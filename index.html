@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f1">
+  <title>مختبر البرمجة | Code Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong data-i18n="brand">مختبر البرمجة</strong><small data-i18n="brandSub">من الفكرة إلى الكود</small></span></a>
+      <div class="sidebar-label" data-i18n="curriculum">المنهج</div>
+      <nav class="grade-list" id="gradeList" aria-label="الصفوف"></nav>
+      <div class="sidebar-footer"><div class="progress-ring" id="progressRing"><span id="progressPercent">٠٪</span></div><div><strong data-i18n="yourProgress">تقدمك</strong><small id="progressCaption"></small></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="breadcrumbs"><span data-i18n="learningPath">مسار التعلم</span><span>/</span><strong id="crumbGrade"></strong></div><div class="top-actions"><span class="saved"><i></i><span data-i18n="saved">حُفظ تقدمك</span></span><button class="language-toggle" id="languageToggle" type="button"><span aria-hidden="true">文</span><span id="languageLabel">English</span></button></div></header>
+      <div class="content-wrap">
+        <section class="grade-heading"><div><div class="eyebrow"><i></i><span data-i18n="track">مسار تعليمي تفاعلي</span><span>·</span><span id="gradeLevel"></span></div><h1 id="gradeTitle"></h1><p id="gradeDescription"></p></div><div class="grade-stamp"><span id="gradeNumber">01</span><small data-i18n="grade">الصف</small></div></section>
+        <div class="overview-row"><div class="lesson-progress"><div class="progress-track"><i id="gradeProgressBar"></i></div><span id="gradeProgressText"></span></div><div class="view-switch"><button id="lessonsTab" class="view-tab active" type="button"><span>▤</span><span data-i18n="lessons">الدروس</span><small>١٠</small></button><button id="projectsTab" class="view-tab" type="button"><span>✳</span><span data-i18n="projects">مشروع التخرج</span></button><button id="gamesTab" class="view-tab" type="button" hidden><span>⌁</span><span data-i18n="games">الألعاب</span></button></div></div>
+        <section id="lessonView"><nav class="lesson-rail" id="lessonRail" aria-label="الدروس"></nav><article id="lessonPanel" class="lesson-panel"></article></section>
+        <section id="projectsView" class="projects-view" hidden></section>
+        <section id="gamesView" class="games-view" hidden></section>
+        <footer class="page-footer"><span data-i18n="footer">تعلّم بالتجربة. كل محاولة تقرّبك من الحل.</span><span>CODE / LAB</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
