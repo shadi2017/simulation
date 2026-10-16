@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تعني سلاسل الشروط المنطقية اتخاذ قرارات مختلفة بناءً على قواعد وشروط متعددة. تخيل أنك تقف أمام مفترق طرق وتختار الطريق الصحيح حسب لون الإشارة، فهذه هي الفكرة الأساسية للتفكير المنطقي.",
+   "مثال صغير وسريع: إذا كانت الإشارة خضراء، اعبر الشارع، وإلا قف وانتظر مكانك. هنا استخدمنا قاعدة بسيطة لتحديد الفعل المناسب حسب الحالة الموجودة.",
+   "كيف تعمل هذه القاعدة؟ يفحص الكمبيوتر الشرط أولاً، فإذا كان صحيحاً ينفذ الأمر الأول، وإذا لم يكن صحيحاً ينتقل تلقائياً إلى خيار وإلا لينفذ أمراً آخر مختلفاً تماماً.",
+   "مثال ثانٍ: إذا كانت درجة الحرارة حارة جداً ارتدِ ملابس خفيفة، وإلا فارتدِ سترة ثقيلة. يمنحنا هذا أسلوباً مرناً للتعامل مع تغيرات الجو والبيئة المحيطة بنا.",
+   "قاعدة ذهبية للتذكر: دائماً ضع شرطاً أساسياً واحداً يغطي الحالة الأولى، ثم استخدم وإلا لتغطية كل الاحتمالات الأخرى الباقية بدون أي تداخل أو ارتباك.",
+   "الاستخدام في الحياة اليومية: نستخدم سلاسل الشروط عندما نختار نوع وجبة الإفطار حسب الموجود في الثلاجة، أو عندما نحدد لعبتنا بناءً على حالة الطقس اليوم."
+  ],
+  "example": "لنفترض أننا نختار وجبة خفيفة في وقت الاستراحة بالمدرسة. القاعدة تقول: إذا كان لديك تفاحة، فكل التفاحة. وإلا إذا كان لديك بسكويت، فكل البسكويت. وإلا فاشرب عصيراً لذيذاً. هنا يفكر العقل أو الكود خطوة بخطوة بالترتيب حتى يجد الطعام الموجود حقاً في حقيبتك ويأكله فوراً.",
+  "mistake": "الخطأ الشائع هو وضع شروط متعارضة تجعل الكمبيوتر يتحير ولا يعرف ماذا ينفذ أولاً. الحل هو ترتيب الشروط من الأخص إلى الأعم وبدقة متناهية.",
+  "recap": "سلاسل الشروط تجعل برامجنا وحياتنا أكثر ذكاءً وقدرة على الاختيار. نتعلم كيف نقرر بدقة ماذا نفعل في كل موقف.",
+  "q": [
+   {
+    "t": "ماذا نفعل إذا كان الشرط الأول غير صحيح في سلسلة الشروط؟",
+    "o": [
+     "نتوقف عن العمل تماماً",
+     "ننتقل لتنفيذ أمر وإلا البديل",
+     "نحذف البرنامج من الجهاز"
+    ],
+    "a": 1,
+    "why": "البرنامج ينتقل للبديل (إلا) عندما لا يتحقق الشرط الأول."
+   },
+   {
+    "t": "لماذا نستخدم سلاسل الشروط المنطقية؟",
+    "o": [
+     "لتزيين الشاشة فقط",
+     "لاتخاذ قرارات متعددة حسب الحالة",
+     "لجعل الكمبيوتر ينام"
+    ],
+    "a": 1,
+    "why": "نستخدمها لكي يتخذ الكمبيوتر قرارات مختلفة بناءً على المدخلات."
+   },
+   {
+    "t": "أي من التالي يعبر عن قاعدة 'إذا' و'إلا' بشكل صحيح؟",
+    "o": [
+     "إذا كانت الشمس مشمسة العب بالخارج وإلا امكث في البيت",
+     "العب دائماً בלי تفكير",
+     "الشمس تشرق صباحاً وتغرب مساءً"
+    ],
+    "a": 0,
+    "why": "هذا مثال حقيقي لشروط واضحة ومتبادلة."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل جملة الشروط المنطقية",
+   "goal": "اختر الكلمة الصحيحة لإكمال القاعدة المنطقية",
+   "items": [
+    {
+     "text": "إذا كان الجو ممطراً، ___ معطفك.",
+     "options": [
+      "ارتدِ",
+      "انزع",
+      "ارسم"
+     ],
+     "a": 0
+    },
+    {
+     "text": "وإلا، العب ___ المنزل.",
+     "options": [
+      "داخل",
+      "فوق",
+      "تحت"
+     ],
+     "a": 0
+    },
+    {
+     "text": "إذا جعت، ___ تفاحة.",
+     "options": [
+      "كل",
+      "ارمي",
+      "شاهد"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد أنشأت سلسلة شروط ناجحة واتخذت القرارات الصحيحة تماماً!"
+  },
+  "sections": [
+   {
+    "h": "ما هي سلاسل الشروط؟",
+    "text": "سلاسل الشروط هي طريقة نخبر بها الكمبيوتر أو عقولنا كيف نتخذ قراراً عندما تختلف الظروف حولنا. تماماً مثلما تقرر ماذا ترتدي كل صباح حسب حالة الطقس.",
+    "code": "إذا كان الجو بارداً: ارتدِ سترة.",
+    "output": "يتم ارتداء الستترة فوراً."
+   },
+   {
+    "h": "قاعدة إذا الأساسية (If)",
+    "text": "كلمة 'إذا' هي المفتاح السحري الأول. نستخدمها لفحص سؤال معين، مثل: هل حقيبتي ثقيلة؟ إذا كان الجواب نعم، فنحن ننفذ أمراً محدداً مرتبطاً بهذا السؤال.",
+    "code": "إذا (الحقيبة ثقيلة) : اطلب المساعدة",
+    "output": "نطلب المساعدة لحمل الحقيبة."
+   },
+   {
+    "h": "قاعدة وإلا (Else)",
+    "text": "ماذا لو لم تتحقق القاعدة الأولى؟ هنا يأتي دور كلمة 'إلا'. هي الخيار الاحتياطي الذي يعمل فوراً عندما يكون الشرط الأول غير صحيح أو غير منطقي.",
+    "code": "وإلا : احمل الحقيبة بنفسك",
+    "output": "نحمل الحقيبة بمفردنا."
+   },
+   {
+    "h": "اتخاذ قرارات متعددة",
+    "text": "الحياة ليست نعم أو لا فقط؛ أحياناً لدينا خيارات كثيرة جداً. سلاسل الشروط تسمح لنا بربط عدة قواعد معاً بترتيب دقيق لتغطية كل الاحتمالات الممكنة.",
+    "code": "إذا كان الطقس مشمساً: العب كرة القدم. وإلا إذا كان ممطراً: ارسم.",
+    "output": "يتم اختيار النشاط حسب الجو بدقة."
+   },
+   {
+    "h": "ترتيب الشروط يهم جداً",
+    "text": "الكمبيوتر يقرأ الشروط بالترتيب من الأعلى إلى الأسفل. إذا تحقق الشرط الأول، فإنه يتوقف فوراً وينفذه ولا ينظر إلى بقية الشروط الموجودة أسفله.",
+    "code": "افحص الشرط الأول -> افحص الشرط الثاني -> نفذ المناسب",
+    "output": "تنفيذ منظم بدون تداخل."
+   },
+   {
+    "h": "شروط وقت الوجبة الخفيفة",
+    "text": "في المدرسة، نقرر ماذا نأكل حسب ما لدينا في الصندوق. نتحقق من نوع الطعام خطوة بخطوة حتى نجد طعامنا ونبدأ في تناوله بسعادة.",
+    "code": "إذا وجدنا ساندوتش: نأكله. وإلا: نأكل الفواكه.",
+    "output": "تناول الوجبة المناسبة."
+   },
+   {
+    "h": "قواعد الألعاب الرقمية",
+    "text": "حتى في الألعاب الإلكترونية المفضلة لديك، الشخصية تتحرك بناءً على شروط: إذا ضغطت الزر الأيمن تجري الشخصية، وإلا تقف في مكانها بهدوء.",
+    "code": "إذا ضغطت زر الجري : تحرك بسرعة",
+    "output": "الشخصية تجري في اللعبة."
+   },
+   {
+    "h": "ملخص تفكير المبرمج الصغير",
+    "text": "البرمجة ليست مجرد كتابة أكواد، بل هي طريقة تفكير منظمة تساعدنا في حل مشكلاتنا اليومية واتخاذ أفضل القرارات بحكمة وسرعة فائقة.",
+    "code": "فكر جيداً -> اكتب الشرط -> نفذ القرار",
+    "output": "حل ذكي للمشكلات."
+   }
+  ],
+  "reference": [
+   {
+    "name": "إذا (If)",
+    "desc": "أمر لفحص شرط أساسي."
+   },
+   {
+    "name": "وإلا (Else)",
+    "desc": "خيار احتياطي عند عدم تحقق الشرط."
+   },
+   {
+    "name": "القرار (Decision)",
+    "desc": "اختيار مسار معين بناءً على البيانات."
+   },
+   {
+    "name": "الشرط (Condition)",
+    "desc": "جملة تحتمل الصحة أو الخطأ."
+   },
+   {
+    "name": "التسلسل (Chain)",
+    "desc": "ترتيب الشروط وراء بعضها البعض."
+   },
+   {
+    "name": "المنطق (Logic)",
+    "desc": "التفكير المرتب لحل المشكلات."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب قاعدة بسيطة: ماذا تفعل إذا كانت الإشارة حمراء؟",
+    "a": "إذا كانت حمراء، أقف مكان ولا اتحرك."
+   },
+   {
+    "q": "رتب ذهنياً: إذا شعرت بالعطش ماذا تفعل؟",
+    "a": "إذا عطشت، أشرب الماء."
+   },
+   {
+    "q": "ماذا تعني كلمة وإلا في سلاسل الشروط؟",
+    "a": "تعني الخيار البديل إذا لم يتحقق الشرط الأول."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Conditional logic chains let us make different choices based on multiple rules and conditions. Imagine standing at a crossroads and choosing the right path based on traffic light colors; this is the core of logical thinking.",
+   "A quick small example: If the light is green, cross the street, else stop and wait in place. Here we used a simple rule to decide the proper action depending on the current state.",
+   "How does this rule work? The computer checks the condition first; if it is true, it runs the first command, and if not, it automatically moves to an else option to run something totally different.",
+   "Second example: If the weather is very hot, wear light clothes, else wear a heavy jacket. This gives us a flexible way to handle weather changes and our surrounding environment.",
+   "Golden rule to remember: Always place one main condition covering the first case, then use else to cover all remaining possibilities without any overlap or confusion.",
+   "Real-life use: We use conditional chains when choosing our breakfast based on what is in the fridge, or when picking our game based on today's weather condition."
+  ],
+  "example": "Suppose we pick a snack during school break time. The rule says: If you have an apple, eat the apple. Else if you have a cookie, eat the cookie. Else drink a yummy juice. Here the brain or code thinks step by step in order until it finds the food truly inside your bag and eats it right away.",
+  "mistake": "A common mistake is making conflicting conditions that confuse the computer so it doesn't know what to run first. The fix is ordering conditions from most specific to general with great precision.",
+  "recap": "Conditional chains make our programs and lives smarter and better at choosing. We learn how to decide precisely what to do in every situation.",
+  "q": [
+   {
+    "t": "What do we do if the first condition is false in a conditional chain?",
+    "o": [
+     "Stop working completely",
+     "Move to execute the else alternative",
+     "Delete the program from the device"
+    ],
+    "a": 1,
+    "why": "The program moves to the alternative (else) when the first condition is not met."
+   },
+   {
+    "t": "Why do we use conditional logic chains?",
+    "o": [
+     "To decorate the screen only",
+     "To make multiple choices depending on the state",
+     "To make the computer sleep"
+    ],
+    "a": 1,
+    "why": "We use them so the computer makes different decisions based on inputs."
+   },
+   {
+    "t": "Which of the following correctly expresses an if-else rule?",
+    "o": [
+     "If it is sunny play outside else stay home",
+     "Always play without thinking",
+     "The sun rises in morning and sets at night"
+    ],
+    "a": 0,
+    "why": "This is a real example of clear and reciprocal conditions."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Conditional Logic Sentence",
+   "goal": "Choose the correct word to complete the logic rule",
+   "items": [
+    {
+     "text": "If the weather is rainy, ___ your coat.",
+     "options": [
+      "wear",
+      "take off",
+      "draw"
+     ],
+     "a": 0
+    },
+    {
+     "text": "Else, play ___ the house.",
+     "options": [
+      "inside",
+      "above",
+      "under"
+     ],
+     "a": 0
+    },
+    {
+     "text": "If you are hungry, ___ an apple.",
+     "options": [
+      "eat",
+      "throw",
+      "watch"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You built a successful conditional chain and made exact right decisions!"
+  },
+  "sections": [
+   {
+    "h": "What Are Conditional Chains?",
+    "text": "Conditional chains are a way we tell the computer or our minds how to make a decision when conditions around us differ. Just like deciding what to wear every morning based on the weather.",
+    "code": "If weather is cold: wear a jacket.",
+    "output": "The jacket is worn right away."
+   },
+   {
+    "h": "The Basic If Rule",
+    "text": "The word 'if' is the first magic key. We use it to check a specific question, like: Is my bag heavy? If the answer is yes, we run a specific command linked to that question.",
+    "code": "If (bag is heavy) : ask for help",
+    "output": "We ask for help to carry the bag."
+   },
+   {
+    "h": "The Else Rule",
+    "text": "What if the first rule is not met? Here comes the word 'else'. It is the backup option that works instantly when the first condition is false or illogical.",
+    "code": "Else : carry the bag yourself",
+    "output": "We carry the bag by ourselves."
+   },
+   {
+    "h": "Making Multiple Choices",
+    "text": "Life is not just yes or no; sometimes we have many choices. Conditional chains let us connect several rules together in precise order to cover all possible outcomes.",
+    "code": "If sunny: play football. Else if rainy: draw.",
+    "output": "The activity is chosen accurately by weather."
+   },
+   {
+    "h": "Condition Order Matters A Lot",
+    "text": "The computer reads conditions in order from top to bottom. If the first condition is true, it stops immediately, runs it, and does not look at the rest below.",
+    "code": "Check first condition -> Check second condition -> Run matching",
+    "output": "Organized execution without overlap."
+   },
+   {
+    "h": "Snack Time Rules",
+    "text": "At school, we decide what to eat based on what we have in our box. We check the food type step by step until we find our food and start eating happily.",
+    "code": "If we find a sandwich: eat it. Else: eat fruits.",
+    "output": "Eating the correct meal."
+   },
+   {
+    "h": "Digital Game Rules",
+    "text": "Even in your favorite video games, the character moves based on conditions: If you press the right button the character runs, else it stands in place calmly.",
+    "code": "If press run button : move fast",
+    "output": "The character runs in the game."
+   },
+   {
+    "h": "Little Coder Mind Summary",
+    "text": "Coding is not just writing code, but an organized mindset that helps us solve daily problems and make the best decisions wisely and super fast.",
+    "code": "Think well -> Write condition -> Execute decision",
+    "output": "Smart problem solving."
+   }
+  ],
+  "reference": [
+   {
+    "name": "If",
+    "desc": "Command to check a primary condition."
+   },
+   {
+    "name": "Else",
+    "desc": "Backup choice when condition fails."
+   },
+   {
+    "name": "Decision",
+    "desc": "Choosing a path based on data."
+   },
+   {
+    "name": "Condition",
+    "desc": "Statement that is true or false."
+   },
+   {
+    "name": "Chain",
+    "desc": "Ordering conditions one after another."
+   },
+   {
+    "name": "Logic",
+    "desc": "Structured thinking to solve problems."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a simple rule: What do you do if the light is red?",
+    "a": "If it is red, I stop in place and do not move."
+   },
+   {
+    "q": "Think mentally: If you feel thirsty what do you do?",
+    "a": "If I am thirsty, I drink water."
+   },
+   {
+    "q": "What does 'else' mean in conditional chains?",
+    "a": "It means the alternative choice if the first condition is not met."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

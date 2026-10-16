@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تريد من القطة في سكراتش جونيور أن تقفز عشر مرات متتالية. بدلًا من سحب بلوك القفز عشر مرات، يوجد حل سحري أسهل بكثير يسمى حلقة التكرار!",
+   "بلوك التكرار يشبه صندوق سحري تضع بداخله الحركة التي تريد إعادتها، وتكتب عليه الرقم ليقوم بالعمل نيابة عنك وبسرعة مذهلة.",
+   "تعمل حلقة التكرار عبر أخذ البلوك الذي بداخلها وإعادة تنفيذه بالعدد المحدد من المرات تدريجيًا حتى ينتهي العد.",
+   "مثال رائع: إذا أردت أن تدور القطة ثلاث مرات، ضع بلوك الدوران داخل بلوك التكرار، واجعل الرقم ثلاثة بدلًا من واحد.",
+   "القاعدة الذهبية: استخدم التكرار دائما عندما تجد نفسك تسحب نفس البلوك أكثر من مرتين، ليبقى مشروعك مرتبًا وسريعًا.",
+   "في الحياة اليومية، التكرار يشبه عندما تغسل أسنانك وتكرر حركة الفرشاة عشر مرات، أو عندما تقفز في مكانك خمس مرات للرياضة!"
+  ],
+  "example": "لنصنع معاً قصة ممتعة لقطة راقصة تدور في مكانها ثلاث مرات! بدلاً من تفتيت الكود ووضع ثلاثة بلوكات دوران، نستخدم بلوك التكرار الأخضر الذي يحتوي على رقم المرات. نسحب بلوك الدوران ونضعه داخل فم بلوك التكرار، ونغير الرقم إلى 3. عندما يضغط المستخدم على العلم الأخضر، ستدور القطة ثلاث لفات متتالية ونظيفة وبكود قصير جداً!",
+  "mistake": "الخطأ الشائع هو نسيان إدخال البلوك الحركي بالكامل داخل صندوق التكرار، فيبقى خارجه ولا يتكرر. الحل هو التأكد من تداخل البلوكات بداخل بعضها تماماً مثل تركيب قطع الليجو.",
+  "recap": "تساعدنا حلقات التكرار على إعادة تنفيذ نفس الحركات عدة مرات بكفاءة وسهولة. هذا يجعل برامجنا أسرع وأقصر وأكثر تنظيماً.",
+  "q": [
+   {
+    "t": "ما هي فائدة بلوك التكرار في سكراتش جونيور؟",
+    "o": [
+     "حذف القطة من الشاشة",
+     "إعادة تنفيذ نفس الحركة عدة مرات بدون نسخ",
+     "جعل الخلفية سوداء اللون"
+    ],
+    "a": 1,
+    "why": "بلوك التكرار يخترع اختصاراً رائعاً لتكرار الحركات دون الحاجة لتكرار وضع البلوكات."
+   },
+   {
+    "t": "إذا أردنا أن تقفز القطة 4 مرات، ما الرقم الذي نضعه في حلقة التكرار؟",
+    "o": [
+     "2",
+     "10",
+     "4"
+    ],
+    "a": 2,
+    "why": "نضع الرقم 4 لأنه يمثل عدد المرات المطلوبة بالضبط."
+   },
+   {
+    "t": "ماذا نسمي جعل الكود قصيراً ومرتباً باستخدام التكرار؟",
+    "o": [
+     "البرمجة الفعالة",
+     "حذف المشروع",
+     "تلوين الخلفية"
+    ],
+    "a": 0,
+    "why": "البرمجة الفعالة تعني عمل أشياء مذهلة بأقل عدد ممكن من البلوكات."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع حركة القطة",
+   "goal": "اعرف ماذا ستفعل القطة مع هذا الكود",
+   "code": "العلم الأخضر -> تكرار (3) -> دوران يميناً",
+   "options": [
+    "تدور القطة مرة واحدة فقط",
+    "تدور القطة ثلاث مرات يميناً",
+    "تقفز القطة لأعلى خمس مرات"
+   ],
+   "a": 1,
+   "success": "دارت القطة ثلاث مرات مذهلة بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن تكرار الأفعال",
+    "text": "في الحياة اليومية، نكرر الكثير من الأشياء مثل ركل الكرة عشر مرات أو التصفيق بحماس. في البرمجة، نكرر الحركات دون إجهاد.",
+    "code": "فعل الشيء مرة واحدة مقابل فعله مراراً وتكراراً",
+    "output": "فهم مفهوم الاستمرارية والإعادة في البرمجة"
+   },
+   {
+    "h": "مشكلة تكرار البلوكات اليدوية",
+    "text": "عندما نريد من الشخصية أن تفعل شيئاً عشر مرات، فإن سحب البلوك عشر مرات يملأ الشاشة بالفوضى ويبطئ العمل.",
+    "code": "حركة + حركة + حركة + حركة (شاشة مزدحمة)",
+    "output": "صعوبة قراءة الكود وزيادة الأخطاء"
+   },
+   {
+    "h": "اكتشاف بلوك التكرار السحري",
+    "text": "يوفر لنا سكراتش جونيور بلوكاً خاصاً للتكرار يشبه الصندوق المفتوح، وبجانبه خانة لنكتب فيها عدد المرات التي نريدها.",
+    "code": "بلوك تكرار رقم [ ]",
+    "output": "صندوق جاهز لاستقبال الحركات"
+   },
+   {
+    "h": "كيف نضع الحركات داخل التكرار؟",
+    "text": "تشبه حلقة التكرار الفم الذي يبتلع الحركات! نسحب بلوك الحركة ونضعه ليستقر تماماً في جوف بلوك التكرار.",
+    "code": "تكرار (3) [دوران]",
+    "output": "الحركة محتواة داخل حلقة العمل"
+   },
+   {
+    "h": "تحديد عدد المرات بدقة",
+    "text": "يمكنك النقر على رقم المرات داخل البلوك وتغييره إلى أي رقم تختاره، مثل 2 أو 5 أو 10 حسب رغبة قصتك.",
+    "code": "تغيير الرقم إلى 3",
+    "output": "تحديد عدد مرات التنفيذ بالضبط"
+   },
+   {
+    "h": "البرمجة الفعالة والأنيقة",
+    "text": "الكود النظيف هو الذي يؤدي مهام ضخمة ببلوكات قليلة. هذا ما نسميه الكفاءة البرمجية؛ تفعل الكثير بجهد أقل.",
+    "code": "3 بلوكات بدلاً من 10 بلوكات",
+    "output": "كود مرتب وسهل التعديل"
+   },
+   {
+    "h": "جعل القطة تدور ثلاث مرات",
+    "text": "تطبيق عملي: نختار بلوك الدوران، نضعه داخل التكرار، ونضبط العداد على ثلاثة لتصنع القطة حركة استعراضية جميلة.",
+    "code": "Repeat(3) -> Spin Right",
+    "output": "القطة تدور ثلاث لفات متتالية"
+   },
+   {
+    "h": "مراجعة وحل المشكلات",
+    "text": "إذا لم يتكرر الفعل، فتأكد أن البلوك بداخله تماماً وأن الرقم ليس صفراً. البرمجة ممتعة عندما نفهم أسرارها!",
+    "code": "فحص تركيب البلوكات",
+    "output": "تنفيذ الكود بسلاسة ودون أخطاء"
+   }
+  ],
+  "reference": [
+   {
+    "name": "حلقة التكرار (Repeat Loop)",
+    "desc": "بلوك يعيد تشغيل ما بداخله عدة مرات."
+   },
+   {
+    "name": "البرمجة الفعالة (Efficient Scripting)",
+    "desc": "كتابة كود أقصر وأذكى لنفس النتيجة."
+   },
+   {
+    "name": "عداد المرات (Repeat Count)",
+    "desc": "الرقم الذي يحدد كم مرة يحدث الفعل."
+   },
+   {
+    "name": "بناء الكود (Scripting)",
+    "desc": "ترتيب البلوكات لصنع قصة تفاعلية."
+   },
+   {
+    "name": "دوران (Spin)",
+    "desc": "حركة تجعل الشخصية تلف حول نفسها."
+   },
+   {
+    "name": "العلم الأخضر (Green Flag)",
+    "desc": "زر يبدأ تشغيل القصة البرمجية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما اسم البلوك الذي يكرر الحركات دون نسخها يدوياً؟",
+    "a": "بلوك التكرار (Repeat Block)"
+   },
+   {
+    "q": "إذا وضعنا بلوك قفز داخل تكرار رقم 5، كم مرة تقفز القطة؟",
+    "a": "5 مرات"
+   },
+   {
+    "q": "لماذا نستخدم البرمجة الفعالة في سكراتش جونيور؟",
+    "a": "لجعل الكود أقصر، أسرع، وأكثر ترتيباً."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you want the ScratchJr cat to jump ten times in a row. Instead of dragging the jump block ten times, there is a much easier magical solution called a repeat loop!",
+   "A repeat block is like a magic box where you place the action you want to duplicate, and write the count on it to do the work for you with amazing speed.",
+   "The repeat loop works by taking the block inside it and executing it repeatedly for the specified number of times gradually until the count finishes.",
+   "Great example: If you want the cat to spin three times, put the spin block inside the repeat block, and make the number three instead of one.",
+   "Golden rule: Always use a repeat loop when you find yourself dragging the same block more than twice, to keep your project neat and fast.",
+   "In daily life, repetition is like brushing your teeth and repeating the brush stroke ten times, or jumping in place five times for exercise!"
+  ],
+  "example": "Let us make a fun story of a dancing cat spinning in place three times! Instead of cluttering the code with three separate spin blocks, we use the green repeat block which holds a count number. We drag the spin block and place it inside the mouth of the repeat block, changing the number to 3. When the user taps the green flag, the cat will spin three clean, consecutive turns with very short code!",
+  "mistake": "A common mistake is forgetting to place the motion block completely inside the repeat box, leaving it outside so it does not repeat. The solution is to ensure blocks snap together perfectly like LEGO bricks.",
+  "recap": "Repeat loops help us re-run the same actions multiple times efficiently and easily. This makes our programs faster, shorter, and much more organized.",
+  "q": [
+   {
+    "t": "What is the benefit of a repeat block in ScratchJr?",
+    "o": [
+     "Deleting the cat from the screen",
+     "Re-running the same action multiple times without copying",
+     "Making the background black"
+    ],
+    "a": 1,
+    "why": "The repeat block creates a wonderful shortcut to repeat actions without duplicating blocks."
+   },
+   {
+    "t": "If we want the cat to jump 4 times, what number do we put in the repeat loop?",
+    "o": [
+     "2",
+     "10",
+     "4"
+    ],
+    "a": 2,
+    "why": "We put the number 4 because it represents the exact required number of times."
+   },
+   {
+    "t": "What do we call making code short and tidy using repetition?",
+    "o": [
+     "Efficient scripting",
+     "Deleting the project",
+     "Painting the background"
+    ],
+    "a": 0,
+    "why": "Efficient scripting means doing amazing things with the fewest possible blocks."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Cat Motion",
+   "goal": "Figure out what the cat will do with this code",
+   "code": "Green Flag -> Repeat (3) -> Spin Right",
+   "options": [
+    "The cat spins only once",
+    "The cat spins to the right three times",
+    "The cat jumps up five times"
+   ],
+   "a": 1,
+   "success": "The cat successfully spun three amazing times!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Repeating Actions",
+    "text": "In daily life, we repeat many things like kicking a ball ten times or clapping excitedly. In programming, we repeat actions effortlessly.",
+    "code": "Doing a task once versus doing it over and over",
+    "output": "Understanding continuity and looping concepts in code"
+   },
+   {
+    "h": "The Problem of Manual Copying",
+    "text": "When we want a character to do something ten times, dragging the block ten times clutters the screen and slows down work.",
+    "code": "Motion + Motion + Motion + Motion (crowded screen)",
+    "output": "Hard-to-read code and increased mistakes"
+   },
+   {
+    "h": "Discovering the Magic Repeat Block",
+    "text": "ScratchJr provides a special repeat block that looks like an open box, next to a box where we can write the number of times we want.",
+    "code": "Repeat block with count [ ]",
+    "output": "A ready box waiting to hold actions"
+   },
+   {
+    "h": "Placing Actions Inside the Loop",
+    "text": "A repeat loop is like a mouth that swallows actions! We drag a motion block and place it so it rests completely inside the cavity of the repeat block.",
+    "code": "Repeat(3) [Spin]",
+    "output": "Action contained inside the loop ring"
+   },
+   {
+    "h": "Setting the Exact Count",
+    "text": "You can click on the count number inside the block and change it to any number you choose, like 2, 5, or 10 depending on your story.",
+    "code": "Change number to 3",
+    "output": "Setting the precise execution count"
+   },
+   {
+    "h": "Efficient and Neat Scripting",
+    "text": "Clean code achieves huge tasks with few blocks. This is what we call scripting efficiency; doing more with less effort.",
+    "code": "3 blocks instead of 10 blocks",
+    "output": "Organized and easily editable code"
+   },
+   {
+    "h": "Making the Cat Spin Three Times",
+    "text": "Practical application: We pick a spin block, place it inside the repeat loop, and set the counter to three so the cat performs a nice show.",
+    "code": "Repeat(3) -> Spin Right",
+    "output": "The cat spins three consecutive turns"
+   },
+   {
+    "h": "Review and Troubleshooting",
+    "text": "If the action does not repeat, make sure the block is completely inside and the number is not zero. Coding is fun when we unlock its secrets!",
+    "code": "Check block snapping",
+    "output": "Executing code smoothly and without bugs"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Repeat Loop",
+    "desc": "A block that re-runs what is inside it multiple times."
+   },
+   {
+    "name": "Efficient Scripting",
+    "desc": "Writing shorter and smarter code for the same result."
+   },
+   {
+    "name": "Repeat Count",
+    "desc": "The number determining how many times an action happens."
+   },
+   {
+    "name": "Scripting",
+    "desc": "Arranging blocks to build an interactive story."
+   },
+   {
+    "name": "Spin",
+    "desc": "An action making the character turn around itself."
+   },
+   {
+    "name": "Green Flag",
+    "desc": "A button that starts running the code story."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is the name of the block that repeats actions without manual copying?",
+    "a": "Repeat Block"
+   },
+   {
+    "q": "If we place a jump block inside a repeat of 5, how many times does the cat jump?",
+    "a": "5 times"
+   },
+   {
+    "q": "Why do we use efficient scripting in ScratchJr?",
+    "a": "To make code shorter, faster, and more organized."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "يُعتبر التحكم في الشخصيات باستخدام لوحة المفاتيح هو أساس تفاعل اللاعب مع اللعبة في سكراتش. عندما نضغط على زر السهم، يجب أن يتحرك الكائن بطريقة سلسة وسريعة دون تأخير مزعج.",
+   "لتجربة ذلك، استخدم لبنة 'عند الضغط على مفتاح السهم الأيمن' وم تحتها لبنة 'تغيير الموضع س بمقدار 10'. هذا يجعل الكائن يقفز خطوة سريعة نحو اليمين كلما ضغطت.",
+   "تعمل هذه الطريقة من خلال تكرار فحص حالة المفتاح داخل حلقة مستمرة. إذا كان المفتاح مضغوطاً، ينفذ الكائن الأمر فوراً ويتحرك بالمسافة المحددة على المحور السيني أو الصادي.",
+   "يمكنك إضافة المزيد من الاتجاهات عبر تكرار الكود لجميع الأسهم. مثلاً، استخدم مفتاح السهم الأيسر مع 'تغيير الموضع س بمقدار -10' للتحرك عكس الاتجاه.",
+   "القاعدة الذهبية للحركة السلسة هي استخدام خطوات صغيرة (مثل 5 أو 10 خطوات) داخل حلقة تكرار مستمرة، بدلاً من القفز لمسافات طويلة مرة واحدة لتجنب بطء الاستجابة.",
+   "في ألعاب الفيديو الحقيقية مثل ألعاب المنصات أو سباقات السيارات، يُعد التحكم السلس بالمفاتيح هو السر لجعل اللعبة ممتعة ومريحة للاعب أثناء استكشاف العوالم."
+  ],
+  "example": "لصنع حركة سلسة لأعلى وأسفل، نضع لبنة 'تكرار باستمرار' وبداخلها شرط: إذا كان مفتاح السهم العلوي ضغط، غير الموضع ص بمقدار 5. هذا يجعل القطة تتحرك بسلاسة فائقة لأعلى الشاشة كأنها تطير في منطاد سحري ممتع.",
+  "mistake": "الخطأ الشائع هو وضع لبنة 'انتظر' داخل حلقة الحركة، مما يسبب تأخيراً مزعجاً (Key Latency). التصحيح هو إزالة أي تأخير والاعتماد على التكرار المستمر المباشر للحصول على استجابة فورية.",
+  "recap": "تعلّمنا كيف نجعل الكائنات تتحرك بسلاسة باستخدام مفاتيح لوحة المفاتيح عبر حلقة مستمرة. كما فهمنا كيفية تجنب تأخير المفاتيح للحصول على تجربة لعب رائعة.",
+  "q": [
+   {
+    "t": "أي لبنة تستخدم لجعل الكائن يتحرك نحو اليمين عند الضغط على مفتاح؟",
+    "o": [
+     "تغيير الموضع س بمقدار 10",
+     "تغيير الاتجاه نحو الشمال",
+     "قل مرحباً لمدة ثانية"
+    ],
+    "a": 0,
+    "why": "لأن المحور السيني (س) يتحكم في الحركة الأفقية يميناً ويساراً."
+   },
+   {
+    "t": "ما هو سبب بطء استجابة الكائن عند الضغط على المفاتيح (Key Latency)؟",
+    "o": [
+     "استخدام خطوات صغيرة جداً",
+     "وضع لبنات انتظار داخل حلقة الحركة",
+     "تغيير لون الكائن"
+    ],
+    "a": 1,
+    "why": "لبنات الانتظار تجعل الكمبيوتر يتوقف عن تفقد المفاتيح لفترة قصيرة مما يصنع تأخيراً."
+   },
+   {
+    "t": "كيف نجعل الكائن يتحرك في 8 اتجاهات مختلفة؟",
+    "o": [
+     "بالضغط على الماوس فقط",
+     "بالجمع بين حركات المحورين س وص معاً في نفس الوقت",
+     "بتغيير حجم الكائن"
+    ],
+    "a": 1,
+    "why": "التحرك أفقياً وعمودياً معاً يمنحنا إمكانية الحركة في جميع الاتجاهات الـ 8."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع حركة القط",
+   "goal": "اعرف ماذا سيحدث للكائن عند الضغط على السهم الأيمن",
+   "code": "عند نقر العلم الأخضر:\nتكرار باستمرار:\n  إذا كان [مفتاح السهم الأيمن مضغوطاً؟]:\n    تغيير (س) بمقدار (10)",
+   "options": [
+    "يتحرك الكائن بسلاسة نحو اليمين",
+    "يختفي الكائن تماماً",
+    "يقفز الكائن لأعلى الشاشة"
+   ],
+   "a": 0,
+   "success": "تحرك القطة بسلاسة وبسرعة نحو يمين الشاشة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في إدخال لوحة المفاتيح",
+    "text": "لوحة المفاتيح هي عجلة قيادة اللعبة! تماماً مثل قيادة دراجة بحب، نضغط على الأزرار لنوجه بطلنا في الاتجاه الصحيح. في سكراتش، نستخدم مستشعرات الضغط لتعرف اللعبة متى يضغط اللاعب على السهم.",
+    "code": "عندما يضغط اللاعب -> يتحرك البطل",
+    "output": "يستجيب الكائن فوراً لضغطات أصابعك."
+   },
+   {
+    "h": "فهم إحداثيات الشاشة س وص",
+    "text": "شاشة سكراتش تشبه خريطة كنز مرسومة بمربعات. المحور الأفقي يسمى (س) ويمتد يميناً ويساراً، والمحور العمودي يسمى (ص) ويمتد صعوداً وهبوطاً. تغيير هذه القيم يحرك كائنك.",
+    "code": "تغيير س بمقدار 10 -> يمين\nتغيير س بمقدار -10 -> يسار",
+    "output": "ينزلق الكائن أفقياً بدقة على الشاشة."
+   },
+   {
+    "h": "حلقة التكرار المستمر",
+    "text": "لكي تكون اللعبة حية، يجب أن يراقب الكمبيوتر لوحة المفاتيح طوال الوقت ودون توقف. لبنة 'تكرار باستمرار' تشبه حارساً عيناه مفتوحتان طوال الوقت يراقب أصابعك على الأزرار.",
+    "code": "تكرار باستمرار:\n  افحص المفاتيح",
+    "output": "مراقبة مستمرة ودائمة دون انقطاع."
+   },
+   {
+    "h": "تجنب تأخير المفاتيح (Key Latency)",
+    "text": "هل لاحظت أحياناً أن الشخصية تتأخر قبل أن تتحرك؟ هذا اسمه تأخير المفاتيح. يحدث غالباً إذا وضعنا أمر 'انتظر ثانية' وسط الكود. للحل، نجعل الفحص مباشراً وسريعاً.",
+    "code": "تجنب: تكرار باستمرار -> انتظر 1 ثانية -> تحرك",
+    "output": "حركة بطيئة ومتعثرة ومزعجة."
+   },
+   {
+    "h": "التحكم السلس والخطوات الصغيرة",
+    "text": "التحرك بخطوات صغيرة جداً وسريعة يجعل الحركة ناعمة مثل السباحة في الماء. بدلاً من القفز 100 خطوة دفعة واحدة، نتحرك 5 خطوات في كل مرة يتكرر فيها الكود.",
+    "code": "تكرار 10 مرات: تحرك 5 خطوات",
+    "output": "حركة انسيابية ومريحة للعين."
+   },
+   {
+    "h": "التحكم الأفقي (اليمين واليسار)",
+    "text": "لتحريك الكائن يميناً ويساراً، نستخدم مفتاحي السهم الأيمن والأيسر مع تغيير قيمة المحور (س). القيمة الموجبة تحركك يميناً، والقيمة السالبة تحركك يساراً.",
+    "code": "إذا سهم يمين: غير س بمقدار 5\nإذا سهم يسار: غير س بمقدار -5",
+    "output": "يتنقل الكائن يميناً ويساراً بسلاسة تامة."
+   },
+   {
+    "h": "التحكم العمودي (لأعلى ولأسفل)",
+    "text": "تماما مثل المصعد، لتحريك الكائن صعوداً وهبوطاً نتحكم في المحور (ص). الضغط على السهم العلوي يزيد القيمة، والضغط على السهم السفلي ينقصها.",
+    "code": "إذا سهم أعلى: غير ص بمقدار 5\nإذا سهم أسفل: غير ص بمقدار -5",
+    "output": "يصعد الكائن ويهبط بسهولة."
+   },
+   {
+    "h": "محاكاة الحركة في 8 اتجاهات",
+    "text": "ماذا لو ضغط اللاعب على سهم اليمين وسهم الأعلى معاً؟ سيتحرك الكائن في خط مائل! بدمج الشروط، يمكن لكائنك التحرك في جميع الاتجاهات الأربعة الرئيسية والجهات الأربع المائلة بينها.",
+    "code": "فحص السهمين معاً في نفس الوقت",
+    "output": "حرية كاملة في الحركة بكل اتجاهات الشاشة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "مستشعر مفتاح مضغوط",
+    "desc": "لبنة تفحص ما إذا كان زر معين من لوحة المفاتيح مضغوطاً الآن."
+   },
+   {
+    "name": "تكرار باستمرار",
+    "desc": "حلقة تنفذ الأوامر بلا توقف طوال فترة عمل اللعبة."
+   },
+   {
+    "name": "المحور س",
+    "desc": "الخط الأفقي على الشاشة لتحديد موقع الكائن يميناً ويساراً."
+   },
+   {
+    "name": "المحور ص",
+    "desc": "الخط العمودي على الشاشة لتحديد موقع الكائن لأعلى ولأسفل."
+   },
+   {
+    "name": "تأخير المفاتيح",
+    "desc": "بطء استجابة الكائن للأوامر بسبب وجود أوقات انتظار في الكود."
+   },
+   {
+    "name": "الحركة السلسة",
+    "desc": "حركة ناعمة وانسيابية نتيجة استخدام خطوات صغيرة متكررة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة المستخدمة لتغيير موضع الكائن أفقياً نحو اليمين بمقدار 10؟",
+    "a": "تغيير الموضع س بمقدار 10"
+   },
+   {
+    "q": "لماذا نستخدم حلقة 'تكرار باستمرار' عند برمجة التحكم بالمفاتيح؟",
+    "a": "لكي يستجيب الكمبيوتر لضغطات الأزرار في أي لحظة دون توقف"
+   },
+   {
+    "q": "كيف نجعل الكائن يتحرك لليسار بدلاً من اليمين باستخدام المحور س؟",
+    "a": "نستخدم قيمة سالبة مثل تغيير الموضع س بمقدار -10"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Controlling characters using the keyboard is the foundation of player interaction in Scratch. When we press an arrow key, the sprite should move smoothly and quickly without annoying lag.",
+   "To test this, use the 'if key right arrow pressed' block combined with the 'change x by 10' block. This makes the sprite take a quick step right whenever you press.",
+   "This works by repeatedly checking the key's state inside a continuous loop. If the key is pressed, the sprite executes the command immediately along the x or y axis.",
+   "You can add more directions by duplicating the code for all arrows. For example, use the left arrow key with 'change x by -10' to move in the opposite direction.",
+   "The golden rule for smooth movement is using small steps (like 5 or 10) inside a continuous loop, rather than jumping long distances at once to avoid sluggish responses.",
+   "In real video games like platformers or car racers, smooth keyboard controls are the secret to making the game fun and comfortable while exploring worlds."
+  ],
+  "example": "To make smooth up and down movement, we place a 'forever' loop containing a condition: if the up arrow key is pressed, change y by 5. This makes the cat move smoothly up the screen as if flying in a magical balloon.",
+  "mistake": "A common mistake is placing a 'wait' block inside the movement loop, causing annoying key latency. The fix is to remove any delays and rely on direct continuous looping for instant response.",
+  "recap": "We learned how to make sprites move smoothly using keyboard keys via a continuous loop. We also understood how to avoid key latency for a wonderful gaming experience.",
+  "q": [
+   {
+    "t": "Which block is used to make a sprite move right when a key is pressed?",
+    "o": [
+     "change x by 10",
+     "point in direction north",
+     "say hello for 1 sec"
+    ],
+    "a": 0,
+    "why": "Because the x-axis controls horizontal movement left and right."
+   },
+   {
+    "t": "What causes key latency where the sprite responds slowly to key presses?",
+    "o": [
+     "Using very small step sizes",
+     "Putting wait blocks inside the movement loop",
+     "Changing the sprite's color"
+    ],
+    "a": 1,
+    "why": "Wait blocks pause the computer from checking keys briefly, creating a delay."
+   },
+   {
+    "t": "How do we make a sprite move in 8 different directions?",
+    "o": [
+     "By clicking the mouse only",
+     "By combining x and y axis movements together at the same time",
+     "By changing the sprite size"
+    ],
+    "a": 1,
+    "why": "Moving horizontally and vertically together gives us motion in all 8 directions."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Cat's Movement",
+   "goal": "Find out what happens to the sprite when pressing the right arrow",
+   "code": "when green flag clicked:\nforever:\n  if <key [right arrow] pressed?> then:\n    change [x] by (10)",
+   "options": [
+    "The sprite moves smoothly to the right",
+    "The sprite disappears completely",
+    "The sprite jumps to the top of the screen"
+   ],
+   "a": 0,
+   "success": "The cat moved smoothly and quickly to the right side of the screen!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Keyboard Inputs",
+    "text": "The keyboard is your game's steering wheel! Just like riding a bike, we press buttons to guide our hero in the right direction. In Scratch, we use sensing blocks so the game knows when a player presses an arrow.",
+    "code": "When player presses -> Hero moves",
+    "output": "The sprite responds instantly to your finger taps."
+   },
+   {
+    "h": "Understanding X and Y Coordinates",
+    "text": "The Scratch screen is like a treasure map drawn on a grid. The horizontal axis is called (x) going right and left, and the vertical axis is called (y) going up and down. Changing these values moves your sprite.",
+    "code": "change x by 10 -> right\nchange x by -10 -> left",
+    "output": "The sprite glides horizontally across the screen with precision."
+   },
+   {
+    "h": "The Forever Loop",
+    "text": "To keep the game alive, the computer must watch the keyboard all the time without stopping. The 'forever' block acts like a guard with wide-open eyes watching your fingers on the buttons.",
+    "code": "forever:\n  check keys",
+    "output": "Continuous and constant monitoring without breaks."
+   },
+   {
+    "h": "Avoiding Key Latency",
+    "text": "Have you ever noticed a character hesitating before moving? That's key latency. It usually happens if we put a 'wait 1 second' block in the middle of code. To fix this, keep checks direct and fast.",
+    "code": "Avoid: forever -> wait 1 sec -> move",
+    "output": "Sluggish, choppy, and annoying movement."
+   },
+   {
+    "h": "Smooth Control & Small Steps",
+    "text": "Moving in very small, rapid steps makes motion as smooth as swimming in water. Instead of jumping 100 steps at once, we move 5 steps every time the code repeats.",
+    "code": "repeat 10: move 5 steps",
+    "output": "Fluid and eye-friendly movement."
+   },
+   {
+    "h": "Horizontal Control (Left & Right)",
+    "text": "To move the sprite right and left, we use the right and left arrow keys while changing the (x) axis value. Positive values move you right, and negative values move you left.",
+    "code": "if right arrow: change x by 5\nif left arrow: change x by -5",
+    "output": "The sprite travels back and forth with total smoothness."
+   },
+   {
+    "h": "Vertical Control (Up & Down)",
+    "text": "Just like an elevator, to move up and down we control the (y) axis. Pressing the up arrow increases the value, and pressing the down arrow decreases it.",
+    "code": "if up arrow: change y by 5\nif down arrow: change y by -5",
+    "output": "The sprite ascends and descends easily."
+   },
+   {
+    "h": "Simulating 8-Directional Motion",
+    "text": "What if the player presses both the right arrow and up arrow together? The sprite moves diagonally! By combining conditions, your sprite can move in all 4 main directions and the 4 diagonal ones between them.",
+    "code": "Checking both arrows at the same time",
+    "output": "Complete freedom of movement in all screen directions."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Key Pressed Sensor",
+    "desc": "A block that checks if a specific keyboard button is currently pressed."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "A loop that runs commands endlessly throughout the game."
+   },
+   {
+    "name": "X Axis",
+    "desc": "The horizontal line on screen for locating sprites right and left."
+   },
+   {
+    "name": "Y Axis",
+    "desc": "The vertical line on screen for locating sprites up and down."
+   },
+   {
+    "name": "Key Latency",
+    "desc": "Delayed sprite response caused by wait times in code."
+   },
+   {
+    "name": "Smooth Movement",
+    "desc": "Fluid and seamless motion resulting from small repeated steps."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block is used to change the sprite's horizontal position to the right by 10?",
+    "a": "change x by 10"
+   },
+   {
+    "q": "Why do we use a 'forever' loop when programming key controls?",
+    "a": "So the computer responds to button presses at any moment without stopping"
+   },
+   {
+    "q": "How do we make the sprite move left instead of right using the x-axis?",
+    "a": "We use a negative value like change x by -10"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

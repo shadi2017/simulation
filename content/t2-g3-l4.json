@@ -1,0 +1,312 @@
+{
+ "ar": {
+  "steps": [
+   "الفكرة الأساسية هي أن روابط الانتقال داخل الصفحة تتيح للمستخدمين القفز مباشرة إلى جزء معين داخل نفس صفحة الويب بدون الحاجة لتحميل صفحة جديدة تماماً.",
+   "مثال بسيط للتوضيح: عندما تنقر على زر في أعلى قصة طويلة ليوصلك فوراً إلى الفصل الأخير في الأسفل.",
+   "كيف تعمل التقنية؟ نستخدم رمز الشباك (#) مع اسم معرف العنصر (id) داخل خاصية الرابط href، مثل href='#bottom'.",
+   "مثال ثانٍ: ربط عنوان رئيسي في قائمة محتويات سريعة بقسم تفاصيل المنتج في منتصف الصفحة عبر الرمز #details.",
+   "قاعدة ذهبية: يجب أن يمتلك العنصر المستهدف خاصية id فريدة، وأن يتطابق اسمها تماماً بعد علامة # في الرابط.",
+   "الاستخدام الحقيقي: توver صفحات المساعدة الطويلة (FAQ) وفهارس الكتب الإلكترونية طرق تنقل سريعة وسلسة ومريحة للمستخدم."
+  ],
+  "example": "تخيل أن لديك صفحة ويب طويلة عن الديناصورات وتريد زسارة قسم الديناصور الطائر مباشرة. نكتب الرابط هكذا: <a href='#pterodactyl'>الذهاب إلى الديناصور الطائر</a>. وفي أسفل الصفحة نضع العنصر المستهدف: <h2 id='pterodactyl'>الديناصور الطائر</h2>. عندما ينقر المستخدم على الرابط، يقوم المتصفح بنقله فوراً إلى هذا العنوان تماماً كالسحر!",
+  "mistake": "الخطأ الشائع هو نسيان كتابة علامة الشباك (#) في الرابط أو عدم مطابقة اسم الـ id بالحرف. الحل هو التأكد من أن href='#section2' يتطابق تماماً مع id='section2'.",
+  "recap": "تسمح لنا روابط الانتقال الداخلي بالقفز الفوري لأي مكان في نفس الصفحة باستخدام الرمز # ومعرفات العناصر. هذا يجعل تصفح المواقع الطويلة أسهل وأسرع بكثير.",
+  "q": [
+   {
+    "t": "ما هو الرمز الذي نستخدمه قبل اسم المعرف (id) في روابط الانتقال داخل الصفحة؟",
+    "o": [
+     "علامة الدولار ($)",
+     "رمز الشباك (#)",
+     "النقطة (.)"
+    ],
+    "a": 1,
+    "why": "نستخدم رمز الشباك (#) لإخبار المتصفح بأننا نبحث عن معرف عنصر محدد داخل نفس الصفحة."
+   },
+   {
+    "t": "كيف نربط رابطاً بقسم يحمل المعرف id='contact'؟",
+    "o": [
+     "href='contact'",
+     "href='#contact'",
+     "href='@contact'"
+    ],
+    "a": 1,
+    "why": "يجب أن تسبق قيمة الـ href علامة الشباك متبوعة باسم الـ id تماماً."
+   },
+   {
+    "t": "ما هي الفائدة الرئيسية لروابط الانتقال الداخلي؟",
+    "o": [
+     "فتح صفحة ويب جديدة في موقع آخر",
+     "القفز مباشرة إلى قسم محدد داخل نفس الصفحة",
+     "تحميل صور جديدة للموقع"
+    ],
+    "a": 1,
+    "why": "تساعد هذه الروابط المستخدم على الانتقال السريع بين أجزاء نفس الصفحة الطويلة دون تحميل متكرر."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة عناصر روابط الانتقال الداخلي",
+   "goal": "صل كل عنصر برابط الانتقال الخاص به بشكل صحيح",
+   "pairs": [
+    [
+     "href='#top'",
+     "رابط القفز إلى أعلى الصفحة"
+    ],
+    [
+     "id='footer'",
+     "معرف العنصر في أسفل الصفحة"
+    ],
+    [
+     "href='#about'",
+     "رابط الانتقال لقسم من نحن"
+    ],
+    [
+     "id='menu'",
+     "معرف عنصر قائمة الطعام"
+    ]
+   ],
+   "success": "رائع! لقد أنشأت نظام تنقل داخلي احترافي وسريع لصفحتك!"
+  },
+  "sections": [
+   {
+    "h": "ما هي روابط الانتقال الداخلي؟",
+    "text": "تخيل أنك تقرأ كتاباً ورقيسكبير وفيه فهرس في البداية يخبرك بأي صفحة تجد القصة التي تحبها. روابط الانتقال الداخلي في HTML تفعل نفس الشيء تماماً، فهي تسمح للمستخدم بالقفز السريع داخل نفس صفحة الويب الطويلة بدون الحاجة للبحث الطويل.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Jump Links</title></head>\n<body>\n  <a href='#bottom'>Go to Bottom</a>\n  <p style='height: 400px;'>Scroll down to see the magic...</p>\n  <h2 id='bottom'>Here is the bottom!</h2>\n</body>\n</html>",
+    "output": "صفحة ويب تحتوي على رابط ينقل المستخدم مباشرة إلى أسفل الصفحة."
+   },
+   {
+    "h": "دور الرمز الشباك (#)",
+    "text": "في عالم الويب، الرمز # (ويسمى هاش أو شباك) هو المفتاح السحري الذي يدل على مكان محدد داخل نفس المستند. عندما تضع # قبل اسم المعرف في الرابط، يفهم المتصفح أنك لا تريد الانتقال لموقع آخر بل البحث عن نقطة محددة هنا.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#section1'>Jump to Section 1</a>\n  <div style='height: 300px;'></div>\n  <h3 id='section1'>This is Section 1</h3>\n</body>\n</html>",
+    "output": "صفحة تنتقل فوراً إلى عنوان القسم الأول عند النقر على الرابط."
+   },
+   {
+    "h": "خاصية المعرف (id) الفريدة",
+    "text": "لكي ينجح القفز، يجب أن يحمل العنصر المستهدف بطاقة تعريف فريدة تسمى id. تماماً مثل رقم الهوية الخاص بك في المدرسة، يجب ألا يتكرر نفس الـ id داخل نفس الصفحة لكي يعرف المتصفح العنوان المقصود بالضبط.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#prize'>Win a Prize!</a>\n  <div style='height: 350px;'></div>\n  <p id='prize'>Congratulations! You found the hidden prize!</p>\n</body>\n</html>",
+    "output": "رابط يقودك مباشرة إلى فقرة إعلان الجائزة في الأسفل."
+   },
+   {
+    "h": "إنشاء قائمة تنقل سريعة في الأعلى",
+    "text": "المواقع الكبيرة مثل المتاجر أو المدونات تضع دائماً قائمة في الأعلى تحتوي على روابط انتقال داخلي (مثل: الأقسام، العروض، اتصل بنا). هذا يجعل التصفح ممتعاً وسريعاً جداً للأطفال والكبار على حد سواء.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <nav>\n    <a href='#fruits'>Fruits</a> |\n    <a href='#toys'>Toys</a>\n  </nav>\n  <div style='height: 250px;'></div>\n  <h2 id='fruits'>Fruits Section</h2>\n  <div style='height: 250px;'></div>\n  <h2 id='toys'>Toys Section</h2>\n</body>\n</html>",
+    "output": "قائمة علوية تتيح التنقل السريع بين قسم الفواكه وقسم الألعاب."
+   },
+   {
+    "h": "العودة إلى أعلى الصفحة",
+    "text": "بعد أن يتصفح المستخدم قسماً سفلياً طويلاً، من المزعج أن يضطر لتحريك الفأرة طويلاً للأعلى. الحل البسيط هو وضع رابط صغير في الأسفل يحمل الرمز # للبداية أو معرف عنصر أعلى الصفحة ليأخذه للأعلى فوراً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1 id='top'>Welcome to Top</h1>\n  <div style='height: 500px;'>Long content here...</div>\n  <a href='#top'>Back to Top ⬆️</a>\n</body>\n</html>",
+    "output": "رابط في الأسفل يعيد المستخدم فوراً إلى أعلى الصفحة."
+   },
+   {
+    "h": "التعامل مع الصفحات الخارجية والداخلية معاً",
+    "text": "يمكنك أيضاً دمج عنوان موقع خارجي مع معرف داخلي! مثلاً إذا أردت أن تفتح صفحة معينة وتقفز مباشرة لقسم معين فيها، تكتب اسم الملف متبوعاً بالشباك والمعرف مثل: `about.html#team`.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#history'>Jump to History on this page</a>\n  <div style='height: 400px;'></div>\n  <h2 id='history'>Our History Section</h2>\n</body>\n</html>",
+    "output": "رابط جاهز للقفز لقسم التاريخ داخل نفس الصفحة."
+   },
+   {
+    "h": "استخدامات حقيقية في الحياة اليومية",
+    "text": "هل زرت من قبل صفحة أسئلة متكررة (FAQ) ونقرت على سؤال فقفز بك الجواب لأسفل الشاشة؟ هذه هي بالضبط تقنية روابط الانتقال الداخلي التي نستخدمها اليوم لتنظيم المعلومات وتسهيل حياة المستخدمين.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#faq2'>What is HTML?</a>\n  <div style='height: 300px;'></div>\n  <h3 id='faq2'>HTML is the structure of the web!</h3>\n</body>\n</html>",
+    "output": "محاكاة لصفحة أسئلة شائعة تنقل المستخدم للإجابة المختارة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<a href='#id'>",
+    "desc": "رابط انتقال داخلي باستخدام الشباك ومعرف العنصر"
+   },
+   {
+    "name": "id='name'",
+    "desc": "خاصية تعطي عنصراً معيناً اسماً فريداً ومميزاً في الصفحة"
+   },
+   {
+    "name": "# (Hash)",
+    "desc": "رمز الشباك الذي يدل على معرف القسم المستهدف"
+   },
+   {
+    "name": "href",
+    "desc": "خاصية الرابط التي تحدد وجهة الانتقال"
+   },
+   {
+    "name": "Anchor Fragment",
+    "desc": "جزء الرابط المسؤول عن تحديد موقع محدد داخل الصفحة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسم رابط يوجه المستخدم إلى قسم يحمل المعرف id='footer'.",
+    "a": "<a href='#footer'>اذهب للأسفل</a>"
+   },
+   {
+    "q": "كيف تكتب وسم عنوان يحمل معرفاً باسم id='intro'؟",
+    "a": "<h2 id='intro'>المقدمة</h2>"
+   },
+   {
+    "q": "ما هو الرمز الذي نضعه دائماً قبل اسم الـ id داخل خاصية الـ href؟",
+    "a": "رمز الشباك (#)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The core idea is that fragment links let users jump straight to a specific part of the exact same webpage without loading a totally new page.",
+   "A simple analogy: Clicking a button at the top of a long story to instantly jump to the final chapter at the bottom.",
+   "How it works: We use the hash symbol (#) combined with an element's id attribute inside the href attribute, like href='#bottom'.",
+   "Second example: Linking a main heading in a quick contents menu to a product details section in the middle of the page using #details.",
+   "Golden rule: The target element must have a unique id, and its name must match the text after the # symbol in the link exactly.",
+   "Real-life use: Long FAQ pages and e-book indexes use fragment links to provide fast, smooth, and comfortable navigation for users."
+  ],
+  "example": "Imagine you have a long webpage about dinosaurs and want to visit the pterodactyl section directly. We write the link like this: <a href='#pterodactyl'>Go to Pterodactyl</a>. At the bottom of the page, we place the target element: <h2 id='pterodactyl'>Pterodactyl</h2>. When the user clicks the link, the browser whisks them straight to that heading like magic!",
+  "mistake": "A common mistake is forgetting the hash symbol (#) in the link or misspelling the id name. The fix is making sure href='#section2' matches id='section2' precisely.",
+  "recap": "Fragment links let us jump instantly anywhere on the same page using the # symbol and element IDs. This makes browsing long websites much easier and faster.",
+  "q": [
+   {
+    "t": "What symbol do we use before an element ID in a page fragment link?",
+    "o": [
+     "Dollar sign ($)",
+     "Hash symbol (#)",
+     "Period (.)"
+    ],
+    "a": 1,
+    "why": "We use the hash symbol (#) to tell the browser we are looking for a specific element ID within the same page."
+   },
+   {
+    "t": "How do you link to a section with the ID id='contact'?",
+    "o": [
+     "href='contact'",
+     "href='#contact'",
+     "href='@contact'"
+    ],
+    "a": 1,
+    "why": "The href value must be preceded by a hash symbol followed by the exact id name."
+   },
+   {
+    "t": "What is the main benefit of internal page fragment links?",
+    "o": [
+     "Opening a new website in a different tab",
+     "Jumping directly to a specific section within the same page",
+     "Downloading new images for the site"
+    ],
+    "a": 1,
+    "why": "These links help users navigate quickly between parts of a long page without reloading."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Match Page Fragment Link Elements",
+   "goal": "Match each element to its correct fragment link function",
+   "pairs": [
+    [
+     "href='#top'",
+     "Link to jump to the top of the page"
+    ],
+    [
+     "id='footer'",
+     "Element ID located at the page bottom"
+    ],
+    [
+     "href='#about'",
+     "Link to jump to the About Us section"
+    ],
+    [
+     "id='menu'",
+     "Element ID for the food menu"
+    ]
+   ],
+   "success": "Awesome! You built a professional and fast internal navigation system for your page!"
+  },
+  "sections": [
+   {
+    "h": "What Are Page Fragment Links?",
+    "text": "Imagine reading a huge book with an index at the front telling you exactly which page your favorite story is on. HTML fragment links do the exact same thing, letting users jump instantly around a long webpage without endless scrolling.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Jump Links</title></head>\n<body>\n  <a href='#bottom'>Go to Bottom</a>\n  <p style='height: 400px;'>Scroll down to see the magic...</p>\n  <h2 id='bottom'>Here is the bottom!</h2>\n</body>\n</html>",
+    "output": "A webpage with a link that takes the user directly to the bottom."
+   },
+   {
+    "h": "The Role of the Hash Symbol (#)",
+    "text": "In the web world, the # symbol (called a hash) is the magic key pointing to a specific spot inside the same document. When you put # before an ID name in a link, the browser knows you want a specific landmark here.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#section1'>Jump to Section 1</a>\n  <div style='height: 300px;'></div>\n  <h3 id='section1'>This is Section 1</h3>\n</body>\n</html>",
+    "output": "A page that jumps instantly to the first section heading upon clicking."
+   },
+   {
+    "h": "The Unique ID Attribute",
+    "text": "To make the jump successful, the target element must wear a unique ID badge called id. Just like your student ID number at school, the same id shouldn't be repeated on the same page so the browser knows the exact destination.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#prize'>Win a Prize!</a>\n  <div style='height: 350px;'></div>\n  <p id='prize'>Congratulations! You found the hidden prize!</p>\n</body>\n</html>",
+    "output": "A link leading directly to the prize announcement paragraph below."
+   },
+   {
+    "h": "Creating a Quick Menu at the Top",
+    "text": "Big websites like stores or blogs always place a menu at the top with fragment links (like: Sections, Deals, Contact Us). This makes browsing fun and lightning fast for kids and adults alike.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <nav>\n    <a href='#fruits'>Fruits</a> |\n    <a href='#toys'>Toys</a>\n  </nav>\n  <div style='height: 250px;'></div>\n  <h2 id='fruits'>Fruits Section</h2>\n  <div style='height: 250px;'></div>\n  <h2 id='toys'>Toys Section</h2>\n</body>\n</html>",
+    "output": "A top menu allowing quick navigation between the fruit and toy sections."
+   },
+   {
+    "h": "Returning to the Top of the Page",
+    "text": "After browsing a long lower section, forcing users to scroll all the way back up is annoying. The simple fix is placing a small link at the bottom containing #top to whisk them right back up.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1 id='top'>Welcome to Top</h1>\n  <div style='height: 500px;'>Long content here...</div>\n  <a href='#top'>Back to Top ⬆️</a>\n</body>\n</html>",
+    "output": "A link at the bottom returning the user instantly to the top of the page."
+   },
+   {
+    "h": "Combining External Pages and Fragments",
+    "text": "You can also combine an external website address with an internal ID! For example, if you want to open a specific page and jump right to a section inside it, write the filename followed by hash and ID like: `about.html#team`.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#history'>Jump to History on this page</a>\n  <div style='height: 400px;'></div>\n  <h2 id='history'>Our History Section</h2>\n</body>\n</html>",
+    "output": "A link ready to jump to the history section within the same page."
+   },
+   {
+    "h": "Real-Life Uses in Daily Life",
+    "text": "Have you ever visited an FAQ page and clicked a question, making the answer jump right to your screen? That is precisely the fragment link technique we use today to organize information and simplify user experiences.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href='#faq2'>What is HTML?</a>\n  <div style='height: 300px;'></div>\n  <h3 id='faq2'>HTML is the structure of the web!</h3>\n</body>\n</html>",
+    "output": "A simulated FAQ page jumping the user to the selected answer."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<a href='#id'>",
+    "desc": "An internal fragment link using hash and element ID"
+   },
+   {
+    "name": "id='name'",
+    "desc": "An attribute giving a specific element a unique name on the page"
+   },
+   {
+    "name": "# (Hash)",
+    "desc": "The symbol denoting the target section identifier"
+   },
+   {
+    "name": "href",
+    "desc": "The link attribute defining the destination"
+   },
+   {
+    "name": "Anchor Fragment",
+    "desc": "The URL part responsible for locating a specific spot inside a page"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write an anchor tag pointing to a section with id='footer'.",
+    "a": "<a href='#footer'>Go to bottom</a>"
+   },
+   {
+    "q": "How do you write a heading tag with an ID named id='intro'?",
+    "a": "<h2 id='intro'>Introduction</h2>"
+   },
+   {
+    "q": "What symbol do we always place before the ID name inside the href attribute?",
+    "a": "Hash symbol (#)"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: <a> HTML anchor element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a"
+  },
+  {
+   "title": "MDN: Creating links",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links"
+  }
+ ],
+ "grounded": true
+}

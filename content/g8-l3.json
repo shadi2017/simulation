@@ -1,0 +1,328 @@
+{
+ "ar": {
+  "steps": [
+   "المخططات الدائرية بتورّينا إزاي الأجزاء المختلفة بتعمل كل واحد كامل، زي تقطيع البيتزا لحتתات.",
+   "عشان نعمل دايرة في ماتروبلوت، بنستخدم أسلوب الأوبجكت، ونرسم البيانات بتاعتنا بنسبة مئوية واضحة وسهلة.",
+   "النسب المئوية بتتحسب لوحدها، والمجموع لازم يكون بيساوي الكل أو مية في المية عشان الرسمة تطلع صح.",
+   "ممكن نبرز جزء معين ونطلعه لبرة شوية عشان نلفت انتباه الناس لحاجة مهمة باستخدام خاصية التباعد.",
+   "ظبط زاوية البداية بيخلينا نحرك مكان أول شريحة في الدايرة عشان الشكل يبמו متناسق وجميل.",
+   "في الحياة، بنستخدم المخططات دي عشان نعرض مصاريفنا الشهرية أو توزيع وقتنا بين المذاكرة واللعب."
+  ],
+  "example": "لو عندنا بيانات بتعبر عن وقتنا اليومي: 8 ساعات نوم، 6 ساعات مدرسة، و10 ساعات أنشطة تانية. بنحسب النسب ونرسمها كالتالي:\n\nimport matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([8, 6, 10], labels=['Sleep', 'School', 'Play'], explode=[0, 0.1, 0])\nplt.show()\n\nالنتيجة هنا إن شريحة المدرسة طالعة لبرة شوية عشان نركز عليها، والدايرة متقسمة بدقة.",
+  "mistake": "الغلطة الشائعة إن مجموع الأجزاء ميساويش الكل تماماً أو ننسى نحط الليبلز. الحل إننا نتأكد إن البيانات بتجمع المجموع الصحيح قبل الرسم.",
+  "recap": "المخططات الدائرية ممتازة لعرض توزيع النسب من الكل. بنظبط الزوايا ونبرز الأجزاء المهمة بوضوح.",
+  "q": [
+   {
+    "t": "إيه فايدة المخططة الدائري؟",
+    "o": [
+     "عرض العلاقة بين متغيرين س وص",
+     "توضيح إزاي الأجزاء بتعمل واحد كامل",
+     "رسم خطوط متعرجة في الفضاء"
+    ],
+    "a": 1,
+    "why": "المخطط الدائري بيبين نسبة كل جزء من الكل."
+   },
+   {
+    "t": "إيه الخاصية اللي بنستخدمها عشان نطلع شريحة لبرة؟",
+    "o": [
+     "explode",
+     "startangle",
+     "color"
+    ],
+    "a": 0,
+    "why": "خاصية explode بتساعدنا نبرز شريحة معينة."
+   },
+   {
+    "t": "ليه بنظبط startangle في الدائرة؟",
+    "o": [
+     "علشان نغير لون الدايرة",
+     "علشان نحرك مكان بداية أول شريحة",
+     "علشان نكبر حجم الرسمة"
+    ],
+    "a": 1,
+    "why": "زاوية البداية بتحدد مكان بداية الرسم."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "توصيل خصائص المخطط الدائري",
+   "goal": "وصل كل خاصية بمهمتها الصحيحة في رسمة المخطط الدائري.",
+   "pairs": [
+    [
+     "pie",
+     "دالة رسم المخطط الدائري"
+    ],
+    [
+     "explode",
+     "إبراز شريحة معينة للخارج"
+    ],
+    [
+     "startangle",
+     "تحديد زاوية بداية الشريحة الأولى"
+    ],
+    [
+     "labels",
+     "تسمية فئات الدايرة"
+    ]
+   ],
+   "success": "رسمت المخطط الدائري باحترافية!"
+  },
+  "sections": [
+   {
+    "h": "ما هو المخطط الدائري؟",
+    "text": "المخطط الدائري هو طريقة بصرية ممتازة لعرض إزاي البيانات بتتقسم لأجزاء بالنسبة لكل واحد صحيح، زي تقطيع قالب كيكة لعزومة أصحابك.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([40, 30, 30])\nplt.show()",
+    "output": "Figure with a basic pie chart"
+   },
+   {
+    "h": "إضافة أسماء للفئات (Labels)",
+    "text": "كل شريحة في الدائرة لازم يكون ليها اسم بيعبر عنها، عشان اللي يبص للرسمة يفهم هي بتعبر عن إيه فوراً.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([50, 30, 20], labels=['Apples', 'Bananas', 'Cherries'])\nplt.show()",
+    "output": "Pie chart with labeled slices"
+   },
+   {
+    "h": "إبراز الشريحة المهمة (Explode)",
+    "text": "لو عاوز تلفت انتباه الناس لجزء معين، تقدر تبعده عن مركز الدائرة مسافة صغيرة باستخدام خاصية الإبراز.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([60, 25, 15], explode=[0, 0.1, 0])\nplt.show()",
+    "output": "Pie chart with the second slice popped out"
+   },
+   {
+    "h": "تعديل زاوية البداية (Startangle)",
+    "text": "افتراضياً، بتبدأ الدايرة الرسم من محور السينات الأيمن. بنقدر نغير الزاوية دي عشان نظبط شكل البيانات على الشاشة.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([40, 60], startangle=90)\nplt.show()",
+    "output": "Pie chart rotated to start at 90 degrees"
+   },
+   {
+    "h": "عرض النسب المئوية تلقائياً",
+    "text": "عشان مانهتمش بالحسابات اليدوية، ماتروبلوت يقدر يحسب ويكتب النسب المئوية جوا كل شريحة باستخدام صيغة نصية.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([30, 50, 20], autopct='%1.1f%%')\nplt.show()",
+    "output": "Pie chart displaying percentages inside slices"
+   },
+   {
+    "h": "تلوين الشرائح المخصص",
+    "text": "ممكن نتحكم في ألوان كل شريحة في الدايرة عشان تتناسب مع ذوقنا أو الهوية البصرية لمشروعنا.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([40, 40, 20], colors=['gold', 'cyan', 'lightgreen'])\nplt.show()",
+    "output": "Pie chart with custom custom colors"
+   },
+   {
+    "h": "إضافة ظل أو تأثيرات",
+    "text": "الرسم النظيف والمنظم بيسهل فهم البيانات، واستخدام الألوان الواضحة بيمنع اللخبطة بين الفئات.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([70, 30], shadow=True)\nplt.show()",
+    "output": "Pie chart with a 3D shadow effect"
+   },
+   {
+    "h": "التأكد من مجموع الكل",
+    "text": "قاعدة ذهبية: لازم مجموع الأجزاء في الدايرة يعبر عن الموقف بالكامل، ولو النسب مش مظبوطة الرسمة هتطلع مش منطقية.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([25, 25, 25, 25])\nplt.show()",
+    "output": "Pie chart split into four equal quarters"
+   }
+  ],
+  "reference": [
+   {
+    "name": "ax.pie()",
+    "desc": "دالة رسم المخطط الدائري في الموضع المحدد"
+   },
+   {
+    "name": "labels",
+    "desc": "قائمة لتسمية كل شريحة في الدايرة"
+   },
+   {
+    "name": "explode",
+    "desc": "مصفوفة لفصل بعض الشرائح عن مركز الدايرة"
+   },
+   {
+    "name": "startangle",
+    "desc": "تدوير الدايرة بزاوية معينة عند البداية"
+   },
+   {
+    "name": "autopct",
+    "desc": "تنسيق طباعة النسبة المئوية داخل الشرائح"
+   },
+   {
+    "name": "colors",
+    "desc": "قائمة ألوان مخصصة لشرائح الدايرة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود لرسم دائرية بثلاث فئات أرقامها 10 و20 و30.",
+    "a": "ax.pie([10, 20, 30])"
+   },
+   {
+    "q": "إزاي تخلي أول شريحة تبدأ من زاوية 90 درجة؟",
+    "a": "ax.pie(data, startangle=90)"
+   },
+   {
+    "q": "ما هي الخاصية المستخدمة لإبراز الشريحة الأولى؟",
+    "a": "explode=[0.1, 0, 0]"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Pie charts show how parts make up a single whole, just like slicing a pizza with friends.",
+   "To draw a pie chart in Matplotlib, we use the object-oriented approach and plot percentages clearly.",
+   "Percentages are calculated automatically, and the sum of parts should represent the whole correctly.",
+   "We can highlight a specific slice and pull it outward to grab attention using the offset feature.",
+   "Adjusting the start angle lets us rotate where the first slice begins for a better visual layout.",
+   "In real life, we use pie charts to display monthly expenses or how we spend our time each day."
+  ],
+  "example": "If we have daily time data: 8 hours sleep, 6 hours school, and 10 hours other activities. We plot them like this:\n\nimport matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([8, 6, 10], labels=['Sleep', 'School', 'Play'], explode=[0, 0.1, 0])\nplt.show()\n\nThe result is that the school slice pops out slightly to draw focus, and the circle is neatly divided.",
+  "mistake": "A common mistake is forgetting that slices represent proportional parts of the whole sum. Always verify your data sums up nicely.",
+  "recap": "Pie charts are great for displaying proportional distributions. We adjust start angles and highlight key slices cleanly.",
+  "q": [
+   {
+    "t": "What is the main purpose of a pie chart?",
+    "o": [
+     "Showing relation between two continuous variables",
+     "Showing how parts make up one whole",
+     "Drawing random zigzag lines"
+    ],
+    "a": 1,
+    "why": "A pie chart displays fractional distribution percentages relative to a whole."
+   },
+   {
+    "t": "Which property is used to pull a slice outward?",
+    "o": [
+     "explode",
+     "startangle",
+     "color"
+    ],
+    "a": 0,
+    "why": "The explode argument offsets slices from the center."
+   },
+   {
+    "t": "Why do we adjust startangle in a pie chart?",
+    "o": [
+     "To change the circle color",
+     "To rotate where the first slice begins",
+     "To make the entire figure larger"
+    ],
+    "a": 1,
+    "why": "Start angle rotates the rotation offset of the initial wedge."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching Pie Chart Properties",
+   "goal": "Match each property to its correct role in pie chart rendering.",
+   "pairs": [
+    [
+     "pie",
+     "Function to render a pie chart"
+    ],
+    [
+     "explode",
+     "Highlight a specific slice outward"
+    ],
+    [
+     "startangle",
+     "Set the rotation angle for the first wedge"
+    ],
+    [
+     "labels",
+     "Assign names to each category"
+    ]
+   ],
+   "success": "You rendered the pie chart professionally!"
+  },
+  "sections": [
+   {
+    "h": "What is a Pie Chart?",
+    "text": "A pie chart is a circular graphic displaying how data categories make up a single whole, like slicing a round cake for a party.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([40, 30, 30])\nplt.show()",
+    "output": "Figure with a basic pie chart"
+   },
+   {
+    "h": "Adding Category Labels",
+    "text": "Every wedge in the pie should have a label so anyone looking at your graph immediately understands what it represents.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([50, 30, 20], labels=['Apples', 'Bananas', 'Cherries'])\nplt.show()",
+    "output": "Pie chart with labeled slices"
+   },
+   {
+    "h": "Highlighting Focus Slices (Explode)",
+    "text": "If you want to draw attention to an important category, you can nudge it away from the center using the explode parameter.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([60, 25, 15], explode=[0, 0.1, 0])\nplt.show()",
+    "output": "Pie chart with the second slice popped out"
+   },
+   {
+    "h": "Adjusting Start Angles",
+    "text": "By default, pie charts start plotting from the positive x-axis. We can rotate this angle to position our data cleanly.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([40, 60], startangle=90)\nplt.show()",
+    "output": "Pie chart rotated to start at 90 degrees"
+   },
+   {
+    "h": "Displaying Percentages Automatically",
+    "text": "Instead of calculating proportions manually, Matplotlib can compute and print percentage strings right inside each slice.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([30, 50, 20], autopct='%1.1f%%')\nplt.show()",
+    "output": "Pie chart displaying percentages inside slices"
+   },
+   {
+    "h": "Customizing Wedge Colors",
+    "text": "You can control the color palette of every slice in your pie chart to match your design style or project theme.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([40, 40, 20], colors=['gold', 'cyan', 'lightgreen'])\nplt.show()",
+    "output": "Pie chart with custom colors"
+   },
+   {
+    "h": "Adding Shadow Effects",
+    "text": "Clean layouts make data easy to read. Adding a subtle 3D shadow can give depth and visual appeal to your chart.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([70, 30], shadow=True)\nplt.show()",
+    "output": "Pie chart with a 3D shadow effect"
+   },
+   {
+    "h": "Checking the Whole Sum",
+    "text": "Golden rule: Ensure your categories combine logically to represent a complete total so your visual fractions make sense.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.pie([25, 25, 25, 25])\nplt.show()",
+    "output": "Pie chart split into four equal quarters"
+   }
+  ],
+  "reference": [
+   {
+    "name": "ax.pie()",
+    "desc": "Function to draw a pie chart on the axis"
+   },
+   {
+    "name": "labels",
+    "desc": "List of string names for each pie wedge"
+   },
+   {
+    "name": "explode",
+    "desc": "Array offsetting specific wedges from center"
+   },
+   {
+    "name": "startangle",
+    "desc": "Angle in degrees to rotate the initial wedge"
+   },
+   {
+    "name": "autopct",
+    "desc": "Format string to label slices with percentages"
+   },
+   {
+    "name": "colors",
+    "desc": "Custom color sequence for chart segments"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to draw a pie chart with three values: 10, 20, and 30.",
+    "a": "ax.pie([10, 20, 30])"
+   },
+   {
+    "q": "How do you start plotting the first wedge at a 90-degree angle?",
+    "a": "ax.pie(data, startangle=90)"
+   },
+   {
+    "q": "What property is used to pop out the first slice?",
+    "a": "explode=[0.1, 0, 0]"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "matplotlib.org docs",
+   "url": "https://matplotlib.org/stable/users/explain/quick_start.html"
+  }
+ ],
+ "grounded": true
+}

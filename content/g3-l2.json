@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك ترتب غرفتك أو تكتب قائمة مشتريات لأمك. في عالم الويب، نحتاج أيضاً لترتيب النصوص وعرضها بشكل نقاط واضحة ومنظمة لتسهيل قراءتها على الزوار.",
+   "لدينا وسوم مخصصة للقوائم في لغة HTML مثل <ul> للقوائم غير المرتبة و<ol> للقوائم المرتبة، وكل عنصر داخل القائمة يوضع بداخل وسم يسمى <li>.",
+   "تعمل هذه الوسوم معاً كمجموعة؛ فتحتضن الوسوم الرئيسية <ul> أو <ol> مجموعة من عناصر القائمة <li> التي تحتوي على النصوص الفعلية التي تريد عرضها.",
+   "مثال بسيط لقائمة تسوق غير مرتبة:\n<ul>\n  <li>تفاح</li>\n  <li>موز</li>\n</ul>",
+   "قاعدة ذهبية بسيطة: استخدم <ul> عندما لا يهم ترتيب العناصر (مثل قائمة المشتريات)، واستخدم <ol> عندما يكون الترتيب خطوة بخطوة مهماً جداً (مثل خطوات صنع العصير).",
+   "تستخدم هذه القوائم في كل مكان على الإنترنت؛ فمن قوائم التنقل في أعلى المواقع الإلكترونية إلى خطوات الوصفات الطبخية الشهية على مدونات الطعام."
+  ],
+  "example": "لنفترض أنك تصنع سندوتش فلافل مصري أصيل وتريد كتابة الخطوات بالترتيب الصحيح. نستخدم الوسم <ol> لأن الترتيب أساسي، وكل خطوة تقع داخل <li> هكذا:\n<ol>\n  <li>ضع الخبز البلدي</li>\n  <li>أضف أقراص الفلافل الساخنة</li>\n  <li>زينها بالسلطة والطحينة</li>\n</ol>\nبهذه الطريقة يفهم الزائر الخطوات بالتسلسل السليم تماماً.",
+  "mistake": "خطأ شائع هو كتابة النصوص مباشرة داخل <ul> أو <ol> بدون استخدام الوسم الفرعي <li> بينهما. الحل هو دائماً وضع كل عنصر بمفرده داخل وسمين <li> مفتوح ومغلق.",
+  "recap": "تساعدنا وسوم <ul> و<ol> و<li> في إنشاء قوائم منظمة وجميلة. القوائم غير المرتبة تناسب النقاط العشوائية بينما القوائم المرتبة تناسب الخطوات المتسلسلة.",
+  "q": [
+   {
+    "t": "أي وسم نستخدمه لإنشاء قائمة غير مرتبة (نقاط دائرية لا يهم ترتيبها)؟",
+    "o": [
+     "<ol>",
+     "<ul>",
+     "<li>"
+    ],
+    "a": 1,
+    "why": "الوسم <ul> يرمز إلى Unordered List أي قائمة غير مرتبة."
+   },
+   {
+    "t": "ما هو الوسم الصحيح الذي يوضع داخله كل عنصر فردي في القائمة؟",
+    "o": [
+     "<li>",
+     "<p>",
+     "<h1>"
+    ],
+    "a": 0,
+    "why": "الوسم <li> يرمز إلى List Item أي عنصر داخل القائمة."
+   },
+   {
+    "t": "متى يجب عليك استخدام القائمة المرتبة <ol>؟",
+    "o": [
+     "عندما تكون العناصر عشوائية",
+     "عندما يكون لترتيب الخطوات أهمية تسلسلية",
+     "عندما تريد تلون الخلفية باللون الأزرق"
+    ],
+    "a": 1,
+    "why": "نستعمل <ol> للأشياء التي تتطلب ترتيباً دقيقاً خطوة بخطوة مثل الوصفات أو التعليمات."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز عناصر القوائم",
+   "goal": "صنف كل عنصر إلى مكانه الصحيح: هل ينتمي إلى قائمة غير مرتبة (<ul>) أم قائمة مرتبة (<ol>)؟",
+   "buckets": [
+    "قائمة غير مرتبة <ul>",
+    "قائمة مرتبة <ol>"
+   ],
+   "items": [
+    {
+     "t": "تفاح وطماطم وحليب",
+     "b": 0
+    },
+    {
+     "t": "الخطوة 1: افتح العبوة",
+     "b": 1
+    },
+    {
+     "t": "ألعاب الفيديو المفضلة",
+     "b": 0
+    },
+    {
+     "t": "أولاً ارتدِ حذائك",
+     "b": 1
+    },
+    {
+     "t": "أسماء أصدقائك في الفصل",
+     "b": 0
+    },
+    {
+     "t": "خطوات حل مسألة رياضية",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت العناصر بذكاء ووضعت كل شيء في مكانه الصحيح بالصفحة."
+  },
+  "sections": [
+   {
+    "h": "ما هي القوائم في لغة HTML؟",
+    "text": "القوائم هي طريقة ممتازة لتنظيم المعلومات وعرضها بشكل نقاط واضحة بدلاً من النصوص المتراصة. تماماً مثلما تكتب قائمة مهامك المدرسية في ورقة، تساعد القوائم زوار موقعك الإلكتروني على قراءة المعلومات وسرعة فهمها دون إجهاد لأعينهم.",
+    "code": "<!doctype html>\n<html>\n<head><title>Lists</title></head>\n<body>\n  <p>أشياء أحبها:</p>\n  <ul>\n    <li>البرمجة</li>\n    <li>الرسم</li>\n  </ul>\n</body>\n</html>",
+    "output": "تظهر الصفحة فقرة تليها نقاط محددة لعناصر تحبها."
+   },
+   {
+    "h": "الوسم الأساسي للقوائم غير المرتبة <ul>",
+    "text": "عندما تريد سرد مجموعة أشياء لا يشترط ترتيبها، مثل قائمة مشتريات الجمعية أو ألوانك المفضلة، تستخدم الوسم <ul>. هذا الوسم يخبر المتصفح بأن العناصر التالية هي مجموعة متساوية في الأهمية وليس لها تسلسل رقمي صارم.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li>حليب</li>\n    <li>بيض</li>\n    <li>خبز</li>\n  </ul>\n</body>\n</html>",
+    "output": "تظهر قائمة مشتريات بنقاط دائرية سوداء صغيرة."
+   },
+   {
+    "h": "عنصر القائمة الفردي <li>",
+    "text": "لا يعمل الوسم <ul> بمفرده، بل يحتاج إلى مساعدين وهما وسوماً فرعية تسمى <li> وتعني عنصر قائمة (List Item). كل عنصر تريد عرضه في القائمة يجب أن يتم احتضانه داخل وسم فتح وغلق من نوع <li>.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li>العنصر الأول</li>\n    <li>العنصر الثاني</li>\n  </ul>\n</body>\n</html>",
+    "output": "تظهر قائمة تحتوي على عنصرين مرتبين بنقاط."
+   },
+   {
+    "h": "الوسم الأساسي للقوائم المرتبة <ol>",
+    "text": "إذا كان لديك خطوات يجب تنفيذها بالترتيب، مثل تعليمات صنع الكعك أو خطوات تشغيل الحاسوب، فإن الوسم <ol> (Ordered List) هو بطل هذه اللحظة. يقوم المتصفح تلقائياً بترقيم هذه العناصر بالأرقام (1، 2، 3...).",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ol>\n    <li>اغسل يديك</li>\n    <li>تناول الطعام</li>\n  </ol>\n</body>\n</html>",
+    "output": "تظهر قائمة مرقمة بالأرقام 1 و 2 تلقائياً."
+   },
+   {
+    "h": "المقارنة بين <ul> و <ol>",
+    "text": "الفرق الجوهري بينهما هو المعنى والقصد؛ <ul> تمنحك نقاطاً دائرية لأن الترتيب غير مهم، بينما <ol> تمنحك أرقاماً لأن الترتيب مقدس وضروري لفهم الخطوات بشكل صحيح، تماماً مثل وصفات الطهي أو اتجاهات الخريطة.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <p>غير مرتبة:</p>\n  <ul><li>قطة</li><li>كلب</li></ul>\n  <p>مرتبة:</p>\n  <ol><li>استيقظ</li><li>انهض</li></ol>\n</body>\n</html>",
+    "output": "تظهر قائمتان؛ الأولى بنقاط والثانية بأرقام متسلسلة."
+   },
+   {
+    "h": "القوائم المتداخلة (Nested Lists)",
+    "text": "هل تعلم أنه يمكنك وضع قائمة داخل قائمة أخرى تماماً مثل الصناديق المتداخلة؟ إذا كان لديك قائمة رئيسية للحيوانات، ويمكنك تفريعها تحت اسم 'حيوانات أليفة' ووضع قطة وكلب بداخلها، فهذا يسمى بالقائمة المتداخلة لتنظيم أدق.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li>فاكهة\n      <ul>\n        <li>تفاح</li>\n        <li>موز</li>\n      </ul>\n    </li>\n  </ul>\n</body>\n</html>",
+    "output": "تظهر قائمة رئيسية وبداخلها قائمة فرعية منفتحة تحتها."
+   },
+   {
+    "h": "استخدامات حقيقية للقوائم في المواقع",
+    "text": "لا تستخدم القوائم فقط للنصوص الطويلة، بل تُستعمل في القوائم العلوية (Navigation Menus) التي تضم روابط الانتقال بين صفحات الموقع المختلفة مثل 'الرئيسية'، 'من نحن'، و'اتصل بنا'.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li><a href=\"#\">الرئيسية</a></li>\n    <li><a href=\"#\">اتصل بنا</a></li>\n  </ul>\n</body>\n</html>",
+    "output": "تظهر قائمة نقاط تحتوي على روابط قابلة للضغط."
+   },
+   {
+    "h": "أفضل الممارسات البرمجية للأكواد النظيفة",
+    "text": "تأكد دائماً من إغلاق وسوم القوائم والعناصر بشكل صحيح وعدم وضع نصوص حرة مباشرة داخل <ul> أو <ol> بدون إحاطتها بـ <li>. الأكواد النظيفة تجعل متصفح الويب يفهم موقعك بسرعة ويعرضه بدون أخطاء.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ol>\n    <li>الخطوة الأولى الصحيحة</li>\n  </ol>\n</body>\n</html>",
+    "output": "تظهر قائمة مرقمة مكتوبة بكود نظيف ومرتب."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<ul>",
+    "desc": "يُستخدم لإنشاء قائمة غير مرتبة تظهر بنقاط دائرية."
+   },
+   {
+    "name": "<ol>",
+    "desc": "يُستخدم لإنشاء قائمة مرتبة تظهر بأرقام تسلسلية."
+   },
+   {
+    "name": "<li>",
+    "desc": "يمثل عنصراً فردياً واحداً داخل القائمتين <ul> أو <ol>."
+   },
+   {
+    "name": "Nested Lists",
+    "desc": "وضع قائمة داخل عنصر قائمة أخرى لتنظيم تفصيلي."
+   },
+   {
+    "name": "Unordered",
+    "desc": "عناصر لا يتطلب ظهورها ترتيباً تصاعدياً أو تنازلياً محدداً."
+   },
+   {
+    "name": "Ordered",
+    "desc": "خطوات تعتمد على الترتيب السليم لكي تفهم بشكل صحيح."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML لقائمة غير مرتبة تحتوي على عنصرين: 'قلم' و'دفتر'.",
+    "a": "<ul>\n  <li>قلم</li>\n  <li>دفتر</li>\n</ul>"
+   },
+   {
+    "q": "ما هو الوسم الذي نضعه دائماً حول كل عنصر داخل القائمة؟",
+    "a": "الوسم <li>"
+   },
+   {
+    "q": "اكتب كود HTML لقائمة مرتبة تحتوي على خطوة واحدة: 'ابدأ اللعبة'.",
+    "a": "<ol>\n  <li>ابدأ اللعبة</li>\n</ol>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine organizing your room or writing a shopping list for your mom. In the web world, we also need to organize text into clear, neat bullet points so visitors can read easily.",
+   "We have special HTML list tags like <ul> for unordered lists and <ol> for ordered lists, and each item inside them goes inside a tag called <li>.",
+   "These tags work together as a team; the container tags <ul> or <ol> wrap around multiple <li> list items which hold the actual text you want to show.",
+   "A simple example of an unordered shopping list:\n<ul>\n  <li>Apples</li>\n  <li>Bananas</li>\n</ul>",
+   "A simple golden rule: Use <ul> when the item order does not matter (like a grocery list), and use <ol> when step-by-step order is crucial (like a juice recipe).",
+   "These lists are used everywhere on the internet; from navigation menus at the top of web pages to delicious cooking recipe instructions on food blogs."
+  ],
+  "example": "Suppose you are making an authentic falafel sandwich and want to write the steps in the correct order. We use the <ol> tag because order is essential, and every step sits inside an <li> tag like this:\n<ol>\n  <li>Take the flatbread</li>\n  <li>Add hot falafel patties</li>\n  <li>Garnish with salad and tahini</li>\n</ol>\nThis way, the visitor understands the steps in the exact right sequence.",
+  "mistake": "A common mistake is writing text directly inside <ul> or <ol> without using the child <li> tag. The fix is always to wrap each individual item inside its own opening and closing <li> tags.",
+  "recap": "The <ul>, <ol>, and <li> tags help us build organized and beautiful lists. Unordered lists fit random bullet points while ordered lists fit sequential steps.",
+  "q": [
+   {
+    "t": "Which tag do we use to create an unordered list (bullet points where order doesn't matter)?",
+    "o": [
+     "<ol>",
+     "<ul>",
+     "<li>"
+    ],
+    "a": 1,
+    "why": "The <ul> tag stands for Unordered List."
+   },
+   {
+    "t": "What is the correct tag placed around each individual item inside a list?",
+    "o": [
+     "<li>",
+     "<p>",
+     "<h1>"
+    ],
+    "a": 0,
+    "why": "The <li> tag stands for List Item."
+   },
+   {
+    "t": "When should you use an ordered list (<ol>)?",
+    "o": [
+     "When items are completely random",
+     "When the order of steps is important and sequential",
+     "When you want to paint the webpage background blue"
+    ],
+    "a": 1,
+    "why": "We use <ol> for things that require strict step-by-step ordering like recipes or instructions."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "List Items Sorting",
+   "goal": "Classify each item into its correct bucket: Does it belong to an unordered list (<ul>) or an ordered list (<ol>)?",
+   "buckets": [
+    "Unordered List <ul>",
+    "Ordered List <ol>"
+   ],
+   "items": [
+    {
+     "t": "Apples, tomatoes, milk",
+     "b": 0
+    },
+    {
+     "t": "Step 1: Open the box",
+     "b": 1
+    },
+    {
+     "t": "Favorite video games",
+     "b": 0
+    },
+    {
+     "t": "First put on your shoes",
+     "b": 1
+    },
+    {
+     "t": "Names of your classmates",
+     "b": 0
+    },
+    {
+     "t": "Steps to solve a math puzzle",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the items smartly and placed everything in its correct spot on the page."
+  },
+  "sections": [
+   {
+    "h": "What are Lists in HTML?",
+    "text": "Lists are a great way to organize information and display it in clear bullet points instead of long blocks of text. Just like writing your school chore list on paper, lists help visitors to your website read information quickly and understand it without straining their eyes.",
+    "code": "<!doctype html>\n<html>\n<head><title>Lists</title></head>\n<body>\n  <p>Things I love:</p>\n  <ul>\n    <li>Coding</li>\n    <li>Drawing</li>\n  </ul>\n</body>\n</html>",
+    "output": "The page displays a paragraph followed by bullet points of things you love."
+   },
+   {
+    "h": "The Unordered List Tag <ul>",
+    "text": "When you want to list a group of items where their order doesn't matter, such as a grocery shopping list or your favorite colors, you use the <ul> tag. This tag tells the browser that the following items are equal in importance and have no strict numerical sequence.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li>Milk</li>\n    <li>Eggs</li>\n    <li>Bread</li>\n  </ul>\n</body>\n</html>",
+    "output": "A shopping list appears with small black circular bullet points."
+   },
+   {
+    "h": "The Individual List Item Tag <li>",
+    "text": "The <ul> tag doesn't work alone; it needs helpers called <li> which stands for List Item. Every single item you want to display in the list must be embraced inside opening and closing <li> tags.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li>First item</li>\n    <li>Second item</li>\n  </ul>\n</body>\n</html>",
+    "output": "A list containing two bulleted items appears."
+   },
+   {
+    "h": "The Ordered List Tag <ol>",
+    "text": "If you have steps that must be performed in order, like instructions for baking a cake or steps to boot a computer, the <ol> (Ordered List) tag is your champion. The browser automatically numbers these items (1, 2, 3...).",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ol>\n    <li>Wash your hands</li>\n    <li>Eat the food</li>\n  </ol>\n</body>\n</html>",
+    "output": "A numbered list appears automatically numbered 1 and 2."
+   },
+   {
+    "h": "Comparing <ul> and <ol>",
+    "text": "The core difference between them is meaning and intent; <ul> gives you bullet points because order is unimportant, while <ol> gives you numbers because sequence is sacred and necessary to understand the steps properly, just like cooking recipes or map directions.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <p>Unordered:</p>\n  <ul><li>Cat</li><li>Dog</li></ul>\n  <p>Ordered:</p>\n  <ol><li>Wake up</li><li>Get up</li></ol>\n</body>\n</html>",
+    "output": "Two lists appear; the first with bullets and the second with sequential numbers."
+   },
+   {
+    "h": "Nested Lists",
+    "text": "Did you know you can put a list inside another list, just like nested boxes? If you have a main list of animals, and you create a sub-list under 'Pets' containing a cat and a dog, this is called a nested list for precise organization.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li>Fruits\n      <ul>\n        <li>Apples</li>\n        <li>Bananas</li>\n      </ul>\n    </li>\n  </ul>\n</body>\n</html>",
+    "output": "A main list appears with a sub-list nested underneath it."
+   },
+   {
+    "h": "Real-world Uses of Lists in Websites",
+    "text": "Lists aren't just for long text; they are widely used in top navigation menus that contain links to jump between different pages of a website like 'Home', 'About Us', and 'Contact Us'.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ul>\n    <li><a href=\"#\">Home</a></li>\n    <li><a href=\"#\">Contact</a></li>\n  </ul>\n</body>\n</html>",
+    "output": "A bulleted list containing clickable navigation links appears."
+   },
+   {
+    "h": "Best Practices for Clean HTML Code",
+    "text": "Always make sure to close your list tags and items properly, and avoid putting raw text directly inside <ul> or <ol> without wrapping it in <li>. Clean code helps the web browser understand your site quickly and render it without errors.",
+    "code": "<!doctype html>\n<html>\n<body>\n  <ol>\n    <li>First correct step</li>\n  </ol>\n</body>\n</html>",
+    "output": "An ordered list rendered with clean and tidy code structure."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<ul>",
+    "desc": "Used to create an unordered list displayed with bullet points."
+   },
+   {
+    "name": "<ol>",
+    "desc": "Used to create an ordered list displayed with sequential numbers."
+   },
+   {
+    "name": "<li>",
+    "desc": "Represents a single individual item inside <ul> or <ol> lists."
+   },
+   {
+    "name": "Nested Lists",
+    "desc": "Placing a list inside another list item for detailed organization."
+   },
+   {
+    "name": "Unordered",
+    "desc": "Items where a specific ascending or descending sequence is not required."
+   },
+   {
+    "name": "Ordered",
+    "desc": "Steps relying on correct sequencing to be understood correctly."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code for an unordered list containing two items: 'Pen' and 'Notebook'.",
+    "a": "<ul>\n  <li>Pen</li>\n  <li>Notebook</li>\n</ul>"
+   },
+   {
+    "q": "What tag do we always place around each item inside a list?",
+    "a": "The <li> tag"
+   },
+   {
+    "q": "Write HTML code for an ordered list containing one step: 'Start the game'.",
+    "a": "<ol>\n  <li>Start the game</li>\n</ol>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: HTML: Creating the content",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content"
+  },
+  {
+   "title": "MDN: Lists",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "إزاي نخلي شخصيتنا في اللعبة تتحكم في الاصطدام بدقة؟ بنستخدم 'مناطق الاصابة' أو Hitboxes وهي مناطق وهمية بتحدد بالظبط أين حدث التلامس.",
+   "تخيل إنك بتلعب لعبة قتالية، ومش عايزين دراع الشخصية الطويل يحاسب كضربة، فهنا بنعمل مربع اصطدام صغير يغطي جسم البطل فقط.",
+   "في سكراتش، بنقدر نعمل ده عن طريق إنشاء كائن (Sprite) تاني خالص خاص بالاصطدام، ونخليه دايمًا يروح مكان البطل الأصلي.",
+   "عشان الكائن ده مايبقاش ظاهر للاعب ويخرب شكل اللعبة، بنستعمل بلوك تأثير الشبح 'ghost effect' ونخليه 100% يعني مخفي تمامًا.",
+   "القاعدة الذهبية لألعاب سكراتش الاحترافية: استخدم كائن اصطدام منفصل ومخفي عشان تضمن إن اللعبة عادلة ومابتظلمش اللاعب في اللمسات.",
+   "في الواقع، كل ألعاب الفيديو الكبيرة زي سبايدر مان أو ماريو بتستخدم مربعات اصطدام مخفية عشان الحركات تبدو طبيعية وماتعلقش في الحيطان."
+  ],
+  "example": "لو عندنا بطل اسمه 'لاعب' وكائن اصطدام اسمه 'هيتريكس'. في البطل بنحط: 'عند الضغط على علم الأخضر -> كرر المستمر: اذهب إلى [لاعب]'. وفي كائن الهيتريكس بنحط: 'اجعل تأثير الشبح مساويًا لـ 100'. كده الكائن بيتحرك مع البطل وفي نفس الوقت مخفي وبيحسب اللمسات بدقة شديدة.",
+  "mistake": "الغلطة المشهورة إننا ننسى نخلي تأثير الشبح 100، فبيظهر مربع غريب ورا الشخصية وبيبوظ شكل اللعبة. الحل: أتأكد دائمًا من إضافة بلوك جعل تأثير الشبح 100 عند بداية اللعبة.",
+  "recap": "مناطق الاصابة المخصصة بتساعدنا نعمل اصطدامات دقيقة ومخفية باستخدام بلوكات سكراتش. ده بيخلي ألعابنا احترافية وعادلة.",
+  "q": [
+   {
+    "t": "ليه بنستخدم كائن اصطدام منفصل ومخفي؟",
+    "o": [
+     "عشان نزود سرعة اللعبة فقط",
+     "عشان نعمل اصطدامات دقيقة وعادلة بدون ما نبوظ شكل الشخصية",
+     "عشان نخلي الشخصية تطير"
+    ],
+    "a": 1,
+    "why": "الكائن المنفصل المخفي بيسمح لنا نحدد مساحة اصطدام مظبوطة بعيدًا عن تفاصيل شكل الشخصية المعقدة."
+   },
+   {
+    "t": "إيه البلوك اللي بيخلي كائن الاصطدام مخفي تمامًا عن عيون اللاعب؟",
+    "o": [
+     "اجعل تأثير الشبح مساويًا لـ 100",
+     "اجعل الحجم مساويًا لـ 0",
+     "اختلف و اختفي"
+    ],
+    "a": 0,
+    "why": "تأثير الشبح بقيمة 100 بيخلي الكائن شفاف تمامًا (مخفي) بس لسه بيقدر يتحسس الاصطدامات."
+   },
+   {
+    "t": "ازاي بنخلي كائن الاصطدام يفضل ماشي مع البطل طول الوقت؟",
+    "o": [
+     "نحط بلوك الانتظار ثانية واحدة",
+     "نحط بلوك 'اذهب إلى موضع البطل' جوه حلقة تكرار مستمر",
+     "نستخدم بلوك القفز"
+    ],
+    "a": 1,
+    "why": "التكرار المستمر مع بلوك الذهاب بيخلي كائن الاصطدام يلزق في البطل في كل جزء من الثانية."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "اختبر توقعك للاصطدام",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل بلوكات الاصطدام المخفي في سكراتش",
+   "code": "عند نقر العلم الأخضر\nكرر باستمرار:\n  اذهب إلى (اللاعب)\n  اجعل تأثير (الشبح) مساويًا لـ (100)",
+   "options": [
+    "يختفي كائن الاصطدام ويفضل لازق في مكان اللاعب ويحسب اللمسات بدقة",
+    "الشخصية الأساسية هي اللي بتختفي ومابتتحركش خالص",
+    "اللعبة بتقفل لوحدها فوراً"
+   ],
+   "a": 0,
+   "success": "برافو! كائن الاصطدام بقى شفاف ومخفي بس شغال يحسب اللمسات بدقة مع حركة البطل!"
+  },
+  "sections": [
+   {
+    "h": "ما هي مناطق الاصابة؟",
+    "text": "مناطق الاصابة أو Hitboxes هي حدود وهمية بتحيط بالشخصيات في الألعاب. لما تلمس حاجة، اللعبة بتعرف إن فيه اصطدام حصل. تخيل لما تلعب كورة، الحارس مش بيمسك الكورة بجسمه كله، بل بيديه بس؛ مناطق الاصابة بتعمل كده في الكود.",
+    "code": "إذا كان (ملامس لـ [العدو]) ← اشرك نقطة",
+    "output": "اللعبة تكتشف التلامس الفوري بين الكائنين."
+   },
+   {
+    "h": "مشكلة الأشكال المعقدة",
+    "text": "أحياناً شخصيتنا في سكراتش بيكون لها شعر طويل أو سيوف طالعة بره الجسم. لو اعتمدنا على شكل الكائن كله، اللاعب هيحس إن اللعبة ظلمته لما يتضرب من مسافة بعيدة. الحل هو تصميم منطقة اصطدام أبسط وأصغر.",
+    "code": "استخدام مظهر دائري أو مربع بسيط بدلاً من تفاصيل الشخصية المعقدة",
+    "output": "اصطدامات عادلة تريح اللاعب وتخليه يحب اللعبة."
+   },
+   {
+    "h": "إنشاء كائن اصطدام مستقل",
+    "text": "عشان نحل مشكلة التفاصيل المعقدة، بنعمل كائن جديد (Sprite) بنسميه هيتريكس. الكائن ده بيكون عبارة عن مربع أو دايرة بسيطة جداً بتعبر عن جسم الشخصية الحقيقي من غير أي أطراف زايدة.",
+    "code": "إنشاء Sprite جديد واختيار مظهر مربع بسيط",
+    "output": "وجود كائن ثاني صغير يمثل منطقة الأمان أو الضرب."
+   },
+   {
+    "h": "جعل كائن الاصطدام مخفياً تماماً",
+    "text": "بما إن كائن الاصطدام ده مجرد أداة حسابية مش شكل جمالي، لازم نخفيه عن عين اللاعب. بنستخدم بلوك تأثير الشبح ونخليه 100%. التخفي هنا بيخلي الكائن موجود بس مش متشاف.",
+    "code": "عند نقر العلم الأخضر\nاجعل تأثير (الشبح) مساويًا لـ (100)",
+    "output": "يختفي المربع تماماً من على المنصة مع بقائه نشطاً."
+   },
+   {
+    "h": "متابعة حركة اللاعب بلا توقف",
+    "text": "عشان الكائن المخفي ده يفضل محمي البطل، لازم يتحرك معاه في كل مكان وكل خطوة. بنستخدم حلقة التكرار المستمر وبلوك 'اذهب إلى البطل' عشان يفضل لازق فيه بالظبط كأنه ظله.",
+    "code": "كرر باستمرار\n  اذهب إلى (البطل)",
+    "output": "يتحرك كائن الاصطدام بسرعة وبدقة مع كل حركة للبطل."
+   },
+   {
+    "h": "استخدام بلوك الملامسة في سكراتش",
+    "text": "لما نحب نعرف هل البطل اضرب أو لمس عدو، بنستخدم بلوك 'ملامس لـ' بس بنخليه يفحص كائن الاصطدام المخفي مش البطل نفسه. ده بيضمن دقة مية في المية في كل لقطة من اللعبة.",
+    "code": "إذا كان <ملامس لـ [هيتريكس]> ← افعل كذا",
+    "output": "استجابة فائقة الدقة لأي ضربة أو لمسة."
+   },
+   {
+    "h": "الفرق بين الهيتريكس والهيرتبوكس",
+    "text": "في الألعاب الكبيرة، الهيتريكس هي منطقة ضرب العدو، والهيرتبوكس هي منطقة استقبال البطل للضربات. في سكراتش البسيط، بنقدر نستخدم نفس الفكرة ونعمل كائن مستقل لكل مهمة عشان نتحكم في اللعبة باحترافية.",
+    "code": "تصميم كائنين: واحد للهجوم وواحد للدفاع",
+    "output": "نظام قتالي متوازن وعادل داخل اللعبة."
+   },
+   {
+    "h": "تطبيقات حقيقية في ألعاب الفيديو",
+    "text": "هل لاحظت قبل كده إنك أحياناً بتموت في لعبة رغم إن السيف ماضش فيك بالظبط؟ دي مشكلة مناطق اصطدام. صانعو الألعاب بيظبطوا الهيتريكس بعناية عشان الألعاب تكون ممتعة وماتخليش اللاعب يتنرفز.",
+    "code": "ضبط قيم الشبح وحجم الهيتريكس بناءً على تجربة اللعبة",
+    "output": "لعبة ممتعة وعادلة يمدحها كل أصدقائك."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Hitbox",
+    "desc": "منطقة وهمية تحدد أين تحدث الاصطدامات في اللعبة."
+   },
+   {
+    "name": "Ghost Effect",
+    "desc": "بلوك في سكراتش يجعل الكائن شفافاً أو مخفياً بنسبة مئوية."
+   },
+   {
+    "name": "Sprite",
+    "desc": "كائن أو شخصية داخل برنامج سكراتش."
+   },
+   {
+    "name": "Touching Block",
+    "desc": "بلوك استشعار يتحقق إذا كان كائن يلامس كائناً آخر."
+   },
+   {
+    "name": "Go To Block",
+    "desc": "بلوك حركة يجعل كائناً يذهب مباشرة إلى مكان كائن آخر."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "حلقة تكرار لا تنتهي لتنفيذ الأوامر طوال فترة تشغيل اللعبة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو بلوك سكراتش المستخدم لإخفاء كائن الاصطدام وجعله شفافاً تماماً؟",
+    "a": "اجعل تأثير (الشبح) مساويًا لـ 100"
+   },
+   {
+    "q": "كيف نضمن أن كائن الاصطدام المخفي يتبع البطل في كل مكان؟",
+    "a": "نستخدم حلقة تكرار مستمر وبداخلها بلوك اذهب إلى اللاعب"
+   },
+   {
+    "q": "ما هي الفائدة الأساسية من استخدام هيرتبوكس منفصل عن شكل الشخصية؟",
+    "a": "للحصول على اصطدامات دقيقة وعادلة بعيداً عن التفاصيل المعقدة"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "How do we make our game character handle collisions with high precision? We use 'Hitboxes', which are invisible regions defining exactly where contact happens.",
+   "Imagine playing a fighting game where a character's long flowing hair shouldn't count as a hit; we create a small collision box covering just the hero's body.",
+   "In Scratch, we can achieve this by creating a completely separate Sprite just for collisions and having it constantly follow the main player's position.",
+   "To ensure this collision object remains invisible to the player and doesn't ruin the game art, we use the 'ghost effect' block set to 100%, making it fully transparent.",
+   "The golden rule for professional Scratch games: use a separate, hidden collision sprite to ensure the game is fair and doesn't cheat the player on close touches.",
+   "In the real world, massive video games like Spider-Man or Mario use hidden collision boxes to make movements feel natural and prevent getting stuck in walls."
+  ],
+  "example": "If we have a hero named 'Player' and a collision sprite named 'Hitbox', inside the Player we place: 'When green flag clicked -> forever: go to [Player]'. Inside the Hitbox sprite, we set: 'set [ghost] effect to 100'. This way, the object moves with the hero while staying invisible and calculating touches with extreme precision.",
+  "mistake": "A common mistake is forgetting to set the ghost effect to 100, which leaves a weird box trailing behind the character and ruins the game's look. Solution: Always make sure to add the set ghost effect to 100 block at the very start of the game.",
+  "recap": "Custom hitboxes help us create precise and hidden collisions using Scratch blocks, making our games feel professional and fair.",
+  "q": [
+   {
+    "t": "Why do we use a separate and hidden collision sprite?",
+    "o": [
+     "To increase the game speed only",
+     "To make precise and fair collisions without messing up the character's look",
+     "To make the character fly"
+    ],
+    "a": 1,
+    "why": "A separate hidden sprite lets us define an exact collision area away from the complex details of the character's art."
+   },
+   {
+    "t": "Which block makes the collision sprite completely invisible to the player's eyes?",
+    "o": [
+     "set [ghost] effect to 100",
+     "set [size] to 0",
+     "hide and seek"
+    ],
+    "a": 0,
+    "why": "A ghost effect value of 100 makes the sprite completely transparent (hidden) while still able to sense collisions."
+   },
+   {
+    "t": "How do we keep the collision sprite moving with the hero all the time?",
+    "o": [
+     "Put a wait 1 second block",
+     "Put a 'go to player' block inside a forever loop",
+     "Use a jump block"
+    ],
+    "a": 1,
+    "why": "A forever loop combined with a go-to block keeps the collision sprite glued to the hero at every split second."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Collision Behavior",
+   "goal": "Find out what happens when we run the hidden collision blocks in Scratch",
+   "code": "when green flag clicked\nforever:\n  go to (Player)\n  set [ghost] effect to (100)",
+   "options": [
+    "The collision sprite becomes invisible, sticks to the player's position, and accurately calculates touches",
+    "The main character disappears and stops moving entirely",
+    "The game closes instantly by itself"
+   ],
+   "a": 0,
+   "success": "Great job! The collision sprite became transparent and hidden while actively calculating precise touches with the hero's movement!"
+  },
+  "sections": [
+   {
+    "h": "What are Hitboxes?",
+    "text": "Hitboxes are invisible boundaries surrounding characters in games. When they touch something, the game knows a collision occurred. Imagine playing soccer; the goalie doesn't catch the ball with their whole body, just their hands. Hitboxes do this in code.",
+    "code": "if <touching [Enemy]?> then -> score point",
+    "output": "The game detects instant contact between the two objects."
+   },
+   {
+    "h": "The Problem of Complex Shapes",
+    "text": "Sometimes our Scratch characters have long hair or swords sticking out past their bodies. If we rely on the whole sprite's shape, the player feels cheated when hit from afar. The solution is designing a simpler, smaller collision area.",
+    "code": "Use a simple circular or square costume instead of complex character details",
+    "output": "Fair collisions that keep the player happy."
+   },
+   {
+    "h": "Creating an Independent Collision Sprite",
+    "text": "To solve complex detail issues, we make a new Sprite called a Hitbox. This sprite is a very simple square or circle representing the character's actual body without any extra limbs.",
+    "code": "Create a new Sprite and pick a simple square costume",
+    "output": "A second small object representing the safe or hit zone."
+   },
+   {
+    "h": "Making the Collision Sprite Completely Hidden",
+    "text": "Since this collision object is just a math tool and not artwork, we must hide it from the player's view. We use the ghost effect block and set it to 100%. Hiding keeps the object active without being seen.",
+    "code": "when green flag clicked\nset [ghost] effect to (100)",
+    "output": "The square completely vanishes from the stage while staying active."
+   },
+   {
+    "h": "Following the Player Non-Stop",
+    "text": "To keep this hidden object protecting the hero, it must move everywhere and every step with them. We use a forever loop and a 'go to Player' block so it stays glued exactly to them like a shadow.",
+    "code": "forever\n  go to (Hero)",
+    "output": "The collision sprite moves quickly and precisely with every hero movement."
+   },
+   {
+    "h": "Using the Touching Block in Scratch",
+    "text": "When we want to know if the hero was hit or touched an enemy, we use the 'touching' block, but we check the hidden collision sprite instead of the hero itself. This ensures 100 percent accuracy in every frame.",
+    "code": "if <touching [Hitbox]?> then -> do something",
+    "output": "Ultra-precise response to any hit or touch."
+   },
+   {
+    "h": "Hitbox vs Hurtbox",
+    "text": "In big games, a Hitbox is the attack zone, and a Hurtbox is the hero's receiving zone. In simple Scratch, we can use the same idea and make an independent sprite for each job to control the game like a pro.",
+    "code": "Design two sprites: one for attack and one for defense",
+    "output": "A balanced and fair combat system inside the game."
+   },
+   {
+    "h": "Real-Life Video Game Applications",
+    "text": "Have you ever noticed you sometimes die in a game even though the sword didn't exactly touch you? That's a hitbox issue. Game makers carefully tweak hitboxes to keep games fun and prevent player frustration.",
+    "code": "Adjust ghost values and hitbox size based on playtesting",
+    "output": "A fun, fair game that all your friends will praise."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Hitbox",
+    "desc": "An invisible region defining where collisions happen in a game."
+   },
+   {
+    "name": "Ghost Effect",
+    "desc": "A Scratch block that makes a sprite transparent or hidden by a percentage."
+   },
+   {
+    "name": "Sprite",
+    "desc": "An object or character inside Scratch."
+   },
+   {
+    "name": "Touching Block",
+    "desc": "A sensing block that checks if a sprite touches another."
+   },
+   {
+    "name": "Go To Block",
+    "desc": "A motion block that sends a sprite directly to another sprite's location."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "An endless loop to run commands throughout the game."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What Scratch block is used to hide the collision sprite and make it fully transparent?",
+    "a": "set [ghost] effect to 100"
+   },
+   {
+    "q": "How do we ensure the hidden collision sprite follows the hero everywhere?",
+    "a": "We use a forever loop containing a go to player block"
+   },
+   {
+    "q": "What is the main benefit of using a separate hurtbox away from the character art?",
+    "a": "To get precise and fair collisions away from complex details"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

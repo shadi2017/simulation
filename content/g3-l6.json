@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "عشان نعمل صفحة ويب يقدر المستخدم يكتب فيها بياناته زي الألعاب أو التسجيل في نادي، بنحتاج نستخدم عنصر أساسي في HTML اسمه النموذج أو الفورم (<form>). الفورم ده بيجمع كل خانات الإدخال مع بعض ويخليهم يشتغلوا كوحدة واحدة لما الزائر يضغط زرار الإرسال.",
+   "ج جوه الفورم، بنحتاج نحط مكان عشان المستخدم يكتب جواه، وده بنعمله بعنصر اسمه إدخال النص (<input type=\"text\">). العنصر ده بيظهر على الشاشة كصندوق مستطيل يقدر الطفل يكتب فيه كلام سادة وبسيط سطر واحد بس زي اسمه أو لونه المفضل.",
+   "عشان المستخدم يعرف هو المفروض يكتب إيه جوه صندوق النص، بنستخدم خاصية ذكية جداً اسمها النص التوضيحي أو (placeholder). الكلمة دي بتظهر بخط خفيف جوه الصندوق وبتختفي أول ما المستخدم يبدأ يكتب بنفسه، زي إرشادات بسيطة.",
+   "بجانب صندوق النص، أي فورم محتاج زرار يقدر المستخدم يضغط عليه عشان يبعت البيانات اللي كتبها، وده بنعمله بعنصر الزرار (<button>). لما الزائر يضغط عليه، المتصفح بياخد الكلام اللي اتكتب ويبعته للمكان المطلوب.",
+   "القاعدة الذهبية في تصميم الفورمات هي الترتيب الصح: بنفتح (<form>)، جواه بنحط صندوق النص (<input type=\"text\" placeholder=\"اكتب هنا...\">)، وبعده بنحط زرار الإرسال (<button>إرسال</button>)، ونقفل الفورم بـ (</form>).",
+   "في الحياة اليومية، بتشوف الفورمات دي في كل مكان، زي صفحة تسجيل الدخول للعبة Roblox المفضلة ليك، أو لما تيجي تسجل في مسابقة مدرسية جديدة على الإنترنت عشان تكتب اسمك ورقمك."
+  ],
+  "example": "تعالوا نتخيل إننا بنعمل نموذج تسجيل بسيط لنادي الكودينج بتاعنا.\n```html\n<form>\n  <input type=\"text\" placeholder=\"اكتب اسمك هنا\">\n  <button type=\"submit\">انضم إلينا</button>\n</form>\n```\nالسبب والتحليل: حطينا عنصر `<form>` عشان يلم الشغل، جواه `<input type=\"text\">` مع `placeholder` ظريف عشان يعرف المستخدم يكتب إيه، وخلصنا بـ `<button>` عشان يسجلوا.",
+  "mistake": "الخطأ الشائع هو نسيان إضافة نوع الإدخال أو كتابته غلط زي `type=\"textx\"`، ده بيخلي المتصفح ما يفهمش الصندوق ويحوله لنص عادي. التصحيح هو التأكد من كتابة `type=\"text\"` بدقة.",
+  "recap": "النماذج في HTML بتجمع حقول النص وأزرار الإرسال عشان تخلي المستخدمين يتواصلوا مع الموقع. استخدام الخصائص زي placeholder بيسهل على الأطفال فهم إيه المطلوب كتابته بدقة.",
+  "q": [
+   {
+    "t": "إيه العنصر الأساسي اللي بيلم كل حقول الإدخال مع بعض في صفحة الويب؟",
+    "o": [
+     "<button>",
+     "<form>",
+     "<input>"
+    ],
+    "a": 1,
+    "why": "عنصر <form> هو الحاوية الرئيسية لكل أدوات إدخال البيانات."
+   },
+   {
+    "t": "إزاي بنكتب صندوق نص مخصص لكتابة سطر واحد بس في HTML؟",
+    "o": [
+     "<input type=\"text\">",
+     "<text-box>",
+     "<textarea-single>"
+    ],
+    "a": 0,
+    "why": "نستخدم عنصر input مع خاصية type='text' لإنشاء حقل نصي مفرد."
+   },
+   {
+    "t": "إيه هي الخاصية اللي بتخلينا نظهر كلام خفيف جوه الصندوق يختفي أول ما المستخدم يبدأ يكتب؟",
+    "o": [
+     "value",
+     "placeholder",
+     "title"
+    ],
+    "a": 1,
+    "why": "خاصية placeholder تعرض نص إرشادي مؤقت داخل خانة الإدخال."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب كود نموذج التسجيل",
+   "goal": "رتب سطور كود HTML عشان تعمل نموذج تسجيل نادي صحيح ومتكامل.",
+   "items": [
+    "<form>",
+    "  <input type=\"text\" placeholder=\"اسمك الكريم\">",
+    "  <button type=\"submit\">تسجيل</button>",
+    "</form>"
+   ],
+   "success": "يا سلام! الفورم اشتغل وظهر صندوق النص والزرار بشكل رائع!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن النماذج (Forms)",
+    "text": "النماذج في صفحات الويب عاملة زي ورقة الاستمارة اللي بتملها في النادي أو المدرسة. بتخليك تكتب كلامك وتبعتهم للموقع بسهولة شديدة.",
+    "code": "<form style=\"background:#eef; padding:10px;\">استمارة</form>",
+    "output": "يظهر صندوق استمارة بسيط بلون خلفية أزرق خفيف."
+   },
+   {
+    "h": "حقل النص الفردي (<input type='text'>)",
+    "text": "عنصر الإدخال النصي ده هو الصندوق المستطيل اللي بتقدر تكتب فيه حروف وأرقام، زي لما تكتب اسمك الثلاثي على اللعبة.",
+    "code": "<input type=\"text\" value=\"أحمد\">",
+    "output": "يظهر صندوق نص مكتوب جوه اسمه أحمد."
+   },
+   {
+    "h": "استخدام خاصية Placeholder",
+    "text": "الـ Placeholder هو تلميح سحري بيظهر جوه الصندوق بخط رمادي خفيف عشان يعرفك تكتب إيه، زي علبة هدية بتقولك أنا جوايا إيه.",
+    "code": "<input type=\"text\" placeholder=\"اكتب اسم لعبتك المفضلة...\">",
+    "output": "يظهر صندوق نص جواه جملة إرشادية بخط باهت."
+   },
+   {
+    "h": "زرار الإرسال (<button>)",
+    "text": "زرار الإرسال ده عامل زي جرس الدار، لما بتضغط عليه بتعرف الموقع إنك خلصت كلامك وجاهز تبعته.",
+    "code": "<button type=\"submit\">إرسال البيانات</button>",
+    "output": "يظهر زرار بارز يمكن الضغط عليه مكتوب عليه إرسال البيانات."
+   },
+   {
+    "h": "تجميع النموذج الكامل",
+    "text": "عشان نعمل نموذج حقيقي، بنحط الفورم جواها صندوق نص وبعده زرار. كده بقى عندنا أداة تفاعلية متكاملة.",
+    "code": "<form><input type=\"text\" placeholder=\"اسمك\"><button>انضم</button></form>",
+    "output": "يظهر نموذج يضم صندوق نص وبجوارة زرار انضم."
+   },
+   {
+    "h": "خصائص إضافية (Readonly)",
+    "text": "ممكن نخلي الصندوق للقراءة فقط (readonly) عشان المستخدم يقرا الكلام من غير ما يقدر يغيره أو يشخبط فيه.",
+    "code": "<input type=\"text\" value=\"قوانين النادي\" readonly>",
+    "output": "يظهر صندوق نص لا يمكن تعديل محتواه."
+   },
+   {
+    "h": "تحديد الحد الأقصى للحروف (maxlength)",
+    "text": "عشان ما تخليش حد يكتب كلام كتير أوي، يقدر المبرمج يحط حد أقصى للحروف زي الألعاب اللي بتقولك اسمك لازم يكون أقل من 10 حروف.",
+    "code": "<input type=\"text\" maxlength=\"5\" placeholder=\"أقصى 5 حروف\">",
+    "output": "يظهر صندوق نص يرفض كتابة أكثر من خمسة حروف."
+   },
+   {
+    "h": "حالة التركيز (Focus State)",
+    "text": "لما تضغط جوه الصندوق بيلقط لون مميز حواليه (Focus ring)، دي طريقة المتصفح عشان يقولك \"أنا مركز معاك دلوقتي يا بطل!\"",
+    "code": "<input type=\"text\" autofocus placeholder=\"مضبوط تلقائياً للتركيز\">",
+    "output": "يظهر صندوق نص جاهز للكتابة فور فتح الصفحة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<form>",
+    "desc": "حاوية لجمع عناصر الإدخال وإرسالها"
+   },
+   {
+    "name": "<input type=\"text\">",
+    "desc": "صندوق إدخال نصي مفرد السطر"
+   },
+   {
+    "name": "placeholder",
+    "desc": "نص توضيحي مؤقت داخل حقل الإدخال"
+   },
+   {
+    "name": "<button>",
+    "desc": "زر تفاعلي لتنفيذ إجراء مثل الإرسال"
+   },
+   {
+    "name": "maxlength",
+    "desc": "تحديد أكبر عدد مسموح به من الحروف"
+   },
+   {
+    "name": "readonly",
+    "desc": "جعل حقل النص للقراءة فقط دون تعديل"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML لإنشاء حقل نصي فارغ مع خاصية placeholder تقول 'اكتب لقبك'.",
+    "a": "<input type=\"text\" placeholder=\"اكتب لقبك\">"
+   },
+   {
+    "q": "ما هو العنصر الذي نستخدمه لإنشاء زر إرسال داخل نموذج الويب؟",
+    "a": "<button>"
+   },
+   {
+    "q": "كيف نجعل حقل النص غير قابل للتعديل ولكن يظل ظاهراً؟",
+    "a": "باستخدام خاصية readonly"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "To build a webpage where users can type their data like in games or signups, we use a core HTML element called a form (<form>). The form groups all input fields together so they act as one unit when the visitor clicks submit.",
+   "Inside the form, we need a place for users to type, which is created using the text input element (<input type=\"text\">). This element appears as a rectangular box where a child can type simple single-line text like their name or favorite color.",
+   "To guide the user on what to type inside the text box, we use a smart feature called a placeholder. This text appears faintly inside the box and disappears as soon as the user starts typing themselves, acting as a helpful hint.",
+   "Beside the text box, every form needs a button that the user can click to send their written data, made using the button element (<button>). When clicked, the browser takes the entered text and sends it to the destination.",
+   "The golden rule for form layout is correct nesting: open with (<form>), place the text box (<input type=\"text\" placeholder=\"Type here...\">) inside, follow it with a submit button (<button>Submit</button>), and close with (</form>).",
+   "In daily life, you see these forms everywhere, such as the login page of your favorite Roblox game, or when signing up for a new school online competition to submit your name and number."
+  ],
+  "example": "Let's imagine we are building a simple signup form for our coding club.\n```html\n<form>\n  <input type=\"text\" placeholder=\"Enter your name\">\n  <button type=\"submit\">Join Us</button>\n</form>\n```\nReasoning and Analysis: We used the `<form>` element to wrap everything, placed an `<input type=\"text\">` with a friendly `placeholder` inside so users know what to type, and finished with a `<button>` to submit.",
+  "mistake": "A common mistake is forgetting the input type attribute or misspelling it like `type=\"textx\"`, which causes the browser not to recognize the box and fall back to default text. The fix is to ensure `type=\"text\"` is spelled accurately.",
+  "recap": "HTML forms group text fields and submit buttons together to let users interact with websites. Using attributes like placeholder makes it easy for kids to understand what information is required.",
+  "q": [
+   {
+    "t": "What is the primary element that wraps all input fields together in a web page?",
+    "o": [
+     "<button>",
+     "<form>",
+     "<input>"
+    ],
+    "a": 1,
+    "why": "The <form> element serves as the main container for data collection tools."
+   },
+   {
+    "t": "How do we create a single-line text input box in HTML?",
+    "o": [
+     "<input type=\"text\">",
+     "<text-box>",
+     "<textarea-single>"
+    ],
+    "a": 0,
+    "why": "We use the input element with type='text' to create a single-line text field."
+   },
+   {
+    "t": "What attribute displays faint guiding text inside the box that disappears upon typing?",
+    "o": [
+     "value",
+     "placeholder",
+     "title"
+    ],
+    "a": 1,
+    "why": "The placeholder attribute displays temporary helper text inside the input box."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Signup Form Code",
+   "goal": "Arrange the HTML code lines to create a correct and complete club signup form.",
+   "items": [
+    "<form>",
+    "  <input type=\"text\" placeholder=\"Your lovely name\">",
+    "  <button type=\"submit\">Register</button>",
+    "</form>"
+   ],
+   "success": "Hooray! The form works and the text box and button appeared wonderfully!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Forms",
+    "text": "Forms on web pages are like registration sheets you fill out at a club or school. They let you type information and send it to the website very easily.",
+    "code": "<form style=\"background:#eef; padding:10px;\">Form Area</form>",
+    "output": "Displays a simple form box with a light blue background."
+   },
+   {
+    "h": "Single-Line Text Field (<input type='text'>)",
+    "text": "This text input element is the rectangular box where you can type letters and numbers, like when typing your full name on a game.",
+    "code": "<input type=\"text\" value=\"Alex\">",
+    "output": "Displays a text box pre-filled with the name Alex."
+   },
+   {
+    "h": "Using the Placeholder Attribute",
+    "text": "The placeholder is a magical hint that shows inside the box in light gray text to tell you what to type, like a gift box explaining what's inside.",
+    "code": "<input type=\"text\" placeholder=\"Type your favorite game...\">",
+    "output": "Displays a text box with placeholder hint text in dimmed lettering."
+   },
+   {
+    "h": "The Submit Button (<button>)",
+    "text": "The submit button is like a doorbell; when you press it, you let the website know you are done talking and ready to send your message.",
+    "code": "<button type=\"submit\">Send Data</button>",
+    "output": "Displays a clickable button labeled Send Data."
+   },
+   {
+    "h": "Assembling the Complete Form",
+    "text": "To make a real form, we put a text box inside a form followed by a button. This creates a complete interactive tool.",
+    "code": "<form><input type=\"text\" placeholder=\"Name\"><button>Join</button></form>",
+    "output": "Displays a form containing a text input alongside a Join button."
+   },
+   {
+    "h": "Readonly Attribute",
+    "text": "We can make a text box read-only (readonly) so the user can read the text without being able to change or mess with it.",
+    "code": "<input type=\"text\" value=\"Club Rules\" readonly>",
+    "output": "Displays a text box whose content cannot be edited."
+   },
+   {
+    "h": "Maximum Length (maxlength)",
+    "text": "To prevent someone from typing too much text, a programmer can set a maximum character limit, like games saying your name must be under 10 letters.",
+    "code": "<input type=\"text\" maxlength=\"5\" placeholder=\"Max 5 chars\">",
+    "output": "Displays a text box that refuses input longer than five characters."
+   },
+   {
+    "h": "Focus State",
+    "text": "When you click inside the box, it catches a special colored border (focus ring), which is the browser's way of saying 'I am paying attention to you now, champion!'",
+    "code": "<input type=\"text\" autofocus placeholder=\"Auto-focused for you\">",
+    "output": "Displays a text box ready for typing right when the page opens."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<form>",
+    "desc": "Container to group input elements and submit data"
+   },
+   {
+    "name": "<input type=\"text\">",
+    "desc": "Single-line text input box"
+   },
+   {
+    "name": "placeholder",
+    "desc": "Temporary guiding text inside an input field"
+   },
+   {
+    "name": "<button>",
+    "desc": "Interactive button to perform actions like submit"
+   },
+   {
+    "name": "maxlength",
+    "desc": "Sets the maximum number of allowed characters"
+   },
+   {
+    "name": "readonly",
+    "desc": "Makes a text field read-only without allowing edits"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code to create an empty text field with a placeholder saying 'Type your nickname'.",
+    "a": "<input type=\"text\" placeholder=\"Type your nickname\">"
+   },
+   {
+    "q": "What element do we use to create a submit button inside a web form?",
+    "a": "<button>"
+   },
+   {
+    "q": "How do we make a text input uneditable while remaining visible?",
+    "a": "By using the readonly attribute"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: Basic HTML syntax",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax"
+  },
+  {
+   "title": "MDN: Basic native form controls",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك تقدر تخلي شخصيتك في القصة تبقى عملاقة قد الجبل أو صغننة قد النملة في ثانية واحدة! بلوكات الحجم في سكراتش جونيور بتخلينا نتحكم في حجم الشخصيات بكل سهولة وذكاء.",
+   "عشان نخلي القطة تكبر، بنسحب بلوك تكبير الحجم ونحطه في منطقة الكود. لما ندوس عليه، القطة بتكبر قدامنا كأنها شربت دواء العمالقة!",
+   "الطريقة دي بتشتغل عن طريق إعطاء أمر للكمبيوتر يزود بكسلات الشخصية أو يصغرها بنسبة معينة. البلوك بيقرا الأمر ده وينفذه فوراً على الشاشة قدامنا.",
+   "ولو حبينا نخلي القطة تستخبى، بنستخدم بلوك تصغير الحجم عشان تبقى صغننة خالص وتقدر تدخل جوه شجيرة صغننة من غير ما حد يشوفها.",
+   "القاعدة الذهبية هنا هي التوازن: استعمل التكبير للمواقف الكوميدية والمفاجآت، والتصغير لما الشخصية تكون بعيدة أو بتستخبى عشان القصة تبقى منطقية وممتعة.",
+   "في الحياة الواقعية، ده شبه العدسات المقربة في الكاميرات أو زوم الموبايل، لما بتقرب بتشوف الحاجة كبيرة، ولما بتدوز تصغير بتشوفها صغيرة وبعيدة في الصورة."
+  ],
+  "example": "تعالوا نعمل قطة ذكية في قصة السرعة. أول ما القطة تبدأ تجري، بنحط بلوك التكبير عشان تبان قريبة من الكاميرا وتكبر تدريجي. ولما تيجي تدخل وراء شجرة صغننة، بنحط بلوك التصغير عشان تختفي بذكاء. في الآخر بنحط بلوك إعادة الحجم عشان ترجع لحجمها الطبيعي. النتيجة: قصة ممتعة وحية تفرح أصحابنا!",
+  "mistake": "الخطأ الشائع هو نسيان إرجاع الحجم لوضعه الطبيعي في بداية القصة الجديدة، وده بيخلي الشخصية تفضل عملاقة طول الوقت. الحل: دايماً ابدأ القصة ببلوك إعادة الحجم الأصلي.",
+  "recap": "بلوكات الحجم بتخلينا نتحكم في طول وعرض الشخصية عشان نعمل قصص مذهلة. نقدر نكبر الشخصيات أو نصغرها بكل سهولة.",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بيخلي الشخصية تكبر وتكون عملاقة؟",
+    "o": [
+     "بلوك تكبير الحجم",
+     "بلوك الاختفاء",
+     "بلوك الدوران"
+    ],
+    "a": 0,
+    "why": "بلوك تكبير الحجم هو المسؤول عن زيادة حجم الشخصية وجعلها تبدو أكبر."
+   },
+   {
+    "t": "ليه ممكن نستخدم بلوك التصغير في قصتنا؟",
+    "o": [
+     "عشان نخلي القطة تجري أسرع",
+     "عشان نخلي القطة تستخبى وراء شجيرة صغننة",
+     "عشان نغير لون القطة للأحمر"
+    ],
+    "a": 1,
+    "why": "بنصغر الشخصية لما تكون مستخبية وراء حاجة صغننة زي الشجيرة عشان تب3ل مناسبة للمشهد."
+   },
+   {
+    "t": "إمتى بنحتاج لبلوك إعادة الحجم؟",
+    "o": [
+     "لما نحب نطير الشخصية للفضاء",
+     "لما نخلص القصة ونحب نرجع الشخصية لحجمها الطبيعي",
+     "لما نحب نغير صوت الشخصية"
+    ],
+    "a": 1,
+    "why": "بلوك إعادة الحجم بيعيد الشخصية لحجمها الأصلي عشان تبدأ المشهد الجديد بشكل صحيح."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع حركة الحجم",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل كود تكبير وتصغير القطة",
+   "code": "عند الضغط على الأخضر -> تكبير الحجم -> تصغير الحجم -> إعادة الحجم",
+   "options": [
+    "تكبر القطة ثم تصغر ثم تعود لحجمها الطبيعي",
+    "تطير القطة في الهواء وتختفي تماماً",
+    "تتغير ألوان القطة فقط بدون تغيير حجمها"
+   ],
+   "a": 0,
+   "success": "رائع! القطة كبرت، صغرت، ورجعت لحجمها الطبيعي تماماً زي ما خططنا!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في عالم الحجم السحري",
+    "text": "في سكراتش جونيور، مش بس بنحرك الشخصيات يمين وشمال، لأ ده احنا كمان نقدر نتحكم في حجمها! تخيل أنك مخرج سينمائي وعايز تبين بطل القصة عملاق عشان هو بطل شجاع، أو صغنن عشان هو لسه طفل صغير. بلوكات الحجم بتدينا القدرة دي بلمسة واحدة على الشاشة.",
+    "code": "اضغط على الأخضر -> بلوك تكبير الحجم",
+    "output": "تكبر الشخصية أمامك على الشاشة بشكل مدهش"
+   },
+   {
+    "h": "تكبير الشخصيات (Grow Big)",
+    "text": "لما تحب تخلي شخصيتك تبدو قريبة جداً من الكاميرا أو عملاقة، بتستخدم بلوك التكبير. البلوك ده بيزود أبعاد الشخصية بكسل بكسل لحد ما تبان كبيرة وملء الشاشة. ده بيخلي المشهد مليان إثارة وحماس للأطفال.",
+    "code": "عند النقر -> تكبير الحجم مرتين",
+    "output": "تصبح الشخصية ضخمة وكأنها تقترب من المشاهد"
+   },
+   {
+    "h": "تصغير الشخصيات (Shrink Small)",
+    "text": "أحياناً القصة بتحتاج أن الشخصية تكون صغيرة جداً، زي لما تكون القطة بتستخبى وراء ورقة شجر أو داخل بيت صغنن. بلوك التصغير بيقلل حجم الشخصية عشان تتناسب مع تفاصيل البيئة الخلفية للقصة بتاعتك.",
+    "code": "عند النقر -> تصغير الحجم ثلاث مرات",
+    "output": "تصبح الشخصية بحجم النملة تقريباً لتختفي خلف الشجيرة"
+   },
+   {
+    "h": "إعادة الحجم لحالته الأصلية (Reset Size)",
+    "text": "بعد ما القصة تخلص أو لما تحب تبدأ مشهد جديد، مهم جداً ترجع الشخصية لحجمها الطبيعي الأصلي. بلوك إعادة الحجم بيقوم بالمهمة دي بذكاء، بيرجع كل حاجة زي ما كانت كأن ما حصلش أي تغيير في الحجم.",
+    "code": "عند بدء المشهد -> إعادة الحجم الأصلي",
+    "output": "تعود الشخصية لحجمها العادي الافتراضي بدقة"
+   },
+   {
+    "h": "الجمع بين الحركة والحجم",
+    "text": "القصص الممتازة مش بس بتعتمد على الحجم لوحده. لما ندمج بلوكات الحجم مع بلوكات الحركة زي المشي أو النط، بنعمل قصص ديناميكية وحية. الشخصية وهي بتجري ممكن تكبر كأنها بتجري ناحيتنا، وده بيعطي إحساس بالعمق ثلاثي الأبعاد.",
+    "code": "حركة لليمين + تكبير الحجم",
+    "output": "تتحرك الشخصية لليمين وتكبر في نفس الوقت"
+   },
+   {
+    "h": "تجنب الارتباك في حجم الشخصيات",
+    "text": "من المهم جداً ترتّب البلوكات صح. لو حطيت بلوك التصغير قبل التكبير، النتيجة هتكون عكس ما تتوقع. دايماً فكر في تسلسل القصة: البداية حجم طبيعي، الوسط تكبير أو تصغير حسب الموقف، والنهاية إعادة الحجم.",
+    "code": "إعادة الحجم -> تكبير -> تصغير",
+    "output": "تسلسل منظم يمنع تداخل الأوامر وظهور الشخصية بحجم خاطئ"
+   },
+   {
+    "h": "تطبيقات من الحياة اليومية",
+    "text": "في حياتنا اليومية، لما نبص في المرايا المكبرة، بنشوف وشنا كبير. ولما نبص في المرايا المحدبة الصغيرة، بنشوف كل حاجة صغرت وبعيدة. بلوكات سكراتش جونيور بتعمل نفس الفكرة الرقمية عشان تعلم الأطفال مفاهيم التناسب والنسب.",
+    "code": "تشبيه: عدسة المكبرة في العلوم",
+    "output": "فهم كيف يتغير المنظور البصري للأشياء"
+   },
+   {
+    "h": "خاتمة تصميم القصص الناجحة",
+    "text": "استخدام بلوكات الحجم بذكاء بيدي لقصتك روح وجمال. جرب دايماً تغير حجم الشخصيات بتاعتك واعمل مشاهد متنوعة ومضحكة عشان تفاجئ أصحابك بقصصك المبدعة في سكراتش جونيور!",
+    "code": "ابتكار قصة جديدة + استخدام الألوان والحجوم",
+    "output": "إنتاج قصة تفاعلية متكاملة وجذابة"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Grow Block",
+    "desc": "بلوك يجعل الشخصية أكبر حجماً."
+   },
+   {
+    "name": "Shrink Block",
+    "desc": "بلوك يجعل الشخصية أصغر حجماً."
+   },
+   {
+    "name": "Reset Size Block",
+    "desc": "بلوك يعيد الشخصية لحجمها الطبيعي."
+   },
+   {
+    "name": "Scale",
+    "desc": "مقياس حجم الشخصية في المشهد."
+   },
+   {
+    "name": "Perspective",
+    "desc": "المنظور البصري للقرب والبعد."
+   },
+   {
+    "name": "Animation",
+    "desc": "تحريك الشخصيات وتغيير مظاهرها."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تسلسل الأكواد لجعل القطة تكبر ثم تعود لحجمها الأصلي.",
+    "a": "عند النقر -> تكبير الحجم -> إعادة الحجم الأصلي"
+   },
+   {
+    "q": "لماذا نستخدم بلوك التصغير عندما تختفي القطة خلف الشجرة؟",
+    "a": "لكي تبدو القطة صغيرة ومتناسبة مع حجم الشجرة الصغير."
+   },
+   {
+    "q": "ما هو البلوك الذي يعيد الشخصية لحجمها الطبيعي بعد انتهاء القصة؟",
+    "a": "بلوك إعادة الحجم الأصلي (Reset Size)."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine making your story character as giant as a mountain or as tiny as an ant in just one second! Size blocks in ScratchJr let us control character sizes easily and smartly.",
+   "To make the cat grow, we drag the grow block onto the coding area. When clicked, the cat grows right before our eyes like it drank giant medicine!",
+   "This works by instructing the computer to increase or decrease the character's pixels by a specific ratio. The block reads this command and executes it instantly on screen.",
+   "If we want the cat to hide, we use the shrink block to make it super tiny so it can slip behind a small bush without anyone noticing.",
+   "The golden rule here is balance: use growing for comedic moments and surprises, and shrinking when a character is far away or hiding to keep the story logical and fun.",
+   "In real life, this is like camera zoom lenses; when you zoom in, things look huge, and when you zoom out, they look tiny and far away in the picture."
+  ],
+  "example": "Let's make a smart cat in a speed story. As the cat starts running, we add the grow block so it looks close to the camera and grows bigger. When it goes behind a tiny tree, we add the shrink block to vanish cleverly. Finally, we add the reset size block so it returns to normal. Result: a lively, fun story that delights our friends!",
+  "mistake": "A common mistake is forgetting to reset the size at the start of a new story, leaving the character giant the whole time. Solution: Always begin your story with the original size reset block.",
+  "recap": "Size blocks let us control character height and width to create amazing stories. We can easily grow characters big or shrink them small.",
+  "q": [
+   {
+    "t": "Which block makes the character grow giant?",
+    "o": [
+     "Grow block",
+     "Hide block",
+     "Turn block"
+    ],
+    "a": 0,
+    "why": "The grow block is responsible for increasing the character's size and making it look bigger."
+   },
+   {
+    "t": "Why might we use the shrink block in our story?",
+    "o": [
+     "To make the cat run faster",
+     "To make the cat hide behind a tiny bush",
+     "To change the cat's color to red"
+    ],
+    "a": 1,
+    "why": "We shrink the character when hiding behind something small like a bush to fit the scene."
+   },
+   {
+    "t": "When do we need the reset size block?",
+    "o": [
+     "When we want to fly the character to space",
+     "When we finish the story and want the character back to normal",
+     "When we want to change the character's voice"
+    ],
+    "a": 1,
+    "why": "The reset size block returns the character to its original size to start the new scene correctly."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Size Motion",
+   "goal": "Find out what happens when we run the cat's grow and shrink code",
+   "code": "Green Flag Clicked -> Grow -> Shrink -> Reset Size",
+   "options": [
+    "The cat grows, then shrinks, then returns to its exact normal size",
+    "The cat flies into the air and disappears completely",
+    "Only the cat's colors change without changing its size"
+   ],
+   "a": 0,
+   "success": "Awesome! The cat grew, shrank, and returned to its normal size just like we planned!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to the Magical World of Size",
+    "text": "In ScratchJr, we don't just move characters left and right; we can also control their size! Imagine you are a movie director wanting to show the hero as giant because they are brave, or tiny because they are a baby. Size blocks give us this power with a single touch on the screen.",
+    "code": "Green flag clicked -> Grow block",
+    "output": "The character grows larger before your eyes in a wonderful way"
+   },
+   {
+    "h": "Growing Characters Big",
+    "text": "When you want your character to look very close to the camera or giant, you use the grow block. This block increases the character's dimensions pixel by pixel until it looks big and fills the screen. This makes the scene exciting and full of fun for kids.",
+    "code": "When clicked -> Grow block twice",
+    "output": "The character becomes massive as if approaching the viewer"
+   },
+   {
+    "h": "Shrinking Characters Small",
+    "text": "Sometimes a story requires a character to be very small, like when a cat is hiding behind a leaf or inside a tiny house. The shrink block reduces the character's size to match the background details of your story environment.",
+    "code": "When clicked -> Shrink block three times",
+    "output": "The character becomes ant-sized to hide behind the bush"
+   },
+   {
+    "h": "Resetting Size to Normal",
+    "text": "After the story ends or when you want to start a fresh scene, returning the character to its original normal size is crucial. The reset size block handles this smartly, restoring everything as if no size changes ever occurred.",
+    "code": "When scene starts -> Reset size block",
+    "output": "The character returns to its default normal size accurately"
+   },
+   {
+    "h": "Combining Motion and Size",
+    "text": "Great stories don't rely on size alone. When we combine size blocks with motion blocks like walking or jumping, we create dynamic, lively stories. Running while growing creates a 3D depth illusion as if running toward us.",
+    "code": "Right motion + Grow block",
+    "output": "The character moves right and grows larger simultaneously"
+   },
+   {
+    "h": "Avoiding Character Size Confusion",
+    "text": "Ordering blocks correctly is vital. Putting the shrink block before the grow block gives unexpected results. Always think of story flow: start normal, middle grow/shink per situation, and end with size reset.",
+    "code": "Reset size -> Grow -> Shrink",
+    "output": "An organized sequence preventing command overlap and wrong sizes"
+   },
+   {
+    "h": "Real-Life Applications",
+    "text": "In daily life, looking in magnifying mirrors makes our face look big. Convex mirrors make everything small and distant. ScratchJr blocks mirror this digital concept to teach children proportion and scale.",
+    "code": "Analogy: Magnifying lens in science",
+    "output": "Understanding how visual perspective of objects changes"
+   },
+   {
+    "h": "Conclusion of Successful Story Design",
+    "text": "Using size blocks cleverly brings life and beauty to your story. Always experiment with changing character sizes and make varied, funny scenes to surprise your friends with your creative ScratchJr stories!",
+    "code": "Create new story + Use colors and sizes",
+    "output": "Producing an integrated, engaging interactive story"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Grow Block",
+    "desc": "A block that makes the character larger."
+   },
+   {
+    "name": "Shrink Block",
+    "desc": "A block that makes the character smaller."
+   },
+   {
+    "name": "Reset Size Block",
+    "desc": "A block that restores the character's normal size."
+   },
+   {
+    "name": "Scale",
+    "desc": "The size proportion of the character in the scene."
+   },
+   {
+    "name": "Perspective",
+    "desc": "The visual illusion of closeness and distance."
+   },
+   {
+    "name": "Animation",
+    "desc": "Moving characters and changing their appearances."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the code sequence to make the cat grow then return to its original size.",
+    "a": "Green flag clicked -> Grow block -> Reset size block"
+   },
+   {
+    "q": "Why do we use the shrink block when the cat hides behind the tree?",
+    "a": "To make the cat look small and match the tiny tree's size."
+   },
+   {
+    "q": "Which block returns the character to normal after the story ends?",
+    "a": "Reset Size block."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "The Digital Moodboard",
+   "desc": "Create an interactive webpage where users click mood buttons to instantly change the page theme, display a matching image, and reveal a random quote.",
+   "tags": [
+    "DOM",
+    "Events",
+    "Arrays"
+   ],
+   "steps": [
+    "Plan your HTML layout with a main container, title, mood buttons, image element, and a quote paragraph box.",
+    "Style your page with basic CSS so it looks neat and ready to receive dynamic theme color changes.",
+    "Write JavaScript variables using const to select your key HTML elements like the body, image, and quote box.",
+    "Create an array of uplifting quotes and use Math.random() to pick a random quote every time a button is clicked.",
+    "Set up click event listeners on your mood buttons to trigger functions when the user interacts with them.",
+    "Use if/else or switch statements inside your functions to update the theme colors and match the correct image source."
+   ],
+   "rubric": [
+    "Page theme changes color successfully on button clicks.",
+    "A matching image loads for the selected mood.",
+    "A random quote appears from an array using Math.random().",
+    "Code is clean and uses proper event listeners and functions."
+   ],
+   "stretch": "Add a text input where users can type their own custom quote and add it to the quotes array using push()!"
+  },
+  {
+   "title": "Smart Age & Ticket Validator",
+   "desc": "Build a ticket booth simulator that checks a visitor's age and budget using complex conditions to see if they can buy a ride ticket.",
+   "tags": [
+    "Input",
+    "Conditions",
+    "Logic"
+   ],
+   "steps": [
+    "Design a simple form in HTML with input fields for the user's age and available budget money.",
+    "Add a 'Check Ticket' submit button and an empty paragraph area to display the final result message.",
+    "Write JavaScript code to select the input fields, button, and result display element using querySelector.",
+    "Attach a click event listener to the button so it reads the values entered by the user.",
+    "Use Number() to convert the input text values into actual numbers for proper mathematical calculations.",
+    "Write if, else if, and else conditions combined with AND (&&) operators to verify age and budget requirements."
+   ],
+   "rubric": [
+    "Inputs for age and budget are correctly captured as numbers.",
+    "Logical AND (&&) operators check both age and money rules accurately.",
+    "Clear success or failure messages are displayed to the user.",
+    "Code handles empty inputs or invalid numbers gracefully."
+   ],
+   "stretch": "Add a VIP pass checkbox and use an OR (||) operator so VIP holders get free entry regardless of budget!"
+  },
+  {
+   "title": "Mini Math Solver App",
+   "desc": "Build a dynamic calculator app with buttons for four basic operations that instantly calculates and displays the result.",
+   "tags": [
+    "Math",
+    "Functions",
+    "DOM"
+   ],
+   "steps": [
+    "Create two number input boxes and four operation buttons (+, -, *, /) in your HTML file.",
+    "Add a dedicated results display box to show the final calculated answer to the user.",
+    "Select all calculator inputs, buttons, and the output display box using JavaScript variables.",
+    "Write reusable JavaScript functions that take two inputs and return the sum, difference, product, or quotient.",
+    "Attach click event listeners to each operation button to call the correct math function.",
+    "Update the text content of the result element with the returned value from your math functions."
+   ],
+   "rubric": [
+    "All four mathematical operations (+, -, *, /) work correctly.",
+    "Reusable functions with parameters and return values are utilized.",
+    "Buttons trigger the right calculation when clicked.",
+    "Results display clearly on the screen for the user to see."
+   ],
+   "stretch": "Add a clear button that resets both input fields and the result display back to zero!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "لوحة المزاج الرقمية",
+   "desc": "اعمل صفحة ويب تفاعلية المستخدمين يقدروا يدوسوا على أزرار المزاج عشان يغيروا شكل الصفحة، يظهروا صورة مناسبة، ويطلعوا حكمة عشوائية.",
+   "tags": [
+    "DOM",
+    "أحداث",
+    "مصفوفات"
+   ],
+   "steps": [
+    "خطط تصميم HTML بتاعك مع مكان رئيسي، عنوان، أزرار للمزاج، عنصر للصورة، ومربع فقرة للحكمة.",
+    "زين صفحتك بـ CSS بسيط عشان شكلها يبقى حلو وجاهز لتغيير الألوان بشكل ديناميكي.",
+    "اكتب متغيرات JavaScript باستخدام const عشان تختار عناصر HTML الأساسية زي الجسم والصورة ومربع الحكمة.",
+    "اعمل مصفوفة فيها حكم جميلة واستخدم Math.random() عشان تختار حكمة عشوائية كل ما المستخدم يدوس على زرار.",
+    "اضبط مستمعات الأحداث (event listeners) على أزرار المزاج عشان تشغل الدوال لما المستخدم يتفاعل معاها.",
+    "استخدم شروط if/else جوه الدوال بتاعتك عشان تحدد ألوان الثيم وتجيب مصدر الصورة الصح."
+   ],
+   "rubric": [
+    "ثيم الصفحة بتغير لونها صح أول ما تدوس على الأزرار.",
+    "الصورة المناسبة للمزاج المختار بتظهر.",
+    "حكمة عشوائية بتظهر من المصفوفة باستخدام Math.random().",
+    "الكود نضيف وبيستخدم مستمعات أحداث ودوال بشكل مظبوط."
+   ],
+   "stretch": "ضيف مكان إدخال نصي عشان المستخدمين يقدروا يكتبوا حكمتهم الخاصة ويضيفوها للمصفوفة باستخدام push()!"
+  },
+  {
+   "title": "مدقق التذاكر والسن الذكي",
+   "desc": "ابني محاكي لشباك التذاكر بيتاكد من سن الزائر وفلوسه باستخدام شروط مركبة عشان يعرف يقدر يشترى تذكرة لعبة ولا لأ.",
+   "tags": [
+    "مدخلات",
+    "شروط",
+    "منطق"
+   ],
+   "steps": [
+    "صمم نموذج بسيط في HTML فيه خانات إدخال لسن المستخدم ومبلغ الفلوس المتاح معاه.",
+    "ضيف زرار إرسال اسمه 'افحص التذكرة' ومكان فقرة فاضي عشان تظهر رسالة النتيجة النهائية.",
+    "اكتب كود JavaScript عشان تختار خانات الإدخال والزرار وعنصر عرض النتيجة باستخدام querySelector.",
+    "اربط مستمع أحداث النقر بالزرار عشان يقرا القيم اللي المستخدم كتبها.",
+    "استخدم Number() عشان تحول النصوص المدخلة لأرقام حقيقية عشان العمليات الحسابية تظبط.",
+    "اكتب شروط if و else if و else مع استخدام أدوات الربط زي AND (&&) عشان تتاكد من شروط السن والفلوس."
+   ],
+   "rubric": [
+    "مدخلات السن والفلوس بتتقرا صح كأرقام.",
+    "أدوات الربط المنطقية AND (&&) بتفحص شروط السن والفلوس بدقة.",
+    "رسائل نجاح أو فشل واضحة بتظهر للمستخدم.",
+    "الكود بيتعامل مع الخانات الفاضية أو الأرقام الغلط بذكاء."
+   ],
+   "stretch": "ضيف صندوق اختيار VIP واستخدم أداة OR (||) عشان أصحاب الـ VIP يدخلوا ببلاش بغض النظر عن فلوسهم!"
+  },
+  {
+   "title": "تطبيق حاسبة الرياضيات الصغيرة",
+   "desc": "ابني تطبيق حاسبة ديناميكي فيه أزرار لأربع عمليات حسابية بيحسب النتيجة ويعرضها فوراً.",
+   "tags": [
+    "رياضيات",
+    "دوال",
+    "DOM"
+   ],
+   "steps": [
+    "اعمل صندوقين إدخال أرقام وأربع أزرار عمليات (+, -, *, /) في ملف HTML بتاعك.",
+    "ضيف صندوق مخصص لعرض النتيجة عشان تبين الإجابة النهائية المحسوبة للمستخدم.",
+    "اختر كل مدخلات الحاسبة والأزرار وصندوق النتيجة باستخدام متغيرات JavaScript.",
+    "اكتب دلالات JavaScript قابلة لإعادة الاستخدام بتاخد مدخلين وترجع المجموع أو الفرق أو حاصل الضرب أو القسمة.",
+    "اربط مستمعات أحداث النقر بكل زرار عملية عشان ينادي دالة الرياضة الصح.",
+    "حدث محتوى النص الخاص بعنصر النتيجة بالقيمة الراجعة من دالتك الرياضية."
+   ],
+   "rubric": [
+    "الأربع عمليات الرياضية (+, -, *, /) شغالين تمام.",
+    "استخدام دالات قابلة لإعادة الاستخدام مع مدخلات وقيم راجعة.",
+    "الأزرار بتشغل الحسابات الصح لما المستخدم يدوس عليها.",
+    "النتائج بتظهر بوضوح على الشاشة للمستخدم."
+   ],
+   "stretch": "ضيف زرار مسح (clear) بيصفر خانتي الإدخال وعرض النتيجة لصفر تاني!"
+  }
+ ]
+}

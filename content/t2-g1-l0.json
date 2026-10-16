@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "القصة الحلوة بتاخدنا لعالم تاني! خلفية مشاهد سكراتش جونيور هي اللي بتخلي الشخصية واقفة على شاطئ منور أو في فضاء واسع، وده بيدي إحساس سحري.",
+   "عشان تغير الخلفية، اضغط على زر 'اختر خلفية' (Choose Background) فوق خالص، واختار شكل الشاطئ المشمس عشان تبدأ القطة بتاعتك تلعب هناك.",
+   "لما بتغير الخلفية، القصة بتتغير كأنك قلبت صفحة في كتاب مصور. كل صفحة في سكراتش جونيور ممكن يكون ليها خلفية مختلفة تماماً.",
+   "تخيل إنك بتعمل قصة عن الفضاء، هتدخل على استوديو الخلفيات وتختار كوكب المريخ عشان القطة تركب صاروخ وتروح تزوره.",
+   "القاعدة الذهبية: الخلفية هي ديكور المسرح؛ اختر دايماً خلفية تناسب المكان اللي حكايتك بتحصل فيه عشان المشاهد يفهم القصة بسرعة.",
+   "في الحقيقة، المخرجين في السينما ورسامين الكارتون بيعملوا نفس الحاجة بالضبط، بيختاروا الخلفيات قبل ما يحطوا الشخصيات عشان يظبطوا جو الحكاية."
+  ],
+  "example": "تعال نعمل مشهد لشاطئ البحر. افتح تطبيق سكراتش جونيور، اضغط على زر اختيار الخلفية من الزاوية اليمنى فوق، انقر على صورة البحر والشمس، واضغط صح. دلوقتي قطتك واقفة على الشاطئ جاهزة تبدأ قصتها الصيفية الجميلة!",
+  "mistake": "الخطأ المشهور إننا ندور على زر الخلفية في منطقة الكود التحتانية. الصح إنه فوق خالص جنب اسم الصفحة مش تحت عند البلوكات.",
+  "recap": "تعلمنا النهاردة إزاي نغير خلفية مشاهد سكراتش جونيور ونخلي القصة في عالم جميل ومناسب. الخلفية هي روح المشهد!",
+  "q": [
+   {
+    "t": "فين بنلاقي زر اختيار الخلفية في سكراتش جونيور؟",
+    "o": [
+     "جنب بلوكات الحركة تحت",
+     "فوق خالص في شاشة المعاينة",
+     "جوا قائمة الشخصيات"
+    ],
+    "a": 1,
+    "why": "زر الخلفية بيكون فوق خالص في الشاشة عشان يغير ديكور الصفحة كلها."
+   },
+   {
+    "t": "إيه فايدة اختيار خلفية مناسبة لقصتك؟",
+    "o": [
+     "بتخلي الشخصية تجري أسرع",
+     "بتوضح مكان وزمن القصة للمشاهد",
+     "بتخلي الصوت أوتوماتيك"
+    ],
+    "a": 1,
+    "why": "الخلفية هي اللي بتعرفنا إحنا فين (زي الشاطئ أو الفضاء)."
+   },
+   {
+    "t": "هل ينفع نخلي كل صفحة في القصة ليها خلفية مختلفة؟",
+    "o": [
+     "أيوة، كل صفحة ليها خلفيتها المستقلة",
+     "لا، لازم كل القصة بنفس الخلفية",
+     "ينفع صفحتين بس"
+    ],
+    "a": 0,
+    "why": "س بيسمح بتغيير الخلفية لكل صفحة عشان نعمل صفحات كتيرة ومتنوعة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة اختيار الخلفية",
+   "goal": "اعرف إيه اللي هيحصل لما ندوس على زر تغيير الخلفية ونختار الشاطئ.",
+   "code": "الصفحة فارغة وبدون خلفية -> اضغط زر 'اختر خلفية' -> اختر صورة الشاطئ المشمس -> اضغط علامة الصح الزرقاء",
+   "options": [
+    "تظهر خلفية الشاطئ وتبقى جاهزة للمشهد",
+    "تختفي الشخصية تماماً من الصفحة",
+    "يبدأ الصوت يشتغل لوحده"
+   ],
+   "a": 0,
+   "success": "يا سلام! الشاطئ ظهر والقطة بقت واقفة على الرمل المنور!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الخلفيات في سكراتش جونيور؟",
+    "text": "الخلفية هي اللوحة اللي بتترسم ورا الشخصيات في سكراتش جونيور، زي الديكور في المسرح أو الصورة اللي ورا الممثلين. بتدي جو مميز للحكاية وتفهمنا إحنا فين بالضبط.",
+    "code": "اضغط على أيقونة الخلفية -> تفتح مكتبة الصور -> اختر الخلفية",
+    "output": "تتغير خلفية الصفحة فوراً."
+   },
+   {
+    "h": "إزاي نختار خلفية الشاطئ المشمس؟",
+    "text": "عشان نبدأ قصة صيفية، بنحتاج نختار شاطئ برمل ومية وشمس. دي أول خطوة عشان نعمل عالم مبهج ومناسب للعب الشخصيات ومغامرتهم البحرية.",
+    "code": "اختر زر الشاطئ من قائمة الخلفيات -> اضغط علامة صح",
+    "output": "تظهر خلفية الشاطئ وراء القطة."
+   },
+   {
+    "h": "تحديد مكان وزمن القصة (Scene Setting)",
+    "text": "الخلفية مش مجرد شكل جميل، دي بتحدد زمان ومكان القصة. هل إحنا بالليل ولا بالنهار؟ في الغابة ولا في المدينة؟ ده بيساعد اللي بيشوف قصتك يفهمها من أول نظرة.",
+    "code": "اختر خلفية ليلية أو نهارية حسب وقت الحدث",
+    "output": "يتضح للمشاهد زمن ومكان القصة فوراً."
+   },
+   {
+    "h": "عوالم القصص المتنوعة (Story Worlds)",
+    "text": "في سكراتش جونيور، عندك عوالم كتيرة تقدر تزورها: الفضاء الخارجي، الغابة الخضراء، مدينة كبيرة، أو حتى بيت قديم. كل عالم بيفتح باب لأفكار جديدة ومغامرات ممتعة.",
+    "code": "تصفح عوالم (الفضاء، المدينة، الطبيعة) -> اختر العالم المناسب",
+    "output": "تنتقل القصة إلى عالم جديد ومختلف."
+   },
+   {
+    "h": "تغيير الخلفيات بين الصفحات",
+    "text": "لو قصتك فيها أكتر من صفحة، تقدر تعمل صفحة أولى على الشاطئ، وتخلي الصفحة التانية في الفضاء! ده بيخلي قصتك مليانة حركة وتشويق وبتتطور مع الأحداث.",
+    "code": "انتقل إلى الصفحة 2 -> اختر خلفية الفضاء",
+    "output": "تتغير خلفية الصفحة الثانية فقط."
+   },
+   {
+    "h": "الفرق بين الشخصية والخلفية",
+    "text": "الشخصية زي القطة هي اللي بتتحرك وبتعمل أفعال، أما الخلفية فهي ثابتة وبتفضل ورا الشخصية عشان تديها المنظر الجميل. متلخبطش بين تحريك الشخصية وتغيير الخلفية!",
+    "code": "الشخصية تتحرك بالبلوكات، الخلفية تتغير من زر الأيقونة",
+    "output": "كل عنصر له مكانه وطريقته الخاصة."
+   },
+   {
+    "h": "ضبط الحالة المزاجية للقصة",
+    "text": "الخلفيات الداكنة بتعمل جو غموض وخوف، بينما الخلفيات المشمسة والمبهرة بتعمل جو فرح وسعادة. اختيارك للخلفية بيوصل مشاعرك للمشاهدين من غير ما تكتب ولا كلمة.",
+    "code": "اختر خلفية مشمسة للقصص السعيدة",
+    "output": "يشعر المشاهد بالبهجة والسعادة."
+   },
+   {
+    "h": "إضافة لمستك الإبداعية الخاصة",
+    "text": "مش لازم تكتفي بالخلفيات الجاهزة بس، تقدر ترسم خلفيتك الخاصة باستخدام أدوات الرسم البسيطة وتلونها بالألوان اللي تعجبك عشان قصتك تبقى فريدة من نوعها.",
+    "code": "اضغط على زر الرسام في الخلفيات -> ارسم عالمك الخاص",
+    "output": "تظهر خلفيتك المرسومة بنفسك في المشهد."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Background",
+    "desc": "الخلفية أو الصورة اللي بتظهر ورا الشخصيات في المشهد."
+   },
+   {
+    "name": "Scene Setting",
+    "desc": "تحديد مكان وزمن أحداث القصة."
+   },
+   {
+    "name": "Story Worlds",
+    "desc": "عوالم مختلفة ومتنوعة زي الفضاء والشاطئ والمدينة."
+   },
+   {
+    "name": "Choose Background",
+    "desc": "الزر المستخدم لفتح مكتبة الخلفيات واختيار واحدة جديدة."
+   },
+   {
+    "name": "Page",
+    "desc": "الصفحة التي تحتوي على المشهد والشخصيات والخلفية الخاصة بها."
+   },
+   {
+    "name": "Paint Editor",
+    "desc": "أداة رسم الخلفيات وتلوينها يدوياً."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الزر الذي نضغط عليه لفتح مكتبة الخلفيات في سكراتش جونيور؟",
+    "a": "زر 'اختر خلفية' (Choose Background) الموجود أعلى الشاشة."
+   },
+   {
+    "q": "إذا أردت أن تبدأ قصتك على الشاطئ، ما نوع الخلفية التي تختارها؟",
+    "a": "خلفية الشاطئ المشمس (Beach scene)."
+   },
+   {
+    "q": "هل يمكن جعل كل صفحة في قصة سكراتش جونيور بخلفية مختلفة؟",
+    "a": "نعم، كل صفحة لها خلفيتها المستقلة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Great stories take us to another world! The background in ScratchJr makes your character stand on a sunny beach or in outer space, adding a magical feel.",
+   "To change the background, tap the 'Choose Background' button at the very top, and select the sunny beach scene to get your cat ready to play there.",
+   "When you change the background, the story changes like flipping a page in a picture book. Each page in ScratchJr can have a totally different background.",
+   "Imagine making a space story; you open the background studio and pick Mars so your cat can ride a rocket and visit it.",
+   "Gold rule: The background is your stage set; always pick a background that matches where your story takes place so viewers understand right away.",
+   "In real life, movie directors and cartoon artists do the exact same thing, picking backgrounds before placing characters to set the mood."
+  ],
+  "example": "Let's make a beach scene. Open ScratchJr, tap the background button in the top right corner, click on the sea and sun image, and press the checkmark. Now your cat is standing on the beach ready to start its fun summer story!",
+  "mistake": "A common mistake is looking for the background button in the bottom code area. The correct place is at the very top next to the page name, not down by the blocks.",
+  "recap": "Today we learned how to change the background of ScratchJr scenes to put our story in a wonderful, fitting world. The background is the soul of the scene!",
+  "q": [
+   {
+    "t": "Where do we find the background button in ScratchJr?",
+    "o": [
+     "Next to the motion blocks at the bottom",
+     "At the very top of the preview screen",
+     "Inside the character list"
+    ],
+    "a": 1,
+    "why": "The background button is at the top of the screen to change the whole page decor."
+   },
+   {
+    "t": "What is the benefit of picking a fitting background for your story?",
+    "o": [
+     "It makes the character run faster",
+     "It shows the viewer where and when the story happens",
+     "It starts the sound automatically"
+    ],
+    "a": 1,
+    "why": "The background tells us where we are (like a beach or space)."
+   },
+   {
+    "t": "Can every page in the story have a different background?",
+    "o": [
+     "Yes, each page has its own independent background",
+     "No, the whole story must have the same background",
+     "Only two pages can"
+    ],
+    "a": 0,
+    "why": "ScratchJr allows changing the background for each page to make diverse pages."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Background Selection",
+   "goal": "Find out what happens when we tap the change background button and pick the beach.",
+   "code": "Page is blank with no background -> Tap 'Choose Background' button -> Select the sunny beach image -> Press blue checkmark",
+   "options": [
+    "The beach background appears and is ready for the scene",
+    "The character disappears completely from the page",
+    "The sound starts playing by itself"
+   ],
+   "a": 0,
+   "success": "Hooray! The beach appeared and the cat is standing on the bright sand!"
+  },
+  "sections": [
+   {
+    "h": "What are Backgrounds in ScratchJr?",
+    "text": "The background is the painting behind the characters in ScratchJr, like a stage set in a theater or the scenery behind actors. It gives a special mood to the tale and shows us where we are.",
+    "code": "Tap background icon -> Image library opens -> Choose background",
+    "output": "The page background changes instantly."
+   },
+   {
+    "h": "How to Choose the Sunny Beach Background?",
+    "text": "To start a summer story, we need to pick a beach with sand, water, and sun. This is the first step to making a joyful world suitable for character play and sea adventures.",
+    "code": "Select beach button from background list -> Tap checkmark",
+    "output": "The beach background appears behind the cat."
+   },
+   {
+    "h": "Scene Setting (Place and Time)",
+    "text": "The background is not just pretty art; it sets the time and place of the story. Is it night or day? In a forest or a city? This helps whoever watches your story understand it at first glance.",
+    "code": "Choose night or day background based on event time",
+    "output": "The time and place become clear to the viewer immediately."
+   },
+   {
+    "h": "Story Worlds Varieties",
+    "text": "In ScratchJr, you have many worlds to visit: outer space, a green forest, a big city, or even an old house. Each world opens a door to new ideas and fun adventures.",
+    "code": "Browse worlds (space, city, nature) -> Pick the right world",
+    "output": "The story shifts to a new and different world."
+   },
+   {
+    "h": "Changing Backgrounds Between Pages",
+    "text": "If your story has more than one page, you can make the first page on the beach, and the second page in space! This keeps your story full of action, excitement, and progress.",
+    "code": "Go to Page 2 -> Choose space background",
+    "output": "Only the second page background changes."
+   },
+   {
+    "h": "Difference Between Character and Background",
+    "text": "The character like the cat moves and does actions, while the background stays still behind the character to give a nice view. Don't confuse moving a character with changing a background!",
+    "code": "Character moves with blocks, background changes via icon button",
+    "output": "Each element has its own place and method."
+   },
+   {
+    "h": "Setting the Story Mood",
+    "text": "Dark backgrounds create a mysterious and spooky vibe, while sunny and bright backgrounds make a joyful and happy mood. Your background choice conveys your feelings to viewers without writing a single word.",
+    "code": "Choose a sunny background for happy stories",
+    "output": "The viewer feels cheerful and happy."
+   },
+   {
+    "h": "Adding Your Own Creative Touch",
+    "text": "You don't have to stick only to ready-made backgrounds; you can draw your own background using simple paint tools and color it with any colors you like to make your story unique.",
+    "code": "Tap paint button in backgrounds -> Draw your own world",
+    "output": "Your self-drawn background appears in the scene."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Background",
+    "desc": "The image that appears behind the characters in a scene."
+   },
+   {
+    "name": "Scene Setting",
+    "desc": "Establishing the location and time of the story events."
+   },
+   {
+    "name": "Story Worlds",
+    "desc": "Different diverse worlds like space, beach, and city."
+   },
+   {
+    "name": "Choose Background",
+    "desc": "The button used to open the background library and pick a new one."
+   },
+   {
+    "name": "Page",
+    "desc": "The page containing the scene, characters, and its own background."
+   },
+   {
+    "name": "Paint Editor",
+    "desc": "The tool to draw and color backgrounds manually."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What button do we tap to open the background library in ScratchJr?",
+    "a": "The 'Choose Background' button located at the top of the screen."
+   },
+   {
+    "q": "If you want your story to start at the beach, what kind of background do you choose?",
+    "a": "The sunny beach scene background."
+   },
+   {
+    "q": "Can every page in a ScratchJr story have a different background?",
+    "a": "Yes, each page has its own independent background."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,332 @@
+{
+ "ar": {
+  "steps": [
+   "تعلّم كيفية إنشاء عناصر ديناميكية جديدة على الصفحة باستخدام أمر document.createElement() البرمجي المذهل لتوليد الأجسام.",
+   "إضافات العناصر الجديدة تتم عبر أمر appendChild() لوضع العنصر المصنوع ديناميكياً داخل صندوق الألعاب الرئيسي بداخل المستند.",
+   "حلقة اللعبة Game Loop تعتمد على دالة requestAnimationFrame لتحديث مواقع الشخصيات والحركات بسلاسة شديدة ومستمرة.",
+   "فحص التصادم أو Collision Detection يتم عبر دالة getboundingclientrect() لمعرفة الحدود الأفقية والرأسية للأجسام.",
+   "تداخل الحدود يعني حدوث اصطدام، حيث نقارن إحداثيات الصندوقين لنتأكد هل تقاطعا أم لا على شاشة العرض.",
+   "التطبيق العملي يظهر في ألعاب المتصفح التفاعلية، حيث تتفاعل الكائنات الحية والصواريخ والعوائق ديناميكياً معاً بلا توقف."
+  ],
+  "example": "لنفترض أننا نصنع لعبة بصرية بسيطة، نقوم بإنشاء عنصر جديد عبر document.createElement('div') ثم نتحقق من اصطدامه باللاعب عبر دالة getBoundingClientRect(). إذا تداخلت القيم البرمجية للطرفين، نخسر نقطة أو ننقص طاقة اللاعب تماماً مثل الألعاب الحقيقية.",
+  "mistake": "نسيان تحديث الإحداثيات داخل حلقة اللعبة requestAnimationFrame يؤدي إلى تجمّد العنصر في مكانه دون أي حركة، والحل هو استدعاء دالة التحديث وتكرار الرسم داخل حلقة مستمرة.",
+  "recap": "لقد تعلمنا اليوم كيف ننشئ عناصر ديناميكية جديدة باستخدام createElement ونكتشف اصطداماتها بدقة عبر بوابات القياس bounding boxes في جافاسكريبت.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة المستخدمة لإنشاء عنصر HTML جديد في جافاسكريبت؟",
+    "o": [
+     "document.createElement()",
+     "document.makeElement()",
+     "document.newDiv()"
+    ],
+    "a": 0,
+    "why": "الأمر الرسمي والوحيد المعتمد لإنشاء عنصر جديد هو createElement."
+   },
+   {
+    "t": "أي دالة تستخدم لمعرفة حدود وموقع العنصر على الشاشة بدقة؟",
+    "o": [
+     "getElementSize()",
+     "getBoundingClientRect()",
+     "checkCollision()"
+    ],
+    "a": 1,
+    "why": "دالة getBoundingClientRect() تُرجع إحداثيات المستطيل المحيط بالعنصر."
+   },
+   {
+    "t": "لماذا نستخدم requestAnimationFrame في الألعاب؟",
+    "o": [
+     "لتشغيل الأغاني فقط",
+     "لتحديث حلقة اللعبة ورسم الحركات بسلاسة",
+     "لحذف صفحة الويب تماماً"
+    ],
+    "a": 1,
+    "why": "requestAnimationFrame مسؤولة عن تحديث الإطارات وتكوين حلقة اللعبة بسلاسة فائقة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف أدوات حلقات الألعاب والاصطدام",
+   "goal": "صنف الأوامر البرمجية التالية بحسب وظيفتها الأساسية في إنشاء العناصر أو فحص التصادم.",
+   "buckets": [
+    "إنشاء عناصر وديناميكية",
+    "حساب واكتشاف الاصطدام"
+   ],
+   "items": [
+    {
+     "t": "document.createElement('div')",
+     "b": 0
+    },
+    {
+     "t": "element.getBoundingClientRect()",
+     "b": 1
+    },
+    {
+     "t": "parent.appendChild(newDiv)",
+     "b": 0
+    },
+    {
+     "t": "rect1.left < rect2.right",
+     "b": 1
+    },
+    {
+     "t": "document.createElement('span')",
+     "b": 0
+    },
+    {
+     "t": "rect1.bottom > rect2.top",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد قمت بتنظيم أدوات اللعبة واكتشاف الاصطدامات بنجاح تام."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن إنشاء العناصر الديناميكية",
+    "text": "في صفحات الويب الحديثة، لا نحتاج لكتابة كل شيء يدوياً في ملف HTML. باستخدام جافاسكريبت، يمكننا توليد عناصر جديدة تماماً وتعديلها وإضافتها للشاشة أثناء تشغيل البرنامج، أشبه بصانع ألعاب يخرج أشكالاً جديدة في منتصف التحدي.",
+    "code": "<div id='app'></div>\n<script>\nconst box = document.createElement('div');\nbox.style.width = '50px';\nbox.style.height = '50px';\nbox.style.background = 'red';\ndocument.getElementById('app').appendChild(box);\n</script>",
+    "output": "يظهر صندوق أحمر جديد على الشاشة تم إنشاؤه برمجياً."
+   },
+   {
+    "h": "ربط العناصر الجديدة بالصفحة عبر appendChild",
+    "text": "عندما نصنع عنصراً جديداً عبر الأمر createElement، يكون مولوداً في الذاكرة فقط ولا يظهر على الشاشة. ولكي يراه المستخدم، يجب أن نربطه بالعنصر الحقيقي الموجود في الصفحة عبر أمر appendChild، مثل وضع لعبة جديدة داخل صندوق الألعاب.",
+    "code": "<div id='container'></div>\n<script>\nconst p = document.createElement('p');\np.textContent = 'أنا عنصر جديد!';\ndocument.getElementById('container').appendChild(p);\n</script>",
+    "output": "تظهر جملة نصية جديدة داخل حاوية الصفحة بدقة."
+   },
+   {
+    "h": "مفهوم حلقة اللعبة Game Loop",
+    "text": "ألعاب الكمبيوتر تعتمد على تكرار تحديث الشاشة مئات المرات في الثانية لتوليد الحركة. حلقة اللعبة Game Loop هي دالة تستدعي نفسها باستمرار لتحديث مواقع الأجسام ورسمها مجدداً، أشبه بدفتر رسوم متحركة نقلبه بسرعة لتبدو الرسومات متحركة.",
+    "code": "<script>\nlet pos = 0;\nfunction gameLoop() {\n  pos += 1;\n  if(pos > 100) pos = 0;\n  requestAnimationFrame(gameLoop);\n}\nrequestAnimationFrame(gameLoop);\n</script>",
+    "output": "تعمل حلقة اللعبة في الخلفية وتقوم بتحديث موقع المتغير باستمرار."
+   },
+   {
+    "h": "اكتشاف التصادم عبر Bounding Rectangles",
+    "text": "كيف تعرف اللعبة أن شخصيتك اصطدمت بالوحش؟ عبر حساب الحدود الوهمية للأجسام بمساعدة دالة getBoundingClientRect(). هذه الدالة تعطينا أبعاد وموقع كل عنصر على الشاشة بالأرقام الدقيقة.",
+    "code": "<div id='e1' style='width:30px;height:30px;background:blue;'></div>\n<script>\nconst rect = document.getElementById('e1').getBoundingClientRect();\nconsole.log(rect.top, rect.left);\n</script>",
+    "output": "يطبع إحداثيات وقيم موضع الصندوق الأزرق على الشاشة في وحدة التحكم."
+   },
+   {
+    "h": "خوارزمية تداخل الصناديق لتحديد الاصطدام",
+    "text": "لكي نعرف هل اصطدم جسمان أم لا، نقارن حوافهما الأربع: اليمين، اليسار، الأعلى، الأسفل. إذا تداخلت حدود الصندوق الأول مع الصندوق الثاني في جميع الاتجاهات الأربعة، فهذا يعني وقوع اصطدام حقيقي ومباشر.",
+    "code": "<script>\nfunction isColliding(r1, r2) {\n  return !(r1.right < r2.left || r1.left > r2.right || r1.bottom < r2.top || r1.top > r2.bottom);\n}\n</script>",
+    "output": "دالة برمجية جاهزة لفحص ما إذا كان صندوقان متداخلين أم لا."
+   },
+   {
+    "h": "تطبيقات حقيقية لألعاب المتصفح",
+    "text": "دمج إنشاء العناصر مع حلقة اللعبة واكتشاف الاصطدام يتيح لنا برمجة ألعاب كاملة مثل لعبة الديناصور الشهيرة، حيث تتولد العقبات ديناميكياً وتتحرك عبر حلقة اللعبة ويتم فحص التصادم في كل جزء من الثانية.",
+    "code": "<div id='game' style='position:relative;height:40px;background:#eee;'></div>\n<script>\nconst obstacle = document.createElement('div');\nobstacle.style.width = '10px';\nobstacle.style.height = '20px';\nobstacle.style.background = 'black';\ndocument.getElementById('game').appendChild(obstacle);\n</script>",
+    "output": "تم إنشاء عقبة سوداء داخل حلبة اللعبة الديناميكية."
+   }
+  ],
+  "reference": [
+   {
+    "name": "document.createElement()",
+    "desc": "ينشئ عنصر HTML جديداً في الذاكرة."
+   },
+   {
+    "name": "node.appendChild()",
+    "desc": "يضيف عنصراً فرعياً جديداً داخل حاوية محددة."
+   },
+   {
+    "name": "requestAnimationFrame()",
+    "desc": "تنفذ دالة التحديث مع كل إطار عرض جديد للشاشة."
+   },
+   {
+    "name": "getBoundingClientRect()",
+    "desc": "يعيد إحداثيات ومقاسات المستطيل المحيط بالعنصر."
+   },
+   {
+    "name": "rect.left / rect.right",
+    "desc": "يمثلان الحدود الأفقية للعنصر على الشاشة."
+   },
+   {
+    "name": "rect.top / rect.bottom",
+    "desc": "يمثلان الحدود الرأسية للعنصر على الشاشة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمراً برمجياً لإنشاء عنصر فقرة نصي p جديد.",
+    "a": "document.createElement('p')"
+   },
+   {
+    "q": "ما اسم الدالة التي تعيد قياسات وإحداثيات حدود العنصر على الشاشة؟",
+    "a": "getBoundingClientRect()"
+   },
+   {
+    "q": "كيف نضيف عنصراً جديداً صُنِع بـ createElement إلى عنصر آخر يحمل معرف container؟",
+    "a": "document.getElementById('container').appendChild(element)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Learn how to create brand new dynamic elements on the page using the amazing document.createElement() command to spawn game objects.",
+   "Attach new elements using the appendChild() method to place the dynamically made element inside the main game container on the document.",
+   "The Game Loop relies on requestAnimationFrame to update character positions and movements smoothly and continuously.",
+   "Collision Detection is performed using getBoundingClientRect() to check the horizontal and vertical boundaries of objects.",
+   "Boundary overlapping means a collision has occurred, where we compare the coordinates of two boxes to check if they intersect on screen.",
+   "Practical application appears in interactive browser games, where living characters, projectiles, and obstacles interact dynamically without stopping."
+  ],
+  "example": "Suppose we are making a simple visual game, we create a new element via document.createElement('div') and then check if it collides with the player using getBoundingClientRect(). If both programmatic boundaries overlap, we lose a point or decrease player health just like real games.",
+  "mistake": "Forgetting to update coordinates inside the requestAnimationFrame game loop causes the element to freeze in place without movement, and the fix is to call the update function and repeat drawing inside a continuous loop.",
+  "recap": "Today we learned how to create new dynamic elements using createElement and detect collisions accurately via bounding boxes in JavaScript.",
+  "q": [
+   {
+    "t": "What is the method used to create a new HTML element in JavaScript?",
+    "o": [
+     "document.createElement()",
+     "document.makeElement()",
+     "document.newDiv()"
+    ],
+    "a": 0,
+    "why": "The official and only supported command to create a new element is createElement."
+   },
+   {
+    "t": "Which method is used to accurately find the boundaries and position of an element on screen?",
+    "o": [
+     "getElementSize()",
+     "getBoundingClientRect()",
+     "checkCollision()"
+    ],
+    "a": 1,
+    "why": "getBoundingClientRect() returns the bounding rectangle coordinates of the element."
+   },
+   {
+    "t": "Why do we use requestAnimationFrame in games?",
+    "o": [
+     "To play background audio only",
+     "To update the game loop and render movements smoothly",
+     "To delete the web page completely"
+    ],
+    "a": 1,
+    "why": "requestAnimationFrame handles frame updates and drives a smooth game loop."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Game Loops and Collision Tools",
+   "goal": "Sort the following code commands based on their primary function in element creation or collision detection.",
+   "buckets": [
+    "Element Creation & Dynamics",
+    "Collision Calculation & Detection"
+   ],
+   "items": [
+    {
+     "t": "document.createElement('div')",
+     "b": 0
+    },
+    {
+     "t": "element.getBoundingClientRect()",
+     "b": 1
+    },
+    {
+     "t": "parent.appendChild(newDiv)",
+     "b": 0
+    },
+    {
+     "t": "rect1.left < rect2.right",
+     "b": 1
+    },
+    {
+     "t": "document.createElement('span')",
+     "b": 0
+    },
+    {
+     "t": "rect1.bottom > rect2.top",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You successfully organized game tools and collision detection."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Dynamic Element Creation",
+    "text": "In modern web pages, we don't need to write everything manually in HTML. Using JavaScript, we can generate entirely new elements, modify them, and add them to the screen while the program runs, much like a game developer spawning new shapes mid-challenge.",
+    "code": "<div id='app'></div>\n<script>\nconst box = document.createElement('div');\nbox.style.width = '50px';\nbox.style.height = '50px';\nbox.style.background = 'red';\ndocument.getElementById('app').appendChild(box);\n</script>",
+    "output": "A new red box is programmatically created and displayed on the screen."
+   },
+   {
+    "h": "Attaching New Elements with appendChild",
+    "text": "When we build a new element via createElement, it exists only in memory and does not appear on screen. To make it visible to the user, we must attach it to a real element on the page using appendChild, like putting a new toy inside the toy box.",
+    "code": "<div id='container'></div>\n<script>\nconst p = document.createElement('p');\np.textContent = 'I am a new element!';\ndocument.getElementById('container').appendChild(p);\n</script>",
+    "output": "A new text paragraph appears inside the page container accurately."
+   },
+   {
+    "h": "The Game Loop Concept",
+    "text": "Computer games rely on repeatedly updating the screen hundreds of times per second to produce motion. A game loop is a function that continuously calls itself to update object positions and redraw them, similar to flipping a flipbook animation quickly.",
+    "code": "<script>\nlet pos = 0;\nfunction gameLoop() {\n  pos += 1;\n  if(pos > 100) pos = 0;\n  requestAnimationFrame(gameLoop);\n}\nrequestAnimationFrame(gameLoop);\n</script>",
+    "output": "The game loop runs in the background and continuously updates the variable position."
+   },
+   {
+    "h": "Collision Detection via Bounding Rectangles",
+    "text": "How does a game know your character hit a monster? By calculating imaginary object boundaries using the getBoundingClientRect() method. This method gives us exact numerical dimensions and screen positions for any element.",
+    "code": "<div id='e1' style='width:30px;height:30px;background:blue;'></div>\n<script>\nconst rect = document.getElementById('e1').getBoundingClientRect();\nconsole.log(rect.top, rect.left);\n</script>",
+    "output": "Prints the coordinates and position values of the blue box to the console."
+   },
+   {
+    "h": "Box Overlap Algorithm for Collisions",
+    "text": "To determine if two objects have collided, we compare their four edges: right, left, top, and bottom. If box one's boundaries overlap with box two across all four directions, it indicates a direct and real collision.",
+    "code": "<script>\nfunction isColliding(r1, r2) {\n  return !(r1.right < r2.left || r1.left > r2.right || r1.bottom < r2.top || r1.top > r2.bottom);\n}\n</script>",
+    "output": "A ready-to-use function checking if two boxes overlap."
+   },
+   {
+    "h": "Real-World Browser Game Applications",
+    "text": "Combining element creation with game loops and collision detection allows us to build complete games like the famous dinosaur game, where obstacles spawn dynamically, move through the game loop, and collisions are checked every fraction of a second.",
+    "code": "<div id='game' style='position:relative;height:40px;background:#eee;'></div>\n<script>\nconst obstacle = document.createElement('div');\nobstacle.style.width = '10px';\nobstacle.style.height = '20px';\nobstacle.style.background = 'black';\ndocument.getElementById('game').appendChild(obstacle);\n</script>",
+    "output": "A black obstacle has been created inside the dynamic game arena."
+   }
+  ],
+  "reference": [
+   {
+    "name": "document.createElement()",
+    "desc": "Creates a new HTML element in memory."
+   },
+   {
+    "name": "node.appendChild()",
+    "desc": "Appends a new child element inside a specified container."
+   },
+   {
+    "name": "requestAnimationFrame()",
+    "desc": "Executes an update function on every new screen display frame."
+   },
+   {
+    "name": "getBoundingClientRect()",
+    "desc": "Returns the coordinates and dimensions of an element's bounding rectangle."
+   },
+   {
+    "name": "rect.left / rect.right",
+    "desc": "Represent the horizontal boundaries of an element on screen."
+   },
+   {
+    "name": "rect.top / rect.bottom",
+    "desc": "Represent the vertical boundaries of an element on screen."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a code command to create a new paragraph p element.",
+    "a": "document.createElement('p')"
+   },
+   {
+    "q": "What is the name of the function that returns an element's boundary measurements and screen coordinates?",
+    "a": "getBoundingClientRect()"
+   },
+   {
+    "q": "How do we add a new element created with createElement to an element with the id container?",
+    "a": "document.getElementById('container').appendChild(element)"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript data types and data structures",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures"
+  },
+  {
+   "title": "MDN: Advanced JavaScript objects",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects"
+  }
+ ],
+ "grounded": true
+}

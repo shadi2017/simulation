@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "الظلال بتدي لمواقع الويب عمق وسحر، بتخلي الأزرار والصناديق تبرز برة الشاشة كأنها حقيقية. زي ما بتحط ايدك قدام النور فيعمل ظل على الحائط، نقدر نعمل كده في النصوص والصناديق بلغة CSS بسهولة شديدة.",
+   "عشان نعمل ظل للنص، بنستخدم خاصية text-shadow. الخاصية دي بتاخد قيمتين على الأقل بيحددوا الإزاحة الأفقية والعمودية للظل، زي ما بنحرك كشاف النور يمين وشمال أو فوق وتحت.",
+   "الإزاحة الأفقية بتحدد مكان الظل يمين أو شمال النص الأصلي. لو كتبنا قيمة موجبة زي 5px بيرוח الظل لليمين، ولو قيمة سالبة زي -5px بيروح للشمال، والقيمة صفر بتخليه في مكانه تماماً.",
+   "الإزاحة العمودية بتحدد الظل فوق أو تحت النص. القيم الموجبة بتنزل الظل لتحت، والقيم السالبة بتطلعه لفوق، وممكن نتحكم في مدى تغويش الظل أو انتشاره عن طريق إضافة قيمة تالتة للتشويش (blur).",
+   "مش بس النصوص، بنقدر نعمل ظل للصناديق والعناصر باستخدام خاصية box-shadow. الخاصية دي بتضيف عمق رائع للبطاقات والصور والأزرار عشان تخلي تصميم موقعك مذهل وبارز.",
+   "بنستعمل الظلال في الحياة اليومية لما بنرسم بالقلم الرصاص ونحط ظل تحت الرسمة عشان تبدو مجسمة وثلاثية الأبعاد. في الويب بنستخدمها عشان نلفت انتباه المستخدم للأزرار المهمة."
+  ],
+  "example": "عملنا عنوان رئيسي وعايزينه ينور بظل أزرق جميل. كتبنا الكود ده: h1 { text-shadow: 4px 4px 8px blue; } القيمة الأولى 4px بتحرك الظل يمين، والتانية 4px بتنزله لتحت، والتالتة 8px بتعمل تغويش ناعم وممتاز، ولون الظل أزرق واضح.",
+  "mistake": "الخطأ الشائع هو نسيان تحديد لون الظل أو كتابة القيم بترتيب خاطئ. الحل إننا نتذكر دائماً ترتيب القيم: الإزاحة الأفقية ثم العمودية ثم التويش وأخيراً اللون، مثل: text-shadow: 2px 2px 5px red.",
+  "recap": "الظلال (Text و Box Shadows) بتدي جمال وعمق لموقعك وتساعد العناصر المهمة على الظهور بوضوح. بنتحكم في حركتها بالإزاحة والتشويش والألوان.",
+  "q": [
+   {
+    "t": "ما هي الخاصة المستخدمة لإضافة ظل لنص في CSS؟",
+    "o": [
+     "box-shadow",
+     "text-shadow",
+     "font-shadow"
+    ],
+    "a": 1,
+    "why": "خاصية text-shadow مخصصة حصرياً لإضافة الظلال للنصوص."
+   },
+   {
+    "t": "ماذا تفعل القيمة الثالثة (Blur) في الـ text-shadow؟",
+    "o": [
+     "تحدد مدى تغويش وانتشار الظل",
+     "تحرك الظل للأعلى والأسفل",
+     "تغير لون الخط الأساسي"
+    ],
+    "a": 0,
+    "why": "القيمة الثالثة هي نصف قطر التشويش أو التغويش للظل."
+   },
+   {
+    "t": "كيف نجعل الظل يتحرك لليمين في خاصية الـ shadows؟",
+    "o": [
+     "بقيمة إزاحة أفقية سالبة",
+     "بقيمة إزاحة أفقية موجبة",
+     "بدون أي قيم طولية"
+    ],
+    "a": 1,
+    "why": "القيم الأفقية الموجبة تحرك الظل جهة اليمين."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة الظلال والخصائص",
+   "goal": "صل كل خاصية CSS أو قيمة بوظيفتها الصحيحة",
+   "pairs": [
+    [
+     "text-shadow",
+     "إضافة ظل لنص معين"
+    ],
+    [
+     "box-shadow",
+     "إضافة ظل لصندوق أو بطاقة"
+    ],
+    [
+     "5px (الأولى)",
+     "الإزاحة الأفقية للظل"
+    ],
+    [
+     "10px (الثالثة)",
+     "تغويش أو blur الظل"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت فهم خصائص الظلال وأصبحت تصاميمك بارزة ومجسمة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الظلال في CSS",
+    "text": "الظلال بتدي الحياة لعناصر صفحة الويب. زي ما وقوفك تحت الشمس بيعمل ظل على الأرض، عناصر الويب كمان تقدر تعمل ظلال تخليها تطفو فوق الشاشة كأنها حقيقية وملموسة.",
+    "code": "<!DOCTYPE html><html><head><style>h1 { text-shadow: 5px 5px 3px gray; font-family: sans-serif; }</style></head><body><h1>عنوان بظل رائع</h1></body></html>",
+    "output": "يظهر عنوان رئيسي تحته ظل رمادي خفيف."
+   },
+   {
+    "h": "الإزاحة الأفقية (Horizontal Offset)",
+    "text": "الإزاحة الأفقية هي القيمة الأولى في خاصية الظل. بتتحكم في حركة الظل يمين أو شمال. القيم الموجبة بتزق الظل لليمين، والقيم السالبة بتوديه للشمال كأن مصدر النور بيتحرك.",
+    "code": "<!DOCTYPE html><html><head><style>p { text-shadow: 15px 0 2px red; font-size: 24px; font-weight: bold; }</style></head><body><p>ظل يمين قوي</p></body></html>",
+    "output": "يظهر النص ومعه ظل أحمر متحرك لليمين بمسافة كبيرة."
+   },
+   {
+    "h": "الإزاحة العمودية (Vertical Offset)",
+    "text": "الإزاحة العمودية هي القيمة التانية في كود الظل. بتحدد إذا كان الظل هينزل تحت النص أو هيطلع فوقه. القيم الموجبة بتنزل الظل لتحت كأن النور جاي من فوق تماماً.",
+    "code": "<!DOCTYPE html><html><head><style>p { text-shadow: 0 15px 2px blue; font-size: 24px; font-weight: bold; }</style></head><body><p>ظل للأسفل</p></body></html>",
+    "output": "يظهر النص ومعه ظل أزرق نازل للأسفل."
+   },
+   {
+    "h": "نصف قطر التشويش (Blur Radius)",
+    "text": "التشويش هو القيمة التالتة والأختيارية في الظل. بدل ما يكون الظل حاد ومحدد زي الرسمة الهندسية، التشويش بيخليه ناعم وسايح زي الضباب أو الغيوم الرقيقة.",
+    "code": "<!DOCTYPE html><html><head><style>p { text-shadow: 5px 5px 12px purple; font-size: 24px; font-weight: bold; }</style></head><body><p>ظل ناعم وغامض</p></body></html>",
+    "output": "يظهر النص ومعه ظل بنفسجي ناعم وواسع الانتشار."
+   },
+   {
+    "h": "تلوين الظلال وإضافتها",
+    "text": "تقدر تختار أي لون لظل النص أو الصندوق باستخدام أسماء الألوان أو كود الـ HEX. الظل مش لازم يكون أسود دايماً، ممكن نخليه أزرق، أحمر، أو حتى برتقالي ناصع.",
+    "code": "<!DOCTYPE html><html><head><style>h2 { text-shadow: 3px 3px 6px orange; font-family: sans-serif; }</style></head><body><h2>نص بظل برتقالي</h2></body></html>",
+    "output": "يظهر العنوان مع ظل برتقالي دافئ وجميل."
+   },
+   {
+    "h": "ظلال الصناديق والبطاقات (Box Shadow)",
+    "text": "مش النصوص لوحدها اللي بتحب الظلال، البطاقات والصناديق كمان بيحبوا box-shadow! الخاصية دي بتخلي الصناديق كأنها أوراق لعب بارزة فوق الخلفية.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 80px; background: #4CAF50; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); }</style></head><body><div class=\"box\"></div></body></html>",
+    "output": "يظهر صندوق أخضر وله ظل ناعم يرفعه عن الصفحة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "text-shadow",
+    "desc": "تُستخدم لإضافة ظل واحد أو عدة ظلال للنصوص."
+   },
+   {
+    "name": "box-shadow",
+    "desc": "تُستخدم لإضافة ظل لعناصر الصناديق والبطاقات والمربعات."
+   },
+   {
+    "name": "Horizontal Offset",
+    "desc": "القيمة الأولى لتحريك الظل أفقياً يمين أو يسار."
+   },
+   {
+    "name": "Vertical Offset",
+    "desc": "القيمة الثانية لتحريك الظل عمودياً لأعلى أو أسفل."
+   },
+   {
+    "name": "Blur Radius",
+    "desc": "القيمة الثالثة لتحديد مدى نعومة وتغويش الظل."
+   },
+   {
+    "name": "none",
+    "desc": "قيمة تُستخدم لإلغاء وإزالة أي ظل موجود عن العنصر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لإضافة ظل أزرق لنص عنوان رئيسي h1 يتحرك 2 بكسل يمين و 2 بكسل أسفل بدون تشويش.",
+    "a": "h1 { text-shadow: 2px 2px blue; }"
+   },
+   {
+    "q": "ما هي الخاصية التي تستخدمها لإضافة ظل لصندوق أو زر في صفحة الويب؟",
+    "a": "box-shadow"
+   },
+   {
+    "q": "أي قيمة في text-shadow تتحكم في مدى نعومة وانتشار الظل؟",
+    "a": "القيمة الثالثة (Blur radius)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Shadows give websites depth and magic, making buttons and cards pop off the screen as if they were real. Just like holding your hand in front of a light casts a shadow on the wall, CSS lets us easily do this for text and boxes.",
+   "To add a shadow to text, we use the text-shadow property. This property accepts at least two values that determine the horizontal and vertical offset of the shadow, just like moving a flashlight left, right, up, or down.",
+   "The horizontal offset determines the shadow's position left or right of the original text. A positive value like 5px moves the shadow to the right, a negative value like -5px moves it to the left, and zero keeps it directly aligned.",
+   "The vertical offset places the shadow above or below the text. Positive values push the shadow downwards, while negative values pull it upwards. We can also control shadow blur or spread by adding a third blur value.",
+   "Not just text—we can also shadow boxes and elements using the box-shadow property. This adds wonderful depth to cards, images, and buttons to make your website design stunning and prominent.",
+   "We encounter shadows in daily life when drawing with a pencil and adding shade underneath to make the drawing look 3D. On the web, we use them to draw user attention to important buttons."
+  ],
+  "example": "We created a main heading and wanted it to glow with a nice blue shadow. We wrote this code: h1 { text-shadow: 4px 4px 8px blue; } The first value 4px moves the shadow right, the second 4px moves it down, the third 8px creates a smooth, excellent blur, and the color is a clear blue.",
+  "mistake": "A common mistake is forgetting to specify the shadow color or writing the values in the wrong order. The fix is to always remember the order: horizontal offset, vertical offset, blur radius, and finally color, such as: text-shadow: 2px 2px 5px red.",
+  "recap": "Shadows (Text and Box Shadows) give your website beauty and depth, helping important elements stand out clearly. We control their movement using offsets, blur, and colors.",
+  "q": [
+   {
+    "t": "What property is used to add a shadow to text in CSS?",
+    "o": [
+     "box-shadow",
+     "text-shadow",
+     "font-shadow"
+    ],
+    "a": 1,
+    "why": "The text-shadow property is dedicated exclusively to adding shadows to text."
+   },
+   {
+    "t": "What does the third value (Blur) do in text-shadow?",
+    "o": [
+     "Determines the blur and dispersion radius of the shadow",
+     "Moves the shadow up and down",
+     "Changes the base font color"
+    ],
+    "a": 0,
+    "why": "The third length value represents the blur radius of the shadow."
+   },
+   {
+    "t": "How do you make the shadow move to the right in shadow properties?",
+    "o": [
+     "By using a negative horizontal offset value",
+     "By using a positive horizontal offset value",
+     "Without using any length values"
+    ],
+    "a": 1,
+    "why": "Positive horizontal values move the shadow towards the right."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Shadows & Properties Match Game",
+   "goal": "Match each CSS property or value to its correct function",
+   "pairs": [
+    [
+     "text-shadow",
+     "Adds a shadow to specific text"
+    ],
+    [
+     "box-shadow",
+     "Adds a shadow to a box or card"
+    ],
+    [
+     "5px (First)",
+     "Horizontal offset of the shadow"
+    ],
+    [
+     "10px (Third)",
+     "Blur radius of the shadow"
+    ]
+   ],
+   "success": "Awesome! You have mastered shadow properties and your designs now look popping and 3D!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to CSS Shadows",
+    "text": "Shadows bring web page elements to life. Just like standing under the sun casts a shadow on the ground, web elements can also cast shadows that make them float above the screen as if tangible.",
+    "code": "<!DOCTYPE html><html><head><style>h1 { text-shadow: 5px 5px 3px gray; font-family: sans-serif; }</style></head><body><h1>Heading with Nice Shadow</h1></body></html>",
+    "output": "Displays a main heading with a soft gray shadow underneath."
+   },
+   {
+    "h": "Horizontal Offset",
+    "text": "The horizontal offset is the first value in the shadow property. It controls the shadow's movement left or right. Positive values push the shadow right, while negative values push it left, simulating a moving light source.",
+    "code": "<!DOCTYPE html><html><head><style>p { text-shadow: 15px 0 2px red; font-size: 24px; font-weight: bold; }</style></head><body><p>Strong Right Shadow</p></body></html>",
+    "output": "Displays text with a red shadow shifted far to the right."
+   },
+   {
+    "h": "Vertical Offset",
+    "text": "The vertical offset is the second value in the shadow code. It decides whether the shadow drops below the text or rises above it. Positive values drop the shadow downwards as if light shines from directly above.",
+    "code": "<!DOCTYPE html><html><head><style>p { text-shadow: 0 15px 2px blue; font-size: 24px; font-weight: bold; }</style></head><body><p>Downward Shadow</p></body></html>",
+    "output": "Displays text with a blue shadow dropped downwards."
+   },
+   {
+    "h": "Blur Radius",
+    "text": "Blur is the third and optional value in a shadow. Instead of a sharp, rigid geometric outline, blur makes the shadow smooth and soft like mist or thin clouds.",
+    "code": "<!DOCTYPE html><html><head><style>p { text-shadow: 5px 5px 12px purple; font-size: 24px; font-weight: bold; }</style></head><body><p>Soft Mystical Shadow</p></body></html>",
+    "output": "Displays text with a soft, widely spread purple shadow."
+   },
+   {
+    "h": "Coloring and Adding Shadows",
+    "text": "You can pick any color for text or box shadows using color names or HEX codes. Shadows don't always have to be black; we can make them blue, red, or even bright orange.",
+    "code": "<!DOCTYPE html><html><head><style>h2 { text-shadow: 3px 3px 6px orange; font-family: sans-serif; }</style></head><body><h2>Orange Shadow Text</h2></body></html>",
+    "output": "Displays a heading with a warm, beautiful orange shadow."
+   },
+   {
+    "h": "Box and Card Shadows (Box Shadow)",
+    "text": "Text isn't the only thing that loves shadows—cards and boxes love box-shadow too! This property makes boxes look like floating playing cards raised above the background.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 80px; background: #4CAF50; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); }</style></head><body><div class=\"box\"></div></body></html>",
+    "output": "Displays a green box with a soft shadow lifting it off the page."
+   }
+  ],
+  "reference": [
+   {
+    "name": "text-shadow",
+    "desc": "Used to add one or multiple shadows to text."
+   },
+   {
+    "name": "box-shadow",
+    "desc": "Used to add shadows to box elements, cards, and containers."
+   },
+   {
+    "name": "Horizontal Offset",
+    "desc": "The first value to move the shadow horizontally right or left."
+   },
+   {
+    "name": "Vertical Offset",
+    "desc": "The second value to move the shadow vertically up or down."
+   },
+   {
+    "name": "Blur Radius",
+    "desc": "The third value to specify the softness and blur of the shadow."
+   },
+   {
+    "name": "none",
+    "desc": "A value used to cancel and remove any existing shadow from an element."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to add a blue shadow to an h1 heading that shifts 2 pixels right and 2 pixels down with no blur.",
+    "a": "h1 { text-shadow: 2px 2px blue; }"
+   },
+   {
+    "q": "What property do you use to add a shadow to a box or button on a web page?",
+    "a": "box-shadow"
+   },
+   {
+    "q": "Which value in text-shadow controls the smoothness and dispersion of the shadow?",
+    "a": "The third value (Blur radius)"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Introduction to text shadows",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Text_decoration/Text_shadows"
+  },
+  {
+   "title": "MDN: text-box CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-box"
+  }
+ ],
+ "grounded": true
+}

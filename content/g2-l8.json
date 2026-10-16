@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تعالوا نعرف إزاي الأعداء في الألعاب بيتحركوا بذكاء! الفكرة هنا إن العدو بيراقب مكان اللاعب ويقرر يمشي وراه خطوة بخطوة.",
+   "عشان نخلي العدو يطارد اللاعب، بنقارن مكان إكس (x) وإكس بتاع اللاعب. لو مكان اللاعب أكبر، العدو يمشي يمين، والعكس صحيح!",
+   "إزاي بتشتغل؟ البلوكات بتتحقق من الإحداثيات كل شوية بجملة 'إذا/إذن' (If) عشان العدو يفضل لازق في اللاعب طول الماتش.",
+   "مثال تاني: ممكن نخلي العدو يغير موضعه في اتجاه الواي (y) برضه بنفس الطريقة عشان يطارده فوق وتحت، مش بس يمين وشمال.",
+   "قاعدة ذهبية: عشان الذكاء الاصطناعي يكون لطيف، خلي سرعة العدو أقل شوية من سرعة اللاعب عشان اللاعب يعرف يهرب ويفوز!",
+   "الاستخدام في الحقيقة: الألعاب الحقيقية زي ماريو أو الألعاب الثلاثية الأبعاد بتستخدم نفس الفكرة البسيطة دي عشان الوحوش تجري وراك."
+  ],
+  "example": "تخيل إن عندنا كائن شبح في سكراتش. هنحط بلوك 'كرر باستمرار' جواه بلوك 'إذا كان موضع سين (x) للاعب > موضع سين (x) للعدو، إذن غير موضع سين بمقدار 2'. ده بيخلي الشبح يتحرك ناحية اليمين ورا اللاعب مباشرة وبذكاء شديد!",
+  "mistake": "الخطأ الشائع هو إننا ننسى بلوك 'كرر باستمرار'، فبنلاقي العدو يتحرك خطوة واحدة بس ويقف مكانه! الحل هو دايماً نحط الكود جوه تكرار مستمر عشان يفضل يلاحقك طول الوقت.",
+  "recap": "تعلمنا إزاي نخلي العدو يحسب مكان اللاعب عشان يطارده يمين وشمال. وكمان عرفنا قاعدة السرعة اللي بتخلي اللعبة ممتعة.",
+  "q": [
+   {
+    "t": "ليه بنخلي سرعة العدو أقل من سرعة اللاعب؟",
+    "o": [
+     "عشان اللعبة تعلّق",
+     "عشان اللاعب يعرف يهرب ويكسب",
+     "عشان العدو يطير"
+    ],
+    "a": 1,
+    "why": "عشان ندي فرصة للاعب يهرب وتبقى اللعبة ممتعة وصعبة بقدر مناسب."
+   },
+   {
+    "t": "إيه البلوك المهم اللي بيخلي العدو يراقب اللاعب طول الوقت؟",
+    "o": [
+     "انتظر 1 ثانية",
+     "كرر باستمرار",
+     "قل سلام لمدة ثانيتين"
+    ],
+    "a": 1,
+    "why": "عشان يتحقق من مكان اللاعب بلا توقف."
+   },
+   {
+    "t": "العدو بيعرف مكان اللاعب عن طريق إيه؟",
+    "o": [
+     "لون الكائن",
+     "موضع إكس وإكس لللاعب",
+     "صوت العدو"
+    ],
+    "a": 1,
+    "why": "بيقارن الإحداثيات عشان يعرف يروح فين."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب كود المطاردة في سكراتش",
+   "goal": "رتب خطوات برمجة العدو عشان يطارد اللاعب صح",
+   "items": [
+    "ابدأ بحدث عند النقر على العلم الأخضر",
+    "اسحب بلوك كرر باستمرار لتشغيل الذكاء بلا توقف",
+    "ضع بلوك إذا/إذن للتحقق من إحداثيات اللاعب والعدو",
+    "أضف بلوك تغيير موضع سين بمقدار موجب أو سالب",
+    "اختبر اللعبة ولاحظ الشبح وهو يجري خلفك"
+   ],
+   "success": "رائع! الشبح أصبح ذكياً ويطاردك في كل مكان باللعبة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن ذكاء الأعداء",
+    "text": "الأعداء في الألعاب مش مجرد صور ثابتة، دي ليها عقل برمجي بيخليه يفكر. زي الكلب اللي بيجري ورا الكورة لما بترميها، العدو في سكراتش بيراقب مكانك عشان يجي وراك في كل مكان تتحرك فيه.",
+    "code": "عند النقر على العلم الأخضر -> ركّز على مكان اللاعب",
+    "output": "العدو يبدأ في مراقبة مكانك."
+   },
+   {
+    "h": "إحداثيات إكس وواي (X and Y)",
+    "text": "عشان العدو يفهم إنت فين، لازم يعرف إحداثياتك. إكس (X) بيحدد مكانك يمين وشمال، واي (Y) بيحدد مكانك فوق وتحت. زي خريطة الكنز اللي فيها أرقام لكل مكان.",
+    "code": "موضع سين (x position) وموضع صاد (y position)",
+    "output": "معرفة مكان اللاعب بدقة على الشاشة."
+   },
+   {
+    "h": "حساب مسار المطاردة (Chase Dynamics)",
+    "text": "مطاردة اللاعب معناها إن العدو بيسأل نفسه: هل أنا يمين اللاعب ولا شماله؟ لو أنا شماله أتحرك يمين، والعكس صحيح. دي الطريقة اللي بيتحرك بيها الشبح وراك.",
+    "code": "إذا موضع سين للاعب > موضع سين للعدو -> تحرك يمين",
+    "output": "العدو يقترب من اللاعب أفقياً."
+   },
+   {
+    "h": "تتبع الحركة الرأسية (Up and Down)",
+    "text": "مش بس يمين وشمال، العدو يقدر يطاردك فوق وتحت كمان! بنقارن موضع صاد (Y) للعدو بموضع صاد للالاعب، عشان لو نطيت لفوق العدو يحاول يطلع وراك.",
+    "code": "إذا موضع صاد للالاعب > موضع صاد للعدو -> تحرك للأعلى",
+    "output": "العدو يتبعك رأسياً أيضاً."
+   },
+   {
+    "h": "سلوك الدوريات (Patrol Behavior)",
+    "text": "ساعات العد مش بيكتفي بالمطاردة، ده بيعمل دورية في المكان زي العسكري! بيمشي من النقطة أ للنقطة ب رايح جاي، ولما تقرب منه يبدأ يطاردك.",
+    "code": "كرر 50 مرة: تحرك 3 خطوة -> ارتد عند الحافة",
+    "output": "العدو يتحرك ذهاباً وإياباً بانتظام."
+   },
+   {
+    "h": "ضبط السرعة والتوازن",
+    "text": "تخيل لو العدو أسرع منك بكتير، اللعبة هتبقى مستحيلة! القاعدة الذكية هي إن سرعة العدو تكون أبطأ شوية من سرعة اللاعب عشان ندي فرصة للفوز والمرح.",
+    "code": "اجعل سرعة العدو = 2 وسرعة اللاعب = 5",
+    "output": "تجربة لعب عادلة وممتعة."
+   },
+   {
+    "h": "التنقل بين الدوريات والمطاردة",
+    "text": "إزاي العدو بيعرف إمتى يبطل دورية ويبدأ يطاردك؟ بنستخدم بلوك الاستشعار (ملمس لـ أو المسافة أقل من). لو قربت منه، بينتقل من وضع الدورية لوضع المطاردة الخطيرة!",
+    "code": "إذا المسافة إلى (اللاعب) < 100 -> اتبع اللاعب",
+    "output": "العدو يغير سلوكه عندما تقترب منه."
+   },
+   {
+    "h": "الخاتمة واختبار اللعبة",
+    "text": "بكده أنت صممت ذكاء اصطناعي حقيقي للعدو في سكراتش! جرب تغير الأرقام والسرعات وشوف إزاي سلوك العدو بيتغير وبيبقى أذكى وأكثر تحدياً.",
+    "code": "شغل اللعبة واختبر المطاردة والدوريات",
+    "output": "لعبة تفاعلية مذهلة من تصميمك."
+   }
+  ],
+  "reference": [
+   {
+    "name": "موضع سين (X Position)",
+    "desc": "الموقع الأفقي للكائن على الشاشة."
+   },
+   {
+    "name": "موضع صاد (Y Position)",
+    "desc": "الموقع الرأسي للكائن على الشاشة."
+   },
+   {
+    "name": "المطاردة (Chase)",
+    "desc": "حركة العدو نحو موقع اللاعب."
+   },
+   {
+    "name": "الدورية (Patrol)",
+    "desc": "حركة العدو ذهاباً وإياباً بين نقطتين محددتين."
+   },
+   {
+    "name": "المسافة إلى (Distance to)",
+    "desc": "تقيس البعد بين كائنين في المنصة."
+   },
+   {
+    "name": "إذا/إذن (If/Then)",
+    "desc": "جملة شرطية لاتخاذ القرار في البرمجة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب فكرة سريعة لجعل العدو يتحرك يميناً إذا كان اللاعب على اليمين.",
+    "a": "إذا (موضع سين للالاعب > موضع سين للعدو) إذن (غير موضع سين بمقدار 2)"
+   },
+   {
+    "q": "ما هو البلوك الذي يمنع العدو من التوقف بعد خطوة واحدة؟",
+    "a": "بلوك كرر باستمرار (Forever)"
+   },
+   {
+    "q": "كيف نجعل اللعبة عادلة بين اللاعب والعدو؟",
+    "a": "اجعل سرعة العدو أقل من سرعة اللاعب."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Let's learn how enemies in games move smartly! The idea is that the enemy watches the player's position and decides to follow step by step.",
+   "To make the enemy chase the player, we compare the x position of both. If the player's x is bigger, the enemy moves right, and vice versa!",
+   "How does it work? The blocks check coordinates constantly using an 'If' statement so the enemy stays glued to the player throughout the game.",
+   "Another example: we can also make the enemy change its y position the same way to chase up and down, not just left and right.",
+   "Golden rule: To keep AI fair, make the enemy's speed slightly slower than the player's so the player can escape and win!",
+   "Real-life use: Real games like Mario or 3D games use this simple idea to make monsters run after you."
+  ],
+  "example": "Imagine we have a ghost sprite in Scratch. We put a 'forever' block containing 'if player x > enemy x, change x by 2'. This makes the ghost move towards the right right behind the player with high intelligence!",
+  "mistake": "A common mistake is forgetting the 'forever' block, making the enemy move just one step and stop! The fix is always putting the code inside a loop to keep tracking you.",
+  "recap": "We learned how to make the enemy calculate the player's position to chase left and right, and the speed rule for fun gameplay.",
+  "q": [
+   {
+    "t": "Why do we make the enemy's speed slower than the player's?",
+    "o": [
+     "To make the game lag",
+     "So the player can escape and win",
+     "To make the enemy fly"
+    ],
+    "a": 1,
+    "why": "To give the player a chance to escape and keep the game fun and challenging."
+   },
+   {
+    "t": "Which important block keeps the enemy tracking the player all the time?",
+    "o": [
+     "Wait 1 second",
+     "Forever",
+     "Say hello for 2 seconds"
+    ],
+    "a": 1,
+    "why": "To check the player's position without stopping."
+   },
+   {
+    "t": "How does the enemy know where the player is?",
+    "o": [
+     "Sprite color",
+     "Player's X and Y positions",
+     "Enemy sound"
+    ],
+    "a": 1,
+    "why": "It compares coordinates to know where to go."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Chase Code in Scratch",
+   "goal": "Order the enemy programming steps to chase the player correctly",
+   "items": [
+    "Start with the green flag clicked event",
+    "Drag a forever block to run the AI continuously",
+    "Place an if-then block to check player and enemy coordinates",
+    "Add a change x by positive or negative amount block",
+    "Test the game and watch the ghost run behind you"
+   ],
+   "success": "Awesome! The ghost is now smart and chases you everywhere in the game!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Enemy AI",
+    "text": "Enemies in games are not just static pictures; they have a programmed brain that makes them think. Like a dog running after a ball when you throw it, an enemy in Scratch watches your position to follow you wherever you move.",
+    "code": "When Green Flag Clicked -> Focus on player location",
+    "output": "The enemy starts tracking your position."
+   },
+   {
+    "h": "X and Y Coordinates",
+    "text": "For the enemy to understand where you are, it needs to know your coordinates. X determines your left-and-right position, and Y determines your up-and-down position. Like a treasure map with numbers for every spot.",
+    "code": "x position and y position blocks",
+    "output": "Precise knowledge of player location on screen."
+   },
+   {
+    "h": "Chase Dynamics",
+    "text": "Chasing the player means the enemy asks itself: Am I to the right or left of the player? If I am to their left, I move right, and vice versa. This is how the ghost moves behind you.",
+    "code": "If player x > enemy x -> move right",
+    "output": "The enemy approaches the player horizontally."
+   },
+   {
+    "h": "Vertical Tracking (Up and Down)",
+    "text": "Not just left and right, the enemy can chase you up and down too! We compare the enemy's Y position to the player's Y position, so if you jump up, the enemy tries to follow.",
+    "code": "If player y > enemy y -> move up",
+    "output": "The enemy follows you vertically as well."
+   },
+   {
+    "h": "Patrol Behavior",
+    "text": "Sometimes the enemy doesn't just chase; it patrols the area like a guard! It walks back and forth between point A and point B, and when you get close, it starts chasing you.",
+    "code": "Repeat 50 times: move 3 steps -> if on edge, bounce",
+    "output": "The enemy moves back and forth regularly."
+   },
+   {
+    "h": "Adjusting Speed and Balance",
+    "text": "Imagine if the enemy was much faster than you; the game would be impossible! The smart rule is that enemy speed should be slightly slower than player speed to give a chance for winning and fun.",
+    "code": "Set enemy speed = 2 and player speed = 5",
+    "output": "A fair and fun gameplay experience."
+   },
+   {
+    "h": "Switching Between Patrol and Chase",
+    "text": "How does the enemy know when to stop patrolling and start chasing? We use sensing blocks (touching or distance <). If you get close, it switches from patrol to dangerous chase mode!",
+    "code": "If distance to [player] < 100 -> follow player",
+    "output": "The enemy changes behavior when you get close."
+   },
+   {
+    "h": "Conclusion and Game Testing",
+    "text": "Now you have designed real enemy AI in Scratch! Try changing numbers and speeds to see how enemy behavior changes to be smarter and more challenging.",
+    "code": "Run the game and test chase and patrol",
+    "output": "An amazing interactive game designed by you."
+   }
+  ],
+  "reference": [
+   {
+    "name": "X Position",
+    "desc": "The horizontal location of a sprite on the stage."
+   },
+   {
+    "name": "Y Position",
+    "desc": "The vertical location of a sprite on the stage."
+   },
+   {
+    "name": "Chase",
+    "desc": "Enemy movement towards the player's location."
+   },
+   {
+    "name": "Patrol",
+    "desc": "Enemy movement back and forth between two chosen points."
+   },
+   {
+    "name": "Distance to",
+    "desc": "Measures the distance between two sprites on the stage."
+   },
+   {
+    "name": "If/Then",
+    "desc": "A conditional statement for decision making in programming."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a quick idea to make the enemy move right if the player is to the right.",
+    "a": "If (player x > enemy x) then (change x by 2)"
+   },
+   {
+    "q": "What block prevents the enemy from stopping after one step?",
+    "a": "Forever block"
+   },
+   {
+    "q": "How do we make the game fair between the player and the enemy?",
+    "a": "Make the enemy's speed slower than the player's speed."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

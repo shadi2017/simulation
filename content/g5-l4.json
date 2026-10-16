@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "في البرمجة، أحياناً نحتاج لفحص أكثر من شرط معاً لنقرر ماذا سنفعل في اللعبة أو التطبيق.",
+   "عامل الربط AND (و) يكتب هكذا (&&) ويشترط أن تكون كل الشروط صحيحة تماماً ليكون الناتج صحيحاً.",
+   "تخيل أنك تريد دخول لعبة مغامرات: يجب أن يكون عمرك أكبر من 10 سنوات (الشرط الأول) ولديك تذكرة (الشرط الثاني). إذا اختل واحد، ترفض البوابة دخولك.",
+   "عامل الربط OR (أو) يكتب هكذا (||) ويكفي أن يتحقق شرط واحد فقط ليكون الناتج صحيحاً ومسموحاً لك بالعبور.",
+   "قاعدة ذهبية للمبرمجين: استخدم (&&) عندما تريد تشدد الشروط وصارمتها، واستخدم (||) عندما تكون مرناً ويكفيك تحقق خيار واحد.",
+   "في الحياة اليومية، كأن تقول: سأذهب للحديقة إذا كان الطقس مشمساً (&&) أو لدي دراجة جاهزة. في الألعاب، نستخدمها للتحقق من الفوز أو الخسارة."
+  ],
+  "example": "تخيل أننا نكتب كوداً لمنح هدية في لعبة: الشرط الأول هو أن تكون النقاط أكبر من 50، والشرط الثاني أن يكون لديك درع حماية. نكتب: if (points > 50 && hasShield) { console.log('مبروك فزت بالترقية!'); } إذا تحقق الاثنان معاً، تظهر رسالة الفوز.",
+  "mistake": "الخطأ الشائع هو خلط الرمزين، مثل كتابة عامل واحد (& أو |) بدلاً من المزدوج (&& أو ||)، أو نسيان أن AND تطالب بكل الشروط بينما OR تقنع بواحد فقط. التقييم السليم يعتمد على استخدام الرمزين الصحيحين.",
+  "recap": "العوامل المنطقية مثل (&&) و (||) تساعدنا في ربط عدة شروط معاً لبناء قرارات ذكية ومعقدة في البرمجة. نستخدم (&&) لجميع الشروط، و(||) لأي شرط.",
+  "q": [
+   {
+    "t": "ما هو رمز معامل الربط المنطقي AND في لغة جافاسكريبت؟",
+    "o": [
+     "||",
+     "&&",
+     "++"
+    ],
+    "a": 1,
+    "why": "نستخدم علامة العطف المزدوجة (&&) لتمثيل شرط التقاطع أو AND."
+   },
+   {
+    "t": "متى يكون تعبير يحتوي على OR (||) صحيحاً؟",
+    "o": [
+     "إذا تحقق شرط واحد على الأقل",
+     "إذا فشلت كل الشروط تماماً",
+     "إذا كانت كل الشروط صحيحة حصراً"
+    ],
+    "a": 0,
+    "why": "عامل OR يكفيه تحقق شرط واحد فقط ليعطي النتيجة true."
+   },
+   {
+    "t": "إذا كان لدينا: (true && false)، فما هي النتيجة؟",
+    "o": [
+     "true",
+     "false",
+     "undefined"
+    ],
+    "a": 1,
+    "why": "معامل AND يتطلب صحة الطرفين معاً، وبما أن أحدهما false فالنتيجة النهائية false."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "صناديق الشروط المنطقية",
+   "goal": "صنف كل جملة برمجية بناءً على ما إذا كانت تستخدم عامل AND أو عامل OR.",
+   "buckets": [
+    "معامل AND (&&)",
+    "معامل OR (||)"
+   ],
+   "items": [
+    {
+     "t": "age > 10 && hasTicket",
+     "b": 0
+    },
+    {
+     "t": "score > 100 && lives > 0",
+     "b": 0
+    },
+    {
+     "t": "isVIP || hasCoupon",
+     "b": 1
+    },
+    {
+     "t": "isWeekend || isHoliday",
+     "b": 1
+    },
+    {
+     "t": "level >= 5 && hasKey",
+     "b": 0
+    },
+    {
+     "t": "isRaining || hasUmbrella",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت الشروط المنطقية بشكل صحيح تماماً وفتحت أبواب اللعبة للجميع!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في المنطق البرمجي",
+    "text": "البرمجة ليست مجرد أرقام، بل هي تفكير وتخطيط واتخاذ قرارات ذكية. عندما نلعب لعبة فيديو، يقوم الكمبيوتر بفحص الكثير من الأمور في الثانية الواحدة: هل اصطدم اللاعب بالجدار؟ هل جمع كل النجوم؟ هذه الفحوصات تعتمد على الشروط المنطقية التي نقوم بكتابتها بلغة جافاسكريبت.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#f0f8ff;padding:15px;'>\n  <h3>فحص شرط بسيط</h3>\n  <p id='res'></p>\n  <script>\n    let score = 80;\n    document.getElementById('res').innerText = 'هل النقط أكبر من 50؟ ' + (score > 50);\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة نتيجة فحص شرط بسيط وتوضح ما إذا كان صحيحاً أم خاطئاً."
+   },
+   {
+    "h": "فهم الشرط الأول مع AND",
+    "text": "عامل الربط AND (ويُكتب هكذا: &&) يشبه البوابة الأمنية المشددة. لا تدخلك إلا إذا أدخلت الرقم السري الصحيح وحملت البطاقة الصحيحة أيضاً. باختصار، يجب أن تكون جميع الشروط الموصولة بـ && صحيحة بنسبة مئة بالمئة ليتم تنفيذ الكود.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#fff0f5;padding:15px;'>\n  <h3>تجربة AND</h3>\n  <p id='res'></p>\n  <script>\n    let age = 12;\n    let hasPass = true;\n    let canEnter = (age >= 10 && hasPass);\n    document.getElementById('res').innerText = 'هل يستطيع الدخول؟ ' + canEnter;\n  </script>\n</body>\n</html>",
+    "output": "تظهر الصفحة ما إذا كان الشخص يستطيع الدخول بناءً على توفر الشرطين معا."
+   },
+   {
+    "h": "فهم الشرط المرن مع OR",
+    "text": "عامل الربط OR (ويُكتب هكذا: ||) يشبه متجراً يقبل الدفع بالنقود أو بالبطاقة الائتمانية. لا يهم أي طريقة تختار، يكفي أن تنجح واحدة منها ليتم قبول المعاملة. في جافاسكريبت، إذا تحقق شرط واحد على الأقل حول الرمز || فإن النتيجة تصبح صحيحة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#f0fff0;padding:15px;'>\n  <h3>تجربة OR</h3>\n  <p id='res'></p>\n  <script>\n    let hasCash = false;\n    let hasCard = true;\n    let canBuy = (hasCash || hasCard);\n    document.getElementById('res').innerText = 'هل تستطيع الشراء؟ ' + canBuy;\n  </script>\n</body>\n</html>",
+    "output": "توضح الصفحة إمكانية الشراء لوجود بديل واحد على الأقل متاح."
+   },
+   {
+    "h": "جدول الحقيقة لمعامل AND",
+    "text": "لكي تفهم كيف يفكر الكمبيوتر، تذكر أن true && true يعطي true. أما أي حالة أخرى تحتوي على false مع AND ستعطي false مباشرة. الكمبيوتر صارم جداً هنا ولا يقبل أن ينقص شرط واحد أبداً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#fffacd;padding:15px;'>\n  <h3>جدول AND</h3>\n  <p id='res'></p>\n  <script>\n    let r1 = (true && true);\n    let r2 = (true && false);\n    document.getElementById('res').innerText = 'True&&True = ' + r1 + ' | True&&False = ' + r2;\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة مقارنة سريعة لنتائج معامل AND مع القيم المختلفة."
+   },
+   {
+    "h": "جدول الحقيقة لمعامل OR",
+    "text": "معامل OR متسامح جداً. طالما وجد قيمة true واحدة في التعبير، فإن النتيجة بأكملها تكون true. ولا تصبح النتيجة false إلا إذا كانت جميع الشروط خاطئة تماماً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#e0ffff;padding:15px;'>\n  <h3>جدول OR</h3>\n  <p id='res'></p>\n  <script>\n    let r1 = (false || false);\n    let r2 = (true || false);\n    document.getElementById('res').innerText = 'False||False = ' + r1 + ' | True||False = ' + r2;\n  </script>\n</body>\n</html>",
+    "output": "توضح الصفحة كيف يتصرف معامل OR في حال وجود قيم خاطئة وصحيحة."
+   },
+   {
+    "h": "دمج الشروط المعقدة في الألعاب",
+    "text": "في الألعاب الحقيقية، نقوم أحياناً بخلط المعاملين معاً لإنشاء قوانين دقيقة جداً. مثلاً: (فاز باللعبة إذا جمع كل النقاط وعنده حياة) أو (خسر إذا نفذ وقته أو انتهت طاقته). استخدام الأقواس يساعدنا في تنظيم ترتيب الفحص بوضوح تام.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#faebd7;padding:15px;'>\n  <h3>منطق الألعاب</h3>\n  <p id='res'></p>\n  <script>\n    let score = 100;\n    let timeUp = false;\n    let lives = 3;\n    let isWinner = (score >= 100 && !timeUp) || (lives > 5);\n    document.getElementById('res').innerText = 'هل اللاعب فائز؟ ' + isWinner;\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة قرار الفوز المبني على شروط متعددة ومدمجة."
+   },
+   {
+    "h": "أخطاء شائعة وكيفية تجنبها",
+    "text": "من الخطأ كتابة عامل واحد مثل & أو | بدلاً من المزدوج && أو ||. معامل واحد يستخدم لعمليات بتية أخرى متقدمة لا نحتاجها الآن. احرص دائماً على كتابة الحرف مرتين لتفعيل الفحص المنطقي الصحيح في الشروط.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#ffe4e1;padding:15px;'>\n  <h3>تنبيه هام</h3>\n  <p id='res'>استخدم دائماً رمز المطرقة المزدوج && وليس المفرد &.</p>\n  <script>\n    let check = (5 > 3 && 2 < 4);\n    document.getElementById('res').innerHTML += '<br>النتيجة: ' + check;\n  </script>\n</body>\n</html>",
+    "output": "توضح الصفحة التطبيق الصحيح للعوامل المزدوجة."
+   },
+   {
+    "h": "الخلاصة وتطبيقات الحياة اليومية",
+    "text": "العوامل المنطقية هي عقل التطبيق المفكر. سواء كنت تصمم نظام حجز تذاكر سينما يتحقق من العمر والمقاعد الشاغرة، أو لعبة مغامرات تفحص المفتاح والطاقة، فإن && و || هما أدواتك السحرية لاتخاذ القرارات الرائعة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#f5f5f5;padding:15px;'>\n  <h3>حارس التذاكر</h3>\n  <p id='res'></p>\n  <script>\n    let age = 14;\n    let hasMoney = true;\n    let buyTicket = (age >= 13 && hasMoney);\n    document.getElementById('res').innerText = 'تم بيع التذكرة؟ ' + buyTicket;\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة محاكاة لنظام بيع تذاكر يعتمد على الشروط المنطقية."
+   }
+  ],
+  "reference": [
+   {
+    "name": "&&",
+    "desc": "عامل الربط المنطقي AND يتطلب صحة جميع الشروط."
+   },
+   {
+    "name": "||",
+    "desc": "عامل الربط المنطقي OR يتطلب صحة شرط واحد على الأقل."
+   },
+   {
+    "name": "!",
+    "desc": "عامل النفي المنطقي NOT يقلب القيمة من صح إلى خطأ والعكس."
+   },
+   {
+    "name": "if",
+    "desc": "أمر برمجي لفحص شرط وتنفيذ كود بناءً عليه."
+   },
+   {
+    "name": "true",
+    "desc": "قيمة بوليانية تعني أن الشرط صحيح."
+   },
+   {
+    "name": "false",
+    "desc": "قيمة بوليانية تعني أن الشرط خاطئ."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعبيراً بوليانياً باستخدام && يتحقق مما إذا كان score أكبر من 50 و lives أكبر من 0.",
+    "a": "score > 50 && lives > 0"
+   },
+   {
+    "q": "اكتب تعبيراً باستخدام || يتحقق مما إذا كان لون الكرات حمراء أو خضراء (ball === 'red' || ball === 'green').",
+    "a": "ball === 'red' || ball === 'green'"
+   },
+   {
+    "q": "ما هي نتيجة التعبير التالي: (true || false && false) بناءً على أسبقية العوامل؟",
+    "a": "true"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In programming, we sometimes need to check multiple conditions at the same time to decide what our game or app should do.",
+   "The logical AND operator is written as (&&) and requires every single condition to be true for the whole expression to be true.",
+   "Imagine entering an adventure game: you must be older than 10 (first condition) AND have a ticket (second condition). If one fails, the door stays closed.",
+   "The logical OR operator is written as (||) and only needs at least one condition to be true for the result to pass.",
+   "Golden rule for programmers: use (&&) when you want strict, demanding rules, and use (||) when you are flexible and need just one option to work.",
+   "In real life, like saying: I will go to the park if it is sunny (&&) or my bicycle is ready. In games, we combine rules for win/loss checks."
+  ],
+  "example": "Imagine writing code to grant a bonus in a game: condition one is points > 50, condition two is having a shield. We write: if (points > 50 && hasShield) { console.log('Upgrade unlocked!'); } If both are true, the win message appears.",
+  "mistake": "A common mistake is using single symbols (& or |) instead of double ones (&& or ||), or forgetting that AND demands all conditions while OR is satisfied with just one. Accurate evaluation relies on correct operators.",
+  "recap": "Logical operators like (&&) and (||) help us combine multiple conditions to build smart, complex decisions in programming. We use (&&) for all conditions, and (||) for any condition.",
+  "q": [
+   {
+    "t": "What is the symbol for the logical AND operator in JavaScript?",
+    "o": [
+     "||",
+     "&&",
+     "++"
+    ],
+    "a": 1,
+    "why": "We use the double ampersand symbol (&&) to represent the logical AND operator."
+   },
+   {
+    "t": "When is an expression using OR (||) considered true?",
+    "o": [
+     "If at least one condition is true",
+     "If all conditions fail completely",
+     "If every condition is strictly true"
+    ],
+    "a": 0,
+    "why": "The OR operator only needs a single true condition to return true."
+   },
+   {
+    "t": "If we have: (true && false), what is the result?",
+    "o": [
+     "true",
+     "false",
+     "undefined"
+    ],
+    "a": 1,
+    "why": "The AND operator requires both sides to be true, and since one is false, the result is false."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Logical Condition Buckets",
+   "goal": "Sort each snippet based on whether it uses the AND operator or the OR operator.",
+   "buckets": [
+    "AND Operator (&&)",
+    "OR Operator (||)"
+   ],
+   "items": [
+    {
+     "t": "age > 10 && hasTicket",
+     "b": 0
+    },
+    {
+     "t": "score > 100 && lives > 0",
+     "b": 0
+    },
+    {
+     "t": "isVIP || hasCoupon",
+     "b": 1
+    },
+    {
+     "t": "isWeekend || isHoliday",
+     "b": 1
+    },
+    {
+     "t": "level >= 5 && hasKey",
+     "b": 0
+    },
+    {
+     "t": "isRaining || hasUmbrella",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the logical conditions correctly and opened the game gates for everyone!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Code Logic",
+    "text": "Programming is not just numbers; it is thinking, planning, and making smart decisions. When we play a video game, the computer checks many things per second: Did the player touch the wall? Did they collect all stars? These checks rely on logical conditions written in JavaScript.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#f0f8ff;padding:15px;'>\n  <h3>Simple Condition Check</h3>\n  <p id='res'></p>\n  <script>\n    let score = 80;\n    document.getElementById('res').innerText = 'Is score > 50? ' + (score > 50);\n  </script>\n</body>\n</html>",
+    "output": "The page displays the result of checking a simple condition."
+   },
+   {
+    "h": "Understanding Strict AND",
+    "text": "The logical AND operator (written as &&) is like a strict security gate. It only lets you pass if you enter the right passcode AND carry the correct badge. In short, all conditions connected by && must be 100% true for the code to run.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#fff0f5;padding:15px;'>\n  <h3>AND Operator Test</h3>\n  <p id='res'></p>\n  <script>\n    let age = 12;\n    let hasPass = true;\n    let canEnter = (age >= 10 && hasPass);\n    document.getElementById('res').innerText = 'Can enter? ' + canEnter;\n  </script>\n</body>\n</html>",
+    "output": "The page shows whether entry is allowed based on both conditions being met."
+   },
+   {
+    "h": "Understanding Flexible OR",
+    "text": "The logical OR operator (written as ||) is like a store that accepts cash or credit card. It does not matter which method you choose, as long as one of them works to complete the transaction. In JavaScript, if at least one condition around || is true, the result is true.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#f0fff0;padding:15px;'>\n  <h3>OR Operator Test</h3>\n  <p id='res'></p>\n  <script>\n    let hasCash = false;\n    let hasCard = true;\n    let canBuy = (hasCash || hasCard);\n    document.getElementById('res').innerText = 'Can buy? ' + canBuy;\n  </script>\n</body>\n</html>",
+    "output": "The page shows purchase capability with at least one available option."
+   },
+   {
+    "h": "Truth Table for AND",
+    "text": "To understand how the computer thinks, remember that true && true gives true. Any other combination involving false with AND results in false immediately. The computer is very strict here and never accepts a missing condition.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#fffacd;padding:15px;'>\n  <h3>AND Table</h3>\n  <p id='res'></p>\n  <script>\n    let r1 = (true && true);\n    let r2 = (true && false);\n    document.getElementById('res').innerText = 'True&&True = ' + r1 + ' | True&&False = ' + r2;\n  </script>\n</body>\n</html>",
+    "output": "The page displays quick comparisons of AND results with various values."
+   },
+   {
+    "h": "Truth Table for OR",
+    "text": "The OR operator is very forgiving. As long as there is a single true value in the expression, the entire result is true. It only becomes false if every single condition is completely false.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#e0ffff;padding:15px;'>\n  <h3>OR Table</h3>\n  <p id='res'></p>\n  <script>\n    let r1 = (false || false);\n    let r2 = (true || false);\n    document.getElementById('res').innerText = 'False||False = ' + r1 + ' | True||False = ' + r2;\n  </script>\n</body>\n</html>",
+    "output": "The page demonstrates how the OR operator behaves with false and true values."
+   },
+   {
+    "h": "Combining Complex Rules in Games",
+    "text": "In real games, we sometimes mix both operators to create precise rules. For example: (Win the game if score is high and time is not up) or (Lose if lives are zero). Using parentheses helps us organize evaluation order clearly.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#faebd7;padding:15px;'>\n  <h3>Game Logic</h3>\n  <p id='res'></p>\n  <script>\n    let score = 100;\n    let timeUp = false;\n    let lives = 3;\n    let isWinner = (score >= 100 && !timeUp) || (lives > 5);\n    document.getElementById('res').innerText = 'Is player a winner? ' + isWinner;\n  </script>\n</body>\n</html>",
+    "output": "The page shows a winning decision based on multiple combined conditions."
+   },
+   {
+    "h": "Common Mistakes and How to Avoid Them",
+    "text": "A common mistake is writing a single symbol like & or | instead of the double ones && or ||. Single symbols are used for advanced bitwise operations we don't need right now. Always type the character twice to activate proper logical evaluation.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#ffe4e1;padding:15px;'>\n  <h3>Important Reminder</h3>\n  <p id='res'>Always use double ampersands &&, not single &.</p>\n  <script>\n    let check = (5 > 3 && 2 < 4);\n    document.getElementById('res').innerHTML += '<br>Result: ' + check;\n  </script>\n</body>\n</html>",
+    "output": "The page shows correct implementation of double operators."
+   },
+   {
+    "h": "Summary and Real-World Applications",
+    "text": "Logical operators are the thinking brain of your app. Whether you are building a cinema ticket booking system checking age and available seats, or an adventure game checking keys and energy, && and || are your magical tools for great decision making.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family:Arial;background:#f5f5f5;padding:15px;'>\n  <h3>Ticket Gatekeeper</h3>\n  <p id='res'></p>\n  <script>\n    let age = 14;\n    let hasMoney = true;\n    let buyTicket = (age >= 13 && hasMoney);\n    document.getElementById('res').innerText = 'Ticket sold? ' + buyTicket;\n  </script>\n</body>\n</html>",
+    "output": "The page displays a simulation of a ticketing system relying on logical conditions."
+   }
+  ],
+  "reference": [
+   {
+    "name": "&&",
+    "desc": "Logical AND operator requiring all conditions to be true."
+   },
+   {
+    "name": "||",
+    "desc": "Logical OR operator requiring at least one condition to be true."
+   },
+   {
+    "name": "!",
+    "desc": "Logical NOT operator reversing a boolean value."
+   },
+   {
+    "name": "if",
+    "desc": "Statement to check a condition and run code based on it."
+   },
+   {
+    "name": "true",
+    "desc": "Boolean value representing a correct condition."
+   },
+   {
+    "name": "false",
+    "desc": "Boolean value representing an incorrect condition."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a boolean expression using && to check if score is greater than 50 and lives is greater than 0.",
+    "a": "score > 50 && lives > 0"
+   },
+   {
+    "q": "Write an expression using || to check if ball is red or green.",
+    "a": "ball === 'red' || ball === 'green'"
+   },
+   {
+    "q": "What is the result of: (true || false && false) considering operator precedence?",
+    "a": "true"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Basic math in JavaScript — numbers and operators",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math"
+  },
+  {
+   "title": "MDN: JavaScript language overview",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Language_overview"
+  }
+ ],
+ "grounded": true
+}

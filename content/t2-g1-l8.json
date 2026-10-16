@@ -1,0 +1,323 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في الأمر كأن الشخصيات في قصة سحرية تحتاج إلى طريقة لتتحدث مع بعضها البعض دون أن تقف بجانب بعضها مباشرة.",
+   "مثال بسيط: عندما يرفع الساحر يده، يرسل رسالة صفراء في الهواء لتستيقظ العصا السحرية وتبدأ في التحرك.",
+   "كيف يعمل ذلك؟ نستخدم صندوق البريد الملون في سكراتش جونيور؛ الشخصية المرسلة تطلق إشارة بلون محدد، والشخصية المستقبلة تبدأ بالعمل فور رؤيتها.",
+   "مثال ثانٍ: القط يرسل رسالة حمراء، فيقوم الكلب بالقفز فوراً بمجرد سماع الرسالة الحمراء في نفس اللحظة.",
+   "قاعدة ذهبية: تطابق الألوان هو السر؛ الرسالة الصفراء يجب أن تقابلها نفس البدء بالرسالة الصفراء لدى الشخصية الأخرى.",
+   "الاستخدام في الواقع: تماماً مثل أضواء المرور التي ترسل إشارة ملونة للسيارات لكي تتوقف أو تتحرك بتنسيق تام."
+  ],
+  "example": "في لعبتنا السحرية، نريد من الساحر أن يخبر العصا أن تبدأ بالعرض. نضع للساحر كتلة الإرسال باللون الأصفر مع صندوق بريد أصفر. وفي برمجة العصا، نبدأ بكتلة 'عند استلام الرسالة الصفراء' ثم نضع بعدها كتل الحركة والظهور. عندما ينقر الطفل على الساحر، يرسل الإشارة للصفراء، فتستجيب العصا فوراً وتبدأ بالدوران والتألق وكأنها تتحرك بسحر حقيقي!",
+  "mistake": "خطأ شائع جداً هو إرسال رسالة صفراء ولكن الشخصية الأخرى تنتظر رسالة زرقاء. الحل هو التأكد من أن لون البريد في كتلة الإرسال يطابق تماماً لون البريد في كتلة الاستقبال.",
+  "recap": "الرسائل الملونة هي طريقة رائعة لتنسيق العمل بين الشخصيات المختلفة. هذا يجعل قصتك تبدو وكأن الشخصيات حقاً تفهم وتتحدث مع بعضها البعض.",
+  "q": [
+   {
+    "t": "ما هو الغرض من استخدام صناديق البريد الملونة في سكراتش جونيور؟",
+    "o": [
+     "لتلوين خلفية الشاشة فقط",
+     "لإرسال إشارات وتنسيق العمل بين الشخصيات",
+     "لتغيير صوت الشخصية إلى الأبد"
+    ],
+    "a": 1,
+    "why": "نستخدم الرسائل الملونة لجعل شخصية ترسل إشارة لتستجيب لها شخصية أخرى."
+   },
+   {
+    "t": "إذا أرسل الساحر رسالة صفراء، ماذا يجب أن تفعل العصا لكي تستجيب؟",
+    "o": [
+     "تبدأ بكتلة 'عند استلام الرسالة الصفراء'",
+     "تختفي نهائياً من الشاشة",
+     "تبدأ بكتلة العلم الأخضر فقط دون رسائل"
+    ],
+    "a": 0,
+    "why": "يجب أن تبدأ العصا بكتلة الانتظار لنفس لون الرسالة المرسلة."
+   },
+   {
+    "t": "أي مما يلي يعبر عن العمل الجماعي والتنسيق بين الشخصيات؟",
+    "o": [
+     "أن تتحرك الشخصيات معاً في نفس الوقت دون أي نظام",
+     "أن ترسل شخصية رسالة لتبدأ الأخرى حركتها بعدها مباشرة",
+     "أن تقف جميع الشخصيات بلا حركة"
+    ],
+    "a": 1,
+    "why": "التنسيق يعني أن تفعل شخصية شيئاً بناءً على إشارة من شخصية أخرى."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة الرسائل السحرية",
+   "goal": "صل كل كتلة رسالة بما يناسبها في برمجة الشخصيات لتعمل القصة بنجاح",
+   "pairs": [
+    [
+     "كتلة إرسال البريد الأصفر",
+     "الساحر يطلق الإشارة"
+    ],
+    [
+     "كتلة استلام البريد الأصفر",
+     "العصا السحرية تستيقظ"
+    ],
+    [
+     "صندوق البريد الملون",
+     "تحديد نوع ورسالة الإشارة"
+    ],
+    [
+     "العمل الجماعي",
+     "تنسيق الحركة بين شخصيتين"
+    ]
+   ],
+   "success": "رائع! تفاعل الساحر والعصا معاً بسحر منسق ومذهل!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الرسائل بين الشخصيات؟",
+    "text": "تخيل أنك تقف في غرفة وترسل إشارة مصباح يدوي لصديقك لكي يبدأ اللعب. في سكراتش جونيور، الرسائل هي إشارات خفية تطلقها شخصية لتقول لشخصية أخرى: 'حان دورك للعمل الآن!'",
+    "code": "الساحر: [انقر الأخضر] -> [أرسل بريد أصفر]\nالعصا: [عند استلام بريد أصفر] -> [تكبير]",
+    "output": "الساحر يرسل الإشارة والعصا تتفاعل فوراً."
+   },
+   {
+    "h": "فكرة صناديق البريد الملونة",
+    "text": "لدينا عدة ألوان لصناديق البريد (أصفر، أزرق، أحمر، وغيرها). هذا يشبه وجود قنوات تلفزيونية مختلفة؛ القناة الصفراء تخص شيئاً معيناً، والقناة الزرقاء تخص شيئاً آخر، حتى لا تتداخل الأوامر.",
+    "code": "صندوق البريد الأصفـر = قناة الساحر\nصندوق البريد الأزرق = قناة القط",
+    "output": "كل شخصية تفهم الإشارة المخصصة لها فقط."
+   },
+   {
+    "h": "كيف تعمل مشغلات الرسائل؟",
+    "text": "المشغل هو الكتلة التي تبدأ بها البرمجة. بدلاً من النقر على العلم الأخضر دائماً، يمكن أن يكون مشغل الشخصية هو 'عندما أستلم الرسالة الصفراء'. هكذا تتحكم الشخصية الأولى في وقت بداية عمل الشخصية الثانية.",
+    "code": "كتلة المشغل: [بريد ملون] + [كتلة حركة]",
+    "output": "الشخصية تبدأ التحرك فقط عند وصول الرسالة."
+   },
+   {
+    "h": "تنسيق العمل الجماعي",
+    "text": "العمل الجماعي يعني ألا تعمل كل شخصية بمفردها بشكل عشوائي، بل تتسلسل الأحداث. مثل أعضاء فريق الموسيقى؛ يبدأ عازف الطبل أولاً، ثم يعطي إشارة ليبدأ عازف الجيتار. الرسائل تفعل نفس الشيء في قصتك.",
+    "code": "الشخصية 1 تحدث قصة -> ترسل رسالة -> الشخصية 2 تكمل القصة",
+    "output": "قصة مرتبة ومتسلسلة الأحداث بسلاسة."
+   },
+   {
+    "h": "مثال عملي: الساحر والعصا",
+    "text": "في مشهدنا السحري، يقف الساحر ويرسل رسالة صفراء. العصا السحرية كانت نائمة، لكن بمجرد تلقي الرسالة الصفراء، تتحرك وتصدر أضواءً لامعة. هذا يجعل القصة تبدو حية وذكية للغاية.",
+    "code": "الساحر [أرسل رسالة صفراء] -> العصا [استلم رسالة صفراء + دور 3 مرات]",
+    "output": "العصا تدور وتتلألأ بانتظار إشارة الساحر."
+   },
+   {
+    "h": "قاعدة ذهبية للألوان",
+    "text": "دائماً تذكر: يجب أن يكون لون صندوق البريد عند المرسل مطابقاً تماماً للون في صندوق البريد عند المستقبل. إذا أرسلت بريداً أحمر واستقبلت بريداً أزرق، فلن يحدث أي شيء!",
+    "code": "مرسل (أحمر) = مستقبل (أحمر) -> نجاح!",
+    "output": "تواصل سليم ومضمون بين الكائنات."
+   },
+   {
+    "h": "تجنب الارتباك في القصص",
+    "text": "إذا كان لديك الكثير من الشخصيات، استخدم ألواناً مختلفة لكل قصة فرعية. مثلاً استخدم البريد الأصفر للساحر، والأزرق للكلب، والأخضر للسيارة. هذا ينظم أفكارك ويمنع تداخل الأوامر البرمجية.",
+    "code": "الساحر(أصفر) | الكلب(أزرق) | السيارة(أخضر)",
+    "output": "شاشتك منظمة وبرمجتك خالية من الأخطاء."
+   },
+   {
+    "h": "الاستخدام في الواقع اليومي",
+    "text": "فكر في جرس الإذاعة في المدرسة؛ عندما يرن الجرس، يعرف الطلاب أن وقت الاستراحة قد بدأ. جرس المدرسة يرسل 'رسالة' لجميع الفصول في نفس اللحظة ليتحرك الجميع بتنسيق تام.",
+    "code": "جرس المدرسة -> إرسال إشارة -> خروج الطلاب",
+    "output": "تنظيم حركة مئات الطلاب في نفس اللحظة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Message (رسالة)",
+    "desc": "إشارة ملونة تطلقها شخصية لتتواصل مع شخصية أخرى."
+   },
+   {
+    "name": "Mailbox (صندوق البريد)",
+    "desc": "اللون المستخدم لتحديد وتوجيه رسائل سكراتش جونيور."
+   },
+   {
+    "name": "Trigger (مشغل)",
+    "desc": "الكتلة التي تبدأ الحدث، مثل استلام الرسالة أو النقر."
+   },
+   {
+    "name": "Teamwork (عمل جماعي)",
+    "desc": "تنسيق أفعال الشخصيات لتظهر وكأنها تتعاون معاً."
+   },
+   {
+    "name": "Broadcast (إرسال)",
+    "desc": "أمر لإطلاق الإشارة الملونة في الشاشة."
+   },
+   {
+    "name": "Receive (استلام)",
+    "desc": "أمر يجعل الشخصية تنتظر الرسالة المحددة لتتحرك."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو لون صندوق البريد الذي يجب استخدامه إذا أرسل الساحر إشارة صفراء للعصا؟",
+    "a": "صندوق البريد الأصفر للطرفين (المرسل والمستقبل)."
+   },
+   {
+    "q": "لماذا نستخدم الرسائل بدلاً من النقر على العلم الأخضر لكل الشخصيات معاً؟",
+    "a": "لكي تتحرك الشخصيات بتسلسل وتنسيق دقيق وليس في نفس اللحظة عشوائياً."
+   },
+   {
+    "q": "إذا استلمت الشخصية الثانية الرسالة، ما هي أول خطوة يجب أن تفعلها في برمجتها؟",
+    "a": "تبدأ بكتلة 'عند استلام الرسالة' باللون المطابق."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of it like characters in a magical story needing a way to talk to each other without standing right next to each other.",
+   "Simple example: When the wizard raises his hand, he sends a yellow message into the air to wake up the magic wand and make it move.",
+   "How it works? We use colored mailboxes in ScratchJr; the sending character launches a specific color signal, and the receiving character springs into action upon seeing it.",
+   "Second example: The cat sends a red message, and the dog jumps instantly upon hearing the red message at that exact moment.",
+   "Golden rule: Color matching is the secret; a yellow message must pair with the exact same yellow message start block on the other character.",
+   "Real-life use: Just like traffic lights that send a colored signal for cars to stop or move with complete coordination."
+  ],
+  "example": "In our magical game, we want the wizard to tell the wand to start its show. We give the wizard a yellow send message block with a yellow mailbox. In the wand's code, we start with a 'when receiving yellow message' block followed by motion and appearance blocks. When the child taps the wizard, he sends the yellow signal, and the wand responds instantly, spinning and sparkling as if moving by real magic!",
+  "mistake": "A very common mistake is sending a yellow message while the other character is waiting for a blue message. The fix is to make sure the mailbox color in the send block matches the mailbox color in the receive block.",
+  "recap": "Colored messages are a wonderful way to coordinate actions between different characters. This makes your story look and feel like characters are truly communicating with each other.",
+  "q": [
+   {
+    "t": "What is the purpose of using colored mailboxes in ScratchJr?",
+    "o": [
+     "To color the background screen only",
+     "To send signals and coordinate actions between characters",
+     "To change the character's voice forever"
+    ],
+    "a": 1,
+    "why": "We use colored messages so one character can send a signal for another character to respond."
+   },
+   {
+    "t": "If the wizard sends a yellow message, what must the wand do to respond?",
+    "o": [
+     "Start with the 'when receiving yellow message' block",
+     "Disappear completely from the screen",
+     "Start with the green flag block only without messages"
+    ],
+    "a": 0,
+    "why": "The wand must start with the trigger block matching the color of the sent message."
+   },
+   {
+    "t": "Which of the following demonstrates teamwork and coordination between characters?",
+    "o": [
+     "Characters moving together at the exact same time without any system",
+     "One character sending a message so another character starts its movement right after",
+     "All characters standing completely still"
+    ],
+    "a": 1,
+    "why": "Coordination means one character performs an action based on a signal from another character."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Magical Message Matching Game",
+   "goal": "Connect each message block to its matching part in character programming to make the story work successfully",
+   "pairs": [
+    [
+     "Yellow mail send block",
+     "Wizard launches the signal"
+    ],
+    [
+     "Yellow mail receive block",
+     "Magic wand wakes up"
+    ],
+    [
+     "Colored mailbox",
+     "Defining the signal type and color"
+    ],
+    [
+     "Teamwork",
+     "Coordinating motion between two characters"
+    ]
+   ],
+   "success": "Awesome! The wizard and wand interacted together with coordinated, amazing magic!"
+  },
+  "sections": [
+   {
+    "h": "What are Messages Between Characters?",
+    "text": "Imagine standing in a room and flashing a flashlight signal to your friend to start playing. In ScratchJr, messages are hidden signals sent by one character to tell another: 'It is your turn to act now!'",
+    "code": "Wizard: [Tap Green] -> [Send Yellow Mail]\nWand: [When Receive Yellow] -> [Grow]",
+    "output": "The wizard sends the signal and the wand reacts instantly."
+   },
+   {
+    "h": "The Idea of Colored Mailboxes",
+    "text": "We have several mailbox colors (yellow, blue, red, and more). This is like having different television channels; the yellow channel is for one specific thing, and the blue channel is for another, preventing command mix-ups.",
+    "code": "Yellow Mailbox = Wizard Channel\nBlue Mailbox = Cat Channel",
+    "output": "Each character understands only its designated signal."
+   },
+   {
+    "h": "How Message Triggers Work",
+    "text": "A trigger is the block where programming starts. Instead of always clicking the green flag, a character's trigger can be 'when I receive the yellow message.' This lets the first character control when the second character starts.",
+    "code": "Trigger block: [Colored Mail] + [Motion block]",
+    "output": "The character starts moving only when the message arrives."
+   },
+   {
+    "h": "Coordinating Teamwork",
+    "text": "Teamwork means characters don't just act randomly on their own, but events flow in sequence. Think of a music band; the drummer starts first, then gives a signal for the guitarist to begin. Messages do the exact same thing in your story.",
+    "code": "Character 1 talks -> sends message -> Character 2 continues story",
+    "output": "An orderly story with smoothly sequenced events."
+   },
+   {
+    "h": "Practical Example: Wizard and Wand",
+    "text": "In our magical scene, the wizard stands and sends a yellow message. The magic wand was sleeping, but upon receiving the yellow message, it moves and glows brightly. This makes the story look alive and very smart.",
+    "code": "Wizard [Send Yellow] -> Wand [Receive Yellow + Turn 3 times]",
+    "output": "The wand spins and sparkles waiting for the wizard's cue."
+   },
+   {
+    "h": "Golden Rule for Colors",
+    "text": "Always remember: the mailbox color on the sender must match the mailbox color on the receiver. If you send a red mail and receive a blue mail, nothing will happen!",
+    "code": "Sender (Red) = Receiver (Red) -> Success!",
+    "output": "Proper and reliable communication between sprites."
+   },
+   {
+    "h": "Avoiding Story Confusion",
+    "text": "If you have many characters, use different colors for each sub-story. For example, use yellow mail for the wizard, blue for the dog, and green for the car. This organizes your thoughts and prevents script overlapping.",
+    "code": "Wizard(Yellow) | Dog(Blue) | Car(Green)",
+    "output": "Your screen is organized and your code is error-free."
+   },
+   {
+    "h": "Real-Life Use Every Day",
+    "text": "Think of the school bell; when it rings, students know recess has started. The school bell sends a 'message' to all classrooms at the exact same moment so everyone moves with complete coordination.",
+    "code": "School Bell -> Send Signal -> Students Exit",
+    "output": "Organizing the movement of hundreds of students at the exact same moment."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Message",
+    "desc": "A colored signal launched by a character to communicate with another."
+   },
+   {
+    "name": "Mailbox",
+    "desc": "The color used to identify and route ScratchJr messages."
+   },
+   {
+    "name": "Trigger",
+    "desc": "The block that starts an event, like receiving a message or tapping."
+   },
+   {
+    "name": "Teamwork",
+    "desc": "Coordinating character actions so they appear to cooperate."
+   },
+   {
+    "name": "Broadcast",
+    "desc": "A command to release the colored signal across the screen."
+   },
+   {
+    "name": "Receive",
+    "desc": "A command that makes a character wait for a specific message to move."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What mailbox color must be used if the wizard sends a yellow signal to the wand?",
+    "a": "The yellow mailbox for both sides (sender and receiver)."
+   },
+   {
+    "q": "Why do we use messages instead of clicking the green flag for all characters together?",
+    "a": "So characters move in sequence and precise coordination rather than all at once randomly."
+   },
+   {
+    "q": "If the second character receives the message, what is the very first block its code needs?",
+    "a": "It starts with the 'When Receive Message' block in the matching color."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

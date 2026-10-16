@@ -1,0 +1,286 @@
+{
+ "ar": {
+  "steps": [
+   "عشان تحمي شغلك من الضياع وأخطاء الحذف، بنستخدم نظام تتبع الإصدارات الشهير Git اللي بيسجل كل خطوة بتعملها في المشروع كأنك بتصور كاميرا.",
+   "أول خطوة بتبدأ بيها في أي مشروع هي إعطاء أمر تهيئة لنظام التتبع في مجلد المشروع المحلي باستخدام الأمر git init عشان يبدأ يراقب ملفاتك.",
+   "لما بتعدل على الكود أو تكتب بيانات جديدة، الملفات بتفضل في منطقة العمل العادية ومش بتدخل السجل مباشرة، فلازم تجهزها.",
+   "بتستخدم أمر تجهيز الملفات git add عشان تنقل الملفات وتجهزها للصورة أو اللقطة الجديدة اللي هتحفظها في السجل المحلي.",
+   "بعد تجهيز الملفات، بتعمل عملية التسجيل الرسمية أو ما يُعرف بـ commit مع كتابة رسالة واضحة توصف إيه التغيير اللي عملته.",
+   "القاعدة الذهبية في Git هي: جهز ملفاتك بـ add ثم سجلها بـ commit ومعها رسالة وصفية، وده بيخليك ترجع لأي وقت سابق بكل سهولة في مشاريع الداتا وتحليل البيانات."
+  ],
+  "example": "تخيل أنك كاتب كود بايثون بيطبع بيانات مبيعات وعايز تحفظ نسخة منه:\n```bash\ngit init\ngit add sales.py\ngit commit -m \"Add initial sales calculation script\"\n```\nالسبب: أمر git init بيفتح صندوق التتبع للمجلد، وبعدها git add بينقل ملف sales.py لمنطقة التجهيز، وأخيراً git commit بيحفظ صورة ثابتة في السجل مع رسالة توضيحية.",
+  "mistake": "الخطأ الشائع هو نسيان خطوة git add ومحاولة عمل commit للملفات مباشرة، وده بيخلي Git يقولك إن مفيش تغييرات جديدة متسجلة للتجهيز. الحل هو كتابة git add اسم_الملف الأول وبعدها git commit.",
+  "recap": "نظام Git بيساعدك تسجل صور متتالية لمشروعك محلياً باستخدام أوامر git init و git add و commit. ده بيخلي شغلك آمناً وسهل الرجوع لأي نسخة قديمة.",
+  "q": [
+   {
+    "t": "إيه الأمر اللي بنستخدمه عشان نبدأ تتبع مشروع جديد محلياً؟",
+    "o": [
+     "git start",
+     "git init",
+     "git new"
+    ],
+    "a": 1,
+    "why": "أمر git init بيُستخدم لإنشاء أو تهيئة مستودع Git محلي جديد داخل مجلد المشروع."
+   },
+   {
+    "t": "ليه بنستخدم أمر git add قبل عمل commit؟",
+    "o": [
+     "لتجهيز ونقل الملفات لمنطقة التحضير للقطة الجديدة",
+     "لحذف الملفات نهائياً من الكمبيوتر",
+     "لرفع الملفات مباشرة على الإنترنت"
+    ],
+    "a": 0,
+    "why": "أمر git add بيجهز الملفات ويحطها في منطقة الانتظار (Staging Area) عشان تدخل في صورة السجل التالية."
+   },
+   {
+    "t": "عشان تحفظ اللقطة مع رسالة توضيحية، إيه الأمر الصحيح؟",
+    "o": [
+     "git save \"message\"",
+     "git commit -m \"message\"",
+     "git record -m \"message\""
+    ],
+    "a": 1,
+    "why": "أمر git commit مع الخيار -m بيُستخدم لتسجيل التغييرات وحفظ الصورة مع كتابة رسالة وصفية."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح تسلسل أوامر Git",
+   "goal": "صحح الخطأ في تسلسل الأوامر لتسجيل تغييرات ملف بيانات المبيعات بنجاح.",
+   "lines": [
+    "git init",
+    "git commit -m \"Add report\"",
+    "git add report.py"
+   ],
+   "bug": 1,
+   "fix": "git add report.py",
+   "success": "رائع! تم تجهيز الملف وتسجيل التغييرات في النظام المحلي بنجاح وبدون أخطاء."
+  },
+  "sections": [
+   {
+    "h": "مقدمة في تتبع الإصدارات",
+    "text": "فكر في نظام Git كأنه آلة زمن لمشروعك البرمجي. بدل ما تحفظ نسخ كتيرة بأسماء مختلفة زي project_v1 و project_v2، Git بيحفظ كل التغييرات بشكل منظم وذكي محلياً على جهازك.",
+    "code": "print('Welcome to Git Version Control!')",
+    "output": "Welcome to Git Version Control!"
+   },
+   {
+    "h": "تهيئة المستودع المحلي بـ git init",
+    "text": "عشان تبخلي الكمبيوتر يراقب مجلد مشروعك، بتفتح سطر الأوامر وتكتب git init. ده بيخلق صندوق سحري خفي في المجلد يبدأ يسجل كل حركة ووقت تعدل فيه ملفاتك.",
+    "code": "import os\n# تخيل هذا الأمر يتم في سطر الأوامر\nprint('Initialized empty Git repository in project folder')\n",
+    "output": "Initialized empty Git repository in project folder"
+   },
+   {
+    "h": "فهم نظام اللقطات (Snapshots)",
+    "text": "على عكس الأنظمة القديمة اللي بتحفظ التعديلات البسيطة بس، Git بياخد صورة كاميرة (Snapshot) للمشروع كله كل ما تسجل. لو الملف متغييرش، بيعمل رابط ذكي للنسخة القديمة عشان يوفر مساحة.",
+    "code": "project_state = {'file': 'data.csv', 'snapshot_taken': True}\nprint(project_state)",
+    "output": "{'file': 'data.csv', 'snapshot_taken': True}"
+   },
+   {
+    "h": "تجهيز الملفات بـ git add",
+    "text": "قبل ما تاخد اللقطة النهائية، Git بيطلب منك تختار إيه الملفات اللي عايز تدخلها في الصورة. دي اسمها منطقة التجهيز أو Staging Area، وبتعملها بأمر git add.",
+    "code": "files_to_stage = ['analysis.py', 'data.csv']\nprint('Staged files:', files_to_stage)",
+    "output": "Staged files: ['analysis.py', 'data.csv']"
+   },
+   {
+    "h": "تسجيل التغييرات بـ git commit",
+    "text": "بعد ما تجهز الملفات، بتثبت اللقطة في السجل الدائم باستخدام أمر git commit ومعاه رسالة واضحة بـ -m. الرسالة دي زي ملصق مكتوب عليه إنت أضفت إيه في اللقطة دي عشان تفكر نفسك بعدين.",
+    "code": "commit_message = 'Add initial data cleaning script'\nprint(f'Committed with message: {commit_message}')",
+    "output": "Committed with message: Add initial data cleaning script"
+   },
+   {
+    "h": "العمل محلياً وبسرعة فائقة",
+    "text": "من أجمل مميزات Git إن كل شغلك والتاريخ بتاع مشروعك موجود على جهازك محلياً (Local). ده بيخلي كل العمليات تحصل بسرعة البرق من غير ما تحتاج إنترنت أو سيرفر بعيد.",
+    "code": "history_speed = 'Instant local access'\nprint(history_speed)",
+    "output": "Instant local access"
+   }
+  ],
+  "reference": [
+   {
+    "name": "git init",
+    "desc": "ينشئ أو يهيئ مستودع Git محلي جديد في المجلد الحالي."
+   },
+   {
+    "name": "git add",
+    "desc": "ينقل الملفات المحددة لمنطقة التجهيز (Staging Area)."
+   },
+   {
+    "name": "git commit",
+    "desc": "يحفظ لقطة جديدة دائمة للملفات المجهزة في السجل المحلي."
+   },
+   {
+    "name": "-m",
+    "desc": "خيار يُستخدم مع أمر commit لكتابة رسالة وصفية للتغييرات."
+   },
+   {
+    "name": "Snapshot",
+    "desc": "طريقة Git في حفظ حالة المشروع كصورة كاملة للملفات بدل الفروق."
+   },
+   {
+    "name": "Local Repository",
+    "desc": "نسخة كاملة من تاريخ المشروع مخزنة على قرص الكمبيوتر الخاص بك."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الأمر المستخدم لتهيئة مستودع Git محلي في مجلد مشروعك؟",
+    "a": "git init"
+   },
+   {
+    "q": "كيف تجهز ملفاً يدعى analysis.py للانتقال لمنطقة التحضير؟",
+    "a": "git add analysis.py"
+   },
+   {
+    "q": "اكتب أمر الـ commit مع رسالة توضيحية تعبر عن إضافة ملفات المبيعات.",
+    "a": "git commit -m \"Add sales files\""
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "To protect your code from loss and deletion mistakes, we use the popular version control system Git, which records every step in your project like a camera snapshot.",
+   "The very first step in any project is initializing a local tracking system inside your project folder using the 'git init' command so it starts monitoring your files.",
+   "When you edit code or write new data, files stay in the normal working directory and don't enter the history directly, so you need to prepare them.",
+   "You use the 'git add' command to move your files and prepare them for the new snapshot or picture you want to save in your local history.",
+   "After staging your files, you perform the official recording operation known as a 'commit' along with a clear message explaining what changes you made.",
+   "The golden rule in Git is: stage your files with add, then record them with commit along with a descriptive message, allowing you to easily revert to any past state in data projects."
+  ],
+  "example": "Imagine you wrote a Python script printing sales data and want to save a version:\n```bash\ngit init\ngit sales.py\ngit commit -m \"Add initial sales calculation script\"\n```\nReasoning: 'git init' opens the tracking box for the folder, 'git add' moves sales.py to the staging area, and 'git commit' saves a fixed snapshot in the history with an explanatory message.",
+  "mistake": "A common mistake is forgetting the 'git add' step and trying to commit files directly, which makes Git report that there are no new changes staged for commit. The fix is to run 'git add filename' first and then 'git commit'.",
+  "recap": "Git helps you record successive snapshots of your project locally using git init, git add, and commit commands. This keeps your work safe and easy to rollback to any older version.",
+  "q": [
+   {
+    "t": "Which command is used to start tracking a new project locally?",
+    "o": [
+     "git start",
+     "git init",
+     "git new"
+    ],
+    "a": 1,
+    "why": "The 'git init' command is used to create or initialize a new local Git repository inside the project folder."
+   },
+   {
+    "t": "Why do we use the 'git add' command before running a commit?",
+    "o": [
+     "To stage and prepare files for the upcoming snapshot",
+     "To permanently delete files from the computer",
+     "To upload files directly to the internet"
+    ],
+    "a": 0,
+    "why": "The 'git add' command stages files and places them in the staging area to be included in the next history snapshot."
+   },
+   {
+    "t": "To save a snapshot with an explanatory message, what is the correct command?",
+    "o": [
+     "git save \"message\"",
+     "git commit -m \"message\"",
+     "git record -m \"message\""
+    ],
+    "a": 1,
+    "why": "The 'git commit' command with the -m flag is used to record changes and save the snapshot with a descriptive message."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Git Command Sequence",
+   "goal": "Correct the error in the command sequence to successfully record changes for the sales report file.",
+   "lines": [
+    "git init",
+    "git commit -m \"Add report\"",
+    "git add report.py"
+   ],
+   "bug": 1,
+   "fix": "git add report.py",
+   "success": "Awesome! The file was staged and changes were successfully recorded in the local system without errors."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Version Control",
+    "text": "Think of Git as a time machine for your coding project. Instead of saving many copies with different names like project_v1 and project_v2, Git stores all changes in an organized and smart way locally on your device.",
+    "code": "print('Welcome to Git Version Control!')",
+    "output": "Welcome to Git Version Control!"
+   },
+   {
+    "h": "Initializing Local Repositories with git init",
+    "text": "To tell your computer to monitor your project folder, open your command line and type 'git init'. This creates a hidden magical box inside the folder that starts recording every move and timestamp when you modify your files.",
+    "code": "import os\n# Imagine this runs in the command line\nprint('Initialized empty Git repository in project folder')",
+    "output": "Initialized empty Git repository in project folder"
+   },
+   {
+    "h": "Understanding Snapshots",
+    "text": "Unlike older systems that only save simple line-by-line changes, Git takes a complete camera snapshot of the entire project every time you commit. If a file hasn't changed, it stores a smart link to the older version to save space.",
+    "code": "project_state = {'file': 'data.csv', 'snapshot_taken': True}\nprint(project_state)",
+    "output": "{'file': 'data.csv', 'snapshot_taken': True}"
+   },
+   {
+    "h": "Staging Files with git add",
+    "text": "Before taking the final snapshot, Git asks you to choose which files you want included in the picture. This is called the Staging Area, and you manage it using the 'git add' command.",
+    "code": "files_to_stage = ['analysis.py', 'data.csv']\nprint('Staged files:', files_to_stage)",
+    "output": "Staged files: ['analysis.py', 'data.csv']"
+   },
+   {
+    "h": "Committing Changes with git commit",
+    "text": "After staging your files, you lock the snapshot into permanent history using the 'git commit' command along with a clear message using '-m'. This message acts like a sticky note describing what you added in this snapshot for future reference.",
+    "code": "commit_message = 'Add initial data cleaning script'\nprint(f'Committed with message: {commit_message}')",
+    "output": "Committed with message: Add initial data cleaning script"
+   },
+   {
+    "h": "Working Locally and Blazing Fast",
+    "text": "One of the best features of Git is that all your work and project history reside locally on your machine. This makes all operations happen at lightning speed without needing internet access or a distant server.",
+    "code": "history_speed = 'Instant local access'\nprint(history_speed)",
+    "output": "Instant local access"
+   }
+  ],
+  "reference": [
+   {
+    "name": "git init",
+    "desc": "Creates or initializes a new local Git repository in the current folder."
+   },
+   {
+    "name": "git add",
+    "desc": "Moves specified files to the staging area."
+   },
+   {
+    "name": "git commit",
+    "desc": "Saves a new permanent snapshot of the staged files in local history."
+   },
+   {
+    "name": "-m",
+    "desc": "Flag used with commit to attach a descriptive message to changes."
+   },
+   {
+    "name": "Snapshot",
+    "desc": "Git's way of storing project states as complete file pictures rather than diffs."
+   },
+   {
+    "name": "Local Repository",
+    "desc": "A full copy of the project's history stored directly on your computer disk."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What command is used to initialize a local Git repository in your project folder?",
+    "a": "git init"
+   },
+   {
+    "q": "How do you stage a file named analysis.py to move it to the staging area?",
+    "a": "git add analysis.py"
+   },
+   {
+    "q": "Write the commit command with an explanatory message indicating the addition of sales files.",
+    "a": "git commit -m \"Add sales files\""
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "git-scm.com docs",
+   "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
+  }
+ ],
+ "grounded": true
+}

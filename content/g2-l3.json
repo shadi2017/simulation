@@ -1,0 +1,311 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل الجيمز، المتغير (Variable) عامل زي حصالة الفلوس بتاعتك. بنحط جواها رقم ونقعد نغيره كل ما تلعب وتاخد نقط جديدة في اللعبة!",
+   "عشان نعمل حصالة النقط في سكراتش، بنروح على ختات (Variables) وندوس Make a Variable ونسميه Score عشان يظهر فوق قدامنا على الشاشة.",
+   "لما الشخصية بتاعتك تلمس نجمة ذهبية في اللعبة، بنستخدم أمر change score by 1 عشان نزود النقط واحد صحيح بكل سهولة.",
+   "لو عايزين نعمل حاجة قوية زي مضاعفة السرعة (Speed Buff)، بنعمل متغير تاني اسمه speed ونزود بيه حركة الشخصية لما تاخد هدية خاصة.",
+   "القاعدة الذهبية هنا: أي حاجة بتتغير جوة اللعبة زي عدد النقط أو الهيلث لازم نخزنها جوة متغير عشان الكمبيوتر يفتكرها وينظمها.",
+   "في ألعاب الكارتينج والسباقات الحقيقية، المتغيرات هي اللي بتحسب السرعة القصوى والنقاط اللي بتجمعها عشان تفوز وتكسب الكأس في النهاية!"
+  ],
+  "example": "تخيل إنك بتبرمج لعبة قطة بتجمع سمك. عملنا متغير اسمه points. في الأول حطينا set points to 0. ولما القطة تلمس السمكة، بنحط بلوك change points by 1. وبكده كل سمكة تاكلها القطة بتزود النقط على الشاشة فوراً وبشكل مرتب وجميل.",
+  "mistake": "أوقات كتير بنسى نعمل set points to 0 في بداية اللعبة خالص، فبنلاقي النقط بتبدأ من الرقم القديم للجولة اللي فاتت. الحل إننا نحط بلوك الصفر أول ما ندوس العلامة الخضراء.",
+  "recap": "المتغيرات هي حافظة الأرقام التي تجعل ألعابنا تفكر وتحتفظ بالنقاط والسرعات. باستخدام أوامر التغيير والظهور، نصنع ألعاباً ممتعة وتفاعلية.",
+  "q": [
+   {
+    "t": "إيه البلوك المسؤول عن زيادة النقاط بمقدار واحد في سكراتش؟",
+    "o": [
+     "set score to 1",
+     "change score by 1",
+     "show variable score"
+    ],
+    "a": 1,
+    "why": "بنستخدم change عشان نزود أو ننقص القيمة بمقدار معين."
+   },
+   {
+    "t": "ليه بنعمل متغيرات في اللعبة أصلاً يا بطل؟",
+    "o": [
+     "عشان نلون خلفية المرحلة",
+     "عشان نحفظ الأرقام ونتتبع النقط والسرعة",
+     "عشان نخلي الشخصية تطير لفوق خالص"
+    ],
+    "a": 1,
+    "why": "المتغير عامل زي الحصالة اللي بتحفظ وتتتبع الأرقام المتغيرة."
+   },
+   {
+    "t": "لو عاوزين نخلي النقاط تبدأ من الصفر تماماً لما اللعبة تبدأ، بنستخدم إيه؟",
+    "o": [
+     "set score to 0",
+     "change score by 10",
+     "hide variable score"
+    ],
+    "a": 0,
+    "why": "أمر set بيضبط المتغير على قيمة محددة وثابتة في البداية."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "وصل كل بلوك في سكراتش بالوظيفة الصحيحة بتاعته",
+   "goal": "فهم دور أوامر المتغيرات المختلفة في تصميم ألعاب سكراتش",
+   "pairs": [
+    [
+     "Make a Variable",
+     "إنشاء حصالة جديدة لحفظ الأرقام"
+    ],
+    [
+     "set score to 0",
+     "تصفير النقاط عند بداية اللعبة"
+    ],
+    [
+     "change score by 1",
+     "زيادة النقاط عند جمع النجمات"
+    ],
+    [
+     "show variable",
+     "عرض النقط على شاشة اللعبة للجميع"
+    ]
+   ],
+   "success": "رائع! لقد قمت بتوصيل أوامر المتغيرات بمهارة وأصبحت جاهزاً لصنع ألعاب تفاعلية خرافية!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم المتغيرات (Variables)",
+    "text": "المتغير هو عبارة عن صندوق سحري صغير جوه ذاكرة الكمبيوتر بنخزن فيه قيمة رقمية أو نصية بتتغير طول ما اللعبة شغال. تخيل حصالتك اللي بتحوش فيها، كل ما تحط جنيه بتزيد، ده بالظبط زي متغير النقاط في الألعاب.",
+    "code": "When Green Flag Clicked -> set [score v] to [0]",
+    "output": "يتم إنشاء متغير النقاط وتصفيره ليبدأ من الصفر."
+   },
+   {
+    "h": "إنشاء متغير جديد في سكراتش",
+    "text": "عشان نعمل متغير جديد في برنامج سكراتش، بنروح على مجموعة الأوامر البرتقالية المكتوب عليها Variables، وبعدين ندوس على زرار Make a Variable ونكتب اسم حلو وواضح زي Score أو Points.",
+    "code": "Click Variables palette -> Click [Make a Variable] -> Type 'Score'",
+    "output": "يظهر صندوق جديد للمتغير على المنصة ومعه بلوكات التحكم الخاصة به."
+   },
+   {
+    "h": "عرض وإخفاء المتغير على الشاشة",
+    "text": "أول ما بتعمل المتغير، بتلاقيه ظاهر أوتوماتيك على المنصة قدام اللاعب عشان يشاهد نقطه بتزيد. ممكن نتحكم في ظهوره أو إخفاؤه باستخدام أوامر show variable و hide variable حسب تصميم اللعبة.",
+    "code": "show variable [score v]",
+    "output": "يظهر عداد النقاط على شاشة اللعبة ليراه اللاعب بوضوح."
+   },
+   {
+    "h": "تعديل وزيادة النقاط (Coin Collection)",
+    "text": "لما الشخصية بتاعتك تجمع عملة ذهبية أو تفاحة، محتاجين النقط تزيد. بنستخدم بلوك change عشان نضيف رقم للمتغير، زي لما تاخد نقطة في لعبة الكابتن ماجد أو ماريو.",
+    "code": "if touching [Coin v] then -> change [score v] by (1)",
+    "output": "تزداد قيمة النقاط بمقدار واحد صحيح كلما لمست الشخصية العملة الذهبية."
+   },
+   {
+    "h": "مضاعفة السرعة وبطاقات الأداء (Speed Buffs)",
+    "text": "مش بس النقط اللي ممكن نعملها متغيرات، السرعة كمان ممكن نخليها متغير! لو الشخصية أخذت جزرة سحرية، بنزود متغير السرعة (speed) عشان تجري بسرعة البرق وتفادي الأعداء.",
+    "code": "if touching [PowerUp v] then -> change [speed v] by (5)",
+    "output": "تزداد سرعة حركة الشخصية وتتحرك بشكل أسرع في المرحلة."
+   },
+   {
+    "h": "قواعد استخدام المتغيرات بذكاء",
+    "text": "دايماً تذكر أن تبدأ لعبتك بتثبيت قيم المتغيرات على الصفر أو القيم الافتراضية باستخدام أمر set في بداية الكود، عشان ما تبدأش اللعبة بنقاط باقية من الجولة السابقة وتلخبط اللاعب.",
+    "code": "When Green Flag Clicked -> set [speed v] to [3]",
+    "output": "تتم تهيئة السرعة بالقيمة الطبيعية المعتدلة مع بداية كل لعبة جديدة."
+   },
+   {
+    "h": "تطبيقات حقيقية في تطوير ألعاب الفيديو",
+    "text": "في كل ألعاب البلايستيشن والموبايل الكبيرة، المتغيرات هي الأساس؛ فهي تحسب عدد الأرواح المتبقية، ووقت السباق، والنقاط المدمرة، والأموال التي تشتري بها الأسلحة والملابس لشخصيتك المفضلة.",
+    "code": "Game Loop: track [Health], [Ammo], and [HighScore]",
+    "output": "تحديث مستمر لعناصر اللعبة وإظهار شاشة الفوز أو الخسارة بدقة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Variable",
+    "desc": "صندوق رقمي في الذاكرة لتخزين وتغيير القيم مثل النقاط والسرعة."
+   },
+   {
+    "name": "Make a Variable",
+    "desc": "أمر لإنشاء متغير جديد ومخصص في لغة سكراتش."
+   },
+   {
+    "name": "set to",
+    "desc": "أمر لتعيين قيمة محددة وثابتة للمتغير، وغالباً نستخدمه للبدء بالصفر."
+   },
+   {
+    "name": "change by",
+    "desc": "أمر لزيادة أو إنقاص قيمة المتغير بمقدار معين أثناء اللعب."
+   },
+   {
+    "name": "Speed Buff",
+    "desc": "ميزة مؤقتة تزيد من سرعة حركة الشخصية باستخدام المتغيرات."
+   },
+   {
+    "name": "Stage Monitor",
+    "desc": "العرض المرئي للمتغير على شاشة اللعبة ليراه اللاعب."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو البلوك المستخدم لتعيين قيمة المتغير في بداية اللعبة إلى الصفر؟",
+    "a": "set variable to 0"
+   },
+   {
+    "q": "كيف تجعل النقاط تزيد عندما تجمع الشخصية نجمة؟",
+    "a": "باستخدام بلوك change score by 1 داخل شرط الملامسة"
+   },
+   {
+    "q": "أين تجد زر إنشاء متغير جديد في واجهة برنامج سكراتش؟",
+    "a": "في مجموعة الأوامر البرتقالية المسمى Variables"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey game champion, a variable is like your personal piggy bank. We store a number inside it and change it whenever you play and earn new points in the game!",
+   "To create our score bank in Scratch, we go to the Variables palette, click Make a Variable, and name it Score so it appears right on the stage for everyone to see.",
+   "When your character touches a golden star in the game, we use the change score by 1 block to easily increase the score by one whole number every single time.",
+   "If we want to build something powerful like a speed buff, we create another variable named speed and increase the character's movement when they grab a special item.",
+   "The golden rule here: anything that changes inside your game, like points or health, must be stored inside a variable so the computer remembers and organizes it.",
+   "In real racing and karting games, variables calculate the top speed and accumulated points so you can win the race and claim the trophy at the very end!"
+  ],
+  "example": "Imagine programming a cat collecting fish. We made a variable called points. First, we set points to 0. When the cat touches the fish, we use the change points by 1 block. This way, every fish the cat eats instantly and neatly increases the score on the screen.",
+  "mistake": "Sometimes we forget to include set points to 0 right at the start of the game, so points start from the old number of the previous round. The fix is to place the zero block right when the green flag is clicked.",
+  "recap": "Variables are number containers that make our games think and keep track of scores and speeds. Using change and show commands, we build fun and interactive games.",
+  "q": [
+   {
+    "t": "Which block is responsible for increasing the score by one in Scratch?",
+    "o": [
+     "set score to 1",
+     "change score by 1",
+     "show variable score"
+    ],
+    "a": 1,
+    "why": "We use change to increase or decrease a value by a specific amount."
+   },
+   {
+    "t": "Why do we create variables in a game anyway, champion?",
+    "o": [
+     "To color the stage background",
+     "To store numbers and track scores and speed",
+     "To make the character fly all the way up"
+    ],
+    "a": 1,
+    "why": "A variable acts like a piggy bank that saves and tracks changing numbers."
+   },
+   {
+    "t": "If we want scores to start strictly at zero when the game begins, what do we use?",
+    "o": [
+     "set score to 0",
+     "change score by 10",
+     "hide variable score"
+    ],
+    "a": 0,
+    "why": "The set command assigns a specific and fixed value at the beginning."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Match each Scratch block to its correct function",
+   "goal": "Understand the role of various variable commands in Scratch game design",
+   "pairs": [
+    [
+     "Make a Variable",
+     "Creates a new container to store numbers"
+    ],
+    [
+     "set score to 0",
+     "Resets the score at game start"
+    ],
+    [
+     "change score by 1",
+     "Increases points when collecting stars"
+    ],
+    [
+     "show variable",
+     "Displays the score on the game screen"
+    ]
+   ],
+   "success": "Awesome! You matched the variable commands skillfully and you are ready to build epic interactive games!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Variables",
+    "text": "A variable is a small magical box inside the computer's memory where we store a numerical or text value that changes while the game runs. Think of your savings piggy bank; every time you add a coin, it grows, just like the score variable in games.",
+    "code": "When Green Flag Clicked -> set [score v] to [0]",
+    "output": "The score variable is created and reset to start from zero."
+   },
+   {
+    "h": "Creating a New Variable in Scratch",
+    "text": "To create a new variable in Scratch, navigate to the orange palette labeled Variables, then click the Make a Variable button and type a nice, clear name like Score or Points.",
+    "code": "Click Variables palette -> Click [Make a Variable] -> Type 'Score'",
+    "output": "A new variable monitor appears on the stage along with its control blocks."
+   },
+   {
+    "h": "Showing and Hiding Variables on Stage",
+    "text": "As soon as you make a variable, it automatically appears on the stage for the player to watch their points grow. We can control its visibility using show variable and hide variable commands depending on game design.",
+    "code": "show variable [score v]",
+    "output": "The score counter appears on the game screen for the player to see clearly."
+   },
+   {
+    "h": "Modifying and Increasing Scores (Coin Collection)",
+    "text": "When your character collects a golden coin or an apple, we need the score to go up. We use the change block to add a number to the variable, just like earning points in classic arcade games.",
+    "code": "if touching [Coin v] then -> change [score v] by (1)",
+    "output": "The score value increases by one whole number whenever the character touches the coin."
+   },
+   {
+    "h": "Speed Buffs and Performance Boosts",
+    "text": "It's not just scores that can be variables; speed can be a variable too! If the character grabs a magic carrot, we increase the speed variable so they dash lightning-fast and dodge enemies.",
+    "code": "if touching [PowerUp v] then -> change [speed v] by (5)",
+    "output": "The character's movement speed increases, allowing them to move faster across the stage."
+   },
+   {
+    "h": "Smart Rules for Using Variables",
+    "text": "Always remember to start your game by locking variable values to zero or default settings using the set command at the start of your code, so you don't start the game with leftover points from the previous round.",
+    "code": "When Green Flag Clicked -> set [speed v] to [3]",
+    "output": "Speed is initialized to a normal, balanced value at the start of every new game."
+   },
+   {
+    "h": "Real-World Applications in Video Game Development",
+    "text": "In all major PlayStation and mobile games, variables are the foundation; they track remaining lives, race times, destroyed targets, and currency used to buy weapons and outfits for your favorite character.",
+    "code": "Game Loop: track [Health], [Ammo], and [HighScore]",
+    "output": "Continuous updating of game elements and accurate triggering of win or lose screens."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Variable",
+    "desc": "A digital memory box used to store and change values like score and speed."
+   },
+   {
+    "name": "Make a Variable",
+    "desc": "A command to create a brand new custom variable in Scratch."
+   },
+   {
+    "name": "set to",
+    "desc": "A command to assign a specific, fixed value to a variable, often used for zeroing."
+   },
+   {
+    "name": "change by",
+    "desc": "A command to increase or decrease a variable's value by a set amount during gameplay."
+   },
+   {
+    "name": "Speed Buff",
+    "desc": "A temporary feature that boosts character movement speed using variables."
+   },
+   {
+    "name": "Stage Monitor",
+    "desc": "The visual display of the variable on the game screen for the player to see."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block is used to set a variable's value to zero at the start of the game?",
+    "a": "set variable to 0"
+   },
+   {
+    "q": "How do you make the score increase when your character collects a star?",
+    "a": "By using the change score by 1 block inside a touching condition"
+   },
+   {
+    "q": "Where can you find the button to create a new variable in the Scratch interface?",
+    "a": "In the orange palette labeled Variables"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً يا بطل! برنامج ScratchJr مثل مسرح العرائس السحري، وفيه نصنع قصصاً ولعبةً جميلة بأيدينا الصغيرة. أول خطوة هي معرفة مساحة العمل التي سنرسم فيها كل أفكارنا الممتعة والملونة.",
+   "الشخصيات في برنامجنا نادراً ما تقف وحدها؛ بل تسمى 'السبرايت' (Sprite). اختر قطتنا الظريفة أو أي حيوان آخر ليكون بطل قصتك الأولى واضغط عليه ليبدأ المغامرة معنا.",
+   "كل بطل يحتاج إلى مكان يروي قصته فيه! اضغط على زر اختيار الخلفية لتضع قطتك في الحديقة، أو على الشاطئ، أو حتى في الفضاء الواسع بين النجوم المضيئة.",
+   "لكي يتحرك بطلنا، نحتاج إلى زر سحري يخبره متى يبدأ. هذا الزر هو 'العلم الأخضر'. اضغط عليه وسوف يبدأ العمل فوراً كأنه إشارة انطلاق سباق الجري.",
+   "التركيب كالألعاب تماماً! اسحب أي أمر وضعه بجانب أمر آخر لتتلاصق البلوكات كقطع الليجو معاً وتصنع جملة برمجية طويلة يفهمها البطل الصغير بدقة.",
+   "في حياتنا اليومية، نحن نحتاج إلى بداية واضحة لكل عمل نقوم به؛ فالمعلم يقول 'ابدأ' لنكتب، والعلم الأخضر في برمجتنا هو كلمة 'ابدأ' الخاصة بالشخصيات الظريفة."
+  ],
+  "example": "تخيل أنك تريد أن تجعل القط يتحرك خطوة للأمام عندما تبدأ القصة. أولاً، تختار القط كشخصية (Sprite)، ثم تختار خلفية الحديقة الجميلة. بعد ذلك، تسحب بلوك 'العلم الأخضر' وتضع بجانبه بلوك التحرك للأمام. عندما تضغط على العلم الأخضر أعلى الشاشة، يتحرك القط خطوة للأمام ويقول مياو! السبب في ذلك هو أن العلم الأخضر يعمل كمفتاح تشغيل رئيسي ينبه البلوكات بأن وقت اللعب قد بدأ.",
+  "mistake": "الخطأ الشائع هو وضع بلوكات الأوامر دون ربطها ببلوك العلم الأخضر في البداية. إذا فعلت ذلك، فلن يتحرك البطل مهما كررتم الضغط على العلم. الحل هو التأكد من التصاق بلوك العلم الأخضر تماماً ببداية سلسلة الأوامر البرمجية.",
+  "recap": "تعلمنا اليوم كيف نفتح برنامج ScratchJr ونختار الشخصيات والخلفيات المناسبة لقصصنا. كما عرفنا كيف نبدأ قصتنا بالعلم الأخضر ونركب البلوكات البرمجية معاً بكل سهولة.",
+  "q": [
+   {
+    "t": "ما هو البلوك الذي نخبر به الشخصية متى تبدأ بالعمل؟",
+    "o": [
+     "العلم الأخضر",
+     "زر الإغلاق",
+     "الخلفية الحمراء"
+    ],
+    "a": 0,
+    "why": "العلم الأخضر هو إشارة البدء لكل الأوامر البرمجية في ScratchJr."
+   },
+   {
+    "t": "ماذا نطلق على الشخصيات أو الكائنات التي نتحكم فيها بالبرنامج؟",
+    "o": [
+     "السبرايت (Sprite)",
+     "القلم السحري",
+     "الملف المفتوح"
+    ],
+    "a": 0,
+    "why": "السبرايت هو الاسم العلمي للشخصيات والأبطال داخل مساحة العمل."
+   },
+   {
+    "t": "كيف نجعل بلوكات الأوامر تعمل معاً؟",
+    "o": [
+     "نتركها متباعدة",
+     "نلصقها معاً مثل قطع الليجو",
+     "نضعها خارج الشاشة"
+    ],
+    "a": 1,
+    "why": "يتم ربط البلوكات ببعضها البعض لتعمل كفريق واحد مرتب ومنظم."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "صندوق عناصر ScratchJr",
+   "goal": "صنف العناصر التالية إلى مكانها الصحيح في مساحة العمل",
+   "buckets": [
+    "أبطال وشخصيات",
+    "أدوات وبدايات"
+   ],
+   "items": [
+    {
+     "t": "القطة الظريفة",
+     "b": 0
+    },
+    {
+     "t": "العلم الأخضر",
+     "b": 1
+    },
+    {
+     "t": "الكلب الودود",
+     "b": 0
+    },
+    {
+     "t": "زر التشغيل",
+     "b": 1
+    },
+    {
+     "t": "رائد الفضاء",
+     "b": 0
+    },
+    {
+     "t": "بلوك التحرك",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت مساحة العمل وأصبح بطلنا جاهزاً لبدء القصة بنجاح."
+  },
+  "sections": [
+   {
+    "h": "مرحباً بكم في مساحة ScratchJr",
+    "text": "برنامج ScratchJr هو بيئة برمجية مصممة خصيصاً للصغار لصنع قصصهم وألعابهم التفاعلية. تخيل أن شاشة التابلت أو الكمبيوتر هي مسرح عرائس كبير، وأنت المخرج الذي يحرك الأبطال ويختار ديكور المسرح بنفسك بكل سهولة ويسر.",
+    "code": "افتح التطبيق -> انظر إلى مساحة العمل الفارغة",
+    "output": "تظهر لك الشاشة الرئيسية ومعها الشخصية الافتراضية القط."
+   },
+   {
+    "h": "اختيار الأبطال أو السبرايت (Sprites)",
+    "text": "في عالم البرمجة، نسمي الشخصيات والحيوانات التي نضيفها اسم 'السبرايت' (Sprite). تماماً كما تختار لعبتك المفضلة من صندوق الألعاب لتلعب بها، يمكنك إضافة قطة أو كلب أو ديناصور ليكون بطل قصتك الجديدة.",
+    "code": "اضغط علامة الزائد (+) -> اختر شخصية الكلب من القائمة",
+    "output": "ينضم الكلب إلى مساحة العمل بجانب القط."
+   },
+   {
+    "h": "تزيين المسرح باختيار الخلفيات (Backdrops)",
+    "text": "القصة الجميلة تحتاج إلى مكان جميل تحدث فيه المغامرة. اختيار الخلفية يشبه تماماً رسم لوحة جدارية لغرفتك؛ يمكنك جعل أبطالك يقفون في حديقة خضراء مزهرة أو تحت الماء مع الأسماك الملونة.",
+    "code": "اضغط زر الخلفية أعلى الشاشة -> اختر خلفية الشاطئ",
+    "output": "تتغير خلفية مسرح العرائس إلى شاطئ بحر جميل."
+   },
+   {
+    "h": "مفتاح السحر: العلم الأخضر",
+    "text": "لكي يبدأ أبطالنا في تنفيذ الأوامر، يحتاجون إلى إشارة انطلاق واضحة تماماً مثل سباق الجري. العلم الأخضر هو زر التشغيل السحري الذي يخبر البرنامج: هيا ابدأوا القصة الآن!",
+    "code": "اسحب بلوك العلم الأخضر إلى منطقة الأوامر",
+    "output": "يصبح لدينا زر جاهز للضغط عليه لبدء الحركة."
+   },
+   {
+    "h": "تركيب البلوكات مثل قطع الليجو",
+    "text": "أوامر البرمجيات هنا ليست كتابة حروف صعبة، بل هي قطع ملونة تُسمى 'بلوكات'. تركيب البلوكات يشبه تماماً تركيب ألعاب المكعبات (الليجو)؛ تضع البلوك الثاني تحت الأول ليتلاصقا ويصنعا معاً شيئاً مفيداً.",
+    "code": "اسحب بلوك الحركة وألصقه تحت بلوك العلم الأخضر",
+    "output": "تتداخل القطعتان معاً وتكونان سلسلة أوامر متصلة."
+   },
+   {
+    "h": "ربط البداية بالنهاية",
+    "text": "لكي يفهم البلوك ما تفعله، يجب أن تبدأ دائماً ببلوك الحدث مثل العلم الأخضر، ثم تتبعه ببلوك الحركة أو الصوت. إذا وضعت الأوامر عشوائية بدون بداية واضحة، فلن يتحرك البطل ولن يفهم ماذا يريد منه المخرج الذكي.",
+    "code": "العلم الأخضر -> بلوك التحرك -> بلوك إصدار صوت",
+    "output": "عند الضغط على العلم، يتحرك البطل ويصدر صوتاً جميلاً بالترتيب."
+   },
+   {
+    "h": "قاعدة ذهبية للمبرمج الصغير",
+    "text": "تذكر دائماً: 'كل قصة رائعة تبدأ بعلم أخضر وشخصية نشيطة'. دائماً تأكد من وجود بطل على المسرح، وخلفية مبهجة، وبلوك بداية متصل بالأوامر قبل الضغط على زر التشغيل الكبير.",
+    "code": "تحقق من وجود: سبرايت + خلفية + علم أخضر + بلوك حركة",
+    "output": "مشروعك جاهز تماماً للتشغيل والعرض أمام أصدقائك."
+   },
+   {
+    "h": "الاستخدام في الحياة اليومية",
+    "text": "هل لاحظت أن كل شيء في حياتنا له بداية ونهاية؟ عندما تشغل التلفاز تضغط زر التشغيل أولاً، وعندما تبدأ الطبخ تحضر المكونات أولاً. في البرمجة، العلم الأخضر هو مفتاح التشغيل لكل أفكارك المبدعة.",
+    "code": "اضغط زر التشغيل للمروحة -> تبدأ المروحة بالدوران",
+    "output": "تعمل المروحة لأننا أعطيناها أمر البدء بوضوح."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Sprite",
+    "desc": "الشخصية أو الكائن الذي نتحكم فيه داخل القصة."
+   },
+   {
+    "name": "Backdrop",
+    "desc": "الخلفية أو الديكور الذي يظهر خلف الشخصيات."
+   },
+   {
+    "name": "Green Flag",
+    "desc": "زر التشغيل الأخضر الذي يبدأ تنفيذ الأوامر البرمجية."
+   },
+   {
+    "name": "Block",
+    "desc": "قطعة أمر ملونة نستخدمها لبناء البرامج."
+   },
+   {
+    "name": "Workspace",
+    "desc": "مساحة العمل التي نركب فيها البلوكات ونرتب القصة."
+   },
+   {
+    "name": "ScratchJr",
+    "desc": "برنامج مخصص للأطفال لصنع قصصهم وألعابهم التفاعلية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الاسم الذي نطلقه على القط أو الحيوانات التي نضيفها إلى مسرح ScratchJr؟",
+    "a": "سبرايت (Sprite)"
+   },
+   {
+    "q": "ما هو البلوك الأساسي الذي نبدأ به أي قصة لكي تعمل عند الضغط عليه؟",
+    "a": "بلوك العلم الأخضر (Green Flag)"
+   },
+   {
+    "q": "كيف نجعل بلوكات الأوامر تلتصق ببعضها البعض؟",
+    "a": "نسحبها ونقربها من بعضها مثل قطع الليجو."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome, little coder! ScratchJr is like a magical puppet theatre where we create wonderful stories and games with our own tiny hands. The very first step is exploring the workspace where all our colourful ideas come to life.",
+   "Characters in our program don't just stand alone; they are called 'Sprites'. Choose our cute cat or any other animal to be the main star of your very first story and tap it to start the adventure with us.",
+   "Every hero needs a place to tell their story! Tap the background button to place your cat in a garden, on a beach, or even out in the vast, shining outer space among glowing stars.",
+   "To make our hero move, we need a magical button that tells them when to begin. This button is the 'Green Flag'. Tap it and the action starts immediately like a running race starting gun.",
+   "Snapping blocks is just like playing toys! Drag any command and place it right next to another so the code blocks click together like Lego pieces to make a long instruction the small hero understands.",
+   "In our daily lives, we need a clear start for everything we do; a teacher says 'Start' so we can write, and the Green Flag in our coding is our characters' special 'Start' signal."
+  ],
+  "example": "Imagine you want to make the cat take a step forward when the story begins. First, you choose the cat as a Sprite, then you pick a lovely garden backdrop. Next, you drag the 'Green Flag' block and place the move-forward block right next to it. When you tap the Green Flag at the top of the screen, the cat steps forward and says meow! The reason is that the Green Flag acts as a main power switch telling the blocks playtime has started.",
+  "mistake": "A common mistake is placing command blocks without connecting them to the Green Flag block at the start. If you do that, the hero won't move no matter how many times you tap the flag. The fix is making sure the Green Flag block is snapped firmly to the beginning of your code chain.",
+  "recap": "Today we learned how to open ScratchJr and choose sprites and backgrounds for our stories. We also discovered how to start our story with the green flag and snap coding blocks together easily.",
+  "q": [
+   {
+    "t": "Which block tells the character when to start working?",
+    "o": [
+     "Green Flag",
+     "Close Button",
+     "Red Backdrop"
+    ],
+    "a": 0,
+    "why": "The Green Flag is the starting signal for all code scripts in ScratchJr."
+   },
+   {
+    "t": "What do we call the characters or objects we control in the program?",
+    "o": [
+     "Sprite",
+     "Magic Pen",
+     "Open File"
+    ],
+    "a": 0,
+    "why": "Sprite is the official name for characters and heroes inside the workspace."
+   },
+   {
+    "t": "How do we make command blocks work together?",
+    "o": [
+     "Leave them far apart",
+     "Snap them together like Lego pieces",
+     "Place them outside the screen"
+    ],
+    "a": 1,
+    "why": "Blocks are connected to each other to work as an organized team."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "ScratchJr Elements Bucket",
+   "goal": "Sort the following items into their correct workspace category",
+   "buckets": [
+    "Heroes and Characters",
+    "Tools and Starts"
+   ],
+   "items": [
+    {
+     "t": "Cute Cat",
+     "b": 0
+    },
+    {
+     "t": "Green Flag",
+     "b": 1
+    },
+    {
+     "t": "Friendly Dog",
+     "b": 0
+    },
+    {
+     "t": "Start Button",
+     "b": 1
+    },
+    {
+     "t": "Astronaut",
+     "b": 0
+    },
+    {
+     "t": "Motion Block",
+     "b": 1
+    }
+   ],
+   "success": "Wonderful! You organized the workspace and our hero is ready to start the story successfully."
+  },
+  "sections": [
+   {
+    "h": "Welcome to the ScratchJr Workspace",
+    "text": "ScratchJr is a programming environment specially designed for young kids to build their own interactive stories and games. Imagine your tablet or computer screen is a big puppet theatre, and you are the director who moves the heroes and sets the stage decor easily.",
+    "code": "Open app -> Look at the blank workspace",
+    "output": "The main screen appears along with the default cat character."
+   },
+   {
+    "h": "Choosing Heroes or Sprites",
+    "text": "In the coding world, we call the characters and animals we add 'Sprites'. Just like picking your favorite toy from a toy box to play with, you can add a cat, a dog, or a dinosaur to be your new story hero.",
+    "code": "Tap the plus sign (+) -> Choose the dog character from the menu",
+    "output": "The dog joins the workspace right next to the cat."
+   },
+   {
+    "h": "Decorating the Stage with Backdrops",
+    "text": "A great story needs a wonderful place for the adventure to happen. Choosing a backdrop is just like painting a mural for your room; you can make your heroes stand in a green blooming garden or underwater with colorful fish.",
+    "code": "Tap the backdrop button at the top -> Choose the beach backdrop",
+    "output": "The puppet theatre background changes to a lovely sea beach."
+   },
+   {
+    "h": "The Magic Key: The Green Flag",
+    "text": "To get our heroes to perform commands, they need a clear starting signal just like a running race. The Green Flag is the magical play button that tells the program: Let's start the story now!",
+    "code": "Drag the Green Flag block into the command area",
+    "output": "We have a ready button to tap for starting motion."
+   },
+   {
+    "h": "Snapping Blocks Like Lego Bricks",
+    "text": "Programming commands here are not hard typing letters, but colorful pieces called 'blocks'. Snapping blocks together is just like playing building blocks (Lego); you place the second block right under the first so they click and make something useful.",
+    "code": "Drag a motion block and snap it under the Green Flag block",
+    "output": "The two pieces lock together and form a connected command chain."
+   },
+   {
+    "h": "Connecting Start to Action",
+    "text": "For a block to understand what you are doing, you must always start with an event block like the Green Flag, followed by a motion or sound block. If you place commands randomly without a clear start, the hero won't move or know what the smart director wants.",
+    "code": "Green Flag -> Motion block -> Sound block",
+    "output": "Upon tapping the flag, the hero moves and plays a nice sound in order."
+   },
+   {
+    "h": "Golden Rule for the Young Coder",
+    "text": "Always remember: 'Every great story starts with a green flag and an active character'. Always make sure there is a hero on stage, a joyful background, and a start block connected to commands before pressing the big play button.",
+    "code": "Check for: Sprite + Backdrop + Green Flag + Motion block",
+    "output": "Your project is fully ready to run and show off to your friends."
+   },
+   {
+    "h": "Real-Life Use",
+    "text": "Did you notice that everything in our life has a start and an end? When you turn on the television you press the power button first, and when you start cooking you gather ingredients first. In coding, the Green Flag is the power switch for all your creative ideas.",
+    "code": "Press the fan power button -> The fan starts spinning",
+    "output": "The fan operates because we clearly gave it a start command."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Sprite",
+    "desc": "The character or object we control inside the story."
+   },
+   {
+    "name": "Backdrop",
+    "desc": "The background or stage decor appearing behind characters."
+   },
+   {
+    "name": "Green Flag",
+    "desc": "The green play button that starts running code commands."
+   },
+   {
+    "name": "Block",
+    "desc": "A colorful command piece we use to build programs."
+   },
+   {
+    "name": "Workspace",
+    "desc": "The area where we snap blocks and arrange the story."
+   },
+   {
+    "name": "ScratchJr",
+    "desc": "An app designed for young kids to make interactive stories and games."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is the name we give to the cat or animals we add to the ScratchJr stage?",
+    "a": "Sprite"
+   },
+   {
+    "q": "What is the main starting block we use to begin any story so it runs when tapped?",
+    "a": "Green Flag block"
+   },
+   {
+    "q": "How do we make command blocks snap together?",
+    "a": "We drag them close to each other like Lego pieces."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

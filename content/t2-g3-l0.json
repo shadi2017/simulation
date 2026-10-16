@@ -1,0 +1,310 @@
+{
+ "ar": {
+  "steps": [
+   "التعليقات في لغة إتش تي إم إل هي عبارة عن ملاحظات سرية نكتبها داخل الكود ولا يراها الزائر في المتصفح أبدًا، تمامًا مثل تدوين أسرار صغيرة في هامش كشكولك الخاص.",
+   "نكتب التعليق بهذه الطريقة البسيطة: علامة أصغر من ثم علامة تعجب وثلاث شرطات؟ لا، بل شرطتان هكذا <!-- ملاحظتك هنا --> ليعرف المتصفح أنه كود سري.",
+   "تساعدنا هذه التعليقات في توثيق الكود وتسهيل قراءته، فلو تركنا مشروعًا ورجعنا إليه بعد شهر، ستخبرنا التعليقات بكل جزء ماذا يفعله.",
+   "مثال صغير وواضح: <!-- هذا عنوان رئيسي لصفحتي --> <h1>مرحباً بكم</h1>، حيث يظهر العنوان للناس بينما تختفي الجملة السرية تمامًا.",
+   "القاعدة الذهبية للتعليقات: استخدمها دائمًا لشرح الأجزاء المعقدة، ولا تترك أسرارًا حساسة أو كلمات مرور داخلها لأن أي شخص يمكنه قراءة الكود المصدري للصفحة.",
+   "في الحياة اليومية، تشبه التعليقات الملصقات الصفراء الملونة (Post-it notes) التي تضعها على كتبك لتذكر نفسك بمعلومة هامة دون أن يراها معلمك في الفصل."
+  ],
+  "example": "دعنا نتخيل أننا نصمم صفحة عن الحيوانات الأليفة ونريد ترك ملاحظة لأنفسنا لتعديلها لاحقًا. الكود سيكون هكذا:\n\n<!-- TODO: Add more animals tomorrow -->\n<h1>قائمة الحيوانات</h1>\n<p>الأرانب والقطط أصدقاؤنا.</p>\n\nعندما نفتح الصفحة في المتصفح، سنرى العنوان والنص فقط، بينما تختفي جملة التنبيه تمامًا، مما يساعد المبرمج على تنظيم عمله بهدوء.",
+  "mistake": "الخطأ الشائع هو نسيان إغلاق التعليق بشكل صحيح هكذا: <!-- ملاحظة بدون إغلاق، مما يفسد الصفحة بأكملها! التصحيح هو التأكد دائمًا من إنهاء التعليق بالرمز -->.",
+  "recap": "التعليقات أدوات رائعة ومخفية لترك الملاحظات وتوثيق الكود داخل لغة إتش تي إم إل. المتصفحات تتجاهل هذه التعليقات تمامًا ولا تعرضها للزوار.",
+  "q": [
+   {
+    "t": "كيف نبدأ كتابة تعليق صحيح في لغة إتش تي إم إل؟",
+    "o": [
+     "<!--",
+     "<comment>",
+     "// "
+    ],
+    "a": 0,
+    "why": "نبدأ التعليق دائمًا بالرمز <!-- وننهيه بالرمز -->."
+   },
+   {
+    "t": "هل يستطيع زائر الموقع رؤية التعليقات التي نكتبها في الكود؟",
+    "o": [
+     "نعم، تظهر بخط عريض",
+     "لا، تختفي تمامًا في المتصفح",
+     "نعم، إذا ضغط على الماوس مرتين"
+    ],
+    "a": 1,
+    "why": "المتصفح يتجاهل التعليقات ولا يعرضها للزوار أبدًا."
+   },
+   {
+    "t": "لماذا نستخدم التعليقات في برمجة صفحات الويب؟",
+    "o": [
+     "لتلوين الخلفية باللون الأزرق",
+     "لتوثيق الكود وترك ملاحظات للمبرمج",
+     "لتسريع تحميل الصور الكبيرة"
+    ],
+    "a": 1,
+    "why": "التعليقات مخصصة لتوثيق الكود وتسهيل قراءته وصيانته لاحقًا."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع ما يظهر في المتصفح",
+   "goal": "اعرف ماذا سيعرض المتصفح عند تشغيل هذا الكود الذي يحتوي على تعليق.",
+   "code": "<!-- مرحباً بك يا صديقي -->\n<h1>أهلاً بك</h1>",
+   "options": [
+    "مرحباً بك يا صديقي أهلاً بك",
+    "أهلاً بك",
+    "صفحة فارغة تماماً"
+   ],
+   "a": 1,
+   "success": "رائع! لقد اختفى التعليق السري وبقي العنوان الجميل ظاهرًا على الشاشة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو التعليق البرمجي؟",
+    "text": "التعليق هو ملاحظة نكتبها داخل الكود لكي نقرأها نحن كمبرمجين، وهو يشبه السر الصغير الذي لا يظهر للناس.",
+    "code": "<p>هذه فقرة عادية.</p>\n<!-- هذا تعليق سري لا يظهر -->",
+    "output": "يظهر النص العادي فقط بينما يختفي التعليق."
+   },
+   {
+    "h": "طريقة كتابة التعليق في إتش تي إم إل",
+    "text": "لكي تفهم لغة إتش تي إم إل أن هذا تعليق، نبدأ بـ <!-- وننهي بـ --> تمامًا مثل الصندوق المغلق.",
+    "code": "<!-- أهلاً بك في موقعي الجميل -->\n<h1>موقع الكود</h1>",
+    "output": "يظهر العنوان الرئيسي فقط ولا يظهر محتوى الصندوق."
+   },
+   {
+    "h": "توثيق الكود للمستقبل",
+    "text": "التوثيق يعني كتابة شرح موجز بجانب الأكواد الصعبة لكي تتذكرها عندما تعود للمشروع بعد عدة أشهر.",
+    "code": "<!-- قسم الأزرار الهامة -->\n<button>اضغط هنا</button>",
+    "output": "يظهر الزر فقط بينما تحميه ملاحظة التوثيق."
+   },
+   {
+    "h": "إخفاء المحتوى المؤقت",
+    "text": "إذا أردت إخفاء جزء من الصفحة مؤقتًا دون حذفه نهائيًا، يمكنك تحويله إلى تعليق بسهولة.",
+    "code": "<!-- <p>هذا النص مخفي مؤقتاً</p> -->\n<p>هذا النص ظاهر</p>",
+    "output": "تظهر الفقرة الثانية فقط وتبقى الأولى مخفية داخل التعليق."
+   },
+   {
+    "h": "ترك ملاحظات للمبرمجين الآخرين",
+    "text": "عندما يعمل فريق كامل على تصميم موقع ويب، تساعد التعليقات في تبادل الرسائل والأفكار البرمجية.",
+    "code": "<!-- ملاحظة لفريق العمل: الرجاء تحديث الشعار -->\n<h2>شعارنا</h2>",
+    "output": "يظهر عنوان الشعار فقط وتظل رسالة الفريق سرية."
+   },
+   {
+    "h": "لماذا نتجنب الأسرار في التعليقات؟",
+    "text": "لأن أي شخص يمكنه رؤية كود المصدر (Source Code) لصفحة الويب، فلا تضع أبدًا كلمات مرور سرية في التعليقات.",
+    "code": "<!-- تحذير: هذا الكود مخصص للتدريب فقط -->\n<p>مرحباً بالعالم</p>",
+    "output": "تظهر عبارة مرحباً بالعالم مع بقاء التحذير مخفيًا في الكود."
+   },
+   {
+    "h": "تقسيم الأقسام الطويلة",
+    "text": "تساعد التعليقات في وضع عناوين فاصلة بين أجزاء الصفحة الكبيرة لتنظيم وترتيب الملفات البرمجية.",
+    "code": "<!-- بداية القائمة الجانبية -->\n<ul><li>عنصر</li></ul>",
+    "output": "تظهر القائمة المنقطة بوضوح بينما يفصل التعليق بينها."
+   },
+   {
+    "h": "تلخيص أساسيات التعليقات",
+    "text": "التعليقات أداة قوية للتنظيم والترتيب والتوثيق، واستخدامها بذكاء يجعل برمجتك نظيفة وواضحة دائمًا.",
+    "code": "<!-- تم بحمد الله كتابة الكود بنجاح -->\n<p>نهاية الدرس</p>",
+    "output": "تظهر جملة نهاية الدرس ويختفي تعليق النجاح."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<!-- ... -->",
+    "desc": "الوسم المستخدم لكتابة التعليقات في لغة إتش تي إم إل."
+   },
+   {
+    "name": "Documentation",
+    "desc": "توثيق الكود وشرح طريقة عمله للمبرمجين."
+   },
+   {
+    "name": "Hiding Content",
+    "desc": "إخفاء العناصر مؤقتًا عن طريق تحويلها إلى تعليقات."
+   },
+   {
+    "name": "Code Notes",
+    "desc": "ملاحظات سريعة تُترك داخل الكود للتذكير."
+   },
+   {
+    "name": "Source Code",
+    "desc": "الكود المصدري الذي يحتوي على جميع وسوم الصفحة بما فيها التعليقات."
+   },
+   {
+    "name": "Browser",
+    "desc": "البرنامج الذي يعرض صفحات الويب ويتجاهل قراءة التعليقات."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليقًا برمجيًا في إتش تي إم إل يحيي فيه الزوار بعبارة مرحباً.",
+    "a": "<!-- مرحباً بالزوار الكرام -->"
+   },
+   {
+    "q": "كيف تحول فقرة نصية عادية إلى تعليق مخفي؟",
+    "a": "نضعها بين رمزي التعليق هكذا: <!-- <p>النص</p> -->"
+   },
+   {
+    "q": "لماذا لا يجب وضع كلمات المرور السرية داخل تعليقات إتش تي إم إل؟",
+    "a": "لأن أي شخص يمكنه قراءة كود المصدر الخاص بالصفحة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "HTML comments are secret notes we write inside our code that visitors never see in their web browser, just like scribbling small secrets in your private notebook margin.",
+   "We write a comment using this simple syntax: an angle bracket, exclamation mark, and two hyphens like this <!-- your note here --> so the browser knows it is secret code.",
+   "These comments help us document our code and make it readable. If we leave a project and return a month later, comments tell us what every single part does.",
+   "A small and clear example: <!-- This is my main heading --> <h1>Welcome</h1>, where the heading shows up for everyone while the secret sentence completely disappears.",
+   "The golden rule of comments: always use them to explain complex parts, and never leave sensitive secrets or passwords inside because anyone can read page source code.",
+   "In daily life, comments are just like sticky Post-it notes you place on your textbooks to remind yourself of an important fact without your teacher seeing them in class."
+  ],
+  "example": "Let's imagine we are building a pet web page and want to leave a note for ourselves to update it later. The code looks like this:\n\n<!-- TODO: Add more animals tomorrow -->\n<h1>Animals List</h1>\n<p>Bunnies and cats are our friends.</p>\n\nWhen we open the page in the browser, we see only the heading and paragraph, while the reminder sentence vanishes entirely, helping the programmer organize work calmly.",
+  "mistake": "A common mistake is forgetting to close the comment properly like this: <!-- Note without closing, which breaks the whole page! The fix is to always ensure the comment ends with -->.",
+  "recap": "Comments are wonderful, hidden tools for leaving notes and documenting code inside HTML. Browsers completely ignore these comments and never display them to visitors.",
+  "q": [
+   {
+    "t": "How do we correctly start writing a comment in HTML?",
+    "o": [
+     "<!--",
+     "<comment>",
+     "// "
+    ],
+    "a": 0,
+    "why": "We always start a comment with the symbol <!-- and end it with -->."
+   },
+   {
+    "t": "Can a website visitor see the comments we write in the code?",
+    "o": [
+     "Yes, they appear in bold text",
+     "No, they completely disappear in the browser",
+     "Yes, if they double click the mouse"
+    ],
+    "a": 1,
+    "why": "The browser completely ignores comments and never displays them to visitors."
+   },
+   {
+    "t": "Why do we use comments in web page programming?",
+    "o": [
+     "To color the background blue",
+     "To document code and leave notes for the programmer",
+     "To speed up loading large images"
+    ],
+    "a": 1,
+    "why": "Comments are meant for documenting code and making it easier to read and maintain later."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Browser Output",
+   "goal": "Find out what the browser displays when running this code containing a comment.",
+   "code": "<!-- Hello my friend -->\n<h1>Welcome</h1>",
+   "options": [
+    "Hello my friend Welcome",
+    "Welcome",
+    "A completely blank page"
+   ],
+   "a": 1,
+   "success": "Awesome! The secret comment disappeared and the lovely heading remained visible on screen!"
+  },
+  "sections": [
+   {
+    "h": "What is a Code Comment?",
+    "text": "A comment is a note written inside the code for us programmers to read, acting like a tiny secret that never shows to people.",
+    "code": "<p>This is a normal paragraph.</p>\n<!-- This is a secret hidden comment -->",
+    "output": "Only the normal text appears while the comment stays hidden."
+   },
+   {
+    "h": "How to Write Comments in HTML",
+    "text": "To let HTML understand this is a comment, we start with <!-- and end with --> just like a locked box.",
+    "code": "<!-- Welcome to my lovely website -->\n<h1>Code Site</h1>",
+    "output": "Only the main heading appears and the box content remains hidden."
+   },
+   {
+    "h": "Documenting Code for the Future",
+    "text": "Documentation means writing brief explanations next to tricky codes so you remember them when returning to the project months later.",
+    "code": "<!-- Important buttons section -->\n<button>Click Here</button>",
+    "output": "Only the button appears while protected by the documentation note."
+   },
+   {
+    "h": "Hiding Content Temporarily",
+    "text": "If you want to hide part of a page temporarily without deleting it permanently, you can easily turn it into a comment.",
+    "code": "<!-- <p>This text is temporarily hidden</p> -->\n<p>This text is visible</p>",
+    "output": "Only the second paragraph appears and the first stays hidden inside the comment."
+   },
+   {
+    "h": "Leaving Notes for Fellow Programmers",
+    "text": "When a whole team works on designing a web page, comments help share messages and programming ideas.",
+    "code": "<!-- Team note: Please update the logo -->\n<h2>Our Logo</h2>",
+    "output": "Only the logo heading appears and the team message remains secret."
+   },
+   {
+    "h": "Why Avoid Secrets in Comments?",
+    "text": "Because anyone can view the Source Code of a web page, never put secret passwords inside comments.",
+    "code": "<!-- Warning: This code is for practice only -->\n<p>Hello World</p>",
+    "output": "Hello World appears while the warning stays hidden inside the code."
+   },
+   {
+    "h": "Dividing Long Sections",
+    "text": "Comments help place separator headings between large page parts to organize and tidy programming files.",
+    "code": "<!-- Beginning of sidebar menu -->\n<ul><li>Item</li></ul>",
+    "output": "The bulleted list appears clearly while the comment separates it."
+   },
+   {
+    "h": "Summarizing Comment Basics",
+    "text": "Comments are a powerful tool for organization, tidiness, and documentation, and using them smartly keeps your coding clean and clear always.",
+    "code": "<!-- Code successfully written praise be to God -->\n<p>End of lesson</p>",
+    "output": "The end of lesson sentence appears and the success comment disappears."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<!-- ... -->",
+    "desc": "The tag used to write comments in HTML."
+   },
+   {
+    "name": "Documentation",
+    "desc": "Documenting code and explaining how it works for programmers."
+   },
+   {
+    "name": "Hiding Content",
+    "desc": "Temporarily hiding elements by turning them into comments."
+   },
+   {
+    "name": "Code Notes",
+    "desc": "Quick remarks left inside code for memory reminders."
+   },
+   {
+    "name": "Source Code",
+    "desc": "The underlying code containing all page tags including comments."
+   },
+   {
+    "name": "Browser",
+    "desc": "The software displaying web pages and ignoring comment text."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write an HTML comment greeting visitors with a hello phrase.",
+    "a": "<!-- Hello dear visitors -->"
+   },
+   {
+    "q": "How do you turn a regular text paragraph into a hidden comment?",
+    "a": "We place it between comment symbols like this: <!-- <p>Text</p> -->"
+   },
+   {
+    "q": "Why should you never place secret passwords inside HTML comments?",
+    "a": "Because anyone can read the source code of the web page."
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: HTML table basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics"
+  },
+  {
+   "title": "MDN: Test your skills: HTML text basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/HTML_text_basics"
+  }
+ ],
+ "grounded": true
+}

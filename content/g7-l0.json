@@ -1,0 +1,372 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تمتلك سلحفاة روبوتية سحرية داخل شاشة الكمبيوتر ترسم خطوطاً خلفها أثناء تحركها! للتحكم بهذه السلحفاة، يجب أولاً استيراد مكتبة الرسم البرمجية الشهيرة باستخدام أمر import turtle لتفعيل أدوات الرسم الرسمية.",
+   "تفتح السلحفاة نافذة إحداثيات جديدة تسمى لوحة الرسم (coordinate screen)، حيث تبدأ السلحفاة حركتها من نقطة المنتصف تماماً عند الإحداثيات (0, 0) تماماً مثل محور الأعداد الرياضي الذي تتعلمونه في المدرسة.",
+   "يمكنك تحريك السلحفاة للأمام باستخدام أمر turtle.forward(100) ليتم رسم خط طولي بمقدار مئة بكسل في الاتجاه الذي توجّه رأسها إليه، بينما يمكنك استخدام turtle.right(90) لتدويرها يמיناً بزاوية قائمة تماماً.",
+   "لدينا حيل رائعة لتسريع العمل؛ يمكنك استخدام اختصار مثل turtle.fd() بدلاً من forward()، أو تدوير السلحفاة لليسار باستخدام turtle.left(120) لتوجيهها نحو رسم زوايا أضلاع المثلث المتساوي الأضلاع بكل سهولة ودقة.",
+   "القاعدة الذهبية للرسم الهندسي: لتصميم أشكال منتظمة بسرعة مذهلة دون تكرار الأوامر اليدوية، نستخدم حلقات التكرار البرمجية مثل for i in range(4): لتنفيذ خطوة السير والانعطاف أربع مرات متتالية لرسم مربع كامل.",
+   "تُستخدم هذه المهارات الممتعة في الواقع لتصميم ألعاب الفيديو التعليمية البسيطة، ورسم الأشكال الهندسيّة في برامج التصميم الهندسية، وبرمجة روبوتات الحركة الحقيقية التي تسير وتنعطف بناءً على تعليمات برمجية مشابهة تماماً."
+  ],
+  "example": "دعنا نرى كيف نرسم مربعاً هندسياً باستخدام حلقة تكرار بسيطة:\n```python\nimport turtle\n\nfor i in range(4):\n    turtle.forward(100)\n    turtle.right(90)\n\nturtle.done()\n```\nالسبب والمنطق: ستبدأ السلحفاة بالتحرك للأمام لمسافة 100 بكسل مرسومة، ثم تستدير 90 درجة يميناً. يتكرر هذا الأمر 4 مرات، مما ينتج عنه إغلاق الشكل ورسم أربعة أضلاع متساوية لتكوين مربع دقيق ومنتظم تماماً.",
+  "mistake": "الخطأ الشائع هو نسيان استيراد المكتبة أو نسيان أمر turtle.done() في النهاية مما يؤدي لإغلاق نافذة الرسم فور ظهورها. الحل هو التأكد دائماً من كتابة import turtle في البداية ووضع turtle.done() في نهاية البرنامج لإبقاء النافذة مفتوحة.",
+  "recap": "تعلمنا اليوم كيف نستورد مكتبة turtle، ونضبط نافذة الإحداثيات، ونرسم الأشكال الهندسية المتنوعة باستخدام الحلقات التكرارية والتحكم بحركة السلحفاة.",
+  "q": [
+   {
+    "t": "ما هو الأمر الصحيح لتحريك السلحفاة للأمام بمقدار 50 بكسل؟",
+    "o": [
+     "turtle.forward(50)",
+     "turtle.run(50)",
+     "turtle.move(50)"
+    ],
+    "a": 0,
+    "why": "لأن دالة forward هي المسؤولة رسمياً عن تحريك السلحفاة للأمام."
+   },
+   {
+    "t": "أين تبدأ السلحفاة حركتها في نافذة الإحداثيات عند فتح نافذة الرسم لأول مرة؟",
+    "o": [
+     "عند الزاوية العلوية اليسرى",
+     "عند نقطة المنتصف (0, 0)",
+     "عند حافة الشاشة اليمنى"
+    ],
+    "a": 1,
+    "why": "لأن نقطة البداية الافتراضية لأي شاشة رسومات سلحفاة هي نقطة الأصل (0, 0)."
+   },
+   {
+    "t": "ما هي أفضل طريقة لتكرار أمر رسم الخطوط أربع مرات لرسم مربع؟",
+    "o": [
+     "استخدام حلقة تكرار for i in range(4)",
+     "كتابة الأمر يدوياً مئة مرة",
+     "استخدام دالة print"
+    ],
+    "a": 0,
+    "why": "لأن حلقة for تساعدنا على تكرار الأوامر بكفاءة وسرعة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف أوامر مكتبة السلحفاة",
+   "goal": "صنف كل أمر برمجي إلى الفئة الصحيحة الخاصة به: حركات أو دوران.",
+   "buckets": [
+    "حركات للأمام والخلف",
+    "أوامر الدوران والزوايا"
+   ],
+   "items": [
+    {
+     "t": "turtle.forward(100)",
+     "b": 0
+    },
+    {
+     "t": "turtle.right(90)",
+     "b": 1
+    },
+    {
+     "t": "turtle.backward(50)",
+     "b": 0
+    },
+    {
+     "t": "turtle.left(120)",
+     "b": 1
+    },
+    {
+     "t": "turtle.fd(200)",
+     "b": 0
+    },
+    {
+     "t": "turtle.rt(45)",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد قمت بتنظيم أوامر الرسم بدقة وأصبحت جاهزاً لرسم أشكال هندسية مذهلة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي رسومات السلحفاة (Turtle Graphics)؟",
+    "text": "تشبه السلحفاة رساماً صغيراً يتحرك على لوحة رسم بيضاء بناءً على أوامر كتابية تعطيه إياها. إنها أداة تعليمية رائعة وممتعة مبتكرة لتعلم البرمجة من خلال الرسوم البصرية الفورية على الشاشة. تماماً مثلما توجه صديقك خطوة بخطوة في الممر، فإنك توجه سلحفاتها للرسم.",
+    "code": "import turtle\nturtle.forward(100)",
+    "output": "رسم خط مستقيم طوله 100 بكسل باتجاه اليمين."
+   },
+   {
+    "h": "استيراد مكتبة السلحفاة",
+    "text": "لكي تستخدم أوامر الرسم، يجب أولاً إخبار لغة بايثون بأنك تريد استدعاء حزمة الرسم المدمجة. يتم ذلك عبر كتابة أمر import turtle في أول سطر برمجي، وهو بمثابة إعطاء إذن للبرنامج بفتح أدوات الرسم.",
+    "code": "import turtle\nprint('مكتبة السلحفاة جاهزة')",
+    "output": "مكتبة السلحفاة جاهزة"
+   },
+   {
+    "h": "تهيئة شاشة الإحداثيات",
+    "text": "تفتح نافذة السلحفاة على شكل مستوى إحداثي رياضي ذي محورين س وع (X و Y). النقطة الافتراضية لوقوف السلحفاة هي المركز (0, 0). تشبه هذه الشاشة تماماً ورقة الرسم البياني التي تستخدمها في حصة الرياضيات لتحديد المواقع.",
+    "code": "import turtle\nprint(turtle.pos())",
+    "output": "(0.00, 0.00)"
+   },
+   {
+    "h": "التحرك للأمام والخلف",
+    "text": "تستطيع السلحفاة السير للأمام باستخدام forward() والخلف باستخدام backward(). تخيل أنك تدفع لعبة سيارة؛ السير للأمام يخلق خطاً مرسوماً، بينما التحرك للخلف يغير مكان السلحفاة بدون أن يغير اتجاه رأسها الأصلي.",
+    "code": "import turtle\nturtle.forward(80)\nturtle.backward(30)",
+    "output": "تتحرك السلحفاة للأمام ثم تتراجع قليلاً للخلف."
+   },
+   {
+    "h": "إدارة الانعطاف والزوايا",
+    "text": "لكي تغير السلحفاة اتجاهها نحو الأعلى أو الأسفل، تستخدم أمري right() و left() مع تحديد درجة الزاوية. الزوايا تقاس بالدرجات مثل الدائرة تماماً، حيث تعني الزاوية 90 درجة انعطافاً قائماً تماماً مثل زوايا المربع.",
+    "code": "import turtle\nturtle.right(90)\nturtle.forward(50)",
+    "output": "تستدير السلحفاة يميناً بزاوية قائمة وتتحرك للأمام."
+   },
+   {
+    "h": "استخدام الاختصارات السريعة",
+    "text": "لتوفير وقت الكتابة، توفر لغة بايثون اختصارات جاهزة لأوامر السلحفاة؛ فأمر fd() يؤدي نفس وظيفة forward() تماماً، و rt() تؤدي وظيفة right()، و bk() تؤدي وظيفة backward().",
+    "code": "import turtle\nturtle.fd(60)\nturtle.rt(90)",
+    "output": "تتحرك السلحفاة مسافة 60 بكسل للأمام وتستدير يميناً."
+   },
+   {
+    "h": "تصميم الأشكال عبر الحلقات التكرارية",
+    "text": "بدلاً من كتابة أوامر السير والانعطاف أربع مرات، نستخدم حلقة for التكرارية. تكرار الأوامر هو السر الحقيقي للبرمجة الذكية، حيث يتيح لك رسم مضلعات معقدة بأوامر معدودة.",
+    "code": "import turtle\nfor _ in range(3):\n    turtle.forward(100)\n    turtle.left(120)",
+    "output": "رسم مثلث متساوي الأضلاع بشكل تلقائي."
+   },
+   {
+    "h": "التحكم بالقلم والنافذة",
+    "text": "يمكنك رفع القلم باستخدام turtle.up() لتتحرك السلحفاة دون رسم خطوط، ثم خفضه بـ turtle.down() لمعاودة الرسم. كما يمكنك إنهاء البرنامج ودفع النافذة للبقاء مفتوحة عبر turtle.done().",
+    "code": "import turtle\nturtle.up()\nturtle.forward(50)\nturtle.down()\nturtle.forward(50)\nturtle.done()",
+    "output": "ترسم السلحفاة خطاً مقطعياً (فراغ ثم خط)."
+   }
+  ],
+  "reference": [
+   {
+    "name": "import turtle",
+    "desc": "يستورد مكتبة الرسم الرسومية للبدء في استخدام السلحفاة."
+   },
+   {
+    "name": "turtle.forward(d)",
+    "desc": "يحرك السلحفاة للأمام بمقدار المسافة المحددة (d) مرسوماً خطاً."
+   },
+   {
+    "name": "turtle.backward(d)",
+    "desc": "يحرك السلحفاة للخلف بنفس الاتجاه المعاكس دون تغيير الرأس."
+   },
+   {
+    "name": "turtle.right(angle)",
+    "desc": "يدير رأس السلحفاة يميناً بالزاوية المحددة بالدرجات."
+   },
+   {
+    "name": "turtle.left(angle)",
+    "desc": "يدير رأس السلحفاة لليسار بالزاوية المحددة."
+   },
+   {
+    "name": "turtle.pos()",
+    "desc": "يعيد إحداثيات موقع السلحفاة الحالي (س، ص)."
+   },
+   {
+    "name": "turtle.up()",
+    "desc": "يرفع القلم لكي تتحرك السلحفاة دون رسم."
+   },
+   {
+    "name": "turtle.done()",
+    "desc": "يحافظ على نافذة الرسم مفتوحة بعد انتهاء الأوامر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً برمجياً كاملاً لاستيراد مكتبة السلحفاة ورسم خط مستقيم طوله 120 بكسل.",
+    "a": "import turtle\nturtle.forward(120)\nturtle.done()"
+   },
+   {
+    "q": "ما هي الدالة المختصرة التي تعادل تماماً أمر turtle.forward(50)؟",
+    "a": "turtle.fd(50)"
+   },
+   {
+    "q": "كم عدد المرات التي تتكرر فيها حلقة رسم المربع باستخدام range(4)؟",
+    "a": "تتكرر 4 مرات تماماً بعدد أضلاع المربع."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine owning a magical robotic turtle inside your computer screen that draws lines behind it as it moves! To control this turtle, you first need to import the official drawing library using import turtle to activate graphics tools.",
+   "The turtle opens a new coordinate screen where it starts right at the center point (0, 0), exactly like the math coordinate plane you study at school.",
+   "You can move the turtle forward using turtle.forward(100) to draw a straight line of one hundred pixels in the direction it faces, or use turtle.right(90) to rotate it clockwise by a right angle.",
+   "We have cool tricks to speed up coding; use shortcuts like turtle.fd() instead of forward(), or turn left using turtle.left(120) to aim towards drawing equilateral triangle corners with total precision.",
+   "The golden rule for geometric drawing: to design regular shapes instantly without repeating manual commands, use Python loops like for i in range(4): to execute walking and turning steps four times consecutively for a square.",
+   "These fun skills are used in the real world to design simple educational video games, draw shapes in engineering design apps, and program real physical robots that move based on similar instructions."
+  ],
+  "example": "Let's see how we draw a geometric square using a simple loop:\n```python\nimport turtle\n\nfor i in range(4):\n    turtle.forward(100)\n    turtle.right(90)\n\nturtle.done()\n```\nReasoning: The turtle moves forward 100 pixels drawing a line, then turns 90 degrees right. This repeats 4 times, closing the shape and drawing four equal sides to form a precise, regular square.",
+  "mistake": "A common mistake is forgetting to import the library or omitting turtle.done() at the end, which causes the drawing window to flash and close instantly. The fix is ensuring you write import turtle at the top and put turtle.done() at the end.",
+  "recap": "Today we learned how to import the turtle module, initialize coordinate screens, and design geometric shapes using loops and turtle motion controls.",
+  "q": [
+   {
+    "t": "What is the correct command to move the turtle forward by 50 pixels?",
+    "o": [
+     "turtle.forward(50)",
+     "turtle.run(50)",
+     "turtle.move(50)"
+    ],
+    "a": 0,
+    "why": "Because the forward function is officially responsible for moving the turtle ahead."
+   },
+   {
+    "t": "Where does the turtle start its motion on the coordinate screen when opened?",
+    "o": [
+     "At the top-left corner",
+     "At the center point (0, 0)",
+     "At the right screen edge"
+    ],
+    "a": 1,
+    "why": "Because the default starting point for any turtle graphics screen is the origin (0, 0)."
+   },
+   {
+    "t": "What is the best way to repeat line-drawing commands four times to draw a square?",
+    "o": [
+     "Using a for i in range(4) loop",
+     "Writing the command manually a hundred times",
+     "Using a print function"
+    ],
+    "a": 0,
+    "why": "Because the for loop helps us repeat instructions efficiently and quickly."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Turtle Library Commands",
+   "goal": "Classify each command into its correct category: forward/backward motion or turning angles.",
+   "buckets": [
+    "Forward & Backward Motions",
+    "Turning & Angle Commands"
+   ],
+   "items": [
+    {
+     "t": "turtle.forward(100)",
+     "b": 0
+    },
+    {
+     "t": "turtle.right(90)",
+     "b": 1
+    },
+    {
+     "t": "turtle.backward(50)",
+     "b": 0
+    },
+    {
+     "t": "turtle.left(120)",
+     "b": 1
+    },
+    {
+     "t": "turtle.fd(200)",
+     "b": 0
+    },
+    {
+     "t": "turtle.rt(45)",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the drawing commands accurately and are ready to draw amazing geometric shapes!"
+  },
+  "sections": [
+   {
+    "h": "What is Turtle Graphics?",
+    "text": "Turtle graphics acts like a tiny digital painter moving across a white canvas based on written instructions you give it. It is a fantastic educational tool created to teach programming through immediate visual feedback on screen. Just like guiding a friend step-by-step down a hallway, you guide your turtle to draw.",
+    "code": "import turtle\nturtle.forward(100)",
+    "output": "Draws a straight line of 100 pixels towards the right."
+   },
+   {
+    "h": "Importing the Turtle Package",
+    "text": "To use drawing commands, you must first tell Python you want to call the built-in graphics module. This is done by typing import turtle at the very top of your code, serving as permission to open drawing tools.",
+    "code": "import turtle\nprint('Turtle library is ready')",
+    "output": "Turtle library is ready"
+   },
+   {
+    "h": "Initializing Coordinate Screens",
+    "text": "The turtle window opens as a mathematical coordinate plane with X and Y axes. The default starting position is the center (0, 0). This screen is just like the grid paper you use in math class to plot coordinates.",
+    "code": "import turtle\nprint(turtle.pos())",
+    "output": "(0.00, 0.00)"
+   },
+   {
+    "h": "Moving Forward and Backward",
+    "text": "The turtle can walk forward using forward() and backward using backward(). Imagine pushing a toy car; moving forward leaves a drawn trail, while moving backward changes the turtle's location without altering its heading direction.",
+    "code": "import turtle\nturtle.forward(80)\nturtle.backward(30)",
+    "output": "Turtle moves forward then steps back slightly."
+   },
+   {
+    "h": "Managing Turns and Angles",
+    "text": "To change direction upwards or downwards, use right() and left() commands specifying degree angles. Angles are measured in degrees like a circle, where 90 degrees means a sharp square corner turn.",
+    "code": "import turtle\nturtle.right(90)\nturtle.forward(50)",
+    "output": "Turtle turns right at a right angle and moves forward."
+   },
+   {
+    "h": "Using Quick Shortcuts",
+    "text": "To save typing time, Python provides built-in command shortcuts; fd() performs the exact same job as forward(), rt() matches right(), and bk() matches backward().",
+    "code": "import turtle\nturtle.fd(60)\nturtle.rt(90)",
+    "output": "Turtle moves 60 pixels forward and turns right."
+   },
+   {
+    "h": "Designing Shapes Through Loops",
+    "text": "Instead of typing walk and turn commands four times, we use a for loop. Looping instructions is the real secret of smart coding, allowing you to draw complex polygons with very few lines.",
+    "code": "import turtle\nfor _ in range(3):\n    turtle.forward(100)\n    turtle.left(120)",
+    "output": "Automatically draws an equilateral triangle."
+   },
+   {
+    "h": "Pen and Window Control",
+    "text": "You can lift the pen using turtle.up() so the turtle moves without drawing lines, then lower it with turtle.down() to draw again. You can also conclude your script and keep the window open using turtle.done().",
+    "code": "import turtle\nturtle.up()\nturtle.forward(50)\nturtle.down()\nturtle.forward(50)\nturtle.done()",
+    "output": "Turtle draws a dashed line segment (gap then line)."
+   }
+  ],
+  "reference": [
+   {
+    "name": "import turtle",
+    "desc": "Imports the turtle graphics module to start drawing."
+   },
+   {
+    "name": "turtle.forward(d)",
+    "desc": "Moves the turtle forward by distance (d) drawing a line."
+   },
+   {
+    "name": "turtle.backward(d)",
+    "desc": "Moves the turtle backward by distance without changing heading."
+   },
+   {
+    "name": "turtle.right(angle)",
+    "desc": "Turns the turtle heading right by the specified angle."
+   },
+   {
+    "name": "turtle.left(angle)",
+    "desc": "Turns the turtle heading left by the specified angle."
+   },
+   {
+    "name": "turtle.pos()",
+    "desc": "Returns the current (x, y) coordinates of the turtle."
+   },
+   {
+    "name": "turtle.up()",
+    "desc": "Lifts the pen so the turtle moves without drawing."
+   },
+   {
+    "name": "turtle.done()",
+    "desc": "Keeps the drawing window open after script execution."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write full Python code to import the turtle module and draw a straight line of 120 pixels.",
+    "a": "import turtle\nturtle.forward(120)\nturtle.done()"
+   },
+   {
+    "q": "What is the short function name that completely equals turtle.forward(50)?",
+    "a": "turtle.fd(50)"
+   },
+   {
+    "q": "How many times does the square-drawing loop repeat when using range(4)?",
+    "a": "It repeats exactly 4 times, matching the square's sides."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/library/turtle.html"
+  },
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html"
+  }
+ ],
+ "grounded": true
+}

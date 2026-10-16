@@ -1,0 +1,316 @@
+{
+ "ar": {
+  "steps": [
+   "فكرة التموضع في سي إس إس (CSS Positioning) هي مثل ترتيب ألعابك في الغرفة؛ بعضها يبقى مكانه الطبيعي، وبعضها تطير به ليقفز فوق ألعاب أخرى، أو يثبت في زاوية الغرفة لا يتحرك أبداً حتى لو مشيت.",
+   "الوضع الافتراضي (static) يعني أن العنصر يتبع طابور الصفحة الطبيعي واحدًا تلو الآخر، مثل اصطفاف الأطفال في طابور المدرسة بانتظام تام ودون أي تغيير.",
+   "الوضع النسبي (relative) يسمح لك بتحريك العنصر قليلاً عن مكانه الأصلي وكأنه يتزحزح من مكانه مع ترك مكانه الفارغ محجوزاً له كي لا يتأثر بقية الأطفال.",
+   "الوضع المطلق (absolute) يحرر العنصر تماماً من الطابور ليتحرك ويسكن فوق أي عنصر أب قريب منه، مثل لصق ملصق صغير (استيكر) على ركن علبة الهدايا.",
+   "الوضع الثابت (fixed) يجعل العنصر يلتصق بشاشة المتصفح ولا يتغير مكانه أبدًا حتى عندما تقوم بالتمرير صعوداً وهبوطاً، تماماً مثل شريط الملاحة العلوي في التطبيقات.",
+   "الربط الحديث (Anchor Positioning) يتيح ربط صندوق معلومات صغير (مثل فقاعة المساعدة tooltip) بعنصر أساسي بحيث يتبعه أينما ذهب بكل سهولة وذكاء."
+  ],
+  "example": "لنفترض أننا نريد تصميم بطاقة لعبة مع شارة صغيرة في زواياها العليا. نجعل صندوق البطاقة هو العنصر الأساسي، ونعطيه خصائص التموضع ليكون مرجعاً، ثم نضع الشارة بوضع مطلق (absolute) مع تحديد المسافة من الأعلى واليمين (top و right). بهذه الطريقة تلتصق الشارة تماماً بالركن المطلوب دون أن تفسد ترتيب الصفحة، وكأنها طابع بريدي على ظرف رسالة.\n\n```html\n<div style=\"position: relative; width: 200px; height: 100px; background: #e0f2fe; border-radius: 12px;\">\n  <span style=\"position: absolute; top: -10px; right: -10px; background: #ef4444; color: white; padding: 4px 8px; border-radius: 999px; font-size: 12px;\">جديد!</span>\n</div>\n```",
+  "mistake": "نسيان جعل العنصر الأب في وضع نسبي (position: relative) عند استخدام التموضع المطلق (absolute) بداخله، مما يجعل العنصر الصغير يهرب ويطير ليتموضع بالنسبة للصفحة كلها بدلاً من البطاقة. الحل هو إضافة position: relative للأب.",
+  "recap": "تمنحنا أدوات التموضع في سي إس إس تحكماً كاملاً في أماكن العناصر على الشاشة. تساعدنا الأوضاع المختلفة مثل الثابت والمطلق والنسبي في ابتكار أشكال وتصاميم مذهلة مثل القوائم العائمة وشارات التنبيه.",
+  "q": [
+   {
+    "t": "أي نوع تموضع يجعل العنصر يلتصق بالشاشة ولا يتحرك عند التمرير؟",
+    "o": [
+     "static",
+     "relative",
+     "fixed"
+    ],
+    "a": 2,
+    "why": "الوضع fixed يثبت العنصر في الشاشة بغض النظر عن تمرير الصفحة."
+   },
+   {
+    "t": "ما هو الوضع الافتراضي لجميع العناصر في صفحات الويب؟",
+    "o": [
+     "static",
+     "absolute",
+     "fixed"
+    ],
+    "a": 0,
+    "why": "العناصر تبدأ دائماً بوضع static داخل تدفق الصفحة الطبيعي."
+   },
+   {
+    "t": "عند استخدام position: absolute، على ماذا يعتمد العنصر في مكانه؟",
+    "o": [
+     "أول أب يمتلك تموضعاً (غير static)",
+     "شاشة المتصفح فقط دائماً",
+     "نهاية صفحة الويب تماماً"
+    ],
+    "a": 0,
+    "why": "العصر المطلق يبحث عن أقرب أب له خصائص تموضع ليتموضع بداخله."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات جعل شارة ملتصقة بالبطاقة",
+   "goal": "رتب الخطوات البرمجية لإنشاء بطاقة تحتوي على شارة ملصقة في ركنها العلوي.",
+   "items": [
+    "إنشاء عنصر الحاوية الأب للبطاقة",
+    "إعطاء الأب وضع التموضع النسبي (relative)",
+    "إضافة عنصر الشارة الصغير داخل البطاقة",
+    "تطبيق الوضع المطلق (absolute) على الشارة مع تحديد top و right"
+   ],
+   "success": "رائع! لقد استقر شريط الإشعارات والشارة في مكانهما المثالي فوق البطاقة بكل مهارة!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم التموضع الأساسي",
+    "text": "التموضع يشبه إلى حد كبير العاب التركيب، حيث يمكنك اختيار مكان دقيق لكل قطعة. في لغة سي إس إس، لدينا عدة خصائص تتحكم في كيفية ظهور العناصر ومكانها على شاشة المتصفح.",
+    "code": "<div style=\"background: #f3f4f6; padding: 15px; border-radius: 8px;\">عنصر عادي في الوضع الافتراضي</div>",
+    "output": "يظهر العنصر في مكانه الطبيعي داخل الصفحة دون أي تغيير."
+   },
+   {
+    "h": "الوضع الثابت (Static Layout)",
+    "text": "الوضع الثابت هو الحالة الافتراضية لكل العناصر. العناصر تتبع بعضها البعض في طابور مرتب، مثل الأطفال الذين يصطفون الواحد تلو الآخر في طابور الصباح بالمدرسة.",
+    "code": "<div style=\"position: static; background: #dbeafe; padding: 10px;\">أنا عنصر ثابت أتبع الطابور</div>",
+    "output": "يصطف العنصر بشكل طبيعي في تدفق الصفحة."
+   },
+   {
+    "h": "الوضع النسبي (Relative Layout)",
+    "text": "الوضع النسبي يسمح لك بإزاحة العنصر قليلاً عن مكانه الأصلي. تخيل أنك تقف في صفك ثم تتحرك خطوة صغيرة لليمين، مع بقاء مكانك الأصلي محجوزاً ولا يمكن لأحد شغله.",
+    "code": "<div style=\"position: relative; top: 10px; left: 20px; background: #fed7aa; padding: 10px;\">تم تحريكي نسبياً</div>",
+    "output": "ينزحف العنصر قليلاً عن مكانه الأصلي مع ترك فراغ مكانه."
+   },
+   {
+    "h": "الوضع المطلق (Absolute Layout)",
+    "text": "الوضع المطلق يحرر العنصر تماماً من الطابور، فيطير ويقفز ليتموضع بالنسبة لأقرب أب له يمتلك خاصية تموضع. يشبه ذلك لصق نجمة ذهبية على زاوية دفترك.",
+    "code": "<div style=\"position: relative; width: 150px; height: 80px; background: #e2e8f0;\">\n  <span style=\"position: absolute; bottom: 0; right: 0; background: #ef4444; color: white; padding: 2px 6px;\">مطلق</span>\n</div>",
+    "output": "تستقر كلمة مطلق في ركن الصندوق الرمادي بدقة."
+   },
+   {
+    "h": "الوضع الثابت الشاشي (Fixed Layout)",
+    "text": "الوضع الثابت يجعل العنصر ملتصقاً بشاشة العرض تماماً مثل ملصق على نظارتك؛ مهما قمت بالتمرير صعوداً أو هبوطاً في الصفحة، يظل هذا العنصر في مكانه لا يتغير أبداً.",
+    "code": "<div style=\"position: fixed; top: 0; left: 0; background: #10b981; color: white; width: 100%; padding: 5px; text-align: center;\">شريط علوي ثابت</div>",
+    "output": "يظهر شريط أخضر مثبت في أعلى الشاشة دائماً."
+   },
+   {
+    "h": "إنشاء شريط ملاحة علوي ثابت",
+    "text": "تستخدم المواقع الكبرى شريط ملاحة ثابت في الأعلى ليتمكن المستخدم من الوصول للقوائم والأزرار دائماً دون الحاجة للعودة إلى أعلى الصفحة. نجعل خاصية position مساوية لـ fixed مع تحديد top: 0.",
+    "code": "<nav style=\"position: fixed; top: 0; left: 0; width: 100%; background: #1e293b; color: white; padding: 10px;\">قائمة التنقل الثابتة</nav>",
+    "output": "شريط ملاحة أسود يغطي أعلى الشاشة ويبقى ثابتاً."
+   },
+   {
+    "h": "صناعة الأدوات العائمة (Floating Widgets)",
+    "text": "يمكننا وضع أزرار مساعدة عائمة في زاوية الشاشة السفلى، مثل زر المساعدة أو الدردشة الفورية. نستخدم الوضع الثابت (fixed) مع تحديد المسافات من الأسفل واليمين أو اليسار.",
+    "code": "<div style=\"position: fixed; bottom: 20px; right: 20px; background: #3b82f6; color: white; padding: 10px 15px; border-radius: 50px;\">💬 مساعدة</div>",
+    "output": "زر دردشة أزرق يطفو في أسفل يمين الشاشة."
+   },
+   {
+    "h": "ربط العناصر الحديث (Anchor Positioning)",
+    "text": "أحدث تقنيات سي إس إس تتيح ربط فقاعات المعلومات بالعناصر الأساسية مباشرة دون حسابات معقدة، بحيث تتبعها تلقائياً أينما تحركت على الشاشة.",
+    "code": "<div style=\"anchor-name: --btn; width: fit-content; background: #8b5cf6; color: white; padding: 8px; border-radius: 6px;\">زر أساسي</div>",
+    "output": "عنصر مرجعي مهيأ لربط الصناديق الأخرى به."
+   }
+  ],
+  "reference": [
+   {
+    "name": "position: static",
+    "desc": "الوضع الافتراضي للطابور العادي"
+   },
+   {
+    "name": "position: relative",
+    "desc": "تموضع نسبي مع ترك مكان فارغ"
+   },
+   {
+    "name": "position: absolute",
+    "desc": "تموضع مطلق حر بالكامل بالنسبة للأب"
+   },
+   {
+    "name": "position: fixed",
+    "desc": "تموضع ثابت لا يتحرك مع التمرير"
+   },
+   {
+    "name": "top / bottom",
+    "desc": "تحديد المسافة من الأعلى أو الأسفل"
+   },
+   {
+    "name": "left / right",
+    "desc": "تحديد المسافة من اليسار أو اليمين"
+   },
+   {
+    "name": "anchor-name",
+    "desc": "تسمية العنصر ليكون مرجعاً للربط الحديث"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS يجعل عنصراً يثبت في أعلى الشاشة تماماً.",
+    "a": "position: fixed; top: 0; left: 0;"
+   },
+   {
+    "q": "كيف تجعل عنصراً يتحرك بشكل نسبي بمقدار 10 بكسل للأفل؟",
+    "a": "position: relative; top: 10px;"
+   },
+   {
+    "q": "ما هي الخاصية المستخدمة لوضع عنصر في ركن بطاقة أب دون ترك فراغ في مكانه؟",
+    "a": "position: absolute"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Positioning rules in CSS decide where an element sits, much like arranging toys in your room; some stay in their normal spot, some jump above others, and some stay glued to a corner.",
+   "Static layout is the default state where elements follow the normal page flow one after another, just like children standing in a neat school line without changes.",
+   "Relative positioning lets you nudge an element slightly from its original spot as if it shifted while keeping its original empty space reserved so other elements don't move.",
+   "Absolute positioning completely frees the element from the normal flow so it floats and sits relative to a parent container, like sticking a small label onto the corner of a gift box.",
+   "Fixed positioning sticks an element to the browser screen so it never moves even when you scroll up and down, exactly like a persistent top navigation bar in apps.",
+   "Modern Anchor Positioning allows tying a small information box (like a tooltip) to a main element so it follows it smoothly and intelligently wherever it goes."
+  ],
+  "example": "Suppose we want to design a game card with a small badge in its top corners. We make the card container the anchor parent and give it relative positioning, then place the badge with absolute positioning specifying top and right distances. This way the badge sticks precisely to the desired corner without breaking the page layout, like a postage stamp on an envelope.\n\n```html\n<div style=\"position: relative; width: 200px; height: 100px; background: #e0f2fe; border-radius: 12px;\">\n  <span style=\"position: absolute; top: -10px; right: -10px; background: #ef4444; color: white; padding: 4px 8px; border-radius: 999px; font-size: 12px;\">New!</span>\n</div>\n```",
+  "mistake": "Forgetting to give the parent container position: relative when using position: absolute inside it, causing the small element to fly away and position itself relative to the entire page instead of the card. The fix is adding position: relative to the parent.",
+  "recap": "Positioning tools in CSS give us full control over element placement on the screen. Different modes like fixed, absolute, and relative help us build amazing designs such as floating widgets and alert badges.",
+  "q": [
+   {
+    "t": "Which positioning type sticks an element to the screen and prevents it from moving on scroll?",
+    "o": [
+     "static",
+     "relative",
+     "fixed"
+    ],
+    "a": 2,
+    "why": "The fixed value keeps an element locked to the screen viewport regardless of scrolling."
+   },
+   {
+    "t": "What is the default positioning value for all web page elements?",
+    "o": [
+     "static",
+     "absolute",
+     "fixed"
+    ],
+    "a": 0,
+    "why": "Elements always start with static positioning in the normal page flow."
+   },
+   {
+    "t": "When using position: absolute, what does the element base its position on?",
+    "o": [
+     "The nearest ancestor with a positioning rule (non-static)",
+     "The browser screen only always",
+     "The very bottom of the web page"
+    ],
+    "a": 0,
+    "why": "An absolute element looks for the closest parent with positioning rules to sit inside."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Steps to Attach a Badge to a Card",
+   "goal": "Arrange the coding steps to create a card with an anchored corner badge.",
+   "items": [
+    "Create the parent container element for the card",
+    "Give the parent container relative positioning",
+    "Add the small badge element inside the card",
+    "Apply absolute positioning to the badge with top and right coordinates"
+   ],
+   "success": "Awesome! The notification bar and badge settled into their perfect positions over the card with great skill!"
+  },
+  "sections": [
+   {
+    "h": "Basic Positioning Concept",
+    "text": "Positioning is very much like building blocks, where you can pick an exact spot for each piece. In CSS, we have properties that control how elements appear and where they sit on the browser screen.",
+    "code": "<div style=\"background: #f3f4f6; padding: 15px; border-radius: 8px;\">Normal element in default position</div>",
+    "output": "The element appears in its natural place on the page without changes."
+   },
+   {
+    "h": "Static Layout",
+    "text": "Static layout is the default state for all elements. Elements follow each other in an orderly queue, much like children standing one after another in a morning school line.",
+    "code": "<div style=\"position: static; background: #dbeafe; padding: 10px;\">I am a static element following the flow</div>",
+    "output": "The element aligns normally within the document flow."
+   },
+   {
+    "h": "Relative Layout",
+    "text": "Relative positioning allows you to nudge an element slightly from its original spot. Imagine standing in line and taking a small step right while your original spot remains reserved so no one else takes it.",
+    "code": "<div style=\"position: relative; top: 10px; left: 20px; background: #fed7aa; padding: 10px;\">Moved relatively</div>",
+    "output": "The element shifts slightly from its original place leaving its slot empty."
+   },
+   {
+    "h": "Absolute Layout",
+    "text": "Absolute positioning completely frees the element from the flow so it flies and sits relative to its nearest positioned parent. This is like sticking a golden star onto your notebook corner.",
+    "code": "<div style=\"position: relative; width: 150px; height: 80px; background: #e2e8f0;\">\n  <span style=\"position: absolute; bottom: 0; right: 0; background: #ef4444; color: white; padding: 2px 6px;\">Absolute</span>\n</div>",
+    "output": "The word absolute settles precisely in the corner of the grey box."
+   },
+   {
+    "h": "Fixed Layout",
+    "text": "Fixed positioning glues an element to the screen viewport just like a sticker on your glasses; no matter how much you scroll up or down the page, this element stays put without changing.",
+    "code": "<div style=\"position: fixed; top: 0; left: 0; background: #10b981; color: white; width: 100%; padding: 5px; text-align: center;\">Fixed Top Bar</div>",
+    "output": "A green bar is fixed at the very top of the screen."
+   },
+   {
+    "h": "Creating Persistent Navigation Headers",
+    "text": "Major websites use a fixed navigation header at the top so users can always reach menus and buttons without scrolling back up. We set position to fixed with top: 0.",
+    "code": "<nav style=\"position: fixed; top: 0; left: 0; width: 100%; background: #1e293b; color: white; padding: 10px;\">Persistent Nav Bar</nav>",
+    "output": "A dark navigation bar covers the top of the screen and stays fixed."
+   },
+   {
+    "h": "Floating Widgets",
+    "text": "We can place floating helper buttons in the bottom screen corner, such as a help button or live chat. We use fixed positioning with bottom and right or left offsets.",
+    "code": "<div style=\"position: fixed; bottom: 20px; right: 20px; background: #3b82f6; color: white; padding: 10px 15px; border-radius: 50px;\">💬 Help</div>",
+    "output": "A blue chat button floats at the bottom-right of the screen."
+   },
+   {
+    "h": "Modern Anchor Positioning",
+    "text": "The newest CSS features let you bind tooltips directly to anchor elements without complex math, making them follow the anchor automatically wherever it moves on screen.",
+    "code": "<div style=\"anchor-name: --btn; width: fit-content; background: #8b5cf6; color: white; padding: 8px; border-radius: 6px;\">Anchor Button</div>",
+    "output": "An anchor-ready element prepared for linking other boxes."
+   }
+  ],
+  "reference": [
+   {
+    "name": "position: static",
+    "desc": "Default normal document flow position"
+   },
+   {
+    "name": "position: relative",
+    "desc": "Relative position leaving empty space behind"
+   },
+   {
+    "name": "position: absolute",
+    "desc": "Free absolute position relative to parent"
+   },
+   {
+    "name": "position: fixed",
+    "desc": "Fixed position locked to screen viewport"
+   },
+   {
+    "name": "top / bottom",
+    "desc": "Define distance from top or bottom"
+   },
+   {
+    "name": "left / right",
+    "desc": "Define distance from left or right"
+   },
+   {
+    "name": "anchor-name",
+    "desc": "Name an element as a reference for modern anchoring"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to make an element stick permanently to the very top of the screen.",
+    "a": "position: fixed; top: 0; left: 0;"
+   },
+   {
+    "q": "How do you make an element move relatively down by 10 pixels?",
+    "a": "position: relative; top: 10px;"
+   },
+   {
+    "q": "What property is used to place an element in a parent card corner without leaving an empty slot?",
+    "a": "position: absolute"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Using CSS anchor positioning",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using"
+  },
+  {
+   "title": "MDN: CSS anchor positioning",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning"
+  }
+ ],
+ "grounded": true
+}

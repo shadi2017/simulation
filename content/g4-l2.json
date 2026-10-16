@@ -1,0 +1,322 @@
+{
+ "ar": {
+  "steps": [
+   "الخطوط بتخلي شكل موقعنا حلو ومقروء! فكر في الخطوط كأنها ملابس الكلام؛ بعضها رسمي زي البدلة، وبعضها مرح وملون زي لبس الخروج.",
+   "عشان نغير حجم الخط بنستخدم خاصية `font-size` بالقيمة اللي تعجبنا، زي `16px` للكلام العادي أو `24px` للعناوين البارزة.",
+   "عشان نخلي الكلام تخين وواضح بنستعمل `font-weight` بقيم زي `bold` أو بأرقام زي `700` عشان نلفت انتباه القارئ بسهولة.",
+   "بنقدر نضبط مكان الكلام في الصفحة باستخدام `text-align` عشان نخليه في النص (`center`) أو على اليمين أو الشمال.",
+   "القاعدة الذهبية: استخدم حجمين أو تلاتة بس في موقعك عشان يفضل شكل الكلام مريح للعين ومش مزعج.",
+   "في الحقيقة، المواقع الكبيرة زي يوتيوب وجوجل بتستخدم خطوط منتقاة بعناية عشان تخلينا نقرأ الفيديوهات والمقالات بكل راحة وسهولة."
+  ],
+  "example": "لو عندنا عنصر عنوان `<h1>` وعنصر كلام عادي `<p>`، نقدر نكتب الكود ده: `h1 { font-size: 32px; font-weight: bold; text-align: center; } p { font-size: 16px; font-weight: normal; text-align: right; }`، وده بيخلي العنوان كبير وتخين في النص، والكلام العادي مظبوط على اليمين.",
+  "mistake": "الغلطة الشائعة هي نسيان كتابة وحدة القياس زي `px` بعد رقم حجم الخط، والصح دايماً نكتب `font-size: 18px;` مش `font-size: 18;`.",
+  "recap": "اتعلمنا إزاي نتحكم في حجم وتخانات ومحاذاة الخطوط عشان مواقعنا تكون جميلة ومقروءة.",
+  "q": [
+   {
+    "t": "إيه الخاصية اللي بنستخدمها عشان نغير حجم الخط؟",
+    "o": [
+     "font-size",
+     "text-align",
+     "font-weight"
+    ],
+    "a": 0,
+    "why": "خاصية font-size مسؤولة عن تكبير وتصغير حجم النص."
+   },
+   {
+    "t": "إزاي نخلي الخط تخين (Bold) باستخدام الأرقام؟",
+    "o": [
+     "100",
+     "700",
+     "10px"
+    ],
+    "a": 1,
+    "why": "القيمة 700 تدل على الخط السميك أو الـ Bold."
+   },
+   {
+    "t": "إيه هي قيمة text-align اللي بتخلي الكلام في النص؟",
+    "o": [
+     "right",
+     "left",
+     "center"
+    ],
+    "a": 2,
+    "why": "القيمة center تضع النص في وسط الصفحة أو العنصر."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "تنسيق الخطوط",
+   "goal": "أكمل الجمل البرمجية الخاصة بتنسيق الخطوط بشكل صحيح.",
+   "items": [
+    {
+     "text": "h1 { ___: 32px; }",
+     "options": [
+      "font-size",
+      "text-align",
+      "font-weight"
+     ],
+     "a": 0
+    },
+    {
+     "text": "p { ___: bold; }",
+     "options": [
+      "font-size",
+      "font-weight",
+      "color"
+     ],
+     "a": 1
+    },
+    {
+     "text": "div { text-align: ___; }",
+     "options": [
+      "center",
+      "bold",
+      "16px"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! أصبحت صفحة الويب مرتبة وخطوطها واضحة ومقروءة."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الخطوط وأهميتها",
+    "text": "الخطوط هي روح صفحة الويب وواجهتها. تخيل لو كتاب كله بخط واحد صغير ومش واضح، هتحس بالملل ومش هتقدر تقرأه. في CSS، بنتحكم في شكل الحروف وأسلوبها عشان نسهل القراءة ونخلي الموقع جذاب للعين، زي ما بنختار أقلام ملونة وجميلة ونحن بنكتب في الكشكول.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: Arial, sans-serif; }\n  h1 { color: #2c3e50; }\n</style>\n</head>\n<body>\n  <h1>مرحباً بكم في عالم التصميم</h1>\n</body>\n</html>",
+    "output": "صفحة تعرض عنواناً بخط نظيف وجميل."
+   },
+   {
+    "h": "تغيير حجم الخط (Font Size)",
+    "text": "حجم الخط بيحدد قد إيه الحروف بتكون كبيرة أو صغيرة. بنستخدم خاصية `font-size` ونحط جنبها الرقم ومعاه وحدة قياس زي `px` (بكسل). العناوين دايماً بتكون كبيرة عشان تلفت الانتباه، والكلام العادي بيكون أصغر شوية عشان عيون القارئ تتعبش وهو بيقرا المقالات الطويلة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .big { font-size: 28px; }\n  .small { font-size: 14px; }\n</style>\n</head>\n<body>\n  <p class=\"big\">هذا عنوان رئيسي كبير</p>\n  <p class=\"small\">هذا نص فرعي صغير</p>\n</body>\n</html>",
+    "output": "نصان بأحجام مختلفة؛ الأول كبير والثاني صغير."
+   },
+   {
+    "h": "تخانات الخط وأوزانها (Font Weight)",
+    "text": "مش كل الخطوط نفس السمك؛ بعضها رقيق وبعضها سميك وتخين. بنستخدم `font-weight` عشان نتحكم في سمك الحروف. نقدر نكتب كلمة `bold` أو أرقام زي `400` للخط العادي و `700` للخط السميك. ده بيساعدنا نبرز الكلمات المهمة، زي ما بنحط خط تحت الكلمة أو نعملها بلون غامق في دفتر الملاحظات.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .normal { font-weight: 400; }\n  .heavy { font-weight: 700; }\n</style>\n</head>\n<body>\n  <p class=\"normal\">خط عادي وخفيف</p>\n  <p class=\"heavy\">خط سميك وبارز</p>\n</body>\n</html>",
+    "output": "نصان أحدهما عادي والآخر سميك وتخين."
+   },
+   {
+    "h": "محاذاة النص وترتيبه (Text Alignment)",
+    "text": "محاذاة النص بتهتم باتجاه الكلام على الشاشة؛ هل هو على اليمين، ولا الشمال، ولا في النص؟ بنستخدم خاصية `text-align` ومعاها قيم زي `right` أو `left` أو `center`. في اللغات العربية، بنحب نكتب من اليمين، لكن أوقات بنحتاج نحط العناوين في نص الصفحة عشان شكلها يكون منسق وجميل.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .center-text { text-align: center; }\n  .right-text { text-align: right; }\n</style>\n</head>\n<body>\n  <h2 class=\"center-text\">عنوان في منتصف الصفحة</h2>\n  <p class=\"right-text\">هذا النص محاذٍ لجهة اليمين.</p>\n</body>\n</html>",
+    "output": "عنوان في الوسط ونص مصطف على اليمين."
+   },
+   {
+    "h": "استيراد الخطوط من جوجل (Google Fonts)",
+    "text": "أحياناً خطوط الكمبيوتر العادية بتكون محدودة ومش كفاية. هنا بتيجي أهمية Google Fonts! بنقدر ندخل على موقع جوجل للخطوط، نختار خط فخم وجميل، وناخد كود الاستيراد نحطه في ملف الـ CSS بتاعنا، وبعدين نستخدمه في أي مكان في الصفحة عشان ندي لموقعنا شكلاً احترافياً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap\" rel=\"stylesheet\">\n<style>\n  body { font-family: 'Cairo', sans-serif; }\n</style>\n</head>\n<body>\n  <h1>خط كايرو الجميل من جوجل</h1>\n</body>\n</html>",
+    "output": "صفحة تعرض عنواناً بخط عربي عصري ومستورد."
+   },
+   {
+    "h": "قاعدة اختيار الخطوط المتناسقة",
+    "text": "سر التصميم الناجح هو البساطة! لما تختار خطوط لموقعك، ما تستخدمش أكتر من خطين أو تلاتة بكتير. تنويع الخطوط بزيادة بيخلي الصفحة تبدو فوضوية ومش مريحة لعين الزائر. اختر خطاً مميزاً للعناوين وخطاً بسيطاً وسهلاً للقراءة للنصوص العادية.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  h1 { font-size: 24px; font-weight: 700; text-align: center; }\n  p { font-size: 16px; font-weight: 400; text-align: right; }\n</style>\n</head>\n<body>\n  <h1>عنوان متناسق</h1>\n  <p>هذا نص فقرة يستخدم أحجاماً وأوزان متناسقة لراحة العين.</p>\n</body>\n</html>",
+    "output": "صفحة بتصميم مرتب ومنسق يسهل قراءته."
+   }
+  ],
+  "reference": [
+   {
+    "name": "font-size",
+    "desc": "يحدد حجم النص (مثل 16px أو 1.2em)."
+   },
+   {
+    "name": "font-weight",
+    "desc": "يحدد سمك أو تخانة الخط (مثل bold أو 700)."
+   },
+   {
+    "name": "text-align",
+    "desc": "يحدد محاذاة واتجاه النص (center, right, left)."
+   },
+   {
+    "name": "font-family",
+    "desc": "يحدد نوع وعائلة الخط المستخدم."
+   },
+   {
+    "name": "Google Fonts",
+    "desc": "مكتبة مجانية لاستيراد خطوط ويب رائعة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS يجعل حجم عنوان رئيسي 30 بكسل وتخانته سميكة وفي منتصف الصفحة.",
+    "a": "h1 { font-size: 30px; font-weight: bold; text-align: center; }"
+   },
+   {
+    "q": "كيف تجعل نص فقرة عادية محاذاة لليمين بحجم 14 بكسل؟",
+    "a": "p { font-size: 14px; text-align: right; }"
+   },
+   {
+    "q": "ما هي الخاصية المسؤولة عن جعل الخط سميكاً ورقمها 700؟",
+    "a": "font-weight"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Fonts make our website look cool and readable! Think of fonts as the clothes words wear; some are formal like a suit, others are fun and bright like casual wear.",
+   "To change the text size, we use the `font-size` property with our preferred value, like `16px` for normal text or `24px` for prominent headings.",
+   "To make text bold and clear, we use `font-weight` with values like `bold` or numbers like `700` to easily catch the reader's attention.",
+   "We can adjust where text sits on the page using `text-align` to place it in the center (`center`), right, or left.",
+   "Golden rule: Use only two or three font styles on your website so the text looks comfortable to the eye and not cluttered.",
+   "In real life, big websites like YouTube and Google use carefully chosen fonts to make reading videos and articles comfortable and easy."
+  ],
+  "example": "If we have an `<h1>` heading and a `<p>` body text element, we can write this code: `h1 { font-size: 32px; font-weight: bold; text-align: center; } p { font-size: 16px; font-weight: normal; text-align: left; }`, which makes the heading large, bold, and centered, while the body text is left-aligned.",
+  "mistake": "A common mistake is forgetting to write the unit like `px` after the font size number, so always write `font-size: 18px;` instead of `font-size: 18;`.",
+  "recap": "We learned how to control text size, weight, and alignment to make our web pages beautiful and readable.",
+  "q": [
+   {
+    "t": "Which property do we use to change the text size?",
+    "o": [
+     "font-size",
+     "text-align",
+     "font-weight"
+    ],
+    "a": 0,
+    "why": "The font-size property is responsible for scaling text size."
+   },
+   {
+    "t": "How do you make text bold using numerical values?",
+    "o": [
+     "100",
+     "700",
+     "10px"
+    ],
+    "a": 1,
+    "why": "The value 700 represents bold or heavy font weight."
+   },
+   {
+    "t": "What is the text-align value that puts text in the middle?",
+    "o": [
+     "right",
+     "left",
+     "center"
+    ],
+    "a": 2,
+    "why": "The center value places the text in the middle of the element."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Typography Formatting",
+   "goal": "Complete the CSS font formatting code sentences correctly.",
+   "items": [
+    {
+     "text": "h1 { ___: 32px; }",
+     "options": [
+      "font-size",
+      "text-align",
+      "font-weight"
+     ],
+     "a": 0
+    },
+    {
+     "text": "p { ___: bold; }",
+     "options": [
+      "font-size",
+      "font-weight",
+      "color"
+     ],
+     "a": 1
+    },
+    {
+     "text": "div { text-align: ___; }",
+     "options": [
+      "center",
+      "bold",
+      "16px"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! The web page layout is now neat with clear and readable typography."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Fonts and Importance",
+    "text": "Fonts are the soul and interface of a web page. Imagine a book written in one tiny, unclear font; you would get bored and struggle to read it. In CSS, we control letter shapes and styles to ease reading and make the site visually appealing, just like choosing colorful pencils when writing in a notebook.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: Arial, sans-serif; }\n  h1 { color: #2c3e50; }\n</style>\n</head>\n<body>\n  <h1>Welcome to Design World</h1>\n</body>\n</html>",
+    "output": "A page showing a heading with a clean, nice font."
+   },
+   {
+    "h": "Changing Font Size",
+    "text": "Font size determines how large or small letters appear. We use the `font-size` property followed by a number and a unit like `px` (pixels). Headings are usually large to catch attention, while body text is smaller so the reader's eyes won't get tired reading long paragraphs.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .big { font-size: 28px; }\n  .small { font-size: 14px; }\n</style>\n</head>\n<body>\n  <p class=\"big\">This is a big main heading</p>\n  <p class=\"small\">This is a small subtext</p>\n</body>\n</html>",
+    "output": "Two texts of different sizes; the first is big, the second small."
+   },
+   {
+    "h": "Font Weight and Thickness",
+    "text": "Not all fonts have the same thickness; some are thin and others are bold and heavy. We use `font-weight` to control letter thickness. We can write `bold` or numbers like `400` for normal and `700` for bold text. This helps us highlight important words, just like underlining or bolding in a notepad.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .normal { font-weight: 400; }\n  .heavy { font-weight: 700; }\n</style>\n</head>\n<body>\n  <p class=\"normal\">Normal and light font</p>\n  <p class=\"heavy\">Thick and prominent font</p>\n</body>\n</html>",
+    "output": "Two texts, one normal and one thick and bold."
+   },
+   {
+    "h": "Text Alignment",
+    "text": "Text alignment controls the direction of words on the screen; are they on the right, left, or center? We use the `text-align` property with values like `right`, `left`, or `center`. This helps organize our page layout neatly so content is easy to follow.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .center-text { text-align: center; }\n  .left-text { text-align: left; }\n</style>\n</head>\n<body>\n  <h2 class=\"center-text\">Heading in the Center</h2>\n  <p class=\"left-text\">This text is aligned to the left.</p>\n</body>\n</html>",
+    "output": "A centered heading and left-aligned text."
+   },
+   {
+    "h": "Importing Google Fonts",
+    "text": "Sometimes standard computer fonts are limited and not enough. That is where Google Fonts comes in! We can visit Google Fonts, pick a gorgeous custom font, copy its import link into our CSS, and use it anywhere on our page to give our site a professional look.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap\" rel=\"stylesheet\">\n<style>\n  body { font-family: 'Roboto', sans-serif; }\n</style>\n</head>\n<body>\n  <h1>Google Imported Roboto Font</h1>\n</body>\n</html>",
+    "output": "A page displaying a heading in a modern imported font."
+   },
+   {
+    "h": "Consistent Font Pairing Rule",
+    "text": "The secret to successful design is simplicity! When picking fonts for your site, do not use more than two or three at most. Overusing different fonts makes the page look cluttered and uncomfortable for visitors. Choose a distinct font for headings and a clean, readable one for paragraphs.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  h1 { font-size: 24px; font-weight: 700; text-align: center; }\n  p { font-size: 16px; font-weight: 400; text-align: left; }\n</style>\n</head>\n<body>\n  <h1>Consistent Heading</h1>\n  <p>This paragraph uses matching sizes and weights for visual comfort.</p>\n</body>\n</html>",
+    "output": "A page with a neat, coordinated design that is easy to read."
+   }
+  ],
+  "reference": [
+   {
+    "name": "font-size",
+    "desc": "Sets the size of text (e.g., 16px or 1.2em)."
+   },
+   {
+    "name": "font-weight",
+    "desc": "Sets the thickness of text (e.g., bold or 700)."
+   },
+   {
+    "name": "text-align",
+    "desc": "Sets the horizontal alignment of text (center, right, left)."
+   },
+   {
+    "name": "font-family",
+    "desc": "Sets the typeface family used for text."
+   },
+   {
+    "name": "Google Fonts",
+    "desc": "Free library for importing awesome web fonts."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to make a main heading 30px, bold, and centered.",
+    "a": "h1 { font-size: 30px; font-weight: bold; text-align: center; }"
+   },
+   {
+    "q": "How do you make a paragraph left-aligned with a font size of 14px?",
+    "a": "p { font-size: 14px; text-align: left; }"
+   },
+   {
+    "q": "What property is responsible for making text bold with a value of 700?",
+    "a": "font-weight"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Baseline (typography)",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Typography"
+  },
+  {
+   "title": "MDN: Visual formatting model",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Visual_formatting_model"
+  }
+ ],
+ "grounded": true
+}

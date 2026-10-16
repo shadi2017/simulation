@@ -1,0 +1,255 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك بتلعب لعبة قط وكمان كورة، وعايز أول ما القط يلمس الكورة، الكورة تفاجأ وتتحرك! دي فكرة السحرية بتاعت أداة التلامس في سكراتش جونيور، اللي بتخلي الشخصيات تحس ببعضها.",
+   "عشان نعمل كدة، بنحط بلوك 'البداية عند التلامس' (Start on Bump) فوق الكورة، ونخلي بعدها بلوك النط (Jump) عشان تنط أول ما تلمس القط.",
+   "البلوك ده بيشتغل كمستشعر سحري؛ أول ما صندوق الشخصية يخبط في صندوق الشخصية التانية على الشاشة، بيبعت إشارة فورا تبدأ الشغل المبرمج تحت البلوك ده.",
+   "تعال نجرب فكرة تانية: أرنب وجزرة. حط بلوك التلامس للجزرة، وبعده بلوك الاختفاء (Hide)، عشان الجزرة تختفي أول ما الأنبوب أو الأرنب يخبط فيها كأنها تؤكل!",
+   "القاعدة البسيطة هنا: دايما حط بلوك التلامس للشخصية اللي هتعمل رد الفعل المفاجئ (زي الكورة اللي بتنط)، مش الشخصية اللي بتتحرك في الأول.",
+   "في ألعابنا الحقيقية، الحركات دي مهمة جدا عشان نخلي الشخصيات تتفاعل مع اللاعب ومع بعضها، زي لما لاعب كرة القدم يلمس الكورة وتتحرك."
+  ],
+  "example": "عشان نخلي الكورة تنط لما يلمسها القط، بنقف على شخصية الكورة ونختار من البلوقات الصفراء بلوك 'بداية عند التلامس'، وبعده بنحط بلوك النط البنفسجي. لما ندوس علم أخضر ونحرك القط لحد ما يخبط في الكورة، الكورة بتنط في الهوا بفرحة شديدة، وده بيخلي قصتنا حية وجميلة جدا!",
+  "mistake": "الغلطة المشهورة هي إننا نحط بلوك التلامس لشخصية القط بدل الكورة، والحل هو إننا نركز مين اللي هيتأثر بالتخبط ونحط البلوك عنده.",
+  "recap": "اتعلمنا إزاي نخلي الشخصيات تتفاعل لما تلمس بعضها باستخدام بلوك التلامس. وده بيضيف مفاجآت وحركات ممتعة لقصصنا.",
+  "q": [
+   {
+    "t": "إيه هو البلوك المسؤول عن بدء الحركة عند لمس شخصية تانية؟",
+    "o": [
+     "بلوك العلم الأخضر",
+     "بلوك البداية عند التلامس",
+     "بلوك الانتظار"
+    ],
+    "a": 1,
+    "why": "بلوك التلامس بيشتغل تلقائيا أول ما الشخصيتين يخبطوا في بعض."
+   },
+   {
+    "t": "لو عايز الكورة تنط لما القط يلمسها، نحط البلوك فين؟",
+    "o": [
+     "على شخصية الكورة",
+     "على شخصية القط",
+     "على الخلفية"
+    ],
+    "a": 0,
+    "why": "الشخصية اللي هتعمل رد الفعل (الكورة) هي اللي بتاخد بلوك التلامس."
+   },
+   {
+    "t": "إيه هي ردود الفعل المفاجئة اللي ممكن نعملها بالتلامس؟",
+    "o": [
+     "النط أو الاختفاء",
+     "تلوين الشاشة فقط",
+     "إغلاق البرنامج"
+    ],
+    "a": 0,
+    "why": "التلامس بيشغل حركات زي النط، الاختفاء، أو الإصدار الصوتي."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات جعل الكورة تنط عند لمس القط",
+   "goal": "رتب الخطوات صح عشان الكورة تنط أول ما القط يخبط فيها",
+   "items": [
+    "اضغط على شخصية الكورة",
+    "اسحب بلوك البداية عند التلامس وضعه في منطقة البرمجة",
+    "اسحب بلوك النط وضعه بجانب بلوك التلامس",
+    "حرك القط ليلمس الكورة لتبدأ النط"
+   ],
+   "success": "يا سلام! الكورة نطت في الهوا بكل حماس أول ما القط لمسها!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن تلامس الشخصيات",
+    "text": "لما تلعب أنت وصحابك وتخبطوا في بعض بالخطأ، كل واحد بيشعر بالتاني ويتصرف. في سكراتش جونيور، بنخلي الشخصيات تحس ببعضها عن طريق تلامس الصناديق بتاعتهم على الشاشة، وده بيبدأ أحداث سحرية جديدة.",
+    "code": "مشهد: القط يمشي ويخبط في الكورة",
+    "output": "الشخصيتان تتلامسان وتتبادلان الإشارات"
+   },
+   {
+    "h": "بلوك البداية عند التلامس",
+    "text": "البلوك ده لونه أصفر وعليه رسمة شخصين بيخبطوا في بعض. بيعتبر زي ودن أو إحساس للشخصية، بيقولها: 'اصحي واعملي الحركة دي أول ما حد يلمسك!'",
+    "code": "Start on Bump block -> Jump block",
+    "output": "تبدأ الكورة في القفز فورا"
+   },
+   {
+    "h": "ردود الفعل المفاجئة",
+    "text": "المفاجآت بتخلي القصة ممتعة! لما قط يلمس كلب، ممكن الكل يختفي أو ينط أو يقول 'مياو' بالعكس. التلامس بيفتح باب كبير للأفكار المفاجئة في قصتك.",
+    "code": "Start on Bump -> Hide block",
+    "output": "تختفي الشخصية فجأة عند اللمس"
+   },
+   {
+    "h": "تطبيق الكورة والقط",
+    "text": "عشان نطبق ده، بنختار كورة وقط. بنبرمج الكورة بحيث أول ما القط يلمسها، تنط لفوق 3 مرات. الحركة دي بتخلي اللعبة كأنها حقيقية وفيها تفاعل ذكي.",
+    "code": "Cat moves -> Touches Ball -> Ball jumps",
+    "output": "الكورة تتفاعل وتقفز في مكانها"
+   },
+   {
+    "h": "قاعدة ذهبية للتلامس",
+    "text": "تذكر دايما: الشخصية التي تتحرك وتذهب للأخرى هي المسبب، والشخصية التي تتلقى اللمسة هي التي نضع لها بلوك التلامس عشان تعمل رد الفعل المفاجئ.",
+    "code": "Rule: Put bump on the receiver of the touch",
+    "output": "برمجة صحيحة بدون أخطاء في التداخل"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Start on Bump",
+    "desc": "بلوك أصفر يبدأ السكربت عند تلامس شخصيتين"
+   },
+   {
+    "name": "Collision",
+    "desc": "حدث تخبط أو تلامس الشخصيتين ببعضهما"
+   },
+   {
+    "name": "Surprise Reaction",
+    "desc": "حركة مفاجئة تحدث نتيجة لمس الشخصية"
+   },
+   {
+    "name": "Jump Block",
+    "desc": "بلوك بنفسجي يجعل الشخصية تقفز لأعلى ولأسفل"
+   },
+   {
+    "name": "Hide Block",
+    "desc": "بلوك يساهم في إخفاء الشخصية من الشاشة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو لون بلوك التلامس في سكراتش جونيور؟",
+    "a": "أصفر (Yellow trigger block)"
+   },
+   {
+    "q": "أين نضع بلوك التلامس، للشخصية التي تتحرك أم التي تتلقى اللمسة؟",
+    "a": "للشخصية التي تتلقى اللمسة وتفعل رد الفعل"
+   },
+   {
+    "q": "اذكر رد فعل مفاجئ يمكن برمجته بعد التلامس.",
+    "a": "النط (Jump) أو الاختفاء (Hide)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine playing catch where the ball jumps excitedly the moment your cat touches it! That is the magic of the bump trigger in ScratchJr, which lets characters sense each other.",
+   "To do this, we place the 'Start on Bump' trigger block on the ball character, followed by a 'Jump' block so it leaps as soon as the cat makes contact.",
+   "This block acts like a magic sensor; the instant two character bounding boxes touch on the screen, it immediately sends a signal to run the blocks underneath.",
+   "Let us try another idea: a rabbit and a carrot. Put the bump block on the carrot and a 'Hide' block after it, so the carrot vanishes when touched as if it was eaten!",
+   "The golden rule here: always attach the bump block to the character performing the surprise reaction (like the jumping ball), not necessarily the moving one.",
+   "In real games, these reactions are essential for making characters interact with players and each other, just like kicking a soccer ball to watch it fly."
+  ],
+  "example": "To make the ball jump when touched by the cat, select the ball character, grab the yellow 'Start on Bump' block, and snap a purple 'Jump' block right after it. When we press the green flag and drive the cat into the ball, the ball joyfully leaps into the air, bringing our story to life!",
+  "mistake": "A common mistake is placing the bump block on the moving cat instead of the ball. The fix is to make sure the reaction block goes on the character that receives the touch.",
+  "recap": "We learned how to make characters react when they touch each other using the bump trigger block. This adds fun surprises and dynamic actions to our stories.",
+  "q": [
+   {
+    "t": "Which block starts an action when two characters touch?",
+    "o": [
+     "Green flag block",
+     "Start on Bump block",
+     "Wait block"
+    ],
+    "a": 1,
+    "why": "The bump trigger automatically runs when characters collide."
+   },
+   {
+    "t": "If you want the ball to jump when the cat touches it, where do you put the bump block?",
+    "o": [
+     "On the ball character",
+     "On the cat character",
+     "On the background"
+    ],
+    "a": 0,
+    "why": "The character doing the reacting (the ball) receives the bump block."
+   },
+   {
+    "t": "What is an example of a surprise reaction?",
+    "o": [
+     "Jumping or hiding",
+     "Only changing screen color",
+     "Closing the app"
+    ],
+    "a": 0,
+    "why": "Bumping can trigger movements like jumping, hiding, or sounds."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the steps to make the ball jump on bump",
+   "goal": "Arrange the steps correctly so the ball jumps when the cat hits it",
+   "items": [
+    "Select the ball character",
+    "Drag the Start on Bump block into the programming area",
+    "Snap the Jump block next to the bump block",
+    "Move the cat to touch the ball and start jumping"
+   ],
+   "success": "Awesome! The ball leaped into the air with excitement the moment the cat touched it!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Character Bumping",
+    "text": "When you bump into a friend by accident, you both notice and react. In ScratchJr, we let characters sense each other when their bounding boxes meet on screen, creating wonderful interactive events.",
+    "code": "Scene: Cat walks and bumps into the ball",
+    "output": "The two characters collide and trigger signals"
+   },
+   {
+    "h": "The Start on Bump Block",
+    "text": "This yellow block features an icon of two characters bumping. It acts like an ear or sensor, telling the character: 'Wake up and run this code the very second someone touches you!'",
+    "code": "Start on Bump block -> Jump block",
+    "output": "The ball immediately starts jumping"
+   },
+   {
+    "h": "Surprise Reactions",
+    "text": "Surprises make stories exciting! When a cat touches a dog, both might hide, jump, or play a sound. Bumping opens up endless creative possibilities for unexpected story twists.",
+    "code": "Start on Bump -> Hide block",
+    "output": "The character suddenly vanishes on contact"
+   },
+   {
+    "h": "The Cat and Ball Practice",
+    "text": "To build this, we choose a ball and a cat. We program the ball so that whenever the cat bumps into it, it leaps upward. This simple trick makes our game feel responsive and alive.",
+    "code": "Cat moves -> Touches Ball -> Ball jumps",
+    "output": "The ball reacts and leaps in place"
+   },
+   {
+    "h": "Golden Rule of Bumping",
+    "text": "Always remember: the character initiating the movement is the actor, but the character receiving the touch is where you place the bump block to trigger the surprise reaction.",
+    "code": "Rule: Put bump on the receiver of the touch",
+    "output": "Clean programming without script conflicts"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Start on Bump",
+    "desc": "A yellow trigger block that starts a script when two characters collide"
+   },
+   {
+    "name": "Collision",
+    "desc": "The event of two characters touching each other on screen"
+   },
+   {
+    "name": "Surprise Reaction",
+    "desc": "An unexpected action triggered by character touch"
+   },
+   {
+    "name": "Jump Block",
+    "desc": "A purple block that makes a character leap up and down"
+   },
+   {
+    "name": "Hide Block",
+    "desc": "A red action block used to make a character disappear"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What color is the Start on Bump trigger block in ScratchJr?",
+    "a": "Yellow"
+   },
+   {
+    "q": "Where do you place the bump block: on the moving character or the receiving character?",
+    "a": "On the character receiving the touch that reacts"
+   },
+   {
+    "q": "Name one surprise reaction you can program after a bump event.",
+    "a": "Jump or Hide"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

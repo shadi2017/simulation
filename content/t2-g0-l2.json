@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في التكرارات المتداخلة على أنها حلقة تدور بداخلها حلقة أخرى أصغر، مثل عقارب الساعة الصغيرة التي تدور دورة كاملة داخل دورة العقرب الكبير.",
+   "مثال بسيط: تخيل أنك تصفق مرتين، ثم تكرر هذا الفعل ثلاث مرات كاملة لعمل نمط إيقاعي ممتع ومنتظم.",
+   "كيف تعمل الفكرة؟ الحلقة الخارجية تتحكم في عدد المرات الكبيرة، وكل مرة تتحقق فيها تنفذ الحلقة الداخلية كل خطواتها بالكامل حتى تنتهي.",
+   "مثال ثانٍ: ارسم 3 نجوم في كل سطر، وافعل ذلك في 4 سطور متتالية لإنشاء شبكة نجوم جميلة ومرتبة على ورقتك.",
+   "قاعدة ذهبية: اضرب عدد مرات الحلقة الخارجية في عدد مرات الحلقة الداخلية لتسأل نفسك دائماً: كم مرة سيحدث الفعل الإجمالي؟",
+   "استخدام في الواقع: نستخدم هذه الأفكار لطباعة الجداول المدرسية، أو تلوين بكسلات ألعاب الفيديو صفاً بعد صف وسعياً نحو السرعة."
+  ],
+  "example": "دعنا نحسب عدد التصفيق الإجمالي عندما نطلب من روبوت أن يكرر الآتي: (في كل مرة من المرتين الخارجيتين، افعل 3 تصفيقات داخلية). الحلقة الخارجية تعمل مرتين، وفي كل مرة تفعل الحلقة الداخلية 3 تصفيقات. الحساب هنا هو 2 ضرب 3، والنتيجة النهائية هي 6 تصفيقات كاملة قام بها الروبوت بنجاح تام وسرعة مذهلة.",
+  "mistake": "الخطأ الشائع هو نسيان أن الحلقة الداخلية تبدأ من جديد بالكامل مع كل خطوة للحلقة الخارجية. العلاج هو تتبع الخطوات ببطء باستخدام أصابعك لترى كيف تدور الحلقة الصغيرة بداخل الكبيرة.",
+  "recap": "التكرارات المتداخلة توفر الوقت وتسمح لنا بعمل أنماط معقدة من خلال وضع حلقة داخل حلقة أخرى. ضرب أرقام التكرارين يمنحنا العدد الإجمالي للعمليات بكل سهولة.",
+  "q": [
+   {
+    "t": "إذا كانت الحلقة الخارجية تتكرر مرتين، والحلقة الداخلية 3 مرات، كم مرة سيحدث الفعل الإجمالي؟",
+    "o": [
+     "5 مرات",
+     "6 مرات",
+     "9 مرات"
+    ],
+    "a": 1,
+    "why": "نضرب 2 في 3 ليكون الناتج 6 مرات إجمالية."
+   },
+   {
+    "t": "ماذا تعني 'حلقة داخل حلقة' في عالم البرمجة والمنطق؟",
+    "o": [
+     "تكرار مجموعة أوامر بداخل تكرار أكبر منها",
+     "توقف الروبوت عن العمل تماماً",
+     "تشغيل لعبتين في نفس الوقت"
+    ],
+    "a": 0,
+    "why": "المقصود هو وضع حلقة أصغر لتتنفذ بالكامل داخل كل دورة من دورات الحلقة الكبيرة."
+   },
+   {
+    "t": "لماذا نستخدم التكرارات المتداخلة في الأنماط والرسومات؟",
+    "o": [
+     "لتصعيب الأمور بلا داعٍ",
+     "لصنع أشكال شبكية ومنتظمة بسرعة وكفاءة",
+     "لجعل الكمبيوتر أبطأ"
+    ],
+    "a": 1,
+    "why": "التكرارات المتداخلة تمنحنا الكفاءة في رسم شبكات منتظمة كالصفوف والأعمدة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع عدد النجوم",
+   "goal": "توقع الناتج الصحيح لتكرار متداخل يطبع نجوم في شبكة",
+   "code": "كرر 3 مرات:\n  كرر مرتين:\n    اطبع نجمة (*)",
+   "options": [
+    "5 نجوم",
+    "6 نجوم",
+    "9 نجوم"
+   ],
+   "a": 1,
+   "success": "رسم الروبوت 6 نجوم مرتبة في صفوف وأعمدة بكل كفاءة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي التكرارات المتداخلة؟",
+    "text": "التكرار المتداخل يشبه العجلة التي تدور بداخل عجلة أكبر. في البرمجة والمنطق، نضع حلقة تكرار صغيرة بالكامل داخل حلقة تكرار أكبر منها، لكي تتكرر الحلقة الصغيرة في كل خطوة من خطوات الحلقة الكبيرة.",
+    "code": "كرر مرتين:\n  كرر 3 مرات:\n    صفق",
+    "output": "يصفق الروبوت 3 مرات، ثم يكرر ذلك مرة أخرى ليصبح المجموع 6 تصفيقات."
+   },
+   {
+    "h": "تشبيه من الحياة اليومية",
+    "text": "تخيل أنك تقوم بتمارين رياضية صباحية: لديك 3 أيام في الأسبوع، وفي كل يوم تفعل التمرين 4 مرات. الأيام الثلاثة هي الحلقة الكبيرة، والتمرين 4 مرات هو الحلقة الصغيرة.",
+    "code": "الأيام: كرر 3 مرات\n  التمارين: كرر 4 مرات",
+    "output": "تفعل التمرين 12 مرة إجمالاً خلال الأيام الثلاثة."
+   },
+   {
+    "h": "الحلقة الخارجية والحلقة الداخلية",
+    "text": "الحلقة الخارجية هي المسؤولة عن المرات الكبيرة (مثل السطور)، بينما الحلقة الداخلية تنفذ دورتها كاملة في كل خطوة من الحلقة الخارجية (مثل الحروف في السطر الواحد).",
+    "code": "السطور: كرر مرتين\n  النجوم: كرر 3 مرات:\n    اطبع (*)",
+    "output": "يتم رسم سطرين، وفي كل سطر 3 نجوم متتالية."
+   },
+   {
+    "h": "تكرار الأنماط المنتظمة",
+    "text": "عندما نريد صنع نمط جميل ومتكرر مثل مربعات ملونة أو أشكال هندسية، تساعدنا التكرارات المتداخلة على تكرار الشكل في اتجاهين: الأفقي والرأسي.",
+    "code": "كرر 4 أعمدة:\n  كرر 3 صفوف:\n    ارسم مربعاً",
+    "output": "تتكون شبكة جميلة من المربعات المتباعدة والمنظمة."
+   },
+   {
+    "h": "حساب الكفاءة والضرب",
+    "text": "الكفاءة تعني إنجاز الكثير من العمل بأوامر قليلة. لمعرفة عدد المرات التي سيتم فيها تنفيذ الأمر الداخلي، نقوم بضرب عدد دورات الحلقة الخارجية في عدد دورات الحلقة الداخلية.",
+    "code": "الحساب: 3 (خارجية) × 4 (داخلية) = 12",
+    "output": "يعرف الروبوت مسبقاً أنه سيقوم بالعملية 12 مرة بالضبط بدون أخطاء."
+   },
+   {
+    "h": "تتبع خطوة بخطوة",
+    "text": "لكي تفهم كيف يعمل التكرار المتداخل، تتبع الخطوات ببطء: ابدأ بالحلقة الكبيرة، ثم نفذ الحلقة الصغيرة بالكامل، ثم ارجع للحلقة الكبيرة للخطوة التالية وهكذا.",
+    "code": "دورة 1 للخارجية -> الصغير ينتهي تماماً\nدورة 2 للخارجية -> الصغير ينتهي تماماً",
+    "output": "تسلسل منظم ودقيق لا يفقد أي خطوة أبداً."
+   },
+   {
+    "h": "استخدامات في ألعاب الفيديو والكمبيوتر",
+    "text": "هل أردت يوماً رسم لوحة شطرنج أو تلوين مربعات على الشاشة؟ الكمبيوتر يستخدم التكرارات المتداخلة لفحص صفوف وأعمدة الشاشة بكسلاً بكسل وبسرعة فائقة.",
+    "code": "صفوف الشاشة (Y) وزايا الأعمدة (X)",
+    "output": "تظهر الصور الجميلة على الشاشة في جزء من الثانية."
+   },
+   {
+    "h": "تجنب الأخطاء البرمجية",
+    "text": "الخطأ الأكثر شيوعاً هو نسيان أن الحلقة الداخلية تعيد عدادها من الصفر مع كل خطوة جديدة للحلقة الكبيرة. انتبه دائماً لمكان وضع الأوامر بداخلهما.",
+    "code": "تحقق من المسافة البادئة (الترتيب داخل الحلقات)",
+    "output": "ينفذ الروبوت الأوامر في مكانها الصحيح تماماً."
+   }
+  ],
+  "reference": [
+   {
+    "name": "التكرار المتداخل (Nested Loop)",
+    "desc": "حلقة تكرار توجد بالكامل داخل حلقة تكرار أخرى."
+   },
+   {
+    "name": "الحلقة الخارجية (Outer Loop)",
+    "desc": "الحلقة الكبيرة التي تتحكم في الدورات الرئيسية."
+   },
+   {
+    "name": "الحلقة الداخلية (Inner Loop)",
+    "desc": "الحلقة الصغيرة التي تدور بالكامل في كل خطوة للخارجية."
+   },
+   {
+    "name": "الكفاءة (Efficiency)",
+    "desc": "إنجاز مهام كبيرة ومعقدة باستخدام أوامر قصيرة وذكية."
+   },
+   {
+    "name": "النمط (Pattern)",
+    "desc": "تصميم أو أفعال تتكرر بانتظام ودون انقطاع."
+   },
+   {
+    "name": "الشبكة (Grid)",
+    "desc": "خطوط أفقية ورأسية تتقاطع لصنع صفوف وأعمدة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "إذا كانت الحلقة الخارجية تتكرر 4 مرات، والداخلية مرتين، فما هو إجمالي عدد مرات تنفيذ العمل؟",
+    "a": "8 مرات (4 × 2)"
+   },
+   {
+    "q": "روبوت يطبع وردة في كل دورة من 3 دورات للخارجية، وكل دورة بها وردتان داخليتان. كم وردة إجمالية؟",
+    "a": "6 ورود"
+   },
+   {
+    "q": "لماذا نستخدم التكرارات المتداخلة بدلاً من كتابة الأمر مئات المرات؟",
+    "a": "لتوفير الوقت وزيادة الكفاءة ومنع الأخطاء."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of nested loops as a loop running completely inside another larger loop, much like a minute hand completing a full circle inside an hour hand's sweep.",
+   "Simple example: Imagine clapping twice, then repeating that entire action three full times to create a fun and steady rhythmic pattern.",
+   "How does it work? The outer loop controls the big steps, and every single time it triggers, the inner loop runs completely from start to finish.",
+   "Second example: Draw 3 stars in every row, and do this across 4 consecutive rows to build a neat and lovely star grid on your paper.",
+   "Golden rule: Multiply the number of outer loop times by the inner loop times to always know the total number of actions happening.",
+   "Real-life use: We use these concepts to print school timetables, or paint video game pixels row by row with incredible speed and efficiency."
+  ],
+  "example": "Let's calculate total claps when we ask a robot to repeat this: (in each of the 2 outer turns, do 3 inner claps). The outer loop runs twice, and each time the inner loop performs 3 claps. The math here is 2 times 3, and the final result is 6 total claps performed by the robot successfully with amazing speed.",
+  "mistake": "A common mistake is forgetting that the inner loop restarts completely from zero with every new step of the outer loop. The fix is to trace the steps slowly using your fingers to see how the small loop spins inside the big one.",
+  "recap": "Nested loops save time and let us make complex patterns by putting one loop inside another. Multiplying the numbers of both loops gives us the total count of actions easily.",
+  "q": [
+   {
+    "t": "If the outer loop repeats 2 times, and the inner loop 3 times, how many total times will the action happen?",
+    "o": [
+     "5 times",
+     "6 times",
+     "9 times"
+    ],
+    "a": 1,
+    "why": "We multiply 2 by 3 to get a total of 6 times."
+   },
+   {
+    "t": "What does 'loop inside a loop' mean in programming and logic?",
+    "o": [
+     "Repeating a set of commands inside a larger repeat",
+     "The robot stopping work entirely",
+     "Running two games at the same time"
+    ],
+    "a": 0,
+    "why": "It means placing a smaller loop to run fully during each iteration of the big loop."
+   },
+   {
+    "t": "Why do we use nested loops for patterns and drawings?",
+    "o": [
+     "To make things difficult for no reason",
+     "To make grid and regular shapes quickly and efficiently",
+     "To make the computer slower"
+    ],
+    "a": 1,
+    "why": "Nested loops give us the efficiency to draw regular grids like rows and columns."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Star Count",
+   "goal": "Predict the correct outcome of a nested loop printing stars in a grid",
+   "code": "Repeat 3 times:\n  Repeat 2 times:\n    Print star (*)",
+   "options": [
+    "5 stars",
+    "6 stars",
+    "9 stars"
+   ],
+   "a": 1,
+   "success": "The robot drew 6 stars neatly arranged in rows and columns efficiently!"
+  },
+  "sections": [
+   {
+    "h": "What Are Nested Loops?",
+    "text": "A nested loop is like a wheel spinning inside a bigger wheel. In programming and logic, we place a smaller loop entirely inside a larger loop, so the small loop runs completely during every single step of the big loop.",
+    "code": "Repeat 2 times:\n  Repeat 3 times:\n    Clap",
+    "output": "The robot claps 3 times, then repeats that again making a total of 6 claps."
+   },
+   {
+    "h": "Real-Life Analogy",
+    "text": "Imagine doing morning workouts: you have 3 days in a week, and each day you do an exercise 4 times. The 3 days are the big loop, and the exercise 4 times is the small loop.",
+    "code": "Days: Repeat 3 times\n  Exercises: Repeat 4 times",
+    "output": "You do the exercise 12 times in total across the three days."
+   },
+   {
+    "h": "Outer Loop and Inner Loop",
+    "text": "The outer loop handles the big counts (like rows), while the inner loop finishes its full cycle at each step of the outer loop (like characters in a single row).",
+    "code": "Rows: Repeat 2 times\n  Stars: Repeat 3 times:\n    Print (*)",
+    "output": "Two rows are drawn, with 3 consecutive stars in each row."
+   },
+   {
+    "h": "Repeating Regular Patterns",
+    "text": "When we want to make a nice repeated pattern like colored squares or geometric shapes, nested loops help us repeat the shape in two directions: horizontal and vertical.",
+    "code": "Repeat 4 columns:\n  Repeat 3 rows:\n    Draw square",
+    "output": "A lovely grid of spaced and organized squares is formed."
+   },
+   {
+    "h": "Efficiency and Multiplication",
+    "text": "Efficiency means doing lots of work with few commands. To find out how many times the inner command runs, we multiply the outer loop counts by the inner loop counts.",
+    "code": "Math: 3 (outer) × 4 (inner) = 12",
+    "output": "The robot knows in advance it will perform the operation exactly 12 times without errors."
+   },
+   {
+    "h": "Step-by-Step Tracing",
+    "text": "To understand how a nested loop works, trace slowly: start the big loop, run the small loop completely, then go back to the big loop for the next step and so on.",
+    "code": "Turn 1 of outer -> Small loop finishes fully\nTurn 2 of outer -> Small loop finishes fully",
+    "output": "An organized and precise sequence that never misses a step."
+   },
+   {
+    "h": "Uses in Video Games and Computers",
+    "text": "Ever wanted to draw a chessboard or color pixels on a screen? The computer uses nested loops to check screen rows and columns pixel by pixel at blazing speed.",
+    "code": "Screen rows (Y) and column corners (X)",
+    "output": "Beautiful images appear on the screen in a fraction of a second."
+   },
+   {
+    "h": "Avoiding Code Mistakes",
+    "text": "The most common mistake is forgetting that the inner loop resets its counter from zero with every new step of the outer loop. Always watch where commands are indented.",
+    "code": "Check indentation (order inside the loops)",
+    "output": "The robot executes commands in their exact correct places."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Nested Loop",
+    "desc": "A loop that exists entirely inside another loop."
+   },
+   {
+    "name": "Outer Loop",
+    "desc": "The large loop controlling the main turns."
+   },
+   {
+    "name": "Inner Loop",
+    "desc": "The small loop spinning completely during every outer step."
+   },
+   {
+    "name": "Efficiency",
+    "desc": "Achieving large, complex tasks using short and smart commands."
+   },
+   {
+    "name": "Pattern",
+    "desc": "Designs or actions that repeat regularly and continuously."
+   },
+   {
+    "name": "Grid",
+    "desc": "Horizontal and vertical lines intersecting to make rows and columns."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If the outer loop repeats 4 times, and the inner loop 2 times, what is the total number of work executions?",
+    "a": "8 times (4 × 2)"
+   },
+   {
+    "q": "A robot prints a flower in each of 3 outer turns, with 2 inner flowers each turn. How many total flowers?",
+    "a": "6 flowers"
+   },
+   {
+    "q": "Why do we use nested loops instead of writing a command hundreds of times?",
+    "a": "To save time, increase efficiency, and prevent errors."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

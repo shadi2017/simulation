@@ -1,0 +1,354 @@
+{
+ "ar": {
+  "steps": [
+   "التصميم المتجاوب يعني تخلي صفحات الويب تظهر بشكل جميل ومناسب على كل الأجهزة، سواء كانت شاشات كمبيوتر ضخمة، أو تابلت، أو موبايل صغير، من غير ما الموقع يتلخبط أو يحصل فيه مشاكل في القراءة.",
+   "عشان نعمل كده، بنستخدم استعلامات الوسائط أو اللي بنسميها (Media Queries)، ودي عبارة عن شرط بيكتبه المطور في الكود عشان يفحص حجم شاشة الجهاز، زي مثلاً معرفة عرض الشاشة الحالي.",
+   "القاعدة بتتكتب كده: `@media (max-width: 600px)`، ودي معناها إن الـ CSS اللي جوه القوسين دول هيتطبق بس لو عرض الشاشة أصغر من أو بيساوي 600 بكسل، يعني كأننا شغالين على موبايل.",
+   "مثال بسيط: ممكن نخلي لون خلفية الموقع أزرق على الشاشات الكبيرة، لكن أول ما العرض يصغر ويدخل جوه نطاق الميديا كويري، الخلفية تتغير للون أخضر عشان تريح عين المستخدم.",
+   "القاعدة الذهبية: صمم دائماً الشاشات الصغيرة الأول (Mobile-First)، أو حط الشروط بدقة عشان الموقع يتمدد وينكمش بسلاسة من غير ما المحتوى يهرب بره حدود الشاشة.",
+   "الاستخدام في الواقع: المواقع الكبيرة زي اليوتيوب أو متجر إلكتروني بتستعمل الميديا كويري عشان تحول شكل المنتجات من كذا عمود جنب بعض في اللاب توب، لعمود واحد تحت بعض في الموبايل."
+  ],
+  "example": "تخيل إنك بتصمم بطاقة منتج. في الكمبيوتر العرض واسع، فممكن نخلي العنوان والصورة جنب بعض في سطر واحد. لكن لما نفتح الموقع من الموبايل، الشاشة بتكون ضيقة. بنكتب ميديا كويري تقول: لو العرض أقل من 600 بكسل، خلي عرض البطاقة 100% وخلي العناصر تيجي تحت بعضها بدل ما هي جنب بعض. الكود بيبدأ بـ `.card { display: flex; }` وللموبايل `@media (max-width: 600px) { .card { display: block; } }` وده بيخلي البطاقة تتظبط فوراً.",
+  "mistake": "من الأخطاء المشهورة جداً إننا ننسى نضيف وسم الـ viewport في الـ HTML (`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`). من غير الوسسم ده، الموبايل هيتعامل مع الصفحة كأنها شاشة كمبيوتر ضخمة ويصغرها كلها بدل ما يستجيب للميديا كويري. الحل هو دايماً كتابة السطر ده جوه قسم الـ `<head>`.",
+  "recap": "التصميم المتجاوب واستعلامات الوسائط بيخلوا صفحات الويب تتأقلم مع كل الأجهزة وتغير شكلها تلقائياً. بنستخدم `@media` عشان نغير التخطيطات من متعددة الأعمدة لعمود واحد حسب حجم الشاشة.",
+  "q": [
+   {
+    "t": "ما هي الفائدة الأساسية من استخدام استعلامات الوسائط (Media Queries)؟",
+    "o": [
+     "جعل الموقع أسرع في التحميل فقط",
+     "تغيير تصميم وتنسيق الصفحة بناءً على حجم شاشة الجهاز",
+     "كتابة أكواد جافا سكريبت متقدمة"
+    ],
+    "a": 1,
+    "why": "تساعد الميديا كويري في تطبيق قواعد CSS مختلفة حسب عرض شاشة المستخدم."
+   },
+   {
+    "t": "ماذا تعني قاعدة @media (max-width: 768px)؟",
+    "o": [
+     "تطبيق الأكواد عندما يكون عرض الشاشة 768 بكسل أو أقل",
+     "تطبيق الأكواد عندما يكون عرض الشاشة أكبر من 768 بكسل",
+     "حذف العناصر التي عرضها 768 بكسل"
+    ],
+    "a": 0,
+    "why": "max-width تعني الحد الأقصى للعرض، أي الشاشات الأصغر من أو المساوية لهذا الرقم."
+   },
+   {
+    "t": "كيف نقوم بتحويل تخطيط من عدة أعمدة في الكمبيوتر إلى عمود واحد في الموبايل؟",
+    "o": [
+     "عن طريق حذف صور الموقع تماماً",
+     "باستخدام استعلام وسائط يغير الخصائص مثل عرض العناصر لتصبح 100%",
+     "بتغيير لغة البرمجة المستخدمة في الصفحة"
+    ],
+    "a": 1,
+    "why": "نستخدم الميديا كويري لتعديل تنسيق العرض ليناسب الشاشات الصغيرة بعمود واحد رأسي."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود الميديا كويري المتجاوب",
+   "goal": "اختر الكلمات الصحيحة لإكمال كود تغيير تصميم الموبايل بنجاح",
+   "items": [
+    {
+     "text": "نستخدم القاعدة الشائعة ___ لتحديد شاشات الهواتف الصغيرة.",
+     "options": [
+      "@media (max-width: 600px)",
+      "@screen (min-size: big)",
+      "display: responsive"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لجعل البطاقات تظهر تحت بعضها في الموبايل، نغير خاصية الـ ___ إلى block.",
+     "options": [
+      "color",
+      "display",
+      "font-size"
+     ],
+     "a": 1
+    },
+    {
+     "text": "يجب دائماً وضع وسم ___ داخل الـ head لضمان عمل التصميم المتجاوب.",
+     "options": [
+      "<meta name=\"viewport\" ...>",
+      "<script src=\"app.js\">",
+      "<link rel=\"sound\">"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! استطاعت شاشتك التفاعل مع الأجهزة المختلفة وأصبح الموقع متجاوباً بالكامل!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم التصميم المتجاوب",
+    "text": "التصميم المتجاوب يشبه الماء الذي يأخذ شكل الإناء الذي يوضع فيه. المواقع المتجاوبة تتشكل وتتأقلم مع حجم شاشة المستخدم، سواء كان يمسك هاتفاً ذكياً، أو تابلت، أو يجلس أمام شاشة كمبيوتر عملاقة. هذا يمنع ظهور أشرطة التمرير المزعجة ويجعل قراءة النصوص مريحة للعين.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: Arial; padding: 20px; background: #e0f7fa; }\n  h2 { color: #00796b; }\n</style>\n</head>\n<body>\n  <h2>مرحباً بك في عالم التصميم المتجاوب!</h2>\n  <ب>الصفحات المتجاوبة تتكيف بسلاسة مع أي جهاز.</ب>\n</body>\n</html>",
+    "output": "يظهر نص ترحيبي بخلفية زرقاء فاتحة يوضح مفهوم التكيف مع الشاشات."
+   },
+   {
+    "h": "أهمية وسم الـ Viewport",
+    "text": "قبل أن تفهم الشاشات أجهزة الموبايل، كان المتصفح يظن أنه يعرض الموقع على شاشة كمبيوتر ضخمة ثم يقوم بتصغيرها لتناسب شاشة الموبايل الصغيرة، مما يجعل النصوص صغيرة جداً وصعبة القراءة. وسم الـ viewport يخبر المتصفح أن يتعامل مع عرض الجهاز الحقيقي كبداية صحيحة للتصميم.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n  p { font-size: 18px; color: #333; }\n</style>\n</head>\n<body>\n  <p>هذا النص يظهر بحجمه الطبيعي والمثالي على الهواتف المحمولة بفضل الـ viewport.</p>\n</body>\n</html>",
+    "output": "يظهر نص بحجم مقروء وواضح بفضل وجود وسم الـ viewport الصحيح."
+   },
+   {
+    "h": "ما هي استعلامات الوسائط (Media Queries)؟",
+    "text": "استعلامات الوسائط تشبه النظارات السحرية للموقع؛ فهي تجعله 'يرى' حجم الشاشة التي يفتح عليها. إذا كانت الشاشة واسعة، يطبق تصميماً معيناً، وإذا كانت صغيرة، يغير قواعد الـ CSS فوراً لتناسب المسحة المتاحة دون إحداث أي فوضى في ترتيب العناصر.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { background: coral; padding: 20px; font-size: 20px; text-align: center; }\n  @media (max-width: 600px) {\n    .box { background: lightgreen; }\n  }\n</style>\n</head>\n<body>\n  <div class=\"box\">صغر نافذة المتصفح لتراني أتغير!</div>\n</body>\n</html>",
+    "output": "صندوق ملون بلون مرجاني يتحول للون الأخضر الفاتح عند تصغير الشاشة."
+   },
+   {
+    "h": "كتابة قاعدة @media الشروطيّة",
+    "text": "لكتابة استعلام وسائط ناجح، نبدأ بكلمة `@media` ثم نحدد الشرط بين قوسين مثل `(max-width: 700px)`، وبعدها نفتح الأقواس المعقوفة ونضع داخلها قواعد الـ CSS التي تريد تفعيلها فقط عندما يتحقق هذا الشرط الحجمي.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  h1 { color: darkblue; }\n  @media (max-width: 500px) {\n    h1 { color: darkred; font-size: 24px; }\n  }\n</style>\n</head>\n<body>\n  <h1>غير حجم النافذة لتتغير لوني!</h1>\n</body>\n</html>",
+    "output": "عنوان يتحول من الأزرق الداكن إلى الأحمر الداكن عند ضيق الشاشة."
+   },
+   {
+    "h": "التحويل من عدة أعمدة إلى عمود واحد",
+    "text": "في شاشات اللاب توب الكبيرة، نحب وضع البطاقات بجانب بعضها لملء المساحة الأفقية. لكن في شاشات الهواتف الضيقة، تصبح هذه الأعضاء متلاصقة وصعبة الرؤية. الحل هو استخدام الميديا كويري لتحويل العرض من متعدد الأعمدة إلى عمود واحد طولي يمتد بنسبة عرض 100%.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .container { display: flex; gap: 10px; }\n  .card { background: #fff; padding: 15px; border: 1px solid #ccc; flex: 1; }\n  @media (max-width: 600px) {\n    .container { flex-direction: column; }\n  }\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"card\">بطاقة 1</div>\n    <div class=\"card\">بطاقة 2</div>\n  </div>\n</body>\n</html>",
+    "output": "بطاقتان جنب بعض على الشاشات الكبيرة، وتصبحان فوق بعضهما في الشاشات الضيقة."
+   },
+   {
+    "h": "الصور المتجاوبة (Fluid Images)",
+    "text": "مثلما تتحكم في ترتيب البطاقات والنصوص، يجب أن تتأكد من أن الصور لا تخرج عن حدود شاشة الموبايل. بإضافة خاصية `max-width: 100%` و `height: auto` للصورة، فإنها ستصغر بنعومة مع الشاشة الضيقة ولن تتمدد بشكل مزعج أو تفقد دقتها.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { max-width: 100%; height: auto; border-radius: 8px; }\n</style>\n</head>\n<body>\n  <div style=\"width: 80%; background: #ddd; padding: 10px;\">\n    <p>صورة متجاوبة تتناسب مع حاويتها:</p>\n    <img src=\"https://via.placeholder.com/400x150\" alt=\"صورة تجريبية\">\n  </div>\n</body>\n</html>",
+    "output": "صورة عرضها يتأقلم بنعومة داخل الحاوية الخاصة بها."
+   },
+   {
+    "h": "فلسفة التصميم أولاً للموبايل (Mobile-First)",
+    "text": "المطورون الأذكياء يبدأون بكتابة كود الـ CSS الأساسي للشاشات الصغيرة (الموبايل) أولاً، ثم يستخدمون استعلامات وسائط تبدأ بـ `min-width` لإضافة التنسيقات الإضافية للشاشات الأكبر. هذه الطريقة أسرع وأفضل للأداء لأن أجهزة الهواتف لا تحمل أعباء زائدة لا تحتاجها.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-size: 14px; background: #fff; }\n  @media (min-width: 700px) {\n    body { font-size: 18px; background: #f0f0f0; }\n  }\n</style>\n</head>\n<body>\n  <p>هذا النص يكبر وتتغير خلفيته عندما تصبح الشاشة أوسع من 700 بكسل.</p>\n</body>\n</html>",
+    "output": "نص يتغير حجمه ولونه مع توسيع نافذة المتصفح."
+   },
+   {
+    "h": "تجربة واختبار التصميم المتجاوب",
+    "text": "لا تحتاج دائماً لشراء هاتف أو تابلت جديد لاختبار موقعك! متصفحات الويب الحديثة مثل فايرفوكس وجوجل كروم تحتوي على أدوات مطورين مدمجة (Responsive Design Mode) تمكنك من سحب نافذة المتصفح أو اختيار نوع الجهاز لمشاهدة كيف يبدو موقعك فوراً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .banner { background: #ffcc00; padding: 20px; text-align: center; font-weight: bold; }\n</style>\n</head>\n<body>\n  <div class=\"banner\">افتح أدوات المطور (F12) وجرب تغيير أبعاد الشاشة!</div>\n</body>\n</html>",
+    "output": "بانر صفراء تنبه المستخدم لتجربة أدوات فحص الشاشات في المتصفح."
+   }
+  ],
+  "reference": [
+   {
+    "name": "@media",
+    "desc": "قاعدة CSS تستخدم لتطبيق تنسيقات مختلفة بناءً على شروط الشاشة والوسائط."
+   },
+   {
+    "name": "max-width",
+    "desc": "شرط في استعلام الوسائط يحدد أقصى عرض للشاشة لتطبيق التنسيق."
+   },
+   {
+    "name": "min-width",
+    "desc": "شرط في استعلام الوسائط يحدد أقل عرض للشاشة لتطبيق التنسيق."
+   },
+   {
+    "name": "viewport",
+    "desc": "منطقة عرض الصفحة المرئية على جهاز المستخدم ويتم التحكم بها عبر وسم الـ meta."
+   },
+   {
+    "name": "flex-direction: column",
+    "desc": "خاصية تجعل عناصر الـ Flexbox تترتب رأسياً فوق بعضها بدل الأفق."
+   },
+   {
+    "name": "max-width: 100%",
+    "desc": "تجعل الصور والعناصر لا تتجاوز عرض حاويتها الأصلية أبداً."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب قاعدة @media تطبق لون خلفية وردي عندما يكون عرض الشاشة أقل من أو يساوي 500 بكسل على عنصر body.",
+    "a": "@media (max-width: 500px) { body { background-color: pink; } }"
+   },
+   {
+    "q": "كيف تجعل عناصر الـ container تترتب بشكل عمودي للموبايل باستخدام الـ Flexbox؟",
+    "a": "باستخدام الخاصية flex-direction: column داخل ميديا كويري."
+   },
+   {
+    "q": "ما هو الوسم الضروري في قسم الـ head لتنظيم عرض الصفحة على الموبايل؟",
+    "a": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Responsive design means making web pages look gorgeous and work smoothly on all devices, whether it is a giant computer monitor, a tablet, or a tiny smartphone, without breaking or causing reading issues.",
+   "To achieve this, developers use Media Queries, which are conditional rules written in CSS to check device screen features, most commonly the current screen width.",
+   "A basic rule looks like this: `@media (max-width: 600px)`, meaning the CSS inside these curly braces will only apply if the screen width is smaller than or equal to 600 pixels, like on a phone.",
+   "Simple example: We can make the website background blue on large screens, but as soon as the width shrinks into the media query range, the background switches to green to give eyes a break.",
+   "The Golden Rule: Always design for small screens first (Mobile-First), or carefully set breakpoints so content stretches and shrinks smoothly without overflowing the screen boundaries.",
+   "Real-world use: Major sites like YouTube or online stores use media queries to shift product layouts from multiple horizontal columns on laptops to a single vertical column on mobile phones."
+  ],
+  "example": "Imagine designing a product card. On desktop, the screen is wide, so title and image sit side-by-side. On mobile, the screen is narrow. We write a media query stating: if width is below 600px, make card width 100% and stack items vertically. The code starts with `.card { display: flex; }` and for mobile `@media (max-width: 600px) { .card { display: block; } }`, making the card adjust instantly.",
+  "mistake": "A very common beginner mistake is forgetting to add the viewport meta tag in the HTML (`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`). Without this tag, mobile browsers pretend they are on a massive desktop screen and scale everything down, ignoring media queries. Fix this by always including that line in `<head>`.",
+  "recap": "Responsive design and media queries let web pages adapt to any device and change layout automatically. We use `@media` to switch layouts from multi-column to single-column based on screen size.",
+  "q": [
+   {
+    "t": "What is the primary purpose of using Media Queries?",
+    "o": [
+     "To make the website load faster only",
+     "To change page styles and layouts based on device screen size",
+     "To write advanced JavaScript functions"
+    ],
+    "a": 1,
+    "why": "Media queries help apply different CSS rules depending on the user's screen width."
+   },
+   {
+    "t": "What does the rule @media (max-width: 768px) mean?",
+    "o": [
+     "Apply styles when screen width is 768 pixels or less",
+     "Apply styles when screen width is greater than 768 pixels",
+     "Delete all elements sized 768 pixels"
+    ],
+    "a": 0,
+    "why": "max-width targets screen widths up to and including that specific number."
+   },
+   {
+    "t": "How do we switch a multi-column desktop layout into a single column on mobile?",
+    "o": [
+     "By deleting all website images entirely",
+     "Using a media query that changes layout properties like element width to 100%",
+     "By changing the programming language of the page"
+    ],
+    "a": 1,
+    "why": "We use media queries to adapt layout properties so elements stack nicely in one column."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Responsive Media Query Code",
+   "goal": "Choose the correct snippets to successfully complete the mobile layout code",
+   "items": [
+    {
+     "text": "We use the common rule ___ to target small mobile phone screens.",
+     "options": [
+      "@media (max-width: 600px)",
+      "@screen (min-size: big)",
+      "display: responsive"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To make cards stack vertically on mobile, we change the ___ property to block.",
+     "options": [
+      "color",
+      "display",
+      "font-size"
+     ],
+     "a": 1
+    },
+    {
+     "text": "We must always include the ___ tag inside head to ensure responsiveness works.",
+     "options": [
+      "<meta name=\"viewport\" ...>",
+      "<script src=\"app.js\">",
+      "<link rel=\"sound\">"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! Your screen successfully adapted to different devices and the site is fully responsive!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Responsive Design",
+    "text": "Responsive design is like water taking the shape of its container. Responsive websites shape and adapt to the user's screen size, whether holding a smartphone, tablet, or sitting before a giant desktop display. This prevents frustrating horizontal scrolling and keeps text comfortable to read.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: Arial; padding: 20px; background: #e0f7fa; }\n  h2 { color: #00796b; }\n</style>\n</head>\n<body>\n  <h2>Welcome to Responsive Design!</h2>\n  <p>Responsive pages adapt smoothly to any device.</p>\n</body>\n</html>",
+    "output": "Displays a greeting text with a light cyan background explaining device adaptation."
+   },
+   {
+    "h": "The Importance of the Viewport Meta Tag",
+    "text": "Before mobile-optimized screens, browsers thought they were rendering sites on huge desktop monitors and zoomed them out on tiny phones, making text microscopic and unreadable. The viewport meta tag tells the browser to use the device's actual physical width as the correct starting point.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n  p { font-size: 18px; color: #333; }\n</style>\n</head>\n<body>\n  <p>This text appears at a natural, ideal size on mobile thanks to the viewport tag.</p>\n</body>\n</html>",
+    "output": "Displays readable, properly sized text thanks to the correct viewport meta tag."
+   },
+   {
+    "h": "What Are Media Queries?",
+    "text": "Media queries are like magical glasses for your website; they let it 'see' the screen size it is opened on. If the screen is wide, it applies one design. If it's narrow, it instantly tweaks CSS rules to fit the available space without breaking layout structure.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { background: coral; padding: 20px; font-size: 20px; text-align: center; }\n  @media (max-width: 600px) {\n    .box { background: lightgreen; }\n  }\n</style>\n</head>\n<body>\n  <div class=\"box\">Resize your browser window to see me change!</div>\n</body>\n</html>",
+    "output": "A coral colored box turns light green when the browser window is resized smaller."
+   },
+   {
+    "h": "Writing Conditional @media Rules",
+    "text": "To write a successful media query, start with `@media` followed by a condition in parentheses like `(max-width: 700px)`, then open curly braces and place inside them the CSS rules you want activated only when that screen size condition is met.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  h1 { color: darkblue; }\n  @media (max-width: 500px) {\n    h1 { color: darkred; font-size: 24px; }\n  }\n</style>\n</head>\n<body>\n  <h1>Resize the window to change my color!</h1>\n</body>\n</html>",
+    "output": "A heading changes from dark blue to dark red when the screen gets narrow."
+   },
+   {
+    "h": "Switching From Multi-Column to Single Column",
+    "text": "On large laptop screens, we love placing cards side-by-side to fill horizontal space. But on narrow mobile screens, these columns bunch up and become unreadable. The solution is using a media query to switch layout from multiple columns to a single vertical column spanning 100% width.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .container { display: flex; gap: 10px; }\n  .card { background: #fff; padding: 15px; border: 1px solid #ccc; flex: 1; }\n  @media (max-width: 600px) {\n    .container { flex-direction: column; }\n  }\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"card\">Card 1</div>\n    <div class=\"card\">Card 2</div>\n  </div>\n</body>\n</html>",
+    "output": "Two cards sit side-by-side on wide screens, stacking on top of each other on narrow screens."
+   },
+   {
+    "h": "Fluid Images",
+    "text": "Just like controlling card and text layouts, you must ensure images never break outside mobile screen bounds. By adding `max-width: 100%` and `height: auto` to images, they shrink gracefully inside narrow containers without overflowing or losing quality.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { max-width: 100%; height: auto; border-radius: 8px; }\n</style>\n</head>\n<body>\n  <div style=\"width: 80%; background: #ddd; padding: 10px;\">\n    <p>Fluid image fitting its container:</p>\n    <img src=\"https://via.placeholder.com/400x150\" alt=\"Sample Image\">\n  </div>\n</body>\n</html>",
+    "output": "An image whose width adapts smoothly within its parent container."
+   },
+   {
+    "h": "Mobile-First Design Philosophy",
+    "text": "Smart developers start by writing base CSS styles for small screens (mobile) first, then use media queries starting with `min-width` to layer on extra styles for larger displays. This approach is faster and more performant because mobile devices don't carry extra weight they don't need.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-size: 14px; background: #fff; }\n  @media (min-width: 700px) {\n    body { font-size: 18px; background: #f0f0f0; }\n  }\n</style>\n</head>\n<body>\n  <p>This text grows larger and changes background when the screen is wider than 700px.</p>\n</body>\n</html>",
+    "output": "Text size and background color expand as the browser window becomes wider."
+   },
+   {
+    "h": "Testing and Inspecting Responsive Designs",
+    "text": "You don't always need to buy a brand new phone or tablet to test your site! Modern web browsers like Firefox and Google Chrome feature built-in developer tools (Responsive Design Mode) allowing you to drag browser windows or pick device presets to preview how your site looks instantly.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .banner { background: #ffcc00; padding: 20px; text-align: center; font-weight: bold; }\n</style>\n</head>\n<body>\n  <div class=\"banner\">Open DevTools (F12) and try testing screen dimensions!</div>\n</body>\n</html>",
+    "output": "A yellow banner advising the user to try browser screen inspector tools."
+   }
+  ],
+  "reference": [
+   {
+    "name": "@media",
+    "desc": "A CSS rule used to apply different styles based on screen and media conditions."
+   },
+   {
+    "name": "max-width",
+    "desc": "A media query condition specifying the maximum screen width to apply styles."
+   },
+   {
+    "name": "min-width",
+    "desc": "A media query condition specifying the minimum screen width to apply styles."
+   },
+   {
+    "name": "viewport",
+    "desc": "The user's visible area of a web page managed via the meta tag."
+   },
+   {
+    "name": "flex-direction: column",
+    "desc": "A property making Flexbox items stack vertically instead of horizontally."
+   },
+   {
+    "name": "max-width: 100%",
+    "desc": "Ensures images and elements never exceed their original container width."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a @media rule applying a pink background color to the body when screen width is less than or equal to 500px.",
+    "a": "@media (max-width: 500px) { body { background-color: pink; } }"
+   },
+   {
+    "q": "How do you make container items stack vertically for mobile using Flexbox?",
+    "a": "By using flex-direction: column inside a media query."
+   },
+   {
+    "q": "What is the essential tag in the head section to manage page scaling on mobile?",
+    "a": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Test your skills: Responsive web design and media queries",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Responsive_design"
+  },
+  {
+   "title": "MDN: Responsive web design",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design"
+  }
+ ],
+ "grounded": true
+}

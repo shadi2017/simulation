@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "إزاي نستخدم الفأرة (الماوس) عشان نحرك السهم على الشاشة زي ما بنحرك إيدينا بالضبط ونشاور على الحاجات اللي بنحبها في الكمبيوتر بكل سهولة وسرعة.",
+   "الضغطة الواحدة (Click) دي زي ما بنخبط على الباب بهدوء عشان نختار لعبة معينة ونقول للكمبيوتر إحنا عايزين دي.",
+   "الضغطتين المتتاليتين بسرعة (Double-click) دي زي سحر السرعة اللي بيفتح لنا الألعاب والبرامج وبيخليها تظهر قدامنا حالا.",
+   "السحب والإفلات (Drag and Drop) هو إننا نمسك الحاجة ونحن دايسين عليها وننقلها لمكان تاني زي ما بنشيل اللعبة ونحطها في السلة.",
+   "القاعدة الذهبية هنا هي: اضغط باختيارك، ودوس وافضل دايس عشان تسحب، وسيب إيدك لما توصل المكان الصح.",
+   "بنستخدم المهارات دي كل يوم واحنا بنرسم، بنلعب الألعاب التعليمية، وبنحل ألغاز الأشكال والقصص الجميلة على الكمبيوتر."
+  ],
+  "example": "تخيل إن قدامك مكعب أحمر على الشاشة وعايز تحطه في مكانه الفاضي المخصص ليه. هتروح بالمؤشر عليه، تدوس بصباعك وتفضل دايس (Drag)، وتسحب المكعب لحد ما يدخل جوه الدايرة الفاضية وترفع صباعك (Drop). البطل الصغير نجح وحط المكعب في مكانه الصح واللعبة صفقت له بحرارة!",
+  "mistake": "الغلطة الشائعة هي إن الطفل بيرفع صباع زرار الماوس في نص الطريق قبل ما يوصل للمكان المطلوب. الحل: خلي صباعك ثابت ودايس على الزرار لحد ما توصل للنهاية تماماً.",
+  "recap": "الماوس أداة سحرية بتخلينا نتحكم في الشاشة بالنقر والسحب. بالتدريب البسيط هنقدر نحل كل ألغاز الأشكال.",
+  "q": [
+   {
+    "t": "إيه الحركة اللي بنستخدمها عشان نفتح لعبة أو برنامج على الكمبيوتر بسرعة؟",
+    "o": [
+     "نقرة واحدة",
+     "ضغطتين متتاليتين بسرعة",
+     "هز الماوس"
+    ],
+    "a": 1,
+    "why": "الضغطتين المتتاليتين (Double-click) هي الحركة المخصصة لفتح البرامج."
+   },
+   {
+    "t": "عشان ننقل شكل من مكانه ونحطه في مكان تاني، بنستخدم مهارة إيه؟",
+    "o": [
+     "السحب والإفلات",
+     "إغلاق الشاشة",
+     "الطباعة"
+    ],
+    "a": 0,
+    "why": "السحب والإفلات (Drag and Drop) بتخلينا ننقل الأشياء بسهولة."
+   },
+   {
+    "t": "امتى بنشيل صباعنا من على زرار الماوس وأحنا بنسحب حاجة؟",
+    "o": [
+     "أول ما نبدأ",
+     "في نص الطريق",
+     "لما نوصل للمكان الصح"
+    ],
+    "a": 2,
+    "why": "بنفضل دايسين لحد ما نوصل لهدفنا وبعدين نسيب صباعنا."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "صندوق مهارات الماوس",
+   "goal": "صنف الحركات دي حسب نوعها الصحيح في استخدام الماوس",
+   "buckets": [
+    "حركات الاختيار والفتح",
+    "حركات النقل بالحركة"
+   ],
+   "items": [
+    {
+     "t": "نقرة واحدة لاختيار لعبة",
+     "b": 0
+    },
+    {
+     "t": "سحب مكعب لمكانه",
+     "b": 1
+    },
+    {
+     "t": "ضغطتين لفتح برنامج",
+     "b": 0
+    },
+    {
+     "t": "إفلات نجمة في سلتها",
+     "b": 1
+    },
+    {
+     "t": "تحديد أيقونة بالفأرة",
+     "b": 0
+    },
+    {
+     "t": "نقل صورة من يمين لليسار",
+     "b": 1
+    }
+   ],
+   "success": "يا سلام! صنفنا كل حركات الماوس ببراعة وأصبحنا أبطال التحكم الرقمي!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الفأرة (الماوس)؟",
+    "text": "الماوس هي صديقتنا الصغيرة اللي بنحركها على المكتب عشان تحرك سهم صغير على شاشة الكمبيوتر، زي ما إيدك بتتحرك فوق الطاولة بالضبط. شبه إيدك لما تشاور بيها على الحاجات الحلوة اللي عايزها في متجر الألعاب.",
+    "code": "حركة الماوس -> تحريك السهم على الشاشة",
+    "output": "السهم بيتحرك ويتبع حركة إيدك بكل ناعمة."
+   },
+   {
+    "h": "النقرة الواحدة (Click)",
+    "text": "لما بنضغط بصباعنا ضغطة خفيفة واحدة على زرار الماوس ونشيله على طول، ده بيعرف الكمبيوتر إننا اخترنا الحاجة دي زي ما بتلمس بصباعك لون معين في كتاب التلوين.",
+    "code": "الخطوة: حط المؤشر على الأيقونة ثم اضغط زرار واحد",
+    "output": "الأيقونة بتتحدد وبتتغير لونها عشان تعرف إنك اخترتها."
+   },
+   {
+    "h": "الضغطتين المتتاليتين (Double-click)",
+    "text": "عشان تفتح لعبة وتدخل جواها، بتحتاج تخبط مرتين وراء بعض بسرعة جداً كأنك بتخبط على باب بيت صاحبك عشان يفتح لك الباب بسرعة.",
+    "code": "الخطوة: اضغط زرار الماوس مرتين وراء بعض بسرعة",
+    "output": "البرنامج أو اللعبة بتتفتح وبتملى الشاشة قدامك."
+   },
+   {
+    "h": "السحب والإفلات (Drag and Drop)",
+    "text": "ده سحر الألعاب! بتدوس وتفضل دايس بصباعك على الزرار (سحب)، وتحرك الماوس للمكان الجديد، وبعدين تشيل صباعك (إفلات). شبه لما تشيل لعبتك المفضلة من على السرير وتحطها جوه صندوق الألعاب.",
+    "code": "الخطوة: اضغط مع الاستمرار + حرك الماوس + ارفع صباعك",
+    "output": "العنصر بيتمرجح مع الماوس ويستقر في مكانه الجديد."
+   },
+   {
+    "h": "تطوير مهارات الحركة بالأصابع",
+    "text": "استخدام الماوس بيقوي عضلات إيديك وبيخلي عقلك وإيديك يشتغلوا مع بعض بتناغم جميل وسريع. ده بيفيدك جداً في الكتابة والرسم والألعاب الهادفة.",
+    "code": "التمرين: حرك الماوس في دائرة بدون ما تفقد السيطرة",
+    "output": "تحكم ممتاز في العضلات الدقيقة للأصابع."
+   },
+   {
+    "h": "حل ألغاز مطابقة الأشكال",
+    "text": "في ألغاز الكمبيوتر، بنشوف أشكال هندسية ناقصة وعلينا نسحب الشكل الصح ونحطه في مكانه المخصص له على الشاشة، زي بازل الأشكال الخشبي الحقيقي.",
+    "code": "السيناريو: اسحب المثلث الأصفر وضعه في الفراغ المثلث",
+    "output": "الشكل بينطبق تماماً واللعبة تطلق ألعاب نارية احتفالية."
+   },
+   {
+    "h": "القاعدة الذهبية للتحكم",
+    "text": "دايماً خلي عينك على المؤشر وإيدك هادية على الماوس. السرعة مش مهمة في الأول، الأهم هو الدقة والتركيز في الوصول للهدف.",
+    "code": "القاعدة: دقة المؤشر أهم من السرعة الزائدة",
+    "output": "أخطاء أقل ونتائج أسرع في كل محاولة."
+   },
+   {
+    "h": "تطبيقات في الحياة اليومية",
+    "text": "مهارات الماوس مش بس للألعاب، دي بنستخدمها لما نكبر في تصميم الصور، تنظيم الملفات، وحتى تصفح المواقع التعليمية المفيدة في المدرسة.",
+    "code": "التطبيق: ترتيب صور الواجب في مجلد المادة",
+    "output": "ملفات منظمة ومرتبة بدقة وسهولة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "المؤشر (Pointer)",
+    "desc": "السهم الصغير الذي يتحرك على الشاشة تبعا لحركة يدك."
+   },
+   {
+    "name": "نقرة (Click)",
+    "desc": "ضغط وتفريغ سريع لزرار الماوس للاختيار."
+   },
+   {
+    "name": "نقرة مزدوجة (Double-click)",
+    "desc": "ضطتان متتاليتان لفتح البرامج والألعاب."
+   },
+   {
+    "name": "سحب (Drag)",
+    "desc": "الضغط المستمر على الزر مع تحريك العنصر."
+   },
+   {
+    "name": "إفلات (Drop)",
+    "desc": "رفع الإصبع لترك العنصر في مكانه النهائي."
+   },
+   {
+    "name": "مطابقة الأشكال (Shape-matching)",
+    "desc": "لغز بصري يربط بين الشكل ومكانه الفارغ."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي الحركة التي نستخدمها لفتح لعبة على سطح المكتب؟",
+    "a": "الضغطتين المتتاليتين (Double-click)."
+   },
+   {
+    "q": "ماذا تفعل بزر الماوس أثناء سحب عنصر؟",
+    "a": "نبقي الإصبع ضاغطاً باستمرار حتى نصل للمكان المطلوب."
+   },
+   {
+    "q": "إلى ماذا يشير السهم الصغير الذي يتحرك على الشاشة؟",
+    "a": "إلى مؤشر الماوس الذي يتحرك بحركة يدك."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "How to use the mouse to move the arrow across the screen just like moving our hand to point at our favorite things on the computer easily and quickly.",
+   "A single click is like gently knocking on a door to choose a specific game and tell the computer we want this one.",
+   "A double-click is like the magic of speed that opens games and programs for us, making them appear instantly right in front of us.",
+   "Drag and drop means holding onto something while keeping the button pressed and moving it somewhere else, like picking up a toy and putting it in the basket.",
+   "The golden rule here is: click to choose, press and hold to drag, and let go when you reach the correct spot.",
+   "We use these skills every day while drawing, playing educational games, and solving cute visual shape-matching puzzles on the computer."
+  ],
+  "example": "Imagine a red cube is on the screen and you want to place it in its designated empty spot. You hover the pointer over it, press and hold your finger (Drag), move the cube until it enters the empty circle, and lift your finger (Drop). The little hero successfully placed the cube in the right spot and the game cheered loudly!",
+  "mistake": "A common mistake is lifting the mouse button finger halfway before reaching the desired location. Solution: Keep your finger steady and pressed on the button until you reach the exact end.",
+  "recap": "The mouse is a magical tool that lets us control the screen with clicks and drags. With simple practice, we can solve all shape puzzles.",
+  "q": [
+   {
+    "t": "What action do we use to open a game or program on the computer quickly?",
+    "o": [
+     "Single click",
+     "Double-click",
+     "Shake the mouse"
+    ],
+    "a": 1,
+    "why": "Double-clicking is the specific action assigned to opening programs."
+   },
+   {
+    "t": "To move a shape from its place and put it somewhere else, what skill do we use?",
+    "o": [
+     "Drag and drop",
+     "Close screen",
+     "Printing"
+    ],
+    "a": 0,
+    "why": "Drag and drop allows us to move items easily."
+   },
+   {
+    "t": "When should we lift our finger from the mouse button while dragging something?",
+    "o": [
+     "Right at the start",
+     "Halfway through",
+     "When we reach the correct spot"
+    ],
+    "a": 2,
+    "why": "We keep holding until we reach our goal and then release our finger."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Mouse Skills Bucket",
+   "goal": "Classify these actions by their correct mouse usage type",
+   "buckets": [
+    "Select & Open Actions",
+    "Movement & Drag Actions"
+   ],
+   "items": [
+    {
+     "t": "Single click to pick a game",
+     "b": 0
+    },
+    {
+     "t": "Drag a cube to its place",
+     "b": 1
+    },
+    {
+     "t": "Double-click to open an app",
+     "b": 0
+    },
+    {
+     "t": "Drop a star in its basket",
+     "b": 1
+    },
+    {
+     "t": "Highlight an icon with mouse",
+     "b": 0
+    },
+    {
+     "t": "Move a picture from right to left",
+     "b": 1
+    }
+   ],
+   "success": "Hooray! We classified all mouse actions brilliantly and became digital control champions!"
+  },
+  "sections": [
+   {
+    "h": "What is a Mouse?",
+    "text": "The mouse is our little friend that we move on the desk to move a small arrow on the computer screen, just like your hand moving across the table. It is like pointing your finger at the cool toys you want in a toy store.",
+    "code": "Mouse movement -> Move the arrow on screen",
+    "output": "The arrow moves and follows your hand smoothly."
+   },
+   {
+    "h": "The Single Click",
+    "text": "When we press our finger lightly once on the mouse button and let go immediately, it lets the computer know we chose this item, just like touching a specific color in a coloring book.",
+    "code": "Step: Hover over icon then press one button",
+    "output": "The icon gets selected and highlights to show your choice."
+   },
+   {
+    "h": "The Double-Click",
+    "text": "To open a game and step inside, you need to knock twice in a row very quickly, as if knocking on your friend's door so they open up fast.",
+    "code": "Step: Press the mouse button twice rapidly",
+    "output": "The program or game opens up and fills the screen."
+   },
+   {
+    "h": "Drag and Drop",
+    "text": "This is game magic! You press and hold your finger on the button (Drag), move the mouse to the new spot, and then lift your finger (Drop). It's like picking up your favorite toy from the bed and putting it inside the toy box.",
+    "code": "Step: Press and hold + Move mouse + Release finger",
+    "output": "The item follows the mouse and settles into its new place."
+   },
+   {
+    "h": "Developing Fine Motor Skills",
+    "text": "Using a mouse strengthens your hand muscles and helps your brain and hands work together in a smooth, fast harmony. This helps you greatly in writing, drawing, and purposeful games.",
+    "code": "Practice: Move the mouse in a circle without losing control",
+    "output": "Excellent control over fine finger muscles."
+   },
+   {
+    "h": "Solving Shape-Matching Puzzles",
+    "text": "In computer puzzles, we see missing geometric shapes and we must drag the correct shape and put it in its designated spot on the screen, just like a real wooden shape puzzle.",
+    "code": "Scenario: Drag the yellow triangle and place it in the triangle slot",
+    "output": "The shape fits perfectly and the game triggers celebratory fireworks."
+   },
+   {
+    "h": "The Golden Control Rule",
+    "text": "Always keep your eye on the pointer and your hand steady on the mouse. Speed is not important at first; accuracy and focus on reaching the goal matter most.",
+    "code": "Rule: Pointer accuracy matters more than excessive speed",
+    "output": "Fewer mistakes and faster results on every try."
+   },
+   {
+    "h": "Real-Life Applications",
+    "text": "Mouse skills are not just for games; we use them as we grow up for photo editing, file organization, and even browsing useful educational websites at school.",
+    "code": "Application: Sort homework pictures into the subject folder",
+    "output": "Files organized and arranged accurately and easily."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Pointer",
+    "desc": "The small arrow moving on screen following your hand."
+   },
+   {
+    "name": "Click",
+    "desc": "A quick press and release of the mouse button to select."
+   },
+   {
+    "name": "Double-click",
+    "desc": "Two rapid presses to open programs and games."
+   },
+   {
+    "name": "Drag",
+    "desc": "Holding down the button while moving an item."
+   },
+   {
+    "name": "Drop",
+    "desc": "Releasing the finger to leave the item in its final spot."
+   },
+   {
+    "name": "Shape-matching",
+    "desc": "A visual puzzle linking a shape to its empty slot."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What action do we use to open a game on the desktop?",
+    "a": "Double-click."
+   },
+   {
+    "q": "What do you do with the mouse button while dragging an item?",
+    "a": "Keep the finger pressed down continuously until reaching the target."
+   },
+   {
+    "q": "What does the small moving arrow on the screen point to?",
+    "a": "The mouse pointer moving with your hand motion."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

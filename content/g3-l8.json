@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، الويب مش كلام وصور بس، ده فيه صوت وفيديو كمان! زمان كان صعب، بس دلوقتي لغة HTML بقت بتدعم عرض الميديا بكل سهولة ومن غير برامج خارجية معقدة.",
+   "علشان تحط فيديو في صفحتك، بنستخدم وسم <video>. تقدر تكتب جوه الوسم خاصية src علشان تحدد مكان الملف، أو تستخدم وسم <source> لو عندك أكتر من صيغة للملف علشان يشتغل في كل المتصفحات.",
+   "علشان الزائر يقدر يشغل الفيديو أو يوقفه، لازم نحط خاصية controls. الخاصية دي بتخلي المتصفح يظهر أزرار التشغيل والتحكم في الصوت تلقائياً لكل الناس.",
+   "لو عايز الفيديو يشتغل لوحده أول ما الصفحة تفتح، بنضيف خاصية autoplay. ولو عايزه يفضل يعيد نفسه بدون ما يقف، بنضيف خاصية loop.",
+   "القاعدة الذهبية لأي ميديا هي إتاحة التحكم: سيب الزائر دايماً يقدر يشغل، يوقف، ويعلي الصوت براحته عشان تحترم وقته وتخلي موقعك مريح للعين والودن.",
+   "تخيل إنك بتعمل سينما مصغرة جوه موقعك الشخصي؛ بـ HTML تقدر تعرض فيديو لأكلتك المفضلة أو كليب أنشودة حبوبة لكل أصحابك وهم قاعدين في بيوتهم."
+  ],
+  "example": "تعال نعمل سينما صغيرة في صفحتنا بعنصر فيديو ونحط أزرار التحكم عشان يشتغل زي الفل:\n\n<video controls width='400'>\n  <source src='my-video.mp4' type='video/mp4'>\n  متصفحك يا بطل مش داعم للفيديو.\n</video>\n\nليه استخدمنا controls؟ علشان تظهر أزرار التشغيل والإيقاف للزائر، ولو المتصفح قديم، الكلام اللي جوه الوسم هيظهر كبديل آمن.",
+  "mistake": "نسيان إضافة خاصية controls في وسم الفيديو أو الصوت بيخلي الملف يشتغل في الخلفية من غير ما الزائر يعرف يشغله أو يوقفه، والحل هو كتابة controls جوه الوسم.",
+  "recap": "اتعلمنا إزاي نستخدم وسومي <video> و <audio> علشان نضيف ميديا ممتعة لمواقعنا. وكمان عرفنا إزاي نتحكم في التشغيل والتكرار بالخصائص البسيطة.",
+  "q": [
+   {
+    "t": "إيه الوسم الصح لعرض فيديو في صفحة الويب؟",
+    "o": [
+     "<audio>",
+     "<video>",
+     "<media>"
+    ],
+    "a": 1,
+    "why": "وسم <video> هو المخصص لعرض ملفات الفيديو على الويب."
+   },
+   {
+    "t": "إيه الخاصية اللي بتظهر أزرار التشغيل والإيقاف للمستخدم؟",
+    "o": [
+     "autoplay",
+     "controls",
+     "loop"
+    ],
+    "a": 1,
+    "why": "خاصية controls بتضيف أزرار التحكم الافتراضية للمتصفح."
+   },
+   {
+    "t": "ليه بنستخدم وسم <source> جوه عناصر الميديا؟",
+    "o": [
+     "علشان نكتب كود CSS",
+     "علشان نحدد أكتر من صيغة للملف للتوافق مع المتصفحات",
+     "علشان نكبر حجم الشاشة"
+    ],
+    "a": 1,
+    "why": "لتوفير صيغ مختلفة (مثل mp4 و webm) علشان يشتغل الفيديو في كل المتصفحات."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف خصائص ووسوم الميديا",
+   "goal": "صنف كل عنصر أو خاصية لمكانها الصحيح في تشغيل الفيديو والصوت.",
+   "buckets": [
+    "وسوم ومحتوى",
+    "خصائص تحكم"
+   ],
+   "items": [
+    {
+     "t": "<video>",
+     "b": 0
+    },
+    {
+     "t": "controls",
+     "b": 1
+    },
+    {
+     "t": "<audio>",
+     "b": 0
+    },
+    {
+     "t": "autoplay",
+     "b": 1
+    },
+    {
+     "t": "<source>",
+     "b": 0
+    },
+    {
+     "t": "loop",
+     "b": 1
+    }
+   ],
+   "success": "يا سلام! قدرت ترتب عناصر الويب وخصائصها صح وبقيت مهندس ميديا شاطر!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الميديا في الويب",
+    "text": "زمان كانت المواقع كلام وصور صامتة، لكن دلوقتي لغة HTML بقت بتسمح لنا نضيف صوت وفيديو زي التلفزيون والسينما. تخيل إنك بتفتح كتاب وفجأة تلاقي الشخصيات بتتكلم وتتحرك قدامك! ده بالظبط اللي بتعمله وسوم الميديا في صفحتك.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>ميديا بسيطة</title></head>\n<body>\n  <h2>موقع كرتون وبس</h2>\n  <p>أهلاً بيك في عالم الفيديو والصوت!</p>\n</body>\n</html>",
+    "output": "صفحة ويب تحتوي على عنوان ترحيب بموقع الميديا."
+   },
+   {
+    "h": "استخدام وسم الفيديو <video>",
+    "text": "وسم <video> عامل زي شاشة السينما الصغيرة جوه المتصفح بتاعك. بتحط جواه ملف الفيديو عشان يظهر للناس. تخيل شاشة عرض بتعلقها في أوضتك علشان تعرض عليها صور رحلتك الأخيرة مع أصحابك.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='rabbit.mp4' width='300'></video>\n</body>\n</html>",
+    "output": "مشغل فيديو يعرض ملف الفيديو المحدد بالمقاسات المطلوبة."
+   },
+   {
+    "h": "إظهار أزرار التحكم controls",
+    "text": "لما تحط فيديو، الزائر محتاج يشغله، يوقفه، أو يعلي الصوت. خاصية controls بتعمل كده بالضبط، زي الريموت كنترول بتاع التلفزيون اللي بتقدر توقف بيه الكرتون وقت ما تحب.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='rabbit.mp4' controls width='300'></video>\n</body>\n</html>",
+    "output": "مشغل فيديو يظهر عليه أزرار التشغيل والإيقاف والتحكم في الصوت."
+   },
+   {
+    "h": "استخدام وسم الصوت <audio>",
+    "text": "مش الفيديو لوحده اللي مهم، الصوت كمان ليه وسم خاص بيه اسمه <audio>. ده عامل زي الراديو أو مسجل الصوت القديم اللي بتحطه في صفحتك عشان الزائر يسمع نشيد جميل أو تسجيل صوتي لك.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <audio src='song.mp3' controls></audio>\n</body>\n</html>",
+    "output": "شريط تحكم صوتي يسمح بتشغيل ملف الأغنية أو التسجيل."
+   },
+   {
+    "h": "تعدد الصيغ بـ <source>",
+    "text": "مش كل المتصفحات زي بعضها؛ متصفح بيحب صيغة ومتصفح تاني بيحب صيغة غيرها. علشان كده بنستخدم وسم <source> جوه الفيديو أو الصوت عشان نحط كذا صيغة والمتصفح يختار اللي يناسبه تلقائياً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video controls width='300'>\n    <source src='video.mp4' type='video/mp4'>\n    <source src='video.webm' type='video/webm'>\n  </video>\n</body>\n</html>",
+    "output": "فيديو يدعم عدة صيغ مختلفة لضمان عمله في كل المتصفحات."
+   },
+   {
+    "h": "التشغيل التلقائي autoplay",
+    "text": "خاصية autoplay بتخلي الفيديو يشتغل لوحده أول ما الصفحة تفتح من غير ما الزائر يداس على زرار التشغيل. عاملة زي الأغنية اللي بتشتغل أول ما تدخل لعبة فيديو مفضلة ليك.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='intro.mp4' autoplay controls width='300'></video>\n</body>\n</html>",
+    "output": "فيديو يبدأ التشغيل فور تحميل الصفحة تلقائياً."
+   },
+   {
+    "h": "التكرار المستمر loop",
+    "text": "لو عندك فيديو قصير وعايزه يفضل يعيد نفسه من الأول كل ما يخلص، بتضيف خاصية loop. زي أغنية العيد المفضلة اللي بتفضل شغالة طول اليوم في البيت من كتر ما بنحبها.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='dance.mp4' loop controls width='300'></video>\n</body>\n</html>",
+    "output": "فيديو يعيد تشغيل نفسه تلقائياً كلما انتهى."
+   },
+   {
+    "h": "النص البديل للمتصفحات القديمة",
+    "text": "لو واحد دخل صفحتك بمتصفح قديم مش بيدعم الفيديو الحديث، بنكتب نص جوه وسم الفيديو كملاذ أخير عشان نقوله إن متصفحه مش داعم، ونحط له رابط مباشر يحمل منه الملف.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='movie.mp4' controls>\n    متصفحك لا يدعم الفيديو.\n  </video>\n</body>\n</html>",
+    "output": "فيديو مزود بنص تحذيري يظهر للمتصفحات القديمة غير الداعمة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<video>",
+    "desc": "وسم إدراج ملفات الفيديو في صفحة الويب."
+   },
+   {
+    "name": "<audio>",
+    "desc": "وسم إدراج ملفات الصوت في صفحة الويب."
+   },
+   {
+    "name": "controls",
+    "desc": "خاصية لإظهار أزرار التشغيل والإيقاف والصوت."
+   },
+   {
+    "name": "<source>",
+    "desc": "وسم لتحديد مصدر الملف وصيغته التقنية."
+   },
+   {
+    "name": "autoplay",
+    "desc": "خاصية لتشغيل الميديا تلقائياً فور فتح الصفحة."
+   },
+   {
+    "name": "loop",
+    "desc": "خاصية لإعادة تشغيل الميديا بشكل مستمر ودائم."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML لإضافة فيديو يعمل بملف اسمه game.mp4 مع أزرار التحكم.",
+    "a": "<video src='game.mp4' controls></video>"
+   },
+   {
+    "q": "ما هي الخاصية التي تجعل الفيديو يعيد نفسه تلقائياً دون توقف؟",
+    "a": "loop"
+   },
+   {
+    "q": "اكتب كود لإضافة ملف صوتي اسمه music.mp3 مع أزرار التحكم.",
+    "a": "<audio src='music.mp3' controls></audio>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey champion, the web is not just text and pictures anymore; it has audio and video too! HTML makes adding media very easy without complicated external software.",
+   "To put a video on your page, we use the <video> tag. You can use the src attribute to specify the file path, or use the <source> tag if you have multiple formats.",
+   "To let visitors play or pause the video, we must include the controls attribute. This automatically adds the browser's built-in playback and volume buttons for everyone.",
+   "If you want the video to start playing automatically when the page loads, add the autoplay attribute. If you want it to repeat endlessly, add the loop attribute.",
+   "The golden rule for any media is accessibility: always let visitors play, pause, and adjust the volume freely to respect their time and make your site comfortable.",
+   "Imagine building a mini cinema inside your personal website; with HTML, you can display a video of your favorite recipe or a fun song for all your friends to enjoy."
+  ],
+  "example": "Let's create a tiny cinema in our page using a video element and add playback controls so it runs smoothly:\n\n<video controls width='400'>\n  <source src='my-video.mp4' type='video/mp4'>\n  Your browser does not support HTML video.\n</video>\n\nWhy did we use controls? So that play and pause buttons appear for the visitor, and if the browser is old, the text inside the tags serves as a safe backup.",
+  "mistake": "Forgetting to add the controls attribute to a video or audio tag makes the file play silently in the background without giving the user any way to control it. The fix is to add controls inside the tag.",
+  "recap": "We learned how to use the <video> and <audio> tags to add fun media to our web pages, and how to control playback and looping with simple attributes.",
+  "q": [
+   {
+    "t": "What is the correct tag to embed a video in a web page?",
+    "o": [
+     "<audio>",
+     "<video>",
+     "<media>"
+    ],
+    "a": 1,
+    "why": "The <video> tag is specifically designed for embedding video files on the web."
+   },
+   {
+    "t": "Which attribute displays play, pause, and volume buttons to the user?",
+    "o": [
+     "autoplay",
+     "controls",
+     "loop"
+    ],
+    "a": 1,
+    "why": "The controls attribute enables the browser's default playback interface."
+   },
+   {
+    "t": "Why do we use the <source> tag inside media elements?",
+    "o": [
+     "To write CSS styling code",
+     "To provide multiple file formats for browser compatibility",
+     "To increase the screen size"
+    ],
+    "a": 1,
+    "why": "To provide different formats (like mp4 and webm) so the video works across all browsers."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Media Tags and Attributes",
+   "goal": "Classify each element or attribute into its correct category for video and audio handling.",
+   "buckets": [
+    "Tags & Content",
+    "Control Attributes"
+   ],
+   "items": [
+    {
+     "t": "<video>",
+     "b": 0
+    },
+    {
+     "t": "controls",
+     "b": 1
+    },
+    {
+     "t": "<audio>",
+     "b": 0
+    },
+    {
+     "t": "autoplay",
+     "b": 1
+    },
+    {
+     "t": "<source>",
+     "b": 0
+    },
+    {
+     "t": "loop",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You correctly sorted the web elements and attributes like a professional media engineer!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Web Media",
+    "text": "Websites used to be just silent text and static images, but now HTML lets us include sound and video just like TV and cinema. Imagine opening a book and suddenly having the characters talk and move right in front of you! That's exactly what media tags do for your web page.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Simple Media</title></head>\n<body>\n  <h2>Cartoon World</h2>\n  <p>Welcome to the world of video and audio!</p>\n</body>\n</html>",
+    "output": "A web page displaying a welcoming heading for a media site."
+   },
+   {
+    "h": "Using the <video> Tag",
+    "text": "The <video> tag acts like a mini movie screen inside your browser. You place your video file inside it so people can watch. Imagine hanging a display screen in your room to show movies to your friends.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='rabbit.mp4' width='300'></video>\n</body>\n</html>",
+    "output": "A video player displaying the specified video file at the given dimensions."
+   },
+   {
+    "h": "Enabling Playback Controls",
+    "text": "When you embed a video, visitors need to play, pause, or adjust the volume. The controls attribute does exactly that, acting like a TV remote control so you can stop the cartoon whenever you want.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='rabbit.mp4' controls width='300'></video>\n</body>\n</html>",
+    "output": "A video player equipped with play, pause, and volume adjustment buttons."
+   },
+   {
+    "h": "Using the <audio> Tag",
+    "text": "Video isn't the only important media; sound has its own tag called <audio>. It's like a radio or old tape player placed on your page so visitors can hear a nice anthem or your voice recording.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <audio src='song.mp3' controls></audio>\n</body>\n</html>",
+    "output": "An audio control bar allowing playback of a song or recording."
+   },
+   {
+    "h": "Multiple Formats with <source>",
+    "text": "Not all browsers are alike; one might prefer a specific format while another prefers a different one. That's why we use the <source> tag inside video or audio elements to provide multiple formats so the browser picks the best match.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video controls width='300'>\n    <source src='video.mp4' type='video/mp4'>\n    <source src='video.webm' type='video/webm'>\n  </video>\n</body>\n</html>",
+    "output": "A video player supporting multiple source formats for cross-browser compatibility."
+   },
+   {
+    "h": "Automatic Playback with autoplay",
+    "text": "The autoplay attribute makes the video start playing on its own as soon as the page opens, without the visitor having to click play. It's like background music starting right when you launch your favorite video game.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='intro.mp4' autoplay controls width='300'></video>\n</body>\n</html>",
+    "output": "A video that automatically begins playing upon page load."
+   },
+   {
+    "h": "Continuous Looping with loop",
+    "text": "If you have a short video and want it to repeat from the beginning every time it ends, you add the loop attribute. It's like your favorite holiday song playing on repeat all day long at home.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='dance.mp4' loop controls width='300'></video>\n</body>\n</html>",
+    "output": "A video that automatically restarts playback whenever it finishes."
+   },
+   {
+    "h": "Fallback Content for Older Browsers",
+    "text": "If someone visits your page using an older browser that doesn't support modern video, we write fallback text inside the video tag to inform them and provide a direct download link.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <video src='movie.mp4' controls>\n    Your browser does not support video.\n  </video>\n</body>\n</html>",
+    "output": "A video element showing fallback text for unsupported browsers."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<video>",
+    "desc": "Tag for embedding video files into a web page."
+   },
+   {
+    "name": "<audio>",
+    "desc": "Tag for embedding audio files into a web page."
+   },
+   {
+    "name": "controls",
+    "desc": "Attribute to display playback, pause, and volume buttons."
+   },
+   {
+    "name": "<source>",
+    "desc": "Tag to specify media file sources and technical formats."
+   },
+   {
+    "name": "autoplay",
+    "desc": "Attribute to start media playback automatically upon page load."
+   },
+   {
+    "name": "loop",
+    "desc": "Attribute to continuously repeat media playback."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code to add a video named game.mp4 with playback controls.",
+    "a": "<video src='game.mp4' controls></video>"
+   },
+   {
+    "q": "What attribute makes a video repeat itself automatically without stopping?",
+    "a": "loop"
+   },
+   {
+    "q": "Write code to add an audio file named music.mp3 with controls.",
+    "a": "<audio src='music.mp3' controls></audio>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: HTML video and audio",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio"
+  },
+  {
+   "title": "MDN: Video and audio APIs",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Video_and_audio_APIs"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,316 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن كل عنصر على صفحة الويب هو هدية مغلفة داخل صندوق سحري. يتكون هذا الصندوق في لغة CSS من أربع طبقات أساسية تترتب فوق بعضها من الداخل إلى الخارج.",
+   "خذ مثلاً صورة كرتونية جميلة؛ هذه الصورة هي محتوى الصندوق الأساسي (Content)، وتعيش في منتصف الهدية تماماً حيث توجد الكلمات أو الصور الحقيقية.",
+   "الحشو (Padding) هو مساحة الهواء الداخلية التي توضع بين المحتوى وسور الصندوق. إنه يشبه تماماً وسادة الهواء الفقاعية التي تحمي الهدية من الداخل.",
+   "الحدود (Border) هي الإطار الخارجي الصلب الذي يحيط بالحشو، تماماً مثل شريط التزيين الملون أو السور الخشبي الذي يحدد شكل الصندوق وجماله.",
+   "المسافة الخارجية (Margin) هي الفراغ الموجود خارج الحدود، والذي يبعد الصندوق عن الصناديق المجاورة له حتى لا تلتصق الهدايا ببعضها البعض.",
+   "القاعدة الذهبية لتصميم الويب هي: استخدم الـ padding لتبعد المحتوى عن إطاره من الداخل، واستخدم الـ margin لتبعد العناصر عن بعضها من الخارج."
+  ],
+  "example": "دعنا نصنع بطاقة لتهنئة عيد الميلاد. إذا كتبنا نص التهنئة مباشرة على حافة الإطار، س يبدو قبيحاً. لذا نضيف padding بمقدار 20 بكسل ليأخذ النص مساحة داخلية مريحة، ثم نضيف border أحمر جميل بسُمك 3 بكسل، وأخيراً margin بقيمة 15 بكسل ليترك مسافة بينه وبين البطاقات المجاورة.",
+  "mistake": "الخطأ الشائع هو الخلط بين الـ padding والـ margin. تذكر دائماً: الـ padding هو مساحة داخلية تقع جوة الإطار، بينما الـ margin مساحة خارجية تقع برة الإطار.",
+  "recap": "نموذج الصندوق في CSS يتعامل مع كل عنصر كصندوق يتكون من محتوى، وحشو داخلي، وحدود، ومسافة خارجية. هذا التنظيم هو السر وراء ترتيب صفحات الويب بشكل جميل.",
+  "q": [
+   {
+    "t": "أين تقع مسافة الحشو (Padding) بالنسبة للإطار (Border)؟",
+    "o": [
+     "خارج الإطار تماماً",
+     "داخل الإطار وتحيط بالمحتوى",
+     "لا علاقة لها بالإطار"
+    ],
+    "a": 1,
+    "why": "الـ padding يقع دائماً في الداخل بين المحتوى والحدود."
+   },
+   {
+    "t": "أي خاصية تستخدم لإبعاد عنصر عن عنصر آخر يجاوره؟",
+    "o": [
+     "padding",
+     "margin",
+     "content"
+    ],
+    "a": 1,
+    "why": "الـ margin هي المسافة الخارجية التي تفصل العناصر عن بعضها."
+   },
+   {
+    "t": "ما هو الجزء الأول والمباشر الذي يحتوي على النص أو الصورة داخل الصندوق؟",
+    "o": [
+     "Content",
+     "Border",
+     "Margin"
+    ],
+    "a": 0,
+    "why": "المحتوى (Content) هو النواة الأساسية التي تحيط بها باقي الطبقات."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود نموذج الصندوق",
+   "goal": "اكتشف السطر الخطأ في كود CSS واصلحه ليظهر الصندوق بشكل صحيح.",
+   "lines": [
+    ".card {",
+    "  width: 200px;",
+    "  padding-top: 20px;",
+    "  margin: 10px;",
+    "  border: red solid 2px;",
+    "}"
+   ],
+   "bug": 3,
+   "fix": "  border: 2px solid red;",
+   "success": "رائع! تم تلوين الإطار وظهرت البطاقة بمسافاتها المنظمة بنجاح."
+  },
+  "sections": [
+   {
+    "h": "مفهوم الصندوق الأساسي",
+    "text": "كل عنصر تراه على متصفح الإنترنت هو في الواقع صندوق مستطيل الشكل. تماماً مثل صندوق الهدية الذي تصله في عيد ميلادك، يتكون من طبقات متداخلة تحدد مساحته وشكله العام على الشاشة.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lightblue; width: 150px; }</style></head><body><div>صندوق المحتوى</div></body></html>",
+    "output": "يظهر صندوق أزرق يمثل المحتوى الأساسي للبلاطة."
+   },
+   {
+    "h": "منطقة المحتوى (Content)",
+    "text": "هذا هو قلب الصندوق النابض، حيث تتواجد الكلمات، الصور، أو مقاطع الفيديو الحقيقية. يمكنك التحكم بعرضه وارتفاعه باستخدام خاصيتي العرض والارتفاع لضمان ظهور رسائلك بوضوح تام.",
+    "code": "<!DOCTYPE html><html><head><style>p { background-color: yellow; width: 200px; height: 50px; }</style></head><body><p>هذا نص المحتوى.</p></body></html>",
+    "output": "يظهر صندوق أصفر بمقاسات محددة يحتوي على نص تجريبي."
+   },
+   {
+    "h": "منطقة الحشو الداخلي (Padding)",
+    "text": "تخيل أنك تضع وسائد هوائية دائرية داخل صندوق الهدية حتى لا تصطدم الهدية بجدران الصندوق. الـ padding يعمل بنفس الطريقة تماماً، فهو يخلق مساحة نظيفة داخل الإطار تحمي النص وتبعده عن الحواف.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lightgreen; padding: 25px; }</style></head><body><div>محتوى مع حشو داخلي</div></body></html>",
+    "output": "يظهر مربع أخضر بمسافة فارغة واسعة حول النص من الداخل."
+   },
+   {
+    "h": "إضافة الحدود المخصصة (Borders)",
+    "text": "الحدود هي السور الخارجي الذي يحيط بالحشو والمحتوى. يمكنك جعل هذا السور رفيعاً أو سميكاً، متصلاً أو منقطاً، وبأي لون تحبه، تماماً مثل تزيين كعكة عيد الميلاد بالشوكولاتة الملونة.",
+    "code": "<!DOCTYPE html><html><head><style>div { border: 4px dashed orange; padding: 10px; }</style></head><body><div>إطار برتقالي منقط</div></body></html>",
+    "output": "يظهر صندوق بإطار برتقالي متقطع يحيط بالنص."
+   },
+   {
+    "h": "المسافة الخارجية (Margin)",
+    "text": "ماذا لو وضعت عدة هدايا بجانب بعضها ولصقت ببعضها؟ ستبدو فوضوية! المسافة الخارجية أو الـ margin هي الحارس الشخصي الذي يقف خارج الصندوق ليمنع الصناديق الأخرى من الاقتراب منه، مما يخلق تنظيماً رائعاً.",
+    "code": "<!DOCTYPE html><html><head><style>.box { background-color: pink; margin: 20px; padding: 10px; }</style></head><body><div class='box'>الصندوق الأول</div><div class='box'>الصندوق الثاني</div></body></html>",
+    "output": "يظهر صندوقان ورديان يفصل بينهما مسافة فارغة واضحة."
+   },
+   {
+    "h": "التحكم بالجهات الأربع",
+    "text": "في نموذج الصندوق، يمكنك التحكم بكل جهة على حدة (الأعلى، اليمين، الأسفل، اليسار). يمكنك جعل الحشو العلوي كبيراً واليساري صغيراً، تماماً مثل تعديل وسادة النوم لتناسب راحتك.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lightcoral; padding-top: 30px; padding-left: 10px; }</style></head><body><div>جهات مختلفة</div></body></html>",
+    "output": "يظهر صندوق بحشو علوي أكبر بكثير من الحشو الجانبي."
+   },
+   {
+    "h": "الفرق الحاسم بين الحشو والمسافة",
+    "text": "تذكر دائماً المعادلة البسيطة: الحشو (Padding) يزيد من حجم الصندوق من الداخل ويقع بين المحتوى والإطار. أما المسافة (Margin) فتقع خارج الإطار تماماً وتبعد الصندوق عن جيرانه في الصفحة.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lavender; border: 2px solid purple; padding: 15px; margin: 20px; }</style></head><body><div>مقارنة مرئية</div></body></html>",
+    "output": "يظهر صندوق موضح به تباين واضح بين المسافة الداخلية والإطار والمسافة الخارجية."
+   },
+   {
+    "h": "تصميم بطاقة احترافية متكاملة",
+    "text": "الآن وبعد أن عرفت جميع أسرار نموذج الصندوق، يمكنك جمعها معاً: محتوى رائع، حشو داخلي مريح، إطار أنيق، ومسافة خارجية تبعدها عن البطاقات الأخرى لتصميم موقع ويب مذهل ومحترف.",
+    "code": "<!DOCTYPE html><html><head><style>.card { background: white; border: 3px solid blue; padding: 20px; margin: 15px; width: 180px; }</style></head><body><div class='card'>بطاقة ألعاب</div></body></html>",
+    "output": "يظهر تصميم بطاقة ويب متكاملة ومترابطة بشكل جميل."
+   }
+  ],
+  "reference": [
+   {
+    "name": "content",
+    "desc": "المساحة الداخلية التي تحتوي على النصوص والصور."
+   },
+   {
+    "name": "padding",
+    "desc": "المسافة الداخلية بين المحتوى والإطار."
+   },
+   {
+    "name": "border",
+    "desc": "الإطار الخارجي الذي يحيط بالحشو والمحتوى."
+   },
+   {
+    "name": "margin",
+    "desc": "المسافة الخارجية التي تفصل العنصر عن العناصر الأخرى."
+   },
+   {
+    "name": "border-width",
+    "desc": "يحدد سُمك الإطار المحيط بالعنصر."
+   },
+   {
+    "name": "box-sizing",
+    "desc": "يتحكم في كيفية حساب العرض والارتفاع الإجمالي للصندوق."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لإضافة حشو داخلي بمقدار 15 بكسل ومسافة خارجية بمقدار 10 بكسل لصندوق.",
+    "a": "div { padding: 15px; margin: 10px; }"
+   },
+   {
+    "q": "كيف تضيف إطاراً أحمر سمكه 2 بكسل ومتصل لعنصر ما؟",
+    "a": "border: 2px solid red;"
+   },
+   {
+    "q": "ما هي الخاصية المسؤولة عن الفراغ الواقع خارج حدود العنصر؟",
+    "a": "margin"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine every element on a webpage is a gift wrapped inside a magical box. In CSS, this box consists of four main layers nested neatly from the inside out.",
+   "Take a nice cartoon picture for example; this picture is the main Content of the box, living right in the center where the real text or images reside.",
+   "Padding is the internal breathing space placed between the content and the box border. It acts just like bubble wrap protecting the gift from the inside.",
+   "Border is the solid outer frame surrounding the padding, just like a colorful ribbon or a wooden fence that defines the shape and beauty of the box.",
+   "Margin is the empty space sitting outside the border, pushing the box away from neighboring boxes so gifts do not stick together.",
+   "The golden rule of web design is: use padding to push content away from its border from the inside, and use margin to separate elements from each other from the outside."
+  ],
+  "example": "Let us build a birthday greeting card. If we write our text right at the edge of the frame, it looks ugly. So we add 20 pixels of padding for comfortable inside breathing room, a nice red border of 3 pixels thickness, and finally 15 pixels of margin to leave space between it and neighboring cards.",
+  "mistake": "A common mistake is confusing padding with margin. Always remember: padding is internal space inside the frame, while margin is external space outside the frame.",
+  "recap": "The CSS box model treats every element as a box made of content, internal padding, borders, and external margin. This organization is the secret behind beautifully structured web pages.",
+  "q": [
+   {
+    "t": "Where is the padding located relative to the border?",
+    "o": [
+     "Completely outside the border",
+     "Inside the border surrounding the content",
+     "It has no relation to the border"
+    ],
+    "a": 1,
+    "why": "Padding is always inside, sitting between the content and the border."
+   },
+   {
+    "t": "Which property is used to push an element away from a neighboring element?",
+    "o": [
+     "padding",
+     "margin",
+     "content"
+    ],
+    "a": 1,
+    "why": "Margin is the external space that separates elements from each other."
+   },
+   {
+    "t": "What is the first and direct part that holds the text or image inside the box?",
+    "o": [
+     "Content",
+     "Border",
+     "Margin"
+    ],
+    "a": 0,
+    "why": "Content is the core element surrounded by all other layers."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Box Model Code",
+   "goal": "Find the wrong line in the CSS code and fix it so the box renders correctly.",
+   "lines": [
+    ".card {",
+    "  width: 200px;",
+    "  padding-top: 20px;",
+    "  margin: 10px;",
+    "  border: red solid 2px;",
+    "}"
+   ],
+   "bug": 3,
+   "fix": "  border: 2px solid red;",
+   "success": "Awesome! The border is styled and the card appears with its organized spacing successfully."
+  },
+  "sections": [
+   {
+    "h": "The Basic Box Concept",
+    "text": "Every element you see on a web browser is actually a rectangular box. Just like a gift box you receive on your birthday, it consists of nested layers that define its size and general appearance on screen.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lightblue; width: 150px; }</style></head><body><div>Content Box</div></body></html>",
+    "output": "A light blue box appears representing the basic element content."
+   },
+   {
+    "h": "The Content Area",
+    "text": "This is the beating heart of the box, where real words, images, or video players live. You can control its width and height using sizing properties to ensure your messages appear clearly.",
+    "code": "<!DOCTYPE html><html><head><style>p { background-color: yellow; width: 200px; height: 50px; }</style></head><body><p>This is content text.</p></body></html>",
+    "output": "A yellow box with specific dimensions containing sample text appears."
+   },
+   {
+    "h": "The Padding Area",
+    "text": "Imagine placing round air cushions inside your gift box so the gift does not crash into the walls. Padding works the exact same way, creating a clean internal space that protects and distances text from edges.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lightgreen; padding: 25px; }</style></head><body><div>Content with internal padding</div></body></html>",
+    "output": "A green box appears with wide empty space around the text from the inside."
+   },
+   {
+    "h": "Adding Custom Borders",
+    "text": "Borders are the outer fence surrounding the padding and content. You can make this fence thin or thick, solid or dashed, in any color you like, just like decorating a birthday cake with colored chocolate.",
+    "code": "<!DOCTYPE html><html><head><style>div { border: 4px dashed orange; padding: 10px; }</style></head><body><div>Dashed orange border</div></body></html>",
+    "output": "A box with a dashed orange border surrounding the text appears."
+   },
+   {
+    "h": "The Margin Area",
+    "text": "What if you placed multiple gifts right next to each other touching? They would look messy! External margin is the personal guard standing outside the box preventing other boxes from crowding it, creating wonderful organization.",
+    "code": "<!DOCTYPE html><html><head><style>.box { background-color: pink; margin: 20px; padding: 10px; }</style></head><body><div class='box'>First Box</div><div class='box'>Second Box</div></body></html>",
+    "output": "Two pink boxes appear separated by a clear empty distance."
+   },
+   {
+    "h": "Controlling All Four Sides",
+    "text": "In the box model, you can control each side independently (top, right, bottom, left). You can make top padding large and left padding small, just like adjusting a pillow to fit your comfort.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lightcoral; padding-top: 30px; padding-left: 10px; }</style></head><body><div>Different sides</div></body></html>",
+    "output": "A box appears with much larger top padding than side padding."
+   },
+   {
+    "h": "The Crucial Difference Between Padding and Margin",
+    "text": "Always remember the simple equation: Padding increases the box size internally, living between content and border. Margin lives completely outside the border, keeping the box away from its page neighbors.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: lavender; border: 2px solid purple; padding: 15px; margin: 20px; }</style></head><body><div>Visual comparison</div></body></html>",
+    "output": "A box showing clear contrast between internal padding, border, and external margin appears."
+   },
+   {
+    "h": "Designing a Complete Professional Card",
+    "text": "Now that you know all box model secrets, you can combine them: great content, comfortable inner padding, neat border, and external margin separating it from other cards to design an amazing and professional website.",
+    "code": "<!DOCTYPE html><html><head><style>.card { background: white; border: 3px solid blue; padding: 20px; margin: 15px; width: 180px; }</style></head><body><div class='card'>Game Card</div></body></html>",
+    "output": "A fully styled, beautifully connected web card design appears."
+   }
+  ],
+  "reference": [
+   {
+    "name": "content",
+    "desc": "The inner area containing texts and images."
+   },
+   {
+    "name": "padding",
+    "desc": "The internal space between content and border."
+   },
+   {
+    "name": "border",
+    "desc": "The outer frame surrounding padding and content."
+   },
+   {
+    "name": "margin",
+    "desc": "The external space separating the element from others."
+   },
+   {
+    "name": "border-width",
+    "desc": "Defines the thickness of the element border."
+   },
+   {
+    "name": "box-sizing",
+    "desc": "Controls how total box width and height are calculated."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to add 15px of internal padding and 10px of external margin to a box.",
+    "a": "div { padding: 15px; margin: 10px; }"
+   },
+   {
+    "q": "How do you add a solid red border with a thickness of 2 pixels to an element?",
+    "a": "border: 2px solid red;"
+   },
+   {
+    "q": "What property is responsible for the space outside the element border?",
+    "a": "margin"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: CSS box model",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model"
+  },
+  {
+   "title": "MDN: Introduction to the CSS box model",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,332 @@
+{
+ "ar": {
+  "steps": [
+   "ملف README هو الوجهة الأولى لأي شخص يزور مشروعك البرمجي، فهو يشرح فكرته باختصار ويجعل المطورين الآخرين يفهمون ما تفعله.",
+   "استخدام لغة Markdown في ملف README.md يتيح لك تنسيق النصوص وإضافة عناوين وجداول وقوائم بسهولة تامة باستخدام رموز بسيطة مثل الشباك والنجوم.",
+   "توثيق كيفية تثبيت المشروع (Documenting code installations) يعتبر أمراً بالغ الأهمية لكي يتمكن الآخرون من تشغيل كودك دون أخطاء أو نقص في الحزم.",
+   "يمكنك إضافة خطوات التشغيل عبر أمر مثل pip install pandas ثم تشغيل السكريبت الخاص بك لعرض النتائج بشكل منسق.",
+   "القاعدة الذهبية: اكتب ملف README كأنك تشرح المشروع لصديق يراه لأول مرة، واجعل خطوات التثبيت واضحة ومباشرة.",
+   "تعتبر ملفات README جزءاً أساسياً من بناء معرض أعمالك المهني (Project Portfolios) على منصات مثل GitHub لتظهر مهاراتك للعالم."
+  ],
+  "example": "لنفترض أننا نصمم مشروع تحليل بيانات صغير. في ملف README.md، نبدأ بعنوان المشروع # مشروع التحليل، ثم نكتب قسم التثبيت ## التثبيت ونضع تحته أمر pip install pandas، ثم نوضح طريقة التشغيل عبر python main.py. هذا يضمن فهم الزائر لكل تفاصيل المشروع بسرعة.",
+  "mistake": "نسيان كتابة خطوات التثبيت أو الاعتماد على افتراض أن المستخدم يعرف كيف يشغل الكود. الحل هو تجربة تثبيت المشروع على جهاز جديد نظرياً للتأكد من شمولية التعليمات.",
+  "recap": "ملفات README والـ Markdown هي واجهة مشروعك الاحترافية لتوثيق التثبيت وعرض إنجازاتك في محفظتك البرمجية. تنظيمها يسهل على الآخرين فهم إبداعك.",
+  "q": [
+   {
+    "t": "ما هو الغرض الرئيسي من ملف README.md؟",
+    "o": [
+     "تشغيل الأكواد تلقائياً",
+     "تقديم مشروعك وشرح كيفية تثبيته وتشغيله",
+     "حفظ بيانات المستخدمين السرية"
+    ],
+    "a": 1,
+    "why": "ملف README يشرح للمستخدِمين تفاصيل المشروع وطريقة تشغيله."
+   },
+   {
+    "t": "أي رمز يُستخدم لإنشاء عنوان رئيسي (Heading 1) في Markdown؟",
+    "o": [
+     "رمز الشباك #",
+     "النجمتان **",
+     "الأقواس {}"
+    ],
+    "a": 0,
+    "why": "نستخدم رمز # واحد لإنشاء العنوان الرئيسي الأول."
+   },
+   {
+    "t": "لماذا نُوثق خطوات التثبيت في ملف README؟",
+    "o": [
+     "لكي يقرأه المعلم فقط",
+     "لكي يتمكن الآخرون من تشغيل المشروع بنجاح",
+     "لتقليص مساحة الملف"
+    ],
+    "a": 1,
+    "why": "توثيق التثبيت يساعد أي شخص على إعداد حزم المشروع وتشغيله بسهولة."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة عناصر ملف README",
+   "goal": "صل كل قسم في ملف README بوظيفته الصحيحة",
+   "pairs": [
+    [
+     "# عنوان المشروع",
+     "يعرض اسم المشروع البارز"
+    ],
+    [
+     "## التثبيت",
+     "يشرح الأوامر المطلوبة لتشغيل الحزم"
+    ],
+    [
+     "## الاستخدام",
+     "يوضح كيف يعمل الكود بالمنهجية الصحيحة"
+    ],
+    [
+     "## التواصل",
+     "يحتوي على معلومات صاحب المشروع"
+    ]
+   ],
+   "success": "رائع! لقد رتبت أقسام ملف README واصبح جاهزاً للنشر باحترافية."
+  },
+  "sections": [
+   {
+    "h": "ما هو ملف README؟",
+    "text": "ملف README هو دليل الاستخدام الخاص بمشروعك البرمجي، يشبه تماماً غلاف الكتاب أو كتبيات الألعاب التي تشرح لك محتويات اللعبة قبل أن تبدأ اللعب.",
+    "code": "# My Project\n# هذا ملف تعريف المشروع",
+    "output": "# My Project"
+   },
+   {
+    "h": "مقدمة عن لغة Markdown",
+    "text": "لغة Markdown هي لغة تنسيق خفيفة تتيح لك كتابة النصوص وتنسيقها بعناوين وخطوط عريضة دون الحاجة لبروتوكولات معقدة، مثل كتابة الرسائل بأسلوب مرتب وسريع.",
+    "code": "**خط عريض** و *خط مائل*",
+    "output": "**خط عريض** و *خط مائل*"
+   },
+   {
+    "h": "إنشاء العناوين في Markdown",
+    "text": "يمكنك تنظيم ملفك باستخدام رموز الشباك (#). شباك واحد يعني عنواناً رئيسياً كبيراً، وشباكان يعنيان عنواناً فرعياً أصغر، تماماً مثل فصول الكتاب.",
+    "code": "# العنوان الرئيسي\n## العنوان الفرعي",
+    "output": "# العنوان الرئيسي\n## العنوان الفرعي"
+   },
+   {
+    "h": "توثيق تثبيت الحزم",
+    "text": "عندما يستخدم شخص آخر مشروعك، يحتاج لمعرفة الحزم المطلوبة. توثيق التثبيت يشرح له الأوامر التي يجب كتابتها في الطرفية لكي يعمل الكود بلا مشاكل.",
+    "code": "pip install pandas matplotlib",
+    "output": "Requirement already satisfied..."
+   },
+   {
+    "h": "إضافة أمثلة الكود البرمجي",
+    "text": "يمكنك وضع مقتطفات من كود بايثون داخل أقواس مائلة ثلاثية لكي تظهر بشكل منظم ويسهل على الآخرين نسخها وتجربتها.",
+    "code": "```python\nprint('Hello Portfolio')\n```",
+    "output": "Hello Portfolio"
+   },
+   {
+    "h": "إنشاء القوائم والنقاط",
+    "text": "لتسهيل القراءة، تستخدم القوائم المنقطة أو المرقمة لعرض متطلبات المشروع أو مميزاته خطوة بخطوة.",
+    "code": "- بايثون 3\n- مكتبة باندا\n- ملف بيانات",
+    "output": "- بايثون 3..."
+   },
+   {
+    "h": "بناء محفظة المشاريع الاحترافية",
+    "text": "محفظة مشاريعك البرمجية هي بوابتك لعرض إنجازاتك. ملف README قوي وموثق جيداً يعكس مدى احترافيتك ودقتك أمام أصحاب العمل أو المدربين.",
+    "code": "# Portfolio\nWelcome to my data projects!",
+    "output": "# Portfolio"
+   },
+   {
+    "h": "التحقق من صحة الملف قبل النشر",
+    "text": "قبل رفع مشروعك إلى GitHub، اقرأ ملف README كاملاً كأنك شخص يراه لأول مرة لتتأكد من عدم نقص أي أمر أو شرح أساسي.",
+    "code": "# تأكد من كتابة خطوات التشغيل بوضوح",
+    "output": "Ready to publish!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "#",
+    "desc": "يُستخدم لإنشاء عنوان رئيسي (Heading 1)"
+   },
+   {
+    "name": "##",
+    "desc": "يُستخدم لإنشاء عنوان فرعي (Heading 2)"
+   },
+   {
+    "name": "**text**",
+    "desc": "يجعل النص عريضاً (Bold)"
+   },
+   {
+    "name": "*text*",
+    "desc": "يجعل النص مائلاً (Italic)"
+   },
+   {
+    "name": "```python",
+    "desc": "يبدأ كتلة مخصصة لكود بايثون"
+   },
+   {
+    "name": "README.md",
+    "desc": "الملف الأساسي لتوثيق المشروع وعرضه"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر Markdown لإنشاء عنوان رئيسي باسم 'تحليل بيانات المبيعات'.",
+    "a": "# تحليل بيانات المبيعات"
+   },
+   {
+    "q": "كيف تجعل كلمة 'مهم' عريضة في لغة Markdown؟",
+    "a": "**مهم**"
+   },
+   {
+    "q": "ما هو الأمر الشائع لتثبيت حزم بايثون الذي تضعه في قسم التثبيت؟",
+    "a": "pip install <packagename>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "A README file is the first destination for anyone visiting your software project; it explains the core idea and helps other developers understand what your project does.",
+   "Using Markdown in a README.md file lets you format text, headings, tables, and lists easily using simple symbols like hashes and asterisks.",
+   "Documenting code installations is crucial so that other users can run your code without errors or missing packages.",
+   "You can add running instructions using commands like pip install pandas and then running your script to display formatted results.",
+   "Golden rule: Write your README as if explaining the project to a friend seeing it for the first time, keeping setup instructions clear and direct.",
+   "README files are an essential part of building your professional project portfolios on platforms like GitHub to showcase your skills to the world."
+  ],
+  "example": "Suppose we are building a small data analysis project. In README.md, we start with the project title # Sales Analysis, add an installation section ## Installation with pip install pandas, and explain how to run it via python main.py. This ensures visitors understand every detail quickly.",
+  "mistake": "Forgetting to write installation steps or assuming the user already knows how to run the code. The fix is to test running your project on a clean virtual setup to verify completeness.",
+  "recap": "README files and Markdown are your professional project interface for documenting installations and showcasing your achievements in your portfolio. Organizing them helps others appreciate your creativity.",
+  "q": [
+   {
+    "t": "What is the primary purpose of a README.md file?",
+    "o": [
+     "To execute code automatically",
+     "To introduce your project and explain how to install and run it",
+     "To store private user credentials"
+    ],
+    "a": 1,
+    "why": "A README explains project details and execution steps to users."
+   },
+   {
+    "t": "Which symbol is used to create a Heading 1 in Markdown?",
+    "o": [
+     "Hash symbol #",
+     "Double asterisks **",
+     "Curly braces {}"
+    ],
+    "a": 0,
+    "why": "We use a single # to create the main primary heading."
+   },
+   {
+    "t": "Why do we document installation steps in a README?",
+    "o": [
+     "So only the teacher reads it",
+     "So others can successfully run the project",
+     "To reduce file storage size"
+    ],
+    "a": 1,
+    "why": "Installation documentation helps anyone set up project packages and run it smoothly."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching README Elements",
+   "goal": "Connect each README section with its correct function",
+   "pairs": [
+    [
+     "# Project Title",
+     "Displays the prominent project name"
+    ],
+    [
+     "## Installation",
+     "Explains the required commands to set up packages"
+    ],
+    [
+     "## Usage",
+     "Demonstrates how the code works correctly"
+    ],
+    [
+     "## Contact",
+     "Contains information about the project author"
+    ]
+   ],
+   "success": "Awesome! You arranged the README sections and it's now ready for professional publishing."
+  },
+  "sections": [
+   {
+    "h": "What is a README File?",
+    "text": "A README file is the user manual for your software project, much like a book cover or game manual explaining what's inside before you start playing.",
+    "code": "# My Project\n# This is the project overview file",
+    "output": "# My Project"
+   },
+   {
+    "h": "Introduction to Markdown",
+    "text": "Markdown is a lightweight markup language that lets you format text with headings and bold text without complex protocols, like writing messages neatly and quickly.",
+    "code": "**Bold text** and *Italic text*",
+    "output": "**Bold text** and *Italic text*"
+   },
+   {
+    "h": "Creating Headings in Markdown",
+    "text": "You can organize your file using hash symbols (#). A single hash means a main heading, and two hashes mean a smaller subheading, just like book chapters.",
+    "code": "# Main Heading\n## Subheading",
+    "output": "# Main Heading\n## Subheading"
+   },
+   {
+    "h": "Documenting Package Installations",
+    "text": "When someone else uses your project, they need to know required packages. Installation docs explain terminal commands needed so code runs without errors.",
+    "code": "pip install pandas matplotlib",
+    "output": "Requirement already satisfied..."
+   },
+   {
+    "h": "Adding Code Snippets",
+    "text": "You can place Python code snippets inside triple backticks so they display cleanly and are easy for others to copy and test.",
+    "code": "```python\nprint('Hello Portfolio')\n```",
+    "output": "Hello Portfolio"
+   },
+   {
+    "h": "Creating Lists and Bullet Points",
+    "text": "To make reading easier, bulleted or numbered lists are used to display project requirements or features step by step.",
+    "code": "- Python 3\n- Pandas library\n- Data file",
+    "output": "- Python 3..."
+   },
+   {
+    "h": "Building Professional Portfolios",
+    "text": "Your software portfolio is your gateway to show achievements. A strong, well-documented README reflects your professionalism and precision to employers or instructors.",
+    "code": "# Portfolio\nWelcome to my data projects!",
+    "output": "# Portfolio"
+   },
+   {
+    "h": "Reviewing Before Publishing",
+    "text": "Before pushing your project to GitHub, read through the entire README as if seeing it for the first time to ensure no essential command or explanation is missing.",
+    "code": "# Make sure running steps are clear",
+    "output": "Ready to publish!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "#",
+    "desc": "Used to create a Heading 1"
+   },
+   {
+    "name": "##",
+    "desc": "Used to create a Heading 2"
+   },
+   {
+    "name": "**text**",
+    "desc": "Makes text bold"
+   },
+   {
+    "name": "*text*",
+    "desc": "Makes text italic"
+   },
+   {
+    "name": "```python",
+    "desc": "Starts a Python code block"
+   },
+   {
+    "name": "README.md",
+    "desc": "The primary file for project documentation and showcase"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Markdown line to create a main heading titled 'Sales Data Analysis'.",
+    "a": "# Sales Data Analysis"
+   },
+   {
+    "q": "How do you make the word 'Important' bold in Markdown?",
+    "a": "**Important**"
+   },
+   {
+    "q": "What is the common Python package installation command placed in the installation section?",
+    "a": "pip install <packagename>"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "docs.github.com docs",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-readmes"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك قاعد في مصنع طيارات بيطلع نسخ كتيرة من نفس الطيارة بسرعة! في سكراتش، \"النسخ أو الـ Clones\" بتخلي الكائن الأساسي يعمل نسخ مؤقتة لنفسه أثناء اللعبة من غير ما نعمل كائنات كتيرة.",
+   "لما تدوس على زر المسافة مثلاً، تقدر تحط بلوك \"create clone of [myself]\" عشان تطلع طلقة جديدة. ده بيخليك تطلق قذائف كتير ورا بعض كأنها لعبة حقيقية بكل سهولة.",
+   "ازاي ده بيشتغل؟ الكائن الأصلي بيفضل زي ما هو، وكل مرة البلوك بيشتغل، سكراتش بياخد نسخة مطابقة تنزل في مكان معين تتحرك لوحدها في اللعبة.",
+   "مثال تاني: لعبة تفاح بينزل من الشجرة. تقدر تعمل نسخة من التفاحة كل ثانية عشان تنزل من فوق لتحت واللاعب يحاول يمسكها قبل ما تقع على الأرض.",
+   "القاعدة الذهبية هنا: كل نسخة بتعملها لازم تمسحها لما تخلص شغلها! استخدم بلوك \"delete this clone\" عشان الرامات والذاكرة ما تخلصش واللعبة تبطأ.",
+   "الاستخدام الحقيقي: في كل ألعاب الآركيد والحروب، الخصوم والطلقات بتشتغل بنفس الفكرة دي عشان نقدر نظهر مئات العناصر على الشاشة من غير ما الجهاز يهنج."
+  ],
+  "example": "لو عندنا قطة وعايزينه يرمي كورة، بنحط بلوك \"when space key pressed\" وتحته \"create clone of [myself]\". ولما الكورة النسخة تبدأ ككائن، بنخليها تتحرك 10 خطوات قدام، ولما تلمس الحافة، بنحط بلوك \"delete this clone\" عشان تختفي من الشاشة وماتعملش زحمة في الذاكرة.",
+  "mistake": "الخطأ الشائع هو نسيان وضع بلوك \"delete this clone\" في نهاية حركة النسخة، وده بيخلي النسخ تتجمع فوق بعضها وتاكل رامات الجهاز وتخلي اللعبة تقف تماماً. الحل هو دايماً ربط نهاية الحركة بالمسح.",
+  "recap": "النسخ في سكراتش بتساعدنا نعمل عناصر متحركة كتيرة زي الطلقات والأعداء بسهولة. ولازم نمسح النسخ لما تخلص دورها عشان نحافظ على سرعة اللعبة.",
+  "q": [
+   {
+    "t": "إيه البلوك المسؤول عن عمل نسخة جديدة من الكائن في سكراتش؟",
+    "o": [
+     "delete this clone",
+     "create clone of [myself]",
+     "when I start as a clone"
+    ],
+    "a": 1,
+    "why": "بلوك create clone of [myself] هو اللي بيخلق النسخة الجديدة أثناء تشغيل اللعبة."
+   },
+   {
+    "t": "ليه لازم نستخدم بلوك \"delete this clone\" للنسخ؟",
+    "o": [
+     "عشان نزود سرعة الإنترنت",
+     "عشان نفضي ذاكرة الجهاز ورامات اللعبة وما تبطأش",
+     "عشان نخلي النسخة تكبر في الحجم"
+    ],
+    "a": 1,
+    "why": "مسح النسخ القديمة بيمنع امتلاء الذاكرة (RAM) ويخلي اللعبة شغالة بسلاسة."
+   },
+   {
+    "t": "إيه الفرق الرئيسي بين الكائن الأصلي والنسخة؟",
+    "o": [
+     "النسخة مؤقتة وبتظهر وتختفي أثناء اللعبة، أما الأصلي فموجود دايماً",
+     "النسخة لا تتحرك أبدًا",
+     "الأصلي لا يمكن برمجته"
+    ],
+    "a": 0,
+    "why": "النسخ بتتعمل وتتمسح ديناميكياً أثناء اللعب، بينما الكائن الأصلي هو الأساس الثابت."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع حركة الكتل البرمجية للنسخ",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل كود إنشاء وحذف النسخ في سكراتش",
+   "code": "When green flag clicked\nForever:\n  Wait 1 secs\n  Create clone of [myself]\n\nWhen I start as a clone\nMove 10 steps\nIf touching [Edge] then:\n  Delete this clone",
+   "options": [
+    "القطة هتتكاثر وتملى الشاشة للأبد من غير ما تختفي",
+    "هتظهر نسخة جديدة كل ثانية، تتحرك وتختفي أول ما تلمس الحافة",
+    "النسخ هتقف مكانها ومش هتتحرك خالص"
+   ],
+   "a": 1,
+   "success": "رائع! ظهرت النسخ، اتحركت، واختفت عند الحافة بنجاح دون إبطاء اللعبة."
+  },
+  "sections": [
+   {
+    "h": "ما هي النسخ (Clones) في سكراتش؟",
+    "text": "النسخ هي طبعة مؤقتة من الكائن الأساسي بتظهر وتشتغل أثناء اللعب. زي ما يكون عندك طابع أسماء بيطبع آلاف الورق في ثواني، الكائن الأصلي بيقدر يخلق آلاف النسخ منه على الشاشة.",
+    "code": "when green flag clicked\ncreate clone of [myself]",
+    "output": "بيظهر كائن جديد مطابق للأصلي تماماً على الشاشة."
+   },
+   {
+    "h": "الفرق بين الكائن الأصلي والنسخ المكررة",
+    "text": "التكرار اليدوي (Duplicate) بيكون قبل اللعبة ومش بنقدر نتحكم في عددهم بسهولة. أما النسخ (Clones) فبتتولد ديناميكياً وأنت بتلعب، يعني ممكن تطلع 100 طلقة ورا بعض وأنت دايس زرار واحد بس.",
+    "code": "Manual Duplicate vs Dynamic Clone",
+    "output": "النسخ بتوفر وقت تصميم مئات الكائنات يدوياً وتجعل اللعبة تفاعلية."
+   },
+   {
+    "h": "إطلاق المقذوفات ديناميكياً (Spawning)",
+    "text": "عشان تعمل لعبة قتال أو طيارات، محتاج تطلق قذائف وقت ما اللاعب يدوس على زر المسافة. ده بيحصل عن طريق أمر إنشاء النسخة مع كل ضغطة زر، وكأنك بتعبي خزنة سلاح في لعبة حقيقية.",
+    "code": "when [space] key pressed\ncreate clone of [myself]",
+    "output": "كل مرة تدوس مسافة، بتطلع طلقة جديدة تجري في اتجاه العدو."
+   },
+   {
+    "h": "بداية رحلة النسخة (When I start as a clone)",
+    "text": "أول ما النسخة بتتعمل، سكراتش بيديها أوامر خاصة بيها منفصلة عن الكائن الأصلي. البلوك ده عامل زي إعذار لميلاد شخص جديد في اللعبة بتقوله: أول ما تتولد، اعمل كذا وكذا.",
+    "code": "when I start as a clone\npoint towards [Enemy]\nmove 15 steps",
+    "output": "كل نسخة جديدة بتتحرك ناحية العدو لوحدها تماماً."
+   },
+   {
+    "h": "حركة النسخة في الاتجاهات المختلفة",
+    "text": "تقدر تخلي كل نسخة تتحرك بسرعة وزاوية معينة. ده بيخلي الألعاب غنية بالحركة، زي تفاح بينزل من فوق بأماكن عشوائية وكل تفاحة ليها سرعة مختلفة عن التانية.",
+    "code": "when I start as a clone\ngo to x: (pick random (-200) to (200)) y: (180)\nrepeat until (touching [Floor]?) {\n  change y by (-5)\n}",
+    "output": "التفاح بينزل من نقاط عشوائية فوق الشاشة لحد ما يوصل للأرض."
+   },
+   {
+    "h": "تنظيف الذاكرة وحذف النسخ (Delete this clone)",
+    "text": "تخيل لو كل النسخ فضلت عايشة جوه الجهاز للأبد؟ الرامات (RAM) هتتملي واللعبة هتهنج وتتعطل! عشان كده لازم نستخدم أمر حذف النسخة أول ما تخلص مهمتها، زي ما بترمي قشر الموز في سلة المهملات.",
+    "code": "if <touching [Edge]?> then\n  delete this clone",
+    "output": "النسخة اللي بتوصل للحافة بتختفي فوراً وتتحذف من ذاكرة الجهاز."
+   },
+   {
+    "h": "قاعدة ذهبية في إدارة النسخ",
+    "text": "القاعدة بتقول: \"كل نسخة يتم إنشاؤها، يجب أن يتم تدميرها عند انتهاء وظيفتها\". ممنوع نسيب النسخ تتراكم وتعمل زحمة على الشاشة وفي الذاكرة عشان لعبتك تظل سريعة وممتعة.",
+    "code": "Rule of thumb: Create -> Move -> Delete",
+    "output": "لعبة سريعة ونظيفة بدون أي بطء في الأداء."
+   },
+   {
+    "h": "التطبيق الواقعي في ألعاب الفيديو",
+    "text": "في كل ألعاب الكومبيوتر الحديثة، زي ألعاب إطلاق النار أو سباق السيارات، كائنات العدو والشرر والفلوس والطلقات كلها بتشتغل بطريقة النسخ والـ Spawning، لأنها الطريقة الوحيدة لتشغيل اللعبة بسلاسة بدون تهنيج.",
+    "code": "Real-world Game Engine Spawner",
+    "output": "ظهور مئات الوحوش والطلقات بدقة وسرعة عالية في نفس اللحظة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Clone",
+    "desc": "نسخة مؤقتة من الكائن يتم إنشاؤها أثناء تشغيل اللعبة."
+   },
+   {
+    "name": "Create clone",
+    "desc": "أمر برمجي في سكراتش يصنع نسخة جديدة من الكائن."
+   },
+   {
+    "name": "When I start as a clone",
+    "desc": "يبدأ تنفيذ الأوامر التي تحكم سلوك النسخة فور إنشائها."
+   },
+   {
+    "name": "Delete this clone",
+    "desc": "أمر لحذف النسخة الحالية وتحرير ذاكرة الجهاز."
+   },
+   {
+    "name": "Spawning",
+    "desc": "عملية ظهور العناصر أو الأعداء أو الطلقات في اللعبة ديناميكياً."
+   },
+   {
+    "name": "RAM Memory",
+    "desc": "ذاكرة الجهاز المؤقتة التي تحافظ على سرعة تشغيل الألعاب."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب البلوك المستخدم لإنشاء نسخة جديدة من نفس الكائن.",
+    "a": "create clone of [myself]"
+   },
+   {
+    "q": "ما هو البلوك الذي نستخدمه لكي تبدأ النسخة تنفيذ حركتها الخاصة فور ظهورها؟",
+    "a": "when I start as a clone"
+   },
+   {
+    "q": "لماذا يجب علينا وضع بلوك \"delete this clone\" في نهاية حركة القذيفة؟",
+    "a": "لحذف النسخة وتفريغ الذاكرة (RAM) ومنع بطء أو توقف اللعبة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine an airplane factory that quickly makes many copies of the same plane! In Scratch, \"Clones\" let the main sprite create temporary copies of itself while the game runs without making too many separate sprites.",
+   "When you press the spacebar for example, you can use the \"create clone of [myself]\" block to shoot a new bullet. This lets you fire many projectiles back-to-back just like a real arcade game.",
+   "How does it work? The original sprite stays in place, and every time the block runs, Scratch makes an exact copy that spawns somewhere and moves independently in the game.",
+   "Another example: apples falling from a tree. You can spawn an apple clone every second so they drop from top to bottom, and the player tries to catch them before hitting the ground.",
+   "The golden rule here: every clone you create must be deleted when its job is done! Use the \"delete this clone\" block so your RAM memory doesn't run out and slow down the game.",
+   "Real-world use: In all arcade and action games, enemies and projectiles use this exact spawning idea so we can show hundreds of objects on screen without lagging the computer."
+  ],
+  "example": "If we have a cat and want it to throw a ball, we use a \"when space key pressed\" block followed by \"create clone of [myself]\". When the ball clone starts as a clone, we make it move 10 steps forward, and if it touches the edge, we use \"delete this clone\" so it disappears from the screen and doesn't clutter memory.",
+  "mistake": "A common mistake is forgetting to put the \"delete this clone\" block at the end of the clone's movement, which causes clones to pile up, eat device RAM, and freeze the game. The fix is always linking the end of motion to deletion.",
+  "recap": "Cloning in Scratch helps us create many moving elements like bullets and enemies easily. We must always delete clones when their role ends to keep the game running fast.",
+  "q": [
+   {
+    "t": "Which block is responsible for creating a new clone of a sprite in Scratch?",
+    "o": [
+     "delete this clone",
+     "create clone of [myself]",
+     "when I start as a clone"
+    ],
+    "a": 1,
+    "why": "The create clone of [myself] block generates the new clone while the game is running."
+   },
+   {
+    "t": "Why must we use the \"delete this clone\" block for clones?",
+    "o": [
+     "To increase internet speed",
+     "To free up device memory and game RAM so it doesn't slow down",
+     "To make the clone grow larger in size"
+    ],
+    "a": 1,
+    "why": "Deleting old clones prevents RAM from filling up and keeps the game running smoothly."
+   },
+   {
+    "t": "What is the main difference between the original sprite and a clone?",
+    "o": [
+     "A clone is temporary and appears/disappears during gameplay, while the original is always present",
+     "A clone never moves at all",
+     "The original sprite cannot be programmed"
+    ],
+    "a": 0,
+    "why": "Clones are created and deleted dynamically during play, whereas the original sprite is the fixed base."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Cloning Script Behavior",
+   "goal": "Find out what happens when running the clone creation and deletion script in Scratch",
+   "code": "When green flag clicked\nForever:\n  Wait 1 secs\n  Create clone of [myself]\n\nWhen I start as a clone\nMove 10 steps\nIf touching [Edge] then:\n  Delete this clone",
+   "options": [
+    "The cat multiplies and fills the screen forever without disappearing",
+    "A new clone appears every second, moves, and disappears as soon as it touches the edge",
+    "The clones stay in place and never move at all"
+   ],
+   "a": 1,
+   "success": "Awesome! Clones spawned, moved, and successfully deleted at the edge without slowing down the game."
+  },
+  "sections": [
+   {
+    "h": "What are Clones in Scratch?",
+    "text": "Clones are temporary copies of the main sprite that appear and act during gameplay. Just like a stamp that prints thousands of papers in seconds, the original sprite can spawn thousands of copies of itself on screen.",
+    "code": "when green flag clicked\ncreate clone of [myself]",
+    "output": "A new clone identical to the original appears on the screen."
+   },
+   {
+    "h": "Difference Between Original Sprite and Clones",
+    "text": "Manual duplicating (Duplicate) happens before the game starts and you can't easily control how many you have. Clones, however, are spawned dynamically while playing, meaning you can fire 100 bullets back-to-back.",
+    "code": "Manual Duplicate vs Dynamic Clone",
+    "output": "Cloning saves design time and makes games interactive."
+   },
+   {
+    "h": "Spawning Projectiles Dynamically",
+    "text": "To make a shooting or flying game, you need to launch projectiles whenever the player presses the spacebar. This happens via the create clone command with every button press, like reloading a weapon in a real game.",
+    "code": "when [space] key pressed\ncreate clone of [myself]",
+    "output": "Every time you press space, a new bullet flies toward the target."
+   },
+   {
+    "h": "The Birth of a Clone (When I start as a clone)",
+    "text": "As soon as a clone is created, Scratch gives it its own independent set of commands separate from the original sprite. This block acts like an instruction manual for a newly born character in the game.",
+    "code": "when I start as a clone\npoint towards [Enemy]\nmove 15 steps",
+    "output": "Each new clone moves toward the enemy completely on its own."
+   },
+   {
+    "h": "Moving Clones in Different Directions",
+    "text": "You can make each clone move at a specific speed and angle. This makes games rich with motion, like apples dropping from random places at the top, each with a different speed.",
+    "code": "when I start as a clone\ngo to x: (pick random (-200) to (200)) y: (180)\nrepeat until (touching [Floor]?) {\n  change y by (-5)\n}",
+    "output": "Apples drop from random points at the top of the screen until they reach the floor."
+   },
+   {
+    "h": "Cleaning Up Memory (Delete this clone)",
+    "text": "Imagine if all clones stayed alive inside the computer forever? RAM memory would fill up and the game would lag and crash! Therefore, we must use the delete command once its job is finished, just like tossing a banana peel in the trash.",
+    "code": "if <touching [Edge]?> then\n  delete this clone",
+    "output": "The clone that reaches the edge instantly vanishes and frees up computer memory."
+   },
+   {
+    "h": "Golden Rule of Clone Management",
+    "text": "The rule states: \"Every clone that is created must be destroyed when its task is complete.\" Never leave clones accumulating and cluttering the screen and memory so your game stays fast and fun.",
+    "code": "Rule of thumb: Create -> Move -> Delete",
+    "output": "A fast and clean game without any performance lag."
+   },
+   {
+    "h": "Real-World Application in Video Games",
+    "text": "In all modern computer games, like shooting games or racing games, enemy objects, sparks, coins, and bullets all run using cloning and spawning techniques because it's the only way to run a game smoothly without lagging.",
+    "code": "Real-world Game Engine Spawner",
+    "output": "Hundreds of monsters and projectiles appear with high precision and speed at the exact same moment."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Clone",
+    "desc": "A temporary copy of a sprite created while the game is running."
+   },
+   {
+    "name": "Create clone",
+    "desc": "A Scratch block command that makes a new copy of a sprite."
+   },
+   {
+    "name": "When I start as a clone",
+    "desc": "Triggers the script that controls the clone's behavior right after creation."
+   },
+   {
+    "name": "Delete this clone",
+    "desc": "A command to delete the current clone and free device memory."
+   },
+   {
+    "name": "Spawning",
+    "desc": "The process of generating objects, enemies, or projectiles dynamically in a game."
+   },
+   {
+    "name": "RAM Memory",
+    "desc": "Temporary device memory that keeps games running at high speed."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the block used to create a new clone of the same sprite.",
+    "a": "create clone of [myself]"
+   },
+   {
+    "q": "What block do we use so that a clone starts executing its own motion right after appearing?",
+    "a": "when I start as a clone"
+   },
+   {
+    "q": "Why must we place the \"delete this clone\" block at the end of a projectile's movement?",
+    "a": "To delete the clone, free up RAM memory, and prevent game lag or freezing."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

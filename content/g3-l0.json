@@ -1,0 +1,286 @@
+{
+ "ar": {
+  "steps": [
+   "الإنترنت هو شبكة كبيرة تربط آلاف الكمبيوترات ببعضها حول العالم. تشمل هذه الشبكة أجهزة المستخدمين التي تسمى العملاء، والخوادم الضخمة التي تخزن المواقع والملفات، تماماً مثل شبكة الطرق التي تربط البيوت بالمحلات التجارية.",
+   "عندما تفتح متصفح الإنترنت وتكتب عنوان أي موقع، فإن جهازك (العميل) يرسل طلباً عبر الإنترنت إلى الخدمة أو السيرفر الذي يحفظ ملفات هذا الموقع لكي يجلبها لك.",
+   "لكي يفهم المتصفح كيف يعرض الصفحة، نبدأ ملف HTML بإعلان نوع المستند <!DOCTYPE html> في السطر الأول، وهو مثل إخبار المتصفح بأننا نستخدم أحدث لغة ويب.",
+   "جميع أكواد الويب تبتدئ وتنتهي بوسم الجذر الرئيسي <html> الذي يضم بداخله كل أجزاء الصفحة، تماماً مثل الغلاف الخارجي لكتاب كبير يحوي كل الصفحات.",
+   "وسم الرأس <head> يأتي في البداية ليضع معلومات مخفية للمتصفح مثل العنوان الذي يظهر في أعلى المتصفح، وهو أشبه ببطاقة تعريف أو فهرس صغير للكتاب.",
+   "وسم الجسم <body> هو المكان الذي نضع فيه كل النصوص والصور والأزرار التي يراها المستخدم ويستمتع بتصفحها، تماماً مثل محتوى صفحات الكتاب الشيقة."
+  ],
+  "example": "إليك مثال لصفحة ويب بسيطة تبين الهيكل الأساسي:\n\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>موقعي الأول</title>\n  </head>\n  <body>\n    <h1>أهلاً بك يا بطل البرمجة!</h1>\n  </body>\n</html>\n```\n\n**السبب والمنطق:** يبدأ المتصفح بقراءة `<!DOCTYPE html>` ليعرف أن هذه صفحة حديثة، ثم يقرأ الوسم `<html>` ليشمل كل شي، ويضع عنوان المتصفح من خلال `<head>` ثم يعرض الرسالة الجميلة داخل `<body>` لكي تراها عينك.",
+  "mistake": "الخطأ الشائع هو نسيان إغلاق الوسوم مثل نسيان كتابة </html> في نهاية الملف. الحل هو دائماً كتابة وسم الفتح ومع مباشرة وسم الإغلاق المسبوق بشرطة مائلة مثل </body> لتجنب أخطاء العرض.",
+  "recap": "تعلمنا كيف يعمل الإنترنت عبر ربط العملاء بالخوادم، وكيف نبني أساس صفحات الويب باستخدام إعلان المستند ووسوم الهيكل الثلاثة الشهيرة.",
+  "q": [
+   {
+    "t": "ماذا نسمي الكمبيوتر الذي يخزن ملفات ومواقع الإنترنت؟",
+    "o": [
+     "العميل (Client)",
+     "الخادم (Server)",
+     "الفأرة (Mouse)"
+    ],
+    "a": 1,
+    "why": "الخادم هو الكمبيوتر الذي يحفظ ويبث ملفات المواقع للعملاء."
+   },
+   {
+    "t": "أين نضع النصوص والصور التي يراها المستخدم في صفحة الويب؟",
+    "o": [
+     "داخل وسم <body>",
+     "داخل وسم <head>",
+     "داخل <!DOCTYPE html>"
+    ],
+    "a": 0,
+    "why": "وسم الجسم <body> مخصص لعرض المحتوى المرئي للمستخدمين."
+   },
+   {
+    "t": "كيف نبدأ أي مستند HTML5 صحيح؟",
+    "o": [
+     "<html>",
+     "<!DOCTYPE html>",
+     "<head>"
+    ],
+    "a": 1,
+    "why": "إعلان نوع المستند <!DOCTYPE html> يكتب دائماً في أول سطر ليعلم المتصفح نوع الإصدار."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب هيكل صفحة HTML",
+   "goal": "رتب أجزاء وسوم الصفحة الأساسية من الأعلى إلى الأسفل بشكل صحيح.",
+   "items": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "<title>عنوان الصفحة</title>",
+    "</head>",
+    "<body>",
+    "<h1>مرحباً بالعالم</h1>",
+    "</body>",
+    "</html>"
+   ],
+   "success": "رائع! لقد رتبت هيكل الصفحة بنجاح وظهرت صفحة الويب على المتصفح بشكل مثالي!"
+  },
+  "sections": [
+   {
+    "h": "العملاء والخوادم",
+    "text": "الإنترنت يتكون من أجهزة تتحدث مع بعضها. أجهزتك مثل الهاتف أو اللابتوب تسمى العملاء، لأنها تطلب المعلومات. أما الخوادم فهي أجهزة كمبيوتر عملاقة تخزن المواقع وتلبي الطلبات، تماماً مثل العميل الذي يطلب وجبة من مطعم كبير.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>العملاء والخوادم</title></head>\n  <body style=\"background:#e0f7fa; font-family:sans-serif; text-align:center;\">\n    <h2>أهلاً بك في عالم الويب!</h2>\n    <p>جهازك يطلب الصفحة والخادم يرسلها لك.</p>\n  </body>\n</html>",
+    "output": "صفحة ويب زرقاء فاتحة تشرح دور العملاء والخوادم."
+   },
+   {
+    "h": "متصفحات الإنترنت",
+    "text": "المتصفح هو التطبيق الذي تستخدمه مثل كروم أو سفاري لفتح المواقع. يقوم بقراءة أكواد الويب المكتوبة بلغة HTML ويحولها إلى صور وألوان وأزرار مفيدة، تماماً مثل المترجم الذي يترجم لغة أجنبية إلى لغة تفهمها.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>المتصفح السحري</title></head>\n  <body style=\"background:#fff3e0; font-family:sans-serif; text-align:center;\">\n    <h2>المتصفح يترجم الأكواد</h2>\n    <p>ليظهر لك هذا الشكل الرائع!</p>\n  </body>\n</html>",
+    "output": "صفحة ويب برتقالية فاتحة توضح دور المتصفح."
+   },
+   {
+    "h": "إعلان نوع المستند",
+    "text": "في أول سطر من أي صفحة ويب، نكتب إعلاناً صغيراً للمتصفح ليعلم أننا نستخدم أحدث إصدار من لغة HTML وهو HTML5. إنه بمثابة مفتاح الدخول السحري الذي يخبر المتصفح كيف يتعامل مع الملف.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>نوع المستند</title></head>\n  <body style=\"background:#f3e5f5; font-family:sans-serif; text-align:center;\">\n    <h2>!DOCTYPE html</h2>\n    <p>يخبر المتصفح أننا نستخدم لغة HTML5 الحديثة.</p>\n  </body>\n</html>",
+    "output": "صفحة ويب بنفشية فاتحة تعرض إعلان نوع المستند."
+   },
+   {
+    "h": "وسم الجذر HTML",
+    "text": "الوسم <html> هو الحاوية الكبرى والأم لكل الأوسمة في الصفحة. كل الأكواد والمعلومات والرسومات توضع بداخله، تماماً مثل هيكل البيت الخارجي الذي يضم كل الغرف والأثاث.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>وسم الجذر</title></head>\n  <body style=\"background:#e8f5e9; font-family:sans-serif; text-align:center;\">\n    <h2>الأب الأكبر: html</h2>\n    <p>كل عناصر الصفحة تسكن داخله.</p>\n  </body>\n</html>",
+    "output": "صفحة ويب خضراء فاتحة تظهر وسم الجذر الرئيسي."
+   },
+   {
+    "h": "قسم الرأس Head",
+    "text": "قسم <head> هو عقل الصفحة الخفي. نضع فيه معلومات غير مرئية للمستخدم مثل عنوان الصفحة واسم المؤلف وأكواد التنسيق، تماماً مثل الغلاف الخلفي لكتاب المدرسة الذي يحمل معلومات النشر.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>عنوان في الرأس</title></head>\n  <body style=\"background:#ffebee; font-family:sans-serif; text-align:center;\">\n    <h2>معلومات الرأس head</h2>\n    <p>تختبئ هنا عناوين ومواصفات الصفحة.</p>\n  </body>\n</html>",
+    "output": "صفحة ويب حمراء فاتحة توضح منطقة الرأس."
+   },
+   {
+    "h": "قسم الجسم Body",
+    "text": "قسم <body> هو مسرح العرض الحقيقي لكل شيء يراه المستخدم. النصوص، والروابط، والصور، والألعاب، كلها تقف هنا لتتفاعل مع زوار الموقع، تماماً مثل مسرح العرض أمام الجمهور.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>الجسم</title></head>\n  <body style=\"background:#fffde7; font-family:sans-serif; text-align:center;\">\n    <h1 style=\"color:#fbc02d;\">مرحباً بك في جسم الصفحة body!</h1>\n    <p>هنا تظهر كل العناصر المرئية.</p>\n  </body>\n</html>",
+    "output": "صفحة ويب صفراء فاتحة تعرض محتوى الجسم المرئي."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<!DOCTYPE html>",
+    "desc": "يعلن للمتصفح أن المستند مكتوب بلغة HTML5 الحديثة."
+   },
+   {
+    "name": "<html>",
+    "desc": "الوسم الجذري الذي يحوي جميع عناصر صفحة الويب."
+   },
+   {
+    "name": "<head>",
+    "desc": "يحتوي على معلومات وصفية وعنوان الصفحة المخفي عن العرض المباشر."
+   },
+   {
+    "name": "<title>",
+    "desc": "يحدد العنوان الذي يظهر في شريط علامات تبويب المتصفح."
+   },
+   {
+    "name": "<body>",
+    "desc": "يحمل ويציר المحتوى المرئي الذي يراه المستخدم على الشاشة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسم إعلان نوع المستند الصحيح في أول صفحة HTML5.",
+    "a": "<!DOCTYPE html>"
+   },
+   {
+    "q": "أي وسم نستخدمه ليحتوي على النصوص والصور الظاهرة للمستخدم؟",
+    "a": "<body>"
+   },
+   {
+    "q": "ما اسم الوسم الذي يوضع فيه عنوان الصفحة الظاهر في تبويب المتصفح؟",
+    "a": "<title>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The internet is a vast network connecting thousands of computers worldwide. It includes user devices called clients and huge servers storing websites and files, just like a road network connecting houses to shops.",
+   "When you open your web browser and type a web address, your device (the client) sends a request across the internet to the server that stores the website files to fetch them for you.",
+   "To help the browser understand how to render the page, we start every HTML document with the document type declaration <!DOCTYPE html> on the very first line.",
+   "All web code starts and ends with the root tag <html>, which wraps around all other parts of the page, much like the outer cover of a large book holding all pages inside.",
+   "The <head> tag comes early to provide hidden instructions for the browser, such as the title shown on the browser tab, acting like an index card or book catalog.",
+   "The <body> tag is where we place all the texts, images, and buttons that the user can actually see and interact with, just like the exciting content inside the book pages."
+  ],
+  "example": "Here is an example of a simple web page showing the basic structure:\n\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>My First Site</title>\n  </head>\n  <body>\n    <h1>Welcome, coding champion!</h1>\n  </body>\n</html>\n```\n\n**Reasoning:** The browser reads `<!DOCTYPE html>` to know it is a modern page, wraps everything inside `<html>`, sets the browser tab title using `<head>`, and displays the lovely message inside `<body>` for your eyes to see.",
+  "mistake": "A common mistake is forgetting to close tags, such as omitting </html> at the end of the file. The solution is always to write an opening tag along with its matching closing tag with a slash like </body> to prevent rendering errors.",
+  "recap": "We learned how the internet works by connecting clients to servers, and how to build the foundation of web pages using the document type declaration and the three classic structural tags.",
+  "q": [
+   {
+    "t": "What do we call the computer that stores website files and serves them?",
+    "o": [
+     "Client",
+     "Server",
+     "Mouse"
+    ],
+    "a": 1,
+    "why": "A server is the computer that stores and delivers website files to clients."
+   },
+   {
+    "t": "Where do we place texts and images that users see on a web page?",
+    "o": [
+     "Inside the <body> tag",
+     "Inside the <head> tag",
+     "Inside <!DOCTYPE html>"
+    ],
+    "a": 0,
+    "why": "The body tag is dedicated to displaying visual content to users."
+   },
+   {
+    "t": "How do we correctly start any valid HTML5 document?",
+    "o": [
+     "<html>",
+     "<!DOCTYPE html>",
+     "<head>"
+    ],
+    "a": 1,
+    "why": "The document type declaration <!DOCTYPE html> is always written on the first line to inform the browser of the version."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the HTML Page Structure",
+   "goal": "Arrange the basic page tag components from top to bottom correctly.",
+   "items": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "<title>Page Title</title>",
+    "</head>",
+    "<body>",
+    "<h1>Hello World</h1>",
+    "</body>",
+    "</html>"
+   ],
+   "success": "Awesome! You ordered the page structure successfully and the web page rendered perfectly in the browser!"
+  },
+  "sections": [
+   {
+    "h": "Clients and Servers",
+    "text": "The internet is made of computers talking to each other. Your device like a phone or laptop is a client, because it requests information. Servers are giant computers that store websites and answer requests, just like a customer ordering food from a big restaurant.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>Clients & Servers</title></head>\n  <body style=\"background:#e0f7fa; font-family:sans-serif; text-align:center;\">\n    <h2>Welcome to the Web!</h2>\n    <p>Your device requests the page, the server sends it.</p>\n  </body>\n</html>",
+    "output": "A light blue web page explaining clients and servers."
+   },
+   {
+    "h": "Web Browsers",
+    "text": "A browser is an application like Chrome or Safari used to view websites. It reads HTML web code and turns it into pictures, colors, and buttons, much like a translator who turns a foreign language into one you understand.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>Magical Browser</title></head>\n  <body style=\"background:#fff3e0; font-family:sans-serif; text-align:center;\">\n    <h2>The Browser Translates Code</h2>\n    <p>To show you this wonderful design!</p>\n  </body>\n</html>",
+    "output": "A light orange web page showing the browser's role."
+   },
+   {
+    "h": "Document Type Declaration",
+    "text": "On the very first line of any web page, we write a small declaration for the browser to know we are using the newest version of HTML, which is HTML5. It acts like a magic entry key telling the browser how to handle the file.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>DocType</title></head>\n  <body style=\"background:#f3e5f5; font-family:sans-serif; text-align:center;\">\n    <h2>!DOCTYPE html</h2>\n    <p>Tells the browser we use modern HTML5.</p>\n  </body>\n</html>",
+    "output": "A light purple web page displaying the document type declaration."
+   },
+   {
+    "h": "The Root HTML Tag",
+    "text": "The <html> tag is the grand container and parent of all tags on the page. All code, information, and graphics go inside it, exactly like the outer frame of a house containing all rooms and furniture.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>Root Tag</title></head>\n  <body style=\"background:#e8f5e9; font-family:sans-serif; text-align:center;\">\n    <h2>The Parent: html</h2>\n    <p>All page elements live inside it.</p>\n  </body>\n</html>",
+    "output": "A light green web page showing the root tag."
+   },
+   {
+    "h": "The Head Section",
+    "text": "The <head> section is the hidden brain of the page. We put invisible information for the browser here, like the page title, author, and styling codes, just like the back cover of a school book holding publishing info.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>Title in Head</title></head>\n  <body style=\"background:#ffebee; font-family:sans-serif; text-align:center;\">\n    <h2>Head Section</h2>\n    <p>Page titles and metadata hide right here.</p>\n  </body>\n</html>",
+    "output": "A light red web page illustrating the head section."
+   },
+   {
+    "h": "The Body Section",
+    "text": "The <body> section is the real stage for everything the user sees. Texts, links, images, and games all stand here to interact with site visitors, much like a stage performance in front of an audience.",
+    "code": "<!DOCTYPE html>\n<html>\n  <head><title>Body</title></head>\n  <body style=\"background:#fffde7; font-family:sans-serif; text-align:center;\">\n    <h1 style=\"color:#fbc02d;\">Welcome to the page body!</h1>\n    <p>All visible elements appear here.</p>\n  </body>\n</html>",
+    "output": "A light yellow web page showing the visible body content."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<!DOCTYPE html>",
+    "desc": "Declares to the browser that the document uses modern HTML5."
+   },
+   {
+    "name": "<html>",
+    "desc": "The root tag wrapping around all web page elements."
+   },
+   {
+    "name": "<head>",
+    "desc": "Contains metadata and page titles hidden from direct display."
+   },
+   {
+    "name": "<title>",
+    "desc": "Sets the title displayed in the browser tab bar."
+   },
+   {
+    "name": "<body>",
+    "desc": "Holds and renders the visual content seen by the user on screen."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the correct document type declaration tag at the top of an HTML5 page.",
+    "a": "<!DOCTYPE html>"
+   },
+   {
+    "q": "Which tag do we use to hold texts and images visible to the user?",
+    "a": "<body>"
+   },
+   {
+    "q": "What is the name of the tag where the browser tab title is placed?",
+    "a": "<title>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: How the web works",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works"
+  },
+  {
+   "title": "MDN: How does the Internet work?",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work"
+  }
+ ],
+ "grounded": true
+}

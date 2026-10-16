@@ -1,0 +1,332 @@
+{
+ "ar": {
+  "steps": [
+   "عندما يقوم المستخدم بإرسال نموذج ويب، يحاول المتصفح تلقائياً إعادة تحميل الصفحة وإرسال البيانات إلى خادم الويب، وهو أمر قد يبطئ تجربة الاستخدام في تطبيقات الصفحة الواحدة الحديثة.",
+   "نستمع لحدث الإرسال في جافاسكريبت عبر استخدام addEventListener للبحث عن حدث 'submit' على عنصر النموذج <form> لكي نتحكم بما سيحدث.",
+   "لمنع المتصفح من إعادة تحميل الصفحة المعتادة، نستפיد من دالة event.preventDefault() داخل دالة الحدث لتولي زمام الأمور برمجياً بالكامل.",
+   "نحقق من صحة المدخلات مثل مطابقة كلمات المرور مقارنة حقل كلمة المرور الأولى بحقل التأكيد للتأكد من تطابقهما تماماً قبل المتابعة.",
+   "القاعدة الذهبية: قم بالتحقق من المدخلات برمجياً على العميل كخط دفاع أول لتحسين تجربة المستخدم الفورية، ثم تذكر أن التحقق الحقيقي يتم دائماً على الخادم أيضاً.",
+   "الاستخدام الحقيقي: في تطبيقات الويب الكبرى مثل موقع التسجيل أو إنشاء حساب جديد، نستخدم هذا الأسلوب لإيقاف إرسال النموذج إذا كانت كلمة المرور غير مطابقة."
+  ],
+  "example": "لنفترض أننا نصمم نموذج تسجيل حساب حيث ندخل كلمة المرور ونعيد تأكيدها. نكتب كود جافاسكريبت يستمع للحدث، يستدعي event.preventDefault() لمنع إعادة تحميل الصفحة، ثم يقارن قيمة الحقلين. إذا تساوت القيمتان، تظهر رسالة نجاح، وإلا تظهر رسالة خطأ تدعو للمحاولة مجدداً.",
+  "mistake": "نسيان استدعاء event.preventDefault() داخل حدث الإرسال، مما يتسبب في إعادة تحميل الصفحة وفقدان القيم المدخلة قبل أن نتمكن من التحقق منها. الحل هو وضعه في السطر الأول من دالة المعالجة.",
+  "recap": "تعلمنا كيفية الاستماع لحدث إرسال النماذج، وإيقاف إعادة تحميل الصفحة الافتراضية، والتحقق من تطابق كلمات المرور بدقة.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة المستخدمة لإيقاف السلوك الافتراضي لنموذج الويب في جافاسكريبت؟",
+    "o": [
+     "event.stopReload()",
+     "event.preventDefault()",
+     "form.cancel()"
+    ],
+    "a": 1,
+    "why": "نستخدم event.preventDefault() لإيقاف المتصفح عن إعادة تحميل الصفحة عند إرسال النموذج."
+   },
+   {
+    "t": "لماذا نقوم بالتحقق من مطابقة كلمات المرور في النموذج؟",
+    "o": [
+     "لتغيير لون خلفية الصفحة تلقائياً",
+     "لضمان عدم كتابة المستخدم لكلمة مرور خاطئة عن طريق السهو",
+     "لتسريع سرعة الإنترنت"
+    ],
+    "a": 1,
+    "why": "التأكد من تطابق كلمة المرور وتأكيدها يحمي المستخدم من الأخطاء الإملائية غير المقصودة."
+   },
+   {
+    "t": "ما هو الحدث الذي نراقب إرسال النموذج من خلاله؟",
+    "o": [
+     "submit",
+     "click",
+     "load"
+    ],
+    "a": 0,
+    "why": "نستمع لحدث 'submit' الخاص بعنصر النموذج <form> لمعالجة البيانات برمجياً."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة مفاهيم النماذج والتحقق",
+   "goal": "صل كل مصطلح برمجي بما يناسبه من وظائف حماية وإدارة النماذج.",
+   "pairs": [
+    [
+     "submit",
+     "حدث إرسال النموذج"
+    ],
+    [
+     "preventDefault()",
+     "إيقاف إعادة تحميل الصفحة"
+    ],
+    [
+     "Password Matching",
+     "التحقق من تساوي كلمتي المرور"
+    ],
+    [
+     "Client-side Validation",
+     "التحقق الفوري في المتصفح"
+    ]
+   ],
+   "success": "رائع! لقد ربطت مفاهيم النماذج البرمجية بشكل ممتاز."
+  },
+  "sections": [
+   {
+    "h": "فكرة نماذج الويب",
+    "text": "النماذج هي الطريقة التي يتفاعل بها المستخدم مع الموقع لإرسال بياناته، تماماً مثل ملء استمارة ورقية في الحقيقة. في البرمجة، نجمع هذه البيانات عبر حقول الإدخال لتتم معالجتها بسهولة.",
+    "code": "<form id='f'><input type='text' placeholder='اسم المستخدم'><button>إرسال</button></form>",
+    "output": "يعرض نموذجاً بسيطاً يحتوي على حقل نصي وزر إرسال."
+   },
+   {
+    "h": "الاستماع لحدث الإرسال",
+    "text": "بدلاً من ترك المتصفح يتصرف من تلقاء نفسه، نستخدم جافاسكريبت لمراقبة متى يضغط المستخدم على زر الإرسال عبر حدث 'submit'. يشبه ذلك حارساً يراقب البوابة.",
+    "code": "<form id='myform'><input type='text' value='أحمد'><button type='submit'>انقر هنا</button></form><script>document.getElementById('myform').addEventListener('submit', (e)=>{ e.preventDefault(); alert('تم التقاط الحدث!'); });</script>",
+    "output": "يظهر نموذج وعند النقر عليه يظهر تنبيه دون إعادة تحميل الصفحة."
+   },
+   {
+    "h": "إيقاف السلوك الافتراضي للمتصفح",
+    "text": "عندما يرسل المستخدم نموذجاً، يعيد المتصفح تحميل الصفحة بشكل افتراضي. نستخدم أمر preventDefault() لنقول للمتصفح: 'قف، نحن سنتولى الأمر برمجياً ونرسل البيانات بأنفسنا عبر جافاسكريبت دون إعادة تحميل'.",
+    "code": "<form id='f'><button id='b'>أرسل</button></form><script>document.getElementById('f').addEventListener('submit', (e)=>{ e.preventDefault(); console.log('تم إيقاف إعادة التحميل'); });</script>",
+    "output": "يمنع النموذج من إعادة تحميل الصفحة عند الضغط على زر الإرسال."
+   },
+   {
+    "h": "التحقق من المدخلات",
+    "text": "قبل إرسال البيانات، يجب التأكد من أنها سليمة. يشبه ذلك فحص بواب الأمن لحقائب المسافرين للتأكد من عدم وجود أشياء ممنوعة.",
+    "code": "<input id='age' value='15'><script>let age=15; if(age>10){console.log('مقبول');}</script>",
+    "output": "يتحقق من أن القيمة صالحة ويطبع رسالة قبول في الكونسول."
+   },
+   {
+    "h": "التحقق من تطابق كلمات المرور",
+    "text": "عند إنشاء حساب جديد، يطلب الموقع إدخال كلمة المرور مرتين. نقارن الحقلين لنتأكد من أنهما متطابقان تماماً قبل المتابعة، منعاً لكتابة كلمة خاطئة بالخطأ.",
+    "code": "<input id='p1' value='12345'><input id='p2' value='12345'><script>let match = document.getElementById('p1').value === document.getElementById('p2').value; console.log('هل متطابقان؟', match);</script>",
+    "output": "يطبع في الكونسول قيمة صحيحة تدل على تطابق كلمتي المرور."
+   },
+   {
+    "h": "عرض رسائل الخطأ الفورية",
+    "text": "إذا لم تتطابق كلمات المرور، نظهر رسالة حمراء تنبه المستخدم فوراً دون الانتظار لإرسال البيانات للخادم، مما يوفر وقتاً طويلاً ويحسن التجربة.",
+    "code": "<p id='msg' style='color:red;'></p><script>let pass1='abc', pass2='xyz'; if(pass1 !== pass2){ document.getElementById('msg').innerText = 'كلمات المرور غير متطابقة!'; }</script>",
+    "output": "يعرض رسالة تنبيه حمراء تفيد بعدم تطابق كلمتي المرور."
+   },
+   {
+    "h": "أهمية التحقق في جهة العميل",
+    "text": "التحقق في المتصفح يمنح المستخدم استجابة سريعة جداً. يشبه ذلك نظام الإنذار السريع عند مدخل المبنى لتنبيهك لارتداء القبعة قبل الدخول.",
+    "code": "<script>function validateName(n){ return n.length > 2; } console.log(validateName('علي'));</script>",
+    "output": "يختبر طول الاسم ويتحقق من صحته فورياً."
+   },
+   {
+    "h": "دمج نموذج متكامل مع جافاسكريبت",
+    "text": "نجمع كل ما تعلمناه: اختيار النموذج، منع التحقق الافتراضي، فحص تطابق الحقول، وعرض النتيجة للمستخدم في صفحة واحدة متكاملة.",
+    "code": "<form id='reg'><input id='pw1' value='123'><input id='pw2' value='123'><button>تسجيل</button></form><script>document.getElementById('reg').addEventListener('submit', (e)=>{ e.preventDefault(); alert('تم التحقق بنجاح!'); });</script>",
+    "output": "ينفذ نموذجاً كاملاً يتحقق من البيانات ويظهر تنبيه النجاح."
+   }
+  ],
+  "reference": [
+   {
+    "name": "addEventListener()",
+    "desc": "دالة للاستماع للأحداث البرمجية على العناصر."
+   },
+   {
+    "name": "submit",
+    "desc": "حدث يتم تفعيله عند محاولة إرسال نموذج."
+   },
+   {
+    "name": "preventDefault()",
+    "desc": "دالة توقف السلوك الافتراضي للمتصفح مثل إعادة التحميل."
+   },
+   {
+    "name": "value",
+    "desc": "خاصية لقراءة النص المدخل داخل حقل الإدخال."
+   },
+   {
+    "name": "=== ",
+    "desc": "عامل مقارنة للتحقق من التساوي التام للقيمة والنوع."
+   },
+   {
+    "name": "FormData",
+    "desc": "واجهة برمجية لتنظيم بيانات النماذج لإرسالها."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر جافاسكريبت يستمع لحدث إرسال نموذج يحمل المعرف myForm ويوقف إعادة التحميل.",
+    "a": "document.getElementById('myForm').addEventListener('submit', (e) => { e.preventDefault(); });"
+   },
+   {
+    "q": "كيف تقارن بين حقل كلمة المرور p1 وحقل التأكيد p2 لمعرفة إن كانا متساويين؟",
+    "a": "let isMatch = p1.value === p2.value;"
+   },
+   {
+    "q": "ما هي الدالة التي تمنع المتصفح من إرسال النموذج بالطريقة الافتراضية؟",
+    "a": "event.preventDefault()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "When a user submits an HTML form, the browser automatically tries to reload the page and send data to a server, which can slow down modern single-page apps.",
+   "We listen for form submissions in JavaScript by using addEventListener to watch for the 'submit' event on a <form> element so we can take full control.",
+   "To stop the browser from performing its default page reload, we call event.preventDefault() inside our event handler function to manage the process programmatically.",
+   "We validate inputs like matching passwords by comparing the primary password field value with the confirmation field value to ensure they match perfectly.",
+   "Gold Rule: Perform front-end validation as a first line of defense to give instant user feedback, while always remembering that real validation happens on the server too.",
+   "Real-life use: In large web applications like signup pages, we use this technique to block form submission if the user's passwords do not match."
+  ],
+  "example": "Suppose we are designing a signup form where users enter a password and confirm it. We write a JavaScript code that listens to the submit event, calls event.preventDefault() to stop page reloading, and compares both input values. If they match, a success message appears; otherwise, an error message prompts the user to try again.",
+  "mistake": "Forgetting to call event.preventDefault() inside the submit event handler, which causes the page to reload instantly and clears all entered values before we can validate them. The fix is placing it at the very top of your handler function.",
+  "recap": "We learned how to listen for form submission events, stop default browser page reloads, and accurately validate matching passwords.",
+  "q": [
+   {
+    "t": "Which method is used to stop the default browser behavior of a form submission?",
+    "o": [
+     "event.stopReload()",
+     "event.preventDefault()",
+     "form.cancel()"
+    ],
+    "a": 1,
+    "why": "We use event.preventDefault() to stop the browser from reloading the page during form submission."
+   },
+   {
+    "t": "Why do we validate password matching in a form?",
+    "o": [
+     "To automatically change the page background color",
+     "To prevent the user from making unintentional typos in their password",
+     "To speed up the internet connection"
+    ],
+    "a": 1,
+    "why": "Ensuring password and confirmation fields match protects the user from accidental typing mistakes."
+   },
+   {
+    "t": "Which event do we monitor on a <form> element to handle submissions?",
+    "o": [
+     "submit",
+     "click",
+     "load"
+    ],
+    "a": 0,
+    "why": "We listen to the 'submit' event on the <form> element to handle form data programmatically."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Match Form & Validation Concepts",
+   "goal": "Connect each programming term to its correct form protection and management function.",
+   "pairs": [
+    [
+     "submit",
+     "Form submission event"
+    ],
+    [
+     "preventDefault()",
+     "Stops page reloading"
+    ],
+    [
+     "Password Matching",
+     "Validates equal passwords"
+    ],
+    [
+     "Client-side Validation",
+     "Instant browser checking"
+    ]
+   ],
+   "success": "Awesome! You matched all the form programming concepts correctly."
+  },
+  "sections": [
+   {
+    "h": "The Concept of Web Forms",
+    "text": "Forms are how users interact with a website to send their information, much like filling out a paper application in real life. In programming, we gather this input through fields to process it smoothly.",
+    "code": "<form id='f'><input type='text' placeholder='Username'><button>Submit</button></form>",
+    "output": "Displays a simple form with a text input and submit button."
+   },
+   {
+    "h": "Listening for Form Submissions",
+    "text": "Instead of letting the browser act on its own, we use JavaScript to watch when a user clicks submit using the 'submit' event. This acts like a security guard monitoring the gate.",
+    "code": "<form id='myform'><input type='text' value='Alex'><button type='submit'>Click</button></form><script>document.getElementById('myform').addEventListener('submit', (e)=>{ e.preventDefault(); alert('Event captured!'); });</script>",
+    "output": "Shows a form that triggers an alert without reloading the page when clicked."
+   },
+   {
+    "h": "Stopping Default Browser Reloads",
+    "text": "When a user submits a form, the browser reloads the page by default. We use preventDefault() to tell the browser: 'Stop, we will handle this programmatically and send data via JavaScript without reloading.'",
+    "code": "<form id='f'><button id='b'>Send</button></form><script>document.getElementById('f').addEventListener('submit', (e)=>{ e.preventDefault(); console.log('Reload stopped'); });</script>",
+    "output": "Prevents the form from reloading the page when clicking the submit button."
+   },
+   {
+    "h": "Checking User Input",
+    "text": "Before sending data, we must ensure it is valid. This is like a security guard inspecting traveler bags to make sure no forbidden items are present.",
+    "code": "<input id='age' value='15'><script>let age=15; if(age>10){console.log('Valid');}</script>",
+    "output": "Checks that the value is valid and logs approval in the console."
+   },
+   {
+    "h": "Validating Password Matching",
+    "text": "When creating a new account, websites ask for a password twice. We compare both fields to ensure they match completely before proceeding, avoiding accidental typing errors.",
+    "code": "<input id='p1' value='12345'><input id='p2' value='12345'><script>let match = document.getElementById('p1').value === document.getElementById('p2').value; console.log('Do they match?', match);</script>",
+    "output": "Logs a boolean value in the console indicating password match status."
+   },
+   {
+    "h": "Displaying Instant Error Messages",
+    "text": "If passwords do not match, we display a red error message instantly without waiting to send data to the server, saving time and improving user experience.",
+    "code": "<p id='msg' style='color:red;'></p><script>let pass1='abc', pass2='xyz'; if(pass1 !== pass2){ document.getElementById('msg').innerText = 'Passwords do not match!'; }</script>",
+    "output": "Displays a red warning text stating passwords do not match."
+   },
+   {
+    "h": "Importance of Client-Side Validation",
+    "text": "Browser-side validation gives the user immediate feedback. It's like a quick alarm at the building entrance reminding you to wear your badge before entering.",
+    "code": "<script>function validateName(n){ return n.length > 2; } console.log(validateName('Ali'));</script>",
+    "output": "Tests the name length and checks validity instantly."
+   },
+   {
+    "h": "Integrating Full Forms with JavaScript",
+    "text": "We combine everything we learned: selecting the form, stopping default reload, checking field matching, and showing the result to the user in a cohesive page.",
+    "code": "<form id='reg'><input id='pw1' value='123'><input id='pw2' value='123'><button>Sign up</button></form><script>document.getElementById('reg').addEventListener('submit', (e)=>{ e.preventDefault(); alert('Validated successfully!'); });</script>",
+    "output": "Executes a complete form that validates data and displays a success alert."
+   }
+  ],
+  "reference": [
+   {
+    "name": "addEventListener()",
+    "desc": "Method to listen for programming events on elements."
+   },
+   {
+    "name": "submit",
+    "desc": "Event triggered when attempting to submit a form."
+   },
+   {
+    "name": "preventDefault()",
+    "desc": "Method that stops default browser behavior like page reload."
+   },
+   {
+    "name": "value",
+    "desc": "Property to read entered text inside an input field."
+   },
+   {
+    "name": "=== ",
+    "desc": "Comparison operator to check exact value and type equality."
+   },
+   {
+    "name": "FormData",
+    "desc": "API interface to organize form data for transmission."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a JavaScript line that listens to the submit event on a form with ID myForm and stops page reload.",
+    "a": "document.getElementById('myForm').addEventListener('submit', (e) => { e.preventDefault(); });"
+   },
+   {
+    "q": "How do you compare password field p1 and confirmation field p2 to check if they are equal?",
+    "a": "let isMatch = p1.value === p2.value;"
+   },
+   {
+    "q": "What is the function that stops the browser from submitting the form by default?",
+    "a": "event.preventDefault()"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Sending forms through JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_forms_through_JavaScript"
+  },
+  {
+   "title": "MDN: Input validation",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Input_validation"
+  }
+ ],
+ "grounded": true
+}

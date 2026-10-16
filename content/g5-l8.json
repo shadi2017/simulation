@@ -1,0 +1,300 @@
+{
+ "ar": {
+  "steps": [
+   "المصفوفة (Array) هي صندوق منظم نحفظ جواه‌ كذا قيمة بترتيب معين، زي قائمة المشتريات أو قائمة الأصحاب في البرمجة.",
+   "عشان نقرأ عنصر جوه المصفوفة، بنستخدم الفهرس (Index) اللي بيبدأ دايماً من الرقم صفر (0) مش واحد!",
+   "حلقات التكرار (for loops) هي أداة سحرية بتخلينا نلف على كل عناصر القائمة خطوة بخطوة من غير ما نكتب الكود كذا مرة.",
+   "مثال صغير: لو عندنا قائمة حيوانات، نقدر نطبعهم كلهم واحد ورا التاني باستخدام حلقة for وطول المصفوفة length.",
+   "القاعدة الذهبية: احذر دائماً من إنك تبدأ العد من 1، في الجافاسكريبت العد بيبدأ من 0، وآخر عنصر بيكون طول المصفوفة ناقص 1.",
+   "الاستخدام الحقيقي: بنستخدم المصفوفات والحلقات في الألعاب عشان نعرض قائمة النجوم أو الأسلحة، وفي المواقع عشان نعرض رسائل أصحابك."
+  ],
+  "example": "تخيل إنك بتدرب قطتك على القفز وكل شوية تديلها مكافأة. في الجافاسكريبت، لو عندنا قائمة حيوانات مفضلة زي:\nlet animals = [\"قرد\", \"فيل\", \"أسد\"];\nعشان نطبع كل حيوان لوحده من غير تكرار الكود، بنكتب حلقة تكرار ذكية:\nfor(let i = 0; i < animals.length; i++) {\n  console.log(animals[i]);\n}\nالحلقة دي بتبدأ من الفهرس صفر وتلف لحد آخر عنصر وتطبع اسم الحيوان بكل سهولة!",
+  "mistake": "الخطأ الشائع هو البدء في العد من الرقم 1 أو تخطي طول المصفوفة (Array length) مما يسبب خطأ undefined. العلاج هو التأكد دائماً أن حلقة for تبدأ من i = 0 وتستمر طالما i < animals.length.",
+  "recap": "المصفوفات تجمع البيانات بترتيب، وحلقات for تساعدنا في زيارة كل عنصر بسرعة وذكاء.",
+  "q": [
+   {
+    "t": "ما هو الرقم الذي يبدأ به فهرس المصفوفات (Index) في لغة JavaScript؟",
+    "o": [
+     "1",
+     "0",
+     "10"
+    ],
+    "a": 1,
+    "why": "الفهارس في البرمجة تبدأ دائماً من الصفر."
+   },
+   {
+    "t": "كيف نعرف عدد العناصر الموجودة داخل المصفوفة؟",
+    "o": [
+     "animals.size",
+     "animals.length",
+     "animals.count"
+    ],
+    "a": 1,
+    "why": "خاصية length تعطينا العدد الإجمالي لعناصر المصفوفة."
+   },
+   {
+    "t": "أي من الأدوات التالية تستخدم لتكرار عملية على عناصر المصفوفة؟",
+    "o": [
+     "for loop",
+     "alert box",
+     "document.write"
+    ],
+    "a": 0,
+    "why": "حلقة for مخصصة لللف على العناصر وتكرار الأكواد."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات طباعة عناصر المصفوفة بحلقة التكرار",
+   "goal": "رتب خطوات إنشاء مصفوفة واستخدام حلقة for لعرض عناصرها بالشكل الصحيح.",
+   "items": [
+    "let animals = [\"قطة\", \"كلب\", \"أرنب\"];",
+    "for (let i = 0; i < animals.length; i++) {",
+    "console.log(animals[i]);",
+    "}"
+   ],
+   "success": "رائع! لقد طبعت جميع الحيوانات المفضلة بنجاح."
+  },
+  "sections": [
+   {
+    "h": "مفهوم المصفوفات (Arrays)",
+    "text": "المصفوفة تشبه صندوقاً مقسماً لأدراج مرقمة. بدلاً من تخزين اسم حيوان في كل متغير مستقل، نجمعهم كلهم في صندوق واحد مفصولين بفواصل. هذا يجعل بياناتك منظمة وسهلة الإدارة تماماً مثل حقيبة المدرسة التي تحتوي على كتبك.",
+    "code": "<script>\n  let pets = [\"قطة\", \"كلب\", \"طائر\"];\n  document.write(pets[0]);\n</script>",
+    "output": "تظهر كلمة قطة على الشاشة لأنها في أول درج."
+   },
+   {
+    "h": "فهم الفهارس (Indexing)",
+    "text": "في عالم البرمجة، العد لا يبدأ من الواحد أبداً! أول درج في المصفوفة يحمل الرقم صفر. الدرج الثاني يحمل الرقم واحد، وهكذا. تذكر هذه القاعدة جيداً لتجنب الأخطاء البرمجية المزعجة.",
+    "code": "<script>\n  let colors = [\"أحمر\", \"أخضر\", \"أزرق\"];\n  document.write(colors[1]);\n</script>",
+    "output": "تظهر كلمة أخضر لأنها في الفهرس رقم 1."
+   },
+   {
+    "h": "معرفة طول المصفوفة (Length)",
+    "text": "كيف تعرف عدد الأغراض في صندوقك؟ خاصية length تخبرك بالعدد الإجمالي للعناصر فوراً. إذا كان لديك 4 حيوانات، ستكون النتيجة 4، وهي مفيدة جداً لمعرفة متى تتوقف عن العد.",
+    "code": "<script>\n  let fruits = [\"تفاح\", \"موز\", \"برتقال\", \"عنب\"];\n  document.write(fruits.length);\n</script>",
+    "output": "يظهر الرقم 4 على الشاشة."
+   },
+   {
+    "h": "أساسيات حلقات التكرار (For Loops)",
+    "text": "حلقة for هي مساعدك الآلي الذي لا يمل ولا يتعب. تعطيه نقطة بداية ونقطة نهاية وخطوة تلو الأخرى، فيقوم بتنفيذ الأمر المطلوب آلاف المرات في ثانية واحدة دون أن تضطر لكتابة الكود متكرراً.",
+    "code": "<script>\n  for(let i = 1; i <= 3; i++) {\n    document.write(i + \" \");\n  }\n</script>",
+    "output": "تظهر الأرقام 1 2 3 متتالية."
+   },
+   {
+    "h": "دمج المصفوفات وحلقات التكرار",
+    "text": "السحر الحقيقي يظهر عندما نربط حلقة for بالمصفوفة. نستخدم عداد الحلقة (i) ليكون هو نفسه رقم الفهرس! هكذا تتحرك الحلقة تلقائياً عبر كل عناصر المصفوفة واحداً تلو الآخر.",
+    "code": "<script>\n  let toys = [\"كرة\", \"سيارة\", \"دمية\"];\n  for(let i = 0; i < toys.length; i++) {\n    document.write(toys[i] + \"<br>\");\n  }\n</script>",
+    "output": "تظهر الألعاب الثلاثة كل واحدة في سطر جديد."
+   },
+   {
+    "h": "تحديث عناصر المصفوفة داخل الحلقة",
+    "text": "يمكنك ليس فقط قراءة العناصر، بل وتعديلها أو إنجاز عمليات حسابية عليها أثناء مرور الحلقة بها. تخيل أنك تضيف كلمة 'مفضلة' لكل لعبة في قائمتك تلقائياً.",
+    "code": "<script>\n  let nums = [10, 20, 30];\n  for(let i = 0; i < nums.length; i++) {\n    document.write((nums[i] + 5) + \" \");\n  }\n</script>",
+    "output": "تظهر الأرقام 15 25 35 بعد إضافة 5 لكل عنصر."
+   },
+   {
+    "h": "تجنب الأخطاء الشائعة (Off-by-One)",
+    "text": "الخطأ الأكثر شيوعاً هو استخدام رمز أصغر من أو يساوي (<=) مع طول المصفوفة، مما يجعلك تحاول قراءة درج غير موجود (undefined). دائماً استخدم علامة أصغر من (<) مع الـ length.",
+    "code": "<script>\n  let items = [\"أ\", \"ب\"];\n  document.write(items[items.length - 1]);\n</script>",
+    "output": "يظهر الحرف 'ب' وهو العنصر الأخير بدقة."
+   },
+   {
+    "h": "الاستخدام الواقعي في تطبيقات الويب",
+    "text": "في تطبيقات المتاجر الإلكترونية أو ألعاب الفيديو، تستخدم المصفوفات لتخزين قائمة المنتجات أو النقاط، وتستخدم حلقة التكرار لرسمها على الشاشة للاعب أو المستخدم بشكل جذاب وسريع.",
+    "code": "<script>\n  let levels = [\"المستوى 1\", \"المستوى 2\", \"المستوى 3\"];\n  for(let l = 0; l < levels.length; l++) {\n    document.write(\"<div>\" + levels[l] + \"</div>\");\n  }\n</script>",
+    "output": "تظهر المستويات الثلاثة في صناديق مخصصة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "let array = [item1, item2]",
+    "desc": "طريقة إنشاء وتخزين مصفوفة جديدة."
+   },
+   {
+    "name": "array[0]",
+    "desc": "الوصول للعنصر الأول عبر الفهرس صفر."
+   },
+   {
+    "name": "array.length",
+    "desc": "معرفة العدد الإجمالي للعناصر في المصفوفة."
+   },
+   {
+    "name": "for (let i = 0; i < length; i++)",
+    "desc": "بناء حلقة تكرار لفحص عناصر القائمة."
+   },
+   {
+    "name": "console.log()",
+    "desc": "طباعة النتائج في نافذة المطورين للاختبار."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ مصفوفة تحتوي على 3 ألوان واستخدم حلقة for لطباعتها.",
+    "a": "let c = [\"أحمر\", \"أخضر\", \"أزرق\"]; for(let i=0; i<c.length; i++){ console.log(c[i]); }"
+   },
+   {
+    "q": "ما هو فهرس العنصر الأول في أي مصفوفة؟",
+    "a": "الرقم 0"
+   },
+   {
+    "q": "اكتب تعليمة معرفة عدد عناصر مصفوفة اسمها names.",
+    "a": "names.length"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "An array is an organized box that holds multiple values in a specific order, like a shopping list or friend list in programming.",
+   "To read an item inside an array, we use an index which always starts at zero (0), not one!",
+   "For loops are magical tools that let us visit every item in a list step-by-step without rewriting the same code.",
+   "Small example: If we have an animal list, we can print them one by one using a for loop and the array's length.",
+   "Golden rule: Always remember indexing starts at 0, and the last item is at length minus 1.",
+   "Real-life use: Arrays and loops power video games to display lists of stars or weapons, and websites to show friend messages."
+  ],
+  "example": "Imagine training your cat and giving treats repeatedly. In JavaScript, if we have a favorite animals list:\nlet animals = [\"monkey\", \"elephant\", \"lion\"];\nTo print each animal alone without repeating code, we write a smart loop:\nfor(let i = 0; i < animals.length; i++) {\n  console.log(animals[i]);\n}\nThis loop starts at index zero, loops until the last item, and prints each animal name easily!",
+  "mistake": "A common mistake is starting your loop at 1 or exceeding the array length causing undefined errors. The fix is ensuring your for loop starts at i = 0 and continues while i < animals.length.",
+  "recap": "Arrays group data in order, and for loops help us visit every single item quickly and smartly.",
+  "q": [
+   {
+    "t": "What number does an array index always start with in JavaScript?",
+    "o": [
+     "1",
+     "0",
+     "10"
+    ],
+    "a": 1,
+    "why": "Indices in programming always start counting from zero."
+   },
+   {
+    "t": "How do we find the total number of items inside an array?",
+    "o": [
+     "animals.size",
+     "animals.length",
+     "animals.count"
+    ],
+    "a": 1,
+    "why": "The length property gives us the total count of array elements."
+   },
+   {
+    "t": "Which of the following tools is used to repeat an operation over array items?",
+    "o": [
+     "for loop",
+     "alert box",
+     "document.write"
+    ],
+    "a": 0,
+    "why": "A for loop is designed to iterate through items and repeat code."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Steps to Print Array Elements with a Loop",
+   "goal": "Arrange the steps to create an array and use a for loop to display its items correctly.",
+   "items": [
+    "let animals = [\"cat\", \"dog\", \"rabbit\"];",
+    "for (let i = 0; i < animals.length; i++) {",
+    "console.log(animals[i]);",
+    "}"
+   ],
+   "success": "Awesome! You successfully printed all your favorite animals."
+  },
+  "sections": [
+   {
+    "h": "The Concept of Arrays",
+    "text": "An array is like a storage box divided into numbered slots. Instead of storing an animal name in separate standalone variables, we group them all inside a single box separated by commas. This keeps your data organized and easy to manage, just like a school backpack holding your books.",
+    "code": "<script>\n  let pets = [\"cat\", \"dog\", \"bird\"];\n  document.write(pets[0]);\n</script>",
+    "output": "The word cat appears on the screen because it is in the first slot."
+   },
+   {
+    "h": "Understanding Indexing",
+    "text": "In programming, counting never starts at one! The first slot in an array holds the number zero. The second slot holds the number one, and so on. Remember this golden rule to avoid frustrating coding errors.",
+    "code": "<script>\n  let colors = [\"red\", \"green\", \"blue\"];\n  document.write(colors[1]);\n</script>",
+    "output": "The word green appears because it is at index 1."
+   },
+   {
+    "h": "Knowing Array Length",
+    "text": "How do you know how many items are in your box? The length property tells you the total count instantly. If you have 4 animals, the result is 4, which is extremely useful for knowing when to stop counting.",
+    "code": "<script>\n  let fruits = [\"apple\", \"banana\", \"orange\", \"grape\"];\n  document.write(fruits.length);\n</script>",
+    "output": "The number 4 appears on the screen."
+   },
+   {
+    "h": "Basics of For Loops",
+    "text": "A for loop is your tireless robotic assistant. You give it a start point, an end point, and a step size, and it executes your command thousands of times in a second without you needing to write repetitive code.",
+    "code": "<script>\n  for(let i = 1; i <= 3; i++) {\n    document.write(i + \" \");\n  }\n</script>",
+    "output": "The numbers 1 2 3 appear sequentially."
+   },
+   {
+    "h": "Combining Arrays and For Loops",
+    "text": "True magic happens when we link a for loop with an array. We use the loop counter (i) to act as the index number! This way, the loop automatically moves through every single element in the array one by one.",
+    "code": "<script>\n  let toys = [\"ball\", \"car\", \"doll\"];\n  for(let i = 0; i < toys.length; i++) {\n    document.write(toys[i] + \"<br>\");\n  }\n</script>",
+    "output": "All three toys appear each on a new line."
+   },
+   {
+    "h": "Updating Array Elements Inside a Loop",
+    "text": "You can not only read elements, but also modify them or perform calculations on them as the loop passes by. Imagine automatically adding extra points to every score in your list.",
+    "code": "<script>\n  let nums = [10, 20, 30];\n  for(let i = 0; i < nums.length; i++) {\n    document.write((nums[i] + 5) + \" \");\n  }\n</script>",
+    "output": "The numbers 15 25 35 appear after adding 5 to each element."
+   },
+   {
+    "h": "Avoiding Off-by-One Errors",
+    "text": "The most common mistake is using a less-than-or-equal (<=) sign with the array length, causing you to read a non-existent slot (undefined). Always use the strict less-than (<) sign with length.",
+    "code": "<script>\n  let items = [\"A\", \"B\"];\n  document.write(items[items.length - 1]);\n</script>",
+    "output": "The letter 'B' appears, which is accurately the last element."
+   },
+   {
+    "h": "Real-Life Web Applications",
+    "text": "In online shopping apps or video games, arrays store lists of products or scores, and loops are used to draw them on the screen for the user or player in an attractive and rapid way.",
+    "code": "<script>\n  let levels = [\"Level 1\", \"Level 2\", \"Level 3\"];\n  for(let l = 0; l < levels.length; l++) {\n    document.write(\"<div>\" + levels[l] + \"</div>\");\n  }\n</script>",
+    "output": "The three levels appear inside dedicated containers."
+   }
+  ],
+  "reference": [
+   {
+    "name": "let array = [item1, item2]",
+    "desc": "Way to create and store a new array."
+   },
+   {
+    "name": "array[0]",
+    "desc": "Accessing the first element via index zero."
+   },
+   {
+    "name": "array.length",
+    "desc": "Finding the total count of items in an array."
+   },
+   {
+    "name": "for (let i = 0; i < length; i++)",
+    "desc": "Building a loop to iterate through list items."
+   },
+   {
+    "name": "console.log()",
+    "desc": "Printing results in the developer tools console for testing."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create an array containing 3 colors and use a for loop to print them.",
+    "a": "let c = [\"red\", \"green\", \"blue\"]; for(let i=0; i<c.length; i++){ console.log(c[i]); }"
+   },
+   {
+    "q": "What is the index of the first element in any array?",
+    "a": "Number 0"
+   },
+   {
+    "q": "Write the statement to find the length of an array named names.",
+    "a": "names.length"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Advanced JavaScript objects",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects"
+  },
+  {
+   "title": "MDN: JavaScript typed arrays",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك ترسم لوحة فنية رائعة، أحياناً تحتاج لتزيين أجزاء صغيرة داخل الرسمة دون إضافة ألوان جديدة في ورقتك الأساسية، وهنا يأتي دور العناصر الوهمية في لغة سي إس إس لتساعدنا على تزيين أجزاء خفية.",
+   "نكتب العنصر الوهمي باستخدام نقطتين رأسيتين مضاعفتين هكذا (::) لكي نفهمه ونفرقه عن بقية الأوامر، فمثلاً لتلوين أول حرف من الفقرة نكتب p::first-letter مع تحديد اللون المطلوب.",
+   "تعمل هذه العناصر الوهمية بطريقة سحرية حيث تقرأ أجزاء محددة تلقائياً من المستند وكأنها عناصر حقيقية، دون الحاجة لتعديل ملف إتش تي إم إل الأصلي وزيادة عدد السطور فيه.",
+   "يمكننا أيضاً استخدام ::first-line لتغيير تنسيق السطر الأول وحده في الفقرة، فإذا كبرت الشاشة أو صغرت، سيتكيف السطر الأول بنفسه ويظل مميزاً وجميلاً.",
+   "القاعدة الذهبية هنا هي أن العنصر الوهمي يتبع دائماً العنصر الأصلي، ولا يمكن أن يعيش بمفرده، وكأنك تضع قبعة جميلة فوق رأس شخص ما.",
+   "نستخدم هذه المهارة في الحياة اليومية لتصميم مواقع ويب مذهلة تشبه الألعاب والتطبيقات الشهيرة، مثل وضع علامات مميزة قبل العناوين أو إضافة رموز تعبيرية مرحة."
+  ],
+  "example": "لنفترض أننا نريد تلوين الحرف الأول من فقرة النص بلون مميز لتبدو القصة جذابة. نكتب في الكود: p::first-letter { color: #ff4757; font-size: 2em; }، وعند تشغيل الصفحة، سيقوم المتصفح تلقائياً بالتعرف على الحرف الأول وتكبيره وتلوينه باللون الأحمر المشرق.",
+  "mistake": "الخطأ الشائع هو استخدام نقطة واحدة مفردة هكذا (:first-letter) بدلاً من النقطتين (::). التصحيح هو دائماً استخدام نقطتين رأسيتين مضاعفتين للعناصر الوهمية في سي إس إس.",
+  "recap": "العناصر الوهمية تتيح لنا تزيين أجزاء محددة من العناصر بسهولة. وهي تستخدم نقطتين رأسيتين مضاعفتين لتحديد أجزاء مثل الحروف الأولى والأسطر بدقة.",
+  "q": [
+   {
+    "t": "ما هي الرموز المستخدمة لكتابة العناصر الوهمية في سي إس إس؟",
+    "o": [
+     "::",
+     ".",
+     "#"
+    ],
+    "a": 0,
+    "why": "نستخدم نقطتين رأسيتين مضاعفتين :: لتمييز العناصر الوهمية."
+   },
+   {
+    "t": "أي عنصر وهمي نستخدمه لاستهداف الحرف الأول من الفقرة؟",
+    "o": [
+     "::after",
+     "::first-letter",
+     "::first-line"
+    ],
+    "a": 1,
+    "why": "العنصر ::first-letter يستهدف الحرف الأول خصيصاً."
+   },
+   {
+    "t": "ما هي الخاصية المسؤولة عن إضافة محتوى جديد عبر ::before و ::after؟",
+    "o": [
+     "text",
+     "content",
+     "display"
+    ],
+    "a": 1,
+    "why": "خاصية content هي الأساسية لإدراج محتوى وهمي."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات إضافة رمز تعبيري بعد الفقرة",
+   "goal": "رتب الخطوات الصحيحة لكتابة عنصر وهمي يضيف وجهًا ضاحكًا بعد الفقرة.",
+   "items": [
+    "تحديد العنصر الأصلي وهو الفقرة p",
+    "إضافة العنصر الوهمي ::after",
+    "كتابة خاصية content وتحتوي على الرمز التعبيري",
+    "تنسيق لون وحجم الرمز المضاف"
+   ],
+   "success": "رائع! ظهر الرمز الضاحك بجمال بعد كل فقرة على الصفحة."
+  },
+  "sections": [
+   {
+    "h": "ما هي العناصر الوهمية؟",
+    "text": "تخيل أن لديك صندوق ألعاب وتريد تزيين زاويته فقط دون تغيير الصندوق كله. العناصر الوهمية في سي إس إس تفعل ذلك تماماً للملفات، فهي تتيح لنا اختيار جزء دقيق من النص، مثل الحرف الأول أو السطر الأول، وتنسيقه بمظهر فريد ومذهل.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::first-letter { font-size: 30px; color: purple; }\n</style>\n</head>\n<body>\n<p>مرحباً بكم في عالم البرمجة الممتع!</p>\n</body>\n</html>",
+    "output": "تظهر الصفحة بحرف ميم كبير وبنفسجي اللون."
+   },
+   {
+    "h": "تنسيق الحرف الأول ::first-letter",
+    "text": "في قصص الأطفال الكلاسيكية، يكون الحرف الأول في أول الصفحة ضخماً وملوناً ليلفت انتباه القارئ الصغير. باستخدام عنصر ::first-letter الوهمي، يمكنك فعل ذلك في أي فقرة نصية على موقعك الإلكتروني دون الحاجة لكتابة كود إضافي في الإتش تي إم إل.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::first-letter { color: #ff6b81; font-weight: bold; font-size: 24px; }\n</style>\n</head>\n<body>\n<p>التعلم يجعل عقولنا أكثر ذكاءً وقوة كل يوم.</p>\n</body>\n</html>",
+    "output": "يظهر حرف الألف الأول كبيراً وباللون الوردي الجميل."
+   },
+   {
+    "h": "تنسيق السطر الأول ::first-line",
+    "text": "هل لاحظت كيف تبدأ بعض الكتب بأسطر مميزة؟ العنصر الوهمي ::first-line يساعدك على استهداف السطر الأول بالكامل للفقرة. بغض النظر عن حجم شاشة الحاسوب أو الهاتف، سيتكيف السطر الأول ويغير لونه أو نمطه تلقائياً بكل ذكاء.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::first-line { color: #2ed573; font-weight: bold; }\n</style>\n</head>\n<body>\n<p>هذا هو السطر الأول وسيكون لونه أخضر جميلاً. أما السطر الثاني فسيبقى بلونه العادي الطبيعي تماماً.</p>\n</body>\n</html>",
+    "output": "يظهر السطر الأول باللون الأخضر الغامق وحده."
+   },
+   {
+    "h": "الإضافة قبل العنصر ::before",
+    "text": "تخيل أنك تقف في طوابير المدرسة، ويأتي شخص ليقف في أول الصف تماماً. العنصر الوهمي ::before يعمل بهذه الطريقة، فهو يضيف محتوى جديداً في بداية العنصر المختار، وكأنه يضع وساماً أو نجوم زينة قبل النص تماماً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nh2::before { content: \"⭐ \"; color: gold; }\n</style>\n</head>\n<body>\n<h2>الدرس الثاني</h2>\n</body>\n</html>",
+    "output": "تظهر نجمة ذهبية لامعة قبل عنوان الدرس مباشرة."
+   },
+   {
+    "h": "الإضافة بعد العنصر ::after",
+    "text": "مثلما يضع أصدقاؤك توقيعاً في نهاية رسائلهم، يتيح لك العنصر ::after وضع محتوى في نهاية العنصر المستهدف تماماً. سنستخدمه اليوم لنضع رمزاً تعبيرياً ضاحكاً بعد كل فقرة لنجعل الموقع حيويًا ومليئًا بالحيوية.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::after { content: \" 😊\"; }\n</style>\n</head>\n<body>\n<p>أنا أحب تصميم مواقع الويب</p>\n</body>\n</html>",
+    "output": "يظهر وجه ضاحك لطيف في نهاية نص الفقرة."
+   },
+   {
+    "h": "أهمية خاصية المحتوى content",
+    "text": "عندما تستخدم ::before أو ::after، فإن خاصية content هي العصا السحرية التي تجعل السحر يحدث. بدون هذه الخاصية داخل الكود، لن يظهر أي نص أو رمز إضافي، لأنها تحدد تماماً ما الذي سيتم إضافته للمتصفح.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nspan::before { content: \"[تنبيه]: \"; color: red; font-weight: bold; }\n</style>\n</head>\n<body>\n<span>هذا مهم جداً</span>\n</body>\n</html>",
+    "output": "تظهر عبارة [تنبيه]: باللون الأحمر قبل الجملة."
+   },
+   {
+    "h": "تمييز النص المظلل ::selection",
+    "text": "هل لاحظت عندما تضع فأرة الكمبيوتر وتسحب لتظليل نص معين، كيف يغير لونه؟ يمكنك التحكم بلون هذا التظليل باستخدام العنصر الوهمي ::selection لتجعل موقعك متناسقاً ومليئاً بالألوان المفضلة لديك حتى أثناء تفاعل المستخدم معه.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n::selection { background-color: #ffa502; color: white; }\n</style>\n</head>\n<body>\n<p>قم بتظليل هذا النص بالفأرة لترى السحر! </p>\n</body>\n</html>",
+    "output": "يتحول لون خلفية النص المظلل إلى البرتقالي الزاهي."
+   },
+   {
+    "h": "قاعدة استخدام النقطتين المزدوجة",
+    "text": "في لغة سي إس إس الحديثة، نستخدم نقطتين رأسيتين مضاعفتين (::) للعناصر الوهمية لنفرقها عن الخصائص العادية أو الفئات. تذكر دائماً أن العنصر الوهمي لا يقف وحيداً، بل يرتبط دائماً بعنصر أصلي في الصفحة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv::first-letter { font-size: 28px; color: #3742fa; }\n</style>\n</head>\n<body>\n<div>هذا صندوق نصي يحتوي على حروف مميزة.</div>\n</body>\n</html>",
+    "output": "يظهر الحرف الأول من الـ div بخط أزرق كبير وواضح."
+   }
+  ],
+  "reference": [
+   {
+    "name": "::first-letter",
+    "desc": "يستهدف الحرف الأول من العنصر لتنسيقه."
+   },
+   {
+    "name": "::first-line",
+    "desc": "يستهدف السطر الأول من العنصر لتعديله."
+   },
+   {
+    "name": "::before",
+    "desc": "يضيف محتوى وهمي في بداية العنصر."
+   },
+   {
+    "name": "::after",
+    "desc": "يضيف محتوى وهمي في نهاية العنصر."
+   },
+   {
+    "name": "content",
+    "desc": "خاصية ضرورية مع before و after لإضافة النصوص."
+   },
+   {
+    "name": "::selection",
+    "desc": "يتحكم بمظهر النص عند تظليله بالمؤشر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود سي إس إس لتكبير الحرف الأول من أي فقرة p وجعله بلون أزرق.",
+    "a": "p::first-letter { font-size: 30px; color: blue; }"
+   },
+   {
+    "q": "اكتب كود لإضافة رمز نجمة ⭐ بعد كل عنوان من نوع h1 باستخدام العناصر الوهمية.",
+    "a": "h1::after { content: \" ⭐\"; }"
+   },
+   {
+    "q": "ما هو الفرق الرئيسي في الكتابة بين الفئات العادية pseudo-classes والعنصر الوهمي pseudo-elements؟",
+    "a": "الفئات تستخدم نقطة مفردة (:) والعناصر الوهمية تستخدم نقطتين مزدوجتين (::)."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you are painting a wonderful artwork and need to decorate small parts without altering your main drawing. CSS pseudo-elements help us style these hidden or specific parts easily.",
+   "We write a pseudo-element using a double colon (::) to distinguish it from regular commands. For example, to color the first letter of a paragraph, we write p::first-letter.",
+   "These pseudo-elements work like magic, automatically targeting specific parts of the document as if they were real elements, without changing your original HTML file structure.",
+   "We can also use ::first-line to style only the first line of a paragraph. Whether the screen grows or shrinks, the first line automatically adapts and stays uniquely beautiful.",
+   "The golden rule here is that a pseudo-element always follows an originating element and cannot exist by itself, just like putting a cute hat on top of someone's head.",
+   "We use this skill in real life to design amazing web pages resembling famous games and apps, such as adding special marks before headings or cheerful emojis."
+  ],
+  "example": "Suppose we want to color the first letter of a text paragraph to make the story engaging. We write in code: p::first-letter { color: #ff4757; font-size: 2em; }. When the page loads, the browser automatically detects the first letter and enlarges it with a bright red color.",
+  "mistake": "A common mistake is using a single colon (:first-letter) instead of the double colon (::). The fix is to always use a double colon for pseudo-elements in CSS.",
+  "recap": "Pseudo-elements let us style specific parts of elements easily. They use a double colon to precisely target elements like first letters and lines.",
+  "q": [
+   {
+    "t": "What symbols are used to write pseudo-elements in CSS?",
+    "o": [
+     "::",
+     ".",
+     "#"
+    ],
+    "a": 0,
+    "why": "We use a double colon :: to distinguish pseudo-elements."
+   },
+   {
+    "t": "Which pseudo-element targets the very first letter of a paragraph?",
+    "o": [
+     "::after",
+     "::first-letter",
+     "::first-line"
+    ],
+    "a": 1,
+    "why": "The ::first-letter pseudo-element specifically targets the first letter."
+   },
+   {
+    "t": "What property is responsible for adding new content via ::before and ::after?",
+    "o": [
+     "text",
+     "content",
+     "display"
+    ],
+    "a": 1,
+    "why": "The content property is essential for inserting pseudo-content."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Steps to Add a Smile Emoji After Paragraphs",
+   "goal": "Arrange the correct steps to write a pseudo-element adding a smiling face after paragraphs.",
+   "items": [
+    "Select the originating element which is the paragraph p",
+    "Add the ::after pseudo-element",
+    "Write the content property containing the emoji",
+    "Style the color and size of the added symbol"
+   ],
+   "success": "Awesome! The smiling symbol appeared nicely after every paragraph on the page."
+  },
+  "sections": [
+   {
+    "h": "What are Pseudo-Elements?",
+    "text": "Imagine you have a toy box and want to decorate just its corner without changing the whole box. CSS pseudo-elements do exactly this for web files. They let us choose a precise part of text, like the first letter or line, and style it uniquely.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::first-letter { font-size: 30px; color: purple; }\n</style>\n</head>\n<body>\n<p>Welcome to the fun world of coding!</p>\n</body>\n</html>",
+    "output": "The page displays with a large purple letter M."
+   },
+   {
+    "h": "Styling the First Letter ::first-letter",
+    "text": "In classic children's storybooks, the first letter on a page is huge and colorful to catch young readers' attention. Using the ::first-letter pseudo-element, you can do this in any text paragraph on your website without extra HTML.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::first-letter { color: #ff6b81; font-weight: bold; font-size: 24px; }\n</style>\n</head>\n<body>\n<p>Learning makes our minds smarter and stronger every single day.</p>\n</body>\n</html>",
+    "output": "The first letter appears large and in a lovely pink color."
+   },
+   {
+    "h": "Styling the First Line ::first-line",
+    "text": "Have you noticed how some books begin with special styled lines? The ::first-line pseudo-element helps you target the entire first line of a paragraph. No matter the screen size, the first line automatically adapts and highlights smartly.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::first-line { color: #2ed573; font-weight: bold; }\n</style>\n</head>\n<body>\n<p>This is the first line and it will be a nice green color. The second line will stay completely normal.</p>\n</body>\n</html>",
+    "output": "Only the first line appears in a dark green color."
+   },
+   {
+    "h": "Inserting Before ::before",
+    "text": "Imagine standing in a school line, and someone steps right at the very front. The ::before pseudo-element works this way, adding new content at the beginning of the selected element, like placing a badge or decorative stars before text.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nh2::before { content: \"⭐ \"; color: gold; }\n</style>\n</head>\n<body>\n<h2>Lesson Two</h2>\n</body>\n</html>",
+    "output": "A shiny golden star appears right before the lesson heading."
+   },
+   {
+    "h": "Inserting After ::after",
+    "text": "Just like friends sign their names at the end of notes, the ::after pseudo-element lets you place content at the very end of your target element. Today we will use it to place a cheerful emoji after every paragraph to make the site lively.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np::after { content: \" 😊\"; }\n</style>\n</head>\n<body>\n<p>I love designing web pages</p>\n</body>\n</html>",
+    "output": "A friendly smiley face appears at the end of the paragraph text."
+   },
+   {
+    "h": "The Importance of the content Property",
+    "text": "When you use ::before or ::after, the content property is the magic wand that makes the magic happen. Without this property inside your code, no text or symbol will appear, because it defines precisely what gets added to the browser.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nspan::before { content: \"[Alert]: \"; color: red; font-weight: bold; }\n</style>\n</head>\n<body>\n<span>This is very important</span>\n</body>\n</html>",
+    "output": "The phrase [Alert]: appears in red before the sentence."
+   },
+   {
+    "h": "Highlighting Text ::selection",
+    "text": "Have you noticed when you drag your computer mouse to select text, how its color changes? You can control this highlight color using the ::selection pseudo-element to keep your site coordinated with your favorite colors during user interaction.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n::selection { background-color: #ffa502; color: white; }\n</style>\n</head>\n<body>\n<p>Drag your mouse over this text to see the magic!</p>\n</body>\n</html>",
+    "output": "The highlighted text background turns into vibrant orange."
+   },
+   {
+    "h": "The Double Colon Rule",
+    "text": "In modern CSS, we use a double colon (::) for pseudo-elements to separate them from regular properties or classes. Always remember that a pseudo-element never stands alone; it always attaches to an originating element on the page.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv::first-letter { font-size: 28px; color: #3742fa; }\n</style>\n</head>\n<body>\n<div>This text box contains special styled letters.</div>\n</body>\n</html>",
+    "output": "The first letter of the div appears in a large clear blue font."
+   }
+  ],
+  "reference": [
+   {
+    "name": "::first-letter",
+    "desc": "Targets the first letter of an element for styling."
+   },
+   {
+    "name": "::first-line",
+    "desc": "Targets the first line of an element for formatting."
+   },
+   {
+    "name": "::before",
+    "desc": "Inserts pseudo-content at the start of an element."
+   },
+   {
+    "name": "::after",
+    "desc": "Inserts pseudo-content at the end of an element."
+   },
+   {
+    "name": "content",
+    "desc": "Mandatory property with before and after to add text."
+   },
+   {
+    "name": "::selection",
+    "desc": "Controls the appearance of user-highlighted text."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to enlarge the first letter of any paragraph p and make it blue.",
+    "a": "p::first-letter { font-size: 30px; color: blue; }"
+   },
+   {
+    "q": "Write code to add a star symbol ⭐ after every h1 heading using pseudo-elements.",
+    "a": "h1::after { content: \" ⭐\"; }"
+   },
+   {
+    "q": "What is the main syntax difference between pseudo-classes and pseudo-elements?",
+    "a": "Pseudo-classes use a single colon (:) while pseudo-elements use a double colon (::)."
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: CSS pseudo-elements",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Pseudo-elements"
+  },
+  {
+   "title": "MDN: Pseudo-elements",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements"
+  }
+ ],
+ "grounded": true
+}

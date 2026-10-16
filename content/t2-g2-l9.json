@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تعني حلقة اللعبة المستمرة أن لعبتك تعمل مراراً وتكراراً دون توقف حتى يفوز اللاعب أو يخسر. نتخيلها مثل عجلة الألعاب في الملاهي التي تدور باستمرار وتتحكم في كل الأنوار والأصوات والحركات داخل اللعبة.",
+   "كمثال بسيط، يمكنك وضع لبنة 'كرر باستمرار' (forever) في سكراتش وتفتيش صحة الزعيم داخلها، تماماً مثل فحص وقود السيارة في كل ثانية لتعريف متى تنتهي الرحلة.",
+   "تعتمد هذه الحلقة على مراقبة الحالة (Game State) هل هي اللعب أم الفوز أم الخسارة؟ السكراتش يختبر الشرط بـ 'إذا.. فإن' (if) لمعرفة هل تحقق الهدف للقفز لشاشة أخرى.",
+   "المثال الثاني: عندما تصبح نقاط الصحة لشرير اللعبة مساوية للصفر، يقوم السكراتش بـ 'التبديل إلى خلفية الفوز' ثم تنفيذ 'أوقف الكل' لإيقاف جميع الأبطال والأشرار.",
+   "القاعدة الذهبية: احرص دائماً على وضع شروط النهاية داخل حلقة التكرار المستمر لكي يتم اكتشاف الفوز في نفس الثانية التي تنتهي فيها المعركة.",
+   "الاستخدام الواقعي: تشبه هذه الحلقة شاشات الفوز في ألعاب الفيديو الشهيرة التي تلعبها على هاتفك، والتي تظهر فوراً لتهنئك وتجمع نقاطك عندما تجتاز المرحلة الصعبة."
+  ],
+  "example": "لنفترض أنك تصمم لعبة مغامرات بطلها القط سكراتش. في حلقة التكرار المستمر، نضع كتلة 'إذا كان (صحة_العدو = 0)، إذن (غير الخلفية إلى Victory) و (أوقف الكل)'. عندما تضرب العدو آخر ضربة، تتوقف الحركة وتهلل الشاشة معلنة فوزك بذكاء وسرعة فائقة!",
+  "mistake": "الخطأ الشائع هو نسيان وضع أمر 'أوقف الكل' (stop all) بعد عرض خلفية الفوز، مما يجعل اللعبة تستمر في العمل وتتحرك الشخصيات فوق شاشة الفوز. الحل هو ربط إيقاف السكربتات بظهور شاشة النصر فوراً.",
+  "recap": "تربط حلقة اللعبة النهائية جميع أجزاء اللعبة وتتحقق من شروط الفوز بذكاء. باستخدام شاشات الفوز والأمر أوقف الكل، نحصل على نهاية احترافية وممتعة.",
+  "q": [
+   {
+    "t": "ما هي اللبنة المسؤولة عن جعل الكود يفحص الفوز بلا توقف في سكراتش؟",
+    "o": [
+     "انتظر 1 ثانية",
+     "كرر باستمرار",
+     "كرر 10 مرات"
+    ],
+    "a": 1,
+    "why": "لبنة كرر باستمرار تفحص الشرط طوال فترة اللعب."
+   },
+   {
+    "t": "متى يجب أن نغير الخلفية إلى شاشة الفوز؟",
+    "o": [
+     "عند بداية اللعبة",
+     "عندما تصبح صحة الزعيم صفراً",
+     "عندما يضغط اللاعب على الزر الأخضر"
+    ],
+    "a": 1,
+    "why": "يظهر الفوز فور القضاء على العدو أو وصول الصحة للصفر."
+   },
+   {
+    "t": "ما فائدة أمر 'أوقف الكل' (stop all) عند نهاية اللعبة؟",
+    "o": [
+     "حذف اللعبة نهائياً",
+     "إيقاف جميع الحركات والسكربتات وتثبيت شاشة الفوز",
+     "تسريع الحركة"
+    ],
+    "a": 1,
+    "why": "يوقف كل الأكواد لضمان عدم استمرار اللعب بعد الفوز."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال شفرة الفوز",
+   "goal": "املأ الفراغات لتشغيل شاشة الفوز بشكل صحيح",
+   "items": [
+    {
+     "text": "داخل حلقة التكرار المستمر، نضع لبنة الشرط إذا كانت صحة العدو تساوي ___",
+     "options": [
+      "صفر",
+      "100",
+      "50"
+     ],
+     "a": 0
+    },
+    {
+     "text": "عند تحقق الشرط، نقوم بالتبديل إلى خلفية ___",
+     "options": [
+      "Start",
+      "Victory",
+      "Game Over"
+     ],
+     "a": 1
+    },
+    {
+     "text": "لنوقف اللعبة تماماً ونمنع الحركة، نستخدم أمر ___",
+     "options": [
+      "تغيير المظهر",
+      "أوقف الكل",
+      "انتظر"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! ظهرت شاشة النصر وتوقفت اللعبة باحترافية تامة!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم حلقة اللعبة (Game Loop)",
+    "text": "حلقة اللعبة هي نبض اللعبة وقلبها النابض؛ فهي تفحص باستمرار موقع اللاعب وأزرار لوحة المفاتيح وصحة الأشرار دون انقطاع. تخيل أنك مدرب كرة قدم يراقب الملعب بلا هفوة طوال التسعين دقيقة ليوجه فريقه.",
+    "code": "عند نقر العلم الأخضر -> كرر باستمرار -> [تحقق من الفوز]",
+    "output": "تفحص اللعبة حالة الفوز أو الخسارة عشرات المرات في كل ثانية."
+   },
+   {
+    "h": "حالات اللعبة (Game States)",
+    "text": "تمر اللعبة بحالات مختلفة مثل حالة اللعب (Playing) وحالة الفوز (Victory) وحالة الخسارة (Game Over). تشبه هذه الحالات إشارات المرور التي تتغير لتنظم حركة الطريق بحسب الموقف الحالي.",
+    "code": "إذا كان (الحالة = فوز) إذن (غير الخلفية)",
+    "output": "تعرف اللعبة ما يجب فعله بناءً على الحالة الحالية."
+   },
+   {
+    "h": "شرط الفوز الأساسي (Win Condition)",
+    "text": "هو الهدف الذي يطمح اللاعب لتحقيقه، مثل تجميع 10 عملات أو القضاء على الزعيم الأخير. شبيه بالوصول إلى خط النهاية في سباق الجري للحصول على الكأس الذهبية.",
+    "code": "إذا كانت (النقاط >= 10) -> [اعلن الفوز]",
+    "output": "ينتقل اللاعب تلقائياً إلى المرحلة التالية أو شاشة الانتصار."
+   },
+   {
+    "h": "شاشة الفوز والرسومات (Victory Screen & Backdrop)",
+    "text": "عندما يفوز اللاعب، ننتقل من خلفية اللعب المزدحمة إلى خلفية زاهية وملونة مكتوب عليها 'أنت فزت!'. تشبه لافتة التتويج الكبرى في نهاية الماراثون الرياضي.",
+    "code": "البدل إلى خلفية (Victory Backdrop)",
+    "output": "تختفي عناصر المعركة وتظهر شاشة الفوز الجميلة."
+   },
+   {
+    "h": "أمر التوقف الشامل (Stop All)",
+    "text": "أمر سحري يوقف كل السكربتات والأصوات والحركات في مشروع سكراتش، وكأنك تضغط زر الإيقاف التام على جهاز التحكم عن بعد ليتجمد كل شيء في مكانه الصحيح.",
+    "code": "أوقف (الكل)",
+    "output": "تتوقف جميع الشخصيات عن الحركة ويثبت المشروع على النهاية السعيدة."
+   },
+   {
+    "h": "تكامل المشروع (Scratch Project Integration)",
+    "text": "يعني ربط الأصوات والنقاط والخلفيات والشخصيات ببعضها بانسجام وتناغم تام لتعمل اللعبة كقطعة واحدة متماسكة، تماماً مثل تروس الساعة التي تتناغم لتدور بدقة.",
+    "code": "عند استلام رسالة (فوز) -> تشغيل صوت التصفيق",
+    "output": "تعمل جميع العناصر معاً لتقدم تجربة ممتعة ومتكاملة."
+   },
+   {
+    "h": "اللمسات الأخيرة (Polish)",
+    "text": "هي الإضافات الصغيرة مثل المؤثرات الصوتية والاحتفالية التي تزيد من بهجة اللعبة، مثل إطلاق قصاصات الورق الملونة عند الانتصار.",
+    "code": "تشغيل الصوت (Victory Sound) + تشغيل مؤثر الاحتفال",
+    "output": "تشعر اللاعبين بإنجازهم وتجعل اللعبة أكثر احترافية وجمالاً."
+   },
+   {
+    "h": "فحص الأخطاء والتنقيح (Debugging)",
+    "text": "التأكد من أن شاشة الفوز تظهر في الوقت المناسب تماماً دون تأخير أو أخطاء برمجية، مثل مهندس الصيانة الذي يفحص التوصيلات الكهربائية قبل التشغيل.",
+    "code": "اختبار اللعبة والتأكد من إيقاف السكربتات بنجاح",
+    "output": "لعبة خالية من المشاكل وجاهزة للمشاركة مع الأصدقاء."
+   }
+  ],
+  "reference": [
+   {
+    "name": "حلقة اللعبة",
+    "desc": "كود تكرار مستمر يتحكم في تدفق اللعبة وأحداثها."
+   },
+   {
+    "name": "شرط الفوز",
+    "desc": "الهدف البرمجي الذي إذا تحقق يفوز اللاعب."
+   },
+   {
+    "name": "شاشة الفوز",
+    "desc": "خلفية خاصة تظهر عند الانتصار والاحتفال."
+   },
+   {
+    "name": "أوقف الكل",
+    "desc": "أمر يوقف جميع المقاطع البرمجية في المشروع."
+   },
+   {
+    "name": "الحالة",
+    "desc": "متغير يحدد هل اللعبة جارية أم انتهت بالفوز أو الخسارة."
+   },
+   {
+    "name": "تكامل المشروع",
+    "desc": "ربط جميع عناصر اللعبة لتعمل معاً بانسيابية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة المستخدمة لمراقبة شرط الفوز بلا توقف في سكراتش؟",
+    "a": "كرر باستمرار (Forever)"
+   },
+   {
+    "q": "ماذا تفعل بلبنة 'أوقف الكل' (Stop All) عند نهاية اللعبة؟",
+    "a": "توقف جميع الحركات والسكربتات وتثبت شاشة الفوز."
+   },
+   {
+    "q": "كيف تخبر سكراتش أن العدو قد هُزم تماماً؟",
+    "a": "عن طريق شرط أن تصبح صحة العدو مساوية لصفر (Health = 0)."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "A continuous game loop runs your game repeatedly without stopping until the player wins or loses. Imagine it like a carnival ride wheel spinning constantly, managing all lights, sounds, and movements inside the game.",
+   "As a simple example, place a 'forever' block in Scratch and check boss health inside it, just like checking a car's fuel every second to know when the journey ends.",
+   "This loop relies on checking the Game State (Playing, Win, or Lose). Scratch tests conditions using 'if' blocks to see if the objective is met to switch screens.",
+   "Second example: When the enemy's health equals zero, Scratch 'switches backdrop to Victory' and runs 'stop all' to halt all heroes and villains instantly.",
+   "Golden Rule: Always place your end-game conditions inside the continuous loop so victory is detected the exact second the battle ends.",
+   "Real-life use: This loop is just like the victory screens in popular video games on your phone that pop up instantly to congratulate you and tally points when you pass a hard level."
+  ],
+  "example": "Suppose you are designing an adventure game starring Scratch Cat. Inside a forever loop, we place a block 'if (enemy_health = 0), then (switch backdrop to Victory) and (stop all)'. When you land the final blow on the enemy, movement stops and the screen cheers, announcing your victory with brilliant speed!",
+  "mistake": "A common mistake is forgetting to place a 'stop all' block after showing the victory backdrop, which makes the game keep running and characters move over the victory screen. The fix is tying script stopping directly to the appearance of the win screen.",
+  "recap": "The ultimate game loop ties all game parts together and checks win conditions smartly. By using victory backdrops and the stop all command, we achieve a professional and fun ending.",
+  "q": [
+   {
+    "t": "Which block makes the code check for a win continuously in Scratch?",
+    "o": [
+     "wait 1 second",
+     "forever",
+     "repeat 10 times"
+    ],
+    "a": 1,
+    "why": "The forever block checks the condition throughout the entire gameplay."
+   },
+   {
+    "t": "When should we change the backdrop to the victory screen?",
+    "o": [
+     "at the start of the game",
+     "when boss health equals zero",
+     "when the player clicks the green flag"
+    ],
+    "a": 1,
+    "why": "Victory appears right after defeating the enemy or reaching zero health."
+   },
+   {
+    "t": "What is the benefit of the 'stop all' command at the end of the game?",
+    "o": [
+     "delete the game permanently",
+     "stop all movements and scripts and lock the victory screen",
+     "speed up movement"
+    ],
+    "a": 1,
+    "why": "It halts all scripts to ensure gameplay doesn't continue after winning."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Completing Win Code",
+   "goal": "Fill in the blanks to run the victory screen correctly",
+   "items": [
+    {
+     "text": "Inside the forever loop, we place an if condition checking if enemy health equals ___",
+     "options": [
+      "zero",
+      "100",
+      "50"
+     ],
+     "a": 0
+    },
+    {
+     "text": "When the condition is met, we switch to the ___ backdrop",
+     "options": [
+      "Start",
+      "Victory",
+      "Game Over"
+     ],
+     "a": 1
+    },
+    {
+     "text": "To stop the game completely and freeze movement, we use the ___ command",
+     "options": [
+      "next costume",
+      "stop all",
+      "wait"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! The victory screen appeared and the game stopped with absolute professionalism!"
+  },
+  "sections": [
+   {
+    "h": "Game Loop Concept",
+    "text": "The game loop is the beating heart of your game; it constantly checks player position, keyboard buttons, and enemy health without pause. Imagine a soccer coach watching the field nonstop for 90 minutes to guide his team.",
+    "code": "When green flag clicked -> forever -> [check win condition]",
+    "output": "The game checks win or lose states dozens of times every second."
+   },
+   {
+    "h": "Game States",
+    "text": "A game passes through different states like Playing, Victory, and Game Over. These states act like traffic lights changing to organize road movement based on the current situation.",
+    "code": "If (state = win) then (switch backdrop)",
+    "output": "The game knows what to do based on the current state."
+   },
+   {
+    "h": "Win Condition",
+    "text": "This is the goal the player strives to achieve, such as collecting 10 coins or defeating the final boss. Similar to reaching the finish line in a running race to grab the golden trophy.",
+    "code": "If (score >= 10) -> [declare victory]",
+    "output": "The player automatically advances to the next stage or victory screen."
+   },
+   {
+    "h": "Victory Screen & Backdrop",
+    "text": "When the player wins, we transition from the busy gameplay backdrop to a bright, colorful backdrop saying 'You Win!'. It's like the grand coronation banner at the end of a sports marathon.",
+    "code": "Switch backdrop to (Victory Backdrop)",
+    "output": "Battle elements vanish and the beautiful victory screen appears."
+   },
+   {
+    "h": "Stop All Command",
+    "text": "A magical command that halts all scripts, sounds, and movements in a Scratch project, just like pressing the total stop button on a remote control so everything freezes in its proper place.",
+    "code": "Stop (all)",
+    "output": "All characters stop moving and the project locks on the happy ending."
+   },
+   {
+    "h": "Scratch Project Integration",
+    "text": "This means connecting sounds, scores, backdrops, and characters harmoniously so the game operates as one cohesive unit, just like clock gears syncing to spin accurately.",
+    "code": "When I receive (win) -> play cheering sound",
+    "output": "All elements work together to deliver an engaging, complete experience."
+   },
+   {
+    "h": "Polish",
+    "text": "These are small additions like sound effects and celebratory touches that boost game joy, such as firing colorful confetti particles upon victory.",
+    "code": "Play sound (Victory Sound) + trigger celebration effect",
+    "output": "Makes players feel accomplished and makes the game look much more professional."
+   },
+   {
+    "h": "Debugging",
+    "text": "Ensuring the victory screen appears at the exact right time without delay or coding bugs, much like a maintenance engineer checking electrical wiring before startup.",
+    "code": "Test the game and verify scripts stop successfully",
+    "output": "A bug-free game ready to share with friends."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Game Loop",
+    "desc": "A continuous repetition code controlling game flow and events."
+   },
+   {
+    "name": "Win Condition",
+    "desc": "The coding objective that, when met, wins the game for the player."
+   },
+   {
+    "name": "Victory Screen",
+    "desc": "A special backdrop appearing upon winning and celebration."
+   },
+   {
+    "name": "Stop All",
+    "desc": "A command that halts all script blocks in the project."
+   },
+   {
+    "name": "State",
+    "desc": "A variable determining if the game is playing, won, or lost."
+   },
+   {
+    "name": "Project Integration",
+    "desc": "Connecting all game elements to work together smoothly."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block is used to monitor the win condition nonstop in Scratch?",
+    "a": "Forever"
+   },
+   {
+    "q": "What does the 'Stop All' block do at the end of the game?",
+    "a": "Stops all movements and scripts and locks the victory screen."
+   },
+   {
+    "q": "How do you tell Scratch the enemy has been fully defeated?",
+    "a": "By using a condition where enemy health equals zero (Health = 0)."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

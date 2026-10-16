@@ -1,0 +1,300 @@
+{
+ "ar": {
+  "steps": [
+   "في لغة إتش تي إم إل، عندما تريد أن تأخذ كلاماً أو جملة قالها شخص آخر وتضعها في موقعك الإلكتروني، فإنك تستخدم وسوم الاقتباس الخاصة، تماماً كما تستخدم العلامات في القصص لنقل كلام الشخصيات.",
+   "مثال بسيط جداً: استخدم الوسم <q> للجمل القصيرة التي تظهر داخل السطر نفسه، مثل: <q>أنا أحب البرمجة</q>، وسيقوم المتصفح تلقائياً بوضع علامات التنصيص حولها.",
+   "كيف يعمل هذا؟ الوسم <q> مخصص للاقتباسات القصيرة المباشرة داخل الفقرات، بينما الوسم <blockquote> مخصص للفقرات الطويلة والمستقلة التي تأخذ مساحة خاصة بها مع مسافة بادئة.",
+   "مثال ثاني للاقتباس الطويل: <blockquote cite='url'>هذه فقرة طويلة مأخوذة من كتاب أو مقال شهير، وتستحق أن تظهر في كتلة منفصلة بمفردها داخل الصفحة.</blockquote>.",
+   "قاعدة ذهبية بسيطة: استخدم <q> للجمل القصيرة السريعة، واستخدم <blockquote> للنصوص الطويلة، ولا تنسَ استخدام الوسم <cite> لكتابة اسم المصدر أو الكاتب.",
+   "الاستخدام في الواقع: في المواقع الإخبارية والمدونات ومواقع الكتب، تُستخدم هذه الوسوم لإظهار آراء الخبراء أو الاقتباسات الشهيرة بشكل منظم ومميز لقرءان الموقع."
+  ],
+  "example": "دعنا نرى كيف نكتب اقتباساً قصيرًا مع ذكر مصدره بشكل صحيح. سنكتب فقرة عادية ونضع داخلها الوسم <q> مع خاصية cite التي تشير إلى رابط المصدر، هكذا: <p>قال المعلم: <q cite='https://school.com'>البرمجة متعة الحواسيب</q></p>. المتصفح سيهتم بوضع علامات التنصيص وجعل النص رائعاً ومفهوماً للجميع.",
+  "mistake": "خطأ شائع جداً هو استخدام الوسم <blockquote> لجملة قصيرة جدًا داخل السطر، مما يسبب فراغات غير مرتبة في الصفحة. التصحيح: استخدم دائماً الوسم <q> للجمل القصيرة داخل السطر، و<blockquote> للفقرات الطويلة فقط.",
+  "recap": "تعلمنا اليوم كيف نستخدم وسوم الاقتباس مثل <q> للجمل القصيرة و<blockquote> للفقرات الطويلة، بالإضافة إلى الوسم <cite> لتوضيح مصدر الكلام بكل احترافية.",
+  "q": [
+   {
+    "t": "أي وسم يجب أن تستخدمه للاقتباسات القصيرة السريعة داخل السطر؟",
+    "o": [
+     "<blockquote>",
+     "<q>",
+     "<cite>"
+    ],
+    "a": 1,
+    "why": "الوسم <q> مخصص للاقتباسات القصيرة داخل السطر."
+   },
+   {
+    "t": "ما هو الوسم الأنسب للفقرات الطويلة والمستقلة؟",
+    "o": [
+     "<block>",
+     "<blockquote>",
+     "<quote>"
+    ],
+    "a": 1,
+    "why": "الوسم <blockquote> مخصص للاقتباسات الطويلة والمستقلة."
+   },
+   {
+    "t": "ما هي الخاصية التي تُستخدم لوضع رابط المصدر داخل وسوم الاقتباس؟",
+    "o": [
+     "href",
+     "src",
+     "cite"
+    ],
+    "a": 2,
+    "why": "خاصية cite تُستخدم لتحديد رابط المصدر للاقتباس."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة الاقتباس",
+   "goal": "اعرف كيف سيعرض المتصفح هذا الكود المكتوب.",
+   "code": "<p>قال أحمد: <q cite='site.com'>العلم نور</q></p>",
+   "options": [
+    "يظهر النص بخط صغير جداً بدون علامات",
+    "يظهر النص مع علامات التنصيص تلقائياً من المتصفح",
+    "يختفي النص تماماً من الصفحة"
+   ],
+   "a": 1,
+   "success": "رائع! قام المتصفح بإضافة علامات التنصيص حول الجملة المقتبسة بنجاح."
+  },
+  "sections": [
+   {
+    "h": "مقدمة في الاقتباسات",
+    "text": "عندما نتحدث في الواقع، فإننا ننقل أحياناً كلام أصدقائنا ونقول 'قال فلان كذا وكذا'. في لغة إتش تي إم إل، لدينا وسوم خاصة تفعل تماماً هذا الأمر لكي يفهم المتصفح والمتصفحون أن هذا الكلام منقول ومقتبس من مصدر آخر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>أفضل جملة سمعتها اليوم هي: <q>الوقت من ذهب</q>.</p>\n</body>\n</html>",
+    "output": "يظهر النص مع علامات تنصيص تلقائية حول جملة الوقت من ذهب."
+   },
+   {
+    "h": "الوسم <q> للاقتباسات القصيرة",
+    "text": "الوسم <q> اختصار لكلمة Quote. يُستخدم هذا الوسم حصرياً للاقتباسات القصيرة التي تقع داخل نفس السطر (Inline). المميز أن المتصفحات الحديثة تضع علامات التنصيص (الـ Quotation marks) بشكل تلقائي حول النص دون أن تكتبها يدوياً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>سأل الأستاذ التلميذ فقال: <q>أنا أحب حل الألغاز البرمجية</q></p>\n</body>\n</html>",
+    "output": "تظهر جملة التلميذ محاطة بعلامات التنصيص داخل الفقرة."
+   },
+   {
+    "h": "الوسم <blockquote> للاقتباسات الطويلة",
+    "text": "إذا كان الاقتباس طويلاً ويأخذ شكل فقرة كاملة أو عدة أسطر، فإن الوسم <blockquote> هو الخيار الصحيح. مثلما تفعل عندما تأخذ مقطعاً كاملاً من قصة ممتعة وتضعه في صندوق خاص داخل صفحتك.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote cite=\"https://example.com\">\n    <p>البرمجة ليست مجرد كتابة أسطر كود صامتة، بل هي فن بناء عوالم ذكية تسعد البشر وتسهل حياتهم اليومية.</p>\n  </blockquote>\n</body>\n</html>",
+    "output": "يظهر النص ككتلة مستقلة بذاتها ومزودة بمسافة بادئة."
+   },
+   {
+    "h": "خاصية المصدر cite",
+    "text": "لكي تكون مطوراً محترفاً وموثوقاً، يمكنك إضافة خاصية تسمى cite إلى وسوم الاقتباس. هذه الخاصية تأخذ رابطاً (URL) يوضح المكان أو الموقع الأصلي الذي أخذت منه هذا الكلام المفيد.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote cite=\"https://www.w3.org\">\n    <p>الويب للجميع، وهدفنا هو بناء مستقبل رقمي مشرق وسهل الاستخدام.</p>\n  </blockquote>\n</body>\n</html>",
+    "output": "يحتوي الوسم على رابط المصدر الخفي للموقع الأصلي."
+   },
+   {
+    "h": "الوسم <cite> لاسم الكاتب أو المرجع",
+    "text": "بينما خاصية cite تضع رابطاً خفياً، فإن الوسم <cite> يُستخدم لإظهار اسم الكتاب أو المؤلف مرئياً على الشاشة للقارئ، مثل كتابة اسم الكاتب تحت المقولة الشهيرة التي أعجبتك.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote>\n    <p>كل شيء يمكن برمجته إذا عرفت الفكرة الصحيحة.</p>\n  </blockquote>\n  <p>— عالم البرمجة، <cite>دليل المطور الصغير</cite></p>\n</body>\n</html>",
+    "output": "يظهر اسم المرجع بخط مائل وواضح تحت الاقتباس."
+   },
+   {
+    "h": "الجمع بين blockquote و cite",
+    "text": "في المواقع الاحترافية، غالباً ما نرى <blockquote> يعرض المقولة في صندوق جميل، وتحته مباشرة نضع اسم المرجع باستخدام الوسم <cite> ليعلم الزائر من هو صاحب هذه الكلمات الرائعة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote cite=\"https://history.org\">\n    <p>الخطوة الأولى هي دائماً الأكثر إثارة في عالم الابتكار.</p>\n  </blockquote>\n  <p>— رائد فضاء، <cite>رحلة الفضاء الرقمي</cite></p>\n</body>\n</html>",
+    "output": "عرض متكامل لاقتباس طويل مع مرئيات اسم المرجع الحقيقي."
+   },
+   {
+    "h": "تنسيق الاقتباسات بلغة سي إس إس",
+    "text": "يمكنك إعطاء لمسة سحرية للاقتباسات عبر تغيير ألوانها أو إضافة إطار جميل حولها باستخدام لغة تنسيق المظهر (CSS)، تماماً مثل تلوين صندوق الهدايا الخاص بك لجذب انتباه الجميع.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  blockquote { border-left: 4px solid blue; padding-left: 10px; color: #555; }\n</style>\n</head>\n<body>\n  <blockquote cite=\"#\">\n    <p>التصميم الجميل يسهل قراءة المحتوى.</p>\n  </blockquote>\n</body>\n</html>",
+    "output": "يظهر الاقتباس مع خط أزرق مميز على الجانب الأيسر."
+   },
+   {
+    "h": "ملخص ودليل الاستخدام السريع",
+    "text": "استخدم <q> للجمل الصغيرة داخل الأسطر، واستخدم <blockquote> للفقرات الكبيرة المستقلة، ولا تنسَ أبداً استخدام <cite> لذكر اسم المؤلف أو المصدر لتكون مطوراً صادقاً ومحترفاً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>شعارنا اليوم هو: <q>تعلم، ابتكر، وشارك!</q></p>\n</body>\n</html>",
+    "output": "صفحة نهائية تعرض اقتباساً قصيراً ومنظماً بشكل رائع."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<blockquote>",
+    "desc": "يُستخدم لإنشاء اقتباس طويل ومستقل في كتلة منفصلة."
+   },
+   {
+    "name": "<q>",
+    "desc": "يُستخدم للاقتباسات القصيرة المباشرة داخل السطر."
+   },
+   {
+    "name": "<cite>",
+    "desc": "يُستخدم لبيان اسم المصدر أو الكاتب مرئياً للمستخدم."
+   },
+   {
+    "name": "cite attribute",
+    "desc": "خاصية توضع داخل وسوم الاقتباس لتحديد رابط المصدر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسماً مناسباً لاقتباس جملة قصيرة تقول 'البرمجة سهلة وممتعة'.",
+    "q_ar": "اكتب وسماً مناسباً لاقتباس جملة قصيرة تقول 'البرمجة سهلة وممتعة'.",
+    "a": "<q>البرمجة سهلة وممتعة</q>"
+   },
+   {
+    "q": "ما هو الوسم الذي تستخدمه إذا كان لديك فقرة اقتباس طويلة جداً؟",
+    "q_ar": "ما هو الوسم الذي تستخدمه إذا كان لديك فقرة اقتباس طويلة جداً؟",
+    "a": "<blockquote>"
+   },
+   {
+    "q": "أي وسم تستخدمه لكتابة اسم كتاب أو مرجع تحت المقولة؟",
+    "q_ar": "أي وسم تستخدمه لكتابة اسم كتاب أو مرجع تحت المقولة؟",
+    "a": "<cite>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In HTML, when you want to take words or a sentence said by someone else and display them on your website, you use special quotation tags, just like quotation marks in stories.",
+   "Very simple example: Use the <q> tag for short inline quotes that appear right inside the text line, like <q>I love coding</q>, and the browser will automatically add quotation marks.",
+   "How does this work? The <q> tag is for short direct inline quotes, while the <blockquote> tag is for long, independent paragraphs that take up their own block space with indentation.",
+   "Second example for a long quote: <blockquote cite='url'>This is a long paragraph taken from a famous book or article, and it deserves to appear in a separate block by itself on the page.</blockquote>.",
+   "A simple golden rule: Use <q> for short quick sentences, use <blockquote> for long texts, and don't forget to use the <cite> tag to write the name of the source or author.",
+   "Real-world use: In news sites, blogs, and book websites, these tags are used to show expert opinions or famous quotes in an organized and distinctive way for readers."
+  ],
+  "example": "Let's see how to write a short quotation with its source properly cited. We write a normal paragraph and place inside it the <q> tag with the cite attribute pointing to the source link, like this: <p>The teacher said: <q cite='https://school.com'>Coding is the joy of computers</q></p>. The browser will take care of adding quotation marks and making the text look amazing and clear to everyone.",
+  "mistake": "A very common mistake is using the <blockquote> tag for a very short inline sentence, which causes messy, unwanted block spacing on the page. Correction: Always use the <q> tag for short inline phrases, and <blockquote> only for long paragraphs.",
+  "recap": "Today we learned how to use quotation tags like <q> for short sentences and <blockquote> for long paragraphs, plus the <cite> tag to clearly state the source of the speech.",
+  "q": [
+   {
+    "t": "Which tag should you use for short, quick inline quotations?",
+    "o": [
+     "<blockquote>",
+     "<q>",
+     "<cite>"
+    ],
+    "a": 1,
+    "why": "The <q> tag is specifically designed for short inline quotations."
+   },
+   {
+    "t": "What is the most suitable tag for long, independent quotation paragraphs?",
+    "o": [
+     "<block>",
+     "<blockquote>",
+     "<quote>"
+    ],
+    "a": 1,
+    "why": "The <blockquote> tag is meant for extended, standalone block quotations."
+   },
+   {
+    "t": "Which attribute is used to specify the source URL inside quotation tags?",
+    "o": [
+     "href",
+     "src",
+     "cite"
+    ],
+    "a": 2,
+    "why": "The cite attribute is used to designate the source document URL."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Quotation Output",
+   "goal": "Find out how the browser will render this written code.",
+   "code": "<p>Ahmed said: <q cite='site.com'>Knowledge is power</q></p>",
+   "options": [
+    "The text appears in a tiny font without marks",
+    "The text appears with quotation marks automatically added by the browser",
+    "The text completely disappears from the page"
+   ],
+   "a": 1,
+   "success": "Great job! The browser successfully added quotation marks around the quoted sentence."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Quotations",
+    "text": "When we speak in real life, we sometimes quote our friends by saying 'so-and-so said this and that'. In HTML, we have special tags that do exactly this so the browser understands that the text is quoted from another source.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>The best sentence I heard today is: <q>Time is gold</q>.</p>\n</body>\n</html>",
+    "output": "The text displays with automatic quotation marks around the time is gold sentence."
+   },
+   {
+    "h": "The <q> Tag for Short Quotes",
+    "text": "The <q> tag stands for Quote. It is used exclusively for short quotations that sit inline within a paragraph. Interestingly, modern browsers automatically insert quotation marks around the text without you having to type them manually.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>The teacher asked the student and they answered: <q>I love solving coding puzzles</q></p>\n</body>\n</html>",
+    "output": "The student's sentence appears wrapped in quotation marks inside the paragraph."
+   },
+   {
+    "h": "The <blockquote> Tag for Long Quotes",
+    "text": "If the quote is long and takes up an entire paragraph or multiple lines, the <blockquote> tag is the right choice. Just like when you take an entire passage from an exciting story and put it in a special box on your page.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote cite=\"https://example.com\">\n    <p>Coding is not just typing silent lines of code, but the art of building smart worlds that make people happy and ease their daily lives.</p>\n  </blockquote>\n</body>\n</html>",
+    "output": "The text appears as an independent indented block by itself."
+   },
+   {
+    "h": "The cite Attribute",
+    "text": "To be a professional and reliable developer, you can add an attribute called cite to quotation tags. This attribute takes a URL explaining the original place or website where you obtained this useful speech.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote cite=\"https://www.w3.org\">\n    <p>The Web is for everyone, and our goal is to build a bright, user-friendly digital future.</p>\n  </blockquote>\n</body>\n</html>",
+    "output": "The tag contains the hidden source URL of the original website."
+   },
+   {
+    "h": "The <cite> Tag for Author or Reference",
+    "text": "While the cite attribute places a hidden link, the <cite> tag is used to visually display the title of a book or the author's name on the screen for the reader, like writing the writer's name under a famous quote you love.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote>\n    <p>Everything can be programmed if you know the right idea.</p>\n  </blockquote>\n  <p>— Coding Expert, <cite>Little Developer Guide</cite></p>\n</body>\n</html>",
+    "output": "The reference name appears in clear italic font under the quotation."
+   },
+   {
+    "h": "Combining blockquote and cite",
+    "text": "On professional websites, we often see <blockquote> displaying the quote in a nice box, and right below it we state the reference name using the <cite> tag so visitors know who authored these wonderful words.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <blockquote cite=\"https://history.org\">\n    <p>The first step is always the most exciting in the world of innovation.</p>\n  </blockquote>\n  <p>— Astronaut, <cite>Digital Space Journey</cite></p>\n</body>\n</html>",
+    "output": "A complete layout of a long quote with visible author reference details."
+   },
+   {
+    "h": "Styling Quotes with CSS",
+    "text": "You can add a magical touch to quotes by changing their colors or adding a nice border around them using CSS styling, just like coloring your gift box to catch everyone's attention.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  blockquote { border-left: 4px solid blue; padding-left: 10px; color: #555; }\n</style>\n</head>\n<body>\n  <blockquote cite=\"#\">\n    <p>Good design makes content easy to read.</p>\n  </blockquote>\n</body>\n</html>",
+    "output": "The quote appears with a distinct blue left border line."
+   },
+   {
+    "h": "Summary and Quick Reference Guide",
+    "text": "Use <q> for small inline sentences, use <blockquote> for large independent paragraphs, and never forget to use <cite> to mention the author or source name to be an honest and professional developer.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>Our motto today is: <q>Learn, innovate, and share!</q></p>\n</body>\n</html>",
+    "output": "A final webpage displaying a short, neatly formatted inline quotation."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<blockquote>",
+    "desc": "Used to create a long, independent block quotation."
+   },
+   {
+    "name": "<q>",
+    "desc": "Used for short direct inline quotations."
+   },
+   {
+    "name": "<cite>",
+    "desc": "Used to visually display the source or author name."
+   },
+   {
+    "name": "cite attribute",
+    "desc": "An attribute placed inside quote tags to specify the source URL."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a suitable tag to quote a short sentence saying 'Coding is easy and fun'.",
+    "q_ar": "اكتب وسماً مناسباً لاقتباس جملة قصيرة تقول 'البرمجة سهلة وممتعة'.",
+    "a": "<q>Coding is easy and fun</q>"
+   },
+   {
+    "q": "What tag do you use if you have a very long quotation paragraph?",
+    "q_ar": "ما هو الوسم الذي تستخدمه إذا كان لديك فقرة اقتباس طويلة جداً؟",
+    "a": "<blockquote>"
+   },
+   {
+    "q": "Which tag do you use to write a book title or reference under a quote?",
+    "q_ar": "أي وسم تستخدمه لكتابة اسم كتاب أو مرجع تحت المقولة؟",
+    "a": "<cite>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: <blockquote> HTML block quotation element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote"
+  },
+  {
+   "title": "MDN: <q> HTML inline quotation element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q"
+  }
+ ],
+ "grounded": true
+}

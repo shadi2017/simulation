@@ -1,0 +1,324 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تطبخ طبقاً مميزاً وتريد تكرار نفس خطوات الطبخ بدون إعادة كتابتها كل مرة؛ هنا تأتي فكرة الدوال لتجمع التعليمات البرمجية معاً تحت اسم واحد.",
+   "إليك مثال بسيط لدالة تقوم بتحية صديق: `function sayHello() { console.log('مرحباً!'); }` حيث نفذنا الأوامر بكل سهولة عبر استدعاء الاسم.",
+   "لكي تصبح الدالة أكثر ذكاءً، نستخدم المدخلات (Parameters) لتمرير معلومات لها مثل اسم الشخص لتغير التحية حسب الطلب.",
+   "مثال على دالة بمدخلات: `function greet(name) { console.log('مرحباً يا ' + name); }` وعند استدعائها بـ `greet('أحمد')` ستطبع التحية المخصصة.",
+   "القاعدة الذهبية: استخدم المدخلات لجعل الدالة مرنة وقابلة للتغيير، واستخدم كلمة `return` لإرجاع النتيجة النهائية للخارج للاستفادة منها.",
+   "في الحياة اليومية، آلة الصراف الآلي تشبه الدالة؛ تضع فيها كارت وباسورد (مدخلات) فتقوم بالمعالجة وتعطيك النقود (القيمة المعادة)."
+  ],
+  "example": "لنفترض أننا نريد حساب مجموع سعر لعبتين. سنكتب دالة تستقبل الرقمين كمدخلات، تجمعهم معاً، ثم تعيد النتيجة:\n\n```javascript\nfunction addItems(price1, price2) {\n  let total = price1 + price2;\n  return total;\n}\nlet myBill = addItems(10, 15);\nconsole.log(myBill);\n```\nهنا قمنا بتعريف الدالة `addItems` بمدخلات `price1` و `price2`، وداخلها حسبنا المجموع وخزناه في متغير `total`، ثم استخدمنا أمر `return` لإرسال النتيجة إلى الخارج ليتم تخزينها في متغير `myBill` وطباعتها بنجاح.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة كلمة `return` داخل الدالة، مما يجعلها تنفذ الحساب داخلياً لكنها تعيد قيمة `undefined` عند محاولة استخدام الناتج خارجها. الحل هو التأكد دائماً من وضع `return` قبل القيمة التي تريد إرجاعها.",
+  "recap": "تساعدنا الدوال في تنظيم الكود وتجنب التكرار عبر تجميع الأوامر تحت اسم واحد مع إمكانية استخدام المدخلات والقيم المعادة. هذا يجعل برامجنا منظمة ومرنة وقابلة للصيانة بسهولة.",
+  "q": [
+   {
+    "t": "ما هي الفائدة الأساسية من استخدام الدوال في البرمجة؟",
+    "o": [
+     "تجميع الأوامر وتجنب تكرار الكود تحت اسم واحد",
+     "جعل موقع الويب أبطأ في التحميل",
+     "منع تشغيل لغة جافاسكريبت تماماً"
+    ],
+    "a": 0,
+    "why": "الدوال تجمع الكود المكرر لتسهيل استدعائه أكثر من مرة."
+   },
+   {
+    "t": "كيف نقوم بإرسال نتيجة من داخل الدالة إلى الخارج؟",
+    "o": [
+     "باستخدام كلمة break",
+     "باستخدام كلمة return",
+     "باستخدام كلمة print"
+    ],
+    "a": 1,
+    "why": "كلمة return هي المسؤولة عن إعادة الناتج خارج الدالة."
+   },
+   {
+    "t": "ماذا نسمى القيم التي نمررها داخل الأقواس عند تعريف الدالة؟",
+    "o": [
+     "المتغيرات العامة",
+     "المدخلات أو الباراميترز (Parameters)",
+     "ألوان الصفحة"
+    ],
+    "a": 1,
+    "why": "المدخلات تسمح للدالة باستقبال بيانات للتعامل معها."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ في دالة الضرب",
+   "goal": "اكتشف السطر الخاطئ في الدالة التي تضرب رقمين وأصلحه.",
+   "lines": [
+    "function multiply(a, b) {",
+    "  let result = a * b;",
+    "  retrun result;",
+    "}"
+   ],
+   "bug": 2,
+   "fix": "  return result;",
+   "success": "رائع! لقد قامت الدالة بضرب الرقمين وإرجاع النتيجة بنجاح."
+  },
+  "sections": [
+   {
+    "h": "ما هي الدوال؟",
+    "text": "الدالة تشبه وصفة الطبخ؛ مجموعة من الأوامر المجمعة معاً تحت اسم واحد لنستدعيها وقتما نشاء بدون إعادة كتابتها.",
+    "code": "<!DOCTYPE html><html><body><script>function sayHi() { document.write('مرحباً بك في عالم الدوال!'); } sayHi();</script></body></html>",
+    "output": "تظهر عبارة مرحباً بك في عالم الدوال على الصفحة."
+   },
+   {
+    "h": "استدعاء الدوال",
+    "text": "بمجرد كتابة اسم الدالة متبوعاً بقوسين () فإننا نقوم بتشغيل جميع الأوامر الموجودة بداخلها.",
+    "code": "<!DOCTYPE html><html><body><script>function ringBell() { document.write('جرس المدرسة رن! '); } ringBell(); ringBell();</script></body></html>",
+    "output": "تتكرر جملة جرس المدرسة رن مرتين على الشاشة."
+   },
+   {
+    "h": "المدخلات (Parameters)",
+    "text": "المدخلات هي معلومات نمررها للدالة لتجعلها أكثر ذكاءً ومرونة، تماماً كإعطاء نكهة مختلفة للآيس كريم حسب الطلب.",
+    "code": "<!DOCTYPE html><html><body><script>function greet(name) { document.write('أهلاً ' + name + '! '); } greet('سارة'); greet('يوسف');</script></body></html>",
+    "output": "تطبع الصفحة أهلاً سارة! وأهلاً يوسف! بنجاح."
+   },
+   {
+    "h": "استخدام مدخلات متعددة",
+    "text": "يمكننا إعطاء الدالة أكثر من مدخل يفصل بينهما فاصلة، لتتعامل مع بيانات مختلفة في نفس الوقت.",
+    "code": "<!DOCTYPE html><html><body><script>function showBox(color, size) { document.write('<div style=\"background:' + color + ';width:' + size + 'px;height:50px;\"></div>'); } showBox('red', 100);</script></body></html>",
+    "output": "ترسم الصفحة صندوقاً أحمر بالعرض المحدد."
+   },
+   {
+    "h": "إرجاع القيم (Return)",
+    "text": "الدالة لا تكتفي بتنفيذ الأوامر فحسب، بل يمكنها حساب نتيجة وإرسالها للخارج باستخدام كلمة return لاستخدامها في مكان آخر.",
+    "code": "<!DOCTYPE html><html><body><script>function doubleIt(n) { return n * 2; } document.write(doubleIt(5));</script></body></html>",
+    "output": "تعرض الصفحة الرقم 10 نتيجة ضرب 5 في 2."
+   },
+   {
+    "h": "تنظيم الكود وتجزئته",
+    "text": "تقسيم الكود إلى دالات صغيرة ومنفصلة يجعل البرامج الكبيرة سهلة القراءة وخالية من الأخطاء.",
+    "code": "<!DOCTYPE html><html><body><script>function getTax(price) { return price * 0.1; } function finalPrice(p) { return p + getTax(p); } document.write(finalPrice(100));</script></body></html>",
+    "output": "تعرض الصفحة السعر الإجمالي بعد الضريبة وهو 110."
+   },
+   {
+    "h": "تجنب التكرار",
+    "text": "بدلاً من كتابة نفس كود الحساب عشر مرات، نكتبه مرة واحدة داخل دالة ونستدعيه كلما احتجنا إليه.",
+    "code": "<!DOCTYPE html><html><body><script>function area(w, h) { return w * h; } document.write(area(3, 4) + '<br>' + area(5, 6));</script></body></html>",
+    "output": "تعرض الصفحة مساحتي المستطيلين 12 و 30."
+   },
+   {
+    "h": "التحكم في المتغيرات المحلية",
+    "text": "المتغيرات التي تُعرف داخل الدالة تعيش فقط داخلها ولا يمكن الوصول إليها من الخارج، مما يحمي بياناتنا.",
+    "code": "<!DOCTYPE html><html><body><script>function secret() { let code = 1234; document.write(code); } secret();</script></body></html>",
+    "output": "تطبع الصفحة الرقم السري 1234 المخزن محلياً."
+   },
+   {
+    "h": "بناء مشروع مصغر بالدوال",
+    "text": "نستطيع دمج المدخلات والقيم المعادة معاً لصنع آلة حاسبة بسيطة ومنظمة للغاية.",
+    "code": "<!DOCTYPE html><html><body><script>function add(x, y) { return x + y; } document.write('النتيجة هي: ' + add(20, 30));</script></body></html>",
+    "output": "تعرض الصفحة النتيجة هي: 50."
+   }
+  ],
+  "reference": [
+   {
+    "name": "function",
+    "desc": "كلمة مفتاحية تُستخدم لتعريف دالة جديدة."
+   },
+   {
+    "name": "return",
+    "desc": "تُستخدم لإرجاع نتيجة من داخل الدالة للخارج."
+   },
+   {
+    "name": "Parameters",
+    "desc": "مدخلات الدالة الموجودة بين القوسين."
+   },
+   {
+    "name": "Call",
+    "desc": "استدعاء أو تشغيل الدالة باسمها."
+   },
+   {
+    "name": "Local Variable",
+    "desc": "متغير معرف داخل الدالة ولا يُرى خارجها."
+   },
+   {
+    "name": "Modular Code",
+    "desc": "تقسيم الكود إلى أجزاء صغيرة ومنظمة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب دالة اسمها multiply تقبل رقمين وتعيد حاصل ضربهما.",
+    "a": "function multiply(a, b) { return a * b; }"
+   },
+   {
+    "q": "كيف تستدعي دالة اسمها sayHello؟",
+    "a": "sayHello();"
+   },
+   {
+    "q": "ما هي الكلمة البرمجية المستخدمة لإرجاع قيمة من دالة؟",
+    "a": "return"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you are cooking a special dish and want to repeat the cooking steps without rewriting them every time; this is where functions group code together under one name.",
+   "Here is a simple function to greet a friend: `function sayHello() { console.log('Hello!'); }` where we ran the commands easily by calling the name.",
+   "To make a function smarter, we use parameters to pass information to it, like a person's name to change the greeting on demand.",
+   "Example of a function with inputs: `function greet(name) { console.log('Hello ' + name); }` and when called with `greet('Ahmed')`, it prints the custom greeting.",
+   "Gold rule: Use parameters to make the function flexible and reusable, and use the `return` keyword to send the final result back out for use.",
+   "In daily life, an ATM machine is like a function; you put in a card and PIN (inputs), it processes, and gives you cash (returned value)."
+  ],
+  "example": "Suppose we want to calculate the total price of two toys. We write a function that receives both numbers as inputs, adds them together, and returns the result:\n\n```javascript\nfunction addItems(price1, price2) {\n  let total = price1 + price2;\n  return total;\n}\nlet myBill = addItems(10, 15);\nconsole.log(myBill);\n```\nHere we defined the function `addItems` with inputs `price1` and `price2`, inside we calculated the sum and stored it in a variable `total`, then used the `return` statement to send the result outside to be stored in `myBill` and printed successfully.",
+  "mistake": "A common mistake is forgetting to write the `return` keyword inside the function, which makes it perform the calculation internally but return `undefined` when trying to use the output outside. The fix is to always ensure `return` is placed before the value you want to send back.",
+  "recap": "Functions help us organize code and avoid duplication by grouping commands under one name with the power of inputs and returned values. This makes our programs clean, flexible, and easily maintainable.",
+  "q": [
+   {
+    "t": "What is the primary benefit of using functions in programming?",
+    "o": [
+     "Grouping commands and avoiding code duplication under one name",
+     "Making web pages load much slower",
+     "Completely stopping JavaScript from running"
+    ],
+    "a": 0,
+    "why": "Functions group repetitive code so it can be easily called multiple times."
+   },
+   {
+    "t": "How do we send a result from inside a function back out?",
+    "o": [
+     "Using the break keyword",
+     "Using the return keyword",
+     "Using the print keyword"
+    ],
+    "a": 1,
+    "why": "The return keyword is responsible for sending the output out of the function."
+   },
+   {
+    "t": "What do we call the values passed inside the parentheses when defining a function?",
+    "o": [
+     "Global variables",
+     "Parameters",
+     "Page colors"
+    ],
+    "a": 1,
+    "why": "Parameters allow a function to receive data to work with."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Multiply Function Bug",
+   "goal": "Find the wrong line in the function that multiplies two numbers and fix it.",
+   "lines": [
+    "function multiply(a, b) {",
+    "  let result = a * b;",
+    "  retrun result;",
+    "}"
+   ],
+   "bug": 2,
+   "fix": "  return result;",
+   "success": "Awesome! The function multiplied the two numbers and returned the result successfully."
+  },
+  "sections": [
+   {
+    "h": "What are Functions?",
+    "text": "A function is like a cooking recipe; a set of grouped commands under a single name that we can call whenever we want without rewriting.",
+    "code": "<!DOCTYPE html><html><body><script>function sayHi() { document.write('Welcome to the world of functions!'); } sayHi();</script></body></html>",
+    "output": "Displays Welcome to the world of functions! on the page."
+   },
+   {
+    "h": "Calling Functions",
+    "text": "By writing the function name followed by parentheses (), we execute all the commands written inside it.",
+    "code": "<!DOCTYPE html><html><body><script>function ringBell() { document.write('School bell rang! '); } ringBell(); ringBell();</script></body></html>",
+    "output": "Repeats the phrase School bell rang! twice on the screen."
+   },
+   {
+    "h": "Function Parameters",
+    "text": "Parameters are pieces of info we pass to a function to make it smarter and more flexible, just like adding custom ice cream flavors.",
+    "code": "<!DOCTYPE html><html><body><script>function greet(name) { document.write('Hello ' + name + '! '); } greet('Sarah'); greet('Youssef');</script></body></html>",
+    "output": "Prints Hello Sarah! and Hello Youssef! successfully."
+   },
+   {
+    "h": "Using Multiple Parameters",
+    "text": "We can give a function multiple parameters separated by commas to handle different data points at the same time.",
+    "code": "<!DOCTYPE html><html><body><script>function showBox(color, size) { document.write('<div style=\"background:' + color + ';width:' + size + 'px;height:50px;\"></div>'); } showBox('red', 100);</script></body></html>",
+    "output": "Draws a red box with the specified width."
+   },
+   {
+    "h": "Returning Values",
+    "text": "A function doesn't just execute commands; it can calculate a result and send it back using return to use it elsewhere.",
+    "code": "<!DOCTYPE html><html><body><script>function doubleIt(n) { return n * 2; } document.write(doubleIt(5));</script></body></html>",
+    "output": "Displays the number 10 resulting from 5 multiplied by 2."
+   },
+   {
+    "h": "Organizing Code and Modularity",
+    "text": "Splitting code into small, separate functions makes large programs easy to read and bug-free.",
+    "code": "<!DOCTYPE html><html><body><script>function getTax(price) { return price * 0.1; } function finalPrice(p) { return p + getTax(p); } document.write(finalPrice(100));</script></body></html>",
+    "output": "Displays the total price including tax as 110."
+   },
+   {
+    "h": "Avoiding Duplication",
+    "text": "Instead of writing the same calculation code ten times, we write it once inside a function and call it whenever needed.",
+    "code": "<!DOCTYPE html><html><body><script>function area(w, h) { return w * h; } document.write(area(3, 4) + '<br>' + area(5, 6));</script></body></html>",
+    "output": "Displays the areas of two rectangles as 12 and 30."
+   },
+   {
+    "h": "Managing Local Variables",
+    "text": "Variables defined inside a function live only inside it and cannot be accessed from the outside, protecting our data.",
+    "code": "<!DOCTYPE html><html><body><script>function secret() { let code = 1234; document.write(code); } secret();</script></body></html>",
+    "output": "Prints the local secret code 1234."
+   },
+   {
+    "h": "Building a Mini Project with Functions",
+    "text": "We can combine parameters and return values together to build a very clean and simple calculator.",
+    "code": "<!DOCTYPE html><html><body><script>function add(x, y) { return x + y; } document.write('Result is: ' + add(20, 30));</script></body></html>",
+    "output": "Displays Result is: 50."
+   }
+  ],
+  "reference": [
+   {
+    "name": "function",
+    "desc": "Keyword used to define a new function."
+   },
+   {
+    "name": "return",
+    "desc": "Used to send a result back out from inside a function."
+   },
+   {
+    "name": "Parameters",
+    "desc": "Function inputs placed inside the parentheses."
+   },
+   {
+    "name": "Call",
+    "desc": "Invoking or running a function by its name."
+   },
+   {
+    "name": "Local Variable",
+    "desc": "A variable defined inside a function, invisible outside."
+   },
+   {
+    "name": "Modular Code",
+    "desc": "Breaking code into small, organized sections."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a function named multiply that takes two numbers and returns their product.",
+    "a": "function multiply(a, b) { return a * b; }"
+   },
+   {
+    "q": "How do you call a function named sayHello?",
+    "a": "sayHello();"
+   },
+   {
+    "q": "What keyword is used to return a value from a function?",
+    "a": "return"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Using CSS custom functions",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Custom_functions_and_mixins/Using_custom_functions"
+  },
+  {
+   "title": "MDN: Using the WebAssembly JavaScript API",
+   "url": "https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Using_the_JavaScript_API"
+  }
+ ],
+ "grounded": true
+}

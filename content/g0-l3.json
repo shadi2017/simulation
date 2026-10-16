@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "فكر إزای بنعمل حاجات مكررة كل يوم، زي إحنا بنغسل سناننا بنفس الحركة كذا مرة ورا بعض من غير ما نتلخبط.",
+   "مثال بسيط: بدل ما نقول «سقف، سقف، سقف»، بنقول «كرر 3 مرات: سقف» عشان نوفر وقت ومجهود كبير.",
+   "إزاي ده بيشتغل؟ العقل البشري والكمبيوتر بيحبوا الاختصار، فبدل ما نكتب نفس الخطوة 5 مرات، بنحطها جوه صندوق تكرار.",
+   "مثال تاني: في رقصة أو أغنية، بنلاقي مقاطع بتتعاد بالنص زي الطبلة اللي بتعمل «بم تك، بم تك، بم تك».",
+   "قاعدة ذهبية: لو لقيت نفسك بتكتب نفس الخطوة أكتر من مرة، استعمل صندوق التكرار فوراً عشان تريح إيدك.",
+   "الاستخدام الحقيقي: مهندسو البرمجة والروبرتات بيستعملوا التكرار ده في كل الألعاب والأجهزة عشان تشتغل بسرعة وبذكاء."
+  ],
+  "example": "تخيل أنك عايز تنط الحبل 5 مرات ورا بعض. بدل ما تقول: (انط، انط، انط، انط، انط)، تقدر تقول بكل بساطة: (كرر 5 مرات: انط). ده بيخلينا نفكر بذكاء ونكتب خطوات أقل بكتير.",
+  "mistake": "الخطأ الشائع هو نسيان عدد المرات اللي المفروض التكرار يقف عندها. الحل هو دايماً تحديد الرقم الواضح في الأول زي (كرر 3 مرات).",
+  "recap": "التكرار بيساعدنا نصغر الخطوات الكتير لخطوة واحدة سريعة. ده بيوفر وقتنا وبيخلينا نفكر زي المبرمجين الشاطرين.",
+  "q": [
+   {
+    "t": "إيه فايدة صندوق التكرار في حياتنا؟",
+    "o": [
+     "بيخلينا نتعب أكتر",
+     "بيوفر وقتنا ويوصّف الخطوات بذكاء",
+     "بيخلينا ننسى اللي عملناه"
+    ],
+    "a": 1,
+    "why": "التكرار بيختصر الخطوات الكتير في خطوة واحدة واضحة."
+   },
+   {
+    "t": "لو عاوزين نسقف 4 مرات ورا بعض، نكتبها إزاي بالذكاء؟",
+    "o": [
+     "كرر 4 مرات: سقف",
+     "سقف مرة واحدة",
+     "امشِ يمين"
+    ],
+    "a": 0,
+    "why": "بنحدد الفعل (سقف) وعدد المرات (4 مرات)."
+   },
+   {
+    "t": "فين بنلاقي التكرار في الموسيقى؟",
+    "o": [
+     "لما الأغنية تخلص فجأة",
+     "في المقاطع الموسيقية اللي بتتعاد بنفس النغمة",
+     "لما الصوت يكون عالي جداً"
+    ],
+    "a": 1,
+    "why": "الموسيقى مليانة نغمات بتتعاد زي الإيقاع المتكرر."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "لعبة توقع التكرار",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل صندوق التكرار.",
+   "code": "كرر 3 مرات: خطوة للأمام",
+   "options": [
+    "نتحرك خطوة واحدة بس",
+    "نتحرك 3 خطوات للأمام ورا بعض",
+    "نلف حوالين نفسنا"
+   ],
+   "a": 1,
+   "success": "شطورة! الروبوت اتحرك 3 خطوات للأمام بنجاح تام!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم التكرار اليومي",
+    "text": "التكرار هو إننا نعمل نفس الحركة كذا مرة ورا بعض. زي ما بنعمل وأحنا بنغسل أطباق أو بنمشى في طريق المدرسة كل يوم. الكمبيوتر بيحب الحاجات دي عشان بتخليه يشتغل بسرعة.",
+    "code": "الروتين: خطوة، خطوة، خطوة",
+    "output": "الحركة بتتكرر بانتظام"
+   },
+   {
+    "h": "تحديد التكرار في الموسيقى",
+    "text": "في الأغاني والأنشودات، بنسمع نغمات بتتعاد. الطبلة مثلاً بتعمل إيقاع متكرر. ده بيخلي الموسيقى جميلة وسهلة نحفظها بسرعة ونغنيها مع أصحابنا.",
+    "code": "إيقاع الأغنية: طم، تك، طم، تك",
+    "output": "نغمة متناسقة ومكررة"
+   },
+   {
+    "h": "التكرار في الرقص والتمارين",
+    "text": "لما بنلعب رياضة الصبح، الكابتن بيقولنا نعمل التمرين 10 مرات. بدل ما يعدهم واحدة بواحدة بصعوبة، بنفهم إننا بنكرر نفس الحركة لحد ما نخلص العد.",
+    "code": "كرر 5 مرات: رفع الذراع",
+    "output": "تمارين رياضية منتظمة"
+   },
+   {
+    "h": "الشعر والأبيات المكررة",
+    "text": "في القصائد والأناشيد، أحياناً بنلاقي جملة بتتكرر في أول كل بيت أو آخره. التكرار ده بيدي للنص إيقاع حلو ومميز يخليه يلزق في دماغنا.",
+    "code": "تكرار جملة: يا فجرنا الهادي",
+    "output": "نشيد جميل ومميز"
+   },
+   {
+    "h": "كتلة تكرار [X] مرات",
+    "text": "في البرمجة، بنستخدم كتلة سحرية اسمها 'كرر [X] مرات'. الرقم بيعرفنا هنعمل الحركة دي كام مرة بالظبط. ده بيمنعنا نلخبط أو ننسى أي خطوة.",
+    "code": "كرر 3 مرات: تصفيق",
+    "output": "تسفيق 3 مرات متتالية"
+   },
+   {
+    "h": "تصغير 5 خطوات لخطوة واحدة",
+    "text": "تخيل تكتب سطر طويل عريض فيه خمس حاجات شبه بعض. بالمقارنة، سطر واحد فيه أمر تكرار بيعمل نفس الشغل ببراعة. ده بيوفر مساحة ووقت كبير جداً.",
+    "code": "من (يمين، يمين، يمين، يمين، يمين) إلى (كرر 5 مرات: يمين)",
+    "output": "اختصار الكود بشكل رائع"
+   },
+   {
+    "h": "التفكير كالمبرمجين",
+    "text": "المبرمج الذكي بيدور دایماً على الحاجات اللي بتتعاد في المشكلة. لما يلاقي تكرار، بيكتبه مرة واحدة ويحطه جوه صندوق التكرار عشان يحل المشكلة بأسرع طريقة.",
+    "code": "ابحث عن النمط -> ضع في تكرار",
+    "output": "حل ذكي وفعال"
+   },
+   {
+    "h": "تطبيقات في الألعاب والروبرتات",
+    "text": "كل الألعاب اللي بتحبها على التابلت بتستعمل التكرار. الروبوت اللي بينظف الأرض بيتحرك يمين وشمال بتكرار لحد ما يخلص الأوضة كلها من غير تعب.",
+    "code": "while(room not clean) { clean(); }",
+    "output": "تنظيف الغرفة بالكامل"
+   }
+  ],
+  "reference": [
+   {
+    "name": "التكرار",
+    "desc": "إعادة نفس الأنشطة أو الأوامر عدة مرات."
+   },
+   {
+    "name": "كتلة التكرار",
+    "desc": "أمر برمجي يكرر الأفعال بعدد محدد."
+   },
+   {
+    "name": "النمط",
+    "desc": "شيء بيتكرر بطريقة منتظمة ومفهومة."
+   },
+   {
+    "name": "الروتين",
+    "desc": "أشياء بنعملها كل يوم بنفس الترتيب."
+   },
+   {
+    "name": "الإيقاع",
+    "desc": "تكرار الأصوات أو الحركات بانتظام."
+   },
+   {
+    "name": "الاختصار",
+    "desc": "جعل الخطوات أسرع وأقصر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب اختصاراً لتسفيق 4 مرات متتالية.",
+    "a": "كرر 4 مرات: سقف"
+   },
+   {
+    "q": "ما فائدة استخدام صندوق التكرار؟",
+    "a": "توفير الوقت واختصار الخطوات الكثيرة."
+   },
+   {
+    "q": "حول عبارة (خطوة، خطوة، خطوة) إلى أمر تكرار.",
+    "a": "كرر 3 مرات: خطوة"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think about how we do repeating daily actions, like brushing our teeth with the exact same motion over and over without getting confused.",
+   "Simple example: Instead of saying 'clap, clap, clap', we say 'repeat 3 times: clap' to save lots of time and effort.",
+   "How it works: Human brains and computers love shortcuts. Instead of writing the same step 5 times, we put it inside a loop box.",
+   "Second example: In a dance or song, we find parts repeating identically, like a drum making 'boom tech, boom tech, boom tech'.",
+   "Golden rule: If you find yourself writing the exact same step more than once, use a loop box right away to make it easy.",
+   "Real-life use: Software engineers and robots use loops in all games and devices so they work fast and smartly."
+  ],
+  "example": "Imagine you want to jump rope 5 times in a row. Instead of writing: (jump, jump, jump, jump, jump), you can simply say: (repeat 5 times: jump). This helps us think smartly and write far fewer steps.",
+  "mistake": "A common mistake is forgetting the exact number of times the loop should stop. The solution is always defining a clear number at the start like (repeat 3 times).",
+  "recap": "Loops help us shrink many steps into one quick action. This saves our time and helps us think like clever programmers.",
+  "q": [
+   {
+    "t": "What is the benefit of a loop box in our lives?",
+    "o": [
+     "It makes us work harder",
+     "It saves time and describes steps smartly",
+     "It makes us forget what we did"
+    ],
+    "a": 1,
+    "why": "Loops condense many repeated steps into one clear action."
+   },
+   {
+    "t": "If we want to clap 4 times in a row, how do we write it smartly?",
+    "o": [
+     "repeat 4 times: clap",
+     "clap one time",
+     "walk right"
+    ],
+    "a": 0,
+    "why": "We specify the action (clap) and the count (4 times)."
+   },
+   {
+    "t": "Where do we find repetition in music?",
+    "o": [
+     "When the song ends suddenly",
+     "In musical phrases repeating with the same tune",
+     "When the sound is extremely loud"
+    ],
+    "a": 1,
+    "why": "Music is full of repeating tunes like a steady rhythm."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Loop Game",
+   "goal": "Find out what happens when we run the loop box.",
+   "code": "repeat 3 times: step forward",
+   "options": [
+    "Move forward only one step",
+    "Move forward 3 steps in a row",
+    "Spin around in place"
+   ],
+   "a": 1,
+   "success": "Awesome! The robot moved forward 3 steps successfully!"
+  },
+  "sections": [
+   {
+    "h": "Daily Routine Concept",
+    "text": "Repetition is doing the same action multiple times in a row. Just like washing dishes or walking the same school path every day. Computers love this because it makes them work fast.",
+    "code": "Routine: step, step, step",
+    "output": "Action repeats regularly"
+   },
+   {
+    "h": "Identifying Loops in Music",
+    "text": "In songs and chants, we hear repeating tunes. A drum makes a steady repeating beat. This makes music pleasant and easy for us to memorize quickly and sing along with friends.",
+    "code": "Song beat: boom, tech, boom, tech",
+    "output": "Harmonious repeated tune"
+   },
+   {
+    "h": "Repetition in Dance and Exercise",
+    "text": "When we exercise in the morning, the coach tells us to do a move 10 times. Instead of counting them one by one laboriously, we understand we are repeating the same move until done.",
+    "code": "repeat 5 times: lift arm",
+    "output": "Regular physical workouts"
+   },
+   {
+    "h": "Poetry and Repeating Lines",
+    "text": "In poems and rhymes, we sometimes find a phrase repeating at the start or end of each stanza. This repetition gives the text a nice, distinct rhythm that sticks in our heads.",
+    "code": "Repeating line: Oh our peaceful dawn",
+    "output": "Beautiful distinct chant"
+   },
+   {
+    "h": "The Repeat [X] Times Block",
+    "text": "In programming, we use a magical block called 'repeat [X] times'. The number tells us exactly how many times we will do the action. This stops us from messing up or missing any step.",
+    "code": "repeat 3 times: clap",
+    "output": "Clapping 3 times in a row"
+   },
+   {
+    "h": "Shrinking 5 Steps Into 1",
+    "text": "Imagine writing a long row containing five similar things. By comparison, one line with a loop command does the exact same job brilliantly. This saves a huge amount of space and time.",
+    "code": "From (right, right, right, right, right) to (repeat 5 times: right)",
+    "output": "Wonderful code shortening"
+   },
+   {
+    "h": "Thinking Like Programmers",
+    "text": "A smart programmer always looks for things that repeat in a problem. When they find a pattern, they write it once and place it inside a loop box to solve the problem fastest.",
+    "code": "Find pattern -> put in loop",
+    "output": "Smart and efficient solution"
+   },
+   {
+    "h": "Applications in Games and Robots",
+    "text": "Every game you love on the tablet uses loops. The floor-cleaning robot moves right and left repeatedly until it finishes cleaning the entire room effortlessly.",
+    "code": "while(room not clean) { clean(); }",
+    "output": "Entire room cleaned"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Loop",
+    "desc": "Repeating the same activities or commands several times."
+   },
+   {
+    "name": "Loop Block",
+    "desc": "A coding command that repeats actions a specific number of times."
+   },
+   {
+    "name": "Pattern",
+    "desc": "Something that repeats in a regular and understandable way."
+   },
+   {
+    "name": "Routine",
+    "desc": "Things we do every day in the same order."
+   },
+   {
+    "name": "Rhythm",
+    "desc": "Repeating sounds or movements regularly."
+   },
+   {
+    "name": "Shortcut",
+    "desc": "Making steps faster and shorter."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a shortcut for clapping 4 times in a row.",
+    "a": "repeat 4 times: clap"
+   },
+   {
+    "q": "What is the benefit of using a loop box?",
+    "a": "Saving time and shortening many steps."
+   },
+   {
+    "q": "Convert the phrase (step, step, step) into a loop command.",
+    "a": "repeat 3 times: step"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

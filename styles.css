@@ -18,3 +18,20 @@
 @media(max-width:1050px){.full-lesson-panel,.reference-section{margin-inline:20px}}
 @media(max-width:760px){.full-lesson-panel{margin:0 15px 13px;padding:13px}.full-lesson-heading{align-items:flex-start;flex-direction:column}.full-lesson-heading .primary-button{width:100%}.reference-section{align-items:flex-start;flex-direction:column;margin:0 15px 13px}.reference-links{justify-content:flex-start}.reference-links a{max-width:100%;overflow-wrap:anywhere}.tutor-status{margin-top:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* --- playground and lesson-pack fixes --- */
+.demo-input{width:100%;max-width:100%;flex:1 1 150px;min-width:110px;min-height:36px;box-sizing:border-box;font:13px/1.5 'Noto Sans Arabic','Manrope',sans-serif;unicode-bidi:plaintext}
+.demo-input[type=number]{flex:0 0 auto;width:80px;font-family:'DM Mono',monospace}
+.demo-control{min-height:36px;padding:0 12px;font-size:12px;line-height:1.3}
+.demo-control.accent{background:#c9ed74;border-color:#c9ed74;color:#16221b;font-weight:700}
+.demo-control:disabled{opacity:.45;cursor:default}
+.playground-caption,.demo-output{font-size:12px}
+.playground-caption strong{color:#c9ed74}
+#playground pre{max-width:100%;overflow:auto;margin:8px 0;padding:9px 11px;border-radius:7px;background:#0f1914;color:#e8f2e6;font:12px/1.7 'DM Mono',monospace;direction:ltr;text-align:left}
+#playground .demo-controls{margin-bottom:6px}
+.pack-sections{margin-top:16px}.pack-sections h3{font-size:16px}.pack-sections h4{margin:6px 0;font-size:14px}.pack-sections p,.learning-note li,.learning-note p{font-size:13px;line-height:1.9}
+.pack-sections textarea{box-sizing:border-box;border:1px solid #c9d6c9;border-radius:7px;padding:8px;font:12px/1.6 'DM Mono',monospace}
+.pack-sections pre{font:12px/1.7 'DM Mono',monospace}
+.pack-sections details{margin:6px 0;padding:8px 10px;border:1px solid #e1e8df;border-radius:7px;background:#f8faf6}
+.pack-sections summary{cursor:pointer;font-weight:600}
+.project-card details{margin-top:10px;font-size:12px;line-height:1.8}.project-card summary{cursor:pointer;font-weight:700}

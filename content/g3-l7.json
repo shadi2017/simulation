@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "في العالم الحقيقي، عندما تملأ استمارة، أحياناً تختار إجابة واحدة فقط، وأحياناً تختار عدة إجابات، أو تختار من قائمة منسدلة.",
+   "في لغة HTML، نستخدم أزرار الاختيار الراديو <input type=\"type=\"radio\"> لاختيار عنصر واحد فقط من مجموعة.",
+   "نربط أزرار الراديو ببعضها البعض عن طريق إعطائها نفس قيمة الخاصية name لضمان اختيار زر واحد فقط.",
+   "إذا أردنا السماح للمستخدم باختيار أكثر من إجابة معاً، نستخدم مربعات التحديد <input type=\"type=\"checkbox\">.",
+   "لتوفير مساحة في الشاشة عندما يكون لدينا خيارات كثيرة جداً، نستخدم القائمة المنسدلة <select> مع عناصر <option>.",
+   "قاعدة ذهبية: استخدم الراديو للإجابة الوحيدة، ومربعات التحديد للخيارات المتعددة، و<select> للقوائم الطويلة!"
+  ],
+  "example": "لنفترض أننا نصمم نموذجاً لاختيار اللون المفضلة والأنشطة المدرسية. نكتب:\n<form>\n  <label>لونك المفضل:</label><br>\n  <input type=\"radio\" id=\"red\" name=\"color\" value=\"red\">\n  <label for=\"red\">أحمر</label><br>\n  <input type=\"radio\" id=\"blue\" name=\"color\" value=\"blue\">\n  <label for=\"blue\">أزرق</label><br>\n  <label>الأنشطة:</label><br>\n  <input type=\"checkbox\" id=\"club1\" name=\"clubs\" value=\"chess\">\n  <label for=\"club1\">نادي الشطرنج</label>\n</form>\nالسبب: أزرار الراديو تحمل نفس الاسم name=\"color\" لتسمح باختيار لون واحد فقط، بينما مربعات التحديد تسمح باختيار عدة أنشطة بحرية.",
+  "mistake": "من الأخطاء الشائعة إعطاء أزرار الراديو (Radio) أسماء name مختلفة، مما يجعل المتصفح يتيح اختيار أكثر من زر في نفس الوقت. التصحيح هو توحيد قيمة name لجميع الأزرار التي تنتمي لنفس المجموعة.",
+  "recap": "تتيح لنا عناصر النموذج المتقدمة مثل أزرار الراديو ومربعات التحديد والقوائم جمع بيانات متنوعة من المستخدم بسهولة. استخدام العناصر الصحيحة يجعل شكل الموقع مرتباً ومفهوماً للجميع.",
+  "q": [
+   {
+    "t": "أي عنصر نستخدمه للسماح للمستخدم باختيار إجابة واحدة فقط من بين عدة خيارات؟",
+    "o": [
+     "<input type=\"checkbox\">",
+     "<input type=\"radio\">",
+     "<select>"
+    ],
+    "a": 1,
+    "why": "أزرار الراديو مخصصة لاختيار خيار واحد فقط من مجموعة خيارات مرتبطة بنفس الاسم."
+   },
+   {
+    "t": "كيف نجعل أزرار الراديو تعمل كفريق واحد بحيث يتم اختيار زر واحد فقط؟",
+    "o": [
+     "بإعطائها نفس قيمة الخاصية name",
+     "بإعطائها نفس قيمة الـ id",
+     "باستخدام الوسم <select>"
+    ],
+    "a": 0,
+    "why": "المتصفح يعرف أن هذه الأزرار في نفس المجموعة إذا تساوت قيمة name فيها."
+   },
+   {
+    "t": "ما هو الوسم المناسب لإنشاء قائمة منسدلة توفر مساحة في الصفحة؟",
+    "o": [
+     "<input type=\"radio\">",
+     "<input type=\"text\">",
+     "<select>"
+    ],
+    "a": 2,
+    "why": "الوسم <select> ومعه <option> يخصصان لعرض قائمة منسدلة تحتوي على عدة اختيارات."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة عناصر النماذج المتقدمة",
+   "goal": "صل كل عنصر HTML بوظيفته الصحيحة في الصفحة.",
+   "pairs": [
+    [
+     "<input type=\"radio\">",
+     "اختيار عنصر واحد فقط من مجموعة"
+    ],
+    [
+     "<input type=\"checkbox\">",
+     "اختيار عدة عناصر في نفس الوقت"
+    ],
+    [
+     "<select>",
+     "إنشاء قائمة منسدلة لتوفير المساحة"
+    ],
+    [
+     "<option>",
+     "عنصر داخل القائمة المنسدلة"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت معرفة أدوات النماذج المتقدمة وصنعت استمارة تفاعلية رائعة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في عناصر الاختيار المتعدد",
+    "text": "عندما نصمم مواقع الإنترنت، نحتاج أحياناً لأخذ آراء المستخدمين أو تفضيلاتهم. مثلما تختار طعامك المفضل من قائمة مطعم، نحتاج لأدوات في HTML تسمح للمستخدم بالنقر على الخيارات بسهولة. تشمل هذه الأدوات أزرار الراديو ومربعات التحديد والقوائم المنسدلة.",
+    "code": "<<!DOCTYPE html>\n<html>\n<body>\n  <h3>استطلاع رأي بسيط</h3>\n  <p>هل تحب البرمجة؟</p>\n</body>\n</html>",
+    "output": "صفحة ويب تعرض عنواناً وسؤالاً بسيطاً للمستخدم."
+   },
+   {
+    "h": "أزرار الاختيار الفردي (Radio Buttons)",
+    "text": "زر الراديو يشبه أزرار اختيار محطة الإذاعة القديمة؛ عندما تضغط على محطة، تنطفئ المحطة السابقة. في لغة HTML، ننشئ هذا الزر باستخدام <input type=\"radio\">. إنه مثالي عندما تريد من المستخدم اختيار خيار واحد فقط لا سواه، مثل تحديد الجنس أو طريقة الدفع.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <input type=\"radio\" id=\"yes\" name=\"answer\">\n  <label for=\"yes\">نعم</label>\n</body>\n</html>",
+    "output": "يظهر زر راديو بجانبه كلمة 'نعم'."
+   },
+   {
+    "h": "تجميع أزرار الراديو معاً",
+    "text": "لكي يفهم المتصفح أن مجموعة من أزرار الراديو تتبع لنفس السؤال، يجب أن نعطيها نفس اسم الخاصية name. فكر في الأمر وكأنهم أفراد فريق واحد يرتدون نفس الزي الموحد. إذا اخترت زرًا، سيتم إلغاء اختيار الزر الآخر تلقائياً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <form>\n    <p>اختر فصلك المفضل:</p>\n    <input type=\"radio\" id=\"spring\" name=\"season\">\n    <label for=\"spring\">الربيع</label><br>\n    <input type=\"radio\" id=\"summer\" name=\"season\">\n    <label for=\"summer\">الصيف</label>\n  </form>\n</body>\n</html>",
+    "output": "يظهر خياران للربيع والصيف، ويمكنك اختيار أحدهما فقط."
+   },
+   {
+    "h": "مربعات التحديد المتعددة (Checkboxes)",
+    "text": "ماذا لو أردت اختيار أكثر من مادة تحبها في المدرسة؟ هنا يأتي دور مربعات التحديد <input type=\"checkbox\">. تماماً مثل قائمة المشتريات التي تضع بجانبها علامات صح متعددة، تتيح هذه المربعات للمستخدم اختيار عدة عناصر في نفس الوقت وبكل حرية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>ما هي الأنشطة التي تفضلها؟</p>\n  <input type=\"checkbox\" id=\"c1\" name=\"hobby\" value=\"reading\">\n  <label for=\"c1\">القراءة</label>\n  <input type=\"checkbox\" id=\"c2\" name=\"hobby\" value=\"sports\">\n  <label for=\"c2\">الرياضة</label>\n</body>\n</html>",
+    "output": "يظهر مربعان يمكنك النقر عليهما لاختيار القراءة أو الرياضة أو كليهما."
+   },
+   {
+    "h": "القوائم المنسدلة (Select Menus)",
+    "text": "تخيل أن لديك قائمة تحتوي على خمسين دولة، وضعها كلها على الشاشة سيجعلها مزدحمة جداً! الحل هو استخدام القائمة المنسدلة <select>. تظل القائمة مطوية حتى ينقر عليها المستخدم لتفتح وتعرض جميع الخيارات، تماماً مثل صندوق الكنز السري الذي يفتح عند الطلب.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <label for=\"city\">مدينتك:</label>\n  <select id=\"city\" name=\"city\">\n    <option value=\"cairo\">القاهرة</option>\n    <option value=\"alex\">الإسكندرية</option>\n  </select>\n</body>\n</html>",
+    "output": "تظهر قائمة منسدلة تحتوي على اسمي القاهرة والإسكندرية."
+   },
+   {
+    "h": "خيارات القائمة المنسدلة (<option>)",
+    "text": "لا يمكن لوسم القائمة المنسدلة <select> بمفرده أن يعمل بدون أصدقائه الـ <option>. كل عنصر <option> يمثل خياراً داخلياً يستطيع المستخدم اختياره. نحدد القيمة التي سترسل للخادم باستخدام الخاصية value.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <select name=\"fruit\">\n    <option value=\"apple\">تفاح</option>\n    <option value=\"banana\">موز</option>\n  </select>\n</body>\n</html>",
+    "output": "قائمة منسدلة عند النقر عليها تعرض تفاح وموز."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<input type=\"radio\">",
+    "desc": "ينشئ زر اختيار يسمح باختيار عنصر واحد من مجموعة."
+   },
+   {
+    "name": "<input type=\"checkbox\">",
+    "desc": "ينشئ مربع تحديد يسمح باختيار عدة خيارات."
+   },
+   {
+    "name": "<select>",
+    "desc": "ينشئ قائمة منسدلة لتوفير مساحة في الصفحة."
+   },
+   {
+    "name": "<option>",
+    "desc": "يمثل خياراً فردياً داخل القائمة المنسدلة."
+   },
+   {
+    "name": "name",
+    "desc": "خاصية تستخدم لتجميع أزرار الراديو معاً."
+   },
+   {
+    "name": "value",
+    "desc": "تحدد القيمة التي يتم إرسالها عند اختيار العنصر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML لإنشاء زر راديو لاختيار لون أحمر.",
+    "a": "<input type=\"radio\" id=\"r1\" name=\"color\" value=\"red\">\n<label for=\"r1\">أحمر</label>"
+   },
+   {
+    "q": "اكتب كود HTML لإنشاء مربع تحديد لاختيار مادة الرسم.",
+    "a": "<input type=\"checkbox\" id=\"art\" name=\"subject\" value=\"art\">\n<label for=\"art\">الرسم</label>"
+   },
+   {
+    "q": "اكتب كود HTML لقائمة منسدلة تحتوي على خيار واحد وهو 'مصر'.",
+    "a": "<select name=\"country\">\n  <option value=\"egypt\">مصر</option>\n</select>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In the real world, when filling out a form, sometimes you pick only one answer, and other times you pick several or choose from a dropdown list.",
+   "In HTML, we use radio buttons <input type=\"radio\"> to let users pick just one single item from a group.",
+   "We connect radio buttons together by giving them the exact same name attribute value so only one can be selected.",
+   "If we want to let users pick multiple answers at the same time, we use checkboxes <input type=\"checkbox\">.",
+   "To save screen space when we have tons of options, we use a select menu <select> combined with <option> tags.",
+   "Golden rule: use radios for a single choice, checkboxes for multiple choices, and select menus for long lists!"
+  ],
+  "example": "Suppose we are building a form for a favorite color and after-school clubs. We write:\n<form>\n  <label>Favorite Color:</label><br>\n  <input type=\"radio\" id=\"red\" name=\"color\" value=\"red\">\n  <label for=\"red\">Red</label><br>\n  <input type=\"radio\" id=\"blue\" name=\"color\" value=\"blue\">\n  <label for=\"blue\">Blue</label><br>\n  <label>Clubs:</label><br>\n  <input type=\"checkbox\" id=\"club1\" name=\"clubs\" value=\"chess\">\n  <label for=\"club1\">Chess Club</label>\n</form>\nReason: Radio buttons share name=\"color\" to enforce picking only one color, while checkboxes let users select multiple club options freely.",
+  "mistake": "A common mistake is giving radio buttons different name attributes, which makes the browser allow picking multiple buttons at once. The fix is to give all radios in the same group the exact same name.",
+  "recap": "Advanced form controls like radios, checkboxes, and select menus let us easily collect varied data from users. Using the correct elements keeps web pages organized and intuitive.",
+  "q": [
+   {
+    "t": "Which element do we use to let the user pick only one single answer from multiple choices?",
+    "o": [
+     "<input type=\"checkbox\">",
+     "<input type=\"radio\">",
+     "<select>"
+    ],
+    "a": 1,
+    "why": "Radio buttons are designed specifically to pick one option from a group sharing the same name."
+   },
+   {
+    "t": "How do you make radio buttons work as a team so only one can be selected?",
+    "o": [
+     "By giving them the same name attribute value",
+     "By giving them the same id attribute value",
+     "By using the <select> tag"
+    ],
+    "a": 0,
+    "why": "The browser knows these buttons belong to the same group when their name values match."
+   },
+   {
+    "t": "What is the proper tag to create a dropdown menu that saves page space?",
+    "o": [
+     "<input type=\"radio\">",
+     "<input type=\"text\">",
+     "<select>"
+    ],
+    "a": 2,
+    "why": "The <select> tag together with <option> is used to display a collapsible dropdown list."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Advanced Form Controls Matching",
+   "goal": "Match each HTML form control to its correct webpage function.",
+   "pairs": [
+    [
+     "<input type=\"radio\">",
+     "Pick a single item from a group"
+    ],
+    [
+     "<input type=\"checkbox\">",
+     "Select multiple items at once"
+    ],
+    [
+     "<select>",
+     "Create a space-saving dropdown list"
+    ],
+    [
+     "<option>",
+     "An individual item inside a dropdown"
+    ]
+   ],
+   "success": "Awesome! You mastered advanced form controls and built an interactive questionnaire!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Multi-Choice Selectors",
+    "text": "When designing websites, we often need to gather user preferences and opinions. Just like picking a meal from a restaurant menu, we need HTML tools that let users click on choices easily. These tools include radio buttons, checkboxes, and dropdown lists.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3>Simple Survey</h3>\n  <p>Do you like coding?</p>\n</body>\n</html>",
+    "output": "A web page showing a heading and a simple question for the user."
+   },
+   {
+    "h": "Single-Choice Radio Buttons",
+    "text": "A radio button acts like old radio preset buttons; when you press one station, the previous one turns off. In HTML, we create this button using <input type=\"radio\">. It is ideal when you want the user to pick one single option exclusively, such as gender or payment method.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <input type=\"radio\" id=\"yes\" name=\"answer\">\n  <label for=\"yes\">Yes</label>\n</body>\n</html>",
+    "output": "Displays a radio button next to the word 'Yes'."
+   },
+   {
+    "h": "Grouping Radio Elements",
+    "text": "To make the browser understand that a set of radio buttons belongs to the same question, we must give them the same name attribute. Think of them as team members wearing matching uniforms. Selecting one automatically deselects any other button in that group.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <form>\n    <p>Choose your favorite season:</p>\n    <input type=\"radio\" id=\"spring\" name=\"season\">\n    <label for=\"spring\">Spring</label><br>\n    <input type=\"radio\" id=\"summer\" name=\"season\">\n    <label for=\"summer\">Summer</label>\n  </form>\n</body>\n</html>",
+    "output": "Shows two options for Spring and Summer where only one can be selected."
+   },
+   {
+    "h": "Multiple Checkboxes",
+    "text": "What if you want to pick more than one school subject you love? That is where checkboxes <input type=\"checkbox\"> come in. Just like a shopping list where you can check off multiple items, these boxes let users choose several items freely at the same time.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>What activities do you prefer?</p>\n  <input type=\"checkbox\" id=\"c1\" name=\"hobby\" value=\"reading\">\n  <label for=\"c1\">Reading</label>\n  <input type=\"checkbox\" id=\"c2\" name=\"hobby\" value=\"sports\">\n  <label for=\"c2\">Sports</label>\n</body>\n</html>",
+    "output": "Shows two boxes you can click to select Reading, Sports, or both."
+   },
+   {
+    "h": "Dropdown Menus (<select>)",
+    "text": "Imagine having a list of fifty countries; putting them all on screen would make it super cluttered! The solution is a dropdown menu using <select>. The list stays collapsed until clicked, popping open to show all choices, just like a secret treasure chest opening on demand.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <label for=\"city\">Your City:</label>\n  <select id=\"city\" name=\"city\">\n    <option value=\"cairo\">Cairo</option>\n    <option value=\"alex\">Alexandria</option>\n  </select>\n</body>\n</html>",
+    "output": "Shows a dropdown menu containing Cairo and Alexandria."
+   },
+   {
+    "h": "Dropdown Options (<option>)",
+    "text": "The select menu tag <select> cannot work alone without its friend tags <option>. Each <option> element represents an item inside the menu that the user can pick. We specify the data sent to the server using the value attribute.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <select name=\"fruit\">\n    <option value=\"apple\">Apple</option>\n    <option value=\"banana\">Banana</option>\n  </select>\n</body>\n</html>",
+    "output": "A dropdown menu that displays Apple and Banana when clicked."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<input type=\"radio\">",
+    "desc": "Creates a radio button allowing one choice from a group."
+   },
+   {
+    "name": "<input type=\"checkbox\">",
+    "desc": "Creates a checkbox allowing multiple choices."
+   },
+   {
+    "name": "<select>",
+    "desc": "Creates a space-saving dropdown menu."
+   },
+   {
+    "name": "<option>",
+    "desc": "Represents an individual choice inside a dropdown menu."
+   },
+   {
+    "name": "name",
+    "desc": "Attribute used to group radio buttons together."
+   },
+   {
+    "name": "value",
+    "desc": "Defines the value submitted when an element is chosen."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code to create a radio button for picking red color.",
+    "a": "<input type=\"radio\" id=\"r1\" name=\"color\" value=\"red\">\n<label for=\"r1\">Red</label>"
+   },
+   {
+    "q": "Write HTML code to create a checkbox for picking art subject.",
+    "a": "<input type=\"checkbox\" id=\"art\" name=\"subject\" value=\"art\">\n<label for=\"art\">Art</label>"
+   },
+   {
+    "q": "Write HTML code for a dropdown menu with one option named 'Egypt'.",
+    "a": "<select name=\"country\">\n  <option value=\"egypt\">Egypt</option>\n</select>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: Advanced form styling",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling"
+  },
+  {
+   "title": "MDN: Basic native form controls",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls"
+  }
+ ],
+ "grounded": true
+}

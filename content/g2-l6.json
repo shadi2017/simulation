@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، أهلاً بك في عالم الألعاب! هل ملاحظة كيف يسقط أي شيء نرميه للأعلى على الأرض؟ هذه هي سحر الجاذبية في ألعاب سكراتش، حيث نجعل شخصيتنا تتحرك بسلاسة وكأنها في العالم الحقيقي.",
+   "في سكراتش، نصنع متغيراً سحرياً نسميه (سرعة ص_y_velocity). هذا المتغير يشبه الموتور الصغير الذي يحدد هل الشخصية تصعد للأعلى أم تسقط للأسفل بسرعة أكبر مع مرور الوقت.",
+   "كيف تعمل الجاذبية؟ في كل مرة يتحرك اللوب (تكرار)، ننقص قيمة (سرعة ص) بمقدار ثابت مثل -1، ثم نغير موضع ص بمقدار هذه السرعة. هذا يجعل السقوط يبدأ بطيئاً ثم يسرع تدريجياً!",
+   "عندما يضغط اللاعب على مفتاح المسافة، نعطي (سرعة ص) قيمة موجبة كبيرة مثل 15! هذا يدفع الشخصية للأعلى فجأة كأنها تقفز بكل قوتها قبل أن تسحبها الجاذبية للأسفل مجدداً.",
+   "قاعدة ذهبية في الألعاب: لا تفترض أن الأرض رسوم فقط! يجب أن نبرمج الشرط: (إذا كانت ص أقل من -100 أو تلامس اللون الأخضر، اجعل (سرعة ص) صفراً ولا تدع الشخصية تسقط تحت المنصة).",
+   "تخيل أنك تصمم لعبة سوبر ماريو مصغرة! هذه القواعد هي التي تجعل القفز والهبوط على المنصات يبدو طبيعياً وممتعاً للاعبين، تماماً كما في ألعاب الكرتون الشهيرة التي تحبها."
+  ],
+  "example": "دعنا نرى كيف نبرمج القفز والجاذبية في سكراتش خطوة بخطوة! أولاً، نصنع متغيراً اسمه (y_velocity). في حدث (عند ضغط العلم الأخضر)، نضع حلقة (إلى الأبد) تتضمن: تغيير (ص) بمقدار (y_velocity)، وتغيير (y_velocity) بمقدار -1. وإذا ضغطنا مفتاح السهم للأعلى، نجعل (y_velocity) يساوي 12. عندما تلمس الشخصية الأرضية الخضراء، نوقف السقوط بتثبيت (y_velocity) عند صفر. هذا يجعل الشخصية تقفز ثم تعود للأرض بأمان تام دون أن تخترق المنصة!",
+  "mistake": "الخطأ الشائع هو نسيان تقليل قيمة (سرعة ص) داخل حلقة التكرار، مما يجعل الشخصية تطفو في الهواء كأنها في الفضاء الخارجي! الحل هو التأكد دائماً من إضافة كتلة (تغيير y_velocity بمقدار -1) داخل اللوب المستمر.",
+  "recap": "تعلمنا اليوم كيف نجعل الشخصيات تقفز وتسقط بفضل متغير السرعة وقانون الجاذبية. كما عرفنا كيف نوقفها بثبات فوق المنصات الخضراء.",
+  "q": [
+   {
+    "t": "ماذا يفعل المتغير y_velocity عندما نسقط؟",
+    "o": [
+     "يزداد بمقدار موجب",
+     "ينقص باستمرار ليجعل السقوط أسرع",
+     "يبقى ثابتاً دائماً"
+    ],
+    "a": 1,
+    "why": "الجاذبية تسحب الشخصية لأسفل بقيمة متناقصة فتزيد سرعة السقوط."
+   },
+   {
+    "t": "كيف نجعل الشخصية تقفز للأعلى في سكراتش؟",
+    "o": [
+     "نجعل y_velocity يساوي رقماً موجباً كبيراً",
+     "نغير الموضع س بمقدار 50",
+     "نخفي الكائن تماماً"
+    ],
+    "a": 0,
+    "why": "إعطاء المتغير قيمة موجبة يرفع الكائن نحو السماء قبل أن تسحبه الجاذبية."
+   },
+   {
+    "t": "لماذا نضع شرطاً عند ملامسة المنصة؟",
+    "o": [
+     "لكي يختفي الكائن",
+     "لكي يتوقف السقوط وتستقر الشخصية فوقها",
+     "لتغيير لون اللعبة فقط"
+    ],
+    "a": 1,
+    "why": "لمنع الشخصية من الاختراق والوقوع عبر المنصة."
+   }
+  ],
+  "sections": [
+   {
+    "h": "ما هي الجاذبية في الألعاب؟",
+    "text": "الجاذبية هي القوة الخفية التي تشد الأشياء للأسفل نحو الأرض. في سكراتش، لا توجد جاذبية جاهزة، بل نصنعها بأنفسنا عبر تقليل موضع الشخصية رأسياً طوال الوقت.",
+    "code": "كرر باستمرار:\n  غير موضع ص بمقدار -2",
+    "output": "تسقط الشخصية باستمرار نحو أسفل الشاشة."
+   },
+   {
+    "h": "متغير سرعة السقوط (Falling Velocity)",
+    "text": "بدلاً من السقوط بسرعة ثابتة ومللة، نستخدم متغيراً نسميه y_velocity. هذا المتغير يبدأ صغيراً ثم يكبر بالسالب، تماماً مثل تفاحة تقع من شجرة وتتسارع تدريجياً.",
+    "code": "اجعل y_velocity = 0\nكرر باستمرار:\n  اجعل y_velocity = y_velocity - 1",
+    "output": "تزداد سرعة سقوط الشخصية مع مرور الوقت بانتظام."
+   },
+   {
+    "h": "معادلة الحركة الرأسية",
+    "text": "لكي نتحرك فعلياً على الشاشة، نربط متغير السرعة بموضع الكائن (ص). في كل خطوة، نضيف قيمة y_velocity إلى الموضع الرأسي للكائن.",
+    "code": "كرر باستمرار:\n  غير (ص) بمقدار (y_velocity)",
+    "output": "يتحرك الكائن صعوداً أو هبوطاً بحسب قيمة المتغير الحالية."
+   },
+   {
+    "h": "سر الصعود: القفز الناعم",
+    "text": "عندما تريد شخصيتك القفز، أنت لا ترفعها فجأة، بل تعطيها دفعة قوية نحو الأعلى عن طريق تعيين قيمة موجبة كبيرة لمتغير السرعة، مثل 15.",
+    "code": "إذا ضغط مفتاح المسافة:\n  اجعل y_velocity = 15",
+    "output": "تقفز الشخصية للأعلى بقوة ثم تبطئ تدريجياً بفعل الجاذبية."
+   },
+   {
+    "h": "تعريف المنصات والأرضية",
+    "text": "المنصة هي السطح الآمن الذي تقف عليه شخصيتك. لكي لا تسقط الشخصية للأبد في الفضاء الأسود، نبرمج قاعدة تفحص متى تلمس الشخصية لون الأرضية.",
+    "code": "إذا كانت الشخصية تلامس اللون الأخضر:\n  اجعل y_velocity = 0",
+    "output": "تتوقف الشخصية فوراً عن السقوط وتقف بثبات."
+   },
+   {
+    "h": "الهبوط على سطح المنصة بدقة",
+    "text": "أحياناً تدخل الشخصية قليلاً داخل الأرضية قبل أن تتوقف. لحل ذلك، نأمر الكائن بالتحرك للأعلى قليلاً حتى يستقر تماماً على السطح العلوي للمنصة.",
+    "code": "كرر حتى لا تلامس اللون الأخضر:\n  غير (ص) بمقدار 1",
+    "output": "يخرج الكائن من داخل الأرض ويقف فوقها بشكل مثالي."
+   },
+   {
+    "h": "رحلة القفز الكاملة: صعود وهبوط",
+    "text": "عندما تجمع كل هذه الأجزاء معاً، تحصل على دورة حياة القفزة: ضغطة زر ترفعك، جاذبية تبطئك ثم تسحبك، ولمسة أرض توقفك بأمان تام.",
+    "code": "اضغط مسافة -> اصعد لأعلى -> أبطئ -> اسقط لأسفل -> اقف على المنصة",
+    "output": "حركة شخصية سلسة وطبيعية تشبه الألعاب الحقيقية تماماً."
+   },
+   {
+    "h": "تطبيق واقعي في عالم الألعاب",
+    "text": "هل لعبت ماريو أو سونيك من قبل؟ كل ألعاب المنصات (Platformers) تستخدم هذه المعادلات الرياضية الدقيقة للجاذبية والسرعة لجعل اللعب ممتعاً وتحدياً مشوقاً.",
+    "code": "لعبة صيد الجواهر أو القفز فوق الحواجز",
+    "output": "تصميم لعبة تفاعلية رائعة يستمتع بها أصدقاؤك."
+   }
+  ],
+  "reference": [
+   {
+    "name": "الجاذبية (Gravity)",
+    "desc": "قوة تجذب الكائنات نحو أسفل الشاشة باستمرار."
+   },
+   {
+    "name": "متغير السرعة (y_velocity)",
+    "desc": "رقم يخزن مقدار واتجاه الحركة الرأسية للكائن."
+   },
+   {
+    "name": "منصة (Platform)",
+    "desc": "سطح صلب تقف فوقه الشخصيات وتمنع السقوط."
+   },
+   {
+    "name": "القفز (Jumping)",
+    "desc": "دفع الكائن للأعلى بإعطائه سرعة موجبة."
+   },
+   {
+    "name": "ملامسة اللون (Touching Color)",
+    "desc": "لبنة فحص تكتشف اصطدام الكائن بالأرضية."
+   },
+   {
+    "name": "حلقة التكرار (Forever)",
+    "desc": "تنفذ كود الجاذبية بلا توقف طوال اللعبة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي القيمة المناسبة لمتغير y_velocity لكي تقفز الشخصية للأعلى؟",
+    "a": "قيمة موجبة كبيرة مثل 12 أو 15."
+   },
+   {
+    "q": "ماذا نضيف داخل الحلقة المستمرة لتفعيل الجاذبية وسحب الشخصية للأسفل؟",
+    "a": "تغيير y_velocity بمقدار سالب مثل -1."
+   },
+   {
+    "q": "كيف نتأكد أن الشخصية توقف سقوطها فوق الأرض الخضراء؟",
+    "a": "بفحص شرط ملامسة اللون الأخضر وتثبيت y_velocity عند صفر."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "رحلة القفز والجاذبية في سكراتش",
+   "goal": "أكمل الجمل البرمجية الصحيحة لتفعيل حركة القفز والجاذبية.",
+   "items": [
+    {
+     "text": "لكي نسحب الشخصية للأسفل باستمرار، نقوم بـ ___ متغير y_velocity بمقدار سالب.",
+     "options": [
+      "تغيير",
+      "إخفاء",
+      "تكبير"
+     ],
+     "a": 0
+    },
+    {
+     "text": "عندما يضغط اللاعب زر القفز، نعطي y_velocity قيمة ___ كبيرة.",
+     "options": [
+      "موجبة",
+      "سالبة",
+      "صفرية"
+     ],
+     "a": 0
+    },
+    {
+     "text": "حين تلمس الشخصية المنصة، نجعل y_velocity يساوي ___ لنوقف السقوط.",
+     "options": [
+      "عشرة",
+      "صفراً",
+      "مائة"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! قفزت شخصيتك في اللعبة وهبطت على المنصة بثبات وسلاسة مذهلة!"
+  }
+ },
+ "en": {
+  "steps": [
+   "Hey hero, welcome to game world! Have you noticed how anything thrown up falls back down? That is the magic of gravity in Scratch, making our character move smoothly just like in the real world.",
+   "In Scratch, we create a magical variable called y_velocity. This variable acts like a tiny motor deciding whether our character is moving up or falling down faster over time.",
+   "How does gravity work? Every loop tick, we decrease y_velocity by a constant like -1, then change y position by this velocity. This makes falling start slow and speed up!",
+   "When the player presses the spacebar, we give y_velocity a big positive value like 15! This suddenly pushes the character up as if jumping with full force before gravity pulls it back down.",
+   "Golden rule in games: Don't assume ground is just art! We must code the rule: 'If y is less than -100 or touching green, set y_velocity to zero and stop falling through the platform.'",
+   "Imagine designing a mini Super Mario game! These rules make jumping and landing on platforms look natural and fun for players, just like your favorite cartoon games."
+  ],
+  "example": "Let's see how to program jumping and gravity in Scratch step-by-step! First, create a variable named y_velocity. Inside a green flag event, put a forever loop containing: change y by y_velocity, and change y_velocity by -1. If the up arrow is pressed, set y_velocity to 12. When touching the green ground, stop falling by setting y_velocity to zero. This makes your character jump and land safely without falling through the platform!",
+  "mistake": "A common mistake is forgetting to decrease y_velocity inside the loop, making the character float in the air like in outer space! The fix is to always ensure you add a block to change y_velocity by -1 inside the forever loop.",
+  "recap": "Today we learned how to make characters jump and fall using a velocity variable and gravity. We also discovered how to stop them firmly on top of green platforms.",
+  "q": [
+   {
+    "t": "What does the y_velocity variable do when falling?",
+    "o": [
+     "Increases by a positive amount",
+     "Decreases constantly to make falling faster",
+     "Stays completely constant"
+    ],
+    "a": 1,
+    "why": "Gravity pulls the character down with a decreasing value, accelerating the fall."
+   },
+   {
+    "t": "How do we make the character jump up in Scratch?",
+    "o": [
+     "Set y_velocity to a large positive number",
+     "Change x position by 50",
+     "Hide the sprite completely"
+    ],
+    "a": 0,
+    "why": "Giving the variable a positive value lifts the sprite skyward before gravity pulls it down."
+   },
+   {
+    "t": "Why do we add a condition when touching the platform?",
+    "o": [
+     "To make the sprite vanish",
+     "To stop falling and rest the character on top",
+     "To only change game colors"
+    ],
+    "a": 1,
+    "why": "To prevent the character from passing through and falling past the platform."
+   }
+  ],
+  "sections": [
+   {
+    "h": "What is Gravity in Games?",
+    "text": "Gravity is the hidden force pulling objects down toward the ground. In Scratch, gravity isn't built-in; we build it ourselves by constantly decreasing our character's vertical position.",
+    "code": "repeat until game over:\n  change y by -2",
+    "output": "The character continuously falls toward the bottom of the screen."
+   },
+   {
+    "h": "The Falling Velocity Variable",
+    "text": "Instead of falling at a boring fixed speed, we use a variable called y_velocity. This variable starts small and grows more negative, just like an apple dropping from a tree and accelerating.",
+    "code": "set y_velocity to 0\nforever:\n  change y_velocity by -1",
+    "output": "The character's fall speed increases steadily over time."
+   },
+   {
+    "h": "The Vertical Motion Equation",
+    "text": "To actually move on screen, we connect our velocity variable to the sprite's y position. At every step, we add y_velocity to the sprite's vertical coordinate.",
+    "code": "forever:\n  change y by (y_velocity)",
+    "output": "The sprite moves up or down based on its current velocity value."
+   },
+   {
+    "h": "The Secret to Rising: Smooth Jumping",
+    "text": "When you want your character to jump, you don't just lift it instantly; you give it an upward boost by assigning a large positive value to the velocity variable, like 15.",
+    "code": "if key space pressed:\n  set y_velocity to 15",
+    "output": "The character jumps up strongly then slows down due to gravity."
+   },
+   {
+    "h": "Defining Platforms and Ground",
+    "text": "A platform is the safe surface your character stands on. To keep your character from falling forever into empty space, we code a rule checking when the character touches the ground color.",
+    "code": "if touching green color:\n  set y_velocity to 0",
+    "output": "The character immediately stops falling and stands firmly."
+   },
+   {
+    "h": "Precise Platform Landing",
+    "text": "Sometimes the character sinks slightly into the ground before stopping. To fix this, we command the sprite to step up slightly until it rests perfectly on top of the platform.",
+    "code": "repeat until not touching green:\n  change y by 1",
+    "output": "The sprite pops out of the ground and stands right on top."
+   },
+   {
+    "h": "The Complete Jump Journey: Up and Down",
+    "text": "When you combine all these parts, you get the complete jump cycle: a button press lifts you, gravity slows you down then pulls you back, and ground contact stops you safely.",
+    "code": "press space -> go up -> slow down -> fall down -> land on platform",
+    "output": "Smooth and natural character movement just like real video games."
+   },
+   {
+    "h": "Real-Life Use in Game Design",
+    "text": "Have you played Mario or Sonic before? All platformer games use these exact mathematical equations for gravity and velocity to make gameplay fun and challenging.",
+    "code": "Gem collecting game or obstacle jumping",
+    "output": "Designing an awesome interactive game your friends will enjoy."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Gravity",
+    "desc": "A force pulling sprites toward the bottom of the screen."
+   },
+   {
+    "name": "y_velocity",
+    "desc": "A number storing the amount and direction of vertical movement."
+   },
+   {
+    "name": "Platform",
+    "desc": "A solid surface characters stand on to prevent falling."
+   },
+   {
+    "name": "Jumping",
+    "desc": "Pushing the sprite upwards by giving it positive velocity."
+   },
+   {
+    "name": "Touching Color",
+    "desc": "A sensing block detecting when a sprite hits the ground."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "Runs the gravity code non-stop throughout the game."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is a good value for y_velocity to make the character jump up?",
+    "a": "A large positive value like 12 or 15."
+   },
+   {
+    "q": "What do we add inside the forever loop to enable gravity pulling down?",
+    "a": "Change y_velocity by a negative amount like -1."
+   },
+   {
+    "q": "How do we ensure the character stops falling on the green ground?",
+    "a": "Check the touching color green condition and set y_velocity to zero."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Jump & Gravity Journey in Scratch",
+   "goal": "Complete the correct code snippets to enable jumping and gravity physics.",
+   "items": [
+    {
+     "text": "To pull the character down continuously, we ___ the y_velocity variable by a negative amount.",
+     "options": [
+      "change",
+      "hide",
+      "enlarge"
+     ],
+     "a": 0
+    },
+    {
+     "text": "When the player presses jump, we give y_velocity a large ___ value.",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "a": 0
+    },
+    {
+     "text": "When touching the platform, we set y_velocity to ___ to stop falling.",
+     "options": [
+      "ten",
+      "zero",
+      "hundred"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! Your game character jumped and landed on the platform smoothly and steadily!"
+  }
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "Interactive School Club Portal",
+   "desc": "Build a vibrant hub for a school club featuring member registration, polls, and project showcases. It puts all your HTML skills together into one fun page.",
+   "tags": [
+    "Forms",
+    "Widgets",
+    "Layout"
+   ],
+   "steps": [
+    "Create the main HTML structure and add a cool favicon using the link tag.",
+    "Use header, figure, and figcaption elements to display the club's logo and title.",
+    "Add quotes and citations from famous club members using blockquote and cite tags.",
+    "Design a registration form with advanced attributes like required, placeholder, and pattern.",
+    "Include progress bars to show club fundraising goals and details tags for FAQs.",
+    "Use inline formatting like mark and code to highlight special rules, then finish with helpful HTML comments."
+   ],
+   "rubric": [
+    "Uses a custom favicon and proper heading hierarchy.",
+    "Includes a working advanced form with validation attributes.",
+    "Features figure, figcaption, progress bars, and details tags.",
+    "Cleanly commented code and correct use of inline text formatting."
+   ],
+   "stretch": "Add a meter element to display the temperature or battery level of a club robot project!"
+  },
+  {
+   "title": "Egyptian Museum Mini Guide",
+   "desc": "Create an educational webpage showcasing famous ancient Egyptian artifacts with images, descriptions, and interactive widgets.",
+   "tags": [
+    "Artifacts",
+    "Widgets",
+    "Media"
+   ],
+   "steps": [
+    "Set up the page title and link a unique historical icon as your favicon.",
+    "Build a hero section using figure and figcaption elements for the main exhibit photo.",
+    "Incorporate quotations and citations from historians using blockquote and cite elements.",
+    "Add interactive details and summary dropdowns for extra artifact history facts.",
+    "Use progress bars to show restoration progress percentages for different monuments.",
+    "Add a visitor feedback form with advanced attributes and leave clean comments throughout."
+   ],
+   "rubric": [
+    "Correct use of figure and figcaption for exhibit images.",
+    "Includes details and summary tags for expandable trivia.",
+    "At least two progress bars showing valid percentage values.",
+    "Working form with advanced attributes and clear HTML comments."
+   ],
+   "stretch": "Use character entities like &copy; or special hieroglyph symbols in your text content!"
+  },
+  {
+   "title": "Personal Hobby & Game Showcase",
+   "desc": "Show off your favorite games, books, or sports in a polished personal webpage complete with interactive forms and status meters.",
+   "tags": [
+    "Portfolio",
+    "Forms",
+    "Design"
+   ],
+   "steps": [
+    "Start your HTML document and set up a custom favicon for your gaming channel.",
+    "Create an intro section using figure and figcaption for your gamer profile picture.",
+    "Add favorite quotes using blockquote and cite tags to inspire your visitors.",
+    "Use meter elements to display your current game skill levels or daily activity scores.",
+    "Build a contact or newsletter sign-up form using advanced form validation attributes.",
+    "Organize extra tips inside details tags and format key terms with inline elements like mark."
+   ],
+   "rubric": [
+    "Includes a custom favicon and well-structured headings.",
+    "Accurately uses meter and progress elements for stats.",
+    "Features functional forms with advanced HTML5 attributes.",
+    "Uses inline formatting and comments to explain sections."
+   ],
+   "stretch": "Add character entities to display mathematical symbols or copyright notices properly!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "بوابة نادي المدرسة التفاعلية",
+   "desc": "اصنع موقعاً مبهجاً لنادي المدرسة يضم تسجيل الأعضاء، الاستطلاعات، وعروض المشاريع. يجمع هذا المشروع كل مهاراتك في صفحة واحدة ممتعة.",
+   "tags": [
+    "نماذج",
+    "أدوات",
+    "تصميم"
+   ],
+   "steps": [
+    "أنشئ هيكل HTML الأساسي وأضف أيقونة موقع مميزة (Favicon) باستخدام الوسم link.",
+    "استخدم عناصر figure و figcaption لعرض شعار النادي وعنوانه بشكل جميل.",
+    "أضف اقتباسات واقتباسات مرجعية لأعضاء النادي المشهورين باستخدام الوسمين blockquote و cite.",
+    "صمم نموذج تسجيل مع سمات متقدمة مثل required و placeholder و pattern.",
+    "أضف أشرطة تقدم (progress bars) لعرض أهداف التبرعات ووسوم details للأسئلة الشائعة.",
+    "استخدم التنسيق الداخلي مثل mark و code لتمييز القواعد الخاصة، ثم انهِ العمل بتعليقات HTML واضحة."
+   ],
+   "rubric": [
+    "استخدام أيقونة موقع مخصصة وترتيب صحيح للعناوين.",
+    "تضمين نموذج متقدم يعمل بشكل صحيح مع سمات التحقق.",
+    "استخدام عناصر figure و figcaption و progress و details.",
+    "كود نظيف مع تعليقات واستخدام صحيح للتنسيق الداخلي."
+   ],
+   "stretch": "أضف عنصر meter لعرض درجة الحرارة أو مستوى البطارية لمشروع روبوت خاص بالنادي!"
+  },
+  {
+   "title": "دليل المتحف المصري المصغر",
+   "desc": "أنشئ صفحة ويب تعليمية تعرض آثاراً مصرية قديمة مشهورة مع صور، أوصاف، وأدوات تفاعلية.",
+   "tags": [
+    "آثار",
+    "أدوات",
+    "وسائط"
+   ],
+   "steps": [
+    "قم بإعداد عنوان الصفحة وربط أيقونة تاريخية فريدة كأيقونة للموقع (Favicon).",
+    "ابنِ قسماً رئيسياً باستخدام عناصر figure و figcaption لصورة المعرض الأساسية.",
+    "أدخل اقتباسات ومصادر من المؤرخين باستخدام عناصر blockquote و cite.",
+    "أضف قوائم منسدلة تفاعلية (details و summary) لحقائق التاريخ الإضافية.",
+    "استخدم أشرطة التقدم (progress bars) لإظهار نسب تقدم ترميم الآثار المختلفة.",
+    "أضف نموذج ملاحظات الزوار مع سمات متقدمة واترك تعليقات نظيفة في جميع الأجزاء."
+   ],
+   "rubric": [
+    "استخدام صحيح لعناصر figure و figcaption لصور المعرض.",
+    "تضمين وسوم details و summary لمعلومات قابلة للتوسيع.",
+    "وجود شريطين تقدم على الأقل بقيم صحيحة.",
+    "نموذج يعمل بشكل صحيح مع سمات متقدمة وتعليقات HTML واضحة."
+   ],
+   "stretch": "استخدم كيانات الأحرف (Character Entities) مثل &copy; أو رموز خاصة في النصوص!"
+  },
+  {
+   "title": "معرض الهوايات والألعاب الشخصي",
+   "desc": "اعرض ألعابك أو كتبك أو رياضتك المفضلة في صفحة ويب شخصية مصقولة مع نماذج تفاعلية ومؤشرات حالة.",
+   "tags": [
+    "محفظة",
+    "نماذج",
+    "تصميم"
+   ],
+   "steps": [
+    "ابدأ مستند HTML الخاص بك وقم بتعيين أيقونة مخصصة لقناتك الألعاب.",
+    "أنشئ قسماً تعريفياً باستخدام figure و figcaption لصورة ملفك الشخصي كلاعب.",
+    "أضف مقولات مفضلة باستخدام وسوم blockquote و cite لإلهام زوارك.",
+    "استخدم عناصر meter لعرض مستويات مهاراتك في الألعاب أو نقاط نشاطك اليومي.",
+    "ابنِ نموذج اتصال أو اشتراك في النشرة البريدية باستخدام سمات التحقق المتقدمة.",
+    "نظم النصائح الإضافية داخل وسوم details ونسق المصطلحات بمفاتيح مثل mark."
+   ],
+   "rubric": [
+    "يتضمن أيقونة موقع مخصصة وعناوين منظمة بشكل جيد.",
+    "يستخدم عناصر meter و progress بدقة للإحصائيات.",
+    "يحتوي على نماذج فعالة مع سمات HTML5 المتقدمة.",
+    "يستخدم التنسيق الداخلي والتعليقات لشرح الأقسام."
+   ],
+   "stretch": "أضف كيانات الأحرف لعرض الرموز الرياضية أو إشعارات حقوق النشر بشكل صحيح!"
+  }
+ ]
+}

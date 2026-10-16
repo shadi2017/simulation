@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تعalو نحكي قصة بصوتنا في سكراتش جونيور! التسجيل الصوتي بيخلي الشخصيات تتكلم وتعمل أصوات حقيقية بدل ما تكون صامتة، وده بيدي حيوية كبيرة جداً لأي قصة إبداعية بنصممها.",
+   "عشان نسجل صوت، بندوس على زر الميكروفون الصغير في برنامج سكراتش جونيور، وندوس على علامة التسجيل الحمراء، ونقول جملتنا بكل حماس زي ما بنقول 'مرحباً أصدقائي!'.",
+   "إزاي الصوت بيشتغل في اللعبة؟ بنربط بلوك مكبر الصوت أو الميكروفون اللي سجلناه ببلوك البداية الأخضر، عشان أول ما ندوس على الشخصية أو تبدأ القصة، الصوت يشتغل لوحده فوراً.",
+   "مش بس كده، نقدر كمان نستخدم أصوات النظام الجاهزة زي صوت 'البوب' (Pop) السريع الجميل، وده بيضيف بهجة ومؤثرات صوتية ممتعة جداً لأفعال الشخصيات زي النط أو الاختفاء.",
+   "قاعدة ذهبية: الصوت لازم يكون قصير وواضح وفي مناسبة الأحداث، زي ما بنسجل صوت طائر يغرد أول ما يظهر على الشاشة، عشان القصة تكون مرتبة وممتعة للجمهور.",
+   "في الحقيقة، المخرجين الكبار بيستخدموا هندسة الصوت في الأفلام والرسوم المتحركة عشان يخلونا نندمج مع القصة، ودلوقتي إنت المخرج الصغير اللي بيتحكم في أصوات شخصياته بكل ابتكار!"
+  ],
+  "example": "تخيل إنك بتصمم قطة ذكية في قصة، وعايزها تقول 'مياو' أول ما تبدأ القصة. بنفتح أداة التسجيل، نسجل صوت 'مياو' ونحفظه برقم 1. بعدين بنسحب بلوك العلم الأخضر، ونحط جنبه بلوك الصوت رقم 1. أول ما ندوس على العلم، القطة بتتحرك وتقول مياو بصوتك الجميل!",
+  "mistake": "الخطأ الشائع إننا بنسجل صوت طويل جداً وغير واضح. الحل إننا نتكلم بصوت عالي وقريب من الميكروفون، ونخلي التسجيل قصير ومحدد بالظبط.",
+  "recap": "تعلمنا إزاي نسجل أصواتنا ونشغلها وقت بداية المشهد، وإزاي نضيف أصوات النظام الجاهزة زي البوب لنجعل القصص ممتعة.",
+  "q": [
+   {
+    "t": "إيه الزرار اللي بندوس عليه عشان نسجل صوت جديد؟",
+    "o": [
+     "زر الميكروفون",
+     "زر العلم الأخضر",
+     "زر الحذف"
+    ],
+    "a": 0,
+    "why": "زر الميكروفون هو المسؤول عن فتح لوحة التسجيل."
+   },
+   {
+    "t": "ليه بنستخدم أصوات النظام الجاهزة مثل Pop؟",
+    "o": [
+     "لإضافة مؤثرات صوتية سريعة وممتعة",
+     "لإغلاق البرنامج",
+     "لتغيير لون الشخصية"
+    ],
+    "a": 0,
+    "why": "أصوات النظام بتدي بهجة ومؤثرات سريعة."
+   },
+   {
+    "t": "إمتى بيشتغل الصوت المسجل في قصة سكراتش جونيور؟",
+    "o": [
+     "لما يتقفل الجهاز",
+     "لما يتربط بلوك البداية أو الحدث",
+     "لوحده من غير أي كود"
+    ],
+    "a": 1,
+    "why": "لازم نربط بلوك الصوت ببلوك البداية عشان يشتغل."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع صوت القطة",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل بلوك الصوت المسجل مع العلم الأخضر",
+   "code": "العلم الأخضر -> بلوك صوت رقم 1 (مسجل: مرحباً)",
+   "options": [
+    "الشخصية تقول مرحباً بصوتك",
+    "الشخصية تختفي تماماً",
+    "الشخصية تغير لونها للأزرق"
+   ],
+   "a": 0,
+   "success": "رائع! الشخصية اتكلمت وقالت مرحباً بصوتك الجميل!"
+  },
+  "sections": [
+   {
+    "h": "ما هو التسجيل الصوتي في سكراتش جونيور؟",
+    "text": "التسجيل الصوتي بيسمح ليك تضيف صوتك الحقيقي أو أي صوت تحبه للقصة. زي ما بتسجل رسالة صوتية لصاحبك على الواتساب، هنا بتقدر تخلي بطريقك أو قطتك يتكلموا بصوتك الخاص.",
+    "code": "اضغط ميكروفون -> سجل صوتك -> احفظ التسجيل",
+    "output": "بيظهر صوت جديد جاهز للاستخدام في الأكواد."
+   },
+   {
+    "h": "استخدام ميكروفون الجهاز",
+    "text": "الميكروفون هو الأذن اللي بتسمع صوتك وتسجله جوه البرنامج. لما تقرب من الجهاز وتقول جملتك بوضوح، البرنامج بيحول صوتك لملف رقمي يقدر يفهمه ويشغله وقت ما تحب.",
+    "code": "التسجيل عبر الميكروفون الداخلي",
+    "output": "تسجيل صوتي خاص برقم (مثل 1)."
+   },
+   {
+    "h": "تسجيل صوت مخصص لشخصية",
+    "text": "كل شخصية ممكن يكون لها صوت فريد. الدب صوته خشن والعصفور صوته رفيع. إنت تقدر تسجل أصوات مختلفة لكل شخصية في قصتك عشان تكون حية ومبتكرة.",
+    "code": "شخصية الكلب -> سجل صوت 'هو هو'",
+    "output": "الكلب بينطق بصوت 'هو هو' الحقيقي."
+   },
+   {
+    "h": "ربط الصوت بأوامر البدء",
+    "text": "عشان الصوت يشتغل، لازم تحطه جنب بلوك تشغيل زي العلم الأخضر أو بلوك اللمس. زي الممثل على المسرح، بيبدأ كلامه أول ما المخرج يدي إشارة البدء.",
+    "code": "عند الضغط على العلم -> تشغيل الصوت المسجل",
+    "output": "الصوت بيشتغل فوراً مع بدء المشهد."
+   },
+   {
+    "h": "استخدام أصوات النظام الجاهزة (Pop)",
+    "text": "لو مش عايز تسجل صوتك، سكراتش جونيور بيوفر أصوات جاهزة وممتعة زي صوت 'البوب' (Pop). ده شبه فقاعة صابون بتفرقع، ممتاز لألعاب القفز والاختفاء.",
+    "code": "بلوك الصوت -> اختر صوت Pop",
+    "output": "سماع صوت فرقعة خفيف ولطيف."
+   },
+   {
+    "h": "تشغيل أصوات متعددة في تسلسل",
+    "text": "تقدر ترتب أكتر من صوت ورا بعض، زي ما تقول مرحباً، وبعدين تعمل صوت بوب، وبعدين صوت ضحكة. ده بيعمل حوار متكامل للقصة.",
+    "code": "صوت 1 -> صوت Pop -> صوت 2",
+    "output": "الأصوات بتشتغل ورا بعضها بانتظام."
+   },
+   {
+    "h": "قاعدة ذهبية لنجاح الصوت",
+    "text": "الصوت القصير والواضح هو الأفضل دائماً. الزحمة والأصوات الطويلة بتخلي اللي بيسمع يتلخبط. خلي جملتك قصيرة وجميلة عشان تناسب أحداث القصة.",
+    "code": "جملة قصيرة ومحددة + ميكروفون قريب",
+    "output": "صوت نقي ومفهوم جداً."
+   },
+   {
+    "h": "تطبيق عملي في الحياة اليومية",
+    "text": "هل سمعت قبل كدة كارتون الأطفال وفيه أصوات خبط أو ضحك أو كلام؟ ده بالظبط اللي بنعمله دلوقتي! بنصنع كارتون خاص بينا بأصواتنا وإبداعنا.",
+    "code": "تصميم فيلم كرتون قصير بصوتك",
+    "output": "قصة متكاملة وناطقة بصوتك الإبداعي."
+   }
+  ],
+  "reference": [
+   {
+    "name": "ميكروفون",
+    "desc": "أداة لتسجيل الأصوات المخصصة داخل البرنامج."
+   },
+   {
+    "name": "صوت النظام",
+    "desc": "أصوات جاهزة مدمجة في البرنامج مثل صوت البوب."
+   },
+   {
+    "name": "بلوك الصوت",
+    "desc": "البلوك المسؤول عن تشغيل التسجيلات أو الأصوات."
+   },
+   {
+    "name": "العلم الأخضر",
+    "desc": "زر لبدء تشغيل البرنامج والقصة والأصوات."
+   },
+   {
+    "name": "تسجيل مخصص",
+    "desc": "صوت يسجله المستخدم بنفسه عبر الميكروفون."
+   },
+   {
+    "name": "مؤثرات صوتية",
+    "desc": "أصوات تضاف لجعل المشهد حيوي وممتع."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "سجل صوتك وأنت تقول 'أنا مبرمج مبدع' واربطه بالعلم الأخضر.",
+    "a": "يتم ربط بلوك الصوت برقم التسجيل بجانب العلم الأخضر ليعمل عند البدء."
+   },
+   {
+    "q": "أضف صوت النظام (Pop) لشخصية تقفز على الشاشة.",
+    "a": "يتم وضع بلوك صوت Pop مع بلوك القفز ليعملان معاً."
+   },
+   {
+    "q": "لماذا نفضل الأصوات القصيرة في القصص؟",
+    "a": "لأنها تكون واضحة ومفهومة وتتناسب مع سرعة أحداث القصة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Let's bring our stories to life with our own voices in ScratchJr! Voice recording lets characters speak and make real sounds instead of being silent, adding amazing energy to any creative story we design.",
+   "To record a sound, click the small microphone button in ScratchJr, press the red record button, and speak clearly with enthusiasm, just like saying 'Hello my friends!'.",
+   "How does sound work in a project? We attach the speaker block or our recorded sound block to the green flag block, so when the story starts, the sound plays automatically.",
+   "Not just that, we can also use built-in system sounds like the quick, fun 'Pop' sound, which adds great joy and sound effects to character actions like jumping or disappearing.",
+   "Golden rule: Sounds should be short, clear, and match the scene events, like recording a bird chirping as soon as it appears on screen, keeping the story neat and fun for the audience.",
+   "In reality, big directors use sound design in movies and animations to immerse us in the story, and now you are the little director controlling your characters' voices with full creativity!"
+  ],
+  "example": "Imagine you are designing a smart cat in a story and want it to say 'Meow' when the story starts. We open the recording tool, record 'Meow' and save it as sound #1. Then we drag the green flag block, and place sound block #1 next to it. As soon as we click the flag, the cat moves and says Meow in your lovely voice!",
+  "mistake": "A common mistake is recording a very long and unclear sound. The fix is to speak loudly close to the microphone, keeping the recording short and focused.",
+  "recap": "We learned how to record our own voices and play them at the start of a scene, and how to add ready system sounds like Pop to make stories fun.",
+  "q": [
+   {
+    "t": "Which button do we click to record a new sound?",
+    "o": [
+     "Microphone button",
+     "Green flag button",
+     "Delete button"
+    ],
+    "a": 0,
+    "why": "The microphone button opens the recording panel."
+   },
+   {
+    "t": "Why do we use built-in system sounds like Pop?",
+    "o": [
+     "To add quick and fun sound effects",
+     "To close the program",
+     "To change character color"
+    ],
+    "a": 0,
+    "why": "System sounds give joy and quick effects."
+   },
+   {
+    "t": "When does the recorded sound play in a ScratchJr story?",
+    "o": [
+     "When the device is turned off",
+     "When attached to a start or trigger block",
+     "By itself without any code"
+    ],
+    "a": 1,
+    "why": "We must attach the sound block to a start block to play it."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Cat's Sound",
+   "goal": "Find out what happens when we run the recorded sound block with the green flag",
+   "code": "Green Flag -> Sound block #1 (Recorded: Hello)",
+   "options": [
+    "Character says Hello in your voice",
+    "Character disappears completely",
+    "Character changes color to blue"
+   ],
+   "a": 0,
+   "success": "Awesome! The character spoke and said Hello in your lovely voice!"
+  },
+  "sections": [
+   {
+    "h": "What is Voice Recording in ScratchJr?",
+    "text": "Voice recording lets you add your real voice or any sound you love to the story. Just like sending a voice note to a friend on WhatsApp, here you can make your penguin or cat speak with your unique voice.",
+    "code": "Click mic -> Record your voice -> Save recording",
+    "output": "A new sound ready to use in your code blocks."
+   },
+   {
+    "h": "Using the Built-In Microphone",
+    "text": "The microphone is the ear that hears your voice and records it inside the app. When you get close to the device and speak clearly, the app turns your voice into a digital file it can play anytime.",
+    "code": "Recording via internal microphone",
+    "output": "A custom voice recording numbered (e.g., 1)."
+   },
+   {
+    "h": "Recording Custom Sounds for Characters",
+    "text": "Every character can have a unique voice. A bear sounds deep and a bird sounds high-pitched. You can record different sounds for each character in your story to make it lively and creative.",
+    "code": "Dog character -> Record 'Woof Woof'",
+    "output": "The dog speaks with a real 'Woof Woof' sound."
+   },
+   {
+    "h": "Triggering Sound with Start Blocks",
+    "text": "For the sound to play, you must place it next to a trigger block like the green flag or tap block. Like an actor on stage, they start speaking as soon as the director gives the signal.",
+    "code": "When Green Flag tapped -> Play recorded sound",
+    "output": "The sound plays instantly when the scene starts."
+   },
+   {
+    "h": "Using Built-In System Sounds (Pop)",
+    "text": "If you don't want to record your voice, ScratchJr provides fun built-in sounds like 'Pop'. It's like a popping soap bubble, great for jumping and disappearing games.",
+    "code": "Sound block -> Choose Pop sound",
+    "output": "Hearing a soft and pleasant popping sound."
+   },
+   {
+    "h": "Playing Multiple Sounds in Sequence",
+    "text": "You can arrange multiple sounds one after another, like saying hello, then making a pop sound, then a laugh. This creates a complete dialogue for the story.",
+    "code": "Sound 1 -> Pop sound -> Sound 2",
+    "output": "Sounds play in order one after another."
+   },
+   {
+    "h": "Golden Rule for Great Sound",
+    "text": "Short and clear sounds are always best. Clutter and long sounds confuse the listener. Keep your sentence short and sweet to match the story events.",
+    "code": "Short specific sentence + close microphone",
+    "output": "A pure and very understandable sound."
+   },
+   {
+    "h": "Real-Life Application",
+    "text": "Have you ever heard children's cartoons with bumping, laughing, or speaking sounds? That's exactly what we are doing now! We are making our own cartoon with our voices and creativity.",
+    "code": "Design a short cartoon movie with your voice",
+    "output": "A complete story speaking in your creative voice."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Microphone",
+    "desc": "A tool to record custom sounds inside the app."
+   },
+   {
+    "name": "System Sound",
+    "desc": "Built-in ready sounds like the Pop sound."
+   },
+   {
+    "name": "Sound Block",
+    "desc": "The block responsible for playing recordings or sounds."
+   },
+   {
+    "name": "Green Flag",
+    "desc": "A button to start running the program, story, and sounds."
+   },
+   {
+    "name": "Custom Recording",
+    "desc": "A sound recorded by the user through the microphone."
+   },
+   {
+    "name": "Sound Effects",
+    "desc": "Sounds added to make the scene lively and fun."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Record your voice saying 'I am a creative programmer' and attach it to the green flag.",
+    "a": "Attach the sound block with the recording number next to the green flag to run at start."
+   },
+   {
+    "q": "Add the system sound (Pop) to a character jumping on screen.",
+    "a": "Place the Pop sound block together with the jump block so they run simultaneously."
+   },
+   {
+    "q": "Why do we prefer short sounds in stories?",
+    "a": "Because they are clear, understandable, and match the fast pace of story events."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

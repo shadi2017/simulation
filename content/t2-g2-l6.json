@@ -1,0 +1,323 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في سرعة الهجوم كأنك تفتح باب النور؛ لا يمكنك الضغط عليه باستمرار وإلا ستكسره! في سكراتش، نستخدم فترات الانتظار لمنع اللاعبين من إطلاق النار بلا توقف.",
+   "إليك مثالاً بسيطاً: عندما يضغط البطل على زر المسافة لإطلاق كرة النار، نجعله يطلقها ثم ينتظر نصف ثانية قبل أن يتمكن من الإطلاق مرة أخرى.",
+   "كيف يعمل ذلك؟ الحاسوب يسجل زمن الضغط؛ وإذا حاول اللاعب الضغط بسرعة كبيرة، فإن البلوك 'انتظر 0.5 ثانية' يوقف إرسال المقذوفات الجديدة مؤقتاً.",
+   "مثال ثانٍ: في ألعاب السفن الفضائية، إذا أطلق الليزر بسرعة فائقة، ستفوز اللعبة بسهولة. إضافة فترة انتظار تجعل اللعبة ممتعة وتتطلب ذكاءً ومهارة.",
+   "قاعدة ذهبية: استخدم دائماً متغير فترة الانتظار أو بلوك الانتظار لتنظيم سرعة الهجوم، فهذا يحمي لعبتك من الأعطال ويجعلها أكثر تحدياً.",
+   "الاستخدام الحقيقي: في أشهر الألعاب العالمية، يتم استخدام وقت التهدئة أو 'الكوولداون' لمنع الغش وجعل معارك اللاعبين عادلة ومثيرة للاهتمام."
+  ],
+  "example": "لنفترض أنك تصمم لعبة سيف سحري. عندما يضغط اللاعب على المفتاح، يتحرك السيف ويضرب. إذا وضعنا بلوك 'انتظر 0.5 ثانية' بعد الضرب، فلن يستطيع اللاعب التلويح بالسيف بلا هداية. Reasoning: هذا يمنع الضغط المتكرر المزعج ويجبر اللاعب على التخطيط لكل ضربة بعناية فائقة.",
+  "mistake": "الخطأ الشائع هو نسيان وضع بلوك الانتظار داخل شرط الضغط، مما يجعل السلاح يطلق مئات المقذوفات في ثانية واحدة ويجمد اللعبة. الحل هو إضافة بلوك 'انتظر' فوراً بعد إنشاء المقذوف.",
+  "recap": "تعلّمنا كيف نحمي ألعابنا من الضغط المتكرر عبر استخدام فترات الانتظار وبلوكات سكراتش. هذا يجعل الألعاب عادلة وأكثر متعة للجميع.",
+  "q": [
+   {
+    "t": "لماذا نستخدم فترات الانتظار (Cooldowns) في الألعاب؟",
+    "o": [
+     "لتسريع اللعبة جداً",
+     "منع الضغط السريع المفرط وإيقاف الغش",
+     "لجعل الشخصية تختفي تماماً"
+    ],
+    "a": 1,
+    "why": "فترة الانتظار تنظم الهجمات وتمنع اللاعب من إطلاق النار بلا توقف."
+   },
+   {
+    "t": "أي بلوك في سكراتش نستخدمه لإيقاف الهجوم لفترة قصيرة؟",
+    "o": [
+     "بلوك انتظر (wait)",
+     "بلوك غير المظهر",
+     "بلوك كرر للأبد"
+    ],
+    "a": 0,
+    "why": "بلوك الانتظار يوقف الكود مؤقتاً لعدد محدد من الثواني."
+   },
+   {
+    "t": "ماذا يحدث لو نسينا وضع فترة انتظار لسلاح ناري؟",
+    "o": [
+     "سيختفي السلاح للأبد",
+     "سيطلق اللاعب مئات الطلقات دفعة واحدة وبلا توقف",
+     "لن يعمل زر المسافة نهائياً"
+    ],
+    "a": 1,
+    "why": "بدون انتظار، سيتمكن اللاعب من الضغط وإطلاق طلقات بلا حدود."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة مفاهيم فترات الانتظار",
+   "goal": "صل كل مفهوم بسرعة الهجوم الخاصة به في سكراتش لضمان عدالة اللعبة.",
+   "pairs": [
+    [
+     "منع الضغط السريع",
+     "استخدام بلوك الانتظار"
+    ],
+    [
+     "زمن التهدئة",
+     "مدة الانتظار بالثواني"
+    ],
+    [
+     "المقذوف السحري",
+     "الطلقة النارية المنطلق"
+    ],
+    [
+     "متغير السلاح",
+     "التحكم في وقت الهجوم"
+    ]
+   ],
+   "success": "رائع! أصبحت ألعابك أكثر تنظيماً وعدالة وتحدياً!"
+  },
+  "sections": [
+   {
+    "h": "ما هي فترات انتظار الأسلحة؟",
+    "text": "فترات الانتظار أو 'الكوولداون' هي استراحة قصيرة بين ضربات البطل، تماماً كما تأخذ نفساً بعد الركض السريع قبل أن تبدأ بالركض مرة أخرى.",
+    "code": "عند الضغط على مفتاح المسافة -> إطلاق طلقة -> انتظر 0.5 ثانية",
+    "output": "يطلق اللاعب طلقة واحدة ثم ينتظر نصف ثانية للطلقة التالية."
+   },
+   {
+    "h": "أهمية منع الضغط المستمر",
+    "text": "إذا ضغط اللاعب على زر الهجوم ألف مرة في الثانية، فستفقد اللعبة متعتها. منع الضغط المفرط يضمن أن الفوز يعتمد على المهارة لا على سرعة النقر.",
+    "code": "إذا كان (زر الماوس مضغوطاً) فاستخدم متغير السماح بالإطلاق",
+    "output": "يمنع تكرار الهجمات العشوائية السريعة."
+   },
+   {
+    "h": "استخدام بلوكات سكراتش للانتظار",
+    "text": "في سكراتش، بلوك 'انتظر ( ) ثانية' هو صديقك المفضل. يوقف تنفيذ الأوامر لفترة وجيزة، مما يمنح النظام وقتاً لتنفس الصعداء.",
+    "code": "انتظر 1 ثانية",
+    "output": "تتوقف الكائنات عن الحركة لفترة زمنية محددة بدقة."
+   },
+   {
+    "h": "إنشاء متغيرات لفترة الانتظار",
+    "text": "بدلاً من تثبيت الوقت، يمكنك صنع متغير خاص بسرعة السلاح وتغييره عندما يجمع البطل جوهرة ترقية السرعة.",
+    "code": "اجعل (سرعة_الهجوم) مساوياً لـ (0.3)",
+    "output": "يسمح بتغيير سرعة إطلاق النار طوال اللعبة."
+   },
+   {
+    "h": "تنظيم حركة المقذوفات",
+    "text": "عندما يطلق السلاح كرة نارية، يجب أن تتأكد من أن الكرة الجديدة لا تظهر فوق الطلقة القديمة تماماً وبنفس السرعة المزعجة.",
+    "code": "أنشئ نسخة من (كرة النار) -> انتظر 0.4 ثانية",
+    "output": "يتم إطلاق الكرات بمسافات زمنية متساوية ومريحة للعين."
+   },
+   {
+    "h": "تحسين تجربة اللاعب",
+    "text": "الألعاب العادلة تجعل اللاعب يشعر بالفخر عند الفوز. فترات الانتظار تجعل اللاعب يفكر متى يهجم ومتى يدافع.",
+    "code": "إذا كان (وقت_الانتظار = 0) إذن اضرب",
+    "output": "لا يمكن توجيه الضربات إلا عندما يكون السلاح جاهزاً."
+   },
+   {
+    "h": "إصلاح مشاكل التكرار السريع",
+    "text": "إذا لاحظت أن السلاح يطلق آلاف الرصاصات دفعة واحدة، فاعلم أنك نسيت وضع بلوك الانتظار في المكان الصحيح داخل حلقة اللعبة.",
+    "code": "ضع (انتظر) مباشرة تحت بلوك (أنشئ نسخة)",
+    "output": "يعود تدفق اللعبة طبيعياً وممتعاً."
+   },
+   {
+    "h": "الخلاصة وتطبيق الألعاب",
+    "text": "الآن أصبح بإمكانك تصميم معارك أسطورية بأسلحة متوازنة وذكية، مما يجعل ألعابك على سكراتش تبدو وكأنها مصممة بواسطة محترفين حقيقيين!",
+    "code": "انتهى الدرس: استعد لتصميم لعبة المعركة الكبرى!",
+    "output": "جاهز لبرمجة سلاح مدمر ولكنه متوازن!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Cooldown",
+    "desc": "فترة الانتظار بين الهجمات"
+   },
+   {
+    "name": "Wait Block",
+    "desc": "بلوك إيقاف التنفيذ مؤقتاً في سكراتش"
+   },
+   {
+    "name": "Spam Prevention",
+    "desc": "منع الضغط السريع والمفرط على الأزرار"
+   },
+   {
+    "name": "Projectile",
+    "desc": "مقذوف أو طلقة متحركة في اللعبة"
+   },
+   {
+    "name": "Timer Variable",
+    "desc": "متغير لتتبع الوقت المنقضي"
+   },
+   {
+    "name": "Attack Rate",
+    "desc": "سرعة تكرار الهجمات"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أضف بلوك انتظار مدته نصف ثانية بعد إطلاق المقذوف في سكراتش.",
+    "a": "اسحب بلوك 'انتظر 0.5 ثانية' وضعه تحت أمر 'أنشئ نسخة'."
+   },
+   {
+    "q": "كيف تمنع اللاعب من إطلاق النار بلا توقف؟",
+    "a": "عبر إضافة فترة انتظار أو متغير فحص حالة السلاح جاهز أم لا."
+   },
+   {
+    "q": "ما هو البلوك المسؤول عن إيقاف الزمن مؤقتاً؟",
+    "a": "بلوك انتظر (Wait block)."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of attack speed like opening a magic door; you cannot smash it constantly or it will break! In Scratch, we use wait periods to stop players from firing endlessly.",
+   "Here is a simple example: when the hero presses space to shoot a fireball, they fire it and then must wait half a second before firing again.",
+   "How does it work? The computer records the press time; if the player tries clicking too fast, the 'wait 0.5 seconds' block temporarily pauses new projectiles.",
+   "Second example: in spaceship games, if lasers fire instantly without limits, the game becomes too easy. Adding a cooldown makes gameplay strategic and fun.",
+   "Golden rule: Always use a cooldown variable or wait block to regulate attack speed; this protects your game from bugs and adds real challenge.",
+   "Real-world use: In famous global games, cooldown times prevent cheating and make player battles fair and exciting."
+  ],
+  "example": "Suppose you are designing a magical sword game. When the player presses the key, the sword swings and strikes. If we place a 'wait 0.5 seconds' block right after the swing, the player cannot spam the sword mindlessly. Reasoning: This prevents annoying rapid clicking and forces the player to plan every strike carefully.",
+  "mistake": "A common mistake is forgetting to place the wait block inside the shooting condition, causing the weapon to fire hundreds of projectiles per second and freeze the game. The fix is to add a 'wait' block immediately after cloning.",
+  "recap": "We learned how to protect our games from spamming using wait periods and Scratch blocks. This makes games fair and much more fun for everyone.",
+  "q": [
+   {
+    "t": "Why do we use cooldowns in games?",
+    "o": [
+     "To speed up the game infinitely",
+     "To prevent rapid button spamming and cheating",
+     "To make the character disappear completely"
+    ],
+    "a": 1,
+    "why": "Cooldowns regulate attacks and stop players from shooting endlessly without a break."
+   },
+   {
+    "t": "Which Scratch block do we use to pause an attack briefly?",
+    "o": [
+     "Wait block",
+     "Next costume block",
+     "Forever block"
+    ],
+    "a": 0,
+    "why": "The wait block temporarily pauses code execution for a specific number of seconds."
+   },
+   {
+    "t": "What happens if we forget to add a cooldown to a weapon?",
+    "o": [
+     "The weapon disappears forever",
+     "The player fires hundreds of bullets instantly without stopping",
+     "The space key stops working completely"
+    ],
+    "a": 1,
+    "why": "Without a wait period, the player can click and fire infinite shots at once."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Cooldown Concepts Matching Game",
+   "goal": "Match each game concept to its proper Scratch attack speed feature to ensure fair gameplay.",
+   "pairs": [
+    [
+     "Prevent spamming",
+     "Use wait block"
+    ],
+    [
+     "Cooldown timer",
+     "Duration in seconds"
+    ],
+    [
+     "Magic projectile",
+     "Moving fiery shot"
+    ],
+    [
+     "Weapon variable",
+     "Attack timing control"
+    ]
+   ],
+   "success": "Awesome! Your games are now more organized, fair, and challenging!"
+  },
+  "sections": [
+   {
+    "h": "What Are Weapon Cooldowns?",
+    "text": "Cooldowns are short breathing breaks between hero strikes, just like catching your breath after a fast sprint before running again.",
+    "code": "When space key pressed -> Create clone -> Wait 0.5 seconds",
+    "output": "The player fires one shot and then waits half a second for the next."
+   },
+   {
+    "h": "Preventing Rapid Spamming",
+    "text": "If a player clicks the attack button a thousand times per second, the game loses its thrill. Preventing spam ensures victory depends on skill, not clicking speed.",
+    "code": "If (mouse down) then check shooting allowed variable",
+    "output": "Stops random repetitive fast attacks."
+   },
+   {
+    "h": "Using Scratch Wait Blocks",
+    "text": "In Scratch, the 'wait ( ) seconds' block is your best friend. It halts command execution briefly, giving the system time to breathe.",
+    "code": "Wait 1 seconds",
+    "output": "Sprites pause movement for a precise time duration."
+   },
+   {
+    "h": "Creating Cooldown Variables",
+    "text": "Instead of a fixed time, you can create a weapon speed variable and change it when the hero collects a speed upgrade gem.",
+    "code": "Set (attack_speed) to (0.3)",
+    "output": "Allows modifying shooting speed dynamically throughout the game."
+   },
+   {
+    "h": "Managing Projectile Flow",
+    "text": "When a weapon shoots a fireball, you must ensure the new fireball doesn't overlap the old shot instantly at an annoying speed.",
+    "code": "Create clone of (fireball) -> Wait 0.4 seconds",
+    "output": "Projectiles fire with equal and comfortable time gaps."
+   },
+   {
+    "h": "Enhancing Player Experience",
+    "text": "Fair games make players proud when winning. Cooldowns force players to think about when to attack and when to defend.",
+    "code": "If (cooldown_timer = 0) then strike",
+    "output": "Strikes are only allowed when the weapon is ready."
+   },
+   {
+    "h": "Fixing Rapid Clones Bugs",
+    "text": "If you notice your weapon firing thousands of bullets at once, you forgot to place the wait block in the correct spot inside the loop.",
+    "code": "Place (wait) directly under (create clone)",
+    "output": "Game flow returns to normal and fun execution."
+   },
+   {
+    "h": "Summary and Game Application",
+    "text": "Now you can design epic battles with balanced, smart weapons, making your Scratch games look like they were built by real professionals!",
+    "code": "Lesson complete: Get ready to build the ultimate battle game!",
+    "output": "Ready to program a devastating yet balanced weapon!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Cooldown",
+    "desc": "The waiting period between attacks"
+   },
+   {
+    "name": "Wait Block",
+    "desc": "Scratch block for temporary execution pause"
+   },
+   {
+    "name": "Spam Prevention",
+    "desc": "Stopping excessive rapid button clicking"
+   },
+   {
+    "name": "Projectile",
+    "desc": "A moving shot or missile in the game"
+   },
+   {
+    "name": "Timer Variable",
+    "desc": "A variable tracking elapsed time"
+   },
+   {
+    "name": "Attack Rate",
+    "desc": "The repetition speed of attacks"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Add a half-second wait block after firing a projectile in Scratch.",
+    "a": "Drag the 'wait 0.5 seconds' block and place it below the 'create clone' command."
+   },
+   {
+    "q": "How do you stop a player from shooting endlessly?",
+    "a": "By adding a wait period or a weapon readiness check variable."
+   },
+   {
+    "q": "Which block pauses time temporarily?",
+    "a": "Wait block."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

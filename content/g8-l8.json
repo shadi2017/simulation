@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في مستودع GitHub كأنه حقيبة ظهر رقمية تسافر معك في كل مكان، حيث تحمي جميع ملفات مشروعك وتسمح لك بمشاركتها مع العالم بسهولة وأمان.",
+   "للبدء، أنشئ مستودعاً جديداً عبر الإنترنت بالضغط على زر New Repository في موقع GitHub، تماماً مثل تخصيص مجلد فارغ على مكتبك لترتيب أوراقك.",
+   "اربط مشروعك المحلي الموجود على جهازك بهذا المستودع السحابي عبر استخدام أوامر الطرفية مثل git remote add origin لتوجيه جهازك نحو السحابة.",
+   "عندما تقوم بتعديل مشروعك، استخدم أمر git push لنقل نسخة من لقطات مشروعك المخزنة محلياً إلى خوادم GitHub السحابية لتراها وتستعرضها في أي وقت.",
+   "احرص دائماً على تنظيم مستودعك بوضع الملفات البرمجية الأساسية في المجلدات المناسبة، وتجنب رفع الملفات المؤقتة التي لا فائدة منها عبر ملف التجاوز .gitignore.",
+   "تتيح لك مستودعات GitHub بناء معرض أعمال رقمي احترافي (Portfolio) يعرض مهاراتك ومشاريعك للجميع، مما يساعدك في مسيرتك التقنية المستقبلية."
+  ],
+  "example": "لنفترض أنك كتبت برنامج بايثون بسيطاً وتريد رفعه إلى حسابك على GitHub. أولاً تقوم بتهيئة المستودع محلياً ثم ترفع الملفات عبر الإنترنت.\n\n```python\n# محاكاة تجهيز رسالة ترحيبية للمشروع\nproject_name = \"Portfolio_V1\"\nprint(f\"Preparing project {project_name} for GitHub cloud!\")\n```\nالنتيجة المتوقعة:\nPreparing project Portfolio_V1 for GitHub cloud!",
+  "mistake": "الخطأ الشائع هو محاولة رفع ملفات النظام المؤقتة أو كلمات المرور السرية إلى المستودع العام. لتصحيح ذلك، أنشئ دائماً ملف .gitignore لتستبعد هذه الملفات الحساسة قبل النشر.",
+  "recap": "تعلمنا في هذا الدرس كيفية إنشاء مستودعات GitHub السحابية وربطها بالمشروعات المحلية لتنظيم ومشاركة أعمالنا البرمجية بأمان.",
+  "q": [
+   {
+    "t": "ما هو الغرض الأساسي من إنشاء مستودع (Repository) على GitHub؟",
+    "o": [
+     "تخزين ومشاركة نسخ المشروع السحابية",
+     "تسريع تشغيل أجهزة الكمبيوتر",
+     "طباعة الملفات على ورق"
+    ],
+    "a": 0,
+    "why": "مستودعات GitHub مخصصة لحفظ وتتبع مشاريع البرمجة ومشاركتها عبر السحابة."
+   },
+   {
+    "t": "أي أمر يُستخدم لرفع التغييرات المحلية إلى خوادم GitHub السحابية؟",
+    "o": [
+     "git pull",
+     "git push",
+     "git delete"
+    ],
+    "a": 1,
+    "why": "أمر git push يرسل اللقطات المحلية إلى المستودع البعيد على السحابة."
+   },
+   {
+    "t": "ما فائدة ملف .gitignore في المشروع؟",
+    "o": [
+     "حذف جميع الأكواد البرمجية نهائياً",
+     "منع رفع الملفات المؤقتة والحساسة للسحابة",
+     "تسريع الإنترنت لديك"
+    ],
+    "a": 1,
+    "why": "يخبر .gitignore نظام Git بتجاهل ملفات معينة وعدم رفعها إلى المستودع العام."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات نشر مشروع على GitHub",
+   "goal": "رتب الخطوات بالترتيب الصحيح من إنشاء المستودع إلى رفع الملفات.",
+   "items": [
+    "إنشاء مستودع جديد (New Repository) على موقع GitHub",
+    "فتح الطرفية على جهازك وربط المجلد المحلي بالمستودع السحابي",
+    "إضافة الملفات وتنظيمها وتجاهل الملفات غير الضرورية",
+    "تنفيذ أمر git push لرفع المشروع إلى سحابة GitHub"
+   ],
+   "success": "رائع! تم نشر مشروعك البرمجقي بنجاح على GitHub وأصبح متاحاً للجميع!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم المستودع الرقمي",
+    "text": "المستودع (Repository) يشبه صندوق كنوز رقمياً يحفظ كل ملفات مشروعك وتاريخ تعديلاتها عبر الزمن. تخيل أنك ترسم لوحة فنية وتلتقط صورة لكل خطوة؛ GitHub يحتفظ بكل هذه الصور بترتيب زمني دقيق.",
+    "code": "repo_name = \"My_Python_App\"\nprint(f\"Initializing repository: {repo_name}\")",
+    "output": "Initializing repository: My_Python_App"
+   },
+   {
+    "h": "بناء ملف التعريف الشخصي السحابي",
+    "text": "قبل أن تشارك أعمالك، تحتاج إلى إنشاء نقطة تواجد رقمية (Profile Node) على منصة GitHub. هذه النقطة هي بيتك البرمجي على الإنترنت حيث يزورها الآخرون للاطلاع على إبداعاتك.",
+    "code": "username = \"CodeHero2024\"\nprint(f\"Welcome to profile node: {username}\")",
+    "output": "Welcome to profile node: CodeHero2024"
+   },
+   {
+    "h": "رفع المشروعات السحابية (Push)",
+    "text": "بعد أن تجهز مشروعك على حاسوبك وتلتقط لقطات التغييرات (Commits)، حان وقت إرسالها إلى سحابة GitHub. تستخدم أمر الرفع لنقل الملفات عبر الإنترنت لتصبح آمنة ومتاحة من أي جهاز.",
+    "code": "action = \"git push origin main\"\nprint(f\"Executing cloud sync: {action}\")",
+    "output": "Executing cloud sync: git push origin main"
+   },
+   {
+    "h": "تنظيم وهيكلة المستودعات",
+    "text": "الهيكلة النظيفة تعني ترتيب ملفاتك في مجلدات واضحة مثل مجلد للأكواد ومجلد للصور ومجلد للمستندات. الترتيب يساعدك وزملائك على فهم المشروع فوراً دون عناء البحث.",
+    "code": "folders = [\"src\", \"docs\", \"assets\"]\nprint(f\"Structured folders: {folders}\")",
+    "output": "Structured folders: ['src', 'docs', 'assets']"
+   },
+   {
+    "h": "التحكم بالملفات المستبعدة",
+    "text": "ليس كل ملف على حاسوبك يجب أن يُرفع للسحابة؛ فبعض الملفات مؤقتة أو تخص إعدادات جهازك الشخصي فقط. ملف التجاوز يمنع رفع هذه الملفات حفاظاً على نظافة المستودع.",
+    "code": "ignore_file = \".gitignore\"\nprint(f\"Excluding temp files using {ignore_file}\")",
+    "output": "Excluding temp files using .gitignore"
+   },
+   {
+    "h": "حفظ تاريخ التعديلات",
+    "text": "GitHub لا يحفظ أحدث نسخة فقط، بل يحفظ تاريخاً كاملاً لكل تعديل قمت به. إذا أخطأت في كود اليوم، يمكنك العودة فوراً إلى نسخة الأمس السليمة بكل سهولة.",
+    "code": "history_steps = 5\nprint(f\"Tracking {history_steps} versions safely.\")",
+    "output": "Tracking 5 versions safely."
+   },
+   {
+    "h": "بناء بورتفوليو احترافي",
+    "text": "مستودعاتك العامة على GitHub تمثل معرض أعمالك التقني (Desktop & Cloud Portfolio). حين يرى مهندسون آخرون مشاريعك المنظمة والمرتبة، سيعجبون بمهاراتك واحترافيتك.",
+    "code": "portfolio_status = \"Published & Active\"\nprint(f\"Portfolio status: {portfolio_status}\")",
+    "output": "Portfolio status: Published & Active"
+   },
+   {
+    "h": "مشاركة المشروعات مع العالم",
+    "text": "بمجرد أن يصبح مستودعك عاماً (Public)، يمكنك مشاركة رابطه مع أصدقائك ومعلميك ليتفقدوا أكوادك ويجربوا برامجك بأنفسهم، مما يفتح لك أبواباً واسعة للتعاون.",
+    "code": "link = \"https://github.com/user/project\"\nprint(f\"Share your project: {link}\")",
+    "output": "Share your project: https://github.com/user/project"
+   }
+  ],
+  "reference": [
+   {
+    "name": "New Repository",
+    "desc": "زر لإنشاء مستودع سحابي جديد على GitHub"
+   },
+   {
+    "name": "git push",
+    "desc": "أمر لنقل اللقطات المحلية إلى الخوادم السحابية"
+   },
+   {
+    "name": "git remote add",
+    "desc": "أمر لربط المشروع المحلي بالمستودع البعيد"
+   },
+   {
+    "name": ".gitignore",
+    "desc": "ملف لتحديد الملفات التي يجب تجنب رفعها"
+   },
+   {
+    "name": "Public / Private",
+    "desc": "خيارات خصوصية المستودع (عام أو خاص)"
+   },
+   {
+    "name": "Portfolio",
+    "desc": "معرض أعمال يجمع مشروعاتك البرمجية للعامة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمراً برمجياً بسيطاً يعرض اسم مستودعك السحابي.",
+    "a": "repo = 'Portfolio'\nprint(repo)"
+   },
+   {
+    "q": "ما هو اسم الملف الذي نستخدمه لاستبعاد الملفات المؤقتة من الرفع؟",
+    "a": ".gitignore"
+   },
+   {
+    "q": "ما هو الأمر المستخدم لرفع التغييرات المحلية إلى سحابة GitHub؟",
+    "a": "git push"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of a GitHub repository as a digital backpack that travels with you everywhere, protecting your project files and letting you share them safely.",
+   "To begin, create a new online repository by clicking the New Repository button on GitHub, just like setting up an empty folder on your desktop.",
+   "Link your local project on your computer to this cloud repository using terminal commands like git remote add origin to point your device toward the cloud.",
+   "Whenever you update your project, use the git push command to send a copy of your locally stored snapshots to GitHub's cloud servers.",
+   "Always organize your repository by placing core code files in appropriate folders, and prevent useless temporary files from uploading using a .gitignore file.",
+   "GitHub repositories allow you to build a professional digital portfolio showcasing your skills and projects to everyone, helping your future tech journey."
+  ],
+  "example": "Suppose you wrote a simple Python program and want to upload it to your GitHub account. First you set up the local repository and then push files online.\n\n```python\n# Simulate preparing a welcoming project message\nproject_name = \"Portfolio_V1\"\nprint(f\"Preparing project {project_name} for GitHub cloud!\")\n```\nExpected Output:\nPreparing project Portfolio_V1 for GitHub cloud!",
+  "mistake": "A common mistake is trying to upload temporary system files or secret passwords to a public repository. To fix this, always create a .gitignore file to exclude these sensitive files before publishing.",
+  "recap": "In this lesson, we learned how to create cloud GitHub repositories and link them with local projects to organize and share our programming work securely.",
+  "q": [
+   {
+    "t": "What is the main purpose of creating a repository on GitHub?",
+    "o": [
+     "Cloud storage and sharing of project versions",
+     "Speeding up computer hardware",
+     "Printing files on physical paper"
+    ],
+    "a": 0,
+    "why": "GitHub repositories are designed to store, track, and share programming projects over the cloud."
+   },
+   {
+    "t": "Which command is used to upload local changes to GitHub cloud servers?",
+    "o": [
+     "git pull",
+     "git push",
+     "git delete"
+    ],
+    "a": 1,
+    "why": "The git push command sends local snapshots to the remote repository in the cloud."
+   },
+   {
+    "t": "What is the benefit of the .gitignore file in a project?",
+    "o": [
+     "Permanently deleting all code",
+     "Preventing temporary and sensitive files from uploading to the cloud",
+     "Speeding up your internet connection"
+    ],
+    "a": 1,
+    "why": ".gitignore tells Git to ignore specific files and keep them out of the public repository."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Steps to Publish a Project on GitHub",
+   "goal": "Arrange the steps in the correct order from repository creation to uploading files.",
+   "items": [
+    "Create a new repository on the GitHub website",
+    "Open your terminal and link the local folder to the cloud repository",
+    "Add and organize files while ignoring unnecessary ones",
+    "Execute the git push command to upload the project to GitHub cloud"
+   ],
+   "success": "Awesome! Your coding project was successfully published on GitHub and is now available to everyone!"
+  },
+  "sections": [
+   {
+    "h": "Concept of Digital Repository",
+    "text": "A repository is like a digital treasure chest that keeps all your project files and their history of changes over time. Imagine painting a picture and taking a snapshot of every step; GitHub keeps all these pictures in exact chronological order.",
+    "code": "repo_name = \"My_Python_App\"\nprint(f\"Initializing repository: {repo_name}\")",
+    "output": "Initializing repository: My_Python_App"
+   },
+   {
+    "h": "Building Cloud Profile Nodes",
+    "text": "Before sharing your work, you need to establish a digital presence node (Profile Node) on GitHub. This node is your programming home on the web where others visit to explore your creations.",
+    "code": "username = \"CodeHero2024\"\nprint(f\"Welcome to profile node: {username}\")",
+    "output": "Welcome to profile node: CodeHero2024"
+   },
+   {
+    "h": "Pushing Cloud Projects",
+    "text": "Once your project is ready on your computer and you take change snapshots (Commits), it is time to send them to the GitHub cloud. You use the push command to transfer files online so they become secure and accessible from any device.",
+    "code": "action = \"git push origin main\"\nprint(f\"Executing cloud sync: {action}\")",
+    "output": "Executing cloud sync: git push origin main"
+   },
+   {
+    "h": "Structuring Repositories",
+    "text": "Clean structuring means organizing your files into clear folders like code folders, image folders, and document folders. Good organization helps you and your teammates understand the project instantly without searching around.",
+    "code": "folders = [\"src\", \"docs\", \"assets\"]\nprint(f\"Structured folders: {folders}\")",
+    "output": "Structured folders: ['src', 'docs', 'assets']"
+   },
+   {
+    "h": "Managing Ignored Files",
+    "text": "Not every file on your computer needs to go to the cloud; some are temporary or belong only to your personal device settings. The ignore file prevents uploading these files to keep the repository clean.",
+    "code": "ignore_file = \".gitignore\"\nprint(f\"Excluding temp files using {ignore_file}\")",
+    "output": "Excluding temp files using .gitignore"
+   },
+   {
+    "h": "Preserving Modification History",
+    "text": "GitHub doesn't just save the latest version; it keeps a complete history of every change you made. If you make a mistake in today's code, you can easily revert back to yesterday's working version.",
+    "code": "history_steps = 5\nprint(f\"Tracking {history_steps} versions safely.\")",
+    "output": "Tracking 5 versions safely."
+   },
+   {
+    "h": "Building a Professional Portfolio",
+    "text": "Your public GitHub repositories represent your technical desktop and cloud portfolio. When other engineers see your organized and tidy projects, they will admire your skills and professionalism.",
+    "code": "portfolio_status = \"Published & Active\"\nprint(f\"Portfolio status: {portfolio_status}\")",
+    "output": "Portfolio status: Published & Active"
+   },
+   {
+    "h": "Sharing Projects with the World",
+    "text": "Once your repository is public, you can share its link with friends and teachers so they can inspect your code and test your programs themselves, opening up wide doors for collaboration.",
+    "code": "link = \"https://github.com/user/project\"\nprint(f\"Share your project: {link}\")",
+    "output": "Share your project: https://github.com/user/project"
+   }
+  ],
+  "reference": [
+   {
+    "name": "New Repository",
+    "desc": "Button to create a new cloud repository on GitHub"
+   },
+   {
+    "name": "git push",
+    "desc": "Command to upload local snapshots to cloud servers"
+   },
+   {
+    "name": "git remote add",
+    "desc": "Command to link local project to remote repository"
+   },
+   {
+    "name": ".gitignore",
+    "desc": "File to specify files that should be excluded from uploads"
+   },
+   {
+    "name": "Public / Private",
+    "desc": "Repository privacy options"
+   },
+   {
+    "name": "Portfolio",
+    "desc": "Showcase collection gathering your programming projects"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a short Python snippet displaying your cloud repository name.",
+    "a": "repo = 'Portfolio'\nprint(repo)"
+   },
+   {
+    "q": "What is the name of the file used to exclude temporary files from being uploaded?",
+    "a": ".gitignore"
+   },
+   {
+    "q": "What command is used to upload local changes to the GitHub cloud?",
+    "a": "git push"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "git-scm.com docs",
+   "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
+  }
+ ],
+ "grounded": true
+}

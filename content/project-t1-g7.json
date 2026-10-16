@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "The Candy Catcher Game",
+   "desc": "Build an interactive arcade game where a turtle player moves with the keyboard to catch falling candy. The program tracks the score, handles missing data safely, and saves high scores to a file.",
+   "tags": [
+    "Turtle",
+    "Keyboard",
+    "Files"
+   ],
+   "steps": [
+    "First, set up a game window and create a turtle player that responds smoothly to left and right arrow keys using listener functions.",
+    "Next, spawn candy items at random top positions that move downward step-by-step inside the main game loop.",
+    "Write a collision detection check using distance formulas to see if the player touches the candy, then increase the score.",
+    "Implement a try-except block to safely read previous high scores from a text file without crashing if the file is missing.",
+    "Use Pandas or file writing to save the updated high score back to the disk when the game ends successfully.",
+    "Finally, test your game thoroughly to make sure score counters update correctly and keyboard controls feel smooth and responsive."
+   ],
+   "rubric": [
+    "Turtle moves smoothly using keyboard arrow keys.",
+    "Candy spawns and collision detection updates the score.",
+    "File reading and writing safely handles high scores without crashing.",
+    "Code is well-commented and organized into functions."
+   ],
+   "stretch": "Add a timer or golden candies that give extra points!"
+  },
+  {
+   "title": "Grade Analyzer Program",
+   "desc": "Load a classroom CSV dataset using Pandas, clean missing values, calculate statistics, filter failing results, and export a clean final report.",
+   "tags": [
+    "Pandas",
+    "CSV",
+    "Statistics"
+   ],
+   "steps": [
+    "First, create or load a classroom CSV file containing student names, subjects, and numerical scores.",
+    "Use pandas to read the dataset into a DataFrame and inspect the first few rows using head().",
+    "Find missing or empty scores in the table and fill them with default values or drop them safely.",
+    "Filter the DataFrame to find students who scored below a passing threshold and list them separately.",
+    "Calculate useful statistics like average scores and group results by subject using groupby.",
+    "Finally, export your clean, analyzed data into a brand-new polished CSV report file."
+   ],
+   "rubric": [
+    "CSV data loads correctly into a Pandas DataFrame.",
+    "Missing data is detected and handled properly.",
+    "Filtering and grouping calculate accurate statistics.",
+    "Clean report is successfully exported to a new CSV file."
+   ],
+   "stretch": "Add a visual chart using matplotlib to display average grades per subject!"
+  },
+  {
+   "title": "Safe Login Vault",
+   "desc": "Create a secure authentication program that reads user credentials from a file, handles invalid login attempts with try-except blocks, and prevents crashes.",
+   "tags": [
+    "Files",
+    "Errors",
+    "Security"
+   ],
+   "steps": [
+    "First, create a text file containing valid usernames and passwords separated by commas or colons.",
+    "Write a Python function to prompt the user for their login credentials through the console.",
+    "Open and read the credentials file inside a try block to handle potential FileNotFoundError errors gracefully.",
+    "Loop through the file lines to verify if the entered username and password match any stored record.",
+    "Implement an except block to catch unexpected file corruption or permission issues and inform the user.",
+    "Finally, lock out the user or display an error message after three consecutive failed login attempts."
+   ],
+   "rubric": [
+    "Credentials file is read correctly by the program.",
+    "Try and except blocks prevent crashes when files are missing.",
+    "Login verification logic works accurately for valid users.",
+    "Failed attempts are counted and handled securely."
+   ],
+   "stretch": "Hash the passwords using a basic algorithm instead of storing them as plain text!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "لعبة صيد الحلويات",
+   "desc": "اصنع لعبة تفاعلية يتحرك فيها سلحفاة اللاعب باستخدام الكيبورد لصيد الحلويات الساقطة. البرنامج يحسب النقاط، يتعامل مع الأخطاء بأمان، ويحفظ أعلى النقاط في ملف.",
+   "tags": [
+    "سلحفاة",
+    "كيبورد",
+    "ملفات"
+   ],
+   "steps": [
+    "أولاً، اعمل شاشة للعبة واصنع سلحفاة للاعب تتحرك بسلاسة مع أزرار السهم اليمين واليسار باستخدام الدوال.",
+    "بعدين، خلي حلويات تظهر عشوائياً من أعلى الشاشة وتنزل خطوة بخطوة جوه لوب اللعبة الأساسي.",
+    "اكتب كود فحص الاصطدام باستخدام المسافة عشان تعرف لو اللاعب لمس الحلوية، وبعدين زود النقاط.",
+    "استخدم try و except عشان تقرأ أعلى النقاط السابقة من ملف نصي بأمان من غير ما اللعبة تقف لو الملف مش موجود.",
+    "استخدم بينداس أو كتابة الملفات عشان تحفظ أعلى النقاط المحدثة على الجهاز لما اللعبة تخلص بنجاح.",
+    "في الآخر، جرب لعبتك كويس عشان تتأكد إن عداد النقاط شغال صح وحركة الكيبورد سريعة ومظبوطة."
+   ],
+   "rubric": [
+    "السلحفاة بتحرك بسلاسة باستخدام أزرار الكيبورد.",
+    "الحلويات بتظهر وفحص الاصطدام بيحدث النقاط.",
+    "قراءة وكتابة الملفات بتتعامل مع أعلى النقاط بأمان من غير أخطاء.",
+    "الكود مترتب ومنظم جوه دالات واضحة."
+   ],
+   "stretch": "ضيف مؤقت زمني أو حلويات ذهبية تديك نقاط إضافية!"
+  },
+  {
+   "title": "برنامج تحليل الدرجات",
+   "desc": "حمل ملف CSV لدرجات الفصل باستخدام بينداس، نظف البيانات المفقودة، احسب الإحصائيات، افصل الدرجات الضعيفة، وصدر تقرير نضيف.",
+   "tags": [
+    "بينداس",
+    "CSV",
+    "إحصائيات"
+   ],
+   "steps": [
+    "أولاً، اعمل أو حمل ملف CSV لفصل دراسي فيه أسماء الطلاب والمواد والدرجات الرقمية.",
+    "استخدم بينداس عشان تقرأ الداتا جوه DataFrame وافحص أول كام صف باستخدام head().",
+    "ابحث عن الدرجات المفقودة أو الفارغة في الجدول وعوضها بقيم افتراضية أو احذفها بأمان.",
+    "افصل الداتا عشان تطلع الطلاب اللي جابوا درجات أقل من النجاح وتعرضهم لوحدهم.",
+    "احسب الإحصائيات المهمة زي متوسط الدرجات وجمع النتائج حسب المادة باستخدام groupby.",
+    "في الآخر، صدر الداتا النظيفة والمحللة لملف CSV جديد ومنسق تماماً."
+   ],
+   "rubric": [
+    "داتا الCSV بتتحمل صح جوه DataFrame بتاعت بينداس.",
+    "البيانات المفقودة بتكتشف وتتعالج بطريقة سليمة.",
+    "الفلترة والتجميع بيحسبوا إحصائيات مضبوطة.",
+    "التقرير النضيف بيتعمله إكسبورت بنجاح لملف CSV جديد."
+   ],
+   "stretch": "ضيف رسم بياني باستخدام مكتبة matplotlib عشان تعرض متوسط الدرجات لكل مادة!"
+  },
+  {
+   "title": "خزنة تسجيل الدخول الآمنة",
+   "desc": "اصنع برنامج تحقق آمن بيقرأ بيانات المستخدمين من ملف، يتعامل مع محاولات الدخول الغلط باستخدام try و except، ويمنع انهيار البرنامج.",
+   "tags": [
+    "ملفات",
+    "أخطاء",
+    "أمان"
+   ],
+   "steps": [
+    "أولاً، اعمل ملف نصي فيه أسماء المستخدمين وكلمات السر الصحيحة مفصولين بفواصل.",
+    "اكتب دالة في بايثون تطلب من المستخدم يكتب بيانات الدخول بتاعة حسابه عبر الشاشة.",
+    "افتح واقرأ ملف بيانات الدخول جوه كتلة try عشان تتعامل مع أخطاء فقدان الملفات بأداة ذكية.",
+    "عدي على سطور الملف عشان تتأكد لو اسم المستخدم وكلمة السر بيطابقوا أي سجل محفوظ.",
+    "استخدم كتلة except عشان تلقط أي مشكلة غير متوقعة في الملفات وتبلغ المستخدم بها.",
+    "في الآخر، اقفل الحساب أو اعرض رسالة خطأ بعد ثلاث محاولات دخول فاشلة ورا بعض."
+   ],
+   "rubric": [
+    "ملف بيانات الدخول بيتقرا صح بواسطة البرنامج.",
+    "أكواد try و except بتمنع البرنامج من الانهيار لو الملفات مش موجودة.",
+    "منطق التحقق من الدخول شغال بدقة للمستخدمين الصح.",
+    "المحاولات الفاشلة بتتحسب وبتتعالج بشكل آمن."
+   ],
+   "stretch": "شفر كلمات السر باستخدام خوارزمية بسيطة بدل ما تسجلها كصوص عادية!"
+  }
+ ]
+}

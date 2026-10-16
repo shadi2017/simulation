@@ -1,0 +1,162 @@
+{
+ "en": [
+  {
+   "title": "The Magic Egyptian Bazaar",
+   "desc": "Design a bustling street market in Cairo where characters chat, walk, and collect items. It brings together backdrops, speech bubbles, and looping animations into a lively scene.",
+   "tags": [
+    "ScratchJr",
+    "Story",
+    "Animation"
+   ],
+   "steps": [
+    "Choose a vibrant outdoor background backdrop like a Cairo street or pyramid desert.",
+    "Design two custom characters, like a friendly merchant and a curious tourist.",
+    "Place the characters on different story pages to represent moving from the market entrance to the shop.",
+    "Use repeat forever loops to make a bird fly back and forth across the sky continuously.",
+    "Add speed control magic so the tourist walks slowly while the merchant moves at normal speed.",
+    "Use wait blocks so the characters pause before speaking to each other naturally.",
+    "Pass a message from the merchant to the tourist so the tourist starts walking when greeted.",
+    "Add fun sound effects like coins clinking and cheerful Egyptian folk music to complete the vibe."
+   ],
+   "rubric": [
+    "Has at least two customized characters and a matching backdrop.",
+    "Uses repeat forever loops and speed control properly.",
+    "Links multiple pages smoothly with message passing.",
+    "Includes sound effects and well-timed wait blocks."
+   ],
+   "stretch": "Add a third hidden character that appears only when you tap a specific prop!"
+  },
+  {
+   "title": "Nile River Adventure",
+   "desc": "Guide a brave little explorer sailing a boat down the magical River Nile past landmarks. Players experience multiple pages, sound effects, and secret messages between sprites.",
+   "tags": [
+    "Adventure",
+    "Navigation",
+    "Sound"
+   ],
+   "steps": [
+    "Pick a river backdrop for page one and a temple backdrop for page two.",
+    "Design a custom wooden sailboat character and a jumping fish companion.",
+    "Program the fish to jump up and down endlessly using a repeat forever loop.",
+    "Control the speed of the sailboat so it moves gently across the water waves.",
+    "Insert wait blocks so the boat pauses at each ancient monument for three seconds.",
+    "Link page one to page two by tapping a golden key sprite at the end of the river.",
+    "Pass a message from the sailboat to the temple door so it opens automatically upon arrival.",
+    "Record your own voice saying 'Welcome to the temple!' and play it using sound blocks."
+   ],
+   "rubric": [
+    "Successfully links at least two different story pages.",
+    "Features smooth repeat loops and custom character designs.",
+    "Uses wait blocks and speed changes for good pacing.",
+    "Integrates recorded voice or sound effects."
+   ],
+   "stretch": "Make an animal pop out of the water using a message trigger when the boat gets close."
+  },
+  {
+   "title": "Pharaoh's Secret Pyramid",
+   "desc": "Help a clever cat unlock the secrets of an ancient pyramid by solving visual clues. This project combines multi-page navigation, custom art, and lively sound design.",
+   "tags": [
+    "Mystery",
+    "Puzzles",
+    "Design"
+   ],
+   "steps": [
+    "Create a dark pyramid entrance backdrop for page one and a treasure room for page two.",
+    "Design a custom Egyptian cat detective wearing a tiny detective hat.",
+    "Use repeat forever loops to make torches flicker on the stone walls continuously.",
+    "Adjust the cat's walking speed so it creeps cautiously inside the dark tomb.",
+    "Add wait blocks so the cat looks around carefully before stepping forward.",
+    "Pass a secret message from a glowing gem to a heavy stone door to make it slide open.",
+    "Link page one to the treasure room page when the door finishes opening.",
+    "Add spooky background music and magical chime sound effects when the treasure is found."
+   ],
+   "rubric": [
+    "Original custom character and fitting atmospheric backdrops.",
+    "Correct use of message passing between items and doors.",
+    "Proper timing with wait blocks and speed adjustments.",
+    "Working sound effects and multi-page story flow."
+   ],
+   "stretch": "Hide a secret mini-game on page two where players must tap gems in the right order."
+  }
+ ],
+ "ar": [
+  {
+   "title": "البازار المصري السحري",
+   "desc": "اصمم سوق شعبي جميل في القاهرة فيه شخصيات بتتكلم وبتتحرك وتجمع حاجات. المشروع ده بيجمع الخلفيات الملونة، فقاعات الكلام، وحركات التكرار في مشهد حيوي ممتع.",
+   "tags": [
+    "سكراتش جونيور",
+    "قصة",
+    "تحريك"
+   ],
+   "steps": [
+    "اختار خلفية شوارع القاهرة الملونة أو خلفية صحراوية مع الأهرامات كمشهد أساسي.",
+    "صمم شخصيتين مخصصتين بنفسك، زي تاجر طيب وسائح بيسأل عن المكان.",
+    "حط الشخصيات على صفحات قصة مختلفة عشان نمثل الانتقال من باب السوق جوه المحل.",
+    "استخدم حلقات التكرار المستمر (Forever) عشان تخلي طيارة الورق تطير في السما على طول.",
+    "ظبط سرعة الحركة عشان السائح يمشي ببطء والتاجر يتحرك بسرعة عادية.",
+    "حط بلوكات الانتظار (Wait) عشان الشخصيات تقف ثواني قبل ما تبدأ تتكلم مع بعض.",
+    "ابعث رسالة (Message) من التاجر للسائح عشان السائح يبدأ يتحرك أول ما التاجر يسلم عليه.",
+    "ضيف مؤثرات صوتية ممتعة زي صوت الفلوس وهي بتعد وموسيقى مصرية جميلة تكمل الجو."
+   ],
+   "rubric": [
+    "المشروع فيه شخصيتين متصممين وخلفية مناسبة.",
+    "بيستخدم تكرار مستمر وتحكم في السرعة بطريقة صحيحة.",
+    "بينتقل بسلاسة بين كذا صفحة باستخدام نظام الرسائل.",
+    "فيه مؤثرات صوتية وبلوكات انتظار مظبوطة."
+   ],
+   "stretch": "ضيف شخصية تالتة مخفية بتظهر بس لما تدوس على حاجة معينة على الشاشة!"
+  },
+  {
+   "title": "مغامرة نهر النيل",
+   "desc": "وجه مركب صغير وشجاع بيسافر في نهر النيل السحري وبيعدي على المعالم الجميلة. اللاعبين بيجربوا التنقل بين كذا صفحة، المؤثرات الصوتية، والرسائل السرية بين الشخصيات.",
+   "tags": [
+    "مغامرة",
+    "استكشاف",
+    "أصوات"
+   ],
+   "steps": [
+    "اختار خلفية نهر النيل للصفحة الأولى وخلفية معبد فرعوني للصفحة التانية.",
+    "صمم مركب شراع خشبية بنفسك وكمان سمكة جميلة بتنط في المية.",
+    "برمج السمكة عشان تنط لفوق وتحت من غير ما تقف باستخدام تكرار مستمر.",
+    "ظبط سرعة المركب عشان يتحرك بهدوء وسط موج المية الجميل.",
+    "ضيف بلوكات الانتظار عشان المركب يقف قدام كل معبد قديم لمدة ٣ ثواني.",
+    "اربط الصفحة الأولى بالصفحة التانية عن طريق الضغط على مفتاح ذهبي في آخر النهر.",
+    "ابعث رسالة من المركب لباب المعبد عشان يتفتح لوحده أول ما المركب يوصل.",
+    "سجل صوتك وأنت بتقول 'أهلاً بكم في المعبد!' وشغله باستخدام بلوكات الصوت."
+   ],
+   "rubric": [
+    "بيربط بنجاح بين صفحتين قصة مختلفين أو أكتر.",
+    "فيه حلقات تكرار ممتازة وشخصيات متصممة بحب.",
+    "بيستعمل بلوكات الانتظار وتغيير السرعة عشان إيقاع القصة.",
+    "بيحتوي على صوت مسجل أو مؤثرات صوتية واضحة."
+   ],
+   "stretch": "خلي حيوان يظهر من المية باستخدام رسالة سرية لما المركب يقرب منه."
+  },
+  {
+   "title": "هرم الفراعنة السرّي",
+   "desc": "ساعد قط ذكي وحكيم يفتح أسرار هرم قديم عن طريق حل الألغاز البصرية. المشروع ده بيجمع التنقل بين الصفحات، الرسم المخصص، وتصميم الصوت الممتع.",
+   "tags": [
+    "غموض",
+    "ألغاز",
+    "تصميم"
+   ],
+   "steps": [
+    "اعمل خلفية مدخل هرم مظلم للصفحة الأولى وغرفة كنز للصفحة التانية.",
+    "صمم قط محقق فرعوني لابس طاقية تحقيق صغيرة بنفسك.",
+    "استخدم تكرار مستمر عشان الشموع تولع وتطفي جوه المقبرة على طول.",
+    "ظبط سرعة حركة القط عشان يمشي بحذر شديد جوه المقبرة المظلمة.",
+    "ضيف بلوكات الانتظار عشان القط يبص حواليه كويس قبل ما ياخد خطوة قدام.",
+    "ابعث رسالة سرية من جوهرة منورة لباب حجري ثقيل عشان يتزحلق ويتفتح.",
+    "اربط الصفحة الأولى بصفحة غرفة الكنز أول ما باب المقبرة يخلص فتح.",
+    "ضيف موسيقى خلفية غامضة ومؤثرات صوتية سحرية زي الرنين أول ما نلاقي الكنز."
+   ],
+   "rubric": [
+    "شخصية أصلية ومتصممة وخلفيات معبرة عن الجو.",
+    "استخدام صحيح لنظام إرسال الرسالة بين الأبواب والأدوات.",
+    "توقيت مظبوط باستخدام بلوكات الانتظار وتغيير السرعة.",
+    "مؤثرات صوتية شغالة وتنقل ممتاز بين صفحات القصة."
+   ],
+   "stretch": "اخفي لعبة صغيرة في الصفحة التانية اللاعبين لازم يضغطوا على الجواهر بالترتيب الصح عشان تكسب."
+  }
+ ]
+}

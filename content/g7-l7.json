@@ -1,0 +1,278 @@
+{
+ "ar": {
+  "steps": [
+   "تساعدنا الإحصاءات في بايثون على فهم مجموعات البيانات الكبيرة بسرعة. تخيل أنك تحسب متوسط علامات الفصل الدراسي أو أعلى درجة حصلت عليها.",
+   "نستخدم دوال إحصائية جاهزة في بايثون مثل df['Score'].mean() لحساب المتوسط، أو .max() لمعرفة القيمة الكبرى بسهولة.",
+   "تعمل هذه الدوال على فحص أعمدة البيانات الرقمية وإجراء العمليات الحسابية دفعة واحدة دون الحاجة لحساب كل رقم بمفرده يدوياً.",
+   "يمكننا أيضاً استخدام .min() لأقل قيمة و .sum() لمجموع كل الأرقام داخل العمود الواحد بكل سرعة ويسر.",
+   "القاعدة الذهبية في البيانات هي أن الدوال الإحصائية تحتاج أعمدة ذات قيم رقمية لكي تعمل بدقة ودون أي أخطاء.",
+   "في الحياة اليومية، نستخدم هذه الدوال لمقارنة متوسط درجات الفرق الرياضية في المدرسة أو حساب إجمالي المصروفات الشهرية."
+  ],
+  "example": "لنفترض أن لدينا جدولاً لدرجات التلاميذ في مادتي الرياضيات والعلوم. لحساب متوسط الدرجات، نكتب: `import pandas as pd`, `df = pd.DataFrame({'Score': [80, 90, 100]})`, ثم `print(df['Score'].mean())`. النتيجة هنا ستكون 90.0، لأننا جمعنا القيم وقسمناها على عددهن.",
+  "mistake": "محاولة تطبيق الدوال الإحصائية مثل mean() أو sum() على عمود يحتوي على نصوص بدلاً من الأرقام، مما يسبب خطأ في البرنامج. الحل هو التأكد من أن بيانات العمود رقمية أو تحويلها أولاً.",
+  "recap": "تتيح لنا دوال بايثون الإحصائية تلخيص البيانات بسرعة، بينما يقسمنا أمر groupby لفئات أسهل للمقارنة.",
+  "q": [
+   {
+    "t": "أي دالة نستخدمها لحساب مجموع الأرقام في عمود بجدول بيانات pandas؟",
+    "o": [
+     ".max()",
+     ".sum()",
+     ".mean()"
+    ],
+    "a": 1,
+    "why": "الدالة .sum() مخصصة لجمع جميع القيم الرقمية الموجودة في العمود."
+   },
+   {
+    "t": "ماذا تفعل الدالة .groupby() في جدول البيانات؟",
+    "o": [
+     "تقسم البيانات إلى مجموعات بناءً على قيم عمود معين",
+     "تحذف جميع الأعمدة غير المرغوب فيها",
+     "تولد أرقاماً عشوائية جديدة"
+    ],
+    "a": 0,
+    "why": "تقوم .groupby() بتجميع الصفوف المتشابهة معاً لمعالجة كل مجموعة على حدة."
+   },
+   {
+    "t": "إذا احتوى عمود على درجات 10 و 20، فما هي نتيجة استدعاء .min()؟",
+    "o": [
+     "20",
+     "15",
+     "10"
+    ],
+    "a": 2,
+    "why": "الدالة .min() تبحث عن أصغر قيمة في العمود وتظهرها."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع ناتج حساب المتوسط",
+   "goal": "معرفة النتيجة الصحيحة لتطبيق الدالة .mean() على درجات محددة",
+   "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [70, 80, 90]})\nprint(df['Score'].mean())",
+   "options": [
+    "70.0",
+    "80.0",
+    "90.0"
+   ],
+   "a": 1,
+   "success": "رائع! لقد حسبت المتوسط الحقيقي للدرجات بنجاح كبير."
+  },
+  "sections": [
+   {
+    "h": "مفهوم الإحصاءات في البيانات",
+    "text": "الإحصاءات هي طرق لتلخيص ملايين الأرقام في رقم واحد مفيد. تخيل أن معلمك يريد معرفة مستوى الفصل كله بكلمة واحدة، فيحسب المتوسط. في بايثون ومكتبة pandas، نفعل ذلك بكلمات بسيطة جداً مثل mean و sum لنفهم البيانات بلمح البصر.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20, 30]})\nprint(df['Points'].mean())",
+    "output": "20.0"
+   },
+   {
+    "h": "حساب المتوسط باستخدام .mean()",
+    "text": "المتوسط الحسابي يساعدنا على معرفة القيمة المتوسطة لمجموعة بيانات. عندما تطبق .mean() على عمود رقمي، يقوم بايثون بجمع كل العناصر ثم قسمتها على عددهم الكلي تلقائياً وبدقة فائقة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Age': [12, 14, 16]})\nprint(df['Age'].mean())",
+    "output": "14.0"
+   },
+   {
+    "h": "معرفة أعلى وأقل قيمة بـ .max() و .min()",
+    "text": "هل تساءلت يوماً عن أطول طالب في الصف أو أرخص لعبة في المتجر؟ دوال .max() و .min() تفحص الجدول بأكمله وتجلب لك القيمة الكبرى أو الصغرى فوراً دون عناء البحث اليدوي الطويل.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Temp': [25, 38, 19]})\nprint(df['Temp'].max())",
+    "output": "38"
+   },
+   {
+    "h": "إيجاد المجموع الكلي بـ .sum()",
+    "text": "عندما تريد جمع كل القيم في عمود واحد، مثل مجموع النقاط التي جمعتها في لعبة فيديو، تستخدم الدالة .sum(). إنها تقوم بالعملية الحسابية الشاقة نيابة عنك في أجزاء من الثانية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Coins': [5, 10, 15]})\nprint(df['Coins'].sum())",
+    "output": "30"
+   },
+   {
+    "h": "فكرة تجميع البيانات بـ .groupby()",
+    "text": "تخيل أن لديك صندوقاً مليئاً بالكرات بألوان وأحجام مختلفة، وتريد فصل كل لون بمفرده لمقارنتها. هذه هي وظيفة .groupby()؛ فهي تقسم جدول البيانات الكبير إلى مجموعات أصغر بناءً على قيم أعمدة معينة مثل القسم أو المدينة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Team': ['A', 'B', 'A', 'B'], 'Score': [10, 20, 30, 40]})\nprint(df.groupby('Team')['Score'].mean())",
+    "output": "Team\nA    20.0\nB    30.0\nName: Score, dtype: float64"
+   },
+   {
+    "h": "مقارنة المجموعات بذكاء",
+    "text": "بعد إنشاء المجموعات باستخدام .groupby()، يمكنك تطبيق أي دالة إحصائية عليها مثل .mean() أو .sum(). يتيح لك هذا مقارنة أداء الفصول الدراسية المختلفة أو مبيعات الفروع بكل سهولة ووضوح.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Class': ['G8', 'G9', 'G8', 'G9'], 'Grade': [85, 90, 95, 80]})\nprint(df.groupby('Class')['Grade'].sum())",
+    "output": "Class\nG8    180\nG9    170\nName: Grade, dtype: int64"
+   }
+  ],
+  "reference": [
+   {
+    "name": ".mean()",
+    "desc": "يحسب المتوسط الحسابي للقيم الرقمية في العمود."
+   },
+   {
+    "name": ".max()",
+    "desc": "يجد أكبر قيمة رقمية موجودة داخل العمود."
+   },
+   {
+    "name": ".min()",
+    "desc": "يجد أصغر قيمة رقمية موجودة داخل العمود."
+   },
+   {
+    "name": ".sum()",
+    "desc": "يحسب المجموع الكلي لجميع الأرقام في العمود."
+   },
+   {
+    "name": ".groupby()",
+    "desc": "يقسم جدول البيانات إلى مجموعات بناءً على عمود محدد."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليمة بايثون لحساب أكبر قيمة في عمود اسمه 'Price' داخل جدول df.",
+    "a": "df['Price'].max()"
+   },
+   {
+    "q": "كيف تجمع البيانات بناءً على عمود 'Category' ثم تحسب المتوسط لعمود 'Sales'؟",
+    "a": "df.groupby('Category')['Sales'].mean()"
+   },
+   {
+    "q": "ما الدالة التي تستخدمها لإيجاد مجموع العناصر في عمود 'Score'؟",
+    "a": "df['Score'].sum()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Statistics in Python help us understand large datasets quickly. Imagine calculating the average score of your class or finding the highest game score.",
+   "We use built-in statistical functions in Python like df['Score'].mean() for the average, or .max() to find the largest value easily.",
+   "These functions scan columns of numeric data and perform mathematical operations all at once without manual calculation.",
+   "We can also use .min() for the smallest value and .sum() to find the total sum of all numbers inside a single column quickly.",
+   "The golden rule in data is that statistical functions require columns with numeric values to work accurately without errors.",
+   "In real life, we use these functions to compare average grades of school sports teams or calculate total monthly expenses."
+  ],
+  "example": "Suppose we have a table of student scores in math and science. To calculate the average score, we write: `import pandas as pd`, `df = pd.DataFrame({'Score': [80, 90, 100]})`, then `print(df['Score'].mean())`. The result here will be 90.0, because we added the values and divided by their count.",
+  "mistake": "Trying to apply statistical functions like mean() or sum() to a text column instead of numbers, causing a program error. The fix is to ensure the column data is numeric or convert it first.",
+  "recap": "Python's statistical functions let us summarize data quickly, while the groupby command splits data into categories for easy comparison.",
+  "q": [
+   {
+    "t": "Which function do we use to calculate the sum of numbers in a pandas column?",
+    "o": [
+     ".max()",
+     ".sum()",
+     ".mean()"
+    ],
+    "a": 1,
+    "why": "The .sum() function is designed to add up all numeric values in a column."
+   },
+   {
+    "t": "What does the .groupby() function do in a DataFrame?",
+    "o": [
+     "Splits data into groups based on values of a specific column",
+     "Deletes all unwanted columns",
+     "Generates new random numbers"
+    ],
+    "a": 0,
+    "why": ".groupby() groups matching rows together to process each category separately."
+   },
+   {
+    "t": "If a column contains 10 and 20, what is the result of calling .min()?",
+    "o": [
+     "20",
+     "15",
+     "10"
+    ],
+    "a": 2,
+    "why": "The .min() function looks for and returns the smallest value in the column."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Average Result",
+   "goal": "Find the correct outcome of applying the .mean() function on specific scores",
+   "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [70, 80, 90]})\nprint(df['Score'].mean())",
+   "options": [
+    "70.0",
+    "80.0",
+    "90.0"
+   ],
+   "a": 1,
+   "success": "Awesome! You successfully calculated the correct average score."
+  },
+  "sections": [
+   {
+    "h": "The Concept of Statistics in Data",
+    "text": "Statistics are ways to summarize millions of numbers into a single useful figure. Imagine your teacher wanting to know the whole class's level in one word by finding the average. In Python and pandas, we do this with simple words like mean and sum to understand data instantly.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20, 30]})\nprint(df['Points'].mean())",
+    "output": "20.0"
+   },
+   {
+    "h": "Calculating Averages with .mean()",
+    "text": "The arithmetic mean helps us find the typical value of a dataset. When you apply .mean() to a numeric column, Python automatically adds all items and divides by their total count with high precision.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Age': [12, 14, 16]})\nprint(df['Age'].mean())",
+    "output": "14.0"
+   },
+   {
+    "h": "Finding Max and Min with .max() and .min()",
+    "text": "Have you ever wondered who the tallest student is or what the cheapest toy in the shop is? The .max() and .min() functions scan the whole table and fetch the highest or lowest value immediately without tedious manual searching.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Temp': [25, 38, 19]})\nprint(df['Temp'].max())",
+    "output": "38"
+   },
+   {
+    "h": "Finding Total Sum with .sum()",
+    "text": "When you want to add up all values in a single column, like total coins collected in a video game, you use the .sum() function. It handles the heavy math for you in a split second.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Coins': [5, 10, 15]})\nprint(df['Coins'].sum())",
+    "output": "30"
+   },
+   {
+    "h": "The Idea of Grouping with .groupby()",
+    "text": "Imagine having a box full of balls of different colors and sizes, and you want to separate each color to compare them. That is the job of .groupby(); it splits a large DataFrame into smaller groups based on specific column values like department or city.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Team': ['A', 'B', 'A', 'B'], 'Score': [10, 20, 30, 40]})\nprint(df.groupby('Team')['Score'].mean())",
+    "output": "Team\nA    20.0\nB    30.0\nName: Score, dtype: float64"
+   },
+   {
+    "h": "Comparing Groups Intelligently",
+    "text": "After creating groups using .groupby(), you can apply any statistical function like .mean() or .sum() to them. This allows you to easily and clearly compare performance across different school classes or branch sales.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Class': ['G8', 'G9', 'G8', 'G9'], 'Grade': [85, 90, 95, 80]})\nprint(df.groupby('Class')['Grade'].sum())",
+    "output": "Class\nG8    180\nG9    170\nName: Grade, dtype: int64"
+   }
+  ],
+  "reference": [
+   {
+    "name": ".mean()",
+    "desc": "Calculates the arithmetic mean of numeric values in a column."
+   },
+   {
+    "name": ".max()",
+    "desc": "Finds the largest numeric value inside a column."
+   },
+   {
+    "name": ".min()",
+    "desc": "Finds the smallest numeric value inside a column."
+   },
+   {
+    "name": ".sum()",
+    "desc": "Calculates the total sum of all numbers in a column."
+   },
+   {
+    "name": ".groupby()",
+    "desc": "Splits a DataFrame into groups based on a specified column."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python statement to find the maximum value in a column named 'Price' inside table df.",
+    "a": "df['Price'].max()"
+   },
+   {
+    "q": "How do you group data by the 'Category' column and then calculate the mean for the 'Sales' column?",
+    "a": "df.groupby('Category')['Sales'].mean()"
+   },
+   {
+    "q": "What function do you use to find the total sum of items in a 'Score' column?",
+    "a": "df['Score'].sum()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions"
+  },
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

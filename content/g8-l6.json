@@ -1,0 +1,330 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل لو أنك تمتلك برنامج كمبيوتر خاص بك، وتريد أن تعرض داخله رسماً بياناً ملوناً يوضح درجات أصدقائك أو مبيعات ألعابك. يمكنك ربط مكتبة الرسم الشهيرة Matplotlib مع نافذة برنامجك المصنوعة بـ Tkinter ليظهر الاثنان معاً كفريق واحد.",
+   "لنفترض أنك كتبت كوداً لإنشاء نافذة بسيطة وأردت وضع رسم بياني بداخلها. في لغة بايثون، نقوم بإنشاء نافذة Tkinter ثم نضيف إليها أدوات عرض الرسم البياني بطريقة مرتبة ومنظمة لتظهر للمستخدم بشكل جميل.",
+   "كيف يعمل هذا السحر؟ تعتمد الفكرة على إنشاء لوحة رسم (Figure) باستخدام Matplotlib، ثم ربط هذه اللوحة بنافذة Tkinter عبر أداة خاصة تسمى Canvas، مما يتيح لك رؤية المخطط مرسوماً بوضوح داخل التطبيق.",
+   "مثال آخر: تخيل تطبيقاً لطقس اليوم، حيث يوجد زر صغير بمجرد الضغط عليه، يتغير الرسم البياني ليعرض درجات الحرارة الجديدة فوراً دون الحاجة لإغلاق البرنامج وفتحه من جديد.",
+   "قاعدة ذهبية: عندما تريد تحديث الرسم البياني داخل نافذة Tkinter، تذكر دائماً مسح المحتوى القديم للوحة أو إعادة رسم البيانات الجديدة، ثم أمر البرنامج بتحديث الشاشة لترى التغيير بسلاسة.",
+   "استخدام حقيقي: تستخدم الشركات الكبرى هذه التقنية لتصميم لوحات التحكم (Dashboards) التي تعرض للموظفين أرباح الشركة وحالة المبيعات تتغير وتتحدث مباشرة أمامهم بضغطة زر."
+  ],
+  "example": "إليك مثال عملي يوضح كيف ننشئ نافذة تحتوي على زر ورسم بياني يتحدث:\n\n```python\nimport tkinter as tk\nimport matplotlib.pyplot as plt\n\ndef تحديث_الرسم():\n    print(\"تم تحديث البيانات ورسم المخطط بنجاح!\")\n\nنافذة = tk.Tk()\nنافذة.geometry(\"300x200\")\nزر = tk.Button(نافذة, text=\"تحديث المخطط\", command=تحديث_الرسم)\nزر.pack()\nنافذة.mainloop()\n```\nالسبب والمنطق: قمنا بربط دالة التحديث بالزر، بحيث إذا ضغط المستخدم عليه، يتم تنفيذ كود إعادة رسم البيانات داخل واجهة Tkinter.",
+  "mistake": "خطأ شائع: نسيان ربط الدالة بالزر باستخدام معامل command، مما يجعل الزر لا يفعل أي شيء عند الضغط عليه. الحل: تأكد دائماً من كتابة command=اسم_الدالة داخل تعريف الزر.",
+  "recap": "تعلمنا كيف ندمج الرسوم البيانية داخل نوافذ Tkinter وكيف نربط الأزرار لتحديث البيانات وعرضها بشكل فوري للمستخدم.",
+  "q": [
+   {
+    "t": "ما هي المكتبة المسؤولة عن رسم المخططات البيانية في بايثون؟",
+    "o": [
+     "Matplotlib",
+     "Tkinter",
+     "Math"
+    ],
+    "a": 0,
+    "why": "مكتبة Matplotlib مخصصة لإنشاء الرسوم والمخططات البيانية بجميع أنواعها."
+   },
+   {
+    "t": "ما هو دور الأداة Button(command=...) في الواجهات؟",
+    "o": [
+     "إغلاق الشاشة فقط",
+     "تنفيذ دالة معينة عند الضغط على الزر",
+     "تغيير لون النافذة"
+    ],
+    "a": 1,
+    "why": "معامل command يربط الزر بدالة برمجية تنفذ المهام المطلوب حدوثها."
+   },
+   {
+    "t": "لماذا ندمج Matplotlib مع Tkinter؟",
+    "o": [
+     "لنتمكن من عرض الرسوم البيانية داخل تطبيقات سطح المكتب الخاصة بنا",
+     "لكتابة النصوص الملونة",
+     "لتسريع تشغيل الإنترنت"
+    ],
+    "a": 0,
+    "why": "الدمج يتيح لنا بناء لوحات تحكم تفاعلية متكاملة."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود ربط الزر بتحديث المخطط",
+   "goal": "اختر الكلمات الصحيحة لإكمال كود ربط الزر بدالة التحديث في Tkinter.",
+   "items": [
+    {
+     "text": "زر = tk.Button(نافذة, text=\"تحديث\", ___=تحديث_البيانات)",
+     "options": [
+      "command",
+      "click",
+      "press"
+     ],
+     "a": 0
+    },
+    {
+     "text": "import ___ as plt",
+     "options": [
+      "matplotlib.pyplot",
+      "tkinter",
+      "math"
+     ],
+     "a": 0
+    },
+    {
+     "text": "نافذة.___()",
+     "options": [
+      "mainloop",
+      "run",
+      "start"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد نجحت في ربط زر التحديث بنافذة الرسوم البيانية وأصبح برنامجك تفاعلياً!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن دمج الواجهات والرسوم",
+    "text": "تخيل أن نافذة برنامجك هي غرفة، والرسوم البيانية هي لوحة فنية معلقة على الجدار. دمج Matplotlib مع Tkinter يعني أننا نأخذ لوحة البيانات الرسمية ونضعها داخل غرفتنا المصنوعة بـ Tkinter ليراها الجميع.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nroot.title('لوحة البيانات')\nroot.mainloop()",
+    "output": "يفتح نافذة فارغة بعنوان لوحة البيانات"
+   },
+   {
+    "h": "إنشاء لوحة الرسم البياني",
+    "text": "لكي نرسم، نحتاج إلى ورقة بيضاء. في بايثون، ورقتنا هي الـ Figure والأحداث عليها تسمى Axes. نستخدم دوال Matplotlib لإنشاء هذا الشكل الهندسي قبل وضعه في النافذة.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots(figsize=(3,3))\nax.plot([1, 2, 3], [4, 5, 6])",
+    "output": "ينشئ رسماً بيانياً جاهزاً للضم"
+   },
+   {
+    "h": "ربط الأزرار بالعمليات",
+    "text": "الزر في واجهة المستخدم يشبه مفتاح الإضاءة؛ تضغط عليه فيضيء المصباح أو تحدث عملية معينة. في برنامجنا، نربط الزر بدالة برمجية تقوم بمعالجة البيانات وإعادة رسم المخطط.",
+    "code": "import tkinter as tk\ndef click():\n    print('تم الضغط!')\nbtn = tk.Button(text='اضغط', command=click)\nbtn.pack()",
+    "output": "يعرض زراً يطبع جملة عند الضغط"
+   },
+   {
+    "h": "تحديث البيانات تلقائياً",
+    "text": "عندما يضغط المستخدم على زر التحديث، يقوم البرنامج بقراءة أحدث الأرقام (مثل درجات الحرارة أو المبيعات) ثم يقوم بمسح الرسم القديم ورسم البيانات الجديدة فوراً.",
+    "code": "def refresh_data():\n    ax.clear()\n    ax.plot([1, 2], [3, 4])",
+    "output": "يمسح الرسم القديم ويضع بيانات جديدة"
+   },
+   {
+    "h": "تنظيم العناصر داخل النافذة",
+    "text": "حتى لا تتداخل الأزرار مع الرسوم البيانية، نستعمل مدير التخطيط مثل pack أو grid لترتيب مكان الزر ومكان الرسم البياني داخل نافذة Tkinter بشكل أنيق ومنظم.",
+    "code": "btn.pack(side='top')\n# مكان وضع لوحة الرسم لاحقاً\n",
+    "output": "يرتب العناصر عمودياً أو أفقياً"
+   },
+   {
+    "h": "اختبار البرنامج التفاعلي",
+    "text": "بعد تجميع القطع معاً: النافذة، الزر، الرسم البياني، ودالة التحديث، نقوم بتشغيل حلقة البرنامج الرئيسية mainloop ليبدأ البرنامج في استقبال نقرات المستخدم وعرض الرسوم.",
+    "code": "# root.mainloop() لتشغيل النافذة باستمرار",
+    "output": "نافذة تفاعلية تعمل بسلاسة"
+   }
+  ],
+  "reference": [
+   {
+    "name": "tkinter.Tk()",
+    "desc": "ينشئ النافذة الرئيسية لتطبيق سطح المكتب"
+   },
+   {
+    "name": "plt.subplots()",
+    "desc": "ينشئ شكلاً هندسيأ ومحاور للرسم البياني"
+   },
+   {
+    "name": "tk.Button()",
+    "desc": "ينشئ زر تفاعلي في نافذة Tkinter"
+   },
+   {
+    "name": "command",
+    "desc": "معامل لربط الزر بدالة برمجية"
+   },
+   {
+    "name": "ax.clear()",
+    "desc": "يمسح المخطط القديم استعداداً لرسم بيانات جديدة"
+   },
+   {
+    "name": "mainloop()",
+    "desc": "يبقي النافذة مفتوحة وتستجيب لتفاعل المستخدم"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطراً لإنشاء زر في Tkinter ينفذ دالة اسمها update_plot.",
+    "a": "btn = tk.Button(root, text='تحديث', command=update_plot)"
+   },
+   {
+    "q": "ما هي الدالة التي تستخدم لمسح الرسم القديم في Matplotlib قبل رسم الجديد؟",
+    "a": "ax.clear()"
+   },
+   {
+    "q": "كيف نبقي نافذة Tkinter مفتوحة وتعمل؟",
+    "a": "root.mainloop()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine owning your own computer program and wanting to display a colorful chart inside it, showing your friends' scores or game sales. You can connect the famous Matplotlib library with your Tkinter window so they work together as one team.",
+   "Suppose you wrote code to create a simple window and wanted to place a plot inside it. In Python, we create a Tkinter window and then arrange chart display widgets inside it so the user sees everything neatly.",
+   "How does this magic work? The idea relies on creating a Figure using Matplotlib, then embedding that figure into the Tkinter window using a special canvas tool, allowing you to see the chart clearly inside the app.",
+   "Another example: Imagine a weather app where a small button, when clicked, instantly changes the chart to display new temperatures without closing and reopening the program.",
+   "Golden rule: When you want to update the chart inside a Tkinter window, always remember to clear the old content or redraw new data, then tell the program to refresh the screen smoothly.",
+   "Real-life use: Large companies use this technique to design dashboards that display company profits and sales status, updating live right before their eyes at the click of a button."
+  ],
+  "example": "Here is a working example showing how we create a window with a button and an updating chart:\n\n```python\nimport tkinter as tk\nimport matplotlib.pyplot as plt\n\ndef update_chart():\n    print(\"Data updated and chart redrawn successfully!\")\n\nwindow = tk.Tk()\nwindow.geometry(\"300x200\")\nbtn = tk.Button(window, text=\"Refresh Plot\", command=update_chart)\nbtn.pack()\nwindow.mainloop()\n```\nReasoning: We linked the update function to the button so that whenever the user clicks it, the data-redrawing code executes inside the Tkinter GUI.",
+  "mistake": "Common mistake: Forgetting to link the function to the button using the command parameter, which makes the button do nothing when clicked. Solution: Always make sure to write command=function_name inside the button definition.",
+  "recap": "We learned how to embed charts inside Tkinter windows and how to bind buttons to update data and display it instantly to the user.",
+  "q": [
+   {
+    "t": "Which library is responsible for drawing charts in Python?",
+    "o": [
+     "Matplotlib",
+     "Tkinter",
+     "Math"
+    ],
+    "a": 0,
+    "why": "Matplotlib is dedicated to creating charts and plots of all kinds."
+   },
+   {
+    "t": "What is the role of the Button(command=...) widget parameter?",
+    "o": [
+     "Only close the screen",
+     "Execute a specific function when the button is clicked",
+     "Change the window color"
+    ],
+    "a": 1,
+    "why": "The command parameter binds the button to a Python function to perform tasks."
+   },
+   {
+    "t": "Why do we combine Matplotlib with Tkinter?",
+    "o": [
+     "To display charts inside our custom desktop applications",
+     "To write colorful text",
+     "To speed up internet browsing"
+    ],
+    "a": 0,
+    "why": "The combination allows us to build fully interactive desktop dashboards."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Completing the Chart-Updating Button Code",
+   "goal": "Choose the correct words to complete the button binding code in Tkinter.",
+   "items": [
+    {
+     "text": "btn = tk.Button(window, text=\"Refresh\", ___=update_data)",
+     "options": [
+      "command",
+      "click",
+      "press"
+     ],
+     "a": 0
+    },
+    {
+     "text": "import ___ as plt",
+     "options": [
+      "matplotlib.pyplot",
+      "tkinter",
+      "math"
+     ],
+     "a": 0
+    },
+    {
+     "text": "window.___()",
+     "options": [
+      "mainloop",
+      "run",
+      "start"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You successfully bound the refresh button to your chart window and made your app interactive!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to GUI and Chart Integration",
+    "text": "Imagine your app window is a room, and the chart is an artwork hanging on the wall. Integrating Matplotlib with Tkinter means taking our official data artwork and placing it inside our Tkinter room for everyone to see.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nroot.title('Data Dashboard')\nroot.mainloop()",
+    "output": "Opens an empty window titled Data Dashboard"
+   },
+   {
+    "h": "Creating the Chart Figure",
+    "text": "To draw, we need a blank sheet. In Python, our sheet is the Figure and its plots are Axes. We use Matplotlib functions to create this geometry object before putting it into the window.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots(figsize=(3,3))\nax.plot([1, 2, 3], [4, 5, 6])",
+    "output": "Creates a ready-to-embed plot object"
+   },
+   {
+    "h": "Binding Buttons to Actions",
+    "text": "A button in a user interface is like a light switch; you press it and a light turns on or a process happens. In our app, we link the button to a function that processes data and redraws the plot.",
+    "code": "import tkinter as tk\ndef click():\n    print('Clicked!')\nbtn = tk.Button(text='Press', command=click)\nbtn.pack()",
+    "output": "Displays a button that prints text when clicked"
+   },
+   {
+    "h": "Updating Data Automatically",
+    "text": "When the user clicks the refresh button, the program reads the latest numbers (like temperatures or sales), clears the old chart, and plots the new data instantly.",
+    "code": "def refresh_data():\n    ax.clear()\n    ax.plot([1, 2], [3, 4])",
+    "output": "Clears old plot and displays fresh data"
+   },
+   {
+    "h": "Organizing Elements in the Window",
+    "text": "So that buttons and charts don't overlap, we use layout managers like pack or grid to neatly arrange where the button and chart sit inside the Tkinter window.",
+    "code": "btn.pack(side='top')\n# Place for embedding chart canvas next\n",
+    "output": "Arranges widgets vertically or horizontally"
+   },
+   {
+    "h": "Testing the Interactive Program",
+    "text": "After assembling the pieces: window, button, chart, and update function, we run the mainloop so the program begins listening for user clicks and displaying graphics.",
+    "code": "# root.mainloop() to keep the window running continuously",
+    "output": "An interactive desktop window running smoothly"
+   }
+  ],
+  "reference": [
+   {
+    "name": "tkinter.Tk()",
+    "desc": "Creates the main desktop application window"
+   },
+   {
+    "name": "plt.subplots()",
+    "desc": "Creates a figure and axes for plotting charts"
+   },
+   {
+    "name": "tk.Button()",
+    "desc": "Creates an interactive button in a Tkinter window"
+   },
+   {
+    "name": "command",
+    "desc": "Parameter to bind a button to a Python function"
+   },
+   {
+    "name": "ax.clear()",
+    "desc": "Clears the old plot in preparation for new data"
+   },
+   {
+    "name": "mainloop()",
+    "desc": "Keeps the window open and responsive to user interaction"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a line to create a Tkinter button that executes a function named update_plot.",
+    "a": "btn = tk.Button(root, text='Refresh', command=update_plot)"
+   },
+   {
+    "q": "What function is used to clear an old Matplotlib chart before drawing a new one?",
+    "a": "ax.clear()"
+   },
+   {
+    "q": "How do we keep a Tkinter window open and running?",
+    "a": "root.mainloop()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "matplotlib.org docs",
+   "url": "https://matplotlib.org/stable/users/explain/quick_start.html"
+  },
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/library/tkinter.html"
+  }
+ ],
+ "grounded": true
+}

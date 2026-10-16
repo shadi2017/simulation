@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن عناصر صفحة الويب مثل ألعاب ليو (LEGO) المبعثرة؛ نظام Flexbox هو الصندوق الذكي الذي يرتبها في صفوف وأعمدة متناسقة وبدون تعب، مما يجعل تصميم المواقع ممتعاً وسهلاً للغاية.",
+   "لنفترض أن لديك ثلاثة أزرار في صفحة ويب وتريدها أن تصطف بجانب بعضها البعض بدل أن تقع فوق بعضها؛ هنا يأتي دور خاصية العرض المرن لتحويل العنصر الأب إلى حاوية ذكية.",
+   "يعمل Flexbox بتحويل العنصر الأب إلى 'حاوية مرنة' عبر كتابة أمر بسيط جداً وهو display: flex في ملف الستايل، فتصطف جميع العناصر الابنة تلقائياً في صف واحد متجاور.",
+   "مثال بسيط: إذا وضعنا ثلاثة مربعات ملونة داخل قسم <section> وأعطينا هذا القسم أمر display: flex، ستتحول المربعات فوراً إلى صف أفقي متناسق ومتساوي في الارتفاع بدون أية تعقيدات.",
+   "القاعدة الذهبية لتصميم الويب: اجعل الأب مرناً (display: flex) لتستطيع التحكم في ترتيب أطفاله يميناً، يساراً، أو في المنتصف بكل حرية وبأقل عدد ممكن من سطور الأكواد.",
+   "يُستخدم Flexbox في الحياة الواقعية لتصميم قوائم التنقل العلوية، وترتيب صور المعرض بجانب بعضها، وتوسيط المحتوى تماماً في منتصف الشاشة مهما كانت دقة أو حجم الجهاز المستخدم."
+  ],
+  "example": "لنفترض أننا نريد تنظيم ثلاثة مقالات لتظهر بجانب بعضها البعض في شاشتك. نقوم بكتابة كود HTML يحتوي على قسم رئيسي وع بداخله ثلاثة مقالات. في ملف CSS، نكتب: section { display: flex; }، وسيقوم المتصفح فوراً بجعل المقالات الثلاثة تصطف في صف واحد متناسق وبنفس الطول تماماً، بفضل سحر الخصائص المرنة ودون الحاجة لحسابات معقدة.",
+  "mistake": "الخطأ الشائع هو وضع أمر display: flex على العناصر الابنة (المقالات) بدلاً من وضعه على العنصر الأب (القسم). التصحيح: ضع دائمًا أمر display: flex على الحاوية الأم لكي تتأثر العناصر الموجودة بداخلها وتصبح مرنة.",
+  "recap": "نظام Flexbox هو أداة قوية في CSS لترتيب العناصر بمرونة في صفوف أو أعمدة. ضبط الحاوية الأم بـ display: flex ينظم جميع العناصر الداخلية بسهولة.",
+  "q": [
+   {
+    "t": "أين يجب أن نكتب أمر display: flex؟",
+    "o": [
+     "على العناصر الابنة",
+     "على العنصر الأب (الحاوية)",
+     "على المتصفح مباشرة"
+    ],
+    "a": 1,
+    "why": "نكتب display: flex على العنصر الأب ليتحكم في ترتيب وتنسيق جميع العناصر الابنة بداخله."
+   },
+   {
+    "t": "ماذا يحدث للعناصر الابنة عند تفعيل Flexbox للحاوية الأم؟",
+    "o": [
+     "تختفي تماماً",
+     "تصطف معاً في صف أو عمود بمرونة",
+     "تتحول إلى صور"
+    ],
+    "a": 1,
+    "why": "يؤدي تفعيل العرض المرن إلى جعل العناصر الابنة تصطف بشكل مرن ومتناسق."
+   },
+   {
+    "t": "ما هي الفائدة الأساسية لاستخدام Flexbox؟",
+    "o": [
+     "إنشاء تخطيطات مرنة ومحاذاة العناصر بسهولة",
+     "تغيير نوع خط الكتابة فقط",
+     "تسريع إنترنت الجهاز"
+    ],
+    "a": 0,
+    "why": "يُستخدم Flexbox لتنظيم وتخطيط وتوزيع العناصر في بعد واحد (صفوف أو أعمدة) بكفاءة عالية."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة مفاهيم Flexbox الأساسية",
+   "goal": "صل كل مصطلح من مصطلحات Flexbox بتعريفه الصحيح لتفهم كيفية عمل التصميم المرن",
+   "pairs": [
+    [
+     "display: flex",
+     "يحول العنصر إلى حاوية مرنة"
+    ],
+    [
+     "المحور الرئيسي (Main Axis)",
+     "الاتجاه الأساسي الذي تصفف فيه العناصر"
+    ],
+    [
+     "المحور المعاكس (Cross Axis)",
+     "الاتجاه العمودي على المحور الرئيسي"
+    ],
+    [
+     "العناصر المرنة (Flex Items)",
+     "العناصر الابنة داخل الحاوية المرنة"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت فهم أساسيات ومصطلحات Flexbox بنجاح كبير!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة إلى نظام Flexbox",
+    "text": "نظام Flexbox هو أداة تصمير رائعة في CSS لترتيب العناصر في صفوف أو أعمدة بمرونة تامة. تخيل أنك ترتب كتباً على رف؛ الرف هو الحاوية والكتب هي العناصر المرنة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .container { display: flex; background: #eee; padding: 10px; }\n  .box { background: #3498db; color: white; padding: 20px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"box\">عنصر 1</div>\n    <div class=\"box\">عنصر 2</div>\n  </div>\n</body>\n</html>",
+    "output": "يظهر صندوقان مرتبان بجانب بعضهما البعض بفضل خاصية Flex."
+   },
+   {
+    "h": "إنشاء الحاوية المرنة (Flex Container)",
+    "text": "لكي يبدأ السحر، يجب أن تخبر المتصفح أن هذا العنصر هو حاوية مرنة. تفعل ذلك ببساطة عبر إضافة خاصية display: flex إلى العنصر الأب.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .flex-parent { display: flex; background: #f1c40f; padding: 10px; }\n  .item { background: #e74c3c; color: white; padding: 15px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"flex-parent\">\n    <div class=\"item\">أ</div>\n    <div class=\"item\">ب</div>\n  </div>\n</body>\n</html>",
+    "output": "يتحول القسم الأب إلى حاوية مرنة وتصطف العناصر الابنة أفقياً."
+   },
+   {
+    "h": "المحاور في Flexbox (الرئيسي والمعاكس)",
+    "text": "يعمل Flexbox على محورين أساسيين: المحور الرئيسي (Main Axis) الذي يمشي مع اتجاه الصف، والمحور المعاكس (Cross Axis) العمودي عليه. مثل خطوط الطول والعرض في الخريطة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .row-container { display: flex; flex-direction: row; background: #2ecc71; padding: 10px; }\n  .col { background: #fff; padding: 10px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"row-container\">\n    <div class=\"col\">س</div>\n    <div class=\"col\">ص</div>\n  </div>\n</body>\n</html>",
+    "output": "تصطف العناصر أفقياً على طول المحور الرئيسي."
+   },
+   {
+    "h": "توزيع المساحات والمسافات",
+    "text": "لا تحتاج لحساب المسافات بالمليمترات! يقوم Flexbox بتوزيع الفراغات تلقائياً بين العناصر أو حولها، تماماً مثل توزيع قطع الحلوى بالتساوي على الأصدقاء.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .space-container { display: flex; justify-content: space-around; background: #9b59b6; padding: 10px; }\n  .item { background: #fff; padding: 15px; }\n</style>\n</head>\n<body>\n  <div class=\"space-container\">\n    <div class=\"item\">1</div>\n    <div class=\"item\">2</div>\n    <div class=\"item\">3</div>\n  </div>\n</body>\n</html>",
+    "output": "تتوزع العناصر بمسافات متساوية حولها داخل الحاوية."
+   },
+   {
+    "h": "المحاذاة الأفقية والعمودية",
+    "text": "يمكنك التحكم في محاذاة العناصر يميناً ويساراً باستخدام justify-content، ومحاذاة العناصر عمودياً للأعلى والأسفل والمنتصف باستخدام align-items بكل سهولة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .align-container { display: flex; align-items: center; height: 100px; background: #34495e; }\n  .item { background: #e67e22; color: white; padding: 10px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"align-container\">\n    <div class=\"item\">في المنتصف عمودياً</div>\n  </div>\n</body>\n</html>",
+    "output": "يتوسط العنصر الحاوية عمودياً داخل المساحة المتوفرة."
+   },
+   {
+    "h": "سلوك العناصر المرنة (Flex Items)",
+    "text": "تصبح العناصر الموجودة داخل الحاوية المرنة مرنة أيضاً؛ يمكنها التمدد لملء الفراغ الفارغ أو الانكماش إذا أصبحت الشاشة صغيرة، لتناسب كل الأجهزة الذكية.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .grow-container { display: flex; background: #1abc9c; padding: 10px; }\n  .item-grow { flex: 1; background: #fff; padding: 10px; margin: 5px; text-align: center; }\n</style>\n</head>\n<body>\n  <div class=\"grow-container\">\n    <div class=\"item-grow\">تمدد 1</div>\n    <div class=\"item-grow\">تمدد 2</div>\n  </div>\n</body>\n</html>",
+    "output": "يتمدد العنصران ليأخذا مساحات متساوية وتملأ الحاوية بالكامل."
+   }
+  ],
+  "reference": [
+   {
+    "name": "display: flex",
+    "desc": "يحول العنصر إلى حاوية مرنة وتصطف مكوظاته تلقائياً"
+   },
+   {
+    "name": "flex-direction",
+    "desc": "يحدد اتجاه الصف أو العمود داخل الحاوية المرنة"
+   },
+   {
+    "name": "justify-content",
+    "desc": "يتحكم في محاذاة وتوزيع العناصر على المحور الرئيسي"
+   },
+   {
+    "name": "align-items",
+    "desc": "يتحكم في محاذاة العناصر عمودياً على المحور المعاكس"
+   },
+   {
+    "name": "flex",
+    "desc": "يحدد قدرة العنصر على التمدد أو الانكماش لملء الفراغ"
+   },
+   {
+    "name": "flex-wrap",
+    "desc": "يسمح للعناصر بالانتقال إلى سطر جديد عند عدم كفاية المساحة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب خاصية CSS التي تحول أي قسم إلى حاوية مرنة.",
+    "a": "display: flex;"
+   },
+   {
+    "q": "ما هي الخاصة المسؤولة عن محاذاة العناصر على المحور الرئيسي أفقياً؟",
+    "a": "justify-content"
+   },
+   {
+    "q": "ما هي الخاصة التي تجعل العناصر تتوزع في سطر جديد عندما تضيق الشاشة؟",
+    "a": "flex-wrap"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine webpage items like scattered LEGO bricks; Flexbox is the smart box that arranges them into neat rows and columns effortlessly, making web design super fun and easy.",
+   "Suppose you have three buttons on a webpage and you want them to sit side by side instead of stacking on top of each other; this is where the flexible display property comes in.",
+   "Flexbox works by turning a parent element into a 'flex container' by writing a very simple command: display: flex, which automatically lines up all child items side by side.",
+   "Simple example: If we place three colored boxes inside a <section> and give that section display: flex, the boxes instantly turn into a neat horizontal row of equal height without any hassle.",
+   "The golden rule of web design: Make the parent flexible (display: flex) so you can freely control its children's layout to the left, right, or center using minimal code lines.",
+   "Flexbox is used in real life to design top navigation menus, align gallery images side by side, and perfectly center content right in the middle of the screen regardless of device size."
+  ],
+  "example": "Suppose we want to organize three articles to appear side by side on your screen. We write HTML with a main section containing three articles. In our CSS file, we write: section { display: flex; }, and the browser instantly makes the three articles line up in a clean, equal-height row, thanks to the magic of flexible boxes and without complex math.",
+  "mistake": "A common mistake is applying display: flex to the child items (the articles) instead of the parent element (the section). Correction: Always put display: flex on the parent container so its inner items become flexible.",
+  "recap": "Flexbox is a powerful CSS tool for arranging items flexibly in rows or columns. Setting the parent container with display: flex easily organizes all inner elements.",
+  "q": [
+   {
+    "t": "Where should we write the display: flex command?",
+    "o": [
+     "On the child elements",
+     "On the parent element (container)",
+     "Directly on the browser"
+    ],
+    "a": 1,
+    "why": "We write display: flex on the parent element to control the layout and alignment of all child elements inside it."
+   },
+   {
+    "t": "What happens to child elements when Flexbox is enabled on the parent container?",
+    "o": [
+     "They completely disappear",
+     "They line up together in a row or column flexibly",
+     "They turn into images"
+    ],
+    "a": 1,
+    "why": "Enabling flexible display makes the child elements line up flexibly and harmoniously."
+   },
+   {
+    "t": "What is the primary benefit of using Flexbox?",
+    "o": [
+     "Creating flexible layouts and easily aligning items",
+     "Changing the text font style only",
+     "Speeding up device internet"
+    ],
+    "a": 0,
+    "why": "Flexbox is used to organize, layout, and distribute items in one dimension (rows or columns) with high efficiency."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching Essential Flexbox Concepts",
+   "goal": "Match each Flexbox term with its correct definition to understand how flexible design works",
+   "pairs": [
+    [
+     "display: flex",
+     "Turns an element into a flex container"
+    ],
+    [
+     "Main Axis",
+     "The primary direction along which flex items are laid out"
+    ],
+    [
+     "Cross Axis",
+     "The axis perpendicular to the main axis"
+    ],
+    [
+     "Flex Items",
+     "The child elements inside a flex container"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered the fundamentals and terminology of Flexbox!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Flexbox",
+    "text": "Flexbox is an amazing CSS layout tool for arranging items in rows or columns with total flexibility. Imagine arranging books on a shelf; the shelf is the container and the books are the flex items.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .container { display: flex; background: #eee; padding: 10px; }\n  .box { background: #3498db; color: white; padding: 20px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"box\">Item 1</div>\n    <div class=\"box\">Item 2</div>\n  </div>\n</body>\n</html>",
+    "output": "Two boxes appear arranged side by side thanks to the Flex property."
+   },
+   {
+    "h": "Creating the Flex Container",
+    "text": "To start the magic, you must tell the browser that this element is a flex container. You simply do this by adding the display: flex property to the parent element.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .flex-parent { display: flex; background: #f1c40f; padding: 10px; }\n  .item { background: #e74c3c; color: white; padding: 15px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"flex-parent\">\n    <div class=\"item\">A</div>\n    <div class=\"item\">B</div>\n  </div>\n</body>\n</html>",
+    "output": "The parent section turns into a flex container and child items line up horizontally."
+   },
+   {
+    "h": "Axes in Flexbox (Main and Cross)",
+    "text": "Flexbox operates along two main axes: the Main Axis running in the direction of the row, and the Cross Axis perpendicular to it. Think of them like latitude and longitude on a map.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .row-container { display: flex; flex-direction: row; background: #2ecc71; padding: 10px; }\n  .col { background: #fff; padding: 10px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"row-container\">\n    <div class=\"col\">X</div>\n    <div class=\"col\">Y</div>\n  </div>\n</body>\n</html>",
+    "output": "Items line up horizontally along the main axis."
+   },
+   {
+    "h": "Distributing Container Margins and Spacing",
+    "text": "No need to calculate gaps in millimeters! Flexbox automatically distributes spacing between or around items, just like handing out candy equally among friends.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .space-container { display: flex; justify-content: space-around; background: #9b59b6; padding: 10px; }\n  .item { background: #fff; padding: 15px; }\n</style>\n</head>\n<body>\n  <div class=\"space-container\">\n    <div class=\"item\">1</div>\n    <div class=\"item\">2</div>\n    <div class=\"item\">3</div>\n  </div>\n</body>\n</html>",
+    "output": "Items are distributed with equal spacing around them inside the container."
+   },
+   {
+    "h": "Horizontal and Vertical Alignment",
+    "text": "You can control horizontal alignment using justify-content, and vertical alignment (top, bottom, center) using align-items with absolute ease.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .align-container { display: flex; align-items: center; height: 100px; background: #34495e; }\n  .item { background: #e67e22; color: white; padding: 10px; margin: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"align-container\">\n    <div class=\"item\">Vertically Centered</div>\n  </div>\n</body>\n</html>",
+    "output": "The item is vertically centered inside the available space."
+   },
+   {
+    "h": "Flex Items Behavior",
+    "text": "Items inside a flex container become flexible too; they can expand to fill extra space or shrink if the screen gets smaller, adapting to all smart devices.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .grow-container { display: flex; background: #1abc9c; padding: 10px; }\n  .item-grow { flex: 1; background: #fff; padding: 10px; margin: 5px; text-align: center; }\n</style>\n</head>\n<body>\n  <div class=\"grow-container\">\n    <div class=\"item-grow\">Grow 1</div>\n    <div class=\"item-grow\">Grow 2</div>\n  </div>\n</body>\n</html>",
+    "output": "Both items grow to take equal spaces and completely fill the container."
+   }
+  ],
+  "reference": [
+   {
+    "name": "display: flex",
+    "desc": "Turns an element into a flex container whose children layout automatically"
+   },
+   {
+    "name": "flex-direction",
+    "desc": "Specifies the row or column direction inside the flex container"
+   },
+   {
+    "name": "justify-content",
+    "desc": "Controls alignment and distribution of items along the main axis"
+   },
+   {
+    "name": "align-items",
+    "desc": "Controls alignment of items along the cross axis vertically"
+   },
+   {
+    "name": "flex",
+    "desc": "Defines an item's ability to grow or shrink to fill space"
+   },
+   {
+    "name": "flex-wrap",
+    "desc": "Allows items to wrap onto new rows when space runs out"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the CSS property that turns any section into a flex container.",
+    "a": "display: flex;"
+   },
+   {
+    "q": "Which property is responsible for aligning items horizontally along the main axis?",
+    "a": "justify-content"
+   },
+   {
+    "q": "What property makes items wrap into a new line when the screen gets narrow?",
+    "a": "flex-wrap"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Flexbox",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox"
+  },
+  {
+   "title": "MDN: CSS styling basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"
+  }
+ ],
+ "grounded": true
+}

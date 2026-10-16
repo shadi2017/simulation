@@ -1,0 +1,162 @@
+{
+ "en": [
+  {
+   "title": "Sports Analytics Dashboard",
+   "desc": "Build a desktop app where users select an athlete to view career trends plotted via Matplotlib inside Tkinter, with Git tracking every change.",
+   "tags": [
+    "Tkinter",
+    "Matplotlib",
+    "Git"
+   ],
+   "steps": [
+    "Create a new folder and run 'git init' to start tracking your project.",
+    "Design a Tkinter desktop window with a dropdown menu to choose an athlete.",
+    "Write a Python function to filter athlete career data and compute trends.",
+    "Use Matplotlib to generate a clear line chart of the player's yearly stats.",
+    "Embed the generated Matplotlib chart canvas directly inside the Tkinter window.",
+    "Add a button that updates the chart dynamically when a new athlete is selected.",
+    "Write a professional README.md file explaining how to run your sports dashboard.",
+    "Commit all your code changes to Git and push your repository to GitHub."
+   ],
+   "rubric": [
+    "Tkinter window launches smoothly with a working athlete dropdown menu.",
+    "Matplotlib successfully plots accurate career trend line charts.",
+    "Charts are correctly embedded inside the desktop user interface.",
+    "Git history shows regular commits and GitHub README is clear."
+   ],
+   "stretch": "Add a second tab or button to show category bar charts comparing player salaries using Pandas."
+  },
+  {
+   "title": "Daily Habits Visual Dashboard",
+   "desc": "Create a habit-tracking desktop tool that records study, sleep, and screen time, displaying correlation patterns using scatter plots.",
+   "tags": [
+    "Scatter Plots",
+    "Tkinter",
+    "Pandas"
+   ],
+   "steps": [
+    "Initialize a Git repository and create your initial commit.",
+    "Build a Tkinter form with entry boxes and sliders to input daily study, sleep, and screen hours.",
+    "Store the entered habit records into a Pandas DataFrame inside your script.",
+    "Write Matplotlib code to generate a scatter plot exploring sleep versus study hours.",
+    "Embed the scatter plot figure seamlessly into your Tkinter dashboard layout.",
+    "Add a save button to export daily habit entries to a local CSV file.",
+    "Document your habit tracker project inside a detailed GitHub README.md file.",
+    "Stage, commit, and push your final working project files to GitHub."
+   ],
+   "rubric": [
+    "Tkinter interface accepts and stores daily habit numbers correctly.",
+    "Scatter plots accurately reveal relationships between different habits.",
+    "Charts update or save data without crashing the desktop window.",
+    "Project is properly version-controlled and shared on GitHub."
+   ],
+   "stretch": "Add a pie chart showing the percentage breakdown of daily time spent on each activity."
+  },
+  {
+   "title": "Weather History Hub",
+   "desc": "Design a desktop dashboard that compares monthly rainfall and temperature data using professional charts inside a Tkinter app.",
+   "tags": [
+    "Bar Charts",
+    "Desktop",
+    "GitHub"
+   ],
+   "steps": [
+    "Set up a local Git repository and create your project file structure.",
+    "Create a Tkinter window titled 'Weather History Hub' with clean button layouts.",
+    "Prepare weather datasets containing monthly temperature and rainfall values.",
+    "Use Matplotlib to create grouped bar charts for category comparisons.",
+    "Embed the weather charts inside the main Tkinter dashboard window.",
+    "Add a toggle feature to switch between temperature and rainfall views.",
+    "Write a comprehensive README.md file describing installation steps.",
+    "Push your complete weather hub repository to GitHub for others to view."
+   ],
+   "rubric": [
+    "Tkinter window displays weather buttons and charts correctly.",
+    "Bar charts clearly display monthly climate comparisons.",
+    "Code is well-organized and easy to navigate.",
+    "GitHub repository includes a professional README and commit history."
+   ],
+   "stretch": "Incorporate a trend line for yearly temperature increases alongside the bar charts."
+  }
+ ],
+ "ar": [
+  {
+   "title": "لوحة تحليل الرياضيين",
+   "desc": "ابني تطبيق سطح مكتب يتيح للمستخدمين اختيار رياضي وعرض تطور مسيرته عبر رسوم بيانية داخل نافذة Tkinter، مع تتبع كل تعديل بـ Git.",
+   "tags": [
+    "Tkinter",
+    "Matplotlib",
+    "Git"
+   ],
+   "steps": [
+    "اعمل مجلد جديد وشغل أمر 'git init' عشان تبدأ تتابع مشروعك.",
+    "صمم نافذة Tkinter فيها قائمة منسدلة عشان تختار الرياضي المطلوب.",
+    "اكتب دالة بايثون عشان تصفي بيانات الرياضي وتحسب الإحصائيات.",
+    "استخدم Matplotlib عشان ترسم خط بياني واضح لمستوى اللاعب سنوياً.",
+    "ادمج لوحة الرسم البياني جوه نافذة Tkinter بطريقة مرتبة.",
+    "ضيف زرار يحدث الرسم البياني تلقائياً أول ما تختار رياضي تاني.",
+    "اكتب ملف README.md احترافي يشرح إزاي تشغل لوحة التحكم بتاعتك.",
+    "اعمل Commit لكل التعديلات وارفع المشروع على مستودع GitHub."
+   ],
+   "rubric": [
+    "نافذة Tkinter بتفتح كويس وقائمة الرياضيين شغال تمام.",
+    "مكتبة Matplotlib بترسم خطوط البيانية بدقة وصح.",
+    "الرسوم البيانية مدمجة جوه واجهة سطح المكتب مظبوط.",
+    "تاريخ Git فيه عمليات commit منتظمة و ملف README واضح."
+   ],
+   "stretch": "ضيف تبويب تاني بيعرض أعمدة مقارنة مرتبة لرواتب اللاعبين باستخدام Pandas."
+  },
+  {
+   "title": "لوحة تتبع العادات اليومية",
+   "desc": "اصمم أداة لسطح المكتب تسجل ساعات المذاكرة، النوم، والموبايل، وبتعرض العلاقات بينهم باستخدام النقاط المشتتة.",
+   "tags": [
+    "Scatter Plots",
+    "Tkinter",
+    "Pandas"
+   ],
+   "steps": [
+    "ابدأ مستودع Git جديد واعمل أول commit للمشروع.",
+    "ابني نموذج Tkinter فيه خانات إدخال ومؤشرات لتسجيل ساعات المذاكرة والنوم.",
+    "احفظ البيانات المدخلة جوه جدول Pandas DataFrame داخل الكود.",
+    "اكتب كود Matplotlib عشان تعمل رسم بياني يوضح العلاقة بين النوم والمذاكرة.",
+    "ادمج الرسم البياني بسلاسة جوه واجهة لوحة تحكم Tkinter.",
+    "ضيف زرار حفظ عشان تصدر البيانات اليومية لملف CSV محلي.",
+    "اكتب تفاصيل مشروع متتبع العادات جوه ملف README.md على GitHub.",
+    "اعمل commit ورفع للملفات النهائية للمشروع على GitHub."
+   ],
+   "rubric": [
+    "واجهة Tkinter بتقبل وتسجل أرقام العادات اليومية صح.",
+    "الرسوم المشتتة بتوضح بوضوح العلاقة بين العادات المختلفة.",
+    "الرسوم بتتحدث أو بتحفظ البيانات من غير ما التطبيق يهنج.",
+    "المشروع متوثق ومنشور صح على GitHub."
+   ],
+   "stretch": "ضيف رسم دائري (Pie Chart) بيوضح نسبة الوقت اليومي لكل نشاط."
+  },
+  {
+   "title": "مركز تاريخ الطقس",
+   "desc": "صمم لوحة تحكم لسطح المكتب بتقارن بين كميات الأمطار ودرجات الحرارة الشهرية باستخدام رسوم بيانية واضحة داخل تطبيق Tkinter.",
+   "tags": [
+    "Bar Charts",
+    "Desktop",
+    "GitHub"
+   ],
+   "steps": [
+    "جهز مستودع Git محلي ونظم ملفات المشروع بطريقة مرتبة.",
+    "اعمل نافذة Tkinter باسم 'Weather History Hub' مع أزرار مرتبة.",
+    "جهز بيانات الطقس اللي فيها درجات الحرارة وكميات المطر الشهرية.",
+    "استخدم Matplotlib عشان تعمل أعمدة بيانية لمقارنة الفئات.",
+    "ادمج رسوم الطقس البيانية جوه النافذة الرئيسية لتطبيق Tkinter.",
+    "ضيف خاصية تبديل عشان تعرض الحرارة أو الأمطار بسهولة.",
+    "اكتب ملف README.md شامل يشرح خطوات تشغيل البرنامج.",
+    "ارفعه على GitHub عشان زمايلك يشوفوا الشغل الجميل."
+   ],
+   "rubric": [
+    "نافذة Tkinter بتعرض أزرار الطقس والرسوم البيانية صح.",
+    "الأعمدة البيانية بتوضح مقارنات المناخ الشهرية بوضوح.",
+    "الكود منظم ومرتب وسهل القراءة.",
+    "مستودع GitHub فيه ملف README احترافي وتاريخ commits مظبوط."
+   ],
+   "stretch": "ضيف خط بياني بيوضح ارتفاع درجات الحرارة سنوياً جنب الأعمدة البيانية."
+  }
+ ]
+}

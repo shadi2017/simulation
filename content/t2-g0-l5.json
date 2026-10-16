@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل يا بطل إننا بنرسم خريطة كنز، والأسهم هي اللي بتوريلنا نروح فين الأول وفين بعد كده عشان نوصل للكنز بسرعة وبدون ما نتوه.",
+   "في عالم البرمجة، بنسمي الخريطة دي «مخطط التدفق»، والأسهم بتحدد اتجاه الخطوات، زي السهم اللي بيقولنا: «ارسم خط» وبعدين سهم تاني بيودينا للخطوة اللي بعدها.",
+   "إزاي بتشتغل؟ السهم عامل زي إشارة المرور أو راية بتشاور على المربع الجديد. بنمشي مع رأس السهم من المربع القديم للمربع الجديد بالترتيب الصحيح.",
+   "مثال تاني بسيط: 1) اصحى من النوم -> سهم يوديك على -> 2) اغسل وشك. الاتجاه مهم جداً عشان مترجعش لورا بالغلط.",
+   "القاعدة الذهبية: دايماً امشي مع اتجاه السهم خطوة بخطوة، وما تنطش أبداً لمربع تاني غير لما السهم يوصلك له مباشرة.",
+   "في الحياة اليومية بنستخدم المخططات والأسهم دي في وصفات الأكل (الطاهي بيتبع خطوات بالترتيب) وفي ألعاب الفيديو عشان تعرف تروح فين بعد ما تفوز بالمرحلة!"
+  ],
+  "example": "تعالوا نعمل خطة بسيطة لغسل السنان: 1) حط معجون على الفرشاة -> [سهم لأسفل] -> 2) ادعك السنان بالراحة -> [سهم لأسفل] -> 3) اضمض فمك بالمية. الأسهم هنا هي اللي بتخلينا نعمل الخطوات بالترتيب الصح من غير ما نبدأ بالخطوة التالتة قبل الأولى!",
+  "mistake": "الخطأ الشائع هو إننا نمشي عكس اتجاه السهم أو نتجاهله ونقسّم الخطوات عشوائي. الحل: ركز دايماً في رأس السهم وشاور عليه بصباعك قبل ما تنفذ الخطوة.",
+  "recap": "أسهم الاتجاه هي التي ترشدنا في مخطط التدفق لنعرف الخطوة التالية بدقة. اتباع المسار الصحيح يمنع الأخطاء ويضمن نجاح المهمة.",
+  "q": [
+   {
+    "t": "إيه فايدة السهم في مخطط التدفق؟",
+    "o": [
+     "بيورينا اتجاه الخطوة التالية",
+     "بيخلي الرسمة ملونة فقط",
+     "بنكتب جواه اسم اللعبة"
+    ],
+    "a": 0,
+    "why": "السهم بيشاور على المربع اللي عليه الدور عشان نمشي بالترتيب الصح."
+   },
+   {
+    "t": "لو السهم بيشاور لتحت من 'البداء' لـ 'اغسل يدك'، نعمل إيه الأول؟",
+    "o": [
+     "نغسل اليدين",
+     "البداء",
+     "نلعب بالكرة"
+    ],
+    "a": 1,
+    "why": "المربع الأول هو نقطة البداية اللي السهم بيطلع منها."
+   },
+   {
+    "t": "إيه القاعدة الصح لمتابعة مسار الأسهم؟",
+    "o": [
+     "نمشي مع رأس السهم خطوة بخطوة",
+     "ننط لأخر مربع على طول",
+     "نمشي عكس اتجاه السهم"
+    ],
+    "a": 0,
+    "why": "المسار الصحيح بيحتاج نمشي مع اتجاه السهم بترتيبه."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز اتجاهات وخطوات مخطط التدفق",
+   "goal": "صنف العناصر الآتية إلى مكانها الصحيح: هل هي حركة تبع السهم أم شكل من أشكال مخطط التدفق؟",
+   "buckets": [
+    "متابعة الأسهم",
+    "أشكال المخطط"
+   ],
+   "items": [
+    {
+     "t": "اتباع رأس السهم للأفل",
+     "b": 0
+    },
+    {
+     "t": "مربع عملية غسل اليدين",
+     "b": 1
+    },
+    {
+     "t": "الانتقال للخطوة التالية",
+     "b": 0
+    },
+    {
+     "t": "دائرة بداية اللعبة",
+     "b": 1
+    },
+    {
+     "t": "التحرك مع مسار السهم",
+     "b": 0
+    },
+    {
+     "t": "مستطيل تنفيذ الأمر",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت كل شيء بنجاح وأصبح مخطط التدفق الخاص بك يعمل بشكل مثالي!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في مخططات التدفق",
+    "text": "مخطط التدفق هو وسيلة بصرية لرسم الخطوات والأفكار باستخدام أشكال هندسية وأسهم. زي ما بتعمل خريطة لبيتك عشان صحابك يزوروك، المخطط بيعمل خريطة للكمبيوتر عشان يعرف يعمل إيه.",
+    "code": "البداية -> ارسم مربع -> النهاية",
+    "output": "خريطة بسيطة للرسم"
+   },
+   {
+    "h": "دور أسهم الاتجاه",
+    "text": "الأسهم هي الشرايين اللي بتربط بين الأشكال في مخطط التدفق. بدون الأسهم، هتكون الأشكال مجرد رسومات منفصلة مش عارفين مين بيحصل قبل مين.",
+    "code": "مربع 1 [سهم] مربع 2",
+    "output": "ربط الخطوتين ببعض"
+   },
+   {
+    "h": "اتجاه التدفق الصحيح",
+    "text": "التدفق يعني الحركة من نقطة لأخرى. في الغالب بنمشي من فوق لتحت أو من اليمين للشمال حسب لغة الرسم، عشان القارئ يفهم خطوة ورا خطوة.",
+    "code": "خطوة 1 -> خطوة 2 -> خطوة 3",
+    "output": "سير العمليات بترتيب منظم"
+   },
+   {
+    "h": "استكشاف المسارات",
+    "text": "المسار هو الطريق اللي بيمشي فيه الكمبيوتر من البداية للنهاية. لو السهم غيّر اتجاهه، المسار بيغير اتجاهه معاه، عشان كده لازم نركز في كل سهم.",
+    "code": "لو صح -> [سهم يمين] -> افرح",
+    "output": "تحديد مسار جديد بناءً على الشرط"
+   },
+   {
+    "h": "تشبيه من حياتنا اليومية",
+    "text": "تخيل سلم البيت: عشان توصل للدور التاني لازم تطلع درجة درجة بانتظام. الأسهم في مخطط التدفق هي زي درجات السلم بتوصلك لفوق خطوة بخطوة.",
+    "code": "درجة 1 -> [سهم] -> درجة 2 -> [سهم] -> درجة 3",
+    "output": "الوصول للهدف بأمان"
+   },
+   {
+    "h": "قواعد ربط الأسهم بالصناديق",
+    "text": "السهم دايماً بيخرج من ضلع الصندوق الأول ويدخل في ضلع الصندوق التاني. ممنوع السهم يتطاير في الهواء من غير ما يمسك في صندوقين.",
+    "code": "[صندوق أ] ---> [صندوق ب]",
+    "output": "اتصال سليم بين الأجزاء"
+   },
+   {
+    "h": "تجنب التخبط في المسارات",
+    "text": "لو عندنا أكتر من سهم طالع من نفس الصندوق، ده معناه إن فيه اختيار أو تفرع. لازم نقرأ كل سهم كويس عشان نعرف نروح فين.",
+    "code": "سؤال؟ -> نعم [سهم لليمين] / لا [سهم لليسار]",
+    "output": "اختيار المسار المناسب"
+   },
+   {
+    "h": "أهمية اتجاهات التدفق للأطفال",
+    "text": "فهم الأسهم بيطور مهارة التفكير المنطقي والترتيب الزمني، ودي مهارة بتفيدنا في البرمجة وفي حل أي مشكلة بتقابلنا في المدرسة أو الحياة.",
+    "code": "مشكلة -> مخطط -> حل خطوة بخطوة",
+    "output": "طفل مبدع ومنظم في تفكيره"
+   }
+  ],
+  "reference": [
+   {
+    "name": "مخطط التدفق",
+    "desc": "رسوم توضيحية للخطوات بأشكال وأسهم."
+   },
+   {
+    "name": "سهم الاتجاه",
+    "desc": "خط برأس يحدد الخطوة التالية."
+   },
+   {
+    "name": "المسار",
+    "desc": "الطريق المتبع من البداية للنهاية."
+   },
+   {
+    "name": "التدفق",
+    "desc": "حركة الأوامر بانتظام."
+   },
+   {
+    "name": "الصندوق",
+    "desc": "شكل هندسي يحمل تعليمة أو خطوة."
+   },
+   {
+    "name": "البداية",
+    "desc": "نقطة انطلاق المخطط."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ارسم صندوقين واربط بينهما بسهم متجه لأسفل.",
+    "a": "صندوق علوي (البداية) -> [سهم] -> صندوق سفلي (النهاية)."
+   },
+   {
+    "q": "ماذا تفعل لو واجهتك سهمان يخرجان من نفس الصندوق؟",
+    "a": "اختر السهم المناسب حسب الشرط أو الخطوة المطلوبة."
+   },
+   {
+    "q": "رتب خطوات ارتداء الحذاء بمخطط تدفق ومسار أسهم.",
+    "a": "أمسك الحذاء -> [سهم] -> ادخل رجلك -> [سهم] -> اربط الحبل."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine we are drawing a treasure map, and the arrows show us where to go first and next so we reach the treasure quickly without getting lost.",
+   "In the coding world, we call this map a 'flowchart', and the arrows set the direction of instructions, like an arrow telling us: 'Draw a line' and then pointing to the next step.",
+   "How does it work? An arrow acts like a traffic sign or flag pointing to a new box. We follow the arrowhead from the old box to the new box in the correct order.",
+   "A simple daily example: 1) Wake up -> arrow pointing to -> 2) Wash your face. Direction is super important so you don't accidentally go backward.",
+   "The golden rule: Always follow the arrow's direction step by step, and never jump to another box unless the arrow leads you there directly.",
+   "In real life, we use charts and arrows in cooking recipes (the chef follows steps in order) and in video games so you know where to go after winning a level!"
+  ],
+  "example": "Let's make a simple plan for brushing teeth: 1) Put paste on brush -> [down arrow] -> 2) Gently brush teeth -> [down arrow] -> 3) Rinse your mouth with water. The arrows here make sure we do the steps in the correct order without starting with step three before step one!",
+  "mistake": "A common mistake is going against the arrow's direction or ignoring it and jumping around randomly. Solution: Always focus on the arrowhead and point your finger at it before doing the step.",
+  "recap": "Direction arrows guide us in a flowchart to know the next step accurately. Following the correct path prevents errors and ensures the task succeeds.",
+  "q": [
+   {
+    "t": "What is the purpose of an arrow in a flowchart?",
+    "o": [
+     "It shows the direction of the next step",
+     "It only makes the drawing colorful",
+     "It holds the name of the game"
+    ],
+    "a": 0,
+    "why": "The arrow points to the upcoming box so we move in the right order."
+   },
+   {
+    "t": "If an arrow points down from 'Start' to 'Wash hands', what do we do first?",
+    "o": [
+     "Wash hands",
+     "Start",
+     "Play with a ball"
+    ],
+    "a": 1,
+    "why": "The first box is the starting point where the arrow originates."
+   },
+   {
+    "t": "What is the correct rule for following an arrow path?",
+    "o": [
+     "Move with the arrowhead step by step",
+     "Jump straight to the last box",
+     "Walk against the arrow direction"
+    ],
+    "a": 0,
+    "why": "The correct path requires moving along the arrow's direction in order."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Flowchart Directions and Steps",
+   "goal": "Sort the following items into their correct category: Are they arrow movements or flowchart shapes?",
+   "buckets": [
+    "Following Arrows",
+    "Chart Shapes"
+   ],
+   "items": [
+    {
+     "t": "Following arrowhead downwards",
+     "b": 0
+    },
+    {
+     "t": "Hand washing process box",
+     "b": 1
+    },
+    {
+     "t": "Moving to the next step",
+     "b": 0
+    },
+    {
+     "t": "Game start circle",
+     "b": 1
+    },
+    {
+     "t": "Moving along the arrow path",
+     "b": 0
+    },
+    {
+     "t": "Command execution rectangle",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted everything successfully and your flowchart works perfectly!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Flowcharts",
+    "text": "A flowchart is a visual way to draw steps and ideas using geometric shapes and arrows. Just like making a house map for your friends, a flowchart maps out instructions for a computer.",
+    "code": "Start -> Draw Box -> End",
+    "output": "A simple drawing map"
+   },
+   {
+    "h": "The Role of Direction Arrows",
+    "text": "Arrows are the arteries connecting shapes in a flowchart. Without arrows, shapes would just be random drawings with no way of knowing what happens first.",
+    "code": "Box 1 [Arrow] Box 2",
+    "output": "Connecting two steps"
+   },
+   {
+    "h": "Correct Flow Direction",
+    "text": "Flow means moving smoothly from one point to another. We usually move top-to-bottom or left-to-right so the reader understands step by step.",
+    "code": "Step 1 -> Step 2 -> Step 3",
+    "output": "Processes run in organized order"
+   },
+   {
+    "h": "Exploring Paths",
+    "text": "A path is the route a computer takes from start to finish. If an arrow changes direction, the path changes with it, so we must pay attention to every arrow.",
+    "code": "If correct -> [Right arrow] -> Cheer",
+    "output": "Defining a new path based on a condition"
+   },
+   {
+    "h": "Real-Life Analogy",
+    "text": "Imagine house stairs: to reach the second floor, you must climb step by step regularly. Arrows in a flowchart are like stair steps taking you up gradually.",
+    "code": "Step 1 -> [Arrow] -> Step 2 -> [Arrow] -> Step 3",
+    "output": "Reaching the goal safely"
+   },
+   {
+    "h": "Rules for Connecting Arrows to Boxes",
+    "text": "An arrow always starts from the edge of one box and points into the edge of another box. An arrow should never float in mid-air without connecting two boxes.",
+    "code": "[Box A] ---> [Box B]",
+    "output": "Proper connection between parts"
+   },
+   {
+    "h": "Avoiding Path Confusion",
+    "text": "If multiple arrows come out of one box, it means there is a choice or branch. We must read each arrow carefully to know where to go.",
+    "code": "Question? -> Yes [Right arrow] / No [Left arrow]",
+    "output": "Choosing the right path"
+   },
+   {
+    "h": "Importance of Flow Directions for Kids",
+    "text": "Understanding arrows builds logical thinking and chronological order skills, helping us in coding and solving any problem at school or in life.",
+    "code": "Problem -> Chart -> Step-by-step solution",
+    "output": "An imaginative and organized thinker child"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Flowchart",
+    "desc": "Visual illustrations of steps using shapes and arrows."
+   },
+   {
+    "name": "Direction Arrow",
+    "desc": "A line with a head indicating the next step."
+   },
+   {
+    "name": "Path",
+    "desc": "The route followed from start to finish."
+   },
+   {
+    "name": "Flow",
+    "desc": "The regular movement of instructions."
+   },
+   {
+    "name": "Box",
+    "desc": "A geometric shape holding an instruction or step."
+   },
+   {
+    "name": "Start",
+    "desc": "The launching point of the chart."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Draw two boxes and connect them with a downward arrow.",
+    "a": "Top box (Start) -> [Arrow] -> Bottom box (End)."
+   },
+   {
+    "q": "What should you do if you encounter two arrows branching out from the same box?",
+    "a": "Choose the appropriate arrow based on the condition or required step."
+   },
+   {
+    "q": "Order the steps of wearing shoes using a flowchart and arrow path.",
+    "a": "Grab shoe -> [Arrow] -> Insert foot -> [Arrow] -> Tie lace."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

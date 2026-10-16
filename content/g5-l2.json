@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "عشان نخلي صفحات الويب متفاعلة، بنستخدم جافاسكريبت عشان نقرأ مدخلات المستخدم ونحسب بيها حاجات مفيدة كأننا بنعمل حاسبة ذكية.",
+   "لما بنستخدم نافذة المدخلات prompt()، الكمبيوتر بيتعامل مع أي كتابة على إنها نص (String) مش رقم حتى لو كتبت أرقام.",
+   "عشان نعمل عمليات حسابية صحيحة زي الجمع، لازم نحول النص الرقمي ده لرقم حقيقي باستخدام دالة تحويل واضحة.",
+   "مثلاً، لو المستخدم كتب '5'، بتتحول لرقم 5 عشان نقدر نجمع عليها أرقام تانية بدل ما نلزق النصوص جنب بعضها.",
+   "القاعدة الذهبية: دايماً حول مدخلات النصوص لرقم قبل ما تعمل أي عملية جمع أو طرح عشان تتجنب الأخطاء الغريبة.",
+   "في الحياة اليومية، فكر فيها زي آلة التذاكر في المترو: بتدخل الفلوس كبيانات، الآلة تحسبها، وتطلع لك النتيجة فوراً."
+  ],
+  "example": "تخيل إننا عايزين نجمع رقمين يدخلهم المستخدم. لو كتبنا let x = prompt('دخل رقم'); بدون تحويل، وجينا نجمع x + 5، الكمبيوتر هيلزقهم جنب بعض ويطلع نتيجة غريبة! الحل السحري هو استخدام Number(prompt('دخل رقم')) عشان الكمبيوتر يفهم إنها عملية حسابية صحيحة ويطبع النتيجة في نافذة تنبيه alert.",
+  "mistake": "جمع المدخلات مباشرة بدون تحويلها لنوع رقمي، مما يؤدي إلى دمج النصوص بدلاً من جمعها رياضياً. الحل هو تغليف دالة الإدخال بدالة تحويل الأرقام.",
+  "recap": "قراءة المدخلات كصوص ثم تحويلها لأرقام يتيح لنا إجراء حسابات دقيقة وعرضها للمستخدم بشكل صحيح.",
+  "q": [
+   {
+    "t": "ما هو نوع البيانات الذي يرجع عادةً من نافذة prompt()؟",
+    "o": [
+     "نص (String)",
+     "رقم صحيح (Integer)",
+     "قيمة منطقية (Boolean)"
+    ],
+    "a": 0,
+    "why": "نافذة الإدخال في المتصفح ترجع دائماً البيانات على شكل نص."
+   },
+   {
+    "t": "كيف نحول النص المدخل إلى رقم في جافاسكريبت؟",
+    "o": [
+     "باستخدام دالة Number()",
+     "باستخدام دالة Text()",
+     "باستخدام دالة Alert()"
+    ],
+    "a": 0,
+    "why": "دالة Number() تحول النصوص الرقمية إلى قيم عددية صالحة للحساب."
+   },
+   {
+    "t": "ما هي الوظيفة المستخدمة لعرض النتيجة للمستخدم في نافذة منبثقة؟",
+    "o": [
+     "console.log()",
+     "alert()",
+     "prompt()"
+    ],
+    "a": 1,
+    "why": "alert() تفتح نافذة منبثقة صغيرة تعرض الرسالة للمستخدم بوضوح."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات برنامج جمع رقمين",
+   "goal": "رتب الخطوات البرمجية لطلب رقمين من المستخدم، جمعهما، وعرض النتيجة بشكل صحيح.",
+   "items": [
+    "let num1 = Number(prompt('أدخل الرقم الأول'));",
+    "let num2 = Number(prompt('أدخل الرقم الثاني'));",
+    "let sum = num1 + num2;",
+    "alert('المجموع هو: ' + sum);"
+   ],
+   "success": "رائع! قام البرنامج بجمع الرقمين بنجاح وعرض النتيجة للمستخدم في نافذة منبثقة رائعة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في تفاعل الويب",
+    "text": "جافاسكريبت لغة مذهلة بتخلي مواقع الإنترنت تتفاعل مع الناس. بدل ما الصفحة تكون ثابتة، بنقدر نسأل المستخدم أسئلة وناخد منه إجابات فورية. ده عامل زي ما تسأل صاحبك عن لعبته المفضلة وهو يرد عليك.",
+    "code": "<script>console.log('مرحباً بك في عالم الجافاسكريبت المتفاعل!');</script>",
+    "output": "يتم تشغيل رسالة ترحيبية في وحدة التحكم بالمتصفح."
+   },
+   {
+    "h": "استخدام نافذة المدخلات prompt()",
+    "text": "عشان نخلي المستخدم يكتب حاجة، بنستخدم أمر سموه prompt. ده بيفتح صندوق صغير على الشاشة فيه مكان للكتابة. فكر فيها زي موظف الاستقبال اللي بيسألك عن اسمك أول ما تدخل المبنى.",
+    "code": "<script>\nlet name = prompt('ما هو اسمك؟');\n</script>",
+    "output": "تظهر نافذة منبثقة تطلب من المستخدم إدخال اسمه."
+   },
+   {
+    "h": "طبيعة النصوص في جافاسكريبت",
+    "text": "لازم نعرف إن الكمبيوتر غلبان شوية؛ أي حاجة بتكتبها جوه نافذة المدخلات بيعتبرها نص عادي جداً (String)، حتى لو كتبت رقم زي 10. الكمبيوتر بيشوفه كحروف مش كأرقام رياضية نقدر نجمعها.",
+    "code": "<script>\nlet textNum = '10';\nconsole.log(typeof textNum);\n</script>",
+    "output": "يطبع نوع البيانات في الكونسول على أنه نص string."
+   },
+   {
+    "h": "أهمية تحويل النصوص لأرقام",
+    "text": "بما إن المدخلات نصوص، لو حاولنا نجمع '5' + '5'، الكمبيوتر هيلزقهم ويطلع '55' مش 10! عشان نحل المشكلة دي، بنستخدم أمر التحويل عشان نحول النص لرقم حقيقي يفهمه الحساب.",
+    "code": "<script>\nlet actualNum = Number('10');\nconsole.log(actualNum + 5);\n</script>",
+    "output": "يطبع النتيجة الصحيحة وهي 15 بعد تحويل النص لرقم."
+   },
+   {
+    "h": "إجراء العمليات الحسابية البسيطة",
+    "text": "بعد ما حولنا المدخلات لأرقام، نقدر نعمل أي عملية رياضية احنا عايزينها: جمع، طرح، ضرب، أو قسمة. ده بيفكرنا بحصة الحساب في المدرسة بس على شاشة الكمبيوتر بطريقة ممتعة.",
+    "code": "<script>\nlet a = Number('20');\nlet b = Number('5');\nalert(a - b);\n</script>",
+    "output": "يظهر تنبيه بالرقم 15 نتيجة عملية الطرح."
+   },
+   {
+    "h": "عرض النتائج عبر نافذة التنبيه alert()",
+    "text": "لما بنخلص الحسابات، بنحتاج نوري النتيجة للمستخدم بطريقة واضحة وسريعة. أمر alert() بيعمل كده بالظبط، بيطلع رسالة منبثقة على الشاشة فيها النتيجة النهائية اللي طلعناها.",
+    "code": "<script>\nlet result = 50 + 50;\nalert('النتيجة هي: ' + result);\n</script>",
+    "output": "تظهر نافذة منبثقة تحمل النص 'النتيجة هي: 100'."
+   },
+   {
+    "h": "بناء حاسبة جمع تفاعلية كاملة",
+    "text": "دلوقتي هنجمع كل المهارات دي مع بعض: هنسأل المستخدم عن رقمين، نحولهم لأرقام، نجمعهم، ونعرض الناتج. دي خطوتنا الكبيرة الأولى نحو بناء تطبيقات ويب حقيقية ومفيدة.",
+    "code": "<script>\nlet n1 = Number(prompt('اكتب الرقم الأول:'));\nlet n2 = Number(prompt('اكتب الرقم الثاني:'));\nalert('المجموع: ' + (n1 + n2));\n</script>",
+    "output": "تظهر نافذتا إدخال ثم نافذة أخيرة تعرض مجموع الرقمين."
+   },
+   {
+    "h": "تجنب الأخطاء الشائعة في المدخلات",
+    "text": "من أكتر الغلطات اللي بيقع فيها المبتدئين إنهم بينسوا يحولوا النص لرقم فبيلاقوا الأرقام بتلزق في بعضها. التأكد من استخدام دالة التحويل بيحمي كودك من الأخطاء وبيخليه دقيق جداً.",
+    "code": "<script>\nlet bad = '3' + 3;\nlet good = Number('3') + 3;\nalert(good);\n</script>",
+    "output": "يظهر تنبيه بالرقم 6 متجنباً دمج النصوص الخاطئ."
+   }
+  ],
+  "reference": [
+   {
+    "name": "prompt()",
+    "desc": "دالة تفتح نافذة منبثقة لطلب إدخال نص من المستخدم."
+   },
+   {
+    "name": "Number()",
+    "desc": "دالة تحول النصوص أو القيم الأخرى إلى أرقام عددية صحيحة أو عشرية."
+   },
+   {
+    "name": "alert()",
+    "desc": "دالة تعرض نافذة تنبثقة تحتوي على رسالة للمستخدم."
+   },
+   {
+    "name": "+",
+    "desc": "عامل رياضي يُستخدم لجمع الأرقام أو دمج النصوص."
+   },
+   {
+    "name": "let",
+    "desc": "كلمة مفتاحية تُستخدم لتعريف وتخزين المتغيرات في جافاسكريبت."
+   },
+   {
+    "name": "String",
+    "desc": "نوع بيانات يمثل النصوص والحروف المكتوبة بين علامات تنصيص."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً يطلب من المستخدم إدخال عمره ويحوله إلى رقم.",
+    "a": "let age = Number(prompt('أدخل عمرك:'));"
+   },
+   {
+    "q": "كيف تعرض الرقم 25 في نافذة تنبثقة للمستخدم؟",
+    "a": "alert(25);"
+   },
+   {
+    "q": "ما هو الناتج الحقيقي لـ Number('10') + 5؟",
+    "a": "15"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "To make web pages interactive, we use JavaScript to read user inputs and calculate useful things like a smart calculator.",
+   "When we use the prompt box, the computer treats any typing as a String (text) even if you type digits.",
+   "To do correct arithmetic like addition, we must convert that text input into a real number using a clear conversion function.",
+   "For example, if the user types '5', it converts to the number 5 so we can add numbers to it instead of sticking text together.",
+   "Golden rule: Always convert text inputs to numbers before doing any math addition or subtraction to avoid weird bugs.",
+   "In real life, think of it like a metro ticket machine: you input money as data, the machine computes it, and outputs your result instantly."
+  ],
+  "example": "Imagine we want to add two numbers entered by the user. If we write let x = prompt('Enter number'); without conversion, and try to add x + 5, the computer sticks them together into a weird string! The magic fix is using Number(prompt('Enter number')) so the computer understands it's a math operation and shows the result in an alert popup.",
+  "mistake": "Adding inputs directly without converting them to numbers, which causes string concatenation instead of math addition. The fix is wrapping the input function inside the number conversion function.",
+  "recap": "Reading inputs as strings then converting them to numbers allows us to perform accurate calculations and display them properly to the user.",
+  "q": [
+   {
+    "t": "What data type does the prompt() box usually return?",
+    "o": [
+     "String (text)",
+     "Integer (number)",
+     "Boolean (true/false)"
+    ],
+    "a": 0,
+    "why": "The browser prompt box always returns user input as a text string."
+   },
+   {
+    "t": "How do we convert input text into a number in JavaScript?",
+    "o": [
+     "Using the Number() function",
+     "Using the Text() function",
+     "Using the Alert() function"
+    ],
+    "a": 0,
+    "why": "The Number() function converts numerical text values into actual numbers for math."
+   },
+   {
+    "t": "Which function is used to show the result to the user in a popup?",
+    "o": [
+     "console.log()",
+     "alert()",
+     "prompt()"
+    ],
+    "a": 1,
+    "why": "alert() opens a small popup window showing the message clearly to the user."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Two-Number Addition Program",
+   "goal": "Arrange the programming steps to ask for two numbers, add them, and show the result correctly.",
+   "items": [
+    "let num1 = Number(prompt('Enter first number'));",
+    "let num2 = Number(prompt('Enter second number'));",
+    "let sum = num1 + num2;",
+    "alert('The sum is: ' + sum);"
+   ],
+   "success": "Awesome! The program successfully added the two numbers and displayed the result to the user in a popup!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Web Interactivity",
+    "text": "JavaScript is an amazing language that lets web pages interact with people. Instead of a static page, we can ask users questions and take immediate answers. It is like asking your friend about their favorite game and getting a reply.",
+    "code": "<script>console.log('Welcome to interactive JavaScript!');</script>",
+    "output": "A greeting message runs in the browser console."
+   },
+   {
+    "h": "Using the Prompt Box prompt()",
+    "text": "To let the user type something, we use a command called prompt. This opens a small box on the screen with a typing field. Think of it like a receptionist asking for your name when you enter a building.",
+    "code": "<script>\nlet name = prompt('What is your name?');\n</script>",
+    "output": "A popup window appears asking the user to enter their name."
+   },
+   {
+    "h": "The Nature of Strings in JavaScript",
+    "text": "We must remember that the computer treats anything inside the prompt box as plain text (String), even if you type a number like 10. The computer sees it as letters rather than math numbers we can add.",
+    "code": "<script>\nlet textNum = '10';\nconsole.log(typeof textNum);\n</script>",
+    "output": "Prints the data type in the console as string."
+   },
+   {
+    "h": "The Importance of Converting Text to Numbers",
+    "text": "Since inputs are strings, if we try to add '5' + '5', the computer glues them to make '55' instead of 10! To fix this, we use a conversion command to turn text into a real number the math engine understands.",
+    "code": "<script>\nlet actualNum = Number('10');\nconsole.log(actualNum + 5);\n</script>",
+    "output": "Prints the correct result of 15 after converting text to a number."
+   },
+   {
+    "h": "Performing Basic Arithmetic Operations",
+    "text": "Once we convert inputs to numbers, we can do any math operation we want: addition, subtraction, multiplication, or division. It reminds us of math class at school but on a computer screen in a fun way.",
+    "code": "<script>\nlet a = Number('20');\nlet b = Number('5');\nalert(a - b);\n</script>",
+    "output": "An alert pops up showing the number 15 as the subtraction result."
+   },
+   {
+    "h": "Displaying Results via Alert Pop-ups alert()",
+    "text": "When we finish calculations, we need to show the result to the user clearly and quickly. The alert() command does exactly that, popping up a message on the screen with our final computed result.",
+    "code": "<script>\nlet result = 50 + 50;\nalert('The result is: ' + result);\n</script>",
+    "output": "A popup window appears with the text 'The result is: 100'."
+   },
+   {
+    "h": "Building a Complete Interactive Addition Calculator",
+    "text": "Now we combine all these skills together: we ask the user for two numbers, convert them to numbers, add them, and show the output. This is our big first step toward building real and useful web applications.",
+    "code": "<script>\nlet n1 = Number(prompt('Enter first number:'));\nlet n2 = Number(prompt('Enter second number:'));\nalert('Sum: ' + (n1 + n2));\n</script>",
+    "output": "Two prompt boxes appear followed by a final popup showing the sum of both numbers."
+   },
+   {
+    "h": "Avoiding Common Input Mistakes",
+    "text": "One of the most common beginner mistakes is forgetting to convert text to numbers, leading to numbers gluing together. Ensuring you use the conversion function protects your code from bugs and keeps it accurate.",
+    "code": "<script>\nlet bad = '3' + 3;\nlet good = Number('3') + 3;\nalert(good);\n</script>",
+    "output": "An alert shows the number 6, avoiding incorrect text concatenation."
+   }
+  ],
+  "reference": [
+   {
+    "name": "prompt()",
+    "desc": "A function that opens a popup dialog to request text input from the user."
+   },
+   {
+    "name": "Number()",
+    "desc": "A function that converts strings or other values into numeric integer or decimal values."
+   },
+   {
+    "name": "alert()",
+    "desc": "A function that displays a popup warning or message box to the user."
+   },
+   {
+    "name": "+",
+    "desc": "An arithmetic operator used to add numbers or concatenate strings."
+   },
+   {
+    "name": "let",
+    "desc": "A keyword used to declare and store variables in JavaScript."
+   },
+   {
+    "name": "String",
+    "desc": "A data type representing text characters enclosed in quotes."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code that asks the user to enter their age and converts it to a number.",
+    "a": "let age = Number(prompt('Enter your age:'));"
+   },
+   {
+    "q": "How do you display the number 25 in an alert popup to the user?",
+    "a": "alert(25);"
+   },
+   {
+    "q": "What is the true mathematical result of Number('10') + 5?",
+    "a": "15"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Dynamic scripting with JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

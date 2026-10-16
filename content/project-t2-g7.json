@@ -1,0 +1,156 @@
+{
+ "en": [
+  {
+   "title": "Smart City Traffic Analyzer",
+   "desc": "Analyze traffic sensor data across Cairo bridges, merging multiple district files, fixing timestamps, and creating pivot tables for peak rush hours.",
+   "tags": [
+    "Pandas",
+    "DataCleaning",
+    "Traffic"
+   ],
+   "steps": [
+    "Import pandas and load traffic sensor CSV files for different Cairo districts using proper date parsing.",
+    "Concatenate all district dataframes into one master dataframe, making sure rows line up correctly.",
+    "Merge the master dataframe with a bridge metadata lookup table using advanced joining techniques.",
+    "Clean and standardize string columns like street names and weather conditions using string accessor methods.",
+    "Detect and drop duplicate sensor readings to ensure accurate traffic counts.",
+    "Apply a custom Python function to classify vehicle speeds into traffic jam severity levels.",
+    "Generate a pivot table to summarize average vehicle speed by district and time of day, finding peak hours."
+   ],
+   "rubric": [
+    "Successfully merges and concatenates all data sources without data loss.",
+    "Accurately parses date and time columns for time-based grouping.",
+    "Applies string methods and custom functions correctly to transform data.",
+    "Produces a clear pivot table showing peak traffic patterns."
+   ],
+   "stretch": "Add a feature that calculates the percentage change in traffic volume between morning and evening rush hours."
+  },
+  {
+   "title": "Nile Basin Water Quality Monitor",
+   "desc": "Track water testing metrics across various Nile stations by cleaning messy strings, handling duplicate test logs, and pivoting parameters.",
+   "tags": [
+    "Pandas",
+    "StringOps",
+    "Environment"
+   ],
+   "steps": [
+    "Import pandas and load water sample datasets containing various chemical measurements.",
+    "Concatenate monthly sample reports into a single comprehensive dataframe.",
+    "Merge water sample data with station GPS location tables using unique station keys.",
+    "Clean string formatting in river name and testing agency columns by removing extra spaces and standardizing casing.",
+    "Identify and remove duplicate water sample entries recorded by mistake during testing.",
+    "Use custom functions to flag samples where contamination levels exceed safe drinking standards.",
+    "Create a pivot table showing average pH levels per station grouped by month and water depth."
+   ],
+   "rubric": [
+    "Cleanly concatenates and merges all monthly reports.",
+    "Removes duplicates and formats strings properly.",
+    "Correctly applies custom functions to flag safety violations.",
+    "Builds an insightful pivot table summarizing water metrics."
+   ],
+   "stretch": "Calculate the moving average of pH levels across consecutive months for each station."
+  },
+  {
+   "title": "Pharaonic Museum Artifact Catalog",
+   "desc": "Organize museum inventory records by merging donor lists with artifact logs, fixing date formats, and summarizing collection values.",
+   "tags": [
+    "Pandas",
+    "PivotTables",
+    "History"
+   ],
+   "steps": [
+    "Import pandas and load separate CSV files containing artifact details and donor contributions.",
+    "Join the artifact and donor dataframes using appropriate merge techniques based on donor ID.",
+    "Parse excavation discovery dates into true datetime objects for chronological sorting.",
+    "Clean string columns for artifact material types and museum gallery locations.",
+    "Check for and eliminate duplicate artifact catalog entries to maintain accurate counts.",
+    "Apply a custom function to calculate estimated insurance values based on artifact age and material.",
+    "Generate a pivot table summarizing total artifact value and count per gallery and material type."
+   ],
+   "rubric": [
+    "Accurately merges artifact records with donor information.",
+    "Parses dates and cleans string attributes effectively.",
+    "Applies custom functions to compute estimated insurance values.",
+    "Creates a comprehensive pivot table of museum gallery statistics."
+   ],
+   "stretch": "Export the final pivoted summary report into a new formatted CSV file."
+  }
+ ],
+ "ar": [
+  {
+   "title": "تحليل مرور العاصمة الذكية",
+   "desc": "حلل بيانات حساسات المرور عبر كبارى القاهرة، وادمج ملفات مناطق مختلفة، وظبط التواريخ، واعمل جداول محورية لساعات الذروة.",
+   "tags": [
+    "بانداس",
+    "تنظيف_بيانات",
+    "مرور"
+   ],
+   "steps": [
+    "استورد مكتبة pandas وحمل ملفات CSV الخاصة بحساسات المرور لمختلف مناطق القاهرة مع قراءة التواريخ صح.",
+    "اجمع (Concatenate) كل داتا فريدز المناطق في داتا فريم رئيسي واحد مع التأكد من تنظيم الصفوف.",
+    "ادمج (Merge) الداتا الرئيسي مع جدول بيانات الكبارى باستخدام تقنيات الربط المتقدمة.",
+    "نظف ووحد أعمدة النصوص زي أسماء الشوارع وحالة الطقس باستخدام أوامر النصوص في بانداس.",
+    "اكشف وازيل قراءات الحساسات المكررة عشان تضمن دقة عداد المرور.",
+    "طبق دالة مخصصة (Custom function) من كتابتك عشان تصنف سرعات العربيات لمستويات زحمة مختلفة.",
+    "اعمل جدول محوري (Pivot Table) يوضح متوسط سرعة العربيات حسب المنطقة ووقت اليوم عشان تطلع ساعات الذروة."
+   ],
+   "rubric": [
+    "دمج وجمع كل مصادر البيانات بنجاح من غير فقدان بيانات.",
+    "قراءة أعمدة التواريخ والأوقات بدقة للتحليل الزمني.",
+    "تطبيق دوال النصوص والدوال المخصصة صح لتعديل البيانات.",
+    "إنتاج جدول محوري واضح يوضح مواعيد الزحمة."
+   ],
+   "stretch": "ضيف ميزة تحسب نسبة التغير في حجم المرور بين زحمة الصبح وزحمة بالليل."
+  },
+  {
+   "title": "مراقب جودة مياه نهر النيل",
+   "desc": "تابع مقاييس اختبارات المياه عبر محطات النيل المختلفة عن طريق تنظيف النصوص، والتعامل مع سجلات الاختبار المكررة، وعمل جدول محوري للمؤشرات.",
+   "tags": [
+    "بانداس",
+    "عمليات_نصوص",
+    "بيئة"
+   ],
+   "steps": [
+    "استورد مكتبة pandas وحمل ملفات عينات المياه اللي فيها قياسات كيميائية مختلفة.",
+    "اجمع تقارير العينات الشهرية في داتا فريم واحدة شاملة.",
+    "ادمج بيانات عينات المياه مع جدول مواقع إحداثيات GPS للمحطات باستخدام مفاتيح المحطة الفريدة.",
+    "نظف تنسيق النصوص في أسماء النهر وأسماء جهات الاختبار عن طريق شيل المسافات الزيادة وتوحيد الحروف.",
+    "حدد واحذف مدخلات عينات المياه المكررة اللي اتسجلت بالغلط وقت الاختبارات.",
+    "استخدم دالة مخصصة عشان تعلم على العينات اللي مستويات التلوث فيها بتعدي معايير الشرب الآمنة.",
+    "اصنع جدول محوري بيبين متوسط مستويات الحموضة لكل محطة مقسمة حسب الشهر وعمق المية."
+   ],
+   "rubric": [
+    "جمع ودمج كل التقارير الشهرية بشكل نضيف.",
+    "حذف التكرارات وتنسيق النصوص صح.",
+    "تطبيق الدوال المخصصة بفاعلية للتحذير من مخالفات الأمان.",
+    "بناء جدول محوري مفيد بيتلخص مؤشرات المياه."
+   ],
+   "stretch": "احسب المتوسط المتحرك لمستويات الحموضة عبر الشهور المتتالية لكل محطة."
+  },
+  {
+   "title": "كتالوج متحف الآثار الفرعونية",
+   "desc": "نظم سجلات مخزن المتحف عن طريق دمج قوائم المتبرعين مع سجلات القطع الأثرية، وظبط صيغ التواريخ، وتلخيص قيم المجموعات.",
+   "tags": [
+    "بانداس",
+    "جداول_محورية",
+    "تاريخ"
+   ],
+   "steps": [
+    "استورد مكتبة pandas وحمل ملفات CSV المنفصلة اللي فيها تفاصيل القطع الأثرية ومساهمات المتبرعين.",
+    "اربط داتا القطع الأثرية والمتبرعين باستخدام تقنيات الدمج المناسبة بناءً على رقم المتبرع.",
+    "حول تواريخ اكتشاف الحفريات لكائنات تاريخ حقيقية (Datetime) عشان تقدر ترتبها زمنياً.",
+    "نظف أعمدة النصوص لأنواع مواد القطع الأثرية وأماكن قاعات المتحف.",
+    "افحص واقفل مدخلات كتالوج الآثار المكررة عشان تحافظ على أعداد صحيحة ومضبوطة.",
+    "طبق دالة مخصصة عشان تحسب القيمة التأمينية التقديرية بناءً على عمر القطعة الأثرية والمادة بتاعتها.",
+    "اصنع جدول محوري بيلخص القيمة الإجمالية للآثار والعدد لكل قاعة ونوع مادة."
+   ],
+   "rubric": [
+    "دمج سجلات الآثار مع معلومات المتبرعين بدقة.",
+    "قراءة التواريخ وتنظيف سمات النصوص بفاعلية.",
+    "تطبيق الدوال المخصصة لحساب قيم التأمين التقديرية.",
+    "إنشاء جدول محوري شامل لإحصائيات قاعات المتحف."
+   ],
+   "stretch": "صدر تقرير الملخص المحوري النهائي لملف CSV جديد ومنسق."
+  }
+ ]
+}

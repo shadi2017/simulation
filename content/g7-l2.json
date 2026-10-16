@@ -1,0 +1,350 @@
+{
+ "ar": {
+  "steps": [
+   "الاستثناءات هي أخطاء تحدث أثناء تشغيل البرنامج وتتسبب في إيقافه فجأة. بدلاً من ذلك، نستخدم كتلة try و except للتعامل معها بلطف.",
+   "إليك مثال بسيط: إذا حاول البرنامج قسمة رقم على صفر، يحدث خطأ ZeroDivisionError. نضعه داخل try لتجنب تعطل البرنامج بالكامل.",
+   "كيف تعمل؟ جرب الكود الخطير داخل try. إذا حدث خطأ يطابق except، ينتقل البرنامج لتنفيذ الكود البديل بدلاً من التوقف المفاجئ.",
+   "مثال ثانٍ: عندما يكتب المستخدم نصاً بدلاً من رقم، يظهر ValueError. نكتشفه بـ except ValueError ونطلب منه المحاولة مرة أخرى بشكل صحيح.",
+   "قاعدة ذهبية: ضع دائماً الأكواد التي قد تسبب المشاكل داخل try، واجعل except محدداً لنوع الخطأ المتوقع لمعالجة دقيقة ومنظمة.",
+   "في الحياة اليومية، أشبه بارتداء خوذة الدراجة؛ فهي لا تمنع الحقائق أو الحوادث، ولكنها تحميك من الصدمات القوية وتجعلك تكمل طريقك بسلام."
+  ],
+  "example": "لنفترض أننا نطلب من المستخدم إدخال عمره كرقم. إذا كتب كلمة 'خمسة'، سيحدث خطأ في نوع البيانات أو القيمة. الكود التالي يحل المشكلة بأمان:\n\n```python\ntry:\n    age = int(input(\"أدخل عمرك: \"))\n    print(f\"عمرك هو {age}\")\nexcept ValueError:\n    print(\"خطأ: يرجى كتابة أرقام صحيحة فقط!\")\n```\nالسبب: إذا دخل نص غير قابل للتحويل لرقم، يتدخل except فوراً ويطبع رسالة لطيفة بدلاً من تحطيم البرنامج.",
+  "mistake": "من الأخطاء الشائعة استخدام except فارغة بدون تحديد نوع الخطأ، مما يخفي أخطاء البرمجة الحقيقية ويصعب اكتشافها. الحل هو دائماً كتابة اسم الخطأ بدقة مثل except ValueError.",
+  "recap": "تتيح لنا أدوات try و except اكتشاف الأخطاء البرمجية أثناء التشغيل والتعامل معها بسلاسة دون أن ينهار البرنامج. هذا يجعل برامجنا أكثر ذكاءً واستقراراً.",
+  "q": [
+   {
+    "t": "ما هو الاسم البرمجي للخطأ الذي يحدث عند قسمة عدد على صفر في بايثون؟",
+    "o": [
+     "TypeError",
+     "ZeroDivisionError",
+     "ValueError"
+    ],
+    "a": 1,
+    "why": "يظهر خطأ ZeroDivisionError دائماً عند محاولة قسمة أي عدد على الصفر رياضياً."
+   },
+   {
+    "t": "أين نضع الكود المريب أو المحتمل حدوث أخطاء فيه؟",
+    "o": [
+     "داخل كتلة try",
+     "داخل كتلة except",
+     "في نهاية ملف البرنامج"
+    ],
+    "a": 0,
+    "why": "نضع الأكواد التي قد تفشل داخل كتلة try لمراقبتها ورصد أي استثناء قد يحدث."
+   },
+   {
+    "t": "ماذا يحدث إذا تم إدخال نص بينما البرنامج يطلب رقماً صحيحاً بداخل int()؟",
+    "o": [
+     "يعمل البرنامج كالمعتاد",
+     "يتوقف النظام فوراً بدون رسائل",
+     "يحدث ValueError"
+    ],
+    "a": 2,
+    "why": "فشل تحويل النص إلى عدد صحيح ينتج عنه استثناء من نوع ValueError."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود معالجة الأخطاء",
+   "goal": "أكمل الكود البرمجي التالي لاكتشاف الأخطاء ومعالجتها بنجاح.",
+   "items": [
+    {
+     "text": "___:\n    x = int(input(\"أدخل رقماً: \"))",
+     "options": [
+      "try",
+      "except",
+      "if"
+     ],
+     "a": 0
+    },
+    {
+     "text": "___ ValueError:\n    print(\"خطأ في القيمة المدخلة!\")",
+     "options": [
+      "try",
+      "except",
+      "else"
+     ],
+     "a": 1
+    },
+    {
+     "text": "10 / ___",
+     "options": [
+      "0",
+      "str",
+      "print"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد حميت برنامجك من الانهيار المفاجئ وتعامد الأخطاء باحترافية."
+  },
+  "sections": [
+   {
+    "h": "ما هي الاستثناءات؟",
+    "text": "الاستثناء هو خطأ يحدث أثناء تشغيل البرنامج بعد أن يبدو سليماً من أخطاء القواعد (Syntax). تماماً مثلما تبدأ في صنع شطيرة ثم تكتشف عدم وجود خبز! في بايثون، عندما تحدث مشكلة غير متوقعة، يطلق البرنامج رسالة خطأ حمراء تتسبب في توقفه المفاجئ عن العمل.",
+    "code": "result = 10 / 0",
+    "output": "ZeroDivisionError: division by zero"
+   },
+   {
+    "h": "قوة try و except",
+    "text": "بدلاً من أن يستسلم البرنامج ويغلق وجهه في وجه المستخدم، تمنحنا بايثون درع الحماية المكون من try و except. نضع الكود المشبوه في try، وإذا وقعت المشكلة، يلتقطها except ويقوم بخطة الطوارئ بدلاً من تحطيم النظام بالكامل.",
+    "code": "try:\n    print(10 / 0)\nexcept:\n    print(\"عذراً، حدث خطأ ما!\")",
+    "output": "عذراً، حدث خطأ ما!"
+   },
+   {
+    "h": "عزل أخطاء القسمة على صفر",
+    "text": "القسمة على صفر مستحيلة رياضياً وتؤدي إلى ZeroDivisionError في بايثون. بعزل هذه العملية داخل كتلة try واصطياد نوع الخطأ بدقة، يمكننا منع انهيار الآلة الحاسبة التي نبرمجها وتنبيه المستخدم بطريقة ظريفة.",
+    "code": "try:\n    ans = 50 / 0\nexcept ZeroDivisionError:\n    print(\"لا يمكن القسمة على الصفر يا صديقي!\")",
+    "output": "لا يمكن القسمة على الصفر يا صديقي!"
+   },
+   {
+    "h": "معالجة اختلاف أنواع البيانات Type Mismatch",
+    "text": "عندما تحاول جمع نص مع رقم مثل '2' + 2، يغضب بايثون ويصدر TypeError. تظهر هذه المشكلة كثيراً عندما ينسى المبرمج تحويل المدخلات النصية إلى أعداد قبل إجراء العمليات الحسابية عليها.",
+    "code": "try:\n    total = \"العمر: \" + 15\nexcept TypeError:\n    print(\"لا يمكنك دمج النصوص مع الأعداد هكذا!\")",
+    "output": "لا يمكنك دمج النصوص مع الأعداد هكذا!"
+   },
+   {
+    "h": "التعامل مع إدخال النصوص بدلاً من الأرقام",
+    "text": "عندما يطلب البرنامج من المستخدم إدخال رقم歳، ويكتب المستخدم كلمة مثل 'خمسة'، يفشل تحويل الدالة int() ويحدث ValueError. استخدام except ValueError يمنحنا فرصة ثانية لطلب رقم صالح.",
+    "code": "try:\n    num = int(input(\"أدخل رقماً: \"))\nexcept ValueError:\n    print(\"هذا ليس رقماً صحيحاً، حاول مجدداً!\")",
+    "output": "هذا ليس رقماً صحيحاً، حاول مجدداً!"
+   },
+   {
+    "h": "التقاط أنواع متعددة من الأخطاء",
+    "text": "يمكن للبرنامج الواحد أن يتعرض لأنواع مختلفة من المشاكل. يمكننا كتابة أكثر من except لمعالجة كل خطأ بطريقة تناسبه، تماماً مثل وجود طبيب أسنان وطبيب أطفال في المستشفى، كل معالج يختص بمشكلته.",
+    "code": "try:\n    x = int(\"abc\")\nexcept ZeroDivisionError:\n    print(\"خطأ قسمة\")\nexcept ValueError:\n    print(\"خطأ في نوع القيمة المدخلة\")",
+    "output": "خطأ في نوع القيمة المدخلة"
+   },
+   {
+    "h": "لماذا يجب تحديد اسم الخطأ؟",
+    "text": "تحديد نوع الخطأ بجانب except (مثل ValueError أو ZeroDivisionError) يعتبر ممارسة احترافية. إذا استخدمت except عامة، فقد تخفي أخطاء برمجية خفية ومهمة دون أن تشعر، مما يجعل تتبع الأخطاء لاحقاً أمراً صعباً للغاية.",
+    "code": "try:\n    val = int(\"10\")\nexcept ValueError:\n    print(\"تم معالجة الخطأ المحدد بنجاح\")",
+    "output": "تم معالجة الخطأ المحدد بنجاح"
+   },
+   {
+    "h": "التطبيق العملي في حماية البرامج",
+    "text": "تستخدم شركات البرمجة الكبرى معالجة الاستثناءات في كل مكان لضمان عدم توقف تطبيقات المستخدمين عند حدوث بيانات تالفة أو مدخلات غير متوقعة. إنها السلاح السري لبناء برامج صلبة وآمنة ومستقرة تماماً.",
+    "code": "try:\n    file_data = 100 / 5\n    print(file_data)\nexcept Exception as e:\n    print(\"حدث خطأ غير متوقع:\", e)",
+    "output": "20.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "try",
+    "desc": "كتلة لبدء مراقبة الأكواد الخطرة أو المحتمل حدوث أخطاء فيها."
+   },
+   {
+    "name": "except",
+    "desc": "كتلة لاستجابة والتعامل مع الخطأ فور وقوعه داخل try."
+   },
+   {
+    "name": "ZeroDivisionError",
+    "desc": "خطأ يحدث عند محاولة قسمة رقم على الصفر."
+   },
+   {
+    "name": "ValueError",
+    "desc": "خطأ يحدث عندما تتلقى الدالة قيمة من نوع صحيح لكن محتواها غير مناسب."
+   },
+   {
+    "name": "TypeError",
+    "desc": "خطأ يحدث عند إجراء عمليات بين أنواع بيانات غير متوافقة."
+   },
+   {
+    "name": "Exception",
+    "desc": "الفئة الأساسية الشاملة لمعظم الاستثناءات والأخطاء في بايثون."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود try/except يقسم 10 على مدخل متغير ويطبع النتيجة أو يعالج خطأ القسمة على صفر.",
+    "a": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"خطأ القسمة على صفر\")"
+   },
+   {
+    "q": "كيف تتعامل مع ValueError لو دخل المستخدم حروفاً بدلاً من أرقام في int()؟",
+    "a": "try:\n    x = int(\"hello\")\nexcept ValueError:\n    print(\"خطأ: يرجى إدخال أرقام فقط\")"
+   },
+   {
+    "q": "ما فائدة تحديد اسم الاستثناء مثل except ZeroDivisionError بدلاً من except وحدها؟",
+    "a": "لتجنب اخفاء أخطاء أخرى غير مقصودة ومعالجة المشكلة بدقة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Exceptions are errors that occur while a program runs, causing sudden crashes. Instead, we use try and except blocks to handle them gracefully.",
+   "Here is a simple example: If a program tries to divide a number by zero, a ZeroDivisionError happens. Putting it inside try prevents a total crash.",
+   "How does it work? Test risky code inside try. If an error matching except occurs, the program runs the fallback code instead of stopping abruptly.",
+   "Second example: When a user types text instead of a number, a ValueError happens. We catch it with except ValueError and ask them to try again properly.",
+   "Golden rule: Always put code that might cause trouble inside try, and make except specific to the expected error type for neat and precise handling.",
+   "In real life, think of wearing a bicycle helmet; it doesn't prevent accidents from happening, but it absorbs the heavy impact and lets you continue your journey safely."
+  ],
+  "example": "Suppose we ask the user to enter their age as a number. If they type the word 'five', a value error occurs. The following code safely handles the issue:\n\n```python\ntry:\n    age = int(input(\"Enter your age: \"))\n    print(f\"Your age is {age}\")\nexcept ValueError:\n    print(\"Error: Please enter valid numbers only!\")\n```\nReason: If unconvertible text is entered, except immediately steps in and prints a friendly message instead of crashing the program.",
+  "mistake": "A common mistake is using a bare except without specifying the error type, which hides real programming bugs and makes debugging hard. The solution is always to name the exact exception like except ValueError.",
+  "recap": "Tools like try and except let us detect runtime errors and handle them smoothly without crashing. This makes our programs much smarter and more stable.",
+  "q": [
+   {
+    "t": "What is the programmatic name of the error when dividing a number by zero in Python?",
+    "o": [
+     "TypeError",
+     "ZeroDivisionError",
+     "ValueError"
+    ],
+    "a": 1,
+    "why": "ZeroDivisionError always appears when attempting mathematical division by zero."
+   },
+   {
+    "t": "Where should we place suspicious code that might cause errors?",
+    "o": [
+     "Inside a try block",
+     "Inside an except block",
+     "At the very end of the file"
+    ],
+    "a": 0,
+    "why": "We place code that might fail inside a try block to monitor and catch any exceptions."
+   },
+   {
+    "t": "What happens if text is entered while the program expects an integer inside int()?",
+    "o": [
+     "The program works normally",
+     "The system stops instantly with no message",
+     "A ValueError occurs"
+    ],
+    "a": 2,
+    "why": "Failing to convert text into an integer raises a ValueError exception."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Completing Exception Handling Code",
+   "goal": "Complete the following Python code to detect and handle errors successfully.",
+   "items": [
+    {
+     "text": "___:\n    x = int(input(\"Enter a number: \"))",
+     "options": [
+      "try",
+      "except",
+      "if"
+     ],
+     "a": 0
+    },
+    {
+     "text": "___ ValueError:\n    print(\"Invalid value entered!\")",
+     "options": [
+      "try",
+      "except",
+      "else"
+     ],
+     "a": 1
+    },
+    {
+     "text": "10 / ___",
+     "options": [
+      "0",
+      "str",
+      "print"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You protected your program from sudden crashes and handled exceptions like a pro."
+  },
+  "sections": [
+   {
+    "h": "What Are Exceptions?",
+    "text": "An exception is an error that occurs during program execution after passing syntax checks. It is just like starting to make a sandwich and realizing you have no bread! In Python, unexpected issues trigger a red error trace that abruptly stops your program.",
+    "code": "result = 10 / 0",
+    "output": "ZeroDivisionError: division by zero"
+   },
+   {
+    "h": "The Power of try and except",
+    "text": "Instead of letting the program give up and shut down on the user, Python gives us the protective shield of try and except. We place risky code in try, and if trouble strikes, except catches it and runs an emergency plan instead of crashing the system.",
+    "code": "try:\n    print(10 / 0)\nexcept:\n    print(\"Oops, something went wrong!\")",
+    "output": "Oops, something went wrong!"
+   },
+   {
+    "h": "Isolating Divide-by-Zero Errors",
+    "text": "Division by zero is mathematically impossible and triggers a ZeroDivisionError in Python. By isolating this operation inside a try block and catching that exact error type, we prevent our calculator program from crashing and alert the user politely.",
+    "code": "try:\n    ans = 50 / 0\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero, my friend!\")",
+    "output": "Cannot divide by zero, my friend!"
+   },
+   {
+    "h": "Handling Type Mismatch Errors",
+    "text": "When you try to concatenate a string and a number like '2' + 2, Python gets upset and raises a TypeError. This issue frequently appears when programmers forget to convert text inputs into numbers before performing math.",
+    "code": "try:\n    total = \"Age: \" + 15\nexcept TypeError:\n    print(\"You cannot mix strings and numbers like this!\")",
+    "output": "You cannot mix strings and numbers like this!"
+   },
+   {
+    "h": "Handling Text Inputs for Numbers",
+    "text": "When a program asks the user for a numeric age, and the user types a word like 'five', the int() function conversion fails and raises a ValueError. Using except ValueError gives us a second chance to request valid digits.",
+    "code": "try:\n    num = int(input(\"Enter a number: \"))\nexcept ValueError:\n    print(\"That is not a valid integer, try again!\")",
+    "output": "That is not a valid integer, try again!"
+   },
+   {
+    "h": "Catching Multiple Exception Types",
+    "text": "A single program can encounter different kinds of trouble. We can write multiple except blocks to handle each error appropriately, just like having a dentist and a pediatrician in a hospital, where each specialist handles their own issue.",
+    "code": "try:\n    x = int(\"abc\")\nexcept ZeroDivisionError:\n    print(\"Division error\")\nexcept ValueError:\n    print(\"Value type error\")",
+    "output": "Value type error"
+   },
+   {
+    "h": "Why Specify the Error Name?",
+    "text": "Specifying the error name next to except (like ValueError or ZeroDivisionError) is professional practice. If you use a bare except, you might hide hidden bugs without realizing it, making future debugging extremely difficult.",
+    "code": "try:\n    val = int(\"10\")\nexcept ValueError:\n    print(\"Specific error handled successfully\")",
+    "output": "Specific error handled successfully"
+   },
+   {
+    "h": "Real-Life Application in Program Safety",
+    "text": "Major tech companies use exception handling everywhere to ensure user apps never crash when facing corrupted data or unexpected inputs. It is the secret weapon for building robust, secure, and stable programs.",
+    "code": "try:\n    file_data = 100 / 5\n    print(file_data)\nexcept Exception as e:\n    print(\"Unexpected error:\", e)",
+    "output": "20.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "try",
+    "desc": "Block to start monitoring risky code or code prone to errors."
+   },
+   {
+    "name": "except",
+    "desc": "Block to respond and handle the error right after it occurs in try."
+   },
+   {
+    "name": "ZeroDivisionError",
+    "desc": "Error raised when attempting to divide a number by zero."
+   },
+   {
+    "name": "ValueError",
+    "desc": "Error raised when a function receives the right type but inappropriate content."
+   },
+   {
+    "name": "TypeError",
+    "desc": "Error raised when performing operations between incompatible data types."
+   },
+   {
+    "name": "Exception",
+    "desc": "The primary base class encompassing most built-in exceptions in Python."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a try/except code dividing 10 by a variable input and printing result or handling zero division.",
+    "a": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"Division by zero error\")"
+   },
+   {
+    "q": "How do you handle ValueError if a user enters letters instead of numbers into int()?",
+    "a": "try:\n    x = int(\"hello\")\nexcept ValueError:\n    print(\"Error: Please enter numbers only\")"
+   },
+   {
+    "q": "What is the benefit of naming the exception like except ZeroDivisionError instead of a bare except?",
+    "a": "To avoid hiding unintended bugs and handle specific problems accurately."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/errors.html"
+  }
+ ],
+ "grounded": true
+}

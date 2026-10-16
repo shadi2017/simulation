@@ -1,0 +1,315 @@
+{
+ "ar": {
+  "steps": [
+   "التفكير الخوارزمي بيبدأ لما نواجه مشكلة كبيرة ومش عارفين نبدأ منين زي تنظبف الأوضة كلها لوحدها.",
+   "الحل السحري هو التقطيع أو الديكومبوزيشن، يعني بنمسك المهمة العملاقة ونقسمها لمهمات صغيرة أوي وسهلة.",
+   "لما نقسم الشغل لأجزاء بسيطة، عقلنا مش بيتوتر وبنقدر نركز في كل جزء لوحده ونخلصه بسرعة وبدون أخطاء.",
+   "مثلاً تخطيط عمل بيتزا لذيذة مش بيحصل مرة واحدة، بنقسمه لثلاث خطوات: فرد العجين، وضع الصلصة، ثم الخبز.",
+   "القاعدة الذهبية للتقسيم: كل ما كانت المهمة الصغيرة واضحة، كل ما كان تنفيذها أسهل وأسرع بكتير.",
+   "في الحياة اليومية، المهندسين بيستخدموا التقسيم ده عشان يبنوا ألعاب فيديو ضخمة أو روبوتات ذكية خطوة بخطوة."
+  ],
+  "example": "تخيل إنك رايح المدرسة الصبح وعندك شنطة مليانة كتب ولعبة ولبس الرياضة، لو حاجة واحدة صعبة، هنقسمها لأجزاء: 1. لبس الهدوم، 2. تجهيز الشنطة، 3. غسل السنان. الخطوات دي بترتب فكرنا وتخلينا نوصل المدرسة في ميعادنا وبكل نشاط وتركيز بدون أي تأخير.",
+  "mistake": "الخطأ الشائع هو محاولة عمل كل شيء في نفس الوقت وبدون ترتيب مما يسبب لخبطة، والتصحيح هو وقف العمل فوراً، كتابة قائمة بالخطوات، والبدء بخطوة واحدة فقط تلو الأخرى.",
+  "recap": "تقسيم المهام الكبيرة لمهمات فرعية بسيطة بيسهل علينا الحل ويمنع التوتر. التخطيط الجيد هو سر النجاح في البرمجة والحياة.",
+  "q": [
+   {
+    "t": "إيه هو معنى تقسيم المهام الكبيرة؟",
+    "o": [
+     "ترك المهمة تماماً وعدم عملها",
+     "تفكيك المهمة لأجزاء أصغر وأسهل",
+     "جعل المهمة أصعب بكثير"
+    ],
+    "a": 1,
+    "why": "التقسيم يعني تفكيك العمل لأجزاء صغيرة يسهل إنجازها."
+   },
+   {
+    "t": "ليه بنقسم الشغل لأجزاء بسيطة؟",
+    "o": [
+     "علشان نخلص بسرعة وبدون توتر",
+     "علشان نصعب اللعبة على نفسنا",
+     "علشان نضيع وقتنا"
+    ],
+    "a": 0,
+    "why": "التقسيم بيريح عقلنا ويخلينا نركز في خطوة واحدة."
+   },
+   {
+    "t": "في مثال البيتزا، إيه أول خطوة بعد تقسيمها؟",
+    "o": [
+     "أكل البيتزا",
+     "الخبز في الفرن",
+     "فرد العجين"
+    ],
+    "a": 2,
+    "why": "بنبدأ بفرد العجين كأول خطوة من الثلاث خطوات."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة خطوات البيتزا",
+   "goal": "صل بين خطوة تحضير البيتزا ومكانها الصحيح في الترتيب",
+   "pairs": [
+    [
+     "الخطوة الأولى",
+     "فرد العجين"
+    ],
+    [
+     "الخطوة الثانية",
+     "وضع الصلصة والجبن"
+    ],
+    [
+     "الخطوة الثالثة",
+     "الخبز في الفرن"
+    ],
+    [
+     "النتيجة",
+     "استمتاع بأحلى بيتزا"
+    ]
+   ],
+   "success": "رائع! لقد رتبت خطوات صنع البيتزا بنجاح وصنعت أحلى بيتزا ساخنة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في التفكير الخوارزمي",
+    "text": "التفكير الخوارزمي يعني إزاي نحل المشاكل بطريقة منظمة ومرتبة خطوة بخطوة، زي ما بنرسم لوحة جميلة من خلال رسم الخطوط الأول وبعدين نلونها.",
+    "code": "الهدف: حل المشكلة\nالطريقة: خطوة ثم خطوة",
+    "output": "يتم حل المشكلة بسهولة ودون تعقيد."
+   },
+   {
+    "h": "ما هو تقسيم المهام؟",
+    "text": "تقسيم المهام أو الديكومبوزيشن هو مهارة عظيمة بناخد فيها الشغل الكبير أوي ونقطعه حتت صغيرة تشبه قطع الألعاب اللي بنركبها مع بعضها عشان نعمل شكل جميل.",
+    "code": "مهمة عملاقة -> [جزء 1] + [جزء 2] + [جزء 3]",
+    "output": "تتحول المهمة الصعبة إلى مهام صغيرة سهلة."
+   },
+   {
+    "h": "المهمات الفرعية البسيطة",
+    "text": "لما بنقسم المهمة، الأجزاء الناتجة اسمها مهمات فرعية، وكل مهمة فرعية بتكون واضحة جداً ومحددة وممكن أي حد ينفذها بكل بساطة وسرعة.",
+    "code": "رسم شجرة = 1. رسم الساق + 2. رسم الأوراق",
+    "output": "نحصل على شجرة مرسومة بشكل رائع."
+   },
+   {
+    "h": "التخطيط المسبق للعمل",
+    "text": "التخطيط عامل زي الخريطة اللي بتوريك الطريق الصح قبل ما تتحرك، لما تخطط لتقسيم مهامك، بتعرف أنت رايح فين وهتعمل إيه في كل دقيقة.",
+    "code": "خطة العمل: فكر -> قسم -> انطلق",
+    "output": "تنفيذ العمل بدون أخطاء أو نسيان."
+   },
+   {
+    "h": "تطبيق عملية صنع البيتزا",
+    "text": "صنع البيتزا مهمة ممتعة لكنها محتاجة ترتيب، بنقسمها لثلاث أجزاء رئيسية: تحضير العجين، إضافة المكونات، والخبز في الفرن لضمان أحلى طعم.",
+    "code": "بيتزا = عجين + صلصة + خبز",
+    "output": "تجهيز بيتزا لذيذة وجاهزة للأكل."
+   },
+   {
+    "h": "لماذا نفشل في المهام الكبيرة؟",
+    "text": "بنحس بالتعب والكسل لما نبص للمهمة الكبيرة كلها مرة واحدة كأنها جبل عالي، لكن لو بصينا لكل حجر صغير فيه لوحده، هنقدر نطلع الجبل ده بسهولة.",
+    "code": "جبل كبير -> تسلق حجر بحجر",
+    "output": "الوصول لقمة الجبل بدون تععب."
+   },
+   {
+    "h": "قواعد ذهبية للتقسيم الذكي",
+    "text": "اخلي كل جزء صغير لدرجة إن طفل صغير يقدر يفهمه، وخلي الأجزاء مترتبة ورا بعضها بالدور عشان مفيش خطوة تسبق تانية بالغلط.",
+    "code": "القاعدة: صغر المهمة + رتب الخطوات",
+    "output": "برنامج أو عمل منظم وخالي من الأخطاء."
+   },
+   {
+    "h": "الاستخدام في الحياة اليومية",
+    "text": "المبرمجين والمخترعين بيستخدموا التقسيم ده كل يوم عشان يعملوا تطبيقات الموبايل والروبوتات، وأنت كمان تقدر تستخدمه وأنت بتذاكر دروسك أو ترتب لعبك.",
+    "code": "استخدام الديكومبوزيشن في كل مكان",
+    "output": "إنجاز الأعمال بسرعة وإتقان كبير."
+   }
+  ],
+  "reference": [
+   {
+    "name": "التفكير الخوارزمي",
+    "desc": "طريقة تفكير لحل المشاكل بخطوات مرتبة."
+   },
+   {
+    "name": "التقسيم (Decomposition)",
+    "desc": "تفكيك المهام الكبيرة لأجزاء صغيرة."
+   },
+   {
+    "name": "المهمات الفرعية",
+    "desc": "الجزئيات البسيطة الناتجة عن التقسيم."
+   },
+   {
+    "name": "التخطيط",
+    "desc": "وضع خريطة عمل قبل التنفيذ."
+   },
+   {
+    "name": "الخطوات",
+    "desc": "الأفعال المرتبة التي ننفذها بالدور."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "لو عندك مهمة تنظيف الغرفة، اذكر جزئين فرعيين ممكن تقسمهم ليها.",
+    "a": "1. ترتيب السرير، 2. جمع الألعاب في الصندوق."
+   },
+   {
+    "q": "ما هي أول خطوة في تقسيم عمل سندوتش جبن؟",
+    "a": "إحضار الخبز والجبن."
+   },
+   {
+    "q": "لماذا نقسم المهام الكبيرة؟",
+    "a": "لتسهيل إنجازها ومنع التوتر والشعور بالصعوبة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Algorithmic thinking starts when we face a huge problem and do not know where to begin, like cleaning a whole messy room alone.",
+   "The magical solution is decomposition, meaning we take the giant task and break it down into smaller, very easy parts.",
+   "When we split work into simple pieces, our brain relaxes, and we can focus on one part at a time to finish quickly and smoothly.",
+   "For example, planning to make a delicious pizza does not happen all at once; we split it into three parts: dough, sauce, and baking.",
+   "The golden rule of decomposition: the clearer the small task, the easier and faster it is to execute successfully.",
+   "In daily life, engineers use this splitting method to build huge video games or smart robots step by step."
+  ],
+  "example": "Imagine going to school in the morning with a bag full of books, a toy, and sports clothes. If it feels overwhelming, we break it down: 1. Wear clothes, 2. Pack the bag, 3. Brush teeth. These steps organize our thoughts so we arrive at school on time, full of energy and focus without any delay.",
+  "mistake": "A common mistake is trying to do everything at once without any order, causing confusion. The fix is to stop immediately, write down a list of steps, and start with just one step at a time.",
+  "recap": "Breaking down big tasks into simple sub-tasks makes solving problems easier and prevents stress. Good planning is the secret to success in coding and life.",
+  "q": [
+   {
+    "t": "What is the meaning of breaking down big tasks?",
+    "o": [
+     "Abandoning the task completely",
+     "Splitting the task into smaller, easier parts",
+     "Making the task much harder"
+    ],
+    "a": 1,
+    "why": "Decomposition means breaking work into small manageable pieces."
+   },
+   {
+    "t": "Why do we split work into simple parts?",
+    "o": [
+     "To finish quickly and without stress",
+     "To make the game harder for ourselves",
+     "To waste our time"
+    ],
+    "a": 0,
+    "why": "Splitting calms our brain and lets us focus on one step."
+   },
+   {
+    "t": "In the pizza example, what is the very first step after splitting?",
+    "o": [
+     "Eating the pizza",
+     "Baking in the oven",
+     "Rolling out the dough"
+    ],
+    "a": 2,
+    "why": "We start by rolling out the dough as the first of three steps."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Pizza Steps Matching Game",
+   "goal": "Match each pizza preparation step to its correct order position",
+   "pairs": [
+    [
+     "First step",
+     "Rolling out the dough"
+    ],
+    [
+     "Second step",
+     "Adding sauce and cheese"
+    ],
+    [
+     "Third step",
+     "Baking in the oven"
+    ],
+    [
+     "Result",
+     "Enjoying a hot delicious pizza"
+    ]
+   ],
+   "success": "Awesome! You successfully ordered the pizza preparation steps and baked a delicious hot pizza!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Algorithmic Thinking",
+    "text": "Algorithmic thinking is about solving problems in an organized, step-by-step way, just like drawing a nice picture by first sketching lines and then coloring them.",
+    "code": "Goal: Solve problem\nMethod: Step by step",
+    "output": "The problem is solved easily and without complexity."
+   },
+   {
+    "h": "What is Task Decomposition?",
+    "text": "Decomposition is an amazing skill where we take a huge job and chop it into tiny pieces, similar to building blocks that snap together to make a cool shape.",
+    "code": "Giant Task -> [Part 1] + [Part 2] + [Part 3]",
+    "output": "The hard task turns into easy mini tasks."
+   },
+   {
+    "h": "Simple Sub-Tasks",
+    "text": "When we break down a task, the resulting pieces are called sub-tasks. Each sub-task is very clear, specific, and can be executed simply and quickly by anyone.",
+    "code": "Draw Tree = 1. Draw trunk + 2. Draw leaves",
+    "output": "We get a wonderfully drawn tree."
+   },
+   {
+    "h": "Planning Ahead",
+    "text": "Planning is like a map that shows you the right path before you move. When you plan your task breakdown, you know where you are going and what to do every minute.",
+    "code": "Action Plan: Think -> Split -> Go",
+    "output": "Executing work without errors or forgetting."
+   },
+   {
+    "h": "Pizza Making Application",
+    "text": "Making a pizza is fun but needs order. We divide it into three main parts: preparing the dough, adding toppings, and baking in the oven to ensure the best taste.",
+    "code": "Pizza = Dough + Sauce + Bake",
+    "output": "A delicious pizza ready to eat."
+   },
+   {
+    "h": "Why Do We Fail at Big Tasks?",
+    "text": "We feel tired and lazy when we look at a huge task all at once like a tall mountain. But if we look at each small rock on it alone, we can climb that mountain easily.",
+    "code": "Big Mountain -> Climb rock by rock",
+    "output": "Reaching the mountain peak without exhaustion."
+   },
+   {
+    "h": "Golden Rules for Smart Splitting",
+    "text": "Keep each part small enough that a young child can understand it, and keep the parts ordered sequentially so no step accidentally happens out of turn.",
+    "code": "Rule: Small task + Ordered steps",
+    "output": "An organized and error-free program or chore."
+   },
+   {
+    "h": "Real-Life Usage",
+    "text": "Programmers and inventors use decomposition every day to build phone apps and robots. You can also use it while studying your lessons or organizing your toys.",
+    "code": "Using decomposition everywhere",
+    "output": "Achieving tasks quickly and with great mastery."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Algorithmic Thinking",
+    "desc": "A thinking method to solve problems with ordered steps."
+   },
+   {
+    "name": "Decomposition",
+    "desc": "Splitting big tasks into smaller parts."
+   },
+   {
+    "name": "Sub-tasks",
+    "desc": "The simple pieces resulting from a split."
+   },
+   {
+    "name": "Planning",
+    "desc": "Creating an action map before execution."
+   },
+   {
+    "name": "Steps",
+    "desc": "Ordered actions we perform in turn."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If you have a room cleaning task, name two sub-parts you can split it into.",
+    "a": "1. Make the bed, 2. Put toys in the box."
+   },
+   {
+    "q": "What is the first step in splitting how to make a cheese sandwich?",
+    "a": "Get the bread and cheese."
+   },
+   {
+    "q": "Why do we break down big tasks?",
+    "a": "To make them easier to finish and prevent stress or feeling overwhelmed."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تعرف على My Blocks (الكتل الخاصة بك) في سكراتش، وهي طريقة سحرية لتجميع الأوامر الكثيرة داخل بلوك واحد مخصص يحمل اسمك لترتيب الشاشة ونظافتها.",
+   "تخيل أنك تكرر أوامر القفز وأخذ الضرر في لعبتك كثيراً؛ بدلاً من وضعها في كل مكان، اصنع بلوك جديداً واسمه 'قفز_وانزل' وضع الكود داخله.",
+   "كيف تعمل؟ عندما تضغط على هذا البلوك الجديد في اللعبة، سيقوم بتنفيذ كل الأوامر التي وضعتها بداخله دفعة واحدة وبسرعة فائقة.",
+   "مثال ثانٍ: تكرار كود إنقاص نقاط الحياة وصوت الانفجار عند اصطدام اللاعب بالعدو، ضعها في بلوك 'تضرر_اللاعب' لتوفير مساحة كبيرة.",
+   "قاعدة ذهبية: استخدم My Blocks عندما تلاحظ أنك تنسخ نفس مجموعة الأوامر وتلصقها في أماكن مختلفة من مقاطعك البرمجية.",
+   "الاستخدام الحقيقي: في تصميم ألعاب الفيديو الاحترافية، يقوم المبرمجون بفصل العمليات المعقدة وتنظيمها في دوال ووظائف لتسهيل تعديلها لاحقاً."
+  ],
+  "example": "لنفترض أن شخصيتك تحتاج للقفز وإصدار صوت في أكثر من مستوى باللعبة. بدلاً من تكرار 5 بلوكات في كل مرة، نذهب إلى قائمة My Blocks وننشئ كتلة جديدة باسم 'اقفز_بفرح'. نضع داخلها بلوك الحركة للأعلى وبلوك تشغيل الصوت. الآن في السكربت الرئيسي، يكفينا سحب بلوك 'اقفز_بفرح' الصغير ليقوم بالعمل كاملاً وبأناقة تامة ودون زحمة في المساحة البرمجية.",
+  "mistake": "الخطأ الشائع هو نسيان وضع الأوامر الفعلية داخل تعريف الـ My Block (داخل شاشة Define)، مما يجعل البلوك الجديد لا يفعل أي شيء عند استخدامه. الحل هو التأكد من تركيب الأوامر أسفل كلمة define مباشرة.",
+  "recap": "تساعدنا My Blocks في تنظيم الأكواد المتكررة داخل كتلة واحدة مرتبة ومخصصة. هذا يجعل مشروع سكراتش الخاص بك أنظف وأسهل في التعديل والقراءة.",
+  "q": [
+   {
+    "t": "ما هو الغرض الأساسي من استخدام My Blocks في سكراتش؟",
+    "o": [
+     "إضافة خلفيات جديدة",
+     "تجميع الأوامر المتكررة في بلوك واحد مرتب",
+     "تسريع سرعة الإنترنت"
+    ],
+    "a": 1,
+    "why": "تُستخدم My Blocks لتنظيم الأكواد وتجميع الأوامر المتكررة تحت اسم واحد لتقليل الفوضى."
+   },
+   {
+    "t": "أين تجد زر إنشاء My Blocks الجديد في برنامج سكراتش؟",
+    "o": [
+     "في قسم الألوان Sounds",
+     "في قسم My Blocks (الكتل الخاصة)",
+     "في قسم التحكم Control"
+    ],
+    "a": 1,
+    "why": "يوجد زر Make a Block داخل قسم My Blocks باللون الوردي."
+   },
+   {
+    "t": "ماذا يحدث إذا وضعت أوامر داخل تعريف My Block ولم تستخدم البلوك في البرنامج؟",
+    "o": [
+     "لن يتم تنفيذ تلك الأوامر أبدًا",
+     "ستعمل الأوامر تلقائيًا",
+     "سيتم حذف اللعبة"
+    ],
+    "a": 0,
+    "why": "البلوك المخصص لا يعمل إلا إذا قمت بسحبه ووضعه داخل المقاطع البرمجية النشطة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة استخدام My Blocks",
+   "goal": "اكتشف ما يحدث عند إنشاء بلوك مخصص لأول مرة",
+   "code": "عندنا بلوك مخصص باسم 'قفز_وانزل' وبداخله تحريك الشخصية للأعلى ثم للأسفل. ماذا يفعل الكود عند سحب بلوك 'قفز_وانزل' وضعه تحت الحدث 'عند النقر على العلم الأخضر'؟",
+   "options": [
+    "لا يفعل شيئاً أبداً",
+    "يقفز اللاعب للأعلى ثم يعود للأسفل تماماً كما صممناه",
+    "يتغير لون الخلفية للوردى"
+   ],
+   "a": 1,
+   "success": "رائع! قام البلوك المخصص بتنفيذ قفزة اللاعب بمهارة ونظافة."
+  },
+  "sections": [
+   {
+    "h": "ما هي My Blocks؟",
+    "text": "تخيل أن لديك صندوق ألعاب كبير تضع فيه ألعابك الصغيرة بدلاً من تركها مبعثرة على الأرض. My Blocks هي بالضبط مثل هذا الصندوق البرمجي، تتيح لك تجميع عدة أوامر سكراتش معاً تحت اسم واحد تختاره بنفسك، لتصبح شاشتك نظيفة ومرتبة.",
+    "code": "My Block name: jump_sequence\nContains: change y by 10, wait 0.1 secs, change y by -10",
+    "output": "صندوق برمجي واحد يجمع أوامر القفز."
+   },
+   {
+    "h": "لماذا نحتاج إلى تقليل الفوضى؟",
+    "text": "عندما تصمم لعبة طويلة، يصبح الشاشة مليئة بالبلوكات المتشابهة مثل القفز والاصطدام. هذا يشبه غرفة نوم غير مرتبة يصعب عليك ايجاد أغراضك فيها. الكتل المخصصة تخفي تفاصيل الأوامر المعقدة لتشاهد لعبتك بوضوح وسهولة.",
+    "code": "repeat 10: [ messy blocks ] -> replace with [ clean custom block ]",
+    "output": "منطقة عمل برمجية نظيفة وخالية من التداخل."
+   },
+   {
+    "h": "كيف نصنع بلوكاً مخصصاً جديداً؟",
+    "text": "من لوحة الأوامر اليسرى في سكراتش، اضغط على زر 'My Blocks' الوردي، ثم اضغط على 'Make a Block'. اكتب اسماً جميلاً ومعبراً مثل 'تلف_اللاعب' أو 'حركة_القفز'، وسظهر لك بلوك تعريف جديد على الشاشة لتبدأ بتركيب الأوامر تحته.",
+    "code": "Click My Blocks -> Make a Block -> Type: take_damage",
+    "output": "ظهور شاشة تصميم البلوك الجديد وبلوك تعريف (define)."
+   },
+   {
+    "h": "تجميع خوارزميات القفز والضرر",
+    "text": "بدلاً من تكرار كود إنقاص نقاط الحياة واهتزاز الشاشة في كل مرة يصطدم فيها البطل بوحش، نجمع هذه الخطوات معاً في بلوك مخصص واحد. الآن، أينما اصطدم الوحش بالبطل، نضع فقط بلوك 'تضرر_اللاعب' الصغير بدلاً من إعادة كتابة الكود كله.",
+    "code": "define take_damage\n- play sound 'ouch'\n- change health by -1\n- flash red",
+    "output": "خوارزمية ضرر جاهزة ومخزنة في بلوك واحد."
+   },
+   {
+    "h": "تشغيل الكتل المخصصة في اللعبة",
+    "text": "بعد أن تصمم البلوك وتضع الأوامر تحته، يصبح جاهزاً للاستخدام تماماً مثل البلوكات العادية. يمكنك سحبه ووضعه في أي مكان داخل مقاطعك البرمجية، وكلما وصل الكود إلى هذا البلوك، سينفذ كل ما بداخله بسرعة وسلاسة.",
+    "code": "when green flag clicked\nforever:\n  if touching monster? then\n    take_damage",
+    "output": "اللعبة تنفذ تسلسل الضرر بفعالية وسرعة عند التلامس."
+   },
+   {
+    "h": "توفير الجهد ووقت التعديل",
+    "text": "إذا اكتشفت خطأً في طريقة القفز وأردت تغييرها، فبدلاً من تعديل الكود في 10 أماكن مختلفة، تقوم بتعديله مرة واحدة فقط داخل شاشة تعريف البلوك المخصص (Define)، وسيتغير في اللعبة بأكملها تلقائياً!",
+    "code": "Edit define jump once -> updates everywhere in the game",
+    "output": "تعديل سريع وذكي يوفر الكثير من الوقت."
+   },
+   {
+    "h": "قاعدة ذهبية لـ My Blocks",
+    "text": "القاعدة تقول: إذا كررت نفس مجموعة الأوامر أكثر من مرتين في لعبتك، فهذه هي الإشارة الحمراء لصنع بلوك مخصص فورا! اجعل مشاريعك ذكية، منظمة، واحترافية كالمبرمجين الكبار.",
+    "code": "Rule: 3 repetitions = Time for a My Block!",
+    "output": "أكواد مرتبة وخالية من التكرار المزعج."
+   },
+   {
+    "h": "الاستخدام في العالم الحقيقي",
+    "text": "في عالم البرمجة الحقيقي، تُسمى هذه الكتل بـ 'الدوال' أو Functions. فكر في روبوت ينظف الغرفة؛ بدلاً من إعطائه كل حركة مفصلة، تبرمجه بأمر واحد اسمه 'تنظيف_الغرفة' وهو يعرف ماذا يفعل بالضبط!",
+    "code": "robot.clean_room() -> runs sweeping, wiping, and trash collection",
+    "output": "أنظمة معقدة تعمل بأوامر بسيطة وواضحة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "My Blocks",
+    "desc": "قسم في سكراتش يتيح للمستخدم صنع كتل برمجية مخصصة."
+   },
+   {
+    "name": "Make a Block",
+    "desc": "زر لبدء تصميم بلوك مخصص جديد."
+   },
+   {
+    "name": "Define",
+    "desc": "بلوك التعريف الذي يحدد الأوامر التي تنفذها الكتلة المخصصة."
+   },
+   {
+    "name": "Clutter",
+    "desc": "الفوضى وزحمة الأكواد الكثيرة على شاشة سكراتش."
+   },
+   {
+    "name": "Function",
+    "desc": "المصطلح البرمجي الحقيقي للكتل المخصصة (الدالة)."
+   },
+   {
+    "name": "Reuse",
+    "desc": "إعادة استخدام نفس الكود في أماكن متعددة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما اسم القسم الذي تجد فيه زر إنشاء بلوك مخصص في سكراتش؟",
+    "a": "My Blocks (الكتل الخاصة)"
+   },
+   {
+    "q": "ما هو البلوك الذي يظهر تلقائياً أعلى أوامر الكتلة المخصصة لتعريفها؟",
+    "a": "بلوك الـ define (التعريف)"
+   },
+   {
+    "q": "لماذا نستخدم My Blocks بدلاً من تكرار الأكواد؟",
+    "a": "لتقليل الفوضى وتنظيم الأكواد وتسهيل التعديل."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Discover My Blocks in Scratch, a magical way to bundle many commands into a single custom block with your own name to keep your workspace clean.",
+   "Imagine repeating jump and damage code in your game often; instead of placing them everywhere, create a new block named 'jump_and_fall' and put the code inside.",
+   "How does it work? When you trigger this new block in your game, it executes all the commands inside it all at once with super speed.",
+   "Second example: Repeating health deduction and explosion sound when colliding with an enemy; put them in a 'player_hurt' block to save massive space.",
+   "Golden rule: Use My Blocks whenever you notice you are copying and pasting the exact same set of instructions across different parts of your scripts.",
+   "Real-life use: In professional video game design, programmers separate complex operations and organize them into functions to make them easy to update later."
+  ],
+  "example": "Suppose your character needs to jump and play a sound in multiple levels of your game. Instead of repeating 5 blocks every time, we go to the My Blocks menu and create a new block called 'happy_jump'. Inside it, we place the move up block and the play sound block. Now in the main script, we just drag the small 'happy_jump' block to do all the work neatly without workspace clutter.",
+  "mistake": "A common mistake is forgetting to put the actual commands inside the My Block definition (under the Define screen), making the new block do nothing when used. The solution is to ensure commands are snapped right below the 'define' hat block.",
+  "recap": "My Blocks help us organize repeated scripts into a single tidy custom block. This makes your Scratch project cleaner, easier to modify, and much easier to read.",
+  "q": [
+   {
+    "t": "What is the primary purpose of using My Blocks in Scratch?",
+    "o": [
+     "To add new backdrops",
+     "To group repeated commands into one tidy block",
+     "To speed up internet connection"
+    ],
+    "a": 1,
+    "why": "My Blocks are used to organize code and group repeated commands under one name to reduce clutter."
+   },
+   {
+    "t": "Where do you find the button to create a new My Block in Scratch?",
+    "o": [
+     "In the Sounds category",
+     "In the My Blocks category",
+     "In the Control category"
+    ],
+    "a": 1,
+    "why": "The 'Make a Block' button is located inside the pink My Blocks category."
+   },
+   {
+    "t": "What happens if you place commands inside a My Block definition but never use the block in your script?",
+    "o": [
+     "Those commands will never run",
+     "The commands will run automatically",
+     "The game will be deleted"
+    ],
+    "a": 0,
+    "why": "A custom block does nothing unless you drag and place it inside your active scripts."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict My Blocks Outcome",
+   "goal": "Discover what happens when creating a custom block for the first time",
+   "code": "We have a custom block named 'jump_and_fall' containing move up then move down. What does the code do when dragging 'jump_and_fall' under 'when green flag clicked'?",
+   "options": [
+    "It does nothing at all",
+    "The player jumps up and comes back down exactly as designed",
+    "The backdrop changes to pink"
+   ],
+   "a": 1,
+   "success": "Awesome! The custom block executed the player's jump neatly and smoothly."
+  },
+  "sections": [
+   {
+    "h": "What are My Blocks?",
+    "text": "Imagine having a big toy box where you put your small toys instead of leaving them scattered all over the floor. My Blocks are just like that for code, letting you bundle several Scratch commands together under a name you choose, keeping your screen clean and organized.",
+    "code": "My Block name: jump_sequence\nContains: change y by 10, wait 0.1 secs, change y by -10",
+    "output": "A single code box bundling jump commands."
+   },
+   {
+    "h": "Why Do We Need to Reduce Clutter?",
+    "text": "When you design a long game, your screen fills up with similar blocks like jumping and colliding. This is like a messy bedroom where it is hard to find your stuff. Custom blocks hide complex command details so you can view your game clearly and easily.",
+    "code": "repeat 10: [ messy blocks ] -> replace with [ clean custom block ]",
+    "output": "A clean coding workspace free of clutter."
+   },
+   {
+    "h": "How to Create a New Custom Block",
+    "text": "From the left blocks palette in Scratch, click the pink 'My Blocks' category, then click 'Make a Block'. Type a nice, descriptive name like 'take_damage' or 'jump_move', and a new define block will appear on screen for you to build commands under.",
+    "code": "Click My Blocks -> Make a Block -> Type: take_damage",
+    "output": "Appearance of the new block builder screen and a define hat block."
+   },
+   {
+    "h": "Wrapping Jump and Damage Algorithms",
+    "text": "Instead of repeating health deduction code and screen shaking every time the hero touches a monster, we bundle these steps into one single custom block. Now, whenever the monster touches the hero, we just drop the small 'player_hurt' block instead of rewriting everything.",
+    "code": "define take_damage\n- play sound 'ouch'\n- change health by -1\n- flash red",
+    "output": "A ready damage algorithm stored in a single block."
+   },
+   {
+    "h": "Running Custom Blocks in the Game",
+    "text": "Once you design the block and put commands under it, it is ready to use just like regular blocks. You can drag and place it anywhere in your scripts, and whenever the code reaches this block, it runs everything inside it quickly and smoothly.",
+    "code": "when green flag clicked\nforever:\n  if touching monster? then\n    take_damage",
+    "output": "The game executes the damage sequence efficiently upon touch."
+   },
+   {
+    "h": "Saving Effort and Edit Time",
+    "text": "If you discover a bug in your jump method and want to change it, instead of editing the code in 10 different places, you edit it just once inside the custom block definition screen (Define), and it updates across the entire game automatically!",
+    "code": "Edit define jump once -> updates everywhere in the game",
+    "output": "Smart, fast editing that saves lots of time."
+   },
+   {
+    "h": "Golden Rule for My Blocks",
+    "text": "The rule says: If you repeat the exact same set of commands more than twice in your game, that is your red signal to make a custom block immediately! Make your projects smart, organized, and professional like senior programmers.",
+    "code": "Rule: 3 repetitions = Time for a My Block!",
+    "output": "Tidy code free of annoying repetitions."
+   },
+   {
+    "h": "Real-World Application",
+    "text": "In the real programming world, these blocks are called 'Functions'. Think of a robot cleaning a room; instead of giving it every detailed movement, you program it with one single command called 'clean_room' and it knows exactly what to do!",
+    "code": "robot.clean_room() -> runs sweeping, wiping, and trash collection",
+    "output": "Complex systems running on simple, clear commands."
+   }
+  ],
+  "reference": [
+   {
+    "name": "My Blocks",
+    "desc": "A category in Scratch allowing users to build custom code blocks."
+   },
+   {
+    "name": "Make a Block",
+    "desc": "A button to start designing a new custom block."
+   },
+   {
+    "name": "Define",
+    "desc": "The hat block that determines the commands executed by the custom block."
+   },
+   {
+    "name": "Clutter",
+    "desc": "Mess and crowding of many blocks on the Scratch workspace."
+   },
+   {
+    "name": "Function",
+    "desc": "The real programming term for custom blocks."
+   },
+   {
+    "name": "Reuse",
+    "desc": "Using the same code in multiple places."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is the name of the category where you find the button to create a custom block in Scratch?",
+    "a": "My Blocks"
+   },
+   {
+    "q": "What block automatically appears at the top of custom block commands to define them?",
+    "a": "The define hat block"
+   },
+   {
+    "q": "Why do we use My Blocks instead of repeating code?",
+    "a": "To reduce clutter, organize code, and make editing easier."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

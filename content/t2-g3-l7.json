@@ -1,0 +1,306 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تصنع كتاب أسرار كبير وجميل، لكنك تريد إخفاء بعض التفاصيل حتى يختار القارئ فتحها بنفسه. عناصر الـ HTML التفاعلية مثل details تمنحك هذه السحر الرائع بسهولة تامة ودون الحاجة لبرمجة معقدة.",
+   "إليك مثال صغير وبسيط: `<details><summary>اضغط هنا</summary><p>مرحباً بك في عالم الويب!</p></details>`. هذا الكود ينشئ صندوقاً قابلاً للطي يظهر عنوانه بينما تختفي تفاصيله حتى النقر عليه.",
+   "كيف يعمل هذا السحر؟ الوسم الأساسي `<details>` هو الحاوية الكبرى لصندوق المعلومات، بينما الوسم الداخلي الأول `<summary>` يعمل كعنوان أو ملخص ظاهر دائماً للمستخدم مع سهم صغير بجانبه.",
+   "يمكنك أيضاً جعل الصندوق مفتوحاً تلقائياً منذ بداية تحميل الصفحة من خلال إضافة الخاصية البوليانية open هكذا: `<details open><summary>عنوان</summary>تفاصيل هامة.</details>` ليرى الزائر المحتوى مباشرة.",
+   "قاعدة ذهبية هامة: يجب دائماً أن يكون الوسم `<summary>` هو الابن الأول المباشر داخل الوسم `<details>` لكي يتعرف عليه المتصفح ويعرضه كعنوان صحيح وزر تفاعلي يعمل بسلاسة تامة.",
+   "في الحياة اليومية، تشبه هذه الصناديق قوائم 'الأسئلة الشائعة' (FAQ) في المواقع الشهيرة، حيث تضغط على السؤال لتظهر إجابته دون أن تملأ الصفحة بالكثير من النصوص الطويلة في نفس الوقت."
+  ],
+  "example": "دعنا نصمم صندوق تفاعلي للأسئلة الشائعة حول رحلة إلى الفضاء:\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<title>رحلة الفضاء</title>\n</head>\n<body>\n  <details>\n    <summary>هل تحب السفر للفضاء؟</summary>\n    <p>نعم، السفر للفضاء ممتع ولكنه يحتاج لتدريب شاق وسفينة صاروخية!</p>\n  </details>\n</body>\n</html>\n```\nالسبب والنتيجة: عند تشغيل هذا الكود في المتصفح، يظهر سهم صغير وكلمة 'هل تحب السفر للفضاء؟'. عندما يضغط المستخدم على العنوان، ينفتح الصندوق بسلاسة ليكشف عن الجملة التي تشرح تفاصيل السفر الفضائي.",
+  "mistake": "الخطأ الشائع هو وضع عنصر آخر مثل فقرة نصية `<p>` قبل الوسم `<summary>` داخل عنصر `<details>`. الحل هو التأكد دائماً من أن `<summary>` هو العنصر الأول بلا منازع داخل حاوية details ليعمل بشكل صحيح.",
+  "recap": "تعلمنا اليوم كيف نصنع صناديق تفاعلية قابلة للطي باستخدام وسمي details وsummary. هذه العناصر تسهل تنظيم المعلومات وإخفائها وإظهارها بنقرة بسيطة.",
+  "q": [
+   {
+    "t": "ما هو الوسم الذي نستخدمه لإنشاء صندوق معلومات قابل للطي؟",
+    "o": [
+     "<details>",
+     "<summary>",
+     "<collapse>"
+    ],
+    "a": 0,
+    "why": "عنصر details هو الحاوية الأساسية لإنشاء صندوق الكشف التفاعلي."
+   },
+   {
+    "t": "أي العناصر يجب أن يكون الابن الأول المباشر داخل وسم details؟",
+    "o": [
+     "<p>",
+     "<summary>",
+     "<span>"
+    ],
+    "a": 1,
+    "why": "يجب أن يكون summary هو الطفل الأول دائماً ليعمل كعنوان وزر للصندوق."
+   },
+   {
+    "t": "كيف نجعل صندوق التفاصيل مفتوحاً افتراضياً عند تحميل الصفحة؟",
+    "o": [
+     "بإضافة الخاصية open",
+     "بإضافة الكلمة active",
+     "بإضافة الخاصية show"
+    ],
+    "a": 0,
+    "why": "الخاصية البوليانية open تجعل المحتوى مرئياً تلقائياً منذ بداية التحميل."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود صندوق التفاصيل",
+   "goal": "اختر الكلمات أو الأوسمة الصحيحة لإكمال كود الصندوق التفاعلي بشكل صحيح.",
+   "items": [
+    {
+     "text": "نستخدم العنصر ___ لإنشاء الحاوية الكبرى للصندوق القابل للطي.",
+     "options": [
+      "<details>",
+      "<summary>",
+      "<div>"
+     ],
+     "a": 0
+    },
+    {
+     "text": "نضع الوسم ___ كأول ابن داخل الحاوية ليعمل كعنوان ظاهر.",
+     "options": [
+      "<p>",
+      "<summary>",
+      "<h1>"
+     ],
+     "a": 1
+    },
+    {
+     "text": "لجعل الصندوق مفتوحاً عند تحميل الصفحة نضيف الخاصية ___.",
+     "options": [
+      "open",
+      "show",
+      "visible"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد أتقنت بناء الصناديق التفاعلية القابلة للطي بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة إلى التفاصيل التفاعلية",
+    "text": "هل أردت يوماً إخفاء سر صغير في صفحتك حتى يضغط صديقك ليرى؟ عناصر الـ HTML التفاعلية تجعل هذا الأمر مذهلاً وبسيطاً. تشبه هذه العناصر صندوق الهدايا المغلق؛ تراه أمامك، ولكي تعرف ما بداخله، عليك بفتحه بنقرة واحدة سريعة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>اضغط هنا لترى المفاجأة</summary>\n    <p>أنت برمجت موقعك بنفسك!</p>\n  </details>\n</body>\n</html>",
+    "output": "يظهر صندوق تفاعلي مع سهم صغير وعنوان، وعند النقر يظهر النص السري."
+   },
+   {
+    "h": "دور عنصر details",
+    "text": "الوسم الرئيسي `<details>` يعمل كصندوق سحري يجمع بداخله المعلومات التي تريد إخفاءها أو تنظيمها. بدلاً من عرض كل النصوص دفعة واحدة وإزعاج القارئ، يتيح لك هذا الوسم حفظ المساحة وتقديم المعلومات بترتيب نظيف ومرتب للغاية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>معلومات عن الديناصورات</summary>\n    <p>عاشت الديناصورات على الأرض قبل ملايين السنين!</p>\n  </details>\n</body>\n</html>",
+    "output": "يعرض صندوق تفاعلي مغلق بانتظار نقرة المستخدم."
+   },
+   {
+    "h": "دور عنصر summary كعنوان",
+    "text": "لكي نعرف ما بداخل الصندوق قبل فتحه، نستعين بعنصر `<summary>`. يوضع هذا العنصر في البداية ليعرض عنواناً واضحاً مع سهم صغير يدل على حالة الصندوق (مغلق أو مفتوح). إنه بمثابة اللافتة المكتوبة على باب الغرفة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>القواعد والتعليمات</summary>\n    <p>1. كن لطيفاً.\n2. تعلم البرمجة يومياً.</p>\n  </details>\n</body>\n</html>",
+    "output": "يظهر سهم وعنوان 'القواعد والتعليمات' وبجواره المحتوى عند فتحه."
+   },
+   {
+    "h": "جعل الصندوق مفتوحاً افتراضياً بالخاصية open",
+    "text": "في بعض الأحيان، تريد من المستخدم أن يرى المعلومات فور دخول الصفحة دون الحاجة للنقر. هنا تأتي أهمية الخاصية البوليانية `open`. بإضافتها إلى الوسم الرئيسي، سيظهر الصندوق مفتوحاً ومرئياً منذ اللحظة الأولى للتحميل.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details open>\n    <summary>رسالة ترحيب هامة</summary>\n    <p>أهلاً بك في أكاديمية البرمجة للصغار!</p>\n  </details>\n</body>\n</html>",
+    "output": "يظهر صندوق التفاصيل مفتوحاً ومعروضاً بالكامل منذ تحميل الصفحة."
+   },
+   {
+    "h": "ربط الصناديق باستخدام الخاصية name",
+    "text": "هل تعلم أنه يمكنك ربط عدة صناديق تفاعلية ببعضها البعض؟ باستخدام الخاصية `name` بنفس القيمة لعدة عناصر `<details>`، يمكنك جعل صندوق واحد فقط مفتوحاً في نفس الوقت، تماماً مثل قوائم الخيارات المنظمة (Accordions) في المواقع الحديثة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details name=\"menu\">\n    <summary>القسم الأول</summary>\n    <p>محتوى القسم الأول هنا.</p>\n  </details>\n  <details name=\"menu\">\n    <summary>القسم الثاني</summary>\n    <p>محتوى القسم الثاني هنا.</p>\n  </details>\n</body>\n</html>",
+    "output": "صندوقان مرتبطان; فتح أحدهما يغلق الآخر تلقائياً."
+   },
+   {
+    "h": "استخدام نصوص وتنسيقات مختلفة داخل الخلاصة",
+    "text": "لا يقتصر محتوى العنوان على الكلمات العادية فقط، بل يمكنك إضافة تنسيقات خفيفة مثل الخط العريض أو الرموز التعبيرية لجعل العنوان أكثر جاذبية وتشويقاً للأطفال والزوار عند تصفح الموقع.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>🌟 الأسرار العجيبة للبرمجة</summary>\n    <p>البرمجة ليست صعبة، بل هي لعبة تفكير ممتعة!</p>\n  </details>\n</body>\n</html>",
+    "output": "يظهر عنوان يحتوي على رمز تعبيري وبجواره السهم التفاعلي."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<details>",
+    "desc": "الحاوية الأساسية لإنشاء صندوق معلومات قابل للطي."
+   },
+   {
+    "name": "<summary>",
+    "desc": "العنوان الظاهر أو الملخص الذي ينقر عليه المستخدم لفتح أو غلق الصندوق."
+   },
+   {
+    "name": "open",
+    "desc": "خاصية بوليانية تجعل صندوق التفاصيل مفتوحاً ومرئياً بشكل افتراضي."
+   },
+   {
+    "name": "name",
+    "desc": "خاصية لربط عدة صناديق تفاعلية بحيث يفتح صندوق واحد فقط في نفس الوقت."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML بسيطاً يحتوي على عنصر details وعنصر summary بداخله عنوان 'لغز اليوم' وتحته فقرة نصية تحوي الإجابة.",
+    "a": "<details><summary>لغز اليوم</summary><p>ما هو الشيء الذي يحمل مفاتيح وليس له أبواب؟ لوحة المفاتيح!</p></details>"
+   },
+   {
+    "q": "كيف تعدل الكود السابق بحيث يبدأ الصندوق مفتوحاً تلقائياً عند تحميل الصفحة؟",
+    "a": "<details open><summary>لغز اليوم</summary><p>ما هو الشيء الذي يحمل مفاتيح وليس له أبواب؟ لوحة المفاتيح!</p></details>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine building a big, secret diary where you can hide some details until the reader chooses to open them. HTML interactive elements like details give you this magical ability easily without any complex programming.",
+   "Here is a small, simple example: `<details><summary>Click here</summary><p>Welcome to the web world!</p></details>`. This code creates a collapsible box showing its title while hiding its details until clicked.",
+   "How does this magic work? The main `<details>` tag is the big container for the info box, while the first inner `<summary>` tag acts as a title or summary always visible to the user with a small arrow next to it.",
+   "You can also make the box start fully open right when the page loads by adding the boolean open attribute like this: `<details open><summary>Title</summary>Important details.</details>` so visitors see the content immediately.",
+   "An important golden rule: The `<summary>` tag must always be the very first direct child inside the `<details>` tag so the browser recognizes it correctly as a title and interactive button.",
+   "In real life, these boxes resemble 'Frequently Asked Questions' (FAQ) lists on popular websites, where you click a question to reveal its answer without cluttering the page with too much text all at once."
+  ],
+  "example": "Let's design an interactive FAQ box about a space journey:\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<title>Space Journey</title>\n</head>\n<body>\n  <details>\n    <summary>Do you like space travel?</summary>\n    <p>Yes, space travel is fun but requires hard training and a rocket ship!</p>\n  </details>\n</body>\n</html>\n```\nCause and effect: When running this code in a browser, a small arrow and the text 'Do you like space travel?' appear. When the user clicks the title, the box smoothly opens to reveal the explanatory sentence about space travel.",
+  "mistake": "A common mistake is placing another element like a paragraph `<p>` before the `<summary>` tag inside the `<details>` element. The fix is to always ensure `<summary>` is the absolute first element inside the details container to work properly.",
+  "recap": "Today we learned how to build interactive collapsible boxes using the details and summary tags. These elements make organizing, hiding, and revealing information effortless with a simple click.",
+  "q": [
+   {
+    "t": "Which tag do we use to create a collapsible information box?",
+    "o": [
+     "<details>",
+     "<summary>",
+     "<collapse>"
+    ],
+    "a": 0,
+    "why": "The details element is the main container for creating an interactive disclosure box."
+   },
+   {
+    "t": "Which element must always be the first direct child inside a details tag?",
+    "o": [
+     "<p>",
+     "<summary>",
+     "<span>"
+    ],
+    "a": 1,
+    "why": "The summary must always be the first child to serve as the title and button for the box."
+   },
+   {
+    "t": "How do we make the details box open by default when the page loads?",
+    "o": [
+     "By adding the open attribute",
+     "By adding the active word",
+     "By adding the show attribute"
+    ],
+    "a": 0,
+    "why": "The boolean open attribute makes the content visible automatically from the start."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Details Box Code",
+   "goal": "Choose the correct words or tags to properly complete the interactive box code.",
+   "items": [
+    {
+     "text": "We use the ___ element to create the main container for the collapsible box.",
+     "options": [
+      "<details>",
+      "<summary>",
+      "<div>"
+     ],
+     "a": 0
+    },
+    {
+     "text": "We place the ___ tag as the first child inside the container to serve as the visible title.",
+     "options": [
+      "<p>",
+      "<summary>",
+      "<h1>"
+     ],
+     "a": 1
+    },
+    {
+     "text": "To make the box open when the page loads, we add the ___ attribute.",
+     "options": [
+      "open",
+      "show",
+      "visible"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You have successfully mastered building interactive collapsible boxes!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Interactive Details",
+    "text": "Have you ever wanted to hide a little secret on your webpage until your friend clicks to see it? Interactive HTML elements make this amazing and simple. These elements are like a locked gift box; you see it in front of you, and to know what's inside, you just open it with one quick click.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>Click here to see the surprise</summary>\n    <p>You coded your own website!</p>\n  </details>\n</body>\n</html>",
+    "output": "An interactive box appears with a small arrow and title, revealing secret text upon clicking."
+   },
+   {
+    "h": "The Role of the Details Element",
+    "text": "The main `<details>` tag works like a magical box holding the information you want to hide or organize. Instead of showing all texts at once and cluttering the page, this tag saves space and presents information in a very neat and orderly way.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>Dinosaur Facts</summary>\n    <p>Dinosaurs lived on Earth millions of years ago!</p>\n  </details>\n</body>\n</html>",
+    "output": "Displays a closed interactive box waiting for user interaction."
+   },
+   {
+    "h": "The Role of the Summary Element as a Title",
+    "text": "To know what is inside the box before opening it, we use the `<summary>` element. This element is placed at the top to display a clear title with a small arrow indicating the box state (closed or open). It acts like a sign on a door.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>Rules and Guidelines</summary>\n    <p>1. Be kind.\n2. Learn coding daily.</p>\n  </details>\n</body>\n</html>",
+    "output": "Shows an arrow and 'Rules and Guidelines' title with content revealed when opened."
+   },
+   {
+    "h": "Making the Box Open by Default with the Open Attribute",
+    "text": "Sometimes, you want the user to see the information right upon entering the page without needing to click. This is where the boolean `open` attribute comes in. By adding it to the main tag, the box will appear open and visible from the very first moment of loading.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details open>\n    <summary>Important Welcome Message</summary>\n    <p>Welcome to the Kids Coding Academy!</p>\n  </details>\n</body>\n</html>",
+    "output": "The details box appears open and fully displayed upon page load."
+   },
+   {
+    "h": "Grouping Boxes Using the Name Attribute",
+    "text": "Did you know you can link multiple interactive boxes together? By using the `name` attribute with the same value for several `<details>` elements, you can make only one box open at a time, just like accordion menus on modern websites.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details name=\"menu\">\n    <summary>Section One</summary>\n    <p>Content for section one here.</p>\n  </details>\n  <details name=\"menu\">\n    <summary>Section Two</summary>\n    <p>Content for section two here.</p>\n  </details>\n</body>\n</html>",
+    "output": "Two linked boxes; opening one automatically closes the other."
+   },
+   {
+    "h": "Using Different Texts and Formats Inside Summary",
+    "text": "The title content is not limited to plain words only; you can add light formatting like bold text or emojis to make the title more engaging and exciting for kids and visitors browsing the site.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>🌟 Amazing Coding Secrets</summary>\n    <p>Coding is not hard; it's a fun thinking game!</p>\n  </details>\n</body>\n</html>",
+    "output": "Shows a title containing an emoji alongside the interactive arrow."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<details>",
+    "desc": "The main container for creating a collapsible information box."
+   },
+   {
+    "name": "<summary>",
+    "desc": "The visible title or summary clicked by the user to toggle the box open or closed."
+   },
+   {
+    "name": "open",
+    "desc": "A boolean attribute that makes the details box open and visible by default."
+   },
+   {
+    "name": "name",
+    "desc": "An attribute to group multiple interactive boxes so only one opens at a time."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a simple HTML code containing a details element and a summary element inside with the title 'Riddle of the Day' and a paragraph containing the answer below it.",
+    "a": "<details><summary>Riddle of the Day</summary><p>What has keys but no doors? A keyboard!</p></details>"
+   },
+   {
+    "q": "How do you modify the previous code so that the box starts open automatically when the page loads?",
+    "a": "<details open><summary>Riddle of the Day</summary><p>What has keys but no doors? A keyboard!</p></details>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: <summary> HTML disclosure summary element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/summary"
+  },
+  {
+   "title": "MDN: <details> HTML details disclosure element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details"
+  }
+ ],
+ "grounded": true
+}

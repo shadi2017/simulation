@@ -1,0 +1,311 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، السرعة بتخلي شخصيتنا تتحرك بسرعة أو ببطء في قصتنا! زي العربيات في الشارع، بعضها بيمشي بالراحة وبعضها طائر بسرعة البرق، وده بيدي حماس جامد للعبة.",
+   "عشان نخلي البطل يتحرك ببطء، بنحط بلوك السرعة البطيئة (السلحفاة) قبل خطوة المشي. لو دوسنا عليه، البطل هياخد وقته وهو ماشي.",
+   "إزاي بتشتغل؟ بلوك السرعة بيغير عداد خطوات الشخصية؛ الرقم الصغير بيخليها بطيئة، والرقم المتوسط عادي، والرقم الكبير صاروخ سريع جداً في اللعبة.",
+   "تعال نعمل سباق! نجيب قطة وفيل، ونحط للقطة بلوك سرعة سريع وللفيل بلوك سرعة بطيء، عشان نشوف مين هيوصل الأول لخط النهاية.",
+   "القاعدة الذهبية: دايماً حط بلوك السرعة *قبل* بلوك الحركة اللي عايز تغيره، عشان البطل يفهم هو هيجري ولا يتمشى قبل ما يتحرك.",
+   "الاستخدام في الحقيقة: زي ما بنعمل في كرتون الجري بين الأرانب والسلاحف، التحكم في السرعة بيخلي القصة فيها تشويق ومفاجآت للي بيفرج."
+  ],
+  "example": "تعالوا نعمل سباق جميل في سكراتش جونيور! بنجيب قطة وبنحط قبلها بلوك السرعة السريع (الأرنب)، وجنبها بنحط بلوك الانتظار (ساعة الرمل) عشان تقف ثانية واحدة. بعدين بنخليها تتحرك 5 خطوات قدام. لما ندوس علم أخضر، القطة هتنطلق بسرعة البرق، وتقف شوية تفكر، وبعدين تكمل. ده بيخلي القصة حماسية جداً وفكرتها ممتعة!",
+  "mistake": "الخطأ المشهور إننا نحط بلوك السرعة *بعد* بلوك الحركة. الحل: دايماً ابدأ ببلوك السرعة والانتظار الأول، وبعدين حط بلوك الحركة عشان الترتيب يشتغل صح.",
+  "recap": "اتعلمنا إزاي نغير سرعة الشخصيات في سكراتش جونيور ونستخدم بلوك الانتظار عشان نعمل سباقات ممتعة. السرعة والانتظار هما سر الحماس في كل قصة!",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بيخلي الشخصية تقف شوية قبل ما تكمل حركة؟",
+    "o": [
+     "بلوك السرعة",
+     "بلوك الانتظار",
+     "بلوك الإخفاء"
+    ],
+    "a": 1,
+    "why": "بلوك الانتظار بيوقف السكربت لفترة معينة قبل ما نعمل الخطوة اللي بعدها."
+   },
+   {
+    "t": "ليه بنحط بلوك سرعة السلحفاة للبطل؟",
+    "o": [
+     "عشان يتحرك ببطء شديد",
+     "عشان يختفي من الشاشة",
+     "عشان يكبر في الحجم"
+    ],
+    "a": 0,
+    "why": "سرعة السلحفاة بتدل على الحركة البطيئة جداً في البرنامج."
+   },
+   {
+    "t": "لو عايزين نعمل سباق بين شخصيتين، بنعمل إيه؟",
+    "o": [
+     "ندي الاتنين نفس السرعة",
+     "نخفي الاتنين خالص",
+     "نغير سرعة كل واحدة عشان نتنافس"
+    ],
+    "a": 2,
+    "why": "عشان نعمل سباق حماسي، لازم نخلي سرعات الشخصيات مختلفة (سريع وبطيء)."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة أدوات السرعة والانتظار",
+   "goal": "وصل كل بلوك بالوظيفة الصحيحة بتاعته في سكراتش جونيور",
+   "pairs": [
+    [
+     "بلوك السرعة البطيئة",
+     "يخلي الشخصية تتمشى بالراحة خالص"
+    ],
+    [
+     "بلوك السرعة السريعة",
+     "يخلي الشخصية تطير زي الصاروخ"
+    ],
+    [
+     "بلوك الانتظار",
+     "يوقف الشخصية مكانها شوية وقت"
+    ],
+    [
+     "بلوك السرعة العادية",
+     "يخلي الشخصية تتحرك بسرعة متوسطة وطبيعية"
+    ]
+   ],
+   "success": "يا سلام! كل الشخصيات اتحركت بالسرعة الصح ووصلت لهدفها في السباق!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في سرعة الشخصيات",
+    "text": "في عالم سكراتش جونيور، مش كل الشخصيات لازم تمشي بنفس السرعة العادية. بعض الأوقات بنحب نخلي البطل يجري بسرعة زي الأبطال الخارقين، وأوقات تانية نخليه يتمشى بالراحة زي السلحفاة. التحكم في السرعة بيدي روح وحياة للقصة بتاعتك ويخليها أكتر واقعية وممتعة.",
+    "code": "الأمر: [علم أخضر] -> [سرعة سريعة] -> [تحرك للأمام 5]",
+    "output": "الشخصية بتتحرك بسرعة جداً فور بداية اللعبة."
+   },
+   {
+    "h": "السرعة العادية والبطيئة",
+    "text": "البرنامج بيدينا اختيارات كتيرة للسرعة. السرعة العادية هي اللي البطل بيبدأ بيها دايماً. أما السرعة البطيئة فبتخلي خطواته هادية خالص، زي ما تكون ماشي على شاطئ البحر بالراحة. بنستخدمها لما نحب نبين إن البطل تعبان أو بيفكر في خطوته.",
+    "code": "الأمر: [علم أخضر] -> [سرعة بطيئة] -> [تحرك للأمام 3]",
+    "output": "البطل بيمشي خطوة بخطوة بالراحة جداً."
+   },
+   {
+    "h": "السرعة السريعة كالصاروخ",
+    "text": "لما يحصل خطر في القصة والبطل لازم يهرب بسرعة، بنستخدم بلوك السرعة السريعة! ده بيخلي الشخصية تنط وتجري في جزء من الثانية من أول الشاشة لآخره. زي الأرنب الشقي وهو بيجري من هجوم الكلب.",
+    "code": "الأمر: [علم أخضر] -> [سرعة سريعة] -> [قفز]",
+    "output": "الشخصية بتقفز في الهواء بسرعة البرق."
+   },
+   {
+    "h": "إزاي نعمل سباق مثير؟",
+    "text": "السباقات هي أحلى حاجة في الألعاب! عشان نعمل سباق بين قطة وكلب، بندي القطة بلوك سرعة سريعة والكلب سرعة بطيئة (أو العكس). لما ندوس على العلم الأخضر، الاتنين هيبدأوا سباقهم ونشوف مين اللي هيوصل خط النهاية الأول. ده بيمّكنا من تصميم ألعاب منافسة رائعة.",
+    "code": "شخصية 1: [سرعة سريعة] + [حركة]\nشخصية 2: [سرعة عادية] + [حركة]",
+    "output": "الشخصية الأولى بتسبق وتكسب السباق."
+   },
+   {
+    "h": "سر توقف اللحظات: بلوك الانتظار",
+    "text": "مش دايماً الحياة جري في جري! أحياناً البطل محتاج يقف ثانية يشرب مية أو يبص حواليه قبل ما يكمل. هنا بيجي دور بلوك الانتظار (Wait). هو عامل زي ساعة رملية بتخلي البطل يقف مكانه لثانية أو أكتر وبعدين يكمل.",
+    "code": "الأمر: [تحرك 3] -> [انتظار ثانية] -> [قل 'مرحى!']",
+    "output": "الشخصية بتتحرك، بتقف ثانية، وبعدين بتتكلم."
+   },
+   {
+    "h": "ترتيب البلوكات الصح",
+    "text": "الكمبيوتر ذكي جداً لكن بيشتغل بالترتيب الحرفي. لو حطيت بلوك الانتظار أو السرعة في المكان الخاطئ، القصة مش هتشتغل زي ما أنت عايز. دايماً ابدأ بتحديد السرعة، بعدين الحركة، وبعدين الانتظار وقت الحاجة، عشان السيناريو يطلع مظبوط مية مية.",
+    "code": "الترتيب: 1. سرعة -> 2. حركة -> 3. انتظار -> 4. حركة تانية",
+    "output": "الشخصية بتنفذ الخطوات بانتظام ودقة."
+   },
+   {
+    "h": "تطبيق مفاجأة: البطل الحذر",
+    "text": "تعالوا نصمم قصة بطل مميز! البطل بيمشي بسرعة عادية، وبعدين بيقابل شجرة، فبيحط بلوك انتظار عشان يقف ويبص كويس للشجرة، وبعدين بيجري بسرعة سريعة عشان يعديها. اللعبة دي بتعلمنا إزاي ندمج السرعة والانتظار مع بعض بذكاء.",
+    "code": "الأمر: [حركة 2] -> [انتظار ثانية] -> [سرعة سريعة] -> [حركة 4]",
+    "output": "البطل بيتمشى، يقف يفكر، وبعدين يجري بسرعة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "السرعة البطيئة",
+    "desc": "بلوك يخلي الشخصية تتحرك ببطء شديد كالسلحفاة."
+   },
+   {
+    "name": "السرعة العادية",
+    "desc": "السرعة الافتراضية اللي بتتحرك بيها كل الشخصيات."
+   },
+   {
+    "name": "السرعة السريعة",
+    "desc": "بلوك يخلي الشخصية تجري بسرعة البرق كالصاروخ."
+   },
+   {
+    "name": "بلوك الانتظار",
+    "desc": "أمر يوقف السكربت لفترة زمنية محددة قبل الخطوة التالية."
+   },
+   {
+    "name": "السباق",
+    "desc": "لعبة بين شخصيتين أو أكتر بسرعات مختلفة لتحديد الفائز."
+   },
+   {
+    "name": "ترتيب الأوامر",
+    "desc": "تنفيذ خطوات البرمجة وراء بعضها بالخطوات الصحيحة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب خطوات سكريبت لقطة تجري بسرعة سريعة وتتحرك 4 خطوات.",
+    "a": "[علم أخضر] -> [سرعة سريعة] -> [تحرك للأمام 4]"
+   },
+   {
+    "q": "إزاي تخلي الشخصية تتحرك خطوتين، تقف ثانية، وبعدين تتحرك خطوتين كمان؟",
+    "a": "[تحرك 2] -> [انتظار ثانية] -> [تحرك 2]"
+   },
+   {
+    "q": "ليه بنستخدم بلوك سرعة السلحفاة في قصة سباق؟",
+    "a": "عشان نخلي الشخصية تتحرك ببطء وندي فرصة للشخصية التانية تكسب السباق."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey champion! Speed blocks let our characters move fast or slow in our story! Just like cars on the street, some go slow and others zoom super fast, making the game very exciting.",
+   "To make our hero move slowly, we place the slow speed block (the turtle) before the motion step. When triggered, our character takes its sweet time walking.",
+   "How does it work? The speed block changes the character's step counter; a small number makes it slow, medium is normal, and a big number makes it rocket-fast in the game.",
+   "Let's make a race! We grab a cat and a dog, give the cat a fast speed block and the dog a slow speed block, to see who reaches the finish line first.",
+   "Golden rule: Always place the speed block *before* the motion block you want to change, so the character knows whether to run or walk before moving.",
+   "Real-life use: Just like cartoons with races between hares and tortoises, controlling speed adds suspense and surprises for anyone watching your story."
+  ],
+  "example": "Let's build a fun race in ScratchJr! We add a cat, put the fast speed block (the rabbit) before its steps, and place a wait block (hourglass) right next to it to pause for one second. Then we make it move 5 steps forward. When we tap the green flag, the cat zooms like lightning, pauses to think for a second, and then keeps going. This makes the story super engaging and fun!",
+  "mistake": "A common mistake is putting the speed block *after* the motion block. Solution: Always start with your speed and wait blocks first, then add your motion block so the order works properly.",
+  "recap": "We learned how to change character speeds in ScratchJr and use the wait block to create fun races. Speed and waiting are the secrets to excitement in every story!",
+  "q": [
+   {
+    "t": "Which block makes a character pause for a moment before continuing?",
+    "o": [
+     "Speed block",
+     "Wait block",
+     "Hide block"
+    ],
+    "a": 1,
+    "why": "The wait block pauses the script for a set amount of time before doing the next step."
+   },
+   {
+    "t": "Why would we use the turtle speed block for our hero?",
+    "o": [
+     "To make it move very slowly",
+     "To make it disappear from the screen",
+     "To make it grow bigger"
+    ],
+    "a": 0,
+    "why": "The turtle speed represents very slow movement in the program."
+   },
+   {
+    "t": "If we want to create a race between two characters, what should we do?",
+    "o": [
+     "Give them both the exact same speed",
+     "Hide them both completely",
+     "Change each one's speed to make it competitive"
+    ],
+    "a": 2,
+    "why": "To make an exciting race, we must give characters different speeds (fast and slow)."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Speed and Wait Tools Matching Game",
+   "goal": "Match each block to its correct function in ScratchJr",
+   "pairs": [
+    [
+     "Slow Speed Block",
+     "Makes the character walk very slowly"
+    ],
+    [
+     "Fast Speed Block",
+     "Makes the character zoom like a rocket"
+    ],
+    [
+     "Wait Block",
+     "Pauses the character in place for a bit of time"
+    ],
+    [
+     "Normal Speed Block",
+     "Makes the character move at an ordinary, natural speed"
+    ]
+   ],
+   "success": "Yay! All characters moved at the correct speed and reached their goal in the race!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Character Speeds",
+    "text": "In the world of ScratchJr, not every character has to walk at the same normal speed. Sometimes we want our hero to sprint like a superhero, and other times we want a slow, leisurely stroll like a turtle. Controlling speed brings life and personality to your story, making it much more realistic and fun.",
+    "code": "Command: [Green Flag] -> [Fast Speed] -> [Move Forward 5]",
+    "output": "The character moves extremely fast right as the game starts."
+   },
+   {
+    "h": "Normal and Slow Speeds",
+    "text": "The app gives us many speed choices. Normal speed is what the hero always starts with. Slow speed makes their steps very calm and relaxed, just like walking gently on a beach. We use it when the hero is tired or thinking carefully about their next step.",
+    "code": "Command: [Green Flag] -> [Slow Speed] -> [Move Forward 3]",
+    "output": "The character walks step-by-step very slowly."
+   },
+   {
+    "h": "Rocket-Fast Speed",
+    "text": "When danger strikes in the story and the hero needs to escape quickly, we use the fast speed block! This lets the character dash across the screen in a fraction of a second, just like a mischievous bunny running away from a playful puppy.",
+    "code": "Command: [Green Flag] -> [Fast Speed] -> [Jump]",
+    "output": "The character jumps up into the air with lightning speed."
+   },
+   {
+    "h": "How to Build an Exciting Race",
+    "text": "Races are the best part of games! To make a race between a cat and a dog, we give the cat a fast speed block and the dog a slow speed block (or vice versa). When we press the green flag, both start racing and we see who crosses the finish line first. This lets us design wonderful competitive games.",
+    "code": "Character 1: [Fast Speed] + [Motion]\nCharacter 2: [Normal Speed] + [Motion]",
+    "output": "The first character sprints ahead and wins the race."
+   },
+   {
+    "h": "The Secret of Pausing: The Wait Block",
+    "text": "Life isn't always a mad dash! Sometimes the hero needs to stop for a second to grab a drink of water or look around before moving on. That's where the Wait block comes in. It acts like an hourglass, making the character stand still for a second or more before continuing.",
+    "code": "Command: [Move 3] -> [Wait 1 second] -> [Say 'Hooray!']",
+    "output": "The character moves, pauses for a second, and then speaks."
+   },
+   {
+    "h": "The Correct Order of Blocks",
+    "text": "Computers are very smart, but they follow instructions literally. If you put the wait or speed block in the wrong place, your story won't act the way you want. Always start by setting the speed, then the motion, and then add waiting when needed so your script plays out perfectly.",
+    "code": "Order: 1. Speed -> 2. Motion -> 3. Wait -> 4. More Motion",
+    "output": "The character executes each step in neat, accurate order."
+   },
+   {
+    "h": "Surprise Practice: The Cautious Hero",
+    "text": "Let's design a special hero story! The hero walks at normal speed, encounters a tree, uses a wait block to pause and look closely at the tree, and then switches to fast speed to zoom past it. This game teaches us how to smartly combine speed and waiting together.",
+    "code": "Command: [Move 2] -> [Wait 1 sec] -> [Fast Speed] -> [Move 4]",
+    "output": "The hero strolls, stops to think, and then dashes forward."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Slow Speed",
+    "desc": "A block that makes a character move very slowly like a turtle."
+   },
+   {
+    "name": "Normal Speed",
+    "desc": "The default speed at which all characters move."
+   },
+   {
+    "name": "Fast Speed",
+    "desc": "A block that makes a character zoom at lightning speed like a rocket."
+   },
+   {
+    "name": "Wait Block",
+    "desc": "A command that pauses the script for a set amount of time before the next step."
+   },
+   {
+    "name": "Race",
+    "desc": "A game between two or more characters at different speeds to find a winner."
+   },
+   {
+    "name": "Command Order",
+    "desc": "Executing programming steps one after another in the correct sequence."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write script steps for a cat running at fast speed and moving 4 steps.",
+    "a": "[Green Flag] -> [Fast Speed] -> [Move Forward 4]"
+   },
+   {
+    "q": "How do you make a character move 2 steps, wait 1 second, and then move 2 more steps?",
+    "a": "[Move 2] -> [Wait 1 second] -> [Move 2]"
+   },
+   {
+    "q": "Why do we use the turtle speed block in a race story?",
+    "a": "To make the character move slowly and give the other character a chance to win the race."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

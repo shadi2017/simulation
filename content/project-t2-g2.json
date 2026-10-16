@@ -1,0 +1,156 @@
+{
+ "en": [
+  {
+   "title": "Cosmic Ninja Escape",
+   "desc": "Help our ninja bounce, wall-jump, and slide through an alien obstacle course! Players must combine double jumps and moving platforms to reach the spaceship before time runs out.",
+   "tags": [
+    "Platformer",
+    "Physics",
+    "Action"
+   ],
+   "steps": [
+    "Create a player sprite and set up variable gravity so the ninja falls naturally with arrow key movement.",
+    "Add Scratch blocks for double jumping by tracking jump counts when touching the ground or air.",
+    "Program wall sliding and wall jump launch so the ninja grips vertical walls and springs away.",
+    "Design moving platforms that carry the player horizontally and vertically across the screen.",
+    "Place bouncy trampolines and slippery ice patches to add fun physics challenges.",
+    "Add a screen wrap-around effect so falling off the left edge teleports the ninja to the right side.",
+    "Build a goal spaceship at the end to win the game when touched."
+   ],
+   "rubric": [
+    "Player moves smoothly with gravity and double jump.",
+    "Wall sliding and wall jumps work properly.",
+    "Moving platforms and ice physics are integrated.",
+    "Screen wrap-around functions without bugs."
+   ],
+   "stretch": "Add a boss arena at the end where the ninja must dodge falling projectiles using all learned mechanics!"
+  },
+  {
+   "title": "Underwater Temple Explorer",
+   "desc": "Dive deep into an ancient temple using floating physics and tricky one-way platforms! Collect all the golden gems while avoiding bouncing hazards and slippery floors.",
+   "tags": [
+    "Exploration",
+    "Physics",
+    "Adventure"
+   ],
+   "steps": [
+    "Draw an explorer character and program smooth left-right arrow movement.",
+    "Set up low gravity to simulate floating underwater jumps and smooth falls.",
+    "Program one-way platform drop mechanics so the player can fall through floors by pressing down arrow.",
+    "Add bouncy trampoline pads on the temple floor for high super-jumps.",
+    "Place slippery ice blocks that make the explorer slide realistically when stopping.",
+    "Code screen wrap-around for secret looping rooms on the left and right borders.",
+    "Create score variables to count collected gems and display a victory screen."
+   ],
+   "rubric": [
+    "Low gravity and smooth movement feel underwater.",
+    "One-way platforms allow dropping down correctly.",
+    "Trampolines and ice add fun physics variety.",
+    "Gems collect and track score accurately."
+   ],
+   "stretch": "Add a moving platform elevator puzzle that requires timing your jumps perfectly to reach the highest chamber."
+  },
+  {
+   "title": "Cyber City Rooftop Dash",
+   "desc": "Race across futuristic neon rooftops in a high-speed physics challenge! Master wall jumps, double jumps, and bouncy trampolines to beat the high score.",
+   "tags": [
+    "Speedrun",
+    "Physics",
+    "Arcade"
+   ],
+   "steps": [
+    "Design a cyberpunk cat character and apply gravity and jump variables.",
+    "Program double jump mechanics to leap over wide gaps between skyscrapers.",
+    "Add wall sliding and wall jump launch scripts for vertical skyscraper escapes.",
+    "Insert moving platforms that act like flying drones between buildings.",
+    "Place bouncy neon trampolines on rooftop corners for massive vertical boosts.",
+    "Set up screen wrap-around so missing a jump on the edge teleports you safely or adds a cool loop effect.",
+    "Program a timer to track how fast you can finish the rooftop dash."
+   ],
+   "rubric": [
+    "Double jump and wall jump combos feel smooth.",
+    "Moving platforms transport the player accurately.",
+    "Trampolines give satisfying high bounces.",
+    "Timer tracks gameplay successfully."
+   ],
+   "stretch": "Include an arcade boss arena at the end of the rooftops where you must dodge laser beams using all physics tricks."
+  }
+ ],
+ "ar": [
+  {
+   "title": "هروب النينجا الفضائي",
+   "desc": "ساعد النينجا بتاعنا يقفز قفزة مزدوجة ويتزحلق على الحوائط جوه مغامرة فضائية! اللاعب لازم يجمع المهارات دي كلها عشان يوصل للصاروخ قبل ما الوقت يخلص.",
+   "tags": [
+    "منصات",
+    "فيزياء",
+    "أكشن"
+   ],
+   "steps": [
+    "اعمل كائن نينجا وظبط الجاذبية بتاعته عشان يقع بشكل طبيعي مع حركة الأسهم.",
+    "ضيف بلوكات سكراتش للقفزة المزدوجة عن طريق حساب عدد القفزات في الهواء.",
+    "برمج التزحلق على الحيطة ونطت الحيطة عشان النينجا يمسك في الحوائط وينط منها.",
+    "صمم منصات متحركة تشيل اللاعب يمين وشمال وفوق وتحت.",
+    "حط ترامبولين نطاط وزحاليق جليد عشان تزود تحديات الفيزياء الممتعة.",
+    "ضيف تأثير لف الشاشة بحيث لو خرجت من الشمال تطلع من اليمين.",
+    "ابني صاروخ النهاية عشان تكسب لما تلمسه."
+   ],
+   "rubric": [
+    "حركة اللاعب والجاذبية والقفزة المزدوجة شغالين بسلاسة.",
+    "التزحلق على الحوائط ونطاتها مظبوطين.",
+    "المنصات المتحركة وفيزياء الجليد شغالين تمام.",
+    "تأثير لف الشاشة بيشتغل من غير مشاكل."
+   ],
+   "stretch": "ضيف حلبة زعيم في الآخر يضطر فيها النينجا يتفادى الكور الساقطة بكل المهارات!"
+  },
+  {
+   "title": "مستكشف معبد الأعماق",
+   "desc": "انزل جوه معبد قديم باستخدام فيزياء الطفو ومنصات النزول السريع! اجمع كل الجواهر الدهبية وتجنب الحواجز النطاطة والأرضيات الزلقة.",
+   "tags": [
+    "مغامرة",
+    "فيزياء",
+    "استكشاف"
+   ],
+   "steps": [
+    "ارسم شخصية مستكشف وبرمج الحركة السريعة يمين وشمال.",
+    "ظبط جاذبية خفيفة عشان تحاكي القفزات تحت المية والسقوط الهادي.",
+    "برمج منصات النزول من اتجاه واحد عشان اللاعب يقدر ينزل تحت بضغط سهم التحت.",
+    "ضيف ترامبولين على أرضية المعبد عشان يعمل قفزات سوبر عالية.",
+    "حط بلوكات جليد زلقة تخلي المستكشف يتزحلق بواقعية وهو واقف.",
+    "اعمل تأثير لف الشاشة للغرف السرية على الجنبين.",
+    "انشئ متغيرات النقاط عشان تعد الجواهر وتظهر شاشة الفوز."
+   ],
+   "rubric": [
+    "الجاذبية الخفيفة والحركة بيفكرونا بالمية.",
+    "منصات اتجاه واحد بتخليك تنزل لتحت صح.",
+    "الترامبولين والجليد بيضيفوا تنوع حلو.",
+    "الجواهر بتتحسب وتسجل النقاط مظبوط."
+   ],
+   "stretch": "ضيف لغز أسانسير منصات متحركة محتاج توقيت دقيق في النط للوصول لأعلى غرفة."
+  },
+  {
+   "title": "جري مدينة المستقبل",
+   "desc": "اجري فوق عمارات نيون مستقبلية في تحدي فيزياء سريع جداً! اتقن نطات الحائط، القفزة المزدوجة، والترامبولين عشان تحطم الرقم القياسي.",
+   "tags": [
+    "سرعة",
+    "فيزياء",
+    "أركيد"
+   ],
+   "steps": [
+    "صمم شخصية قطة سايبربانك وطبق عليها الجاذبية ومتغيرات النط.",
+    "برمج القفزة المزدوجة عشان تعدي الفراغات الواسعة بين ناطحات السحاب.",
+    "ضيف سكربتات التزحلق على الحائط والنط للهروب من المباني.",
+    "حط منصات متحركة بتطير زي الطيارات المسيرة بين المباني.",
+    "رص ترامبولين نيون على حروف السطوح عشان تاخد دفعات لفوق قوية.",
+    "ظبط لف الشاشة بحيث لو وقعت من الحرف تظهر في الناحية التانية.",
+    "برمج مؤقت عشان تحسب الوقت اللي خدته في السباق."
+   ],
+   "rubric": [
+    "القفزة المزدوجة ونطة الحيطة شكلهم سلس.",
+    "المنصات المتحركة بتنقل اللاعب بدقة.",
+    "الترامبولين بيدي نطات عالية وممتعة.",
+    "المؤقت بيسجل وقت اللعبة بنجاح."
+   ],
+   "stretch": "حط حلبة زعيم في نهاية السطوح عشان تتفادى أشعة الليزر بكل حيل الفيزياء."
+  }
+ ]
+}

@@ -1,0 +1,328 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تريد إعطاء تعليمات لشخص ليكرّر عملاً معيناً عدة مرات، مثل صفقات التصفيق في الحفلات. في البرمجة، نستخدم الحلقات (Loops) لنفس الغرض تماماً دون كتابة نفس الكود مئات المرات.",
+   "حلقة for في بايثون هي الأداة المثالية لتكرار الأوامر عبر تسلسل معروف مسبقاً، مثل قائمة من الكلمات أو الأرقام، وتتحرك بانتظام عبر كل عنصر بالترتيب.",
+   "تأتي دالة range() لمساعدتنا عندما نريد تكرار الكود لعدد محدد من المرات عبر توليد متتابعة رقمية تبدأ من الصفر افتراضياً وتنتهي قبل الرقم المكتوب بقليل.",
+   "أما حلقة while فتستمر في الدوران والعمل طالما أن الشرط المرفق بها يحمل قيمة صحيحة (True)، وهي مفيدة جداً عندما لا ندري متى سينتهي الحدث بالضبط.",
+   "لكن احذر! إذا نسيت تغيير الشرط داخل حلقة while، فسوف تدور للأبد فيما يُسمى (Endless Loop). وهنا يأتي دور أمر break للخروج الفوري بأمان تام.",
+   "في الحياة اليومية، تماماً كما تفحص بطاريات ألعابك واحدة تلو الأخرى حتى تجد الفارغة وتتوقف، هكذا تعمل أدوات التحكم في الحلقات لتنظيم برامجنا بكفاءة."
+  ],
+  "example": "لنفترض أننا نريد طباعة الأرقام من 0 إلى 2 باستخدام حلقة for ودالة range(3). الكود سيكون هكذا:\nfor i in range(3):\n    print(i)\nالسبب أن range(3) تُنتج الأرقام 0 ثم 1 ثم 2، والمتغير i يحمل كل رقم في كل دورة ليتم طباعته على الشاشة بدقة وسرعة.",
+  "mistake": "الخطأ الشائع هو نسيان تحديث المتغير داخل حلقة while، مما يؤدي إلى تجميد البرنامج في حلقة لا نهائية. الحل هو التأكد من تعديل قيمة المتغير مع كل دورة ليقترب الشرط من أن يصبح خاطئاً (False).",
+  "recap": "تتيح لنا حلقات for وwhile تنفيذ الأوامر المتكررة بمرونة وكفاءة عالية. وتساعدنا أدوات مثل range وbreak في التحكم بمسار البرنامج وأمانه.",
+  "q": [
+   {
+    "t": "ماذا تفعل الدالة range(3) عند استخدامها مع حلقة for؟",
+    "o": [
+     "تولد الأرقام من 1 إلى 3",
+     "تولد الأرقام من 0 إلى 2",
+     "تكرر الكود 4 مرات"
+    ],
+    "a": 1,
+    "why": "دالة range(5) أو range(3) تبدأ افتراضياً من الصفر وتتوقف قبل الرقم المحدد."
+   },
+   {
+    "t": "متى تستمر حلقة while في العمل؟",
+    "o": [
+     "طالما أن شرطها يحمل القيمة True",
+     "لمرة واحدة فقط",
+     "عندما تتوقف بايثون عن العمل"
+    ],
+    "a": 0,
+    "why": "تعمل حلقة while باستمرار طالما أن الشرط المقترن بها صحيح."
+   },
+   {
+    "t": "ما هو دور أمر break داخل الحلقات؟",
+    "o": [
+     "حذف الكود بالكامل",
+     "الخروج الفوري من الحلقة",
+     "تسريع سرعة المعالج"
+    ],
+    "a": 1,
+    "why": "يُستخدم break لكسر الحلقة والخروج منها قبل اكتمالها الطبيعي."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "ربط أدوات التحكم بحلقات بايثون",
+   "goal": "صل كل أداة أو دالة في بايثون بوظيفتها البرمجية الصحيحة.",
+   "pairs": [
+    [
+     "for",
+     "التكرار عبر تسلسل معروف"
+    ],
+    [
+     "range()",
+     "توليد متتابعة عددية محددة"
+    ],
+    [
+     "while",
+     "التكرار بشرط مستمر"
+    ],
+    [
+     "break",
+     "الخروج الآمن من الحلقة"
+    ]
+   ],
+   "success": "رائع! لقد نظّمت حلقاتك البرمجية بذكاء وأمان!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة إلى حلقات التكرار (Loops)",
+    "text": "التكرار هو أساس البرمجة الذكية. بدلاً من كتابة نفس سطر الطباعة مئة مرة، تمنحنا الحلقات القدرة على أمر الحاسوب بتنفيذ المهمة مراراً وتكراراً. تخيل أنك ترتب أحذيتك في الخزانة واحدًا تلو الآخر؛ هذا هو بالضبط عمل الحلقات في بايثون.",
+    "code": "# تكرار تحية بسيطة 3 مرات\nfor i in range(3):\n    print(\"أهلاً بك!\")",
+    "output": "أهلاً بك!\nأهلاً بك!\nأهلاً بك!"
+   },
+   {
+    "h": "حلقة for وتسلسل العناصر",
+    "text": "تتفرد حلقة for في بايثون بقدرتها على المرور عبر أي تسلسل، سواء كان قائمة كلمات أو حروف نصية، بترتيب ظهورها. إنها تشبه تماماً قراءة كتاب صفحة بعد صفحة حتى تصل إلى النهاية.",
+    "code": "fruits = [\"تفاح\", \"موز\", \"برتقال\"]\nfor f in fruits:\n    print(f)",
+    "output": "تفاح\nموز\nبرتقال"
+   },
+   {
+    "h": "دالة range() وتوليد الأرقام",
+    "text": "حين تحتاج إلى تكرار عمل عدد محدد من المرات دون الحاجة لقائمة جاهزة، تأتي دالة range() لإنقاذك. فهي تولد متتابعات عددية بكفاءة عالية دون استهلاك مساحة كبيرة في الذاكرة. تذكر دائماً أن العد يبدأ من الصفر.",
+    "code": "for num in range(4):\n    print(num)",
+    "output": "0\n1\n2\n3"
+   },
+   {
+    "h": "تحديد بداية ونهاية وخطوة range()",
+    "text": "لا تقتصر range على البداية من الصفر، بل يمكنك تخصيص نقطة البداية، والنهاية، وحتى مقدار القفزة (الخطوة) بين الأرقام، تماماً مثل العد بالعشرات أو القفز فوق مربعات لعبة الحجلة.",
+    "code": "print(list(range(1, 10, 2)))",
+    "output": "[1, 3, 5, 7, 9]"
+   },
+   {
+    "h": "حلقة while والتحقق الشرطي",
+    "text": "تختلف حلقة while عن for بأنها لا تهتم بتسلسل جاهز، بل تعمل بناءً على شرط بولياني (صحيح أو خطأ). تظل الحلقة تدور وتنفذ الأوامر طالما ظل الشرط محققاً، مثل الاستمرار في نفخ بالون حتى يصبح بالحجم المطلوب.",
+    "code": "count = 2\nwhile count > 0:\n    print(count)\n    count -= 1",
+    "output": "2\n1"
+   },
+   {
+    "h": "الهروب من الحلقات اللانهائية بـ break",
+    "text": "الحلقة اللانهائية تحدث عندما يظل شرط while صحيحاً إلى الأبد ولا يتغير أبداً، مما قد يتسبب في تجميد البرنامج. لمنع ذلك، نستخدم أمر break للهروب الفوري من الحلقة بمجرد تحقيق ظرف معين.",
+    "code": "n = 1\nwhile True:\n    print(n)\n    if n == 2:\n        break\n    n += 1",
+    "output": "1\n2"
+   },
+   {
+    "h": "تخطي الدورات باستخدام continue",
+    "text": "أحياناً لا تريد الخروج تماماً من الحلقة، بل تريد فقط تخطي الدورة الحالية والانتقال فوراً للدورة التي تليها. يأتي أمر continue هنا كأداة قفز ذكية تتجاوز الخطوات غير المرغوب فيها.",
+    "code": "for i in range(4):\n    if i == 2:\n        continue\n    print(i)",
+    "output": "0\n1\n3"
+   },
+   {
+    "h": "استخدام else مع الحلقات",
+    "text": "تدعم بايثون ميزة فريدة وهي وضع قسم else مع الحلقات. يتم تنفيذ كود else بعد انتهاء الحلقة طبيعياً ودون أي انقطاع بسبب أمر break، لتأكيد إتمام المهمة بنجاح.",
+    "code": "for x in range(2):\n    print(x)\nelse:\n    print(\"انتهت الحلقة!\")",
+    "output": "0\n1\nانتهت الحلقة!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "for",
+    "desc": "حلقة للتكرار عبر عناصر أي تسلسل معروف"
+   },
+   {
+    "name": "while",
+    "desc": "حلقة تستمر طالما أن الشرط صحيح"
+   },
+   {
+    "name": "range()",
+    "desc": "دالة لتوليد متتابعات أرقام قابلة للتكرار"
+   },
+   {
+    "name": "break",
+    "desc": "أمر للخروج الفوري من الحلقة الحالية"
+   },
+   {
+    "name": "continue",
+    "desc": "أمر لتخطي الدورة الحالية والانتقال للتالية"
+   },
+   {
+    "name": "else (مع الحلقة)",
+    "desc": "كود يُنفذ عند انتهاء الحلقة طبيعياً دون break"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب حلقة for تطبع الأرقام من 0 إلى 4 باستخدام range.",
+    "a": "for i in range(5): print(i)"
+   },
+   {
+    "q": "ما هو الناتج المتوقع لتنفيذ range(1, 4) كقائمة؟",
+    "a": "[1, 2, 3]"
+   },
+   {
+    "q": "كيف توقف حلقة while فوراً إذا وصل المتغير x إلى 5؟",
+    "a": "باستخدام جملة الشرط if x == 5: break داخل الحلقة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you want to instruct someone to repeat a task several times, like clapping at a party. In programming, we use loops for this exact purpose without writing the same code hundreds of times.",
+   "The for loop in Python is the perfect tool to iterate over a pre-known sequence, like a list of words or numbers, moving smoothly and orderly through each item.",
+   "The range() function helps when we want to repeat code a specific number of times by generating a numeric progression starting at zero by default.",
+   "Meanwhile, the while loop keeps spinning as long as its attached condition remains True, which is super useful when we don't know exactly when an event will end.",
+   "Watch out! If you forget to update the condition inside a while loop, it will spin forever in an Endless Loop. That's when the break statement steps in for safe escape.",
+   "In real life, just like checking your toy batteries one by one until you find the dead one and stop, loop controls help us manage our programs efficiently."
+  ],
+  "example": "Suppose we want to print numbers from 0 to 2 using a for loop and range(3). The code looks like this:\nfor i in range(3):\n    print(i)\nThe reason is that range(3) produces numbers 0, then 1, then 2, and the variable i holds each number in turn to be printed precisely and quickly.",
+  "mistake": "A common mistake is forgetting to update the variable inside a while loop, causing the program to freeze in an infinite loop. The fix is ensuring the variable changes every iteration so the condition moves closer to False.",
+  "recap": "For and while loops let us execute repetitive tasks flexibly and efficiently. Tools like range and break help us control program flow and safety.",
+  "q": [
+   {
+    "t": "What does the range(3) function do when used in a for loop?",
+    "o": [
+     "Generates numbers from 1 to 3",
+     "Generates numbers from 0 to 2",
+     "Repeats code 4 times"
+    ],
+    "a": 1,
+    "why": "range(5) or range(3) starts at zero by default and stops right before the specified number."
+   },
+   {
+    "t": "When does a while loop keep running?",
+    "o": [
+     "As long as its condition is True",
+     "Only once",
+     "When Python stops working"
+    ],
+    "a": 0,
+    "why": "A while loop continues executing as long as its associated condition evaluates to True."
+   },
+   {
+    "t": "What is the role of the break statement inside loops?",
+    "o": [
+     "Delete all code",
+     "Exit the loop immediately",
+     "Speed up the processor"
+    ],
+    "a": 1,
+    "why": "break is used to break out of the loop and exit before natural completion."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching Python Loop Controls",
+   "goal": "Match each Python tool or function to its correct programming role.",
+   "pairs": [
+    [
+     "for",
+     "Iterating over a known sequence"
+    ],
+    [
+     "range()",
+     "Generating a specific number sequence"
+    ],
+    [
+     "while",
+     "Repeating with an ongoing condition"
+    ],
+    [
+     "break",
+     "Safely exiting the loop"
+    ]
+   ],
+   "success": "Awesome! You organized your program loops smartly and safely!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Loops",
+    "text": "Iteration is the foundation of smart programming. Instead of writing the same print line a hundred times, loops give us the power to command the computer to do the job repeatedly. Imagine organizing your shoes in the rack one by one; this is exactly how loops work in Python.",
+    "code": "# Repeat a simple greeting 3 times\nfor i in range(3):\n    print(\"Hello!\")",
+    "output": "Hello!\nHello!\nHello!"
+   },
+   {
+    "h": "The for Loop & Sequences",
+    "text": "Python's for loop stands out for its ability to iterate through any sequence, whether a list of words or text characters, in the exact order they appear. It is just like reading a book page by page until you reach the end.",
+    "code": "fruits = [\"apple\", \"banana\", \"orange\"]\nfor f in fruits:\n    print(f)",
+    "output": "apple\nbanana\norange"
+   },
+   {
+    "h": "The range() Function & Numbers",
+    "text": "When you need to repeat a task a fixed number of times without a ready-made list, the range() function comes to save the day. It generates numeric progressions efficiently without consuming much memory. Always remember counting starts at zero.",
+    "code": "for num in range(4):\n    print(num)",
+    "output": "0\n1\n2\n3"
+   },
+   {
+    "h": "Start, Stop, and Step in range()",
+    "text": "Range isn't limited to starting at zero; you can customize the start point, stop point, and even the jump size (step) between numbers, much like counting by tens or skipping hopscotch squares.",
+    "code": "print(list(range(1, 10, 2)))",
+    "output": "[1, 3, 5, 7, 9]"
+   },
+   {
+    "h": "The while Loop & Conditionals",
+    "text": "A while loop differs from for because it doesn't care about a ready sequence, running instead based on a boolean condition (True or False). The loop keeps spinning as long as the condition remains met, like blowing up a balloon until it reaches the right size.",
+    "code": "count = 2\nwhile count > 0:\n    print(count)\n    count -= 1",
+    "output": "2\n1"
+   },
+   {
+    "h": "Escaping Endless Loops with break",
+    "text": "An infinite loop happens when a while condition stays True forever and never changes, potentially freezing your program. To prevent this, we use the break statement to escape the loop immediately once a specific circumstance is met.",
+    "code": "n = 1\nwhile True:\n    print(n)\n    if n == 2:\n        break\n    n += 1",
+    "output": "1\n2"
+   },
+   {
+    "h": "Skipping Iterations with continue",
+    "text": "Sometimes you don't want to exit the loop entirely, but just skip the current iteration and jump straight to the next one. The continue statement acts as a smart jumping tool bypassing unwanted steps.",
+    "code": "for i in range(4):\n    if i == 2:\n        continue\n    print(i)",
+    "output": "0\n1\n3"
+   },
+   {
+    "h": "Using else with Loops",
+    "text": "Python supports a unique feature of attaching an else clause to loops. The else code executes after the loop finishes naturally without any interruption by a break statement, confirming successful task completion.",
+    "code": "for x in range(2):\n    print(x)\nelse:\n    print(\"Loop completed!\")",
+    "output": "0\n1\nLoop completed!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "for",
+    "desc": "Loop to iterate over elements of any known sequence"
+   },
+   {
+    "name": "while",
+    "desc": "Loop that continues as long as a condition is True"
+   },
+   {
+    "name": "range()",
+    "desc": "Function to generate iterable number sequences"
+   },
+   {
+    "name": "break",
+    "desc": "Statement to exit the current loop immediately"
+   },
+   {
+    "name": "continue",
+    "desc": "Statement to skip current iteration and move to next"
+   },
+   {
+    "name": "else (with loop)",
+    "desc": "Code executed when loop finishes naturally without break"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a for loop that prints numbers from 0 to 4 using range.",
+    "a": "for i in range(5): print(i)"
+   },
+   {
+    "q": "What is the expected output of executing range(1, 4) as a list?",
+    "a": "[1, 2, 3]"
+   },
+   {
+    "q": "How do you stop a while loop immediately if variable x reaches 5?",
+    "a": "By using the conditional statement if x == 5: break inside the loop."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html"
+  }
+ ],
+ "grounded": true
+}

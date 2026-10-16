@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، تخيل إن شخصيتك في لعبة الأبطال عندها طاقة أو 'صحة' زي زجاجة المياة اللي بتخلص لما بنشرب منها، وده بيفدنا عشان نعرف كام فرصة لعب باقية معانا.",
+   "عشان نعمل كده في سكراتش، بنعمل متغير جديد اسمه 'الصحة' ونحط فيه رقم كبير في الأول زي 3، عن طريق بلوك 'اجعل الصحة تساوي 3'.",
+   "إزاي المتغير بيشتغل؟ هو زي صندوق سحري جواه رقم كل ما نتخبط في عقبة بينقص، ولما الرقم يوصل صفر بنعرف إن اللعبة انتهت.",
+   "لو البطل لمس فخ أو نار، بنستخدم بلوك 'غير الصحة بمقدار -1' عشان نطرح نقطة من الصحة في كل مرة بيحصل فيها اصطدام.",
+   "قاعدة دهبية: دايماً حط شرط 'إذا كانت الصحة تساوي 0' جوه حلقة التكرار، عشان اللعبة توقف فوراً وتقول 'لعبة انتهت' بأسلوب ممتع.",
+   "الاستخدام الحقيقي: الفكرة دي مستخدمة في كل ألعاب الفيديو المشهورة زي ماين كرافت وماريو عشان تدي اللاعب حماس وتحدي حقيقي."
+  ],
+  "example": "تعالوا نعمل كود بسيط في سكراتش: لما الشخصية تلمس 'النار'، بنحط بلوك 'إذا كان لمس النار'، جواه بنكتب 'غير الصحة بمقدار -1'، وبعدين بلوك 'انتظر 1 ثانية' عشان الشخصية ما تفقدش كل دمها مرة واحدة وهي واقفة في مكانها، وفي الآخر بنحط بلوك شرطي لو الصحة بقت صفر بنشغل أمر 'أوقف الكل'.",
+  "mistake": "الخطأ الشهير إننا ننسى نحط وقت انتظار بعد الاصطدام بالفخ، وده بيخلي الصحة تنقص كلها في ثانية واحدة وتخسر بسرعة. الحل هو إضافة بلوك 'انتظر 1 ثانية' بعد تغيير المتغير.",
+  "recap": "شريط الصحة بيخلي لعبتنا ممتعة ومليانة تحدي. بنتابع المتغير، نقلل قيمته عند الإصطدام، وننهي اللعبة لما يوصل للصفر.",
+  "q": [
+   {
+    "t": "ما هو البلوك المستخدم لإنقاص نقطة واحدة من الصحة في سكراتش؟",
+    "o": [
+     "اجعل الصحة تساوي 1",
+     "غير الصحة بمقدار -1",
+     "انقل الصحة إلى البداية"
+    ],
+    "a": 1,
+    "why": "لأن بلوك التغيير بقيمة سالبة بيطرح من المتغير الحالي."
+   },
+   {
+    "t": "متى نقول إن اللعبة انتهت في تصميم ألعاب سكراتش؟",
+    "o": [
+     "عندما تصبح الصحة مساوية لـ 0",
+     "عندما تبدأ اللعبة",
+     "عندما يضغط اللاعب على الزر الأخضر"
+    ],
+    "a": 0,
+    "why": "نفاد الصحة بالكامل يعني انتهاء الفرص وخسارة اللعبة."
+   },
+   {
+    "t": "لماذا نضيف بلوك 'انتظر 1 ثانية' بعد ملامسة الفخ؟",
+    "o": [
+     "لكي تجري الشخصية أسرع",
+     "لكي لا تنقص الصحة كلها دفعة واحدة",
+     "لكي تختفي الشخصية نهائياً"
+    ],
+    "a": 1,
+    "why": "لتجنب استنزاف جميع نقاط الصحة في جزء من الثانية أثناء ملامسة الفخ."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز عناصر نظام الصحة والضرر",
+   "goal": "صنف كل جملة أو بلوك إلى المكان الصحيح الخاص بمتغير الصحة أو أحداث الضرر.",
+   "buckets": [
+    "أوامر الصحة والخصم",
+    "أوامر نهاية اللعبة"
+   ],
+   "items": [
+    {
+     "t": "غير الصحة بمقدار -1",
+     "b": 0
+    },
+    {
+     "t": "إذا كانت الصحة = 0",
+     "b": 1
+    },
+    {
+     "t": "اجعل الصحة تساوي 3",
+     "b": 0
+    },
+    {
+     "t": "أوقف جميع اللعبة",
+     "b": 1
+    },
+    {
+     "t": "إذا كان لامس الشوكة",
+     "b": 0
+    },
+    {
+     "t": "قل لعبة انتهت لمدة 2 ثانية",
+     "b": 1
+    }
+   ],
+   "success": "يا سلام! رتبت أكواد الصحة بذكاء وأصبحت لعبتك جاهزة وتعمل كالمحترفين!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم شريط الصحة في الألعاب",
+    "text": "فكر في طاقة الشخصية مثل عدد أرواحك في لعبة فيديو أو عدد محاولاتك في مسابقة مدرسية. الصحة تعبر عن مدى بقائك في اللعبة، وكلما تعرضت لخطر تفقد جزءاً منها حتى تنتهي تماماً.",
+    "code": "المتغير: الصحة = 3",
+    "output": "يظهر صندوق الصحة في أعلى الشاشة برقم 3"
+   },
+   {
+    "h": "إنشاء متغير الصحة في سكراتش",
+    "text": "لكي نصنع شريط صحة، يجب أن ننشئ متغيرًا جديدًا في سكراتش باسم 'الصحة'. المتغير يشبه صندوق تخزين نضع فيه رقمًا يتغير طوال فترة اللعب.",
+    "code": "أنشئ متغير -> الصحة",
+    "output": "ظهور عداد الصحة على منصة اللعب"
+   },
+   {
+    "h": "تحديد القيمة الأولية للصحة",
+    "text": "في بداية أي لعبة، يجب أن نعطي البطل طاقة كاملة. نستخدم لبنة 'اجعل الصحة تساوي 3' عند النقر على العلم الأخضر لضمان بدء اللعبة بفرص كاملة.",
+    "code": "عند نقر العلم الأخضر -> اجعل الصحة تساوي 3",
+    "output": "تعود الصحة دائماً للرقم 3 عند بداية اللعبة"
+   },
+   {
+    "h": "مفهوم الضرر والاصطدام",
+    "text": "عندما يصطدم بطل اللعبة بعقبة مثل صخرة حادة أو نيران، فهذا يسمى 'حدث اصطدام'. فيزيائياً، الاصطدام يعني نقل طاقة ضارة تقلل من طاقة شخصيتنا.",
+    "code": "إذا كان ملامساً لـ (النار)",
+    "output": "يكتشف الحاسوب حدوث الاصطدام فوراً"
+   },
+   {
+    "h": "خصم نقاط الصحة عند الخطر",
+    "text": "بمجرد حدوث الاصطدام بالعقبة، يجب أن نعاقب اللاعب بنقصان فرصه. نستخدم لبنة 'غير الصحة بمقدار -1' لخصم نقطة واحدة من العداد.",
+    "code": "إذا كان ملامساً لـ (النار) -> غير الصحة بمقدار -1",
+    "output": "ينخفض عداد الصحة من 3 إلى 2"
+   },
+   {
+    "h": "حماية البطل بوقت الانتظار",
+    "text": "إذا لم نضع فترة انتظار قصيرة بعد الاصطدام، سيقوم الحاسوب بخصم كل نقاط الصحة في جزء من الثانية لأن ملامسة النار تستمر لعدة إطارات.",
+    "code": "غير الصحة بمقدار -1 -> انتظر 1 ثانية",
+    "output": "ينقص القلب ببطء وبشكل عادل ومنطقي"
+   },
+   {
+    "h": "مراقبة شروط نهاية اللعبة",
+    "text": "اللعبة الذكية يجب أن تعرف متى تنتهي. نراقب دائماً قيمة متغير الصحة لنعرف هل وصل للصفر أم لا، باستخدام لبنة الشرط 'إذا كان'.",
+    "code": "إذا كانت (الصحة) < 1",
+    "output": "يفحص الكود حالة الصحة في كل حركة"
+   },
+   {
+    "h": "تفعيل شاشة خسارة اللعبة",
+    "text": "عندما تصل الصحة إلى صفر، يجب إيقاف كل الكائنات وإظهار رسالة الخسارة. نستخدم لبنة 'أوقف الكل' لإنهاء اللعبة وإرسال تحية للمحاولة مرة أخرى.",
+    "code": "إذا كانت (الصحة) = 0 -> أوقف الكل",
+    "output": "تتوقف اللعبة تماماً وتظهر رسالة النهاية"
+   }
+  ],
+  "reference": [
+   {
+    "name": "الصحة (Health)",
+    "desc": "متغير رقمي يحدد عدد الفرص الباقية للاعب."
+   },
+   {
+    "name": "الاصطدام (Collision)",
+    "desc": "حدث تلامس بين كائن البطل وكائن الفخ أو العقبة."
+   },
+   {
+    "name": "التغيير بمقدار سالب (Decrement)",
+    "desc": "طرح قيمة معينة من المتغير لتخفيضه."
+   },
+   {
+    "name": "أوقف الكل (Stop All)",
+    "desc": "أمر يوقف تشغيل جميع السكربتات والكائنات في اللعبة."
+   },
+   {
+    "name": "الشرط (Condition)",
+    "desc": "فحص ما إذا كان هناك شيء صحيح لتنفيذ أمر معين."
+   },
+   {
+    "name": "وقت الانتظار (Wait)",
+    "desc": "تأخير زمني لمنع تكرار الضرر بسرعة كبيرة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة التي نستخدمها لإنقاص نقطة واحدة من الصحة؟",
+    "a": "غير الصحة بمقدار -1"
+   },
+   {
+    "q": "ما القيمة التي نبدأ بها الصحة غالباً في بداية اللعبة؟",
+    "a": "3 أو أي رقم موجب تختاره"
+   },
+   {
+    "q": "ماذا يحدث عندما يصل متغير الصحة إلى الصفر في كود اللعبة؟",
+    "a": "تنتهي اللعبة أو يتوقف كل شيء (Game Over)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hero, imagine your character has energy or 'health' like a water bottle that empties when you drink; this helps us track how many chances remain.",
+   "To do this in Scratch, we create a new variable named 'Health' and set it to a starting number like 3 using the 'set Health to 3' block.",
+   "How does a variable work? It's like a magical box holding a number that decreases whenever we hit an obstacle, and when it hits zero, the game ends.",
+   "If the hero touches a trap or fire, we use the 'change Health by -1' block to subtract a point from the health every time a collision happens.",
+   "Golden rule: Always put an 'if Health equals 0' condition inside your loop so the game stops immediately and says 'Game Over' in a fun way.",
+   "Real-world use: This idea is used in every famous video game like Minecraft and Mario to give the player real excitement and challenge."
+  ],
+  "example": "Let's make a simple Scratch script: When the character touches 'Fire', we use an 'if touching Fire' block, inside it we put 'change Health by -1', followed by a 'wait 1 secs' block so the character doesn't lose all their health instantly while standing still, and finally a conditional block that stops all scripts if health reaches zero.",
+  "mistake": "A common mistake is forgetting to add a wait time after colliding with a trap, causing health to drain completely in a split second. The fix is to add a 'wait 1 second' block after changing the variable.",
+  "recap": "The health bar makes our game fun and challenging. We track the variable, decrease its value on collision, and end the game when it hits zero.",
+  "q": [
+   {
+    "t": "Which block is used to subtract one point from health in Scratch?",
+    "o": [
+     "set Health to 1",
+     "change Health by -1",
+     "switch costume to Health"
+    ],
+    "a": 1,
+    "why": "Because changing a variable by a negative value subtracts from the current amount."
+   },
+   {
+    "t": "When do we say the game is over in Scratch game design?",
+    "o": [
+     "When Health equals 0",
+     "When the game starts",
+     "When the green flag is clicked"
+    ],
+    "a": 0,
+    "why": "Running out of health entirely means running out of chances and losing the game."
+   },
+   {
+    "t": "Why do we add a 'wait 1 second' block after touching a trap?",
+    "o": [
+     "To make the character run faster",
+     "To prevent health from draining all at once",
+     "To make the character disappear forever"
+    ],
+    "a": 1,
+    "why": "To avoid draining all health points in a fraction of a second while touching the hazard."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sort Health & Damage Elements",
+   "goal": "Classify each statement or block into the correct category of health variables or game-over events.",
+   "buckets": [
+    "Health & Deduction Commands",
+    "Game Over Commands"
+   ],
+   "items": [
+    {
+     "t": "change Health by -1",
+     "b": 0
+    },
+    {
+     "t": "if Health = 0",
+     "b": 1
+    },
+    {
+     "t": "set Health to 3",
+     "b": 0
+    },
+    {
+     "t": "stop all",
+     "b": 1
+    },
+    {
+     "t": "if touching spike",
+     "b": 0
+    },
+    {
+     "t": "say Game Over for 2 secs",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the health codes smartly and your game is ready and working like a pro!"
+  },
+  "sections": [
+   {
+    "h": "The Health Bar Concept in Games",
+    "text": "Think of a character's energy like your number of lives in a video game or tries in a school quiz. Health represents your survival time, and whenever you face danger, you lose a piece of it until it runs out.",
+    "code": "Variable: Health = 3",
+    "output": "Health display appears at the top of the screen showing 3"
+   },
+   {
+    "h": "Creating the Health Variable in Scratch",
+    "text": "To build a health bar, we must create a new variable in Scratch named 'Health'. A variable is like a storage box where we keep a number that changes throughout the game.",
+    "code": "Make a Variable -> Health",
+    "output": "Health counter appears on the game stage"
+   },
+   {
+    "h": "Setting Initial Health Value",
+    "text": "At the start of any game, we must give our hero full energy. We use the 'set Health to 3' block when the green flag is clicked to ensure the game starts with full chances.",
+    "code": "When green flag clicked -> set Health to 3",
+    "output": "Health always resets to 3 when starting the game"
+   },
+   {
+    "h": "The Concept of Damage and Collision",
+    "text": "When our game hero crashes into an obstacle like a sharp rock or fire, this is called a 'collision event'. Physically, a collision means transferring harmful energy that reduces our character's power.",
+    "code": "if touching (Fire)",
+    "output": "Computer detects the collision instantly"
+   },
+   {
+    "h": "Deducting Health Points on Hazard",
+    "text": "As soon as a collision with an obstacle happens, we must penalize the player by reducing their chances. We use the 'change Health by -1' block to subtract one point from the counter.",
+    "code": "if touching (Fire) -> change Health by -1",
+    "output": "Health counter decreases from 3 to 2"
+   },
+   {
+    "h": "Protecting the Hero with Wait Time",
+    "text": "If we don't put a short waiting period after a collision, the computer will drain all health points in a fraction of a second because touching fire lasts across multiple frames.",
+    "code": "change Health by -1 -> wait 1 seconds",
+    "output": "Heart decreases slowly, fairly, and logically"
+   },
+   {
+    "h": "Monitoring Game Over Conditions",
+    "text": "A smart game must know when to end. We constantly monitor the value of the health variable to see if it reached zero or not, using an 'if' condition block.",
+    "code": "if (Health) < 1",
+    "output": "Code checks the health status with every movement"
+   },
+   {
+    "h": "Triggering the Game Over Screen",
+    "text": "When health reaches zero, we must stop all sprites and show the loss message. We use the 'stop all' block to end the game and send a greeting to try again.",
+    "code": "if (Health) = 0 -> stop all",
+    "output": "Game stops completely and the end message appears"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Health",
+    "desc": "A numerical variable determining the remaining chances of the player."
+   },
+   {
+    "name": "Collision",
+    "desc": "A touching event between the hero sprite and a trap or obstacle sprite."
+   },
+   {
+    "name": "Decrement",
+    "desc": "Subtracting a specific value from a variable to lower it."
+   },
+   {
+    "name": "Stop All",
+    "desc": "A block that stops running all scripts and sprites in the game."
+   },
+   {
+    "name": "Condition",
+    "desc": "Checking if something is true to execute a specific command."
+   },
+   {
+    "name": "Wait Time",
+    "desc": "A time delay to prevent damage from repeating too fast."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block do we use to subtract one point from health?",
+    "a": "change Health by -1"
+   },
+   {
+    "q": "What value do we usually start health with at the beginning of a game?",
+    "a": "3 or any positive number you choose"
+   },
+   {
+    "q": "What happens when the health variable reaches zero in the game code?",
+    "a": "The game ends or everything stops (Game Over)"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

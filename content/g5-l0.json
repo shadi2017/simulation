@@ -1,0 +1,346 @@
+{
+ "ar": {
+  "steps": [
+   "لغة JavaScript هي الأداة السحرية اللي بتدي صفحات الويب حيوية وأوامر وتفاعلات، ومش مجرد كلام ثابت.",
+   "عشان نخلي المتصفح يشغل كود JavaScript، بنربط ملف خارجي بملف HTML باستخدام وسم script وعلامة src.",
+   "عشان نطبع رسائل ونشوف حالة الكود شغال ولا لأ، بنستخدم أدوات وحدة تحكم المتصفح وخاصة أمر console.log().",
+   "تعال نجرب نكتب جوه ملف JavaScript: console.log(\"أهلاً بالعالم!\"); عشان تظهر الرسالة دي جوه شاشة الـ Console.",
+   "القاعدة الذهبية: الـ Console هو الصديق الأقوى للمبرمج عشان يكتشف الأخطاء ويعرف إيه اللي بيحصل جوه الكود بصمت.",
+   "في الحياة الحقيقية، زي الطيار اللي عنده لوحة قيادة بتظهر له حالة الطائرة، المبرمج عنده وحدة التحكم بتظهر له حالة الموقع."
+  ],
+  "example": "تخيل إنك بتعمل موقع ومحتاج تتأكد إن الزرار شغال، بتكتب في كود الـ JavaScript الخاص بيك:\n```javascript\nconsole.log(\"الموقع اشتغل بنجاح!\");\nlet score = 10;\nconsole.log(score);\n```\nلما تفتح وحدة تحكم المتصفح (Console) في متصفحك زي جوجل كروم، هتلاقيه طبع الجملة وتحتها رقم 10. بالطريقة دي أنت راقبت بياناتك وتأكدت إن كودك شغال مظبوط من غير ما تبوظ شكل الصفحة الحقيقي.",
+  "mistake": "الخطأ الشائع هو كتابة console.log بحروف كبيرة أو نسيان علامات التنصيص للكلمات، زي كتابة Console.Log أو نسيان \"\" حول النص. الحل هو التأكد من الحروف الصغيرة والصحيحة console.log وكتابة النصوص بين علامات تنصيص.",
+  "recap": "تعلمنا إزاي لغة JavaScript بتدي حياة لصفحات الويب، وإزاي نربط السكريبت الخارجي ونستخدم وحدة التحكم لتتبع حالة الأكواد.",
+  "q": [
+   {
+    "t": "ما هو الأمر المستخدم لطباعة رسالة في وحدة تحكم المتصفح؟",
+    "o": [
+     "print.message()",
+     "console.log()",
+     "document.write()"
+    ],
+    "a": 1,
+    "why": "الأمر console.log() هو الطريقة القياسية لإخراج البيانات في الـ Console."
+   },
+   {
+    "t": "كيف نربط ملف JavaScript خارجي بصفحة الويب؟",
+    "o": [
+     "باستخدام وسم <script src=\"file.js\"></script>",
+     "باستخدام وسم <link rel=\"stylesheet\" href=\"file.js\">",
+     "باستخدام وسم <js href=\"file.js\">"
+    ],
+    "a": 0,
+    "why": "وسم script مع الخاصية src هو الوسيلة الصحيحة لجلب ملف سكريبت خارجي."
+   },
+   {
+    "t": "ماذا تعني بيئة تشغيل المتصفح بالنسبة لـ JavaScript؟",
+    "o": [
+     "مكان لتخزين الصور فقط",
+     "البيئة التي تنفذ الكود وتوفر أدوات مثل الـ Console",
+     "نوع من أنظمة التشغيل مثل ويندوز"
+    ],
+    "a": 1,
+    "why": "المتصفح يوفر محركاً لتنفيذ أكواد الجافاسكريبت ووحدة تحكم لمراقبة العمليات."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل جمل وحدة التحكم",
+   "goal": "اختر الكلمات الصحيحة لإكمال أمر الطباعة والربط في الجافاسكريبت.",
+   "items": [
+    {
+     "text": "لكتابة رسالة في وحدة التحكم نستخدم أمر ___(\"مرحباً\");",
+     "options": [
+      "console.log",
+      "alert",
+      "document"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لربط ملف جافاسكريبت خارجي نستخدم وسم <script ___=\"main.js\"></script>",
+     "options": [
+      "href",
+      "src",
+      "file"
+     ],
+     "a": 1
+    },
+    {
+     "text": "لفحص بيئة تشغيل الكود ومعرفة الأخطاء نفتح الـ ___ في المتصفح.",
+     "options": [
+      "Console",
+      "Paint",
+      "Notepad"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد أتممت أوامر وحدة التحكم والربط بنجاح وأصبح كودك جاهزاً للعمل."
+  },
+  "sections": [
+   {
+    "h": "ما هي لغة JavaScript؟",
+    "text": "لغة JavaScript هي اللغة اللي بتخلي صفحات الويب تتفاعل وتسأل وتجاوب، زي ما تكون بتدي عقل وحركة للصفحة بعد ما كانت مجرد صور وكلام ثابت، تماماً زي ما بنركب بطارية وموتور للعبة بلاستيك عشان تتحرك لوحدها.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2>مرحباً بك</h2>\n  <script>\n    console.log(\"الجافاسكريبت تعمل!\");\n  </script>\n</body>\n</html>",
+    "output": "يظهر نص عادي في الصفحة بينما يتم إرسال رسالة لوحدة التحكم."
+   },
+   {
+    "h": "ربط ملف JavaScript خارجي",
+    "text": "بدل ما نكتب الكود جوه صفحة الويب ونلخبط الدنيا، الأفضل نحط أكواد JavaScript في ملف منفصل بينتهي بـ .js ونربطه بصفحة الويب باستخدام وسم script والخاصية src، زي ما بنحط كتبنا في شنطة المدرسة ونعلقها على ظهرنا.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <script src=\"script.js\"></script>\n</head>\n<body>\n  <p>راجع وحدة التحكم!</p>\n</body>\n</html>",
+    "output": "يتم ربط ملف السكريبت الخارجي وتشغيله عبر الصفحة."
+   },
+   {
+    "h": "أمر الطباعة console.log()",
+    "text": "أمر console.log() عامل زي الكشاف السحري اللي بيسلط الضوء جوه كواليس الموقع، عشان يخليك تشوف النصوص أو الأرقام المتخزنة من غير ما تظهر للزوار العاديين على الشاشة الرئيسية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"أهلاً بك يا مبرمج الصغير\");\n  </script>\n</body>\n</html>",
+    "output": "تطبع عبارة الترحيب في وحدة تحكم المتصفح."
+   },
+   {
+    "h": "فحص بيئة تشغيل المتصفح",
+    "text": "المتصفح مش بس بيعرض صفحات، ده بيحتوي على بيئة كاملة لتشغيل وفحص أكواد الجافاسكريبت، زي المختبر العلمي المليان بأجهزة قياس وفحص لكل تجربة بنعملها.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"المتصفح يقوم بتنفيذ الكود الآن.\");\n  </script>\n</body>\n</html>",
+    "output": "يعرض رسالة تأكيد بأن المتصفح يشغل بيئة الجافاسكريبت."
+   },
+   {
+    "h": "تتبع القيم والمتغيرات",
+    "text": "تقدر تستخدم وحدة التحكم عشان تطبع قيم متغيرة، زي درجات لعبة أو أسماء أصحابك، عشان تتأكد إن البرنامج بيحسب الحسابات صح أول بأول.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    let points = 50;\n    console.log(\"النقاط الحالية:\");\n    console.log(points);\n  </script>\n</body>\n</html>",
+    "output": "يطبع جملة النقاط ثم قيمة المتجر وهي 50 في وحدة التحكم."
+   },
+   {
+    "h": "أهمية الـ Console للمبرمجين",
+    "text": "المبرمج المحترف مبيستغناش عن الـ Console أبداً، لأنها أول مكان بيبص عليه أول ما الصفحة مبتشتغلش، زي الطبيب اللي بيستخدم السماعة عشان يسمع دقات قلب المريض.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"فحص النظام: الحالة ممتازة.\");\n  </script>\n</body>\n</html>",
+    "output": "تظهر رسالة فحص النظام في وحدة التحكم بالمتصفح."
+   },
+   {
+    "h": "تنظيم وترتيب الكود الخارجي",
+    "text": "لما المشروع يكبر، تقسيم الأكواد لملفات خارجية بيخلي الموقع أسرع وأسهل في التعديل، تماماً زي ترتيب أدواتك في أدراج مختلفة عشان تلاقي قلمك بسهولة من غير تضييع وقت.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"الملفات منظمة بشكل ممتاز!\");\n  </script>\n</body>\n</html>",
+    "output": "تظهر رسالة تنظيم الملفات في وحدة التحكم."
+   },
+   {
+    "h": "استكشاف الأخطاء وإصلاحها الأولية",
+    "text": "لو كتبت أمر غلط، الـ Console بتطلع لك سهم أحمر وتحذير بيعرفك مكان الغلط فين بالضبط، زي لوحة الإرشادات اللي بتقول لك \"انتبه، يوجد مطب في هذا المكان!\"",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"جاهز لاكتشاف الأخطاء وإصلاحها.\");\n  </script>\n</body>\n</html>",
+    "output": "تظهر رسالة الجاهزية لاستكشاف الأخطاء في وحدة التحكم."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<script>",
+    "desc": "وسم يستخدم لتضمين أو ربط كود JavaScript في صفحة HTML."
+   },
+   {
+    "name": "src",
+    "desc": "خاصية تحدد مسار ملف الجافاسكريبت الخارجي المراد ربطه."
+   },
+   {
+    "name": "console.log()",
+    "desc": "دالة تطبع الرسائل والبيانات في وحدة تحكم المتصفح."
+   },
+   {
+    "name": "Console",
+    "desc": "أداة مطور داخل المتصفح لفحص الأكواد وعرض رسائل الحالة."
+   },
+   {
+    "name": "JavaScript",
+    "desc": "لغة برمجة تفاعلية خفيفة تُستخدم لتطوير صفحات الويب."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر سكريبت لطباعة جملة 'مرحباً بك يا مبرمج' في وحدة التحكم.",
+    "a": "console.log(\"مرحباً بك يا مبرمج\");"
+   },
+   {
+    "q": "كيف تربط ملف باسم code.js بصفحة الويب الخاصة بك؟",
+    "a": "<script src=\"code.js\"></script>"
+   },
+   {
+    "q": "ما هي الأداة التي تستخدمها لرؤية رسائل console.log في متصفح جوجل كروم؟",
+    "a": "وحدة تحكم المتصفح (Browser Console) بالضغط على F12 أو كليك يمين ثم Inspect."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "JavaScript is the magical tool that gives web pages life, interactivity, and instructions, rather than just static text.",
+   "To make the browser run JavaScript code, we connect an external script file to the HTML document using the script tag and src attribute.",
+   "To output status updates and check if code is running, we use browser console tools, specifically the console.log() command.",
+   "Let's try writing inside our JavaScript file: console.log(\"Hello World!\"); so this message appears directly inside the Console screen.",
+   "Golden Rule: The Console is a programmer's best friend for catching errors and quietly seeing what is happening behind the scenes.",
+   "In real life, just like a pilot has a dashboard showing airplane status, a developer has the console showing website status."
+  ],
+  "example": "Imagine you are building a website and need to check if a button click works, you write in your JavaScript code:\n```javascript\nconsole.log(\"Website started successfully!\");\nlet score = 10;\nconsole.log(score);\n```\nWhen you open the browser console (like in Google Chrome), you will see the phrase printed followed by the number 10. This way, you monitor your data and make sure your code runs properly without breaking the actual web page layout.",
+  "mistake": "A common mistake is writing console.log with uppercase letters or forgetting quotation marks around strings, such as writing Console.Log or missing \"\" around text. The fix is to ensure correct lowercase spelling console.log and keep text inside quotes.",
+  "recap": "We learned how JavaScript brings web pages to life, how to connect an external script, and how to use the console to track code status.",
+  "q": [
+   {
+    "t": "What is the command used to print a message in the browser console?",
+    "o": [
+     "print.message()",
+     "console.log()",
+     "document.write()"
+    ],
+    "a": 1,
+    "why": "The console.log() command is the standard way to output data in the Console."
+   },
+   {
+    "t": "How do we connect an external JavaScript file to a web page?",
+    "o": [
+     "Using <script src=\"file.js\"></script>",
+     "Using <link rel=\"stylesheet\" href=\"file.js\">",
+     "Using <js href=\"file.js\">"
+    ],
+    "a": 0,
+    "why": "The script tag with the src attribute is the correct way to pull in an external script file."
+   },
+   {
+    "t": "What does the browser execution environment mean for JavaScript?",
+    "o": [
+     "A place to store images only",
+     "The environment that executes code and provides tools like the Console",
+     "A type of operating system like Windows"
+    ],
+    "a": 1,
+    "why": "The browser provides an engine to run JavaScript code and a console to monitor operations."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Console Statements",
+   "goal": "Choose the correct words to complete the printing and connection commands in JavaScript.",
+   "items": [
+    {
+     "text": "To write a message in the console we use ___(\"Hello\");",
+     "options": [
+      "console.log",
+      "alert",
+      "document"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To connect an external JavaScript file we use <script ___=\"main.js\"></script>",
+     "options": [
+      "href",
+      "src",
+      "file"
+     ],
+     "a": 1
+    },
+    {
+     "text": "To inspect the code execution environment and find errors, we open the ___ in the browser.",
+     "options": [
+      "Console",
+      "Paint",
+      "Notepad"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You completed the console and connection commands successfully and your code is ready."
+  },
+  "sections": [
+   {
+    "h": "What is JavaScript?",
+    "text": "JavaScript is the language that makes web pages interactive, allowing them to ask and answer, giving brains and motion to a page that was once just static pictures and text, just like putting a battery and motor into a plastic toy.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2>Welcome</h2>\n  <script>\n    console.log(\"JavaScript is working!\");\n  </script>\n</body>\n</html>",
+    "output": "Plain text appears on the page while a message is sent to the console."
+   },
+   {
+    "h": "Connecting External JavaScript",
+    "text": "Instead of writing code directly inside the web page and cluttering things, it is best to place JavaScript code in a separate file ending with .js and link it using the script tag and src attribute, like putting school books in a backpack.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <script src=\"script.js\"></script>\n</head>\n<body>\n  <p>Check the console!</p>\n</body>\n</html>",
+    "output": "The external script file is linked and executed through the page."
+   },
+   {
+    "h": "The console.log() Output Command",
+    "text": "The console.log() command acts like a magical flashlight shining behind the scenes of a website, letting you see stored text or numbers without displaying them to regular visitors on the main screen.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"Welcome young coder\");\n  </script>\n</body>\n</html>",
+    "output": "The greeting phrase is printed in the browser console."
+   },
+   {
+    "h": "Inspecting Browser Execution Environments",
+    "text": "Browsers do not just display pages; they contain a full environment for running and inspecting JavaScript code, much like a scientific laboratory filled with measurement devices for every experiment.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"Browser is executing code now.\");\n  </script>\n</body>\n</html>",
+    "output": "Displays a confirmation message that the browser is running the JavaScript environment."
+   },
+   {
+    "h": "Tracking Values and Variables",
+    "text": "You can use the console to print variable values, such as game scores or friend names, to ensure your program calculates things correctly step by step.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    let points = 50;\n    console.log(\"Current points:\");\n    console.log(points);\n  </script>\n</body>\n</html>",
+    "output": "Prints the points label and the value 50 in the console."
+   },
+   {
+    "h": "Importance of the Console for Developers",
+    "text": "Professional developers never go without the Console, as it is the first place they look when a page fails to work, just like a doctor using a stethoscope to listen to a patient's heartbeat.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"System check: status excellent.\");\n  </script>\n</body>\n</html>",
+    "output": "System check message appears in the browser console."
+   },
+   {
+    "h": "Organizing External Code Files",
+    "text": "As a project grows, splitting code into external files makes the website faster and easier to modify, just like organizing your tools into separate drawers so you can find your pen easily.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"Files organized perfectly!\");\n  </script>\n</body>\n</html>",
+    "output": "File organization message appears in the console."
+   },
+   {
+    "h": "Initial Troubleshooting and Debugging",
+    "text": "If you write a command incorrectly, the Console shows a red arrow and warning telling you exactly where the mistake is, like a signpost saying 'Caution, bump ahead!'",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    console.log(\"Ready for troubleshooting.\");\n  </script>\n</body>\n</html>",
+    "output": "Readiness message for debugging appears in the console."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<script>",
+    "desc": "Tag used to embed or link JavaScript code in an HTML page."
+   },
+   {
+    "name": "src",
+    "desc": "Attribute specifying the path of the external JavaScript file to link."
+   },
+   {
+    "name": "console.log()",
+    "desc": "Function that prints messages and data to the browser console."
+   },
+   {
+    "name": "Console",
+    "desc": "A developer tool inside the browser for inspecting code and viewing status messages."
+   },
+   {
+    "name": "JavaScript",
+    "desc": "A lightweight interactive programming language used for web development."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a script command to print the sentence 'Hello Coder' in the console.",
+    "a": "console.log(\"Hello Coder\");"
+   },
+   {
+    "q": "How do you link a file named code.js to your web page?",
+    "a": "<script src=\"code.js\"></script>"
+   },
+   {
+    "q": "What tool do you use to see console.log messages in Google Chrome?",
+    "a": "The Browser Console by pressing F12 or right-clicking and selecting Inspect."
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "title": "MDN: JavaScript modules",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+  }
+ ],
+ "grounded": true
+}

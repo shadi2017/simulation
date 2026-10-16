@@ -1,0 +1,318 @@
+{
+ "ar": {
+  "steps": [
+   "الألوان بتخلي صفحات الإنترنت شكلها جميل وممتع زي اللوحات الفنية الكبيرة.",
+   "ممكن نكتب اسم اللون مباشرة زي red أو blue عشان نلون العناصر بسهولة.",
+   "الأكواد السداسية عشري أو ما تسمى HEX زي #ff0000 بتدينا ألوان دقيقة جداً.",
+   "طريقة RGB بتخليني أمزج الألوان الأحمر والأخضر والأزرق بنسب مختلفة لعمل أي لون.",
+   "التدرجات اللونية (Gradients) بتعمل انتقال ناعم وممتاز بين لونين أو أكتر ورا بعض.",
+   "الصور الخلفية بتدي عمق وشكل واقعي، ولازم نظبط مكانها عشان تبان بشكل احترافي."
+  ],
+  "example": "لو عاوزين نعمل خلفية كويسة لصفحة ويب، بنكتب في الكود:\n```css\nbody {\n  background-color: #f0fbff;\n  background-image: url('stars.png');\n  background-repeat: no-repeat;\n  background-position: center;\n}\n```\nده بيخلي لون الخلفية أزرق فاتح هادي، ويحط صورة النجوم في نص الصفحة بالضبط من غير ما تتكرر بشكل مزعج، وده بيدي راحة للعين ووضوح تام للمحتوى.",
+  "mistake": "نحط كلام أبيض على خلفية فاتحة جداً زي الأصفر أو الأبيض، وده بيخلي الكلام مش واضح خالص. الحل هو نتأكد إن فيه تباين عالي عشان القراءة تكون سهلة للجميع.",
+  "recap": "استخدام الألوان والخلفيات بيغير شكل موقعك تماماً ويخليه جذاب. تذكر دائماً اختيار تدرجات وألوان واضحة ومريحة للعين.",
+  "q": [
+   {
+    "t": "إيه هي الطريقة اللي بنكتب بيها أكواد اللون السداسية عشرية؟",
+    "o": [
+     "تبدأ بعلامة # وتتبعها حروف وأرقام",
+     "تبدأ بكلمة color:",
+     "تتكون من أرقام عربية فقط"
+    ],
+    "a": 0,
+    "why": "أكواد الـ HEX دايماً بتبدأ بعلامة الشباك #."
+   },
+   {
+    "t": "إيه الخاصية اللي بنستخدمها عشان نعمل تدرج لوني خلفي؟",
+    "o": [
+     "background-color",
+     "background-image مع linear-gradient",
+     "font-gradient"
+    ],
+    "a": 1,
+    "why": "التدرجات اللونية بتتعمل عن طريق تدرج خطي داخل صورة الخلفية أو خاصية التدرج."
+   },
+   {
+    "t": "ليه بنهتم بالتباين بين لون النص ولون الخلفية؟",
+    "o": [
+     "عشان نجعل الموقع بطيء",
+     "عشان يكون الكلام سهل ومريح للقراءة",
+     "عشان نخفي الصور"
+    ],
+    "a": 1,
+    "why": "التباين العالي بيخلي المحتوى واضح ومقروء لكل المستخدمين."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة الكود اللوني",
+   "goal": "اعرف شكل الخلفية لما نستخدم كود الـ HEX المناسب",
+   "code": "<div style=\"background-color: #ff5733; color: white;\">مرحباً بكم</div>",
+   "options": [
+    "خلفية برتقالية زاهية مع نص أبيض",
+    "خلفية سوداء مع نص أخضر",
+    "بدون خلفية تماماً"
+   ],
+   "a": 0,
+   "success": "رائع! ظهرت الخلفية باللون البرتقالي الجميل والنص الأبيض الواضح."
+  },
+  "sections": [
+   {
+    "h": "مقدمة الألوان في صفحات الويب",
+    "text": "الألوان هي الروح اللي بتدب في تصميم صفحات الإنترنت، زي ألوان اللوحات الفنية اللي بتجذب عين الناظر ليها. في لغة CSS، نقدر نلون عناصر الصفحة بأكتر من طريقة مختلفة عشان نخلي تصميمنا مبهر ومناسب للمحتوى.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: skyblue; padding: 20px; }</style></head><body><div>مرحباً بكم في عالم الألوان</div></body></html>",
+    "output": "يظهر صندوق بلون سماوي جميل."
+   },
+   {
+    "h": "استخدام أسماء الألوان البسيطة",
+    "text": "أسهل طريقة لنطق وتطبيق الألوان هي استخدام الأسماء المباشرة زي red أو blue أو green. دي طريقة ممتازة للمبتدئين عشان يجرّبوا شكل الألوان بسرعة من غير حفظ أرقام معقدة.",
+    "code": "<!DOCTYPE html><html><head><style>p { background-color: tomato; color: white; padding: 10px; }</style></head><body><p>هذا نص بخلفية طماطم</p></body></html>",
+    "output": "يظهر فقرة نصية بلون خلفية أحمر مائل للبرتقالي."
+   },
+   {
+    "h": "الأكواد السداسية عشري HEX",
+    "text": "لو عاوزين درجات ألوان دقيقة جداً مش موجودة بالأسماء العادية، بنستخدم أكواد HEX اللي بتبدأ بعلامة الشباك # ومعاها ست رموز. ده بيفتح لينا باب لمليارات الألوان المختلفة لتصميم فريد من نوعه.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: #ffcc00; padding: 15px; }</style></head><body><div>خلفية صفراء زاهية</div></body></html>",
+    "output": "يظهر صندوق بخلفية صفراء مميزة."
+   },
+   {
+    "h": "نظام الألوان الثلاثي RGB",
+    "text": "نظام RGB بيمثل الألوان عن طريق خلط كميات مختلفة من الأحمر (Red) والأخضر (Green) والأزرق (Blue)، زي الألوان المائية اللي بنخلطها على اللوحة عشان نطلع بدرجة لون جديدة تماماً.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: rgb(100, 150, 250); padding: 15px; color: white; }</style></head><body><div>خلفية بنظام RGB</div></body></html>",
+    "output": "يظهر صندوق بلون أزرق تم تركيبه برمجياً."
+   },
+   {
+    "h": "إضافة التدرجات اللونية Gradients",
+    "text": "التدرج اللوني بيخلي الخلفية تنتقل بسلاسة وناعمة من لون للثاني، زي منظر غروب الشمس الجميل لما الشمس بتدمج اللون الأصفر بالبرتقالي والأحمر في السما.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-image: linear-gradient(to right, #ff7e5f, #feb47b); height: 100px; }</style></head><body><div></div></body></html>",
+    "output": "يظهر عنصر بتدرج لوني ساحر من البرتقالي الفاتح للغامق."
+   },
+   {
+    "h": "إضافة الصور كخلفيات للموقع",
+    "text": "ممكن بدل الألوان نحط صورة كاملة وراء الكلام، وده بيدي للموقع طابع احترافي كبير، زي وضع صورة غابة أو فضاء وراء محتوى الصفحة.",
+    "code": "<!DOCTYPE html><html><head><style>body { background-color: #222; color: white; }</style></head><body><h1>صفحة ذات خلفية داكنة</h1></body></html>",
+    "output": "يظهر نص أبيض على خلفية داكنة."
+   },
+   {
+    "h": "التحكم في تكرار الصور الخلفية",
+    "text": "الصورة الصغيرة لما نحطها كخلفية بتتكرر تلقائياً زي مربعات البلاط. بنستخدم خاصية background-repeat علشان نمنع التكرار ده أو نتحكم فيه بالطريقة اللي تعجبنا.",
+    "code": "<!DOCTYPE html><html><head><style>.box { background-color: lightgreen; background-repeat: no-repeat; height: 80px; }</style></head><body><div class=\"box\">صندوق بلا تكرار</div></body></html>",
+    "output": "يظهر صندوق أخضر بثبات تماثل ممتاز."
+   },
+   {
+    "h": "تحديد مكان وضع الصورة background-position",
+    "text": "عشان نضمن إن الصورة تظهر في المكان الصح (في النص، أو على اليمين، أو فوق)، بنستخدم خاصية background-position اللي بتوزع العناصر بدقة هندسية عالية.",
+    "code": "<!DOCTYPE html><html><head><style>.card { background-color: #e0e0e0; background-position: center; padding: 20px; }</style></head><body><div class=\"card\">بطاقة مرتبة</div></body></html>",
+    "output": "يظهر صندوق رمادي فاتح بتصميم مرتب."
+   }
+  ],
+  "reference": [
+   {
+    "name": "background-color",
+    "desc": "تحديد لون خلفية العنصر."
+   },
+   {
+    "name": "HEX",
+    "desc": "كود لوني سداسي عشري يبدأ بـ #."
+   },
+   {
+    "name": "RGB",
+    "desc": "طريقة تحديد اللون بمزج الأحمر والأخضر والأزرق."
+   },
+   {
+    "name": "linear-gradient",
+    "desc": "عمل تدرج لوني خطي بين ألوان متعددة."
+   },
+   {
+    "name": "background-image",
+    "desc": "إضافة صورة لخلفية العنصر."
+   },
+   {
+    "name": "background-repeat",
+    "desc": "التحكم في تكرار صورة الخلفية."
+   },
+   {
+    "name": "background-position",
+    "desc": "تحديد موضع صورة الخلفية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لتغيير لون خلفية عنصر p إلى اللون الأحمر.",
+    "a": "p { background-color: red; }"
+   },
+   {
+    "q": "كيف تكتب لون باستخدام النظام السداسي عشري للون الأسود؟",
+    "a": "#000000"
+   },
+   {
+    "q": "ما هي الخاصية المسؤولة عن منع تكرار صورة الخلفية؟",
+    "a": "background-repeat: no-repeat;"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Colors make web pages look gorgeous and fun, just like big art paintings.",
+   "We can type color names directly like red or blue to easily color elements.",
+   "Hexadecimal codes, or HEX like #ff0000, give us super precise colors.",
+   "The RGB system lets us mix red, green, and blue values to make any color.",
+   "Gradients create a smooth and cool transition between two or more colors.",
+   "Background images add depth and a realistic look, and we must position them well."
+  ],
+  "example": "If we want to make a great webpage background, we write in code:\n```css\nbody {\n  background-color: #f0fbff;\n  background-image: url('stars.png');\n  background-repeat: no-repeat;\n  background-position: center;\n}\n```\nThis sets a soft light blue background color, places the stars image right in the center without annoying repetition, giving eye comfort and clear content readability.",
+  "mistake": "Putting white text on a very light background like yellow or white, making text completely unreadable. The fix is to ensure high contrast so reading is easy for everyone.",
+  "recap": "Using colors and backgrounds completely transforms your site's look and makes it engaging. Always remember to choose clear gradients and colors comfortable for the eyes.",
+  "q": [
+   {
+    "t": "How are hexadecimal color codes written?",
+    "o": [
+     "Starting with a # followed by letters and numbers",
+     "Starting with the word color:",
+     "Made of Arabic numbers only"
+    ],
+    "a": 0,
+    "why": "HEX codes always start with a hash sign #."
+   },
+   {
+    "t": "Which property do we use to make a gradient background?",
+    "o": [
+     "background-color",
+     "background-image with linear-gradient",
+     "font-gradient"
+    ],
+    "a": 1,
+    "why": "Gradients are created via linear gradients inside the background image or gradient property."
+   },
+   {
+    "t": "Why do we care about contrast between text color and background color?",
+    "o": [
+     "To make the website slow",
+     "To make text easy and comfortable to read",
+     "To hide images"
+    ],
+    "a": 1,
+    "why": "High contrast keeps content clear and readable for all users."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Color Code Result",
+   "goal": "Know what the background looks like when using the right HEX code",
+   "code": "<div style=\"background-color: #ff5733; color: white;\">Welcome</div>",
+   "options": [
+    "Bright orange background with white text",
+    "Black background with green text",
+    "No background at all"
+   ],
+   "a": 0,
+   "success": "Awesome! The background appeared in a lovely orange with clear white text."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Web Colors",
+    "text": "Colors breathe life into web page design, just like art palette colors that attract the viewer's eye. In CSS, we can color page elements in various ways to make our design stunning and content-appropriate.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: skyblue; padding: 20px; }</style></head><body><div>Welcome to the World of Colors</div></body></html>",
+    "output": "Displays a box with a sky blue background."
+   },
+   {
+    "h": "Using Simple Color Names",
+    "text": "The easiest way to write and apply colors is using direct names like red, blue, or green. This is an excellent method for beginners to quickly test color looks without memorizing complex numbers.",
+    "code": "<!DOCTYPE html><html><head><style>p { background-color: tomato; color: white; padding: 10px; }</style></head><body><p>This is a paragraph with tomato background</p></body></html>",
+    "output": "Displays a paragraph with a reddish-orange background."
+   },
+   {
+    "h": "Hexadecimal HEX Codes",
+    "text": "If we want very precise color shades not found in basic names, we use HEX codes starting with a hash # followed by six characters. This opens up billions of color options for a unique design.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: #ffcc00; padding: 15px; }</style></head><body><div>Bright yellow background</div></body></html>",
+    "output": "Displays a box with a vibrant yellow background."
+   },
+   {
+    "h": "RGB Color System",
+    "text": "The RGB system represents colors by mixing different amounts of Red, Green, and Blue, just like water paints mixed on a palette to create a completely new color shade.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-color: rgb(100, 150, 250); padding: 15px; color: white; }</style></head><body><div>RGB system background</div></body></html>",
+    "output": "Displays a box with a programmatically mixed blue color."
+   },
+   {
+    "h": "Adding Gradients",
+    "text": "A color gradient makes the background transition smoothly and softly from one color to another, like a beautiful sunset view blending yellow, orange, and red in the sky.",
+    "code": "<!DOCTYPE html><html><head><style>div { background-image: linear-gradient(to right, #ff7e5f, #feb47b); height: 100px; }</style></head><body><div></div></body></html>",
+    "output": "Displays an element with a magical gradient from light to dark orange."
+   },
+   {
+    "h": "Adding Images as Backgrounds",
+    "text": "Instead of colors, we can place a full image behind text, giving the site a professional feel, like putting a forest or space image behind page content.",
+    "code": "<!DOCTYPE html><html><head><style>body { background-color: #222; color: white; }</style></head><body><h1>Page with a dark background</h1></body></html>",
+    "output": "Displays white text on a dark background."
+   },
+   {
+    "h": "Controlling Background Image Repetition",
+    "text": "A small image used as a background repeats automatically like tile squares. We use the background-repeat property to stop this repetition or control it as we like.",
+    "code": "<!DOCTYPE html><html><head><style>.box { background-color: lightgreen; background-repeat: no-repeat; height: 80px; }</style></head><body><div class=\"box\">Non-repeating box</div></body></html>",
+    "output": "Displays a stable green box with excellent symmetry."
+   },
+   {
+    "h": "Setting Image Position background-position",
+    "text": "To ensure the image appears in the right spot (center, right, or top), we use the background-position property, distributing elements with high geometric precision.",
+    "code": "<!DOCTYPE html><html><head><style>.card { background-color: #e0e0e0; background-position: center; padding: 20px; }</style></head><body><div class=\"card\">Neat card</div></body></html>",
+    "output": "Displays a light gray box with a tidy layout."
+   }
+  ],
+  "reference": [
+   {
+    "name": "background-color",
+    "desc": "Sets the background color of an element."
+   },
+   {
+    "name": "HEX",
+    "desc": "Hexadecimal color code starting with #."
+   },
+   {
+    "name": "RGB",
+    "desc": "Color definition method mixing Red, Green, and Blue."
+   },
+   {
+    "name": "linear-gradient",
+    "desc": "Creates a linear color gradient between multiple colors."
+   },
+   {
+    "name": "background-image",
+    "desc": "Adds an image to an element's background."
+   },
+   {
+    "name": "background-repeat",
+    "desc": "Controls background image repetition."
+   },
+   {
+    "name": "background-position",
+    "desc": "Sets the position of the background image."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to change a p element's background color to red.",
+    "a": "p { background-color: red; }"
+   },
+   {
+    "q": "How do you write a color using the hexadecimal system for black?",
+    "a": "#000000"
+   },
+   {
+    "q": "What property is responsible for preventing background image repetition?",
+    "a": "background-repeat: no-repeat;"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: background-color CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-color"
+  },
+  {
+   "title": "MDN: background_color",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/background_color"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,330 @@
+{
+ "ar": {
+  "steps": [
+   "الروابط بتخلينا نتحرك بين صفحات الويب المختلفة بسهولة.",
+   "عشان نعمل رابط بنستعمل وسم الـ <a> وخصيصه الـ href عشان نحدد المكان اللي هيروح له.",
+   "الخاصية href بتكتب فيها عنوان الصفحة أو الموقع اللي هيفتحه الرابط.",
+   "لو عاوز تربط صفحة البداية بصفحة المشروع، بتكتب اسم ملف المشروع جوه الـ href.",
+   "القاعدة الذهبية: دايماً اكتب اسم الملف مظبوط جوه علامات التنصيص عشان الرابط يشتغل.",
+   "في الحياة اليومية، الروابط عاملة زي خريطة أو كوبري بيندلك على المكان اللي تقصده."
+  ],
+  "example": "لو عملنا صفحة رئيسية وعاوزين نروح لصفحة الألعاب، بنكتب كود زي دا:\n<a href=\"games.html\">العاب ممتعة</a>\nالسبب: لما المستخدم يضغط على جملة 'العاب ممتعة'، المتصفح بينقله مباشرة لملف games.html.",
+  "mistake": "نسيان علامات التنصيص (\" \") حوالين الرابط جوه الـ href بيخلي المتصفح ما يفهمش العنوان والصح إننا نحطها دايماً.",
+  "recap": "استخدمنا وسم a والخاصية href عشان نعمل روابط تنقلنا بين صفحات موقعنا بكل سهولة.",
+  "q": [
+   {
+    "t": "إيه هو الوسم المستخدم لعمل الروابط؟",
+    "o": [
+     "<a>",
+     "<p>",
+     "<h1>"
+    ],
+    "a": 0,
+    "why": "الوسم a اختصار لـ anchor وهو المسؤول عن إنشاء الروابط."
+   },
+   {
+    "t": "إيه هي الخاصية اللي بنحط فيها عنوان الصفحة المستهدفة؟",
+    "o": [
+     "src",
+     "href",
+     "alt"
+    ],
+    "a": 1,
+    "why": "href تعني hyperlink reference وهي اللي بتحدد الوجهة."
+   },
+   {
+    "t": "ازاي نخلي الرابط يفتح في تبويب جديد؟",
+    "o": [
+     "target=\"_blank\"",
+     "new=\"tab\"",
+     "open=\"new\""
+    ],
+    "a": 0,
+    "why": "خاصية target بالقيم _blank بتفتح الرابط في صفحة أو تبويب جديد."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود الرابط",
+   "goal": "اختر الكلمات الصحيحة لإكمال بناء الروابط بشكل سليم.",
+   "items": [
+    {
+     "text": "الوسم المستخدم لإنشاء رابط هو <___>",
+     "options": [
+      "a",
+      "p",
+      "div"
+     ],
+     "a": 0
+    },
+    {
+     "text": "الخاصية المسؤولة عن تحديد وجهة الرابط هي <___>",
+     "options": [
+      "href",
+      "src",
+      "id"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لفتح الرابط في تبويب جديد نستخدم target=<___>",
+     "options": [
+      "\"_blank\"",
+      "\"_self\"",
+      "\"_new\""
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد أنشأت روابط تنقل زوار موقعك بكل احترافية."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الروابط",
+    "text": "الروابط هي أساس الإنترنت وتعتبر مثل الطرق السريعة التي تربط المدن ببعضها، فبدونها سنبقى محصورين في صفحة واحدة ولن نستطيع تصفح باقي المواقع.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>هذا موقعي الأول!</p>\n</body>\n</html>",
+    "output": "يظهر نص بسيط لصفحة ويب بدون روابط."
+   },
+   {
+    "h": "وسم الروابط الأساسي <a>",
+    "text": "نستخدم الوسم <a> (Anchor) لإنشاء أي رابط تشعبي. النص الموجود بين وسم البداية والنهاية هو الكلام الذي يظهر للزوار باللون الأزرق وتحته خط.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"#\">اضغط هنا</a>\n</body>\n</html>",
+    "output": "يظهر رابط قابل للنقر عليه."
+   },
+   {
+    "h": "خاصية الوجهة href",
+    "text": "الوسم وحده لا يكفي، فنحن بحاجة لخاصية href (Hypertext Reference) لنخبر المتصفح بالمكان الذي يجب أن يذهب إليه المستخدم عند النقر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"https://www.google.com\">اذهب إلى جوجل</a>\n</body>\n</html>",
+    "output": "يظهر رابط يوجهك لموقع جوجل."
+   },
+   {
+    "h": "الربط بين صفحات موقعك الداخليرة",
+    "text": "تماماً مثل غرف المنزل المرتبطة بممر، يمكنك ربط صفحة الاستقبال الرئيسية بصفحة مشروعك عن طريق كتابة اسم ملف المشروع مباشرة داخل خاصية href.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"project.html\">انتقل إلى صفحة مشروعي</a>\n</body>\n</html>",
+    "output": "يظهر رابط ينقل المستخدم لصفحة المشروع الداخلية."
+   },
+   {
+    "h": "فتح الروابط في تبويب جديد",
+    "text": "أحياناً لا تريد أن يغادر المستخدم موقعك الأساسي عند النقر على رابط خارجي، وهنا تأتي أهمية إضافة خاصية target=_blank ليفتح الرابط في صفحة جديدة مستقلة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"https://www.wikipedia.org\" target=\"_blank\">موسوعة ويكيبيديا (في تبويب جديد)</a>\n</body>\n</html>",
+    "output": "يفتح الرابط في نافذة جديدة عند النقر عليه."
+   },
+   {
+    "h": "الروابط الداخلية للأقسام",
+    "text": "يمكنك أيضاً عمل روابط تصلك بأجزاء معينة داخل نفس الصفحة الحالية، تماماً مثل فهرس الكتاب الذي ينقلك للفصل المطلوب مباشرة دون الحاجة للتقليب.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"#section2\">الذهاب للقسم الثاني</a>\n  <div style=\"margin-top: 500px;\" id=\"section2\">هذا هو القسم الثاني!</div>\n</body>\n</html>",
+    "output": "يقوم بالتمرير تلقائياً للقسم المحدد داخل نفس الصفحة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<a>",
+    "desc": "وسم إنشاء الروابط التشعبية"
+   },
+   {
+    "name": "href",
+    "desc": "خاصية تحديد عنوان الوجهة"
+   },
+   {
+    "name": "target=\"_blank\"",
+    "desc": "فتح الرابط في تبويب جديد"
+   },
+   {
+    "name": "internal link",
+    "desc": "رابط يربط صفحات نفس الموقع"
+   },
+   {
+    "name": "external link",
+    "desc": "رابط يربط بموقع خارجي آخر"
+   },
+   {
+    "name": "anchor",
+    "desc": "رابط للانتقال بين أجزاء الصفحة الواحدة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML لرابط ينقل المستخدم إلى صفحة اسمها 'about.html' والنص الظاهر هو 'من نحن'.",
+    "a": "<a href=\"about.html\">من نحن</a>"
+   },
+   {
+    "q": "كيف تجعل رابطا يفتح في تبويب جديد باستخدام خاصية target؟",
+    "a": "target=\"_blank\""
+   },
+   {
+    "q": "ما هو الوسم المطلوب لاستخدام الروابط في لغة HTML؟",
+    "a": "<a>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hyperlinks let us move easily between different web pages.",
+   "To make a link, we use the <a> tag and the href attribute to specify where it goes.",
+   "The href attribute holds the address or file name of the target page.",
+   "To connect your home page to a project page, write the project file name inside href.",
+   "Rule of thumb: Always wrap your URL or file name in quotes inside the href attribute.",
+   "In real life, hyperlinks act like a bridge or a map guiding you to your destination."
+  ],
+  "example": "If we have a home page and want to go to games, we write:\n<a href=\"games.html\">Fun Games</a>\nReason: When the user clicks 'Fun Games', the browser takes them directly to games.html.",
+  "mistake": "Forgetting quotation marks (\" \") around the link inside href confuses the browser, so always make sure to include them.",
+  "recap": "We used the a tag and href attribute to create hyperlinks that navigate between pages seamlessly.",
+  "q": [
+   {
+    "t": "Which tag is used to create hyperlinks?",
+    "o": [
+     "<a>",
+     "<p>",
+     "<h1>"
+    ],
+    "a": 0,
+    "why": "The a tag stands for anchor and is responsible for creating links."
+   },
+   {
+    "t": "Which attribute holds the target destination address?",
+    "o": [
+     "src",
+     "href",
+     "alt"
+    ],
+    "a": 1,
+    "why": "href stands for hyperlink reference and sets where the link leads."
+   },
+   {
+    "t": "How do you make a link open in a new tab?",
+    "o": [
+     "target=\"_blank\"",
+     "new=\"tab\"",
+     "open=\"new\""
+    ],
+    "a": 0,
+    "why": "The target attribute with value _blank opens the link in a new browser tab."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Link Code",
+   "goal": "Choose the correct words to complete the hyperlink structures properly.",
+   "items": [
+    {
+     "text": "The tag used to create a link is <___>",
+     "options": [
+      "a",
+      "p",
+      "div"
+     ],
+     "a": 0
+    },
+    {
+     "text": "The attribute responsible for setting the link destination is <___>",
+     "options": [
+      "href",
+      "src",
+      "id"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To open a link in a new tab, use target=<___>",
+     "options": [
+      "\"_blank\"",
+      "\"_self\"",
+      "\"_new\""
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You built links that navigate your website visitors smoothly."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Hyperlinks",
+    "text": "Hyperlinks are the foundation of the Web, acting like highways connecting different towns. Without them, we would be stuck on a single page with no way to explore further.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>This is my first website!</p>\n</body>\n</html>",
+    "output": "Displays a simple webpage with no links."
+   },
+   {
+    "h": "The Anchor Tag <a>",
+    "text": "We use the <a> (Anchor) tag to build any hyperlink. The text placed between the opening and closing tags is what visitors see in blue and underlined.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"#\">Click Here</a>\n</body>\n</html>",
+    "output": "Displays a clickable link."
+   },
+   {
+    "h": "The href Destination Attribute",
+    "text": "The tag alone is not enough; we need the href (Hypertext Reference) attribute to tell the browser where the user should go when clicked.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"https://www.google.com\">Go to Google</a>\n</body>\n</html>",
+    "output": "Displays a link pointing to Google."
+   },
+   {
+    "h": "Connecting Internal Site Pages",
+    "text": "Just like rooms in a house connected by a hallway, you can link your main welcome page to your project page by typing your project file name directly inside href.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"project.html\">Go to my project page</a>\n</body>\n</html>",
+    "output": "Displays a link leading to an internal project page."
+   },
+   {
+    "h": "Opening Links in New Tabs",
+    "text": "Sometimes you do not want users to leave your main site when clicking an external link. That is why adding target=_blank opens the link in a separate new tab.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"https://www.wikipedia.org\" target=\"_blank\">Wikipedia (in new tab)</a>\n</body>\n</html>",
+    "output": "Opens the link in a brand new browser tab."
+   },
+   {
+    "h": "Internal Page Anchors",
+    "text": "You can also create links that jump to specific sections within the exact same page, much like a book's table of contents taking you straight to a chapter.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"#section2\">Go to Section 2</a>\n  <div style=\"margin-top: 500px;\" id=\"section2\">This is Section 2!</div>\n</body>\n</html>",
+    "output": "Smoothly scrolls down to the specified section on the page."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<a>",
+    "desc": "Tag for creating hyperlinks"
+   },
+   {
+    "name": "href",
+    "desc": "Attribute specifying destination URL"
+   },
+   {
+    "name": "target=\"_blank\"",
+    "desc": "Opens link in a new tab"
+   },
+   {
+    "name": "internal link",
+    "desc": "Links pages within the same website"
+   },
+   {
+    "name": "external link",
+    "desc": "Links to someone else's webpage"
+   },
+   {
+    "name": "anchor",
+    "desc": "Links different sections of one document"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code for a link that points to 'about.html' with the visible text 'About Us'.",
+    "a": "<a href=\"about.html\">About Us</a>"
+   },
+   {
+    "q": "How do you make a link open in a new tab using the target attribute?",
+    "a": "target=\"_blank\""
+   },
+   {
+    "q": "What is the required tag to build hyperlinks in HTML?",
+    "a": "<a>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: What are hyperlinks?",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_are_hyperlinks"
+  },
+  {
+   "title": "MDN: Coordinate systems",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems"
+  }
+ ],
+ "grounded": true
+}

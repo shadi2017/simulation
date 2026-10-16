@@ -1,0 +1,270 @@
+{
+ "ar": {
+  "steps": [
+   "خاصية الفئة أو الـ class تتيح لك تجميع عدة عناصر مختلفة في لغة إتش تي إم إل تحت اسم فريق واحد مشترك لتنظيمها.",
+   "مثال صغير: كتابة <p class=\"story\"> فقرة أولى </p> و <p class=\"story\"> فقرة ثانية </p> لمنحهما نفس الاسم.",
+   "كيف تعمل: تسمح لك بتمييز مجموعة عناصر معاً لتطبيق نفس التصميمات عليها دفعة واحدة بدلاً من تعديل كل عنصر بمفرده.",
+   "مثال ثاني: يمكنك إعطاء زر وصورة نفس اسم الفئة مثل class=\"highlight\" لتمييزهما بلون خلفية مميز معاً.",
+   "قاعدة ذهبية: اختر دائماً أسماء فئات تعبر عن المعنى أو الوظيفة مثل note بدلاً من اختيار أشكال مثل red.",
+   "الاستخدام الواقعي: تستخدم في المواقع الكبيرة لتلوين وتنسيق مجموعات من الأخبار أو البطاقات أو الأزرار المتشابهة بنقرة واحدة."
+  ],
+  "example": "تخيل أن لديك فريقاً كشفياً يرتدي الجميع نفس القميص الأزرق لتمييزهم. في لغة إتش تي إم إل، تتيح لك خاصية class فعل الشيء نفسه مع العناصر. الكود التالي يمنح ثلاث فقرات مختلفة نفس الفئة note لتطبيق خط مائل وتصميم مميز عليها معاً.\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<style>\n.note { font-style: italic; background-color: yellow; }\n</style>\n</head>\n<body>\n<p class=\"note\">مرحباً بكم في لعبتنا الجديدة.</p>\n<p>هذه فقرة عادية.</p>\n<p class=\"note\">لا تنسوا تسجيل النتيجة!</p>\n</body>\n</html>\n```\nالنتيجة: الفقرة الأولى والثالثة تظهران بخط مائل وخلفية صفراء بينما تبقى الفقرة الوسطى عادية.",
+  "mistake": "خطأ شائع هو وضع مسافات داخل اسم الفئة الواحدة مثل class=\"my note\". الصواب هو استخدام اسم متصل أو فاصلة علوية أو شرطة مثل class=\"my-note\" لأن المسافات تفصل بين أسماء فئات متعددة.",
+  "recap": "خاصية الفئة تمنح العناصر اسماً مشتركاً لتسهيل تنسيقها معاً. وتساعدنا في تطبيق نفس الأنماط على عناصر متعددة في نفس الوقت.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لخاصية class في عناصر إتش تي إم إل؟",
+    "o": [
+     "تجميع عناصر متعددة تحت اسم فريق مشترك",
+     "حذف العناصر غير المرغوب فيها",
+     "تغيير عنوان الصفحة الرئيسي فقط"
+    ],
+    "a": 0,
+    "why": "خاصية الفئة تستخدم لتجميع عدة عناصر تحت اسم مشترك."
+   },
+   {
+    "t": "كيف يتم كتابة محدد الفئة في كود الـ CSS؟",
+    "o": [
+     "باستخدام رمز الشباك # قبل الاسم",
+     "باستخدام نقطة . قبل اسم الفئة",
+     "باستخدام العلامة المالية $"
+    ],
+    "a": 1,
+    "why": "نستخدم النقطة . في لغة سي إس إس للإشارة إلى اسم الفئة."
+   },
+   {
+    "t": "ما هو الأفضل عند تسمية الفئات بحسب النصائح الرسمية؟",
+    "o": [
+     "اختيار أسماء تعبر عن المعنى الوظائفي مثل note",
+     "اختيار أرقام فقط مثل 1234",
+     "وضع رموز غريبة مثل الاستفهام ?"
+    ],
+    "a": 0,
+    "why": "من الأفضل اختيار أسماء دلالية تعبر عن معنى العنصر."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب كود الفئة",
+   "goal": "رتب خطوات إنشاء صفحة بها عناصر تحمل نفس الفئة والتنسيق.",
+   "items": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<p class=\"team\">عضو الفريق الأول</p>",
+    "<style>.team { color: blue; }</style>",
+    "</html>"
+   ],
+   "success": "رائع! لقد رتبت الكود بنجاح وظهرت عناصر الفريق باللون الأزرق الجميل!"
+  },
+  "sections": [
+   {
+    "h": "ما هي خاصية الفئة؟",
+    "text": "خاصية الفئة أو class تتيح لك وضع علامة تعريفية أو اسم فريق لمجموعة من عناصر إتش تي إم إل. تخيل أنك توزع قمصان رياضية ملونة على أصدقائك ليعرف الجميع أنهم في نفس الفريق.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<h2 class=\"team-heading\">فريق الصقور</h2>\n<p class=\"team-heading\">أهلاً بكم في موقعنا.</p>\n</body>\n</html>",
+    "output": "يظهر عنوان وفقرة يحملان نفس الفئة."
+   },
+   {
+    "h": "تجميع عناصر مختلفة",
+    "text": "لا يشترط أن تكون العناصر من نفس النوع لكي تحمل نفس الفئة. يمكنك إعطاء عنوان فقرة وصورة نفس الفئة تماماً مثلما يرتدي أفراد مختلفون نفس شارة النادي.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<h1 class=\"highlight\">عنوان رئيسي</h1>\n<p class=\"highlight\">فقرة نصية هامة.</p>\n</body>\n</html>",
+    "output": "عنوان وفقرة ينتميان لنفس الفئة."
+   },
+   {
+    "h": "الأنماط القابلة لإعادة الاستخدام",
+    "text": "الفائدة الكبرى من الفئات هي إعادة الاستخدام. بدلاً من كتابة لون وطريقة خط لكل عنصر على حدة، تكتب التصميم مرة واحدة في قسم الأنماط وتطبقه على مئات العناصر.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.box { background-color: lightblue; padding: 10px; }\n</style>\n</head>\n<body>\n<div class=\"box\">صندوق أول</div>\n<div class=\"box\">صندوق ثاني</div>\n</body>\n</html>",
+    "output": "صندوقان يظهران بخلفية زرقاء فاتحة مشتركة."
+   },
+   {
+    "h": "محددات المجموعات في سي إس إس",
+    "text": "لكي نخاطب الفئة في لغة التنسيق سي إس إس، نبدأ الاسم بنقطة (.) تليها اسم الفئة. هذا يشبه النداء على كل من يرتدي القبعة الحمراء في الحديقة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.special { color: red; font-weight: bold; }\n</style>\n</head>\n<body>\n<p class=\"special\">نص مميز للغاية.</p>\n</body>\n</html>",
+    "output": "يظهر النص باللون الأحمر وبخط عريض."
+   },
+   {
+    "h": "استخدام عدة فئات لعنصر واحد",
+    "text": "يمكن للعنصر الواحد أن يحمل أكثر من فئة مفصولة بمسافة. فكر في الأمر كشخص يرتدي قميصاً أزرق وقبعة صفراء؛ لديه صفتان معاً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.big { font-size: 24px; }\n.border { border: 2px solid black; }\n</style>\n</head>\n<body>\n<p class=\"big border\">نص كبير وله إطار.</p>\n</body>\n</html>",
+    "output": "نص بحجم كبير وحول إطار أسود."
+   },
+   {
+    "h": "اختيار أسماء ذات معنى",
+    "text": "تنصح التوثيق الرسمية باختيار أسماء تعبر عن وظيفة العنصر مثل note أو warning بدلاً من أشكال مثل red أو big، حتى يظل المعنى مفهوماً لو تغير التصميم مستقبلاً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.warning { background-color: orange; }\n</style>\n</head>\n<body>\n<div class=\"warning\">تنبيه هام جداً!</div>\n</body>\n</html>",
+    "output": "صندوق تنبيه بخلفية برتقالية دلالية."
+   }
+  ],
+  "reference": [
+   {
+    "name": "class",
+    "desc": "خاصية عامة لتحديد فئة أو اسم فريق للعنصر."
+   },
+   {
+    "name": ".classname",
+    "desc": "محدد سي إس إس يستهدف كل العناصر التي تحمل تلك الفئة."
+   },
+   {
+    "name": "document.getElementsByClassName()",
+    "desc": "دالة جافاسكريبت للبحث عن العناصر حسب اسم الفئة."
+   },
+   {
+    "name": "element.className",
+    "desc": "خاصية برمجية للحصول على أو تعديل فئات العنصر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أضف فئة باسم alert لفقرة نصية في كود إتش تي إم إل.",
+    "a": "<p class=\"alert\">احذر من الخطأ!</p>"
+   },
+   {
+    "q": "كيف تكتب محدد فئة في سي إس إس لفئة اسمها button؟",
+    "a": ".button { ... }"
+   },
+   {
+    "q": "كيف تجعل عنصراً ينتمي لفئتين معا هما red و round؟",
+    "a": "<div class=\"red round\">محتوى</div>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The class attribute lets you group many different HTML elements together under one team name for better organization.",
+   "Small example: writing <p class=\"story\">First paragraph</p> and <p class=\"story\">Second paragraph</p> to give them the same name.",
+   "How it works: It allows you to select a group of elements together to apply identical styles all at once instead of editing each one individually.",
+   "Second example: You can give a button and an image the same class name like class=\"highlight\" to style them with a matching background color.",
+   "Rule of thumb: Always choose class names that describe the meaning or purpose, like note, rather than appearance words like red.",
+   "Real-life use: Used in large websites to format groups of news cards, articles, or buttons with a single stylesheet rule."
+  ],
+  "example": "Imagine a scout team where everyone wears the same blue scarf to identify them. In HTML, the class attribute lets you do the exact same thing with elements. The following code gives two different paragraphs the same class name note to apply italic styling and a highlighted background together.\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<style>\n.note { font-style: italic; background-color: yellow; }\n</style>\n</head>\n<body>\n<p class=\"note\">Welcome to our new game.</p>\n<p>This is a normal paragraph.</p>\n<p class=\"note\">Don't forget to save your score!</p>\n</body>\n</html>\n```\nResult: The first and third paragraphs appear italicized with a yellow background while the middle paragraph stays normal.",
+  "mistake": "A common mistake is putting spaces inside a single class name like class=\"my note\". The correct way is to use a hyphen or no spaces like class=\"my-note\" because spaces actually separate multiple distinct class names.",
+  "recap": "The class attribute gives elements a shared name to make styling them together easy. It helps us apply identical styles to multiple elements at the same time.",
+  "q": [
+   {
+    "t": "What is the main purpose of the class attribute in HTML elements?",
+    "o": [
+     "To group multiple elements under a shared team name",
+     "To delete unwanted elements from the webpage",
+     "To change only the main page title"
+    ],
+    "a": 0,
+    "why": "The class attribute is used to group several elements under a shared name."
+   },
+   {
+    "t": "How is a class selector written in CSS code?",
+    "o": [
+     "Using a hash symbol # before the name",
+     "Using a dot . before the class name",
+     "Using a dollar sign $"
+    ],
+    "a": 1,
+    "why": "We use a dot . in CSS to target a class name."
+   },
+   {
+    "t": "What is recommended when naming classes according to official guidelines?",
+    "o": [
+     "Choose semantic names that describe purpose like note",
+     "Choose numbers only like 1234",
+     "Use strange punctuation symbols like a question mark ?"
+    ],
+    "a": 0,
+    "why": "It is best to choose semantic names that reflect the meaning of the element."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Class Code",
+   "goal": "Arrange the steps to create a page with elements sharing a class and styling.",
+   "items": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<p class=\"team\">First team member</p>",
+    "<style>.team { color: blue; }</style>",
+    "</html>"
+   ],
+   "success": "Awesome! You ordered the code correctly and the team elements appeared in a lovely blue color!"
+  },
+  "sections": [
+   {
+    "h": "What is the Class Attribute?",
+    "text": "The class attribute lets you assign a tag name or team identifier to a group of HTML elements. Imagine handing out colored sports jerseys to your friends so everyone knows they are on the same team.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<h2 class=\"team-heading\">Falcons Team</h2>\n<p class=\"team-heading\">Welcome to our website.</p>\n</body>\n</html>",
+    "output": "A heading and paragraph showing the same class."
+   },
+   {
+    "h": "Grouping Different Elements",
+    "text": "Elements do not have to be of the same type to share a class. You can give a heading, a paragraph, and an image the exact same class, just like different club members wearing the same badge.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<h1 class=\"highlight\">Main Heading</h1>\n<p class=\"highlight\">Important text paragraph.</p>\n</body>\n</html>",
+    "output": "A heading and paragraph belonging to the same class."
+   },
+   {
+    "h": "Reusable Styles",
+    "text": "The greatest benefit of classes is reusability. Instead of writing colors and font styles for each individual element, you write the style once in your stylesheet and apply it to hundreds of elements.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.box { background-color: lightblue; padding: 10px; }\n</style>\n</head>\n<body>\n<div class=\"box\">First box</div>\n<div class=\"box\">Second box</div>\n</body>\n</html>",
+    "output": "Two boxes showing a shared light blue background."
+   },
+   {
+    "h": "Class Selectors in CSS",
+    "text": "To target a class in CSS, we start the name with a dot (.) followed by the class name. This is like calling out to everyone wearing a red hat in the park.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.special { color: red; font-weight: bold; }\n</style>\n</head>\n<body>\n<p class=\"special\">Very special text.</p>\n</body>\n</html>",
+    "output": "Text appears in red with bold font."
+   },
+   {
+    "h": "Using Multiple Classes",
+    "text": "A single element can hold more than one class separated by a space. Think of someone wearing both a blue shirt and a yellow hat; they possess two traits at once.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.big { font-size: 24px; }\n.border { border: 2px solid black; }\n</style>\n</head>\n<body>\n<p class=\"big border\">Large text with border.</p>\n</body>\n</html>",
+    "output": "Text with large font size and a black border."
+   },
+   {
+    "h": "Choosing Meaningful Names",
+    "text": "Official documentation recommends choosing names that describe the element's purpose like note or warning rather than appearance like red or big, so the meaning stays logical if styling changes later.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.warning { background-color: orange; }\n</style>\n</head>\n<body>\n<div class=\"warning\">Very important warning!</div>\n</body>\n</html>",
+    "output": "A warning box with a semantic orange background."
+   }
+  ],
+  "reference": [
+   {
+    "name": "class",
+    "desc": "Global attribute to specify a class or team name for an element."
+   },
+   {
+    "name": ".classname",
+    "desc": "CSS selector targeting all elements with that class."
+   },
+   {
+    "name": "document.getElementsByClassName()",
+    "desc": "JavaScript method to find elements by their class name."
+   },
+   {
+    "name": "element.className",
+    "desc": "DOM property to get or set an element's classes."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Add a class named alert to a paragraph element in HTML.",
+    "a": "<p class=\"alert\">Watch out for the bug!</p>"
+   },
+   {
+    "q": "How do you write a CSS class selector for a class named button?",
+    "a": ".button { ... }"
+   },
+   {
+    "q": "How do you make an element belong to two classes at once: red and round?",
+    "a": "<div class=\"red round\">Content</div>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: data-* HTML global attributes",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/data-*"
+  },
+  {
+   "title": "MDN: class HTML global attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/class"
+  }
+ ],
+ "grounded": true
+}

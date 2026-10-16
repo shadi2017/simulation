@@ -1,0 +1,314 @@
+{
+ "ar": {
+  "steps": [
+   "في عالم البرمجة، نتعلم كيف نجعل الكود ينتظر أو يتكرر بانتظام. هل تخيلت يوماً كيف تنفذ ألعابك أو مواقعك مهاماً بعد مرور وقت محدد؟ هذا هو دور دوال التوقيت الزمنية مثل setTimeout و setInterval في لغة جافاسكريبت.",
+   "لنفترض أنك تريد عرض رسالة ترحيب بعد مرور ثلاث ثوانٍ بالضبط. يمكنك استخدام دالة setTimeout التي تنفذ الكود مرة واحدة فقط بعد انتهاء العد التنازلي. نكتب الكود هكذا: setTimeout(sayHi, 3000)، حيث الرقم 3000 يعبر عن ثلاثة آلاف جزء من الثانية أو ما يعادل ثلاث ثوانٍ.",
+   "تعمل دالة setTimeout عن طريق استقبال دالة تنفيذية ووقت بالميلي ثانية. تقوم جافاسكريبت بوضع الكود جانباً ومتابعة باقي البرنامج، وعندما ينتهي الوقت المحدد، تقفز لتنفيذ الأوامر الموجودة داخل الدالة تماماً مثل منبه الهاتف.",
+   "ماذا لو أردنا تكرار أمر ما بلا توقف، مثل تحديث الساعة الرقمية؟ هنا يأتي دور دالة setInterval التي تستمر في تكرار الكود بشكل متواصل كل فترة زمنية محددة. نكتبها هكذا: setInterval(updateClock, 1000) لتتكرر كل ثانية.",
+   "القاعدة الذهبية للتعامل مع المؤقتات المتكررة هي حفظها في متغير دائماً لكي تتمكن من إيقافها باستخدام دالة clearInterval عندما لا تحتاج إليها بعد الآن، وإلا ستستمر اللعبة أو الصفحة في استهلاك الذاكرة بلا توقف.",
+   "تستخدم هذه المهارات في الحياة اليومية في تطبيقات الطبخ لتنبيهك بإنقضد وقت نضج الكعكة، أو في ألعاب الفيديو لتنفيذ هجوم مركب للعدو كل خمس ثوانٍ، أو في مواقع الويب لعرض صور متحركة تتغير تلقائياً."
+  ],
+  "example": "لنفترض أننا نصمم لعبة سباق بسيطة ونريد بدء العد التنازلي. نكتب الكود التالي:\n\nlet count = 3;\nlet timer = setInterval(function() {\n  console.log(count);\n  count--;\n  if (count < 0) {\n    clearInterval(timer);\n    console.log('انطلق!');\n  }\n}, 1000);\n\nالسبب في هذا الترتيب هو أن setInterval يشغل الكود كل ثانية لينقص المتغير بمقدار واحد، وعندما يصل الرقم إلى الصفر، نقوم بإيقاف المؤقت فوراً باستخدام clearInterval لكي لا يستمر بالسلب.",
+  "mistake": "الخطأ الشائع هو نسيان إيقاف setInterval باستخدام دالة clearInterval مما يجعل الكود يتكرر إلى الأبد ويسبب بطئاً في المتصفح. التصحيح هو دائماً ربط المؤقت بمتغير ووضع شرط إيقاف واضح.",
+  "recap": "تساعدنا أدوات التوقيت في جافاسكريبت مثل setTimeout على تأجيل تنفيذ المهام لمرة واحدة، بينما تقوم setInterval بتكرارها باستمرار. استخدام هذه الأدوات يتطلب دائماً الانتباه لوقت الإيقاف الصحيح.",
+  "q": [
+   {
+    "t": "ما هي الدالة المناسبة لتنفيذ أمر ما لمرة واحدة بعد مرور 5 ثوانٍ؟",
+    "o": [
+     "setInterval",
+     "setTimeout",
+     "clearInterval"
+    ],
+    "a": 1,
+    "why": "لان setTimeout تنفذ الكود مرة واحدة فقط بعد انقضاء الوقت المحدد."
+   },
+   {
+    "t": "ماذا يمثل الرقم 2000 داخل دالة التوقيت بالميلي ثانية؟",
+    "o": [
+     "ثانيتان",
+     "عشرون ثانية",
+     "نصف ثانية"
+    ],
+    "a": 0,
+    "why": "لأن الألف ميلي ثانية تساوي ثانية واحدة، إذن ألفان تعني ثانيتين."
+   },
+   {
+    "t": "كيف نقوم بإيقاف عمل دالة setInterval مستمرة؟",
+    "o": [
+     "باستخدام setTimeout",
+     "باستخدام clearTimeout",
+     "باستخدام clearInterval"
+    ],
+    "a": 2,
+    "why": "دالة clearInterval مخصصة لإيقاف التكرار المستمر للمؤقت."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات إنشاء وإيقاف عداد تنازلي",
+   "goal": "رتب الخطوات البرمجية التالية لتعمل بطريقة صحيحة ودون تكرار لا نهائي.",
+   "items": [
+    "let seconds = 5;",
+    "let countdown = setInterval(function() {",
+    "  seconds--;",
+    "  if (seconds === 0) {",
+    "    clearInterval(countdown);",
+    "  }",
+    "}, 1000);"
+   ],
+   "success": "رائع! لقد أنشأت عداداً تنازلياً ذكياً يتوقف في اللحظة المناسبة!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم التوقيت في جافاسكريبت",
+    "text": "التوقيت البرمجي يشبه المنبه الذي تضبطه لكي يستيقظك صباحاً. في جافاسكريبت، نستخدم الدوال الزمنية لكي نجعل الكمبيوتر ينتظر لفترة معينة قبل تنفيذ أي أمر.",
+    "code": "<!DOCTYPE html><html><body><h1 id='msg'>انتظر اللحظة...</h1><script>setTimeout(() => { document.getElementById('msg').innerText = 'مرحباً بك!'; }, 2000);</script></body></html>",
+    "output": "تتغير جملة انتظر اللحظة إلى مرحباً بك بعد مرور ثانيتين."
+   },
+   {
+    "h": "استخدام دالة setTimeout للتأخير",
+    "text": "تعمل دالة setTimeout كالمؤقت الذي نستخدمه لطهي الطعام، حيث تأخذ منك أمراً وتنفذه لمرة واحدة فقط بعد انتهاء الوقت المحدد بالميلي ثانية.",
+    "code": "<!DOCTYPE html><html><body><p id='p1'>جاهز؟</p><script>setTimeout(() => { document.getElementById('p1').innerText = 'تم التنفيذ!'; }, 1500);</script></body></html>",
+    "output": "يتحول النص إلى تم التنفيذ بعد ثانية ونصف."
+   },
+   {
+    "h": "فهم وحدة الميلي ثانية",
+    "text": "الكمبيوتر لا يتعامل بالثواني المعتادة بل بوحدة أسرع تسمى الميلي ثانية. الثانية الواحدة تساوي ألف ميلي ثانية، فإذا اردت خمس ثوانٍ تكتب خمسة آلاف.",
+    "code": "<!DOCTYPE html><html><body><p id='p2'>العد يبدأ</p><script>setTimeout(() => { document.getElementById('p2').innerText = 'مرت ثانية واحدة'; }, 1000);</script></body></html>",
+    "output": "يظهر النص الخاص بمرور ثانية واحدة بعد ألف ميلي ثانية."
+   },
+   {
+    "h": "التكرار المستمر مع setInterval",
+    "text": "إذا أردت أن تفعل شيئاً مراراً وتكراراً مثل نبضات القلب أو ومضات ضوء، تستخدم setInterval التي تكرر الكود بلا توقف كل فترة زمنية ثابتة.",
+    "code": "<!DOCTYPE html><html><body><h2 id='clock'>0</h2><script>let n = 0; setInterval(() => { n++; document.getElementById('clock').innerText = n; }, 1000);</script></body></html>",
+    "output": "يزداد الرقم في الشاشة بمقدار واحد كل ثانية باستمرار."
+   },
+   {
+    "h": "أهمية إيقاف المؤقتات",
+    "text": "التكرار المستمر قد يرهق جهاز الكمبيوتر إذا تركناه للابد. لذلك يجب دائماً أن نضع نقطة نهاية أو شرطاً لتوقيف هذا التكرار باستخدام دالة الإيقاف.",
+    "code": "<!DOCTYPE html><html><body><p id='stop'>بدء</p><script>let t = setInterval(() => { document.getElementById('stop').innerText = 'تم التوقف'; clearInterval(t); }, 1000);</script></body></html>",
+    "output": "يتوقف المؤقت بعد أول ثانية ويعرض نص تم التوقف."
+   },
+   {
+    "h": "بناء مؤقت عداد تنازلي",
+    "text": "العد التنازلي يجمع بين الأمرين؛ نبدأ برقم معين ونستخدم تكرار setInterval لنقصانه كل ثانية، وعندما يصل للصفر نوقفه باستخدام شرط واضح.",
+    "code": "<!DOCTYPE html><html><body><h3 id='cd'>3</h3><script>let c = 3; let x = setInterval(() => { c--; document.getElementById('cd').innerText = c; if(c<=0) clearInterval(x); }, 1000);</script></body></html>",
+    "output": "ينقص العد من 3 إلى 0 ثم يتوقف تماماً."
+   },
+   {
+    "h": "تطبيقات حقيقية في الحياة",
+    "text": "نستخدم هذه الأدوات في الألعاب الإلكترونية لإنشاء حركات الأعداء، وفي المواقع الإخبارية لتحديث العناوين، وفي تطبيقات اللياقة لحساب فترات التمرين.",
+    "code": "<!DOCTYPE html><html><body><button onclick='setTimeout(() => alert(\"انتهى الوقت!\"), 1000)'>اضغط للعد</button></body></html>",
+    "output": "يظهر تنبيه رسالة بعد ضغط الزر بثانية واحدة."
+   },
+   {
+    "h": "تلخيص ومراجعة المؤقتات",
+    "text": "تذكر دائماً أن setTimeout تنفذ مرة واحدة، و setInterval تكرر بلا توقف، و clearInterval تحمي برامجك من التشغيل الأبدي غير المخطط له.",
+    "code": "<!DOCTYPE html><html><body><p>تم إتمام الدرس بنجاح!</p></body></html>",
+    "output": "يعرض رسالة تفيد بإتمام الدرس."
+   }
+  ],
+  "reference": [
+   {
+    "name": "setTimeout()",
+    "desc": "تنفذ دالة أو كوداً معيناً لمرة واحدة بعد مرور فترة زمنية محددة."
+   },
+   {
+    "name": "setInterval()",
+    "desc": "تكرر تنفيذ دالة بشكل مستمر كل فترة زمنية محددة."
+   },
+   {
+    "name": "clearTimeout()",
+    "desc": "تلغي مؤقت setTimeout قبل أن يتم تنفيذه."
+   },
+   {
+    "name": "clearInterval()",
+    "desc": "توقف تكرار مؤقت setInterval المستمر."
+   },
+   {
+    "name": "Milliseconds",
+    "desc": "وحدة قياس الزمن في جافاسكريبت، حيث كل ثانية تساوي 1000 ميلي ثانية."
+   },
+   {
+    "name": "Function",
+    "desc": "كتلة برمجية تحتوي على الأوامر التي نريد تنفيذها عند انتهاء الوقت."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليمة برمجية تعرض رسالة بعد 4 ثوانٍ باستخدام setTimeout.",
+    "a": "setTimeout(() => { console.log('مرحباً'); }, 4000);"
+   },
+   {
+    "q": "كيف تكتب مؤقتاً متكرراً كل ثانيتين؟",
+    "a": "setInterval(myFunction, 2000);"
+   },
+   {
+    "q": "ما هي دالة إيقاف التكرار المستمر؟",
+    "a": "clearInterval()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In programming, we learn how to make our code wait or repeat regularly. Have you ever wondered how your games or websites perform tasks after a set time? This is the role of timing functions like setTimeout and setInterval in JavaScript.",
+   "Suppose you want to show a greeting message after exactly three seconds. You can use the setTimeout function, which executes code only once after a countdown finishes. We write it like this: setTimeout(sayHi, 3000), where 3000 represents three thousand milliseconds, equal to three seconds.",
+   "The setTimeout function works by taking a callback function and a time in milliseconds. JavaScript puts the code aside and continues running the rest of the program, and when the time is up, it jumps in to execute the commands just like a phone alarm.",
+   "What if we want to repeat something continuously, like updating a digital clock? This is where setInterval comes in, repeating code over and over at a fixed time interval. We write it like this: setInterval(updateClock, 1000) to repeat every single second.",
+   "The golden rule for handling repeating timers is to always store them in a variable so you can stop them using the clearInterval function when you no longer need them, otherwise your game or page will keep consuming memory forever.",
+   "These skills are used in daily life in cooking apps to alert you when a cake is ready, in video games to trigger an enemy attack every five seconds, or on websites to display scrolling image galleries automatically."
+  ],
+  "example": "Suppose we are designing a simple racing game and want to start a countdown. We write the following code:\n\nlet count = 3;\nlet timer = setInterval(function() {\n  console.log(count);\n  count--;\n  if (count < 0) {\n    clearInterval(timer);\n    console.log('Go!');\n  }\n}, 1000);\n\nThe reason for this order is that setInterval runs the code every second to decrease the variable by one, and when the number reaches zero, we immediately stop the timer using clearInterval so it doesn't keep going into negative numbers.",
+  "mistake": "A common mistake is forgetting to stop setInterval using clearInterval, which makes the code repeat forever and slows down the browser. The fix is always to assign the timer to a variable and include a clear stop condition.",
+  "recap": "JavaScript timing tools like setTimeout help us delay tasks to run once, while setInterval repeats them continuously. Using these tools always requires paying attention to the correct stopping time.",
+  "q": [
+   {
+    "t": "Which function is appropriate to run a task once after 5 seconds?",
+    "o": [
+     "setInterval",
+     "setTimeout",
+     "clearInterval"
+    ],
+    "a": 1,
+    "why": "Because setTimeout executes code only once after the specified time."
+   },
+   {
+    "t": "What does the number 2000 represent inside a timing function in milliseconds?",
+    "o": [
+     "Two seconds",
+     "Twenty seconds",
+     "Half a second"
+    ],
+    "a": 0,
+    "why": "Since one thousand milliseconds equals one second, two thousand means two seconds."
+   },
+   {
+    "t": "How do you stop a running setInterval loop?",
+    "o": [
+     "Using setTimeout",
+     "Using clearTimeout",
+     "Using clearInterval"
+    ],
+    "a": 2,
+    "why": "The clearInterval function is designed to stop continuous timer loops."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Countdown Creation and Stopping Steps",
+   "goal": "Arrange the following programming steps so they work correctly without an infinite loop.",
+   "items": [
+    "let seconds = 5;",
+    "let countdown = setInterval(function() {",
+    "  seconds--;",
+    "  if (seconds === 0) {",
+    "    clearInterval(countdown);",
+    "  }",
+    "}, 1000);"
+   ],
+   "success": "Awesome! You created a smart countdown that stops at the exact right moment!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Timing in JavaScript",
+    "text": "Program timing is like an alarm clock you set to wake you up in the morning. In JavaScript, we use timer functions to make the computer wait for a specific period before executing any command.",
+    "code": "<!DOCTYPE html><html><body><h1 id='msg'>Wait a moment...</h1><script>setTimeout(() => { document.getElementById('msg').innerText = 'Welcome!'; }, 2000);</script></body></html>",
+    "output": "Changes the phrase Wait a moment to Welcome after two seconds."
+   },
+   {
+    "h": "Using setTimeout for Delays",
+    "text": "The setTimeout function acts like a kitchen timer, taking an instruction and executing it only once after the specified time in milliseconds has passed.",
+    "code": "<!DOCTYPE html><html><body><p id='p1'>Ready?</p><script>setTimeout(() => { document.getElementById('p1').innerText = 'Done!'; }, 1500);</script></body></html>",
+    "output": "Turns the text into Done after one and a half seconds."
+   },
+   {
+    "h": "Understanding Milliseconds",
+    "text": "Computers do not use regular seconds but a faster unit called milliseconds. One second equals one thousand milliseconds, so if you want five seconds, you write five thousand.",
+    "code": "<!DOCTYPE html><html><body><p id='p2'>Counting starts</p><script>setTimeout(() => { document.getElementById('p2').innerText = 'One second passed'; }, 1000);</script></body></html>",
+    "output": "Displays the text for one second passing after one thousand milliseconds."
+   },
+   {
+    "h": "Continuous Loops with setInterval",
+    "text": "If you want to do something over and over like a heartbeat or light flashes, use setInterval which repeats code continuously at a fixed time interval.",
+    "code": "<!DOCTYPE html><html><body><h2 id='clock'>0</h2><script>let n = 0; setInterval(() => { n++; document.getElementById('clock').innerText = n; }, 1000);</script></body></html>",
+    "output": "Increases the number on the screen by one every second continuously."
+   },
+   {
+    "h": "The Importance of Stopping Timers",
+    "text": "Continuous repetition can exhaust the computer if left running forever. Therefore, we must always set an end point or condition to stop this repetition using the stop function.",
+    "code": "<!DOCTYPE html><html><body><p id='stop'>Start</p><script>let t = setInterval(() => { document.getElementById('stop').innerText = 'Stopped'; clearInterval(t); }, 1000);</script></body></html>",
+    "output": "Stops the timer after the first second and displays Stopped."
+   },
+   {
+    "h": "Building a Countdown Timer",
+    "text": "A countdown combines both; we start with a specific number and use a setInterval loop to decrease it every second, and when it reaches zero, we stop it using a clear condition.",
+    "code": "<!DOCTYPE html><html><body><h3 id='cd'>3</h3><script>let c = 3; let x = setInterval(() => { c--; document.getElementById('cd').innerText = c; if(c<=0) clearInterval(x); }, 1000);</script></body></html>",
+    "output": "Decreases the count from 3 to 0 then stops completely."
+   },
+   {
+    "h": "Real-Life Applications",
+    "text": "We use these tools in video games to create enemy movements, in news websites to update headlines, and in fitness apps to calculate workout intervals.",
+    "code": "<!DOCTYPE html><html><body><button onclick='setTimeout(() => alert(\"Time is up!\"), 1000)'>Click to count</button></body></html>",
+    "output": "Shows an alert message box one second after clicking the button."
+   },
+   {
+    "h": "Summary and Review of Timers",
+    "text": "Always remember that setTimeout runs once, setInterval repeats continuously, and clearInterval protects your programs from unplanned eternal execution.",
+    "code": "<!DOCTYPE html><html><body><p>Lesson completed successfully!</p></body></html>",
+    "output": "Displays a message stating the lesson is complete."
+   }
+  ],
+  "reference": [
+   {
+    "name": "setTimeout()",
+    "desc": "Executes a function or specified code once after a designated time period."
+   },
+   {
+    "name": "setInterval()",
+    "desc": "Repeats execution of a function continuously every specified time interval."
+   },
+   {
+    "name": "clearTimeout()",
+    "desc": "Cancels a setTimeout timer before it executes."
+   },
+   {
+    "name": "clearInterval()",
+    "desc": "Stops a continuous setInterval timer loop."
+   },
+   {
+    "name": "Milliseconds",
+    "desc": "The unit of time measurement in JavaScript, where each second equals 1000 milliseconds."
+   },
+   {
+    "name": "Function",
+    "desc": "A block of code containing commands we want to execute when time runs out."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a code instruction that displays a message after 4 seconds using setTimeout.",
+    "a": "setTimeout(() => { console.log('Hello'); }, 4000);"
+   },
+   {
+    "q": "How do you write a repeating timer every two seconds?",
+    "a": "setInterval(myFunction, 2000);"
+   },
+   {
+    "q": "What is the function used to stop continuous repetition?",
+    "a": "clearInterval()"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Dynamic scripting with JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

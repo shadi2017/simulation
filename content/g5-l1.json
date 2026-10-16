@@ -1,0 +1,312 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن الكمبيوتر لديه غرف تخزين صغيرة تسمى المتغيرات، وكل غرفة تحمل اسماً فريداً لحفظ المعلومات بداخلها.",
+   "نستخدم كلمة let في جافاسكريبت لإنشاء صندوق يمكن تغيير محتواه لاحقاً، مثل نقاط اللاعب التي تزيد مع كل تفاحة يجمعها.",
+   "نستخدم كلمة const لإنشاء صندوق يظل محتواه ثابتاً ولا يتغير أبداً طوال اللعبة، مثل اسم اللعبة أو السرعة القصوى.",
+   "يمكننا تخزين أنواع مختلفة من البيانات داخل هذه الصناديق مثل النصوص بين علامات تنصيص، والأرقام الصحيحة مباشرة، والقيم المنطقية مثل صح أو خطأ.",
+   "تتيح لنا ميزة دمج النصوص أو إلصاقها معاً تكوين جمل جديدة ومفيدة من خلال جمع النصوص ببعضها باستخدام علامة الزائد.",
+   "في الحياة اليومية، الصندوق الذي يحمل اسمك المدرسي ثابت (const)، بينما حصالك النقدي الذي تضع فيه قروشاً جديدة كل يوم يتغير (let)."
+  ],
+  "example": "في لعبتنا البرمجية الأولى، سننشئ متغيراً باسم let score = 10; ونغير قيمته لأنها ترتفع مع الفوز، وسنحدد اسماً ثابتاً للعبة باستخدام const gameTitle = \"مغامرة الفضاء\";. عبر هذه الأدوات، نحفظ البيانات بذكاء ونقوم بدمج النصوص مع الأرقام لعرض رسالة ترحيبية مشوقة للاعب على الشاشة.",
+  "mistake": "محاولة تغيير قيمة متغيرة تم تعريفها بـ const ستؤدي إلى ظهور خطأ في وحدة التحكم لأنها ثابتة لا تقبل التعديل. الحل هو استخدام let إذا كنت تعلم أن القيمة ستتغير لاحقاً.",
+  "recap": "المتغيرات هي الصناديق الأساسية لحفظ البيانات في جافاسكريبت، فنستعمل let للقيم المتغيرة وconst للثوابت.",
+  "q": [
+   {
+    "t": "أي كلمة مفتاحية نستخدمها لمتغير تتغير قيمته باستمرار؟",
+    "o": [
+     "const",
+     "let",
+     "print"
+    ],
+    "a": 1,
+    "why": "نستخدم let للقيم التي تتغير بمرور الوقت مثل النقاط أو المراحل."
+   },
+   {
+    "t": "ما نوع البيانات الذي يمثله النص المحصور بين علامات التنصيص؟",
+    "o": [
+     "عدد صحيح",
+     "قيمة منطقية",
+     "نص"
+    ],
+    "a": 2,
+    "why": "النصوص أو الـ Strings هي سلاسل الحروف المحاطة بعلامات التنصيص."
+   },
+   {
+    "t": "ماذا يحدث إذا حاولت تغيير قيمة متغير معرف بـ const؟",
+    "o": [
+     "يحدث خطأ برمجي",
+     "تتغير القيمة بنجاح",
+     "يتم حذف الصفحة"
+    ],
+    "a": 0,
+    "why": "القيم المعرفة بـ const ثابتة ولا يمكن تعديلها بعد إعطائها القيمة الأولى."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ المتغير الثابت",
+   "goal": "أصلح السطر البرمجي الذي يحاول تغيير قيمة ثابتة بشكل خاطئ",
+   "lines": [
+    "const maxLives = 3;",
+    "let playerName = \"أحمد\";",
+    "maxLives = 5;",
+    "console.log(playerName);"
+   ],
+   "bug": 2,
+   "fix": "let maxLives = 3;",
+   "success": "تم تصحيح الكود بنجاح وأصبح الكمبيوتر يداري المتغيرات بلا أخطاء!"
+  },
+  "sections": [
+   {
+    "h": "ما هو المتغير البرمجي؟",
+    "text": "المتغير هو عبارة عن صندوق في ذاكرة الكمبيوتر يحمل اسماً معيناً ونضع داخله قيمة نريد تذكرها لاستخدامها لاحقاً. تخيل أنك تكتب اسمك على حقيبة المدرسة حتى تعرف أنها حقيبتك وحدك.",
+    "code": "<script>let box = \"كنز البرمجة\"; document.write(box);</script>",
+    "output": "يظهر على الصفحة نص كنز البرمجة المخزن داخل المتغير."
+   },
+   {
+    "h": "استخدام كلمة let للقيم المتغيرة",
+    "text": "عندما تخطط لأن تتغير القيمة داخل الصندوق أثناء تشغيل البرنامج، مثل عدد النقاط أو المحاولات المتبقية، يجب عليك استخدام الكلمة المفتاحية let.",
+    "code": "<script>let score = 10; score = 20; document.write(score);</script>",
+    "output": "يتم طباعة الرقم 20 بعد تحديث قيمة النقاط."
+   },
+   {
+    "h": "استخدام كلمة const للقيم الثابتة",
+    "text": "إذا كانت القيمة لا يجب أن تتغير أبداً طوال تشغيل البرنامج، مثل سرعة الضوء أو عنوان موقعك المفضل، فنحن نستعمل كلمة const لضمان عدم عبث أي كود آخر بها عن طريق الخطأ.",
+    "code": "<script>const school = \"مدرسة الفراعنة\"; document.write(school);</script>",
+    "output": "يطبع اسم المدرسة الثابت على الشاشة."
+   },
+   {
+    "h": "تخزين النصوص أو Strings",
+    "text": "النص هو مجموعة من الحروف أو الكلمات وتوضع دائماً بين علامات التنصيص المزدوجة أو المفردة. مثل تخزين اسم البطل أو رسالة ترحيبية جميلة.",
+    "code": "<script>let hero = \"بطل الأبطال\"; document.write(hero);</script>",
+    "output": "يعرض اسم البطل النصي بوضوح."
+   },
+   {
+    "h": "تخزين الأرقام الصحيحة والأعداد",
+    "text": "الأرقام لا تحتاج إلى علامات تنصيص، بل نكتبها بشكل مباشر. يمكننا استخدامها في العمليات الحسابية مثل حساب عمرك في السنة القادمة أو جمع النقاط.",
+    "code": "<script>let age = 12; document.write(age + 1);</script>",
+    "output": "يعرض الناتج 13 بعد جمع رقم واحد على العمر."
+   },
+   {
+    "h": "تخزين القيم المنطقية Booleans",
+    "text": "القيمة المنطقية هي إجابة لسؤال بنعم أو لا، وتمثل في جافاسكريبت بكلمتين هما true أو false. هل اللعبة بدأت؟ true.",
+    "code": "<script>let isReady = true; document.write(isReady);</script>",
+    "output": "يطبع كلمة true على الشاشة."
+   },
+   {
+    "h": "إلصاق ودمج النصوص (Appending)",
+    "text": "يمكننا لصق النصوص معاً أو ربط النصوص بالمتغيرات باستخدام علامة الزائد (+) لنصنع جملاً طويلة ومفيدة، تماماً مثل تركيب قطع ليغو مع بعضها البعض لتكوين شكل جميل.",
+    "code": "<script>let greeting = \"أهلاً بك يا \"; let name = \"سارة\"; document.write(greeting + name);</script>",
+    "output": "يطبع جملة أهلاً بك يا سارة مجتمعة."
+   },
+   {
+    "h": "جمع النصوص والأرقام معاً",
+    "text": "عندما تجمع نصاً مع رقم بعلامة الزائد، يقوم جافاسكريبت بتحويل الرقم إلى نص ويلصقهما بجانب بعضهما البعض بدلاً من إجراء عملية حسابية رياضية معقدة.",
+    "code": "<script>let msg = \"لديك نقاط: \"; let points = 50; document.write(msg + points);</script>",
+    "output": "يطبع عبارة لديك نقاط: 50 متصلة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "let",
+    "desc": "إنشاء متغير يمكن تغيير قيمته لاحقاً."
+   },
+   {
+    "name": "const",
+    "desc": "إنشاء متغير ثابت لا تتغير قيمته أبداً."
+   },
+   {
+    "name": "String",
+    "desc": "نوع بيانات يمثل النصوص المحاطة بعلامات تنصيص."
+   },
+   {
+    "name": "Number",
+    "desc": "نوع بيانات يمثل الأرقام الصحيحة والعشرية."
+   },
+   {
+    "name": "Boolean",
+    "desc": "نوع بيانات يحمل قيمتين فقط: صحيح (true) أو خطأ (false)."
+   },
+   {
+    "name": "Appending",
+    "desc": "عملية وصل النصوص والأحرف ببعضها باستخدام علامة الجمع (+)."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ متغيراً لتخزين اسمك باستخدام let واطبعه على الشاشة.",
+    "a": "let myName = \"علي\"; document.write(myName);"
+   },
+   {
+    "q": "أنشئ ثابتاً لاسم مدينتك باستخدام const.",
+    "a": "const city = \"القاهرة\"; document.write(city);"
+   },
+   {
+    "q": "قم بدمج نص الترحيب مع اسم اللاعب في متغير واحد.",
+    "a": "let hello = \"مرحباً \"; let user = \"كريم\"; document.write(hello + user);"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine the computer has tiny storage rooms called variables, and each room holds a unique name to keep information safely inside.",
+   "We use the keyword let in JavaScript to create a box whose content can change later, like a player's score that increases with every apple collected.",
+   "We use the keyword const to create a box whose content stays constant and never changes throughout the game, like the game title or maximum speed.",
+   "We can store different types of data inside these boxes, such as text inside quotes, direct integer numbers, and boolean values like true or false.",
+   "String appending allows us to attach texts together to form new and useful sentences by joining them using the plus sign.",
+   "In real life, your school ID name is constant (const), while your piggy bank where you add new coins every day changes (let)."
+  ],
+  "example": "In our first coding game, we will create a variable let score = 10; and change its value since it increases on winning, and set a fixed game name using const gameTitle = \"Space Adventure\";. Through these tools, we save data smartly and combine text with numbers to show an exciting welcome message on the screen.",
+  "mistake": "Trying to change the value of a variable defined with const will cause an error in the console because constants cannot be reassigned. The fix is to use let if you know the value will change later.",
+  "recap": "Variables are the foundational boxes for storing data in JavaScript, using let for changeable values and const for constants.",
+  "q": [
+   {
+    "t": "Which keyword should we use for a variable whose value changes constantly?",
+    "o": [
+     "const",
+     "let",
+     "print"
+    ],
+    "a": 1,
+    "why": "We use let for values that change over time like points or game levels."
+   },
+   {
+    "t": "What data type is represented by text enclosed in quotation marks?",
+    "o": [
+     "Integer",
+     "Boolean",
+     "String"
+    ],
+    "a": 2,
+    "why": "Text strings are sequences of characters surrounded by quotation marks."
+   },
+   {
+    "t": "What happens if you try to change the value of a variable declared with const?",
+    "o": [
+     "A coding error occurs",
+     "The value changes successfully",
+     "The web page deletes"
+    ],
+    "a": 0,
+    "why": "Values declared with const are constant and cannot be modified after their initial assignment."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Constant Variable Bug",
+   "goal": "Fix the line of code that incorrectly tries to modify a constant value",
+   "lines": [
+    "const maxLives = 3;",
+    "let playerName = \"Ahmed\";",
+    "maxLives = 5;",
+    "console.log(playerName);"
+   ],
+   "bug": 2,
+   "fix": "let maxLives = 3;",
+   "success": "Code corrected successfully and the computer manages variables without errors!"
+  },
+  "sections": [
+   {
+    "h": "What is a Programming Variable?",
+    "text": "A variable is a box in the computer's memory with a specific name where we place a value we want to remember and use later. Imagine writing your name on your school bag so you know it belongs to you.",
+    "code": "<script>let box = \"Code Treasure\"; document.write(box);</script>",
+    "output": "Displays the text Code Treasure stored inside the variable."
+   },
+   {
+    "h": "Using let for Changing Values",
+    "text": "When you plan for the value inside the box to change while the program runs, like score counts or remaining attempts, you must use the let keyword.",
+    "code": "<script>let score = 10; score = 20; document.write(score);</script>",
+    "output": "Prints the number 20 after updating the score value."
+   },
+   {
+    "h": "Using const for Constant Values",
+    "text": "If a value should never change throughout the program, like the speed of light or your favorite website URL, we use const to ensure no other code accidentally tampers with it.",
+    "code": "<script>const school = \"Pharaohs School\"; document.write(school);</script>",
+    "output": "Prints the constant school name on the screen."
+   },
+   {
+    "h": "Storing Text Strings",
+    "text": "A string is a collection of characters or words always wrapped in double or single quotation marks. Perfect for storing hero names or friendly welcome messages.",
+    "code": "<script>let hero = \"Super Hero\"; document.write(hero);</script>",
+    "output": "Displays the string hero name clearly."
+   },
+   {
+    "h": "Storing Integers and Numbers",
+    "text": "Numbers do not need quotation marks; we write them directly. We can use them in mathematical operations like calculating your age next year or summing points.",
+    "code": "<script>let age = 12; document.write(age + 1);</script>",
+    "output": "Displays the result 13 after adding one to the age."
+   },
+   {
+    "h": "Storing Boolean Values",
+    "text": "A boolean is a yes-or-no answer, represented in JavaScript by true or false. Has the game started? true.",
+    "code": "<script>let isReady = true; document.write(isReady);</script>",
+    "output": "Prints the word true on the screen."
+   },
+   {
+    "h": "Appending Text Fields",
+    "text": "We can glue texts together or combine text with variables using the plus sign (+) to make long, useful sentences, just like snapping Lego pieces together to form a cool shape.",
+    "code": "<script>let greeting = \"Welcome \"; let name = \"Sarah\"; document.write(greeting + name);</script>",
+    "output": "Prints the combined sentence Welcome Sarah."
+   },
+   {
+    "h": "Combining Text and Numbers",
+    "text": "When you combine text with a number using a plus sign, JavaScript converts the number into text and places them side by side instead of performing complex math.",
+    "code": "<script>let msg = \"Score: \"; let points = 50; document.write(msg + points);</script>",
+    "output": "Prints the connected phrase Score: 50."
+   }
+  ],
+  "reference": [
+   {
+    "name": "let",
+    "desc": "Creates a variable whose value can be changed later."
+   },
+   {
+    "name": "const",
+    "desc": "Creates a constant variable whose value never changes."
+   },
+   {
+    "name": "String",
+    "desc": "Data type representing text enclosed in quotes."
+   },
+   {
+    "name": "Number",
+    "desc": "Data type representing whole and decimal numbers."
+   },
+   {
+    "name": "Boolean",
+    "desc": "Data type holding only two values: true or false."
+   },
+   {
+    "name": "Appending",
+    "desc": "The process of joining texts and characters together using the plus sign (+)."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a variable to store your name using let and print it.",
+    "a": "let myName = \"Ali\"; document.write(myName);"
+   },
+   {
+    "q": "Create a constant for your city name using const.",
+    "a": "const city = \"Cairo\"; document.write(city);"
+   },
+   {
+    "q": "Append a greeting text with a player name into a single variable.",
+    "a": "let hello = \"Hello \"; let user = \"Kareem\"; document.write(hello + user);"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Dynamic scripting with JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting"
+  },
+  {
+   "title": "MDN: Scripting SVG with JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/Scripting"
+  }
+ ],
+ "grounded": true
+}

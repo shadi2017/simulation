@@ -1,0 +1,314 @@
+{
+ "ar": {
+  "steps": [
+   "البطاقات المخصصة هي وحدات تصميم أنيقة تعرض الصور والنصوص والمعلومات بطريقة مرتبة، تماماً مثل بطاقات الألعاب أو بطاقات الشخصيات الكرتونية التي نجمعها مع أصدقائنا في المدرسة.",
+   "لتصميم بطاقة بسيطة، نستخدم عنصر حاوية يحمل صورة في الأعلى وعنواناً في المنتصف ووصفاً في الأسفل، مع إطار أنيق يحيط بها.",
+   "نستخدم خاصية شبكة التخطيط لتقسيم عناصر البطاقة بدقة، حيث نحدد مساحة ثابتة للصورة ومساحة مرنة للنص لضمان تنظيم الشكل العام.",
+   "تجميع البطاقات بجانب بعضها البعض يتطلب إنشاء شبكة رئيسية تحتوي على أعمدة متجاوبة تتكيف تلقائياً مع حجم الشاشة لتبدو منظمة في كل الأجهزة.",
+   "القاعدة الذهبية لتصميم البطاقات هي الحفاظ على ترتيب العناصر وثبات الارتفاع، مما يجعل مقارنة المنتجات أو الصور أمراً سهلاً ومريحاً للعين.",
+   "نستخدم هذه البطاقات في الواقع لعرض المنتجات في المتاجر الإلكترونية، مقالات المدونات، أو بطاقات الشخصيات في ألعاب الفيديو الممتعة."
+  ],
+  "example": "لنفترض أننا نصمم بطاقة تعرض صورة منطاد هواء طائر مع عنوان رئيسي ووصف قصير. سنقوم بكتابة عنصر حاوية يحمل بداخله وسم العنوان وسم الصورة وسم النص. ننسق هذه الحاوية بإطار رمادي نحيف وزوايا دائرية، ونستخدم خاصية الشبكة لضمان ظهور الصورة بارتفاع ثابت يبلغ مئتي بكسل، بينما يتمدد النص في المساحة المتبقية لتبدو البطاقة مرتبة ومتناسقة للغاية.",
+  "mistake": "نسيان تحديد ارتفاع الصورة أو جعلها تتمدد بشكل مبالغ فيه قد يؤدي إلى تشويه شكل البطاقة بالكامل. الحل هو استخدام خاصية ضبط صورة الكائن مع عرض وارتفاع محددين بدقة.",
+  "recap": "تتيح لنا بطاقات CSS دمج الصور والنصوص والإطارات في وحدات متناسقة. استخدام شبكات التخطيط يساعدنا في تنظيم عرض هذه البطاقات بشكل احترافي.",
+  "q": [
+   {
+    "t": "ما هي الفائدة الأساسية من استخدام البطاقات المخصصة في تصميم الويب؟",
+    "o": [
+     "عرض المعلومات والصور بشكل منظم وسهل المقارنة",
+     "جعل موقع الويب أبطأ في التحميل",
+     "إخفاء النصوص تماماً عن الزوار"
+    ],
+    "a": 0,
+    "why": "البطاقات تنظم المحتوى بصرياً لتسهيل القراءة والمقارنة."
+   },
+   {
+    "t": "كيف نحدد ارتفاع صف الصورة داخل شبكة تخطيط البطاقة؟",
+    "o": [
+     "باستخدام خاصية اللون",
+     "بتحديد قيمة ثابتة مثل 200 بكسل",
+     "بتعطيل الشبكة تماماً"
+    ],
+    "a": 1,
+    "why": "نحدد مساحة محددة مثل 200 بكسل لتبدو الصورة متناسقة."
+   },
+   {
+    "t": "أي خاصية تستخدم لإنشاء أعمدة متجاوبة لشبكة البطاقات؟",
+    "o": [
+     "grid-template-columns مع خاصية التعبئة التلقائية",
+     "color: red",
+     "font-size: 20px"
+    ],
+    "a": 0,
+    "why": "نعرف أعمدة الشبكة لتتكيّف تلقائياً مع حجم الشاشة."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ في تنسيق البطاقة",
+   "goal": "اكتشف السطر البرجرمي الخاطئ في تنسيق شبكة البطاقة وأصلحه",
+   "lines": [
+    ".card {",
+    "  border: 1px solid #999;",
+    "  display: block;",
+    "  grid-template-rows: max-content 200px 1fr;",
+    "}"
+   ],
+   "bug": 2,
+   "fix": "  display: grid;",
+   "success": "تحولت البطاقة إلى شبكة منظمة وظهرت العناصر في مكانها الصحيح!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم بطاقات الويب",
+    "text": "البطاقة هي حاوية بصرية تجمع صورة وعنواناً ونصاً ووصفاً في مكان واحد، تشبه تماماً بطاقات تداول لاعبي كرة القدم أو الشخصيات الكرتونية المفضلة لديك.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 1px solid #ccc; padding: 10px; width: 200px; border-radius: 5px; }</style></head><body><div class='card'><h3>بطاقة</h3><p>محتوى البطاقة</p></div></body></html>",
+    "output": "يظهر صندوق بسيط يمثل بطاقة تحتوي على عنوان ونص."
+   },
+   {
+    "h": "إضافة الإطارات والزوايا",
+    "text": "لجعل البطاقة بارزة وجميلة، نضيف إطاراً خارجياً نحيفاً ونقوم بتدوير الحواف الزاوية لتصبح ناعمة الملمس ومريحة للعين.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 2px solid #333; border-radius: 8px; padding: 15px; width: 220px; }</style></head><body><div class='card'><h3>إطار أنيق</h3></div></body></html>",
+    "output": "يظهر صندوق بإطار غامق وزوايا دائرية جذابة."
+   },
+   {
+    "h": "دمج الصور داخل البطاقات",
+    "text": "الصورة هي روح البطاقة! نضعها في أعلى البطاقة ونستخدم خصائص التنسيق لضمان ملاءمتها للمساحة المخصصة لها دون تشوه.",
+    "code": "<!DOCTYPE html><html><head><style>.card { width: 200px; border: 1px solid #999; } img { width: 100%; height: 120px; object-fit: cover; }</style></head><body><div class='card'><img src='https://picsum.photos/200' alt='صورة'></div></body></html>",
+    "output": "تظهر صورة مرتبة داخل حدود البطاقة."
+   },
+   {
+    "h": "استخدام شبكة تخطيط البطاقة",
+    "text": "نقسم مساحة البطاقة باستخدام الشبكة إلى صفوف محددة بدقة: صف العنوان، صف الصورة، وصف المحتوى.",
+    "code": "<!DOCTYPE html><html><head><style>.card { display: grid; grid-template-rows: max-content 150px 1fr; border: 1px solid #666; width: 220px; }</style></head><body><div class='card'><h2>عنوان</h2><img src='https://picsum.photos/200' alt='صورة'><p>نص وصف</p></div></body></html>",
+    "output": "يتم تنظيم عناصر البطاقة في صفوف مرتبة وثابتة."
+   },
+   {
+    "h": "إنشاء مجموعة بطاقات متجاوبة",
+    "text": "عندما يكون لدينا العديد من البطاقات، نضعها في حاوية رئيسية تستخدم شبكة متجاوبة لتوزع البطاقات بانتظام على الشاشة.",
+    "code": "<!DOCTYPE html><html><head><style>.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }</style></head><body><div class='cards'><div class='card'>بطاقة 1</div><div class='card'>بطاقة 2</div></div></body></html>",
+    "output": "تتوزع البطاقات بجانب بعضها بشكل شبكي متناسق."
+   },
+   {
+    "h": "إضافة تذييل البطاقة",
+    "text": "بعض البطاقات تحتوي على قسم سفلي أو تذييل يضم معلومات إضافية مثل اسم الكاتب أو زر إعجاب يلصق تلقائياً بأسفل البطاقة.",
+    "code": "<!DOCTYPE html><html><head><style>.card { display: grid; grid-template-rows: auto 100px 1fr auto; border: 1px solid #999; width: 200px; } footer { background: #333; color: white; padding: 5px; }</style></head><body><div class='card'><h3>عنوان</h3><img src='https://picsum.photos/200' alt=''><p>محتوى</p><footer>تذييل</footer></div></body></html>",
+    "output": "تظهر البطاقة ومعها شريط سفلي داكن اللون."
+   },
+   {
+    "h": "تحسين مسافات الحشو الداخلية",
+    "text": "المسافات الداخلية تمنع النصوص والصور من التصاقها بحواف الإطار، مما يعطي تصميماً احترافياً ومريحاً للقارئ.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 1px solid #aaa; padding: 12px; width: 200px; }</style></head><body><div class='card'><h3>عنوان</h3><p>محتوى متباعد ومنظم</p></div></body></html>",
+    "output": "يظهر النص بعيداً عن حواف الإطار بمسافة متساوية."
+   },
+   {
+    "h": "مقارنة العناصر وتوحيد الارتفاع",
+    "text": "جعل جميع البطاقات بنفس الارتفاع يساعد المستخدم في مقارنة المنتجات أو الصور بسهولة تامة ودون تشتت.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 1px solid #000; height: 250px; width: 180px; }</style></head><body><div class='card'>بطاقة ثابتة الارتفاع</div></body></html>",
+    "output": "يظهر صندوق بارتفاع ثابت ومثالي للمقارنة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "display: grid",
+    "desc": "يحول العنصر إلى شبكة تخطيط مرنة"
+   },
+   {
+    "name": "grid-template-rows",
+    "desc": "يحدد ارتفاع صفوف شبكة البطاقة بدقة"
+   },
+   {
+    "name": "object-fit: cover",
+    "desc": "يضبط حجم الصورة لتملأ المساحة دون تشويه"
+   },
+   {
+    "name": "border-radius",
+    "desc": "يقوم بتدوير زوايا حدود العناصر"
+   },
+   {
+    "name": "gap",
+    "desc": "يحدد المسافة الفاصلة بين البطاقات في الشبكة"
+   },
+   {
+    "name": "repeat(auto-fill, ...)",
+    "desc": "ينشئ أعمدة متجاوبة تتكيف مع حجم الشاشة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "قم بإنشاء بطاقة تحتوي على إطار ونصوص ومسافات داخلية.",
+    "a": "<div style='border: 1px solid black; padding: 10px; border-radius: 4px;'><h3>عنوان</h3><p>وصف قصير</p></div>"
+   },
+   {
+    "q": "اكتب كود CSS يحول حاوية البطاقات إلى شبكة متجاوبة.",
+    "a": ".cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }"
+   },
+   {
+    "q": "كيف تجعل صورة داخل البطاقة تغطي مساحتها بالكامل بارتفاع 200 بكسل؟",
+    "a": "img { width: 100%; height: 200px; object-fit: cover; }"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Custom cards are neat visual containers that display images, titles, and information in an organized way, just like trading cards or game character cards we collect at school.",
+   "To design a simple card, we use a container element holding a top image, a middle heading, and a bottom description, surrounded by a stylish border.",
+   "We use grid layout to precisely divide card elements, setting a fixed size for the image and flexible space for text to keep the overall shape neat.",
+   "Grouping cards together requires a main grid container with responsive columns that adapt automatically to screen sizes so they look organized on all devices.",
+   "The golden rule for card design is keeping elements consistent and heights equal, making it easy and comfortable for people to compare items or pictures.",
+   "We use these cards in real life for product grids in online stores, blog post previews, or character cards in fun video games."
+  ],
+  "example": "Suppose we are designing a card showcasing a hot air balloon image with a short heading and text. We write a container element holding the heading, image, and text elements. We style this container with a thin gray border and rounded corners, and use grid layout to ensure the image appears at a fixed 200-pixel height while the text fills the remaining space so the card looks neat and balanced.",
+  "mistake": "Forgetting to set image dimensions or letting images stretch too much can distort the entire card layout. The fix is using object-fit cover along with explicit width and height values.",
+  "recap": "CSS cards let us combine images, text, and borders into harmonious components. Using grid layout helps us organize the display of these cards professionally.",
+  "q": [
+   {
+    "t": "What is the main benefit of using custom cards in web design?",
+    "o": [
+     "Displaying information and images in an organized, easy-to-compare way",
+     "Making web pages slower to load",
+     "Hiding text completely from visitors"
+    ],
+    "a": 0,
+    "why": "Cards visually organize content to make reading and comparison easy."
+   },
+   {
+    "t": "How do we define the height of the image row inside a card grid layout?",
+    "o": [
+     "By using the color property",
+     "By setting a fixed value like 200 pixels",
+     "By disabling the grid completely"
+    ],
+    "a": 1,
+    "why": "We set a specific space like 200px so the image stays well-proportioned."
+   },
+   {
+    "t": "Which property is used to create responsive columns for a card grid?",
+    "o": [
+     "grid-template-columns with auto-fill",
+     "color: red",
+     "font-size: 20px"
+    ],
+    "a": 0,
+    "why": "We define grid columns to adapt automatically to screen size."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing a Card Layout Bug",
+   "goal": "Find the wrong line of code in the card grid styling and fix it",
+   "lines": [
+    ".card {",
+    "  border: 1px solid #999;",
+    "  display: block;",
+    "  grid-template-rows: max-content 200px 1fr;",
+    "}"
+   ],
+   "bug": 2,
+   "fix": "  display: grid;",
+   "success": "The card transformed into an organized grid and all elements snapped into their correct places!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Web Cards",
+    "text": "A card is a visual container that groups an image, title, and description in one place, very much like trading cards or your favorite cartoon character cards.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 1px solid #ccc; padding: 10px; width: 200px; border-radius: 5px; }</style></head><body><div class='card'><h3>Card</h3><p>Card content</p></div></body></html>",
+    "output": "A simple box appears representing a card with a heading and text."
+   },
+   {
+    "h": "Adding Borders and Corners",
+    "text": "To make a card stand out nicely, we add a thin outer border and round the corner edges to give them a smooth and eye-friendly look.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 2px solid #333; border-radius: 8px; padding: 15px; width: 220px; }</style></head><body><div class='card'><h3>Nice Border</h3></div></body></html>",
+    "output": "A box with a dark border and attractive rounded corners appears."
+   },
+   {
+    "h": "Embedding Images in Cards",
+    "text": "An image is the soul of a card! We place it at the top of the card and use styling properties to ensure it fits its allocated space without distortion.",
+    "code": "<!DOCTYPE html><html><head><style>.card { width: 200px; border: 1px solid #999; } img { width: 100%; height: 120px; object-fit: cover; }</style></head><body><div class='card'><img src='https://picsum.photos/200' alt='image'></div></body></html>",
+    "output": "A neat image is displayed within the card boundaries."
+   },
+   {
+    "h": "Using Card Grid Layout",
+    "text": "We divide the card space using grid into precise rows: the heading row, the image row, and the content description row.",
+    "code": "<!DOCTYPE html><html><head><style>.card { display: grid; grid-template-rows: max-content 150px 1fr; border: 1px solid #666; width: 220px; }</style></head><body><div class='card'><h2>Title</h2><img src='https://picsum.photos/200' alt='image'><p>Description text</p></div></body></html>",
+    "output": "Card elements are organized into neat and fixed rows."
+   },
+   {
+    "h": "Creating a Responsive Card Group",
+    "text": "When we have multiple cards, we place them inside a main container that uses a responsive grid to distribute cards neatly across the screen.",
+    "code": "<!DOCTYPE html><html><head><style>.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }</style></head><body><div class='cards'><div class='card'>Card 1</div><div class='card'>Card 2</div></div></body></html>",
+    "output": "Cards are distributed side-by-side in a balanced grid layout."
+   },
+   {
+    "h": "Adding a Card Footer",
+    "text": "Some cards feature a bottom section or footer holding extra info like an author name or button, sticking automatically to the bottom of the card.",
+    "code": "<!DOCTYPE html><html><head><style>.card { display: grid; grid-template-rows: auto 100px 1fr auto; border: 1px solid #999; width: 200px; } footer { background: #333; color: white; padding: 5px; }</style></head><body><div class='card'><h3>Title</h3><img src='https://picsum.photos/200' alt=''><p>Content</p><footer>Footer</footer></div></body></html>",
+    "output": "The card appears with a dark bottom bar footer."
+   },
+   {
+    "h": "Improving Inner Padding",
+    "text": "Inner padding prevents text and images from sticking to frame borders, giving a professional and readable design.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 1px solid #aaa; padding: 12px; width: 200px; }</style></head><body><div class='card'><h3>Title</h3><p>Padded and organized content</p></div></body></html>",
+    "output": "Text appears neatly spaced away from the frame edges."
+   },
+   {
+    "h": "Comparing Items and Uniform Heights",
+    "text": "Making all cards the same height helps users compare products or images easily and without visual distraction.",
+    "code": "<!DOCTYPE html><html><head><style>.card { border: 1px solid #000; height: 250px; width: 180px; }</style></head><body><div class='card'>Fixed height card</div></body></html>",
+    "output": "A fixed-height box appears, perfect for side-by-side comparison."
+   }
+  ],
+  "reference": [
+   {
+    "name": "display: grid",
+    "desc": "Turns an element into a flexible grid container"
+   },
+   {
+    "name": "grid-template-rows",
+    "desc": "Precisely sets the height of card grid rows"
+   },
+   {
+    "name": "object-fit: cover",
+    "desc": "Resizes an image to fill its space without distortion"
+   },
+   {
+    "name": "border-radius",
+    "desc": "Rounds the corner edges of element borders"
+   },
+   {
+    "name": "gap",
+    "desc": "Sets the spacing between cards in a grid"
+   },
+   {
+    "name": "repeat(auto-fill, ...)",
+    "desc": "Creates responsive columns adapting to screen width"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a card containing a border, text, and inner padding.",
+    "a": "<div style='border: 1px solid black; padding: 10px; border-radius: 4px;'><h3>Title</h3><p>Short description</p></div>"
+   },
+   {
+    "q": "Write CSS code that turns a card container into a responsive grid.",
+    "a": ".cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }"
+   },
+   {
+    "q": "How do you make an image inside a card cover its space fully at 200px height?",
+    "a": "img { width: 100%; height: 200px; object-fit: cover; }"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Card",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card"
+  },
+  {
+   "title": "MDN: Card sorting",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Card_sorting"
+  }
+ ],
+ "grounded": true
+}

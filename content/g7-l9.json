@@ -1,0 +1,304 @@
+{
+ "ar": {
+  "steps": [
+   "بعد ما ننضف بياناتنا في بايثون، بنعوز نحفظ الشغل عشان الناس تشوفه. دالة .to_csv() في مكتبة pandas بتخلينا نحفظ الجدول كملف جديد بكل سهولة.",
+   "مثال بسيط: df_clean.to_csv('cleaned_sales.csv', index=False) بيحفظ الجدول في ملف جديد ومن غير أعمدة فهارس زايدة.",
+   "ازاي بتشتغل؟ بايثون بياخد البيانات اللي في الـ DataFrame ويكتبها سطر بسطر جوه ملف نصي مفصول بـ commas (فاصلات)، وده معيار CSV الشهير.",
+   "مثال تاني: لو عندنا تقرير لدرجات الطلاب بعد التنظيف، نقدر نعمل active_df.to_csv('final_grades.csv') ونفتح الملف في إكسيل.",
+   "قاعدة ذهبية: دايماً حط index=False مع .to_csv() عشان ما تحفظش أرقام الفهارس القديمة وتلخبط ملفك الجديد.",
+   "الاستخدام الحقيقي: الشركات الكبيرة بتستخدم تصدير الملفات لإنشاء تقارير يومية تلقائية للمديرين والمحاسبين من غير تدخل بشري."
+  ],
+  "example": "تخيل إنك جمعت درجات طلاب المدرسة من فصول مختلفة ونظفت الأخطاء. عايز تحفظ النتيجة في ملف جديد:\n\nimport pandas as pd\n# دمج و تنظيف البيانات\ndata = {'Student': ['Ali', 'Mona'], 'Score': [95, 88]}\ndf = pd.DataFrame(data)\n# تصدير الملف\ndf.to_csv('cleaned_report.csv', index=False)\nprint('Exported successfully!')\n\nالسبب: كدة حفظنا الشغل النظيف من غير ما نغير الجدول الأصلي في الذاكرة.",
+  "mistake": "غلطة شائعة هي نسيان كتابة index=False، وده بيخلي بايثون يضيف عمود أرقام جانبي مش مطلوب في ملف الـ CSV.",
+  "recap": "تعلمنا إزاي نستخدم .to_csv() لحفظ جداولنا ونتايجنا في ملفات جديدة بكل سهولة وأمان.",
+  "q": [
+   {
+    "t": "إيه الدالة اللي بنستخدمها لتصدير DataFrame لملف CSV في pandas؟",
+    "o": [
+     "to_csv()",
+     "save_file()",
+     "export_data()"
+    ],
+    "a": 0,
+    "why": "to_csv() هي الدالة الرسمية والأساسية في pandas لحفظ الجداول كملفات CSV."
+   },
+   {
+    "t": "ليه بنكتب index=False عند التصدير؟",
+    "o": [
+     "عشان نسرع بايثون",
+     "عشان ما نحفظش أرقام الفهارس الزايدة",
+     "عشان نلون الملف"
+    ],
+    "a": 1,
+    "why": "index=False بيمنع حفظ أرقام الفهارس (0, 1, 2) كعمود جديد في الملف."
+   },
+   {
+    "t": "هل التصدير بيغير الجدول الأصلي في ذاكرة الكمبيوتر؟",
+    "o": [
+     "أيوة، بيمسحه",
+     "لا، بيسيب الأصلي ويحفظ نسخة جديدة",
+     "بيحوله لصورة"
+    ],
+    "a": 1,
+    "why": "تصدير الملف بينشئ نسخة جديدة على القرص الصلب ومش بيأثر على الجدول الأصلي."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود التصدير",
+   "goal": "صلح الخطأ في حفظ ملف الـ CSV",
+   "lines": [
+    "import pandas as pd",
+    "df = pd.DataFrame({'Name': ['Aya'], 'Age': [14]})",
+    "df.to_csv(filename.csv)",
+    "print('Done')"
+   ],
+   "bug": 2,
+   "fix": "df.to_csv('filename.csv', index=False)",
+   "success": "تم تصدير الملف النظيف بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن حفظ البيانات",
+    "text": "بعد ما نخلص شغلنا على البيانات ونظفناها، لازم نسجلها عشان ما تضيعش. زي ما بتكتب الواجب في كشكول عشان تستلمه بكرة، بايثون بيحفظ الجداول في ملفات.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Item': ['Apple'], 'Price': [5]})\nprint(df)",
+    "output": "   Item  Price\n0 Apple      5"
+   },
+   {
+    "h": "فهم ملفات الـ CSV",
+    "text": "ملف الـ CSV معناه 'قيم مفصولة بفواصل'. زي ما تقسم الساندوتش لجزء عيش وجزء جبنة، الملف ده بيقسم الجدول لصفوف وأعمدة بفاصلات بسيطة.",
+    "code": "print('CSV means Comma Separated Values!')",
+    "output": "CSV means Comma Separated Values!"
+   },
+   {
+    "h": "استخدام دالة .to_csv()",
+    "text": "الدالة دي هي البطل بتاعنا النهاردة. بتاخد اسم الملف اللي عايز تنشئه وتحفظ جواه بيانات الـ DataFrame.",
+    "code": "df.to_csv('my_table.csv')",
+    "output": "(تم إنشاء ملف my_table.csv بنجاح)"
+   },
+   {
+    "h": "أهمية معامل index=False",
+    "text": "لما تحفظ جدول، بايثون بيحط أرقام صفوف على الشمال. لو مش عايز الأرقام دي تظهر في ملفك الجديد، اكتب index=False زي السحر.",
+    "code": "df.to_csv('clean_table.csv', index=False)",
+    "output": "(تم حفظ الملف من غير أعمدة فهارس زايدة)"
+   },
+   {
+    "h": "دمج البيانات من مصادر مختلفة",
+    "text": "أحياناً بيكون عندنا ملفات كتير لفصول مختلفة في المدرسة، بنجمعهم مع بعض في جدول واحد كبير قبل ما نصدرهم.",
+    "code": "all_data = pd.concat([df1, df2])\nall_data.to_csv('combined_school.csv', index=False)",
+    "output": "(تم دمج البيانات وتصديرها في ملف واحد)"
+   },
+   {
+    "h": "الحفاظ على سلامة البيانات الأصلية",
+    "text": "تصدير الملفات بينشئ نسخة جديدة ومش بيلخبط الملف القديم. ده بيخليك دايماً في الأمان لو حصل خطأ.",
+    "code": "print('Original data is safe and untouched!')",
+    "output": "Original data is safe and untouched!"
+   },
+   {
+    "h": "فتح الملفات في برامج خارجية",
+    "text": "الملفات اللي بنصدرها بـ pandas تقدر تفتحها ببرنامج Microsoft Excel أو Google Sheets وتتفرج على ألوانها وجداولها بكل سهولة.",
+    "code": "print('You can open .csv files in Excel!')",
+    "output": "You can open .csv files in Excel!"
+   },
+   {
+    "h": "معالجة الأخطاء الشائعة",
+    "text": "لو نسيت تحط علامات التنصيص حوالين اسم الملف، بايثون هيزعل ويطلع رسالة خطأ (NameError). دايماً حط اسم الملف جوه ' '.",
+    "code": "# df.to_csv(my_file.csv) -> خطأ!\ndf.to_csv('my_file.csv') # صح!",
+    "output": "(تم تصحيح اسم الملف بنجاح)"
+   }
+  ],
+  "reference": [
+   {
+    "name": "to_csv()",
+    "desc": "دالة في pandas لتصدير الجدول إلى ملف CSV."
+   },
+   {
+    "name": "index=False",
+    "desc": "معامل لمنع حفظ أرقام الفهارس في الملف الناتج."
+   },
+   {
+    "name": "pd.DataFrame",
+    "desc": "هيكل بيانات الجدول الأساسي في بايثون."
+   },
+   {
+    "name": "pd.concat()",
+    "desc": "دالة لدمج جداول متعددة مع بعضها."
+   },
+   {
+    "name": "CSV",
+    "desc": "صيغة ملفات نصية لتخزين الجداول بفواصل."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب الكود لحفظ DataFrame باسم my_df في ملف اسمه 'output.csv' بدون فهارس.",
+    "a": "my_df.to_csv('output.csv', index=False)"
+   },
+   {
+    "q": "ما هو اسم المعامل الذي نستخدمه لعدم حفظ أرقام الصفوف؟",
+    "a": "index=False"
+   },
+   {
+    "q": "في أي برنامج خارجي يمكننا فتح ملفات CSV الناتجة؟",
+    "a": "Microsoft Excel أو Google Sheets"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "After cleaning our data in Python, we need to save our work for others to see. The .to_csv() function in pandas lets us save tables as brand new files easily.",
+   "Simple example: df_clean.to_csv('cleaned_sales.csv', index=False) saves the table into a new file without extra index columns.",
+   "How does it work? Python takes the DataFrame data and writes it row by row into a text file separated by commas, the famous CSV standard.",
+   "Second example: If we have cleaned student grade reports, we can run active_df.to_csv('final_grades.csv') and open the file in Excel.",
+   "Golden rule: Always use index=False with .to_csv() so you don't save old row index numbers and clutter your new file.",
+   "Real-life use: Large corporations use file exporting to automatically generate daily reports for managers and accountants without human intervention."
+  ],
+  "example": "Imagine you gathered school student grades from different classes and cleaned the errors. You want to save the result into a new file:\n\nimport pandas as pd\n# Combine and clean data\ndata = {'Student': ['Ali', 'Mona'], 'Score': [95, 88]}\ndf = pd.DataFrame(data)\n# Export file\ndf.to_csv('cleaned_report.csv', index=False)\nprint('Exported successfully!')\n\nReason: This saves our clean work without altering the original table in memory.",
+  "mistake": "A common mistake is forgetting to write index=False, which makes Python add an unwanted side column of numbers into your CSV file.",
+  "recap": "We learned how to use .to_csv() to save our tables and results into new files safely and easily.",
+  "q": [
+   {
+    "t": "What function do we use to export a DataFrame to a CSV file in pandas?",
+    "o": [
+     "to_csv()",
+     "save_file()",
+     "export_data()"
+    ],
+    "a": 0,
+    "why": "to_csv() is the official and primary pandas function for saving tables as CSV files."
+   },
+   {
+    "t": "Why do we write index=False when exporting?",
+    "o": [
+     "To speed up Python",
+     "To avoid saving extra index numbers",
+     "To color the file"
+    ],
+    "a": 1,
+    "why": "index=False prevents saving row index numbers (0, 1, 2) as a new column in the file."
+   },
+   {
+    "t": "Does exporting change the original table in computer memory?",
+    "o": [
+     "Yes, it deletes it",
+     "No, it leaves the original and saves a new copy",
+     "It turns it into an image"
+    ],
+    "a": 1,
+    "why": "Exporting creates a new copy on the hard drive and does not affect the original table."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Export Code",
+   "goal": "Fix the error in saving the CSV file",
+   "lines": [
+    "import pandas as pd",
+    "df = pd.DataFrame({'Name': ['Aya'], 'Age': [14]})",
+    "df.to_csv(filename.csv)",
+    "print('Done')"
+   ],
+   "bug": 2,
+   "fix": "df.to_csv('filename.csv', index=False)",
+   "success": "Clean file exported successfully!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Saving Data",
+    "text": "After we finish working on our data and cleaning it, we must record it so it doesn't get lost. Just like writing your homework in a notebook to hand in tomorrow, Python saves tables into files.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Item': ['Apple'], 'Price': [5]})\nprint(df)",
+    "output": "   Item  Price\n0 Apple      5"
+   },
+   {
+    "h": "Understanding CSV Files",
+    "text": "CSV stands for 'Comma Separated Values'. Just like splitting a sandwich into bread and cheese parts, this file format splits tables into rows and columns using simple commas.",
+    "code": "print('CSV means Comma Separated Values!')",
+    "output": "CSV means Comma Separated Values!"
+   },
+   {
+    "h": "Using the .to_csv() Function",
+    "text": "This function is our hero today. It takes the filename you want to create and stores the DataFrame data inside it.",
+    "code": "df.to_csv('my_table.csv')",
+    "output": "(File my_table.csv created successfully)"
+   },
+   {
+    "h": "Importance of index=False",
+    "text": "When you save a table, Python puts row numbers on the left. If you don't want these numbers showing up in your new file, type index=False like magic.",
+    "code": "df.to_csv('clean_table.csv', index=False)",
+    "output": "(File saved without extra index columns)"
+   },
+   {
+    "h": "Aggregating Data from Sources",
+    "text": "Sometimes we have multiple files for different school classes, and we merge them together into one big table before exporting them.",
+    "code": "all_data = pd.concat([df1, df2])\nall_data.to_csv('combined_school.csv', index=False)",
+    "output": "(Data combined and exported to a single file)"
+   },
+   {
+    "h": "Keeping Original Data Safe",
+    "text": "File exporting creates a brand new copy and doesn't mess up the old file. This keeps you safe if any mistake happens.",
+    "code": "print('Original data is safe and untouched!')",
+    "output": "Original data is safe and untouched!"
+   },
+   {
+    "h": "Opening Files in External Programs",
+    "text": "Files exported with pandas can be opened in Microsoft Excel or Google Sheets to inspect colors and tables easily.",
+    "code": "print('You can open .csv files in Excel!')",
+    "output": "You can open .csv files in Excel!"
+   },
+   {
+    "h": "Handling Common Errors",
+    "text": "If you forget to put quotation marks around the filename, Python will get upset and throw a NameError. Always put the filename inside ' '.",
+    "code": "# df.to_csv(my_file.csv) -> Error!\ndf.to_csv('my_file.csv') # Correct!",
+    "output": "(Filename corrected successfully)"
+   }
+  ],
+  "reference": [
+   {
+    "name": "to_csv()",
+    "desc": "Pandas function to export a table to a CSV file."
+   },
+   {
+    "name": "index=False",
+    "desc": "Parameter to prevent saving row indices in the output file."
+   },
+   {
+    "name": "pd.DataFrame",
+    "desc": "The primary table data structure in Python."
+   },
+   {
+    "name": "pd.concat()",
+    "desc": "Function to merge multiple tables together."
+   },
+   {
+    "name": "CSV",
+    "desc": "Text file format for storing tables with commas."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to save a DataFrame named my_df into a file called 'output.csv' without indices.",
+    "a": "my_df.to_csv('output.csv', index=False)"
+   },
+   {
+    "q": "What parameter name do we use to avoid saving row numbers?",
+    "a": "index=False"
+   },
+   {
+    "q": "In what external program can we open the resulting CSV files?",
+    "a": "Microsoft Excel or Google Sheets"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

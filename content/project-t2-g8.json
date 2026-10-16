@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "Student Grade Analyzer App",
+   "desc": "A multi-tab desktop app that loads student CSV records, cleans missing grades, filters data by subject, groups by class for statistics, and embeds a Matplotlib chart.",
+   "tags": [
+    "Tkinter",
+    "Pandas",
+    "Matplotlib"
+   ],
+   "steps": [
+    "Initialize a multi-tab Tkinter window to hold different sections of your analytics dashboard.",
+    "Write a Pandas function to load a student grades CSV file into a DataFrame.",
+    "Clean the dataset by filling missing score values with class averages or dropping corrupted rows.",
+    "Add a filtering mechanism using conditional selection to isolate specific classes or subjects.",
+    "Group the data by teacher or subject and aggregate using mean scores to find top performers.",
+    "Embed a Matplotlib bar chart directly into a Tkinter tab to visually display grade distributions."
+   ],
+   "rubric": [
+    "Successfully loads and cleans CSV data without crashing.",
+    "Multi-tab Tkinter interface is responsive and well-organized.",
+    "Pandas aggregation and filtering logic produce accurate statistics.",
+    "Matplotlib chart renders correctly inside the desktop window."
+   ],
+   "stretch": "Add a Git version control workflow with a new feature branch for exporting filtered results to a new CSV file."
+  },
+  {
+   "title": "Smart Store Sales Tracker",
+   "desc": "A Tkinter portfolio app featuring CSV data loading, data cleaning, conditional filtering for low stock, grouped revenue summaries, and embedded sales trend charts.",
+   "tags": [
+    "Pandas",
+    "Tkinter",
+    "Charts"
+   ],
+   "steps": [
+    "Design a Tkinter GUI with separate tabs for inventory, sales summary, and charts.",
+    "Import store transaction data using Pandas read_csv and inspect the columns.",
+    "Handle missing price or quantity values by replacing them with zero or standard defaults.",
+    "Filter the DataFrame to show only items where stock is below a critical threshold.",
+    "Group sales data by product category and calculate total revenue using aggregation.",
+    "Embed a line chart inside the app to display monthly sales trends over time."
+   ],
+   "rubric": [
+    "Clean and robust CSV loading and error handling.",
+    "Accurate Pandas grouping and conditional filtering.",
+    "Interactive and clean multi-tab Tkinter layout.",
+    "Proper integration of embedded data visualizations."
+   ],
+   "stretch": "Implement a merge conflict resolution scenario simulating team updates on the inventory CSV loader function."
+  },
+  {
+   "title": "Weather & Climate Explorer",
+   "desc": "A desktop app that analyzes historical weather data, cleans missing temperature readings, filters data by season, groups by city, and plots comparative temperature charts.",
+   "tags": [
+    "DataAnalytics",
+    "Tkinter",
+    "Git"
+   ],
+   "steps": [
+    "Build a Tkinter application shell with navigation tabs for raw data, statistics, and graphs.",
+    "Load historical weather CSV datasets into Pandas DataFrames safely.",
+    "Identify and clean missing weather readings using interpolation or drop methods.",
+    "Apply conditional filtering to isolate extreme weather days or specific months.",
+    "Group data by city or region to compute average rainfall and temperatures.",
+    "Embed a Matplotlib scatter plot inside the Tkinter UI showing temperature versus humidity."
+   ],
+   "rubric": [
+    "Accurate handling of missing climate data.",
+    "Effective use of conditional selection for seasonal filtering.",
+    "Clean Pandas grouping and aggregation metrics.",
+    "Visually clear embedded charts within the desktop app."
+   ],
+   "stretch": "Use Git branching to develop a new search feature, then intentionally create and resolve a merge conflict."
+  }
+ ],
+ "ar": [
+  {
+   "title": "تطبيق تحليل درجات الطلاب",
+   "desc": "تطبيق سطح مكتب متعدد التبويبات يحمل ملفات CSV للطلاب، ينظف الدرجات الناقصة، يفلتر البيانات، يجمعها لحساب الإحصائيات، ويعرض رسماً بيضانياً.",
+   "tags": [
+    "تينكنتر",
+    "بانداس",
+    "رسوم بيانية"
+   ],
+   "steps": [
+    "أنشئ نافذة Tkinter متعددة التبويبات لاحتواء أقسام لوحة التحكم المختلفة.",
+    "اكتب دالة بـ Pandas لتحويل ملف CSV الخاص بدرجات الطلاب إلى DataFrame.",
+    "نظف البيانات بملء القيم المفقودة بمتوسط الفصل أو حذف الصفوف التالفة.",
+    "أضف آلية فلترة باستخدام الشروط لعزل فصول أو مواد معينة.",
+    "اجمع البيانات حسب المعلم أو المادة واستخدم التجميع لحساب متوسط الدرجات.",
+    "ادمج رسم Matplotlib بياني للأعمدة مباشرة داخل تبويب Tkinter لعرض توزيع الدرجات."
+   ],
+   "rubric": [
+    "تحميل وتنظيف بيانات CSV بنجاح دون أعطال.",
+    "واجهة Tkinter متعددة التبويبات منظمة وسريعة الاستجابة.",
+    "منطق التجميع والفلترة في Pandas يعطي إحصائيات دقيقة.",
+    "رسم Matplotlib يظهر بشكل صحيح داخل نافذة سطح المكتب."
+   ],
+   "stretch": "أضف نظام تحكم في الإصدارات Git مع فرع مخصص لتصدير النتائج المفلترة إلى ملف CSV جديد."
+  },
+  {
+   "title": "متعقب مبيعات المتجر الذكي",
+   "desc": "تطبيق مكتب يضم تحميل بيانات CSV، وتنظيف البيانات، وفلترة المخزون القليل، وتلخيص الإيرادات، ورسوم بيانية لاتجاهات المبيعات.",
+   "tags": [
+    "بانداس",
+    "واجهات",
+    "مشاريع"
+   ],
+   "steps": [
+    "صمم واجهة Tkinter بتبويبات منفصلة للمخزون، ملخص المبيعات، والرسوم البيانية.",
+    "استورد بيانات المعاملات باستخدام Pandas read_csv وافحص الأعمدة.",
+    "تعامل مع الأسعار أو الكميات المفقودة باستبدالها بأصفار أو قيم افتراضية.",
+    "فلتر الـ DataFrame لإظهار العناصر التي تقل فيها كمية المخزون عن الحد الأدنى.",
+    "اجمع بيانات المبيعات حسب فئة المنتج واحسب إجمالي الإيرادات.",
+    "ادمج رسم خطي بياني داخل التطبيق لعرض اتجاهات المبيعات الشهرية بمرور الوقت."
+   ],
+   "rubric": [
+    "تحميل آمن وسليم لملفات CSV مع معالجة الأخطاء.",
+    "تجميع وفلترة دقيقة باستخدام Pandas.",
+    "تصميم تفاعلي ونظيف لتبويبات Tkinter.",
+    "تكامل صحيح للرسوم البيانية المدمجة."
+   ],
+   "stretch": "طبق سيناريو لحل تعارض الدمج (Merge Conflict) لمحاكاة تحديثات الفريق على دالة تحميل CSV."
+  },
+  {
+   "title": "مستكشف الطقس والمناخ",
+   "desc": "تطبيق سطح مكتب يحلل بيانات الطقس التاريخية، ينظف درجات الحرارة الناقصة، يفصل البيانات حسب الفصول، ويجمعها حسب المدن لرسوم بيانية مقارنة.",
+   "tags": [
+    "تحليل بيانات",
+    "جيت",
+    "بايثون"
+   ],
+   "steps": [
+    "ابنِ هيكل تطبيق Tkinter مع تبويبات تنقل للبيانات الخام، الإحصائيات، والرسوم.",
+    "حمّل مجموعات بيانات الطقس التاريخية إلى Pandas DataFrames بأمان.",
+    "حدد ونظف قراءات الطقس المفقودة باستخدام طرق الاستيفاء أو الحذف.",
+    "طبق الفلترة الشرطية لعزل أيام الطقس القاسي أو شهور محددة.",
+    "اجمع البيانات حسب المدينة أو المنطقة لحساب متوسط الأمطار ودرجات الحرارة.",
+    "ادمج رسم مبعثر Matplotlib داخل واجهة Tkinter يوضح العلاقة بين الحرارة والرطوبة."
+   ],
+   "rubric": [
+    "التعامل الدقيق مع بيانات المناخ المفقودة.",
+    "استخدام فعال للفلترة الشرطية للمواسم.",
+    "مقاييس تجميع وتنظيف سليمة باستخدام Pandas.",
+    "رسوم بيانية مدمجة واضحة داخل التطبيق."
+   ],
+   "stretch": "استخدم فروع Git لتطوير ميزة بحث جديدة، ثم أنشئ وحل تعارض دمج متعمداً."
+  }
+ ]
+}

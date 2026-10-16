@@ -1,0 +1,300 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن كل عنصر في صفحة الويب يحتاج إلى بطاقة تعريف شخصية فريدة ومميزة تشبه تماماً بطاقة المدرسة الخاصة بك. هذه الخاصية تسمى id وتمنح العنصر اسماً خاصاً لا يتكرر أبداً داخل نفس الصفحة.",
+   "لإضافة معرف عنصر، نكتب الكلمة id داخل وسم HTML مع علامات التنصيص هكذا: <h1 id=\"main-title\">عنوان الصفحة</h1>. هذه العلامة تجعل الوسم مميزاً جداً عن بقية العناصر في الصفحة.",
+   "تعمل خاصية المعرف كعنوان فريد لكل عنصر تماماً مثل رقم غرفة نومك في المنزل. لا يمكن أن يكون هناك غرفتان تحملان نفس الرقم في نفس المنزل، تماماً كما لا يمكن لعنصرين في نفس الصفحة حمل نفس الـ id.",
+   "يمكننا استخدام المعرفات لإنشاء روابط تنقل تسمى anchor links. عندما تضغط على رابط يحتوي على #top، سينتقل بك المتصفح فوراً إلى العنصر الذي يحمل id=\"top\" في نفس الصفحة وكأنك تطير إليه!",
+   "القاعدة الذهبية لمعرفات HTML هي: استخدم قيمة فريدة لا تتكرر أبداً، ولا تضع مسافات أبداً داخل قيمة الـ id، وتأكد من أن يبدأ بحرف إنجليزي ليكون صالحاً للاستخدام في لغات البرمجة وتنسيقات CSS.",
+   "في الحياة اليومية، الرقم القومي أو رقم جلوسك في الامتحان هو معرف فريد id خاص بك وحدك. هكذا בדיוק يتعرف المتصفح على العنصر المحدد بدقة شديدة وسط آلاف العناصر الأخرى في الموقع."
+  ],
+  "example": "إليك مثال عملي يوضح كيف نستخدم خاصية المعرف id لتمييز فقرة معينة عن بقية الفقرات في الصفحة:\n\n```html\n<!DOCTYPE html>\n<html>\n<body>\n  <p>هذه فقرة عادية جداً.</p>\n  <p id=\"special-para\">هذه فقرة مميزة تحمل معرفاً خاصاً!</p>\n</body>\n</html>\n```\nالسبب والمنطق: استخدمنا `id=\"special-para\"` لكي نجعل الفقرة الثانية فريدة، مما يتيح لنا تنسيقها بلون مختلف أو الوصول إليها بسهولة عبر البرمجة.",
+  "mistake": "الخطأ الشائع هو تكرار نفس قيمة الـ id لعنصرين مختلفين في نفس الصفحة (مثلاً وضع id=\"box\" لزرين). التصحيح: يجب أن يكون لكل عنصر اسم معرف فريد تماماً ولا تكرر أي id أبداً.",
+  "recap": "خاصية المعرف id تمنح كل عنصر في صفحة الويب علامة فريدة لا تتكرر لتسهيل الوصول إليه وتنسيقه. تذكر دائماً ألا تضع مسافات وألا تكرر نفس المعرف أبداً.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لخاصية id في لغة HTML؟",
+    "o": [
+     "إعطاء العنصر هوية فريدة وغير متكررة في الصفحة",
+     "تلوين خلفية الصفحة باللون الأزرق",
+     "إضافة صور متحركة تلقائياً"
+    ],
+    "a": 0,
+    "why": "خاصية id تخصص لكل عنصر اسماً فريداً ومميزاً لا يتكرر أبداً داخل نفس المستند."
+   },
+   {
+    "t": "أي من الخيارات التالية يعتبر اسماً صحيحاً لمعرف id؟",
+    "o": [
+     "my id with spaces",
+     "123-number",
+     "main-header"
+    ],
+    "a": 2,
+    "why": "معرفات id يجب ألا تحتوي على مسافات ويُفضل أن تبدأ بحرف وتكون معرفات CSS صالحة."
+   },
+   {
+    "t": "كيف نربط رابط انتقال (anchor link) بمعرف داخل الصفحة؟",
+    "o": [
+     "باستخدام رمز # متبوعاً باسم الـ id مثل href=\"#section1\"",
+     "باستخدام علامة النسبة المئوية مثل href=\"%section1\"",
+     "باستخدام علامة النجمة مثل href=\"*section1\""
+    ],
+    "a": 0,
+    "why": "نستخدم الرمز # أمام اسم المعرف للقفز مباشرة إلى العنصر المستهدف في نفس الصفحة."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ معرف HTML",
+   "goal": "اكتشف السطر الخطأ الذي يحتوي على مسافات غير مسموحة في قيمة المعرف وصححه.",
+   "lines": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<body>",
+    "  <h1 id=\"my header\">عنوان رئيسي</h1>",
+    "</body>",
+    "</html>"
+   ],
+   "bug": 3,
+   "fix": "  <h1 id=\"my-header\">عنوان رئيسي</h1>",
+   "success": "رائع! لقد أصلحت المعرف بنجاح وأصبح كود HTML سليماً وبدون مسافات."
+  },
+  "sections": [
+   {
+    "h": "ما هي خاصية المعرف ID؟",
+    "text": "خاصية الـ id في لغة HTML تشبه تماماً بطاقة الهوية الشخصية الخاصة بك في المدرسة. إنها تمنح العنصر اسماً فريداً وخاصاً به وحده لا يمكن لأي عنصر آخر في نفس الصفحة أن يشاركه فيه. هذا يساعد المتصفح ولغات البرمجة على تمييز هذا العنصر عن بقية العناصر بكل سهولة ويسر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1 id=\"welcome-title\">أهلاً بك يا بطل!</h1>\n</body>\n</html>",
+    "output": "يظهر عنوان رئيسي يحمل معرفاً فريداً لتمييزه."
+   },
+   {
+    "h": "كيف نكتب خاصية الـ ID؟",
+    "text": "لكي نضيف معرفاً لأي وسم في HTML، نكتب كلمة id داخل وسم الفتح متبوعة بعلامة التساوي وعلامة التنصيص التي تضم اسم المعرف. تماماً مثلما تعطي اسمًا فريدًا لملفك على الكمبيوتر، يجب أن تعطي كل عنصر اسمًا دلاليًا يصف دوره في الصفحة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"intro-paragraph\">هذه هي فقرة المقدمة الخاصة بموقعنا الجميل.</p>\n</body>\n</html>",
+    "output": "يظهر فقرة نصية مرتبطة بمعرف تعريفي خاص."
+   },
+   {
+    "h": "قاعدة التفرد: لا تكرار أبداً!",
+    "text": "القاعدة الأهم والأكثر صرامة في خاصية الـ id هي أن تكون فريدة تماماً داخل صفحة الويب الواحدة. تخيل لو كان في فصلك الدراسي طفلان يملكان نفس الاسم ورقم الهوية بالضبط، سيحدث ارتباك كبير! نفس الشيء يحدث في لغة HTML، فلا يجوز أبداً أن يتشارك عنصران في نفس الـ id.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div id=\"box-one\">الصندوق الأول</div>\n  <div id=\"box-two\">الصندوق الثاني بأسماء فريدة</div>\n</body>\n</html>",
+    "output": "يظهر صندوقان كل منهما يحمل معرفاً فريداً ومختلفاً عن الآخر."
+   },
+   {
+    "h": "قواعد كتابة اسم المعرف الصحيح",
+    "text": "عند اختيار اسم لـ id، يجب أن تبتعد تماماً عن المسافات. لا تكتب id=\"my title\" بل اكتب id=\"my-title\" أو id=\"myTitle\". كما يُفضل دائماً أن يبدأ الاسم بحرف إنجليزي صغير لكي يتعامل معه المتصفح ولغات التنسيق والبرمجة بسلاسة ودون أي أخطاء مفاجئة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <button id=\"submit-btn\">اضغط هنا</button>\n</body>\n</html>",
+    "output": "يظهر زر تفاعلي يحمل معرفاً صحيحاً وخالياً من المسافات."
+   },
+   {
+    "h": "الاستهداف وتنسيق العناصر",
+    "text": "لماذا نتعب أنفسنا ونعطي العناصر معرفات فريدة؟ السبب الرائع هو القدرة على استهداف عنصر واحد بعينه! باستخدام لغة CSS أو جافاسكريبت، يمكنك إخبار المتصفح: 'قم بتغيير لون خلفية العنصر الذي يحمل id='special' فقط دون باقي العناصر'. هذا يمنحك قوة تحكم خارقة في موقعك.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    #highlight { color: red; font-weight: bold; }\n  </style>\n</head>\n<body>\n  <p id=\"highlight\">هذه الفقرة ملونة باللون الأحمر لأننا استهدفناها بمعرفها!</p>\n</body>\n</html>",
+    "output": "تظهر الفقرة باللون الأحمر وتكون بارزة بفضل استهداف المعرف."
+   },
+   {
+    "h": "روابط الانتقال السريع (Anchor Links)",
+    "text": "من الاستخدامات المذهلة لمعرفات الـ id هي الانتقال السريع داخل نفس الصفحة. عندما تنقر على رابط يحتوي على علامة # متبوعة بمعرف العنصر (مثل href=\"#contact\"), سينتقل بك المتصفح فوراً كالصاروخ إلى ذلك الجزء من الصفحة وكأنك تستخدم مصعداً خفياً!",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"#bottom-section\">اذهب إلى الأسفل</a>\n  <div style=\"height: 500px;\">محتوى طويييل...</div>\n  <h2 id=\"bottom-section\">وصلت إلى قاع الصفحة بنجاح!</h2>\n</body>\n</html>",
+    "output": "يظهر رابط وعند النقر عليه يقفز المتصفح مباشرة إلى القسم السفلي."
+   },
+   {
+    "h": "الفرق بين ID والفئات (Classes)",
+    "text": "يتساءل الكثير من المبتدئين: ما الفرق بين id و class؟ البساطة تكمن هنا: الـ class يشبه الزي المدرسي الموحد الذي يرتديه مجموعة من الطلاب (يمكن لعدة عناصر مشاركة نفس الـ class)، أما الـ id فهو بطاقة الهوية الشخصية الخاصة بطالب واحد فقط لا تكرر أبداً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p class=\"text-style\">فقرة أولى بفئة مشتركة</p>\n  <p class=\"text-style\">فقرة ثانية بنفس الفئة</p>\n  <p id=\"only-one\">فقرة فريدة بمعرف خاص بها وحدها</p>\n</body>\n</html>",
+    "output": "يظهر كيف تتشارك الفئات بينما يبقى المعرف وحيداً وفريداً."
+   },
+   {
+    "h": "أمثلة من الحياة اليومية",
+    "text": "في حياتنا اليومية، نحن نستخدم المعرفات الفريدة طوال الوقت. رقم جلوسك في الامتحانات، أو رقم الطاولة المخصص لك في الحفلة، أو رقم الباركود الخاص بلعبتك المفضلة في المتجر. كل هذه الأشياء تضمن عدم حدوث أي خطأ أو تشابه بين العناصر، تماماً مثل خاصية id في صفحات الويب.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div id=\"item-barcode-9988\">لعبة الروبوت الذكي</div>\n</body>\n</html>",
+    "output": "يظهر عنصر مميز يمثل منتجاً له رقم تعريف فريد في المتجر."
+   }
+  ],
+  "reference": [
+   {
+    "name": "id=\"...\"",
+    "desc": "خاصية عامة تعطي العنصر معرفاً فريداً وغير متكرر."
+   },
+   {
+    "name": "#idname",
+    "desc": "محدد CSS يستخدم للوصول إلى عنصر عبر معرفه الفريد."
+   },
+   {
+    "name": "href=\"#id\"",
+    "desc": "رابط انتقال (Anchor Link) يقفز مباشرة إلى العنصر المستهدف."
+   },
+   {
+    "name": "getElementById()",
+    "desc": "دالة برمجية في جافاسكريبت للبحث عن عنصر بواسطة معرّفه."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أضف معرفاً فريداً باسم 'main-banner' لعنصر الصورة الخاص بك.",
+    "a": "<img src=\"photo.jpg\" id=\"main-banner\">"
+   },
+   {
+    "q": "اكتب رابط انتقال (anchor link) يقفز إلى عنصر يحمل المعرف 'footer'.",
+    "a": "<a href=\"#footer\">الذهاب إلى التذييل</a>"
+   },
+   {
+    "q": "صحح الخطأ في هذا الوسم الذي يحتوي على مسافة في المعرف: <div id=\"my box\">محتوى</div>",
+    "a": "<div id=\"my-box\">محتوى</div>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine every element on a web page needs a unique ID card, much like your school badge. This attribute is called id and it gives the element a special name that never repeats.",
+   "To add an element identifier, we write the id attribute inside an HTML tag with quotation marks like this: <h1 id=\"main-title\">Page Title</h1>. This makes the tag distinct from everything else.",
+   "The id attribute acts as a unique address for each element, just like your bedroom number at home. No two rooms can have the exact same room number in the same house, just like two elements cannot share an id.",
+   "We can use identifiers to create navigation links called anchor links. When you click a link pointing to #top, the browser instantly jumps to the element with id=\"top\" on the same page as if by magic!",
+   "The golden rule of HTML identifiers is: use a unique value that never repeats, never put spaces inside an id value, and make sure it starts with an English letter to work smoothly in CSS and JS.",
+   "In real life, your national ID number or student exam seat number is a unique id assigned strictly to you. This is exactly how the browser precisely identifies a specific element among thousands."
+  ],
+  "example": "Here is a practical example showing how we use the id attribute to distinguish a specific paragraph from others on the page:\n\n```html\n<!DOCTYPE html>\n<html>\n<body>\n  <p>This is a normal paragraph.</p>\n  <p id=\"special-para\">This is a special paragraph with a unique ID!</p>\n</body>\n</html>\n```\nReasoning: We used `id=\"special-para\"` to make the second paragraph unique, allowing us to style it differently or access it easily through code.",
+  "mistake": "A common mistake is reusing the same id value for two different elements on the same page (e.g., giving two buttons id=\"box\"). Fix: Every element must have a completely unique identifier value and no ids should ever be duplicated.",
+  "recap": "The id attribute gives every web element a unique, non-repeating tag for easy access and styling. Always remember to avoid spaces and never duplicate the same identifier.",
+  "q": [
+   {
+    "t": "What is the primary purpose of the id attribute in HTML?",
+    "o": [
+     "To give an element a unique, non-repeating identity on the page",
+     "To turn the webpage background color blue",
+     "To automatically add animated images"
+    ],
+    "a": 0,
+    "why": "The id attribute assigns a unique and distinct name to an element that cannot be shared within the same document."
+   },
+   {
+    "t": "Which of the following options is a valid id name?",
+    "o": [
+     "my id with spaces",
+     "123-number",
+     "main-header"
+    ],
+    "a": 2,
+    "why": "ID values must not contain spaces and should preferably start with a letter, forming valid CSS identifiers."
+   },
+   {
+    "t": "How do we link an anchor link to an ID inside the page?",
+    "o": [
+     "By using the # symbol followed by the id name like href=\"#section1\"",
+     "By using the percent sign like href=\"%section1\"",
+     "By using the asterisk sign like href=\"*section1\""
+    ],
+    "a": 0,
+    "why": "We use the # prefix before the id name to jump directly to the target element on the same page."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the HTML ID Bug",
+   "goal": "Find the faulty line containing forbidden spaces in the id value and fix it.",
+   "lines": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<body>",
+    "  <h1 id=\"my header\">Main Heading</h1>",
+    "</body>",
+    "</html>"
+   ],
+   "bug": 3,
+   "fix": "  <h1 id=\"my-header\">Main Heading</h1>",
+   "success": "Brilliant! You fixed the identifier successfully and made the HTML code valid with zero spaces."
+  },
+  "sections": [
+   {
+    "h": "What is the ID Attribute?",
+    "text": "The id attribute in HTML is very much like your personal school ID card. It gives an element a completely unique name that no other element on the same page can share. This helps browsers and programming languages single out this exact element among thousands of others with ease.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1 id=\"welcome-title\">Welcome, Champion!</h1>\n</body>\n</html>",
+    "output": "Displays a main heading featuring a unique identifier for distinction."
+   },
+   {
+    "h": "How Do We Write the ID Attribute?",
+    "text": "To add an identifier to any HTML tag, we type the word id inside the opening tag followed by an equals sign and quotes enclosing the identifier name. Just like naming a unique file on your computer, you should give each element a descriptive name fitting its role.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"intro-paragraph\">This is the introduction paragraph for our lovely website.</p>\n</body>\n</html>",
+    "output": "Displays a text paragraph linked to a descriptive ID attribute."
+   },
+   {
+    "h": "The Uniqueness Rule: No Duplication!",
+    "text": "The most important and strict rule about the id attribute is that it must be entirely unique within a single web page. Imagine if two kids in your classroom had the exact same name and ID number—total chaos! The same goes for HTML; two elements can never share the exact same id.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div id=\"box-one\">First Box</div>\n  <div id=\"box-two\">Second Box with a unique name</div>\n</body>\n</html>",
+    "output": "Displays two boxes, each possessing a unique and distinct identifier."
+   },
+   {
+    "h": "Rules for Naming a Valid ID",
+    "text": "When picking an id name, you must stay away from spaces. Do not write id=\"my title\"; instead, write id=\"my-title\" or id=\"myTitle\". It is also best practice to start the name with an English letter so browsers, style sheets, and scripts handle it smoothly without errors.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <button id=\"submit-btn\">Click Here</button>\n</body>\n</html>",
+    "output": "Displays an interactive button with a valid space-free ID."
+   },
+   {
+    "h": "Targeting and Styling Elements",
+    "text": "Why bother giving elements unique identifiers? The amazing reason is the ability to target one single element! Using CSS or JavaScript, you can tell the browser: 'Change the background color of the element with id='special' only.' This gives you superpower control over your site.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    #highlight { color: red; font-weight: bold; }\n  </style>\n</head>\n<body>\n  <p id=\"highlight\">This paragraph is red because we targeted it using its ID!</p>\n</body>\n</html>",
+    "output": "Displays the paragraph in red text, highlighted by targeting its ID."
+   },
+   {
+    "h": "Anchor Links for Quick Navigation",
+    "text": "One of the coolest uses for id attributes is quick in-page navigation. When you click a link containing a # sign followed by an element's id (like href=\"#contact\"), the browser instantly rockets you straight to that part of the page as if riding a secret elevator!",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <a href=\"#bottom-section\">Go to Bottom</a>\n  <div style=\"height: 500px;\">Lots of content here...</div>\n  <h2 id=\"bottom-section\">You reached the bottom of the page successfully!</h2>\n</body>\n</html>",
+    "output": "Displays a link that, when clicked, jumps the browser directly to the lower section."
+   },
+   {
+    "h": "Difference Between IDs and Classes",
+    "text": "Many beginners wonder: what is the difference between id and class? The simplicity lies here: a class is like a school uniform worn by a group of students (multiple elements can share the same class), while an id is like a personal ID card belonging to only one student, never repeated.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p class=\"text-style\">First paragraph with a shared class</p>\n  <p class=\"text-style\">Second paragraph with the same class</p>\n  <p id=\"only-one\">Unique paragraph with its own exclusive ID</p>\n</body>\n</html>",
+    "output": "Demonstrates how classes are shared while the ID remains single and unique."
+   },
+   {
+    "h": "Real-Life Examples",
+    "text": "In our daily lives, we use unique identifiers all the time. Your exam seat number, your assigned table number at a party, or the barcode number of your favorite toy at the store. All these ensure zero confusion or mix-ups, exactly like the id attribute on web pages.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div id=\"item-barcode-9988\">Smart Robot Toy</div>\n</body>\n</html>",
+    "output": "Displays a distinct element representing a product with a unique identification number in a store."
+   }
+  ],
+  "reference": [
+   {
+    "name": "id=\"...\"",
+    "desc": "A global attribute giving an element a unique, non-repeating identifier."
+   },
+   {
+    "name": "#idname",
+    "desc": "A CSS selector used to target an element by its unique ID."
+   },
+   {
+    "name": "href=\"#id\"",
+    "desc": "An anchor link that jumps directly to the target element."
+   },
+   {
+    "name": "getElementById()",
+    "desc": "A JavaScript method to find an element by its ID."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Add a unique id attribute named 'main-banner' to your image tag.",
+    "a": "<img src=\"photo.jpg\" id=\"main-banner\">"
+   },
+   {
+    "q": "Write an anchor link that jumps to an element with the id 'footer'.",
+    "a": "<a href=\"#footer\">Go to Footer</a>"
+   },
+   {
+    "q": "Fix the error in this tag which contains a space in the ID: <div id=\"my box\">Content</div>",
+    "a": "<div id=\"my-box\">Content</div>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: data-* HTML global attributes",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/data-*"
+  },
+  {
+   "title": "MDN: id HTML global attribute",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/id"
+  }
+ ],
+ "grounded": true
+}

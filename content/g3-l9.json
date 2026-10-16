@@ -1,0 +1,310 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تبني منزلاً من المكعبات؛ أنت بحاجة إلى صناديق كبيرة لجمع الغرف وصناديق صغيرة لحفظ الأغراض الدقيقة. في تصميم صفحات الويب، نستخدم عناصر هيكلية لتنظيم المحتوى وجعله مفهوماً للمتصفحات ومحركات البحث.",
+   "نستخدم وسم الصندوق العام <div> لتجميع أجزاء كاملة معاً مثل قسم القائمة الجانبية أو مجموعة صور، بينما نستخدم وسم السطر الصغير <span> لتلوين أو تعديل كلمة مفردة داخل الفقرة دون كسر السطر.",
+   "الفرق الجوهري بين الصناديق هو أن عناصر الكتلة (Block-level) تأخذ السطر بأكمله وتدفع ما بعدها للأسفل مثل الأبواب الكبيرة، بينما العناصر المضمنة (Inline) تقف بجانب بعضها البعض مثل الكتب المرصوصة على الرف.",
+   "إليك مثال عملي لتجميع محتوى الصفحة: <div class='header-box'><h1>موقعي</h1></div> يجمع عنوان الصفحة، بينما <p>أهلاً بك يا <span class='name'>أحمد</span></p> يميز كلمة واحدة داخل النص.",
+   "القاعدة الذهبية في تصميم الويب هي استخدام العناصر الدلالية الواضحة مثل <header> و <main> و <footer> قبل اللجوء للصناديق العامة، لأنها تساعد برامج قراءة الشاشة ومحركات البحث على فهم محتوى صفحتك فوراً.",
+   "تُستخدم هذه التقنيات في بناء كل مواقع الإنترنت الضضمة التي تزورها يومياً، حيث تقسم الشركات الكبرى صفحاتها إلى مناطق رئيسية واضحة لتسهيل القراءة وتنسيق التصميم عبر ملفات الـ CSS."
+  ],
+  "example": "لنفترض أننا نصمم بطاقة تعريفية بسيطة لشخصيتك الرقمية على الويب. نستخدم وسم الهيكل العام <div> لنحيط بكل البطاقة، ثم نستخدم وسم <span> لتمييز عمرك بلون مميز داخل الفقرة. إليك الكود:\n\n```html\n<div style='border: 2px solid blue; padding: 10px;'>\n  <h2>سارة</h2>\n  <p>أحب البرمجة وعمري <span style='color: red;'>10</span> سنوات</p>\n</div>\n```\n\nبهذه الطريقة، نظمنا البطاقة ككتلة واحدة وميزنا الكلمة بدقة.",
+  "mistake": "الخطأ الشائع هو استخدام وسوم الصناديق العامة <div> لكل شيء في الصفحة بدلاً من استخدام العناصر الدلالية مثل <header> أو <main>. الحل هو اختيار الوسم الذي يصف محتوى الجزء بصدق لتسهيل قراءة الكود.",
+  "recap": "تساعدنا الصناديق العامة والعناصر الدلالية في ترتيب صفحات الويب بشكل احترافي. وسم div يجمع الكتل الكبيرة بينما span يعتني بالكلمات الصغيرة داخل السطور.",
+  "q": [
+   {
+    "t": "أي وسم نستخدمه لتجميع قسم كامل يمثل كتلة مستقلة في الصفحة؟",
+    "o": [
+     "<span>",
+     "<div>",
+     "<b>"
+    ],
+    "a": 1,
+    "why": "وسم div هو الصندوق العام الأفضل لتجميع كتل المحتوى الكبيرة."
+   },
+   {
+    "t": "ما هي الميزة الأساسية للعنصر المضمن (Inline) مثل span؟",
+    "o": [
+     "يأخذ عرض الشاشة بالكامل",
+     "يبقى داخل السطر بجانب النصوص الأخرى دون نزول سطر جديد",
+     "ينشئ جدول بيانات ضخم"
+    ],
+    "a": 1,
+    "why": "العناصر المضمنة لا تكسر السطر وتبقى مجاور لغيرها."
+   },
+   {
+    "t": "لماذا نفضل استخدام عناصر مثل header و main بدلاً من div دائماً؟",
+    "o": [
+     "لأنها تعطي دلالة واضحة لمحرك البحث وقارئ الشاشة",
+     "لأنها ترسم رسومات متحركة ثلاثية الأبعاد",
+     "لأن حجمها أصغر في الذاكرة"
+    ],
+    "a": 0,
+    "why": "العناصر الدلالية توضح الغرض الحقيقي للجزء للمتصفح ومحركات البحث."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع ناتج الصناديق والهيكل",
+   "goal": "معرفة كيف يتصرف وسم div و span في تنسيق الصفحة.",
+   "code": "<div style='background: yellow;'>\n  <h3>مرحباً</h3>\n  <p>تعلمنا اليوم مهارة <span style='color: green;'>الويب</span> بنجاح.</p>\n</div>",
+   "options": [
+    "يظهر صندوق أصفر يحتوي على عنوان ونص توجد فيه كلمة ملونة بالأخضر",
+    "تختفي كل الحروف وتظهر شاشة سوداء",
+    "يتم طباعة الكود على الطابعة مباشرة"
+   ],
+   "a": 0,
+   "success": "رائع! لقد فهمت كيف يجمع div المحتوى بينما يلون span الكلمة بدقة."
+  },
+  "sections": [
+   {
+    "h": "ما هو هيكل الويب؟",
+    "text": "هيكل الويب يشبه تقسيم خزانة ملابسك إلى أدفُر منظمة؛ فبدلاً من رمي كل شيء معاً، نضع القمصان في رف والجوارب في رف آخر. في لغة HTML، نقوم بتنظيم أجزاء الصفحة باستخدام صناديق واضحة لتسهيل قراءة وتنسيق المحتوى لاحقاً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>div { background: #eee; padding: 10px; }</style>\n</head>\n<body>\n  <div>هذا صندوق يجمع محتوى الصفحة</div>\n</body>\n</html>",
+    "output": "يظهر صندوق رمادي اللون يحتوي على نص تجميع المحتوى."
+   },
+   {
+    "h": "استخدام وسم الصندوق العام div",
+    "text": "الوسم <div> هو صندوق سحري عام لا يملك أي معنى خاص بحد ذاته، لكنه ممتاز لتجميع عدة عناصر معاً لتنسيقها معاً عبر ملفات الـ CSS. تشبهه تماماً كصندوق كرتوني تضع فيه ألعابك المتفرقة لتنقلها معاً بسهولة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div style='border: 1px solid black; padding: 5px;'>\n    <h3>عنوان فرعي</h3>\n    <p>هذا النص داخل صندوق واحد.</p>\n  </div>\n</body>\n</html>",
+    "output": "يظهر صندوق ذو إطار أسود يحيط بعنوان ونصف فقرة."
+   },
+   {
+    "h": "استخدام وسم السطر span",
+    "text": "على عكس الصناديق الكبيرة، فإن وسم <span> مثل قلم التحديد الفسفوري الذي تستخدمه لتلوين كلمة واحدة داخل جملة كراستك المدرسية. إنه عنصر مضمن لا ينزل إلى سطر جديد، ويستخدم لتعديل جزء صغير من النص.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>أنا أحب <span style='color: red; font-weight: bold;'>البرمجة</span> كثيراً.</p>\n</body>\n</html>",
+    "output": "تظهر جملة عادية ولكن كلمة البرمجة ملونة باللون الأحمر وسميكة."
+   },
+   {
+    "h": "عناصر الكتلة مقابل العناصر المضمنة",
+    "text": "عناصر الكتلة (Block) مثل الجدران المبنية تعرض عرض الشاشة بالكامل وتبدأ دائماً في سطر جديد مثل <div> و <p>. أما العناصر المضمنة (Inline) مثل الطوب الصغير فتصطف بجانب بعضها البعض في نفس السطر مثل <span> و <a>.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div style='background: lightblue;'>عنصر كتلة يملأ السطر</div>\n  <span style='background: lightgreen;'>عنصر مضمن 1</span>\n  <span style='background: lightpink;'>عنصر مضمن 2</span>\n</body>\n</html>",
+    "output": "يظهر صندوق أزرق عريض في سطر مستقل، يليه عنصران مضمنان متجاوران."
+   },
+   {
+    "h": "ما هي العناصر الدلالية؟",
+    "text": "العناصر الدلالية هي وسوم تخبر المتصفح ومحركات البحث بما تعنيه حقاً؛ مثل <header> لرأس الصفحة و <footer> لذيلها. تشبه لافتة متجر كتب تعليق فوق الباب لتخبر الجميع أن هنا توجد كتب وليست ملابس.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <header style='background: gold;'>رأس الصفحة الرئيسي</header>\n  <main style='background: lightgray;'>المحتوى الأساسي هنا</main>\n  <footer>تذييل الصفحة</footer>\n</body>\n</html>",
+    "output": "تظهر مناطق الصفحة ملونة ومرتبة بترتيب منطقي: رأس ثم محتوى ثم ذيل."
+   },
+   {
+    "h": "تصميم تخطيط صفحة بسيطة",
+    "text": "لبناء تخطيط صفحة ويب نظيف، نقسمها إلى مناطق رئيسية: ترويسة تعلو الصفحة، ومنطقة رئيسية تحوي المقالات، وتذييل في الأسفل. هذا التنظيم يجعل موقعك يبدو كصفحة جريدة حقيقية ومنسقة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family: Arial;'>\n  <header style='background: #333; color: white; padding: 10px;'>موقعي التعليمي</header>\n  <main style='padding: 15px;'>أهلاً بك في دروس البرمجة الشائقة.</main>\n  <footer style='background: #ddd; padding: 5px;'>جميع الحقوق محفوظة</footer>\n</body>\n</html>",
+    "output": "تظهر صفحة مرتبة بترويسة داكنة، ومحتوى أبيض، وتذييل رمادي هادئ."
+   },
+   {
+    "h": "لماذا نهتم بالدلالة في الهيكل؟",
+    "text": "عندما تستخدم وسوماً دلالية صحيحة، فإن برامج قراءة الشاشة التي تساعد المكفوفين تستطيع التنقل بسهولة عبر الموقع، كما أن محركات البحث تفهم موضوع صفحتك بدقة وتضعها في مرتبة متقدمة بالنتائج.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <article style='border: 1px dashed gray; padding: 10px;'>\n    <h2>مقالة اليوم</h2>\n    <p>أهمية لغة HTML في بناء الإنترنت.</p>\n  </article>\n</body>\n</html>",
+    "output": "يظهر صندوق متقطع الإطار يمثل مقالة كاملة ومفيدة."
+   },
+   {
+    "h": "تجميع كل المهارات معاً",
+    "text": "الآن وبعد أن عرفت كيف تستخدم div و span والعناصر الدلالية، يمكنك دمجها جميعاً لبناء صفحات ويب احترافية ومذهلة تضاهي المواقع الحقيقية التي تستخدمها كل يوم في دراستك ولعبك.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div style='max-width: 300px; margin: auto; border: 1px solid gray;'>\n    <header style='background: purple; color: white; padding: 5px;'>بطاقة تعريف</header>\n    <main style='padding: 10px;'>مرحباً، اسمي <span style='color: blue;'>رياض</span>.</main>\n  </div>\n</body>\n</html>",
+    "output": "تظهر بطاقة ويب صغيرة ومنتصفة الشاشة تحتوي على رأس بنفسجي ونص منسق."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<div>",
+    "desc": "صندوق عام كتلي لتجميع عدة عناصر معاً."
+   },
+   {
+    "name": "<span>",
+    "desc": "عنصر مضمن لتمييز جزء صغير من النص."
+   },
+   {
+    "name": "<header>",
+    "desc": "عنصر دلالي لتمثيل رأس الصفحة أو القسم."
+   },
+   {
+    "name": "<main>",
+    "desc": "عنصر دلالي يحمل المحتوى الأساسي والفريد للصفحة."
+   },
+   {
+    "name": "<footer>",
+    "desc": "عنصر دلالي يمثل تذييل أو أسفل الصفحة."
+   },
+   {
+    "name": "<article>",
+    "desc": "عنصر دلالي يمثل مقالاً أو وحدة محتوى مستقلة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسم الصندوق العام الذي يجمع عناصر الكتلة.",
+    "a": "<div>"
+   },
+   {
+    "q": "ما هو الوسم المضمن المستخدم لتلوين كلمة داخل فقرة؟",
+    "a": "<span>"
+   },
+   {
+    "q": "اذكر وسماً دلالياً يمثل رأس الصفحة.",
+    "a": "<header>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you are building a house out of toy blocks; you need large boxes to group rooms and small boxes to keep tiny items. In web design, we use structural elements to organize content so browsers and search engines understand it.",
+   "We use the general box tag <div> to group whole sections together like a sidebar or image gallery, while we use the small inline tag <span> to style or target a single word inside a paragraph without breaking the line.",
+   "The core difference between boxes is that block-level elements take up the full width and push content below them like large doors, whereas inline elements sit side by side like books on a shelf.",
+   "Here is a practical example of grouping page content: <div class='header-box'><h1>My Site</h1></div> wraps the header, while <p>Welcome <span class='name'>Alex</span></p> highlights a single word inside the text.",
+   "The golden rule in web design is to use clear semantic elements like <header>, <main>, and <footer> before resorting to generic boxes, because they help screen readers and search engines understand your page content instantly.",
+   "These techniques are used to build every huge website you visit daily, where major companies divide their pages into clear main regions for easier reading and layout styling via CSS files."
+  ],
+  "example": "Suppose we are designing a simple profile card for your digital web identity. We use the general structure tag <div> to wrap the entire card, and then use the <span> tag to highlight your age with a special color inside the paragraph. Here is the code:\n\n```html\n<div style='border: 2px solid blue; padding: 10px;'>\n  <h2>Sarah</h2>\n  <p>I love coding and I am <span style='color: red;'>10</span> years old</p>\n</div>\n```\n\nThis way, we organized the card as a single block and styled the word precisely.",
+  "mistake": "A common mistake is using generic container tags <div> for everything on the page instead of using semantic elements like <header> or <main>. The fix is to choose the tag that truly describes the content's purpose to make the code easier to read.",
+  "recap": "Generic containers and semantic elements help us structure web pages professionally. The div tag groups large blocks while span handles small words within lines.",
+  "q": [
+   {
+    "t": "Which tag do we use to group an entire section representing an independent block on the page?",
+    "o": [
+     "<span>",
+     "<div>",
+     "<b>"
+    ],
+    "a": 1,
+    "why": "The div tag is the best general box for grouping large content blocks."
+   },
+   {
+    "t": "What is the main feature of an inline element like span?",
+    "o": [
+     "It takes the full screen width",
+     "It stays inline next to other texts without starting a new line",
+     "It creates a huge data table"
+    ],
+    "a": 1,
+    "why": "Inline elements do not break the line and stay adjacent to others."
+   },
+   {
+    "t": "Why do we prefer using elements like header and main instead of always using div?",
+    "o": [
+     "Because they give a clear meaning to search engines and screen readers",
+     "Because they draw 3D animated graphics",
+     "Because their file size is smaller in memory"
+    ],
+    "a": 0,
+    "why": "Semantic elements clarify the true purpose of the section to the browser and search engines."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Boxes and Semantics Output",
+   "goal": "Understand how div and span behave in page layout.",
+   "code": "<div style='background: yellow;'>\n  <h3>Hello</h3>\n  <p>Today we learned <span style='color: green;'>web</span> skills successfully.</p>\n</div>",
+   "options": [
+    "A yellow box appears containing a heading and text with a green-colored word",
+    "All letters disappear and a black screen appears",
+    "The code is printed directly on the printer"
+   ],
+   "a": 0,
+   "success": "Great! You understood how div groups content while span colors the word precisely."
+  },
+  "sections": [
+   {
+    "h": "What is Web Structure?",
+    "text": "Web structure is like organizing your wardrobe into neat drawers; instead of throwing everything together, we put shirts in one shelf and socks in another. In HTML, we organize page parts using clear boxes to make reading and styling content much easier later.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>div { background: #eee; padding: 10px; }</style>\n</head>\n<body>\n  <div>This box groups page content</div>\n</body>\n</html>",
+    "output": "A gray box appears containing the content grouping text."
+   },
+   {
+    "h": "Using the Generic Box Tag div",
+    "text": "The <div> tag is a magical general box with no special meaning of its own, but it is excellent for grouping multiple elements together to style them simultaneously via CSS files. Think of it like a cardboard box where you collect scattered toys to move them easily.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div style='border: 1px solid black; padding: 5px;'>\n    <h3>Subheading</h3>\n    <p>This text is inside a single box.</p>\n  </div>\n</body>\n</html>",
+    "output": "A box with a black border appears wrapping a heading and half a paragraph."
+   },
+   {
+    "h": "Using the Inline Tag span",
+    "text": "Unlike large boxes, the <span> tag is like a highlighter pen you use to color a single word inside your notebook sentence. It is an inline element that does not drop to a new line, used for tweaking a small piece of text.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p>I love <span style='color: red; font-weight: bold;'>coding</span> very much.</p>\n</body>\n</html>",
+    "output": "A normal sentence appears, but the word coding is red and bold."
+   },
+   {
+    "h": "Block-level vs. Inline Elements",
+    "text": "Block-level elements like built walls take up the full screen width and always start on a new line, such as <div> and <p>. Inline elements like small bricks line up next to each other on the same line, such as <span> and <a>.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div style='background: lightblue;'>Block element filling the line</div>\n  <span style='background: lightgreen;'>Inline element 1</span>\n  <span style='background: lightpink;'>Inline element 2</span>\n</body>\n</html>",
+    "output": "A wide blue box appears on its own line, followed by two adjacent inline elements."
+   },
+   {
+    "h": "What are Semantic Elements?",
+    "text": "Semantic elements are tags that tell the browser and search engines what they truly mean; like <header> for the top and <footer> for the bottom. They are like a bookstore sign hanging above the door telling everyone books are inside, not clothes.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <header style='background: gold;'>Main Page Header</header>\n  <main style='background: lightgray;'>Core content here</main>\n  <footer>Page Footer</footer>\n</body>\n</html>",
+    "output": "Page regions appear colored and ordered in a logical sequence: header then content then footer."
+   },
+   {
+    "h": "Designing a Simple Web Layout",
+    "text": "To build a clean web layout, we divide it into main regions: a header on top, a main section carrying articles, and a footer at the bottom. This organization makes your site look like a real, neatly formatted newspaper page.",
+    "code": "<!DOCTYPE html>\n<html>\n<body style='font-family: Arial;'>\n  <header style='background: #333; color: white; padding: 10px;'>My Learning Site</header>\n  <main style='padding: 15px;'>Welcome to exciting coding lessons.</main>\n  <footer style='background: #ddd; padding: 5px;'>All rights reserved</footer>\n</body>\n</html>",
+    "output": "A neat page appears with a dark header, white content, and a quiet gray footer."
+   },
+   {
+    "h": "Why Care About Semantics in Structure?",
+    "text": "When you use proper semantic tags, screen readers assisting visually impaired users can navigate the site effortlessly, and search engines understand your page topic accurately, ranking it higher in results.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <article style='border: 1px dashed gray; padding: 10px;'>\n    <h2>Today's Article</h2>\n    <p>The importance of HTML in building the internet.</p>\n  </article>\n</body>\n</html>",
+    "output": "A dashed-border box appears representing a complete, useful article."
+   },
+   {
+    "h": "Bringing All Skills Together",
+    "text": "Now that you know how to use div, span, and semantic elements, you can combine them all to build professional, stunning web pages matching real websites you use every day for your studies and games.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <div style='max-width: 300px; margin: auto; border: 1px solid gray;'>\n    <header style='background: purple; color: white; padding: 5px;'>Profile Card</header>\n    <main style='padding: 10px;'>Hello, my name is <span style='color: blue;'>Ryan</span>.</main>\n  </div>\n</body>\n</html>",
+    "output": "A small web card appears centered on the screen containing a purple header and styled text."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<div>",
+    "desc": "A generic block container for grouping multiple elements together."
+   },
+   {
+    "name": "<span>",
+    "desc": "An inline element for styling a small piece of text."
+   },
+   {
+    "name": "<header>",
+    "desc": "A semantic element representing the header of a page or section."
+   },
+   {
+    "name": "<main>",
+    "desc": "A semantic element holding the primary, unique content of the page."
+   },
+   {
+    "name": "<footer>",
+    "desc": "A semantic element representing the footer or bottom of a page."
+   },
+   {
+    "name": "<article>",
+    "desc": "A semantic element representing an independent article or content unit."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the generic container tag that groups block elements.",
+    "a": "<div>"
+   },
+   {
+    "q": "What is the inline tag used to color a word inside a paragraph?",
+    "a": "<span>"
+   },
+   {
+    "q": "Name a semantic tag representing the page header.",
+    "a": "<header>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: Semantics",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Semantics"
+  },
+  {
+   "title": "MDN: <semantics>",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/MathML/Reference/Element/semantics"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,286 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن متصفح الويب الخاص بك هو مطعم موسيقي كبير، وصوت الويب (Web Audio API) هو الطاهي السحري الذي يصنع أصوات النغمات الرقمية من العدم باستخدام أدوات خاصة تسمى العقد أو (Audio Nodes).",
+   "أول خطوة لبدء السحر هي تهيئة صندوق الصوت أو (AudioContext). مثل هذا الكود البسيط: const ctx = new AudioContext(); والذي ينشئ لنا مسرح العمليات الصوتية بالكامل داخل المتصفح.",
+   "المتصفحات الذكية ترفض تشغيل الصوت تلقائياً مزعجةً المستخدم، لذا يجب دائماً ربط تشغيل الصوت بحدث حقيقي مثل ضغطة زر من الماوس (User Gesture) لتفتح الستار ويبدأ العرض الموسيقي الرائع.",
+   "يمكننا إنشاء مصدر صوتي رياضي يسمى المذبذب (OscillatorNode) وتحديد تردده ليعزف نغمة محددة، مثل تردد 440 هرتز لنغمة (لا) الشهيرة عبر: const osc = ctx.createOscillator(); osc.frequency.value = 440;",
+   "قاعدة ذهبية في هندسة الصوت بالمتصفح: لكي تسمع الصوت، يجب أن تربط مصدر النغمة بمكبر الصوت النهائي عبر الأمر: osc.connect(ctx.destination) ثم تشغيله بـ osc.start()!",
+   "تطبيقات هذا العلم مذهلة للغاية؛ فهي تتيح للمبرمجين الصغار بناء آلات بيانو افتراضية تفاعلية، ألعاب فيديو بأصوات تفاعلية، ومولدات طبول رقمية رائعة تعمل مباشرة داخل متصفح الإنترنت دون برامج إضافية."
+  ],
+  "example": "لنفترض أننا نريد تشغيل نغمة رقمية عند الضغط على زر في الصفحة. نبدأ بإنشاء سياق الصوت وضبطه بـ const ctx = new AudioContext();. ثم نصنع مذبذب نغمات ونحدد تردده على 261.63 هرتز (وهو تردد نغمة دو وسط البيانو C4) هكذا: const osc = ctx.createOscillator(); osc.frequency.value = 261.63;. نربط المذبذب بمكبر الصوت ctx.destination ونستمع للموسيقى العذبة السحرية!",
+  "mistake": "الخطأ الشائع هو محاولة تشغيل الصوت فور تحميل الصفحة دون انتظار ضغطة زر من المستخدم، مما يجعله صامتاً بسبب سياسة الحماية في المتصفحات. الحل هو وضع كود تشغيل الصوت داخل دالة ترتبط بحدث الضغط على زر (click).",
+  "recap": "تعلمنا اليوم كيف نستخدم واجهة صوت الويب لإنشاء سياق صوتي ومذبذبات ترددية لتوليد النغمات. وأدركنا أهمية ضغطة المستخدم لتشغيل الصوت وربطه بالمكبرات بنجاح.",
+  "q": [
+   {
+    "t": "ما هو الأمر الأساسي لإنشاء سياق صوتي جديد في المتصفح؟",
+    "o": [
+     "new AudioContext()",
+     "createSound()",
+     "playAudio.now()"
+    ],
+    "a": 0,
+    "why": "نستخدم الأمر new AudioContext() لبدء بيئة العمل الصوتية في المتصفح."
+   },
+   {
+    "t": "لماذا ترفض المتصفحات تشغيل الصوت فور فتح الصفحة تلقائياً؟",
+    "o": [
+     "لأن المتصفح لا يحب الموسيقى",
+     "بسبب سياسة حماية المتصفح التي تطلب تفاعلاً أو ضغطة زر أولاً",
+     "لأن لغة جافاسكريبت لا تدعم الصوت"
+    ],
+    "a": 1,
+    "why": "تتطلب المتصفحات حركة أو ضغطة مستخدم (User Gesture) لمنع المواقع من إزعاج المستخدمين بأصوات مفاجئة."
+   },
+   {
+    "t": "إلى أين نربط عقدة المذبذب (OscillatorNode) لكي نسمع الصوت عبر السماعات؟",
+    "o": [
+     "إلى ctx.destination",
+     "إلى زر الماوس",
+     "إلى ملف الصور"
+    ],
+    "a": 0,
+    "why": "المحطة الأخيرة لأي مسار صوتي هي ctx.destination لتوجيه الصوت إلى سماعات الجهاز."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع سلوك كود البيانو الصوتي",
+   "goal": "توقع ما يحدث عند تشغيل كود المذبذب الصوتي البسيط",
+   "code": "const ctx = new AudioContext();\nconst osc = ctx.createOscillator();\nosc.frequency.value = 440;\nosc.connect(ctx.destination);\nosc.start();",
+   "options": [
+    "يصدر المتصفح نغمة ترددها 440 هرتز فور تشغيل الكود",
+    "تظهر صورة قطة ملونة على الشاشة",
+    "يتم تحميل ملف فيديو كبير"
+   ],
+   "a": 0,
+   "success": "رائع! لقد أصدر المتصفح نغمة موسيقية صافية بتردد 440 هرتز بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في صوت الويب",
+    "text": "تخيل أن متصفح الويب هو استوديو تسجيل مجهز بأحدث الأجهزة. صوت الويب (Web Audio API) هو النظام الخارق الذي يمنحك القوة لتوليد الأصوات، التحكم في تردداتها، وإضافة تأثيرات مذهلة مباشرة باستخدام لغة جافاسكريبت.",
+    "code": "<button onclick='playTone()'>اضغط لسماع النغمة</button>\n<script>\nfunction playTone() {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  osc.connect(ctx.destination);\n  osc.start();\n}\n</script>",
+    "output": "يصدر المتصفح نغمة أساسية عند النقر على الزر."
+   },
+   {
+    "h": "تهيئة بيئة الصوت AudioContext",
+    "text": "لكي تبدأ العزف، يجب أولاً إنشاء مسرح العمليات الصوتي والذي يُعرف بـ AudioContext. هذا الكائن هو المدير المسؤول عن جميع العمليات الصوتية وعقد التوصيل داخل صفحة الويب الخاصة بك.",
+    "code": "<button onclick='initAudio()'>إنشاء السياق الصوتي</button>\n<p id='status'>لم يتم البدء بعد</p>\n<script>\nfunction initAudio() {\n  const ctx = new AudioContext();\n  document.getElementById('status').innerText = 'تم إنشاء السياق بنجاح بحالة: ' + ctx.state;\n}\n</script>",
+    "output": "يعرض حالة السياق الصوتي بأنه نشط ومستعد."
+   },
+   {
+    "h": "توليد النغمات عبر المذبذب Oscillator",
+    "text": "المذبذب (OscillatorNode) هو بمثابة الوتر المهتز في الجيتار أو الغشاء الداخلي للسماعة. يقوم بتوليد موجات رياضية تتحول إلى أصوات، ويمكننا تغيير ترددها بدقة تامة لإنتاج نغمات منخفضة أو عالية.",
+    "code": "<button onclick='playNote()'>تشغيل نغمة 523 هرتز</button>\n<script>\nfunction playNote() {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  osc.frequency.value = 523.25; // نغمة دو C5\n  osc.connect(ctx.destination);\n  osc.start();\n  setTimeout(() => osc.stop(), 500);\n}\n</script>",
+    "output": "يصدر المتصفح نغمة موسيقية سريعة لمدة نصف ثانية."
+   },
+   {
+    "h": "سياسة تفاعل المستخدم للتشغيل",
+    "text": "المتصفحات الحديثة تشبه الحراس الأذكياء؛ فهي تمنع تشغيل أي صوت تلقائياً فور فتح الصفحة مزعجةً الزوار. يجب دائماً أن يبدأ الصوت نتيجة حدث تفاعلي من المستخدم مثل النقر على زر أو مفتاح في لوحة المفاتيح.",
+    "code": "<button id='soundBtn'>اضغطني لتفعيل الصوت</button>\n<script>\ndocument.getElementById('soundBtn').addEventListener('click', () => {\n  const ctx = new AudioContext();\n  alert('ممتاز! تم تفعيل الصوت بناءً على ضغطتك.');\n});\n</script>",
+    "output": "يظهر تنبيه يفيد بنجاح تفعيل الصوت بفضل ضغطة الزر."
+   },
+   {
+    "h": "ربط العقد الصوتية بالنهاية",
+    "text": "هندسة الصوت في الويب تعتمد على نظام الشبكات المعيارية. أنت تصنع مصدراً للصوت، وتمرره عبر تأثيرات اختيارية، ثم تربطه نهائياً بـ ctx.destination لكي يخرج الصوت عبر سماعات جهازك للأذن.",
+    "code": "<button onclick='connectFlow()'>تجربة مسار التوصيل</button>\n<script>\nfunction connectFlow() {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  // التوصيل بالمكبر النهائي\n  osc.connect(ctx.destination);\n  osc.start();\n  setTimeout(() => osc.stop(), 300);\n}\n</script>",
+    "output": "يتم ربط المذبذب بمكبر الصوت وسماع نبضة سريعة."
+   },
+   {
+    "h": "بناء مفاتيح بيانو تفاعلية مصغرة",
+    "text": "يمكننا جمع كل ما تعلمناه لإنشاء لوحة مفاتيح بيانو صغيرة على الويب! كل مفتاح يمثل تردداً مختلفاً تماماً، فعند الضغط عليه يتم إنشاء مذبذب مؤقت يطلق النغمة الموسيقية المطلوبة لفترة قصيرة.",
+    "code": "<button onclick='playPianoKey(261.63)'>Do (C4)</button>\n<button onclick='playPianoKey(329.63)'>Mi (E4)</button>\n<script>\nfunction playPianoKey(freq) {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  osc.frequency.value = freq;\n  osc.connect(ctx.destination);\n  osc.start();\n  setTimeout(() => osc.stop(), 400);\n}\n</script>",
+    "output": "تعزف الأزرار نغمات مختلفة ومميزة عند النقر عليها."
+   }
+  ],
+  "reference": [
+   {
+    "name": "AudioContext",
+    "desc": "بيئة العمل الأساسية المسؤولة عن إدارة ومعالجة الصوت."
+   },
+   {
+    "name": "createOscillator()",
+    "desc": "دالة لإنشاء مذبذب صوتي يولد موجات نغمية رياضية."
+   },
+   {
+    "name": "osc.frequency.value",
+    "desc": "خاصية لتحديد تردد النغمة بالهرتز (Hz)."
+   },
+   {
+    "name": "osc.connect()",
+    "desc": "دالة لربط عقدة صوتية بعقدة أخرى أو بمكبر الصوت."
+   },
+   {
+    "name": "ctx.destination",
+    "desc": "المحطة النهائية للصوت (سماعات الجهاز أو سماعات الرأس)."
+   },
+   {
+    "name": "osc.start() / osc.stop()",
+    "desc": "أوامر لبدء وإيقاف تشغيل مصدر الصوت في المذبذب."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر البرمجة بـ جافاسكريبت لإنشاء سياق صوتي جديد باسم ctx.",
+    "a": "const ctx = new AudioContext();"
+   },
+   {
+    "q": "كيف تحدد تردد مذبذب صوتي ليساوي 440 هرتز؟",
+    "a": "osc.frequency.value = 440;"
+   },
+   {
+    "q": "ما هو الأمر المطلوب لربط المذبذب بمكبر الصوت النهائي؟",
+    "a": "osc.connect(ctx.destination);"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine your web browser is a grand musical studio, and the Web Audio API is a magical chef crafting digital tones from scratch using special tools called audio nodes.",
+   "The first step to unleash this magic is initializing the sound container using: const ctx = new AudioContext(); which sets up our entire audio processing stage inside the browser.",
+   "Smart browsers block autoplaying sounds to protect users, so audio playback must always be triggered by a real user action, such as a mouse click (User Gesture) to open the curtain.",
+   "We can create a mathematical sound source called an OscillatorNode and set its frequency to play a specific pitch, like 440 Hz for the A note, using: const osc = ctx.createOscillator(); osc.frequency.value = 440;",
+   "A golden rule in browser sound engineering: to actually hear the sound, you must connect your tone source to the final speakers destination using osc.connect(ctx.destination) and then start it with osc.start()!",
+   "Real-world applications are amazing; they empower young coders to build interactive virtual pianos, sound-responsive web games, and fantastic digital drum machines running directly inside web browsers without extra plugins."
+  ],
+  "example": "Suppose we want to play a digital tone when clicking a button on the webpage. We start by initializing the audio context with const ctx = new AudioContext();. Then we create an oscillator and set its frequency to 261.63 Hz (middle C4 note) like this: const osc = ctx.createOscillator(); osc.frequency.value = 261.63;. We connect the oscillator to ctx.destination and enjoy the magical melody!",
+  "mistake": "A common mistake is trying to play audio immediately on page load without waiting for user interaction, making it silent due to browser autoplay policies. The fix is placing the audio trigger inside a click event handler.",
+  "recap": "Today we learned how to use the Web Audio API to create an audio context and frequency oscillators for sound synthesis. We also understood the importance of user gestures for playback and connecting nodes to destinations successfully.",
+  "q": [
+   {
+    "t": "What is the essential command to create a new audio context in the browser?",
+    "o": [
+     "new AudioContext()",
+     "createSound()",
+     "playAudio.now()"
+    ],
+    "a": 0,
+    "why": "We use new AudioContext() to initialize the audio processing environment in the browser."
+   },
+   {
+    "t": "Why do browsers refuse to play audio automatically on page load?",
+    "o": [
+     "Because browsers do not like music",
+     "Due to browser autoplay protection policies requiring user interaction first",
+     "Because JavaScript does not support sound"
+    ],
+    "a": 1,
+    "why": "Browsers require a user gesture to prevent websites from annoying users with unexpected sudden sounds."
+   },
+   {
+    "t": "Where do we connect the OscillatorNode to hear sound through the speakers?",
+    "o": [
+     "To ctx.destination",
+     "To the mouse button",
+     "To an image file"
+    ],
+    "a": 0,
+    "why": "The final destination for any audio routing graph is ctx.destination to direct sound to system speakers."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Audio Oscillator Code Behavior",
+   "goal": "Predict what happens when running the simple audio oscillator code",
+   "code": "const ctx = new AudioContext();\nconst osc = ctx.createOscillator();\nosc.frequency.value = 440;\nosc.connect(ctx.destination);\nosc.start();",
+   "options": [
+    "The browser outputs a 440 Hz tone immediately upon running code",
+    "A colorful cat picture appears on screen",
+    "A large video file starts downloading"
+   ],
+   "a": 0,
+   "success": "Awesome! The browser successfully output a clear musical tone at 440 Hz!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Web Audio API",
+    "text": "Imagine your web browser is a recording studio equipped with high-tech gear. The Web Audio API is the superpower system that gives you the ability to generate sounds, control frequencies, and add stunning effects directly using JavaScript.",
+    "code": "<button onclick='playTone()'>Click to Play Tone</button>\n<script>\nfunction playTone() {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  osc.connect(ctx.destination);\n  osc.start();\n}\n</script>",
+    "output": "The browser plays a basic tone when the button is clicked."
+   },
+   {
+    "h": "Initializing AudioContext",
+    "text": "To start making music, you must first create an audio processing stage known as AudioContext. This object is the manager responsible for all audio operations and routing nodes inside your web page.",
+    "code": "<button onclick='initAudio()'>Create Audio Context</button>\n<p id='status'>Not started yet</p>\n<script>\nfunction initAudio() {\n  const ctx = new AudioContext();\n  document.getElementById('status').innerText = 'Context created with state: ' + ctx.state;\n}\n</script>",
+    "output": "Displays the audio context state as active and ready."
+   },
+   {
+    "h": "Generating Tones via Oscillator",
+    "text": "An OscillatorNode acts like a vibrating guitar string or speaker membrane. It generates mathematical waveforms that turn into sounds, and we can precisely change its frequency to produce low or high musical notes.",
+    "code": "<button onclick='playNote()'>Play 523Hz Note</button>\n<script>\nfunction playNote() {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  osc.frequency.value = 523.25; // C5 note\n  osc.connect(ctx.destination);\n  osc.start();\n  setTimeout(() => osc.stop(), 500);\n}\n</script>",
+    "output": "The browser plays a quick musical tone for half a second."
+   },
+   {
+    "h": "User Gesture Playback Policy",
+    "text": "Modern browsers act like smart guards; they prevent any sound from playing automatically when opening a page to avoid bothering visitors. Sound must always be initiated by a user interactive event like clicking a button or key.",
+    "code": "<button id='soundBtn'>Click to Enable Audio</button>\n<script>\ndocument.getElementById('soundBtn').addEventListener('click', () => {\n  const ctx = new AudioContext();\n  alert('Awesome! Audio enabled based on your click.');\n});\n</script>",
+    "output": "An alert pops up confirming audio was successfully enabled via the button click."
+   },
+   {
+    "h": "Connecting Audio Nodes to Destination",
+    "text": "Web audio engineering relies on modular routing networks. You create a sound source, pass it through optional effects, and finally connect it to ctx.destination so sound exits through your device speakers to your ears.",
+    "code": "<button onclick='connectFlow()'>Test Connection Flow</button>\n<script>\nfunction connectFlow() {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  // Connecting to final speaker destination\n  osc.connect(ctx.destination);\n  osc.start();\n  setTimeout(() => osc.stop(), 300);\n}\n</script>",
+    "output": "The oscillator connects to speakers and plays a quick beep."
+   },
+   {
+    "h": "Building Mini Interactive Piano Keys",
+    "text": "We can combine everything we learned to build a tiny web piano keyboard! Each key represents a distinct frequency, so when clicked, it spins up a temporary oscillator firing the required musical note for a short moment.",
+    "code": "<button onclick='playPianoKey(261.63)'>Do (C4)</button>\n<button onclick='playPianoKey(329.63)'>Mi (E4)</button>\n<script>\nfunction playPianoKey(freq) {\n  const ctx = new AudioContext();\n  const osc = ctx.createOscillator();\n  osc.frequency.value = freq;\n  osc.connect(ctx.destination);\n  osc.start();\n  setTimeout(() => osc.stop(), 400);\n}\n</script>",
+    "output": "The buttons play different distinct musical notes when clicked."
+   }
+  ],
+  "reference": [
+   {
+    "name": "AudioContext",
+    "desc": "The primary interface representing an audio-processing graph."
+   },
+   {
+    "name": "createOscillator()",
+    "desc": "Method to create an oscillator node generating periodic waveforms."
+   },
+   {
+    "name": "osc.frequency.value",
+    "desc": "Property specifying the frequency of the tone in Hertz (Hz)."
+   },
+   {
+    "name": "osc.connect()",
+    "desc": "Method to link an audio node to another node or destination."
+   },
+   {
+    "name": "ctx.destination",
+    "desc": "The final audio destination (speakers or headphones)."
+   },
+   {
+    "name": "osc.start() / osc.stop()",
+    "desc": "Commands to begin and end playback of the oscillator sound source."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the JavaScript statement to create a new audio context named ctx.",
+    "a": "const ctx = new AudioContext();"
+   },
+   {
+    "q": "How do you set an oscillator frequency to 440 Hz?",
+    "a": "osc.frequency.value = 440;"
+   },
+   {
+    "q": "What is the command required to link an oscillator to the final speakers?",
+    "a": "osc.connect(ctx.destination);"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Web Audio API",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

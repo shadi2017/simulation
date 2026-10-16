@@ -1,0 +1,258 @@
+{
+ "ar": {
+  "steps": [
+   "الـ DOM هو شجرة مفصلة بيمثلها المتصفح لكل عناصر صفحة الإنترنت، وبتسمح لجافاسكريبت إنها تفهم محتوى الصفحة وتعدل عليه بشكل ديناميكي وسريع.",
+   "عشان نقدر نوصل لأي عنصر جوه شجرة الـ DOM، بنستخدم أداة سحرية اسمها document.getElementById() وبنكتب جوها الـ id بتاع العنصر بين قوسين وعلامات تنصيص.",
+   "تخيل إن عنصر الـ id ده عامل زي الرقم القومي الخاص بشخص واحد بس في البلد كلها؛ مفيش عنصرين في نفس الصفحة ممكن ياخدوا نفس الـ id.",
+   "بعد ما بنمسك العنصر ونجيبه، نقدر نغير الكلام اللي جوه النص باستخدام الخاصية .innerText كأننا بنكتب استبدال فوري للرسالة القديمة بكلام جديد.",
+   "مش بس النصوص، دي جافاسكريبت تقدر كمان تغير الصور والصور المتحركة عن طريق تحديث المصدر بالخاصية .src وكأننا بنغير كارت بوستر في إطار تعليق.",
+   "القاعدة الذهبية هنا هي: جيب العنصر بالـ ID الأول، وبعدين اطلب منه يغير .innerText أو .src عشان تخلي صفحتك تتفاعل مع المستخدم في الحال!"
+  ],
+  "example": "لو عندنا عنصر عنوان كالتالي: <h1 id='title'>أهلاً</h1> وجنبه زرار، لما المستخدم يدوس على الزرار، الكود بيمسك العنوان كالتالي: const myTitle = document.getElementById('title'); وبعدين يغير نصه: myTitle.innerText = 'مرحباً بك يا أبطال'; وبكده الصفحة اتحدثت بدون ما نعمل تحميل من جديد!",
+  "mistake": "الغلطة الشائعة هي كتابة اسم الـ ID غلط أو نسيان علامات التنصيص د, وده بيخلي المتصفح ما يلاقيش العنصر ويطلع خطأ. الحل هو التأكد من تطابق الحروف الكبيرة والصغيرة وكتابة اسم الـ ID مظبوط جوه الأقواس.",
+  "recap": "تعلمنا إزاي نختار أي عنصر في صفحة الويب باستخدام الـ id وتحديث كلامه أو صورته فوراً. الـ DOM بيخلي صفحاتنا ذكية وحية!",
+  "q": [
+   {
+    "t": "ما هي الدالة المستخدمة لاختيار عنصر بواسطة معرفه الفريد في جافاسكريبت؟",
+    "o": [
+     "document.getElementById()",
+     "document.findTag()",
+     "document.selectName()"
+    ],
+    "a": 0,
+    "why": "document.getElementById هي الطريقة الأساسية والوحيدة للبحث عن عنصر بمعرفه الفريد."
+   },
+   {
+    "t": "أي خاصية نستخدمها لتغيير النص المكتوب داخل العنصر؟",
+    "o": [
+     ".src",
+     ".innerText",
+     ".href"
+    ],
+    "a": 1,
+    "why": "خاصية innerText مخصصة لتحديث النصوص أو قراءتها داخل عناصر الـ HTML."
+   },
+   {
+    "t": "كيف نقوم بتغيير صورة في الصفحة باستخدام جافاسكريبت؟",
+    "o": [
+     "عن طريق تحديث خاصية .src للصورة",
+     "عن طريق تعديل خاصية .innerText",
+     "عن طريق حذف العنصر نهائياً"
+    ],
+    "a": 0,
+    "why": "خاصية src هي المسؤولة عن مسار ورابط مصدر الوسائط والصور."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة الكود",
+   "goal": "توقع ما سيحدث عند تنفيذ كود جافاسكريبت لتغيير النص والـ ID",
+   "code": "<h1 id='msg'>مبدئي</h1>\n<script>\n  const el = document.getElementById('msg');\n  el.innerText = 'تم التحديث بنجاح';\n</script>",
+   "options": [
+    "سيبقى العنوان مكتوباً عليه 'مبدئي'",
+    "سيتحول النص في العنوان إلى 'تم التحديث بنجاح'",
+    "سيختفي العنوان تماماً من الصفحة"
+   ],
+   "a": 1,
+   "success": "أحسنت! لقد تم تحديث نص العنوان فوراً بفضل جافاسكريبت و الـ DOM."
+  },
+  "sections": [
+   {
+    "h": "مفهوم شجرة الـ DOM",
+    "text": "الـ DOM هو خريطة رقمية يبنيها المتصفح لكل صفحة إنترنت تزورها. تخلّيها عاملة زي شجرة عائلية كبيرة كل فرع فيها بيمثل عنصر HTML زي الأزرار والعناوين والصور. جافاسكريبت بتقدر تمشي في الشجرة دي وتعدل في أي فرع وقت ما تحب.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>DOM Test</title></head>\n<body>\n  <h1 id='heading'>شجرة الـ DOM</h1>\n  <p>المتصفح يقرأ الصفحة كعناصر مترابطة.</p>\n</body>\n</html>",
+    "output": "يظهر عنوان رئيسي وفقرة تشرح شجرة الـ DOM."
+   },
+   {
+    "h": "اختيار العناصر بـ getElementById",
+    "text": "عشان نكلم عنصر معين في الصفحة، لازم ننادي عليه باسمه الفريد الـ id. دالة document.getElementById() هي الكشاف السحري اللي بيدخل جوه شجرة الـ DOM ويجيب لنا العنصر المطلوب بالمللي متر بدون أي لخبطة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'>العنصر الأصلي</p>\n  <script>\n    const myPara = document.getElementById('demo');\n    console.log(myPara);\n  </script>\n</body>\n</html>",
+    "output": "يتم اختيار العنصر وعرضه في وحدة التحكم برمجياً."
+   },
+   {
+    "h": "تعديل النصوص بـ .innerText",
+    "text": "بعد ما مسكنا العنصر بإيدنا في الكود، نقدر نغير الكلام اللي جواه بكل سهولة باستخدام خاصية .innerText. كأنك بتجيب أستيكة وتمسح السبورة وتكتب عليها فكرة جديدة خالص يراها المستخدم فوراً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2 id='greet'>أهلاً بالجميع</h2>\n  <script>\n    document.getElementById('greet').innerText = 'أهلاً بك يا مبرمج المستقبل!';\n  </script>\n</body>\n</html>",
+    "output": "يتحول النص على الشاشة إلى 'أهلاً بك يا مبرمج المستقبل!'."
+   },
+   {
+    "h": "تغيير الوسائط والصور بـ .src",
+    "text": "مش النصوص لوحدها اللي بتتغير! الصور كمان نقدر نبدلها ونحط مكانها صورة تانية جديدة عن طريق تحديث خاصية .src. تخيل إن عندك إبريق شاي محطوط فيه صورة، وبتقوم تشيلها وتحط صورة قطة لطيفة مكانها.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <img id='myImg' src='cat1.png' width='100'>\n  <script>\n    const imgBox = document.getElementById('myImg');\n    imgBox.src = 'cat2.png';\n  </script>\n</body>\n</html>",
+    "output": "يتم تحديث مصدر الصورة لتصبح cat2.png."
+   },
+   {
+    "h": "التفاعل مع أزرار المستخدم",
+    "text": "عشان نخلي الصفحة تفاعلية بجد، بنربط تعديل الـ DOM بحدث زي الضغط على زرار. المستخدم لما بيدوس على الزرار، جافاسكريبت بتشتغل في الخلفية وتنفذ أوامر الاختيار والتعديل في نفس اللحظة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3 id='status'>غير متصل</h3>\n  <button onclick=\"document.getElementById('status').innerText='متصل الآن!'\">اتصل</button>\n</body>\n</html>",
+    "output": "عند الضغط على زرار 'اتصل'، تتغير كلمة غير متصل إلى 'متصل الآن!'."
+   }
+  ],
+  "reference": [
+   {
+    "name": "document.getElementById()",
+    "desc": "دالة لاختيار عنصر واحد من صفحة الويب باستخدام المعرف الـ ID الخاص به."
+   },
+   {
+    "name": ".innerText",
+    "desc": "خاصية لقراءة أو كتابة النص الداخلي لأي عنصر HTML."
+   },
+   {
+    "name": ".src",
+    "desc": "خاصية لتغيير أو معرفة رابط مصدر الملفات مثل الصور ومقاطع الفيديو."
+   },
+   {
+    "name": "DOM",
+    "desc": "نموذج كائن المستند وهو الطريقة التي يمثل بها المتصفح صفحات الإنترنت برمجياً."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر برمجياً لاختيار عنصر يحمل الـ id التالي: 'box'.",
+    "a": "const box = document.getElementById('box');"
+   },
+   {
+    "q": "كيف تغير نص عنصر الـ id الخاص به هو 'title' إلى 'مرحباً'؟",
+    "a": "document.getElementById('title').innerText = 'مرحباً';"
+   },
+   {
+    "q": "اكتب الكود لتغيير صورة الـ id الخاص بها 'banner' إلى رابط جديد 'new.jpg'.",
+    "a": "document.getElementById('banner').src = 'new.jpg';"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The DOM is a detailed tree model created by the browser for every web page, letting JavaScript understand the page contents and update them dynamically and fast.",
+   "To reach any element inside the DOM tree, we use a magical tool called document.getElementById() by passing the unique ID of the element inside quotes.",
+   "Imagine an element's ID is like a unique national ID card belonging to one person only; no two elements on the same page can share the exact same ID.",
+   "Once we grab the element, we can change its inner text using the .innerText property, just like instantly erasing an old message and writing a brand new one.",
+   "Not just text! JavaScript can also change images and media sources by updating the .src property, just like swapping a poster card inside a hanging frame.",
+   "The golden rule here is: get the element by its ID first, then tell it to change .innerText or .src to make your web page interact with users instantly!"
+  ],
+  "example": "If we have a heading element like this: <h1 id='title'>Hello</h1> next to a button, when the user clicks the button, the code grabs the heading: const myTitle = document.getElementById('title'); and then changes its text: myTitle.innerText = 'Welcome Champions'; updating the page instantly without reloading!",
+  "mistake": "A common mistake is typing the ID name incorrectly or forgetting quotes, which causes the browser to miss the element and throw an error. The fix is to double-check uppercase/lowercase letters and ensure the ID name matches perfectly inside the parentheses.",
+  "recap": "We learned how to select any web element using its unique ID and update its text or image instantly. The DOM makes our web pages smart and alive!",
+  "q": [
+   {
+    "t": "Which method is used to select an element by its unique identifier in JavaScript?",
+    "o": [
+     "document.getElementById()",
+     "document.findTag()",
+     "document.selectName()"
+    ],
+    "a": 0,
+    "why": "document.getElementById is the primary method to search for an element using its unique ID."
+   },
+   {
+    "t": "Which property do we use to change the written text inside an element?",
+    "o": [
+     ".src",
+     ".innerText",
+     ".href"
+    ],
+    "a": 1,
+    "why": "The innerText property is designed for updating or reading text inside HTML elements."
+   },
+   {
+    "t": "How do we change an image on the page using JavaScript?",
+    "o": [
+     "By updating the .src property of the image",
+     "By modifying the .innerText property",
+     "By deleting the element permanently"
+    ],
+    "a": 0,
+    "why": "The src property manages the source path and link of media and image files."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Code Output",
+   "goal": "Predict what happens when running JavaScript code to update text and elements",
+   "code": "<h1 id='msg'>Initial</h1>\n<script>\n  const el = document.getElementById('msg');\n  el.innerText = 'Updated Successfully';\n</script>",
+   "options": [
+    "The heading will remain 'Initial'",
+    "The heading text will change to 'Updated Successfully'",
+    "The heading will disappear completely from the page"
+   ],
+   "a": 1,
+   "success": "Great job! The heading text was updated instantly thanks to JavaScript and the DOM."
+  },
+  "sections": [
+   {
+    "h": "The Concept of the DOM Tree",
+    "text": "The DOM is a digital map built by the browser for every web page you visit. Think of it like a giant family tree where every branch represents an HTML element like buttons, headings, and images. JavaScript can walk through this tree and modify any branch whenever you like.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>DOM Test</title></head>\n<body>\n  <h1 id='heading'>DOM Tree</h1>\n  <p>The browser reads the page as connected elements.</p>\n</body>\n</html>",
+    "output": "Displays a main heading and a paragraph explaining the DOM tree."
+   },
+   {
+    "h": "Selecting Elements with getElementById",
+    "text": "To talk to a specific element on the page, we call out its unique name: the id. The document.getElementById() method is our magic flashlight that dives into the DOM tree and retrieves the desired element accurately without any confusion.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'>Original Element</p>\n  <script>\n    const myPara = document.getElementById('demo');\n    console.log(myPara);\n  </script>\n</body>\n</html>",
+    "output": "Selects the element and logs it in the console programmatically."
+   },
+   {
+    "h": "Modifying Text with .innerText",
+    "text": "Once we grab the element in our code, we can easily change the words inside it using the .innerText property. It is like taking an eraser to a whiteboard and writing a brand new idea that the user sees instantly.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2 id='greet'>Hello Everyone</h2>\n  <script>\n    document.getElementById('greet').innerText = 'Welcome Future Programmer!';\n  </script>\n</body>\n</html>",
+    "output": "The text on screen changes to 'Welcome Future Programmer!'."
+   },
+   {
+    "h": "Changing Media and Images with .src",
+    "text": "It is not just text that can change! Images can also be swapped out with a new picture by updating the .src property. Imagine having a picture frame on your desk and swapping the old photo for a cute kitten photo.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <img id='myImg' src='cat1.png' width='100'>\n  <script>\n    const imgBox = document.getElementById('myImg');\n    imgBox.src = 'cat2.png';\n  </script>\n</body>\n</html>",
+    "output": "The image source is updated to cat2.png."
+   },
+   {
+    "h": "Interacting with User Buttons",
+    "text": "To make our web page truly interactive, we tie DOM updates to an event like a button click. When the user clicks the button, JavaScript runs in the background and executes selection and modification commands at that exact moment.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3 id='status'>Offline</h3>\n  <button onclick=\"document.getElementById('status').innerText='Online Now!'\">Connect</button>\n</body>\n</html>",
+    "output": "When clicking the 'Connect' button, offline changes to 'Online Now!'."
+   }
+  ],
+  "reference": [
+   {
+    "name": "document.getElementById()",
+    "desc": "A method to select a single web page element using its unique ID."
+   },
+   {
+    "name": ".innerText",
+    "desc": "A property to read or write the inner text of any HTML element."
+   },
+   {
+    "name": ".src",
+    "desc": "A property to change or check the source link of files like images and videos."
+   },
+   {
+    "name": "DOM",
+    "desc": "Document Object Model, the way the browser represents web pages programmatically."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a line of code to select an element with the id 'box'.",
+    "a": "const box = document.getElementById('box');"
+   },
+   {
+    "q": "How do you change the text of an element whose id is 'title' to 'Hello'?",
+    "a": "document.getElementById('title').innerText = 'Hello';"
+   },
+   {
+    "q": "Write code to change an image whose id is 'banner' to a new link 'new.jpg'.",
+    "a": "document.getElementById('banner').src = 'new.jpg';"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "title": "MDN: Selection and traversal on the DOM tree",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree"
+  }
+ ],
+ "grounded": true
+}

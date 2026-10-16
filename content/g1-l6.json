@@ -1,0 +1,355 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك بتنط الحبل في الحوش، لو صحابك قالوا لك نط 10 مرات ورا بعض، دي اسمها حلقة تكرار! في كود الأطفال، بنستخدم بلوك التكرار عشان نختصر على نفسنا بدل ما نحط نفس الحركة كتير.",
+   "عشان نخلي الشخصية تمشي خطوتين وتكررهم 3 مرات، بنحط بلوك المشي جوه بلوك الرقم (3). ده بيخلي البطل يتحرك ورا بعضه بسرعة وبأمر واحد بس!",
+   "الحكاية بتبدأ لما تحط البلوك جوه مجموعة التكرار (Repeat Block). الكمبيوتر بيقرا الرقم، ويعيد نفس الحركة عدد المرات دي بالضبط من غير ما تتعب في رص البلوكات.",
+   "لو عايز طيارة تطير للأمام 5 مرات، حط بلوك السهم اليمين وجنبه رقم 5. البطل هيطير ويتحرك خمس خطوات قدام بكل سهولة وبأوامر قصيرة ومنظمة.",
+   "القاعدة الذهبية للتكرار: كرر أي حركة بتحبها بدل ما تكرر البلوكات شكل بعضها. وفر مكان في الشاشة وخلي الكود بتاعك نظيف وسريع الفهم للكل.",
+   "في الحياة اليومية، زي ما بتغسل سنانك رايح جاي كل يوم بنفس الطريقة، الحلقات في الكود بتخلي الخلفيات تتحرك زي السحب والشمس بشكل دائم من غير توقف."
+  ],
+  "example": "عشان نعمل قطة تلف لفة ظريفة، بنجيب بلوك اللف (Spin) ونحطه جوه بلوك التكرار ونختار رقم 4. القطة هتبتدي تلف حوالين نفسها 4 مرات متتالية وبحركة سلسة وممتعة جداً على الشاشة.",
+  "mistake": "الغلطة الشهيرة إننا ننسى نقفل بلوك التكرار كويس أو نحط رقم صفر، والحل إنك تتأكد دايماً من كتابة رقم صحيح وموجب زي 3 أو 4 عشان الحركة تشتغل صح.",
+  "recap": "التكرار بيوفر وقتنا ويخلي الألعاب أحلى. بنستخدمه عشان نحرك الشخصيات والخلفيات بدون تعب.",
+  "q": [
+   {
+    "t": "إيه فايدة بلوك التكرار في سكراتش جونيور؟",
+    "o": [
+     "بيحذف الشخصية",
+     "بيدخل صوت مزعج",
+     "بيخلي الحركة تتعد كذا مرة بسهولة"
+    ],
+    "a": 2,
+    "why": "بلوك التكرار وظيفته يعيد الحركة عدد محدد من المرات."
+   },
+   {
+    "t": "لو عايزين القطة تنط 3 مرات، نستخدم إيه؟",
+    "o": [
+     "بلوك تكرار برقم 3 مع بلوك نطة",
+     "بلوك نهاية اللعبة",
+     "لون الخلفية أحمر"
+    ],
+    "a": 0,
+    "why": "بنحط بلوك النط جوه بلوك تكرار رقم 3."
+   },
+   {
+    "t": "فين بنحط الأوامر اللي عايزين نكررها؟",
+    "o": [
+     "بره الشاشة خالص",
+     "جوه بلوك التكرار نفسه",
+     "في صندوق الألوان"
+    ],
+    "a": 1,
+    "why": "الأوامر بتتzelf جوه بلوك التكرار عشان يكررها."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز الحركات والخلفيات",
+   "goal": "صنف الأوامر دي هل هي تبع التكرار ولا حركة عادية",
+   "buckets": [
+    "أوامر التكرار",
+    "حركة عادية"
+   ],
+   "items": [
+    {
+     "t": "تكرار النط 4 مرات",
+     "b": 0
+    },
+    {
+     "t": "خطوة واحدة لليمين",
+     "b": 1
+    },
+    {
+     "t": "تكرار الدوران 5 مرات",
+     "b": 0
+    },
+    {
+     "t": "تكبير الشخصية مرة",
+     "b": 1
+    },
+    {
+     "t": "تكرار الطيران للأعلى",
+     "b": 0
+    },
+    {
+     "t": "إصدار صوت قطة",
+     "b": 1
+    }
+   ],
+   "success": "رائع! رتبت الأوامر صح والشخصية بدأت ترقص وتتحرك بكل ذكاء."
+  },
+  "sections": [
+   {
+    "h": "ما هو التكرار؟",
+    "text": "التكرار هو إنك تعمل نفس الحاجة كذا مرة ورا بعض من غير ما تتعب. زي ما بتطبل على الطاولة بإيقاع ثابت، الكمبيوتر بيقدر يعمل نفس الحركة بالظبط لما تديه أمر تكرار.",
+    "code": "Repeat 3 times: [Clap hands]",
+    "output": "الشخصية بتصفق ثلاث مرات ورا بعض بسرعة."
+   },
+   {
+    "h": "لي بنستخدم الحلقات؟",
+    "text": "بدل ما تسحب عشر بلوكات شكل بعض وتملى بيهم الشاشة، بلوك واحد للتكرار بيقوم بالواجب وبيوفر مساحة كبيرة. ده بيخلي البرمجة أسهل وأسرع بكتير.",
+    "code": "Repeat 4 times: [Move right 1]",
+    "output": "البطل بيتحرك أربع خطوات قدام بأمر واحد صغير."
+   },
+   {
+    "h": "تكرار الحركة للمجموعات",
+    "text": "ممكن تحط أكتر من أمر جوه بلوك التكرار، زي خطوة قدام ونطة لفوق، وتخليهم يتعادوا سوا. ده بيعمل حركات معقدة وجميلة جداً للأبطال في قصتك.",
+    "code": "Repeat 2 times: [Move right, Jump]",
+    "output": "البطل بيمشي وينط مرتين ورا بعض بتناسق ممتع."
+   },
+   {
+    "h": "حلقة الاستمرار للأبد Forever",
+    "text": "بعض الحاجات في قصتنا مش بتوقف أبداً، زي الشمس وهي بتلف في السما أو السحب وهي ماشية. بنستخدم حلقة 'للأبد' عشان الخلفية تفضل تتحرك طول وقت اللعبة.",
+    "code": "Forever: [Spin 1 time]",
+    "output": "الشمس بتلف بلا توقف وتدي شكل حي للخلفية."
+   },
+   {
+    "h": "تطبيق على خلفيات سكراتش جونيور",
+    "text": "لما تحرك السحب يمين وشمال بشكل دائم، القصة بتحسس اللاعب كأن الكاميرا بتطير في الجو. بنستعين ببلوك الاستمرار عشان الخلفية تبدو طبيعية ومتحركة.",
+    "code": "Forever: [Move cloud left 5]",
+    "output": "السحب بتتحرك باستمرار وتعطي إحساس بالحركة المستمرة."
+   },
+   {
+    "h": "ربط التكرار بالزمن",
+    "text": "كل مرة الكود بيخلص لفة تكرار، بياخد جزء صغير من الثانية. لما نكبر الأرقام، الحركة بتطول، ولما نصغرها بتكون سريعة، وده بيدينا تحكم كامل في سرعة القصة.",
+    "code": "Repeat 10 times: [Turn right]",
+    "output": "القطة بتلف ببطء جميل عشر مرات متتالية."
+   },
+   {
+    "h": "تجنب الأخطاء في التكرار",
+    "text": "لو نسيت تحط بلوك جوه حلقة التكرار، مش هيحصل حاجة. تأكد دايماً إن الأوامر مركبة جوه التجويف بتاع بلوك التكرار عشان الكمبيوتر ينفذها صح.",
+    "code": "Put blocks INSIDE the repeat container",
+    "output": "الأوامر بتتنفذ بسلاسة وبدون أي مشاكل برمجية."
+   },
+   {
+    "h": "إبداع بلا حدود في القصص",
+    "text": "استخدم التكرار عشان تعمل ألعاب حية وقصص مشوقة. المطر وهو نازل، أو الفراشات وهي طايحة، كله بيعتمد على تكرار الأوامر الذكية.",
+    "code": "Repeat 5 times: [Fall down]",
+    "output": "المطر بينزل على الشاشة في شكل متناسق ولطيف."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Repeat Block",
+    "desc": "بلوك تكرار الأوامر لعدد محدد من المرات."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "حلقة استمرار الحركة للأبد بدون توقف."
+   },
+   {
+    "name": "Animation",
+    "desc": "تحريك الرسوم بطريقة تخليها تبدي كأنها حقيقية."
+   },
+   {
+    "name": "Background",
+    "desc": "خلفية المشهد اللي ورا الشخصيات."
+   },
+   {
+    "name": "Loop",
+    "desc": "إعادة تنفيذ مجموعة أوامر تلقائياً."
+   },
+   {
+    "name": "Action",
+    "desc": "أي حركة بيعملها البطل زي النط أو المشي."
+   },
+   {
+    "name": "Code",
+    "desc": "مجموعة الأوامر اللي بيفهمها الكمبيوتر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب فكرة سريعة لكركتر بينط خمس مرات باستخدام التكرار.",
+    "a": "استخدم بلوك التكرار برقم 5 وحط جوه بلوك النط."
+   },
+   {
+    "q": "ليه بنستخدم حلقة الاستمرار Forever للخلفيات؟",
+    "a": "عشان تخلي الشمس أو السحب متحركة طول وقت اللعبة بدون ما تقف."
+   },
+   {
+    "q": "إزاي تخلي قطة تلف دورتين؟",
+    "a": "حط بلوك اللف جوه بلوك التكرار وحدد الرقم 2."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine jumping rope in the yard; if your friends say jump 10 times in a row, that is a loop! In kids' coding, we use a repeat block to save space instead of stacking the same move over and over.",
+   "To make a character take two steps and repeat them 3 times, we put the walk block inside a number block (3). This makes the hero move sequentially and quickly with just a single command!",
+   "The story starts when you place blocks inside the Repeat Block. The computer reads the number and repeats that exact motion without you tiring yourself out stacking blocks.",
+   "If you want an airplane to fly forward 5 times, put the right arrow block next to the number 5. The hero flies and moves forward five easy steps with short, neat commands.",
+   "The golden rule of loops: repeat any favorite motion instead of stacking identical blocks. Clear screen space and keep your code clean and easy for everyone to understand.",
+   "In daily life, just like brushing your teeth back and forth every day in the same way, loops in code make backgrounds like moving clouds and spinning suns run continuously without stopping."
+  ],
+  "example": "To make a cute cat do a fun spin, we grab the Spin block, place it inside a repeat container, and choose the number 4. The cat will spin around itself 4 times smoothly and very enjoyably on screen.",
+  "mistake": "A common mistake is forgetting to close the repeat block properly or setting the count to zero. The fix is to always ensure you write a correct positive number like 3 or 4 so the animation runs right.",
+  "recap": "Loops save our time and make games much cooler. We use them to animate characters and backgrounds effortlessly.",
+  "q": [
+   {
+    "t": "What is the benefit of the repeat block in ScratchJr?",
+    "o": [
+     "It deletes the character",
+     "It plays an annoying sound",
+     "It repeats a motion multiple times easily"
+    ],
+    "a": 2,
+    "why": "The repeat block's job is to repeat actions a specific number of times."
+   },
+   {
+    "t": "If we want a cat to jump 3 times, what should we use?",
+    "o": [
+     "A repeat block set to 3 with a jump block",
+     "An end game block",
+     "A red background color"
+    ],
+    "a": 0,
+    "why": "We place the jump block inside a repeat block set to 3."
+   },
+   {
+    "t": "Where do we place the commands we want to loop?",
+    "o": [
+     "Completely off screen",
+     "Inside the repeat block itself",
+     "In the color palette"
+    ],
+    "a": 1,
+    "why": "Commands are nested inside the repeat block so it can loop them."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Motions and Backgrounds",
+   "goal": "Classify these commands into loop actions versus regular single motions",
+   "buckets": [
+    "Loop Commands",
+    "Regular Motion"
+   ],
+   "items": [
+    {
+     "t": "Repeat jumping 4 times",
+     "b": 0
+    },
+    {
+     "t": "Single step to the right",
+     "b": 1
+    },
+    {
+     "t": "Repeat spinning 5 times",
+     "b": 0
+    },
+    {
+     "t": "Grow character once",
+     "b": 1
+    },
+    {
+     "t": "Repeat flying upwards",
+     "b": 0
+    },
+    {
+     "t": "Make a cat meow sound",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the commands correctly and the character started dancing and moving smartly."
+  },
+  "sections": [
+   {
+    "h": "What is a Loop?",
+    "text": "A loop is doing the same thing over and over without getting tired. Just like tapping your desk in a steady rhythm, the computer can execute the exact same motion when you give it a loop command.",
+    "code": "Repeat 3 times: [Clap hands]",
+    "output": "The character claps their hands three times in a row quickly."
+   },
+   {
+    "h": "Why Use Loops?",
+    "text": "Instead of dragging ten identical blocks and filling up the screen, a single repeat block does the job and saves a lot of space. This makes programming much easier and faster.",
+    "code": "Repeat 4 times: [Move right 1]",
+    "output": "The hero moves four steps forward with one small command."
+   },
+   {
+    "h": "Repeating Motion Groups",
+    "text": "You can put more than one command inside a repeat block, like a step forward and a jump up, and have them repeat together. This creates complex and wonderful movements for heroes in your story.",
+    "code": "Repeat 2 times: [Move right, Jump]",
+    "output": "The hero walks and jumps twice in a row with fun coordination."
+   },
+   {
+    "h": "The Forever Loop",
+    "text": "Some things in our story never stop, like the sun spinning in the sky or clouds moving across. We use a 'Forever' loop to keep the background moving throughout the whole game time.",
+    "code": "Forever: [Spin 1 time]",
+    "output": "The sun spins endlessly, giving a lively feel to the background."
+   },
+   {
+    "h": "Applying to ScratchJr Backgrounds",
+    "text": "When you move clouds left and right continuously, it makes the player feel like the camera is flying in the air. We use a forever block to make the background look natural and animated.",
+    "code": "Forever: [Move cloud left 5]",
+    "output": "Clouds move continuously, giving a sensation of ongoing motion."
+   },
+   {
+    "h": "Tying Loops to Time",
+    "text": "Each time code finishes a loop cycle, it takes a tiny fraction of a second. When we increase numbers, motion takes longer; when we decrease them, it's fast, giving us complete control over story speed.",
+    "code": "Repeat 10 times: [Turn right]",
+    "output": "The cat spins nicely and slowly ten consecutive times."
+   },
+   {
+    "h": "Avoiding Mistakes in Loops",
+    "text": "If you forget to place a block inside the loop container, nothing will happen. Always make sure commands are nested inside the indentation of the repeat block so the computer executes them right.",
+    "code": "Put blocks INSIDE the repeat container",
+    "output": "Commands execute smoothly and without any programming glitches."
+   },
+   {
+    "h": "Limitless Creativity in Stories",
+    "text": "Use loops to make lively games and engaging stories. Falling rain or fluttering butterflies all rely on repeating smart commands.",
+    "code": "Repeat 5 times: [Fall down]",
+    "output": "Rain falls onto the screen in a balanced and pleasant pattern."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Repeat Block",
+    "desc": "A block that repeats commands a specified number of times."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "A loop that keeps motion running forever without stopping."
+   },
+   {
+    "name": "Animation",
+    "desc": "Moving graphics in a way that makes them look alive."
+   },
+   {
+    "name": "Background",
+    "desc": "The scene backdrop behind the characters."
+   },
+   {
+    "name": "Loop",
+    "desc": "Automatic re-execution of a group of commands."
+   },
+   {
+    "name": "Action",
+    "desc": "Any movement made by a hero like jumping or walking."
+   },
+   {
+    "name": "Code",
+    "desc": "A set of instructions understood by computers."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a quick idea for a character jumping five times using a loop.",
+    "a": "Use a repeat block set to 5 and place the jump block inside it."
+   },
+   {
+    "q": "Why do we use the Forever loop for backgrounds?",
+    "a": "To keep the sun or clouds moving all the time while the game runs."
+   },
+   {
+    "q": "How do you make a cat spin twice?",
+    "a": "Place the spin block inside a repeat block and set the number to 2."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

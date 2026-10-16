@@ -1,0 +1,316 @@
+{
+ "ar": {
+  "steps": [
+   "البيانات الوصفية (Metadata) هي معلومات مخفية لا تظهر مباشرة على صفحة الويب، لكنها تخبر المتصفح بتفاصيل مهمة عنها.",
+   "كل هذه المعلومات المخفية يتم وضعها داخل عنصر خاص يسمى <head> والذي يقع في أعلى مستند HTML.",
+   "من أهم هذه البيانات تحديد ترميز الحروف باستخدام <meta charset=\"UTF-8\"> لكي تظهر الحروف العربية بشكل صحيح.",
+   "يمكننا أيضاً إضافة أيقونة الموقع (Favicon) لتظهر بجانب عنوان الموقع في تبويب المتصفح باستخدام عنصر <link>.",
+   "القاعدة الذهبية: كل بيانات المتصفح والأيقونات والوصف تسكن دائماً داخل قسم <head> قبل أن يبدأ محتوى الصفحة المرئي في <body>.",
+   "في الحياة اليومية، تشبه البيانات الوصفية الغلاف الخارجي للكتاب أو بطاقة التعريف التي تضعها على حقيبتك المدرسية."
+  ],
+  "example": "عندما تقوم ببرمجة موقعك، فإنك تضيف الأيقونة والترميز في قسم <head> هكذا:\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"icon\" href=\"favicon.ico\">\n  <title>موقعي الجميل</title>\n</head>\n<body>\n  <h1>أهلاً بكم!</h1>\n</body>\n</html>\nهذا الكود يجعل المتصفح يفهم الحروف العربية ويعرض صورة مصغرة بجانب اسم التبويب.",
+  "mistake": "الخطأ الشائع هو وضع عنصر الأيقونة أو وسم <meta> داخل قسم <body> بدلاً من <head>. لتصحيح ذلك، تأكد دائماً من كتابتها بين وسمي <head> و </head>.",
+  "recap": "تعلمنا اليوم كيف نستخدم قسم <head> لتخزين البيانات الوصفية وإضافة أيقونة مميزة لتبويب المتصفح. هذه الأدوات تجعل صفحاتنا تبدو احترافية ومنظمة.",
+  "q": [
+   {
+    "t": "أين يجب وضع عناصر البيانات الوصفية وأيقونة الموقع؟",
+    "o": [
+     "داخل قسم <body>",
+     "داخل قسم <head>",
+     "في نهاية الصفحة"
+    ],
+    "a": 1,
+    "why": "قسم <head> مخصص للمعلومات الخفيفة والموجهة للمتصفح مثل البيانات الوصفية والأيقونات."
+   },
+   {
+    "t": "ما هو الوسم المستخدم لإضافة أيقونة الموقع (Favicon)؟",
+    "o": [
+     "<meta>",
+     "<link>",
+     "<title>"
+    ],
+    "a": 1,
+    "why": "نستخدم عنصر <link rel=\"icon\"> لربط أيقونة الموقع بصفحة الويب."
+   },
+   {
+    "t": "ما هي الفائدة من <meta charset=\"UTF-8\">؟",
+    "o": [
+     "عرض الحروف العربية واللغات المختلفة بشكل صحيح",
+     "تكبير حجم الخط",
+     "تغيير لون خلفية الصفحة"
+    ],
+    "a": 0,
+    "why": "ترميز UTF-8 يخبر المتصفح كيف يعرض الحروف والرموز بشكل دقيق دون أخطاء."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ في أيقونة الموقع",
+   "goal": "اكتشف السطر الخطأ في كود HTML وأصلحه لتعمل الأيقونة بشكل صحيح.",
+   "lines": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "  <link rel=\"stylesheet\" href=\"favicon.ico\">",
+    "  <title>موقعي</title>",
+    "</head>",
+    "<body>",
+    "  <h1>مرحباً</h1>",
+    "</body>",
+    "</html>"
+   ],
+   "bug": 3,
+   "fix": "  <link rel=\"icon\" href=\"favicon.ico\">",
+   "success": "رائع! ظهرت أيقونة الموقع الجميلة بجانب اسم الصفحة في تبويب المتصفح."
+  },
+  "sections": [
+   {
+    "h": "ما هي البيانات الوصفية؟",
+    "text": "البيانات الوصفية هي معلومات وصفية عن الصفحة تُقرأ بواسطة المتصفح ولا تظهر للمستخدم مباشرة على شاشة العرض. مثل بطاقة الهوية الشخصية التي تحمل اسمك وتاريخ ميلادك ولكنك لا تعلقها على جبينك، فإن <head> يحمل هوية الصفحة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>تعريف الصفحة</title>\n</head>\n<body>\n  <h1>مرحباً بالعالم!</h1>\n</body>\n</html>",
+    "output": "صفحة ويب بسيطة تحتوي على عنوان رئيسي."
+   },
+   {
+    "h": "دور عنصر الرأس <head>",
+    "text": "عنصر <head> هو الصندوق السحري الذي نضع فيه كل الخفاءات والأسرار الخاصة بالصفحة، مثل العنوان، والترميز، والروابط الخارجية. إنه تماماً مثل الحقيبة المدرسية التي تجمع فيها أدواتك قبل الذهاب إلى المدرسة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>صندوق الرأس</title>\n</head>\n<body>\n  <p>المحتوى المرئي يظهر هنا.</p>\n</body>\n</html>",
+    "output": "صفحة تعرض فقرة نصية والمحتوى الأساسي."
+   },
+   {
+    "h": "ترميز الحروف <meta charset>",
+    "text": "لكي يفهم المتصفح اللغات المختلفة مثل العربية والإنجليزية بدون رموز غريبة، نستخدم وسماً خاصاً يسمى ترميز الحروف. إنه مثل المترجم الفوري الذي يترجم الحروف إلى أشكال يفهمها جهاز الكمبيوتر بدقة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>اللغة العربية</title>\n</head>\n<body>\n  <h2>مرحباً بكم في دروس البرمجة</h2>\n</body>\n</html>",
+    "output": "نص عربي واضح وبدون أي رموز غريبة."
+   },
+   {
+    "h": "ما هي أيقونة الموقع (Favicon)؟",
+    "text": "أيقونة الموقع أو Favicon هي تلك الصورة المصغرة التي تراها بجانب اسم موقعك في تبويب المتصفح العلوي. إنها مثل الشعار أو العلامة التجارية الصغيرة التي تجعل موقعك مميزاً بين عشرات التبويبات المفتوحة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"icon\" href=\"logo.png\">\n  <title>صفحة مع أيقونة</title>\n</head>\n<body>\n  <h1>انظر إلى التبويب في الأعلى!</h1>\n</body>\n</html>",
+    "output": "صفحة ويب تظهر أيقونتها في تبويب المتصفح."
+   },
+   {
+    "h": "ربط الأيقونة بعنصر <link>",
+    "text": "لكي نخبر المتصفح بمكان وجود الأيقونة، نستخدم وسم <link> مع خاصية العلاقة rel=\"icon\". يشبه ذلك وضع لافتة إرشادية تدل الزائرين على مكان الهدية المفضلة لديهم.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"icon\" type=\"image/png\" href=\"icon.png\">\n  <title>رابط الأيقونة</title>\n</head>\n<body>\n  <p>تم ربط الأيقونة بنجاح.</p>\n</body>\n</html>",
+    "output": "صفحة تربط ملف الأيقونة بنجاح."
+   },
+   {
+    "h": "عنوان الصفحة في التبويب <title>",
+    "text": "عنوان الصفحة هو النص الذي يظهر في شريط تبويب المتصفح الأعلى وعند البحث في جوجل. إنه بمثابة عنوان القصة الجذاب الذي يجعلك تحب قراءتها من الوهلة الأولى.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>موقعي المدهش</title>\n</head>\n<body>\n  <h1>اقرأ عنوان التبويب بالأعلى</h1>\n</body>\n</html>",
+    "output": "تبويب متصفح يحمل العنوان المخصص."
+   },
+   {
+    "h": "ترتيب العناصر داخل <head>",
+    "text": "يجب دائماً تنظيم العناصر داخل <head> بترتيب منطقي، مثل وضع الترميز أولاً ثم العنوان ثم الأيقونة. تماماً كما ترتب حقيبتك المدرسية بحيث تكون الكتب المهمة في متناول يدك.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>ترتيب منظم</title>\n  <link rel=\"icon\" href=\"favicon.ico\">\n</head>\n<body>\n  <p>كل شيء منظم هنا.</p>\n</body>\n</html>",
+    "output": "صفحة ذات رأس منظم واحترافي."
+   },
+   {
+    "h": "وصف الموقع للبحث",
+    "text": "يمكننا إضافة وصف مختصر للموقع باستخدام وسم <meta name=\"description\"> لكي تظهر تفاصيل موقعك عندما يبحث عنها الآخرون في محركات البحث مثل جوجل.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta name=\"description\" content=\"موقع تعليم البرمجة للأطفال\">\n  <title>موقع تعليمي</title>\n</head>\n<body>\n  <h1>تعلم البرمجة معنا</h1>\n</body>\n</html>",
+    "output": "صفحة تحتوي على وصف تعريفي لمحركات البحث."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<head>",
+    "desc": "يحتوي على البيانات الوصفية ومعلومات المتصفح غير المرئية."
+   },
+   {
+    "name": "<meta>",
+    "desc": "يعرف البيانات الوصفية مثل الترميز والوصف."
+   },
+   {
+    "name": "charset=\"UTF-8\"",
+    "desc": "يحدد ترميز الحروف لدعم اللغات المختلفة."
+   },
+   {
+    "name": "<link rel=\"icon\">",
+    "desc": "يضيف أيقونة الموقع (Favicon) لتبويب المتصفح."
+   },
+   {
+    "name": "<title>",
+    "desc": "يحدد عنوان الصفحة في تبويب المتصفح."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسم <meta> لتحديد ترميز الحروف UTF-8.",
+    "a": "<meta charset=\"UTF-8\">"
+   },
+   {
+    "q": "اكتب وسم <link> لإضافة أيقونة موقع باسم myicon.png.",
+    "a": "<link rel=\"icon\" href=\"myicon.png\">"
+   },
+   {
+    "q": "أين يجب وضع عناصر الأيقونة والترميز في ملف HTML؟",
+    "a": "داخل قسم <head>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Metadata is hidden information that does not appear directly on the web page, but tells the browser important details about it.",
+   "All this hidden information is placed inside a special element called <head> located at the top of an HTML document.",
+   "One of the most important metadata is setting the character encoding using <meta charset=\"UTF-8\"> so Arabic and other characters display correctly.",
+   "We can also add a browser tab icon (Favicon) using the <link> element so it appears next to the site title.",
+   "The Golden Rule: All browser settings, icons, and descriptions always live inside the <head> section before the visible page content in <body>.",
+   "In real life, metadata is like the cover of a book or the luggage tag you put on your school bag to identify it."
+  ],
+  "example": "When coding your website, you add the icon and charset inside the <head> section like this:\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"icon\" href=\"favicon.ico\">\n  <title>My Cool Website</title>\n</head>\n<body>\n  <h1>Welcome!</h1>\n</body>\n</html>\nThis code helps the browser understand characters and display a mini image next to the tab name.",
+  "mistake": "A common mistake is putting the icon link or <meta> tag inside the <body> section instead of <head>. To fix this, always make sure to write them between the <head> and </head> tags.",
+  "recap": "Today we learned how to use the <head> section to store metadata and add a special icon to the browser tab. These tools make our web pages look professional and organized.",
+  "q": [
+   {
+    "t": "Where should metadata elements and the website favicon be placed?",
+    "o": [
+     "Inside the <body> section",
+     "Inside the <head> section",
+     "At the very end of the page"
+    ],
+    "a": 1,
+    "why": "The <head> section is dedicated to background information and browser instructions like metadata and icons."
+   },
+   {
+    "t": "What is the tag used to add a website icon (Favicon)?",
+    "o": [
+     "<meta>",
+     "<link>",
+     "<title>"
+    ],
+    "a": 1,
+    "why": "We use the <link rel=\"icon\"> element to connect a favicon to the web page."
+   },
+   {
+    "t": "What is the benefit of <meta charset=\"UTF-8\">?",
+    "o": [
+     "Displaying different languages and characters correctly",
+     "Making the text font larger",
+     "Changing the page background color"
+    ],
+    "a": 0,
+    "why": "UTF-8 encoding tells the browser how to accurately render characters and symbols without errors."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Favicon Bug",
+   "goal": "Find the wrong line in the HTML code and fix it so the website icon works properly.",
+   "lines": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "  <link rel=\"stylesheet\" href=\"favicon.ico\">",
+    "  <title>My Site</title>",
+    "</head>",
+    "<body>",
+    "  <h1>Hello</h1>",
+    "</body>",
+    "</html>"
+   ],
+   "bug": 3,
+   "fix": "  <link rel=\"icon\" href=\"favicon.ico\">",
+   "success": "Awesome! The cool website icon appeared right next to the page name in the browser tab."
+  },
+  "sections": [
+   {
+    "h": "What is Metadata?",
+    "text": "Metadata is descriptive information about the web page that is read by the browser and does not appear directly to users on the screen. Like an ID card that holds your name and birth date but isn't worn on your forehead, <head> holds the page's identity.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Page Definition</title>\n</head>\n<body>\n  <h1>Hello World!</h1>\n</body>\n</html>",
+    "output": "A simple web page with a main heading."
+   },
+   {
+    "h": "The Role of the <head> Element",
+    "text": "The <head> element is the magic box where we store all secrets and background info of the page, like the title, character encoding, and external links. It is just like your school backpack holding your supplies before going to school.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Head Box</title>\n</head>\n<body>\n  <p>Visible content goes here.</p>\n</body>\n</html>",
+    "output": "A page displaying a paragraph and main content."
+   },
+   {
+    "h": "Character Encoding <meta charset>",
+    "text": "To help the browser understand various languages like Arabic and English without weird symbols, we use a special tag called character encoding. It acts like an instant translator converting letters into shapes the computer understands accurately.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Arabic Language</title>\n</head>\n<body>\n  <h2>Welcome to Coding Lessons</h2>\n</body>\n</html>",
+    "output": "Clear text displayed without any garbled symbols."
+   },
+   {
+    "h": "What is a Favicon?",
+    "text": "A favicon is that tiny thumbnail image you see next to your website name in the top browser tab. It is like a small logo or brand mark that makes your site stand out among dozens of open tabs.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"icon\" href=\"logo.png\">\n  <title>Page with Icon</title>\n</head>\n<body>\n  <h1>Look at the tab above!</h1>\n</body>\n</html>",
+    "output": "A web page showing its icon in the browser tab."
+   },
+   {
+    "h": "Linking the Icon with <link>",
+    "text": "To tell the browser where the icon file is located, we use the <link> tag with the rel=\"icon\" attribute. This is similar to putting up a signpost pointing visitors to where their favorite gift is kept.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"icon\" type=\"image/png\" href=\"icon.png\">\n  <title>Icon Link</title>\n</head>\n<body>\n  <p>Icon linked successfully.</p>\n</body>\n</html>",
+    "output": "A page successfully linking the icon file."
+   },
+   {
+    "h": "Page Title in the Tab <title>",
+    "text": "The page title is the text appearing in the top browser tab and when searching on Google. It acts like an engaging story title that makes you want to read it from the very first glance.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Awesome Website</title>\n</head>\n<body>\n  <h1>Read the tab title above</h1>\n</body>\n</html>",
+    "output": "A browser tab carrying the custom title."
+   },
+   {
+    "h": "Ordering Elements Inside <head>",
+    "text": "We should always organize elements inside <head> logically, like placing the character encoding first, then the title, then the icon. Just like packing your school bag so important books are within easy reach.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Organized Order</title>\n  <link rel=\"icon\" href=\"favicon.ico\">\n</head>\n<body>\n  <p>Everything is organized here.</p>\n</body>\n</html>",
+    "output": "A page with a clean and professional head section."
+   },
+   {
+    "h": "Website Description for Search",
+    "text": "We can add a brief description of the site using the <meta name=\"description\"> tag so your site details appear when others search for them on search engines like Google.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta name=\"description\" content=\"Coding education website for kids\">\n  <title>Educational Site</title>\n</head>\n<body>\n  <h1>Learn coding with us</h1>\n</body>\n</html>",
+    "output": "A page containing a meta description for search engines."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<head>",
+    "desc": "Contains invisible metadata and browser information."
+   },
+   {
+    "name": "<meta>",
+    "desc": "Defines metadata such as charset and description."
+   },
+   {
+    "name": "charset=\"UTF-8\"",
+    "desc": "Sets character encoding to support multiple languages."
+   },
+   {
+    "name": "<link rel=\"icon\">",
+    "desc": "Adds a website favicon to the browser tab."
+   },
+   {
+    "name": "<title>",
+    "desc": "Defines the page title in the browser tab."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a <meta> tag to set the UTF-8 character encoding.",
+    "a": "<meta charset=\"UTF-8\">"
+   },
+   {
+    "q": "Write a <link> tag to add a website icon named myicon.png.",
+    "a": "<link rel=\"icon\" href=\"myicon.png\">"
+   },
+   {
+    "q": "Where should icon and charset elements be placed in an HTML file?",
+    "a": "Inside the <head> section"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: <meta> HTML metadata element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta"
+  },
+  {
+   "title": "MDN: <head> HTML document metadata (header) element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/head"
+  }
+ ],
+ "grounded": true
+}

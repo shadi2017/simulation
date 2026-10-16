@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "عالم البرمجيات المكتبية مليء بالإثارة! اليوم سنتعلم كيف نصنع نوافذ حقيقية تظهر على سطح المكتب باستخدام مكتبة Tkinter المدمجة في بايثون، لنحول الأكواد الجافة إلى تطبيقات مرئية مذهلة.",
+   "لننشئ أول نافذة بسيطة، نستورد المكتبة ثم ننشئ كائناً يمثل النافذة الأساسية، وأخيراً نشغل حلقة الأحداث لتبقى النافذة مفتوحة أمام المستخدم.",
+   "تعتمد بايثون على إرسال الأوامر عبر مكتبة Tkinter إلى نظام التشغيل لرسم الإطارات والنوافذ، وتعد حلقة الأحداث (mainloop) هي القلب الذي يبقي النافذة تستجيب لحركات الفأرة والنقر.",
+   "يمكننا إضافة عناصر مرئية تسمى 'العناصر الفرعية' (Widgets) مثل النصوص والأزرار داخل النافذة، وكل عنصر يحتاج إلى أداة تنظيم تحدد مكانه بدقة.",
+   "قاعدة ذهبية: لا يكفي إنشاء الزر أو النص، بل يجب دائماً استخدام دقة الترتيب مثل التعبئة أو الشبكة ليظهر العنصر في المكان الصحيح داخل النافذة.",
+   "نستخدم هذه المهارات في الحياة الواقعية لبناء برامج حاسوبية مفيدة مثل الآلات الحاسبة، وبرامج تنظيم المهام، وتطبيقات تحليل البيانات البسيطة التي تستخدمها الشركات."
+  ],
+  "example": "دعنا نصنع تطبيقاً صغيراً يعرض نافذة بعنوان 'لوحة التحكم' وبداخلها زر يطبع رسالة في شاشة الطرفية عند النقر عليه. نبدأ باستيراد tkinter ثم ننشئ النافذة الرئيسية ونضبط عنوانها، ثم نضيف زراً يستدعي دالة طباعة عند الضغط.",
+  "mistake": "نسيان استدعاء الدالة mainloop() في نهاية البرنامج، مما يجعل النافذة تظهر وتختفي في جزء من الثانية دون أن يلاحظها أحد. الحل هو التأكد دائماً من وضع window.mainloop() كسطر أخير.",
+  "recap": "تعلمنا اليوم كيف نبني واجهات المستخدم المكتبية باستخدام مكتبة Tkinter وكيف نربط الأزرار بالأحداث البرمجية. أصبحت جاهزاً لتطوير أول تطبيق حقيقي خاص بك!",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية للأمر mainloop() في Tkinter؟",
+    "o": [
+     "إغلاق النافذة فوراً",
+     "إبقاء النافذة مفتوحة والاستماع لأحداث المستخدم",
+     "حفظ النافذة كصورة"
+    ],
+    "a": 1,
+    "why": "حلقة الأحداث تضمن استمرار تشغيل النافذة وتجاوبها مع الفأرة ولوحة المفاتيح."
+   },
+   {
+    "t": "أي من الموديولات التالية يُستخدم لإنشاء واجهة مكتبية في بايثون؟",
+    "o": [
+     "tkinter",
+     "pandas",
+     "math"
+    ],
+    "a": 0,
+    "why": "مكتبة tkinter هي الواجهة القياسية المدمجة في بايثون لإنشاء الرسوميات."
+   },
+   {
+    "t": "كيف نضيف زرّاً إلى النافذة لكي يظهر بداخلها؟",
+    "o": [
+     "باستخدام دالة print() فقط",
+     "عنصر Button مع مدير تخطيط مثل pack()",
+     "تعديل ملف الـ CSS"
+    ],
+    "a": 1,
+    "why": "ننشئ العنصر ثم نربطه بمدير التخطيط ليتم عرضه على الشاشة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة تشغيل نافذة Tkinter",
+   "goal": "فهم كيف يؤثر كود إنشاء النافذة والزر على الشاشة الظاهرة",
+   "code": "from tkinter import *\nroot = Tk()\nroot.title('My App')\nbtn = Button(root, text='Click Me')\nbtn.pack()\n# root.mainloop() is missing",
+   "options": [
+    "تظهر النافذة والزر وتعمل بسلاسة",
+    "تظهر النافذة لفترة قصيرة جداً ثم تغلق أو لا تفتح بانتظام لعدم وجود mainloop",
+    "يحدث خطأ فيزيائي في الشاشة"
+   ],
+   "a": 1,
+   "why": "بدون حلقة الأحداث mainloop، لا يستطيع نظام التشغيل الحفاظ على بقاء النافذة مفتوحة وتفاعلية.",
+   "success": "لقد فهمت كيف تتواصل بايثون مع نظام التشغيل لإظهار الواجهات!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة إلى مكتبة Tkinter",
+    "text": "تشبه مكتبة Tkinter صندوق أدوات السحري الذي يتيح لك بناء نوافذ برمجية حقيقية تماماً مثل التطبيقات التي تستخدمها كل يوم على حاسوبك، مثل برامج الرسم أو الألعاب البسيطة. في هذه الدرس، سنقوم بتحويل أفكارك البرمجية من مجرد أسطر نصية سوداء إلى نوافذ تفاعلية جميلة تظهر على سطح المكتب.",
+    "code": "import tkinter as tk\n# إنشاء النافذة الأساسية\nwindow = tk.Tk()\nwindow.title('نافذتي الأولى')\nwindow.mainloop()",
+    "output": "تظهر نافذة صغيرة تحمل العنوان 'نافذتي الأولى'."
+   },
+   {
+    "h": "بناء إطار النافذة الأساسية",
+    "text": "النافذة في عالم البرمجة تشبه البيت الكبير، وأول خطوة هي بناء جدران هذا البيت أو ما نسميه بالإطار الأساسي (Root Window). هذا الإطار هو الحاوية الكبرى التي ستضم بداخلها كل الأزرار والنصوص والصور التي سترسمها لاحقاً.",
+    "code": "from tkinter import *\nroot = Tk()\nroot.geometry('300x200') # تحديد عرض وارتفاع النافذة\nroot.mainloop()",
+    "output": "نافذة أبعادها 300 في 200 بكسل."
+   },
+   {
+    "h": "إضافة النصوص والأوسمة (Labels)",
+    "text": "الوسم أو الـ Label يشبه يافطة أو لوحة إرشادية تضعها على الجدار لتخبر الناس بشيء ما، ففي الواجهات البرمجية نستخدم الـ Label لعرض نصوص توضيحية للمستخدم مثل 'مرحباً بك' أو 'الرجاء إدخال اسمك'.",
+    "code": "from tkinter import *\nroot = Tk()\nmy_label = Label(root, text='أهلاً بك في عالم البرمجة!')\nmy_label.pack()\nroot.mainloop()",
+    "output": "نافذة تحتوي على جملة 'أهلاً بك في عالم البرمجة!'."
+   },
+   {
+    "h": "إضافة الأزرار التفاعلية (Buttons)",
+    "text": "الزر في الواجهات يشبه زر المصباح في غرفتك؛ عندما تضغط عليه، فإنه ينفذ أمراً معيناً. في بايثون، نضيف الأزرار لكي يستطيع المستخدم التفاعل مع التطبيق وإخباره بأن يقوم بعمل ممتع.",
+    "code": "from tkinter import *\nroot = Tk()\nmy_btn = Button(root, text='اضغط هنا')\nmy_btn.pack()\nroot.mainloop()",
+    "output": "نافذة تحتوي على زر مكتوب عليه 'اضغط هنا'."
+   },
+   {
+    "h": "مديرات التخطيط وترتيب العناصر (Layout Managers)",
+    "text": "تخيل أن لديك مجموعة من الألعاب وتريد ترتيبها على الرف؛ مدير التخطيط مثل حزمة (pack) هو الطريقة التي ترتب بها العناصر داخل النافذة فوق بعضها البعض أو بجانب بعضها لكي تبدو مرتبطة وجميلة.",
+    "code": "from tkinter import *\nroot = Tk()\nlbl = Label(root, text='مرحباً')\nlbl.pack()\nbtn = Button(root, text='موافق')\nbtn.pack()\nroot.mainloop()",
+    "output": "نص يظهر فوقه أو تحته زر بشكل منظم."
+   },
+   {
+    "h": "ربط الأزرار بالأحداث والطباعة",
+    "text": "عندما يضغط المستخدم على الزر، نريد من الحاسوب أن يفعل شيئاً ذكياً، مثل طباعة رسالة في شاشة الطرفية. نربط الزر بدالة معينة باستخدام خاصية تسمى (command) لتنفيذ الأوامر فور النقر.",
+    "code": "from tkinter import *\nroot = Tk()\ndef say_hello():\n    print('تم نقر الزر بنجاح!')\nbtn = Button(root, text='انقرني', command=say_hello)\nbtn.pack()\nroot.mainloop()",
+    "output": "عند النقر، تطبع الطرفية عبارة 'تم نقر الزر بنجاح!'."
+   },
+   {
+    "h": "حلقة الأحداث المستمرة (Mainloop)",
+    "text": "حلقة الأحداث تشبه حراس الأمن الواقفين على باب النافذة طوال الوقت لكي يراقبوا هل ضغط المستخدم على الفأرة أم حركها؟ بدون هذه الحلقة، ستفتح النافذة وتغلق في أجزاء من الثانية ولن تلاحظ شيئاً.",
+    "code": "from tkinter import *\nroot = Tk()\n# حلقة الأحداث تبقي النافذة نشطة\nroot.mainloop()",
+    "output": "تظل النافذة مفتوحة حتى يضغط المستخدم على علامة الإغلاق X."
+   },
+   {
+    "h": "تطبيقات الواقع في تحليل البيانات والبرمجيات",
+    "text": "في عالم البيانات، يستخدم المحللون واجهات Tkinter البسيطة لصنع لوحات تحكم مصغرة تتيح للمستخدمين الضغط على زر لتوليد التقارير أو جلب البيانات دون الحاجة لكتابة أكواد معقدة في كل مرة.",
+    "code": "from tkinter import *\nroot = Tk()\ndef generate_report():\n    print('جاري توليد تقرير البيانات...')\nButton(root, text='توليد التقرير', command=generate_report).pack()\nroot.mainloop()",
+    "output": "زر لتوليد التقارير يطبع رسالة عند الضغط."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Tk()",
+    "desc": "دالة لإنشاء النافذة الرئيسية للتطبيق."
+   },
+   {
+    "name": "Label()",
+    "desc": "عنصر فرعي لعرض النصوص على الشاشة."
+   },
+   {
+    "name": "Button()",
+    "desc": "عنصر فرعي لإنشاء زر قابل للضغط."
+   },
+   {
+    "name": "pack()",
+    "desc": "مدير تخطيط يرتب العناصر داخل النافذة."
+   },
+   {
+    "name": "mainloop()",
+    "desc": "حلقة أحداث تبقي النافذة مفتوحة وتستجيب للمستخدم."
+   },
+   {
+    "name": "command",
+    "desc": "خاصية في الزر لربطه بدالة برمجية تنفذ عند النقر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً لإنشاء نافذة أساسية عنوانها 'برنامجي'?",
+    "a": "from tkinter import *\nroot = Tk()\nroot.title('برنامجي')\nroot.mainloop()"
+   },
+   {
+    "q": "كيف تضيف زرّاً يطبع 'مرحباً' عند النقر عليه؟",
+    "a": "Button(root, text='اضغط', command=lambda: print('مرحباً')).pack()"
+   },
+   {
+    "q": "ما هو الأمر الذي يمنع النافذة من الإغلاق الفوري؟",
+    "a": "mainloop()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The world of desktop programming is thrilling! Today we learn how to build real desktop windows using Python's built-in Tkinter library, turning dry code into stunning visual apps.",
+   "To create our first simple window, we import the library, instantiate a main window object, and finally run the event loop to keep the window open for the user.",
+   "Python sends commands through Tkinter to the operating system to draw frames and windows, while the event loop is the heartbeat that keeps the window responsive to mouse clicks.",
+   "We can add visual components called 'widgets' like labels and buttons inside the window, and each widget needs a layout manager to position it accurately.",
+   "Golden rule: creating a button or label isn't enough; you must always use a layout method like pack to make the element appear in the correct spot inside the window.",
+   "We use these skills in real life to build useful computer programs like calculators, task managers, and simple data analysis tools used by companies."
+  ],
+  "example": "Let's build a small application that displays a window titled 'Control Panel' with a button that prints a message to the console when clicked. We start by importing tkinter, creating the main window, setting its title, and adding a button linked to a print function.",
+  "mistake": "Forgetting to call the mainloop() method at the end of the program, causing the window to flash and close instantly without notice. The fix is to always ensure window.mainloop() is your final line.",
+  "recap": "Today we learned how to build desktop user interfaces using Tkinter and how to link buttons to code events. You are now ready to develop your very first real desktop application!",
+  "q": [
+   {
+    "t": "What is the main function of the mainloop() method in Tkinter?",
+    "o": [
+     "Closing the window immediately",
+     "Keeping the window open and listening for user events",
+     "Saving the window as an image"
+    ],
+    "a": 1,
+    "why": "The event loop ensures the window stays active and responsive to mouse and keyboard inputs."
+   },
+   {
+    "t": "Which of the following modules is used to build desktop GUIs in Python?",
+    "o": [
+     "tkinter",
+     "pandas",
+     "math"
+    ],
+    "a": 0,
+    "why": "The tkinter module is Python's standard built-in interface for GUI creation."
+   },
+   {
+    "t": "How do you add a button to the window so it appears inside?",
+    "o": [
+     "Using the print() function only",
+     "Creating a Button widget and using a layout manager like pack()",
+     "Editing a CSS file"
+    ],
+    "a": 1,
+    "why": "We instantiate the widget and then attach it to a layout manager to display it on screen."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Tkinter Window Execution Result",
+   "goal": "Understand how window and button creation code affects the screen output",
+   "code": "from tkinter import *\nroot = Tk()\nroot.title('My App')\nbtn = Button(root, text='Click Me')\nbtn.pack()\n# root.mainloop() is missing",
+   "options": [
+    "The window and button appear and work smoothly",
+    "The window flashes briefly and closes or fails to stay open because mainloop is missing",
+    "A physical screen error occurs"
+   ],
+   "a": 1,
+   "why": "Without the mainloop event loop, the operating system cannot keep the window open and interactive.",
+   "success": "You understand how Python communicates with the operating system to show GUIs!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Tkinter",
+    "text": "Tkinter is like a magical toolbox that lets you build real graphical windows just like the apps you use every day on your computer, such as drawing tools or simple games. In this lesson, we transform your text-based code into beautiful interactive desktop windows.",
+    "code": "import tkinter as tk\n# Create the main window\nwindow = tk.Tk()\nwindow.title('My First Window')\nwindow.mainloop()",
+    "output": "A small window opens with the title 'My First Window'."
+   },
+   {
+    "h": "Constructing Window Frames",
+    "text": "A window in programming is like a big house, and the first step is building its walls, known as the root window. This root container holds all the buttons, text, and images you will draw inside later.",
+    "code": "from tkinter import *\nroot = Tk()\nroot.geometry('300x200') # Set window width and height\nroot.mainloop()",
+    "output": "A window sized 300 by 200 pixels appears."
+   },
+   {
+    "h": "Adding Text Labels",
+    "text": "A Label is like a sign or directional board placed on a wall to guide people. In graphical user interfaces, we use labels to display explanatory text to users, such as 'Welcome' or 'Please enter your name'.",
+    "code": "from tkinter import *\nroot = Tk()\nmy_label = Label(root, text='Welcome to coding!')\nmy_label.pack()\nroot.mainloop()",
+    "output": "A window containing the text 'Welcome to coding!'."
+   },
+   {
+    "h": "Adding Interactive Buttons",
+    "text": "A button in a GUI is like a light switch in your room; when you click it, it executes a specific command. In Python, we add buttons so users can interact with the application and trigger fun actions.",
+    "code": "from tkinter import *\nroot = Tk()\nmy_btn = Button(root, text='Click Here')\nmy_btn.pack()\nroot.mainloop()",
+    "output": "A window containing a button with the text 'Click Here'."
+   },
+   {
+    "h": "Layout Managers",
+    "text": "Imagine having toys and wanting to arrange them on a shelf; a layout manager like pack is the method you use to arrange widgets inside the window, placing them on top of or beside each other neatly.",
+    "code": "from tkinter import *\nroot = Tk()\nlbl = Label(root, text='Hello')\nlbl.pack()\nbtn = Button(root, text='OK')\nbtn.pack()\nroot.mainloop()",
+    "output": "A text label stacked neatly above or below a button."
+   },
+   {
+    "h": "Linking Buttons to Print Statements",
+    "text": "When the user clicks a button, we want the computer to do something smart, like printing a message to the console. We link the button to a specific function using the command property to execute actions instantly upon clicking.",
+    "code": "from tkinter import *\nroot = Tk()\ndef say_hello():\n    print('Button clicked successfully!')\nbtn = Button(root, text='Click Me', command=say_hello)\nbtn.pack()\nroot.mainloop()",
+    "output": "When clicked, the console prints 'Button clicked successfully!'."
+   },
+   {
+    "h": "The Continuous Event Loop (Mainloop)",
+    "text": "The event loop is like security guards standing at the window's door constantly watching whether the user clicked or moved the mouse. Without this loop, the window would open and close in fractions of a second.",
+    "code": "from tkinter import *\nroot = Tk()\n# Event loop keeps window active\nroot.mainloop()",
+    "output": "The window remains open until the user clicks the close X mark."
+   },
+   {
+    "h": "Real-World Applications in Data & Software",
+    "text": "In the data world, analysts use simple Tkinter interfaces to build mini dashboards allowing users to click a button to generate reports or fetch data without writing complex code every single time.",
+    "code": "from tkinter import *\nroot = Tk()\ndef generate_report():\n    print('Generating data report...')\nButton(root, text='Generate Report', command=generate_report).pack()\nroot.mainloop()",
+    "output": "A report generation button that prints a message when pressed."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Tk()",
+    "desc": "Function to create the main application window."
+   },
+   {
+    "name": "Label()",
+    "desc": "Widget used to display text on screen."
+   },
+   {
+    "name": "Button()",
+    "desc": "Widget used to create a clickable button."
+   },
+   {
+    "name": "pack()",
+    "desc": "Layout manager that organizes widgets inside the window."
+   },
+   {
+    "name": "mainloop()",
+    "desc": "Event loop that keeps the window open and responsive."
+   },
+   {
+    "name": "command",
+    "desc": "Button property linking a widget to a function executed on click."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to create a basic window with the title 'My Program'?",
+    "a": "from tkinter import *\nroot = Tk()\nroot.title('My Program')\nroot.mainloop()"
+   },
+   {
+    "q": "How do you add a button that prints 'Hello' when clicked?",
+    "a": "Button(root, text='Press', command=lambda: print('Hello')).pack()"
+   },
+   {
+    "q": "What command prevents the window from closing instantly?",
+    "a": "mainloop()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/library/tkinter.html"
+  }
+ ],
+ "grounded": true
+}

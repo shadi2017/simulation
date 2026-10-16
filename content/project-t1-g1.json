@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "The Jungle Concert",
+   "desc": "Create a lively musical show where jungle animals play recorded sounds when tapped. Background birds loop across the screen to set the tropical scene.",
+   "tags": [
+    "ScratchJr",
+    "Animation",
+    "Sound"
+   ],
+   "steps": [
+    "Open ScratchJr and choose a jungle background to set the stage for your concert.",
+    "Add three different animal sprites, like a monkey, a parrot, and a tiger, and place them on the grid.",
+    "Use the record sound block to record your own fun animal noises or musical beats for each character.",
+    "Attach the green flag and tap trigger blocks so each animal starts its action when touched by the player.",
+    "Use motion blocks and repeat loops to make the background birds fly smoothly across the screen over and over.",
+    "Test your project by tapping different animals to make sure their sounds play and the music flows nicely."
+   ],
+   "rubric": [
+    "Jungle background and three distinct animal sprites are added.",
+    "At least two unique sounds are recorded and attached to tap triggers.",
+    "Repeat loops are used to make birds move continuously across the background.",
+    "Project runs smoothly when the green flag and tap triggers are tested."
+   ],
+   "stretch": "Add a speech bubble above each animal showing musical notes when its sound plays!"
+  },
+  {
+   "title": "Undersea Adventure Movie",
+   "desc": "Animate a brave little fish escaping from a big shark. The scene changes when they bump into each other, ending with a voice message inside a safe cave.",
+   "tags": [
+    "ScratchJr",
+    "Storytelling",
+    "Triggers"
+   ],
+   "steps": [
+    "Choose an ocean background and add a small fish, a shark, and a cave background for the second page.",
+    "Program the small fish to swim forward using motion blocks and grid steps.",
+    "Set up the shark to chase the fish using speed blocks and motion triggers.",
+    "Use the bump trigger so that when the shark touches the fish, the story automatically switches to the cave page.",
+    "On the cave page, use the record sound block so the fish can share a happy voice message about being safe.",
+    "Review your story from start to finish to ensure the page switch and voice message work smoothly."
+   ],
+   "rubric": [
+    "Two story pages are created: ocean and cave.",
+    "Motion and speed blocks make the fish and shark move naturally.",
+    "Bump trigger successfully switches the story to the second page.",
+    "Recorded voice message plays clearly once the fish reaches the safe cave."
+   ],
+   "stretch": "Send a hidden message between sprites just before changing scenes to coordinate the chase!"
+  },
+  {
+   "title": "Vehicle Racing Game",
+   "desc": "Start three cool vehicles with a single tap, compare their different speeds across the grid, and celebrate the winning car with sounds and growing animations.",
+   "tags": [
+    "ScratchJr",
+    "Games",
+    "Speed"
+   ],
+   "steps": [
+    "Pick a race track background and add three different vehicle sprites, like a car, a truck, and a motorcycle.",
+    "Use tap triggers so all three vehicles start moving forward when the player touches them.",
+    "Give each vehicle a different speed block to make the race exciting and unpredictable.",
+    "Add repeat loops so the vehicles travel all the way across the grid to the finish line.",
+    "Program the winning vehicle to grow larger and play a celebratory sound when it finishes.",
+    "Test your racing game multiple times to see which vehicle wins and make sure the animations look great."
+   ],
+   "rubric": [
+    "Three distinct vehicle sprites are placed on a race track background.",
+    "Tap triggers start the movement for all vehicles simultaneously.",
+    "Different speed blocks are applied to create a competitive race.",
+    "Winning vehicle successfully grows and plays a sound at the finish line."
+   ],
+   "stretch": "Add a cheering crowd sprite that uses speech bubbles to announce the winner!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "حفلة الغابة الموسيقية",
+   "desc": "اصنع عرضًا موسيقيًا ممتعًا حيث تقوم حيوانات الغابة بتشغيل أصوات مسجلة عند لمسها. وتتحرك الطيور في الخلفية بشكل متكرر لإكمال أجواء الغابة.",
+   "tags": [
+    "سكراتش جونيور",
+    "رسوم متحركة",
+    "أصوات"
+   ],
+   "steps": [
+    "افتح برنامج سكراتش جونيور واختر خلفية الغابة المناسبة لبدء الحفلة.",
+    "أضف ثلاث شخصيات حيوانات مختلفة مثل القرد والبغداد والنمر وضعهم على شبكة الحركة.",
+    "استخدم أداة تسجيل الصوت لتسجيل أصوات حيوانات مضحكة أو نغمات موسيقية لكل شخصية.",
+    "اربط لبنة العلم الأخضر ولبنة اللمس لكي تبدأ كل حيوانات الغابة بالحركة عند نقرها.",
+    "استخدم لبنات الحركة وحلقة التكرار لجعل طيور الخلفية تطير بسلاسة عبر الشاشة مراراً وتكراراً.",
+    "جرب مشروعك عبر النقر على الحيوانات للتأكد من عمل الأصوات وتدفق الموسيقى بشكل جميل."
+   ],
+   "rubric": [
+    "تمت إضافة خلفية الغابة وثلاث شخصيات حيوانات مميزة.",
+    "تم تسجيل صوتين فريدين على الأقل وربطهما بأوامر اللمس.",
+    "تم استخدام حلقات التكرار لحركة الطيور باستمرار عبر الخلفية.",
+    "المشروع يعمل بسلاسة عند اختبار العلم الأخضر وأوامر اللمس."
+   ],
+   "stretch": "أضف فقاعة كلام فوق كل حيوان تظهر نغمات موسيقية عند صدور الصوت!"
+  },
+  {
+   "title": "مغامرة تحت الماء",
+   "desc": "حرك سمكة شجاعة تهرب من سمكة قرش كبيرة، وتتغير المشاهد عند التصادم، وتنتهي القصة برسالة صوتية داخل كهف آمن.",
+   "tags": [
+    "سكراتش جونيور",
+    "قصص تفاعلية",
+    "محفزات"
+   ],
+   "steps": [
+    "اختر خلفية البحر وأضف سمكة صغيرة وقرشاً، ثم جهز خلفية الكهف للصفحة الثانية.",
+    "برمج السمكة الصغيرة لكي تسبح للأمام باستخدام لبنات الحركة وخطوات الشبكة.",
+    "اضبط حركة القرش لكي يلاحق السمكة باستخدام لبنات السرعة وأوامر الحركة.",
+    "استخدم أمر الاصطدام (البمپ) لكي تنتقل القصة تلقائياً إلى صفحة الكهف عندما يلمس القرش السمكة.",
+    "في صفحة الكهف، استخدم لبنة تسجيل الصوت لكي تشارك السمكة رسالة صوتية سعيدة بأنها بأمان.",
+    "راجع قصتك من البداية للنهاية للتأكد من نجاح انتقال الصفحات وعمل الرسالة الصوتية."
+   ],
+   "rubric": [
+    "تم إنشاء صفحتين للقصة: البحر والكهف.",
+    "تم استخدام لبنات الحركة والسرعة لتحريك السمكة والقرش بطريقة طبيعية.",
+    "أمر الاصطدام ينتقل بنجاح إلى الصفحة الثانية.",
+    "الرسالة الصوتية المسجلة تعمل بوضوح فور وصول السمكة للكهف الآمن."
+   ],
+   "stretch": "أرسل رسالة خفية بين الشخصيات قبل تغيير المشهد لتنسيق المطاردة!"
+  },
+  {
+   "title": "لعبة سباق السيارات",
+   "desc": "ابدأ سباق ثلاث سيارات بلمسة واحدة، وقارن بين سرعاتهن المختلفة على الشبكة، واحتفل بالسيارة الفائزة بالصوت والحركة.",
+   "tags": [
+    "سكراتش جونيور",
+    "ألعاب",
+    "سرعة"
+   ],
+   "steps": [
+    "اختر خلفية مضمار السباق وأضف ثلاث سيارات مختلفة مثل سيارة رياضية وشاحنة ودراجة.",
+    "استخدم أوامر اللمس لكي تبدأ السيارات الثلاث بالتحرك للأمام عندما يلمسها اللاعب.",
+    "امنح كل سيارة لبنة سرعة مختلفة لجعل السباق مثيراً وغير متوقع.",
+    "أضف حلقات التكرار لكي تقطع السيارات المسافة كاملة عبر الشبكة حتى خط النهاية.",
+    "برمج السيارة الفائزة لكي تكبر في الحجم وتصدر صوت احتفالي عند الوصول.",
+    "جرب لعبة السباق عدة مرات لمعرفة السيارة الفائزة والتأكد من جمال الحركات."
+   ],
+   "rubric": [
+    "تم وضع ثلاث سيارات مختلفة على خلفية مضمار السباق.",
+    "أوامر اللمس تبدأ حركة جميع السيارات في نفس الوقت.",
+    "تم تطبيق سرعات مختلفة لكل سيارة لخلق منافسة قوية.",
+    "السيارة الفائزة تكبر بالحجم وتصدر صوتاً ناجحاً عند خط النهاية."
+   ],
+   "stretch": "أضف شخصية جمهور مشجع تستخدم فقاعات الكلام لإعلان اسم الفائز!"
+  }
+ ]
+}

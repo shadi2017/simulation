@@ -1,0 +1,358 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن عندك أرقام كتيرة جداً ومش فاهم منها حاجة، هنا بيجي دور سرد القصة المرئية عشان تحول الأرقام لجرافات ورسومات سهلة الفهم للكل.",
+   "عشان تبدأ ترسم في بايثون، أول خطوة هي تثبيت مكتبة ماتبلوت ليب الشهيرة على جهازك باستخدام أمر تثبيت الحزم السريع.",
+   "الهيكل الأساسي للوحة الرسم بيتكون من الشاشة الكبيرة اللي اسمها فيجر، وجواها مساحة الرسم المخصصة للنقاط اللي بنسميها أكسس.",
+   "عشان نرسم خط بياني أساسي يربط النقاط ببعض، بنستعمل أمر الرسم المباشر ونبعت له بيانات المحورين السيني والصادي بكل سهولة.",
+   "القاعدة الذهبية هنا هي اختيار نوع الرسم المناسب للسؤال اللي بتسأله، عشان الجراف يطلع بيدoح ويوصل الفكرة للناس بوضوح تام.",
+   "في الحياة اليومية، بتستعمل الرسم البياني ده لما تحب تعرض درجاتك في المدرسة على مدار الترم عشان تشوف أنت بتتحسن ولا لأ."
+  ],
+  "example": "تعالوا نعمل جراف بسيط يوضح درجات أحمد في مادة الكودينج خلال أول أربع أسابيع. هنستورد مكتبة ماتبلوت ليب، ونعمل لوحة الرسم بالامر بتاع صب بلوتس، وبعدين نرسم خط البيانات بالارقام [60, 75, 85, 95] ونعرضها للشاشة.\n\n```python\nimport matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3, 4], [60, 75, 85, 95])\nplt.show()\n```\nالنتيجة هتكون خط بياني صاعد بيفرح ويوضح تفوق أحمد المستمر.",
+  "mistake": "الغلطة المشهورة هي نسيان استدعاء مكتبة ماتبلوت ليب أو كتابة اسم الأمر غلط. الحل هو دايماً التأكد من كتابة `import matplotlib.pyplot as plt` في أول السطر.",
+  "recap": "الرسومات البيانية بتحول الأرقام الصعبة لصور سهلة القراءة. استخدام أداة ماتبلوت ليب بيساعدنا نعمل ده باحترافية.",
+  "q": [
+   {
+    "t": "ما هو الأمر المستخدم لتثبيت مكتبة ماتبلوت ليب؟",
+    "o": [
+     "pip install matplotlib",
+     "import matplotlib",
+     "draw graph matplotlib"
+    ],
+    "a": 0,
+    "why": "لأن أمر تثبيت الحزم في بايثون يبدأ بـ pip install متبوعاً باسم المكتبة."
+   },
+   {
+    "t": "ماذا نسمي مساحة الرسم التي تحتوي على المحاور والنقاط داخل اللوحة؟",
+    "o": [
+     "Figure",
+     "Axes",
+     "Canvas"
+    ],
+    "a": 1,
+    "why": "لأن الـ Axes هي المساحة المخصصة لرسم البيانات وتحديد المحاور."
+   },
+   {
+    "t": "أي دالة نستعملها لإنشاء لوحة رسم ومساحة محاور معاً في ماتبلوت ليب؟",
+    "o": [
+     "plt.show()",
+     "plt.subplots()",
+     "ax.plot()"
+    ],
+    "a": 1,
+    "why": "لأن دالة subplots تنشئ اللوحة ومساحة الرسم في نفس الوقت."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود الرسم البياني",
+   "goal": "اختر الكلمات الصحيحة لإكمال كود رسم خط بياني بسيط.",
+   "items": [
+    {
+     "text": "import matplotlib.pyplot as ___",
+     "options": [
+      "plt",
+      "ax",
+      "np"
+     ],
+     "a": 0
+    },
+    {
+     "text": "fig, ax = plt.___()",
+     "options": [
+      "figure",
+      "subplots",
+      "plot"
+     ],
+     "a": 1
+    },
+    {
+     "text": "ax.___([1, 2], [3, 4])",
+     "options": [
+      "show",
+      "plot",
+      "draw"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! لقد أنشأت رسمك البياني الأول بنجاح وظهر الخط بوضوح!"
+  },
+  "sections": [
+   {
+    "h": "ما هو سرد القصة المرئية؟",
+    "text": "سرد القصة المرئية هو تحويل الجداول المليانة أرقام صعبة إلى رسومات وجرافات واضحة تخلي أي حد يفهم المعلومة من أول نظرة. تخيل أنك بتشرح لأصحابك مين فيكم بينط أطول بدل ما تقرأ لهم أرقام ملخبطة. الرسم بيوضح الحكاية بسرعة.",
+    "code": "# فكرة بسيطة لتحويل الأرقام لصورة\nprint('الأرقام تحولت إلى رسمة واضحة!')",
+    "output": "الأرقام تحولت إلى رسمة واضحة!"
+   },
+   {
+    "h": "تثبيت مكتبة ماتبلوت ليب",
+    "text": "عشان نرسم جوه بايثون، محتاجين نثبت مكتبة قوية اسمها ماتبلوت ليب. بنكتب أمر التثبيت السريع في موجه الأوامر عشان تنزل على جهازك وتبقى جاهزة للاستخدام في أي مشروع برمجي.",
+    "code": "# أمر التثبيت (يكتب في Terminal)\n# pip install matplotlib",
+    "output": "Successfully installed matplotlib"
+   },
+   {
+    "h": "استيراد المكتبة في الكود",
+    "text": "بعد ما ثبتنا المكتبة، أول خطوة في أي ملف بايثون هي استيرادها عشان نقدر نستعمل أكلاتها وأوامرها. العادة البرمجية أننا بنستوردها ونختصر اسمها بـ plt عشان نكتب أكواد أسرع.",
+    "code": "import matplotlib.pyplot as plt\nprint('المكتبة جاهزة للعمل!')",
+    "output": "المكتبة جاهزة للعمل!"
+   },
+   {
+    "h": "تشريح لوحة الرسم (Canvas Anatomy)",
+    "text": "لوحة الرسم في ماتبلوت ليب عاملة زي لوحة الفنون؛ الشاشة الكبيرة بره اسمها فيجر، وجواها مساحة الرسم الأساسية اللي اسمها أكسس واللي بيتحط عليها النقط والخطوط والمحاور السينية والصادية.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nprint('تم إنشاء اللوحة ومساحة الرسم بنجاح')",
+    "output": "تم إنشاء اللوحة ومساحة الرسم بنجاح"
+   },
+   {
+    "h": "رسم الخطوط البيانية الأساسية",
+    "text": "عشان نعمل خط بياني يربط بين مجموعة نقاط، بنستعمل أمر الرسم المباشر على مساحة الأكسس. بنديها قيم المحور الأفقي ومحور الرأسي وهي بتوصل بينهم بخط لطيف وجميل.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3], [10, 20, 25])",
+    "output": "[<matplotlib.lines.Line2D object at 0x...>]"
+   },
+   {
+    "h": "عرض الرسمة للشاشة",
+    "text": "بعد ما بنخلص تجهيز الرسمة، بنحتاج نظهرها قدامنا عشان نتفرج عليها. بنستعمل أمر العرض النهائي، رغم إن بعض بيئات الشغل زي نوتبوك بتعرضها لوحدها من غير ما نكتبه.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nplt.show()",
+    "output": "يعرض نافذة تحتوي على الرسم البياني"
+   },
+   {
+    "h": "اختيار نوع الجراف المناسب لسؤالك",
+    "text": "كل سؤال له رسمة تناسبه؛ لو عايز تعرف تطور درجاتك مع الوقت استعمل الخط البياني، ولو عايز تقارن بين حاجات مختلفة استعمل الأعمدة. اختيار الجراف الصح بيخلي اجابة سؤالك واضحة زي الشمس.",
+    "code": "# اختيار الرسم المناسب للسؤال\nprint('الخط البياني مثالي لمعرفة التغير مع الوقت')",
+    "output": "الخط البياني مثالي لمعرفة التغير مع الوقت"
+   },
+   {
+    "h": "تطبيقه في الحياة اليومية",
+    "text": "في حياتك اليومية، بتمارس سرد القصة المرئية لما تعمل جدول لفلوس المصروف بتاعتك وتعمل لها رسمة بيانية عشان تعرف أنت بتصرف فين أكتر، أو لما تقارن نتائج ألعابك الرياضية كل شهر.",
+    "code": "# تتبع المصروفات الشهرية\ndays = [1, 2, 3, 4]\nmoney = [50, 40, 25, 10]\nprint('تم تتبع المصروف بنجاح')",
+    "output": "تم تتبع المصروف بنجاح"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pip install matplotlib",
+    "desc": "أمر تثبيت مكتبة الرسوم البيانية"
+   },
+   {
+    "name": "import matplotlib.pyplot as plt",
+    "desc": "استيراد واجهة الرسم المختصرة"
+   },
+   {
+    "name": "plt.subplots()",
+    "desc": "إنشاء لوحة الرسم ومساحة المحاور"
+   },
+   {
+    "name": "ax.plot()",
+    "desc": "رسم خط بياني بالنقاط"
+   },
+   {
+    "name": "plt.show()",
+    "desc": "عرض نافذة الرسم البياني النهائية"
+   },
+   {
+    "name": "Figure",
+    "desc": "النافذة الكبيرة أو اللوحة الشاملة"
+   },
+   {
+    "name": "Axes",
+    "desc": "مساحة الرسم والمحاور الداخلية"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود استيراد مكتبة ماتبلوت ليب بالاسم المختصر الشائع plt.",
+    "a": "import matplotlib.pyplot as plt"
+   },
+   {
+    "q": "ما هو الأمر المستخدم لإنشاء فيجر ومساحة أكسس معاً؟",
+    "a": "plt.subplots()"
+   },
+   {
+    "q": "كيف ترسم خطاً بيانياً يعبر عن النقطتين (1,2) و (3,4)؟",
+    "a": "ax.plot([1, 3], [2, 4])"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have a mountain of numbers and make no sense of them; visual storytelling turns those numbers into easy charts for everyone.",
+   "To start plotting in Python, your very first step is installing the famous Matplotlib library onto your device using the package manager.",
+   "The core anatomy of a drawing canvas consists of the outer Figure window and the inner Axes area designated for plotting points.",
+   "To render a baseline line plot connecting points together, we use the direct plotting command passing both the x and y axis data.",
+   "The golden rule here is picking the right chart type that fits your specific question so the graph clearly communicates the idea.",
+   "In real life, you use this line plot when tracking your school grades across terms to see if you are improving over time."
+  ],
+  "example": "Let's make a simple chart showing Ahmed's coding scores over four weeks. We import Matplotlib, create our figure and axes with subplots, then plot our score points [60, 75, 85, 95] and show it.\n\n```python\nimport matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3, 4], [60, 75, 85, 95])\nplt.show()\n```\nThe output is an upward-trending line chart celebrating Ahmed's steady progress.",
+  "mistake": "A common mistake is forgetting to import Matplotlib or spelling the command wrong. The fix is always ensuring `import matplotlib.pyplot as plt` is at the top.",
+  "recap": "Charts transform complex numbers into readable pictures. Using Matplotlib helps us build these visual stories like pros.",
+  "q": [
+   {
+    "t": "What is the command used to install the Matplotlib library?",
+    "o": [
+     "pip install matplotlib",
+     "import matplotlib",
+     "draw graph matplotlib"
+    ],
+    "a": 0,
+    "why": "Because Python package installation commands start with pip install followed by the library name."
+   },
+   {
+    "t": "What do we call the plotting region that holds the ticks, labels, and coordinate points inside a figure?",
+    "o": [
+     "Figure",
+     "Axes",
+     "Canvas"
+    ],
+    "a": 1,
+    "why": "Because the Axes object is the specific region attached to a figure where data is plotted."
+   },
+   {
+    "t": "Which function creates both a figure and an axes area simultaneously in Matplotlib?",
+    "o": [
+     "plt.show()",
+     "plt.subplots()",
+     "ax.plot()"
+    ],
+    "a": 1,
+    "why": "Because subplots() is a convenience function that creates a figure with a single Axes."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Plotting Code",
+   "goal": "Choose the correct words to complete a basic line plot snippet.",
+   "items": [
+    {
+     "text": "import matplotlib.pyplot as ___",
+     "options": [
+      "plt",
+      "ax",
+      "np"
+     ],
+     "a": 0
+    },
+    {
+     "text": "fig, ax = plt.___()",
+     "options": [
+      "figure",
+      "subplots",
+      "plot"
+     ],
+     "a": 1
+    },
+    {
+     "text": "ax.___([1, 2], [3, 4])",
+     "options": [
+      "show",
+      "plot",
+      "draw"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! You successfully created your first plot and the line rendered clearly!"
+  },
+  "sections": [
+   {
+    "h": "What is Visual Storytelling?",
+    "text": "Visual storytelling is about turning tables full of boring numbers into clear charts and pictures so anyone can understand the data instantly. Imagine explaining who jumps the furthest instead of reading out confusing numbers. A chart tells the story quickly.",
+    "code": "# Simple concept of turning numbers into pictures\nprint('Numbers successfully turned into a clear picture!')",
+    "output": "Numbers successfully turned into a clear picture!"
+   },
+   {
+    "h": "Installing Visual Libraries",
+    "text": "To draw inside Python, we need to install a powerful library called Matplotlib. We run a quick package installation command in our terminal so it downloads onto our system and gets ready for any coding project.",
+    "code": "# Installation command (run in Terminal)\n# pip install matplotlib",
+    "output": "Successfully installed matplotlib"
+   },
+   {
+    "h": "Importing the Library",
+    "text": "Once installed, the very first line in any Python script is importing the library so we can use its tools. The coding convention is to import it and shorten its name to plt for faster writing.",
+    "code": "import matplotlib.pyplot as plt\nprint('Library is ready for action!')",
+    "output": "Library is ready for action!"
+   },
+   {
+    "h": "Canvas Anatomy",
+    "text": "A Matplotlib canvas works like an art board; the outer window is the Figure, and inside it sits the plotting area called Axes where points, lines, and coordinate axes live.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nprint('Figure and Axes created successfully')",
+    "output": "Figure and Axes created successfully"
+   },
+   {
+    "h": "Rendering Baseline Line Plots",
+    "text": "To draw a line plot connecting coordinate points, we use the direct plotting method on our Axes area. We feed it horizontal and vertical values, and it joins them with a smooth, lovely line.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3], [10, 20, 25])",
+    "output": "[<matplotlib.lines.Line2D object at 0x...>]"
+   },
+   {
+    "h": "Displaying the Figure",
+    "text": "After preparing our plot, we need to display it so we can examine our work. We use the final show command, although some environments like Jupyter notebooks display figures automatically without typing it.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nplt.show()",
+    "output": "Opens a window displaying the line plot"
+   },
+   {
+    "h": "Choosing the Right Chart for a Question",
+    "text": "Every question has a matching chart; if you want to see how grades change over time, use a line plot. If you want to compare categories, use bar charts. Picking the right graph makes your answer crystal clear.",
+    "code": "# Choosing chart based on question\nprint('Line plot is ideal for tracking changes over time')",
+    "output": "Line plot is ideal for tracking changes over time"
+   },
+   {
+    "h": "Real-Life Application",
+    "text": "In real life, you practice visual storytelling when logging your allowance money into a table and charting it to see where you spend the most, or when comparing your monthly high scores in a video game.",
+    "code": "# Tracking monthly savings\ndays = [1, 2, 3, 4]\nmoney = [50, 40, 25, 10]\nprint('Savings tracked successfully')",
+    "output": "Savings tracked successfully"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pip install matplotlib",
+    "desc": "Command to install the plotting library"
+   },
+   {
+    "name": "import matplotlib.pyplot as plt",
+    "desc": "Importing the shortened plotting interface"
+   },
+   {
+    "name": "plt.subplots()",
+    "desc": "Creating the figure window and axes area"
+   },
+   {
+    "name": "ax.plot()",
+    "desc": "Drawing a line plot with coordinate data"
+   },
+   {
+    "name": "plt.show()",
+    "desc": "Displaying the final plot window"
+   },
+   {
+    "name": "Figure",
+    "desc": "The overarching window holding all plot elements"
+   },
+   {
+    "name": "Axes",
+    "desc": "The specific data plotting region with its own scale"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the code to import Matplotlib using its standard short alias plt.",
+    "a": "import matplotlib.pyplot as plt"
+   },
+   {
+    "q": "What is the function used to create a figure and axes area together?",
+    "a": "plt.subplots()"
+   },
+   {
+    "q": "How do you plot a line connecting points (1,2) and (3,4)?",
+    "a": "ax.plot([1, 3], [2, 4])"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "matplotlib.org docs",
+   "url": "https://matplotlib.org/stable/users/explain/quick_start.html"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "مشروع القصة التفاعلية هو فرصتك الكبرى لدمج كل ما تعلمته في سكراتش جونيور لتصميم مغامرة مذهلة تبدأ بصفحة ممتعة وتنتهي بنهاية سعيدة ومبدعة.",
+   "كمثال بسيط، ابدأ بإضافة شخصية القطة المضحكة في صفحة الغابة الساحرة، واجعلها تتحرك ببطء نحو شجرة كبيرة لتلتقي بصديقها الجديد.",
+   "تعمل هذه الأجزاء معًا بفضل صفحة البداية التي ترسل رسالة سحرية للشخصيات لتبدأ بالتحرك وتغيير الخلفيات في الوقت المناسب تمامًا.",
+   "مثال ثانٍ: عندما تصل الشخصية للشجرة، اضغط على زر الرسائل لتبدأ الخلفية بالتغير إلى قلعة مسحورة وتظهر شخصية الأمير الضفدع.",
+   "القاعدة الذهبية لأي قصة ناجحة: خطط لقصتك على ورقة أولاً قبل تلوينها وتحريكها على الشاشة لتبدو منظمة ومسلية.",
+   "تُستخدم هذه المهارات الرائعة في الواقع لصميم ألعاب الفيديو التفاعلية، والرسوم المتحركة المشهورة، والكتب الرقمية للأطفال."
+  ],
+  "example": "لنخلق قصة مغامرة القط الشجاع: نبدأ بوضع القط في خلفية الشاطئ، ونستخدم مكعب العلم الأخضر لتحريكه 5 خطوات للأمام. وعندما يصل إلى الصخرة، يرسل رسالة حمراء. في الصفحة الثانية، تستقبل الشخصية الرسالة، فتتغير الخلفية إلى سفينة قراصنة، ويظهر صوت ضحكة مبهجة. هذا الربط الذكي يمنحنا قصة مترابطة وممتعة للغاية!",
+  "mistake": "الخطأ الشائع هو نسيان مطابقة ألوان الرسائل بين المرسل والمستقبل، مما يجعل الشخصية الثانية لا تتحرك أبداً. الحل هو التأكد من استخدام نفس لون الرسالة (مثل الحمراء هنا وهناك).",
+  "recap": "القصة التفاعلية تجمع كل المهارات عبر صفحات متعددة ورسائل ذكية. أنت الآن مؤهل لصنع أروع المغامرات الرقمية!",
+  "q": [
+   {
+    "t": "ما هي الخطوة الأولى لتصميم قصة تفاعلية ناجحة؟",
+    "o": [
+     "التخطيط للقصة على الورق أولاً",
+     "إغلاق الحاسوب فوراً",
+     "حذف جميع الشخصيات"
+    ],
+    "a": 0,
+    "why": "التخطيط المسبق يساعدك على ترتيب أحداث القصة وصفحاتها بكل سهولة."
+   },
+   {
+    "t": "كيف تنتقل الشخصية من صفحة إلى أخرى في القصة؟",
+    "o": [
+     "باستخدام مكعب الانتقال لصفحة جديدة",
+     "بإيقاف تشغيل البرنامج",
+     "برسم شجرة جديدة"
+    ],
+    "a": 0,
+    "why": "مكعب الانتقال هو المسؤول عن فتح الصفحة التالية في المغامرة."
+   },
+   {
+    "t": "لماذا نستخدم الرسائل الملونة في مشروعنا النهائي؟",
+    "o": [
+     "لتغيير ألوان شاشة الحاسوب",
+     "لتنسيق الأحداث وإرسال إشارات بين الصفحات والشخصيات",
+     "لتكبير حجم الشخصية فقط"
+    ],
+    "a": 1,
+    "why": "الرسائل تعمل كإشارات مرور تخبر الشخصيات متى تبدأ بالتحرك أو متى تتغير الخلفيات."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز عناصر القصة التفاعلية",
+   "goal": "صنف العناصر التالية إلى مكانها الصحيح في مشروع القصة التفاعلية.",
+   "buckets": [
+    "بداية القصة",
+    "أحداث ونهاية"
+   ],
+   "items": [
+    {
+     "t": "إضافة خلفية الغابة الساحرة",
+     "b": 0
+    },
+    {
+     "t": "وضع الشخصية الأساسية بالعلم الأخضر",
+     "b": 0
+    },
+    {
+     "t": "إرسال رسالة لتغيير الخلفية",
+     "b": 1
+    },
+    {
+     "t": "الانتقال للصفحة الثانية للأبطال",
+     "b": 1
+    },
+    {
+     "t": "برمجة حركة الرقص للنهاية السعيدة",
+     "b": 1
+    },
+    {
+     "t": "اختيار الشخصيات الرئيسية",
+     "b": 0
+    }
+   ],
+   "success": "لقد رتبت عناصر القصة ببراعة، وأصبحت جاهزًا لإطلاق تحفتك التفاعلية!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة مشروع القصة التفاعلية",
+    "text": "مشروع القصة التفاعلية هو اللحظة التي تجمع فيها كل الأدوات التي تعلمتها في سكراتش جونيور لتصنع كتابك السحري الخاص. تخيل أنك كاتب ومخرج مسرحي في آن واحد، تدير الشخصيات والخلفيات والأصوات لتسرد حكاية ممتعة يراها أصدقاؤك.",
+    "code": "المشروع الشامل:\n- صفحة 1: البداية والشخصية الرئيسية\n- صفحة 2: المغامرة وتغيير الخلفية\n- صفحة 3: النهاية السعيدة والاحتفال",
+    "output": "يظهر أمامك عرض متكامل يشبه الرسوم المتحركة الحقيقية."
+   },
+   {
+    "h": "دمج الخلفيات المتعددة",
+    "text": "القصة الرائعة تأخذنا في رحلة لأماكن مختلفة. في سكراتش جونيور، يمكنك البدء في الغابة، ثم الانتقال للفضاء، ثم إلى قلعة الأميرة. تمامًا مثل صفحات كتاب القصص الورقي، كل صفحة تفتح عالماً جديداً ومثيراً للفضول.",
+    "code": "خطوات التغيير:\nمكعب العلم الأخضر -> اختيار خلفية الغابة -> مكعب الانتقال للصفحة 2 -> خلفية الفضاء",
+    "output": "تتغير البيئة المحيطة بالشخصية لتناسب أحداث القصة المتجددة."
+   },
+   {
+    "h": "إدارة الشخصيات المتعددة وحركاتها",
+    "text": "القصص تحتاج أبطالاً وشراراً أو أصدقاء لطفاء. يمكنك إضافة عدة شخصيات في نفس الصفحة، وجعل بعضها يركض بسرعة بينما يمشي البعض الآخر ببطء. فكر في الأمر كفريق كرة قدم يتوزع في الملعب لتأدية خطة محكمة.",
+    "code": "شخصية 1: تحرك 10 خطوات يميناً\nشخصية 2: قفز للأعلى مرتين\nشخصية 3: اختفاء عند اللمس",
+    "output": "تتحرك الشخصيات معاً في شاشتك بتناغم وجمال."
+   },
+   {
+    "h": "استخدام نظام الرسائل لربط الأحداث",
+    "text": "الرسائل تشبه جهاز اللاسلكي السري بين الشخصيات والخلفيات. عندما تصل البطلة إلى الكنز، تطلق رسالة صفراء؛ وبمجرد أن تسمع الخلفية هذه الرسالة، تتحول فوراً إلى مغارة ذهبية مضيئة، لتبدأ مرحلة جديدة من التشويق.",
+    "code": "الشخصية: عند الوصول للصخرة -> إرسال رسالة برتقالية\nالخلفية: عند استلام رسالة برتقالية -> تغير المظهر",
+    "output": "تتفاعل الخلفيات والشخصيات بسلاسة دون تأخير."
+   },
+   {
+    "h": "التحكم بالسرعات وتوقيت الأحداث",
+    "text": "تخيل قصة يركض فيها بطل بسرعة شديدة ثم يقف فجأة ليتأمل زهرة جميلة. ضبط السرعة وإضافات الانتظار (العدادات الزمنية) تعطي القصة إيقاعاً درامياً واقعياً يشبه الأفلام الكرتونية المحبوبة لديك.",
+    "code": "حركة سريعة (سرعة عالية) -> مكعب الانتظار 2 ثانية -> حركة بطيئة (سرعة منخفضة)",
+    "output": "تتحرك الشخصية بشكل ممتع ومتنوع الحركات."
+   },
+   {
+    "h": "بناء صفحة البداية وعنوان القصة",
+    "text": "كل كتاب جميل يبدأ بغلاف جذاب وعنوان رائع. في سكراتش جونيور، اصنع الصفحة الأولى لتكون مخصصة لعنوان قصتك وأزرار البدء، بحيث يضغط اللاعب على الزر لينتقل إلى مغامرة الحكاية الفعلية.",
+    "code": "الصفحة 1: عنوان القصة + زر اللمس -> مكعب الانتقال للصفحة 2",
+    "output": "يبدأ المستخدم قصته بالضغط على زر انطلاق تفاعلي مبهر."
+   },
+   {
+    "h": "ابتكار نهاية سعيدة ومؤثرة",
+    "text": "النهاية هي ما يبقى في ذاكرة المشاهد. في مشروعك النهائي، اختتم القصة باحتفال كبير؛ فقزات فرح للشخصيات، وأصوات موسيقية بهيجة، وعبارة (النهاية السعيدة) لتترك ابتسامة واسعة على وجه كل من يتابع عملك.",
+    "code": "عند استلام رسالة النهاية -> قفز 5 مرات -> تشغيل صوت الاحتفال",
+    "output": "تنتهي القصة بجو احتفالي مبهج ومبدع."
+   },
+   {
+    "h": "الفحص والأخطاء وإصلاحها (Debug)",
+    "text": "حتى المبرمجون المحترفون يقعون في أخطاء بسيطة! قبل عرض قصتك على أصدقائك، شغل العرض كاملاً وراقب هل تتحرك الشخصيات بالترتيب الصحيح؟ هل تظهر الخلفية في وقتها؟ إذا وجد0 خطأ، قم بتعديله فوراً.",
+    "code": "فحص الشاشة:\n- هل تبدأ القصة بالعلم الأخضر؟ نعم.\n- هل تنتقل الصفحة بسلاسة؟ نعم.",
+    "output": "يصبح مشروعك جاهزاً ومثالياً تماماً للعرض."
+   }
+  ],
+  "reference": [
+   {
+    "name": "مقاليد القصة (Project Integration)",
+    "desc": "دمج كافة المهارات البرمجية في مشروع واحد متكامل."
+   },
+   {
+    "name": "صفحة متعددة (Multi-page)",
+    "desc": "تصميم قصة موزعة على عدة شاشات مختلفة."
+   },
+   {
+    "name": "مكعب الانتقال (Go to Page)",
+    "desc": "أمر برمجي يأخذ الشخصية لصفحة جديدة."
+   },
+   {
+    "name": "الرسائل (Messages)",
+    "desc": "إشارات ملونة للتزامن بين الأحداث."
+   },
+   {
+    "name": "السرعة (Speed)",
+    "desc": "التحكم في سرعة حركة أبطال القصة."
+   },
+   {
+    "name": "الغلاف والبداية (Title Screen)",
+    "desc": "الصفحة الأولى التي تعرض اسم القصة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ صفحة بداية لقصتك بعنوان (مغامرة الفضاء) مع زر انطلاق ينتقل للصفحة الثانية.",
+    "a": "مكعب اللمس على العنوان -> مكعب الانتقال للصفحة الثانية."
+   },
+   {
+    "q": "كيف تجعل الخلفية تتغير إلى كوكب آخر عندما تصل الشخصية إلى نهاية الشاشة؟",
+    "a": "شخصية تصل الحافة -> ترسل رسالة زرقاء -> الخلفية تستلم الرسالة وتتغير إلى الكوكب."
+   },
+   {
+    "q": "صمم نهاية سعيدة تقفز فيها الشخصية وتصدر صوتاً محبباً عند اكتمال المغامرة.",
+    "a": "عند استلام رسالة الفوز -> تكرار قفز مرتين + مكعب الصوت."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "An interactive story project is your big chance to combine everything you learned in ScratchJr to design an amazing adventure starting with a fun page and ending with a creative happy ending.",
+   "As a simple example, start by adding the funny cat character in a magical forest background, making it walk slowly toward a big tree to meet its new friend.",
+   "These parts work together thanks to a start page that sends a magical message telling characters to move and change backgrounds at the exact right moment.",
+   "Second example: when the character reaches the tree, tap the message button so the background changes to an enchanted castle and the frog prince character appears.",
+   "The golden rule for any successful story: plan your story on paper first before coloring and animating it on screen to keep it organized and fun.",
+   "These wonderful skills are used in real life to design interactive video games, famous cartoons, and digital storybooks for kids."
+  ],
+  "example": "Let's create the Brave Cat adventure story: we place the cat on a beach background, using the green flag block to move it 5 steps forward. When it reaches a rock, it sends a red message. On the second page, the character receives the message, the background changes to a pirate ship, and a cheerful laughing sound plays. This smart connection gives us a tightly linked and extremely fun story!",
+  "mistake": "A common mistake is forgetting to match message colors between the sender and receiver, which makes the second character never move. The fix is ensuring you use the exact same message color (like red here and there).",
+  "recap": "An interactive story brings together all skills across multiple pages and smart messages. You are now ready to make the most wonderful digital adventures!",
+  "q": [
+   {
+    "t": "What is the very first step to design a successful interactive story?",
+    "o": [
+     "Planning the story on paper first",
+     "Closing the computer immediately",
+     "Deleting all characters"
+    ],
+    "a": 0,
+    "why": "Planning ahead helps you organize your story's events and pages smoothly."
+   },
+   {
+    "t": "How does a character move from one page to another in the story?",
+    "o": [
+     "Using the go-to-page block",
+     "By turning off the app",
+     "By drawing a new tree"
+    ],
+    "a": 0,
+    "why": "The go-to-page block is responsible for opening the next page in the adventure."
+   },
+   {
+    "t": "Why do we use colored messages in our final project?",
+    "o": [
+     "To change the computer screen colors",
+     "To coordinate events and send signals between pages and characters",
+     "To make the character bigger only"
+    ],
+    "a": 1,
+    "why": "Messages act like traffic signals telling characters when to move or when backgrounds should change."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Interactive Story Elements Sorting",
+   "goal": "Sort the following elements into their correct place in the interactive story project.",
+   "buckets": [
+    "Story Start",
+    "Events & Ending"
+   ],
+   "items": [
+    {
+     "t": "Adding the magical forest background",
+     "b": 0
+    },
+    {
+     "t": "Placing main character with green flag",
+     "b": 0
+    },
+    {
+     "t": "Sending a message to change background",
+     "b": 1
+    },
+    {
+     "t": "Transitioning to page 2 for heroes",
+     "b": 1
+    },
+    {
+     "t": "Programming a happy ending dance",
+     "b": 1
+    },
+    {
+     "t": "Choosing the main characters",
+     "b": 0
+    }
+   ],
+   "success": "You sorted the story elements brilliantly and are ready to launch your interactive masterpiece!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to the Interactive Story Project",
+    "text": "The interactive story project is the moment you combine all the tools you learned in ScratchJr to build your very own magical book. Imagine being both a writer and a theatre director, managing characters, backgrounds, and sounds to tell an engaging tale your friends will love.",
+    "code": "Complete Project:\n- Page 1: Start and main character\n- Page 2: Adventure and background change\n- Page 3: Happy ending and celebration",
+    "output": "A complete animated show appears right before your eyes."
+   },
+   {
+    "h": "Combining Multiple Backgrounds",
+    "text": "A great story takes us on a journey to different places. In ScratchJr, you can start in a forest, move to space, and then land in a princess castle. Just like pages in a paper storybook, every page opens up a new and exciting world.",
+    "code": "Change Steps:\nGreen Flag block -> Select forest background -> Go to page 2 block -> Space background",
+    "output": "The environment around the character changes to match the evolving story events."
+   },
+   {
+    "h": "Managing Multiple Characters & Movements",
+    "text": "Stories need heroes, villains, or friendly companions. You can add several characters to the same page, making some run fast while others walk slowly. Think of it like a soccer team spreading across the field to execute a clever plan.",
+    "code": "Character 1: Move 10 steps right\nCharacter 2: Jump up twice\nCharacter 3: Disappear on touch",
+    "output": "Characters move together on your screen in harmony and beauty."
+   },
+   {
+    "h": "Using Message Systems to Link Events",
+    "text": "Messages are like secret walkie-talkies between characters and backgrounds. When the heroine reaches the treasure, she triggers a yellow message; as soon as the background hears this message, it instantly transforms into a glowing golden cave.",
+    "code": "Character: On reaching rock -> Send orange message\nBackground: On receiving orange message -> Change appearance",
+    "output": "Backgrounds and characters interact smoothly without delay."
+   },
+   {
+    "h": "Controlling Speeds and Event Timing",
+    "text": "Imagine a story where a hero runs super fast then suddenly stops to admire a lovely flower. Adjusting speed and adding wait blocks (timers) give the story a realistic dramatic rhythm just like your favorite cartoons.",
+    "code": "Fast motion (High speed) -> Wait 2 seconds block -> Slow motion (Low speed)",
+    "output": "The character moves in an entertaining and varied motion style."
+   },
+   {
+    "h": "Building the Title Page & Story Cover",
+    "text": "Every beautiful book starts with an attractive cover and a great title. In ScratchJr, make your first page dedicated to your story title and start buttons, so the player taps the button to jump straight into the actual tale.",
+    "code": "Page 1: Story title + Touch button -> Go to page 2 block",
+    "output": "The user starts their story with an impressive interactive launch button."
+   },
+   {
+    "h": "Inventing a Happy and Memorable Ending",
+    "text": "The ending is what stays in the viewer's memory. In your final project, wrap up the story with a big celebration; joyful character jumps, cheerful sound effects, and a 'The End' caption to leave a wide smile on everyone's face.",
+    "code": "On receiving win message -> Jump 5 times + Play celebration sound",
+    "output": "The story ends with a joyful and creative celebratory atmosphere."
+   },
+   {
+    "h": "Testing, Bugs, and Debugging",
+    "text": "Even expert programmers make small mistakes! Before showing your story to your friends, run the whole show and watch: do characters move in the correct order? Does the background show up on time? If you spot a bug, fix it right away.",
+    "code": "Screen Check:\n- Does the story start with green flag? Yes.\n- Does the page transition smoothly? Yes.",
+    "output": "Your project becomes completely ready and flawless to present."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Project Integration",
+    "desc": "Combining all coding skills into a single cohesive project."
+   },
+   {
+    "name": "Multi-page",
+    "desc": "Designing a story spread across multiple different screens."
+   },
+   {
+    "name": "Go to Page",
+    "desc": "A coding command that takes a character to a new page."
+   },
+   {
+    "name": "Messages",
+    "desc": "Colored signals for synchronization between events."
+   },
+   {
+    "name": "Speed",
+    "desc": "Controlling how fast story heroes move."
+   },
+   {
+    "name": "Title Screen",
+    "desc": "The first page displaying the story's title."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a title page for your story titled 'Space Adventure' with a start button that leads to page two.",
+    "a": "Touch block on title -> Go to page 2 block."
+   },
+   {
+    "q": "How do you make the background change to another planet when the character reaches the screen edge?",
+    "a": "Character reaches edge -> Sends blue message -> Background receives message and changes to planet."
+   },
+   {
+    "q": "Design a happy ending where the character jumps and makes a friendly sound upon completing the adventure.",
+    "a": "When receiving win message -> Repeat jump twice + Sound block."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

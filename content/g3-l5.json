@@ -1,0 +1,292 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في الجدول كأنه شبكة معلومات منظمة في صفوف أفقية وأعمدة رأسية، مثل ورقة مربعات الكشكول المدرسي تماماً.",
+   "نستخدم وسم الجدول الأساسي <table> لفتح حاوية الجدول وإعلام المتصفح بوجود بيانات مرتبة.",
+   "كل صف أفقي داخل الجدول يتم إنشاؤه بواسطة الوسم <tr> الذي يعني صف جدول.",
+   "داخل كل صف، نستخدم الوسم <td> لإضافة خلايا البيانات العادية، أو الوسم <th> لخلايا العناوين البارزة.",
+   "القاعدة الذهبية: ابدأ دائماً بإنشاء الصف <tr> ثم ضع بداخله عناصر <th> أو <td> بالعدد المناسب.",
+   "تُستخدم الجداول في الواقع لإنشاء جداول الحصص المدرسية، قوائم درجات الألعاب، وعروض بيانات المتاجر بوضوح."
+  ],
+  "example": "لنرسم جدولاً بسيطاً لسجل قراءة الكتب الصفية. نكتب <table> ثم صف العناوين <tr> وبداخله <th>اسم الكتاب</th> و <th>عدد الصفحات</th>، ثم نضيف صف بيانات يحتوي على <td>قصص الأبطال</td> و <td>120</td> داخل وسم <tr> آخر. هذا يرتب المعلومات بوضوح تام.",
+  "mistake": "الخطأ الشائع هو وضع خلايا البيانات <td> مباشرة داخل الوسم <table> بدون تجميعها أولاً داخل صفوف <tr>. الحل هو التأكد دائماً من أن كل خلية محاطة بوسم صف من الجانبين.",
+  "recap": "تعلمنا كيف ننظم المعلومات بوضوح باستخدام وسوم الجداول لإنشاء صفوف وأعمدة مرتبة. الجداول تسهل قراءة البيانات المعقدة بسرعة.",
+  "q": [
+   {
+    "t": "ما هو الوسم المسؤول عن إنشاء صف جديد في الجدول؟",
+    "o": [
+     "<table>",
+     "<tr>",
+     "<td>"
+    ],
+    "a": 1,
+    "why": "الوسم <tr> يمثل صف الجدول (Table Row)."
+   },
+   {
+    "t": "أي وسم نستخدمه لتمييز عناوين الأعمدة بخط عريض؟",
+    "o": [
+     "<th>",
+     "<td>",
+     "<head>"
+    ],
+    "a": 0,
+    "why": "الوسم <th> مخصص لعناوين جدول البيانات (Table Header)."
+   },
+   {
+    "t": "أين نضع خلايا البيانات العادية <td> دائماً؟",
+    "o": [
+     "مباشرة داخل <table>",
+     "داخل صف <tr>",
+     "داخل عنوان الصفحة <title>"
+    ],
+    "a": 1,
+    "why": "خلايا البيانات يجب أن توضع داخل صفوف <tr>."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ جدول سجل القراءة",
+   "goal": "اكتشف الخطأ في كود HTML الخاص بجدول قراءة الكتب وأصلحه لتظهر البيانات بشكل صحيح.",
+   "lines": [
+    "<table>",
+    "  <tr>",
+    "    <td>عنوان الكتاب</td>",
+    "    <td>الكاتب</td>",
+    "  </tr>",
+    "  <tr>",
+    "    <td>رحلة إلى النجوم</td>",
+    "    <td>أحمد</td>",
+    "  </tr>",
+    "</table>"
+   ],
+   "bug": 2,
+   "fix": "    <th>عنوان الكتاب</th>",
+   "success": "رائع! تم تحويل خلايا العنوان إلى عناصر <th> بارزة وظهر الجدول المدرسي بشكل منظم للغاية."
+  },
+  "sections": [
+   {
+    "h": "ما هو الجدول وكيف نتخيله؟",
+    "text": "الجدول هو وسيلة ممتازة لتنظيم المعلومات في صفوف وأعمدة، تماماً مثل كشف حضور الطلاب في الفصل أو جدول الحصص الأسبوعي. تخيل أنك ترتب ألعابك في صناديق مرتبة حسب النوع واللون، هذا هو بالضبط دور الجداول في مواقع الويب.",
+    "code": "<table border=\"1\">\n  <tr>\n    <td>كتاب العلوم</td>\n    <td>صفحة 15</td>\n  </tr>\n</table>",
+    "output": "يظهر جدول بسيط يحتوي على خلفتين ببيانات كتاب العلوم ورقم الصفحة مع حد ظاهر حوله."
+   },
+   {
+    "h": "إنشاء حاوية الجدول بـ <table>",
+    "text": "لكي نبدأ في بناء أي جدول على صفحتنا، نحتاج أولاً إلى إخبار متصفح الويب أننا سنضع بيانات شبكية. نقوم بذلك باستخدام الوسم الرئيسي <table> والذي يحيط بجميع محتويات الجدول من البداية وحتى النهاية.",
+    "code": "<table style=\"background: #eef;\">\n  <tr>\n    <td>محتوى الجدول هنا</td>\n  </tr>\n</table>",
+    "output": "يظهر صندوق خلفيته زرقاء فاتحة يمثل بداية هيكل الجدول."
+   },
+   {
+    "h": "تنظيم الصفوف الأفقية بـ <tr>",
+    "text": "الجدول يتكون من صفوف أفقية متتالية. الوسم <tr> اختصار لـ Table Row وتعني صف جدول. كل سطر جديد في جدولك يحتاج إلى وسم <tr> خاص به ليحتوي بداخله على الخلايا.",
+    "code": "<table border=\"1\">\n  <tr>\n    <td>الصف الأول</td>\n  </tr>\n  <tr>\n    <td>الصف الثاني</td>\n  </tr>\n</table>",
+    "output": "يظهر جدول بصفين أفقيين فوق بعضهما البعض."
+   },
+   {
+    "h": "إضافة خلايا البيانات بـ <td>",
+    "text": "داخل كل صف أفقي، نقسم المساحة إلى خلايا رأسية باستخدام الوسم <td> واختصارها Table Data. هذه الخلايا هي التي تحتوي على الكلمات والأرقام الفعلية التي نريد عرضها للقارئ.",
+    "code": "<table border=\"1\">\n  <tr>\n    <td>اسم الطالب</td>\n    <td>الدرجة</td>\n  </tr>\n</table>",
+    "output": "يظهر صف واحد يحتوي على عمودين لاسم الطالب والدرجة."
+   },
+   {
+    "h": "تمييز العناوين بـ <th>",
+    "text": "لكي نعرف ماذا يعني كل عمود، نستخدم الوسم <th> بدلاً من <td> في الصف الأول. الوسم <th> يعني Table Header وهو يجعل النص عريضاً وفي منتصف الخلية تلقائياً ليميز العناوين عن البيانات العادية.",
+    "code": "<table border=\"1\">\n  <tr>\n    <th>اسم القصة</th>\n    <th>عدد الصفحات</th>\n  </tr>\n  <tr>\n    <td>الأميرة النائمة</td>\n    <td>50</td>\n  </tr>\n</table>",
+    "output": "يظهر جدول بأسماء أعمدة بارزة وعريضة في الأعلى وتحتها صف البيانات."
+   },
+   {
+    "h": "إضافة الحدود بخصائص بسيطة",
+    "text": "في الماضي، كنا نضيف خاصية border مباشرة لوسم الجدول لنرى الخطوط الفاصلة بوضوح. اليوم نستخدم تقنيات التنسيق، ولكن فهم الحدود البسيطة يساعدنا على رؤية الخلايا مميزة عن بعضها البعض بدقة.",
+    "code": "<table border=\"2\" style=\"border-collapse: collapse;\">\n  <tr>\n    <th style=\"border: 1px solid black;\">الرياضة</th>\n    <th style=\"border: 1px solid black;\">اليوم</th>\n  </tr>\n  <tr>\n    <td style=\"border: 1px solid black;\">كرة القدم</td>\n    <td style=\"border: 1px solid black;\">الأحد</td>\n  </tr>\n</table>",
+    "output": "يظهر جدول منظم تحيط به خطوط واضحة تفصل بين الخلايا بدقة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<table>",
+    "desc": "يُعرّف حاوية جدول البيانات الرئيسية في لغة HTML."
+   },
+   {
+    "name": "<tr>",
+    "desc": "يُنشئ صفاً أفقياً جديداً داخل الجدول."
+   },
+   {
+    "name": "<td>",
+    "desc": "يُنشئ خلية بيانات عادية داخل الصف."
+   },
+   {
+    "name": "<th>",
+    "desc": "يُنشئ خلية عنوان بارزة ومميزة في الجدول."
+   },
+   {
+    "name": "border",
+    "desc": "خاصية قديمة لتحديد سمك خطوط حدود الجدول."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسم HTML لإنشاء خلية بيانات عادية تحتوية على كلمة 'رياضيات'.",
+    "a": "<td>رياضيات</td>"
+   },
+   {
+    "q": "كيف تكتب صف جدول <tr> يحتوي على خلية عنوان <th> بداخلها 'اليوم'؟",
+    "a": "<tr><th>اليوم</th></tr>"
+   },
+   {
+    "q": "ما هو الوسم الذي تحيط به جميع صفوف وأعمدة الجدول من البداية والنهاية؟",
+    "a": "<table> و </table>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of a table like a grid organized into horizontal rows and vertical columns, just like a school math notebook page.",
+   "We use the main table tag <table> to open the table container and tell the browser data is structured here.",
+   "Every horizontal row inside the table is created using the <tr> tag, which stands for table row.",
+   "Inside each row, we use the <td> tag to add normal data cells, or the <th> tag for highlighted header cells.",
+   "The golden rule: always start by creating a <tr> row, then place <th> or <td> elements inside it.",
+   "Tables are used in real life for school schedules, game scoreboards, and product pricing lists displayed clearly."
+  ],
+  "example": "Let's draw a simple class reading log table. We type <table>, then a header row <tr> with <th>Book Title</th> and <th>Pages</th>, then add a data row containing <td>Hero Tales</td> and <td>120</td> inside another <tr>. This organizes info neatly.",
+  "mistake": "A common mistake is placing data cells <td> directly inside the <table> tag without grouping them inside <tr> rows first. The fix is to always ensure every cell is wrapped in a row tag.",
+  "recap": "We learned how to organize info clearly using table tags to create neat rows and columns. Tables make complex data easy to read quickly.",
+  "q": [
+   {
+    "t": "Which tag is responsible for creating a new row in a table?",
+    "o": [
+     "<table>",
+     "<tr>",
+     "<td>"
+    ],
+    "a": 1,
+    "why": "The <tr> tag represents a table row."
+   },
+   {
+    "t": "Which tag should we use to make column headings bold and prominent?",
+    "o": [
+     "<th>",
+     "<td>",
+     "<head>"
+    ],
+    "a": 0,
+    "why": "The <th> tag is designated for table header cells."
+   },
+   {
+    "t": "Where should regular data cells <td> always be placed?",
+    "o": [
+     "Directly inside <table>",
+     "Inside a <tr> row",
+     "Inside the page title <title>"
+    ],
+    "a": 1,
+    "why": "Data cells must be enclosed within table rows."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Reading Log Table Bug",
+   "goal": "Spot the bug in the reading log HTML code and fix it so the table displays correctly.",
+   "lines": [
+    "<table>",
+    "  <tr>",
+    "    <td>Book Title</td>",
+    "    <td>Author</td>",
+    "  </tr>",
+    "  <tr>",
+    "    <td>Space Journey</td>",
+    "    <td>Ahmed</td>",
+    "  </tr>",
+    "</table>"
+   ],
+   "bug": 2,
+   "fix": "    <th>Book Title</th>",
+   "success": "Awesome! The header cells were converted into prominent <th> elements and the school table rendered very neatly."
+  },
+  "sections": [
+   {
+    "h": "What is a Table and How to Imagine It?",
+    "text": "A table is a great way to organize information in rows and columns, just like a classroom attendance sheet or a weekly timetable. Imagine organizing your toys in boxes sorted by type and color; that is exactly what tables do on web pages.",
+    "code": "<table border=\"1\">\n  <tr>\n    <td>Science Book</td>\n    <td>Page 15</td>\n  </tr>\n</table>",
+    "output": "Displays a simple table with two cells containing science book and page number with a visible border."
+   },
+   {
+    "h": "Creating the Table Container with <table>",
+    "text": "To start building any table on our page, we first need to tell the web browser that we are putting grid data here. We do this using the main <table> tag, which wraps all table content from start to finish.",
+    "code": "<table style=\"background: #eef;\">\n  <tr>\n    <td>Table content here</td>\n  </tr>\n</table>",
+    "output": "Displays a light blue box representing the start of the table structure."
+   },
+   {
+    "h": "Organizing Horizontal Rows with <tr>",
+    "text": "A table consists of consecutive horizontal rows. The <tr> tag stands for Table Row. Every new line in your table needs its own <tr> tag to hold the cells inside it.",
+    "code": "<table border=\"1\">\n  <tr>\n    <td>Row One</td>\n  </tr>\n  <tr>\n    <td>Row Two</td>\n  </tr>\n</table>",
+    "output": "Displays a table with two horizontal rows stacked on top of each other."
+   },
+   {
+    "h": "Adding Data Cells with <td>",
+    "text": "Inside each horizontal row, we divide the space into vertical cells using the <td> tag, which stands for Table Data. These cells contain the actual words and numbers we want to show the reader.",
+    "code": "<table border=\"1\">\n  <tr>\n    <td>Student Name</td>\n    <td>Score</td>\n  </tr>\n</table>",
+    "output": "Displays a single row with two columns for student name and score."
+   },
+   {
+    "h": "Highlighting Headings with <th>",
+    "text": "To know what each column means, we use the <th> tag instead of <td> in the first row. The <th> tag stands for Table Header, and it automatically makes text bold and centered to distinguish headers from normal data.",
+    "code": "<table border=\"1\">\n  <tr>\n    <th>Story Title</th>\n    <th>Page Count</th>\n  </tr>\n  <tr>\n    <td>Sleeping Princess</td>\n    <td>50</td>\n  </tr>\n</table>",
+    "output": "Displays a table with bold prominent header names at the top and a data row below."
+   },
+   {
+    "h": "Adding Borders with Simple Properties",
+    "text": "In the past, we added a border attribute directly to the table tag to see dividing lines clearly. Today we use styling techniques, but understanding basic borders helps us see cells distinctly separated.",
+    "code": "<table border=\"2\" style=\"border-collapse: collapse;\">\n  <tr>\n    <th style=\"border: 1px solid black;\">Sport</th>\n    <th style=\"border: 1px solid black;\">Day</th>\n  </tr>\n  <tr>\n    <td style=\"border: 1px solid black;\">Football</td>\n    <td style=\"border: 1px solid black;\">Sunday</td>\n  </tr>\n</table>",
+    "output": "Displays an organized table surrounded by clear lines separating cells precisely."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<table>",
+    "desc": "Defines the main data table container in HTML."
+   },
+   {
+    "name": "<tr>",
+    "desc": "Creates a new horizontal row inside the table."
+   },
+   {
+    "name": "<td>",
+    "desc": "Creates a normal data cell inside the row."
+   },
+   {
+    "name": "<th>",
+    "desc": "Creates a prominent header cell in the table."
+   },
+   {
+    "name": "border",
+    "desc": "An old attribute to set table border line thickness."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the HTML tag to create a normal data cell containing the word 'Math'.",
+    "a": "<td>Math</td>"
+   },
+   {
+    "q": "How do you write a table row <tr> containing a header cell <th> with 'Day' inside?",
+    "a": "<tr><th>Day</th></tr>"
+   },
+   {
+    "q": "What tag wraps all table rows and columns from start to finish?",
+    "a": "<table> and </table>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: Structuring content with HTML",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+  },
+  {
+   "title": "MDN: Test your skills: Structuring content with HTML",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills"
+  }
+ ],
+ "grounded": true
+}

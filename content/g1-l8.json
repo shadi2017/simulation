@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك بتهمس لصحابك في الفصل عشان يبدأوا يعملوا حركة معينة، ده بالضبط فكرة إرسال الرسائل في سكراتش جونيور، لأن الشخصيات بتقدر تكلم بعضها.",
+   "عشان شخصية تبعث رسالة، بنستخدم بلوك envelope (الظرف الملون)، زي ما بنحط جواب في ظرف أحمر ونبعته لصاحبنا.",
+   "إزاي بتشتغل؟ الشخصية الأولى بتضغط على بلوك إرسال الرسالة، فالظرف بيطير ويقول لكل الشخصيات الثانية: 'يلا ابدأوا الدور!'",
+   "مثال تاني، القطة ممكن تبعث ظرف أصفر، والفيل يشوف الظرف الأصفر فيجري وراها بسرعة، كده عملنا تواصل ذكي وحلو جداً بين الشخصيتين.",
+   "قاعدة ذهبية: لون الظرف هو السر! لازم الظرف اللي بتبعت بيه الشخصية الأولى يكون نفس لون الظرف اللي بتستقبل بيه الشخصية الثانية.",
+   "في الحياة الواقعية، دي عاملة زي إشارات المرور أو جرس المدرسة اللي بيخلي كل التلاميذ يتحركوا في نفس اللحظة من غير ما نتكلم بصوت عالي."
+  ],
+  "example": "تعالوا نتخيل أن بستاني بيزرع وردة. القطة بتقف في الأول وبتدوس على العلم الأخضر، فبتبعث ظرف أصفر مكتوب عليه رسالة للببغاء. الببغاء بيستنى يشوف الظرف الأصفر، وأول ما يشوفه، بيطير لفوق ويقول 'مرحباً!'. كده استخدمنا الإرسال والاطلاع عشان نخلي الببغاء يبدأ كلامه بعد القطة بالضبط، وده بيدي قصة شكلها مرتب وجميل.",
+  "mistake": "أكبر غلطة بيقع فيها الأبطال الصغار إنهم يبعثوا ظرف أحمر بس الشخصية الثانية تستنى ظرف أزرق، فالشخصية الثانية مش هتتحرك خالص عشان الألوان مش شبه بعض. الحل إننا نتأكد إن لون الظرف في الإرسال هو هو في الاستقبال.",
+  "recap": "تعلمنا إزاي نخلي الشخصيات تكلم بعضها باستخدام الأظرف الملونة، وإزاي الشخصية التانية تبدأ تتحرك أول ما تستلم الرسالة. بكده قصصنا بقت تفاعلية وممتعة جداً!",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بنستخدمه عشان نبعث رسالة للشخصيات التانية؟",
+    "o": [
+     "بلوك العلم الأخضر",
+     "بلوك ظرف الرسالة",
+     "بلوك المشي للأمام"
+    ],
+    "a": 1,
+    "why": "عشان بنستخدم بلوك الظرف (Message Envelope) لإرسال الرسائل."
+   },
+   {
+    "t": "لو الشخصية الأولى بعثت ظرف أخضر، الشخصية التانية المفروض تستنى إيه عشان ترد؟",
+    "o": [
+     "ظرف أخضر زيه",
+     "موزة",
+     "صوت زغروطة"
+    ],
+    "a": 0,
+    "why": "لازم لون الظرف في الاستقبال يكون نفس لون الظرف في الإرسال."
+   },
+   {
+    "t": "ليه بنستخدم نظام الرسائل بين الشخصيات في القصة؟",
+    "o": [
+     "عشان نلون الشاشة فقط",
+     "عشان نخلي الشخصيات تتفاعل مع بعض في الوقت المناسب",
+     "عشان نمسح الشخصيات"
+    ],
+    "a": 1,
+    "why": "الرسائل بتخلي الشخصيات تنسق الحركات وتبدأ ترد في الوقت الصح."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إرسال الرسائل السحرية",
+   "goal": "أكمل الجمل التالية لتتعلم كيف ترسل الشخصيات الرسائل وتستقبلها.",
+   "items": [
+    {
+     "text": "عشان نبعث رسالة لشخصية تانية بنستخدم بلوك ___ الملون.",
+     "options": [
+      "الظرف",
+      "المطرقة",
+      "الدائرة"
+     ],
+     "a": 0
+    },
+    {
+     "text": "الشخصية التي تنتظر الرسالة تبدأ حركتها عند ___ الرسالة.",
+     "options": [
+      "استلام",
+      "أكل",
+      "إطفاء"
+     ],
+     "a": 0
+    },
+    {
+     "text": "يجب أن يكون لون ظرف الإرسال ___ لون ظرف الاستقبال.",
+     "options": [
+      "مطابقاً لـ",
+      "مخالفاً لـ",
+      "أكبر من"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "يا سلام! الشخصيات بقت تتكلم وتفهم بعضها بالرسائل السرية بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "فكرة التواصل بين الشخصيات",
+    "text": "في البرمجة، أحياناً بنحتاج شخصية تكلم شخصية تانية عشان تبدأ تعمل حاجة. زي ما صاحبك بيلوح لك بإيده عشان تجري معاه، الشخصيات في سكراتش جونيور بتبعت لبعض إشارات عشان ينفذوا الحركات مع بعض في نفس التوقيت.",
+    "code": "القطة: تلوح بيدها -> الفيل: يبدأ يجري",
+    "output": "الفيل يبدأ يتحرك فوراً بعد إشارة القطة."
+   },
+   {
+    "h": "ظروف الرسائل الملونة",
+    "text": "عشان نبعث رسالة، بنستخدم بلوك خاص اسمه بلوك الرسالة أو الظرف. الظرف ده جواه لون سحري (أحمر، أصفر، أزرق، إلخ). اللون ده هو كلمة السر اللي بتخلي الشخصيات تعرف مين بيكلم مين.",
+    "code": "شخصية 1: [إرسال ظرف أصفر]",
+    "output": "ظرف أصفر يطير في الشاشة لكل الشخصيات."
+   },
+   {
+    "h": "استقبال الرسائل وبدء الرد",
+    "text": "الشخصية المستقبلة بيكون عندها بلوك تاني اسمه (الاستلام). أول ما الشخصية دي تشوف الظرف اللي بنفس لونها بيوصل، بتفهم فوراً إن ده دورها، فتبدأ تنفذ الحركات المكتوبة ورا البلوك ده.",
+    "code": "شخصية 2: [عند استلام ظرف أصفر] -> تقفز لأعلى",
+    "output": "الشخصية تقفز حالاً بمجرد وصول الظرف الأصفر."
+   },
+   {
+    "h": "تنسيق الحوار بين بطلين",
+    "text": "تخيل مسرحية مدرسية، الممثل الأول بيخلص كلامه ويديك إشارة عشان تدخل وتقول جملتك. ده بالضبط اللي بنعمله بالرسائل؛ بنخلي القطة تقول 'مرحباً' وبعدين تبعث ظرف عشان الكلب يرد بـ 'أهلاً بك'.",
+    "code": "القطة: تقول مرحباً -> تبعث ظرف أخضر",
+    "output": "الكلب يستلم الظرف ويقول أهلاً بك في الوقت المناسب."
+   },
+   {
+    "h": "تجنب اختلاط الرسائل بالألوان",
+    "text": "لو عندك كذا شخصية في القصة، كل حكاية لازم يكون ليها لون ظرف لوحدها. يعني لو البطة بتبعت رسالة والدب بيبعت رسالة، استخدم ظرف أحمر للبطة وظرف أزرق للدب عشان ما يتلخبطوش.",
+    "code": "البطة: ظرف أحمر | الدب: ظرف أزرق",
+    "output": "كل شخصية ترد على صاحبها الصح من غير لخبطة."
+   },
+   {
+    "h": "أهمية التوقيت في القصص التفاعلية",
+    "text": "بدل ما نخمن الشخصية هتمشي بعد كام ثانية، الرسائل بتخلي الأحداث دقيقة جداً. الشخصية بتستنى الرسالة مهما طال الوقت، وأول ما تيجي، بتتحرك في الألف جزء من الثانية من غير تأخير.",
+    "code": "انتظار الظرف -> تنفيذ الحركة فوراً",
+    "output": "استجابة سريعة ودقيقة بدون أخطاء في التوقيت."
+   },
+   {
+    "h": "قاعدة ذهبية لنجاح الرسائل",
+    "text": "القاعدة البسيطة بتقول: لكل مرسل ظرف، ولكل مستقبل ظرف زيه بالضبط في اللون! لو لخبطت الألوان، الشخصية مش هتسمع النداء وفضل واقفة مكانها.",
+    "code": "إرسال (أصفر) = استقبال (أصفر)",
+    "output": "نجاح تام وتواصل شغّال بين الشخصيتين."
+   },
+   {
+    "h": "تطبيق عملي في قصتك الكرتونية",
+    "text": "جرب تعمل قصة مغامرة: البطل يلاقي كنز، فيبعث ظرف لامع لكل أصحابه، فكلهم يرقصوا فرحةً بالكنز! بكده عملت إخراج سينمائي هايل لشاشتك الصغيرة.",
+    "code": "البطل: يجد الكنز -> يبعث ظرف -> الأصحاب: يرقصون",
+    "output": "مشهد احتفالي جماعي رائع في سكراتش جونيور."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Message Envelope",
+    "desc": "بلوك إرسال رسالة بريدية ملونة بين الشخصيات."
+   },
+   {
+    "name": "Receive Message",
+    "desc": "بلوك بداية الحركة عند وصول لون ظرف معين."
+   },
+   {
+    "name": "Color Coding",
+    "desc": "استخدام الألوان لتمييز الرسائل المختلفة وتوجيهها."
+   },
+   {
+    "name": "Trigger",
+    "desc": "الحدث الذي يبدأ تشغيل الكود، مثل استلام رسالة."
+   },
+   {
+    "name": "Sprite Communication",
+    "desc": "تبادل الإشارات والأوامر بين شخصيات الشاشة."
+   },
+   {
+    "name": "Response Routine",
+    "desc": "مجموعة الأوامر التي تنفذها الشخصية فور استلامها للرد."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ارسم في خيالك بلوك إرسال ظرف أحمر، ما هو اللون الذي يجب أن تضعه الشخصية الأخرى في بلوك الاستقبال؟",
+    "a": "لون أحمر مطابق تماماً."
+   },
+   {
+    "q": "إذا أرادت قطة أن تجعل كلباً ينبح عند إرسال إشارة، فما هو البلوك الأول الذي تضعه القطة؟",
+    "a": "بلوك إرسال الرسالة (الظرف الملون)."
+   },
+   {
+    "q": "لماذا نستخدم ألوان مختلفة للأظرف إذا كان لدينا عدة شخصيات تتحدث معاً؟",
+    "a": "لكي لا تختلط الرسائل ولا تستجيب الشخصية الخطأ للإشارة غير المقصودة لها."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine whispering to your classmates so they know when to start a game; that is exactly how messaging works in ScratchJr, allowing characters to talk to each other.",
+   "To make a character send a message, we use the envelope block, just like putting a letter in a colored envelope and handing it to a friend.",
+   "How does it work? The first character triggers an envelope send block, and the flying envelope tells all other characters: 'Hey, time to start your turn!'",
+   "Another example: a cat can send a yellow envelope, and an elephant sees that yellow envelope and runs towards it, creating smart and cute teamwork between them.",
+   "Golden rule: Envelope color is the secret! The envelope sent by the first character must match the color of the envelope received by the second character.",
+   "In real life, this is just like a traffic light or a school bell that tells everyone to move at the exact same moment without shouting."
+  ],
+  "example": "Let's imagine a gardener growing a flower. The cat stands at the start, clicks the green flag, and sends a yellow message envelope to the parrot. The parrot waits for the yellow envelope, and as soon as it sees it, flies up and says 'Hello!'. This way, we use sending and receiving to make the parrot speak right after the cat, making our story look neat and orderly.",
+  "mistake": "The biggest mistake young coders make is sending a red envelope while the second character waits for a blue one, so the second character won't move at all because the colors don't match. The solution is to ensure the envelope color in the send block matches the receive block.",
+  "recap": "We learned how to make characters talk to each other using colored envelopes, and how the second character starts moving as soon as it receives the message. This makes our stories interactive and super fun!",
+  "q": [
+   {
+    "t": "Which block do we use to send a message to other characters?",
+    "o": [
+     "Green flag block",
+     "Message envelope block",
+     "Walk forward block"
+    ],
+    "a": 1,
+    "why": "We use the message envelope block to send signals between sprites."
+   },
+   {
+    "t": "If the first character sends a green envelope, what should the second character wait for to reply?",
+    "o": [
+     "A matching green envelope",
+     "A banana",
+     "A loud sound"
+    ],
+    "a": 0,
+    "why": "The receiving envelope color must match the sending envelope color."
+   },
+   {
+    "t": "Why do we use a messaging system between characters in a story?",
+    "o": [
+     "To only color the screen background",
+     "To make characters interact at the right time",
+     "To delete sprites"
+    ],
+    "a": 1,
+    "why": "Messages help characters coordinate their movements and respond at the right moment."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Sending Magic Messages",
+   "goal": "Complete the following sentences to learn how sprites send and receive messages.",
+   "items": [
+    {
+     "text": "To send a message to another sprite, we use the colored ___ block.",
+     "options": [
+      "envelope",
+      "hammer",
+      "circle"
+     ],
+     "a": 0
+    },
+    {
+     "text": "The character waiting for the message starts its action upon ___ the message.",
+     "options": [
+      "receiving",
+      "eating",
+      "turning off"
+     ],
+     "a": 0
+    },
+    {
+     "text": "The color of the sending envelope must be ___ the receiving envelope.",
+     "options": [
+      "identical to",
+      "different from",
+      "bigger than"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Yay! The sprites are successfully talking and understanding each other using secret messages!"
+  },
+  "sections": [
+   {
+    "h": "The Idea of Sprite Communication",
+    "text": "In coding, sometimes we need one character to talk to another so they can start an action. Just like a friend waving at you to run together, characters in ScratchJr send signals to each other to perform movements at the exact same time.",
+    "code": "Cat: Waves hand -> Elephant: Starts running",
+    "output": "The elephant starts moving right after the cat's signal."
+   },
+   {
+    "h": "Colored Message Envelopes",
+    "text": "To send a message, we use a special block called the message envelope block. This envelope holds a magical color (red, yellow, blue, etc.). This color is the secret password that lets characters know who is calling whom.",
+    "code": "Character 1: [Send yellow envelope]",
+    "output": "A yellow envelope flies across the screen to all characters."
+   },
+   {
+    "h": "Receiving Messages and Triggering Responses",
+    "text": "The receiving character has another block called (Receive). As soon as this character sees the envelope with its matching color arrive, it immediately understands it's its turn and executes the actions placed under that block.",
+    "code": "Character 2: [When receiving yellow envelope] -> Jump up",
+    "output": "The character jumps immediately upon the arrival of the yellow envelope."
+   },
+   {
+    "h": "Coordinating Dialogue Between Two Heroes",
+    "text": "Imagine a school play where the first actor finishes their line and gives you a cue to step in and say yours. This is exactly what we do with messages; we make the cat say 'Hello' and then send an envelope so the dog replies with 'Welcome'.",
+    "code": "Cat: Say hello -> Send green envelope",
+    "output": "The dog receives the envelope and says welcome at the right time."
+   },
+   {
+    "h": "Avoiding Message Confusion with Colors",
+    "text": "If you have multiple characters in a story, each interaction needs its own envelope color. For instance, if the duck sends a message and the bear sends a message, use a red envelope for the duck and a blue one for the bear so they don't get mixed up.",
+    "code": "Duck: Red envelope | Bear: Blue envelope",
+    "output": "Each character responds to the right peer without confusion."
+   },
+   {
+    "h": "The Importance of Timing in Interactive Stories",
+    "text": "Instead of guessing how many seconds a character should wait, messages make events extremely precise. The character waits for the message no matter how long it takes, and as soon as it arrives, it moves instantly without delay.",
+    "code": "Wait for envelope -> Execute action instantly",
+    "output": "Fast and precise response without timing errors."
+   },
+   {
+    "h": "Golden Rule for Successful Messaging",
+    "text": "The simple rule states: Every sender has an envelope, and every receiver has an identical envelope in color! If you mix up the colors, the character won't hear the call and will stay in place.",
+    "code": "Send (yellow) = Receive (yellow)",
+    "output": "Total success and working communication between both characters."
+   },
+   {
+    "h": "Practical Application in Your Cartoon Story",
+    "text": "Try making an adventure story: The hero finds a treasure, then sends a shiny envelope to all their friends, and they all dance with joy for the treasure! This is how you make great cinematic direction for your small screen.",
+    "code": "Hero: Finds treasure -> Send envelope -> Friends: Dance",
+    "output": "A wonderful group celebration scene in ScratchJr."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Message Envelope",
+    "desc": "A block used to send a colored postal message between characters."
+   },
+   {
+    "name": "Receive Message",
+    "desc": "A block that starts an action when a specific envelope color arrives."
+   },
+   {
+    "name": "Color Coding",
+    "desc": "Using colors to differentiate and route different messages."
+   },
+   {
+    "name": "Trigger",
+    "desc": "The event that starts code execution, such as receiving a message."
+   },
+   {
+    "name": "Sprite Communication",
+    "desc": "Exchanging signals and commands between screen characters."
+   },
+   {
+    "name": "Response Routine",
+    "desc": "The set of commands a character runs immediately upon receiving a reply."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Imagine a block sending a red envelope; what color must the other character put in its receive block?",
+    "a": "An exact matching red color."
+   },
+   {
+    "q": "If a cat wants to make a dog bark when a signal is sent, what is the first block the cat should place?",
+    "a": "The message send block (colored envelope)."
+   },
+   {
+    "q": "Why do we use different envelope colors if we have several characters talking together?",
+    "a": "So messages don't get mixed up and the wrong character doesn't respond to an unintended signal."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تملك سحرًا رقميًا يقرر نيابة عنك في ألعاب الفيديو. في لغة جافاسكريبت، دالة Math.random() تفعل ذلك تمامًا عبر توليد أرقام عشرية كسرية تبدأ من صفر وتصل إلى ما قبل الواحد صحيح بقليل.",
+   "إليك أول مثال عملي: اكتب في وحدة التحكم Math.random() وسترى نتيجة تشبه 0.7412 أو 0.0538 في كل مرة تضغط فيها على زر التحديث لتبدو الأرقام متغيرة ومفاجئة.",
+   "تعمل هذه الدالة بطريقة رياضية خلف الكواليس لتوزع الأرقام العشرية بشكل متساوٍ، لكنها لا تصل أبدًا إلى الرقم واحد صحيح تمامًا، مما يجعلها مثالية لبناء ألعاب الاحتمالات والاختيارات.",
+   "لكي نتحكم في المدى، نقوم بضرب ناتج Math.random() في عدد أكبر مثل 5، ليصبح لدينا أرقام عشرية تتراوح بين الصفر وخمسة، لكننا ما زلنا نحتاج إلى التخلص من الكسور.",
+   "القاعدة الذهبية هنا هي دمج Math.random() مع دالة Math.floor() التي تقوم بتقريب الأرقام للأفل، فنحصل على أرقام صحيحة بحتة ومفيدة جدا لاختيار العناصر.",
+   "في الحياة اليومية، تشبه هذه الطريقة وضع خمس قطع حلوى مختلفة في صندوق مغلق وسحب واحدة عشوائيًا دون أن تعرف مسبقًا أي نكهة ستختارها."
+  ],
+  "example": "لنفترض أننا نريد اختيار لون عشوائي من قائمة تحتوي على ثلاثة ألوان: أحمر، وأخضر، وأزرق. نكتب الكود التالي:\n\nconst colors = [\"أحمر\", \"أخضر\", \"أزرق\"];\nconst randomIndex = Math.floor(Math.random() * colors.length);\nconsole.log(colors[randomIndex]);\n\nالسبب في هذا الحل أننا نضرب ناتج Math.random() في طول المصفوفة (وهو 3)، مما يعطينا رقماً عشرياً بين 0 و 2.99. ثم تأتي دالة Math.floor لتحذف الأجزاء العشرية، فيتحول الناتج إلى 0 أو 1 أو 2 בדיוק كأرقام الفهارس الخاصة بمصفوفة الألوان، ليطبع المتصفح لوناً عشوائياً صحيحاً ومضموناً.",
+  "mistake": "الخطأ الشائع هو استخدام Math.round() بدلاً من Math.floor()، وهذا يسبب توزيعاً غير عادل للاحتمالات لأن الأطراف تأخذ فرصة أقل. الحل هو الالتزام دائمًا بـ Math.floor() لضمان العدالة.",
+  "recap": "تساعدنا دالة Math.random في توليد أرقام عشرية عشوائية بين الصفر والواحد. وعند ضربها في طول قاعدة البيانات واستخدام Math.floor، يمكننا اختيار عناصر عشوائية بدقة متناهية.",
+  "q": [
+   {
+    "t": "ما هو أكبر رقم عشري محتمل أن تعيده دالة Math.random() تقريبًا؟",
+    "o": [
+     "أقل من 1 تمامًا",
+     "يساوي 1 بالضبط",
+     "يساوي 10"
+    ],
+    "a": 0,
+    "why": "تعود دالة Math.random دائما برقم أكبر من أو يساوي الصفر وأقل من الواحد تمامًا."
+   },
+   {
+    "t": "ما هي وظيفة دالة Math.floor() عند دمجها مع الأرقام العشوائية؟",
+    "o": [
+     "تقريب الرقم لأعلى إلى أكبر عدد صحيح",
+     "تقريب الرقم لأسفل وحذف الكسور للحصول على رقم صحيح",
+     "مضاعفة الرقم العشوائي عشر مرات"
+    ],
+    "a": 1,
+    "why": "تقوم Math.floor بتقريب الأعداد العشرية لأسفل لتصبح أعدادًا صحيحة صالحة كفهارس للمصفوفات."
+   },
+   {
+    "t": "إذا كان لدينا مصفوفة فيها 4 عناصر، ما هو الرقم الأقصى الذي نريد ضرب Math.random فيه قبل التقريب؟",
+    "o": [
+     "نضرب في 3",
+     "نضرب في 4",
+     "نضرب في 5"
+    ],
+    "a": 1,
+    "why": "نضرب في طول المصفوفة (4) لكي يغطي المدى الفهارس من 0 إلى 3."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة مهارات العشوائية في جافاسكريبت",
+   "goal": "صل كل دالة أو عملية برمجية بدورها الصحيح في توليد العشوائية.",
+   "pairs": [
+    [
+     "Math.random()",
+     "توليد عدد عشري بين 0 وأقل من 1"
+    ],
+    [
+     "Math.floor()",
+     "تقريب الرقم العشري لأسفل إلى عدد صحيح"
+    ],
+    [
+     "colors.length",
+     "تحديد أقصى مدى بناءً على عدد عناصر المصفوفة"
+    ],
+    [
+     "randomIndex",
+     "تخزين الفهرس العشوائي لاختيار العنصر المناسب"
+    ]
+   ],
+   "success": "رائع! لقد نظمت مهارات العشوائية بنجاح، وأصبحت جاهزًا لبرمجة الألعاب والقرعة الرقمية!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم العشوائية في الحواسيب",
+    "text": "الحواسيب كائنات دقيقة ومنطقية لا تحب الفوضى، لذا فهي بحاجة إلى خوارزميات خاصة لتوليد ما يشبه العشوائية. تشبه العشوائية في الحواسيب صندوقًا سحريًا مغلقًا نسحب منه ألعابًا مفاجئة دون أن نعرف ما بداخلها مسبقًا.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Test</title></head>\n<body>\n  <p id=\"demo\"></p>\n  <script>\n    document.getElementById(\"demo\").innerText = Math.random();\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة رقماً عشرياً عشوائياً جديداً كلما تم تحديثها."
+   },
+   {
+    "h": "دالة Math.random الأساسية",
+    "text": "دالة Math.random() هي الأداة السحرية في جافاسكريبت. تعطيك دائماً رقماً عشرياً يبدأ من الصفر ولا يصل أبداً إلى الرقم واحد صحيح. إنها الأساس لبناء ألعاب الحظ والاختيارات التلقائية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3 id=\"res\"></h3>\n  <script>\n    let num = Math.random();\n    document.getElementById(\"res\").innerText = \"الرقم هو: \" + num;\n  </script>\n</body>\n</html>",
+    "output": "تطبع الصفحة نصاً يوضح رقمًا عشريًا عشوائيًا محصورًا بين الصفر والواحد."
+   },
+   {
+    "h": "تكبير المدى العددي",
+    "text": "بما أن ناتج Math.random محصور بين 0 و 0.99، فإننا نحتاج أحياناً إلى أرقام أكبر. عبر ضرب الناتج في أي عدد، مثل 10، فإننا نوسع المدى ليصبح بين الصفر وأقل بقليل من عشرة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"out\"></p>\n  <script>\n    let scaled = Math.random() * 10;\n    document.getElementById(\"out\").innerText = scaled;\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة رقماً عشرياً كبيراً يقع بين 0 وأقل من 10."
+   },
+   {
+    "h": "استخدام Math.floor للتقريب",
+    "text": "الأرقام العشرية الطويلة غير مفيدة عندما نريد اختيار عنصر برقم فهرس محدد في قاعدة بيانات. هنا يأتي دور دالة Math.floor التي تحذف الأجزاء العشرية وتحول الكسر إلى رقم صحيح صافٍ.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"floorRes\"></p>\n  <script>\n    let rounded = Math.floor(4.8);\n    document.getElementById(\"floorRes\").innerText = rounded;\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة الرقم الصحيح 4 بعد حذف الكسور."
+   },
+   {
+    "h": "اختيار عنصر عشوائي من مصفوفة",
+    "text": "لكي نختار عنصراً واحداً من قائمة قاعدة بيانات (مصفوفة)، نضرب ناتج Math.random في طول المصفوفة (length) ثم نمرره عبر Math.floor للحصول على فهرس سليم وصحيح تمامًا.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"item\"></p>\n  <script>\n    const fruits = [\"تفاح\", \"موز\", \"مانجو\"];\n    let idx = Math.floor(Math.random() * fruits.length);\n    document.getElementById(\"item\").innerText = fruits[idx];\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة إحدى الفواكه الثلاث بشكل عشوائي عند كل تحديث."
+   },
+   {
+    "h": "تطبيق عملية القرعة اللونية",
+    "text": "تخيل أنك تصمم موقعاً يغير لون الخلفية تلقائياً كلما ضغط الزر المستخدم. نضع مجموعة ألوان في مصفوفة ونستخدم خوارزميتنا العشوائية لاختيار لون مختلف ومفاجئ للمستخدم.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <button onclick=\"pickColor()\">اضغط للون عشوائي</button>\n  <script>\n    function pickColor() {\n      const cols = [\"red\", \"blue\", \"green\", \"orange\"];\n      let i = Math.floor(Math.random() * cols.length);\n      document.body.style.backgroundColor = cols[i];\n    }\n  </script>\n</body>\n</html>",
+    "output": "يتغير لون خلفية الصفحة عشوائياً كلما نقر المستخدم على الزر."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Math.random()",
+    "desc": "توليد رقم عشري عشوائي بين 0 (شامل) و 1 (غير شامل)."
+   },
+   {
+    "name": "Math.floor()",
+    "desc": "تقريب الرقم العشري للأفل وتحويله إلى عدد صحيح."
+   },
+   {
+    "name": "array.length",
+    "desc": "خاصية تعطينا عدد العناصر الموجودة داخل المصفوفة."
+   },
+   {
+    "name": "Math.ceil()",
+    "desc": "تقريب الرقم العشري لأعلى إلى أقرب عدد صحيح."
+   },
+   {
+    "name": "Math.round()",
+    "desc": "تقريب الرقم العشري لأقرب عدد صحيح بناءً على قيمته."
+   },
+   {
+    "name": "Random Index",
+    "desc": "فهرس عشوائي صحيح يستعمل لجلب عنصر من قاعدة بيانات."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعبير جافاسكريبت لتوليد رقم عشوائي صحيح بين 0 و 4 باستخدام مصفوفة طولها 5.",
+    "a": "Math.floor(Math.random() * 5)"
+   },
+   {
+    "q": "ما هي الدالة المسؤولة عن تقريب الأعداد العشرية لأسفل في لغة جافاسكريبت؟",
+    "a": "Math.floor()"
+   },
+   {
+    "q": "كيف نحصل على طول مصفوفة اسمها items؟",
+    "a": "items.length"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have digital magic that helps video games make surprise choices. In JavaScript, the Math.random() function does exactly this by generating fractional decimal numbers starting from zero up to, but not including, one.",
+   "Here is your first hands-on test: type Math.random() in your console and you will see a result like 0.7412 or 0.0538 every time you press refresh, making numbers change and feel surprising.",
+   "This function works behind the scenes using math algorithms to distribute decimals evenly, though it never quite reaches the exact number one, making it ideal for probability games and choices.",
+   "To control the range, we multiply the Math.random result by a larger number like 5, giving us decimals spanning from zero to five, though we still need to get rid of the extra fractions.",
+   "The golden rule here is combining Math.random() with the Math.floor() function, which rounds numbers down, leaving us with pure whole integers very useful for picking items.",
+   "In real life, this is just like placing five different candies inside a closed box and drawing one at random without knowing beforehand which flavor you will pick."
+  ],
+  "example": "Suppose we want to pick a random color from a list containing three items: red, green, and blue. We write the following code:\n\nconst colors = [\"red\", \"green\", \"blue\"];\nconst randomIndex = Math.floor(Math.random() * colors.length);\nconsole.log(colors[randomIndex]);\n\nThe reason this works is that we multiply Math.random() by the array length (which is 3), yielding a decimal between 0 and 2.99. Then Math.floor strips away the decimal parts, converting the value into 0, 1, or 2 exactly matching our color array indices, so the browser prints a guaranteed valid random color.",
+  "mistake": "A common mistake is using Math.round() instead of Math.floor(), which causes an unfair distribution because the boundary values get fewer chances. The fix is always sticking to Math.floor() for absolute fairness.",
+  "recap": "The Math.random function helps us generate random decimals between zero and one. When multiplied by a database length and paired with Math.floor, we can select random items with supreme precision.",
+  "q": [
+   {
+    "t": "What is the highest possible decimal number Math.random() can roughly return?",
+    "o": [
+     "Just under 1",
+     "Exactly 1",
+     "Equal to 10"
+    ],
+    "a": 0,
+    "why": "Math.random always returns a number greater than or equal to 0 and strictly less than 1."
+   },
+   {
+    "t": "What is the job of Math.floor() when paired with random numbers?",
+    "o": [
+     "Round the number up to the next integer",
+     "Round down and drop fractions to get a clean whole number",
+     "Multiply the random number tenfold"
+    ],
+    "a": 1,
+    "why": "Math.floor rounds decimal numbers downward into whole integers valid for array indexing."
+   },
+   {
+    "t": "If an array has 4 items, what is the maximum number we want to multiply Math.random by before rounding?",
+    "o": [
+     "Multiply by 3",
+     "Multiply by 4",
+     "Multiply by 5"
+    ],
+    "a": 1,
+    "why": "We multiply by the array length (4) so the range covers index positions 0 through 3."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "JavaScript Randomness Skills Matching Game",
+   "goal": "Match each function or code snippet to its correct role in generating randomness.",
+   "pairs": [
+    [
+     "Math.random()",
+     "Generates a decimal number between 0 and under 1"
+    ],
+    [
+     "Math.floor()",
+     "Rounds the decimal number downward to a whole integer"
+    ],
+    [
+     "colors.length",
+     "Determines maximum range based on array item count"
+    ],
+    [
+     "randomIndex",
+     "Stores the random index to pick the right item"
+    ]
+   ],
+   "success": "Awesome! You sorted your randomness skills successfully and are ready to build games and digital draws!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Computer Randomness",
+    "text": "Computers are precise, logical creatures that dislike chaos, so they need special algorithms to generate pseudo-randomness. Randomness in coding is like a closed magic box from which we draw surprise toys without knowing beforehand what is inside.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Test</title></head>\n<body>\n  <p id=\"demo\"></p>\n  <script>\n    document.getElementById(\"demo\").innerText = Math.random();\n  </script>\n</body>\n</html>",
+    "output": "The page displays a new random decimal number every time it is refreshed."
+   },
+   {
+    "h": "The Basic Math.random() Function",
+    "text": "The Math.random() function is your magic tool in JavaScript. It always gives you a decimal number starting from zero and never quite reaching the number one. It is the core foundation for building chance games and automated selections.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3 id=\"res\"></h3>\n  <script>\n    let num = Math.random();\n    document.getElementById(\"res\").innerText = \"Number is: \" + num;\n  </script>\n</body>\n</html>",
+    "output": "The page prints text showing a random decimal between zero and one."
+   },
+   {
+    "h": "Scaling Up the Number Range",
+    "text": "Since Math.random results range between 0 and 0.99, we sometimes need larger numbers. By multiplying the output by any number, like 10, we expand the range so it spans between zero and slightly under ten.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"out\"></p>\n  <script>\n    let scaled = Math.random() * 10;\n    document.getElementById(\"out\").innerText = scaled;\n  </script>\n</body>\n</html>",
+    "output": "The page displays a larger decimal number falling between 0 and under 10."
+   },
+   {
+    "h": "Using Math.floor for Rounding",
+    "text": "Long decimal numbers are useless when we want to select an element using a specific database index number. This is where Math.floor comes in, stripping away decimal fractions and turning the fractional value into a clean integer.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"floorRes\"></p>\n  <script>\n    let rounded = Math.floor(4.8);\n    document.getElementById(\"floorRes\").innerText = rounded;\n  </script>\n</body>\n</html>",
+    "output": "The page displays the whole number 4 after removing fractions."
+   },
+   {
+    "h": "Picking a Random Item from an Array",
+    "text": "To select a single item from a database list (array), we multiply Math.random by the array length property and pass it through Math.floor to get a proper, valid index number.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"item\"></p>\n  <script>\n    const fruits = [\"Apple\", \"Banana\", \"Mango\"];\n    let idx = Math.floor(Math.random() * fruits.length);\n    document.getElementById(\"item\").innerText = fruits[idx];\n  </script>\n</body>\n</html>",
+    "output": "The page displays one of the three fruits randomly upon each refresh."
+   },
+   {
+    "h": "Applying a Color Lottery Feature",
+    "text": "Imagine building a website that changes its background color automatically whenever the user clicks a button. We place multiple colors inside an array and use our random algorithm to pick a different surprise color for the user.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <button onclick=\"pickColor()\">Click for Random Color</button>\n  <script>\n    function pickColor() {\n      const cols = [\"red\", \"blue\", \"green\", \"orange\"];\n      let i = Math.floor(Math.random() * cols.length);\n      document.body.style.backgroundColor = cols[i];\n    }\n  </script>\n</body>\n</html>",
+    "output": "The page background color changes randomly whenever the user clicks the button."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Math.random()",
+    "desc": "Generates a random decimal between 0 (inclusive) and 1 (exclusive)."
+   },
+   {
+    "name": "Math.floor()",
+    "desc": "Rounds a decimal number downward into an integer."
+   },
+   {
+    "name": "array.length",
+    "desc": "Property giving us the count of elements inside an array."
+   },
+   {
+    "name": "Math.ceil()",
+    "desc": "Rounds a decimal number upward to the nearest integer."
+   },
+   {
+    "name": "Math.round()",
+    "desc": "Rounds a decimal number to the nearest integer based on value."
+   },
+   {
+    "name": "Random Index",
+    "desc": "A valid random integer index used to fetch a database item."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a JavaScript expression to generate a random integer between 0 and 4 using an array of length 5.",
+    "a": "Math.floor(Math.random() * 5)"
+   },
+   {
+    "q": "What function is responsible for rounding decimal numbers downward in JavaScript?",
+    "a": "Math.floor()"
+   },
+   {
+    "q": "How do we get the length of an array named items?",
+    "a": "items.length"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Math.random()",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"
+  },
+  {
+   "title": "MDN: Crypto: getRandomValues() method",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"
+  }
+ ],
+ "grounded": true
+}

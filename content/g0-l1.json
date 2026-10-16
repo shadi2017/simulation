@@ -1,0 +1,339 @@
+{
+ "ar": {
+  "steps": [
+   "الخريطة عبارة عن شبكة مربعات خطية جميلة تشبه كراسة الرسم المربعة التي نحبها. تتكون من صفوف وأعمدة متقاطعة تحدد لنا مكان كل شيء بدقة مذهلة.",
+   "تخيل أنك تريد تحريك بطريقك الصغير المفضل خطوة واحدة للأعلى. نكتب بكل بساطة: 'للأعلى' لننتقل للمربع المجاور مباشرة.",
+   "تعمل الاتجاهات مثل بوصلة الساحر: 'أعلى' و'أسفل' يحركاننا بين الصفوف، بينما 'يسار' و'يمين' يحركاننا بين الأعمدة المجاورة بخطوات منتظمة.",
+   "إذا أردنا الوصول إلى نجمة ذهبية تبعد خطوتين يمينًا وخطوة للأعلى، نكتب الترتيب التالي: 'يمين'، ثم 'يمين'، ثم 'أعلى' للوصول بنجاح.",
+   "القاعدة الذهبية هنا هي الدقة: الترتيب الصحيح للخطوات يمنع بطلنا من الاصطدام بالجدران ويضمن وصوله للهدف من أقصر طريق ممكن.",
+   "نستخدم هذا التفكير المنطقي تمامًا في حياتنا اليومية، مثل إرشاد صديقنا للوصول إلى لعبتنا المفضلة في الغرفة بخطوات واضحة ومحددة."
+  ],
+  "example": "لنفترض أن لدينا روبوت صغير يقف عند المربع (1,1) ويريد الوصول إلى الهدية عند (1,3). الخطوات بالترتيب هي: 'يمين' ثم 'يمين'. السبب في ذلك أن الروبوت يتحرك عموداً تلو الآخر حتى يصل إلى الهدف المطلوب دون أي أخطاء.",
+  "mistake": "الخطأ الشائع هو خلط اتجاه 'اليسار' مع 'اليمين' أو نسيان ترتيب الخطوات. التصحيح هو تخيل نفسك مكان الشخصية وتجربة الخطوة بيديك في الهواء قبل كتابتها.",
+  "recap": "الخريطة شبكة من الصفوف والأعمدة نتحرك فيها بخطوات مرتبة ودقيقة. الاتجاهات الأربعة هي أداتنا السحرية للوصول لأي هدف.",
+  "q": [
+   {
+    "t": "ما هو الاتجاه الذي يحرك الشخصية صفاً واحداً للأعلى؟",
+    "o": [
+     "يمين",
+     "أعلى",
+     "يسار"
+    ],
+    "a": 1,
+    "why": "اتجاه أعلى ينقلنا للمربع المجاور في الصف العلوي."
+   },
+   {
+    "t": "كيف نتحرك بين أعمدة الشبكة أفقياً؟",
+    "o": [
+     "يسار ويمين",
+     "أعلى وأسفل",
+     "أعلى فقط"
+    ],
+    "a": 0,
+    "why": "يسار ويمين هما الاتجاهان المخصصان للحركة الأفقية بين الأعمدة."
+   },
+   {
+    "t": "لماذا يجب ترتيب خطوات التنقل على الخريطة بعناية؟",
+    "o": [
+     "لجعل الرسم ملوناً",
+     "لتجنب الأخطاء والوصول للهدف",
+     "لنوم البطريق"
+    ],
+    "a": 1,
+    "why": "الترتيب الدقيق يضمن وصول الشخصية للهدف بسلام دون اصطدام."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة مطابقة الاتجاهات",
+   "goal": "صل كل حركة بوظيفتها الصحيحة على خريطة الشبكة",
+   "pairs": [
+    [
+     "أعلى",
+     "ينقلنا صفاً واحداً للأعلى"
+    ],
+    [
+     "أسفل",
+     "ينقلنا صفاً واحداً للأسفل"
+    ],
+    [
+     "يمين",
+     "ينقلنا عموداً واحداً لليمين"
+    ],
+    [
+     "يسار",
+     "ينقلنا عموداً واحداً لليسار"
+    ]
+   ],
+   "success": "رائع! لقد تحرك البطل بدقة ووصل إلى النجمة الذهبية بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم شبكة الخريطة",
+    "text": "الخريطة المدرسية أو خريطة اللعبة ليست مجرد رسمة عادية، بل هي شبكة منظمة تشبه كراسة الرسم المربعة. تتألف هذه الشبكة من خطوط أفقية تسمى صفوفاً وخطوط رأسية تسمى أعمدة. عندما يتقاطع صف مع عمود، يتكون لدينا مربع صغير يمكن لشخصيتنا الوقوف عليه والتحرك نحوه بكل ثقة وسهولة تامة.",
+    "code": "شبكة المربعات = صفوف وأعمدة متقاطعة",
+    "output": "يظهر أمامنا ملعب مربعات جاهز للمغامرة"
+   },
+   {
+    "h": "فهم الإحداثيات البسيطة",
+    "text": "كل مربع على الخريطة له عنوان سري أو مكان معروف يسمى الإحداثيات، تماماً مثل عنوان بيتك الجميل في الشارع. عندما نقول إن الصندوق السحري يوجد في المربع رقم 2، فهذا يعني أننا يجب أن نعد خطوتين لنجده. هذه الطريقة تساعدنا على عدم الضياع أبداً وتحديد مكان الأهداف بدقة متناهية.",
+    "code": "مكان الهدية = المربع (2, 3)",
+    "output": "نعرف العنوان الحقيقي للهدف المطلوب"
+   },
+   {
+    "h": "الاتجاهات الأربعة السحرية",
+    "text": "لكي تتحرك شخصيتنا على الخريطة، نحتاج إلى مفتاح حركة يسمى الاتجاهات. لدينا أربعة أبطال هنا: 'أعلى' و'أسفل' و'يسار' و'يمين'. هذه الاتجاهات تشبه إشارات المرور أو بوصلة المغامر، فهي تخبرنا بالضبط في أي مربع مجاور يجب أن نضع أقدامنا في الخطوة التالية.",
+    "code": "الحركة = [أعلى، أسفل، يسار، يمين]",
+    "output": "تمتلك الشخصية أدوات الحركة الأربع"
+   },
+   {
+    "h": "الحركة العمودية (أعلى وأسفل)",
+    "text": "تخيل أنك تصعد سلماً أو تنزل منه في بيتك. اتجاه 'أعلى' يحرك شخصيتك خطوة واحدة إلى المربع الذي يقع فوقه مباشرة، بينما اتجاه 'أسفل' يعيدها خطوة إلى المربع الذي تحته. نستخدم هذين الاتجاهين حصرياً عندما نريد تغيير الصف الذي نقف فيه على خريطة الشبكة.",
+    "code": "خطوة للأعلى + خطوة للأعلى",
+    "output": "تصعد الشخصية صفين للأعلى"
+   },
+   {
+    "h": "الحركة الأفقية (يسار وليمين)",
+    "text": "عندما تمشي في ممر غرفة الفصول الدراسية، أنت تتحرك يميناً أو يساراً. على خريطة الشبكة، اتجاه 'يمين' ينقلك إلى المربع المجاور في نفس الصف نحو جهة اليمين، واتجاه 'يسار' ينقلك نحو جهة اليسار. نستخدم هذين الاتجاهين عندما نريد تغيير العمود الذي نقف فيه بدقة.",
+    "code": "خطوة لليمين + خطوة لليمين",
+    "output": "تتحرك الشخصية عمودين لجهة اليمين"
+   },
+   {
+    "h": "تصميم المسارات على الورق",
+    "text": "قبل أن نجعل الروبوت يتحرك على الشاشة، يمكننا رسم مساره بقلم رصاص على ورقة مربعات مدرسية. نرسم نقطة البداية ونقطة النهاية (مثل النجمة)، ثم نخطط خطاً متصلاً يمر بالمربعات المجاورة فقط. هذا التخطيط الورقي يمنع الأخطاء ويجعلنا مهندسين ذكيين ومبدعين.",
+    "code": "البداية -> [يمين] -> [أعلى] -> النجمة",
+    "output": "رسمنا خريطة طريق واضحة على الورق"
+   },
+   {
+    "h": "أهمية الترتيب المتسلسل",
+    "text": "الترتيب هو سر النجاح في كل الألعاب البرمجية والرياضيات. إذا كانت خطواتك هي 'أعلى' ثم 'يمين'، فلن تصل أبداً لو نفذتها بالعكس 'يمين' ثم 'أعلى' إلى نفس المربع المقصود في بعض الأحيان! كتابة الخطوات بالترتيب الزمني الصحيح تضمن وصول الشخصية تماماً للهدف المنشود.",
+    "code": "الخطوة الأولى: يمين | الخطوة الثانية: أعلى",
+    "output": "تنفذ الأوامر بترتيبها الصحيح تماماً"
+   },
+   {
+    "h": "تطبيقات من حياتنا اليومية",
+    "text": "نحن نستخدم مهارات خريطة الشبكة كل يوم دون أن نشعر! عندما ترشد والدتك في المطبخ لتقول لها: 'امشي خطوتين للأمام ثم انعطف يميناً نحو الثلاجة'، أو عندما تلعب لعبة إيجاد الكنز مع أصدقائك في الحديقة، فأنت تطبق نفس قواعد التنقل والاتجاهات تماماً.",
+    "code": "إرشادات البيت = خطوتين أمام + انعطف يمين",
+    "output": "نصل إلى الثلاجة أو الكنز بكل سهولة"
+   }
+  ],
+  "reference": [
+   {
+    "name": "الشبكة (Grid)",
+    "desc": "مجموعة مربعات مرتبة في صفوف وأعمدة متقاطعة."
+   },
+   {
+    "name": "الصف (Row)",
+    "desc": "خط أفقي من المربعات على الخريطة."
+   },
+   {
+    "name": "العمود (Column)",
+    "desc": "خط رأسي من المربعات على الخريطة."
+   },
+   {
+    "name": "أعلى (Up)",
+    "desc": "اتجاه للحركة إلى الصف العلوي المجاور."
+   },
+   {
+    "name": "أسفل (Down)",
+    "desc": "اتجاه للحركة إلى الصف السفلي المجاور."
+   },
+   {
+    "name": "يمين (Right)",
+    "desc": "اتجاه للحركة إلى العمود المجاور جهة اليمين."
+   },
+   {
+    "name": "يسار (Left)",
+    "desc": "اتجاه للحركة إلى العمود المجاور جهة اليسار."
+   },
+   {
+    "name": "المسار (Path)",
+    "desc": "سلسلة متتابعة من الخطوات المحددة للوصول للهدف."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "إذا كان البطل عند المربع (1,1) ويريد التحرك مربعاً واحداً للأعلى، فما هو الاتجاه المطلوب؟",
+    "a": "أعلى"
+   },
+   {
+    "q": "ماذا نسمى الخطوط الأفقية المتقاطعة في شبكة الخريطة؟",
+    "a": "صفوف"
+   },
+   {
+    "q": "إذا تحركت خطوة لليمين ثم خطوة للأعلى، فما هو اسم الأداة التي استخدمناها لتحديد هذه الحركات؟",
+    "a": "الاتجاهات"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "A grid map is a lovely field of lined squares, just like your favorite math notebook. It consists of intersecting rows and columns that show us where everything is located with amazing accuracy.",
+   "Imagine you want to move your cute little penguin friend one step upward. We simply write: 'Up' to step directly into the neighboring square above.",
+   "Directions act like a wizard's compass: 'Up' and 'Down' move us between rows, while 'Left' and 'Right' move us between neighboring columns in orderly steps.",
+   "If we want to reach a golden star that is two steps to the right and one step up, we write the sequence: 'Right', then 'Right', then 'Up' to arrive successfully.",
+   "The golden rule here is precision: the correct order of steps prevents our hero from bumping into walls and ensures arriving at the goal via the shortest path.",
+   "We use this logical thinking in our daily lives, such as guiding our friend to find our favorite toy in the room using clear, specific steps."
+  ],
+  "example": "Suppose a small robot stands at square (1,1) and wants to reach the gift at (1,3). The steps in order are: 'Right' then 'Right'. The reason is that the robot moves column by column until it reaches the target without any errors.",
+  "mistake": "A common mistake is confusing 'Left' with 'Right' or forgetting the sequence order. The fix is to imagine yourself as the character and test the step with your hands in the air before writing it down.",
+  "recap": "A map is a grid of rows and columns where we move in ordered, precise steps. The four directions are our magic tool to reach any goal.",
+  "q": [
+   {
+    "t": "Which direction moves the character one row upward?",
+    "o": [
+     "Right",
+     "Up",
+     "Left"
+    ],
+    "a": 1,
+    "why": "The 'Up' direction moves us to the neighboring square in the upper row."
+   },
+   {
+    "t": "How do we move horizontally between the grid columns?",
+    "o": [
+     "Left and Right",
+     "Up and Down",
+     "Up only"
+    ],
+    "a": 0,
+    "why": "Left and Right are the directions dedicated to horizontal movement between columns."
+   },
+   {
+    "t": "Why must map navigation steps be ordered carefully?",
+    "o": [
+     "To make the drawing colorful",
+     "To avoid errors and reach the goal",
+     "To let the penguin sleep"
+    ],
+    "a": 1,
+    "why": "Precise ordering ensures the character safely reaches the goal without collisions."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Direction Matching Game",
+   "goal": "Match each movement with its correct function on the grid map",
+   "pairs": [
+    [
+     "Up",
+     "Moves us one row upward"
+    ],
+    [
+     "Down",
+     "Moves us one row downward"
+    ],
+    [
+     "Right",
+     "Moves us one column to the right"
+    ],
+    [
+     "Left",
+     "Moves us one column to the left"
+    ]
+   ],
+   "success": "Awesome! The hero moved precisely and reached the golden star successfully!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of a Grid Map",
+    "text": "A school map or game map is not just a random drawing; it is an organized grid that looks like quad-ruled notebook paper. This grid consists of horizontal lines called rows and vertical lines called columns. When a row intersects with a column, it creates a small square where our character can stand and move with complete confidence.",
+    "code": "Grid squares = Intersecting rows and columns",
+    "output": "A square playground ready for adventure appears"
+   },
+   {
+    "h": "Understanding Simple Coordinates",
+    "text": "Every square on the map has a secret address or known location called coordinates, just like your home address on a street. When we say the magic box is in square number 2, it means we count two steps to find it. This method helps us never get lost and locate targets with extreme precision.",
+    "code": "Gift location = Square (2, 3)",
+    "output": "We know the true address of the required target"
+   },
+   {
+    "h": "The Four Magic Directions",
+    "text": "To make our character move on the map, we need a movement key called directions. We have four heroes here: 'Up', 'Down', 'Left', and 'Right'. These directions are like traffic lights or an adventurer's compass, telling us exactly which neighboring square to step into next.",
+    "code": "Movement = [Up, Down, Left, Right]",
+    "output": "The character possesses all four movement tools"
+   },
+   {
+    "h": "Vertical Movement (Up and Down)",
+    "text": "Imagine climbing stairs or walking down them in your house. The 'Up' direction moves your character one step directly into the square above it, while 'Down' returns it one step to the square below. We use these two directions exclusively when we want to change our row on the grid map.",
+    "code": "Step Up + Step Up",
+    "output": "The character climbs two rows upward"
+   },
+   {
+    "h": "Horizontal Movement (Left and Right)",
+    "text": "When you walk down a classroom hallway, you move right or left. On the grid map, the 'Right' direction moves you to the neighboring square in the same row towards the right, and 'Left' moves you towards the left. We use these two directions when we want to change our column accurately.",
+    "code": "Step Right + Step Right",
+    "output": "The character moves two columns to the right"
+   },
+   {
+    "h": "Designing Pathways on Paper",
+    "text": "Before making the robot move on screen, we can sketch its path with a pencil on school grid paper. We draw the starting point and ending point (like a star), then plan a connected line passing only through neighboring squares. This paper planning prevents errors and makes us smart, creative engineers.",
+    "code": "Start -> [Right] -> [Up] -> Star",
+    "output": "We drew a clear roadmap on paper"
+   },
+   {
+    "h": "The Importance of Sequential Order",
+    "text": "Order is the secret to success in all programming games and mathematics. If your steps are 'Up' then 'Right', reversing them to 'Right' then 'Up' might not land you on the exact same intended square! Writing steps in the correct chronological order ensures the character arrives precisely at the desired goal.",
+    "code": "First step: Right | Second step: Up",
+    "output": "Commands execute in the exact correct order"
+   },
+   {
+    "h": "Real-Life Applications",
+    "text": "We use grid map skills every single day without realizing it! When you guide your mom in the kitchen saying, 'Walk two steps forward and turn right towards the fridge,' or when you play treasure hunt with friends in the park, you are applying these exact navigation and direction rules.",
+    "code": "Home guide = Two steps forward + turn right",
+    "output": "We reach the fridge or treasure easily"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Grid",
+    "desc": "A set of squares arranged in intersecting rows and columns."
+   },
+   {
+    "name": "Row",
+    "desc": "A horizontal line of squares on the map."
+   },
+   {
+    "name": "Column",
+    "desc": "A vertical line of squares on the map."
+   },
+   {
+    "name": "Up",
+    "desc": "Direction to move to the neighboring upper row."
+   },
+   {
+    "name": "Down",
+    "desc": "Direction to move to the neighboring lower row."
+   },
+   {
+    "name": "Right",
+    "desc": "Direction to move to the neighboring column on the right."
+   },
+   {
+    "name": "Left",
+    "desc": "Direction to move to the neighboring column on the left."
+   },
+   {
+    "name": "Path",
+    "desc": "A sequential series of specific steps to reach the goal."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If the hero is at square (1,1) and wants to move one square upward, what is the required direction?",
+    "a": "Up"
+   },
+   {
+    "q": "What do we call the horizontal intersecting lines on a grid map?",
+    "a": "Rows"
+   },
+   {
+    "q": "If you move one step right then one step up, what is the name of the tool we used to specify these movements?",
+    "a": "Directions"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,348 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن لديك صندوق ألوان سحري في غرفة نومك تستخدمه لتلوين كل رسوماتك. في لغة CSS، المتغيرات المخصصة تعمل بنفس الطريقة تماماً لحفظ القيم وتكرار استخدامها.",
+   "لإنشاء متغير، تبدأ دائماً بـ شرطتين متصلتين هكذا (--), ثم اسم المتغير الخاص بك متبوعاً بنقطتين وقيمة صالحة مثل --main-color: blue;",
+   "لكي تستخدم هذا المتغير داخل أي خصائص، فإنك تنادي عليه باستخدام دالة خاصة اسمها var() وتكتب بداخله اسم المتغير تماماً مثل var(--main-color);",
+   "من أفضل الممارسات البرمجية هي تعريف المتغيرات داخل المحدد الرئيسي :root لكي تكون متاحة وعامة لكل أجزاء صفحة الويب وتورث لجميع العناصر.",
+   "القاعدة الذهبية هنا هي أن أسماء المتغيرات حساسة لحالة الأحرف (Case-sensitive)، مما يعني أن --myColor تختلف تماماً عن --mycolor.",
+   "نستخدم هذه التقنية في الواقع العملي لتغيير ثيم الموقع بأكمله (كالوضع المظلم والوضع الفاتح) بتعديل سطر واحد فقط من الكود بكل سهولة."
+  ],
+  "example": "لنفترض أنك تريد توحيد لون خلفية أزرار موقعك. بدلاً من كتابة اللون الأزرق في كل زر على حدة، تقوم بتعريفه في :root هكذا: `:root { --btn-bg: #3498db; }` ثم تستخدمه داخل الأزرار: `.button { background-color: var(--btn-bg); }`. إذا قررت لاحقاً تغيير اللون إلى الأخضر، يكفي تعديل السطر الأول فقط!",
+  "mistake": "الخطأ الشائع هو نسيان كتابة الشرطتين -- في بداية اسم المتغير عند استخدامه داخل دالة var(). تذكر دائماً أن كتابة var(main-color) خاطئة، والصحيح هو var(--main-color).",
+  "recap": "المتغيرات المخصصة توفر لنا وسيلة ذكية لحفظ القيم وتكرارها في مكان واحد. استخدام دالة var() يربط عناصر الويب بهذه المتغيرات لتسهيل الصيانة والتعديل.",
+  "q": [
+   {
+    "t": "ما هي الرموز التي تبدأ بها أي متغير مخصص في CSS؟",
+    "o": [
+     "شرطة واحدة (-)",
+     "شرطتان (--)",
+     "علامة النمر (#)"
+    ],
+    "a": 1,
+    "why": "المتغيرات المخصصة تبدأ دائماً بشرطتين متصلتين (--)."
+   },
+   {
+    "t": "كيف نقوم باستدعاء أو استخدام متغير مخصص داخل خاصية CSS؟",
+    "o": [
+     "باستخدام دالة var()",
+     "باستخدام دالة get()",
+     "باستخدام دالة css()"
+    ],
+    "a": 0,
+    "why": "نستعمل دالة var() مع اسم المتغير لتطبيق قيمته."
+   },
+   {
+    "t": "أين يُفضل غالباً تعريف المتغيرات العامة لكي تُستخدم في كل الصفحة؟",
+    "o": [
+     "داخل وسم p",
+     "داخل محدد :root",
+     "داخل وسم br"
+    ],
+    "a": 1,
+    "why": "محدد :root هو المكان القياسي لتعريف المتغيرات العامة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف عناصر متغيرات CSS",
+   "goal": "صنف العبارات التالية إلى ما يخص 'تعريف المتغير' وما يخص 'استخدام المتغير'.",
+   "buckets": [
+    "تعريف المتغير",
+    "استخدام المتغير"
+   ],
+   "items": [
+    {
+     "t": "--primary-color: red;",
+     "b": 0
+    },
+    {
+     "t": "color: var(--primary-color);",
+     "b": 1
+    },
+    {
+     "t": "--box-size: 100px;",
+     "b": 0
+    },
+    {
+     "t": "width: var(--box-size);",
+     "b": 1
+    },
+    {
+     "t": ":root { --bg: white; }",
+     "b": 0
+    },
+    {
+     "t": "background: var(--bg);",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت مفاهيم متغيرات CSS بشكل صحيح تماماً وجعلت موقعك ينبض بالحياة."
+  },
+  "sections": [
+   {
+    "h": "ما هي متغيرات CSS؟",
+    "text": "فكر في المتغيرات على أنها علب هدايا نحفظ فيها ألواناً أو مقاسات نستخدمها كثيراً. بدلاً من حفظ الأرقام المعقدة، نعطيها اسماً جميلاً وسهل التذكر لنستعمله متى شئنا في مختلف أنحاء صفحة الإنترنت.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --main-color: purple; } h1 { color: var(--main-color); }</style></head><body><h1>مرحباً بكم في عالم المتغيرات!</h1></body></html>",
+    "output": "يظهر عنوان رئيسي بلون بنفسجي جميل."
+   },
+   {
+    "h": "طريقة كتابة اسم المتغير",
+    "text": "لكي يفهم المتصفح أن هذا متغير وليس خاصية عادية، يجب أن تبدأ اسم المتغير بشرطتين متصلتين (--). على سبيل المثال، نكتب --favorite-color أو --spacing لتخزين القيم بشكل آمن وسليم.",
+    "code": "<!DOCTYPE html><html><head><style>.box { --my-bg: orange; background-color: var(--my-bg); padding: 20px; }</style></head><body><div class=\"box\">صندوق برتقالي</div></body></html>",
+    "output": "يظهر صندوق بلون خلفية برتقالي."
+   },
+   {
+    "h": "استخدام دالة var()",
+    "text": "بعد أن قمت بتخزين القيمة داخل المتغير، تحتاج إلى طريقة لإحضارها واستخدامها. هنا يأتي دور دالة var() السحرية، حيث تضع اسم المتغير داخل قوسين هكذا var(--variable-name) لتطبقه على أي عنصر.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --main-font: Arial, sans-serif; } p { font-family: var(--main-font); }</style></head><body><p>هذا نص بخط موحد وجميل.</p></body></html>",
+    "output": "يظهر فقرة نصية بنوع خط محدد."
+   },
+   {
+    "h": "نطاق المتغيرات ومحدد :root",
+    "text": "عندما تضع المتغيرات داخل المحدد :root، فهذا يعني أنها أصبحت 'عامة' ومتاحة لجميع عناصر الصفحة. يشبه ذلك لوحة إعلانات في وسط المدرسة يمكن لكل الطلاب رؤيتها وقراءتها في نفس الوقت.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --global-bg: #e0f7fa; } body { background-color: var(--global-bg); }</style></head><body><p>خلفية الصفحة بأكملها متأثرة بمتغير الجذر.</p></body></html>",
+    "output": "تتلون خلفية الصفحة بأكملها بلون سماوي فاتح."
+   },
+   {
+    "h": "الحساسية لحالة الأحرف",
+    "text": "لغة CSS دقيقة جداً! المتغير المسمى --MyColor يختلف تماماً عن المتغير المسمى --mycolor. احرص دائماً على كتابة أحرف المتغير بنفس الطريقة تماماً لكي لا تختفي الألوان أو تتوقف التنسيقات عن العمل.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --BoxColor: teal; } div { background-color: var(--BoxColor); padding: 10px; color: white; }</style></head><body><div>متطابق تماماً في الأحرف</div></body></html>",
+    "output": "يظهر صندوق بلون أخضر مزرق (teal) لأن الأحرف متطابقة."
+   },
+   {
+    "h": "تعديل القيم بسهولة وسرعة",
+    "text": "تخيل أنك بنيت موقعاً كبيراً جداً يحتوي على ألف زر بلون أزرق، ثم طلب منك مديرك تغيير لون كل الأزرار إلى اللون الوردي. بفضل المتغيرات، ستقوم بتغيير سطر واحد فقط في الأعلى ليتم تحديث الموقع كله في ثانية واحدة!",
+    "code": "<!DOCTYPE html><html><head><style>:root { --btn-color: pink; } button { background: var(--btn-color); padding: 10px; }</style></head><body><button>زر وردي</button></body></html>",
+    "output": "يظهر زر بلون وردي مأخوذ مباشرة من المتغير."
+   },
+   {
+    "h": "استخدام المتغيرات للمقاسات والأبعاد",
+    "text": "لا تقتصر المتغيرات على الألوان فقط، بل يمكنك استخدامها لتخزين المسافات، ومقاسات الخطوط، وأحجام الحدود. هذا يساعد على جعل تصميم موقعك متناسقاً ومرتباً طوال الوقت.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --main-radius: 15px; } .card { border-radius: var(--main-radius); border: 2px solid black; padding: 10px; }</style></head><body><div class=\"card\">بطاقة ذات حواف دائرية</div></body></html>",
+    "output": "يظهر مربع ببطاقة ذات حواف دائرية ناعمة."
+   },
+   {
+    "h": "وراثة المتغيرات للأبناء",
+    "text": "بما أن المتغيرات تتبع نظام التوريث في CSS، فإن العناصر الأبناء ترث المتغيرات المعرفة في العناصر الآباء أو الأجداد. يشبه ذلك ارتدائك لملابس والدك أو استخدامك لأدوات عائلتك.",
+    "code": "<!DOCTYPE html><html><head><style>.parent { --text-col: crimson; } .child { color: var(--text-col); }</style></head><div class=\"parent\"><div class=\"child\">هذا النص سيرث اللون الأحمر القاني.</div></div></html>",
+    "output": "يظهر النص داخل العنصر الابن بلون أحمر قاني وراثي."
+   }
+  ],
+  "reference": [
+   {
+    "name": "--variable-name",
+    "desc": "طريقة تسمية وتصريح المتغير المخصص في CSS."
+   },
+   {
+    "name": "var()",
+    "desc": "دالة تستخدم لجلب واستعمال قيمة المتغير المخصص."
+   },
+   {
+    "name": ":root",
+    "desc": "محدد رئيسي لتعريف المتغيرات العامة على مستوى المستند بأكمله."
+   },
+   {
+    "name": "background-color",
+    "desc": "خاصية لتحديد خلفية العنصر وتتقبل متغيرات الألوان."
+   },
+   {
+    "name": "calc()",
+    "desc": "دالة لإجراء العمليات الحسابية وتعمل بكفاءة مع المتغيرات."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ متغيراً عاماً في :root اسمه --theme-color وقيمته gold واستخدمه لتلوين خلفية فقرة.",
+    "a": ":root { --theme-color: gold; } p { background-color: var(--theme-color); }"
+   },
+   {
+    "q": "اكتب الكود لاستخدام متغير اسمه --main-size لخاصية حجم الخط font-size.",
+    "a": "font-size: var(--main-size);"
+   },
+   {
+    "q": "لماذا نبدأ اسم المتغير المخصص دائماً بشرطتين (-- ) وليس شرطة واحدة؟",
+    "a": "لكي تميز لغة CSS بين المتغيرات المخصصة وبين خصائص CSS القياسية والتقليدية."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine having a magical color box in your room to paint all your drawings. In CSS, custom variables work the exact same way to save values and reuse them everywhere.",
+   "To create a variable, you always start with two connected dashes like (--), followed by your custom name, a colon, and a valid value such as --main-color: blue;",
+   "To use this variable inside any property, you call upon it using a special function called var() and write the variable name inside it, just like var(--main-color);",
+   "A top coding best practice is to define your variables inside the :root pseudo-class so they become global, available to all parts of the webpage, and inherited by all elements.",
+   "The golden rule here is that variable names are case-sensitive, meaning --myColor is completely different from --mycolor.",
+   "We use this technique in real life to change an entire website's theme (like dark mode and light mode) by updating just a single line of code effortlessly."
+  ],
+  "example": "Suppose you want to unify your website buttons' background color. Instead of typing blue on every button, you define it in :root like this: `:root { --btn-bg: #3498db; }` and then use it inside buttons: `.button { background-color: var(--btn-bg); }`. If you later decide to change it to green, updating just the first line is enough!",
+  "mistake": "A common mistake is forgetting to write the two dashes -- at the beginning of the variable name inside the var() function. Always remember that writing var(main-color) is wrong; the correct way is var(--main-color).",
+  "recap": "Custom variables give us a smart way to store values and repeat them in one place. Using the var() function connects web elements to these variables for easier maintenance and editing.",
+  "q": [
+   {
+    "t": "What symbols do all custom variables in CSS start with?",
+    "o": [
+     "A single dash (-)",
+     "Two dashes (--)",
+     "A hashtag (#)"
+    ],
+    "a": 1,
+    "why": "Custom variables always start with two connected dashes (--)."
+   },
+   {
+    "t": "How do we call or use a custom variable inside a CSS property?",
+    "o": [
+     "Using the var() function",
+     "Using the get() function",
+     "Using the css() function"
+    ],
+    "a": 0,
+    "why": "We use the var() function along with the variable name to apply its value."
+   },
+   {
+    "t": "Where is it best practice to define global variables so they can be used across the whole page?",
+    "o": [
+     "Inside a p tag",
+     "Inside the :root selector",
+     "Inside a br tag"
+    ],
+    "a": 1,
+    "why": "The :root selector is the standard place to define global variables."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "CSS Variables Elements Bucket",
+   "goal": "Sort the following statements into 'Variable Definition' and 'Variable Usage'.",
+   "buckets": [
+    "Variable Definition",
+    "Variable Usage"
+   ],
+   "items": [
+    {
+     "t": "--primary-color: red;",
+     "b": 0
+    },
+    {
+     "t": "color: var(--primary-color);",
+     "b": 1
+    },
+    {
+     "t": "--box-size: 100px;",
+     "b": 0
+    },
+    {
+     "t": "width: var(--box-size);",
+     "b": 1
+    },
+    {
+     "t": ":root { --bg: white; }",
+     "b": 0
+    },
+    {
+     "t": "background: var(--bg);",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the CSS variable concepts correctly and brought your webpage to life."
+  },
+  "sections": [
+   {
+    "h": "What are CSS Variables?",
+    "text": "Think of variables as gift boxes where we store colors or sizes that we use often. Instead of remembering complex numbers, we give them a nice and easy-to-remember name to use whenever we want across the web page.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --main-color: purple; } h1 { color: var(--main-color); }</style></head><body><h1>Welcome to the world of variables!</h1></body></html>",
+    "output": "Shows a main heading in a lovely purple color."
+   },
+   {
+    "h": "How to Write a Variable Name",
+    "text": "To help the browser understand that this is a variable and not a standard property, you must start the variable name with two connected dashes (--). For example, we write --favorite-color or --spacing to store values securely.",
+    "code": "<!DOCTYPE html><html><head><style>.box { --my-bg: orange; background-color: var(--my-bg); padding: 20px; }</style></head><body><div class=\"box\">Orange Box</div></body></html>",
+    "output": "Shows a box with an orange background color."
+   },
+   {
+    "h": "Using the var() Function",
+    "text": "Once you store a value inside a variable, you need a way to fetch and use it. This is where the magical var() function comes in, placing the variable name inside parentheses like var(--variable-name) to apply it to any element.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --main-font: Arial, sans-serif; } p { font-family: var(--main-font); }</style></head><body><p>This is text with a unified and nice font.</p></body></html>",
+    "output": "Shows a paragraph text with a specific font family."
+   },
+   {
+    "h": "Variable Scope and the :root Selector",
+    "text": "When you put variables inside the :root selector, it means they become 'global' and available to all elements on the page. It is like a bulletin board in the middle of a school that all students can see and read at the same time.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --global-bg: #e0f7fa; } body { background-color: var(--global-bg); }</style></head><body><p>The entire page background is affected by the root variable.</p></body></html>",
+    "output": "The entire page background colors in a light cyan shade."
+   },
+   {
+    "h": "Case Sensitivity",
+    "text": "CSS is very precise! A variable named --MyColor is completely different from a variable named --mycolor. Always make sure to write variable letters in the exact same casing so colors do not vanish or styles stop working.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --BoxColor: teal; } div { background-color: var(--BoxColor); padding: 10px; color: white; }</style></head><body><div>Exact letter match</div></body></html>",
+    "output": "Shows a teal colored box because the letter casing matches."
+   },
+   {
+    "h": "Updating Values Easily and Quickly",
+    "text": "Imagine you built a huge website containing a thousand blue buttons, and then your manager asks you to change all button colors to pink. Thanks to variables, you will change just a single line at the top to update the whole site in one second!",
+    "code": "<!DOCTYPE html><html><head><style>:root { --btn-color: pink; } button { background: var(--btn-color); padding: 10px; }</style></head><body><button>Pink Button</button></body></html>",
+    "output": "Shows a button in a pink color taken directly from the variable."
+   },
+   {
+    "h": "Using Variables for Sizes and Dimensions",
+    "text": "Variables are not limited to colors only; you can use them to store spacing, font sizes, and border dimensions. This helps keep your website design consistent and tidy at all times.",
+    "code": "<!DOCTYPE html><html><head><style>:root { --main-radius: 15px; } .card { border-radius: var(--main-radius); border: 2px solid black; padding: 10px; }</style></head><body><div class=\"card\">Card with rounded corners</div></body></html>",
+    "output": "Shows a box card with smooth rounded corners."
+   },
+   {
+    "h": "Variable Inheritance to Children",
+    "text": "Since variables follow the CSS inheritance system, child elements inherit variables defined in parent or ancestor elements. This is similar to wearing your father's clothes or using your family tools.",
+    "code": "<!DOCTYPE html><html><head><style>.parent { --text-col: crimson; } .child { color: var(--text-col); }</style></head><div class=\"parent\"><div class=\"child\">This text will inherit the crimson red color.</div></div></html>",
+    "output": "Shows the text inside the child element in an inherited crimson red color."
+   }
+  ],
+  "reference": [
+   {
+    "name": "--variable-name",
+    "desc": "The naming and declaration syntax for a custom variable in CSS."
+   },
+   {
+    "name": "var()",
+    "desc": "A function used to retrieve and apply the value of a custom variable."
+   },
+   {
+    "name": ":root",
+    "desc": "A top-level selector to define global variables across the entire document."
+   },
+   {
+    "name": "background-color",
+    "desc": "A property to set an element's background that accepts color variables."
+   },
+   {
+    "name": "calc()",
+    "desc": "A function to perform calculations that works efficiently with variables."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a global variable in :root named --theme-color with value gold and use it to color a paragraph's background.",
+    "a": ":root { --theme-color: gold; } p { background-color: var(--theme-color); }"
+   },
+   {
+    "q": "Write the code to use a variable named --main-size for the font-size property.",
+    "a": "font-size: var(--main-size);"
+   },
+   {
+    "q": "Why do we always start custom variable names with two dashes (-- ) instead of one dash?",
+    "a": "So that CSS can distinguish between custom variables and standard CSS properties."
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Using CSS custom properties (variables)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties"
+  },
+  {
+   "title": "MDN: CSS custom properties for cascading variables",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables"
+  }
+ ],
+ "grounded": true
+}

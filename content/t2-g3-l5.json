@@ -1,0 +1,332 @@
+{
+ "ar": {
+  "steps": [
+   "الرموز الخاصة هي حروف وأشكال مثل علامة الطبع أو علامة وحفظ الحقوق، وتُعرف في لغة إتش تي إم إل باسم الكيانات أو HTML Entities لكي تظهر بشكل صحيح على المتصفح.",
+   "إذا حاولنا كتابة رموز معينة مثل علامة الأكبر من أو الأصغر من، فقد يظن المتصفح أنها بداية ووسم كود برمجي جديد، لذلك نحتاج إلى رموز خاصة آمنة.",
+   "تبدأ الرموز الخاصة دائماً بحرف العطف & وتنتهي بعلامة الفاصلة المنقوطة ؛ لتخبر المتصفح أن هذا ليس وسماً عادياً بل هو رمز خاص ومقصود.",
+   "لكتابة رمز حقوق النشر المعروف، نستخدم الكود المخصص الذي يعرض حرف c الدائري الشهير على الشاشة دون أي مشاكل.",
+   "قاعدة ذهبية: تذكر دائماً أن تبدأ الرموز بحرف & وتنهيها بـ ؛ لضمان ظهور الرموز الخاصة بدقة في صفحات الويب الخاصة بك.",
+   "نستخدم هذه الرموز في المواقع الحقيقية لعرض حقوق النشر في نهاية الصفحة والرموز الرياضية والأسهم والعلامات التجارية المختلفة بأمان."
+  ],
+  "example": "لكتابة رمز حفظ الحقوق والرمز التجاري في موقعك، يمكنك كتابة الآتي: <p>جميع الحقوق محفوظة &copy; 2026 &trade;</p>. هنا يفهم المتصفح أن رمز &copy; يعني حرف حقوق الطبع والنشر، وأن &trade; يعني العلامة التجارية المسجلة، فيقوم برسمهما كرموز جميلة على الشاشة.",
+  "mistake": "نسيان علامة الفاصلة المنقوطة (؛) في نهاية الكود الخاص بالرمز، مما يجعل المتصفح يعرض الكود النصي كله على الشاشة بدلاً من إظهار الرمز الجميل. الحل هو التأكد من كتابة &copy; كاملة.",
+  "recap": "تسمح لنا الكيانات في لغة إتش تي إم إل بعرض الرموز الخاصة بأمان. ونبدأها بحرف & وننهيها بفاصلة منقوطة.",
+  "q": [
+   {
+    "t": "بماذا يبدأ أي كود رمز خاص في لغة إتش تي إم إل؟",
+    "o": [
+     "علامة النسبة المئوية %",
+     "حرف العطف &",
+     "الشرطة المائلة /"
+    ],
+    "a": 1,
+    "why": "تبدأ الرموز الخاصة دائماً بحرف العطف &."
+   },
+   {
+    "t": "ما هو الرمز المستخدم لكتابة علامة حقوق النشر؟",
+    "o": [
+     "&copy;",
+     "&trade;",
+     "&amp;"
+    ],
+    "a": 0,
+    "why": "رمز &copy; مخصص لعرض علامة حقوق النشر."
+   },
+   {
+    "t": "بماذا ينتهي كود الرمز الخاص في لغة إتش تي إم إل؟",
+    "o": [
+     "نقطة .",
+     "فاصلة منقوطة ؛",
+     "علامة استفهام ؟"
+    ],
+    "a": 1,
+    "why": "تنتهي جميع الرموز الخاصة بعلامة الفاصلة المنقوطة ؛."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف الرموز الخاصة في إتش تي إم إل",
+   "goal": "ضع كل عنصر في الصندوق الصحيح لتنظيم صفحة الويب",
+   "buckets": [
+    "رموز خاصة صحيحة",
+    "عناصر تالفة أو خاطئة"
+   ],
+   "items": [
+    {
+     "t": "&copy;",
+     "b": 0
+    },
+    {
+     "t": "&trade;",
+     "b": 0
+    },
+    {
+     "t": "&amp;",
+     "b": 0
+    },
+    {
+     "t": "copy;",
+     "b": 1
+    },
+    {
+     "t": "&trade",
+     "b": 1
+    },
+    {
+     "t": "amp",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت الرموز الخاصة بنجاح وظهرت في الموقع!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الرموز الخاصة؟",
+    "text": "الرموز الخاصة هي طريقة آمنة لإظهار أشكال وحروف معينة لا يستطيع المتصفح قراءتها بالطريقة العادية، مثل الرموز الرياضية وحقوق الطبع والنشر. تشبه هذه الرموز الحبر السري الذي يتحول إلى رسمة جميلة عند عرضه على المتصفح.",
+    "code": "<p>مرحباً بكم في موقعنا الإلكتروني &hearts;</p>",
+    "output": "تعرض الصفحة نصاً بجانبه قلب أحمر جميل."
+   },
+   {
+    "h": "لماذا نحتاج إلى الرموز الخاصة؟",
+    "text": "بعض الحروف مثل علامة الأكبر من والأصغر من تُستخدم أساساً لكتابة وسوم إتش تي إم إل. فإذا أردنا طباعتها على الشاشة ككتابة عادية، سيظن المتصفح أنها أكواد برمجية، وهنا تأتي فائدة الرموز الخاصة لحمايتها.",
+    "code": "<p>استخدم الكود &lt;p&gt; لكتابة فقرة جديدة.</p>",
+    "output": "تعرض الصفحة وسوم الفقرة ككتابة عادية على الشاشة."
+   },
+   {
+    "h": "هيكل الرموز الخاصة",
+    "text": "يتكون أي رمز خاص في لغة إتش تي إم إل من ثلاثة أجزاء أساسية: حرف العطف في البداية، ثم اسم الرمز أو رقمه، وأخيراً علامة الفاصلة المنقوطة في النهاية. هذا الهيكل يخبر المتصفح بضرورة ترجمة الكود إلى رمز.",
+    "code": "<p>هذا النص يحتوي على مسافة فارغة كبيرة &nbsp;&nbsp;&nbsp; هنا.</p>",
+    "output": "تعرض الصفحة مسافات فارغة متعددة بين الكلمات."
+   },
+   {
+    "h": "رمز حقوق الطبع والنشر",
+    "text": "عندما تصنع موقعاً رائعاً، سترغب في كتابة اسمك مع علامة حقوق الطبع والنشر لحفظ مجهودك. يمكنك فعل ذلك بسهولة عبر استخدام رمز خاص يعرض حرف c داخل دائرة أنيقة أسفل الصفحة.",
+    "code": "<p>جميع الحقوق محفوظة &copy; 2026</p>",
+    "output": "تعرض الصفحة جملة الحقوق المتبوعة برمز الدائرة وحرف c."
+   },
+   {
+    "h": "رمز العلامة التجارية المسجلة",
+    "text": "إذا كان لديك منتج رائع أو اسم لشركة ألعاب برمجتها بنفسك، يمكنك إضافة علامة العلامة التجارية المسجلة بجانب الاسم ليظهر وكأنه مشروع حقيقي وكبير.",
+    "code": "<p>لعبة السوبر الذكي &trade; هي لعبتي المفضلة.</p>",
+    "output": "تعرض الصفحة اسم اللعبة وبجانبه رمز العلامة التجارية الصغيرة."
+   },
+   {
+    "h": "رمز حرف العطف (الأمبيرساند)",
+    "text": "حرف العطف الإنجليزي يُستخدم في بداية الرموز الخاصة، فماذا لو أردنا عرضه كحرف عادي في النص؟ نستطيع استخدام رمزه الخاص لكي يفهم المتصفح أننا نريد طباعة الحرف نفسه وليس بدء كود جديد.",
+    "code": "<p>أحب ألعاب المغامرات &amp; الألغاز البرمجية.</p>",
+    "output": "تعرض الصفحة حرف العطف الواصل بين الكلمتين بأمان."
+   }
+  ],
+  "reference": [
+   {
+    "name": "&copy;",
+    "desc": "يعرض رمز حقوق الطبع والنشر الدائري."
+   },
+   {
+    "name": "&trade;",
+    "desc": "يعرض رمز العلامة التجارية المسجلة."
+   },
+   {
+    "name": "&amp;",
+    "desc": "يعرض حرف العطف الأند و (ampersand)."
+   },
+   {
+    "name": "&lt;",
+    "desc": "يعرض علامة الأصغر من (<) بشكل آمن."
+   },
+   {
+    "name": "&gt;",
+    "desc": "يعرض علامة الأكبر من (>) بشكل آمن."
+   },
+   {
+    "name": "&nbsp;",
+    "desc": "يضيف مسافة فارغة غير قابلة للكسر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود إتش تي إم إل يعرض فقرة تحتوي على اسمك متبوعاً برمز حقوق النشر.",
+    "a": "<p>أحمد &copy;</p>"
+   },
+   {
+    "q": "كيف تعرض علامة الأصغر من (<) على صفحة الويب كحرف عادي؟",
+    "a": "&lt;"
+   },
+   {
+    "q": "ما هو الكود المستخدم لعرض علامة العلامة التجارية المسجلة؟",
+    "a": "&trade;"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Special symbols and characters like copyright or trademark signs are known in HTML as entities, helping browsers display them correctly.",
+   "If we try to type symbols like greater-than or less-than directly, the browser might think they are part of HTML code tags, so we need safe alternatives.",
+   "HTML entities always start with an ampersand character and end with a semicolon, telling the browser this is a special symbol and not regular code.",
+   "To display the famous copyright symbol, we use a dedicated entity code that renders the circular c letter on the screen without any trouble.",
+   "Golden rule: always remember to start your entities with an ampersand and finish them with a semicolon to ensure symbols show up accurately.",
+   "We use these entities in real websites to display copyright notices at the page footer, mathematical symbols, and various brand marks safely."
+  ],
+  "example": "To display a copyright symbol and a trademark symbol on your page, you can write: <p>All rights reserved &copy; 2026 &trade;</p>. Here the browser understands that &copy; stands for the copyright sign and &trade; stands for the registered trademark, drawing them as nice symbols on the screen.",
+  "mistake": "Forgetting the semicolon at the end of the entity code, which causes the browser to display the text code literally instead of rendering the nice symbol. The fix is to make sure &copy; is written completely.",
+  "recap": "HTML entities allow us to display special symbols safely on web pages. We start them with an ampersand and end them with a semicolon.",
+  "q": [
+   {
+    "t": "What character does every HTML entity start with?",
+    "o": [
+     "Percent sign %",
+     "Ampersand &",
+     "Forward slash /"
+    ],
+    "a": 1,
+    "why": "HTML entities always start with an ampersand &."
+   },
+   {
+    "t": "Which entity is used to display the copyright symbol?",
+    "o": [
+     "&copy;",
+     "&trade;",
+     "&amp;"
+    ],
+    "a": 0,
+    "why": "The &copy; entity is dedicated to showing the copyright sign."
+   },
+   {
+    "t": "What character does an HTML entity always end with?",
+    "o": [
+     "Period .",
+     "Semicolon ;",
+     "Question mark ?"
+    ],
+    "a": 1,
+    "why": "All HTML entities end with a semicolon ;."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Categorizing HTML Entities",
+   "goal": "Place each item into the correct bucket to organize the web page",
+   "buckets": [
+    "Valid Entities",
+    "Broken or Incorrect Items"
+   ],
+   "items": [
+    {
+     "t": "&copy;",
+     "b": 0
+    },
+    {
+     "t": "&trade;",
+     "b": 0
+    },
+    {
+     "t": "&amp;",
+     "b": 0
+    },
+    {
+     "t": "copy;",
+     "b": 1
+    },
+    {
+     "t": "&trade",
+     "b": 1
+    },
+    {
+     "t": "amp",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the HTML entities successfully and they appeared on the site!"
+  },
+  "sections": [
+   {
+    "h": "What Are HTML Entities?",
+    "text": "HTML entities are a safe way to show specific shapes and characters that browsers cannot read normally, such as math symbols and copyright signs. These entities act like secret ink that turns into a wonderful drawing when viewed on a browser.",
+    "code": "<p>Welcome to our website &hearts;</p>",
+    "output": "The page displays text accompanied by a lovely red heart."
+   },
+   {
+    "h": "Why Do We Need Entities?",
+    "text": "Certain characters like greater-than and less-than signs are used to write HTML tags. If we want to print them on screen as regular text, the browser will think they are code, which is where entities come in to protect them.",
+    "code": "<p>Use the code &lt;p&gt; to write a new paragraph.</p>",
+    "output": "The page displays paragraph tags as normal text on the screen."
+   },
+   {
+    "h": "Structure of HTML Entities",
+    "text": "Any HTML entity consists of three main parts: an ampersand at the beginning, the name or number of the symbol, and a semicolon at the end. This structure tells the browser to translate the code into a symbol.",
+    "code": "<p>This text has a wide empty space &nbsp;&nbsp;&nbsp; right here.</p>",
+    "output": "The page displays multiple empty spaces between words."
+   },
+   {
+    "h": "The Copyright Symbol",
+    "text": "When you build an awesome website, you will want to display your name with a copyright sign to protect your effort. You can easily do this using a special entity that renders a c letter inside a neat circle at the bottom of the page.",
+    "code": "<p>All rights reserved &copy; 2026</p>",
+    "output": "The page displays the rights sentence followed by the circle-c symbol."
+   },
+   {
+    "h": "The Trademark Symbol",
+    "text": "If you have an amazing product or a gaming company name you coded yourself, you can add the registered trademark sign next to the name to make it look like a real, large-scale project.",
+    "code": "<p>Super Smart Game &trade; is my favorite game.</p>",
+    "output": "The page displays the game name with a small trademark symbol next to it."
+   },
+   {
+    "h": "The Ampersand Symbol",
+    "text": "The ampersand character is used at the start of HTML entities, so what if we want to display it as a normal letter in text? We can use its own entity so the browser understands we want to print the letter itself rather than start a new code.",
+    "code": "<p>I love adventure games &amp; coding puzzles.</p>",
+    "output": "The page safely displays the ampersand connecting the two words."
+   }
+  ],
+  "reference": [
+   {
+    "name": "&copy;",
+    "desc": "Displays the circular copyright symbol."
+   },
+   {
+    "name": "&trade;",
+    "desc": "Displays the registered trademark symbol."
+   },
+   {
+    "name": "&amp;",
+    "desc": "Displays the ampersand character (&)."
+   },
+   {
+    "name": "&lt;",
+    "desc": "Safely displays the less-than sign (<)."
+   },
+   {
+    "name": "&gt;",
+    "desc": "Safely displays the greater-than sign (>)."
+   },
+   {
+    "name": "&nbsp;",
+    "desc": "Inserts a non-breaking space."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write an HTML snippet displaying a paragraph with your name followed by the copyright symbol.",
+    "a": "<p>Ahmed &copy;</p>"
+   },
+   {
+    "q": "How do you display a less-than sign (<) on a web page as normal text?",
+    "a": "&lt;"
+   },
+   {
+    "q": "What is the code used to display the registered trademark symbol?",
+    "a": "&trade;"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: Entity",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Entity"
+  },
+  {
+   "title": "MDN: Basic HTML syntax",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,288 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن المتغيرات هي صناديق صغيرة في غرفة نومك نكتب عليها أسماء لكي نحتفظ بداخلها بأشياء مهمة مثل الأرقام أو النصوص لاستخدامها لاحقاً.",
+   "لكي نخزن قيمة في متغير داخل بايثون، نستخدم علامة التساوي (=). مثلاً نكتب عمر_اللاعب = 12 لنحفظ الرقم اثني عشر داخل الصندوق المسمى عمر_اللاعب.",
+   "دالة input() تعمل مثل صديق يسأل الشخص سؤالاً وينتظر منه كتابة إجابة بلوحة المفاتيح، ولكن انتبه جيداً لأن كل ما يكتبه المستخدم يدخل كنوع نصي (str).",
+   "إذا طلبنا من المستخدم إدخال عمره باستخدام input('كم عمرك؟ ')، فإن بايثون ستخزن الرقم ككلام مكتوب وليس كعدد صحيح يمكن إجراء عمليات رياضية עליו.",
+   "القاعدة الذهبية لتحويل أنواع البيانات هي استخدام دالة int() حول دالة الإدخال هكذا: العمر = int(input('كم عمرك؟ ')) لكي يتحول النص إلى رقم صحيح.",
+   "نستخدم هذه المهارات في الألعاب وبرامج الحاسوب اليومية عندما يكتب اللاعب مستواه أو يسجل نقاطه، فنحتاج لتحويلها من نص إلى أرقام لنحسب المجموع أو الفوز."
+  ],
+  "example": "دعنا نرى كيف نطلب اسم المستخدم وعمره ونقوم بحساب عمره العام القادم.\nالبرنامج:\nالاسم = input('ما هو اسمك؟ ')\nالنص_العمر = input('كم عمرك الآن؟ ')\nالعمر_الحقيقي = int(النص_العمر)\nالعمر_المستقبلي = العمر_الحقيقي + 1\nprint('أهلاً ' + الاسم + '! سيكون عمرك العام القادم ' + str(العمر_المستقبلي))\nالسبب في استخدام int هنا هو أن المدخلات تأتي كنص، وبدون التحويل سيحدث خطأ أو تلاصق بين النصوص بدلاً من الجمع الرياضي.",
+  "mistake": "الخطأ الشائع هو جمع مدخلات input مباشرة مع رقم هكذا: العمر + 1 بدون تحويل int. سيقوم بايثون بإعطاء رسالة خطأ لأننا نحاول جمع نص مع رقم. الحل هو تغليف الإدخال بـ int().",
+  "recap": "تعلمنا كيف نخزن القيم في المتغيرات وقراءة مدخلات المستخدم بدالة input وتحويلها إلى أرقام صحيحة باستخدام int. هذا يمنح برامجنا القدرة على التفاعل الذكي مع البشر.",
+  "q": [
+   {
+    "t": "ما هو نوع البيانات الذي ترجعه دالة input() بشكل افتراضي؟",
+    "o": [
+     "عدد صحيح (int)",
+     "نص (str)",
+     "عدد عشري (float)"
+    ],
+    "a": 1,
+    "why": "دالة input() تقرأ دائماً المدخلات من المستخدم على هيئة نصوص حرفية."
+   },
+   {
+    "t": "كيف نقوم بتحويل النص المدخل إلى عدد صحيح في بايثون؟",
+    "o": [
+     "int(النص)",
+     "str(النص)",
+     "float(النص)"
+    ],
+    "a": 0,
+    "why": "نستخدم دالة int() لتحويل السلسلة النصية الممثلة للأرقام إلى عدد صحيح."
+   },
+   {
+    "t": "ماذا يحدث إذا كتبنا x = input() ودخل المستخدم الرقم 5؟",
+    "o": [
+     "تخزن القيمة كعدد 5",
+     "تخزن القيمة كنص '5'",
+     "يتوقف البرنامج فوراً"
+    ],
+    "a": 1,
+    "why": "المدخلات تأتي دوماً كنصوص حتى لو كتب المستخدم أرقاماً."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ التحويل في المدخلات",
+   "goal": "صحح السطر البرمجي الذي يجمع العمر بشكل خاطئ بدون تحويل.",
+   "lines": [
+    "اسم = input('اسمك: ')",
+    "نص_عمر = input('عمرك: ')",
+    "عمر = نص_عمر + 1",
+    "print(عمر)"
+   ],
+   "bug": 2,
+   "fix": "عمر = int(نص_عمر) + 1",
+   "success": "رائع! قام البرنامج بحساب عمرك القادم بنجاح بعد تحويل المدخل النصي إلى رقم صحيح."
+  },
+  "sections": [
+   {
+    "h": "مفهوم المتغيرات في بايثون",
+    "text": "المتغير يشبه صندوقاً نضع فيه بيانات ونكتب عليه اسماً لنعرف محتواه. في بايثون، ننشئ المتغير باستخدام علامة التساوي لوضع قيمة بداخله.",
+    "code": "# تخزين عدد في متغير\nنقاط_اللاعب = 50\nprint(نقاط_اللاعب)",
+    "output": "50"
+   },
+   {
+    "h": "قراءة مدخلات المستخدم عبر input()",
+    "text": "لكي يجعل البرنامج المستخدم يتفاعل معه، نستخدم دالة input() لعرض رسالة وطلب كتابة شيء من لوحة المفاتيح.",
+    "code": "# طلب اسم المستخدم\nاسم_المستخدم = input('ما اسمك؟ ')\nprint(اسم_المستخدم)",
+    "output": "ما اسمك؟ أحمد\nأحمد"
+   },
+   {
+    "h": "مشكلة أنواع البيانات في المدخلات",
+    "text": "عندما يكتب المستخدم أي شيء عبر input()، يتعامل معها بايثون حصرياً على أنها نصوص (str)، حتى لو كتب أرقاماً بحتة.",
+    "code": "رقم = input('اكتب رقماً: ')\nprint(type(رقم))",
+    "output": "اكتب رقماً: 7\n<class 'str'>"
+   },
+   {
+    "h": "تحويل النصوص إلى أرقام صحيحة بـ int()",
+    "text": "لكي نقوم بعمليات حسابية بالأرقام المدخلة، يجب أن نحول النص إلى عدد صحيح باستخدام دالة int().",
+    "code": "مدخل_عمر = input('كم عمرك؟ ')\nعمر_صحيح = int(مدخل_عمر)\nprint(عمر_صحيح + 5)",
+    "output": "كم عمرك؟ 10\n15"
+   },
+   {
+    "h": "الجمع بين الإدخال والتحويل في سطر واحد",
+    "text": "يمكننا توفير الوقت وكتابة الكود باختصار عن طريق وضع دالة input() مباشرة داخل دالة int().",
+    "code": "سعر = int(input('أدخل السعر: '))\nprint(سعر * 2)",
+    "output": "أدخل السعر: 15\n30"
+   },
+   {
+    "h": "تطبيقات عملية في الألعاب والبرامج",
+    "text": "نستخدم هذه المهارات في الألعاب لتحديد مستويات اللاعبين، أو في برامج المتاجر لحساب السعر الإجمالي للسلع المشتراة.",
+    "code": "تفاح = int(input('عدد التفاحات: '))\nإجمالي = تفاح * 5\nprint(إجمالي)",
+    "output": "عدد التفاحات: 4\n20"
+   }
+  ],
+  "reference": [
+   {
+    "name": "input()",
+    "desc": "تقرأ سطرًا نصيًا مدخلاً من لوحة المفاتيح"
+   },
+   {
+    "name": "int()",
+    "desc": "تحول القيمة النصية أو العشرية إلى عدد صحيح"
+   },
+   {
+    "name": "str()",
+    "desc": "تحول أي قيمة إلى نوع نصي"
+   },
+   {
+    "name": "type()",
+    "desc": "تعيد نوع البيانات الخاص بأي متغير"
+   },
+   {
+    "name": "=",
+    "desc": "تستخدم لتعيين وتخزين القيم داخل المتغيرات"
+   },
+   {
+    "name": "print()",
+    "desc": "تعرض المخرجات على شاشة الحاسوب"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً يطلب من المستخدم إدخال سنة ميلاده ويحسب عمره الحالي بناءً على سنة 2026.",
+    "a": "birth = int(input('سنة ميلادك: '))\nage = 2026 - birth\nprint(age)"
+   },
+   {
+    "q": "ما نوع البيانات الناتج عن دالة input() إذا أدخل المستخدم 100؟",
+    "a": "str (نص)"
+   },
+   {
+    "q": "كيف تحول متغيراً نصياً اسمه s يحتوي على '25' إلى عدد صحيح؟",
+    "a": "int(s)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine variables are small labeled boxes in your bedroom where we store important items like numbers or words to use them later.",
+   "To store a value in a variable inside Python, we use the assignment operator (=). For example, player_age = 12 stores the number twelve inside the box named player_age.",
+   "The input() function acts like a friendly assistant who asks a question and waits for a keyboard response, but remember that everything entered by a user comes in as a string (str).",
+   "If we ask a user for their age using input('How old are you? '), Python stores that number as plain text rather than a mathematical number we can calculate with.",
+   "The golden rule for converting data types is wrapping the input function inside int() like this: age = int(input('How old are you? ')) to turn the text into a whole number.",
+   "We use these skills in games and everyday computer programs when players type their levels or scores, so we must convert text to numbers before performing math or comparisons."
+  ],
+  "example": "Let us see how to ask for a user's name and age, then calculate their age next year.\nProgram:\nname = what_is_your_name = input('What is your name? ')\nage_text = input('How old are you now? ')\nreal_age = int(age_text)\nfuture_age = real_age + 1\nprint('Hello ' + name + '! Next year you will be ' + str(future_age))\nThe reason we use int here is because inputs arrive as text, and without conversion, Python would either throw an error or glue texts together instead of adding numbers mathematically.",
+  "mistake": "A common mistake is adding user input directly to a number like age + 1 without using int(). Python will raise a type error because we are trying to add a string and an integer together. The fix is wrapping the input call with int().",
+  "recap": "We learned how to store values in variables, read user input using the input() function, and convert text strings into whole integers using int(). This gives our programs the power to interact intelligently with humans.",
+  "q": [
+   {
+    "t": "What data type does the input() function return by default?",
+    "o": [
+     "Integer (int)",
+     "String (str)",
+     "Float (float)"
+    ],
+    "a": 1,
+    "why": "The input() function always reads user entries as text strings."
+   },
+   {
+    "t": "How do we convert an entered text string into a whole number in Python?",
+    "o": [
+     "int(text)",
+     "str(text)",
+     "float(text)"
+    ],
+    "a": 0,
+    "why": "We use the int() function to convert text representing numbers into integer values."
+   },
+   {
+    "t": "What happens if we write x = input() and the user types 5?",
+    "o": [
+     "It is stored as the number 5",
+     "It is stored as the string '5'",
+     "The program stops instantly"
+    ],
+    "a": 1,
+    "why": "Inputs always arrive as strings even if the user types digits."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing Input Conversion Bug",
+   "goal": "Correct the program line that incorrectly adds age without conversion.",
+   "lines": [
+    "name = input('Name: ')",
+    "age_str = input('Age: ')",
+    "age = age_str + 1",
+    "print(age)"
+   ],
+   "bug": 2,
+   "fix": "age = int(age_str) + 1",
+   "success": "Brilliant! The program successfully calculated your future age after converting the text input into an integer."
+  },
+  "sections": [
+   {
+    "h": "The Concept of Variables in Python",
+    "text": "A variable is like a container where we store data and label it with a name. In Python, we create a variable using the equal sign to place a value inside.",
+    "code": "# Storing a number in a variable\nplayer_score = 50\nprint(player_score)",
+    "output": "50"
+   },
+   {
+    "h": "Reading User Entries via input()",
+    "text": "To make a program interactive, we use the input() function to display a prompt and wait for keyboard text.",
+    "code": "# Asking for user name\nusername = input('What is your name? ')\nprint(username)",
+    "output": "What is your name? Alex\nAlex"
+   },
+   {
+    "h": "Data Type Challenge with Inputs",
+    "text": "Whenever a user types anything using input(), Python treats it strictly as text (str), even if they type pure digits.",
+    "code": "num = input('Type a number: ')\nprint(type(num))",
+    "output": "Type a number: 7\n<class 'str'>"
+   },
+   {
+    "h": "Converting Text to Integers with int()",
+    "text": "To perform arithmetic calculations with user input, we must convert the text string into a whole number using the int() function.",
+    "code": "age_input = input('How old are you? ')\ncorrect_age = int(age_input)\nprint(correct_age + 5)",
+    "output": "How old are you? 10\n15"
+   },
+   {
+    "h": "Combining Input and Conversion in One Line",
+    "text": "We can save space and write cleaner code by nesting the input() function directly inside the int() function.",
+    "code": "price = int(input('Enter price: '))\nprint(price * 2)",
+    "output": "Enter price: 15\n30"
+   },
+   {
+    "h": "Real-Life Applications in Games and Software",
+    "text": "We use these skills in games to set player difficulties or in store checkout applications to calculate the total cost of bought items.",
+    "code": "apples = int(input('Number of apples: '))\ntotal = apples * 5\nprint(total)",
+    "output": "Number of apples: 4\n20"
+   }
+  ],
+  "reference": [
+   {
+    "name": "input()",
+    "desc": "Reads a string line from the keyboard console"
+   },
+   {
+    "name": "int()",
+    "desc": "Converts a string or float value into an integer"
+   },
+   {
+    "name": "str()",
+    "desc": "Converts any given value into a text string"
+   },
+   {
+    "name": "type()",
+    "desc": "Returns the data type of any variable"
+   },
+   {
+    "name": "=",
+    "desc": "Used to assign and store values into variables"
+   },
+   {
+    "name": "print()",
+    "desc": "Displays output on the computer screen"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code that asks a user for their birth year and calculates their age based on the year 2026.",
+    "a": "birth = int(input('Birth year: '))\nage = 2026 - birth\nprint(age)"
+   },
+   {
+    "q": "What data type is returned by input() if the user enters 100?",
+    "a": "str (string)"
+   },
+   {
+    "q": "How do you convert a string variable named s containing '25' into an integer?",
+    "a": "int(s)"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/introduction.html"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,331 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في المؤقت كأنه ساعة وقف في لعبة سباق الجري. يبدأ العد التنازلي من رقم معين ليعرف اللاعب كم تبقى له من وقت.",
+   "في سكراتش، نستخدم متغيراً اسمه 'الوقت' ونضع لبنة 'تغيير الوقت بمقدار -1' داخل تكرار ينتظر ثانية واحدة.",
+   "هكذا يعمل المؤقت: يبدأ بقيمة كبرى، وكل ثانية تمر ينقص تدريجياً حتى يصل إلى الصفر ليعلن انتهاء الجولة.",
+   "يمكننا ربط المؤقت بحدث الفوز أو الخسارة، مثل: إذا وصل المؤقت إلى الصفر ولم تجمع كل النجوم، تخسر اللعبة فوراً.",
+   "قاعدة ذهبية: اجعل دائماً قيمة المؤقت واضحة على الشاشة باستخدام لبنة 'أظهر المتغير' ليراها اللاعب طوال الوقت.",
+   "في الألعاب الحقيقية، نستخدم المؤقتات لإنشاء مستويات بقاء صعبة تتطلب من البطل تجميع العناصر قبل نفاد الوقت المحدد."
+  ],
+  "example": "لعمل مؤقت تنازلي من 30 ثانية في سكراتش، نضع لبنة 'اجعل (الوقت) مساوياً 30' عند النقر على العلم الأخضر. ثم نضيف تكراراً مستمراً يحتوي على 'انتظر 1 ثانية' و'تغيير (الوقت) بمقدار -1'. وتحت ذلك نضع لبنة شرطية: إذا كان (الوقت) = 0، قم ببث رسالة 'خسارة'. بهذه الطريقة يراقب الكود مرور الثواني ويغير حالة اللعبة تلقائياً عند انتهائها.",
+  "mistake": "نسيان وضع لبنة 'انتظر 1 ثانية' داخل حلقة المؤقت، مما يجعل الوقت ينفد في جزء من الثانية قبل أن يلاحظ اللاعب! التصحيح هو إضافة انتظار ثانية بين كل عملية طرح.",
+  "recap": "المؤقت يقيس الوقت المتبقي وينقل اللعبة لحالة جديدة عند انتهائه. حالات اللعبة تنظم الشاشات من البداية وحتى الفوز أو الخسارة.",
+  "q": [
+   {
+    "t": "ما هي اللبنة المناسبة لجعل المؤقت ينقص ثانية بعد ثانية؟",
+    "o": [
+     "تغيير الوقت بمقدار -1",
+     "اجعل الوقت مساوياً 100",
+     "اجمع الوقت"
+    ],
+    "a": 0,
+    "why": "لأننا نريد طرح واحد من قيمة الوقت كل ثانية."
+   },
+   {
+    "t": "متى يجب إظهار شاشة خسارة اللعبة بسبب المؤقت؟",
+    "o": [
+     "عند النقر على العلم",
+     "عندما يصبح المؤقت صفراً",
+     "في بداية اللعبة"
+    ],
+    "a": 1,
+    "why": "تظهر شاشة الخسارة فور نفاد الوقت تماماً."
+   },
+   {
+    "t": "ما فائدة استخدام متغير لحالة اللعبة مثل 'البداية' أو 'اللعب'؟",
+    "o": [
+     "لتنقل اللاعب بين الشاشات المناسبة",
+     "لزيادة سرعة اللعبة فقط",
+     "لتغيير لون خلفية المنصة"
+    ],
+    "a": 0,
+    "why": "حالات اللعبة تتحكم في ظهور الشاشة الصحيحة في الوقت المناسب."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "ربط حالات الشاشة بحدثها",
+   "goal": "صل كل حالة من حالات اللعبة بالحدث أو المظهر الصحيح الخاص بها.",
+   "pairs": [
+    [
+     "شاشة البداية",
+     "زر ابدأ اللعبة"
+    ],
+    [
+     "شاشة اللعب",
+     "تحريك البطل وتجميع النقاط"
+    ],
+    [
+     "شاشة الخسارة",
+     "نفاد الوقت المخصص"
+    ],
+    [
+     "شاشة الفوز",
+     "جمع كل القطع النقدية"
+    ]
+   ],
+   "success": "رائع! لقد نظمت شاشات لعبتك باحترافية تامة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو المؤقت في الألعاب؟",
+    "text": "المؤقت هو أداة رقمية تقيس الزمن المنقضي أو المتبقي في مرحلة معينة. تماماً مثل ساعة الرمال التي تقلبها لتبدأ الرمال بالنزول حتى تنتهي، يحسب المؤقت الثواني لتشجيع اللاعب على إنجاز مهمته قبل فوات الأوان.",
+    "code": "متغير الوقت = 30",
+    "output": "يبدأ العد التنازلي لتحدي اللاعب."
+   },
+   {
+    "h": "فكرة مستويات البقاء المؤقتة",
+    "text": "في مستويات البقاء، يكون التحدي هو الصمود لمدة زمنية محددة، مثل البقاء على قيد الحياة لمدة 60 ثانية وسط العقبات. إذا نجح اللاعب في البقاء حتى يصل المؤقت إلى الصفر، ينتقل إلى المرحلة التالية كبطل مغوار.",
+    "code": "كرر حتى (الوقت = 0): انتظر ثانية",
+    "output": "اللعبة تتحقق بانتظام من انتهاء الوقت."
+   },
+   {
+    "h": "فهم حالات اللعبة (Game State)",
+    "text": "حالة اللعبة هي متغير سحري يخبرنا بما يحدث الآن. هل نحن في القائمة الرئيسية؟ أم نلعب بداخل المغامرة؟ أم خسرنا للتو؟ مثل الإشارات الضوئية التي تنظم حركة المرور وتمنع الفوضى في الشارع.",
+    "code": "اجعل (الحالة) مساوياً 'لعب'",
+    "output": "المنصة تعرض كائنات اللعب وتخفي القائمة."
+   },
+   {
+    "h": "تصميم شاشة البداية (Start Screen)",
+    "text": "شاشة البداية هي واجهة الترحيب للاعب. تظهر فيها عنوان اللعبة وزر 'ابدأ'. تشبه تماماً غلاف الكتاب الجميل الذي يشجعك على فتحه وقراءة قصته المثيرة.",
+    "code": "عند نقر العلم: اظهر المظهر (شاشة البداية)",
+    "output": "يظهر اسم اللعبة في منتصف الشاشة."
+   },
+   {
+    "h": "تصميم شاشة اللعب (Play Screen)",
+    "text": "عندما يضغط اللاعب على زر البداية، تتغير حالة اللعبة إلى 'لعب'. تختفي شاشة الترحيب وتظهر الشخصيات الشريرة، والنقاط، والمؤقت، وتبدأ الإثارة الحقيقية.",
+    "code": "إذا (الحالة = 'لعب'): اظهر البطل والنجوم",
+    "output": "تبدأ تفاعلات اللعبة وتتحرك الكائنات."
+   },
+   {
+    "h": "تصميم شاشة خسارة اللعبة (Game-Over)",
+    "text": "إذا انتهى المؤقت ولم يكمل اللاعب مهمته، أو اصطدم بعائق قوي، تنتقل اللعبة إلى حالة 'خسارة'. تختفي عناصر اللعب ويظهر نص كبير يخبر اللاعب 'حاول مرة أخرى'.",
+    "code": "إذا (الوقت = 0): ابث 'خسارة'",
+    "output": "تتحول الخلفية وتظهر رسالة الخسارة."
+   },
+   {
+    "h": "تصميم شاشة الفوز (Win Screen)",
+    "text": "عندما يجمع اللاعب جميع العناصر أو ينجو طوال مدة المؤقت، تتحول الحالة إلى 'فوز'. تتساقط قصاصات الورق الملونة على الشاشة ويظهر شعار الانتصار الكبير.",
+    "code": "إذا (النقاط = 10): ابث 'فوز'",
+    "output": "تظهر شاشة الاحتفال بالفوز."
+   },
+   {
+    "h": "التحكم في الانتقالات بين المشاهد",
+    "text": "الانتقال هو الجسر الذي ينقل اللاعب بسلاسة من شاشة لأخرى باستخدام رسائل سكراتش (Broadcast). تماماً مثل إسدال الستار في المسرح بين المشهد الأول والمشهد الثاني.",
+    "code": "عندما أستلم 'ابدأ اللعبة': غير الحالة إلى 'لعب'",
+    "output": "تنتقل اللعبة للمشهد التالي بسلاسة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "المؤقت (Timer)",
+    "desc": "متغير يقيس الزمن المتبقي أو المنقضي بالثواني."
+   },
+   {
+    "name": "حالة اللعبة (Game State)",
+    "desc": "متغير يحدد المشهد الحالي (بداية، لعب، فوز، خسارة)."
+   },
+   {
+    "name": "بث رسالة (Broadcast)",
+    "desc": "أداة لإرسال إشارة بين الكائنات لتغيير الشاشات."
+   },
+   {
+    "name": "شاشة البداية (Start Screen)",
+    "desc": "واجهة الترحيب والعنوان عند تشغيل اللعبة."
+   },
+   {
+    "name": "شاشة اللعب (Play Screen)",
+    "desc": "المشهد الأساسي حيث يتحكم اللاعب بالشخصية."
+   },
+   {
+    "name": "شاشة الخسارة (Game-Over)",
+    "desc": "مشهد يظهر عندما يفشل اللاعب في التحدي."
+   },
+   {
+    "name": "شاشة الفوز (Win Screen)",
+    "desc": "مشهد احتفالي يظهر عند إنجاز المهمة بنجاح."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة المطلوبة لجعل العداد ينقص بمقدار واحد في سكراتش؟",
+    "a": "تغيير (الوقت) بمقدار -1"
+   },
+   {
+    "q": "ما هو الاسم البرمجي للحالة التي تظهر فيها زر 'ابدأ'؟",
+    "a": "شاشة البداية"
+   },
+   {
+    "q": "كيف نخبر جميع الكائنات بتغيير المشهد إلى حالة الفوز؟",
+    "a": "باستخدام لبنة بث رسالة 'فوز'"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of a timer like a stopwatch in a running race. It counts down from a specific number to show the player how much time is left.",
+   "In Scratch, we use a variable named 'Timer' and place the 'change Timer by -1' block inside a loop that waits one second.",
+   "This is how the timer works: it starts large, and every passing second decreases it until it reaches zero to end the round.",
+   "We can link the timer to win or lose events, such as: if the timer hits zero and you haven't collected all stars, you lose immediately.",
+   "Gold rule: Always keep the timer visible on the screen using the 'show variable' block so the player can see it constantly.",
+   "In real games, we use timers to create challenging survival levels that require the hero to gather items before time runs out."
+  ],
+  "example": "To make a 30-second countdown timer in Scratch, we set the 'Timer' variable to 30 when the green flag is clicked. Then we add a forever loop containing 'wait 1 seconds' and 'change Timer by -1'. Beneath that, we add a conditional block: if Timer = 0, broadcast 'Game-Over'. This way, the code monitors passing seconds and automatically changes the game state when time expires.",
+  "mistake": "Forgetting to place the 'wait 1 seconds' block inside the timer loop, causing time to drain instantly in a fraction of a second before the player notices! The fix is to add a one-second wait between each subtraction step.",
+  "recap": "A timer measures remaining time and shifts the game state when finished. Game states organize screens from the start menu all the way to winning or losing.",
+  "q": [
+   {
+    "t": "Which block is best to make the timer decrease second by second?",
+    "o": [
+     "change Timer by -1",
+     "set Timer to 100",
+     "add to Timer"
+    ],
+    "a": 0,
+    "why": "Because we want to subtract one from the timer value every second."
+   },
+   {
+    "t": "When should the game-over screen appear because of the timer?",
+    "o": [
+     "When the green flag is clicked",
+     "When the timer reaches zero",
+     "At the very beginning of the game"
+    ],
+    "a": 1,
+    "why": "The game-over screen appears as soon as time runs out completely."
+   },
+   {
+    "t": "What is the benefit of using a game state variable like 'start' or 'play'?",
+    "o": [
+     "To guide the player to the right screens",
+     "To increase the game speed only",
+     "To change the stage background color"
+    ],
+    "a": 0,
+    "why": "Game states control showing the correct screen at the right time."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Match Game States to Their Events",
+   "goal": "Connect each game state to its correct matching event or appearance.",
+   "pairs": [
+    [
+     "Start Screen",
+     "Start game button"
+    ],
+    [
+     "Play Screen",
+     "Moving hero and scoring points"
+    ],
+    [
+     "Game-Over Screen",
+     "Timer runs out completely"
+    ],
+    [
+     "Win Screen",
+     "Collecting all gold coins"
+    ]
+   ],
+   "success": "Awesome! You structured your game screens like a true professional!"
+  },
+  "sections": [
+   {
+    "h": "What is a Timer in Games?",
+    "text": "A timer is a digital tool that measures elapsed or remaining time in a specific level. Just like an hourglass where you flip it and watch sand trickle down until it finishes, a timer counts seconds to encourage players to complete missions before time runs out.",
+    "code": "Timer variable = 30",
+    "output": "A countdown begins to challenge the player."
+   },
+   {
+    "h": "Timed Survival Levels Concept",
+    "text": "In survival levels, the challenge is to stay alive for a set duration, such as surviving for 60 seconds amidst obstacles. If the player manages to stay alive until the timer hits zero, they advance to the next level as a heroic champion.",
+    "code": "repeat until (Timer = 0): wait 1 secs",
+    "output": "The game regularly checks if time has expired."
+   },
+   {
+    "h": "Understanding Game States",
+    "text": "A game state is a magical variable telling us what is happening right now. Are we in the main menu? Are we playing inside the adventure? Did we just lose? Think of traffic lights that organize street movement and prevent chaos.",
+    "code": "set GameState to 'play'",
+    "output": "The stage displays gameplay sprites and hides the menu."
+   },
+   {
+    "h": "Designing the Start Screen",
+    "text": "The start screen is the welcoming interface for the player, featuring the game title and a 'Start' button. It resembles a beautiful book cover that encourages you to open it and read its exciting story.",
+    "code": "when green flag clicked: switch costume to StartScreen",
+    "output": "The game title appears in the center of the screen."
+   },
+   {
+    "h": "Designing the Play Screen",
+    "text": "When the player clicks the start button, the game state changes to 'play'. The welcome screen vanishes, enemy characters, points, and timers appear, and the real excitement begins.",
+    "code": "if (GameState = 'play'): show Hero and Stars",
+    "output": "Gameplay interactions start and sprites move."
+   },
+   {
+    "h": "Designing the Game-Over Screen",
+    "text": "If the timer runs out before the player completes the task, or if they crash into a heavy obstacle, the game transitions to a 'game-over' state. Gameplay elements disappear and big text tells the player 'Try Again'.",
+    "code": "if (Timer = 0): broadcast 'lose'",
+    "output": "The background switches and the loss message appears."
+   },
+   {
+    "h": "Designing the Win Screen",
+    "text": "When the player gathers all items or survives the entire timer duration, the state changes to 'win'. Confetti particles fall across the screen and the grand victory logo appears proudly.",
+    "code": "if (Score = 10): broadcast 'win'",
+    "output": "The victory celebration screen appears."
+   },
+   {
+    "h": "Controlling Transitions Between Scenes",
+    "text": "A transition is the bridge that moves the player smoothly from one screen to another using Scratch broadcasts. Just like lowering theater curtains between Act One and Act Two on stage.",
+    "code": "when I receive 'startGame': set GameState to 'play'",
+    "output": "The game shifts smoothly to the next scene."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Timer",
+    "desc": "A variable measuring remaining or elapsed time in seconds."
+   },
+   {
+    "name": "Game State",
+    "desc": "A variable determining the current scene (start, play, win, lose)."
+   },
+   {
+    "name": "Broadcast",
+    "desc": "A tool to send signals between sprites to change screens."
+   },
+   {
+    "name": "Start Screen",
+    "desc": "The welcome and title interface when launching the game."
+   },
+   {
+    "name": "Play Screen",
+    "desc": "The core scene where the player controls the character."
+   },
+   {
+    "name": "Game-Over Screen",
+    "desc": "A scene shown when the player fails the challenge."
+   },
+   {
+    "name": "Win Screen",
+    "desc": "A celebratory scene shown upon successful mission completion."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block is required to make the counter decrease by one in Scratch?",
+    "a": "change (Timer) by -1"
+   },
+   {
+    "q": "What is the programming name for the state where the 'Start' button appears?",
+    "a": "Start Screen"
+   },
+   {
+    "q": "How do we tell all sprites to switch scenes to the winning state?",
+    "a": "Using the broadcast 'win' block"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

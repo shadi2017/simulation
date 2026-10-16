@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، التصنيف معناه إننا بنقسم الحاجات لمجموعات عشان كل حاجة تروح مكانها الصح وما نتلخبطش أبداً في وسط الزحمة.",
+   "تخيل قدامك لعب كتيرة، عربيات لوحدها، ودباديب لوحدهم، ده مثال بسيط وسهل لفكرة التصنيف وترتيب الألعاب.",
+   "عشان نصنف صح، بندور على 'الخصائص' أو الصفات المشتركة، زي اللون، أو الحجم، أو هل اللعبة بتطير ولا بتمشي على الأرض.",
+   "مثال تاني: لو عندك أقلام ألوان، ممكن تجمع الأقلام الحمراء لوحدها والأقلام الزرقاء في مقلمة تانية بذكاء.",
+   "القاعدة الذهبية: اسأل نفسك دائماً 'ايه الشبه بين الحاجات دي؟' قبل ما تحطهم مع بعض في نفس الصندوق.",
+   "في الحقيقة، المتاجر الكبيرة بتصنف البضائع بتاعتها؛ قسم الألعاب لوحده وقسم الخضار لوحده عشان الناس تلاقي طلباتها بسهولة."
+  ],
+  "example": "تعالوا نعمل خطة تصنيف لحيوانات الحديقة. عندنا: أسد، سمكة، فهد، بطوطة. الأسد والفهد بنحطهم في مجموعة الحيوانات البرية عشان ليهم أرجل بتمشي على اليابسة، والسمكة والبطوطة بنحطهم في مجموعة المية عشان بيعوموا فيها. بالتفكير المنطقي، وزعنا كل حيوان على البيت المناسب ليه بناءً على صفاته الحقيقية بدقة.",
+  "mistake": "الغلطة الشائعة هي خلط حاجات مختلفة الصفات في مجموعة واحدة، زي إننا نحط سمكة مع الأسد في مجموعة البر. الحل: ركز كويس في صفات الحيوان وشوف هو بيعيش فين قبل ما تفرزه.",
+  "recap": "التصنيف والجمع المنطقي بيساعدونا ننظم أي حاجة حوالينا حسب الصفات المشتركة. ده بيخلي حياتنا أسهل بكتير وبيخلينا نفكر زي المبرمجين الأذكياء.",
+  "q": [
+   {
+    "t": "ايه هو التصنيف؟",
+    "o": [
+     "تجميع الحاجات اللي ليها صفات مشتركة",
+     "رمي كل الألعاب على الأرض",
+     "تلوين الصور بالأحمر فقط"
+    ],
+    "a": 0,
+    "why": "التصنيف هو تجميع الأشياء المتشابهة مع بعض."
+   },
+   {
+    "t": "لو عندنا قطة وكلب وعصفورة وسمكة، فين نحط السمكة؟",
+    "o": [
+     "مع القط والكلب",
+     "في مجموعة المية",
+     "فوق الشجرة"
+    ],
+    "a": 1,
+    "why": "السمكة تعيش في الماء وتتبع مجموعة المية."
+   },
+   {
+    "t": "ليه بننظم البيانات والأشياء؟",
+    "o": [
+     "عشان نتعب أكتر",
+     "عشان نلخبط الدولاب",
+     "عشان نلاقي الحاجة بسرعة"
+    ],
+    "a": 2,
+    "why": "التنظيم بيسهل علينا إيجاد الأشياء بسرعة وسهولة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "لعبة توقع تصنيف الحيوانات",
+   "goal": "توقع في أي مجموعة سنضع البطريق بناءً على صفاته.",
+   "code": "لدينا حيوان البطريق. يعيش في الثلج ويحب السباحة في الماء. مجموعات الاختيار: [1] مجموعة حيوانات الصحراء الجافة [2] مجموعة حيوانات الماء والجليد [3] مجموعة طيور الشجر",
+   "options": [
+    "مجموعة الصحراء",
+    "مجموعة الماء والجليد",
+    "مجموعة الشجر"
+   ],
+   "a": 1,
+   "success": "رائع! لقد وضعنا البطريق في مجموعة الماء والجليد لأنه يحب السباحة."
+  },
+  "sections": [
+   {
+    "h": "مفهوم التصنيف الأساسي",
+    "text": "التصنيف هو مهارة مذهلة بنستخدمها كل يوم. زي ما بتفصل ملابسك النظيفة عن غيرها، الكمبيوتر كمان بيقسم البيانات لمجموعات عشان يفهمها.",
+    "code": "خطوات: انظر للأشياء -> ابحث عن الشبه -> اجمع المتشابه",
+    "output": "يتم تجميع العناصر في صناديق مرتبة"
+   },
+   {
+    "h": "ما هي الفئات (Categories)؟",
+    "text": "الفئة هي الصندوق الكبير اللي بنحط جواها الأشياء اللي ليها نفس الصفة. مثلاً فئة الفواكه وفئة الخضروات في السوبر ماركت.",
+    "code": "فئة الألعاب: [سيارة، قطار، عروسة]",
+    "output": "كل الألعاب تجمعت في مكان واحد"
+   },
+   {
+    "h": "الخصائص المشتركة (Attributes)",
+    "text": "الخصائص هي الحاجات اللي بتميز كل كائن أو أداة، زي اللون، الشكل، الطول، أو مكان العيش.",
+    "code": "خصائص القلم: لونه أحمر، طويل، يكتب",
+    "output": "معرفة صفات القلم بدقة"
+   },
+   {
+    "h": "تنظيم البيانات بطريقة ذكية",
+    "text": "لما ننظم البيانات، بنمنع الفوضى. فكر في مكتبتك المدرسية، الكتب محطوطة حسب المواد عشان توصل لها بثواني.",
+    "code": "قسم الكتب: [رياضيات، لغة عربية، علوم]",
+    "output": "الوصول السريع للكتيب المطلوب"
+   },
+   {
+    "h": "تصنيف الحيوانات: اليابسة والماء",
+    "text": "الحيوانات بتعيش في أماكن مختلفة. بعضها بيعيش على الأرض والبعض الثاني في المية، ولازم نفرق بينهم بذكاء.",
+    "code": "فحص الحيوان: هل عنده زعانف؟ نعم -> ماء / لا -> يابسة",
+    "output": "توزيع الحيوانات بدقة في بيئاتها"
+   },
+   {
+    "h": "أهمية تجميع الأشياء في حياتنا",
+    "text": "تجميع الأشياء بيوفر وقتنا وبيخلينا أشخاص منظمين. المبرمج بيحتاج المهارة دي عشان يرتب الأوامر والملفات في برامجه.",
+    "code": "ترتيب الملفات: [صور، أغاني، مستندات]",
+    "output": "جهاز كمبيوتر سريع ومنظم"
+   },
+   {
+    "h": "تطبيق عملي: فرز الأشكال الهندسية",
+    "text": "لو قدامنا دوائر ومربعات ومثلثات، بنقدر نعمل جدول بسيط ونفرز كل شكل مع إخوته.",
+    "code": "إذا كان الشكل له 4 أضلع متساوية -> ضعه في صندوق المربعات",
+    "output": "فصل المربعات عن الدوائر تماماً"
+   },
+   {
+    "h": "خلاصة التفكير المنطقي للتصنيف",
+    "text": "التصنيف هو أساس البرمجة السليمة. لما بنرتب أفكارنا، الكمبيوتر بينفذ مهامه بسرعة وسهولة من غير أخطاء.",
+    "code": "قاعدة ذهبية: كل معلومة في مكانها الصحيح",
+    "output": "نظام ذكي وخالٍ من الفوضى"
+   }
+  ],
+  "reference": [
+   {
+    "name": "التصنيف (Sorting)",
+    "desc": "تجميع العناصر في مجموعات بناءً على قواعد محددة."
+   },
+   {
+    "name": "الفئات (Categories)",
+    "desc": "مجموعات رئيسية تحتوي على عناصر متشابهة."
+   },
+   {
+    "name": "الخصائص (Attributes)",
+    "desc": "الصفات المميزة للعنصر مثل اللون أو مكان العيش."
+   },
+   {
+    "name": "البيانات (Data)",
+    "desc": "المعلومات والأشياء التي نقوم بترتيبها."
+   },
+   {
+    "name": "اليابسة (Land)",
+    "desc": "مكان يعيش عليه الحيوان الذي يمشي على الأرض."
+   },
+   {
+    "name": "الماء (Water)",
+    "desc": "البيئة المائية التي يعيش فيها السمك والكائنات البحرية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "صنف الألوان التالية إلى مجموعتين: أحمر، أزرق، تفاحة، موزة؟",
+    "a": "مجموعة الألوان (أحمر، أزرق) ومجموعة الفواكه (تفاحة، موزة)"
+   },
+   {
+    "q": "أين نضع الكلب: في مجموعة اليابسة أم مجموعة المية؟",
+    "a": "في مجموعة اليابسة"
+   },
+   {
+    "q": "ما هي الصفة المشتركة بين القلم والمسطرة في مقلمة المدرسة؟",
+    "a": "أنهم من أدوات الكتابة والدرس"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey hero, sorting means dividing things into groups so everything goes to its right place and we never get confused.",
+   "Imagine having many toys: cars alone and teddy bears alone. This is a simple and easy idea for sorting toys.",
+   "To sort correctly, we look for shared 'attributes' or features like color, size, or whether a toy flies or walks.",
+   "Another example: If you have color pencils, you can cleverly group red pencils together and blue pencils in another case.",
+   "Golden rule: Always ask yourself 'What do these items have in common?' before putting them in the same box.",
+   "In real life, big stores sort their goods; toy section alone and vegetable section alone so people find things easily."
+  ],
+  "example": "Let's make a sorting plan for park animals. We have: a lion, a fish, a leopard, a duck. The lion and leopard go into the land animal group because they walk on ground, and the fish and duck go into the water group because they swim. With logical thinking, we placed each animal in its right home based on exact real traits.",
+  "mistake": "A common mistake is mixing items with different traits into one group, like putting a fish with a lion in the land group. Solution: Pay close attention to the animal's traits and where it lives before sorting.",
+  "recap": "Sorting and logical grouping help us organize anything around us based on shared traits. This makes our life much easier and lets us think like smart programmers.",
+  "q": [
+   {
+    "t": "What is sorting?",
+    "o": [
+     "Grouping things that share common traits",
+     "Throwing all toys on the floor",
+     "Painting pictures red only"
+    ],
+    "a": 0,
+    "why": "Sorting is grouping similar items together."
+   },
+   {
+    "t": "If we have a cat, dog, bird, and fish, where do we put the fish?",
+    "o": [
+     "With the cat and dog",
+     "In the water group",
+     "Up in the tree"
+    ],
+    "a": 1,
+    "why": "The fish lives in water and belongs to the water group."
+   },
+   {
+    "t": "Why do we organize data and objects?",
+    "o": [
+     "To get more tired",
+     "To mess up the closet",
+     "To find things quickly"
+    ],
+    "a": 2,
+    "why": "Organization helps us find things quickly and easily."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Animal Sorting Prediction Game",
+   "goal": "Predict which group we will put the penguin in based on its traits.",
+   "code": "We have a penguin. It lives in ice and loves swimming in water. Choice groups: [1] Dry desert animal group [2] Water and ice animal group [3] Tree birds group",
+   "options": [
+    "Desert group",
+    "Water and ice group",
+    "Tree group"
+   ],
+   "a": 1,
+   "success": "Awesome! We placed the penguin in the water and ice group because it loves swimming."
+  },
+  "sections": [
+   {
+    "h": "Basic Concept of Sorting",
+    "text": "Sorting is an amazing skill we use every day. Just like separating clean clothes from dirty ones, a computer also divides data into groups to understand it.",
+    "code": "Steps: Look at items -> Find similarities -> Group similar ones",
+    "output": "Items are gathered in neat boxes"
+   },
+   {
+    "h": "What are Categories?",
+    "text": "A category is the big box where we put items sharing the same property. For example, the fruit category and vegetable category in a supermarket.",
+    "code": "Toy category: [car, train, doll]",
+    "output": "All toys gathered in one place"
+   },
+   {
+    "h": "Shared Attributes",
+    "text": "Attributes are features that define each object or creature, such as color, shape, length, or living place.",
+    "code": "Pencil attributes: red color, long, writes",
+    "output": "Knowing pencil traits accurately"
+   },
+   {
+    "h": "Smart Data Organization",
+    "text": "When we organize data, we prevent mess. Think of your school library; books are sorted by subjects so you can reach them in seconds.",
+    "code": "Book section: [math, arabic, science]",
+    "output": "Quick access to the requested book"
+   },
+   {
+    "h": "Animal Sorting: Land and Water",
+    "text": "Animals live in different places. Some live on ground and others in water, and we must cleverly tell them apart.",
+    "code": "Check animal: Does it have fins? Yes -> water / No -> land",
+    "output": "Accurate distribution of animals in habitats"
+   },
+   {
+    "h": "Importance of Grouping in Life",
+    "text": "Grouping items saves our time and makes us organized. A programmer needs this skill to arrange commands and files in programs.",
+    "code": "File sorting: [photos, songs, documents]",
+    "output": "A fast and organized computer"
+   },
+   {
+    "h": "Practical Application: Sorting Shapes",
+    "text": "If we have circles, squares, and triangles, we can make a simple table and sort each shape with its peers.",
+    "code": "If shape has 4 equal sides -> put in square box",
+    "output": "Squares completely separated from circles"
+   },
+   {
+    "h": "Summary of Logical Sorting Thinking",
+    "text": "Sorting is the foundation of proper coding. When we organize our thoughts, the computer executes tasks quickly and easily without errors.",
+    "code": "Golden rule: Every piece of information in its right place",
+    "output": "A smart, clutter-free system"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Sorting",
+    "desc": "Grouping items based on specific rules."
+   },
+   {
+    "name": "Categories",
+    "desc": "Main groups containing similar items."
+   },
+   {
+    "name": "Attributes",
+    "desc": "Distinctive traits of an item like color or habitat."
+   },
+   {
+    "name": "Data",
+    "desc": "Information and objects we arrange."
+   },
+   {
+    "name": "Land",
+    "desc": "Place where land-walking animals live."
+   },
+   {
+    "name": "Water",
+    "desc": "Aquatic environment where fish and sea creatures live."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Sort these into two groups: red, blue, apple, banana?",
+    "a": "Color group (red, blue) and fruit group (apple, banana)"
+   },
+   {
+    "q": "Where do we put a dog: in the land group or water group?",
+    "a": "In the land group"
+   },
+   {
+    "q": "What is the shared attribute between a pencil and a ruler in a school pencil case?",
+    "a": "They are school and study stationery tools"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

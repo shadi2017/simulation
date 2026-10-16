@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "الكمبيوتر شاطر جداً لكن محتاج يفكر زينا ويختار بين طريقين بناءً على سؤال إجماعيه بنعم أو لا، وده اللي بنسميه اتخاذ القرار أو الشروط في البرمجة.",
+   "تخيل إنك بتلعب لعبة وماشي في طريق، فجأة لقيت علامة حمراء وعلامة خضراء، القاعدة بتقول: لو لقيت أخضر اكمل قدام، لو لقيت أحمر اقف.",
+   "الشروط عبارة عن جملة تبدأ بـ 'لو' (If). الكمبيوتر بيبص على الحاجة، يسأل نفسه سؤال، هل الشرط ده صح؟ لو صح بينفذ حاجة معينة.",
+   "مثال تاني: لو الدنيا مطرت، البس الجاكيت. لو مش مطرة، البس التيشيرت الخفيف. الكمبيوتر بيطبق نفس الفكرة دي בדיقّة.",
+   "القاعدة الذهبية هنا: دايماً اكتب سؤال شروط اجابته واضحة جداً بنعم أو لا، عشان الكمبيوتر ما يتلخبطش أبداً في الاختيار.",
+   "بنستخدم الطريقة دي في حياتنا اليومية وفي ألعاب الموبايل، زي لو خلصت الواجب، العب بلايستيشن، ودي برمجة الشروط بأسلوب ممتع وبسيط!"
+  ],
+  "example": "تعالوا نتخيل روبوت ماشي في ممر لونه أبيض وفيه كروت ملونة. الروبوت بيسأل نفسه: هل الكارت اللي قدامي لونه أخضر؟ لو الإجابة 'نعم'، الروبوت بيكمل خطوة لقدام ويقول: 'أنا ماشي في الطريق الصحيح'. لو الإجابة 'لا'، الروبوت بيقف مكانه بهدوء. بالطريقة البسيطة دي، الروبوت قدر يختار طريقه لوحده من غير ما يتلخبط بين الألوان المختلفة.",
+  "mistake": "الخطأ الشائع إننا نعمل شرط اجابته مش واضحة، زي 'لو الطريق حلو'. الكمبيوتر مش عارف يعني إيه حلو! الحل إننا نخليه محدد، زي 'لو لون الطريق أخضر'.",
+  "recap": "الشروط بتخلي الكمبيوتر يختار طريقين مختلفين بناءً على سؤال إجماعته نعم أو لا. استخدام الألوان بيسهل علينا تحديد المسارات بدقة.",
+  "q": [
+   {
+    "t": "إيه هي أول كلمة بتبدأ بيها جملة الشروط للكمبيوتر؟",
+    "o": [
+     "اوقف",
+     "لو (If)",
+     "معلش"
+    ],
+    "a": 1,
+    "why": "جملة الشروط في البرمجة دايماً بتبدأ بكلمة لو أو If عشان نسأل السؤال."
+   },
+   {
+    "t": "لو الروبوت شاف كارت أحمر والقاعدة بتقول 'لو أخضر امشي'، يعمل إيه؟",
+    "o": [
+     "يمشي بسرعة",
+     "يطير",
+     "يقف مكانه"
+    ],
+    "a": 2,
+    "why": "الشرط ما تحققش لأن الكارت مش أخضر، فبالتالي الروبوت هيقف."
+   },
+   {
+    "t": "ليه بنستخدم الألوان في تحديد المسارات؟",
+    "o": [
+     "عشان شكلها جميل بس",
+     "عشان الكمبيوتر يفهمها كشرط واضح بنعم أو لا",
+     "عشان نصعب اللعبة"
+    ],
+    "a": 1,
+    "why": "الألوان علامات واضحة بتخلي الكمبيوتر يجاوب بنعم أو لا بسهولة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز الشروط والألوان",
+   "goal": "صنف العبارات إلى شروط صحيحة للكمبيوتر وحاجات غير واضحة",
+   "buckets": [
+    "شروط واضحة للكمبيوتر",
+    "شروط مش واضحة"
+   ],
+   "items": [
+    {
+     "t": "لو اللون أخضر، امشي",
+     "b": 0
+    },
+    {
+     "t": "لو الطريق جميل، ابتسم",
+     "b": 1
+    },
+    {
+     "t": "لو الكارت أحمر، قف",
+     "b": 0
+    },
+    {
+     "t": "لو الجو حلو، انزل",
+     "b": 1
+    },
+    {
+     "t": "لو العلامة صفراء، استعد",
+     "b": 0
+    },
+    {
+     "t": "لو الشخص ده طيب، سلم عليه",
+     "b": 1
+    }
+   ],
+   "success": "رائع! الروبوت عرف يختار الشروط الواضحة وبقى ذكي جداً!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في الشروط البرمجية",
+    "text": "الشروط هي الطريقة اللي بنخلي بيها الكمبيوتر يفكر ويتخذ قرار بنفسه، زي ما إنت بتعمل لما تختار تلبس سويتر لو الجو برد. في البرمجة، بنعلم الأجهزة تلاحظ الحاجات اللي حواليها وتختار بناءً على قواعد واضحة جداً ومحددة.",
+    "code": "لو (الجو برد) { البس سويتر }",
+    "output": "الكمبيوتر يقرر يلبس السويتر لو الشرط اتحقق."
+   },
+   {
+    "h": "سؤال نعم أو لا البسيط",
+    "text": "عشان الكمبيوتر يفهم أي شرط، لازم نسأله سؤال اجابته تكون واضحة جداً يا إما 'نعم' أو 'لا'. لو السؤال فيه حيرة أو مش واضح، الكمبيوتر هيقف ومش هيعرف يعمل إيه.",
+    "code": "سؤال: هل الكارت أحمر؟ (نعم / لا)",
+    "output": "الكمبيوتر بيختار مسار مختلف على حسب إجابته."
+   },
+   {
+    "h": "استخدام علامات الألوان",
+    "text": "الألوان طريقة ممتازة وممتعة جداً لتوجيه الروبوتات والألعاب. بنحط كروت ملونة على الأرض، وكل لون بيمثل أمر مختلف تماماً للروبوت عشان يتحرك في المتاهة.",
+    "code": "لو (اللون == أخضر) : تقدم للأمام",
+    "output": "الروبوت بيتحرك خطوة قدام لما يشوف اللون الأخضر."
+   },
+   {
+    "h": "قواعد إيجاد المسار الصحيح",
+    "text": "إيجاد المسار معتمد على ربط كل لون بتعليمات حركة معينة. الأخضر يعني امشي، الأحمر يعني قف، والأصفر يعني استعد. كده بنرسم خارطة طريق ذكية جداً للكمبيوتر.",
+    "code": "مسار الروبوت = [أخضر -> امشي، أحمر -> قف]",
+    "output": "الروبوت بينفذ رحلة آمنة من غير ما يخبط في الحيطة."
+   },
+   {
+    "h": "تشبيه من الحياة اليومية",
+    "text": "فكر في إشارة المرور في الشارع. لما تكون الإشارة حمرا، كل العربيات بتقف. لما تكون خضرا، العربيات بتتحرك. دي أبسط وأجمل طريقة لفهم يعني ايه شروط في حياتنا.",
+    "code": "إشارة المرور: لو أحمر (قف) | لو أخضر (امشي)",
+    "output": "تنظيم حركة الشارع بدون حوادث."
+   },
+   {
+    "h": "كتابة أول كود شرطي",
+    "text": "عشان نكتب كود شرطي مظبوط، بنكتب كلمة 'لو' وبعدها الشرط بين قوسين، وبعدين بنقول إيه اللي هيحصل لو الشرط ده صح.",
+    "code": "تكرار: لو (وجدت هدية) { اجمعها }",
+    "output": "اللاعب بيكسب نقاط ويزود الهدية في شنطته."
+   },
+   {
+    "h": "تجنب الأخطاء في الشروط",
+    "text": "أهم حاجة وأنت بتكتب الشروط إنك ما تستخدمش كلمات عامة أو مبهمة. الكمبيوتر بيفهم بالحرف الواحد، فخلي سؤالك دايماً محدد وبسيط جداً.",
+    "code": "خطأ: لو (الطريق حلو) | صح: لو (لون الطريق أبيض)",
+    "output": "تجنب توقف البرنامج أو حدوث أخطاء غريبة."
+   },
+   {
+    "h": "خاتمة الشروط البرمجية",
+    "text": "الشروط هي اللي بتخلي الألعاب والبرامج ممتعة وفيها تحدي. من غير الشروط، كل الألعاب هتكون ماشية في خط مستقيم ومش هتتغير أبداً!",
+    "code": "اللعبة الذكية = مدخلات + شروط + قرارات",
+    "output": "ألعاب ممتعة ومتنوعة كل مرة تلعبها."
+   }
+  ],
+  "reference": [
+   {
+    "name": "شرط (Condition)",
+    "desc": "سؤال يسأله الكمبيوتر وتكون اجابته نعم أو لا لتحديد الخطوة التالية."
+   },
+   {
+    "name": "لو (If)",
+    "desc": "الكلمة السحرية اللي بنبدا بيها كتابة أي شرط برمجي."
+   },
+   {
+    "name": "علامة اللون (Color Tag)",
+    "desc": "علامة مرئية بنستخدمها لتوجيه روبوت أو شخص في مسار معين."
+   },
+   {
+    "name": "إيجاد المسار (Pathfinding)",
+    "desc": "اختيار أفضل وأصح طريق للوصول للنهاية باستخدام القواعد."
+   },
+   {
+    "name": "نعم أو لا (Yes/No)",
+    "desc": "النوع الوحيد من الإجابات اللي بيفهمها الكمبيوتر في الشروط البسيطة."
+   },
+   {
+    "name": "قرار (Decision)",
+    "desc": "الخطوة اللي بينفذها الكمبيوتر بعد ما يتاكد إن الشرط اتحقق."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب جملة شرط بسيطة لروبوت يشوف كارت أحمر فيقف.",
+    "a": "لو (الكارت أحمر) { قف }"
+   },
+   {
+    "q": "لو الروبوت قدامه لون أخضر، المفروض يعمل إيه بناءً على درسنا؟",
+    "a": "يمشي للأمام خطوة."
+   },
+   {
+    "q": "ليه بنقول إن الكمبيوتر محتاج أسئلة اجابتها نعم أو لا بس؟",
+    "a": "لأن الكمبيوتر مش بيعرف يفهم المعاني المبهمة أو الغامضة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Computers are super smart, but they need to think like us and choose between paths based on a yes or no question. This is what we call decision-making or conditionals in programming.",
+   "Imagine you are playing a game and walking on a path, suddenly you find a red mark and a green mark. The rule says: if you find green, keep going; if red, stop.",
+   "Conditions are sentences that start with 'If'. The computer looks at something, asks itself a question, is this condition true? If yes, it does a specific action.",
+   "Another example: if it is raining, wear a jacket. If it is not raining, wear a light t-shirt. The computer applies this exact same idea very precisely.",
+   "The golden rule here: always write a condition question with a very clear yes or no answer, so the computer never gets confused when making a choice.",
+   "We use this method in daily life and mobile games, like if you finish homework, play video games. This is conditional programming in a fun and simple way!"
+  ],
+  "example": "Let's imagine a robot walking in a white corridor with colored cards. The robot asks itself: Is the card in front of me green? If the answer is 'Yes', the robot takes a step forward and says: 'I am on the right path'. If the answer is 'No', the robot stops in place calmly. With this simple method, the robot managed to choose its path alone without getting confused by different colors.",
+  "mistake": "The common mistake is making a condition with an unclear answer, like 'If the path is nice'. The computer doesn't know what nice means! The fix is to make it specific, like 'If the path color is green'.",
+  "recap": "Conditions let the computer choose different paths based on a clear yes or no question. Using colors makes it easier for us to define pathways accurately.",
+  "q": [
+   {
+    "t": "What is the first word a computer condition sentence usually starts with?",
+    "o": [
+     "Stop",
+     "If",
+     "Maybe"
+    ],
+    "a": 1,
+    "why": "Condition sentences in programming always start with 'If' to ask our question."
+   },
+   {
+    "t": "If the robot sees a red card and the rule is 'If green, walk', what should it do?",
+    "o": [
+     "Walk fast",
+     "Fly",
+     "Stop in place"
+    ],
+    "a": 2,
+    "why": "The condition was not met because the card is not green, so the robot stops."
+   },
+   {
+    "t": "Why do we use colors in defining pathways?",
+    "o": [
+     "Just because they look pretty",
+     "So the computer understands them as a clear yes/no condition",
+     "To make the game harder"
+    ],
+    "a": 1,
+    "why": "Colors are clear markers that help the computer easily answer yes or no."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Conditions and Colors Sorting",
+   "goal": "Sort statements into clear computer conditions and unclear things",
+   "buckets": [
+    "Clear Computer Conditions",
+    "Unclear Conditions"
+   ],
+   "items": [
+    {
+     "t": "If the color is green, walk",
+     "b": 0
+    },
+    {
+     "t": "If the road is nice, smile",
+     "b": 1
+    },
+    {
+     "t": "If the card is red, stop",
+     "b": 0
+    },
+    {
+     "t": "If the weather is cool, go out",
+     "b": 1
+    },
+    {
+     "t": "If the sign is yellow, get ready",
+     "b": 0
+    },
+    {
+     "t": "If this person is nice, greet them",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! The robot figured out the clear conditions and became super smart!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Programming Conditions",
+    "text": "Conditions are how we make computers think and make decisions by themselves, just like you do when you choose to wear a sweater if it is cold outside. In programming, we teach devices to observe their surroundings and choose based on very clear and specific rules.",
+    "code": "if (weather == cold) { wear_sweater() }",
+    "output": "The computer decides to wear a sweater if the condition is met."
+   },
+   {
+    "h": "Simple Yes or No Question",
+    "text": "For a computer to understand any condition, we must ask a question that has a very clear answer: either 'Yes' or 'No'. If the question is confusing or unclear, the computer will halt and not know what to do.",
+    "code": "question: Is the card red? (Yes / No)",
+    "output": "The computer chooses a different path based on its answer."
+   },
+   {
+    "h": "Using Color Tags",
+    "text": "Colors are an excellent and very fun way to guide robots and games. We place colored cards on the floor, and each color represents a completely different command for the robot to move through the maze.",
+    "code": "if (color == green) : move_forward()",
+    "output": "The robot takes a step forward when it sees the green color."
+   },
+   {
+    "h": "Pathfinding Rules",
+    "text": "Pathfinding relies on connecting each color with specific movement instructions. Green means walk, red means stop, and yellow means get ready. This is how we draw a very smart road map for the computer.",
+    "code": "robot_path = [green -> walk, red -> stop]",
+    "output": "The robot takes a safe journey without crashing into walls."
+   },
+   {
+    "h": "Real-Life Analogy",
+    "text": "Think of a traffic light in the street. When the light is red, all cars stop. When it is green, cars move. This is the simplest and best way to understand what conditions mean in our daily lives.",
+    "code": "traffic_light: if red (stop) | if green (walk)",
+    "output": "Organizing street traffic without accidents."
+   },
+   {
+    "h": "Writing Your First Conditional Code",
+    "text": "To write a correct conditional code, we write the word 'if' followed by the condition in parentheses, and then we state what happens if that condition is true.",
+    "code": "repeat: if (found_gift) { collect_it() }",
+    "output": "The player earns points and adds the gift to their inventory."
+   },
+   {
+    "h": "Avoiding Mistakes in Conditions",
+    "text": "The most important thing when writing conditions is not to use general or vague words. The computer understands literally, so always keep your question very specific and simple.",
+    "code": "error: if (road is nice) | correct: if (road color is white)",
+    "output": "Preventing program crashes or weird errors."
+   },
+   {
+    "h": "Conclusion of Programming Conditions",
+    "text": "Conditions are what make games and programs fun and challenging. Without conditions, all games would move in a straight line and never change!",
+    "code": "smart_game = inputs + conditions + decisions",
+    "output": "Fun and diverse games every time you play."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Condition",
+    "desc": "A question asked by the computer with a yes or no answer to determine the next step."
+   },
+   {
+    "name": "If",
+    "desc": "The magic keyword we start writing any programming condition with."
+   },
+   {
+    "name": "Color Tag",
+    "desc": "A visual marker we use to guide a robot or person along a specific path."
+   },
+   {
+    "name": "Pathfinding",
+    "desc": "Choosing the best and correct path to reach the end using rules."
+   },
+   {
+    "name": "Yes/No",
+    "desc": "The only type of answers a computer understands in simple conditions."
+   },
+   {
+    "name": "Decision",
+    "desc": "The step executed by the computer after verifying that the condition is met."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a simple condition sentence for a robot to stop if it sees a red card.",
+    "a": "if (card == red) { stop() }"
+   },
+   {
+    "q": "If the robot has a green color in front of it, what should it do based on our lesson?",
+    "a": "Walk forward one step."
+   },
+   {
+    "q": "Why do we say computers need questions with only yes or no answers?",
+    "a": "Because computers do not understand vague or ambiguous meanings."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,322 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك حارس على بوابة الملاهي، بتسأل الناس عن طولهم عشان تحدد يقدروا يدخلوا ألعاب معينة ولا لأ. في البرمجة، بنستخدم جملة if عشان نعمل نفس الفكرة بالظبط، ونتحكم في مسار الكود بناءً على شروط معينة.",
+   "عشان نعمل فحص بسيط في بايثون، بنكتب كلمة if بعدها الشرط اللي عاوزين نتأكد منه، وبعدين نقطتين فوق بعض (:). مثال صغير: لو درجة الحرارة أكبر من 30، اطبع 'الجو حار'.",
+   "بايثون بتفهم الكود جوه الشرط عن طريق المسافة البادئة (Indentation). أي سطر جواه مسافة في الأول بيبقى جزء من القرار اللي هيتنفذ لو الشرط طلع صح.",
+   "لما نحب نتحقق من كذا احتمال ورا بعض، بنستخدم elif (اللي هي اختصار else if). لو الشرط الأولاني غلط، بايثون بتنزل تشوف الشرط اللي بعده في elif وتختبره.",
+   "القاعدة الذهبية هنا هي الترتيب: بايثون بتقرأ الشروط من فوق لتحت بالترتيب، وأول شرط يطلع صح بتنفذه وتسيب الباقي كله. وعشان كده بنحط الشرط الأخص فوق والشرط العام تحت.",
+   "في الحياة اليومية، زي لما بتقرر تلبس إيه بناءً على الطقس: لو فيه مطر بتلبس جاكيت، وإلا لو فيه شمس بتلبس نظارة، وغير كده بتلبس عادي. دي بالضبط فكرة if و elif و else!"
+  ],
+  "example": "تعالوا نعمل برنامج صغير يفحص درجات الاختبار: \nscore = 85\nif score >= 90:\n    print('ممتاز')\nelif score >= 75:\n    print('جيد جداً')\nelse:\n    print('تحتاج لمزيد من التركيز')\nالسبب والمنطق: بايثون بتبص على score (85)، هل هي أكبر من أو تساوي 90؟ لأ. فبتنزل على elif اللي بعدها، هل 85 أكبر من أو تساوي 75؟ نعم! فبتطبع 'جيد جداً' وتقفل الباقي.",
+  "mistake": "الخطأ الشائع هو نسيان النقطتين (:) في نهاية سطر if أو elif، أو نسيان المسافة البادئة قبل سطر الطباعة. الحل: تأكد دائماً من كتابة (:) وضع أربع مسافات أو زر Tab قبل أوامر القرار.",
+  "recap": "جملة if و elif و else بتساعد برامجنا تاخد قرارات ذكية بناءً على الشروط. الترتيب والمسافات البادئة هما أساس نجاح الكود.",
+  "q": [
+   {
+    "t": "ما هي الكلمة التي نستخدمها لإضافة شرط بديل بعد الـ if الأولى؟",
+    "o": [
+     "else if",
+     "elif",
+     "maybe"
+    ],
+    "a": 1,
+    "why": "في لغة بايثون، الكلمة المختصرة والوحيدة الصحيحة لفحص شرط تالٍ هي elif."
+   },
+   {
+    "t": "متى يتم تنفيذ كود الـ else؟",
+    "o": [
+     "دائماً في بداية البرنامج",
+     "فقط عندما تكون كل الشروط السابقة خاطئة",
+     "عندما يكون الشرط الأول صحيحاً"
+    ],
+    "a": 1,
+    "why": "جملة else هي الملجأ الأخير وتعمل فقط لو فشلت كل شروط if و elif."
+   },
+   {
+    "t": "كيف تعرف بايثون أن هذا السطر يتبع جملة الـ if؟",
+    "o": [
+     "بوضع علامة النجمة",
+     "باستخدام المسافة البادئة (Indentation)",
+     "بكتابة كلمة start"
+    ],
+    "a": 1,
+    "why": "المسافة البادئة هي الطريقة التي تعتمدها بايثون لتجميع الأكواد معاً داخل الشروط."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات فحص الدرجات",
+   "goal": "رتب خطوات برنامج فحص الدرجات بالترتيب الصحيح ليعمل دون أخطاء.",
+   "items": [
+    "score = 80",
+    "if score >= 90:",
+    "    print('ممتاز')",
+    "elif score >= 70:",
+    "    print('جيد')",
+    "else:",
+    "    print('حاول مرة أخرى')"
+   ],
+   "success": "رائع! قام البرنامج بفحص الدرجات وطبع النتيجة الصحيحة بكل نجاح."
+  },
+  "sections": [
+   {
+    "h": "مقدمة في اتخاذ القرارات",
+    "text": "البرمجة مش مجرد طباعة كلام، البرمجة بتفكر وتقرر! زي ما أنت بتقرر تفتح شمسية لو الجو مطر، البرنامج بيستخدم شروط عشان يقرر هيعمل إيه. دي أول خطوة في بناء برامج ذكية وتفاعلية.",
+    "code": "weather = 'rainy'\nif weather == 'rainy':\n    print('خد معاك شمسية!')",
+    "output": "خد معاك شمسية!"
+   },
+   {
+    "h": "معاملات المقارنة",
+    "text": "عشان نعمل شرط، لازم نقارن حاجات ببعضها. بنستخدم علامات زي أكبر من (>)، أصغر من (<)، ويساوي (==). خد بالك إننا بنكتب علامتي يساوي (==) لما نحب نتأكد إن الحاجة بتساوى كذا، مش علامة واحدة.",
+    "code": "age = 12\nprint(age > 10)",
+    "output": "True"
+   },
+   {
+    "h": "استخدام جملة if الأساسية",
+    "text": "جملة if هي البوابة الأولى. بنكتب بعدها الشرط ونحط نقطتين (:)، وبعدين ننزل السطر اللي بعده ونعمل مسافة بادئة. لو الشرط صح، الكود اللي جوه بيتنفذ، ولو غلط، البرنامج بيعديه.",
+    "code": "points = 50\nif points >= 50:\n    print('مبروك، كسبت نقطة إضافية!')",
+    "output": "مبروك، كسبت نقطة إضافية!"
+   },
+   {
+    "h": "إضافة احتمالات أخرى بـ elif",
+    "text": "الحياة مش أبيض وأسود بس، فيه ألوان كتير! لو عندك أكتر من احتمالين، مفرود تستخدم elif. دي بتخليك تفحص شرط تاني وتالت ورابع لو الشرط الأولاني طلع غلط.",
+    "code": "level = 2\nif level == 1:\n    print('مبتدئ')\nelif level == 2:\n    print('متوسط')\n# الباقي...",
+    "output": "متوسط"
+   },
+   {
+    "h": "ملجأ الأمان مع else",
+    "text": "جملة else زي الحارس الأمين اللي بيستقبل أي حاجة مكنتش متوقعة في الشروط اللي فاتت. مش بيكتب جنبها شرط، لأنها بتشتغل تلقائي لو كل شروط if و elif فشلت.",
+    "code": "color = 'purple'\nif color == 'red':\n    print('أحمر')\nelse:\n    print('لون تاني خالص')",
+    "output": "لون تاني خالص"
+   },
+   {
+    "h": "ترتيب الشروط والأولوية",
+    "text": "بايثون ذكية جداً بس بتمشي بالدور! بتقرأ الشروط من فوق لتحت، وأول شرط تلاقيه صح بتنفذه وتسيب الباقي. عشان كده لازم نحط الشروط الدقيقة والمحددة فوق، والشروط العامة تحت خالص.",
+    "code": "num = 15\nif num > 20:\n    print('أكبر من 20')\nelif num > 10:\n    print('أكبر من 10')\nelse:\n    print('صغير')",
+    "output": "أكبر من 10"
+   },
+   {
+    "h": "الشروط المتداخلة (Nesting)",
+    "text": "ممكن نحط جملة if جوه جملة if تاني! ده بيسميه البرمجيون الشروط المتداخلة. بنستخدمها لما نحب نفحص شرط فرعي بعد ما الشرط الرئيسي يكون اتحقق خلاص.",
+    "code": "has_ticket = True\nage = 14\nif has_ticket:\n    if age >= 12:\n        print('اتفضل ادخل السينما!')",
+    "output": "اتفضل ادخل السينما!"
+   },
+   {
+    "h": "بناء برنامج تشخيصي كامل",
+    "text": "دلوقتي نقدر نجمع كل اللي تعلمناه ونبني برنامج بيشخص حالة البطارية مثلاً أو بيقيم أداء لعبة. الفكرة كلها تعتمد على تنظيم الشروط صح واستخدام المسافات المظبوطة.",
+    "code": "battery = 15\nif battery > 80:\n    print('البطارية مليانة')\nelif battery > 20:\n    print('البطارية جيدة')\nelse:\n    print('اشحن الجهاز فوراً!')",
+    "output": "اشحن الجهاز فوراً!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "if",
+    "desc": "الكلمة الأساسية لبدء فحص شرط جديد في بايثون."
+   },
+   {
+    "name": "elif",
+    "desc": "اختصار لـ else if، وتستخدم لفحص شرط إضافي إن فشل ما قبلها."
+   },
+   {
+    "name": "else",
+    "desc": "تنفذ الكود التلقائي إذا لم تتحقق أي من الشروط السابقة."
+   },
+   {
+    "name": "==",
+    "desc": "معامل مقارنة للتحقق مما إذا كان الشيئان متساويين."
+   },
+   {
+    "name": ">",
+    "desc": "معامل مقارنة يعني أكبر من."
+   },
+   {
+    "name": "<",
+    "desc": "معامل مقارنة يعني أصغر من."
+   },
+   {
+    "name": ":",
+    "desc": "نقطتان فوق بعض يجب وضعها بنهاية سطر الشرط."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب جملة if تفحص إذا كانت المتغير temperature أكبر من 35 وتطبع 'حر جداً'.",
+    "a": "if temperature > 35:\n    print('حر جداً')"
+   },
+   {
+    "q": "ما هو الرمز المستخدم في بايثون للمقارنة بين قيمتين للتأكد من تساويهما؟",
+    "a": "=="
+   },
+   {
+    "q": "أين نضع جملة else في تسلسل الشروط؟",
+    "a": "في نهاية التسلسل تماماً بعد جميع شروط if و elif."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you are a security guard at an amusement park gate, asking visitors for their height to see which rides they can enter. In programming, we use the if statement to do this exact job and control the path of our code based on specific conditions.",
+   "To make a simple check in Python, write the word if followed by the condition you want to test, ending with a colon (:). Small example: if temperature is greater than 30, print 'It is hot'.",
+   "Python understands which instructions belong to a condition through indentation. Any line with spaces at the beginning becomes part of the decision that runs only when the condition evaluates to true.",
+   "When we want to check multiple possibilities in sequence, we use elif (short for else if). If the first condition is false, Python moves down to test the elif condition.",
+   "The golden rule here is order: Python reads conditions from top to bottom, executing the very first one that turns out true and skipping the rest. That is why we put specific conditions at the top and general ones at the bottom.",
+   "In daily life, like deciding what to wear based on weather: if it rains you wear a jacket, else if it is sunny you wear sunglasses, otherwise you wear normal clothes. This is precisely how if, elif, and else work!"
+  ],
+  "example": "Let's build a quick score-checking program:\nscore = 85\nif score >= 90:\n    print('Excellent')\nelif score >= 75:\n    print('Very Good')\nelse:\n    print('Needs More Focus')\nReasoning: Python looks at score (85). Is it >= 90? False. It moves to elif, is 85 >= 75? True! It prints 'Very Good' and skips the rest.",
+  "mistake": "A very common mistake is forgetting the colon (:) at the end of an if or elif line, or missing the indentation for the print statement. Solution: Always check for the colon and use four spaces or the Tab key before decision instructions.",
+  "recap": "The if, elif, and else statements help our programs make smart decisions based on conditions. Order and proper indentation are the keys to making your code succeed.",
+  "q": [
+   {
+    "t": "What keyword do we use to add an alternative check after the first if?",
+    "o": [
+     "else if",
+     "elif",
+     "maybe"
+    ],
+    "a": 1,
+    "why": "In Python, the short and correct keyword for checking a subsequent condition is elif."
+   },
+   {
+    "t": "When does the else block execute?",
+    "o": [
+     "Always at the very start",
+     "Only when all previous conditions are false",
+     "Whenever the first condition is true"
+    ],
+    "a": 1,
+    "why": "The else statement is a fallback that runs only if every preceding if and elif condition fails."
+   },
+   {
+    "t": "How does Python know which line belongs to an if statement?",
+    "o": [
+     "By using a star symbol",
+     "By using indentation (spaces at the start)",
+     "By writing the word start"
+    ],
+    "a": 1,
+    "why": "Indentation is Python's structural way of grouping code blocks together under conditions."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Grade Checker Steps",
+   "goal": "Arrange the score-checking program lines in the correct sequential order to run smoothly.",
+   "items": [
+    "score = 80",
+    "if score >= 90:",
+    "    print('Excellent')",
+    "elif score >= 70:",
+    "    print('Good')",
+    "else:",
+    "    print('Try again')"
+   ],
+   "success": "Awesome! The program successfully checked the scores and printed the correct result."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Making Decisions",
+    "text": "Programming isn't just about printing text; programming thinks and decides! Just like you decide to open an umbrella when it rains, a program uses conditions to decide what action to take next. This is the first step toward building smart, interactive apps.",
+    "code": "weather = 'rainy'\nif weather == 'rainy':\n    print('Take an umbrella!')",
+    "output": "Take an umbrella!"
+   },
+   {
+    "h": "Comparison Operators",
+    "text": "To create a condition, we must compare values. We use symbols like greater than (>), less than (<), and equal to (==). Notice we write two equals signs (==) when checking if two things match, never just one.",
+    "code": "age = 12\nprint(age > 10)",
+    "output": "True"
+   },
+   {
+    "h": "Using the Basic If Statement",
+    "text": "The if statement is our primary gateway. We write the condition next to it, add a colon (:), and indent the line below. If the condition is true, the enclosed code runs; if false, the program skips it entirely.",
+    "code": "points = 50\nif points >= 50:\n    print('Congrats, you won extra points!')",
+    "output": "Congrats, you won extra points!"
+   },
+   {
+    "h": "Adding Choices with Elif",
+    "text": "Life isn't just black and white; there are many colors! If you have more than two possibilities, you should use elif. This lets you test a second, third, or fourth condition if the initial one turns out false.",
+    "code": "level = 2\nif level == 1:\n    print('Beginner')\nelif level == 2:\n    print('Intermediate')",
+    "output": "Intermediate"
+   },
+   {
+    "h": "The Safety Net with Else",
+    "text": "The else statement acts like a trusty safety net catching anything unexpected that wasn't caught by prior checks. It requires no condition phrase because it triggers automatically if all preceding if and elif checks fail.",
+    "code": "color = 'purple'\nif color == 'red':\n    print('Red')\nelse:\n    print('A totally different color')",
+    "output": "A totally different color"
+   },
+   {
+    "h": "Condition Order and Priority",
+    "text": "Python is super smart but follows strict turns! It reads conditions from top to bottom, executing the very first true match and ignoring the rest. Therefore, place specific narrow conditions at the top and general ones at the very bottom.",
+    "code": "num = 15\nif num > 20:\n    print('Greater than 20')\nelif num > 10:\n    print('Greater than 10')\nelse:\n    print('Small')",
+    "output": "Greater than 10"
+   },
+   {
+    "h": "Nesting Checks Inside Each Other",
+    "text": "We can put an if statement right inside another if statement! Programmers call this nesting. We use this pattern when we need to verify a secondary sub-condition only after the main condition has already passed.",
+    "code": "has_ticket = True\nage = 14\nif has_ticket:\n    if age >= 12:\n        print('Enjoy the movie!')",
+    "output": "Enjoy the movie!"
+   },
+   {
+    "h": "Building a Diagnostic Program",
+    "text": "Now we can combine everything learned to build a diagnostic program, like checking a battery health status or evaluating game performance. The core logic relies entirely on organizing conditions correctly with proper spacing.",
+    "code": "battery = 15\nif battery > 80:\n    print('Battery is full')\nelif battery > 20:\n    print('Battery is good')\nelse:\n    print('Charge device immediately!')",
+    "output": "Charge device immediately!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "if",
+    "desc": "The core keyword used to initiate a new condition check in Python."
+   },
+   {
+    "name": "elif",
+    "desc": "Short for else if, used to test an additional condition if prior checks fail."
+   },
+   {
+    "name": "else",
+    "desc": "Executes fallback code if none of the preceding conditions evaluate to true."
+   },
+   {
+    "name": "==",
+    "desc": "Comparison operator to check if two values are equal."
+   },
+   {
+    "name": ">",
+    "desc": "Comparison operator meaning strictly greater than."
+   },
+   {
+    "name": "<",
+    "desc": "Comparison operator meaning strictly less than."
+   },
+   {
+    "name": ":",
+    "desc": "Colon character required at the end of every conditional statement line."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write an if statement checking if a variable temperature is greater than 35 and printing 'Too hot'.",
+    "a": "if temperature > 35:\n    print('Too hot')"
+   },
+   {
+    "q": "What symbol does Python use to compare two values for equality?",
+    "a": "=="
+   },
+   {
+    "q": "Where should the else statement be placed in a conditional sequence?",
+    "a": "At the very end of the sequence after all if and elif statements."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html"
+  }
+ ],
+ "grounded": true
+}

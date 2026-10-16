@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "Ultimate Recipe Hub",
+   "desc": "Build a multi-page recipe site with ingredient lists, preparation steps, a video, and cooking-time tables.",
+   "tags": [
+    "HTML5",
+    "Recipes",
+    "Media"
+   ],
+   "steps": [
+    "Plan your site structure with a home page and at least one recipe detail page.",
+    "Write the main HTML skeleton and add page titles using headings.",
+    "Insert a mouth-watering food image with alt text and a video showing the recipe.",
+    "Create unordered lists for ingredients and ordered lists for step-by-step cooking instructions.",
+    "Add a neat HTML table to display cooking times, serving sizes, and calorie counts.",
+    "Connect your pages together using anchor tags so users can click and navigate smoothly."
+   ],
+   "rubric": [
+    "Uses correct HTML5 structural tags and page titles.",
+    "Includes both ordered and unordered lists for ingredients and steps.",
+    "Embeds an image and a video with proper sources and alt text.",
+    "Features a working table and navigation links between pages."
+   ],
+   "stretch": "Add a form at the bottom allowing visitors to submit their own secret family recipe!"
+  },
+  {
+   "title": "School Subject Survey Quiz",
+   "desc": "Create a school survey with text fields, club checkboxes, and a student review form.",
+   "tags": [
+    "Forms",
+    "Inputs",
+    "Survey"
+   ],
+   "steps": [
+    "Design the layout of your survey form using a main form element.",
+    "Add text input fields for the student's name and favorite subject.",
+    "Insert radio buttons for single-choice questions like 'Do you love homework? (Yes/No)'.",
+    "Add checkboxes so students can select multiple after-school clubs they join.",
+    "Use a select dropdown menu for picking their grade level or homeroom teacher.",
+    "Include a submit button to finish the survey and test your inputs."
+   ],
+   "rubric": [
+    "Correctly uses form elements for gathering user data.",
+    "Includes text inputs, radio buttons, and checkboxes appropriately.",
+    "Features a select dropdown menu with multiple options.",
+    "Organizes questions clearly with headings and labels."
+   ],
+   "stretch": "Group your form questions neatly using fieldset and legend tags."
+  },
+  {
+   "title": "My Coding Autobiography Portal",
+   "desc": "Make a personal site with a project catalog, milestone lists, images, and contact links.",
+   "tags": [
+    "Portfolio",
+    "Semantics",
+    "Links"
+   ],
+   "steps": [
+    "Create an introductory homepage using semantic tags like header, main, and footer.",
+    "Add a profile picture of yourself with a friendly alt text description.",
+    "Build a project catalog using tables or structured lists of your favorite coding creations.",
+    "List your coding milestones in chronological order using ordered lists.",
+    "Add external links to your favorite learning websites or scratch profiles.",
+    "Create a footer with contact links and a span tag for your copyright year."
+   ],
+   "rubric": [
+    "Uses semantic HTML elements like header, footer, and main.",
+    "Displays images with accurate alt text.",
+    "Presents milestones and projects using lists and tables.",
+    "Includes working links for navigation and external resources."
+   ],
+   "stretch": "Style your text with some inline spans or add an audio greeting clip to welcome visitors!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "مركز الوصفات الكبرى",
+   "desc": "ابني موقع وصفات متعدد الصفحات يضم قوائم مكونات، خطوات تحضير، فيديو، وجداول وقت الطهي.",
+   "tags": [
+    "إتش تي إم إل",
+    "وصفات",
+    "وسائط"
+   ],
+   "steps": [
+    "خطط لهيكل موقعك بصفحة رئيسية وصفحة تفاصيل وصفة واحدة على الأقل.",
+    "اكتب الهيكل الأساسي للغة إتش تي إم إل وأضف عناوين للصفحات باستخدام العناوين الرئيسية.",
+    "أدخل صورة طعام شهية مع نص بديل وفيديو يوضح طريقة تحضير الوصفة.",
+    "أنشئ قوائم غير مرتبة للمكونات وقوائم مرتبة لخطوات الطهي خطوة بخطوة.",
+    "أضف جدولاً منظماً لعرض أوقات الطهي، أحجام الوجبات، وعدد السعرات الحرارية.",
+    "اربط صفحاتك ببعضها باستخدام روابط التنقل لكي يتمكن المستخدمون من الانتقال بسلاسة."
+   ],
+   "rubric": [
+    "يستخدم وسوم إتش تي إم إل 5 الهيكلية وعناوين الصفحات بشكل صحيح.",
+    "يتضمن قوائم مرتبة وغير مرتبة للمكونات والخطوات.",
+    "يحتوي على صورة وفيديو مع المصادر والنصوص البديلة المناسبة.",
+    "يتميز بوجود جدول وروابط تنقل عاملة بين الصفحات."
+   ],
+   "stretch": "أضف نموذجاً في الأسفل يتيح للزوار إرسال وصفاتهم العائلية السرية الخاصة!"
+  },
+  {
+   "title": "استطلاع رأي المواد المدرسية",
+   "desc": "أنشئ استطلاعاً مدرسياً يحتوي على حقول نصية، مربعات اختيار للأنشطة، وننموذج تقييم للطلاب.",
+   "tags": [
+    "نماذج",
+    "مدخلات",
+    "استطلاع"
+   ],
+   "steps": [
+    "صمم تخطيط نموذج الاستطلاع الخاص بك باستخدام عنصر النموذج الرئيسي.",
+    "أضف حقول إدخال نصية لاسم الطالب ومادته الدراسية المفضلة.",
+    "أدخل أزرار اختيار دائرية للأسئلة ذات الإجابة الواحدة مثل 'هل تحب الواجبات؟ (نعم/لا)'.",
+    "أضف مربعات اختيار لكي يتمكن الطلاب من اختيار عدة أنشطة مدرسية يشاركون فيها.",
+    "استخدم قائمة منسدلة لاختيار المرحلة الدراسية أو معلم الفصل.",
+    "قم بتضمين زر إرسال لإنهاء الاستطلاع واختبار المدخلات الخاصة بك."
+   ],
+   "rubric": [
+    "يستخدم عناصر النماذج بشكل صحيح لجمع بيانات المستخدم.",
+    "يتضمن مدخلات نصية، أزرار اختيار دائرية، ومربعات اختيار بشكل ملائم.",
+    "يحتوي على قائمة منسدلة ذات خيارات متعددة.",
+    "ينظم الأسئلة بوضوح باستخدام العناوين والتسميات التوضيحية."
+   ],
+   "stretch": "قم بتجميعه أسئلة نموذجك بدقة باستخدام وسوم مجموعات الحقول والعناوين."
+  },
+  {
+   "title": "بوابة سيرتي الذاتية البرمجية",
+   "desc": "اصنع موقعاً شخصياً يحتوي على كتالوج مشاريع، قوائم إنجازات، صور، وروابط تواصل.",
+   "tags": [
+    "محفظة",
+    "معاني",
+    "روابط"
+   ],
+   "steps": [
+    "أنشئ صفحة رئيسية تعريفية باستخدام الوسوم الدلالية مثل الرأس والمحتوى والتذييل.",
+    "أضف صورة شخصية لك مع وصف نصي بديل لطيف.",
+    "ابنِ كتالوج مشاريع باستخدام الجداول أو القوائم المنظمة لإبداعاتك البرمجية المفضلة.",
+    "اذكر إنجازاتك البرمجية بترتيب زمني باستخدام القوائم المرتبة.",
+    "أضف روابط خارجية لمواقع التعلم المفضلة لديك أو لملفك الشخصي.",
+    "أنشئ تذييلاً للموقع يحتوي على روابط تواصل ووسم مخصص لسنة حقوق النشر."
+   ],
+   "rubric": [
+    "يستخدم عناصر إتش تي إم إل الدلالية مثل الرأس والتذييل والمحتوى الأساسي.",
+    "يعرض الصور مع نصوص بديلة دقيقة.",
+    "يعرض الإنجازات والمشاريع باستخدام القوائم والجداول.",
+    "يحتوي على روابط عاملة للتنقل والموارد الخارجية."
+   ],
+   "stretch": "قم بتنسيق نصوصك باستخدام وسوم داخلية أو أضف مقطع صوتي ترحيبي لتحية الزوار!"
+  }
+ ]
+}

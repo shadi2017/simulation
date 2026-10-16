@@ -1,0 +1,352 @@
+{
+ "ar": {
+  "steps": [
+   "التعريف بالدوال في Python وكيف تجمع مجموعة من التعليمات البرمجية لتنفيذ مهمة محددة ونظامية. مثلما يعمل الطاهي على تحضير خلطة سرية لطبق معين واستخدامها مراراً وتكراراً، تسمح لك الدالة بكتابة الكود مرة واحدة واستدعائه متى شئت داخل البرنامج دون تكرار مزعج.",
+   "نستخدم الكلمة المفتاحية def لنعلن لبايثون أننا نبدأ في بناء دالة جديدة. نتبعها باسم الدالة وأقواس دائرية تحتوي أحياناً على متغيرات، ثم نقطتين رأسيتين. تذكر أن تترك مسافة بادئة (زحافة) للسطور الداخلية لكي يفهم بايثون أنها تتبع هذه الدالة.",
+   "المعاملات (Arguments) هي المدخلات التي نرسلها إلى الدالة لتقوم بعملها عليها. تماماً مثل إعطاء آلة العصارة برتقالة لتعصرها، تستقبل الدالة القيمة داخل أقواسها عبر متغيرات مؤقتة تُدعى البارامترات لنتمكن من التعامل مع هذه القيمة داخل جسم الدالة.",
+   "التعليمة return هي المسؤولة عن إخراج النتيجة النهائية من الدالة إلى الكود الذي قام باستدعائها. تشبه شباك الاستلام في المطعم، حيث تسلمك الوجبة الجاهزة بعد الانتهاء من طهيها، وبمجرد تنفيذ return، تنتهي عملية الدالة فوراً.",
+   "قاعدة ذهبية هامة: دائماً أعطِ دوالك أسماءً واضحة تدل على وظيفتها، واحرص على استخدام return عندما ترغب في حفظ النتيجة الناتجة واستخدامها في حسابات لاحقة، بدلاً من مجرد طباعتها على الشاشة عبر print التي لا تحتفظ بالقيمة.",
+   "في الحياة اليومية، الآلة الحاسبة تملك زراً لجمع رقمين وتظهر لك النتيجة، تماماً مثل الدالة التي تتقبل رقمين كمعاملات وتُرجع مجموعهما. هذا يجعل البرامج الكبيرة منظمة، سهلة القراءة، وسريعة الصيانة إذا ظهر خطأ برمجي."
+  ],
+  "example": "دعنا نكتب دالة بسيطة لضرب أي رقم في اثنين وإرجاع النتيجة. نسمي الدالة def double_it(num): ثم نحسب النتيجة بضرب num في 2، ونستخدم return لرجوع الناتج. عندما نستدعي double_it(5)، تستقبل الدالة الرقم 5، تضربه في 2، وترجع القيمة 10 لنقوم بحفظها أو طباعتها بكل سهولة.",
+  "mistake": "خطأ شائع هو نسيان كتابة الكلمة return، مما يجعل الدالة تنفذ العمليات ولكنها تعيد القيمة None بدلاً من النتيجة المطلوبة. لتصحيح ذلك، تأكد دائماً من كتابة return متبوعة بالقيمة أو المتغير الذي ترغب في إخراجه من الدالة.",
+  "recap": "تعلمنا كيف نستخدم الكلمة def لإنشاء دوال قابلة لإعادة الاستخدام، وكيف نمرر المدخلات عبر المعاملات ونستلم النتائج باستخدام return. هذا التنظيم يجعل برمجتنا أكثر كفاءة وذكاء.",
+  "q": [
+   {
+    "t": "ما هي الكلمة المفتاحية المستخدمة لتعريف دالة جديدة في Python؟",
+    "o": [
+     "function",
+     "def",
+     "define"
+    ],
+    "a": 1,
+    "why": "تستخدم الكلمة المفتاحية def لتعريف الدوال في لغة Python."
+   },
+   {
+    "t": "ما هو دور الكلمة المفتاحية return داخل الدالة؟",
+    "o": [
+     "إيقاف تشغيل البرنامج تماماً",
+     "إرسال النتيجة النهائية للخارج لمن استدعى الدالة",
+     "طباعة النص على الشاشة حصراً"
+    ],
+    "a": 1,
+    "why": "تقوم return بإرسال النتيجة المحسوبة خارج الدالة."
+   },
+   {
+    "t": "كيف نسمي المدخلات التي تستقبلها الدالة بين الأقواس؟",
+    "o": [
+     "المعاملات أو البارامترات (Arguments)",
+     "الحلقات التكرارية (Loops)",
+     "القوائم (Lists)"
+    ],
+    "a": 0,
+    "why": "تُسمى المدخلات داخل الأقواس بالمعاملات أو البارامترات."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "صندوق أجزاء الدوال البرمجية",
+   "goal": "صنف العبارات البرمجية التالية بحسب مكانها الصحيح في بناء الدوال.",
+   "buckets": [
+    "مكونات كتابة الدالة",
+    "مفاهيم خارج الدوال"
+   ],
+   "items": [
+    {
+     "t": "def my_func():",
+     "b": 0
+    },
+    {
+     "t": "return result",
+     "b": 0
+    },
+    {
+     "t": "while True: loop",
+     "b": 1
+    },
+    {
+     "t": "استقبال المعاملات (Arguments)",
+     "b": 0
+    },
+    {
+     "t": "import random",
+     "b": 1
+    },
+    {
+     "t": "المسافة البادئة (Indentation)",
+     "b": 0
+    }
+   ],
+   "success": "رائع! لقد رتبت مفاهيم الدوال البرمجية ببراعة فائقة وأصبحت مستعداً لكتابة برامج نظيفة ومتقدمة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الدالة البرمجية؟",
+    "text": "الدالة (Function) هي كتلة برمجية مستقلة تقوم بمهمة محددة. تشبه الآلة في المصنع؛ تضع فيها مواد خام (معاملات)، فتعالجها وتخرج لك منتجاً نهائياً (نتيجة). استخدام الدوال يمنع تكرار الأكواد ويجعل البرامج أكثر تنظيماً.",
+    "code": "# تعريف دالة ترحب بالمستخدم\ndef say_hello():\n    print(\"مرحباً بك في عالم بايثون!\")\n\nsay_hello()",
+    "output": "مرحباً بك في عالم بايثون!"
+   },
+   {
+    "h": "الكلمة المفتاحية def",
+    "text": "لكي نبدأ في إنشاء دالة بداخل بايثون، نبدأ دائماً بالكلمة المفتاحية def والتي تعني 'Define' أو تعريف. يتبعها اسم الدالة الذي تختاره أنت، ثم أقواس دائرية ()، ثم نقطتان رأسيتان (:).",
+    "code": "def greet_student():\n    print(\n        \"أهلاً بك يا بطل البرمجة!\"\n    )\n\ngreet_student()",
+    "output": "أهلاً بك يا بطل البرمجة!"
+   },
+   {
+    "h": "إرسال واستقبال المعاملات (Arguments)",
+    "text": "الدوال تصبح أكثر قوة عندما نقوم بتمرير معلومات إليها. نضع هذه المعلومات داخل الأقواس أثناء تعريف الدالة وتسمى بارامترات. مثل إعطاء اسم الشخص للدالة لتقوم بتحيته شخصياً.",
+    "code": "def greet_name(name):\n    print(f\"أهلاً بك يا {name}!\")\n\ngreet_name(\"أحمد\")",
+    "output": "أهلاً بك يا أحمد!"
+   },
+   {
+    "h": "إرجاع النتائج باستخدام return",
+    "text": "بدلاً من الاكتفاء بطباعة النتائج، غالباً ما نريد أن تعيد الدالة قيمة برمجية لنستخدمها لاحقاً. هنا يأتي دور تعليمة return التي تنهي عمل الدالة وتعيد القيمة لمن استدعاها.",
+    "code": "def add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(3, 4)\nprint(result)",
+    "output": "7"
+   },
+   {
+    "h": "دالة لحساب ضعف الرقم",
+    "text": "تطبيق عملي بسيط: دالة تستقبل رقماً وتضربه في اثنين ثم تعيد الناتج الجديد باستخدام return. هذا يوضح كيف تتفاعل المعاملات مع مخرجات الدالة بفعالية.",
+    "code": "def double_number(n):\n    return n * 2\n\nprint(double_number(6))",
+    "output": "12"
+   },
+   {
+    "h": "استدعاء الدوال متعددة المعاملات",
+    "text": "يمكن للدالة أن تستقبل أكثر من معامل واحد مفصولاً بفواصل داخل الأقواس. هذا مفيد جداً عندما تحتاج الدالة إلى أكثر من مدخل لإجراء العملية الحسابية أو المنطقية.",
+    "code": "def calculate_area(length, width):\n    return length * width\n\nprint(calculate_area(5, 3))",
+    "output": "15"
+   },
+   {
+    "h": "المسافة البادئة وأهميتها",
+    "text": "في بايثون، الأكواد التابعة للدالة يجب أن تحتوي على مسافة بادئة (زحافة) صحيحة. أي سطر بدون مسافة بادئة يعتبر خارج الدالة، مما يتسبب في ظهور خطأ IndentationError.",
+    "code": "def test_indent():\n    print(\n        \"هذا السطر داخل الدالة\"\n    )\n\ntest_indent()",
+    "output": "هذا السطر داخل الدالة"
+   },
+   {
+    "h": "تنظيم البرنامج عبر الدوال",
+    "text": "تقسيم البرنامج الكبير إلى عدة دوال صغيرة يسهل قراءته وتعديله واكتشاف الأخطاء فيه. كل دالة تركز على مهمة واحدة ومحددة، مما يجعل هندسة البرمجيات أمتع وأكثر احترافية.",
+    "code": "def square(x):\n    return x * x\n\ndef cube(x):\n    return x * x * x\n\nprint(square(4), cube(2))",
+    "output": "16 8"
+   }
+  ],
+  "reference": [
+   {
+    "name": "def",
+    "desc": "كلمة مفتاحية لبدء تعريف دالة جديدة."
+   },
+   {
+    "name": "return",
+    "desc": "تعليمة لإرجاع القيمة من داخل الدالة إلى مستدعيها."
+   },
+   {
+    "name": "Arguments",
+    "desc": "القيم أو المتغيرات المدخلة إلى الدالة عبر الأقواس."
+   },
+   {
+    "name": "Indentation",
+    "desc": "المسافة البادئة لتحديد الأكواد التابعة لجسم الدالة."
+   },
+   {
+    "name": "Function Call",
+    "desc": "عملية استدعاء الدالة باسمها لتنفيذ مهامها."
+   },
+   {
+    "name": "None",
+    "desc": "القيمة الافتراضية التي تعيدها الدالة إذا لم تحتوي على return."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب دالة باسم triple تتلقى رقماً وتعيد ثلاثة أضعافه.",
+    "a": "def triple(n):\n    return n * 3"
+   },
+   {
+    "q": "اكتب دالة باسم say_hi تتلقى اسماً وتطبع رسالة ترحيبية.",
+    "a": "def say_hi(name):\n    print(f\"Hi {name}\")"
+   },
+   {
+    "q": "اكتب دالة باسم multiply تتلقى رقمين وترجع حاصل ضربهما.",
+    "a": "def multiply(x, y):\n    return x * y"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Introduction to functions in Python, which bundle groups of code to perform specific, organized tasks. Just like a chef prepares a secret recipe mixture to use over and over, a function lets you write code once and call it whenever needed without annoying repetition.",
+   "We use the def keyword to announce to Python that we are building a new function. We follow it with the function name, parentheses that sometimes hold variables, and a colon. Remember to indent the inner lines so Python knows they belong to this function.",
+   "Arguments are inputs we send into a function so it can work on them. Much like giving an orange to a juicer, the function receives the value inside its parentheses via temporary variables called parameters so we can use them inside the function body.",
+   "The return statement is responsible for sending the final result out of the function back to the code that called it. It resembles a delivery window at a restaurant, handing you the ready meal after cooking. Once return runs, the function ends immediately.",
+   "An important golden rule: always give your functions clear names reflecting their purpose, and use return when you want to save the resulting value for later calculations, rather than just printing it to the screen via print which doesn't store the value.",
+   "In real life, a calculator has a button to add two numbers and show you the result, just like a function taking two numbers as arguments and returning their sum. This makes large programs organized, readable, and easy to maintain if bugs appear."
+  ],
+  "example": "Let's write a simple function to double any number and return the result. We name the function def double_it(num): then calculate the result by multiplying num by 2, and use return to send the value back. When we call double_it(5), the function receives 5, multiplies it by 2, and returns 10 so we can store or print it easily.",
+  "mistake": "A common mistake is forgetting the return keyword, which causes the function to run its code but evaluate to None instead of the expected result. To fix this, always ensure you include return followed by the value or variable you want to output.",
+  "recap": "We learned how to use def to create reusable functions, how to pass inputs via arguments, and how to retrieve results using return. This organization makes our programming much more efficient and smart.",
+  "q": [
+   {
+    "t": "What keyword is used to define a new function in Python?",
+    "o": [
+     "function",
+     "def",
+     "define"
+    ],
+    "a": 1,
+    "why": "The def keyword is used to define functions in Python."
+   },
+   {
+    "t": "What is the role of the return keyword inside a function?",
+    "o": [
+     "To shut down the program completely",
+     "To send the final computed result back to the caller",
+     "To print text on the screen exclusively"
+    ],
+    "a": 1,
+    "why": "The return statement sends the calculated result outside the function."
+   },
+   {
+    "t": "What do we call the inputs received by a function inside parentheses?",
+    "o": [
+     "Arguments or parameters",
+     "Loops",
+     "Lists"
+    ],
+    "a": 0,
+    "why": "Inputs inside parentheses are called arguments or parameters."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Function Parts Sorting Bucket",
+   "goal": "Classify the following statements based on whether they belong to function structures or outside concepts.",
+   "buckets": [
+    "Function Building Parts",
+    "Outside Concepts"
+   ],
+   "items": [
+    {
+     "t": "def my_func():",
+     "b": 0
+    },
+    {
+     "t": "return result",
+     "b": 0
+    },
+    {
+     "t": "while True: loop",
+     "b": 1
+    },
+    {
+     "t": "Receiving Arguments",
+     "b": 0
+    },
+    {
+     "t": "import random",
+     "b": 1
+    },
+    {
+     "t": "Indentation",
+     "b": 0
+    }
+   ],
+   "success": "Brilliant! You sorted the function concepts like an expert developer and are ready to write clean code!"
+  },
+  "sections": [
+   {
+    "h": "What is a Function?",
+    "text": "A function is an independent block of code that performs a specific task. Think of it as a factory machine: you feed it raw materials (arguments), it processes them, and outputs a finished product (result). Using functions prevents duplicated code and keeps programs organized.",
+    "code": "# Defining a greeting function\ndef say_hello():\n    print(\"Welcome to the world of Python!\")\n\nsay_hello()",
+    "output": "Welcome to the world of Python!"
+   },
+   {
+    "h": "The def Keyword",
+    "text": "To start creating a function in Python, we always begin with the def keyword, which stands for 'Define'. It is followed by your chosen function name, parentheses (), and a colon (:).",
+    "code": "def greet_student():\n    print(\n        \"Hello coding champion!\"\n    )\n\ngreet_student()",
+    "output": "Hello coding champion!"
+   },
+   {
+    "h": "Passing and Receiving Arguments",
+    "text": "Functions become much more powerful when we pass data into them. We place this data inside parentheses during function definition as parameters. Like giving a person's name to a function to greet them personally.",
+    "code": "def greet_name(name):\n    print(f\"Hello {name}!\")\n\ngreet_name(\"Ahmed\")",
+    "output": "Hello Ahmed!"
+   },
+   {
+    "h": "Returning Results with return",
+    "text": "Instead of just printing results, we often want a function to hand back a data value for later use. This is where the return statement comes in, ending the function execution and passing the value back to the caller.",
+    "code": "def add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(3, 4)\nprint(result)",
+    "output": "7"
+   },
+   {
+    "h": "Doubling a Number Function",
+    "text": "A simple practical application: a function that receives a number, multiplies it by two, and returns the new value using return. This demonstrates how parameters interact with function outputs effectively.",
+    "code": "def double_number(n):\n    return n * 2\n\nprint(double_number(6))",
+    "output": "12"
+   },
+   {
+    "h": "Calling Multi-Argument Functions",
+    "text": "A function can accept more than one argument separated by commas inside the parentheses. This is extremely useful when a function needs multiple inputs to complete a math or logic operation.",
+    "code": "def calculate_area(length, width):\n    return length * width\n\nprint(calculate_area(5, 3))",
+    "output": "15"
+   },
+   {
+    "h": "Indentation and Its Importance",
+    "text": "In Python, lines belonging to a function must feature proper indentation. Any line without correct indentation is considered outside the function, triggering an IndentationError.",
+    "code": "def test_indent():\n    print(\n        \"This line is inside\"\n    )\n\ntest_indent()",
+    "output": "This line is inside"
+   },
+   {
+    "h": "Program Organization via Functions",
+    "text": "Splitting a large program into multiple small functions makes it easier to read, modify, and debug. Each function focuses on one specific task, making software engineering much more fun and professional.",
+    "code": "def square(x):\n    return x * x\n\ndef cube(x):\n    return x * x * x\n\nprint(square(4), cube(2))",
+    "output": "16 8"
+   }
+  ],
+  "reference": [
+   {
+    "name": "def",
+    "desc": "Keyword to begin defining a new function."
+   },
+   {
+    "name": "return",
+    "desc": "Statement to send a value out from inside the function to its caller."
+   },
+   {
+    "name": "Arguments",
+    "desc": "Values or variables passed into the function through parentheses."
+   },
+   {
+    "name": "Indentation",
+    "desc": "Spacing used to define code blocks belonging to a function body."
+   },
+   {
+    "name": "Function Call",
+    "desc": "The act of invoking a function by its name to execute its tasks."
+   },
+   {
+    "name": "None",
+    "desc": "Default value returned by a function if it lacks a return statement."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a function named triple that takes a number and returns three times its value.",
+    "a": "def triple(n):\n    return n * 3"
+   },
+   {
+    "q": "Write a function named say_hi that takes a name and prints a greeting message.",
+    "a": "def say_hi(name):\n    print(f\"Hi {name}\")"
+   },
+   {
+    "q": "Write a function named multiply that takes two numbers and returns their product.",
+    "a": "def multiply(x, y):\n    return x * y"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions"
+  }
+ ],
+ "grounded": true
+}

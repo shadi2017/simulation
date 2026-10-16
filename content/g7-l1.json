@@ -1,0 +1,298 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تقود سيارة لعبة بجهاز تحكم عن بعد، حيث تضغط على زر لتتحرك للأمام أو تنعطف يمينًا. في برمجة البايثون، تتيح لنا مكتبة Turtle الاستماع إلى ضغطات لوحة المفاتيح لجعل السلحفاة تتفاعل فورًا مع أفعالك.",
+   "لربط مفتاح في لوحة المفاتيح بأمر، نستخدم دالة الاستماع license والربط. على سبيل المثال: screen.onkey(move_forward, 'Up')، مما يعني أنه عندما تضغط على السهم العلوي، ستنفذ السلحفاة دالة التقدم للأمام.",
+   "لكي يستمع الشاشة للوحة المفاتيح بشكل مستمر، يجب أن نضيف أمر screen.listen() في بداية البرنامج. هذا الأمر يشبه فتح أذني السلحفاة لتسمع أي زر تضغطه على لوحة مفاتيح الكمبيوتر الخاص بك.",
+   "بما أن السلحفاة تتحرك بحرية، فقد تهرب خارج نافذة الرسم وتختفي عن إشرافك! لمنع ذلك، نكتب شروطا 'if' تفحص موقع السلحفاة الحالي باستخدام دالات مثل xcor() و ycor() لتقييد حركتها داخل حدود أمان الشاشة.",
+   "قاعدة ذهبية في تصميم ألعاب سلحفاة بايثون: اربط دائماً دالة الحركة بشروط تحكم بالحدود (Boundary Restrictions)، بحيث إذا اقتربت السلحفاة من الحافة، تتوقف أو ترتد إلى الداخل ولا تختفي أبداً.",
+   "في الحياة اليومية، أشبه هذا بلعبة الفيديو، حيث تحافظ شخصيتك على البقاء داخل خريطة اللعبة ولا تسقط خارج الشاشة. نستخدم هذه التقنية لصنع ألعاب تفاعلية ممتعة ومتحكم بها بالكامل عبر الكيبورد."
+  ],
+  "example": "لنقم ببرمجة سلحفاة تتحرك للأمام عند الضغط على مفتاح 'Up'، مع التأكد أنها لا تتجاوز الإحداثي y = 200.\n\n```python\nfrom turtle import *\nscreen = Screen()\nscreen.listen()\n\ndef move_up():\n    if ycor() < 200:\n        forward(20)\n\nscreen.onkey(move_up, 'Up')\nscreen.mainloop()\n```\nهنا، عند ضغط السهم العلوي، تتحقق دالة 'if ycor() < 200' أولاً؛ فإذا كانت السلحفاة آمنة تحت خط 200 بكسل، تتحرك للأمام 20 خطوة، وإلا تتوقف لحماية الحدود.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة أمر screen.listen()، مما يجعل الشاشة لا تستجيب نهائياً لضغطات المفاتيح. الحل هو وضع screen.listen() فور إنشاء كائن الشاشة.",
+  "recap": "تعلمنا كيفية الاستماع لضغطات لوحة المفاتيح وربطها بدالات الحركة لتوجيه السلحفاة تفاعلياً. كما طبقنا شروط الحدود لمنع السلحفاة من الهروب خارج نافذة الرسم.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لأمر screen.listen() في مكتبة Turtle؟",
+    "o": [
+     "رسم خط مستقيم فوري",
+     "تفعيل استقبال ضغطات لوحة المفاتيح",
+     "إغلاق نافذة الرسم"
+    ],
+    "a": 1,
+    "why": "أمر screen.listen يجعل نافذة الرسم قادرة على سماع واستقبال الأزرار التي تضغطها على الكيبورد."
+   },
+   {
+    "t": "كيف نتحقق من موقع السلحفاة الأفقي لفرض قيود الحدود؟",
+    "o": [
+     "باستخدام دالة xcor()",
+     "باستخدام دالة speed()",
+     "باستخدام دالة heading()"
+    ],
+    "a": 0,
+    "why": "دالة xcor() تعيد الإحداثي السيني الحالي للسلحفاة لفحص مكانها أفقياً."
+   },
+   {
+    "t": "لماذا نستخدم الشروط (if statements) مع دوال مفاتيح الحركة؟",
+    "o": [
+     "لتغيير لون السلحفاة فقط",
+     " لمنع السلحفاة من الخروج عن حدود الشاشة",
+     "لجعل الكود أسرع"
+    ],
+    "a": 1,
+    "why": "الشروط تضمن بقاء السلحفاة داخل الشاشة وعدم اختفائها في الأطراف."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع حركة السلحفاة المقيدة",
+   "goal": "فهم كيف تمنع شروط الحدود السلحفاة من تجاوز إحداثي معين.",
+   "code": "from turtle import *\nsety(190)\nif ycor() < 200:\n    forward(30)\nprint(ycor())",
+   "options": [
+    "220.0",
+    "190.0",
+    "200.0"
+   ],
+   "a": 0,
+   "success": "رائع! تحركت السلحفاة 30 خطوة لأمام فاصبح موقعها 220 ضمن الحدود المسموحة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في تفاعل الكيبورد",
+    "text": "تماماً كما تضغط على أزرار ذراع الألعاب لتحريك شخصيتك، تتيح لك مكتبة Turtle ربط مفاتيح الكيبورد بدالات برمجية لتتحكم بالسلحفاة بمرونة وسرعة.",
+    "code": "from turtle import *\nscreen = Screen()\nscreen.listen()",
+    "output": "يتم تفعيل استماع الشاشة للمفاتيح"
+   },
+   {
+    "h": "ربط المفاتيح بالأوامر",
+    "text": "نستخدم دالة screen.onkey(function, key) لنقول للحاسوب: عندما يضغط اللاعب على هذا المفتاح المحدّد، نفذ تلك الدالة البرمجية فوراً.",
+    "code": "from turtle import *\ndef say_hi():\n    print('أهلاً!')\nscreen = Screen()\nscreen.onkey(say_hi, 'space')",
+    "output": "تطبع 'أهلاً!' عند الضغط على المسافة"
+   },
+   {
+    "h": "فهم إحداثيات الشاشة",
+    "text": "نافذة الرسم تشبه ورقة رسم بياني مركزها (0,0). لمعرفة مكان السلحفاة، نستخدم دالات مثل xcor() و ycor() لمعرفة الإحداثي الأفقي والعمودي.",
+    "code": "from turtle import *\nprint(position())",
+    "output": "(0.00, 0.00)"
+   },
+   {
+    "h": "فرض قيود الحدود الأمانية",
+    "text": "لكلا لا تختفي السلحفاة في حواف النافذة، نضع شرطاً يفحص إحداثياتها قبل تنفيذ خطوة الحركة الأمامية أو الجانبية.",
+    "code": "from turtle import *\nif ycor() < 250:\n    forward(10)",
+    "output": "تتحرك فقط إذا كانت أقل من 250"
+   },
+   {
+    "h": "تجميع تفاعل المفاتيح والحدود",
+    "text": "نجمع الآن الاستماع ومفتاح الحركة والشرط داخل دالة واحدة مخصصة لضمان تحكم آمن بالكامل دون أي خروج عن الشاشة.",
+    "code": "from turtle import *\nscreen = Screen()\nscreen.listen()\nscreen.onkey(lambda: forward(10), 'Up')",
+    "output": "السلحفاة تتحرك للأمام عند ضغط السهم العلوي"
+   },
+   {
+    "h": "الحفاظ على بقاء النافذة مفتوحة",
+    "text": "بعد إعداد جميع مفاتيح التحكم، يجب إنهاء البرنامج بأمر screen.mainloop() لكي تظل نافذة الرسم مفتوحة وتستمر في استقبال أضواء الأزرار.",
+    "code": "from turtle import *\nscreen = Screen()\nscreen.mainloop()",
+    "output": "تظل النافذة مفتوحة وتستجيب للمستخدم"
+   },
+   {
+    "h": "تشبيه من الواقع",
+    "text": "فكر في روبوت في مسار سباق مغلق؛ إذا اقترب الروبوت من الجدار، يتوقف تلقائياً لكي لا يصطدم. هذا בדיוק ما تفعله شروط الحدود للسلحفاة!",
+    "code": "from turtle import *\n# تشبيه برمجي تفاعلي للأمان",
+    "output": "حماية حدود الشاشة بنجاح"
+   }
+  ],
+  "reference": [
+   {
+    "name": "screen.listen()",
+    "desc": "تفعيل نافذة الرسوم لاستقبال الأحداث وضغطات لوحة المفاتيح."
+   },
+   {
+    "name": "screen.onkey()",
+    "desc": "ربط مفتاح معين بلوحة المفاتيح بدالة برمجية محددة."
+   },
+   {
+    "name": "ycor()",
+    "desc": "إرجاع الإحداثي العمودي الحالي للسلحفاة."
+   },
+   {
+    "name": "xcor()",
+    "desc": "إرجاع الإحداثي الأفقي الحالي للسلحفاة."
+   },
+   {
+    "name": "screen.mainloop()",
+    "desc": "إبقاء نافذة الرسم مفعلة وتنتظر تفاعل المستخدم."
+   },
+   {
+    "name": "if statement",
+    "desc": "التحقق من شرط معين قبل السماح للسلحفاة بالحركة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر الكود الذي يجعل الشاشة تستمع لضغطات الكيبورد.",
+    "a": "screen.listen()"
+   },
+   {
+    "q": "كيف تربط مفتاح السهم السفلي 'Down' بدالة اسمها move_down؟",
+    "a": "screen.onkey(move_down, 'Down')"
+   },
+   {
+    "q": "ما الدالة التي تفحص الإحداثي السيني للسلحفاة؟",
+    "a": "xcor()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine driving a toy RC car by pressing buttons to go forward or turn right. In Python programming, the Turtle library lets us listen to keyboard presses to make the turtle react instantly to your actions.",
+   "To bind a keyboard key to a command, we use screen listening and binding methods. For example: screen.onkey(move_forward, 'Up'), which means when you press the Up arrow, the turtle runs the forward function.",
+   "For the screen to continuously listen for keys, we must add the screen.listen() command at the beginning of our program. This acts like opening the turtle's ears to hear any button you press on your computer keyboard.",
+   "Since the turtle moves freely, it might escape outside the drawing window and disappear from your view! To prevent this, we write 'if' statements checking the turtle's current position using functions like xcor() and ycor() to restrict movement within safe screen boundaries.",
+   "A golden rule in Python turtle game design: always couple movement functions with boundary restrictions, so if the turtle approaches an edge, it stops or stays inside and never vanishes.",
+   "In real life, this is just like a video game where your character stays inside the game map and doesn't fall off the screen. We use this technique to build fun, fully keyboard-controlled interactive games."
+  ],
+  "example": "Let's code a turtle that moves forward when pressing the 'Up' key, while ensuring it never exceeds the y = 200 coordinate.\n\n```python\nfrom turtle import *\nscreen = Screen()\nscreen.listen()\n\ndef move_up():\n    if ycor() < 200:\n        forward(20)\n\nscreen.onkey(move_up, 'Up')\nscreen.mainloop()\n```\nHere, when the Up arrow is pressed, the 'if ycor() < 200' check runs first; if the turtle is safe below 200 pixels, it moves forward 20 steps, otherwise it halts to protect the boundaries.",
+  "mistake": "A common mistake is forgetting to write screen.listen(), which makes the screen completely unresponsive to key presses. The fix is to place screen.listen() right after creating the screen object.",
+  "recap": "We learned how to listen to keyboard presses and bind them to movement functions to steer the turtle interactively. We also applied boundary conditions to prevent the turtle from escaping the drawing window.",
+  "q": [
+   {
+    "t": "What is the primary purpose of the screen.listen() command in Turtle?",
+    "o": [
+     "Draw an instant straight line",
+     "Enable the window to receive keyboard presses",
+     "Close the drawing window"
+    ],
+    "a": 1,
+    "why": "screen.listen makes the graphics window active for hearing and capturing keyboard buttons."
+   },
+   {
+    "t": "How do we check the turtle's horizontal position to enforce boundary restrictions?",
+    "o": [
+     "Using the xcor() function",
+     "Using the speed() function",
+     "Using the heading() function"
+    ],
+    "a": 0,
+    "why": "The xcor() function returns the current x-coordinate of the turtle for horizontal checking."
+   },
+   {
+    "t": "Why do we use if statements with key movement functions?",
+    "o": [
+     "To change the turtle's color only",
+     "To prevent the turtle from going off-screen",
+     "To make the code run faster"
+    ],
+    "a": 1,
+    "why": "Conditions ensure the turtle remains inside the screen and doesn't vanish off the edges."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Restricted Turtle Movement",
+   "goal": "Understand how boundary conditions stop the turtle from exceeding a coordinate.",
+   "code": "from turtle import *\nsety(190)\nif ycor() < 200:\n    forward(30)\nprint(ycor())",
+   "options": [
+    "220.0",
+    "190.0",
+    "200.0"
+   ],
+   "a": 0,
+   "success": "Awesome! The turtle moved 30 steps forward reaching 220 within allowed limits!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Keyboard Interaction",
+    "text": "Just like pressing gamepad buttons to move your character, the Turtle library lets you link keyboard keys to code functions so you can steer your turtle smoothly and quickly.",
+    "code": "from turtle import *\nscreen = Screen()\nscreen.listen()",
+    "output": "Screen key listening is activated"
+   },
+   {
+    "h": "Binding Keys to Commands",
+    "text": "We use the screen.onkey(function, key) method to tell the computer: when the player presses this specific key, execute that code function immediately.",
+    "code": "from turtle import *\ndef say_hi():\n    print('Hi!')\nscreen = Screen()\nscreen.onkey(say_hi, 'space')",
+    "output": "Prints 'Hi!' when spacebar is pressed"
+   },
+   {
+    "h": "Understanding Screen Coordinates",
+    "text": "The drawing window is like a graph paper with (0,0) at the center. To check where the turtle is, we use functions like xcor() and ycor() for horizontal and vertical coordinates.",
+    "code": "from turtle import *\nprint(position())",
+    "output": "(0.00, 0.00)"
+   },
+   {
+    "h": "Enforcing Safety Boundary Restrictions",
+    "text": "So the turtle doesn't disappear off window edges, we place a condition checking its coordinates before executing forward or directional steps.",
+    "code": "from turtle import *\nif ycor() < 250:\n    forward(10)",
+    "output": "Moves only if y coordinate is less than 250"
+   },
+   {
+    "h": "Combining Keys and Boundaries",
+    "text": "We now bundle screen listening, movement keys, and boundary conditions inside a custom setup to guarantee safe control without leaving the screen.",
+    "code": "from turtle import *\nscreen = Screen()\nscreen.listen()\nscreen.onkey(lambda: forward(10), 'Up')",
+    "output": "Turtle moves forward when Up arrow is pressed"
+   },
+   {
+    "h": "Keeping the Window Open",
+    "text": "After setting up all control keys, we must end the program with screen.mainloop() so the drawing window stays open and continues listening for button inputs.",
+    "code": "from turtle import *\nscreen = Screen()\nscreen.mainloop()",
+    "output": "Window stays open and responds to user"
+   },
+   {
+    "h": "Real-Life Analogy",
+    "text": "Think of a robot on a closed racing track; if the robot nears a wall, it stops automatically to avoid crashing. That is precisely what boundary conditions do for the turtle!",
+    "code": "from turtle import *\n# Interactive safety programming analogy",
+    "output": "Screen boundaries protected successfully"
+   }
+  ],
+  "reference": [
+   {
+    "name": "screen.listen()",
+    "desc": "Sets focus on the graphics window to catch keyboard events."
+   },
+   {
+    "name": "screen.onkey()",
+    "desc": "Binds a specific keyboard key to a designated function."
+   },
+   {
+    "name": "ycor()",
+    "desc": "Returns the current vertical y-coordinate of the turtle."
+   },
+   {
+    "name": "xcor()",
+    "desc": "Returns the current horizontal x-coordinate of the turtle."
+   },
+   {
+    "name": "screen.mainloop()",
+    "desc": "Keeps the graphics window active and waiting for user interactions."
+   },
+   {
+    "name": "if statement",
+    "desc": "Evaluates a specific condition before letting the turtle move."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the line of code that makes the screen listen for keyboard presses.",
+    "a": "screen.listen()"
+   },
+   {
+    "q": "How do you bind the down arrow 'Down' to a function named move_down?",
+    "a": "screen.onkey(move_down, 'Down')"
+   },
+   {
+    "q": "What function checks the turtle's horizontal x-coordinate?",
+    "a": "xcor()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/library/turtle.html"
+  },
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html"
+  }
+ ],
+ "grounded": true
+}

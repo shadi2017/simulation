@@ -1,0 +1,299 @@
+{
+ "ar": {
+  "steps": [
+   "التصحيح هو اختبار الأوامر، وإيجاد الخطأ، ثم تغليفه وإصلاحه. مثل عندما ترسم صورة وتمسح خطا بالخطأ لإعادة رسمه بشكل أجمل.",
+   "تخيل روبوت يتحرك للأمام خطوتين ثم يدور. إذا توقف الروبوت قبل النجمة بمربع واحد، فهذا يعني أن هناك أمرا ناقصا يجب إضافته.",
+   "نختبر الكود خطوة بخطوة ببطء. نراقب الروبوت وهو يتحرك ونرى أين حدث الخطأ بالتحديد لنصلحه فورا.",
+   "إذا كان لدينا تكرار خاطئ، مثل تكرار القفز 3 مرات بدل 4، نقوم بتعديل رقم التكرار ليعمل البرنامج بنجاح.",
+   "القاعدة الذهبية للتصحيح: صلحي خطأ واحدا فقط في كل مرة، ثم جربي الكود من جديد لترى النتيجة.",
+   "في الحياة اليومية، عندما لا يفتح باب الغرفة، نتحقق من المفتاح أو القفل، ونصلح المشكلة لنتمكن من الدخول."
+  ],
+  "example": "لدينا روبوت يريد الوصول للنجمة ولكن الكود الحالي يقول: 'تحرك للأمام خطوة، تحرك للأمام خطوة'. الروبوت يتوقف قبل المربع الأخير! السبب أننا نسينا خطوة إضافية. الحل: نضيف أمر 'تحرك للأمام خطوة' ليصبح الكود 3 خطوات، فيصل الروبوت للنجمة بنجاح.",
+  "mistake": "الخطأ الشائع هو تغيير أشياء كثيرة في الكود دفعة واحدة عندما يتوقف الروبوت. التصحيح الصحيح هو تغيير خطأ واحد فقط واختبار البرنامج.",
+  "recap": "التصحيح يساعدنا في إيجاد الأخطاء وإصلاحها خطوة بخطوة. اختبار الكود بعد كل تعديل يضمن وصول الشخصية لهدفها بأمان.",
+  "q": [
+   {
+    "t": "ماذا يعني التصحيح في عالم البرمجة؟",
+    "o": [
+     "رسم أشكال ملونة على الشاشة",
+     "إيجاد الأخطاء في الأوامر وإصلاحها",
+     "حفظ الملفات في الحاسوب"
+    ],
+    "a": 1,
+    "why": "التصحيح هو عملية البحث عن الأخطاء في الكود وإصلاحها."
+   },
+   {
+    "t": "إذا توقف الروبوت قبل النجمة بمربع واحد، فماذا نفعل؟",
+    "o": [
+     "نضيف أمر تحرك خطوة إضافية",
+     "نحذف كل الأوامر ونبدأ من جديد",
+     "نغلق الحاسوب ونترك اللعبة"
+    ],
+    "a": 0,
+    "why": "نضيف الخطوة الناقصة ليكمل الروبوت طريقه إلى النجمة."
+   },
+   {
+    "t": "ما هي القاعدة الذهبية عند اكتشاف عدة أخطاء؟",
+    "o": [
+     "نصلح كل الأخطاء دفعة واحدة بدون تفكير",
+     "نصلح خطأ واحدا فقط ثم نختبر الكود",
+     "نترك الأخطاء كما هي"
+    ],
+    "a": 1,
+    "why": "إصلاح خطأ واحد والاختبار يسهل معرفة إن كان الحل صحيحا."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات تصحيح طريق الروبوت",
+   "goal": "رتب خطوات العثور على الخطأ وإصلاح الكود بالترتيب الصحيح",
+   "items": [
+    "تشغيل الأوامر لمشاهدة حركة الروبوت",
+    "ملاحظة المكان الذي توقف فيه الروبوت بالخطأ",
+    "تعديل الأمر الناقص أو الخاطئ في الكود",
+    "إعادة تشغيل الكود للتأكد من وصول الروبوت للنجمة"
+   ],
+   "success": "رائع! لقد تحرك الروبوت بأمان ووصل إلى النجمة بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "ما هو التصحيح؟",
+    "text": "التصحيح هو العملية التي نكتشف من خلالها الأخطاء في الأوامر ونصلحها. مثلما تبحث عن قطعة لغز مفقودة لتكتمل الصورة.",
+    "code": "كرر 3 مرات: امسح الخطأ، أضف التعديل",
+    "output": "يصبح البرنامج يعمل بدون أخطاء"
+   },
+   {
+    "h": "الاختبار المنهجي",
+    "text": "الاختبار المنهجي يعني تشغيل الكود بتركيز وانتباه لمعرفة أين تظهر المشكلة بالضبط، خطوة بخطوة.",
+    "code": "شغل الكود -> راقب حركة الروبوت -> حدد مكان التوقف",
+    "output": "معرفة مكان الخطأ بكل سهولة"
+   },
+   {
+    "h": "اكتشاف الكتل غير المرتبة",
+    "text": "أحيانا نضع الأوامر بترتيب خاطئ، كأن نجعل الروبوت يدور قبل أن يتحرك. الترتيب الصحيح أساس النجاح.",
+    "code": "1. تحرك للأمام\n2. انعطف لليمين\n3. التقط النجمة",
+    "output": "الروبوت ينفذ المهام بالترتيب الصحيح"
+   },
+   {
+    "h": "إصلاح التكرارات الخاطئة",
+    "text": "إذا كان لدينا تكرار، مثل القفز 3 مرات بدل 5، فإن الروبوت لن يصل للمكان المطلوب. يجب تعديل رقم التكرار.",
+    "code": "كرر 5 مرات: اقفز للأمام",
+    "output": "الروبوت يقفز للعدد الصحيح من المرات"
+   },
+   {
+    "h": "مساعدة الشخصية للهروب من المتاهة",
+    "text": "لتخرج الشخصية من المتاهة بأمان، نختبر مسارها، وإذا اصطدمت بالجدار نغير اتجاهها فورا.",
+    "code": "إذا كان الطريق مسدودا: انعطف لليسار",
+    "output": "الشخصية تجد مخرج المتاهة بأمان"
+   },
+   {
+    "h": "خطأ التوقف المبكر",
+    "text": "عندما يتوقف الروبوت قبل المربع الأخير، فذلك يعني أننا بحاجة لإضافة أمر حركة واحد إضافي.",
+    "code": "تحرك للأمام 3 مرات بدل مرتين",
+    "output": "الروبوت يصل تماما إلى الهدف"
+   },
+   {
+    "h": "قاعدة الخطأ الواحد",
+    "text": "لا تغير كل شيء مرة واحدة. قم بتغيير أمر واحد فقط، ثم جرب الكود لتعرف إن كان هذا التعديل صحيحا.",
+    "code": "عدل أمرا واحدا -> جرب الكود",
+    "output": "يسهل اكتشاف سبب المشكلة"
+   },
+   {
+    "h": "تطبيق حياتي للتصحيح",
+    "text": "في الحياة، عندما ترتدي حذائك وتجد رباطه معقدا، تفك العقدة وتصلحها لتمشي براحة.",
+    "code": "العقدة -> فكها -> ربطها بشكل صحيح",
+    "output": "حذاء مريح ومشي بلا تعثر"
+   }
+  ],
+  "reference": [
+   {
+    "name": "التصحيح (Debugging)",
+    "desc": "البحث عن الأخطاء في الكود وإصلاحها"
+   },
+   {
+    "name": "الاختبار (Testing)",
+    "desc": "تشغيل الأوامر لمشاهدة النتيجة"
+   },
+   {
+    "name": "الترتيب (Ordering)",
+    "desc": "تنظيم الأوامر بالمسار الصحيح"
+   },
+   {
+    "name": "التكرار (Loop)",
+    "desc": "إعادة تنفيذ نفس الأمر عددا من المرات"
+   },
+   {
+    "name": "المتاهة (Maze)",
+    "desc": "طريق مليء بالمنعطفات يحتاج توجيها دقيقا"
+   },
+   {
+    "name": "الهدف (Goal)",
+    "desc": "المكان النهائي الذي نريد للروبوت الوصول إليه"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "إذا توقف الروبوت قبل المربع الأخير، فما هو الأمر الذي يجب إضافته؟",
+    "a": "أمر حركة إضافي (خطوة للأمام)"
+   },
+   {
+    "q": "لماذا نصلح خطأ واحدا في كل مرة بدلا من تغيير كل الأوامر دفعة واحدة؟",
+    "a": "لكي نعرف بوضوح أي تعديل هو الذي أصلح المشكلة"
+   },
+   {
+    "q": "إذا كان الروبوت يدور قبل أن يتحرك وحدث خطأ، فماذا نغير؟",
+    "a": "نرتب الأوامر بحيث يتحرك أولا ثم يدور"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Debugging is testing instructions, finding a mistake, and changing it. Like when you draw a picture and erase a wrong line to redraw it better.",
+   "Imagine a robot moving forward two steps then turning. If the robot stops one square before the star, it means an instruction is missing.",
+   "We test code step by step slowly. We watch the robot move and see exactly where the mistake happened to fix it immediately.",
+   "If we have a wrong loop, like repeating a jump 3 times instead of 4, we adjust the repeat number so the program works successfully.",
+   "The golden rule of debugging: fix only one mistake at a time, then test the code again to see the result.",
+   "In real life, when a room door won't open, we check the key or lock, and fix the issue so we can enter."
+  ],
+  "example": "We have a robot wanting to reach the star, but the current code says: 'move forward one step, move forward one step'. The robot stops before the last square! The reason is we forgot an extra step. Solution: add 'move forward one step' so the code becomes 3 steps, and the robot reaches the star successfully.",
+  "mistake": "A common mistake is changing many things in the code at once when the robot stops. The correct debugging is changing only one error and testing the program.",
+  "recap": "Debugging helps us find mistakes and fix them step by step. Testing code after each adjustment ensures the character reaches its goal safely.",
+  "q": [
+   {
+    "t": "What does debugging mean in the programming world?",
+    "o": [
+     "Drawing colorful shapes on the screen",
+     "Finding mistakes in instructions and fixing them",
+     "Saving files on the computer"
+    ],
+    "a": 1,
+    "why": "Debugging is the process of looking for errors in code and fixing them."
+   },
+   {
+    "t": "If the robot stops one square before the star, what should we do?",
+    "o": [
+     "Add an extra move step command",
+     "Delete all commands and start over",
+     "Turn off the computer and quit the game"
+    ],
+    "a": 0,
+    "why": "We add the missing step so the robot completes its path to the star."
+   },
+   {
+    "t": "What is the golden rule when discovering multiple mistakes?",
+    "o": [
+     "Fix all mistakes at once without thinking",
+     "Fix only one mistake and then test the code",
+     "Leave the mistakes as they are"
+    ],
+    "a": 1,
+    "why": "Fixing one error and testing makes it easy to see if the fix was correct."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Robot Path Debugging Steps",
+   "goal": "Order the steps of finding an error and fixing the code correctly",
+   "items": [
+    "Run the instructions to watch the robot's movement",
+    "Notice the spot where the robot mistakenly stopped",
+    "Modify the missing or wrong command in the code",
+    "Rerun the code to ensure the robot reaches the star"
+   ],
+   "success": "Awesome! The robot moved safely and reached the star successfully!"
+  },
+  "sections": [
+   {
+    "h": "What is Debugging?",
+    "text": "Debugging is the process where we discover errors in instructions and fix them. Just like searching for a missing puzzle piece to complete the picture.",
+    "code": "repeat 3 times: erase error, add fix",
+    "output": "The program runs without errors"
+   },
+   {
+    "h": "Systematic Testing",
+    "text": "Systematic testing means running the code with focus and attention to see exactly where the problem appears, step by step.",
+    "code": "run code -> watch robot movement -> locate stopping point",
+    "output": "Knowing the error location easily"
+   },
+   {
+    "h": "Spotting Out-of-Order Blocks",
+    "text": "Sometimes we place commands in the wrong order, like making the robot turn before it moves. Correct ordering is the basis of success.",
+    "code": "1. move forward\n2. turn right\n3. get star",
+    "output": "The robot performs tasks in correct order"
+   },
+   {
+    "h": "Fixing Wrong Loops",
+    "text": "If we have a loop, like jumping 3 times instead of 5, the robot won't reach the target location. The loop number must be adjusted.",
+    "code": "repeat 5 times: jump forward",
+    "output": "The robot jumps the correct number of times"
+   },
+   {
+    "h": "Helping Character Escape Maze Safely",
+    "text": "To get the character out of the maze safely, we test its path, and if it hits a wall, we change its direction immediately.",
+    "code": "if path is blocked: turn left",
+    "output": "The character finds the maze exit safely"
+   },
+   {
+    "h": "Early Stopping Error",
+    "text": "When the robot stops before the last square, it means we need to add one extra movement instruction.",
+    "code": "move forward 3 times instead of 2",
+    "output": "The robot reaches the goal precisely"
+   },
+   {
+    "h": "The One-Error Rule",
+    "text": "Do not change everything at once. Change only one command, then test the code to know if this adjustment is correct.",
+    "code": "fix one command -> test code",
+    "output": "Easier to find the cause of the problem"
+   },
+   {
+    "h": "Real-Life Debugging Application",
+    "text": "In life, when you wear your shoe and find its lace tangled, you untangle it and fix it to walk comfortably.",
+    "code": "tangled lace -> untangle -> tie correctly",
+    "output": "Comfortable shoe and smooth walking"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Debugging",
+    "desc": "Finding errors in code and fixing them"
+   },
+   {
+    "name": "Testing",
+    "desc": "Running instructions to watch the result"
+   },
+   {
+    "name": "Ordering",
+    "desc": "Organizing commands in the right path"
+   },
+   {
+    "name": "Loop",
+    "desc": "Repeating the same command multiple times"
+   },
+   {
+    "name": "Maze",
+    "desc": "A path full of turns needing precise guidance"
+   },
+   {
+    "name": "Goal",
+    "desc": "The final place we want the robot to reach"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If the robot stops before the last square, what command must be added?",
+    "a": "An extra movement command (step forward)"
+   },
+   {
+    "q": "Why do we fix one error at a time instead of changing all commands at once?",
+    "a": "To clearly know which adjustment fixed the problem"
+   },
+   {
+    "q": "If the robot turns before it moves and an error occurs, what do we change?",
+    "a": "Order the commands so it moves first then turns"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

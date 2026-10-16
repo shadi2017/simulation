@@ -1,0 +1,340 @@
+{
+ "ar": {
+  "steps": [
+   "عالم الإنترنت يحتاج لتنظيم مثل الكتب المدرسية تماماً! تعتبر العناوين أدوات ممتازة لترتيب الأفكار وجعل قراءة الصفحات أسهل بكثير للبشر ولبرامج قراءة الشاشة.",
+   "نستخدم وسم العنوان الأكبر <h1> ليكون العنوان الرئيسي لصفحتنا، تماماً مثل عنوان قصة مشوقة على الغلاف الخارجي.",
+   "تتدرج مستويات العناوين من <h1> وحتى <h6> حيث يعتبر <h1> هو الأكبر والأهم بينما يكون <h6> هو الأصغر مستوى.",
+   "إذا أردنا تقسيم الموضوع إلى أجزاء فرعية، نستخدم الوسم <h2> للقسم الرئيسي التالي، و <h3> للأقسام الأصغر تحته مباشرة.",
+   "القاعدة الذهبية لتصميم الويب: لا تقفز أبداً بين مستويات العناوين؛ ابدأ دائماً بـ <h1> ثم تابع بـ <h2> و <h3> بالترتيب ولا تستخدم عناوين متعددة من نوع <h1>.",
+   "نكتب الجمل والفقرات العادية داخل وسوم الفقرات <p>، مما يعطي نصوصنا شكلاً مرتباً ومقروءاً على المتصفح."
+  ],
+  "example": "إليك صفحة ويب بسيطة عن الفضاء:\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>رحلة الفضاء</title>\n  </head>\n  <body>\n    <h1>استكشاف الفضاء</h1>\n    <h2>الكواكب السيارة</h2>\n    <p>تدور الكواكب حول الشمس في مدارات محددة.</p>\n  </body>\n</html>\n```\nالسبب: استخدمنا <h1> لعنوان الصفحة الرئيسي، و <h2> للقسم الفرعي، و <p> لكتابة الفقرة التي تشرح الفكرة.",
+  "mistake": "الخطأ الشائع هو استخدام وسوم العناوين لمجرد تكبير أو تصغير حجم الخط، أو تخطي المستويات (مثل الانتقال من <h1> إلى <h3> مباشرة). التصحيح: استخدم وسوم العناوين لترتيب المحتوى منطقياً وتابع التسلسل بدون تخطي.",
+  "recap": "العناوين والفقرات هي الأساس الذي تبنى عليه هيكلة أي صفحة ويب بشكل منظم ومفهوم. استخدام الوسوم بالترتيب الصحيح يساعد القارئ ومحركات البحث في فهم موقعك.",
+  "q": [
+   {
+    "t": "ما هو الوسم الأنسب للعنوان الرئيسي للصفحة؟",
+    "o": [
+     "<h1>",
+     "<p>",
+     "<h6>"
+    ],
+    "a": 0,
+    "why": "<h1> هو العنوان الأكبر والأكثر أهمية ويمثل العنوان الرئيسي للصفحة."
+   },
+   {
+    "t": "كيف نكتب فقرة نصية عادية في صفحة HTML؟",
+    "o": [
+     "<h1>",
+     "<p>",
+     "<heading>"
+    ],
+    "a": 1,
+    "why": "الوسم <p> مخصص لإنشاء الفقرات النصية."
+   },
+   {
+    "t": "لماذا لا يجب تخطي مستويات العناوين؟",
+    "o": [
+     "لأن المتصفح سيغلق تلقائياً",
+     "للحفاظ على تسلسل هرمي مفهوم للمستخدمين ومبرمجي قراءة الشاشة",
+     "لأن ذلك يزيد سرعة الإنترنت"
+    ],
+    "a": 1,
+    "why": "الحفاظ على التسلسل يضمن وصول أصحاب الهمم والمستخدمين لفهم محتوى الصفحة بسهولة."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "ربط وسوم النصوص بمهمتها",
+   "goal": "صل كل وسم HTML بالوصف الصحيح الذي يمثله.",
+   "pairs": [
+    [
+     "<h1>",
+     "العنوان الرئيسي الأكبر"
+    ],
+    [
+     "<h2>",
+     "عنوان القسم الفرعي"
+    ],
+    [
+     "<p>",
+     "وسم الفقرة النصية"
+    ],
+    [
+     "<h6>",
+     "العنوان الأصغر مستوى"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت تنظيم عناصر الصفحة بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "لماذا نحتاج إلى العناوين؟",
+    "text": "تخيل أنك تقرأ كتاباً ضخماً بلا فصول أو عناوين، ستشعر بالضياع! تساعد العناوين في تنظيم المعلومات تماماً مثل لافتات الطرق.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>مرحباً بكم في موقعي</h1>\n</body>\n</html>",
+    "output": "يظهر العنوان الرئيسي بخط كبير وبارز في أعلى الصفحة."
+   },
+   {
+    "h": "الوسم الكبير <h1>",
+    "text": "هذا هو الملك المتوج بين العناوين. يجب أن يكون هناك عنوان <h1> واحد فقط في الصفحة ليخبر الجميع عن موضوع الصفحة الأساسي.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>عالم الحيوانات المذهل</h1>\n</body>\n</html>",
+    "output": "يعرض عنواناً رئيسياً ضخماً يعبر عن فكرة الموقع الكبرى."
+   },
+   {
+    "h": "مستويات العناوين من <h1> إلى <h6>",
+    "text": "تتدرج العناوين في الحجم والأهمية من الأكبر <h1> وحتى الأصغر <h6> لتنظيم الأقسام والفروع داخل الصفحة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>الكواكب</h1>\n  <h2>المشتري</h2>\n  <h3>أقمار المشتري</h3>\n</body>\n</html>",
+    "output": "يظهر تدرج مرئي وواضح في أحجام العناوين والأقسام."
+   },
+   {
+    "h": "كتابة الجمل والفقرات بـ <p>",
+    "text": "بعد كتابة العنوان، نحتاج إلى كتابة التفاصيل والجمل. نستخدم وسم الفقرة <p> لنضع داخله أي كلام نصي نريد عرضه للقارئ.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2>عن القطط</h2>\n  <p>القطط حيوانات أليفة ونظيفة تحب اللعب بالخيوط.</p>\n</body>\n</html>",
+    "output": "يظهر نص الفقرة تحت العنوان بخط عادي ومرتب."
+   },
+   {
+    "h": "ترتيب الأقسام بدون تخطي",
+    "text": "تماماً مثل درجات السلم، نصعد خطوة بخطوة. لا يجوز الانتقال من <h1> إلى <h3> مباشرة، بل يجب المرور بـ <h2> أولاً.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>الرياضة</h1>\n  <h2>كرة القدم</h2>\n  <h3>قواعد اللعبة</h3>\n</body>\n</html>",
+    "output": "يعرض بنية هرمية صحيحة ومتسلسلة للمحتوى."
+   },
+   {
+    "h": "دور العناوين في تسهيل القراءة",
+    "text": "برامج قراءة الشاشة للمكفوفين تستخدم هذه العناوين كفهرس سريع لكي يتمكن المستخدم من القفز مباشرة للقسم الذي يهمه.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>مكتبتي</h1>\n  <h2>القصص الخيالية</h2>\n  <p>قصص السحر والأميرة النائمة.</p>\n</body>\n</html>",
+    "output": "ينظم المحتوى بطريقة تجعل الوصول للمعلومة أسرع بكثير."
+   },
+   {
+    "h": "استخدام أكثر من فقرة",
+    "text": "يمكننا وضع عدة وسوم <p> تحت بعضها البعض لكتابة مواضيع طويلة ومقسمة إلى عدة أسطر أو أجزاء مريحة للعين.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2>الطقس اليوم</h2>\n  <p>الجو مشمس وجميل في الصباح.</p>\n  <p>قد تنشط الرياح قليلاً عند المساء.</p>\n</body>\n</html>",
+    "output": "يظهر فقرتين منفصلتين بمسافات مرتبة بينهما."
+   },
+   {
+    "h": "قواعد ذهبية لتصميم ويب سليم",
+    "text": "لا تستخدم وسوم العناوين لمجرد تكبير الخط، بل استخدمها لترتيب الأهمية. لتغيير الحجم البصري استعمل لغة CSS.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>h1 { color: blue; }</style>\n</head>\n<body>\n  <h1>عنوان ملون</h1>\n</body>\n</html>",
+    "output": "يظهر العنوان باللون الأزرق مع الحفاظ على هيكله الصحيح."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<h1>",
+    "desc": "أعلى مستوى لعناوين القسم الرئيسي في الصفحة."
+   },
+   {
+    "name": "<h2>",
+    "desc": "عنوان مستوى ثانٍ للأقسام الفرعية."
+   },
+   {
+    "name": "<h3>",
+    "desc": "عنوان مستوى ثالث للأقسام الدقيقة."
+   },
+   {
+    "name": "<h4>",
+    "desc": "عنوان مستوى رابع للتفاصيل الداخلية."
+   },
+   {
+    "name": "<h5>",
+    "desc": "عنوان مستوى خامس لفروع صغيرة جداً."
+   },
+   {
+    "name": "<h6>",
+    "desc": "أقل مستوى لعناوين الأقسام."
+   },
+   {
+    "name": "<p>",
+    "desc": "يمثل فقرة نصية عادية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML يحتوي على عنوان رئيسي <h1> بعبارة 'رحلتي المدرسية' وفقرة تحته.",
+    "a": "<h1>رحلتي المدرسية</h1>\n<p>زرت المتحف اليوم وشاهدت الآثار القديمة.</p>"
+   },
+   {
+    "q": "صحح الخطأ: صفحة تحتوي على <h1> ثم انتقلت مباشرة إلى <h3> بدون <h2>.",
+    "a": "يجب تغيير <h3> إلى <h2> للحفاظ على التسلسل الصحيح دون تخطي المستويات."
+   },
+   {
+    "q": "ما هو الوسم الصحيح لعمل عنوان قسم فرعي يأتي بعد <h1>؟",
+    "a": "<h2>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The digital world needs organization just like school textbooks! Headings are wonderful tools to arrange ideas and make pages much easier to read for humans and screen readers.",
+   "We use the largest heading tag <h1> to be our main page title, just like an exciting story title on an outer book cover.",
+   "Heading levels range from <h1> all the way down to <h6>, where <h1> is the highest and most important level, and <h6> is the lowest.",
+   "If we want to divide a topic into sub-parts, we use the <h2> tag for the next major section, and <h3> for smaller sections directly underneath it.",
+   "The golden rule of web design: never skip heading levels! Always start with <h1>, followed by <h2> and <h3> in order, and avoid using multiple <h1> elements.",
+   "We write regular sentences and text inside paragraph tags <p>, giving our text a neat and readable layout on the web browser."
+  ],
+  "example": "Here is a simple webpage about space:\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>Space Journey</title>\n  </head>\n  <body>\n    <h1>Exploring Space</h1>\n    <h2>The Planets</h2>\n    <p>Planets orbit around the sun in specific paths.</p>\n  </body>\n</html>\n```\nReason: We used <h1> for the main page title, <h2> for the sub-section, and <p> for the paragraph explaining the idea.",
+  "mistake": "A common mistake is using heading tags just to make text look big or small, or skipping levels (like jumping straight from <h1> to <h3>). Fix: Use headings for logical document structure and follow the sequence without skipping.",
+  "recap": "Headings and paragraphs are the foundation for structuring any webpage in an organized and clear way. Using tags in the correct order helps both readers and search engines understand your site.",
+  "q": [
+   {
+    "t": "What is the most appropriate tag for the main page title?",
+    "o": [
+     "<h1>",
+     "<p>",
+     "<h6>"
+    ],
+    "a": 0,
+    "why": "<h1> is the largest and most important heading representing the main title of the page."
+   },
+   {
+    "t": "How do we write a regular text paragraph in HTML?",
+    "o": [
+     "<h1>",
+     "<p>",
+     "<heading>"
+    ],
+    "a": 1,
+    "why": "The <p> tag is dedicated to creating text paragraphs."
+   },
+   {
+    "t": "Why should we avoid skipping heading levels?",
+    "o": [
+     "Because the browser will auto-close them",
+     "To maintain a clear, logical hierarchy for users and screen reader software",
+     "Because it increases internet speed"
+    ],
+    "a": 1,
+    "why": "Maintaining hierarchy ensures accessibility and helps users easily understand page content."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Match Text Tags with Their Purpose",
+   "goal": "Connect each HTML tag to the correct description it represents.",
+   "pairs": [
+    [
+     "<h1>",
+     "Largest main title"
+    ],
+    [
+     "<h2>",
+     "Sub-section heading"
+    ],
+    [
+     "<p>",
+     "Text paragraph tag"
+    ],
+    [
+     "<h6>",
+     "Lowest level heading"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered page element structuring!"
+  },
+  "sections": [
+   {
+    "h": "Why Do We Need Headings?",
+    "text": "Imagine reading a huge book with no chapters or titles; you would feel lost! Headings help organize information just like road signs.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Welcome to My Site</h1>\n</body>\n</html>",
+    "output": "Displays a large, prominent main title at the top of the page."
+   },
+   {
+    "h": "The Mighty <h1> Tag",
+    "text": "This is the crowned king of headings. There should generally be only one <h1> per page to tell everyone the main topic.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>The Amazing Animal World</h1>\n</body>\n</html>",
+    "output": "Shows a massive main title representing the core idea of the site."
+   },
+   {
+    "h": "Heading Levels from <h1> to <h6>",
+    "text": "Headings step down in size and importance from <h1> to <h6> to organize sections and sub-branches inside the page.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Planets</h1>\n  <h2>Jupiter</h2>\n  <h3>Jupiter's Moons</h3>\n</body>\n</html>",
+    "output": "Displays a clear, visible hierarchy in heading sizes and sections."
+   },
+   {
+    "h": "Writing Sentences and Paragraphs with <p>",
+    "text": "After writing a heading, we need details. We use the paragraph tag <p> to place any text content we want to show the reader.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2>About Cats</h2>\n  <p>Cats are clean pets that love playing with yarn.</p>\n</body>\n</html>",
+    "output": "Shows paragraph text neatly below the heading in regular font."
+   },
+   {
+    "h": "Ordering Sections Without Skipping",
+    "text": "Just like staircase steps, we climb one by one. You must not jump straight from <h1> to <h3> without passing through <h2> first.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Sports</h1>\n  <h2>Football</h2>\n  <h3>Game Rules</h3>\n</body>\n</html>",
+    "output": "Displays a correct and sequential hierarchical content structure."
+   },
+   {
+    "h": "Headings Make Reading Easier",
+    "text": "Screen readers for visually impaired users use these headings as a quick index so users can jump straight to the section they care about.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>My Library</h1>\n  <h2>Fairy Tales</h2>\n  <p>Stories of magic and Sleeping Beauty.</p>\n</body>\n</html>",
+    "output": "Organizes content so finding information is much faster."
+   },
+   {
+    "h": "Using Multiple Paragraphs",
+    "text": "We can place several <p> tags one after another to write long topics split into multiple lines or reader-friendly blocks.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h2>Today's Weather</h2>\n  <p>The weather is sunny and nice in the morning.</p>\n  <p>Wind might pick up slightly by evening.</p>\n</body>\n</html>",
+    "output": "Shows two separate paragraphs with tidy spacing between them."
+   },
+   {
+    "h": "Golden Rules for Sound Web Design",
+    "text": "Do not use heading tags just to resize text; use them to organize importance. To change visual sizing, use CSS.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>h1 { color: blue; }</style>\n</head>\n<body>\n  <h1>Colored Heading</h1>\n</body>\n</html>",
+    "output": "Displays the heading in blue while keeping its correct semantic structure."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<h1>",
+    "desc": "Highest section heading level on the page."
+   },
+   {
+    "name": "<h2>",
+    "desc": "Second-level heading for sub-sections."
+   },
+   {
+    "name": "<h3>",
+    "desc": "Third-level heading for detailed sections."
+   },
+   {
+    "name": "<h4>",
+    "desc": "Fourth-level heading for inner details."
+   },
+   {
+    "name": "<h5>",
+    "desc": "Fifth-level heading for very small branches."
+   },
+   {
+    "name": "<h6>",
+    "desc": "Lowest section heading level."
+   },
+   {
+    "name": "<p>",
+    "desc": "Represents a standard text paragraph."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code containing an <h1> heading with 'My School Trip' and a paragraph below it.",
+    "a": "<h1>My School Trip</h1>\n<p>I visited the museum today and saw ancient artifacts.</p>"
+   },
+   {
+    "q": "Fix the error: A page containing an <h1> then jumping directly to <h3> without an <h2>.",
+    "a": "Change <h3> to <h2> to maintain the correct sequence without skipping levels."
+   },
+   {
+    "q": "What is the correct tag for a sub-section heading coming right after <h1>?",
+    "a": "<h2>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: <h1>–<h6> HTML section heading elements",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements"
+  },
+  {
+   "title": "MDN: HTML elements reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements"
+  }
+ ],
+ "grounded": true
+}

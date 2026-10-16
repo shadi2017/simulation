@@ -1,0 +1,354 @@
+{
+ "ar": {
+  "steps": [
+   "تتصف عناصر HTML بأنها تشبه قطع البناء المختلفة التي تترتب على صفحة الويب بطرق متنوعة وفقاً لنوعها الطبيعي.",
+   "خذ مثلاً عنصر الفقرة الفقرة <p> الذي يأخذ مساحة كاملة العرض ويجبر العناصر التالية على النزول للأسفل، أو عنصر span الذي يلتصق بما يجاوره.",
+   "تتحكم خاصية العرض في المتصفح في كيفية تدفق العناصر، حيث ينقسم العالم هنا إلى عناصر كتفية وعناصر مضمنة تناسب النصوص الصغيرة.",
+   "تخيل أن العناصر الكتفية مثل صناديق الكرتون الكبيرة التي تمنع أي شخص من الوقوف بجانبها، بينما العناصر المضمنة مثل خرزات العقد المتجاورة.",
+   "القاعدة الذهبية لتصميم الويب: العناصر الكتفية تبدأ دائماً في سطر جديد وتأخذ العرض كله، بينما المضمنة تأخذ قدر محتواها فقط.",
+   "تستخدم هذه الأفكار يومياً في بناء المواقع الحقيقية لتنظيم النصوص، وتلوين كلمات مفردة داخل الفقرات الكبيرة دون تخريب التخطيط العام."
+  ],
+  "example": "دعنا نرى الفرق العملي. إذا كتبنا <p>مرحبا</p> و <p>عالم</p>، فستظهر كل كلمة في سطر مستقل. لكن لو استخدمنا <span>مرحبا</span> و <span>عالم</span> داخل جملة، فستبقيان جنباً إلى جنب في نفس السطر تماماً.",
+  "mistake": "الخطأ الشائع هو وضع عنصر كتفي كبير مثل <div> بداخل عنصر مضمن صغير مثل <span>، والصحيح هو جعل العناصر الكبيرة تحتوي العناصر الصغيرة وليس العكس.",
+  "recap": "العناصر الكتفية تبني الهيكل الرأسي وتأخذ عرض الصفحة، بينما العناصر المضمنة تتحرك أفقياً مع النص ولا تبدأ سطراً جديداً.",
+  "q": [
+   {
+    "t": "كيف تترتب العناصر الكتفية في صفحة الويب؟",
+    "o": [
+     "تتراص عمودياً واحدها تحت الآخر",
+     "تتجمع أفقياً بجانب بعضها دائماً",
+     "تختفي تماماً من الشاشة"
+    ],
+    "a": 0,
+    "why": "العناصر الكتفية تأخذ السطر كاملاً وتبدأ من سطر جديد دائماً."
+   },
+   {
+    "t": "أي من العناصر التالية يعتبر عنصراً مضمناً؟",
+    "o": [
+     "<p>",
+     "<span>",
+     "<div>"
+    ],
+    "a": 1,
+    "why": "عنصر <span> مخصص للنصوص المضمنة ولا يكسر السطر."
+   },
+   {
+    "t": "ما هو سلوك عرض العناصر الكتفية افتراضياً؟",
+    "o": [
+     "عرض صغير بقدر المحتوى فقط",
+     "عرض الصفحة كاملاً أفقياً",
+     "عرض دائري متحرك"
+    ],
+    "a": 1,
+    "why": "العناصر الكتفية تمتد لتأخذ كل المساحة الأفقية المتاحة."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود العناصر الكتفية والمضمنة",
+   "goal": "اختر الكلمة الصحيحة لإكمال كود تنسيق وتوزيع العناصر في صفحة الويب",
+   "items": [
+    {
+     "text": "العنصر الكتفي يبدأ دائماً في ___ جديد.",
+     "options": [
+      "سطر",
+      "لون",
+      "ركن"
+     ],
+     "a": 0
+    },
+    {
+     "text": "العنصر المضمن مثل span يتدفق ___ مع النص.",
+     "options": [
+      "أفقياً",
+      "عمودياً",
+      "خلفياً"
+     ],
+     "a": 0
+    },
+    {
+     "text": "تتحكم خاصية ___ في نوع تدفق العناصر.",
+     "options": [
+      "display",
+      "color",
+      "font"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد فهمت تماماً كيف تتدفق العناصر على صفحة الويب مثل المحترفين."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن تدفق العناصر",
+    "text": "تخيل أن صفحة الويب عبارة عن طاولة كبيرة نرص عليها الصناديق والكتب. بعض الأشياء ضخمة وتأخذ مساحة السطر كله، وبعضها أصغر حجماً ويمكن وضعها بجانب بعضها بسهولة.",
+    "code": "<!DOCTYPE html><html><body><p>فقرة أولى</p><p>فقرة ثانية</p></body></html>",
+    "output": "صفحة تعرض فقرتين كل واحدة في سطر منفصل."
+   },
+   {
+    "h": "ما هي العناصر الكتفية؟",
+    "text": "العناصر الكتفية (Block Elements) تشبه الأثاث الكبير في الغرفة؛ كل قطعة تقف وحدها في مكانها الخاص وتفرض على ما بعده النزول للأسفل.",
+    "code": "<!DOCTYPE html><html><body><div>صندوق أول</div><div>صندوق ثاني</div></body></html>",
+    "output": "صندوقين يظهر كل منهما في سطر مستقل."
+   },
+   {
+    "h": "خصائص عرض العناصر الكتفية",
+    "text": "تتميز هذه العناصر بأنها تمتد أفقياً لتملأ عرض الشاشة بالكامل افتراضياً، بغض النظر عن حجم الكلمات الموجودة بداخلها.",
+    "code": "<!DOCTYPE html><html><body style='background:#eef;'><p style='background:pink;'>هذه فقرة كتفية تأخذ العرض كله.</p></body></html>",
+    "output": "فقرة بخلفية وردية تمتد على عرض الشاشة."
+   },
+   {
+    "h": "ما هي العناصر المضمنة؟",
+    "text": "العناصر المضمنة (Inline Elements) تشبه الكلمات المكتوبة بقلم الرصاص داخل السطر نفسه؛ فهي تلتصق بالكلمات المحيطة بها ولا تبدأ سطراً جديداً.",
+    "code": "<!DOCTYPE html><html><body><p>هذا نص عادى يحتوي على <span style='color:red;'>كلمة ملونة</span> بداخله.</p></body></html>",
+    "output": "فقرة عادية يتخللها نص ملون في نفس السطر."
+   },
+   {
+    "h": "سلوك التدفق الطبيعي Normal Flow",
+    "text": "التدفق الطبيعي هو الطريقة التي يرتب بها المتصفح العناصر تلقائياً من الأعلى للأسفل ومن اليسار لليمين دون تدخل معقد منا.",
+    "code": "<!DOCTYPE html><html><body><h1>عنوان رئيسي</h1><p>فقرة تحت العنوان.</p></body></html>",
+    "output": "عنوان يعقبه فقرة في تدفق مرتب."
+   },
+   {
+    "h": "مقارنة سريعة بين الكتفية والمضمنة",
+    "text": "الفرق الجوهري هو أن الكتفية تكسر السطر وتأخذ عرضاً كاملاً، بينما المضمنة تعيش داخل السطر الواحد مع بقية الكلمات.",
+    "code": "<!DOCTYPE html><html><body><div>كتفي</div><span>مضمن</span><span>مضمن أخر</span></body></html>",
+    "output": "عنصر كتفي في سطر، وعنصرا span بجانب بعضهما في سطر تالٍ."
+   },
+   {
+    "h": "استخدام عنصر الفقرة p",
+    "text": "يُعد الوسم <p> من أشهر العناصر الكتفية، حيث نستخدمه لكتابة الفقرات النصية الطويلة مع ترك مسافات تلقائية تفصلها عن باقي المحتوى.",
+    "code": "<!DOCTYPE html><html><body><p>هذه الفقرة الأولى.</p><p>هذه الفقرة الثانية.</p></body></html>",
+    "output": "فقرتان منفصلتان بمسافة رأسية واضحة."
+   },
+   {
+    "h": "تطبيقات حقيقية في تصميم المواقع",
+    "text": "نستخدم العناصر الكتفية لتقسيم أقسام الموقع الكبيرة (مثل القوائم والمقالات)، والعناصر المضمنة لتنسيق أجزاء صغيرة من النصوص مثل الروابط والكلمات البارزة.",
+    "code": "<!DOCTYPE html><html><body><p>زوروا <a href='#'>موقعنا</a> الآن لمزيد من الدروس!</p></body></html>",
+    "output": "جملة تحتوي على رابط مضمن داخل السطر."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<p>",
+    "desc": "عنصر كتفي يمثل فقرة نصية."
+   },
+   {
+    "name": "<div>",
+    "desc": "عنصر كتفي حاوي عام لتنظيم المحتوى."
+   },
+   {
+    "name": "<span>",
+    "desc": "عنصر مضمني لتنسيق أجزاء صغيرة داخل النصوص."
+   },
+   {
+    "name": "<h1> - <h6>",
+    "desc": "عناصر كتفية مخصصة للعناوين بمستويات مختلفة."
+   },
+   {
+    "name": "<a>",
+    "desc": "عنصر مضمني لإنشاء الروابط التشعبية."
+   },
+   {
+    "name": "display",
+    "desc": "خاصية في CSS لتحديد نوع تدفق العنصر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ فقرتين نصيتين باستخدام وسم الفقرة وشاهد كيف يظهر كل منهما في سطر مستقل.",
+    "a": "<p>الفقرة الأولى</p><p>الفقرة الثانية</p>"
+   },
+   {
+    "q": "اكتب جملة تحتوي على عنصر مضمن span لتلوين كلمة واحدة باللون الأزرق داخل السطر.",
+    "a": "<p>تعلم <span style='color:blue;'>البرمجة</span> ممتع للغاية.</p>"
+   },
+   {
+    "q": "اجمع بين عنصر كتفي div وعنصر مضمن span بداخله لتوضيح فهمك للتدفق.",
+    "a": "<div>محتوى كتفي يحتوي على <span style='color:green;'>كلمة مضمنة</span></div>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "HTML elements act like different types of building blocks that arrange themselves on your webpage according to their natural display behavior.",
+   "Take paragraph elements <p> which take full width and force the next items down, versus span elements which sit right next to neighbors.",
+   "The browser display property controls how elements flow, splitting our world into block-level elements and small inline text items.",
+   "Imagine block elements as large cardboard boxes that block anyone from standing beside them, while inline elements are like beads on a string.",
+   "The golden rule of web design: block elements always start on a new line taking full width, while inline ones take only their content width.",
+   "These concepts are used daily in real websites to structure text and style single words inside paragraphs without breaking the overall layout."
+  ],
+  "example": "Let's see the practical difference. If we write <p>Hello</p> and <p>World</p>, each word appears on a new line. But if we use <span>Hello</span> and <span>World</span> inside a sentence, they stay side by side in the exact same line.",
+  "mistake": "A common mistake is putting a large block element like <div> inside a small inline element like <span>; the correct way is for big containers to hold small items, never the reverse.",
+  "recap": "Block-level elements build vertical structure and take full width, while inline elements flow horizontally with text and never start a new line.",
+  "q": [
+   {
+    "t": "How do block-level elements arrange themselves on a webpage?",
+    "o": [
+     "They stack vertically one below another",
+     "They always cluster horizontally side by side",
+     "They completely disappear from the screen"
+    ],
+    "a": 0,
+    "why": "Block elements take the full width and always start on a new line."
+   },
+   {
+    "t": "Which of the following is an inline element?",
+    "o": [
+     "<p>",
+     "<span>",
+     "<div>"
+    ],
+    "a": 1,
+    "why": "The <span> element is designed for inline text and does not break lines."
+   },
+   {
+    "t": "What is the default width behavior of block elements?",
+    "o": [
+     "Small width fitting only the content",
+     "Full horizontal width of the container",
+     "Circular moving width"
+    ],
+    "a": 1,
+    "why": "Block elements expand to consume all available inline space."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete Block and Inline Code",
+   "goal": "Choose the correct word to complete the code and rules for element layout",
+   "items": [
+    {
+     "text": "A block element always starts on a new ___.",
+     "options": [
+      "line",
+      "color",
+      "corner"
+     ],
+     "a": 0
+    },
+    {
+     "text": "An inline element like span flows ___ with text.",
+     "options": [
+      "horizontally",
+      "vertically",
+      "backward"
+     ],
+     "a": 0
+    },
+    {
+     "text": "The ___ property controls the element flow type.",
+     "options": [
+      "display",
+      "color",
+      "font"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You now completely understand how elements flow on a webpage like a pro."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Element Flow",
+    "text": "Imagine a webpage as a large table where we place boxes and books. Some items are huge and take up the whole line width, while smaller items can easily sit side by side.",
+    "code": "<!DOCTYPE html><html><body><p>First paragraph</p><p>Second paragraph</p></body></html>",
+    "output": "A page showing two paragraphs, each on a separate line."
+   },
+   {
+    "h": "What are Block Elements?",
+    "text": "Block elements act like big furniture pieces in a room; each piece stands alone in its own space and forces anything following it to drop down below.",
+    "code": "<!DOCTYPE html><html><body><div>First box</div><div>Second box</div></body></html>",
+    "output": "Two boxes, each appearing on its own independent line."
+   },
+   {
+    "h": "Block Elements Display Characteristics",
+    "text": "These elements stretch horizontally by default to fill the entire screen width, regardless of how short the words inside them happen to be.",
+    "code": "<!DOCTYPE html><html><body style='background:#eef;'><p style='background:pink;'>This block paragraph takes full width.</p></body></html>",
+    "output": "A pink paragraph stretching across the full screen width."
+   },
+   {
+    "h": "What are Inline Elements?",
+    "text": "Inline elements are like words written with a pencil inside the very same line; they cuddle up next to surrounding words and never start a new line.",
+    "code": "<!DOCTYPE html><html><body><p>This is normal text with a <span style='color:red;'>colored word</span> inside.</p></body></html>",
+    "output": "A normal paragraph containing a colored inline text snippet."
+   },
+   {
+    "h": "Normal Flow Behavior",
+    "text": "Normal flow is the default mechanism the browser uses to lay out elements automatically from top to bottom and left to right without complicated tweaks.",
+    "code": "<!DOCTYPE html><html><body><h1>Main Heading</h1><p>Paragraph beneath heading.</p></body></html>",
+    "output": "A heading followed by a paragraph in neat normal flow."
+   },
+   {
+    "h": "Quick Comparison: Block vs Inline",
+    "text": "The core difference is that block elements break lines and take full width, whereas inline elements live inside a single line alongside other words.",
+    "code": "<!DOCTYPE html><html><body><div>Block</div><span>Inline</span><span>Another inline</span></body></html>",
+    "output": "A block element on one line, and two span elements side by side on the next."
+   },
+   {
+    "h": "Using the Paragraph Element p",
+    "text": "The <p> tag is one of the most famous block elements, used for writing long text paragraphs while automatically leaving vertical spacing from surrounding content.",
+    "code": "<!DOCTYPE html><html><body><p>This is paragraph one.</p><p>This is paragraph two.</p></body></html>",
+    "output": "Two separate paragraphs with clear vertical spacing."
+   },
+   {
+    "h": "Real-World Web Design Uses",
+    "text": "We use block elements to divide large website sections (like navigation menus and articles), and inline elements to style tiny text fragments like links and highlighted words.",
+    "code": "<!DOCTYPE html><html><body><p>Visit our <a href='#'>website</a> now for more lessons!</p></body></html>",
+    "output": "A sentence containing an inline hyperlink inside the line."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<p>",
+    "desc": "Block element representing a text paragraph."
+   },
+   {
+    "name": "<div>",
+    "desc": "Generic block container element for organizing content."
+   },
+   {
+    "name": "<span>",
+    "desc": "Inline element for styling small fragments within text."
+   },
+   {
+    "name": "<h1> - <h6>",
+    "desc": "Block elements designated for headings at various levels."
+   },
+   {
+    "name": "<a>",
+    "desc": "Inline element used to create hyperlinks."
+   },
+   {
+    "name": "display",
+    "desc": "CSS property specifying an element's layout flow type."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create two text paragraphs using the paragraph tag and observe how each appears on its own line.",
+    "a": "<p>First paragraph</p><p>Second paragraph</p>"
+   },
+   {
+    "q": "Write a sentence containing an inline span element to color a single word blue within the line.",
+    "a": "<p>Learning <span style='color:blue;'>coding</span> is super fun.</p>"
+   },
+   {
+    "q": "Combine a block div element and an inline span inside it to demonstrate flow understanding.",
+    "a": "<div>Block content containing a <span style='color:green;'>inline word</span></div>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: HTML elements reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements"
+  },
+  {
+   "title": "MDN: Block and inline layout in normal flow",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "Animal Directory Showcase",
+   "desc": "Create a responsive animal catalog with cards that respond to hover using CSS Grid and Flexbox.",
+   "tags": [
+    "Grid",
+    "Hover",
+    "Responsive"
+   ],
+   "steps": [
+    "Set up an HTML file with a main container and multiple animal card divs, each containing an image, a title, and a short description.",
+    "Link an external stylesheet and set up basic page styles including background colors and a clean font family for typography.",
+    "Use CSS Grid on the main container to create a responsive multi-column layout that automatically adjusts to screen sizes.",
+    "Style the individual animal cards using the CSS Box Model with proper padding, margins, and border-radius for rounded corners.",
+    "Add CSS transitions and hover states so the cards lift up slightly and change shadow depth when the mouse moves over them.",
+    "Test your layout using media queries to ensure it looks amazing and readable on both phones and big computer screens."
+   ],
+   "rubric": [
+    "Grid layout correctly organizes animal cards.",
+    "Cards feature smooth hover effects and transitions.",
+    "Typography and colors make the page look attractive.",
+    "Media queries ensure the site works on mobile devices."
+   ],
+   "stretch": "Add a cute floating badge to each card that changes color when hovered over!"
+  },
+  {
+   "title": "Mobile-First Coffee Shop",
+   "desc": "Design a café page with a navigation bar, a hero banner, and a responsive menu using Flexbox.",
+   "tags": [
+    "Flexbox",
+    "Navigation",
+    "Mobile-First"
+   ],
+   "steps": [
+    "Build the basic HTML structure including a header navigation bar, a big hero banner section, and a menu list section.",
+    "Apply mobile-first styles, setting up a vertical flex column layout for smaller phone screens first.",
+    "Design the navigation bar using Flexbox to space out the logo and menu links evenly across the top.",
+    "Style the hero banner with a warm coffee background color, catchy heading typography, and a call-to-action button.",
+    "Create a responsive menu section using Flexbox rows that wrap nicely as the screen gets wider.",
+    "Add media queries to expand your layout into a multi-column desktop masterpiece when viewed on larger monitors."
+   ],
+   "rubric": [
+    "Navigation bar is clean and properly aligned with Flexbox.",
+    "Hero banner grabs attention with great colors and typography.",
+    "Menu items wrap nicely on different screen sizes.",
+    "Mobile-first design principles are clearly followed."
+   ],
+   "stretch": "Include a hover animation on the coffee cups in your menu to make them spin slightly!"
+  },
+  {
+   "title": "My Portfolio Gallery",
+   "desc": "Build a filtered project gallery with screenshots and clear descriptions using CSS layout tools.",
+   "tags": [
+    "Gallery",
+    "Cards",
+    "Layout"
+   ],
+   "steps": [
+    "Create an HTML file with a header introducing yourself, a category filter bar, and a grid of project showcase items.",
+    "Style the typography and choose a professional color palette with pleasing background gradients for your header.",
+    "Use CSS Flexbox to style the filter buttons neatly in a row across the top of your gallery section.",
+    "Build the project showcase cards using the CSS Box Model, ensuring images and text fit perfectly inside.",
+    "Implement CSS Grid to arrange your project cards into neat, balanced rows and columns.",
+    "Add smooth hover transitions to your project cards so they glow or zoom in slightly when clicked or hovered."
+   ],
+   "rubric": [
+    "Project gallery uses CSS Grid effectively for a clean layout.",
+    "Filter buttons are well-aligned using Flexbox.",
+    "Cards include clear screenshots, titles, and descriptions.",
+    "Hover transitions add a polished, interactive feel."
+   ],
+   "stretch": "Add a dark mode toggle button using CSS variables to switch the portfolio colors!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "معرض الحيوانات الرائع",
+   "desc": "اصنع كتالوج حيوانات متجاوب مع كروت بتتفاعل مع حركة الماوس باستخدام جرد وفليكس بوكس.",
+   "tags": [
+    "جرد",
+    "تفاعل",
+    "متجاوب"
+   ],
+   "steps": [
+    "اعمل ملف HTML فيه حاوية رئيسية ومجموعة كروت للحيوانات، كل كارت جواه صورة، عنوان، ووصف قصير.",
+    "اربط ملف تصميم CSS وظبط ألوان الخلفية الأساسية ونوع خط جميل عشان الكلام يبان واضح.",
+    "استخدم CSS Grid على الحاوية الرئيسية عشان تعمل تخطيط متعدد الأعمدة بيتظبط لوحده حسب الشاشة.",
+    "صمم كروت الحيوانات باستخدام نموذج الصندوق (Box Model) مع ظبط المسافات الداخلية والخارجية وحواف دائرية.",
+    "ضيف تأثيرات انتقال وتفاعل (Hover) عشان الكروت ترتفع لفوق شوية وتعمل ظل لما الماوس يقف عليها.",
+    "جرب شكل التصميم باستخدام الوسائط (Media Queries) عشان تتأكد إنه شغال وزي الفل على التليفونات والكمبيوتر."
+   ],
+   "rubric": [
+    "تخطيط الجرد بينظم كروت الحيوانات بشكل مظبوط.",
+    "الكروت فيها تأثيرات تفاعل ناعمة ولطيفة.",
+    "الخطوط والألوان بتخلي شكل الصفحة جميل ومريح.",
+    "استخدام وسائل التجاوب بيخلي الموقع شغال على الموبايل."
+   ],
+   "stretch": "ضيف علامة مميزة صغيرة على كل كارت لونه بيغيير أول ما الماوس يعدي عليه!"
+  },
+  {
+   "title": "مقهى القهوة الذكي",
+   "desc": "صمم صفحة كافيه فيها شريط تنقل، لافتة رئيسية، وقائمة طعام متجاوبة باستخدام فليكس بوكس.",
+   "tags": [
+    "فليكس",
+    "تنقل",
+    "موبايل"
+   ],
+   "steps": [
+    "ابني هيكل HTML الأساسي اللي بيحتوي على شريط التنقل، قسم اللافتة الكبيرة، وقائمة المنيو.",
+    "ابدأ بالتصميم المناسب للموبايل الأول، واعمل تخطيط عمودي لشاشات التليفون الصغيرة.",
+    "صمم شريط التنقل باستخدام Flexbox عشان توزع اللوجو والروابط بشكل متساوي فوق خالص.",
+    "صمم اللافتة الرئيسية بلون خلفية دافئ للقهوة، عنوان جذاب، وزرار طلب مميز.",
+    "اعمل قسم المنيو باستخدام صفوف Flexbox اللي بتنزل تحت بعضها بمرونة لما الشاشة توسع.",
+    "ضيف قواعد التجاوب عشان التصميم يتحول لشاشة واسعة ومليانة أعمدة لما نفتحه من كمبيوتر."
+   ],
+   "rubric": [
+    "شريط التنقل مرتب ومتظبط صح باستخدام فليكس بوكس.",
+    "اللافتة الرئيسية بتشد العيون بألوان وخطوط ممتازة.",
+    "عناصر المنيو بتترتب بمرونة على أحجام الشاشات المختلفة.",
+    "مبادئ التصميم للموبايل أولاً مطبقة بوضوح."
+   ],
+   "stretch": "ضيف حركة بسيطة لكوباية القهوة في المنيو تخليها تلف سنة صغيرة!"
+  },
+  {
+   "title": "معرض أعمالي الفني",
+   "desc": "ابني معرض مشاريع فيه فلترة، صور واضحة، ووصف مرتب باستخدام أدوات تنسيق CSS.",
+   "tags": [
+    "معرض",
+    "كروت",
+    "تنسيق"
+   ],
+   "steps": [
+    "اعمل ملف HTML فيه عنوان بيكتب عنك، شريط أزرار للفلترة، وشبكة لعرض المشاريع.",
+    "ظبط الخطوط واختار ألوان احترافية مع تدرجات خلفية جميلة للعنوان الرئيسي.",
+    "استخدم CSS Flexbox عشان ترتب أزرار الفلترة بشكل جميل جنب بعض فوق المعرض.",
+    "اصنع كروت المشاريع باستخدام نموذج الصندوق، واتأكد إن الصور والكلام جوه الكارت مظبوطين.",
+    "استخدم CSS Grid عشان ترتب كروت المشاريع في صفوف وأعمدة متناسقة وجميلة.",
+    "ضيف تأثيرات انتقال ناعمة للكروت عشان تنور أو تكبر شوية أول ما تدوس عليها أو تقف بالماوس."
+   ],
+   "rubric": [
+    "معرض المشاريع بيستخدم الجرد بشكل ممتاز لتصميم منظم.",
+    "أزرار الفلترة متظبطة كويس جداً باستخدام فليكس بوكس.",
+    "الكروت فيها صور واضحة وعناوين ووصف مرتب.",
+    "تأثيرات التفاعل بتدي إحساس احترافي وحيوي."
+   ],
+   "stretch": "ضيف زرار للوضع الليلي (Dark Mode) باستخدام متغيرات CSS عشان تغير ألوان المعرض!"
+  }
+ ]
+}

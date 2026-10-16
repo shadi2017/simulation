@@ -1,0 +1,280 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن عناصر صفحة الويب مثل أشكال ورقية مرنة يمكنك تحريكها وثنيها ودورناها بلطف.",
+   "باستخدام خاصية rotate، يمكنك تدوير أي عنصر بزاوية معينة مثل تدوير صورة شخصية بـ 90 درجة بسهولة.",
+   "خاصية scale تكبر أو تصغر حجم العنصر على الشاشة بدون التأثير على أماكن العناصر المجاورة في الصفحة.",
+   "باستخدام skew يمكنك إمالة شكل العنصر ليبدو وكأنه مائل جانبياً كأنه مستند على حائط.",
+   "كل هذه الأدوات تنتمي لعالم التحويلات ثنائية الأبعاد (2D transforms) التي تغير شكل العناصر وموقعها.",
+   "في الحياة الواقعية، تشبه هذه التحويلات ألعاب الأوراق السحرية وتدوير الملصقات على دفاتر المدرسة لتصميم لوحات مبهرة!"
+  ],
+  "example": "لنفترض أننا نريد تدوير صورة شخصية وتكبيرها قليلاً عند تحريك المؤشر أو تطبيقها مباشرة. نكتب في ملف الالتصاق: img { transform: rotate(90deg) scale(1.2); }، هذا الكود يقوم أولاً بلف الصورة تسعين درجة حول مركزها، ثم يجعل حجمها أكبر بنسبة عشرين بالمئة، مما يخلق مظهراً جذاباً.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة وحدة القياس بجانب الزاوية مثل كتابة 90 بدلاً من 90deg. التصحيح هو دائماً إضافة deg للزوايا ليفهم المتصفح المطلوب.",
+  "recap": "تتيح تحويلات CSS تغيير شكل وحجم وميل العناصر بسلاسة دون تخريب تخطيط الصفحة. تذكر استخدام rotate و scale و skew لإبداع تصاميم حية.",
+  "q": [
+   {
+    "t": "ما هي الخاصية المسؤولة عن تدوير العناصر في CSS؟",
+    "o": [
+     "scale",
+     "rotate",
+     "skew"
+    ],
+    "a": 1,
+    "why": "خاصية rotate تستخدم لتدوير العناصر بالزوايا المطلوبة."
+   },
+   {
+    "t": "ماذا تفعل خاصية scale(1.5) بالعنصر؟",
+    "o": [
+     "تكبر حجمه إلى مرة ونصف",
+     "تدوره بـ 1.5 درجة",
+     "تميله يميناً"
+    ],
+    "a": 0,
+    "why": "scale تغير حجم العناصر تكبيراً أو تصغيراً بناءً على المعامل المعطى."
+   },
+   {
+    "t": "كيف نكتب زاوية الدوران بشكل صحيح في CSS؟",
+    "o": [
+     "90px",
+     "90deg",
+     "90%"
+    ],
+    "a": 1,
+    "why": "وحدة قياس الزوايا في CSS هي deg."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود التحويل",
+   "goal": "اكتشف الخطأ في كود تدوير الصورة وتكبيرها",
+   "lines": [
+    "img {",
+    "  transform: rotate(90) scale(2);",
+    "  transform-origin: center;",
+    "}"
+   ],
+   "bug": 1,
+   "fix": "  transform: rotate(90deg) scale(2);",
+   "success": "تدورت الصورة بـ 90 درجة وتضاعف حجمها بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في تحويلات CSS",
+    "text": "تسمح لك التحويلات بتعديل العناصر دون تغيير تخطيط الصفحة الأساسي، مثل تحريك ورقة على الطاولة.",
+    "code": "<div style='background:blue; color:white; padding:20px; width:100px;'>عنصر</div>",
+    "output": "يظهر صندوق أزرق عادي في الصفحة."
+   },
+   {
+    "h": "التدوير بواسطة rotate",
+    "text": "تدور الخاصية rotate العنصر حول نقطة محددة بزوايا مثل الدرجات deg.",
+    "code": "<div style='background:red; color:white; padding:20px; width:100px; transform: rotate(45deg);'>تدوير</div>",
+    "output": "يظهر الصندوق الأحمر مائلاً بزاوية 45 درجة."
+   },
+   {
+    "h": "تغيير الحجم بواسطة scale",
+    "text": "تكبر أو تصغر الخاصية scale الأبعاد الأفقية والرأسية للعنصر.",
+    "code": "<div style='background:green; color:white; padding:20px; width:100px; transform: scale(1.5);'>تكبير</div>",
+    "output": "يظهر الصندوق الأخضر بحجم أكبر بنسبة 50%."
+   },
+   {
+    "h": "الإمالة بواسطة skew",
+    "text": "تقوم خاصية skew بفتل العنصر على المحورين السيني والصادي ليبدو كأنه متوازي أضلاع.",
+    "code": "<div style='background:purple; color:white; padding:20px; width:100px; transform: skewX(20deg);'>إمالة</div>",
+    "output": "يظهر الصندوق البنفسجي مائلاً جانبياً."
+   },
+   {
+    "h": "دمج عدة تحويلات معاً",
+    "text": "يمكنك تطبيق عدة تحويلات في سطر واحد داخل خاصية transform مثل التدوير والتكبير معاً.",
+    "code": "<div style='background:orange; color:white; padding:20px; width:100px; transform: rotate(20deg) scale(1.2);'>مدمج</div>",
+    "output": "يظهر الصندوق البرتقالي مائلاً وأكبر حجماً في نفس الوقت."
+   },
+   {
+    "h": "تحديد مركز التحويل transform-origin",
+    "text": "يحدد transform-origin النقطة التي يدور أو يتكبر حولها العنصر، تماماً مثل عقارب الساعة.",
+    "code": "<div style='background:teal; color:white; padding:20px; width:100px; transform: rotate(90deg); transform-origin: top left;'>مركز</div>",
+    "output": "يدور الصندوق حول الزاوية العلوية اليسرى."
+   }
+  ],
+  "reference": [
+   {
+    "name": "rotate()",
+    "desc": "تدور العنصر بزاوية معينة."
+   },
+   {
+    "name": "scale()",
+    "desc": "تغير حجم العنصر تكبيراً أو تصغيراً."
+   },
+   {
+    "name": "skew()",
+    "desc": "تميل العنصر على المحاور."
+   },
+   {
+    "name": "transform",
+    "desc": "الخاصية الجامعة لتطبيق التحويلات."
+   },
+   {
+    "name": "transform-origin",
+    "desc": "تحدد نقطة ارتكاز التحويل."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لتدوير فقرة نصية بزاوية 180 درجة.",
+    "a": "p { transform: rotate(180deg); }"
+   },
+   {
+    "q": "اكتب كود لتصغير زر إلى النصف باستخدام scale.",
+    "a": "button { transform: scale(0.5); }"
+   },
+   {
+    "q": "كيف تميل عنصراً أفقياً بـ 15 درجة؟",
+    "a": ".box { transform: skewX(15deg); }"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine web page elements as flexible paper shapes that you can gently move, bend, and spin around.",
+   "Using the rotate property, you can spin any element by a specific angle like rotating a profile picture by 90 degrees easily.",
+   "The scale property makes an element bigger or smaller on the screen without affecting nearby layout positions.",
+   "With skew, you can slant the shape of an element so it looks tilted sideways like leaning against a wall.",
+   "All these tools belong to the world of 2D transforms which change the visual shape and position of elements.",
+   "In real life, these transforms are like magic card tricks and spinning stickers on school notebooks to make cool designs!"
+  ],
+  "example": "Suppose we want to rotate a profile picture and make it slightly bigger when hovered or applied directly. We write in our CSS: img { transform: rotate(90deg) scale(1.2); }. This code first spins the image ninety degrees around its center, then increases its size by twenty percent, creating an eye-catching look.",
+  "mistake": "A common mistake is forgetting the unit next to the angle, such as writing 90 instead of 90deg. The fix is always adding deg to angles so the browser understands.",
+  "recap": "CSS transforms let you smoothly change element shape, size, and tilt without breaking page layout. Remember to use rotate, scale, and skew for vibrant designs.",
+  "q": [
+   {
+    "t": "Which property is responsible for rotating elements in CSS?",
+    "o": [
+     "scale",
+     "rotate",
+     "skew"
+    ],
+    "a": 1,
+    "why": "The rotate property is used to spin elements by specified angles."
+   },
+   {
+    "t": "What does scale(1.5) do to an element?",
+    "o": [
+     "Increases its size to 1.5 times",
+     "Rotates it by 1.5 degrees",
+     "Slants it to the right"
+    ],
+    "a": 0,
+    "why": "scale resizes elements up or down based on the given factor."
+   },
+   {
+    "t": "How do we write a rotation angle correctly in CSS?",
+    "o": [
+     "90px",
+     "90deg",
+     "90%"
+    ],
+    "a": 1,
+    "why": "The unit for angles in CSS is deg."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Transform Code",
+   "goal": "Find the error in the image rotation and scaling code",
+   "lines": [
+    "img {",
+    "  transform: rotate(90) scale(2);",
+    "  transform-origin: center;",
+    "}"
+   ],
+   "bug": 1,
+   "fix": "  transform: rotate(90deg) scale(2);",
+   "success": "The image rotated 90 degrees and doubled in size successfully!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to CSS Transforms",
+    "text": "Transforms let you modify elements without altering the underlying page layout, like shifting paper on a desk.",
+    "code": "<div style='background:blue; color:white; padding:20px; width:100px;'>Element</div>",
+    "output": "Displays a normal blue box on the page."
+   },
+   {
+    "h": "Rotation with rotate",
+    "text": "The rotate property spins an element around a specific point by angle values like deg.",
+    "code": "<div style='background:red; color:white; padding:20px; width:100px; transform: rotate(45deg);'>Rotate</div>",
+    "output": "Displays the red box tilted at a 45-degree angle."
+   },
+   {
+    "h": "Resizing with scale",
+    "text": "The scale property enlarges or shrinks the horizontal and vertical dimensions of an element.",
+    "code": "<div style='background:green; color:white; padding:20px; width:100px; transform: scale(1.5);'>Scale</div>",
+    "output": "Displays the green box scaled up by 50%."
+   },
+   {
+    "h": "Slanting with skew",
+    "text": "The skew property distorts an element along the X or Y axis so it looks like a parallelogram.",
+    "code": "<div style='background:purple; color:white; padding:20px; width:100px; transform: skewX(20deg);'>Skew</div>",
+    "output": "Displays the purple box slanted sideways."
+   },
+   {
+    "h": "Combining Multiple Transforms",
+    "text": "You can apply several transform functions in one line inside the transform property like rotating and scaling together.",
+    "code": "<div style='background:orange; color:white; padding:20px; width:100px; transform: rotate(20deg) scale(1.2);'>Combined</div>",
+    "output": "Displays the orange box rotated and enlarged at the same time."
+   },
+   {
+    "h": "Setting transform-origin",
+    "text": "transform-origin defines the pivot point around which an element rotates or scales, much like clock hands.",
+    "code": "<div style='background:teal; color:white; padding:20px; width:100px; transform: rotate(90deg); transform-origin: top left;'>Origin</div>",
+    "output": "The box rotates around its top-left corner."
+   }
+  ],
+  "reference": [
+   {
+    "name": "rotate()",
+    "desc": "Rotates an element by an angle."
+   },
+   {
+    "name": "scale()",
+    "desc": "Resizes an element larger or smaller."
+   },
+   {
+    "name": "skew()",
+    "desc": "Slants an element along axes."
+   },
+   {
+    "name": "transform",
+    "desc": "The property to apply visual transforms."
+   },
+   {
+    "name": "transform-origin",
+    "desc": "Sets the pivot point for transforms."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to rotate a paragraph by 180 degrees.",
+    "a": "p { transform: rotate(180deg); }"
+   },
+   {
+    "q": "Write code to shrink a button to half its size using scale.",
+    "a": "button { transform: scale(0.5); }"
+   },
+   {
+    "q": "How do you slant an element horizontally by 15 degrees?",
+    "a": ".box { transform: skewX(15deg); }"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: CSS transforms",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transforms"
+  },
+  {
+   "title": "MDN: Using CSS transforms",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transforms/Using"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,156 @@
+{
+ "en": [
+  {
+   "title": "Ninja Jump Platformer",
+   "desc": "Guide a ninja jumping across floating platforms to collect glowing orbs while avoiding patrolling spikes. Survive as the lava slowly rises to reach the exit portal!",
+   "tags": [
+    "Platformer",
+    "Gravity",
+    "Clones"
+   ],
+   "steps": [
+    "Set up the Scratch stage with a platform background and create a Ninja sprite with left and right arrow controls.",
+    "Add gravity and jumping blocks using variables so the ninja falls naturally and jumps when pressing the space bar.",
+    "Create floating platform sprites and program the ninja to stop falling when touching a platform color or sprite.",
+    "Use the Clone block to spawn glowing orbs randomly across the screen that disappear and add points when collected.",
+    "Add a patrolling spike enemy that moves back and forth using simple motion blocks and resets the player if touched.",
+    "Create a rising lava sprite that slowly changes its Y position over time to push the player upward.",
+    "Add a score variable and win/lose game states using broadcast messages when time or health runs out."
+   ],
+   "rubric": [
+    "Smooth movement and responsive jumping mechanics.",
+    "Accurate collision detection with platforms and spikes.",
+    "Score updates correctly when collecting glowing orbs.",
+    "Game over state triggers properly when lava touches the player."
+   ],
+   "stretch": "Add a speed boost power-up that makes the ninja jump higher for 5 seconds."
+  },
+  {
+   "title": "Space Defender Invaders",
+   "desc": "Pilot a spaceship at the bottom of the screen, firing cloned laser shots upward at incoming alien waves. Dodge floating asteroids and destroy the mother ship before your health runs out!",
+   "tags": [
+    "Shooter",
+    "Clones",
+    "Collisions"
+   ],
+   "steps": [
+    "Position your spaceship sprite at the bottom of the stage and enable arrow key movement along the X-axis.",
+    "Program the space bar to create a clone of a laser sprite that shoots straight upward toward the top.",
+    "Create an alien sprite that spawns at the top and moves downward in waves across the screen.",
+    "Use touching blocks inside the laser clone to detect hits on aliens, hiding both and increasing the score.",
+    "Add falling asteroid sprites that reduce the spaceship's health variable when they crash into it.",
+    "Create a health bar display and a game over broadcast when health reaches zero.",
+    "Add a win condition that triggers after destroying 20 aliens."
+   ],
+   "rubric": [
+    "Spaceship moves smoothly left and right using arrow keys.",
+    "Laser clones spawn correctly and travel upward.",
+    "Alien destruction and score keeping work accurately.",
+    "Health variable decreases correctly upon asteroid impact."
+   ],
+   "stretch": "Add a boss alien that requires 5 laser hits to defeat and fires back its own laser clones."
+  },
+  {
+   "title": "Maze Escape with AI Guard",
+   "desc": "Navigate a tricky maze to find the hidden key and reach the exit door before the timer runs out. Avoid the wandering AI ghost that patrols the corridors!",
+   "tags": [
+    "Maze",
+    "AI Guard",
+    "Timers"
+   ],
+   "steps": [
+    "Draw a custom maze backdrop with walls, a starting point, a key, and an exit door.",
+    "Program your character sprite to move with arrow keys, ensuring it bounces back or stops when touching wall colors.",
+    "Place a key sprite in the maze that hides and sets a 'hasKey' variable to true when touched by the player.",
+    "Program the exit door to only open and win the game if the player touches it while 'hasKey' is true.",
+    "Create a ghost enemy that uses simple AI to glide toward the player's position inside the maze.",
+    "Add a countdown timer variable that decreases every second until time runs out.",
+    "Set up game over screens for both getting caught by the ghost and running out of time."
+   ],
+   "rubric": [
+    "Player cannot walk through maze walls.",
+    "Key collection unlocks the exit door correctly.",
+    "AI ghost successfully tracks and catches the player.",
+    "Timer counts down and triggers game over at zero."
+   ],
+   "stretch": "Add a freeze power-up that stops the AI ghost for 4 seconds when collected."
+  }
+ ],
+ "ar": [
+  {
+   "title": "لعبة النينجا القافز",
+   "desc": "قُد شخصية النينجا في القفز بين المنصات العائمة لجمع الكرات المضيئة مع تجنب المسامير المتحركة. اصمد بينما ترتفع الحمم البركانية ببطء للوصول إلى بوابة الخروج!",
+   "tags": [
+    "منصات",
+    "جاذبية",
+    "نسخ الكائنات"
+   ],
+   "steps": [
+    "قم بإعداد منصة سكراتش بخلفية مناسبة وأنشئ كائن النينجا مع أدوات تحكم الأسهم يميناً ويساراً.",
+    "أضف لبنات الجاذبية والقفز باستخدام المتغيرات لكي يسقط النينجا بشكل طبيعي ويقفز عند الضغط على مسافة.",
+    "أنشئ كائنات منصات عائمة وبرمج النينجا لكي يتوقف عن السقط عند ملامسة لون أو كائن المنصة.",
+    "استخدم لبنة التكرار والنسخ (Clone) لإنهور كرات مضيئة عشوائياً تختفي وتزيد النقاط عند جمعها.",
+    "أضف كائن مسمار متحرك يتحرك ذهاباً وإياباً باستخدام لبنات الحركة البسيطة ويعيد اللاعب إذا لمسه.",
+    "أنشئ كائن حمم بركانية صاعدة يغير موضع الصاد (Y) ببطء بمرور الوقت لدفع اللاعب للأعلى.",
+    "أضف متغير النقاط وحالات الفوز والخسارة باستخدام رسائل البث عند انتهاء الوقت أو الصحة."
+   ],
+   "rubric": [
+    "حركة سلسة وآلية قفز مستجيبة.",
+    "اكتشاف دقيق للاصطدام بالمنصات والمسامير.",
+    "تحديث النقاط بشكل صحيح عند جمع الكرات المضيئة.",
+    "تفعيل شاشة خسارة اللعبة بشكل صحيح عند لمس الحمم للاعب."
+   ],
+   "stretch": "أضف قوة إضافية لزيادة السرعة تجعل النينجا يقفز أعلى لمدة 5 ثوانٍ."
+  },
+  {
+   "title": "مدافع الفضاء الغازي",
+   "desc": "قم بقيادة مركبة فضائية أسفل الشاشة، وأطلق طلقات الليزر المنسوخة نحو الأعلى على موجات الكائنات الفضائية القادمة. تفادى الكويكبات العائمة ودمر المركبة الأم قبل نفاد صحتك!",
+   "tags": [
+    "إطلاق نار",
+    "نسخ الكائنات",
+    "اصطدامات"
+   ],
+   "steps": [
+    "ضع كائن المركبة الفضائية أسفل المسرح وقم بتمكين حركة مفاتيح الأسهم على المحور السيني (X).",
+    "برمج مفتاح المسافة لإنشاء نسخة (Clone) من كائن الليزر الذي ينطلق مباشرة نحو الأعلى.",
+    "أنشئ كائن كائن فضائي يظهر في الأعلى ويتحرك نحو الأسفل في موجات عبر الشاشة.",
+    "استخدم لبنات التلامس داخل نسخة الليزر لاكتشاف الإصابات على الفضائيين، مع إخفائهما وزيادة النقاط.",
+    "أضف كائنات كويكبات ساقطة تقلل متغير صحة المركبة الفضائية عند اصطدامها بها.",
+    "أنشئ عرضاً لشريط الصحة وبثاً لنهاية اللعبة عندما تصل الصحة إلى الصفر.",
+    "أضف شرط الفوز الذي يتم تفعيله بعد تدمير 20 كائناً فضائياً."
+   ],
+   "rubric": [
+    "تتحرك المركبة الفضائية بسلاسة يميناً ويساراً باستخدام مفاتيح الأسهم.",
+    "تظهر نسخ الليزر بشكل صحيح وتتجه نحو الأعلى.",
+    "تدمير الفضائيين والحفاظ على النقاط يعمل بدقة.",
+    "ينخفض متغير الصحة بشكل صحيح عند اصطدام الكويكب."
+   ],
+   "stretch": "أضف كائناً فضائياً زعيماً يتطلب 5 ضربات ليزر لهزيمته ويطلق هو الآخر نسخه الخاصة من الليزر."
+  },
+  {
+   "title": "الهروب من المتاهة مع الحارس الذكي",
+   "desc": "تنقل في متاهة صعبة للعثور على المفتاح المخفي والوصول إلى باب الخروج قبل نفاد الوقت. تجنب شبح الذكاء الاصطناعي الجوال الذي يقوم بدوريات في الممرات!",
+   "tags": [
+    "متاهة",
+    "حارس ذكي",
+    "مؤقتات"
+   ],
+   "steps": [
+    "ارسم خلفية متاهة مخصصة بها جدران، نقطة بداية، مفتاح، وباب خروج.",
+    "برمج كائن شخصيتك للتحرك بمفاتيح الأسهم، مع التأكد من ارتداده أو توقفه عند ملامسة ألوان الجدران.",
+    "ضع كائن مفتاح في المتاهة يختفي ويحدد متغير 'يملك المفتاح' ليصبح صحيحاً (true) عند لمسه بواسطة اللاعب.",
+    "برمج باب الخروج لكي يفتح فقط ويفوز باللعبة إذا لمسه اللاعب بينما متغير 'يملك المفتاح' صحيحاً.",
+    "أنشئ كائن شبح يستخدم ذكاء اصطناعي بسيطاً للانزلاق نحو موضع اللاعب داخل المتاهة.",
+    "أضف متغير عداد تنازلي يتناقص كل ثانية حتى نفاد الوقت.",
+    "قم بإعداد شاشات نهاية اللعبة لكل من الإمساك بالشبح ونفاد الوقت."
+   ],
+   "rubric": [
+    "لا يمكن للاعب المشي عبر جدران المتاهة.",
+    "جمع المفتاح يفتح باب الخروج بشكل صحيح.",
+    "شبح الذكاء الاصطناعي يتعقب اللاعب ويقبض عليه بنجاح.",
+    "العداد التنازلي يعمل وينشط نهاية اللعبة عند الصفر."
+   ],
+   "stretch": "أضف قوة تجميد توقف شبح الذكاء الاصطناعي لمدة 4 ثوانٍ عند جمعها."
+  }
+ ]
+}

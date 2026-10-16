@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تلعب لعبتك المفضلة، وكلما جمعت نجوم وراء بعضها بسرعة، زادت نقاطك! هذا ما نسميه سلاسل الكومبو ومضاعفات النقاط في الألعاب.",
+   "في سكراتش، نصنع متغيراً اسمه 'مضاعف' (Multiplier) يبدأ بقيمة واحد، وكلما ضربت عدواً بسرعة، يزيد المضاعف إلى اثنين أو ثلاثة.",
+   "عندما تهزم عدواً، بدلاً من إضافة نقطة واحدة، نضرب النقاط العادية في قيمة متغير المضاعف لكي تفوز بنقاط أكثر وأسرع بكثير.",
+   "لكي نجعل اللعبة ممتعة، نضيف مؤقتاً (Streak Timer) ينقص ببطء؛ إذا لم تقم بضرب العدو التالي قبل أن ينتهي الوقت، يرجع المضاعف إلى الواحد.",
+   "القاعدة الذهبية هي: استخدم كتلة الضرب الرياضية في سكراتش لضرب النقاط في المضاعف، واحرص على إعادة تعيين المضاعف لواحد عند انقضاء الوقت.",
+   "تُستخدم هذه الفكرة في كل ألعاب الفيديو الشهيرة لمكافأة اللاعبين المهرة الذين يلعبون بسرعة وبدون أخطاء للحصول على أعلى النقاط."
+  ],
+  "example": "لنفترض أنك هزمت عدواً ونقاطك الأساسية هي عشرة. إذا كان لديك متغير مضاعف بقيمة ثلاثة بسبب الكومبو السريع، سنقوم بضرب عشرة في ثلاثة ليصبح إجمالي النقاط المضافة ثلاثين نقطة كاملة! هكذا يشعر اللاعب بمتعة المهارة والسرعة في سكراتش.",
+  "mistake": "الخطأ الشائع هو نسيان إعادة تعيين مؤقت الكومبو إلى الصفر أو إعادة المضاعف إلى واحد عند التأخير. الحل هو وضع كتلة لضبط المضاعف على واحد فور انتهاء وقت المؤقت أو عند تفويت ضربة.",
+  "recap": "تمنح مضاعفات النقاط مكافآت للمهارة عندما ينجح اللاعب في الحفاظ على سلسلة كومبو سريعة. نستخدم المتغيرات والعمليات الحسابية في سكراتش لتنفيذ ذلك بذكاء.",
+  "q": [
+   {
+    "t": "ماذا تفعل متغيرات المضاعف بالنقاط في سكراتش؟",
+    "o": [
+     "تقسم النقاط على اثنين",
+     "تضرب النقاط المكتسبة بقيمتها الحالية",
+     "تمسح كل النقاط نهائياً"
+    ],
+    "a": 1,
+    "why": "المضاعف يضرب النقاط الأساسية لزيادتها."
+   },
+   {
+    "t": "متى يعود المضاعف إلى قيمته الأصلية (واحد)؟",
+    "o": [
+     "عندما ينتهي مؤقت الكومبو دون هجوم جديد",
+     "في بداية كل ثانية تلقائياً",
+     "عندما يفوز اللاعب باللعبة فقط"
+    ],
+    "a": 0,
+    "why": "مؤقت الكومبو يحافظ على السلسلة، وإذا انتهى الوقت تضيع السلسلة."
+   },
+   {
+    "t": "أي كتلة في سكراتش نستخدمها لضرب النقاط في المضاعف؟",
+    "o": [
+     "كتلة الجمع (+)",
+     "كتلة الضرب (*)",
+     "كتلة القسمة (/)"
+    ],
+    "a": 1,
+    "why": "العملية الرياضية المناسبة للمضاعفات هي الضرب."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة الكومبو",
+   "goal": "توقع النقاط المضافة عندما يكون المضاعف بقيمة 3 والنقاط الأساسية 5",
+   "code": "متغير النقاط = 5\nمتغير المضاعف = 3\nنفذ: غير النقاط بمقدار (النقاط الأساسية * المضاعف)",
+   "options": [
+    "تزداد النقاط بمقدار 8 نقاط",
+    "تزداد النقاط بمقدار 15 نقطة",
+    "تزداد النقاط بمقدار 3 نقاط فقط"
+   ],
+   "a": 1,
+   "success": "رائع! لقد تم ضرب 5 في 3 وكانت النتيجة زيادة النقاط 15 نقطة دفعة واحدة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو مضاعف النقاط؟",
+    "text": "مضاعف النقاط هو رقم سحري في اللعبة يضاعف المكافأة التي تحصل عليها عند إنجاز مهمة ما بسرعة. مثلما تشتري وجبة مزدوجة في المطعم، فإن المضاعف يمنحك نقاطاً مضاعفة.",
+    "code": "اجعل [المضاعف v] مساوياً لـ (2)",
+    "output": "يصبح المضاعف جاهزاً لمضاعفة النقاط بمقدار الضعف."
+   },
+   {
+    "h": "سلاسل الكومبو السريعة",
+    "text": "الكومبو هو تكرار الفعل الناجح دون توقف. إذا ضربت الأعداء واحداً تلو الآخر بسرعة، تبدأ سلسلة الكومبو في الاشتعال وتمنحك درجات أعلى.",
+    "code": "متى يتم النقر على العدو: غير [الكومبو v] بمقدار (1)",
+    "output": "يزيد عداد الكومبو مع كل ضربة ناجحة."
+   },
+   {
+    "h": "دور مؤقت الكومبو",
+    "text": "مؤقت الكومبو يشبه فتيل الشمعة؛ إنه ينقص تدريجياً. إذا لم تضرب العدو التالي قبل أن ينطفئ الوقت، ستفقد الكومبو وتعود للبداية.",
+    "code": "كرر حتى (مؤقت الكومبو = 0): انتظر (1) ثانية، غير [مؤقت الكومبو v] بمقدار (-1)",
+    "output": "ينقص الوقت تدريجياً حتى ينفد."
+   },
+   {
+    "h": "استخدام الرياضيات في سكراتش",
+    "text": "سكراتش يحتوي على كتل رياضية خضراء جميلة. نستخدم كتلة الضرب لضرب النقاط الأساسية للعدو في قيمة المضاعف الحالي.",
+    "code": "غير [النقاط v] بمقدار (10 * [المضاعف v])",
+    "output": "يتم حساب الناتج وإضافته لرصيد النقاط."
+   },
+   {
+    "h": "مكافأة اللاعب الماهر",
+    "text": "عندما يلعب طفل بمهارة عالية، فإن النقاط المضاعفة تشعره بالفخر والتميز وتجعله يحاول تحطيم رقمه القياسي القديم في اللعبة.",
+    "code": "إذا كان ([المضاعف v] > 3) فـ: قل (كومبو خرافي!) لمدة (2) ثانية",
+    "output": "تظهر رسالة تشجيعية على الشاشة."
+   },
+   {
+    "h": "إعادة تعيين الكومبو عند الخطأ",
+    "text": "إذا تأخر اللاعب أو أخطأ الهدف، يجب أن يعود كل شيء لطبيعته. نصفر الكومبو ونعيد المضاعف إلى واحد.",
+    "code": "إذا كان (مؤقت الكومبو = 0) فـ: اجعل [المضاعف v] مساوياً لـ (1)",
+    "output": "يعود المضاعف للوضع العادي في انتظار كومبو جديد."
+   },
+   {
+    "h": "نقاط المكافأة الإضافية",
+    "text": "يمكننا منح نقاط مكافأة خاصة إذا وصلت سلسلة الكومبو إلى رقم قياسي مثل عشرة أعداء متتاليين بدون خطأ.",
+    "code": "إذا كان ([الكومبو v] = 10) فـ: غير [النقاط v] بمقدار (50)",
+    "output": "يحصل اللاعب على مكافأة كبرى إضافية."
+   },
+   {
+    "h": "تجميع كل أجزاء اللعبة معاً",
+    "text": "الآن نجمع المتغيرات، والمؤقت، وكتل الضرب في كود متكامل يجعل لعبتنا في سكراتش ممتعة، تنافسية، ومليئة بالحركة والإثارة.",
+    "code": "عند استلام (هزيمة عدو): أضف نقاط مضاعفة واضبط المؤقت",
+    "output": "تعمل اللعبة بتناغم كامل وميكانيكا احترافية."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Multiplier",
+    "desc": "متغير يضرب النقاط المكتسبة بقيمة معينة."
+   },
+   {
+    "name": "Streak Timer",
+    "desc": "مؤقت زمني ينقص لتحديد وقت انتهاء الكومبو."
+   },
+   {
+    "name": "Bonus Points",
+    "desc": "نقاط إضافية تمنح عند تحقيق إنجاز خاص."
+   },
+   {
+    "name": "Scratch Math",
+    "desc": "العمليات الحسابية الخضراء مثل الجمع والضرب في سكراتش."
+   },
+   {
+    "name": "Combo Streak",
+    "desc": "سلسلة من الضربات المتتالية الناجحة."
+   },
+   {
+    "name": "Reset",
+    "desc": "إعادة المتغيرات لقيمتها الأولية عند الخطأ."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي قيمة النقاط الجديدة إذا كانت النقاط الأساسية 5 والمضاعف 4؟",
+    "a": "20 نقطة"
+   },
+   {
+    "q": "ماذا يحدث لمؤقت الكومبو بمرور الوقت في اللعبة؟",
+    "a": "ينقص تدريجياً حتى يصل إلى الصفر"
+   },
+   {
+    "q": "إلى أي قيمة يعود المضاعف عندما ينتهي وقت الكومبو؟",
+    "a": "يعود إلى القيمة 1"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine playing your favorite game where collecting stars quickly boosts your score! This is what we call combo streaks and score multipliers in game design.",
+   "In Scratch, we create a 'Multiplier' variable starting at one. Whenever you defeat an enemy quickly, the multiplier increases to two or three.",
+   "When you defeat an enemy, instead of adding standard points, we multiply the gained points by the multiplier value to win points much faster.",
+   "To make the game exciting, we add a streak timer that slowly ticks down. If you do not hit the next enemy before time runs down, the multiplier resets to one.",
+   "The golden rule is: use the Scratch green multiplication math block to multiply points by the multiplier, and reset the multiplier to one when time expires.",
+   "This concept is used in all popular video games to reward skilled players who play fast and make no mistakes to achieve the highest scores."
+  ],
+  "example": "Suppose you defeat an enemy and your base points are ten. If you have a multiplier variable of three due to a fast combo, we multiply ten by three to get a total of thirty added points! This is how a player feels the fun of skill and speed in Scratch.",
+  "mistake": "A common mistake is forgetting to reset the combo timer to zero or the multiplier back to one when running out of time. The fix is to add a block setting the multiplier to one as soon as the timer ends or a hit is missed.",
+  "recap": "Score multipliers reward skill when a player successfully maintains a fast combo streak. We use variables and math operations in Scratch to implement this smartly.",
+  "q": [
+   {
+    "t": "What do multiplier variables do to score points in Scratch?",
+    "o": [
+     "Divide points by two",
+     "Multiply earned points by their current value",
+     "Delete all points permanently"
+    ],
+    "a": 1,
+    "why": "The multiplier multiplies base points to increase them."
+   },
+   {
+    "t": "When does the multiplier return to its original value (one)?",
+    "o": [
+     "When the combo timer ends without a new attack",
+     "At the start of every single second automatically",
+     "Only when the player wins the game"
+    ],
+    "a": 0,
+    "why": "The combo streak timer maintains the streak, and if time runs out, the streak is lost."
+   },
+   {
+    "t": "Which Scratch block do we use to multiply points by the multiplier?",
+    "o": [
+     "Addition block (+)",
+     "Multiplication block (*)",
+     "Division block (/)"
+    ],
+    "a": 1,
+    "why": "The correct math operation for multipliers is multiplication."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Combo Result",
+   "goal": "Predict the added score when multiplier is 3 and base points are 5",
+   "code": "Score variable = 5\nMultiplier variable = 3\nExecute: change Score by (Base Points * Multiplier)",
+   "options": [
+    "Score increases by 8 points",
+    "Score increases by 15 points",
+    "Score increases by only 3 points"
+   ],
+   "a": 1,
+   "success": "Awesome! Multiplying 5 by 3 resulted in score increasing by 15 points all at once!"
+  },
+  "sections": [
+   {
+    "h": "What is a Score Multiplier?",
+    "text": "A score multiplier is a magic game number that multiplies the reward you get when completing a task quickly. Just like buying a double meal at a restaurant, the multiplier gives you doubled points.",
+    "code": "set [Multiplier v] to (2)",
+    "output": "The multiplier becomes ready to double the points."
+   },
+   {
+    "h": "Fast Combo Streaks",
+    "text": "A combo is repeating a successful action without stopping. If you hit enemies one after another quickly, the combo streak starts firing up and grants you higher grades.",
+    "code": "when enemy clicked: change [Combo v] by (1)",
+    "output": "The combo counter increases with every successful hit."
+   },
+   {
+    "h": "The Role of the Streak Timer",
+    "text": "The combo timer is like a candle fuse; it ticks down gradually. If you do not hit the next enemy before the time goes out, you lose the combo and start over.",
+    "code": "repeat until (Combo Timer = 0): wait (1) secs, change [Combo Timer v] by (-1)",
+    "output": "Time ticks down gradually until it runs out."
+   },
+   {
+    "h": "Using Math in Scratch",
+    "text": "Scratch has lovely green math blocks. We use the multiplication block to multiply the enemy's base points by the current multiplier value.",
+    "code": "change [Score v] by (10 * [Multiplier v])",
+    "output": "The product is calculated and added to the score balance."
+   },
+   {
+    "h": "Rewarding the Skilled Player",
+    "text": "When a child plays with high skill, multiplied points make them feel proud and unique, encouraging them to beat their old high score in the game.",
+    "code": "if <([Multiplier v] > 3)> then: say (Awesome Combo!) for (2) secs",
+    "output": "An encouraging message pops up on screen."
+   },
+   {
+    "h": "Resetting Combos on Mistakes",
+    "text": "If the player delays or misses the target, everything must return to normal. We zero out the combo and reset the multiplier to one.",
+    "code": "if <(Combo Timer = 0)> then: set [Multiplier v] to (1)",
+    "output": "The multiplier returns to normal waiting for a new combo."
+   },
+   {
+    "h": "Extra Bonus Points",
+    "text": "We can grant special bonus points if the combo streak reaches a record number like ten consecutive enemies without a single mistake.",
+    "code": "if <([Combo v] = 10)> then: change [Score v] by (50)",
+    "output": "The player gets a major extra bonus reward."
+   },
+   {
+    "h": "Putting It All Together",
+    "text": "Now we combine variables, timers, and multiplication blocks into a complete code that makes our Scratch game fun, competitive, and full of action and excitement.",
+    "code": "when I receive (Enemy Defeated): add multiplied points and reset timer",
+    "output": "The game works in full harmony with professional mechanics."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Multiplier",
+    "desc": "A variable that multiplies earned points by a value."
+   },
+   {
+    "name": "Streak Timer",
+    "desc": "A ticking timer to determine when a combo ends."
+   },
+   {
+    "name": "Bonus Points",
+    "desc": "Extra points awarded upon achieving a special milestone."
+   },
+   {
+    "name": "Scratch Math",
+    "desc": "Green arithmetic operations like addition and multiplication in Scratch."
+   },
+   {
+    "name": "Combo Streak",
+    "desc": "A sequence of consecutive successful hits."
+   },
+   {
+    "name": "Reset",
+    "desc": "Restoring variables to initial values upon mistakes."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is the new score value if base points are 5 and multiplier is 4?",
+    "a": "20 points"
+   },
+   {
+    "q": "What happens to the combo timer over time in the game?",
+    "a": "It ticks down gradually until it reaches zero"
+   },
+   {
+    "q": "What value does the multiplier return to when combo time ends?",
+    "a": "It returns to 1"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

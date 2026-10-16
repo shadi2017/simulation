@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
-const mimeTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8' };
+const mimeTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8' };
 
 function loadLocalEnv() {
   try {
@@ -49,6 +49,7 @@ function lessonContext(value = {}) {
     `Example 1: ${safeText(value.example1, 1000)}`,
     `Example 2: ${safeText(value.example2, 1000)}`,
     `Practice task: ${safeText(value.practice, 1000)}`,
+    `Detailed lesson: ${safeText(value.details, 2500)}`,
     `Lesson notes: ${safeText(value.stageNote, 1000)}`,
     `Reference links: ${Array.isArray(value.references) ? value.references.slice(0, 3).map(item => safeText(item.url, 300)).join(', ') : ''}`
   ].join('\n');
@@ -65,9 +66,39 @@ function withinRateLimit(request) {
   return true;
 }
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+async function callGemini(instructions, turns, maxTokens) {
+  const models = [process.env.GEMINI_MODEL || 'gemini-3.8-flash', ...(process.env.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.1-flash-lite').split(',').map(m => m.trim()).filter(Boolean)];
+  const body = JSON.stringify({
+    systemInstruction: { parts: [{ text: instructions }] },
+    contents: turns.map(t => ({ role: t.role === 'assistant' ? 'model' : 'user', parts: [{ text: t.content }] })),
+    generationConfig: { maxOutputTokens: maxTokens + 2000 }
+  });
+  let last;
+  for (const model of models) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      last = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+        method: 'POST', headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY, 'content-type': 'application/json' }, body, signal: AbortSignal.timeout(30_000)
+      });
+      if (last.ok) { if (model !== models[0]) console.log(`[tutor] answered by fallback model ${model}`); return last; }
+      console.error(`[tutor] ${model} -> ${last.status}`);
+      if (last.status === 503 || last.status === 500) { await sleep(1200); continue; }
+      break;
+    }
+    if (![503, 500, 404, 429].includes(last.status)) return last;
+  }
+  return last;
+}
+
+const provider = () => process.env.AI_PROVIDER || (process.env.GEMINI_API_KEY ? 'gemini' : 'openai');
+const activeKey = () => (provider() === 'gemini' ? process.env.GEMINI_API_KEY : process.env.OPENAI_API_KEY);
+
+let tutorDay = '', tutorCount = 0;
 async function answerTutor(request, response) {
+  const today = new Date().toISOString().slice(0, 10); if (today !== tutorDay) { tutorDay = today; tutorCount = 0; }
+  if (++tutorCount > Number(process.env.TUTOR_DAILY_LIMIT || 400)) return json(response, 429, { error: 'The tutor reached its daily limit. Please come back tomorrow.' });
   if (!withinRateLimit(request)) return json(response, 429, { error: 'Too many questions. Please wait a moment and try again.' });
-  if (!process.env.OPENAI_API_KEY) return json(response, 503, { error: 'AI tutor is not configured yet. Add OPENAI_API_KEY to the local .env file, then restart the server.' });
+  if (!activeKey()) return json(response, 503, { error: 'AI tutor is not configured yet. Add GEMINI_API_KEY (free) or OPENAI_API_KEY to the local .env file, then restart the server.' });
 
   let body;
   try { body = await readJson(request); }
@@ -101,33 +132,40 @@ async function answerTutor(request, response) {
     ? `Create a complete, self-contained lesson for the student using this context. Keep it substantial enough to teach from, but accessible to the stated grade.\n\n${context}`
     : [...history, { role: 'user', content: `Lesson context:\n${context}\n\nStudent question:\n${question}` }];
 
+  const gemini = provider() === 'gemini';
+  const maxTokens = mode === 'lesson' ? 2600 : 850;
   let upstream;
   try {
-    upstream = await fetch('https://api.openai.com/v1/responses', {
-      method: 'POST',
-      headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}`, 'content-type': 'application/json' },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
-        instructions,
-        input,
-        max_output_tokens: mode === 'lesson' ? 2600 : 850,
-        store: false
-      }),
-      signal: AbortSignal.timeout(45_000)
-    });
+    if (gemini) {
+      upstream = await callGemini(instructions, Array.isArray(input) ? input : [{ role: 'user', content: input }], maxTokens);
+    } else {
+      upstream = await fetch('https://api.openai.com/v1/responses', {
+        method: 'POST',
+        headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}`, 'content-type': 'application/json' },
+        body: JSON.stringify({ model: process.env.OPENAI_MODEL || 'gpt-4.1-mini', instructions, input, max_output_tokens: maxTokens, store: false }),
+        signal: AbortSignal.timeout(45_000)
+      });
+    }
   } catch {
     return json(response, 502, { error: 'The tutor could not connect just now. Check the server connection and try again.' });
   }
 
   const data = await upstream.json().catch(() => ({}));
   if (!upstream.ok) {
-    const message = upstream.status === 401 || upstream.status === 403
-      ? 'The AI service key was rejected. Check OPENAI_API_KEY in .env.'
+    const detail = String(data.error?.message || '');
+    console.error(`[tutor] ${provider()} error ${upstream.status}: ${detail.slice(0, 300)}`);
+    const keyBad = upstream.status === 401 || upstream.status === 403 || (gemini && upstream.status === 400 && /api key/i.test(detail));
+    const message = keyBad ? 'The AI service key was rejected. Check the key in .env.'
+      : upstream.status === 429 ? (gemini ? 'The free quota is used up for now. Wait a minute and try again.' : 'OpenAI quota or credit is exhausted. Check billing, or switch to the free Gemini key.')
+      : upstream.status === 503 ? 'Google servers are busy right now. Please try again in a few seconds.'
+      : upstream.status === 404 && gemini ? 'The Gemini model name was not found. Set GEMINI_MODEL in .env to a model listed in Google AI Studio.'
       : 'The tutor service had a problem. Please try again in a moment.';
     return json(response, upstream.status === 429 ? 429 : 502, { error: message });
   }
 
-  const answer = data.output?.flatMap(item => item.content || []).filter(item => item.type === 'output_text').map(item => item.text).join('\n').trim() || data.output_text?.trim();
+  const answer = gemini
+    ? data.candidates?.[0]?.content?.parts?.map(p => p.text || '').join('').trim()
+    : data.output?.flatMap(item => item.content || []).filter(item => item.type === 'output_text').map(item => item.text).join('\n').trim() || data.output_text?.trim();
   if (!answer) return json(response, 502, { error: 'The tutor returned an empty answer. Please try again.' });
   return json(response, 200, { answer });
 }
@@ -151,7 +189,7 @@ function serveStatic(request, response, pathname) {
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, 'http://localhost');
   if (request.method === 'GET' && url.pathname === '/api/health') {
-    return json(response, 200, { ready: Boolean(process.env.OPENAI_API_KEY) });
+    return json(response, 200, { ready: Boolean(activeKey()) });
   }
   if (request.method === 'POST' && url.pathname === '/api/tutor') return answerTutor(request, response);
   if (request.method !== 'GET' && request.method !== 'HEAD') return json(response, 405, { error: 'Method not allowed.' });
@@ -159,7 +197,8 @@ const server = http.createServer(async (request, response) => {
 });
 
 const port = Number(process.env.PORT || 4173);
-server.listen(port, '127.0.0.1', () => {
-  console.log(`Code Lab running at http://127.0.0.1:${port}`);
-  console.log(process.env.OPENAI_API_KEY ? 'AI tutor: configured' : 'AI tutor: needs OPENAI_API_KEY in .env');
+const host = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1');
+server.listen(port, host, () => {
+  console.log(`Code Lab running at http://${host}:${port}`);
+  console.log(activeKey() ? `AI tutor: configured (${provider()})` : 'AI tutor: needs GEMINI_API_KEY or OPENAI_API_KEY in .env');
 });

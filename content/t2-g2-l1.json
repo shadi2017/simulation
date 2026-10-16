@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن شاشة سكراتش مثل ورقة رسم مربعة، حدودها لها أرقام تخبرنا بمكان الكائن بالضبط، وتسمى هذه الأرقام الإحداثيات.",
+   "عندما يتحرك الكائن ويصل لليمين تماماً، يصل إحداثي السينات (x) إلى الرقم 240، وهو أقصى حافة الشاشة اليمنى.",
+   "لكي نصنع حركة التفاف سحرية، نستخدم فحص الحافة: هل تجاوز الكائن الرقم 240؟ إذا حدث، سنقوم بنقله بسرعة.",
+   "نستخدم كتلة تغيير الموضع (set x to) لنقل الكائن فوراً إلى الحافة اليسرى وسيناتها تساوي ناقص 240 (-240).",
+   "القاعدة الذهبية للتفافه هي: إذا خرجت من باب يمين الشاشة، تظهر فجأة ودون توقف من باب اليسار.",
+   "هذه الحيلة البرمجية نراها في ألعاب المتاهة الشهيرة والفضاء القديمة، حيث تطير المركبة يميناً لتظهر باليسار."
+  ],
+  "example": "في لعبتنا، نضع مقطعاً برمجياً يفحص طوال الوقت عبر لبنة (إذا): هل الموضع السيني (x position) أكبر من 240؟ إذا كان الجواب نعم، نأمر الكائن باستخدام لبنة (اجعل x مساوياً لـ -240). هذا يجعل قطنا اللطيف يختفي من أقصى اليمين ليظهر فورا كأنه دخل من أقصى اليسار بسلاسة مذهلة وممتعة.",
+  "mistake": "الخطأ الشائع هو وضع رقم صغير مثل 100 بدل 240، مما يجعل الكائن يختفي في منتصف الشاشة! التصحيح هو ضبط شرط الفحص على الحد الأقصى الصحيح لشاشة سكراتش وهو 240.",
+  "recap": "تعلمنا كيف نكتشف وصول الكائن لحافة الشاشة وننقله أوتوماتيكياً للجانب الآخر. هذا يصنع عالماً دائرياً جميلاً في الألعاب.",
+  "q": [
+   {
+    "t": "ما هو الإحداثي السيني أقصى اليمين في شاشة سكراتش؟",
+    "o": [
+     "100",
+     "240",
+     "0"
+    ],
+    "a": 1,
+    "why": "حافة الشاشة اليمنى في سكراتش هي الرقم 240 دائماً."
+   },
+   {
+    "t": "عندما يخرج الكائن من اليمين، إلى أين ننقله؟",
+    "o": [
+     "إلى أقصى اليسار عند -240",
+     "إلى منتصف الشاشة",
+     "إلى أعلى الشاشة"
+    ],
+    "a": 0,
+    "why": "لعمل التفاف صحيح، ينتقل الكائن فوراً للجانب المقابل وهو اليسار عند -240."
+   },
+   {
+    "t": "أي لبنة تستخدم لفحص مكان الكائن على اليمين؟",
+    "o": [
+     "إذا كان < الموضع السيني > 240>",
+     "تحرك 10 خطوات",
+     "انتظر 1 ثانية"
+    ],
+    "a": 0,
+    "why": "نستخدم لبنة الشرط (إذا) مع مقارنة الموضع السيني للتحقق من وصول الحافة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز حواف الشاشة وال teleport",
+   "goal": "صنف العناصر إلى أماكنها الصحيحة بين حواف الشاشة وأوامر الانتقال",
+   "buckets": [
+    "حواف الشاشة والسينات",
+    "أوامر النقل والتteleport"
+   ],
+   "items": [
+    {
+     "t": "الإحداثي 240",
+     "b": 0
+    },
+    {
+     "t": "اجعل x مساوياً لـ -240",
+     "b": 1
+    },
+    {
+     "t": "الإحداثي -240",
+     "b": 0
+    },
+    {
+     "t": "إذا كان الموضع السيني > 240",
+     "b": 1
+    },
+    {
+     "t": "أقصى يسار الشاشة",
+     "b": 0
+    },
+    {
+     "t": "الانتقال السحري للجانب الآخر",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد نظمت حواف الشاشة وأوامر النقل ببراعة تامة ليطير الكائن بلا حدود!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم حدود الشاشة",
+    "text": "تشبه شاشة سكراتش ملعب كرة قدم له سور يمنع اللاعبين من الخروج. في البرمجة، هذه السور لها أرقام محددة جداً. عندما يقترب كائننا منها، يجب أن نعرف مكانه بدقة لكي لا يضيع خارج الملعب.",
+    "code": "عند الضغط على علم الأخضر -> كرر تجميد الحركة إذا لزم",
+    "output": "يظل الكائن محصوراً داخل نطاق رؤية اللاعب."
+   },
+   {
+    "h": "إحداثيات الشاشة وسيناتها",
+    "text": "تتكون شاشة سكراتش من شبكة أرقام أفقية تسمى السينات (X) وعمودية تسمى الصادات (Y). أقصى اليمين هو 240 وأقصى اليسار هو سالب 240 (-240). تماماً مثل المسطرة التي تبدأ من الصفر وتتجه يميناً ويساراً.",
+    "code": "الموضع السيني = 240",
+    "output": "يعرف الحاسوب أن الكائن يقف عند أقصى حافة اليمين."
+   },
+   {
+    "h": "اكتشاف الحافة (Edge Detection)",
+    "text": "لكي نعرف هل وصل الكائن للحافة أم لا، نسأل الحاسوب سؤالاً ذكياً باستخدام لبنة (إذا). نقول له: هل تجاوز الموضع السيني رقم 240؟ هذا يشبه حارساً يراقب الباب ليعرف متى يخرج القط.",
+    "code": "إذا <الموضع السيني > 240>",
+    "output": "يتحقق الشرط فور وصول الكائن لليمين تماماً."
+   },
+   {
+    "h": "النقل السحري (Teleporting Coordinates)",
+    "text": "عندما يخرج الكائن من اليمين، لا نريد أن يختفي للأبد. نريد نقله فوراً وبسرعة البرق إلى الحافة اليسرى عند سالب 240 (-240). هذا يشبه نفقاً سرياً يوصلك من أول اللعبة لآخرها.",
+    "code": "اجعل x مساوياً لـ (-240)",
+    "output": "ينتقل الكائن فجأة وبدون أن يشعر اللاعب إلى اليسار."
+   },
+   {
+    "h": "العمليات الرياضية في فحص الحافة",
+    "text": "نحتاج أحياناً للعمليات الرياضية مثل علامة أكبر من (>) أو أصغر من (<) لمقارنة أرقام الشاشة. الرياضيات هنا ليست معقدة، بل هي أداة بسيطة لتحديد متى يفعل الكائن حركته السحرية.",
+    "code": "استخدام لبنة أكبر من وعلامة ناقص",
+    "output": "مقارنة صحيحة ودقيقة لمكان الكائن."
+   },
+   {
+    "h": "تطبيق لفافة الجانب الأيسر إلى اليمين",
+    "text": "تماماً كما نفعل مع اليمين، إذا مشى الكائن كثيراً لليسار ووصل إلى -240، يجب أن نعيده إلى اليمين عند 240. هكذا يصبح العالم الدائري مكاناً لا ينتهي من الحركة واللعب المستمر.",
+    "code": "إذا <الموضع السيني < -240> -> اجعل x مساوياً لـ 240",
+    "output": "حركة التفاف كاملة يميناً ويساراً."
+   },
+   {
+    "h": "تأثير التفاف الشاشة في الألعاب",
+    "text": "هل لعبت يوماً لعبة فضاء تطير فيها طائرتك وتخرج من يمين الشاشة لتظهر في يسارها؟ هذا هو التفاف الشاشة (Wrap-Around). يعطي شعوراً بأن العالم كروي وكبير جداً رغم صغر الشاشة.",
+    "code": "تشغيل حلقة مستمرة (تكرار باستمرار)",
+    "output": "لعبة احترافية ذات ميكانيكا ممتعة."
+   },
+   {
+    "h": "تلخيص ومراجعة الحواف",
+    "text": "الخلاصة هي مراقبة الموضع السيني والصادي طوال اللعبة، وعند لمس الحافة، نقوم بعمل Teleport بسيط. البساطة والتركيز يجعلان لعبتك تبدو كألعاب الفيديو الحقيقية التي تصنعها الشركات الكبرى.",
+    "code": "دمج كل اللبنات في مقبرة برمجية واحدة متسقة",
+    "output": "كود نظيف وخالٍ من الأخطاء وجاهز للعب."
+   }
+  ],
+  "reference": [
+   {
+    "name": "الموضع السيني (X position)",
+    "desc": "رقم يحدد مكان الكائن أفقياً يميناً ويساراً."
+   },
+   {
+    "name": "حافة الشاشة (Edge)",
+    "desc": "نهاية مساحة اللعب في سكراتش عند 240 أو -240."
+   },
+   {
+    "name": "النقل الآني (Teleport)",
+    "desc": "تغيير مكان الكائن فوراً دون رؤيته وهو يتحرك بالمسافة."
+   },
+   {
+    "name": "عمليات المقارنة (Operators)",
+    "desc": "لبنات تفحص ما إذا كان الرقم أكبر أو أصغر من الآخر."
+   },
+   {
+    "name": "الالتفاف (Wrap-around)",
+    "desc": "خروج الكائن من جانب وعودته الفورية من الجانب المقابل."
+   },
+   {
+    "name": "لبنة الشرط (If)",
+    "desc": "تنفذ شيئاً معيناً فقط إذا تحقق شرط صحة العبارة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الرقم الذي نضعه في لبنة (اجعل x مساوياً لـ ...) لنقل الكائن لأقصى اليسار؟",
+    "a": "-240"
+   },
+   {
+    "q": "أي علامة رياضية نستخدمها لنعرف هل تجاوز الكائن الحافة اليمنى 240؟",
+    "a": "علامة أكبر من (>)"
+   },
+   {
+    "q": "إذا خرج الكائن من يسار الشاشة عند -240، إلى أين يجب أن يعود؟",
+    "a": "إلى أقصى اليمين عند 240"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine the Scratch stage is a grid with number coordinates that tell us exactly where our sprite is located at any moment.",
+   "When a sprite moves all the way to the right, its X position reaches 240, which is the absolute right edge of the stage.",
+   "To create a magical wrap-around motion, we use edge detection to ask: Has the sprite gone past 240?",
+   "We use the motion block (set x to) to instantly teleport the sprite to the left side where X equals minus 240 (-240).",
+   "The golden rule of screen wrapping: If you exit through the right door, you instantly reappear through the left door.",
+   "This fun programming trick is seen in classic arcade and maze games, letting characters fly continuously without hitting a wall."
+  ],
+  "example": "In our game, we place a script that constantly checks using an (if) block: Is the (x position) greater than 240? If yes, we command the sprite using the (set x to -240) block. This makes our cute cat disappear from the far right and instantly pop up entering from the far left, creating a seamless and fun effect.",
+  "mistake": "A common mistake is using a small number like 100 instead of 240, which makes the sprite disappear right in the middle of the screen! The fix is to set the check condition to the correct maximum Scratch edge bound of 240.",
+  "recap": "We learned how to detect when a sprite reaches the stage edge and automatically teleport it to the opposite side. This creates a wonderful continuous world in games.",
+  "q": [
+   {
+    "t": "What is the maximum right X coordinate on the Scratch stage?",
+    "o": [
+     "100",
+     "240",
+     "0"
+    ],
+    "a": 1,
+    "why": "The right edge of the Scratch stage is always 240."
+   },
+   {
+    "t": "When the sprite exits from the right, where do we teleport it?",
+    "o": [
+     "To the far left at -240",
+     "To the center of the stage",
+     "To the top of the stage"
+    ],
+    "a": 0,
+    "why": "To wrap around correctly, the sprite instantly moves to the opposite side at -240."
+   },
+   {
+    "t": "Which block is used to check the sprite's position on the right?",
+    "o": [
+     "if <x position > 240>",
+     "move 10 steps",
+     "wait 1 secs"
+    ],
+    "a": 0,
+    "why": "We use the conditional (if) block combined with an X position comparison to check the edge."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Stage Edges and Teleport Sort",
+   "goal": "Sort items correctly between stage bounds and teleport commands",
+   "buckets": [
+    "Stage Bounds & X Values",
+    "Teleport & Check Commands"
+   ],
+   "items": [
+    {
+     "t": "Coordinate 240",
+     "b": 0
+    },
+    {
+     "t": "set x to -240",
+     "b": 1
+    },
+    {
+     "t": "Coordinate -240",
+     "b": 0
+    },
+    {
+     "t": "if <x position > 240>",
+     "b": 1
+    },
+    {
+     "t": "Far left edge of screen",
+     "b": 0
+    },
+    {
+     "t": "Magical jump to other side",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You neatly organized stage bounds and teleport commands so your sprite can fly endlessly!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Stage Boundaries",
+    "text": "The Scratch stage is like a soccer field with a fence that keeps players inside. In programming, these fences have precise numbers. When our sprite gets close to them, we must track its location so it doesn't wander off outside.",
+    "code": "when green flag clicked -> keep checking position inside loop",
+    "output": "The sprite stays within the player's view range."
+   },
+   {
+    "h": "Stage Coordinates and X Positions",
+    "text": "The Scratch stage consists of a horizontal grid of numbers called X and a vertical grid called Y. The far right is 240 and the far left is negative 240 (-240), much like a ruler starting at zero and stretching both ways.",
+    "code": "x position = 240",
+    "output": "The computer knows the sprite is standing at the far right edge."
+   },
+   {
+    "h": "Edge Detection Basics",
+    "text": "To know if the sprite has hit the edge, we ask the computer a smart question using an (if) block. We ask: Has the X position gone past 240? This acts like a guard watching the door to know when the cat steps out.",
+    "code": "if <x position > 240>",
+    "output": "The condition triggers right when the sprite reaches the far right."
+   },
+   {
+    "h": "Teleporting Coordinates",
+    "text": "When the sprite exits from the right, we don't want it to vanish forever. We want to instantly flash it over to the left edge at negative 240 (-240). This acts like a secret tunnel connecting the end of the game to the start.",
+    "code": "set x to (-240)",
+    "output": "The sprite suddenly jumps to the left without the player noticing travel time."
+   },
+   {
+    "h": "Math Operators in Edge Checking",
+    "text": "We often need math operators like greater than (>) or less than (<) to compare screen numbers. Math here isn't complicated; it's simply a tool to decide when the sprite should perform its magical movement.",
+    "code": "using greater than operator with X position",
+    "output": "Accurate and correct comparison of the sprite's location."
+   },
+   {
+    "h": "Left-to-Right Wrap-Around",
+    "text": "Just like we do on the right, if the sprite walks too far left and hits -240, we must bring it back to the right at 240. This turns our flat screen into an endless, circular world of continuous play.",
+    "code": "if <x position < -240> -> set x to 240",
+    "output": "Complete smooth wrap-around movement left and right."
+   },
+   {
+    "h": "Screen Wrap in Video Games",
+    "text": "Have you ever played a space game where your spaceship flies off the right side of the screen and pops out on the left? That is screen wrap-around. It gives the illusion of a massive, spherical game world.",
+    "code": "running inside a forever loop",
+    "output": "A professional game with fun mechanics."
+   },
+   {
+    "h": "Summary and Edge Review",
+    "text": "The bottom line is tracking X and Y positions all game long, and triggering a simple teleport when touching an edge. Simplicity and focus make your game feel like real video games created by top studios.",
+    "code": "combining all blocks into one consistent script",
+    "output": "Clean, error-free code ready for playtime."
+   }
+  ],
+  "reference": [
+   {
+    "name": "X position",
+    "desc": "A number that defines the sprite's horizontal location left and right."
+   },
+   {
+    "name": "Stage Edge",
+    "desc": "The boundary of the play area in Scratch at 240 or -240."
+   },
+   {
+    "name": "Teleport",
+    "desc": "Instantly changing a sprite's location without seeing it travel across."
+   },
+   {
+    "name": "Operators",
+    "desc": "Blocks that check if a number is greater or smaller than another."
+   },
+   {
+    "name": "Wrap-around",
+    "desc": "Exiting from one side of the screen and instantly reappearing on the opposite side."
+   },
+   {
+    "name": "If block",
+    "desc": "Runs a specific action only when a condition statement is true."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What number do we put inside the (set x to ...) block to teleport the sprite to the far left?",
+    "a": "-240"
+   },
+   {
+    "q": "Which math operator do we use to check if the sprite went past the right edge 240?",
+    "a": "greater than (>)"
+   },
+   {
+    "q": "If the sprite exits the left side of the screen at -240, where should it return?",
+    "a": "To the far right at 240"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

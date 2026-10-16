@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تعني أحداث البداية في سكراتش جونيور إعارة الانتباه للعبة، حيث تبدأ الأوامر بالعمل عندما يفعل اللاعب شيئاً، تماماً مثل الضغط على زر التشغيل في التلفاز ليظهر الكرتون المفضل لديك فوراً.",
+   "تخيل قطة صغيرة تقف في الحديقة، عندما تلمسها بإصبعك على شاشة التابلت، يبدأ الكود البرمجي الخاص بالقفز في التنفيذ فوراً دون الحاجة للضغط على العلم الأخضر.",
+   "تعمل لبنة 'البداية عند اللمس' كأذن صاغية للشخصية؛ فهي تنتظر بصمت حتى يلامسها اللاعب بإصبعه، ثم تترجم هذا اللمس إلى حركة مذهلة أو صوت طريف.",
+   "لنفترض أنك صممت قردًا يحب الموز، فعندما تلمس القرد بإصبعك، يقول 'يُمي!' ويتحرك خطوتين للأمام ليقترب من طعامه المفضل بكل حماس.",
+   "القاعدة الذهبية هي اختيار الحدث المناسب للمكان المناسب؛ استخدم اللمس عندما تحب أن يتحكم اللاعب مباشرة بالشخصية، واستخدم الاصطدام عندما تقترب شخصيتان من بعضهما البعض.",
+   "تُستخدم هذه المهارات الرائعة في تصميم ألعاب مغامرات حقيقية، مثل جعل الأميرة تهرب عندما يلمسها التنين، أو جمع النقاط الذهبية بمجرد لمسها على الشاشة."
+  ],
+  "example": "لنفترض أننا نصمم لعبة كرة قدم بسيطة في سكراتش جونيور. نضع شخصية الكرة، ونختار لها لبنة 'البداية عند اللمس' (Start on Tap)، ثم نلصق بها لبنة الحركة للأمام 4 خطوات. عندما يضغط اللاعب بإصبعه على الكرة، تفهم الكرة الأمر فوراً وتتدحرج للأمام لتبدأ المباراة! هذا يجعل لعبتنا تفاعلية وممتعة للغاية.",
+  "mistake": "من الأخطاء الشائعة نسيان وضع لبنة البداية باللمس وسحب الحركة مباشرة، مما يجعل الشخصية لا تستجيب لإصبعك أبداً. الحل هو التأكد دائماً من وضع لبنة الحدث الخضراء كغطاء علوي لكل مجموعة برمجية.",
+  "recap": "تتعلم في هذا الدرس كيف تجعل شخصياتك تتفاعل مع لمساتك واصطداماتها. الأحداث هي المفتاح السحري لجعل ألعابك حية وممتعة.",
+  "q": [
+   {
+    "t": "ماذا تفعل لبنة 'البداية عند اللمس'؟",
+    "o": [
+     "تبدأ البرمجة عندما يلمس اللاعب الشخصية بإصبعه",
+     "تنهي اللعبة فوراً",
+     "تغير لون الخلفية تلقائياً"
+    ],
+    "a": 0,
+    "why": "لأنها تنتظر لمسة الإصبع لتشغيل الأوامر."
+   },
+   {
+    "t": "متى تستخدم لبنة الاصطدام؟",
+    "o": [
+     "عندما تلامس شخصية شخصية أخرى",
+     "عند تشغيل التطبيق أول مرة",
+     "عند إغلاق التابلت"
+    ],
+    "a": 0,
+    "why": "الاصطدام يحدث عندما تلتقي شخصيتان ببعضهما."
+   },
+   {
+    "t": "كيف تجعل شخصيتك ترد على اللمس؟",
+    "o": [
+     "بربط حركة بلبنة اللمس",
+     "برسم خلفية سوداء",
+     "بحذف جميع اللبنات"
+    ],
+    "a": 0,
+    "why": "ربط الأوامر بلبنة اللمس يجعلها تبدأ عند الضغط."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل جمل أحداث سكراتش جونيور",
+   "goal": "اختر الكلمة الصحيحة لإكمال كل عبارة برمجية.",
+   "items": [
+    {
+     "text": "تبدأ لبنة البداية بـ ___ عندما يضغط اللاعب على الشخصية.",
+     "options": [
+      "اللمس",
+      "النوم",
+      "الاختفاء"
+     ],
+     "a": 0
+    },
+    {
+     "text": "تحدث حالة ___ عندما تصطدم شخصيتان ببعضهما.",
+     "options": [
+      "الاصطدام",
+      "القفز العالي",
+      "الطيران"
+     ],
+     "a": 0
+    },
+    {
+     "text": "نستخدم لبنة ___ لجعل الشخصية تتحرك بعد لمسها.",
+     "options": [
+      "الحركة",
+      "الصمت",
+      "الإغلاق"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! أصبحت خبيراً في ربط الأحداث بالأوامر البرمجية!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الأحداث البرمجية؟",
+    "text": "الأحداث مثل الضوء الأحمر في إشارات المرور؛ تخبر البرنامج متى يبدأ بالعمل. في سكراتش جونيور، نستخدم الأحداث لنجعل الشخصيات تستجيب لعالمها، تماماً مثل رد فعلك عندما ينادي أحدهم باسمك.",
+    "code": "عندما يلمس اللاعب الشخصية -> تحرك للأمام",
+    "output": "الشخصية تتحرك فوراً عند النقر عليها."
+   },
+   {
+    "h": "لبنة البداية عند اللمس",
+    "text": "تشبه هذه اللبنة زر جرس الباب. عندما يضغط الإصبع على الشخصية، ترسل هذه اللبنة إشارة لتبدأ بقية الأوامر بالعمل فوراً.",
+    "code": "لبنة اللمس + لبنة القفز",
+    "output": "تقفز الشخصية بمجرد لمسها."
+   },
+   {
+    "h": "التفاعل مع اللاعب",
+    "text": "بدلاً من مشاهدة فيلم صامت، تتيح لك أحداث اللمس جعل اللاعب هو البطل الذي يتحكم بما يحدث في القصة.",
+    "code": "لبنة اللمس + لبنة تكبير الحجم",
+    "output": "تكبر الشخصية عندما يلمسها اللاعب."
+   },
+   {
+    "h": "لبنة البداية عند الاصطدام",
+    "text": "تراقب هذه اللبنة الشاشة بصمت. عندما تقترب شخصية وتصطدم بشخصية أخرى، تنطلق الأوامر مثل قطارين تقابلا على نفس السكة.",
+    "code": "لبنة الاصطدام + لبنة إصدار صوت",
+    "output": "تصدر الشخصية صوتاً عند اصطدامها بالأخرى."
+   },
+   {
+    "h": "تجنب الارتباك في اللعبة",
+    "text": "لكي تكون لعبتك منظمة، ضع لكل شخصية حدثها الخاص بها، حتى لا تختلط الأوامر وتتحرك الشخصيات بطرق غريبة.",
+    "code": "شخصية قطة (لمس) + شخصية كلب (اصطدام)",
+    "output": "تعمل كل شخصية عند حدوث الحدث الخاص بها فقط."
+   },
+   {
+    "h": "بناء ألعاب مطاردة ممتعة",
+    "text": "يمكنك استخدام الاصطدام لصنع لعبة هروب، حيث يهرب الأرنب الذكي بسرعة عندما يصطدم به الثعلب الماكر.",
+    "code": "اصطدام الثعلب بالأرنب -> هروب الأرنب للخلف",
+    "output": "يهرب الأرنب بعيداً عند ملامسة الثعلب له."
+   },
+   {
+    "h": "استخدام الأصوات مع الأحداث",
+    "text": "الأحداث رائعة لإضافة مشاعر للشخصية؛ فعندما يلمس اللاعب قطة صغيرة، يمكنها المواء بسعادة.",
+    "code": "لبنة اللمس + لبنة صوت المواء",
+    "output": "تسمع صوت المواء عند النقر على القطة."
+   },
+   {
+    "h": "قصص تفاعلية لا تنتهي",
+    "text": "باستخدام اللمس والاصطدام معاً، تصبح مؤلف قصص رقمية حقيقياً يصنع عوالم يندمج فيها الأصدقاء باللعب.",
+    "code": "قصة تبدأ باللمس وتستمر بالاصطدام",
+    "output": "قصة تفاعلية متكاملة وممتعة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Trigger",
+    "desc": "حدث يبدأ تشغيل مجموعة الأوامر البرمجية."
+   },
+   {
+    "name": "Start on Tap",
+    "desc": "لبنة تبدأ الكود عند لمس الشخصية بإصبعك."
+   },
+   {
+    "name": "Start on Bump",
+    "desc": "لبنة تبدأ الكود عند اصطدام شخصية بأخرى."
+   },
+   {
+    "name": "Interaction",
+    "desc": "تفاعل اللاعب مع اللعبة عبر اللمس أو الحركة."
+   },
+   {
+    "name": "Event",
+    "desc": "شيء يقع في اللعبة ليؤدي إلى رد فعل."
+   },
+   {
+    "name": "Response",
+    "desc": "الحركة أو الصوت الذي تفعله الشخصية بعد الحدث."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة التي تجعل الشخصية تبدأ الحركة عند لمسها؟",
+    "a": "لبنة البداية عند اللمس (Start on Tap)"
+   },
+   {
+    "q": "متى تبدأ لبنة الاصطدام بالعمل؟",
+    "a": "عندما تلامس شخصية شخصية أخرى على الشاشة."
+   },
+   {
+    "q": "كيف تجعل قطتك الرقمية تموء عند النقر عليها؟",
+    "a": "نضع لبنة اللمس وفوقها لبنة الصوت."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Trigger events in ScratchJr mean paying attention to the game, where commands start working when the player does something, just like pressing the power button on a TV to instantly watch your favorite cartoon.",
+   "Imagine a little cat standing in the park; when you touch it with your finger on the tablet screen, its jumping code runs immediately without needing to press the green flag.",
+   "The 'Start on Tap' block acts like a listening ear for your character; it waits silently until the player touches it with a finger, then turns that touch into an amazing move or a funny sound.",
+   "Suppose you design a monkey that loves bananas. When you touch the monkey with your finger, it says 'Yum!' and moves two steps forward to get closer to its favorite food with excitement.",
+   "The golden rule is to choose the right event for the right place: use tap when you want the player to directly control the character, and use bump when two characters get close to each other.",
+   "These wonderful skills are used to design real adventure games, such as making a princess run away when a dragon touches her, or collecting gold coins simply by touching them on the screen."
+  ],
+  "example": "Suppose we are designing a simple football game in ScratchJr. We place the ball character, choose the 'Start on Tap' block, and attach a move forward 4 steps block to it. When the player taps the ball with their finger, the ball instantly understands the command and rolls forward to start the match! This makes our game interactive and extremely fun.",
+  "mistake": "A common mistake is forgetting to place the Start on Tap block and dragging motion blocks directly, making the character never respond to your finger. The fix is to always ensure the green event block is placed as a cap on top of every script.",
+  "recap": "In this lesson, you learn how to make your characters react to your touches and bumps. Events are the magic key to making your games alive and fun.",
+  "q": [
+   {
+    "t": "What does the 'Start on Tap' block do?",
+    "o": [
+     "Starts code when the player touches the character with a finger",
+     "Ends the game immediately",
+     "Changes the background color automatically"
+    ],
+    "a": 0,
+    "why": "Because it waits for a finger touch to run commands."
+   },
+   {
+    "t": "When do you use the bump block?",
+    "o": [
+     "When one character touches another character",
+     "When starting the app for the first time",
+     "When shutting down the tablet"
+    ],
+    "a": 0,
+    "why": "A bump happens when two characters meet each other."
+   },
+   {
+    "t": "How do you make your character respond to a touch?",
+    "o": [
+     "By attaching motion to the tap block",
+     "By drawing a black background",
+     "By deleting all blocks"
+    ],
+    "a": 0,
+    "why": "Connecting commands to the tap block makes them start on click."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete ScratchJr Event Sentences",
+   "goal": "Choose the correct word to complete each coding phrase.",
+   "items": [
+    {
+     "text": "The start block begins with ___ when the player presses on the character.",
+     "options": [
+      "Tap",
+      "Sleep",
+      "Hide"
+     ],
+     "a": 0
+    },
+    {
+     "text": "A ___ event happens when two characters collide with each other.",
+     "options": [
+      "Bump",
+      "High jump",
+      "Fly"
+     ],
+     "a": 0
+    },
+    {
+     "text": "We use the ___ block to make the character move after being touched.",
+     "options": [
+      "Motion",
+      "Silence",
+      "Close"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You became an expert at connecting events to code commands!"
+  },
+  "sections": [
+   {
+    "h": "What are Coding Events?",
+    "text": "Events are like the red light at a traffic intersection; they tell the program when to start working. In ScratchJr, we use events to make characters respond to their world, just like your reaction when someone calls your name.",
+    "code": "When player taps character -> move forward",
+    "output": "The character moves instantly when clicked."
+   },
+   {
+    "h": "The Start on Tap Block",
+    "text": "This block is like a doorbell button. When a finger presses on the character, this block sends a signal for the rest of the commands to start running immediately.",
+    "code": "Tap block + Jump block",
+    "output": "The character jumps as soon as it is touched."
+   },
+   {
+    "h": "Interacting with the Player",
+    "text": "Instead of watching a silent movie, touch events let you make the player the hero who controls what happens in the story.",
+    "code": "Tap block + Grow block",
+    "output": "The character grows bigger when touched by the player."
+   },
+   {
+    "h": "The Start on Bump Block",
+    "text": "This block watches the screen silently. When a character moves and bumps into another character, the commands trigger like two trains meeting on the same track.",
+    "code": "Bump block + Play sound block",
+    "output": "The character makes a sound when bumping into another."
+   },
+   {
+    "h": "Avoiding Confusion in Games",
+    "text": "To keep your game organized, give each character its own event so commands don't get mixed up and characters move in weird ways.",
+    "code": "Cat character (tap) + Dog character (bump)",
+    "output": "Each character acts only upon its specific event."
+   },
+   {
+    "h": "Building Fun Chasing Games",
+    "text": "You can use bumps to make an escape game, where a smart rabbit quickly runs away when bumped by a sneaky fox.",
+    "code": "Fox bumps rabbit -> rabbit runs backward",
+    "output": "The rabbit flees away when touched by the fox."
+   },
+   {
+    "h": "Using Sounds with Events",
+    "text": "Events are great for giving character feelings; when the player touches a kitty cat, it can meow happily.",
+    "code": "Tap block + Meow sound block",
+    "output": "You hear a meow sound when clicking the cat."
+   },
+   {
+    "h": "Endless Interactive Stories",
+    "text": "By using taps and bumps together, you become a true digital storyteller creating worlds where friends immerse in play.",
+    "code": "Story starting with tap and continuing with bump",
+    "output": "A complete and entertaining interactive story."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Trigger",
+    "desc": "An event that starts running a group of code commands."
+   },
+   {
+    "name": "Start on Tap",
+    "desc": "A block that starts code when you touch the character with your finger."
+   },
+   {
+    "name": "Start on Bump",
+    "desc": "A block that starts code when one character bumps into another."
+   },
+   {
+    "name": "Interaction",
+    "desc": "Player engagement with the game via touch or movement."
+   },
+   {
+    "name": "Event",
+    "desc": "Something happening in the game leading to a reaction."
+   },
+   {
+    "name": "Response",
+    "desc": "The movement or sound the character performs after an event."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block makes a character start moving when touched?",
+    "a": "Start on Tap block"
+   },
+   {
+    "q": "When does the bump block start working?",
+    "a": "When one character touches another character on the screen."
+   },
+   {
+    "q": "How do you make your digital cat meow when clicked?",
+    "a": "We place the tap block and attach the sound block on top of it."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "الخطأ البرمجي، أو ما نسميه 'Bug'، هو عبارة عن غلطة بسيطة تجعل خطواتنا أو برنامجنا يعمل بشكل غير متوقع. تخيل أنك ترسم خريطة للوصول إلى الثلاجة، لكنك كتبت 'انعطف يساراً' بالخطأ بدلاً من 'يمين', فاصطدمت بالحائط!",
+   "إليك مثال صغير: نريد من الروبوت أن يجمع 'لعبة واحدة'. الكاتب كتب:\n1. امشِ خطوتين للأمام\n2. افتح الصندوق\n3. ارقص\nهنا يوجد خطأ لأن الرقص لا يجمع اللعبة، والخطوة الصحيحة كانت 'التقط اللعبة' بدلاً من الارتباك.",
+   "كيف تعمل الأخطاء؟ الأخطاء هي مجرد إشارات مرور حمراء تخبرنا أن شيئاً ناقصاً أو غير مرتب. الكمبيوتر يفعل حرفياً ما نقوله له تماماً، ليس ما نقصد قوله، فإذا أعطيناه أمراً خاطئاً، سيقوم بتنفيذه مهما كان غريباً.",
+   "مثال ثانٍ: لعمل شطيرة جبن، الترتيب هو:\n1. احضر الخبز\n2. ضع الجبن\n3. أغلق الشطيرة\nإذا بدأنا بإغلاق الشطيرة أولاً، فلن نستطيع وضع الجبن بداخلها، وهذا خطأ تسلسلي واضح سنقوم بإصلاحه.",
+   "قاعدة ذهبية نتعلمها اليوم: الأخطاء ليست شيئاً سيئاً أبداً! الأخطاء هي أفضل أصدقائنا لأنها تعلمني كيف أكون مفكراً ذكياً يكتشف الألغاز ويصلح المشكلات بنفسه.",
+   "في الحياة اليومية، نحن نستخدم كشف الأخطاء طوال الوقت: عندما لا يفتح باب الغرفة، نكتشف أن المفتاح مقلوب فنعدله، وعندما ترتدي حذائك في القدم الخطأ، تكتشف الخطأ وتبدله فوراً."
+  ],
+  "example": "لنفترض أنك صممت روبوتً ليرسم دائرة، لكنه رسم خطاً مستقيماً ووقف. السبب؟ خطوة الرسم الدائري تحولت بالخطأ إلى خطوة 'قف'. بدلاً من أن نحبط، سننظر للخطوة الثانية، ونقوم بتعديلها من 'قف' إلى 'دُر بحلقة دائرية'. الكمبيوتر الآن سعيد، والرسمة خرجت تماماً كما خططت لها.",
+  "mistake": "الخطأ الشائع هو الشعور بالإحباط وحذف البرنامج كاملاً عند ظهور خطأ واحد. التصحيح هو التحلي بالهدوء، قراءة الخطوات واحدة تلو الأخرى كالمحقق، وإصلاح الخطأ الصغير فقط.",
+  "recap": "الأخطاء البرمجية هي زلات بسيطة في الأوامر تجعلنا نحصل على نتائج غريبة. عندما نكتشفها ونصلحها، نصبح مبرمجين أذكى وأقوى.",
+  "q": [
+   {
+    "t": "ما هو الـ Bug أو الخطأ البرمجي؟",
+    "o": [
+     "حشرة حقيقية تعيش داخل شاشة الكمبيوتر",
+     "غلطة تجعل الأوامر تفعل شيئاً غير متوقع",
+     "لعبة سحرية جديدة في البلايستيشن"
+    ],
+    "a": 1,
+    "why": "الخطأ البرمجي هو غلطة في ترتيب أو كتابة الأوامر تجعل النتيجة مختلفة عما أردناه."
+   },
+   {
+    "t": "لماذا نعتبر الأخطاء أصدقاء لنا؟",
+    "o": [
+     "لأنها تعلمني كيف أكتشف المشاكل وأصلحها",
+     "لأنها تجعل الكمبيوتر ينفجر بالضحك",
+     "لأنها تمنعنا من تشغيل أجهزة الكمبيوتر نهائياً"
+    ],
+    "a": 0,
+    "why": "الأخطاء أدوات تعلم ممتازة تظهر لنا أين يجب أن نحسن تفكيرنا."
+   },
+   {
+    "t": "ماذا يفعل الكمبيوتر إذا أعطيناه أمراً خاطئاً؟",
+    "o": [
+     "يصلحه تلقائياً ويغيره للصحيح",
+     "ينفذ الأمر الخاطئ حرفياً وبدقة",
+     "يرفض العمل ويغلق الشاشة فوراً"
+    ],
+    "a": 1,
+    "why": "الكمبيوتر آلة ذكية لكنها تنفذ التعليمات بحذافيرها دون فهم لنية المبرمج."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع النتيجة الخاطئة",
+   "goal": "توقع ماذا يفعل الروبوت عند وجود أمر خاطئ في ترتيبه",
+   "code": "1. ارفع يدك اليمنى\n2. صفق بيديْك\n3. اربط حذاءك (وأنت ترتدي خفاً بلا رباط)",
+   "options": [
+    "سيربط الحذاء بنجاح وسعادة",
+    "سيتعجب الروبوت ويبحث عن مكان الرباط دون فائدة",
+    "سيرقص رقصة الهيب هوب الفائزة"
+   ],
+   "a": 1,
+   "success": "رائع! لقد اكتشفت كيف يؤدي الخطأ في التعليمات إلى توقف الروبوت بحيرة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو الخطأ البرمجي (Bug)؟",
+    "text": "الخطأ البرمجي ليس حشرة حقيقية، بل هو خطأ صغير في كتابة أو ترتيب الأوامر التي نعطيها للكمبيوتر. إنه يشبه تماماً عندما تطلب من صديقك أن يناولك التفاحة، فيعطيك الموزة بالخطأ لأنك لم توضح له جيداً.",
+    "code": "خطوات روبوت غبي:\n1. تقدم خطوة\n2. انظر للسقف\n3. ابحث عن الأكل",
+    "output": "الروبوت ينظر للسقف بدلاً من التقاط الطعام!"
+   },
+   {
+    "h": "لماذا يخطئ الكمبيوتر؟",
+    "text": "الكمبيوتر ذكي جداً لكنه لا يفكر بمفرده، إنه ينفذ ما تكتبه حرفياً. إذا كتبت له أمراً خاطئاً، فسوف ينفذه بدقة شديدة مهما كان غريباً أو مؤذياً للهدف النهائي.",
+    "code": "أمر خطأ: ارسم مربعاً بـ 3 أضلاع فقط",
+    "output": "الروبوت يرسم شكلاً ناقصاً لأن الضلع الرابع مفقود."
+   },
+   {
+    "h": "الأخطاء كأدوات للتعلم",
+    "text": "في عالم البرمجة، الأخطاء هي بوابات النجاح. كل خطأ تكتشفه يعني أنك أصبحت أقرب لفهم كيف تعمل الأشياء. العالم والمبرمج العبقري يتعلمون دائماً من تجاربهم الفاشلة.",
+    "code": "تحليل الخطأ:\n1. ظهر خطأ -> 2. افحص الخطوات -> 3. أصلحه",
+    "output": "البرنامج يعمل بنجاح تام بعد الإصلاح!"
+   },
+   {
+    "h": "تفكيك مسارات البرمجة المعطلة",
+    "text": "عندما يتعطل البرنامج، نقوم بتفكيكه مثل لعبة الفك والركوب (ليغو). نتحقق من الخطوة الأولى، ثم الثانية، حتى نجد المكان الذي حدث فيه الانحراف عن المسار الصحيح.",
+    "code": "مسار الشاي:\n1. ضع الماء على النار\n2. أضف الشاي\n3. اشرب قبل الغليان!",
+    "output": "الماء بارد والشاي لم يجهز بعد."
+   },
+   {
+    "h": "تشبيه من الحياة اليومية",
+    "text": "تخيل أنك تطبخ كعكة ونسيت سكر المذاق. النتيجة لن تكون كعكة لذيذة. هذا خطأ في المكونات (الأوامر)، وتصحيحه يجعلك مديراً لعملك وأكثر تركيزاً في المرة القادمة.",
+    "code": "وصفة كعكة:\n1. طحين\n2. بيض\n3. صابون بالخطأ!",
+    "output": "الكعكة تصبح طعمها سيئاً للغاية بسبب مكون خاطئ."
+   },
+   {
+    "h": "البحث عن الغلطة المخفية",
+    "text": "المبرمجون يمضون وقتاً في البحث عن الأخطاء أكثر من كتابة الأوامر الجديدة نفسها. هذه المهارة تسمى التصحيح (Debugging)، وهي تمرين رائع لتدريب عقلك على الصبر والملاحظة الدقيقة.",
+    "code": "بحث المحقق الصغير:\nأين توقف القطار عن السير؟ عند الجسر المكسور.",
+    "output": "إصلاح الجسر يجعل القطار يعبر بسلام."
+   },
+   {
+    "h": "قاعدة الذهب عند وجود Bug",
+    "text": "لا تيأس أبداً عندما تجد حمراء تدل على وجود خطأ. ابتسم وقل: 'رائع، لقد وجدت لغزاً جديداً لأحله!' هذه الطريقة تجعل التعلم لعبة ممتعة.",
+    "code": "ابتسم -> افتح الكود -> أصلح السطر",
+    "output": "سعادة عارمة وحل للمشكلة."
+   },
+   {
+    "h": "الخلاصة الكبرى",
+    "text": "الأخطاء والبرمجة وجهان لعملة واحدة. بالتدريب، ستصبح خبيراً في رؤية المشاكل قبل أن تحدث، وتكتب أوامر نظيفة وصحيحة من المرة الأولى.",
+    "code": "برنامج سليم = تفكير مرتب + تصحيح الأخطاء",
+    "output": "إنجاز مهام رائعة بالروبوت!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Bug",
+    "desc": "خطأ في الأوامر يجعل النتيجة غير متوقعة."
+   },
+   {
+    "name": "Debugging",
+    "desc": "عملية البحث عن الأخطاء وإصلاحها."
+   },
+   {
+    "name": "Instruction",
+    "desc": "أمر محدد نعطيه للكمبيوتر لتنفيذه."
+   },
+   {
+    "name": "Unexpected",
+    "desc": "نتيجة غريبة لم نكن نتمناها أو ننتظرها."
+   },
+   {
+    "name": "Sequence",
+    "desc": "ترتيب الخطوات الواحدة تلو الأخرى."
+   },
+   {
+    "name": "Analysis",
+    "desc": "فحص الخطوات لمعرفة مكان الخلل."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "روبوت طهي يريد صنع عصير، فكانت خطوته الثانية هي 'شرب الكأس الفارغ'. ما هو الخطأ؟",
+    "a": "شرب الكأس قبل عصر الفواكه وملئه."
+   },
+   {
+    "q": "لماذا نسمي الخطأ البرمجي Bug (حشرة) طالما أنه ليس حشرة حقيقية؟",
+    "a": "لأن المبرمجين الأوائل وجدوا حشرة حقيقية سببت عطلاً في حاسوب قديم ضخم."
+   },
+   {
+    "q": "إذا رسم روبوت خطاً متعرجاً بدلاً من خط مستقيم، ماذا نفعل بالخطوات؟",
+    "a": "نفحص خطوات الحركة ونصحح أمر المنعطفات الزائدة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "A software bug is a simple mistake that makes instructions do something unexpected. Imagine drawing a map to the fridge, but accidentally writing 'turn left' instead of 'right', and bumping into the wall!",
+   "Here is a small example: We want a robot to collect 'one toy'. The creator wrote:\n1. Take two steps forward\n2. Open the box\n3. Dance\nHere is a bug because dancing doesn't collect the toy. The correct step should be 'pick up the toy'.",
+   "How do bugs work? Bugs are just bright red stop signs telling us something is missing or out of order. The computer does literally what we tell it, not what we mean to say, so if we give a wrong command, it obeys it blindly.",
+   "Second example: To make a cheese sandwich, the order is:\n1. Get the bread\n2. Put the cheese\n3. Close the sandwich\nIf we start by closing the sandwich first, we cannot put cheese inside. This is a sequence bug we must fix.",
+   "A golden rule for today: Bugs are never bad! They are our best friends because they teach us how to be smart thinkers who solve mysteries and fix problems independently.",
+   "In real life, we use bug-spotting all the time: when a room door won't open, we notice the key is upside down and fix it; when you put your shoes on the wrong feet, you spot the mistake and switch them right away."
+  ],
+  "example": "Suppose you programmed a robot to draw a circle, but it drew a straight line and stopped. The reason? The circular drawing step was accidentally changed to a 'stop' step. Instead of getting upset, we look at the second step and change it from 'stop' to 'loop in a circular path'. The computer is now happy, and the drawing comes out exactly as planned.",
+  "mistake": "A common mistake is feeling frustrated and deleting the entire program when a single bug appears. The fix is to stay calm, read the steps one by one like a detective, and fix only the tiny error.",
+  "recap": "Bugs are simple order mistakes that give us strange results. When we find and fix them, we become smarter and stronger programmers.",
+  "q": [
+   {
+    "t": "What is a software bug?",
+    "o": [
+     "A real insect living inside the computer screen",
+     "A mistake that makes instructions do something unexpected",
+     "A new magic game mode on the PlayStation"
+    ],
+    "a": 1,
+    "why": "A bug is an error in order or writing instructions that makes the result different from what we wanted."
+   },
+   {
+    "t": "Why do we consider bugs our friends?",
+    "o": [
+     "Because they teach me how to discover and fix problems",
+     "Because they make the computer burst into laughter",
+     "Because they stop us from ever turning computers on"
+    ],
+    "a": 0,
+    "why": "Bugs are excellent learning tools showing us where to improve our thinking."
+   },
+   {
+    "t": "What does the computer do if we give it a wrong command?",
+    "o": [
+     "It fixes it automatically to the correct one",
+     "It executes the wrong command literally and strictly",
+     "It refuses to work and turns off the screen instantly"
+    ],
+    "a": 1,
+    "why": "The computer is smart but follows instructions word-for-word without understanding the programmer's intent."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Wrong Outcome",
+   "goal": "Predict what the robot does when there is a wrong instruction in its sequence",
+   "code": "1. Raise your right hand\n2. Clap your hands\n3. Tie your shoelaces (while wearing slip-on sandals)",
+   "options": [
+    "It will tie the shoe successfully and happily",
+    "It will look puzzled and search for the shoelace place in vain",
+    "It will do a winning hip-hop dance"
+   ],
+   "a": 1,
+   "success": "Awesome! You discovered how a mistake in instructions causes the robot to halt in confusion!"
+  },
+  "sections": [
+   {
+    "h": "What is a Software Bug?",
+    "text": "A software bug is not a real insect; it is a small mistake in writing or ordering the instructions we give to the computer. It is just like asking a friend to hand you an apple, and they give you a banana by mistake because you weren't clear enough.",
+    "code": "Silly robot steps:\n1. Step forward\n2. Look at ceiling\n3. Search for food",
+    "output": "The robot stares at the ceiling instead of grabbing food!"
+   },
+   {
+    "h": "Why Does the Computer Make Mistakes?",
+    "text": "The computer is very smart but cannot think for itself; it executes what you write literally. If you write a wrong command, it will follow it with extreme precision, no matter how weird or harmful to the ultimate goal.",
+    "code": "Wrong command: Draw a square with only 3 sides",
+    "output": "The robot draws an incomplete shape because the fourth side is missing."
+   },
+   {
+    "h": "Bugs as Learning Tools",
+    "text": "In programming, bugs are gateways to success. Every bug you discover means you are one step closer to understanding how things work. Wise scientists and brilliant programmers always learn from their failed trials.",
+    "code": "Bug analysis:\n1. Error appears -> 2. Inspect steps -> 3. Fix it",
+    "output": "The program runs completely successfully after fixing!"
+   },
+   {
+    "h": "Deconstructing Broken Code Paths",
+    "text": "When a program breaks, we take it apart like a building block toy (Lego). We check step one, then step two, until we find the exact place where it deviated from the correct path.",
+    "code": "Tea pathway:\n1. Put water on fire\n2. Add tea leaves\n3. Drink before boiling!",
+    "output": "The water is cold and the tea is not ready yet."
+   },
+   {
+    "h": "Real-Life Analogy",
+    "text": "Imagine baking a cake and forgetting the sugar. The result won't taste delicious. This is an ingredient error (instruction error), and fixing it makes you a master of your work and more focused next time.",
+    "code": "Cake recipe:\n1. Flour\n2. Eggs\n3. Soap by mistake!",
+    "output": "The cake tastes terrible due to a wrong ingredient."
+   },
+   {
+    "h": "Hunting for Hidden Mistakes",
+    "text": "Programmers spend time searching for bugs rather than writing brand new commands. This skill is called debugging, and it is a wonderful exercise to train your mind in patience and sharp observation.",
+    "code": "Little detective search:\nWhere did the train stop? At the broken bridge.",
+    "output": "Fixing the bridge lets the train cross safely."
+   },
+   {
+    "h": "The Golden Rule When Finding a Bug",
+    "text": "Never despair when you see a red warning sign of a bug. Smile and say: 'Awesome, I found a new puzzle to solve!' This mindset turns learning into an enjoyable game.",
+    "code": "Smile -> Open code -> Fix the line",
+    "output": "Overwhelming joy and problem solved."
+   },
+   {
+    "h": "The Grand Summary",
+    "text": "Bugs and programming are two sides of the same coin. With practice, you will become an expert at spotting problems before they happen and writing clean, correct commands from the very first try.",
+    "code": "Healthy program = Orderly thinking + Bug fixing",
+    "output": "Achieving great tasks with the robot!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Bug",
+    "desc": "An error in commands causing unexpected results."
+   },
+   {
+    "name": "Debugging",
+    "desc": "The process of finding and fixing errors."
+   },
+   {
+    "name": "Instruction",
+    "desc": "A specific command given to the computer to execute."
+   },
+   {
+    "name": "Unexpected",
+    "desc": "A strange result we did not wish for or expect."
+   },
+   {
+    "name": "Sequence",
+    "desc": "The arrangement of steps one after another."
+   },
+   {
+    "name": "Analysis",
+    "desc": "Inspecting steps to locate the source of a flaw."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "A cooking robot wants to make juice, and its second step was 'drink the empty cup'. What is the bug?",
+    "a": "Drinking the cup before squeezing fruits and filling it."
+   },
+   {
+    "q": "Why do we call a program error a 'Bug' even though it's not a real insect?",
+    "a": "Because early programmers found a real moth causing a glitch in an old giant computer."
+   },
+   {
+    "q": "If a robot draws a zigzag line instead of a straight line, what should we do to the steps?",
+    "a": "Inspect the movement steps and correct the extra turn command."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

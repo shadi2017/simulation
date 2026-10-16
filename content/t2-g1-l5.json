@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تمثل مسرحية مع أصدقائك، هل يتحدث الجميع في نفس الوقت؟ بالطبع لا! يجب أن ينتظر كل شخص دوره حتى يفهم الجمهور القصة ويستمتع بالعرض الجميل.",
+   "في برنامج سكراتش جونيور، نستخدم بلوك الانتظار (Wait Block) البرتقالي الجميل لنقول للشخصية أن تتوقف وتنتظر ثوانٍ معدودة قبل أن تفعل شيئاً جديداً على المسرح.",
+   "يعمل هذا البلوك كعداد زمني سحري؛ عندما تصل البرمجة إليه، تأخذ استراحة قصيرة بالثواني التي تحددها، تماماً مثل التوقف لتأخذ نفساً عميقاً قبل الجري.",
+   "مثال رائع: اجعل القطة تقول 'مرحباً'، ثم اسحب بلوك الانتظار واكتب رقم 2، ثم ضع بلوك المشي بعدها لتتحرك القطة بعد ثنتين من الثواني تماماً.",
+   "القاعدة الذهبية للتوقيت: لا تضع كل الأوامر تحدث دفعة واحدة، بل استخدم الانتظار دائماً عندما تريد تنظيم الحوار وجعل الشخصيات تتحرك بذكاء وتناوب مذهل.",
+   "في الحياة اليومية، نستخدم الانتظار عندما نعد الكعكة وندخلها الفرن لننتظر حتى تنضج، أو عندما ننتظر إشارة المرور الخضراء قبل عبور الشارع بأمان تام!"
+  ],
+  "example": "لنرتب مسرحية قصيرة وممتعة لقطتنا الجميلة! أولاً، نضع بلوك العلم الأخضر للبدء. ثانياً، نضيف بلوك الكلام لتنطق القطة: 'أنا مستعدة!'. ثالثاً، نضع بلوك الانتظار (Wait) ونضبطه على 2 ثانية حتى يفكر الصديق. رابعاً، نضيف بلوك المشي خطوتين للأمام. النتيجة: تتحدث القطة، ثم تنتظر بهدوء لثانيتين، ثم تتمشى بكل ثقة على المسرح وكأنها نجمة حقيقية!",
+  "mistake": "الخطأ الشائع هو نسيان وضع بلوك الانتظار بين الكلام والحركة، مما يجعل القطة تتحرك وتتحدث في نفس الثانية المخيفة. الحل هو إضافة بلوك الانتظار البرتقالي الفاصل بينهما ليأخذ كل فعل وقته الصحيح.",
+  "recap": "بلوك الانتظار يساعد شخصياتنا على أخذ استراحة قصيرة بالثواني لترتيب أفكارهم. إنه الأداة السحرية لجعل الحوار والحركة يبدوان طبيعيين ومنظمين تماماً على خشبة المسرح.",
+  "q": [
+   {
+    "t": "ما هو لون بلوك الانتظار في سكراتش جونيور؟",
+    "o": [
+     "أخضر فاتح",
+     "برتقالي",
+     "أزرق غامق"
+    ],
+    "a": 1,
+    "why": "بلوك الانتظار يأتي باللون البرتقالي لأنه ينتمي لمجموعة أوضاع التحكم في الوقت."
+   },
+   {
+    "t": "لماذا نستخدم بلوك الانتظار قبل أن تتحرك القطة؟",
+    "o": [
+     "لكي تنام القطة",
+     "لكي تنتظر ثواني معدودة لترتيب الحوار والحركة",
+     "لكي يختفي المسرح نهائياً"
+    ],
+    "a": 1,
+    "why": "نستخدمه لنمنح الشخصية وقتاً للتوقف المنظم قبل بدء الحركة التالية."
+   },
+   {
+    "t": "ماذا يفعل رقم 2 داخل بلوك الانتظار؟",
+    "o": [
+     "يجعل القطة تقفز مرتين",
+     "يجعل البرنامج ينتظر لمدة ثانيتين كاملتين",
+     "يحذف خطوتين من البرمجة"
+    ],
+    "a": 1,
+    "why": "الرقم يحدد عدد ثواني الاستراحة التي يتوقف عندها البرنامج مؤقتاً."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل جمل التوقيت السحري",
+   "goal": "املأ الفراغات بالكلمة الصحيحة لفهم كيفية عمل بلوك الانتظار",
+   "items": [
+    {
+     "text": "نستخدم بلوك ___ لجعل الشخصية تتوقف مؤقتاً بالثواني.",
+     "options": [
+      "الانتظار",
+      "القفز",
+      "الاختفاء"
+     ],
+     "a": 0
+    },
+    {
+     "text": "الانتظار يساعدنا في تنظيم ___ بين الشخصيات على المسرح.",
+     "options": [
+      "الحوار",
+      "الألوان",
+      "الملابس"
+     ],
+     "a": 0
+    },
+    {
+     "text": "عندما نضبط بلوك الانتظار على الرقم 3، يتوقف البرنامج لمدة ___ ثوانٍ.",
+     "options": [
+      "ثلاث",
+      "عشر",
+      "واحدة"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! أصبحت خبيراً في تنظيم أوقات الحركات والمسرحيات البرمجية."
+  },
+  "sections": [
+   {
+    "h": "ما هو التوقيت في القصص؟",
+    "text": "التوقيت هو الفن الجميل لمعرفة متى تتحدث الشخصية ومتى تتحرك. تماماً مثل الطاهي الذي ينتظر نضج الطعام، يحتاج المبرمج الصغير لجعل الأحداث تحدث بتتابع مرتب وجميل.",
+    "code": "عندما يبدأ العرض: تكلم، ثم انتظر، ثم تحرك.",
+    "output": "عرض منظم ومريح لعين المشاهد الصغير."
+   },
+   {
+    "h": "دور بلوك الانتظار البرتقالي",
+    "text": "بلوك الانتظار هو صديقك البرتقالي الذي يوقف الزمن بداخل البرنامج لعدد محدد من الثواني. إنه مثل إشارة قف صغيرة تقول للبرنامج: خذ نفساً قبل الانتقال للأمر التالي.",
+    "code": "سحب بلوك الانتظار -> كتابة الرقم 2",
+    "output": "يتوقف الكود مؤقتاً لمدة ثانيتين تماماً."
+   },
+   {
+    "h": "تنظيم أوقات المسرح (Stage Timing)",
+    "text": "مسرح سكراتش جونيور واسع وجميل. ولكي لا تتقاطع حركات الشخصيات، نستخدم أوقات المسرح لكي تدخل القطة أولاً، ثم تنتظر، ثم يدخل الكلب بعدها بثوانٍ معدودة.",
+    "code": "القطة: تحرك 5 خطوات -> انتظر 3 ثواني",
+    "output": "تتحرك القطة وتترك مساحة زمنية للحدث التالي."
+   },
+   {
+    "h": "حوار متزامن ومرتب (Synchronized Dialogue)",
+    "text": "عندما يتحاور الصديقان، لا نريد أن يصرخا معاً بصوت واحد غير مفهوم. نستخدم بلوك الكلام ثم بلوك الانتظار ليأخذ كل صديق دوره في الحديث مثل الأبطال الحقيقيين.",
+    "code": "القطة تقول مرحباً -> انتظر 2 ثانية -> الكلب يقول أهلاً",
+    "output": "حوار مرتب وجميل يفهمه كل من يشاهد القصة."
+   },
+   {
+    "h": "إيقاف مؤقت للقصة (Pause Action)",
+    "text": "أحياناً تحتاج القطة لأن تفكر قبل أن تقرر القفز. يمنحها بلوك الانتظار هذا الوقت المستقطع الجميل لتظهر وكأنها تفكر حقاً قبل اتخاذ قرارها الشجاع.",
+    "code": "القطة تفكر -> انتظر 4 ثواني -> اقفز",
+    "output": "تبدو القطة وكأنها شخصية حية تفكر وتشعر."
+   },
+   {
+    "h": "حساب الثواني بدقة",
+    "text": "كل رقم تدخله في بلوك الانتظار يمثل ثانية حقيقية. الرقم 1 يعني ثانية واحدة، ورقم 5 يعني خمس ثوانٍ كاملة من الانتظار الهادئ على خشبة المسرح.",
+    "code": "بلوك الانتظار [ 5 ]",
+    "output": "انتظار هادئ لمدة خمس ثوانٍ قبل استئناف العرض."
+   },
+   {
+    "h": "الجمع بين الحركة والانتظار",
+    "text": "أفضل القصص تحتوي على حركة ممتعة تليها استراحة قصيرة ثم حركة جديدة. هذا التباين يجعل القصة مشوقة ولا تصيب المشاهد بالملل أبداً.",
+    "code": "امشِ -> انتظر -> استدر",
+    "output": "قصة حركية ديناميكية وممتعة للغاية."
+   },
+   {
+    "h": "الاستخدام في الحياة اليومية",
+    "text": "تذكر دائماً أن التوقيت مهم في حياتنا. فنحن ننتظر قليلاً بعد الأكل قبل السباحة، وننتظر دورنا في طابور المدرسة. البرمجة تعلم النظام تماماً مثل حياتنا!",
+    "code": "الحياة الواقعية: انتظر حتى ينتهي معلمك من الشرح قبل السؤال",
+    "output": "احترام النظام والتوقيت الصحيح لكل شيء."
+   }
+  ],
+  "reference": [
+   {
+    "name": "بلوك الانتظار",
+    "desc": "أمر برتقالي يوقف تشغيل البرنامج لعدد محدد من الثواني."
+   },
+   {
+    "name": "التوقيت",
+    "desc": "تنظيم متى تبدأ الأوامر ومتى تنتهي على المسرح."
+   },
+   {
+    "name": "الحوار المتزامن",
+    "desc": "تبادل الكلمات بين الشخصيات بأدوار مرتبة."
+   },
+   {
+    "name": "الإيقاف المؤقت",
+    "desc": "استراحة قصيرة تمنح الشخصية وقتاً للتفكير أو الحركة."
+   },
+   {
+    "name": "الثانية",
+    "desc": "وحدة قياس الوقت المستخدمة داخل بلوك الانتظار."
+   },
+   {
+    "name": "المسرح",
+    "desc": "الشاشة التي تظهر عليها رسومات وقصص سكراتش جونيور."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو البلوك الذي نستخدمه لإيقاف القطة عن الحركة لثانيتين؟",
+    "a": "بلوك الانتظار (Wait Block) المضبوط على الرقم 2."
+   },
+   {
+    "q": "لماذا لا نضع الكلام والحركة في نفس اللحظة بدون انتظار؟",
+    "a": "لأن الشخصيات ستتحدث وتتحرك معاً بشكل فوضوي ولا يفهم المشاهد القصة."
+   },
+   {
+    "q": "إذا أردت أن تفكر القطة لمدة 4 ثوانٍ، ما هو الرقم الذي تضعه في بلوك الانتظار؟",
+    "a": "الرقم 4."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine acting in a play with your friends; do you all speak at the exact same time? Of course not! Everyone takes turns so the audience can understand and enjoy the wonderful story.",
+   "In ScratchJr, we use the lovely orange Wait Block to tell a character to pause and wait for a few seconds before doing something brand new on the stage.",
+   "This block works like a magical timer. When the code reaches it, it takes a short break for the seconds you choose, just like pausing to catch your breath before running.",
+   "Awesome example: Make the cat say 'Hello', then drag the wait block and set it to 2 seconds, then put a walk block right after so the cat moves after exactly two seconds.",
+   "The golden rule of timing: Do not let all actions happen at once. Always use wait blocks when you want to organize dialogue and make characters move with amazing turn-taking.",
+   "In daily life, we use waiting when we bake a cake and wait for it to bake in the oven, or when we wait for the green traffic light before crossing the street safely!"
+  ],
+  "example": "Let's arrange a short, fun play for our lovely cat! First, we place the green flag block to start. Second, we add the say block so the cat utters: 'I am ready!'. Third, we place the wait block and set it to 2 seconds for our friend to think. Fourth, we add a move-forward block. Result: The cat speaks, waits calmly for two seconds, and then walks across the stage with confidence like a true star!",
+  "mistake": "A common mistake is forgetting to place a wait block between speaking and moving, which makes the cat talk and move at the scary same second. The fix is to add the orange wait block between them so each action takes its proper time.",
+  "recap": "The wait block helps our characters take a short break in seconds to organize their actions. It is the magical tool that makes dialogue and movement look natural and orderly on stage.",
+  "q": [
+   {
+    "t": "What color is the wait block in ScratchJr?",
+    "o": [
+     "Light green",
+     "Orange",
+     "Dark blue"
+    ],
+    "a": 1,
+    "why": "The wait block is orange because it belongs to the time control category."
+   },
+   {
+    "t": "Why do we use the wait block before the cat moves?",
+    "o": [
+     "To make the cat sleep",
+     "To wait a few seconds to organize dialogue and movement",
+     "To delete the stage completely"
+    ],
+    "a": 1,
+    "why": "We use it to give the character an organized pause before starting the next action."
+   },
+   {
+    "t": "What does the number 2 do inside the wait block?",
+    "o": [
+     "Makes the cat jump twice",
+     "Makes the program wait for two full seconds",
+     "Deletes two lines of code"
+    ],
+    "a": 1,
+    "why": "The number specifies the seconds of pause where the program temporarily stops."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Magical Timing Sentences",
+   "goal": "Fill in the blanks with the correct word to understand how the wait block works",
+   "items": [
+    {
+     "text": "We use the ___ block to make a character pause temporarily in seconds.",
+     "options": [
+      "wait",
+      "jump",
+      "hide"
+     ],
+     "a": 0
+    },
+    {
+     "text": "Waiting helps us organize ___ between characters on the stage.",
+     "options": [
+      "dialogue",
+      "colors",
+      "clothes"
+     ],
+     "a": 0
+    },
+    {
+     "text": "When we set the wait block to the number 3, the program pauses for ___ seconds.",
+     "options": [
+      "three",
+      "ten",
+      "one"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Fantastic! You are now an expert at timing character movements and scripted plays."
+  },
+  "sections": [
+   {
+    "h": "What is Timing in Stories?",
+    "text": "Timing is the wonderful art of knowing when a character speaks and when they move. Just like a chef waiting for food to cook, a young programmer needs events to happen in a neat, organized sequence.",
+    "code": "When show starts: speak, then wait, then move.",
+    "output": "An organized and pleasant show for young viewers."
+   },
+   {
+    "h": "The Role of the Orange Wait Block",
+    "text": "The wait block is your orange friend that freezes time inside the program for a specific number of seconds. It is like a tiny stop sign telling the code: take a breath before the next command.",
+    "code": "Drag wait block -> Type number 2",
+    "output": "The code pauses for exactly two seconds."
+   },
+   {
+    "h": "Stage Timing Organization",
+    "text": "The ScratchJr stage is wide and wonderful. To prevent characters from clashing, we use stage timing so the cat enters first, waits, and then the dog enters a few seconds later.",
+    "code": "Cat: move 5 steps -> wait 3 seconds",
+    "output": "The cat moves and creates a time gap for the next event."
+   },
+   {
+    "h": "Synchronized Dialogue",
+    "text": "When two friends chat, we do not want them shouting together in a confusing mess. We use a speech block followed by a wait block so each friend takes their turn like true heroes.",
+    "code": "Cat says hello -> wait 2 seconds -> Dog says hi",
+    "output": "An orderly dialogue that every viewer can understand."
+   },
+   {
+    "h": "Pause Action",
+    "text": "Sometimes the cat needs to think before deciding to jump. The wait block gives it that nice timeout to look like it is really thinking before making a brave choice.",
+    "code": "Cat thinks -> wait 4 seconds -> jump",
+    "output": "The cat looks like a living, thinking character."
+   },
+   {
+    "h": "Calculating Seconds Accurately",
+    "text": "Every number you type into the wait block stands for a real second. The number 1 means one second, and the number 5 means five full seconds of quiet waiting on stage.",
+    "code": "Wait block [ 5 ]",
+    "output": "A quiet five-second pause before the show resumes."
+   },
+   {
+    "h": "Combining Movement and Waiting",
+    "text": "The best stories contain fun motion followed by a short break, then new movement. This contrast keeps the story exciting and never boring for the audience.",
+    "code": "Walk -> wait -> turn around",
+    "output": "A dynamic and extremely fun motion story."
+   },
+   {
+    "h": "Real-Life Usage",
+    "text": "Always remember that timing matters in real life too. We wait a bit after eating before swimming, and we wait our turn in the school line. Coding teaches order just like our daily life!",
+    "code": "Real life: Wait for your teacher to finish explaining before asking",
+    "output": "Respecting rules and correct timing for everything."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Wait Block",
+    "desc": "An orange command that pauses program execution for a set number of seconds."
+   },
+   {
+    "name": "Timing",
+    "desc": "Organizing when commands start and finish on stage."
+   },
+   {
+    "name": "Synchronized Dialogue",
+    "desc": "Exchanging words between characters with structured turns."
+   },
+   {
+    "name": "Pause Action",
+    "desc": "A short break giving a character time to think or move."
+   },
+   {
+    "name": "Second",
+    "desc": "The unit of time measurement used inside the wait block."
+   },
+   {
+    "name": "Stage",
+    "desc": "The screen where ScratchJr drawings and stories appear."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block do we use to stop the cat from moving for two seconds?",
+    "a": "The Wait Block set to the number 2."
+   },
+   {
+    "q": "Why don't we put speech and movement at the exact same time without waiting?",
+    "a": "Because characters would talk and move together chaotically and viewers wouldn't understand the story."
+   },
+   {
+    "q": "If you want the cat to think for 4 seconds, what number do you put in the wait block?",
+    "a": "The number 4."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

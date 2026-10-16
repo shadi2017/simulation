@@ -1,0 +1,340 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً بك يا بطل! لغة CSS مسؤولة عن تجميل وتزيين صفحات الويب التي تصنعها بلغة HTML، تماماً مثلما نستخدم الألوان والأقلام لتلوين دفتر رسم أبيض وأسود.",
+   "تتكون قاعدة CSS من محدد (Selector) لتحديد العنصر، وخصائص (Properties) وقيم (Values) داخل أقواس معكوفة مثل: h1 { color: blue; } لتلوين العناوين باللون الأزرق الجميل.",
+   "يمكننا كتابة كود التنسيق بثلاث طرق: داخل العنصر مباشرة (Inline)، أو داخل وسم style في نفس الصفحة (Internal)، أو في ملف خارجي مستقل (External) نربطه بكلمة link.",
+   "الملف الخارجي المنفصل هو طريقتنا المفضلة والمحتترفة لتنظيم المواقع الكبيرة، لأنه يسمح لنا بتطبيق نفس التصميم على مئات الصفحات دون تكرار أي سطر برمجي.",
+   "القاعدة الذهبية في تنظيم الملفات هي وضع ملفات CSS في مجلد خاص يسمى css وملفات الصور في مجلد images، ليبقى مشروعك نظيفاً ومرتباً طوال الوقت.",
+   "نستخدم هذه المهارات في الواقع لتصميم المواقع الكبرى مثل ألعاب الفيديو ومواقع الأبطال الخارقين، لتبدو جذابة ومريحة لعين المستخدم الذي يتصفحها يومياً."
+  ],
+  "example": "لنفترض أننا نريد تلوين جميع عناوين الدروس باللون البرتقالي وجعل خطها كبيراً وجميلاً. نكتب في ملف التنسيق الخارجي: h2 { color: orange; font-size: 24px; } وعندما نربط هذا الملف بصفحة HTML الخاصة بنا، ستتحول كل عناوين h2 فوراً إلى الشكل المطلوب وكأن السحر قد عمل!",
+  "mistake": "نسيان وضع فاصلة منقوطة (;) بعد كل قيمة في CSS، أو نسيان إغلاق الأقواس المعكوفة { }. الحل هو مراجعة الكود بدقة والتأكد من وجود الفاصلة المنقوطة والأقواس لكل قاعدة.",
+  "recap": "تعلمنا اليوم كيف نستخدم لغة CSS لتجميل صفحات الويب عبر المحددات والخصائص، وكيف نربط الملفات الخارجية لننظم مشاريعنا بذكاء.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية للغة CSS في تطوير الويب؟",
+    "o": [
+     "إضافة محتوى النصوص والصور",
+     "تنسيق وتجميل مظهر عناصر الصفحة",
+     "برمجة الالعاب ثلاثية الأبعاد"
+    ],
+    "a": 1,
+    "why": "لغة CSS مخصصة بالكامل لتصميم وتجميل مظهر صفحات الويب."
+   },
+   {
+    "t": "أي من الطرق التالية تعتبر الأفضل لتنظيم مشروع ضخم؟",
+    "o": [
+     "الملف الخارجي (External)",
+     "التنسيق الداخلي (Internal)",
+     "التنسيق المباشر (Inline)"
+    ],
+    "a": 0,
+    "why": "الملف الخارجي يفصل التصميم عن المحتوى ويسهل إعادة استخدامه."
+   },
+   {
+    "t": "كيف نكتب خاصية تغيير لون النص في CSS؟",
+    "o": [
+     "text-color: red;",
+     "color: red;",
+     "font-color: red;"
+    ],
+    "a": 1,
+    "why": "الخاصية الصحيحة لتغيير لون النص هي color."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف أنواع كتابة وتنسيق CSS",
+   "goal": "صنف كل عبارة أو كود إلى مكانه الصحيح: تنسيق داخلي (Internal) أو ملف خارجي (External).",
+   "buckets": [
+    "تنسيق داخلي (Internal)",
+    "ملف خارجي (External)"
+   ],
+   "items": [
+    {
+     "t": "<style> h1 { color: red; } </style>",
+     "b": 0
+    },
+    {
+     "t": "<link rel=\"stylesheet\" href=\"style.css\">",
+     "b": 1
+    },
+    {
+     "t": "يُكتب داخل وسم <head> في نفس ملف HTML",
+     "b": 0
+    },
+    {
+     "t": "ملف منفصل ينتهي باللاحقة .css",
+     "b": 1
+    },
+    {
+     "t": "يستخدم لتنسيق صفحة واحدة بشكل سريع",
+     "b": 0
+    },
+    {
+     "t": "يتحكم بمظهر موقع كامل مكون من صفحة متعددة",
+     "b": 1
+    }
+   ],
+   "success": "يا له من إنجاز رائع! لقد صنفت أنواع التنسيق باحترافية تامة وأصبحت جاهزاً لبناء مواقع مذهلة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي لغة CSS؟",
+    "text": "لغة CSS هي أداة التجميل السحرية لصفحات الويب. بينما تهتم لغة HTML ببناء الهيكل والعظام، تأتي لغة CSS لتضع الألوان والملابس الجميلة وتحدد أماكن كل شيء، تماماً مثل مهندس الديكور الذي يرتب الغرفة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    p { color: purple; font-size: 20px; }\n  </style>\n</head>\n<body>\n  <p>مرحباً بك في عالم تنسيق صفحات الويب!</p>\n</body>\n</html>",
+    "output": "يظهر النص باللون البنفسجي وبحجم كبير وجميل."
+   },
+   {
+    "h": "تركيب قاعدة CSS (Ruleset)",
+    "text": "تتكون قاعدة CSS من عنصر مستهدف يسمى المحدد (Selector)، يليه قوسان معكوفان يضمان الخصائص والقيم. كل خاصية تخبر المتصفح بما يجب تغييره، وكل قيمة تحدد الشكل الجديد بدقة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    h1 { color: green; background-color: lightyellow; }\n  </style>\n</head>\n<body>\n  <h1>عنوان ملون وجذاب</h1>\n</body>\n</html>",
+    "output": "يظهر العنوان بخط أخضر وخلفية صفراء فاتحة."
+   },
+   {
+    "h": "التنسيق المباشر (Inline Styles)",
+    "text": "يمكنك إضافة تنسيق سريع لعنصر واحد فقط باستخدام سمة style مباشرة داخل وسوم HTML. هذه الطريقة مفيدة للتجارب السريعة ولكنها غير مناسبة للمواقع الكبيرة لأنها متعبة في التعديل.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p style=\"color: red; font-weight: bold;\">هذا نص منسق بطريقة مباشرة.</p>\n</body>\n</html>",
+    "output": "يظهر النص باللون الأحمر وبخط عريض ومباشر."
+   },
+   {
+    "h": "التنسيق الداخلي (Internal Stylesheet)",
+    "text": "بدلاً من تنسيق كل عنصر بمفرده، يمكنك وضع جميع قواعد CSS داخل وسم <style> في قسم <head> لصفحة HTML. هذا ينطبق على كل عناصر الصفحة الحالية بضربة واحدة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { background-color: #f0f8ff; }\n    h2 { color: navy; }\n  </style>\n</head>\n<body>\n  <h2>مرحباً بكم في درس اليوم</h2>\n</body>\n</html>",
+    "output": "تتحول خلفية الصفحة إلى اللون الأزرق الفاتح وعنوان h2 إلى الكحلي."
+   },
+   {
+    "h": "الملف الخارجي (External Stylesheet)",
+    "text": "الطريقة الاحترافية والأكثر استخداماً هي كتابة الأكواد في ملف منفصل يحمل اللاحقة .css، ثم ربطه بملف HTML باستخدام وسم <link>. هذا يتيح لك التحكم بمظهر مئات الصفحات عبر تعديل ملف واحد فقط!",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>موقع مرتب بملف خارجي</h1>\n</body>\n</html>",
+    "output": "يتم جلب التصميم من الملف الخارجي وتطبيقه بسلاسة."
+   },
+   {
+    "h": "أفضل ممارسات تنظيم المجلدات",
+    "text": "عندما يكبر مشروعك، يجب أن تنظم ملفاتك بذكاء. ضع ملفات HTML الرئيسية في المجلد الرئيسي، وأنشئ مجلداً باسم css لملفات التنسيق، ومجلداً باسم images للصور. الترتيب هو سر المبرمج الناجح!",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>مجلدات منظمة</title>\n</head>\n<body>\n  <p>مشروع منظم يعني مبرمجاً سعيداً!</p>\n</body>\n</html>",
+    "output": "عرض هيكلة المشروع المنظمة للمبرمجين الصغار."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Selector (المحدد)",
+    "desc": "يحدد عنصر HTML المراد تنسيقه وتلوينه."
+   },
+   {
+    "name": "Property (الخاصية)",
+    "desc": "السمة المراد تغييرها مثل اللون أو حجم الخط."
+   },
+   {
+    "name": "Value (القيمة)",
+    "desc": "القنديس أو التعديل المخصص للخاصية مثل red أو 16px."
+   },
+   {
+    "name": "color",
+    "desc": "خاصية CSS المسؤولة عن تغيير لون النصوص."
+   },
+   {
+    "name": "background-color",
+    "desc": "خاصية لتغيير لون خلفية العناصر."
+   },
+   {
+    "name": "<link>",
+    "desc": "وسم يستخدم لربط ملف CSS الخارجي بصفحة HTML."
+   },
+   {
+    "name": "<style>",
+    "desc": "وسم لكتابة التنسيقات الداخلية في رأس الصفحة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب قاعدة CSS لتلوين جميع الفقرات p باللون الأزرق.",
+    "a": "p { color: blue; }"
+   },
+   {
+    "q": "ما هو الوسم المستخدم لربط ملف CSS خارجي بصفحتي؟",
+    "a": "<link rel=\"stylesheet\" href=\"filename.css\">"
+   },
+   {
+    "q": "أين نضع وسم التنسيق الداخلي <style> في ملف HTML؟",
+    "a": "داخل قسم الرأس <head>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome champion! CSS is responsible for styling and decorating the web pages you build with HTML, just like using colorful pencils to decorate a black-and-white drawing book.",
+   "A CSS rule consists of a Selector to target an element, followed by Properties and Values inside curly brackets, like: h1 { color: blue; } to color headings in a lovely blue.",
+   "We can write styling code in three ways: directly on the element (Inline), inside a style tag in the same page (Internal), or in a separate external file (External) linked with a link tag.",
+   "A separate external file is our favorite professional way to organize large websites because it lets us apply the same design to hundreds of pages without repeating code.",
+   "The golden rule for folder organization is placing CSS files in a dedicated folder named css and images in an images folder, keeping your project clean and tidy at all times.",
+   "We use these skills in the real world to design major websites like video games and superhero sites, making them look engaging and comfortable for daily users."
+  ],
+  "example": "Suppose we want to color all lesson headings orange and make their font large and beautiful. In our external stylesheet file, we write: h2 { color: orange; font-size: 24px; } When we link this file to our HTML page, all h2 headings instantly transform into the desired style as if by magic!",
+  "mistake": "Forgetting to put a semicolon (;) after each value in CSS, or forgetting to close the curly brackets { }. The fix is to carefully review your code and make sure semicolons and brackets exist for every rule.",
+  "recap": "Today we learned how to use CSS to style web pages using selectors and properties, and how to link external files to organize our projects smartly.",
+  "q": [
+   {
+    "t": "What is the primary function of CSS in web development?",
+    "o": [
+     "Adding text content and images",
+     "Styling and beautifying page elements",
+     "Programming 3D video games"
+    ],
+    "a": 1,
+    "why": "CSS is entirely dedicated to designing and styling the appearance of web pages."
+   },
+   {
+    "t": "Which of the following methods is considered best for organizing a large project?",
+    "o": [
+     "External Stylesheet",
+     "Internal Stylesheet",
+     "Inline Style"
+    ],
+    "a": 0,
+    "why": "An external file separates design from content and makes reuse easy."
+   },
+   {
+    "t": "How do we write the text color property in CSS?",
+    "o": [
+     "text-color: red;",
+     "color: red;",
+     "font-color: red;"
+    ],
+    "a": 1,
+    "why": "The correct property for changing text color is color."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Categorize CSS Styling Types",
+   "goal": "Sort each statement or code snippet into its correct place: Internal Style or External Stylesheet.",
+   "buckets": [
+    "Internal Style",
+    "External Stylesheet"
+   ],
+   "items": [
+    {
+     "t": "<style> h1 { color: red; } </style>",
+     "b": 0
+    },
+    {
+     "t": "<link rel=\"stylesheet\" href=\"style.css\">",
+     "b": 1
+    },
+    {
+     "t": "Written inside the <head> tag in the same HTML file",
+     "b": 0
+    },
+    {
+     "t": "A separate file ending with the .css extension",
+     "b": 1
+    },
+    {
+     "t": "Used to style a single page quickly",
+     "b": 0
+    },
+    {
+     "t": "Controls the appearance of an entire multi-page website",
+     "b": 1
+    }
+   ],
+   "success": "What an amazing achievement! You categorized styling types with total professionalism and are ready to build awesome websites!"
+  },
+  "sections": [
+   {
+    "h": "What is CSS?",
+    "text": "CSS is the magical beautification tool for web pages. While HTML handles building the structure and bones, CSS comes in to apply colors and beautiful clothing and position everything, much like an interior designer decorating a room.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    p { color: purple; font-size: 20px; }\n  </style>\n</head>\n<body>\n  <p>Welcome to the world of web styling!</p>\n</body>\n</html>",
+    "output": "Displays text in purple with a large, beautiful font size."
+   },
+   {
+    "h": "CSS Ruleset Structure",
+    "text": "A CSS rule consists of a target element called a Selector, followed by curly brackets enclosing properties and values. Every property tells the browser what to change, and every value precisely defines the new look.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    h1 { color: green; background-color: lightyellow; }\n  </style>\n</head>\n<body>\n  <h1>Colorful and Catchy Heading</h1>\n</body>\n</html>",
+    "output": "Displays the heading with green text and a light yellow background."
+   },
+   {
+    "h": "Inline Styles",
+    "text": "You can add quick styling to a single element using the style attribute directly inside HTML tags. This method is useful for quick experiments but unsuitable for large sites because editing becomes tedious.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p style=\"color: red; font-weight: bold;\">This is text styled inline.</p>\n</body>\n</html>",
+    "output": "Displays text in red with bold and direct styling."
+   },
+   {
+    "h": "Internal Stylesheet",
+    "text": "Instead of styling each element separately, you can place all CSS rules inside a <style> tag in the <head> section of your HTML page. This applies to all elements on the current page in one strike.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { background-color: #f0f8ff; }\n    h2 { color: navy; }\n  </style>\n</head>\n<body>\n  <h2>Welcome to today's lesson</h2>\n</body>\n</html>",
+    "output": "Changes the page background to light blue and h2 heading to navy."
+   },
+   {
+    "h": "External Stylesheet",
+    "text": "The professional and most common approach is writing code in a separate file with a .css extension, then linking it to the HTML file using a <link> tag. This lets you control the look of hundreds of pages by editing just one file!",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Website organized with an external file</h1>\n</body>\n</html>",
+    "output": "Fetches design from the external file and applies it smoothly."
+   },
+   {
+    "h": "Best Practices for Folder Organization",
+    "text": "As your project grows, organize your files smartly. Put main HTML files in the root folder, create a folder named css for stylesheets, and an images folder for pictures. Organization is the secret of a successful programmer!",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Organized Folders</title>\n</head>\n<body>\n  <p>An organized project means a happy programmer!</p>\n</body>\n</html>",
+    "output": "Displays the organized project structure for young coders."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Selector",
+    "desc": "Targets the HTML element you want to style and color."
+   },
+   {
+    "name": "Property",
+    "desc": "The attribute to change, such as color or font size."
+   },
+   {
+    "name": "Value",
+    "desc": "The specific setting for the property like red or 16px."
+   },
+   {
+    "name": "color",
+    "desc": "CSS property responsible for changing text color."
+   },
+   {
+    "name": "background-color",
+    "desc": "Property to change the background color of elements."
+   },
+   {
+    "name": "<link>",
+    "desc": "Tag used to connect an external CSS file to an HTML page."
+   },
+   {
+    "name": "<style>",
+    "desc": "Tag for writing internal styles in the page head."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a CSS rule to color all paragraph elements p blue.",
+    "a": "p { color: blue; }"
+   },
+   {
+    "q": "What tag is used to link an external CSS file to my page?",
+    "a": "<link rel=\"stylesheet\" href=\"filename.css\">"
+   },
+   {
+    "q": "Where do we place the internal <style> tag in an HTML file?",
+    "a": "Inside the <head> section"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Introduction to the CSS cascade",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Introduction"
+  },
+  {
+   "title": "MDN: Introduction to CSS clipping",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Masking/Clipping"
+  }
+ ],
+ "grounded": true
+}

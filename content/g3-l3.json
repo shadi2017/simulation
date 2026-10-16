@@ -1,0 +1,302 @@
+{
+ "ar": {
+  "steps": [
+   "الصور بتخلي صفحات الويب ممتعة ومليانة ألوان وجمال.",
+   "عشان نضيف صورة بنستخدم عنصر الـ img ومعاه خاصية الـ src عشان نحدد مكان الملف.",
+   "كمان لازم نكتب خاصية الـ alt عشان توصف الصورة لأصحابنا اللي مش بيشوفوها كويس.",
+   "نقدر نحدد حجم الصورة بدقة باستخدام خاصيتي الـ width والـ height بالأبكسل.",
+   "القاعدة الذهبية: دايماً اكتب وصف واضح في الـ alt عشان الموقع يكون مفيد لكل الناس.",
+   "في الحقيقة، كل المواقع الكبيرة زي يوتيوب وجوجل بتستخدم الصور عشان تشرح المنتجات والألعاب."
+  ],
+  "example": "لو عاوزين نعرض صورة قطة جميلة، بنكتب الكود ده: <img src='cat.jpg' alt='قطة صغيرة تلعب بالكرة' width='200' height='150'>. الخاصية src بتجيب ملف الصورة، و alt بتشرح إيه اللي جوه الصورة، بينما width و height بيضبطوا حجمها على الشاشة عشان تبين بشكل مرتب.",
+  "mistake": "نسيان كتابة خاصية الـ alt أو كتابة كلام مالوش أي معنى. التصحيح: اكتب دايماً وصف قصير وحقيقي للي موجود جوه الصورة عشان مساعدات القراءة تفهمها.",
+  "recap": "عنصر الـ img بيعرض الصور، والخاصية src بتجيب مسارها بينما alt بتوصفها.",
+  "q": [
+   {
+    "t": "إيه الخاصية اللي بنستخدمها عشان نحدد مسار ملف الصورة؟",
+    "o": [
+     "alt",
+     "src",
+     "width"
+    ],
+    "a": 1,
+    "why": "الخاصية src تعني Source وهي المسؤولة عن تحديد مكان ملف الصورة."
+   },
+   {
+    "t": "ليه بنكتب خاصية الـ alt في عنصر الصورة؟",
+    "o": [
+     "لتغيير لون خلفية الصفحة",
+     "لوصف الصورة للأشخاص الذين لا يستطيعون رؤيتها",
+     "تكبير حجم الشاشة تلقائياً"
+    ],
+    "a": 1,
+    "why": "خاصية alt تقدم نصاً بديلًا لوصف الصورة لمساعدات القراءة ووصول ذوي الاحتياجات الخاصة."
+   },
+   {
+    "t": "كيف يتم كتابة قيم الأبعاد width و height في الـ HTML؟",
+    "o": [
+     "أرقام بدون وحدات قياس مثل 150",
+     "بالسنتيمتر مثل 10cm",
+     "بالكلمات مثل big"
+    ],
+    "a": 0,
+    "why": "الأبعاد تقاس بالبكسل وتكتب كأرقام صحيحة بدون وحدات."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة عرض الصورة",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل كود الصورة ده.",
+   "code": "<img src='robo.png' alt='روبوت يبتسم' width='100' height='100'>",
+   "options": [
+    "تظهر صورة روبوت يبتسم بحجم 100 في 100 بكسل مع وصف بديل",
+    "تظهر شاشة سوداء بالكامل",
+    "يتم تحميل فيديو تعليمي طويل"
+   ],
+   "a": 0,
+   "success": "رائع! لقد ظهر الروبوت باللون والشكل المناسبين تماماً."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الصور في الويب",
+    "text": "الصور بتخلي صفحات الإنترنت تبמו زي كتاب ملون وجمال، بدل ما تكون مجرد كلام أبيض وأسود صامت. في الويب بنستخدم عنصر خاص اسمه img عشان نعرض أي رسمة أو صورة شخصية.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<title>صورة بسيطة</title>\n</head>\n<body>\n<img src='https://via.placeholder.com/150' alt='صورة تجريبية'>\n</body>\n</html>",
+    "output": "تعرض الصفحة صورة تجريبية مربعة الشكل."
+   },
+   {
+    "h": "خاصية المصدر src",
+    "text": "خاصية src هي اختصار لكلمة Source يعني المصدر. دي اللي بنحط جواها عنوان الرابط أو مكان ملف الصورة على الجهاز عشان المتصفح يعرف هو هيجيب الصورة دي منين بالضبط.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/100/FF0000' alt='مربع أحمر'>\n</body>\n</html>",
+    "output": "تعرض الصفحة مربعاً أحمر اللون."
+   },
+   {
+    "h": "النص البديل alt للوصول الشامل",
+    "text": "النص البديل alt هو كلام مكتوب بيوصف اللي جوه الصورة. ده مهم جداً للناس اللي نظرهم ضعيف وبيستخدموا برامج تقرأ الشاشة بصوت عالي، عشان يفهموا الصورة بتتكلم عن إيه.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/100/00FF00' alt='شعار أخضر براق'>\n</body>\n</html>",
+    "output": "تعرض الصفحة صورة مع وجود نص وصفى خفي لقارئ الشاشة."
+   },
+   {
+    "h": "تحديد الأبعاد width و height",
+    "text": "عشان الصفحة ما تهتزش وهي بتحمل، بنقدر نحدد عرض الصورة وارتفاعها باستخدام width و height بالأبكسل. ده بيخلي المتصفح يحجز المكان المظبوط للصورة من قبل ما تظهر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/200' alt='صورة بحجم محدد' width='120' height='120'>\n</body>\n</html>",
+    "output": "تعرض الصفحة صورة مربعة بأبعاد محددة وثابتة وهي 120 بكسل."
+   },
+   {
+    "h": "العناصر الفارغة (Void Elements)",
+    "text": "عنصر الـ img بيتسمى عنصر فارغ أو void element، ده معناه إنه مش محتاج وسم إغلاق زي </tag>. هو وسم واحد بيفتح ويقفل نفسه بنفسه عن طريق الشرطة المائلةاختيارياً مثل />.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<p>هنا تظهر صورة مفردة:</p>\n<img src='https://via.placeholder.com/80' alt='أيقونة صغيرة'>\n</body>\n</html>",
+    "output": "تعرض الصفحة فقرة نصية تحتها صورة صغيرة بدون أخطاء إغلاق."
+   },
+   {
+    "h": "استخدام الصور عبر الإنترنت",
+    "text": "ممكن نجيب صور من على الإنترنت عن طريق وضع رابط ويب كامل جوه خاصية src، وده بيخلينا نعرض صور موجودة على سيرفرات تانية بكل سهولة وسرعة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/150/0000FF' alt='سيرفر خارجي أزرق' width='100' height='50'>\n</body>\n</html>",
+    "output": "تعرض الصفحة مستطيلاً أزرق مستمداً من الإنترنت."
+   },
+   {
+    "h": "كتابة وصف alt ذكي ومفيد",
+    "text": "لما تكتب وصف alt، تجنب تقول 'صورة كذا' وخلاص. اكتب تفاصيل حلوة ومفيدة زي 'قطة رمادي تنام على السجادة' عشان الوصف يكون واقعي وواضح لكل الناس.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/150' alt='كلب صغير يمسك كرة حمراء بالفم'>\n</body>\n</html>",
+    "output": "تعرض الصفحة صورة مع نص بديل غني بالتفاصيل الوظيفية."
+   },
+   {
+    "h": "تجنب الأخطاء الشائعة في الأبعاد",
+    "text": "لما نكتب الأبعاد، بنكتب الأرقام بس من غير وحدات زي px. يعني نكتب width='200' مش width='200px'، عشان المتصفح يفهم الرقم صح ويطبق العرض المطلوب.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/150' alt='عرض صحيح للأبعاد' width='150' height='100'>\n</body>\n</html>",
+    "output": "تعرض الصفحة صورة بعرض 150 وارتفاع 100 بكسل بدون مشاكل."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<img>",
+    "desc": "عنصر إدراج الصور في صفحة الويب."
+   },
+   {
+    "name": "src",
+    "desc": "خاصية لتحديد مسار أو رابط ملف الصورة."
+   },
+   {
+    "name": "alt",
+    "desc": "خاصية لوصف محتوى الصورة للأشخاص وبرامج قراءة الشاشة."
+   },
+   {
+    "name": "width",
+    "desc": "خاصية لتحديد عرض الصورة بالبكسل."
+   },
+   {
+    "name": "height",
+    "desc": "خاصية لتحديد ارتفاع الصورة بالبكسل."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود HTML لإدراج صورة رابطها 'logo.png' مع نص بديل 'شعار المدرسة' وعرض 100 وارتفاع 50.",
+    "a": "<img src='logo.png' alt='شعار المدرسة' width='100' height='50'>"
+   },
+   {
+    "q": "لماذا نعتبر عنصر img عنصراً فارغاً (void element)؟",
+    "a": "لأنه لا يحتوي على محتوى بداخله ولا يحتاج إلى وسم إغلاق مستقل."
+   },
+   {
+    "q": "ما هي الخاصية المسؤولة عن إعطاء وصف نصي للصورة عند عدم ظهورها أو للمكفوفين؟",
+    "a": "خاصية alt."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Images make web pages fun, colorful, and visually engaging for everyone.",
+   "To add a picture, we use the img element along with the src property to locate the file.",
+   "We must also write the alt property to describe the image for people who cannot see it.",
+   "We can precisely set the image dimensions using the width and height properties in pixels.",
+   "The golden rule: always write a clear alt description to make your website accessible to all users.",
+   "In real life, major websites like YouTube and Google use images to illustrate items, games, and videos."
+  ],
+  "example": "If we want to display a cute cat picture, we write this code: <img src='cat.jpg' alt='A small kitten playing with a ball' width='200' height='150'>. The src property fetches the image file, alt explains what is inside the picture, while width and height neatly adjust its display size.",
+  "mistake": "Forgetting to write the alt property or typing meaningless text. Fix: Always write a short, truthful description of what is inside the image so screen readers can understand it.",
+  "recap": "The img element displays images, while src specifies their path and alt describes them.",
+  "q": [
+   {
+    "t": "Which property is used to specify the file path of an image?",
+    "o": [
+     "alt",
+     "src",
+     "width"
+    ],
+    "a": 1,
+    "why": "The src property stands for Source and is responsible for defining where the image file is located."
+   },
+   {
+    "t": "Why do we include the alt property in an image element?",
+    "o": [
+     "To change the background color of the page",
+     "To describe the image for people who cannot see it",
+     "To automatically zoom in the browser screen"
+    ],
+    "a": 1,
+    "why": "The alt property provides alternative text to describe the image for screen readers and accessibility."
+   },
+   {
+    "t": "How should the width and height dimension values be written in HTML?",
+    "o": [
+     "Numbers without units like 150",
+     "In centimeters like 10cm",
+     "Using words like big"
+    ],
+    "a": 0,
+    "why": "Dimensions are measured in pixels and written as raw integer numbers without units."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Image Display",
+   "goal": "Find out what happens when this image code runs.",
+   "code": "<img src='robo.png' alt='A smiling robot' width='100' height='100'>",
+   "options": [
+    "A smiling robot picture appears with 100 by 100 pixel dimensions and alt text",
+    "The entire browser screen turns completely black",
+    "A long educational video starts playing automatically"
+   ],
+   "a": 0,
+   "success": "Brilliant! The robot appeared with the correct visual style and dimensions."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Web Images",
+    "text": "Images transform web pages into colorful, lively stories instead of plain black-and-white text. On the web, we use a special element called img to display any graphic, photo, or icon.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<title>Simple Image</title>\n</head>\n<body>\n<img src='https://via.placeholder.com/150' alt='Sample image'>\n</body>\n</html>",
+    "output": "The page displays a square sample image."
+   },
+   {
+    "h": "The Source Property src",
+    "text": "The src property stands for Source. This is where we place the web link or local file path so the browser knows exactly where to retrieve the picture file from.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/100/FF0000' alt='Red square'>\n</body>\n</html>",
+    "output": "The page displays a red square image."
+   },
+   {
+    "h": "Alternative Text alt for Accessibility",
+    "text": "The alt property is text that describes what is inside the image. This is crucial for users with visual impairments who rely on screen readers to read the text description out loud.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/100/00FF00' alt='Bright green badge'>\n</body>\n</html>",
+    "output": "The page displays an image with hidden descriptive text for screen readers."
+   },
+   {
+    "h": "Defining Dimensions width and height",
+    "text": "To prevent the page from jumping while loading, we can specify the image width and height in pixels. This allows the browser to reserve the exact correct space beforehand.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/200' alt='Sized image' width='120' height='120'>\n</body>\n</html>",
+    "output": "The page displays a square image with fixed 120 pixel dimensions."
+   },
+   {
+    "h": "Void Elements in HTML",
+    "text": "The img element is called a void element. This means it contains no inner content and does not require a closing tag like </tag>; it is a single self-contained tag.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<p>Below is a single image:</p>\n<img src='https://via.placeholder.com/80' alt='Small icon'>\n</body>\n</html>",
+    "output": "The page displays a paragraph with a small image below it without closing tag errors."
+   },
+   {
+    "h": "Embedding Online Image Assets",
+    "text": "We can pull images directly from the internet by placing a complete web URL inside the src property, allowing us to display pictures hosted on other servers easily.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/150/0000FF' alt='External blue server' width='100' height='50'>\n</body>\n</html>",
+    "output": "The page displays a blue rectangle fetched from the internet."
+   },
+   {
+    "h": "Writing Smart and Useful alt Text",
+    "text": "When writing alt text, avoid vague phrases like 'image of something'. Instead, write helpful details like 'A grey cat sleeping on a rug' so the description is realistic and meaningful.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/150' alt='A puppy holding a red ball in its mouth'>\n</body>\n</html>",
+    "output": "The page displays an image with a rich, descriptive alternative text."
+   },
+   {
+    "h": "Avoiding Common Dimension Mistakes",
+    "text": "When writing dimensions, use numbers only without units like px. For example, write width='150' instead of width='150px' so the browser parses the number correctly.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n<img src='https://via.placeholder.com/150' alt='Correct dimension styling' width='150' height='100'>\n</body>\n</html>",
+    "output": "The page displays an image sized 150 by 100 pixels without errors."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<img>",
+    "desc": "The HTML element used to embed images in a web page."
+   },
+   {
+    "name": "src",
+    "desc": "Property used to specify the file path or URL of an image."
+   },
+   {
+    "name": "alt",
+    "desc": "Property used to describe the image content for accessibility and screen readers."
+   },
+   {
+    "name": "width",
+    "desc": "Property used to set the width of an image in pixels."
+   },
+   {
+    "name": "height",
+    "desc": "Property used to set the height of an image in pixels."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write HTML code to embed an image with source 'logo.png', alt text 'School Logo', width 100, and height 50.",
+    "a": "<img src='logo.png' alt='School Logo' width='100' height='50'>"
+   },
+   {
+    "q": "Why is the img element classified as a void element?",
+    "a": "Because it contains no inner content and does not require a separate closing tag."
+   },
+   {
+    "q": "What property provides a text description for images when they fail to load or for screen readers?",
+    "a": "The alt property."
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: HTML elements reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements"
+  },
+  {
+   "title": "MDN: <source> HTML media or image source element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source"
+  }
+ ],
+ "grounded": true
+}

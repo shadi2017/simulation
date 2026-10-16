@@ -1,0 +1,150 @@
+{
+ "en": [
+  {
+   "title": "Pet Care Tamagotchi Game",
+   "desc": "Create a virtual pet dashboard where you manage its happiness, hunger, and energy using arrays of objects and methods. Feed it, play with it, and watch its stats update live on the screen!",
+   "tags": [
+    "Objects",
+    "Arrays",
+    "Dashboard"
+   ],
+   "steps": [
+    "First, create a JavaScript object for your pet with keys like name, hunger, happiness, and energy to store its starting stats.",
+    "Next, build an array of items or toys using strings like push() and unshift() to keep track of what you bought for your pet.",
+    "Then, write functions that use string methods like length or uppercase to format your pet's name nicely in a status banner.",
+    "After that, use indexOf() to search your inventory array to see if you actually own a specific toy before playing with your pet.",
+    "Next, update your pet object's properties (like lowering hunger or increasing happiness) whenever a button on the dashboard is clicked.",
+    "Finally, combine everything inside an array of objects representing a history log of recent actions, and render it neatly on the screen."
+   ],
+   "rubric": [
+    "Pet object correctly uses key-value pairs for stats.",
+    "Array methods (push, pop, indexOf) work properly on inventory.",
+    "String methods correctly format displayed text.",
+    "Dashboard updates pet properties without breaking."
+   ],
+   "stretch": "Add an array of achievements that unlocks new items when your pet reaches high happiness!"
+  },
+  {
+   "title": "Superhero Team HQ Manager",
+   "desc": "Build a command center dashboard to manage your ultimate superhero roster, track missions, and update power stats using everything learned this term.",
+   "tags": [
+    "Arrays of Objects",
+    "Properties",
+    "Dashboard"
+   ],
+   "steps": [
+    "Start by creating individual superhero objects with keys like heroName, powerLevel, and secretIdentity.",
+    "Put all your hero objects inside a single main array to represent your team headquarters roster.",
+    "Use push() and pop() to add new recruits to your team or send the last hero on a solo mission.",
+    "Use shift() and unshift() to handle urgent emergency queue responses at the front of your mission list.",
+    "Write a search feature using indexOf() to find out the exact position of a hero in your team array by name.",
+    "Finally, loop through your array of objects to display each hero's uppercase name and power stats on the dashboard."
+   ],
+   "rubric": [
+    "Heroes are correctly stored as an array of objects.",
+    "All array methods (push, pop, shift, unshift, indexOf) are used accurately.",
+    "Object properties are successfully read and updated.",
+    "Dashboard clearly displays all team data."
+   ],
+   "stretch": "Add a feature to slice hero codenames to create funny secret acronyms!"
+  },
+  {
+   "title": "Gourmet Restaurant Order Hub",
+   "desc": "Design a digital kitchen ticket system where customers can order food, customize dishes with string methods, and track order status using objects and arrays.",
+   "tags": [
+    "String Methods",
+    "Objects",
+    "Dashboard"
+   ],
+   "steps": [
+    "First, create menu item objects containing key-value pairs for dishName, price, and spicyLevel.",
+    "Next, store all available menu items in an array so customers can browse delicious options.",
+    "Then, use string methods like slice() and lowercase/uppercase to format customer special request notes cleanly.",
+    "Use push() to add new food orders to the active kitchen ticket queue array as they come in.",
+    "Use shift() to remove and process orders from the front of the queue once the chef finishes cooking them.",
+    "Finally, update order status properties inside your objects and display the final receipt on the dashboard."
+   ],
+   "rubric": [
+    "Menu and orders use objects and arrays correctly.",
+    "String methods properly clean up customer input notes.",
+    "Queue management works smoothly with shift and push.",
+    "Dashboard successfully renders live ticket statuses."
+   ],
+   "stretch": "Add a customer review system that stores feedback strings in an array and checks their length!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "لعبة تربية الحيوان الأليف الرقمي",
+   "desc": "اعمل لوحة تحكم لحيوان أليف افتراضي تدير بيها أكله وسعادته وطاقته باستخدام الأوبجكتس والمصفوفات. أكله والعب معاها وشوف الإحصائيات بتتحدث قدامك على الشاشة!",
+   "tags": [
+    "أوبجكتس",
+    "مصفوفات",
+    "لوحة تحكم"
+   ],
+   "steps": [
+    "أول حاجة، اعمل أوبجكت (Object) لحيوانك الأليف فيه مفاتيح زي name و hunger و happiness و energy عشان تخزن إحصائياته.",
+    "بعد كده، اعمل مصفوفة (Array) للألعاب أو الأكل باستخدام دوال زي push() و unshift() عشان تتابع إنت اشتريت إيه لحيوانك.",
+    "بعدين، اكتب كود بيستخدم دوال النصوص زي length أو تحويل الحروف لكبيرة (Uppercase) عشان تعرض اسم الحيوان بشكل شيك.",
+    "استخدم دالة indexOf() عشان تبحث جوه مصفوفة الألعاب وتشوف هل معاك لعبة معينة ولا لأ قبل ما تلعب مع حيوانك.",
+    "حدث خصائص الأوبجكت بتاع الحيوان (زي تقليل الجوع أو زيادة السعادة) كل ما المستخدم يدوس على زرار في لوحة التحكم.",
+    "في الآخر، اجمع كل ده جوه مصفوفة أوبجكتس بتعبر عن سجل العمليات الأخيرة واعرضها بشكل مرتب على الشاشة."
+   ],
+   "rubric": [
+    "أوبجكت الحيوان الأليف بيستخدم المفاتيح والقيم صح.",
+    "دوال المصفوفات (push, pop, indexOf) شغالين مظبوط.",
+    "دوال النصوص بتنسق الكلام المعروض صح.",
+    "لوحة التحكم بتحدث خصائص الحيوان من غير أخطاء."
+   ],
+   "stretch": "ضيف مصفوفة للإنجازات تفتح ألعاب جديدة لما حيوانك يوصل لمستوى سعادة عالي!"
+  },
+  {
+   "title": "مدير مقر الأبطال الخارقين",
+   "desc": "اصنع مركز قيادة لإدارة فريق الأبطال الخارقين، متابعة المهام، وتحديث مستويات القوة باستخدام كل اللي اتعلمناه الترم ده.",
+   "tags": [
+    "مصفوفة أوبجكتس",
+    "خصائص",
+    "لوحة تحكم"
+   ],
+   "steps": [
+    "ابدأ بإنشاء أوبجكتس منفصلة للأبطال الخارقين بمفاتيح زي heroName و powerLevel و secretIdentity.",
+    "حط كل أوبجكتس الأبطال جوه مصفوفة رئيسية واحدة عشان تمثل مقر فريقك الخارق.",
+    "استخدم push() و pop() عشان تضيف أعضاء جدد للفريق أو تبعت آخر بطل في مهمة فردية.",
+    "استخدم shift() و unshift() عشان تدير طوابير الطوارئ العاجلة في أول قائمة المهام.",
+    "اكتب ميزة بحث باستخدام indexOf() عشان تعرف مكان البطل بالظبط جوه مصفوفة الفريق باستخدام اسمه.",
+    "في الآخر، عدّي على مصفوفة الأوبجكتس عشان تعرض اسم كل بطل بحروف كبيرة ومستويات قوته على لوحة التحكم."
+   ],
+   "rubric": [
+    "الأبطال متخزنين صح كمصفوفة أوبجكتس.",
+    "كل دوال المصفوفات مستخدمة بدقة.",
+    "خصائص الأوبجكت بتتقرا وتتحدث بنجاح.",
+    "لوحة التحكم بتعرض بيانات الفريق بوضوح."
+   ],
+   "stretch": "ضيف ميزة لتقطيع (slice) الأسامي السرية للأبطال عشان تعمل اختصارات سرية مضحكة!"
+  },
+  {
+   "title": "لوحة تحكم مطعم الأكلات الفاخرة",
+   "desc": "صمم نظام طلبات ديجيتال للمطبخ يقدر فيه الزباين يطلبوا أكل، ويعدلوا الطلبات بدوال النصوص، ويتابعوا حالة الطلب باستخدام الأوبجكتس والمصفوفات.",
+   "tags": [
+    "دوال النصوص",
+    "أوبجكتس",
+    "لوحة تحكم"
+   ],
+   "steps": [
+    "أول حاجة، اعمل أوبجكتس لأصناف القائمة فيها مفاتيح زي dishName و price و spicyLevel.",
+    "بعدين، خزّن كل أصناف القائمة المتاحة جوه مصفوفة عشان الزباين يتصفحوا الأكل اللذيذ.",
+    "استخدم دوال النصوص زي slice() وتعديل الحروف عشان تنظم ملاحظات الطلبات الخاصة للزباين.",
+    "استخدم push() عشان تضيف طلبات أكل جديدة لطابور تذاكر المطبخ النشط أول بأول.",
+    "استخدم shift() عشان تشيله وتعالج الطلبات من أول الطابور أول ما الشيف يخلص طبخهم.",
+    "في الآخر، حدث حالة الطلب جوه الأوبجكتس واعرض الإيصال النهائي على لوحة التحكم."
+   ],
+   "rubric": [
+    "القائمة والطلبات بيستخدموا الأوبجكتس والمصفوفات صح.",
+    "دوال النصوص بتنضف ملاحظات الزباين كويس.",
+    "إدارة الطابور شغالة بسلاسة مع shift و push.",
+    "لوحة التحكم بتعرض حالة التذاكر الحية بنجاح."
+   ],
+   "stretch": "ضيف نظام تقييمات للعملاء بيخزن آراءهم في مصفوفة ويتاكد من طول النص!"
+  }
+ ]
+}

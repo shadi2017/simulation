@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "فكر في الكود كأنه رسام ذكي جداً ينتظر أوامرك يا بطل! بدلاً من تحريك القلم بيديك، نكتب للروبوت خطوات واضحة وبسيطة ليرسم لنا أحلى الأشكال الملونة بدقة.",
+   "تخيل أنك تخبر صديقك: 'تحرك للأمام خطوتين'، هذه هي بداية تحريك الفرشاة في اتجاهات مختلفة مثل اليمين، اليسار، للأمام، وللخلف بكل سهولة.",
+   "تعمل هذه الأوامر كأنك تقود سيارة سباق؛ عليك تحديد اتجاه السير بدقة قبل الضغط على زر التحرك، فالفرشاة لا تتحرك عشوائياً بل باتجاهات محددة ومرتبة.",
+   "لتلوين لوحتنا الفنية، نستخدم أوامر تغيير ألوان الفرشاة مثل السحر! يمكنك اختيار اللون الأحمر، الأزرق، أو الأخضر قبل البدء بالرسم مباشرة.",
+   "القاعدة الذهبية هنا هي: خطوة حركة متبوعة بخطوة دوران تصنع المعجزة! كرر نفس الحركة والالتفاف أربع مرات متتالية وسترى سحر الهندسة يظهر أمامك.",
+   "نستخدم هذا الفن البرمجي الرائع في الحياة الواقعية لتصميم ألعاب الفيديو الكرتونية، ورسم الأشكال الهندسية في برامج التصميم، وحتى توجيه روبوتات رسم اللوحات الحقيقية!"
+  ],
+  "example": "نريد من الروبوت أن يرسم مربعاً مذهلاً لونه أزرق. نبدأ باختيار لون الفرشاة الأزرق، ثم نتحرك للأمام خطوة، ثم نستدير لليمين زاوية قائمة. نكرر هذا الفعل 4 مرات متتالية، فنحصل فوراً على شكل مربع متساوي الأضلاع ومرتب بدقة مذهلة على الشاشة بفضل الأوامر المتسلسلة.",
+  "mistake": "الخطأ الشائع هو نسيان أمر الاستدارة بعد المشي للأمام، مما يجعل الروبوت يرسم خطاً طويلاً مستقيماً بدلاً من مربع مغلق. الحل هو التأكد دائماً من إضافة أمر الاستدارة بعد كل ضلع.",
+  "recap": "تعلمنا كيف نتحكم باتجاهات الفرشاة ونغير ألوانها لنرسم أشكالاً هندسية رائعة. الكود هو دستور الأوامر الذي يمنح الحياة لأفكارنا الفنية بكل بساطة.",
+  "q": [
+   {
+    "t": "ماذا نفعل لكي يغير الروبوت لون الخط أثناء الرسم؟",
+    "o": [
+     "نستخدم أمر تغيير لون الفرشاة",
+     "نغلق البرنامج فوراً",
+     "نحرك الروبوت للخلف"
+    ],
+    "a": 0,
+    "why": "أمر تغيير اللون يخبر الفرشاة باللون الجديد الذي نريده."
+   },
+   {
+    "t": "كم مرة نكرر الحركة والاستدارة لكي نصنع مربعاً كاملاً؟",
+    "o": [
+     "مرتين",
+     "أربع مرات",
+     "عشر مرات"
+    ],
+    "a": 1,
+    "why": "المربع يتكون من 4 أضلع، لذا نكرر الخطوة 4 مرات."
+   },
+   {
+    "t": "ماذا يحدث لو نسينا أمر الاستدارة أثناء محاولة رسم مربع؟",
+    "o": [
+     "يرسم مربعاً صغيراً",
+     "يرسم خطاً مستقيماً طويلاً",
+     "لا يحدث شيئاً تماماً"
+    ],
+    "a": 1,
+    "why": "بدون الاستدارة، سيستمر الروبوت في المشي باتجاه واحد فقط صانعاً خطاً مستقيماً."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع رسمة الروبوت",
+   "goal": "اختر ماذا سيحدث عندما ينفذ الروبوت هذا الكود: [لون أزرق -> تحرك للأمام -> استدر يميناً] أربع مرات متتالية.",
+   "code": "لون: أزرق\nكرر 4 مرات:\n- تحرك للأمام\n- استدر لليمين",
+   "options": [
+    "يرسم دائرة حمراء",
+    "يرسم مربعاً أزرق",
+    "يمشي للخلف فقط"
+   ],
+   "a": 1,
+   "success": "رسم الروبوت مربعاً أزرق جميلاً بكل مهارة وإتقان!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في الرسم البرمجي",
+    "text": "البرمجة ليست مجرد أرقام وحروف، بل هي فن جميل يمكنك من خلاله رسم أشكال مذهلة على الشاشة. تخيل أن لديك روبوت رسام صغير يجلس داخل الكمبيوتر، وينتظر إشاراتك وكلماتك ليبدأ في تحريك فرشاته الملونة وإنشاء لوحات فنية مذهلة تشبه تلك التي ترسمها بكراستك.",
+    "code": "ابدأ الرسم\nفرشاة جديدة جاهزة",
+    "output": "يستعد الكمبيوتر لعرض رسوماتك الملونة."
+   },
+   {
+    "h": "اتجاهات حركة الفرشاة",
+    "text": "لكي تتحرك الفرشاة على الشاشة، تحتاج إلى إخباره بالاتجاه الصحيح تماماً مثل الكابتن الذي يوجه السفينة في البحر. هل تريد التحرك للأمام، للخلف، لليمين أم لليسار؟ هذه الاتجاهات الأربعة هي أدواتك الأساسية لاستكشاف الفضاء الأبيض للوحة.",
+    "code": "تحرك للأمام خطوة\nاستدر لليمين",
+    "output": "تتحرك الفرشاة للأمام ثم تغير اتجاهها."
+   },
+   {
+    "h": "تغيير ألوان اللوحة السحرية",
+    "text": "الرسم بالأبيض والأسود ممل بعض الشيء، أليس كذلك؟ لذلك يمنحنا الكود قوة سحرية لتغيير لون الفرشاة في أي وقت نشاء. يمكنك اختيار الأحمر المشتعل، الأزرق الهادئ، أو الأخضر الطبيعي بضغطة زر واحدة قبل أن يبدأ الرسام في إبداع خطوطه.",
+    "code": "اختر اللون: أحمر\nارسم خطاً",
+    "output": "يظهر الخط المرسوم باللون الأحمر الجميل."
+   },
+   {
+    "h": "رسم الخطوط البسيطة",
+    "text": "أبسط شيء يمكن أن ترسمه هو خط مستقيم، وهو يشبه وضع مسطرة على الورقة وقلم رصاص لتسحب خطاً ناعماً. في الكود، نعطي أمراً للفرشاة أن تنزل على الورق وتتحرك مسافة معينة، تاركة خلفها أثراً جميلاً ومستقيماً لا يحيد عن طريقه.",
+    "code": "انزل بالقلم\nتحرك للأمام 5 خطوات",
+    "output": "يتم رسم خط مستقيم بطول خمس خطوات."
+   },
+   {
+    "h": "بناء الأشكال الهندسية والمربعات",
+    "text": "هل ترغب في بناء منزل جميل؟ يبدأ كل منزل بمربع متناسق! لصنع مربع، تحتاج إلى الجمع بين أمرين: الحركة للأمام لرسم الضلع، ثم الاستدارة بزاوية صحيحة لرسم الضلع التالي. عندما تفعل ذلك أربع مرات، تكتمل أضلاع المربع وكأن السحر قد حدث أمام عينيك.",
+    "code": "كرر 4 مرات:\n- تحرك للأمام\n- استدر زاوية قائمة",
+    "output": "يتشكل مربع كامل ومتساوي الأضلاع."
+   },
+   {
+    "h": "سر التكرار الذكي",
+    "text": "لماذا نكتب نفس السطر أربع مرات بينما يمكننا أن نطلب من الكمبيوتر تكراره بالنيابة عنا؟ التكرار هو صديق المبرمج الكسول والذكي في نفس الوقت! نخبره بـ 'كرر 4 مرات' ونضع داخل القوسين حركة الضلع والزاوية، فينفذها بسرعة البرق وبدون أخطاء.",
+    "code": "تكرار (4):\n  مشروب الفن()",
+    "output": "يتم توفير الوقت والجهد بأمر مختصر."
+   },
+   {
+    "h": "تجنب أخطاء الرسام الصغير",
+    "text": "أحياناً ينسى المبرمجون الصغار أن يطلبوا من الفرشاة الاستدارة، فتجد الروبوت يرسم خطاً طويلاً وعملاقاً خارج الشاشة! تذكر دائماً: كل ضلع يحتاج إلى التفافة صغيرة لكي يغلق الشكل الهندسي ولا يهرب منك في الفضاء الرقمي.",
+    "code": "تحرك للأمام (بدون استدارة)\n النتيجة: خط طويل",
+    "output": "يفشل رسم الشكل ويصبح خطاً مستقيماً."
+   },
+   {
+    "h": "الفن الرقمي في العالم الواقعي",
+    "text": "هل تعلم أن المهندسين ومصممي ألعاب الفيديو يستخدمون نفس هذه الأفكار البسيطة يومياً؟ عندما تلعب لعبتك المفضلة على الجوال وترا الشخصيات تتحرك وترسم أشكالاً، فهناك أكواد شبيهة جداً بما تتعلمه الآن تعمل بكفاءة خلف الكواليس لتصنع لك المتعة والإبهار.",
+    "code": "تشغيل اللعبة()\nرسم عالم افتراضي",
+    "output": "تستمتع بلعبة مذهلة ومصنوعة بالكامل بالأكواد."
+   }
+  ],
+  "reference": [
+   {
+    "name": "تحرك للأمام",
+    "desc": "أمر يجعل الفرشاة تسير إلى وجهتها."
+   },
+   {
+    "name": "استدر لليمين",
+    "desc": "أمر يغير اتجاه الفرشاة جهة اليمين."
+   },
+   {
+    "name": "لون الفرشاة",
+    "desc": "تحديد اللون الذي سيرسم به الروبوت."
+   },
+   {
+    "name": "التكرار",
+    "desc": "إعادة تنفيذ الأوامر عدة مرات دون إعادة كتابتها."
+   },
+   {
+    "name": "المربع",
+    "desc": "شكل هندسي له أربعة أضلع متساوية."
+   },
+   {
+    "name": "الخط المستقيم",
+    "desc": "أثر ناتج عن حركة الفرشاة في اتجاه واحد."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب خطوات رسم خط أحمر مستقيم للأمام.",
+    "a": "اختر اللون الأحمر -> انزل بالقلم -> تحرك للأمام."
+   },
+   {
+    "q": "كم عدد المرات التي نستدير فيها لكي نصنع مربعاً كاملاً؟",
+    "a": "4 مرات."
+   },
+   {
+    "q": "ما هو الأمر الذي يمنعنا من كتابة نفس سطر الحركة أربع مرات؟",
+    "a": "أمر التكرار (كرر 4 مرات)."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Think of code as a super smart little artist waiting for your commands! Instead of moving a real pencil with your fingers, you write clear, simple steps for a robot to draw colorful shapes accurately.",
+   "Imagine telling your friend: 'Move forward two steps.' This is how brush movement starts, using directions like right, left, forward, and backward with complete ease.",
+   "These commands work like driving a racing car; you must choose your direction precisely before pressing go, because the brush moves only along commanded paths.",
+   "To paint our artwork, we use brush color commands like magic! You can choose red, blue, or green right before you start drawing.",
+   "The golden rule here is: a movement step followed by a turn step creates magic! Repeat the same move and turn four times, and watch the geometry appear before your eyes.",
+   "We use this wonderful coding art in real life to design cartoon video games, draw shapes in design software, and even guide real drawing robots!"
+  ],
+  "example": "We want our robot to draw an amazing blue square. We start by selecting the blue brush color, then move forward one step, and turn right at a right angle. Repeating this action 4 times instantly gives us a neat, equal-sided square on the screen thanks to sequential commands.",
+  "mistake": "A common mistake is forgetting the turn command after walking forward, which makes the robot draw one long straight line instead of a closed square. The fix is to always include a turn command after each side.",
+  "recap": "We learned how to control brush directions and change colors to draw cool geometric shapes. Code is the rulebook that brings our artistic ideas to life.",
+  "q": [
+   {
+    "t": "What do we do to make the robot change the line color while drawing?",
+    "o": [
+     "Use the change brush color command",
+     "Close the program immediately",
+     "Move the robot backward"
+    ],
+    "a": 0,
+    "why": "The color command tells the brush the new color we want."
+   },
+   {
+    "t": "How many times do we repeat the move and turn to make a complete square?",
+    "o": [
+     "Two times",
+     "Four times",
+     "Ten times"
+    ],
+    "a": 1,
+    "why": "A square has 4 sides, so we repeat the step 4 times."
+   },
+   {
+    "t": "What happens if we forget the turn command when trying to draw a square?",
+    "o": [
+     "It draws a tiny square",
+     "It draws one long straight line",
+     "Nothing happens at all"
+    ],
+    "a": 1,
+    "why": "Without turning, the robot keeps walking in one single direction making a straight line."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Robot Drawing",
+   "goal": "Choose what happens when the robot runs this code: [Blue color -> Move forward -> Turn right] four times in a row.",
+   "code": "Color: Blue\nRepeat 4 times:\n- Move forward\n- Turn right",
+   "options": [
+    "Draws a red circle",
+    "Draws a blue square",
+    "Only walks backward"
+   ],
+   "a": 1,
+   "success": "The robot drew a beautiful blue square with skill and precision!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Code Drawing",
+    "text": "Coding isn't just about numbers and letters; it is a fun art form where you can draw amazing shapes on screen. Imagine having a tiny robotic artist sitting inside your computer, waiting for your signals to move its colored brush and create stunning artwork.",
+    "code": "Start drawing\nNew brush ready",
+    "output": "The computer gets ready to show your colorful drawings."
+   },
+   {
+    "h": "Brush Movement Directions",
+    "text": "To move the brush on screen, you need to tell it the exact direction, just like a captain steering a ship at sea. Do you want to move forward, backward, right, or left? These four directions are your basic tools for exploring the white canvas.",
+    "code": "Move forward 1 step\nTurn right",
+    "output": "The brush moves forward then changes its heading."
+   },
+   {
+    "h": "Changing Magical Canvas Colors",
+    "text": "Black and white drawing is a bit boring, right? That is why code gives us the magical power to change the brush color anytime we want. You can pick fiery red, calm blue, or natural green with a single click before the artist starts creating.",
+    "code": "Choose color: red\nDraw line",
+    "output": "The drawn line appears in a lovely red color."
+   },
+   {
+    "h": "Drawing Simple Lines",
+    "text": "The simplest thing to draw is a straight line, like putting a ruler on paper and pulling a smooth pencil line. In code, we command the brush to touch the paper and travel a specific distance, leaving behind a clean and straight trail.",
+    "code": "Pen down\nMove forward 5 steps",
+    "output": "A straight line five steps long is drawn."
+   },
+   {
+    "h": "Building Shapes and Squares",
+    "text": "Want to build a nice house? Every house starts with a balanced square! To make a square, you combine two actions: moving forward to draw a side, then turning at a sharp angle for the next side. Repeat this four times, and the square forms like magic.",
+    "code": "Repeat 4 times:\n- Move forward\n- Turn at right angle",
+    "output": "A complete, equal-sided square is formed."
+   },
+   {
+    "h": "The Secret of Smart Loops",
+    "text": "Why write the same line four times when we can ask the computer to repeat it for us? Loops are the lazy and smart programmer's best friend! We tell it 'Repeat 4 times' and put the movement and angle inside, executing instantly without errors.",
+    "code": "Loop (4):\n  draw_side()",
+    "output": "Time and effort are saved with a concise command."
+   },
+   {
+    "h": "Avoiding Little Artist Mistakes",
+    "text": "Sometimes young programmers forget to ask the brush to turn, causing the robot to draw one giant line off the screen! Always remember: every side needs a little turn to close the geometric shape so it doesn't escape into digital space.",
+    "code": "Move forward (no turn)\n Result: long line",
+    "output": "Shape drawing fails and becomes a straight line."
+   },
+   {
+    "h": "Digital Art in the Real World",
+    "text": "Did you know engineers and video game designers use these exact simple ideas every day? When you play your favorite mobile game and watch characters move and draw shapes, similar code runs efficiently behind the scenes to bring you fun.",
+    "code": "Start game()\nDraw virtual world",
+    "output": "You enjoy an amazing game built entirely with code."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Move Forward",
+    "desc": "Command making the brush walk to its destination."
+   },
+   {
+    "name": "Turn Right",
+    "desc": "Command changing the brush heading rightwards."
+   },
+   {
+    "name": "Brush Color",
+    "desc": "Setting the color the robot will paint with."
+   },
+   {
+    "name": "Repeat Loop",
+    "desc": "Running commands multiple times without rewriting."
+   },
+   {
+    "name": "Square",
+    "desc": "A geometric shape with four equal sides."
+   },
+   {
+    "name": "Straight Line",
+    "desc": "A trail resulting from brush movement in one direction."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write steps to draw a straight red line forward.",
+    "a": "Choose red color -> Pen down -> Move forward."
+   },
+   {
+    "q": "How many times do we turn to make a complete square?",
+    "a": "4 times."
+   },
+   {
+    "q": "What command stops us from writing the same movement line four times?",
+    "a": "The repeat loop (repeat 4 times)."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,309 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، النهاردة هنجمع كل اللي تعلمناه في الفصل الدراسي الثاني في تحدي كبير وممتع! هراجع معاك إزاي نبني خطوات مترتبة ونستخدم التكرار والشروط ونصلح الأخطاء عشان نوصل للهدف.",
+   "تخيل إنك بتكتب وصفة كيكة أو بتمشي في متاهة. الخطوات وراء بعضها اسمها تسلسل. مثلاً: (1) تحريك خطوة للأمام، (2) الالتفاف يمينًا. ده بيضمن إن الروبوت أو الشخصية تتحرك صح.",
+   "لو لقينا خطوة بتتكرر كذا مرة وراء بعض، بدل ما نكتبها كتير، بنستخدم التكرار (Loops). مثلاً: (كرر 3 مرات: ارفع يدك). ده بيوفر وقت وجهد كبير وبيخلي الكود بتاعنا منظم وجميل جداً.",
+   "أما لو واجهنا موقف محتاج قرار، بنستخدم الشرط (Conditions). القاعدة دايماً بتقول: 'لو الطريق مفتوح، اتحرك، وإلا قف'. الشرط بيخلي الألعاب والبرامج ذكية وتقدر تفكر وتتخذ قرارات لوحدها حسب الموقف.",
+   "ولو حصل خطأ وظهرت مشكلة في الترتيب أو التنفيذ، مش نزعل! بنعمل تصحيح أخطاء (Debugging). بنراجع خطواتنا خطوة بخطوة، نكتشف الغلط، ونصلحه فوراً عشان يشتغل البرنامج بنجاح.",
+   "في الحياة اليومية، إحنا بنستخدم الخوارزميات في كل حاجة: تنظيم شنطة المدرسة، ترتيب ألعابك، أو حتى غسيل الأسنان. التفكير المنجّم بيساعدنا نحل أي مشكلة مهما كانت صعبة وبأسرع طريقة ممكنة!"
+  ],
+  "example": "تعالوا نحل مع بعض تحدي روبوت المغامرات! الهدف: نجمع النجمة ونتجنب الحفرة. الخطوات: (1) كرر 3 مرات: امشي خطوة، (2) لو قابلتك حفرة اقفز، (3) التقط النجمة. النتيجة: الروبوت اتحرك بثلاث خطوات، قفز فوق الحفرة بذكاء، ومسك النجمة بكل سهولة ونجاح!",
+  "mistake": "الخطأ الشائع هو نسيان وضع الشرط في مكانه الصحيح قبل تنفيذ الحركة، مما يخلي الروبوت يقع في الحفرة. الحل: دايماً اختبر الشروط الأول قبل ما تخلي الشخصية تتحرك.",
+  "recap": "عملنا مراجعة شاملة لكل مهارات الفصل الثاني ودخلنا تحدي الخوارزميات بنجاح. أنت دلوقتيبرمجي بطل بتعرف ترتب، تكرر، تشترط، وتصلح الأخطاء!",
+  "q": [
+   {
+    "t": "إيه هو اسم تجميع الخطوات وراء بعضها بترتيب معين؟",
+    "o": [
+     "التسلسل (Sequence)",
+     "التخبط العشوائي",
+     "النوم العميق"
+    ],
+    "a": 0,
+    "why": "التسلسل هو ترتيب الخطوات وراء بعضها عشان ننفذ المهمة صح."
+   },
+   {
+    "t": "لو عندنا أمر بيتكرر 5 مرات، بنستخدم إيه عشان نوفر كتابته؟",
+    "o": [
+     "شرط الرفض",
+     "التكرار (Loop)",
+     "حذف الأوامر"
+    ],
+    "a": 1,
+    "why": "التكرار بيخلينا نكرر الأوامر بسرعة وبدون ما نكتبها كتير."
+   },
+   {
+    "t": "ليه بنعمل تصحيح أخطاء (Debugging) في البرنامج؟",
+    "o": [
+     "علشان نبوظ اللعبة",
+     "علشان نكتشف الغلط ونصلحه",
+     "علشان نطفي الكمبيوتر"
+    ],
+    "a": 1,
+    "why": "تصحيح الأخطاء بيساعدنا نلاقي المشكلة ونصلحها عشان البرنامج يشتغل كويس."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "تحدي حل اللغز النهائي",
+   "goal": "رتب خطوات الروبوت بالترتيب الصحيح ليصل إلى الكنز.",
+   "items": [
+    "ابدأ بفتح برنامج اللعبة",
+    "تحرك خطوتين للأمام",
+    "إذا وجدتم باب مغلق افتحه",
+    "كرر 3 مرات: اجمع العملات المعدنية",
+    "احتفل بالفوز بجمع الكنز"
+   ],
+   "success": "فتح الروبوت الباب وجمع العملات ووصل للكنز بذكاء شديد!"
+  },
+  "sections": [
+   {
+    "h": "مرحباً بك في تحدي الفصل الثاني",
+    "text": "النهاردة هو يوم التحدي الكبير! هنجمع كل الأفكار اللي اتعلمناها: التسلسل، التكرار، الشروط، وتصحيح الأخطاء. زي ما بتبني برج من المكعبات خطوة بخطوة، هنبني برنامج ذكي ومميز.",
+    "code": "Start Challenge -> Combine all logic tools",
+    "output": "جاهز لكل التحديات البرمجية!"
+   },
+   {
+    "h": "قوة التسلسل (Sequence)",
+    "text": "التسلسل هو أساس أي برنامج. معناه إنك ترتب الخطوات بالترتيب الصح من الأول للآخر. زي ما بتلبس جزمتك قبل ما تربطها، الروبوت لازم يتحرك خطوة خطوة بالترتيب.",
+    "code": "1. Forward\n2. Turn Right\n3. Jump",
+    "output": "الشخصية تحركت واتجهت وقفزت بالترتيب الصحيح."
+   },
+   {
+    "h": "سحر التكرار (Loops)",
+    "text": "بدل ما تقعد تكتب 'امشي خطوة' عشر مرات، بتقول للكمبيوتر 'كرر عشر مرات: امشي خطوة'. التكرار بيوفر وقتك وبيخلي الكود بتاعك نظيف وسهل القراءة.",
+    "code": "repeat 4 times:\n  claps",
+    "output": "صفق الشخص 4 مرات متتالية بسرعة."
+   },
+   {
+    "h": "ذكاء الشروط (Conditions)",
+    "text": "الشروط بتخلي البرامج تفكر. 'لو الشارع فاضي، اعبر'. الشرط بيساعد الروبوت يقرر يعمل إيه بناءً على اللي بيحصل قدامه في اللعبة.",
+    "code": "if door is locked:\n  use key",
+    "output": "فتح الباب باستخدام المفتاح لأن الشرط تحقق."
+   },
+   {
+    "h": "فن تصحيح الأخطاء (Debugging)",
+    "text": "الكل بيغلط، وأحسن المبرمجين هما اللي بيصلحوا غلطاتهم. تصحيح الأخطاء هو إننا ندور على الغلط في الخطوات ونصلحه عشان اللعبة تشتغل من غير مشاكل.",
+    "code": "find bug -> fix line -> test again",
+    "output": "تم اكتشاف الخطأ وإصلاحه بنجاح وعمل البرنامج."
+   },
+   {
+    "h": "إتقان حل الألغاز (Puzzle Solving)",
+    "text": "حل الألغاز هو اختبار لكل ذكائك. بنجمع كل الأدوات اللي اتعلمناها عشان نلاقي الحل الأقصر والأذكى للمتاهة أو للمشكلة البرمجية.",
+    "code": "Analyze puzzle -> Choose tool -> Solve",
+    "output": "تم حل اللغز بأقل عدد من الخطوات."
+   },
+   {
+    "h": "التكامل بين كل المهارات (Integration)",
+    "text": "التكامل معناه إننا نستخدم التسلسل والتكرار والشرط مع بعض في نفس الوقت. زي الأوركسترا الموسيقية، كل الآلات بتشتغل مع بعض لتطلع لنا أحلى لحن.",
+    "code": "repeat 3 times:\n  if path clear: forward",
+    "output": "الروبوت مشي بانتظام وراجع طريقه بكل ذكاء."
+   },
+   {
+    "h": "الخوارزميات في حياتنا اليومية",
+    "text": "الخوارزميات مش بس على الشاشة، دي في كل حياتنا! من وصفة الكيك في المطبخ لترتيب ألوان الدولاب. التفكير المنطقي بيخلي حياتنا منظمة وسهلة.",
+    "code": "Daily Life = Algorithm + Practice",
+    "output": "حياة منظمة وحل أي مشكلة بسهولة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "التسلسل (Sequence)",
+    "desc": "ترتيب الخطوات البرمجية وراء بعضها."
+   },
+   {
+    "name": "التكرار (Loop)",
+    "desc": "إعادة تنفيذ الأوامر عدة مرات لتوفير الوقت."
+   },
+   {
+    "name": "الشرط (Condition)",
+    "desc": "اتخاذ قرار بناءً على تحقق أمر معين (لو... وإلا)."
+   },
+   {
+    "name": "تصحيح الأخطاء (Debugging)",
+    "desc": "اكتشاف الأخطاء في الكود وإصلاحها."
+   },
+   {
+    "name": "اللغز (Puzzle)",
+    "desc": "مشكلة نحتاج لحلها باستخدام التفكير المنطقي."
+   },
+   {
+    "name": "التكامل (Integration)",
+    "desc": "جمع كل المهارات معاً في برنامج واحد."
+   },
+   {
+    "name": "الخوارزمية (Algorithm)",
+    "desc": "مجموعة خطوات مرتبة لحل مشكلة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "رتب خطوات عمل الساندوتش: 1. ضع الجبن، 2. هات الخبز، 3. كُل الساندوتش.",
+    "a": "2 ثم 1 ثم 3."
+   },
+   {
+    "q": "إذا أردت تكرار القفز 5 مرات، كيف تكتبها باختصار؟",
+    "a": "كرر 5 مرات: اقفز."
+   },
+   {
+    "q": "ماذا تفعل إذا واجهت خطأ في ترتيب خطوات الروبوت؟",
+    "a": "أقوم بتصحيح الأخطاء (Debugging) بترتيب الخطوات صح."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey champion, today we will combine everything we learned in Term 2 into one big, fun challenge! I will guide you on how to arrange steps, use loops and conditions, and fix bugs to reach the goal.",
+   "Imagine following a recipe or walking through a maze. Putting steps one after another is called a sequence. For example: (1) Move forward, (2) Turn right. This ensures the robot or character moves correctly.",
+   "If we find a step repeating over and over, instead of writing it many times, we use a loop. For example: (Repeat 3 times: raise your hand). This saves time and effort, keeping our code clean and neat.",
+   "If we face a situation requiring a decision, we use a condition. The rule is always: 'If the path is clear, move; otherwise, stop'. Conditions make games and programs smart and able to make decisions on their own.",
+   "If a mistake happens in order or execution, don't worry! We do debugging. We review our steps one by one, find the bug, and fix it right away so the program runs successfully.",
+   "In daily life, we use algorithms everywhere: packing a school bag, organizing toys, or brushing teeth. Algorithmic thinking helps us solve any problem no matter how hard, in the fastest way possible!"
+  ],
+  "example": "Let's solve the adventure robot challenge together! Goal: Collect the star and avoid the pit. Steps: (1) Repeat 3 times: step forward, (2) If pit ahead, jump, (3) Grab the star. Result: The robot moved three steps, cleverly jumped over the pit, and grabbed the star with ease and success!",
+  "mistake": "A common mistake is forgetting to place the condition in the correct spot before moving, causing the robot to fall into the pit. Solution: Always test conditions first before making the character move.",
+  "recap": "We reviewed all skills from Term 2 and conquered the algorithmic challenge successfully. You are now a champion programmer who knows how to sequence, loop, condition, and debug!",
+  "q": [
+   {
+    "t": "What is the name of putting steps one after another in a specific order?",
+    "o": [
+     "Sequence",
+     "Random scramble",
+     "Deep sleep"
+    ],
+    "a": 0,
+    "why": "Sequence is ordering steps one after another to complete a task correctly."
+   },
+   {
+    "t": "If we have a command repeating 5 times, what do we use to avoid writing it too much?",
+    "o": [
+     "Rejection rule",
+     "Loop",
+     "Delete commands"
+    ],
+    "a": 1,
+    "why": "A loop lets us repeat commands quickly without writing them out many times."
+   },
+   {
+    "t": "Why do we perform debugging in a program?",
+    "o": [
+     "To break the game",
+     "To find and fix the mistake",
+     "To turn off the computer"
+    ],
+    "a": 1,
+    "why": "Debugging helps us find the problem and fix it so the program runs well."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Final Puzzle Solving Challenge",
+   "goal": "Order the robot's steps correctly to reach the treasure.",
+   "items": [
+    "Start by opening the game app",
+    "Move forward two steps",
+    "If you find a locked door, unlock it",
+    "Repeat 3 times: collect gold coins",
+    "Celebrate winning by grabbing the treasure"
+   ],
+   "success": "The robot unlocked the door, collected the coins, and reached the treasure brilliantly!"
+  },
+  "sections": [
+   {
+    "h": "Welcome to the Term 2 Challenge",
+    "text": "Today is the big challenge day! We will combine all the ideas we learned: sequence, loops, conditions, and debugging. Just like building a block tower step by step, we will build a smart and cool program.",
+    "code": "Start Challenge -> Combine all logic tools",
+    "output": "Ready for all programming challenges!"
+   },
+   {
+    "h": "The Power of Sequence",
+    "text": "Sequence is the foundation of any program. It means ordering steps correctly from start to finish. Just like putting on your shoe before tying it, the robot must move step by step in order.",
+    "code": "1. Forward\n2. Turn Right\n3. Jump",
+    "output": "The character moved, turned, and jumped in the correct order."
+   },
+   {
+    "h": "The Magic of Loops",
+    "text": "Instead of writing 'take a step' ten times, you tell the computer 'repeat ten times: take a step'. Loops save your time and keep your code clean and easy to read.",
+    "code": "repeat 4 times:\n  claps",
+    "output": "The character clapped 4 times in a row quickly."
+   },
+   {
+    "h": "The Intelligence of Conditions",
+    "text": "Conditions make programs think. 'If the street is empty, cross'. Conditions help the robot decide what to do based on what is happening ahead in the game.",
+    "code": "if door is locked:\n  use key",
+    "output": "Opened the door using the key because the condition was met."
+   },
+   {
+    "h": "The Art of Debugging",
+    "text": "Everyone makes mistakes, and the best programmers fix them. Debugging is searching for the bug in the steps and fixing it so the game runs smoothly without issues.",
+    "code": "find bug -> fix line -> test again",
+    "output": "Bug detected and fixed successfully, program works."
+   },
+   {
+    "h": "Mastering Puzzle Solving",
+    "text": "Puzzle solving tests all your smarts. We combine all our learned tools to find the shortest and smartest solution to a maze or a coding problem.",
+    "code": "Analyze puzzle -> Choose tool -> Solve",
+    "output": "Puzzle solved with the minimum number of steps."
+   },
+   {
+    "h": "Integration of All Skills",
+    "text": "Integration means using sequence, loops, and conditions together at the same time. Like a musical orchestra, all instruments play together to make the best tune.",
+    "code": "repeat 3 times:\n  if path clear: forward",
+    "output": "The robot walked steadily and checked its path cleverly."
+   },
+   {
+    "h": "Algorithms in Daily Life",
+    "text": "Algorithms aren't just on screens, they are everywhere in our lives! From a kitchen cake recipe to organizing closet colors. Logical thinking keeps our lives organized and easy.",
+    "code": "Daily Life = Algorithm + Practice",
+    "output": "An organized life and easy problem solving."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Sequence",
+    "desc": "Ordering programming steps one after another."
+   },
+   {
+    "name": "Loop",
+    "desc": "Repeating commands multiple times to save time."
+   },
+   {
+    "name": "Condition",
+    "desc": "Making a decision based on a specific check (if... else)."
+   },
+   {
+    "name": "Debugging",
+    "desc": "Finding errors in code and fixing them."
+   },
+   {
+    "name": "Puzzle",
+    "desc": "A problem we need to solve using logical thinking."
+   },
+   {
+    "name": "Integration",
+    "desc": "Combining all skills together in one program."
+   },
+   {
+    "name": "Algorithm",
+    "desc": "A set of ordered steps to solve a problem."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Order sandwich-making steps: 1. Put cheese, 2. Get bread, 3. Eat sandwich.",
+    "a": "2 then 1 then 3."
+   },
+   {
+    "q": "If you want to repeat jumping 5 times, how do you write it shortly?",
+    "a": "Repeat 5 times: jump."
+   },
+   {
+    "q": "What do you do if you encounter an error in the robot's step order?",
+    "a": "Perform debugging by ordering the steps correctly."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

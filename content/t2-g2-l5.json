@@ -1,0 +1,277 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تلعب لعبة مغامرات وتريد حفظ المفاتيح والسيوف التي تجمعها في مكان آمن، تماماً مثل حقيبة الظهر الحقيقية! في سكراتش، نستخدم قائمة أو 'List' لكي تكون هي هذه الحقيبة الذكية التي توسع حجمها تلقائياً حسب عدد العناصر التي تجمعها.",
+   "لإنشاء الحقيبة، نذهب إلى فئة المتغيرات (Variables) ونضغط على زر 'Make a List' ونسميها 'Inventory'. الآن أصبح لديك صندوق سحري جاهز لتخزين كل كنوزك وأدواتك أثناء اللعب بطريقة منظمة وسهلة الاستخدام تماماً.",
+   "لكي نضع عنصراً داخل القائمة، نستخدم لبنة الإضافة 'add [thing] to [list]'. مثلاً، عندما يلمس اللاعب مفتاحاً ذهبياً، نأمر البرمجة بإضافة كلمة 'Key' إلى قائمة الحقيبة لكي نعرف أننا أصبحنا نملكه ونستطيع فتحه به الأبواب المغلقة.",
+   "كيف تتأكد اللعبة أنك تمتلك المفتاح لفتح الباب؟ نستخدم لبنة الفحص الذكية 'if <[Inventory] contains [Key]?> then' لنرى إن كان العنصر موجوداً حقاً داخل الحقيبة، وإذا كان موجوداً، نسمح للبطل بعبور الباب والتقدم في المرحلة الجديدة.",
+   "القاعدة الذهبية في إدارة قوائم سكراتش هي أن تتأكد من تنظيف الحقيبة في بداية اللعبة باستخدام لبنة 'delete all of [Inventory]'، حتى لا تبدأ لعبتك الجديدة وبداخلها مفاتيح قديمة من اللعبة السابقة وتخرب عليك متعة التحدي والتنظيم!",
+   "تُستخدم هذه المهارة في ألعاب تقمص الأدوار الشهيرة وحقائب المتاجر الإلكترونية لتخزين وتتبع المشتريات، مما يمنح اللاعب شعوراً حقيقياً بالتقدم والإنجاز عندما يرى حقيبته ممتلئة بالجوائز والعناصر النادرة التي جمعها بمهارة."
+  ],
+  "example": "عندما يلمس البطل مفتاحاً، نضيفه للحقيبة. لنكتب البرمجة: 'when green flag clicked' ثم 'delete all of [Inventory]' لنبدأ نظيفين. بعد ذلك وضع حلقة تكرار مستمرة 'forever' وبداخلها: 'if <touching [Key]?> then' نضيف العنصر 'add [Gold Key] to [Inventory]' ونقوم باختفاء المفتاح لكي لا نأخذه مرتين، والنتيجة أن الحقيبة ستظهر عليها علامة (1) وتحفظ المفتاح بذكاء!",
+  "mistake": "الخطأ الشائع هو نسيان مسح قائمة الحقيبة عند بداية اللعبة، مما يجعل العناصر القديمة تبقى متراكمة من الجلسة السابقة؛ ولحل ذلك أضف دائماً لبنة مسح الحقيبة 'delete all of [Inventory]' تحت علم الأخضر المباشر.",
+  "recap": "تُستخدم قوائم سكراتش كحقائب ذكية لتخزين وفحص العناصر المجمعَّة. هذا يجعل ألعابك أكثر تنظيماً وتفاعلية ومتعة للاعبين الصغار.",
+  "q": [
+   {
+    "t": "أي لبنة في سكراتش نستخدمها لإنشاء حقيبة عناصر جديدة؟",
+    "o": [
+     "Make a Variable",
+     "Make a List",
+     "Play Sound"
+    ],
+    "a": 1,
+    "why": "لأن قائمة 'List' هي المخصصة لتخزين مجموعة من العناصر وليست متغيراً قيمته مفردة."
+   },
+   {
+    "t": "ما هي اللبنة المناسبة لإضافة عنصر 'Potion' إلى قائمة 'Inventory'؟",
+    "o": [
+     "add [Potion] to [Inventory]",
+     "set [Inventory] to [Potion]",
+     "repeat [Inventory]"
+    ],
+    "a": 0,
+    "why": "لبنة 'add to' هي المسؤولة عن إدخال عناصر جديدة داخل القائمة."
+   },
+   {
+    "t": "لماذا نستخدم لبنة 'delete all of [Inventory]' عند بدء اللعبة؟",
+    "o": [
+     "لجعل اللعبة أسرع",
+     "لتفريغ الحقيبة من العناصر القديمة",
+     "لتغيير لون القائمة"
+    ],
+    "a": 1,
+    "why": "لكي نبدأ كل محاولة لعب جديدة بحقيبة نظيفة خالية من عناصر اللعبة السابقة."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات تفعيل الحقيبة",
+   "goal": "رتب الخطوات لجمع مفتاح وإضافته للحقيبة بشكل صحيح.",
+   "items": [
+    "عند النقر على العلم الأخضر امسح قائمة الحقيبة",
+    "ضع حلقة تكرار مستمرة لفحص الاصطدام بالمفتاح",
+    "افحص هل يلامس اللاعب كائن المفتاح",
+    "أضف مفتاح الذهب إلى قائمة الحقيبة",
+    "قم بإخفاء كائن المفتاح لكي لا يتكرر جمعه"
+   ],
+   "success": "رائع! قام البطل بجمع المفتاح بنجاح وتخزينه في الحقيبة الذكية."
+  },
+  "sections": [
+   {
+    "h": "ما هي قائمة العناصر (Inventory List)؟",
+    "text": "تخيل أنك ذاهب إلى المدرسة ومعك حقيبة ظهر تضع فيها كتبك وأقلامك ولعبتك المفضلة، وكلما أردت شيئاً فتحت الحقيبة وأخرجته. في سكراتش، نستخدم قائمة مخصصة تسمى 'List' لنلعب نفس الدور تماماً، فهي متجر رقمي ذكي يتسع لعدد غير محدود من العناصر التي يجمعها بطلك الشجاع.",
+    "code": "make a list: [Inventory]",
+    "output": "يظهر صندوق القائمة على منصة اللعب معروضاً بداخله العناصر."
+   },
+   {
+    "h": "إنشاء الحقيبة الرقمية",
+    "text": "لكي تبدأ اللعبة وتجهز حقيبتك، يجب أولاً أن تخبر سكراتش بأنك تريد قائمة جديدة. تذهب إلى لوحة المتغيرات البرتقالية وتضغط على زر إنشاء قائمة، وتطلق عليها اسماً مميزاً مثل 'Inventory' أو 'حقيبة_العناصر' لتظهر لك كلوحة جميلة على الشاشة.",
+    "code": "click [Make a List] -> type 'Inventory'",
+    "output": "تظهر قائمة جديدة فارغة على شاشة اللعب مع عداد العناصر."
+   },
+   {
+    "h": "إضافة عناصر جديدة للحقيبة",
+    "text": "عندما يسير بطلك في العالم ويجد تفاحة سحرية أو مفتاحاً لامعاً، كيف يحمله؟ نستخدم لبنة الإضافة البرمجية. هذه اللبنة تأخذ العنصر الجديد وتضعه تلقائياً في آخر صف بالحقيبة، تماماً مثلما تضع كتاباً جديداً فوق الكتب السابقة في حقيبتك المدرسية.",
+    "code": "add [Magic Potion] to [Inventory]",
+    "output": "يزداد عدد العناصر في القائمة وتظهر كلمة Magic Potion في السطر الأول."
+   },
+   {
+    "h": "التحقق من وجود عنصر داخل الحقيبة",
+    "text": "عندما تقف أمام باب مغلق، كيف تعرف إن كنت تستطيع فتحه؟ تسأل اللعبة سؤالاً ذكياً: هل تحتوي الحقيبة على مفتاح؟ سكراتش يمتلك أداة فحص خاصة تسأل عن وجود الكلمة بدقة داخل قائمة الحقيبة وتخبرك بنعم أو لا.",
+    "code": "if <[Inventory] contains [Gold Key]?> then",
+    "output": "إذا وجد المفتاح يتحقق الشرط وينفتح الباب فوراً."
+   },
+   {
+    "h": "تنظيف الحقيبة عند بداية اللعبة",
+    "text": "من المزعج جداً أن تبدأ لعبة جديدة وتجد فيها مفاتيح قديمة جمعتها في اللعبة السابقة! ولهذا السبب، من قواعد المبرمجين المحترفين أن تضع أمر مسح الحقيبة بالكامل في بداية اللعبة تحت زر العلم الأخضر مباشرة لتضمن بداية نظيفة وعادلة.",
+    "code": "when green flag clicked\ndelete all of [Inventory]",
+    "output": "تفرغ القتمام تماماً من أي عناصر قديمة وتصبح جاهزة لجولة جديدة."
+   },
+   {
+    "h": "استخدام الحقيبة في ألعاب المغامرات",
+    "text": "استخدام القوائم في سكراتش يمنح ألعابك طابعاً احترافياً كالألعاب الكبيرة التي تلعبها على الأجهزة المختلفة. يمكنك تتبع الدروع، السيوف، والجرعات، وتغيير قدرات الشخصية بناءً على محتويات هذه الحقيبة السحرية.",
+    "code": "if <[Inventory] contains [Shield]?> then\nset [speed v] to (5)",
+    "output": "يصبح البطل أسرع وأقوى عند امتلاكه للدرع في حقيبته."
+   }
+  ],
+  "reference": [
+   {
+    "name": "List",
+    "desc": "متغير متعدد القيم لتخزين مجموعة من العناصر مرتبة."
+   },
+   {
+    "name": "Add",
+    "desc": "لبنة لإدراج عنصر جديد في نهاية القائمة."
+   },
+   {
+    "name": "Contains",
+    "desc": "لبنة فحص للتأكد إذا كان عنصر معين موجوداً داخل القائمة."
+   },
+   {
+    "name": "Delete All",
+    "desc": "أمر لمسح جميع محتويات القائمة وتفريغها تماماً."
+   },
+   {
+    "name": "Inventory",
+    "desc": "الاسم الشائع لقائمة تخزين الأدوات والعناصر في الألعاب."
+   },
+   {
+    "name": "Item #",
+    "desc": "رقم ترتيب العنصر داخل صفوف القائمة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة التي تفرغ الحقيبة تماماً في سكراتش؟",
+    "a": "delete all of [Inventory]"
+   },
+   {
+    "q": "كيف تفحص إذا كان عنصر المفتاح موجوداً في الحقيبة؟",
+    "a": "استخدام لبنة [Inventory] contains [Key] داخل شرط if"
+   },
+   {
+    "q": "أين تذهب العناصر الجديدة عند إضافتها للقائمة؟",
+    "a": "إلى نهاية القائمة (الأسفل)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine playing an adventure game where you want to store keys and swords you collect in a safe place, just like a real backpack! In Scratch, we use a List to act as this smart bag that grows automatically based on how many items you pick up.",
+   "To create the inventory, go to the Variables category, click 'Make a List', and name it 'Inventory'. Now you have a magical digital box ready to store all your treasures and tools neatly and easily while playing your game.",
+   "To place an item inside the list, we use the add block 'add [thing] to [list]'. For example, when the player touches a golden key, we program the code to add 'Key' to the inventory list so we know we own it and can unlock doors.",
+   "How does the game check if you have the key to open a door? We use the smart check block 'if <[Inventory] contains [Key]?> then' to see if the item is truly inside the backpack, and if so, we let the hero cross the door and advance.",
+   "The golden rule in managing Scratch lists is to clean out the bag at the start of the game using 'delete all of [Inventory]', so you don't start a new game with old keys left over from your previous session, ruining the challenge!",
+   "This skill is used in famous RPGs and shop inventories to store and track purchased items, giving players a real sense of progress and achievement when they see their bag full of rare rewards and items they skillfully collected."
+  ],
+  "example": "When the hero touches a key, we add it to the inventory. Let's write the code: 'when green flag clicked', then 'delete all of [Inventory]' to start clean. Next, a 'forever' loop containing: 'if <touching [Key]?> then' add 'add [Gold Key] to [Inventory]', and hide the key so we don't pick it up twice. The result is that the inventory shows count (1) and safely holds the key!",
+  "mistake": "A common mistake is forgetting to clear the inventory list at the game's start, which leaves old items accumulated from the previous session. To fix this, always add the 'delete all of [Inventory]' block right under the green flag.",
+  "recap": "Scratch lists are used as smart backpacks to store and check collected items. This makes your games more organized, interactive, and fun for young players.",
+  "q": [
+   {
+    "t": "Which Scratch block do we use to create a new item inventory?",
+    "o": [
+     "Make a Variable",
+     "Make a List",
+     "Play Sound"
+    ],
+    "a": 1,
+    "why": "Because a 'List' is designed to store multiple items rather than a single variable value."
+   },
+   {
+    "t": "What is the correct block to add a 'Potion' item to the 'Inventory' list?",
+    "o": [
+     "add [Potion] to [Inventory]",
+     "set [Inventory] to [Potion]",
+     "repeat [Inventory]"
+    ],
+    "a": 0,
+    "why": "The 'add to' block is responsible for inserting new items into the list."
+   },
+   {
+    "t": "Why do we use the 'delete all of [Inventory]' block when starting the game?",
+    "o": [
+     "To make the game run faster",
+     "To clear the inventory from old items",
+     "To change the list color"
+    ],
+    "a": 1,
+    "why": "So every new play session starts with a clean bag free of items from the previous game."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order Inventory Activation Steps",
+   "goal": "Order the steps to collect a key and add it to the inventory correctly.",
+   "items": [
+    "When green flag clicked, clear the inventory list",
+    "Run a forever loop to check for collision with the key",
+    "Check if the player is touching the key sprite",
+    "Add the gold key to the inventory list",
+    "Hide the key sprite so it cannot be collected twice"
+   ],
+   "success": "Awesome! The hero successfully collected the key and stored it in the smart inventory."
+  },
+  "sections": [
+   {
+    "h": "What is an Inventory List?",
+    "text": "Imagine going to school with a backpack where you put your books, pencils, and favorite toy. Whenever you need something, you open the bag and take it out. In Scratch, we use a specialized list to play this exact role, acting as a smart digital store that holds unlimited items for your brave hero.",
+    "code": "make a list: [Inventory]",
+    "output": "The list monitor appears on the stage displaying its stored items."
+   },
+   {
+    "h": "Creating the Digital Bag",
+    "text": "To start your game and prepare your bag, you must first tell Scratch you want a new list. Go to the orange Variables palette, click the make a list button, and give it a clear name like 'Inventory' so it appears as a nice display panel on your screen.",
+    "code": "click [Make a List] -> type 'Inventory'",
+    "output": "A new empty list monitor appears on the game screen with an item counter."
+   },
+   {
+    "h": "Adding New Items to the Bag",
+    "text": "When your hero walks around the world and finds a magic apple or a shining key, how do they carry it? We use the programming add block. This block takes the new item and places it automatically at the very bottom of the list, just like putting a new book on top of older ones in your school bag.",
+    "code": "add [Magic Potion] to [Inventory]",
+    "output": "The item count increases and 'Magic Potion' appears on the first line."
+   },
+   {
+    "h": "Checking if an Item Exists in the Bag",
+    "text": "When you stand in front of a locked door, how do you know if you can open it? You ask the game a smart question: Does the inventory contain the key? Scratch has a special check tool that asks about exact text presence inside the inventory list and tells you yes or no.",
+    "code": "if <[Inventory] contains [Gold Key]?> then",
+    "output": "If the key is found, the condition evaluates to true and the door opens immediately."
+   },
+   {
+    "h": "Cleaning the Bag at Game Start",
+    "text": "It is very annoying to start a new game and find old keys you collected in your previous playthrough! For this reason, professional programmer rules state that you should place the clear list command right at the start of the game under the green flag to ensure a clean, fair start.",
+    "code": "when green flag clicked\ndelete all of [Inventory]",
+    "output": "The list completely clears of any old items and gets ready for a fresh round."
+   },
+   {
+    "h": "Using Inventories in Adventure Games",
+    "text": "Using lists in Scratch gives your games a professional feel like the big games you play on different devices. You can track armor, swords, and potions, and change character abilities based on the contents of this magical inventory.",
+    "code": "if <[Inventory] contains [Shield]?> then\nset [speed v] to (5)",
+    "output": "The hero becomes faster and stronger upon holding the shield in their inventory."
+   }
+  ],
+  "reference": [
+   {
+    "name": "List",
+    "desc": "A multi-value variable used to store an ordered collection of items."
+   },
+   {
+    "name": "Add",
+    "desc": "A block to insert a new item at the end of the list."
+   },
+   {
+    "name": "Contains",
+    "desc": "A check block to verify if a specific item exists inside the list."
+   },
+   {
+    "name": "Delete All",
+    "desc": "A command to clear all contents of a list and empty it completely."
+   },
+   {
+    "name": "Inventory",
+    "desc": "The common name for a list that stores tools and items in games."
+   },
+   {
+    "name": "Item #",
+    "desc": "The numeric position index of an item inside the list rows."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block completely clears the inventory in Scratch?",
+    "a": "delete all of [Inventory]"
+   },
+   {
+    "q": "How do you check if the key item exists in the inventory?",
+    "a": "Using the [Inventory] contains [Key] block inside an if condition"
+   },
+   {
+    "q": "Where do new items go when added to the list?",
+    "a": "To the end of the list (the bottom)"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

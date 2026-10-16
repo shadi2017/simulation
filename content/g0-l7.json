@@ -1,0 +1,323 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، تعال نفكر مع بعض: الحياة فيها اختيارات كتير. لما تلاقي حاجة بتحصل، بتتصرف بناءً عليها. ده اسمه التفكير الشرطي البسيط، زي ما بنعمل كل يوم في البيت والشارع.",
+   "مثال بسيط جداً: 'لو الجو مطر، يبقى البس جاكيت'. الجملة دي فيها شرط (المطر) وفعل (البس الجاكيت). الشروط بتساعدنا ناخد القرار الصح في الوقت الصح من غير لخبطة.",
+   "إزاي بتشتغل الحكاية دي؟ المخ بيراقب البيئة حواليه. لو لقى الشرط اتحقق وصحيح، بينفذ الأمر فوراً. لو الشرط مش صحيح، بيكسل أو بيعمل حاجة تانية خالص.",
+   "مثال تاني: 'لو الإشارة حمراء، قف'. الشارع ليه قوانين واضحة بتعتمد على نظام لو/فإن. الشرط هو لون الإشارة، والفعل هو إننا نقف لحد ما النور يغير للأخضر.",
+   "قاعدة ذهبية: دايماً فكر في 'الشرط' الأول، وبعدين 'النتيجة'. لو الشرط صح، النتيجة بتحصل فوراً. اللعبة دي بتخلينا أذكياء جداً في تنظيم يومنا وحل أي مشكلة.",
+   "في الحقيقة، الكمبيوتر والروبوتات وكل الألعاب اللي بتحبها بتشتغل بنفس الطريقة. الكود جوه اللعبة بيقول: 'لو اللاعب ضغط زر النط، خليه يطير لفوق'. ده بيدينا تحكم كامل ومتعة ملهاش حدود."
+  ],
+  "example": "تعال نتخيل لعبة خلع ولبس الجاكيت. الشروط بتقول: لو درجة الحرارة باردة جداً، هنختار الجاكيت الثقيل. السبب؟ عشان نحافظ على جسمنا دافئ ومريض البرد يبعد عننا. التفكير ده بيعلمنا نعمل خوارزميات ذكية لكل موقف.",
+  "mistake": "الغلطة المشهورة هي إننا ننفذ الأمر من غير ما نتاكد من الشرط. الصح دايماً نتاكد الأول إن الشرط حصل فعلاً قبل ما نعمل أي خطوة.",
+  "recap": "الشروط هي اختيارات ذكية بتحدد الفعل المناسب بناءً على اللي بيحصل حوالينا. بكده بنرتب أفكارنا زي الكمبيوتر المحترف.",
+  "q": [
+   {
+    "t": "إيه هو الشرط في جملة: 'لو الشاي سخن، استنى شوية'؟",
+    "o": [
+     "الشاي سخن",
+     "استنى شوية",
+     "اشرب بسرعة"
+    ],
+    "a": 0,
+    "why": "عشان ده الموقف أو الحالة اللي بنراقبها."
+   },
+   {
+    "t": "إمتى بنفذ الفعل في جملة لو/فإن؟",
+    "o": [
+     "دائماً من غير سبب",
+     "لما الشرط يتحقق ويبقي صح",
+     "لما ننسى خالص"
+    ],
+    "a": 1,
+    "why": "الفعل مش بيحصل غير لما الشرط يكون حقيقي."
+   },
+   {
+    "t": "ليه بنستخدم الشروط في حياتنا؟",
+    "o": [
+     "عشان ننام أكتر",
+     "عشان ناخد قرارات صح ومرتبة",
+     "عشان ناكل كاندي"
+    ],
+    "a": 1,
+    "why": "الشروط بتنظم تصرفاتنا وتخلينا أذكياء."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة الشروط والحاجات",
+   "goal": "وصل كل شرط بالنتيجة الصح بتاعته في الحياة اليومية",
+   "pairs": [
+    [
+     "لو الإشارة حمراء",
+     "قف فوراً"
+    ],
+    [
+     "لو الجو حر جداً",
+     "البس ملابس خفيفة"
+    ],
+    [
+     "لو النور ضلم",
+     "افتح الكشاف"
+    ],
+    [
+     "لو سمعت جرس الباب",
+     "افتح لضيوفك"
+    ]
+   ],
+   "success": "يا سلام! قدرت ترتب أفعالك وشروطك زي الكمبيوتر الذكي."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الاختيارات الشرطية",
+    "text": "في حياتنا اليومية، إحنا دايماً بنعمل اختيارات مبنية على أحداث حوالينا. زي ما بابا يقولك: 'لو خلصت واجبك، هخليك تلعب'. العقل البشري بيعمل كده أوتوماتيك من غير ما نحس، وده أساس التفكير المنطقي.",
+    "code": "لو (خلصت الواجب):\n  افعل (العب بالكمبيوتر)",
+    "output": "استمتاع باللعبة بعد إنجاز المهمة."
+   },
+   {
+    "h": "لغة (لو / فإن) البسيطة",
+    "text": "كلمة 'لو' بتحدد الشرط، وكلمة 'فإن' بتحدد النتيجة أو الفعل. تخيل إنك روبوت صغير، والمبرمج بيديك قاعدة بسيطة: لو حسيت بالجوع، كل تفاحة. دي أبسط طريقة لبرمجة عقلك.",
+    "code": "لو (جوعان):\n  افعل (كل تفاحة)",
+    "output": "شبع ونشاط جديد."
+   },
+   {
+    "h": "أمثلة من الشارع والمرور",
+    "text": "الشارع مليان قواعد شرطية بتحمينا. إشارات المرور هي أحسن مثال واضح وصريح. العقل البشري بيفحص لون النور في الشارع، وبناءً عليه بياخد قرار المشي أو الوقوف بثواني معدودة.",
+    "code": "لو (الإشارة حمراء):\n  افعل (قف مكانك)",
+    "output": "عبور آمن وحماية من الحوادث."
+   },
+   {
+    "h": "اختيار الملابس حسب الطقس",
+    "text": "كل صباح بنبص من الشباك نشوف الجو عامل إزاي. لو الشتاء بيمطر بغزارة، بنلبس معطف ثقيل. لو الجو شمس وجميل، بنلبس ملابس خفيفة. دي قاعدة شرطية لتنظيم ملابسنا.",
+    "code": "لو (الجو ممطر):\n  افعل (البس المعطف الثقيل)",
+    "output": "الجسم دافئ وجاف طوال اليوم."
+   },
+   {
+    "h": "القرارات الثنائية (أبيض وأسود)",
+    "text": "أحياناً بيكون عندنا اختيارين بس، زي نعم أو لا، صح أو غلت، أو النور منور أو مطفي. التفكير الثنائي ده هو الأساس اللي بتتعمل بيه لغات البرمجة والكمبيوترات الحديثة.",
+    "code": "لو (الباب مفتوح):\n  افعل (اقفله)",
+    "output": "غرفة منظمة وآمنة."
+   },
+   {
+    "h": "لماذا نحتاج الشروط؟",
+    "text": "من غير الشروط، حياتنا هتبقى فوضى ومش هنعرف نعمل أي خطوة صح. الشروط بتخلينا مرتبين ونعرف إيه اللي هيحصل لما نعمل تصرف معين، زي الروبوتات المبرمجة بدقة.",
+    "code": "لو (سمعت التنبيه):\n  افعل (انتبه للمعلم)",
+    "output": "فهم الدرس بسرعة وبدون تشتت."
+   },
+   {
+    "h": "ربط الشروط بألعاب الفيديو",
+    "text": "في كل ألعابك المفضلة، المبرمج كتب شروط كتير جداً. مثلاً: لو شخصيتك لمست العملة الذهبية، النتيجة هي زيادة النقاط. الشروط هي السر وراء تفاعل الألعاب معاك.",
+    "code": "لو (لمست النجمة):\n  افعل (زد نقطة واحدة)",
+    "output": "ارتفاع النتيجة وصوت احتفالي ممتع."
+   },
+   {
+    "h": "ملخص بطل البرمجة الصغير",
+    "text": "أنت دلوقتي عرفت إن الشروط هي مفتاح الذكاء المنطقي. كل ما تلاحظ حاجة وتحط لها رد فعل مناسب، كل ما بقيت مبرمج فنان يقدر يحل أي مشكلة تقابله بكل بساطة.",
+    "code": "لو (فهمت الدرس):\n  افعل (ابتسم وقول أنا مبرمج شاطر)",
+    "output": "فرحة وثقة بالنفس لا تضاهى."
+   }
+  ],
+  "reference": [
+   {
+    "name": "لو (If)",
+    "desc": "الكلمة اللي بتبدأ بيها السؤال أو الشرط."
+   },
+   {
+    "name": "فإن (Then)",
+    "desc": "النتيجة أو الفعل اللي بنعمله لما الشرط يتحقق."
+   },
+   {
+    "name": "الشرط (Condition)",
+    "desc": "الموقف أو الحالة اللي لازم نراقبها ونتاكد منها."
+   },
+   {
+    "name": "القرار (Decision)",
+    "desc": "الاختيار اللي بناخده بعد ما الشرط يحصل."
+   },
+   {
+    "name": "التفكير الثنائي (Binary)",
+    "desc": "اختيار بين أمرين فقط، زي نعم أو لا."
+   },
+   {
+    "name": "الخوارزمية (Algorithm)",
+    "desc": "خطوات مرتبة لحل أي مشكلة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "لو الموبايل بطاريته خلصت، هتعمل إيه؟ اكتبها كقاعدة لو/فإن.",
+    "a": "لو (البطارية خلصت) -> افعل (اشحن الموبايل)"
+   },
+   {
+    "q": "لو عطشان في المدرسة، إيه التصرف الصح؟",
+    "a": "لو (عطشان) -> افعل (اشرب ماء من الزمزمية)"
+   },
+   {
+    "q": "لو النور قطع بالليل، هتعمل إيه كقاعدة بسيطة؟",
+    "a": "لو (النور قطع) -> افعل (شغل كشاف الطوارئ)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey champion, let's think together: life is full of choices. When something happens, you react to it. This is called simple conditional thinking, just like we do every day at home and on the street.",
+   "A very simple example: 'If it is raining, wear a jacket'. This sentence has a condition (the rain) and an action (wear the jacket). Conditions help us make the right choice at the right time without confusion.",
+   "How does this work? The brain monitors the environment around it. If it finds that the condition is met and true, it performs the action immediately. If the condition is false, it does nothing or something else.",
+   "Another example: 'If the traffic light is red, stop'. The street has clear rules based on if/then systems. The condition is the light color, and the action is to stay put until the light turns green.",
+   "Golden rule: Always think about the 'condition' first, then the 'result'. If the condition is true, the result happens instantly. This game makes us very smart at organizing our day and solving any problem.",
+   "In reality, computers, robots, and all the games you love work the same way. The code inside the game says: 'If the player presses the jump button, make them fly up'. This gives us total control and endless fun."
+  ],
+  "example": "Let's imagine a jacket-wearing game. The rules say: If the temperature is very cold, we choose the heavy jacket. Why? To keep our body warm and stay away from catching a cold. This thinking teaches us to make smart algorithms for every situation.",
+  "mistake": "A common mistake is performing the action without checking if the condition happened. The correct way is always to verify first that the condition is truly met before taking any step.",
+  "recap": "Conditions are smart choices that determine the proper action based on what is happening around us. This is how we organize our thoughts like a professional computer.",
+  "q": [
+   {
+    "t": "What is the condition in the sentence: 'If the tea is hot, wait a bit'?",
+    "o": [
+     "The tea is hot",
+     "Wait a bit",
+     "Drink quickly"
+    ],
+    "a": 0,
+    "why": "Because this is the situation or state we are monitoring."
+   },
+   {
+    "t": "When do we execute the action in an if/then statement?",
+    "o": [
+     "Always for no reason",
+     "When the condition is met and true",
+     "When we completely forget"
+    ],
+    "a": 1,
+    "why": "The action only happens when the condition is true."
+   },
+   {
+    "t": "Why do we use conditions in our lives?",
+    "o": [
+     "To sleep more",
+     "To make correct and organized decisions",
+     "To eat candy"
+    ],
+    "a": 1,
+    "why": "Conditions organize our behaviors and make us smart."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Conditions and Actions Game",
+   "goal": "Match each condition with its correct everyday life result",
+   "pairs": [
+    [
+     "If the traffic light is red",
+     "Stop immediately"
+    ],
+    [
+     "If the weather is very hot",
+     "Wear light clothes"
+    ],
+    [
+     "If the room is dark",
+     "Turn on the flashlight"
+    ],
+    [
+     "If you hear the doorbell",
+     "Open the door for guests"
+    ]
+   ],
+   "success": "Awesome! You successfully arranged your actions and conditions like a smart computer."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Conditional Choices",
+    "text": "In our daily lives, we constantly make choices based on events around us. Just like your dad tells you: 'If you finish your homework, I will let you play'. The human brain does this automatically without us noticing, which is the foundation of logical thinking.",
+    "code": "If (finished homework):\n  Do (play computer games)",
+    "output": "Enjoying the game after completing the task."
+   },
+   {
+    "h": "The Simple If / Then Language",
+    "text": "The word 'If' sets the condition, and 'Then' sets the result or action. Imagine you are a tiny robot, and the programmer gives you a simple rule: If you feel hungry, eat an apple. This is the simplest way to program your brain.",
+    "code": "If (hungry):\n  Do (eat an apple)",
+    "output": "Full stomach and new energy."
+   },
+   {
+    "h": "Street and Traffic Examples",
+    "text": "The street is full of conditional rules that keep us safe. Traffic lights are the best clear example. The human brain checks the color of the light on the street, and accordingly decides to walk or stop within seconds.",
+    "code": "If (traffic light is red):\n  Do (stand in place)",
+    "output": "Safe crossing and protection from accidents."
+   },
+   {
+    "h": "Choosing Clothes According to Weather",
+    "text": "Every morning we look out the window to see how the weather is. If winter is raining heavily, we wear a heavy coat. If the weather is sunny and nice, we wear light clothes. This is a conditional rule to organize our clothing.",
+    "code": "If (weather is rainy):\n  Do (wear the heavy coat)",
+    "output": "Body stays warm and dry all day."
+   },
+   {
+    "h": "Binary Decisions (Black and White)",
+    "text": "Sometimes we only have two choices, like yes or no, true or false, or light on or off. This binary thinking is the core foundation used by modern programming languages and computers.",
+    "code": "If (door is open):\n  Do (close it)",
+    "output": "An organized and secure room."
+   },
+   {
+    "h": "Why Do We Need Conditions?",
+    "text": "Without conditions, our lives would be chaotic and we wouldn't know how to take any correct step. Conditions keep us organized and let us know what will happen when we take a specific action, just like precisely programmed robots.",
+    "code": "If (hear the alert):\n  Do (pay attention to teacher)",
+    "output": "Quick understanding of the lesson without distraction."
+   },
+   {
+    "h": "Connecting Conditions to Video Games",
+    "text": "In all your favorite games, the programmer wrote many conditions. For example: If your character touches the gold coin, the result is an increase in points. Conditions are the secret behind how games interact with you.",
+    "code": "If (touched the star):\n  Do (add one point)",
+    "output": "Score increases with a fun celebration sound."
+   },
+   {
+    "h": "Little Coding Champion Summary",
+    "text": "You now know that conditions are the key to logical intelligence. Whenever you notice something and set a proper reaction for it, you become an artist programmer who can solve any problem simply.",
+    "code": "If (understood the lesson):\n  Do (smile and say I am a smart programmer)",
+    "output": "Unmatched joy and self-confidence."
+   }
+  ],
+  "reference": [
+   {
+    "name": "If",
+    "desc": "The keyword that starts the question or condition."
+   },
+   {
+    "name": "Then",
+    "desc": "The result or action we take when the condition is met."
+   },
+   {
+    "name": "Condition",
+    "desc": "The situation or state we must monitor and verify."
+   },
+   {
+    "name": "Decision",
+    "desc": "The choice we make after the condition happens."
+   },
+   {
+    "name": "Binary Thinking",
+    "desc": "A choice between only two things, like yes or no."
+   },
+   {
+    "name": "Algorithm",
+    "desc": "Ordered steps to solve any problem."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If the phone battery dies, what will you do? Write it as an if/then rule.",
+    "a": "If (battery dies) -> Do (charge the phone)"
+   },
+   {
+    "q": "If you are thirsty at school, what is the right action?",
+    "a": "If (thirsty) -> Do (drink water from your bottle)"
+   },
+   {
+    "q": "If the power goes out at night, what will you do as a simple rule?",
+    "a": "If (power goes out) -> Do (turn on the emergency flashlight)"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,1222 @@
+
+�
+�
+The Ultimate K-9 Coding & Data 
+Science Curriculum 
+Syllabus Structure: Exactly 10 Lessons & 1 Capstone Project (with 3 
+Project Options) per Grade 
+�
+�
+Grade 1: Algorithmic Thinking & Screenless Logic 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Introduction to Algorithms & Sequenced Instructions 
+● Sub-topics: What is a computer?; How do machines folow instructions?; Step-by-step 
+algorithms; The "Human Robot" classroom movement game. 
+● Resources: 
+○ 
+�
+�
+ What is an Algorithm? - Kahn Academy 
+○ 
+�
+�
+ Code.org Unplugged Activity Guide 
+Lesson 2: Sequential Order & Map Navigation 
+● Sub-topics: Navigating grid coordinates; Directional arrows (Up, Down, Left, Right); 
+Designing pathways on paper grid maps. 
+● Resources: 
+○ 
+�
+�
+ Coding and Sequencing - Scratch Garden 
+○ 
+�
+�
+ Code.org Course A: Happy Maps 
+Lesson 3: Introduction to the Mouse & Drag-and-Drop Control 
+● Sub-topics: Developing motor skils; Click, double-click, and drag gestures; Solving initial 
+visual shape-matching puzzles. 
+● Resources: 
+○ 
+�
+�
+ Computer Mouse Tutorial for Kids 
+○ 
+�
+�
+ Code.org Course A: Drag and Drop 
+Lesson 4: Finding Loops in Daily Routines (Unplugged) 
+● Sub-topics: Identifying repetition in music, dance, and poetry; The "Repeat [X] Times" 
+block concept; Shrinking 5 steps into 1 loop block. 
+● Resources: 
+○ 
+�
+�
+ My Robotic Friends - Code.org 
+○ 
+�
+�
+ Code.org Loops Documentation 
+Lesson 5: Coding Loops in Maze Navigation 
+● Sub-topics: Navigating long, repeating paths; Implementing loop containers; Character 
+pacing and boundary testing. 
+● Resources: 
+○ 
+�
+�
+ Loops in Maze - Code.org 
+○ 
+�
+�
+ Code.org Course B: Loops 
+Lesson 6: Understanding Bugs & Program Failure 
+● Sub-topics: What is a software "Bug"?; Why mistakes are useful learning tools; 
+Deconstructing broken code paths. 
+● Resources: 
+○ 
+�
+�
+ What is Debugging? - Hopscotch 
+○ 
+�
+�
+ Code.org Debugging Guide 
+Lesson 7: Hands-On Debugging Exercises 
+● Sub-topics: Systematic code testing; Spotting out-of-order blocks; Fixing loops; Helping 
+the character escape the maze safely. 
+● Resources: 
+○ 
+�
+�
+ Debugging Maze Levels Guide 
+○ 
+�
+�
+ Code.org Debugging with Laurel 
+Lesson 8: Introduction to Real-World Conditionals 
+● Sub-topics: If-Then logic in everyday life (e.g., If the light is red, then stop); Making 
+simple choices in binary patterns. 
+● Resources: 
+○ 
+�
+�
+ Conditionals with Cards - Code.org 
+○ 
+�
+�
+ Code.org Unplugged Conditionals Guide 
+Lesson 9: Coding with Conditionals 
+● Sub-topics: Putting IF-conditions into visual puzzles; Coding pathways based on color 
+tags; Pathfinding rules. 
+● Resources: 
+○ 
+�
+�
+ Conditionals in Code Studio 
+○ 
+�
+�
+ Code.org Course B: Conditionals 
+Lesson 10: Creative Drawing with Code (The Artist Block) 
+● Sub-topics: Moving brush directions; Changing paint brush colors using block 
+commands; Drawing simple geometrical lines and boxes. 
+● Resources: 
+○ 
+�
+�
+ Drawing Shapes with Code.org Artist 
+○ 
+�
+�
+ Code.org Course B: Artist 
+Capstone Project Ideas (Choose 1) 
+● Option A: The Treasure Map Run: Students code a character through an obstacle-filed 
+maze to reach a treasure chest, using loops to jump and automated triggers to change 
+map paths. 
+● Option B: Unplugged Family Robot: Students write a physical, step-by-step paper 
+instruction guide (Algorithm) to instruct a parent/teacher to draw a house, complete with 
+loops and conditions. 
+● Option C: My Digital Painting: Students code the "Artist Sprite" to draw a colored castle 
+flag using sequenced movement loops. 
+�
+�
+Grade 2: Creative Storytelling (Scratch Jr.) 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Introduction to the Scratch Jr. Workspace 
+● Sub-topics: Selecting characters (Sprites); Choosing and editing backdrops; The green 
+flag trigger; Basic block snapping mechanics. 
+● Resources: 
+○ 
+�
+�
+ Scratch Jr Tutorial for Beginners 
+○ 
+�
+�
+ ScratchJr Official Interface Guide 
+Lesson 2: Motion Blocks & Grid Navigation 
+● Sub-topics: Walking forward, backward, jumping, and rotating; Grid measurement 
+numbers; Reverting sprites to their start coordinates. 
+● Resources: 
+○ 
+�
+�
+ Making Characters Move on ScratchJr 
+○ 
+�
+�
+ ScratchJr Block Descriptions 
+Lesson 3: Triggering Events (Taps & Bumps) 
+● Sub-topics: Creating player interaction; Coding the "Start on Tap" block; Coding the 
+"Start on Bump" block for object colisions. 
+● Resources: 
+○ 
+�
+�
+ Touch Triggers in ScratchJr 
+○ 
+�
+�
+ ScratchJr Ideas & Activities 
+Lesson 4: Voice Recording & Audio Effects 
+● Sub-topics: Using the built-in microphone to record custom sounds; Triggering sound 
+clips; Adding custom system pop sounds. 
+● Resources: 
+○ 
+�
+�
+ Recording Sound in ScratchJr 
+○ 
+�
+�
+ ScratchJr Sound Guides 
+Lesson 5: Speech Bubbles & Visual Transformations 
+● Sub-topics: Writing dialogue boxes; Scaling character sizes (Grow, Shrink); Making 
+elements appear and disappear (Hide & Show). 
+● Resources: 
+○ 
+�
+�
+ ScratchJr Conversation Tutorial 
+○ 
+�
+�
+ ScratchJr Speech Tips 
+Lesson 6: Sprite Pacing & Speed Adjustments 
+● Sub-topics: Altering motion speeds (Slow, Normal, Fast); Making sprites race; Pausing 
+action with the "Wait" block. 
+● Resources: 
+○ 
+�
+�
+ Speed Controls in ScratchJr 
+○ 
+�
+�
+ ScratchJr Activities List 
+Lesson 7: Repeating Actions (Loops in Scratch Jr.) 
+● Sub-topics: Repeating motion groups; Structuring infinite "Forever" loops for 
+background animations (e.g., spinning sun, moving clouds). 
+● Resources: 
+○ 
+�
+�
+ Loops in ScratchJr Tutorial 
+○ 
+�
+�
+ ScratchJr Block Guide 
+Lesson 8: Multi-Page Scene Navigation 
+● Sub-topics: Linking multiple pages; Triggering page turns; Building starting, action, and 
+ending scenes in sequence. 
+● Resources: 
+○ 
+�
+�
+ How to change scenes in Scratch Jr 
+○ 
+�
+�
+ ScratchJr Multiple Pages Guide 
+Lesson 9: Sending Secret Messages (Broadcasting) 
+● Sub-topics: Building sprite communication; Sending color-coded message envelopes; 
+Triggering response routines on envelope receipt. 
+● Resources: 
+○ 
+�
+�
+ Broadcasting Messages in Scratch Jr 
+○ 
+�
+�
+ ScratchJr Message Passing 
+Lesson 10: Storyboarding & Interactive Animation Preparation 
+● Sub-topics: Sketching scenes on paper; Writing sprite scripts; Designing custom sprites; 
+Organizing voice and sound plans. 
+● Resources: 
+○ 
+�
+�
+ Storyboarding for Kids' Coding 
+○ 
+�
+�
+ ScratchJr Learning Curriculums 
+Capstone Project Ideas (Choose 1) 
+● Option A: The Jungle Concert: An interactive musical scene where different animals 
+play recorded sound instruments when tapped by the user, while background birds fly 
+continuously in loops. 
+● Option B: Undersea Adventure Movie: A multi-page animated story about a fish fleeing 
+a shark. When the shark bumps the fish, the scene changes to a "safe cave" page where 
+they talk to each other using voice recordings and broadcast messages. 
+● Option C: Vehicle Racing Game: A simple interactive race page where 3 vehicles run at 
+random speeds when clicked. The winner triggers a colorful confetti animation and plays 
+a victory track. 
+�
+�
+Grade 3: Game Mechanics & Physics (Scratch 3.0) 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Welcome to Scratch 3.0 & Coordinate Grids 
+● Sub-topics: Discovering the ful editor; Mapping coordinates on the $X$ and $Y$ axis 
+grid ($240$ to $-240$ width, $180$ to $-180$ height); Basic point navigation. 
+● Resources: 
+○ 
+�
+�
+ Scratch 3.0 Beginner Tutorial 
+○ 
+�
+�
+ Scratch Wiki: Coordinates Guide 
+Lesson 2: Keyboard Inputs & Smooth Movement Controls 
+● Sub-topics: Troubleshooting key latency; Writing "If key pressed" conditional loops; 
+Simulating 8-directional sprite motion. 
+● Resources: 
+○ 
+�
+�
+ Smooth Movement in Scratch Tutorial 
+○ 
+�
+�
+ Scratch Wiki: Arrow Key Movement 
+Lesson 3: Advanced Sensor Collisions 
+● Sub-topics: Sensing colors, borders, and other sprites; Programming wals that block 
+player sprites; Making game checkpoints. 
+● Resources: 
+○ 
+�
+�
+ Scratch Sensing Blocks Tutorial 
+○ 
+�
+�
+ Scratch Wiki: Sensing Blocks 
+Lesson 4: Game Variables (Scores & Speed Buffs) 
+● Sub-topics: Defining, showing, and altering variables; Programming coin pickup 
+colectors; Building score multipliers. 
+● Resources: 
+○ 
+�
+�
+ How to make a Score Counter in Scratch 
+○ 
+�
+�
+ Scratch Wiki: Variables Guide 
+Lesson 5: Health Bars & Damage Triggers 
+● Sub-topics: Tracking multiple variables; Decrementing health upon trap colision; Coding 
+game conditions based on health reaching $0$. 
+● Resources: 
+○ 
+�
+�
+ Scratch Health Bar Tutorial 
+○ 
+�
+�
+ Scratch Wiki: Lives/Health Systems 
+Lesson 6: Spawning Objects (Cloning) 
+● Sub-topics: Clones vs duplicated sprites; Spawning projectiles dynamicaly; Clearing 
+RAM memory using the "delete this clone" block. 
+● Resources: 
+○ 
+�
+�
+ Cloning in Scratch Made Easy 
+○ 
+�
+�
+ Scratch Wiki: Cloning Tutorial 
+Lesson 7: Game Physics & Gravity Simulation 
+● Sub-topics: Faling velocity equations; Jump variables; Defining ground platforms; 
+Jumping on platform surfaces. 
+● Resources: 
+○ 
+�
+�
+ Scratch Platformer Tutorial: Gravity 
+○ 
+�
+�
+ Scratch Wiki: Gravity Simulation 
+Lesson 8: Custom Functions ("My Blocks") 
+● Sub-topics: Reducing workspace clutter; Wrapping repeated jump/damage algorithms in 
+clean custom block containers. 
+● Resources: 
+○ 
+�
+�
+ How to Use "My Blocks" in Scratch 
+○ 
+�
+�
+ Scratch Wiki: My Blocks 
+Lesson 9: Advanced Enemy AI Pathfinding 
+● Sub-topics: Creating chase dynamics; Programming enemy sprites to calculate player 
+positions and track them; Designing enemy patroling behaviors. 
+● Resources: 
+○ 
+�
+�
+ Scratch Enemy AI Chase Tutorial 
+○ 
+�
+�
+ Scratch Wiki: Pathfinding AI 
+Lesson 10: Timers & Game State Loops 
+● Sub-topics: Designing timed survival levels; Building Start, Play, Game-Over, and Win 
+screens; Contro ling transitions between scenes. 
+● Resources: 
+○ 
+�
+�
+ Creating a Timer in Scratch 
+○ 
+�
+�
+ Scratch Wiki: Game Timers 
+Capstone Project Ideas (Choose 1) 
+● Option A: Ninja Jump Platformer: A gravity-based platformer game where the player 
+jumps between platforms to escape rising lava, colecting glowing orbs for points while 
+evading patro ling spikes. 
+● Option B: Space Defender Invaders: A top-down space shooter game. The player 
+commands a spaceship, firing laser clones at incoming alien waves while avoiding 
+asteroid co lisions. 
+● Option C: Maze Escape with AI Guard: A complex maze game with a timer. The player 
+must find a key and exit while avoiding an AI-controled ghost that stalks them through 
+the pathways. 
+�
+�
+Grade 4: HTML5 — Structuring the Web 
+Weekly Lessons (10 Lessons) 
+HTML 
+<!-- HTML Structure --> 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Grade 4 Portal</title> 
+</head> 
+<body> 
+<h1>Coding Journey</h1> 
+</body> 
+</html> 
+Lesson 1: How the Internet Works & Intro to HTML5 
+● Sub-topics: Clients, servers, and web browsers; Document type declaration; Structuring 
+standard tag components (<html>, <head>, <body>). 
+● Resources: 
+○ 
+�
+�
+ HTML in 5 Minutes - SuperSimpleDev 
+○ 
+�
+�
+ W3Schools HTML Introduction 
+Lesson 2: Typography & Heading Elements 
+● Sub-topics: Title tag structures; Structuring document hierarchies using tags <h1> 
+through <h6>; Creating paragraphs with <p>. 
+● Resources: 
+○ 
+�
+�
+ HTML Text Elements Tutorial 
+○ 
+�
+�
+ W3Schools HTML Text Formatting 
+Lesson 3: Creating Unordered and Ordered Lists 
+● Sub-topics: Making bulet points; Nested lists; Using list container tags (<ul>, <ol>, <li>). 
+● Resources: 
+○ 
+�
+�
+ HTML Lists Tutorial - freeCodeCamp 
+○ 
+�
+�
+ W3Schools HTML Lists 
+Lesson 4: Image Elements & Media Attributes 
+● Sub-topics: Embedding online image assets; Defining resource dimensions with src, alt, 
+width, and height properties. 
+● Resources: 
+○ 
+�
+�
+ Images in HTML5 Tutorial 
+○ 
+�
+�
+ W3Schools HTML Images 
+Lesson 5: Hyperlinks & Navigation Systems 
+● Sub-topics: Anchor tags (<a>); The href target attribute; Connecting internal site pages; 
+Opening links in new tabs. 
+● Resources: 
+○ 
+�
+�
+ HTML Links Tutorial - Programming with Mosh 
+○ 
+�
+�
+ W3Schools HTML Links 
+Lesson 6: Structuring Information with HTML Tables 
+● Sub-topics: Creating data sheets; Using table tags (<table>, <tr>, <td>, <th>); Adding 
+borders to tables. 
+● Resources: 
+○ 
+�
+�
+ HTML Tables Tutorial 
+○ 
+�
+�
+ W3Schools HTML Tables 
+Lesson 7: Form Layouts & Basic Text Inputs 
+● Sub-topics: Building user input boxes; Using text field types (<form>, <input type="text">, 
+<button>); Adding descriptive placeholder labels. 
+● Resources: 
+○ 
+�
+�
+ HTML Forms for Beginners 
+○ 
+�
+�
+ W3Schools HTML Forms 
+Lesson 8: Advanced Form Controls (Radios, Checkboxes, Dropdowns) 
+● Sub-topics: Creating multi-choice selectors (<input type="radio">, <input 
+type="checkbox">, <select>, <option>); Grouping radio elements. 
+● Resources: 
+○ 
+�
+�
+ Advanced HTML Inputs Tutorial 
+○ 
+�
+�
+ W3Schools HTML Form Attributes 
+Lesson 9: Embedding Audio & Video Media 
+● Sub-topics: Direct media integration; Using <audio> and <video> tags; Configuring 
+autoplay, loops, and playback controls. 
+● Resources: 
+○ 
+�
+�
+ HTML5 Video & Audio Elements 
+○ 
+�
+�
+ W3Schools HTML Multimedia 
+Lesson 10: Structural Containers & Semantics (Divs & Spans) 
+● Sub-topics: Creating layout divisions using the <div> tag; Differentiating block-level and 
+inline elements; Designing simple web layouts. 
+● Resources: 
+○ 
+�
+�
+ Divs and Blocks in HTML5 
+○ 
+�
+�
+ W3Schools HTML Div Element 
+Capstone Project Ideas (Choose 1) 
+● Option A: Ultimate Recipe Hub: A structured multi-page culinary blog containing a 
+home page, ingredient checklists, bu leted prep steps, an embedded video tutorial, and 
+cooking time metric tables. 
+● Option B: School Subject Survey Quiz: An interactive school questionnaire page 
+utilizing form fields, checkboxes for selecting extracurricular clubs, and text input 
+sections for student reviews. 
+● Option C: My Coding Autobiography Portal: A multi-page profile structure. It features 
+an "About Me" page with list-based programming milestones, a project catalog 
+showcasing images of previous Scratch games, and a clickable external contact page. 
+�
+�
+Grade 5: CSS3 — Web Styling & Layouts 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Introduction to CSS Styles & Syntax 
+● Sub-topics: Rulesets (Selectors, Properties, Values); Linking inline, internal, and external 
+stylesheets; Best practices for folder organization. 
+● Resources: 
+○ 
+�
+�
+ CSS in 5 Minutes - TechWithTim 
+○ 
+�
+�
+ W3Schools CSS Syntax Tutorial 
+Lesson 2: Color Engines & Background Management 
+● Sub-topics: Using color names, HEX codes, and RGB styles; Setting background 
+gradients; Adding and positioning background images. 
+● Resources: 
+○ 
+�
+�
+ CSS Colors and Backgrounds Tutorial 
+○ 
+�
+�
+ W3Schools CSS Colors Guide 
+Lesson 3: Typography Formatting & Font Imports 
+● Sub-topics: Customizing text sizes and weights; Adjusting alignment; Importing and 
+using web-safe font weights from Google Fonts. 
+● Resources: 
+○ 
+�
+�
+ CSS Fonts & Typography Guide 
+○ 
+�
+�
+ W3Schools CSS Fonts Guide 
+Lesson 4: Demystifying the CSS Box Model 
+● Sub-topics: Conceptualizing elements as nested boxes; Adjusting internal padding vs 
+external margin boundaries; Adding custom borders. 
+● Resources: 
+○ 
+�
+�
+ Understanding the CSS Box Model 
+○ 
+�
+�
+ W3Schools CSS Box Model 
+Lesson 5: Advanced Positioning Systems 
+● Sub-topics: Working with static, relative, absolute, and fixed layouts; Creating floating 
+widgets and persistent navigation headers. 
+● Resources: 
+○ 
+�
+�
+ CSS Positioning Explained 
+○ 
+�
+�
+ W3Schools CSS Position 
+Lesson 6: Layout Structures with Flexbox Basics 
+● Sub-topics: Establishing flex parent wrappers (display: flex); Aligning child assets 
+horizonta ly and vertica ly; Distributing container margins. 
+● Resources: 
+○ 
+�
+�
+ CSS Flexbox in 15 Minutes 
+○ 
+�
+�
+ Flexbox Froggy Game 
+Lesson 7: Grid Containers (CSS Grid basics) 
+● Sub-topics: Creating multi-row grids (display: grid); Constructing columns and rows; 
+Adjusting template grids to arrange page sections. 
+● Resources: 
+○ 
+�
+�
+ CSS Grid Layout Guide - fireship 
+○ 
+�
+�
+ W3Schools CSS Grid 
+Lesson 8: Pseudo-Classes & Mouse Hover Animations 
+● Sub-topics: Styling elements on interaction using the :hover pseudo-class; Creating 
+smooth scale changes using the transition property. 
+● Resources: 
+○ 
+�
+�
+ CSS Transitions & Hover Effects 
+○ 
+�
+�
+ W3Schools CSS Hover Selectors 
+Lesson 9: Media Queries & Responsive Design 
+● Sub-topics: Understanding mobile responsiveness; Writing media break rules (@media); 
+Re-organizing site structures from multi-column to single-column layouts for sma l 
+screens. 
+● Resources: 
+○ 
+�
+�
+ Responsive Web Design with Media Queries 
+○ 
+�
+�
+ W3Schools CSS Media Queries 
+Lesson 10: Building Custom Card Component Cards 
+● Sub-topics: Combining background styles, borders, text alignment, and shadows to 
+build custom image showcase cards. 
+● Resources: 
+○ 
+�
+�
+ How to Build CSS Cards 
+○ 
+�
+�
+ W3Schools CSS Cards Tutorial 
+Capstone Project Ideas (Choose 1) 
+● Option A: Animal Directory Showcase: A responsive page containing a 3-column grid 
+of detailed animal catalog cards that scale up smoothly and change colors when hovered 
+over. 
+● Option B: Mobile-First Coffee Shop Page: A multi-section business page containing a 
+fixed navigation bar, a highlighted hero banner with styled action buttons, and responsive 
+menus that adapt from mobile to desktop sizes. 
+● Option C: My Portfolio Gallery: A custom galery page displaying screenshots of 
+previous Scratch creations in neat grid cards, featuring custom tag filters and detailed 
+project description overlays. 
+⚡
+Grade 6: Web Logic & Interactivity (JavaScript) 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Introduction to JavaScript & Console Tools 
+● Sub-topics: Connecting external script engines; Outputting status updates 
+(console.log()); Inspecting browser execution environments. 
+● Resources: 
+○ 
+�
+�
+ JavaScript Beginner Tutorial - freeCodeCamp 
+○ 
+�
+�
+ W3Schools JS Introduction 
+Lesson 2: Storage Units (Variables with Let & Const) 
+● Sub-topics: Alocating memory with let and const; Storing text, integer, and boolean 
+values; Appending text fields. 
+● Resources: 
+○ 
+�
+�
+ JS Variables Explained - freeCodeCamp 
+○ 
+�
+�
+ W3Schools JS Variables 
+Lesson 3: Dynamic Calculation Systems 
+● Sub-topics: Reading strings from the prompt box; Converting text inputs to numerical 
+types; Outputting results via alert pop-ups. 
+● Resources: 
+○ 
+�
+�
+ User Input in JavaScript 
+○ 
+�
+�
+ W3Schools JS Popup Boxes 
+Lesson 4: Condition Gates (If, Else If, Else) 
+● Sub-topics: Evaluation expressions (===, >, <); Constructing conditional programs to 
+check user data. 
+● Resources: 
+○ 
+�
+�
+ JavaScript If/Else Statements 
+○ 
+�
+�
+ W3Schools JS If Else 
+Lesson 5: Logical Operators & Multi-Condition Logic 
+● Sub-topics: Combining evaluation paths with logical AND/OR operators (&&, ||); Building 
+deep branching game logic. 
+● Resources: 
+○ 
+�
+�
+ JS Logical Operators Explained 
+○ 
+�
+�
+ W3Schools JS Operators 
+Lesson 6: Manipulating Web Documents (DOM Selection) 
+● Sub-topics: Selecting web elements (document.getElementById()); Modifying text 
+parameters with .innerText; Overwriting media sources with .src. 
+● Resources: 
+○ 
+�
+�
+ DOM Manipulation Tutorial 
+○ 
+�
+�
+ W3Schools HTML DOM Intro 
+Lesson 7: Interactive Event Handling 
+● Sub-topics: Setting event triggers with .addEventListener(); Monitoring page interactions 
+(click, mouseover); Changing styling layouts ً ﺑرﻣﺟﯾﺎ. 
+● Resources: 
+○ 
+�
+�
+ JavaScript Event Listeners 
+○ 
+�
+�
+ W3Schools JS Event Listener 
+Lesson 8: Structuring Logic Using Functions 
+● Sub-topics: Defining functions with arguments; Returning calculated variables; 
+Organizing logic into neat, modular code blocks. 
+● Resources: 
+○ 
+�
+�
+ JavaScript Functions for Beginners 
+○ 
+�
+�
+ W3Schools JS Functions 
+Lesson 9: Advanced Loops & Arrays 
+● Sub-topics: Grouping values in arrays; Accessing arrays via indexing; Building repeating 
+loop systems (for loops) to process list arrays. 
+● Resources: 
+○ 
+�
+�
+ Loops and Arrays in JavaScript 
+○ 
+�
+�
+ W3Schools JS Loops 
+Lesson 10: Generating Pseudo-Random Values (Math.random) 
+● Sub-topics: Generating decimal values with Math.random(); Rounding numbers using 
+Math.floor(); Selecting random index values from databases. 
+● Resources: 
+○ 
+�
+�
+ JavaScript Math Object Guide 
+○ 
+�
+�
+ W3Schools JS Math Object 
+Capstone Project Ideas (Choose 1) 
+● Option A: The Digital Moodboard: A webpage featuring mood selection buttons 
+(Happy, Relaxed, Energetic) that change the backdrop color theme, display matching 
+images, and output a random quote of the day when clicked. 
+● Option B: Smart Age & Ticket Validator: A portal where users enter their age and 
+budget. The script uses conditionals and DOM updates to output if they can buy tickets 
+to a ride, displaying their final balance. 
+● Option C: Mini Math Solver App: A web calculator tool where kids enter two values and 
+click operations buttons (+, -, *, /). The program uses custom functions to calculate and 
+display the results dynamica ly. 
+⚡
+Grade 7: Web Engineering & Intro to Desktop 
+Scripting 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Monitoring Systems with Timing Operations 
+● Sub-topics: Creating delays with setTimeout(); Running loops continuously using 
+setInterval(); Coding countdown triggers. 
+● Resources: 
+○ 
+�
+�
+ JS Timing Events Tutorial 
+○ 
+�
+�
+ W3Schools JS Timing Events 
+Lesson 2: Interactive Forms & Input Validation 
+● Sub-topics: Listening for form submissions; Stopping browser reloads with 
+event.preventDefault(); Checking inputs for matching passwords. 
+● Resources: 
+○ 
+�
+�
+ Form Validation in JavaScript 
+○ 
+�
+�
+ W3Schools JS Form Validation 
+Lesson 3: Advanced JS DOM Game Loop Structures 
+● Sub-topics: Creating dynamic elements with document.createElement(); Writing simple 
+colision detectors using bounding box calculations (getBoundingClientRect()). 
+● Resources: 
+○ 
+�
+�
+ Creating DOM Elements with JavaScript 
+○ 
+�
+�
+ W3Schools JS DOM Nodes 
+Lesson 4: Web Audio API & Interactive Sound Synthesis 
+● Sub-topics: Initializing browser audio nodes; Playing sound assets; Building key trigger 
+configurations to play distinct notes. 
+● Resources: 
+○ 
+�
+�
+ Introduction to Web Audio API 
+○ 
+�
+�
+ W3Schools HTML Audio/Video DOM 
+Lesson 5: Transitioning to Python Console Programming 
+● Sub-topics: Comparing browser execution to local interpreters (Thonny IDE); Writing 
+python syntax; Mastering indentation; Executing your first print script. 
+● Resources: 
+○ 
+�
+�
+ Python Beginner Guide - freeCodeCamp 
+○ 
+�
+�
+ Thonny IDE Official Website 
+Lesson 6: Python Variable Types & Interactive Console Inputs 
+● Sub-topics: Storing values in variables; Reading user entries (input()); Converting string 
+fields into integer values. 
+● Resources: 
+○ 
+�
+�
+ Python Variables and Input Tutorial 
+○ 
+�
+�
+ Python Docs - Input and Output 
+Lesson 7: Logic Checks & branching loops (Python If/Elif/Else) 
+● Sub-topics: Writing comparison operators; Nesting checks; Constructing diagnostic 
+programs to test values. 
+● Resources: 
+○ 
+�
+�
+ Python If/Else Statements 
+○ 
+�
+�
+ Python Docs - Control Flow 
+Lesson 8: Python Loop Controls (For & While) 
+● Sub-topics: Executing fixed iteration loops using range(); Implementing conditional 
+loops; Escaping endless loops with safety break conditions. 
+● Resources: 
+○ 
+�
+�
+ Python Loops Explained (For & While) 
+○ 
+�
+�
+ Python Tutorial - Loops 
+Lesson 9: Reusable Functions in Python 
+● Sub-topics: Defining functions with the def keyword; Declaring input arguments; 
+Returning processed parameters. 
+● Resources: 
+○ 
+�
+�
+ Python Functions Tutorial - Corey Schafer 
+○ 
+�
+�
+ Python Docs - Defining Functions 
+Lesson 10: Python Lists & Dictionaries 
+● Sub-topics: Creating lists; Adding and removing array entries; Storing data profiles in 
+structured key-value maps (Dictionaries). 
+● Resources: 
+○ 
+�
+�
+ Lists and Dictionaries in Python 
+○ 
+�
+�
+ Python Docs - Data Structures 
+Capstone Project Ideas (Choose 1) 
+● Option A: Web-Based Virtual Piano (JS): A styled webpage displaying piano keys. 
+When keys are clicked or corresponding keyboard keys are pressed, the browser plays 
+matching music notes. 
+● Option B: Console Chatbot Assistant (Python): An automated Python script that asks 
+for the user's name, calculates their age, asks about their mood, and plays a text-based 
+guessing game. 
+● Option C: Interactive Score Card (JS): A scoreboard tracker for tracking matches, 
+containing timers, buttons to increment/decrement points, and game-over alert 
+messages. 
+�
+�
+Grade 8: Advanced Core Python & Data Wrangling 
+(Pandas) 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Desktop Graphics with Python Turtle 
+● Sub-topics: Importing turtle packages; Initializing coordinate screens; Designing 
+geometric shapes through movement loops. 
+● Resources: 
+○ 
+�
+�
+ Drawing with Python Turtle 
+○ 
+�
+�
+ Python Docs - Turtle Module 
+Lesson 2: Interactive Turtle Controller Loops 
+● Sub-topics: Listening for keyboard presses; Binding screen keys to movement 
+algorithms; Implementing boundary restrictions. 
+● Resources: 
+○ 
+�
+�
+ Keyboard Controls in Python Turtle 
+○ 
+�
+�
+ Python Docs - Turtle Events 
+Lesson 3: Robust Error Exception Handling 
+● Sub-topics: Intercepting system crashes with try/except blocks; Isolating divide-by-zero 
+errors; Handling type mismatch errors gracefu ly. 
+● Resources: 
+○ 
+�
+�
+ Python Exception Handling 
+○ 
+�
+�
+ Python Docs - Errors and Exceptions 
+Lesson 4: Reading and Writing System Files 
+● Sub-topics: Opening local documents with with open(); Writing text entries; Reading files 
+to load stored game values. 
+● Resources: 
+○ 
+�
+�
+ Python File Handling - Corey Schafer 
+○ 
+�
+�
+ Python Docs - Reading and Writing Files 
+Lesson 5: Introduction to Structured Databases 
+● Sub-topics: Conceptualizing datasets; Exploring CSV structures; Insta ling third-party 
+packages using package managers (pip instal pandas). 
+● Resources: 
+○ 
+�
+�
+ Introduction to Pandas - freeCodeCamp 
+○ 
+�
+�
+ Pandas Official Get Started Guide 
+Lesson 6: Importing Datasets with Pandas 
+● Sub-topics: Loading spreadsheets with .read_csv(); Inspecting tables using metadata 
+tools (.head(), .info(), .describe()). 
+● Resources: 
+○ 
+�
+�
+ How to read CSV Files in Pandas 
+○ 
+�
+�
+ Pandas Docs - IO Tools Guide 
+Lesson 7: Sorting and Querying DataFrames 
+● Sub-topics: Isolating columns; Filtering rows using conditional evaluations; Sorting tables 
+by numeric values. 
+● Resources: 
+○ 
+�
+�
+ Filtering Rows and Columns in Pandas 
+○ 
+�
+�
+ Pandas Docs - Indexing and Selecting 
+Lesson 8: Basic Math Calculations & Groupings 
+● Sub-topics: Running statistical functions (.mean(), .max(), .min(), .sum()); Categorizing 
+rows based on column values using .groupby(). 
+● Resources: 
+○ 
+�
+�
+ Pandas Grouping and Aggregating Data 
+○ 
+�
+�
+ Pandas Docs - GroupBy Guide 
+Lesson 9: Cleaning Messy Datasets 
+● Sub-topics: Finding empty cels (.isnul()); Drop-filtering rows containing missing fields 
+(.dropna()); Fi ling blank slots with default values (.fi lna()). 
+● Resources: 
+○ 
+�
+�
+ Cleaning Messy Data in Pandas 
+○ 
+�
+�
+ Pandas Docs - Missing Data Handling 
+Lesson 10: Exporting Clean Data Files 
+● Sub-topics: Aggregating data from separate sheets; Exporting processed results into 
+brand new files (.to_csv()). 
+● Resources: 
+○ 
+�
+�
+ Exporting DataFrames to CSV 
+○ 
+�
+�
+ Pandas Docs - Writing to Files 
+Capstone Project Ideas (Choose 1) 
+● Option A: The Candy Catcher Game (Turtle): A graphical game where player sprites 
+use arrow keys to catch sweets faling from random screen positions, updating a live 
+scoreboard counter. 
+● Option B: Grade Analyzer Program: A data program that loads a CSV of mock 
+classroom scores, filters out failing student list rows, calculates top exam scores, and 
+exports a final report card spreadsheet. 
+● Option C: Safe Login Vault: A script that checks login credentials against password 
+pairs stored in an external file, using exceptions to block unauthorized attempts. 
+�
+�
+Grade 9: Data Analytics & Desktop Portfolios 
+Weekly Lessons (10 Lessons) 
+Lesson 1: Visual Storytelling with Matplotlib 
+● Sub-topics: Instaling visual libraries (pip insta l matplotlib); Canvas anatomy; Rendering 
+baseline line plots. 
+● Resources: 
+○ 
+�
+�
+ Matplotlib Beginner Tutorial 
+○ 
+�
+�
+ Matplotlib Tutorials Guide 
+Lesson 2: Plotting Trends (Line Charts) 
+● Sub-topics: Plotting dataset values across timeline intervals; Adding chart titles; Naming 
+$X$ and $Y$ axis grids. 
+● Resources: 
+○ 
+�
+�
+ Line Charts in Python 
+○ 
+�
+�
+ Matplotlib Line Plot Documentation 
+Lesson 3: Bar Charts & Category Comparisons 
+● Sub-topics: Comparing variables; Setting bar colors; Customizing legend positions to 
+display distinct data values clearly. 
+● Resources: 
+○ 
+�
+�
+ Creating Bar Charts in Python 
+○ 
+�
+�
+ Matplotlib Bar Chart Guide 
+Lesson 4: Proportional Distribution (Pie Charts) 
+● Sub-topics: Rendering fractional distribution percentages; Highlighting focus slices; 
+Adjusting start angles. 
+● Resources: 
+○ 
+�
+�
+ Creating Pie Charts in Python 
+○ 
+�
+�
+ Matplotlib Pie Chart Guide 
+Lesson 5: Identifying Relationships (Scatter Plots) 
+● Sub-topics: Plotting variable trends; Altering point sizing metrics; Formatting scatter 
+points to analyze data correlations. 
+● Resources: 
+○ 
+�
+�
+ Python Scatter Plots Tutorial 
+○ 
+�
+�
+ Matplotlib Scatter Plots Documentation 
+Lesson 6: Desktop GUI Programming with Tkinter 
+● Sub-topics: Constructing window frames; Dragging labels and button assets onto 
+screens; Linking button clicks to print statements. 
+● Resources: 
+○ 
+�
+�
+ Python GUI with Tkinter - freeCodeCamp 
+○ 
+�
+�
+ Python Docs - Tkinter Package 
+Lesson 7: Embedding Charts in Tkinter Windows 
+● Sub-topics: Drawing charts inside GUI panels; Binding update buttons to process data 
+and refresh plots inside the UI. 
+● Resources: 
+○ 
+�
+�
+ Embedding Matplotlib in Tkinter 
+○ 
+�
+�
+ Matplotlib Tkinter Backend Guide 
+Lesson 8: Version Control Basics with Git 
+● Sub-topics: Understanding local commits; Initializing tracking systems (git init); Staging 
+files (git add); Committing files. 
+● Resources: 
+○ 
+�
+�
+ Git Beginner Crash Course 
+○ 
+�
+�
+ Git Documentation Guides 
+Lesson 9: Creating GitHub Repositories 
+● Sub-topics: Establishing online profile nodes; Pushing local projects up to GitHub cloud 
+storage servers; Structuring repositories. 
+● Resources: 
+○ 
+�
+�
+ Pushing Code to GitHub 
+○ 
+�
+�
+ GitHub Learning Paths Guide 
+Lesson 10: Writing Professional Readme Files 
+● Sub-topics: Writing Markdown code files (README.md); Documenting code instalations; 
+Creating project portfolios. 
+● Resources: 
+○ 
+�
+�
+ Writing Professional READMEs 
+○ 
+�
+�
+ GitHub Markdown Documentation 
+Capstone Project Ideas (Choose 1) 
+● Option A: Sports Analytics Dashboard (GUI): A desktop Tkinter application that loads 
+historical records of top athletes, a lowing users to select a name and view line charts of 
+their career goals or wins inside the window. 
+● Option B: Daily Habits Visual Dashboard (GUI): A desktop tracking hub where users 
+input daily study, sleep, and screen hours. The app stores these values in a CSV and 
+draws scatter plots showing their productivity habits. 
+● Option C: Weather History Hub (GUI): A desktop weather analyzer application that 
+displays average monthly rainfa l metrics and temperature values using detailed 
+comparative bar charts. 

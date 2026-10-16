@@ -1,0 +1,299 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، عشان لعبتك تكون ممتعة، لازم الشخصية تحس باللي حواليها! بلوكات الاستشعار في سكراتش بتخلي الكائن يعرف لو لمس لون معين أو حافة الشاشة أو كائن تاني.",
+   "مثال بسيط: لو كائن القطة لمس لون الحيطة الأحمر، نقدر نخليه يوقف مكانه ومايعديش كأنه خبط في حيطة حقيقية.",
+   "بتشتغل إزاي؟ البلوكات دي بتراقب الشاشة طول الوقت، وأول ما التلامس بيحصل، بتنفذ الأوامر اللي جوه شرط 'لو' (If).",
+   "مثال تاني: لو اللاعب وصل لخط النهاية أو نقطة تفتيش (Checkpoint)، ممكن نسجل مكانه عشان لو خسر يرجع لنفس النقطة بدل ما يبدأ من الأول.",
+   "قاعدة ذهبية: دايماً حط بلوكات الاستشعار جوه حلقة تكرار (Forever) عشان الكائن يفضل صاحي ويحس بالاصطدام في أي وقت.",
+   "في الواقع، دي نفس الفكرة اللي بتستخدمها ألعاب الفيديو الحقيقية عشان تخلي الشخصيات تمشي على الأرض وماتخترقش الجدران أو تديك نقاط حفظ."
+  ],
+  "example": "تعال نعمل حركة سمارت! هنحط شرط 'لو لمس اللون الأسود' جوه حلقة تكرار للقطة. لو ده حصل، هنخليها ترجع خطوات للوراء ((-5) خطوات)، فتبان كأنها خبطت في حيطة ومامشيتش خلالها. دي أبسط طريقة لعمل حواجز صلبة في سكراتش!",
+  "mistake": "الخطأ المشهور إننا نحط بلوك الاستشعار بره حلقة التكرار، فاشتغل مرة واحدة وميبقاش حساس طول اللعبة. الحل: دايماً حطه جوه 'تكرار باستمرار' (Forever).",
+  "recap": "اتعلمنا إزاي نخلي الكائن يستشعر الألوان والحواف، وكمان نعمل حوائط تمنعه ونقاط حفظ عشان نكمل اللعب بذكاء.",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بنستخدمه عشان نعرف إن الكائن لمس لون الحيطة؟",
+    "o": [
+     "Touching color?",
+     "Move 10 steps",
+     "Play sound"
+    ],
+    "a": 0,
+    "why": "البلوك ده بيفحص لو الكائن لمس لون معين على الشاشة."
+   },
+   {
+    "t": "ليه لازم نحط شرط الاستشعار جوه حلقة تكرار Forever؟",
+    "o": [
+     "عشان الصوت يطلع عالي",
+     "عشان يفضل يراقب اللمس طول الوقت",
+     "عشان يغير لون الكائن"
+    ],
+    "a": 1,
+    "why": "الحلقة المستمرة بتخلي الكائن دايماً صاحي ومستعد لأي اصطدام."
+   },
+   {
+    "t": "إيه فائدة نقاط الحفظ (Checkpoints) في الألعاب؟",
+    "o": [
+     "بتخلي اللعبة أسرع",
+     "بترجع اللاعب لنقطة آمنة لو خسر بدل البداية",
+     "بتزود حجم اللعبة"
+    ],
+    "a": 1,
+    "why": "نقاط الحفظ بتحفظ تقدم اللاعب وتريحه من إعادة اللعبة من الأول خالص."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب كود الاصطدام بالحيطة",
+   "goal": "رتب خطوات عمل كود يخلي القطة ترجع لو لمست الحيطة",
+   "items": [
+    "عند الضغط على العلامة الخضراء",
+    "كرر باستمرار (Forever)",
+    "إذا كان (لمس لون الحيطة؟)",
+    "تحرك (-5) خطوات للوراء"
+   ],
+   "success": "عاش! القطة بقت شاطرة ومش بتعدي من الحوائط!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في الاستشعار",
+    "text": "الاستشعار هو حواس الكائن في اللعبة، زي ما أنت بتلمس الحاجات بإيدك وتعرف هي صلبة ولا لأ. في سكراتش، البلوكات الفيروزية بتخلي الكائن يشوف العالم اللي حواليه.",
+    "code": "إذا كان (لمس مؤشر الفأرة؟) ← قل (مرحبا!)",
+    "output": "الكائن بينطق كلمة مرحبا أول ما الماوس يلمسه."
+   },
+   {
+    "h": "استشعار الألوان",
+    "text": "ممكن تخلّي الكائن يحس بلون معين على الشاشة، زي اللون الأحمر للدم أو الأسود للحيطة. دي طريقة ممتازة لعمل مصائد أو حواجز مخصصة.",
+    "code": "إذا كان (لمس لون [أحمر]؟) ← توقف عن اللعب",
+    "output": "اللعبة بتقف لو الكائن لمس اللون الأحمر."
+   },
+   {
+    "h": "استشعار حواف الشاشة",
+    "text": "عشان الكائن مايخرجش بره شاشة اللعبة ويضيع، بنستشعر الحواف ونمنعه من الخروج، زي السياج اللي بيحمينا نبعد عن الشارع.",
+    "code": "إذا كان (ملامساً لـ [الحافة]) ← ارتد وكن معتدلاً",
+    "output": "الكائن بينط أو بيرتد جوه الشاشة ومايختفيش."
+   },
+   {
+    "h": "استشعار الكائنات ببعضها",
+    "text": "هل القطة لمست الفار؟ الاستشعار بيخلي الكائنات تعرف بعضها. ده أساس ألعاب الأكشن والذكاء.",
+    "code": "إذا كان (ملامساً لـ [الفأر]) ← احصل على نقطة",
+    "output": "عداد النقاط بيزيد واحد."
+   },
+   {
+    "h": "صنع الجدران الصلبة",
+    "text": "عشان نعمل حائط بيصد اللاعب، بنخليه يتحرك للأمام، ولو لمس لون الحيطة، بنرجعه لورا فوراً، فكأنه خبط في صخرة.",
+    "code": "كرر باستمرار: تحرك 3 خطوات | إذا لمس الحائط ← تحرك -3 خطوات",
+    "output": "اللاعب بيمشي عادي، لكن بيقف مكان الحيطة ومش بيعديها."
+   },
+   {
+    "h": "فكرة نقاط الحفظ (Checkpoints)",
+    "text": "لما اللاعب يوصل لمنطقة معينة، بنحفظ إحداثيات (س) و(ص) الحالية في متغيرات، عشان لو خسر يرجع للمنطقة دي بالذات.",
+    "code": "إذا لمس (علم الحفظ) ← اجعل (مكان_س) مساوياً لـ (الموقع_الحالي)",
+    "output": "بيتم تسجيل مكان اللاعب الحالي كمرجع للموت."
+   },
+   {
+    "h": "العودة لنقطة الحفظ عند الخسارة",
+    "text": "لما الكائن يخسر (يلمس نار مثلاً)، مش بنبدأ من أول اللعبة، بننقذه ونبعته فوراً عند إحداثيات نقطة الحفظ المحفوظة.",
+    "code": "إذا لمس (النار) ← اذهب إلى (مكان_س) و (مكان_ص)",
+    "output": "القطة بتنتقل سحرياً لنقطة الأمان الأخيرة."
+   },
+   {
+    "h": "جمع الميكانيكا معاً",
+    "text": "دلوقتي لعبتك بقت متكاملة: حركة سلسة، جدران بتمنع الاختراق، ونقاط حفظ بتحمي تقدم اللاعب من الضياع.",
+    "code": "دمج حائط اللون + نقطة الحفظ + الاستشعار في لعبة واحدة",
+    "output": "لعبة إلكترونية احترافية وجاهزة للعب!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Touching color?",
+    "desc": "بلوك يستشعر تلامس كائن بلون محدد."
+   },
+   {
+    "name": "Touching?",
+    "desc": "بلوك يستشعر تلامس كائن بكائن آخر أو الحافة."
+   },
+   {
+    "name": "Checkpoint",
+    "desc": "نقطة حفظ تسجل مكان اللاعب ليعود إليها."
+   },
+   {
+    "name": "Wall Collision",
+    "desc": "منع الكائن من عبور الجدران برده للخلف."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "تكرار مستمر يجعل الكائن يراقب الاصطدامات دائماً."
+   },
+   {
+    "name": "Variables",
+    "desc": "أماكن لتخزين إحداثيات نقطة الحفظ."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو البلوك المستخدم لفحص تلامس كائن بلون معين في سكراتش؟",
+    "a": "Touching color?"
+   },
+   {
+    "q": "لماذا نرجع اللاعب خطوتين للخوار لو لمس الحائط؟",
+    "a": "لمنعه من اختراق الحائط وصنع جدار صلب."
+   },
+   {
+    "q": "كيف تفيد نقطة الحفظ (Checkpoint) اللاعب؟",
+    "a": "تجعله يعود لمكان آمن بدلاً من بدء اللعبة من الصفر عند الخسارة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey champion, for your game to be fun, your character needs to sense its surroundings! Sensing blocks in Scratch let a sprite know if it touches a specific color, screen edge, or another sprite.",
+   "Simple example: If our cat sprite touches the red wall color, we can make it stop right there so it cannot walk through solid objects.",
+   "How does it work? These blocks constantly monitor the screen, and the moment a touch happens, they trigger commands inside an 'If' condition.",
+   "Second example: If the player reaches a finish line or checkpoint, we can save their position so if they lose, they return to that spot instead of starting over.",
+   "Golden rule: Always place sensing blocks inside a 'Forever' loop so your sprite stays alert and detects collisions at any millisecond.",
+   "In the real world, video games use this exact logic to keep characters walking on the ground without falling through floors or letting you resume from saved checkpoints."
+  ],
+  "example": "Let us make smart movement! We put an 'If touching black color' check inside the cat's forever loop. If true, we move it backwards by (-5) steps. This makes it look like it hit a wall and could not pass through. It is the easiest way to make solid obstacles in Scratch!",
+  "mistake": "A common mistake is placing the sensing block outside the loop, so it only checks once at the start and never again. Solution: Always wrap it inside a 'Forever' loop.",
+  "recap": "We learned how to make sprites sense colors and borders, program walls that block them, and build checkpoints to save game progress.",
+  "q": [
+   {
+    "t": "Which block checks if a sprite touches a specific wall color?",
+    "o": [
+     "Touching color?",
+     "Move 10 steps",
+     "Play sound"
+    ],
+    "a": 0,
+    "why": "This block checks if the sprite is touching a specific color on the stage."
+   },
+   {
+    "t": "Why must the sensing condition be placed inside a Forever loop?",
+    "o": [
+     "To make sound louder",
+     "To keep monitoring touches all the time",
+     "To change sprite color"
+    ],
+    "a": 1,
+    "why": "A continuous loop keeps the sprite awake and ready to detect any collision instantly."
+   },
+   {
+    "t": "What is the benefit of checkpoints in games?",
+    "o": [
+     "Make the game run faster",
+     "Return the player to a safe spot if they lose instead of the start",
+     "Increase the game file size"
+    ],
+    "a": 1,
+    "why": "Checkpoints save player progress and save them from replaying the whole game from scratch."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Wall Collision Code",
+   "goal": "Arrange the steps to make the cat step back if it hits the wall",
+   "items": [
+    "When green flag clicked",
+    "Forever",
+    "If (touching wall color?)",
+    "Move (-5) steps backwards"
+   ],
+   "success": "Awesome! The cat is smart now and cannot walk through walls!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Sensing",
+    "text": "Sensing is like your character's sense of touch, just like you use your hands to feel if something is solid. In Scratch, turquoise blocks let the sprite perceive the world around it.",
+    "code": "If (touching [mouse-pointer]?) then (say [Hello!])",
+    "output": "The sprite speaks the moment the mouse touches it."
+   },
+   {
+    "h": "Sensing Colors",
+    "text": "You can make a sprite detect a specific color on screen, like red for danger or black for a wall. This is a brilliant way to create custom traps and barriers.",
+    "code": "If (touching color [red]?) then (stop [all])",
+    "output": "The game stops if the sprite touches the red color."
+   },
+   {
+    "h": "Sensing Screen Edges",
+    "text": "To keep your sprite from wandering off the game screen and getting lost, we detect the edges and stop it, like a fence keeping us safe from the street.",
+    "code": "If (on edge, bounce)",
+    "output": "The sprite bounces inside the stage and does not vanish."
+   },
+   {
+    "h": "Sprite-to-Sprite Sensing",
+    "text": "Did the cat touch the mouse? Sensing allows sprites to interact with each other. This is the foundation of action and puzzle games.",
+    "code": "If (touching [Mouse]?) then (change [Score v] by 1)",
+    "output": "The score counter increases by one."
+   },
+   {
+    "h": "Making Solid Walls",
+    "text": "To make a wall block the player, we move forward normally, but if we touch the wall color, we instantly push back, mimicking hitting a rock.",
+    "code": "Forever: Move 3 steps | If touching wall -> Move -3 steps",
+    "output": "The player walks smoothly but stops dead at the wall."
+   },
+   {
+    "h": "Checkpoint Concept",
+    "text": "When the player reaches a certain zone, we store their current X and Y coordinates in variables, so if they fail, they return precisely to this zone.",
+    "code": "If touching (Save Flag) then set (SaveX) to (X position)",
+    "output": "The player's current location is recorded as a safe haven."
+   },
+   {
+    "h": "Returning to Checkpoint on Failure",
+    "text": "When the sprite loses (touches fire, for example), we do not restart the whole game; we rescue it and teleport it directly to the saved checkpoint coordinates.",
+    "code": "If touching (Fire) then go to x: (SaveX) y: (SaveY)",
+    "output": "The cat magically teleports to the last safe checkpoint."
+   },
+   {
+    "h": "Bringing Mechanics Together",
+    "text": "Your game is now complete: smooth movement, blocking walls, and checkpoints protecting player progress from being lost.",
+    "code": "Combining color walls + checkpoint + sensing in one game",
+    "output": "A professional, fully playable electronic game!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Touching color?",
+    "desc": "A block that detects if a sprite touches a specific color."
+   },
+   {
+    "name": "Touching?",
+    "desc": "A block that detects contact with another sprite or edge."
+   },
+   {
+    "name": "Checkpoint",
+    "desc": "A saved point storing player location to return to upon failure."
+   },
+   {
+    "name": "Wall Collision",
+    "desc": "Preventing a sprite from crossing walls by pushing it back."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "A continuous loop making the sprite constantly monitor collisions."
+   },
+   {
+    "name": "Variables",
+    "desc": "Storage containers used to hold checkpoint coordinates."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block is used to check if a sprite touches a specific color in Scratch?",
+    "a": "Touching color?"
+   },
+   {
+    "q": "Why do we push the player back two steps if they touch a wall?",
+    "a": "To prevent them from passing through the wall and create a solid barrier."
+   },
+   {
+    "q": "How does a checkpoint help the player?",
+    "a": "It lets them return to a safe spot instead of restarting the game from scratch upon losing."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

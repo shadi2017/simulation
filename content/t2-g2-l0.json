@@ -1,0 +1,331 @@
+{
+ "ar": {
+  "steps": [
+   "تعرف على سحر الخلفيات المتحركة! Parallax Scrolling هو خدعة بصرية مذهلة بنستخدمها في ألعاب سكراتش عشان نخلي اللاعب يحس إن العالم حقيقي وعميق وثلاثي الأبعاد.",
+   "عشان نعمل كده، بنقسم الخلفية لطبقات! طبقة قريبة من الكاميرا زي الشجر والأرض، وطبقة بعيدة خالص زي السما والجبال اللي ورا خالص.",
+   "السر كله في السرعة! الطبقات القريبة بتتحرك بسرعة أكبر مع حركة البطل، بينما الطبقات البعيدة بتتحرك ببطء شديد كأنها ثابتة.",
+   "تخيل إنك راكب قطار وبتبص من الشبابيك؛ العواميد القريبة بتجري بسرعة جنونية، والبيوت البعيدة ماشية ببطء، والشمس كأنها واقفة مكانها!",
+   "القاعدة الذهبية في سكراتش: كل ما كانت طبقة الخلفية أبعد، كلما قللنا قيمة التغيير في محور السينات (set x) عشان تتحرك ببطء أكتر.",
+   "دلوقتي في لعبتك، جرب تخلي سكربت السما يتحرك بقيمة صغيرة جدا زي (1)، بينما الأرض تتحرك بقيمة أكبر زي (5)، وهتشوف العمق السحري فوراً!"
+  ],
+  "example": "عشان نطبق ده في سكراتش، هنعمل كائنين للخلفية: `Sky` و `Ground`. في كائن السما، بنحط بلوك `forever` جوه `set x to (mouse x / 4)`. وفي كائن الأرض، بنحط `forever` جوه `set x to (mouse x * 2)`. السبب في كده إن حركة الماوس بتأثر على الطبقتين بنسب مختلفة، فالأرض بتسبق السما، وده بيعمل إيحاء حقيقي بالعمق والمسافة!",
+  "mistake": "الخطأ الشائع إن المبرمج الصغير بيحط لكل طبقات الخلفية نفس سرعة الحركة. الحل هو تزويد أو تقليل معامل الضرب أو القسمة لكل طبقة عشان يظهر الفرق في السرعة والعمق.",
+  "recap": "خلفيات الحركة المتتالية تعتمد على تحريك طبقات الخلفية بسرعة مختلفة لخدع العين وإظهار العمق الثلاثي الأبعاد. السر يكمن في جعل الطبقات البعيدة أبطأ من القريبة.",
+  "q": [
+   {
+    "t": "إيه هو الغرض الأساسي من استخدام Parallax Scrolling في الألعاب؟",
+    "o": [
+     "إصدار صوت عالي",
+     "خلق إيحاء بالعمق ثلاثي الأبعاد",
+     "زيادة حجم اللعبة فقط"
+    ],
+    "a": 1,
+    "why": "التقنية دي بتخدع العين عشان تحس بالمسافة والعمق."
+   },
+   {
+    "t": "ازاي بنخلي الطبقة البعيدة تبعد وتتحرك بشكل صحيح؟",
+    "o": [
+     "بنتحرك بسرعة أكبر بكتير",
+     "بنحركها ببطء شديد مقارنة بالطبقات القريبة",
+     "بنخفيها تماما من اللعبة"
+    ],
+    "a": 1,
+    "why": "الطبقات البعيدة في الواقع والحقيقة بتتحرك أبطأ بكتير."
+   },
+   {
+    "t": "في سكراتش، لو عاوزين نعمل طبقة قريبة تتحرك بسرعة، بنعمل إيه؟",
+    "o": [
+     "بنخلي قيمة التغيير في x كبيرة",
+     "بنمسح الكائن ونلغي البلوكات",
+     "بنحط نفس قيمة الطبقة البعيدة"
+    ],
+    "a": 0,
+    "why": "السرعة الأكبر تعني تغييرا أكبر في إحداثيات السينات x."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة طبقات الحركة المتتالية",
+   "goal": "وصل كل طبقة بالسرعة المناسبة لها في سكراتش عشان تعمل عمق حقيقي.",
+   "pairs": [
+    [
+     "السما البعيدة جداً",
+     "حركة بطيئة جداً"
+    ],
+    [
+     "الأشجار المتوسطة",
+     "حركة متوسطة السرعة"
+    ],
+    [
+     "الأرض والأعشاب القريبة",
+     "حركة سريعة جداً"
+    ],
+    [
+     "الشمس في الأفق",
+     "شبه ثابتة لا تتحرك تقريباً"
+    ]
+   ],
+   "success": "يا سلام! الخلفية بقت شكلها مجسم وجميلة جداً!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم خلفيات الحركة المتتالية",
+    "text": "هل لاحظت قبل كده وأنت راكب العربية إن الشجر اللي جنب الطريق بيطير بسرعة، بينما الجبال اللي في آخر الأفق ماشية بالراحة خالص؟ ده بالضبط اللي بنسميه Parallax Scrolling أو الحركة المتتالية في الألعاب. بنستخدم التقنية دي في سكراتش عشان نحول الشاشة المسطحة لبيئة تج7س كأنها عالم حقيقي وواسع.",
+    "code": "repeat forever:\n  move foreground fast\n  move background slow",
+    "output": "يظهر إحساس فوري بالعمق والمسافة بين العناصر."
+   },
+   {
+    "h": "توزيع الطبقات (Layering)",
+    "text": "عشان نعمل الخدعة دي، لازم نقسم الخلفية لعدة طبقات فوق بعض زي الكيكة! الطبقة الأولى من قدام خالص (Foreground) فيها الأعشاب والحجارة. الطبقة اللي في النص فيها الأشجار والبيوت. الطبقة اللي ورا خالص (Background) فيها السما والجبال والغيوم. ترتيب الطبقات ده أساس أي لعبة متميزة.",
+    "code": "go to front layer\ngo to back layer",
+    "output": "تترتب الكائنات بشكل صحيح بدون تداخل مزعج."
+   },
+   {
+    "h": "فرق السرعات (Speed Difference)",
+    "text": "السر كله مش بس في تقسيم الطبقات، السر في السرعة! تخيل كأنك بتلعب لعبة سباق سيارات؛ العربيات اللي جنبك بتتحرك بسرعة البرق، والبيوت اللي بعيدة بتتحرك شوية بشوية. في سكراتش، بنعمل بلوكات حركة مختلفة لكل كائن عشان نحقق فرق السرعات ده بكل سهولة.",
+    "code": "set x to (player x / 2) for clouds\nset x to (player x * 3) for ground",
+    "output": "تتحرك كل طبقة بسرعة مختلفة تماما عن الأخرى."
+   },
+   {
+    "h": "خدعة العمق الثلاثي الأبعاد",
+    "text": "عين الإنسان بتفهم المسافة من خلال ملاحظة إن الأشياء القريبة بتتحرك أسرع بكتير من الأشياء البعيدة. في ألعاب سكراتش ثنائية الأبعاد، بنستغل الخدعة دي عشان نخلي اللاعب ينسى إن الشاشة مسطحة ويحس إنه جوه عالم ثلاثي الأبعاد بينط ويجري بحرية تامة.",
+    "code": "illusion = distant objects move slowly + close objects move fast",
+    "output": "تتكون خديعة بصرية رائعة تشبه الألعاب الاحترافية."
+   },
+   {
+    "h": "استخدام بلوكات سكراتش المناسبة",
+    "text": "عشان نطبق ده عملياً، بنستخدم بلوكات زي `set x to` مع متغيرات زي إحداثيات الماوس أو مكان البطل (Player X). لما نربط حركة الخلفية بمكان البطل، أول ما البطل يتحرك يمين أو شمال، الخلفية بتتحرك وراه بس بنسب مختلفة لكل طبقة.",
+    "code": "when green flag clicked\nforever\n  set x to (position of hero * 0.5)\nend",
+    "output": "تتحرك طبقة الخلفية بنعومة مع حركة البطل."
+   },
+   {
+    "h": "تطبيق عملية على طبقة السما",
+    "text": "عشان نطبق الدرس بنفسنا، هنروح لكائن السما في مشروعك بلعبة سكراتش. هنحط بلوك تكرار مستمر `forever` جواه بلوك `set x`، ونخلي القيمة صغيرة جدا أو نضرب إحداثيات البطل في رقم صغير زي (0.2). ده هيخلي السما تتحرك ببطء شديد يوضح إنها بعيدة جداً.",
+    "code": "set x to (hero_x * 0.2)",
+    "output": "تتحرك السما ببطء شديد مقارنة بباقي اللعبة."
+   },
+   {
+    "h": "تجنب الأخطاء الشائعة",
+    "text": "من أكبر الأخطاء اللي بيقع فيها المبرمجين المبتدئين إنهم بيخلوا كل طبقات الخلفية تتحرك بنفس السرعة بالضبط، ساعتها اللعبة بتبان مسطحة ومش حقيقية. الحل السحري هو التأكد من تدرج أرقام السرعة: طبقة قريبة سريعة، طبقة متوسطة، وطبقة بعيدة بطيئة جداً.",
+    "code": "check values: ground=5, trees=2, sky=0.5",
+    "output": "تظهر اللعبة باحترافية وعمق بصري مذهل."
+   },
+   {
+    "h": "التجربة واللعب بمتعة",
+    "text": "أجمل حاجة في البرمجة هي التجربة! بعد ما تظبط السرعات، شغل اللعبة وجرب تحرك البطل يمين وشمال. لو حسيت إن السما بتجري أسرع من الأرض، اعرف إنك عكست الأرقام! عدل القيم واستمتع بأفضل لعبة مغامرات عملتها بنفسك.",
+    "code": "play test -> adjust numbers -> enjoy game",
+    "output": "تصميم لعبة ممتعة وجاهزة للمشاركة مع الأصدقاء."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Parallax Scrolling",
+    "desc": "تقنية تحريك طبقات الخلفية بسرعات مختلفة لخلق عمق."
+   },
+   {
+    "name": "Layering",
+    "desc": "ترتيب الكائنات فوق بعضها من الأمام للخلف."
+   },
+   {
+    "name": "Speed Difference",
+    "desc": "الفرق بين سرعة حركة الطبقات القريبة والبعيدة."
+   },
+   {
+    "name": "Illusion of Depth",
+    "desc": "الخدعة البصرية التي تجعل الشاشة المسطحة تبدو ثلاثية الأبعاد."
+   },
+   {
+    "name": "set x to",
+    "desc": "بلوك في سكراتش لتحديد موقع الكائن الأفقي بدقة."
+   },
+   {
+    "name": "Foreground",
+    "desc": "الطبقة القريبة جدا من الكاميرا وتتحرك بسرعة."
+   },
+   {
+    "name": "Background",
+    "desc": "الطبقة البعيدة جدا وتتحرك ببطء شديد."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "لو عندك طبقتين (سما وأرض)، أي واحدة فيهم المفروض تتحرك بسرعة أقل؟",
+    "a": "طبقة السما لأنها أبعد."
+   },
+   {
+    "q": "ما هو اسم البلوك المستخدم في سكراتش لتغيير الموضع الأفقي للكائن؟",
+    "a": "set x to"
+   },
+   {
+    "q": "لماذا تبدو اللعبة ثلاثية الأبعاد عندما نستخدم سرعات مختلفة للطبقات؟",
+    "a": "لأن العين تخدع وتحس بالعمق والمسافة بسبب اختلاف السرعة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Discover the magic of moving backgrounds! Parallax scrolling is an amazing visual trick used in Scratch games to make the game world feel real, deep, and 3D.",
+   "To do this, we split the background into layers! A foreground layer close to the camera like trees and grass, and a distant background layer like the sky and far mountains.",
+   "The whole secret is speed! Close layers move quickly with the hero's movement, while distant layers move very slowly as if they are standing still.",
+   "Imagine riding a train and looking out the window; nearby poles zoom past blindingly fast, distant houses move slowly, and the sun seems to stay in place!",
+   "The golden rule in Scratch: The further away a background layer is, the smaller we make the change value in the x-axis (set x) so it moves slower.",
+   "Now in your game, try making the sky script move with a tiny value like (1), while the ground moves with a larger value like (5), and you will immediately see the magical depth!"
+  ],
+  "example": "To apply this in Scratch, we create two background sprites: `Sky` and `Ground`. In the Sky sprite, we put `forever` around `set x to (mouse x / 4)`. In the Ground sprite, we put `forever` around `set x to (mouse x * 2)`. The reason is mouse movement affects both layers at different rates, so the ground outpaces the sky, creating a true illusion of depth and distance!",
+  "mistake": "A common mistake is when young programmers give all background layers the exact same movement speed. The fix is to increase or decrease the multiplication or division factor for each layer so the difference in speed and depth appears.",
+  "recap": "Parallax scrolling relies on moving background layers at different speeds to trick the eye and show 3D depth. The secret lies in making distant layers move slower than close ones.",
+  "q": [
+   {
+    "t": "What is the primary purpose of using parallax scrolling in games?",
+    "o": [
+     "To make loud sound effects",
+     "To create a 3D depth illusion",
+     "To increase game file size only"
+    ],
+    "a": 1,
+    "why": "This technique tricks the eye into perceiving distance and depth."
+   },
+   {
+    "t": "How do you make a distant layer move correctly?",
+    "o": [
+     "Move it much faster than everything else",
+     "Move it very slowly compared to close layers",
+     "Hide it completely from the game"
+    ],
+    "a": 1,
+    "why": "Distant layers in reality and games always move much slower."
+   },
+   {
+    "t": "In Scratch, if we want a close layer to move quickly, what do we do?",
+    "o": [
+     "Make the change value in x large",
+     "Delete the sprite and remove blocks",
+     "Give it the exact same value as the sky"
+    ],
+    "a": 0,
+    "why": "Higher speed means a bigger change in the x-coordinates."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Parallax Layers Matching",
+   "goal": "Match each background layer with its correct speed in Scratch to create true depth.",
+   "pairs": [
+    [
+     "Very distant sky",
+     "Very slow movement"
+    ],
+    [
+     "Middle-distance trees",
+     "Medium speed movement"
+    ],
+    [
+     "Close ground and grass",
+     "Very fast movement"
+    ],
+    [
+     "Sun on the horizon",
+     "Almost still / stationary"
+    ]
+   ],
+   "success": "Awesome! The background now looks layered, dimensional, and wonderful!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Parallax Scrolling",
+    "text": "Have you ever noticed while riding in a car that trees right beside the road zip by super fast, while mountains on the far horizon move very slowly? That is exactly what we call parallax scrolling in games. We use this technique in Scratch to turn a flat screen into an environment that feels like a vast, real world.",
+    "code": "repeat forever:\n  move foreground fast\n  move background slow",
+    "output": "An instant sense of depth and distance between elements appears."
+   },
+   {
+    "h": "Layering Backgrounds",
+    "text": "To pull off this trick, we must split the background into multiple layers stacked like a cake! The front-most layer (Foreground) has grass and rocks. The middle layer has trees and houses. The far-back layer (Background) has the sky, mountains, and clouds. Ordering these layers is the foundation of any great game.",
+    "code": "go to front layer\ngo to back layer",
+    "output": "Sprites are correctly ordered without annoying overlaps."
+   },
+   {
+    "h": "Speed Difference",
+    "text": "The whole secret isn't just splitting layers; it's the speed! Imagine playing a racing game; cars right next to you move lightning fast, while distant houses move little by little. In Scratch, we build different motion blocks for each sprite to easily achieve this speed difference.",
+    "code": "set x to (player x / 2) for clouds\nset x to (player x * 3) for ground",
+    "output": "Each layer moves at a completely different speed from the others."
+   },
+   {
+    "h": "The 3D Depth Illusion",
+    "text": "The human eye understands distance by noticing that close objects move much faster than distant ones. In 2D Scratch games, we exploit this trick so the player forgets the screen is flat and feels like they are inside a 3D world, jumping and running freely.",
+    "code": "illusion = distant objects move slowly + close objects move fast",
+    "output": "A wonderful visual illusion similar to professional games is formed."
+   },
+   {
+    "h": "Using the Right Scratch Blocks",
+    "text": "To apply this practically, we use blocks like `set x to` with variables like mouse coordinates or player position (Player X). When we tie background movement to player location, the moment the hero moves left or right, the background follows but at different proportions for each layer.",
+    "code": "when green flag clicked\nforever\n  set x to (hero position * 0.5)\nend",
+    "output": "The background layer moves smoothly along with the hero."
+   },
+   {
+    "h": "Applying It to the Sky Layer",
+    "text": "To test the lesson ourselves, we will go to the Sky sprite in your Scratch game project. We put a `forever` loop containing a `set x` block, and make the value very small or multiply the player's coordinates by a small number like (0.2). This makes the sky move very slowly, showing it is extremely far away.",
+    "code": "set x to (hero_x * 0.2)",
+    "output": "The sky moves very slowly compared to the rest of the game."
+   },
+   {
+    "h": "Avoiding Common Mistakes",
+    "text": "One of the biggest mistakes beginner programmers make is setting all background layers to the exact same movement speed, making the game look flat and unrealistic. The magical fix is ensuring progressive speed numbers: a fast close layer, a medium layer, and a very slow distant layer.",
+    "code": "check values: ground=5, trees=2, sky=0.5",
+    "output": "The game appears professional with stunning visual depth."
+   },
+   {
+    "h": "Experimenting and Having Fun",
+    "text": "The best part of coding is experimenting! After setting your speeds, run the game and try moving the hero left and right. If you feel like the sky is running faster than the ground, you know you flipped the numbers! Adjust the values and enjoy the best adventure game you built yourself.",
+    "code": "play test -> adjust numbers -> enjoy game",
+    "output": "Designing a fun game ready to share with friends."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Parallax Scrolling",
+    "desc": "A technique of moving background layers at different speeds to create depth."
+   },
+   {
+    "name": "Layering",
+    "desc": "Arranging sprites on top of each other from front to back."
+   },
+   {
+    "name": "Speed Difference",
+    "desc": "The variance between the movement speed of close and distant layers."
+   },
+   {
+    "name": "Illusion of Depth",
+    "desc": "The optical trick that makes a flat screen look 3D."
+   },
+   {
+    "name": "set x to",
+    "desc": "A Scratch block to precisely set a sprite's horizontal position."
+   },
+   {
+    "name": "Foreground",
+    "desc": "The layer very close to the camera moving quickly."
+   },
+   {
+    "name": "Background",
+    "desc": "The layer very far away moving extremely slowly."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If you have two layers (sky and ground), which one should move at a slower speed?",
+    "a": "The sky layer because it is further away."
+   },
+   {
+    "q": "What is the name of the Scratch block used to change a sprite's horizontal position?",
+    "a": "set x to"
+   },
+   {
+    "q": "Why does the game look 3D when we use different layer speeds?",
+    "a": "Because the eye is tricked into sensing depth and distance due to speed variation."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,355 @@
+{
+ "ar": {
+  "steps": [
+   "مستمع الأحداث هو بمثابة حارس ذكي ينتظر حدوث شيء معين في صفحة الويب، مثل أن يضغط المستخدم على زر الماوس أو يحرك المؤشر فوق عنصر معين.",
+   "نستخدم دالة تسمى addEventListener لربط العنصر بهذا الحارس، فنقول له: 'يا زر، استمع لحدث النقر click'.",
+   "عندما يقع الحدث المنشود، يقوم المستمع بتنفيذ دالة برمجية محددة تقوم برد الفعل المطلوب فوراً، تماماً مثل الجرس الذي يدق عندما نضغط عليه.",
+   "يمكننا أيضاً مراقبة تفاعلات أخرى مثل mouseover، وهو الحدث الذي يقع عندما يمر مؤشر الماوس فوق عنصر ما على الشاشة.",
+   "القاعدة الذهبية هنا هي: حدد العنصر أولاً بـ querySelector، ثم أضف له المستمع بالحدث والدالة التي تنفذ التغيير المنشود.",
+   "نستخدم هذه التقنية في الواقع العملي لبناء صفحات ويب تفاعلية، مثل تغيير الألوان، إظهار الرسائل، أو إنشاء ألعاب ممتعة يستمتع بها المستخدمون."
+  ],
+  "example": "لنفترض أن لدينا زراً نريد أن يتغير لونه أو يكتب رسالة عندما نضغط عليه. نقوم باختيار الزر هكذا: const btn = document.querySelector('button'); ثم ننشئ دالة تعرض رسالة: function sayHi() { alert('مرحباً بك!'); } وأخيراً نربطهما ببعض: btn.addEventListener('click', sayHi);. عندما يضغط المستخدم على الزر، تظهر نافذة الترحيب فوراً.",
+  "mistake": "خطأ شائع هو نسيان كتابة اسم الحدث بين علامات التنصيص مثل 'click'، أو كتابة اسم الدالة مع أقواس داخل addEventListener مما يجعلها تعمل فور تحميل الصفحة بدلاً من انتظار النقر. التصحيح هو كتابة اسم الدالة بدون أقواس.",
+  "recap": "تعلمنا كيف نستخدم addEventListener لمراقبة أحداث مثل النقر ومرور الماوس. هذا يجعل صفحات الويب حية وتتفاعل مع المستخدمين.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة المستخدمة لربط حدث بعنصر في جافاسكريبت؟",
+    "o": [
+     "addEventListener",
+     "clickButton",
+     "listenToEvent"
+    ],
+    "a": 0,
+    "why": "نستخدم addEventListener لنطلب من العنصر الاستماع لأحداث مثل النقر."
+   },
+   {
+    "t": "متى يقع حدث mouseover؟",
+    "o": [
+     "عند إغلاق المتصفح",
+     "عند مرور مؤشر الماوس فوق العنصر",
+     "عند الضغط على مفتاح في لوحة المفاتيح"
+    ],
+    "a": 1,
+    "why": "حدث mouseover يتفعل عندما يتحرك مؤشر الماوس فوق العنصر المستهدف."
+   },
+   {
+    "t": "لماذا نكتب اسم الدالة بدون أقواس داخل addEventListener؟",
+    "o": [
+     "لكي تعمل فوراً عند تحميل الصفحة",
+     "لكي ينفذها المستمع فقط عندما يحدث الحدث المطلوب",
+     "لأن الأقواس ممنوعة تماماً في لغة جافاسكريبت"
+    ],
+    "a": 1,
+    "why": "بدون أقواس، نجعل الدالة كمرجع ينتظر الحدث، وإلا فستعمل فوراً."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود استماع الأحداث",
+   "goal": "أكمل الفراغات في الكود البرمجي لتفعيل زر التفاعل",
+   "items": [
+    {
+     "text": "const myBtn = document.___('button');",
+     "options": [
+      "querySelector",
+      "createElement",
+      "getElementById"
+     ],
+     "a": 0
+    },
+    {
+     "text": "myBtn.___('click', changeColor);",
+     "options": [
+      "addEventListener",
+      "onClcik",
+      "trigger"
+     ],
+     "a": 0
+    },
+    {
+     "text": "function changeColor() { this.style.backgroundColor = '___'; }",
+     "options": [
+      "blue",
+      "123",
+      "true"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! استجاب الزر للنقر وتغير لونه بنجاح."
+  },
+  "sections": [
+   {
+    "h": "ما هو مستمع الأحداث؟",
+    "text": "مستمع الأحداث هو بمثابة حارس بوابة ذكي يقف في صفحة الويب وينتظر حدوث شيء مثير، مثل ضغطة زر أو تحريك الماوس. مثل الجرس الذي ينتظر إصبعك ليدق.",
+    "code": "<button id='b1'>اضغطني</button>\n<script>\nconst b = document.getElementById('b1');\nb.addEventListener('click', () => alert('تم النقر!'));\n</script>",
+    "output": "يظهر زر وعند النقر عليه تظهر نافذة تنبيه."
+   },
+   {
+    "h": "استخدام دالة addEventListener",
+    "text": "هذه الدالة السحرية هي الطريقة الرسمية في جافاسكريبت لربط عنصر بمستمع أحداث. نخبر العنصر من خلالها: استمع لحدث معين، وعند وقوعه، قم بتنفيذ دالة معينة.",
+    "code": "<div id='box' style='width:100px;height:50px;background:orange;'>انقر هنا</div>\n<script>\nconst box = document.getElementById('box');\nbox.addEventListener('click', () => box.style.background = 'green');\n</script>",
+    "output": "مربع برتقالي يتحول إلى اللون الأخضر عند النقر عليه."
+   },
+   {
+    "h": "مراقبة تفاعل النقر (click)",
+    "text": "النقر هو الحدث الأكثر شهرة واستخداماً على الإنترنت. سواء ضغط المستخدم على زر شراء، أو أيقونة إعجاب، أو رابط، فإن حدث النقر هو الذي يجعل الصفحة تستجيب.",
+    "code": "<button id='btn'>غير النص</button>\n<p id='txt'>مرحباً</p>\n<script>\ndocument.getElementById('btn').addEventListener('click', () => {\n  document.getElementById('txt').textContent = 'أهلاً بك في عالم البرمجة!';\n});\n</script>",
+    "output": "زر يغير النص الموجود في الفقرة عند النقر عليه."
+   },
+   {
+    "h": "مراقبة مرور الماوس (mouseover)",
+    "text": "ليس النقر وحده هو ما يهمنا، فمرور مؤشر الماوس فوق العنصر (mouseover) يمنحنا شعوراً بالحيوية. يشبه ذلك لمس قطة لتتحرك أو تتفاعل معك.",
+    "code": "<div id='hoverBox' style='padding:10px;background:#eee;'>مرر الماوس هنا</div>\n<script>\nconst hBox = document.getElementById('hoverBox');\nhBox.addEventListener('mouseover', () => hBox.style.background = 'yellow');\n</script>",
+    "output": "مربع رمادي يتحول إلى الأصفر فور مرور الماوس فوقه."
+   },
+   {
+    "h": "تغيير التنسيق برمجياً (Styling Layouts)",
+    "text": "عندما يقع الحدث، لا نقتصر على طباعة النصوص فقط، بل يمكننا تغيير مظهر الصفحة بالكامل برمجياً عبر تعديل خصائص CSS مثل الألوان، والأحجام، والمسافات.",
+    "code": "<button id='stBtn'>تكبير النص</button>\n<p id='pText' style='font-size:16px;'>نص قابل للتكبير</p>\n<script>\ndocument.getElementById('stBtn').addEventListener('click', () => {\n  document.getElementById('pText').style.fontSize = '24px';\n});\n</script>",
+    "output": "زر يكبر حجم خط الفقرة عند النقر عليه."
+   },
+   {
+    "h": "استخدام دالة رد النداء (Callback Function)",
+    "text": "الدالة التي نمررها داخل addEventListener تسمى دالة رد النداء. إنها تعمل في الخلفية ولا تُنفذ إلا عندما يحدث الظرف المطلوب (مثل النقر أو مرور الماوس).",
+    "code": "<button id='cbBtn'>اطبع في الكونسول</button>\n<script>\ndocument.getElementById('cbBtn').addEventListener('click', function() {\n  console.log('تم تشغيل الدالة بنجاح!');\n});\n</script>",
+    "output": "زر يسجل رسالة في وحدة التحكم عند النقر."
+   },
+   {
+    "h": "التعامل مع عدة عناصر",
+    "text": "يمكننا تطبيق مستمعات الأحداث على عدة عناصر في نفس الوقت باستخدام الحلقات التكرارية، لنجعل كل زر في صفحة الويب ذكياً وجاهزاً للتفاعل.",
+    "code": "<button class='myBtns'>زر 1</button>\n<button class='myBtns'>زر 2</button>\n<script>\nconst allBtns = document.querySelectorAll('.myBtns');\nallBtns.forEach(b => b.addEventListener('click', () => alert('تم الضغط!')));\n</script>",
+    "output": "زران كلاهما يعرض رسالة تنبيه عند النقر."
+   },
+   {
+    "h": "بناء تجربة مستفاعل متكاملة",
+    "text": "بتجميع كل هذه المهارات، يمكنك صنع تطبيقات ويب مذهلة مثل الألعاب، والآلات الحاسبة، والمعارض التفاعلية التي تتفاعل بسلاسة مع كل حركة يقررها المستخدم.",
+    "code": "<div id='game' style='background:pink;width:120px;height:40px;'>العب معي</div>\n<script>\nconst g = document.getElementById('game');\ng.addEventListener('mouseover', () => g.style.background = 'cyan');\ng.addEventListener('click', () => g.style.background = 'pink');\n</script>",
+    "output": "مربع يتغير لونه بمرور الماوس ويعود عند النقر."
+   }
+  ],
+  "reference": [
+   {
+    "name": "addEventListener()",
+    "desc": "دالة تربط حدثاً معيناً بعنصر وتقوم بتنفيذ دالة عند وقوعه."
+   },
+   {
+    "name": "'click'",
+    "desc": "حدث يمثل النقر على العنصر بواسطة الفأرة أو اللمس."
+   },
+   {
+    "name": "'mouseover'",
+    "desc": "حدث يمثل مرور مؤشر الفأرة فوق حدود العنصر."
+   },
+   {
+    "name": "element.style",
+    "desc": "خاصية لتغيير خصائص وتنسيقات CSS للعنصر برمجياً."
+   },
+   {
+    "name": "document.querySelector()",
+    "desc": "أداة لاختيار عنصر من صفحة HTML باستخدام محددات CSS."
+   },
+   {
+    "name": "Callback Function",
+    "desc": "دالة تُمرر كمعامل لتُنفذ لاحقاً عند وقوع الحدث."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً لاختيار زر يحمل الآيدي 'myButton' وإضافة مستمع حدث للنقر يغير لون خلفيته إلى اللون الأحمر.",
+    "a": "const btn = document.querySelector('#myButton'); btn.addEventListener('click', () => { btn.style.backgroundColor = 'red'; });"
+   },
+   {
+    "q": "كيف تراقب مرور مؤشر الماوس فوق عنصر يحمل الآيدي 'banner' وتغير النص بداخله؟",
+    "a": "const banner = document.querySelector('#banner'); banner.addEventListener('mouseover', () => { banner.textContent = 'مرحباً بك!'; });"
+   },
+   {
+    "q": "ما هو الخطأ في هذا الكود: btn.addEventListener('click', alert('مرحباً'));؟ وكيف تصلحه؟",
+    "q_en": "What is the error in: btn.addEventListener('click', alert('مرحباً'));? How to fix it?",
+    "a": "الخطأ هو وجود أقواس الدالة alert مما يجعلها تعمل فوراً. التصحيح: btn.addEventListener('click', () => alert('مرحباً'));"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "An event listener acts like a smart guard waiting for a specific thing to happen on a web page, such as a user clicking a mouse or moving a pointer.",
+   "We use a method called addEventListener to attach the element to this guard, telling it: 'Hey button, listen for a click event.'",
+   "When the desired event occurs, the listener immediately triggers a specified function to respond, much like a doorbell ringing when pressed.",
+   "We can also monitor other interactions like mouseover, which is the event that happens when the mouse pointer moves over an element on the screen.",
+   "The golden rule here is: select the element first using querySelector, then add the event listener with the event type and the response function.",
+   "We use this technique in the real world to build interactive web pages, such as changing colors, showing messages, or creating fun games for users."
+  ],
+  "example": "Suppose we have a button and we want its color to change or show a message when clicked. We select the button: const btn = document.querySelector('button'); then create a function that shows a message: function sayHi() { alert('Hello there!'); } and finally connect them: btn.addEventListener('click', sayHi);. When the user clicks the button, the welcome popup appears instantly.",
+  "mistake": "A common mistake is forgetting to wrap the event name in quotes like 'click', or calling the function with parentheses inside addEventListener, making it run immediately on page load instead of waiting for a click. The fix is to pass the function reference without parentheses.",
+  "recap": "We learned how to use addEventListener to monitor events like clicks and mouseovers. This brings web pages to life and makes them interactive.",
+  "q": [
+   {
+    "t": "What is the method used to attach an event to an element in JavaScript?",
+    "o": [
+     "addEventListener",
+     "clickButton",
+     "listenToEvent"
+    ],
+    "a": 0,
+    "why": "We use addEventListener to instruct an element to listen for events like clicks."
+   },
+   {
+    "t": "When does a mouseover event trigger?",
+    "o": [
+     "When the browser closes",
+     "When the mouse pointer moves over the element",
+     "When a keyboard key is pressed"
+    ],
+    "a": 1,
+    "why": "The mouseover event fires when the cursor moves inside the boundaries of the target element."
+   },
+   {
+    "t": "Why do we pass the function without parentheses inside addEventListener?",
+    "o": [
+     "To make it run instantly when the page loads",
+     "So the listener can execute it only when the event actually occurs",
+     "Because parentheses are completely forbidden in JavaScript"
+    ],
+    "a": 1,
+    "why": "Without parentheses, we pass a reference that waits for the event, otherwise it executes immediately."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Event Listener Code",
+   "goal": "Fill in the blanks in the code snippet to make the interactive button work",
+   "items": [
+    {
+     "text": "const myBtn = document.___('button');",
+     "options": [
+      "querySelector",
+      "createElement",
+      "getElementById"
+     ],
+     "a": 0
+    },
+    {
+     "text": "myBtn.___('click', changeColor);",
+     "options": [
+      "addEventListener",
+      "onClcik",
+      "trigger"
+     ],
+     "a": 0
+    },
+    {
+     "text": "function changeColor() { this.style.backgroundColor = '___'; }",
+     "options": [
+      "blue",
+      "123",
+      "true"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! The button responded to the click and changed its color successfully."
+  },
+  "sections": [
+   {
+    "h": "What is an Event Listener?",
+    "text": "An event listener is like a smart security guard standing on a web page, waiting for something exciting to happen, like a button click or a mouse move. Just like a doorbell waiting for your finger.",
+    "code": "<button id='b1'>Click Me</button>\n<script>\nconst b = document.getElementById('b1');\nb.addEventListener('click', () => alert('Clicked!'));\n</script>",
+    "output": "Displays a button that shows an alert box when clicked."
+   },
+   {
+    "h": "Using addEventListener",
+    "text": "This magical method is the official JavaScript way to attach an event listener to an element. We tell the element: listen for a specific event, and when it happens, run a specific function.",
+    "code": "<div id='box' style='width:100px;height:50px;background:orange;'>Click Here</div>\n<script>\nconst box = document.getElementById('box');\nbox.addEventListener('click', () => box.style.background = 'green');\n</script>",
+    "output": "An orange box that turns green when clicked."
+   },
+   {
+    "h": "Monitoring Click Interactions (click)",
+    "text": "Clicking is the most popular and widely used event on the internet. Whether a user clicks a buy button, a like icon, or a link, the click event makes the page respond.",
+    "code": "<button id='btn'>Change Text</button>\n<p id='txt'>Hello</p>\n<script>\ndocument.getElementById('btn').addEventListener('click', () => {\n  document.getElementById('txt').textContent = 'Welcome to coding!';\n});\n</script>",
+    "output": "A button that changes the text inside the paragraph when clicked."
+   },
+   {
+    "h": "Monitoring Mouse Hover (mouseover)",
+    "text": "Clicks aren't the only thing that matters; hovering the mouse pointer over an element (mouseover) adds a lively feel. It's like petting a cat to watch it react.",
+    "code": "<div id='hoverBox' style='padding:10px;background:#eee;'>Hover over me</div>\n<script>\nconst hBox = document.getElementById('hoverBox');\nhBox.addEventListener('mouseover', () => hBox.style.background = 'yellow');\n</script>",
+    "output": "A gray box that turns yellow as soon as the mouse hovers over it."
+   },
+   {
+    "h": "Changing Styling Layouts Programmatically",
+    "text": "When an event occurs, we aren't limited to printing text; we can completely change the page's appearance programmatically by modifying CSS properties like colors, sizes, and spacing.",
+    "code": "<button id='stBtn'>Make Bigger</button>\n<p id='pText' style='font-size:16px;'>Scalable text</p>\n<script>\ndocument.getElementById('stBtn').addEventListener('click', () => {\n  document.getElementById('pText').style.fontSize = '24px';\n});\n</script>",
+    "output": "A button that increases the font size of the paragraph when clicked."
+   },
+   {
+    "h": "Using Callback Functions",
+    "text": "The function we pass inside addEventListener is called a callback function. It runs in the background and executes only when the required condition (like a click or hover) happens.",
+    "code": "<button id='cbBtn'>Log to Console</button>\n<script>\ndocument.getElementById('cbBtn').addEventListener('click', function() {\n  console.log('Function triggered successfully!');\n});\n</script>",
+    "output": "A button that logs a message to the browser console when clicked."
+   },
+   {
+    "h": "Handling Multiple Elements",
+    "text": "We can apply event listeners to multiple elements at once using loops, making every button on a web page smart and ready to interact.",
+    "code": "<button class='myBtns'>Btn 1</button>\n<button class='myBtns'>Btn 2</button>\n<script>\nconst allBtns = document.querySelectorAll('.myBtns');\nallBtns.forEach(b => b.addEventListener('click', () => alert('Pressed!')));\n</script>",
+    "output": "Two buttons, both showing an alert message when clicked."
+   },
+   {
+    "h": "Building a Complete Interactive Experience",
+    "text": "By combining all these skills, you can build amazing web apps like games, calculators, and interactive galleries that respond smoothly to every user action.",
+    "code": "<div id='game' style='background:pink;width:120px;height:40px;'>Play with me</div>\n<script>\nconst g = document.getElementById('game');\ng.addEventListener('mouseover', () => g.style.background = 'cyan');\ng.addEventListener('click', () => g.style.background = 'pink');\n</script>",
+    "output": "A box that changes color on hover and resets on click."
+   }
+  ],
+  "reference": [
+   {
+    "name": "addEventListener()",
+    "desc": "A method that attaches an event handler to an element and runs a function when it fires."
+   },
+   {
+    "name": "'click'",
+    "desc": "An event representing a mouse click or tap on an element."
+   },
+   {
+    "name": "'mouseover'",
+    "desc": "An event representing the mouse pointer moving over an element's boundaries."
+   },
+   {
+    "name": "element.style",
+    "desc": "A property used to modify CSS styles of an element programmatically."
+   },
+   {
+    "name": "document.querySelector()",
+    "desc": "A tool to select an HTML element using CSS selectors."
+   },
+   {
+    "name": "Callback Function",
+    "desc": "A function passed as an argument to be executed later when the event occurs."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to select a button with the ID 'myButton' and add a click event listener that changes its background color to red.",
+    "a": "const btn = document.querySelector('#myButton'); btn.addEventListener('click', () => { btn.style.backgroundColor = 'red'; });"
+   },
+   {
+    "q": "How do you monitor a mouse hover over an element with the ID 'banner' and change its text content?",
+    "a": "const banner = document.querySelector('#banner'); banner.addEventListener('mouseover', () => { banner.textContent = 'Welcome!'; });"
+   },
+   {
+    "q": "What is the error in this code: btn.addEventListener('click', alert('Hello'));? How do you fix it?",
+    "a": "The error is the parentheses on alert which makes it run immediately. Fix: btn.addEventListener('click', () => alert('Hello'));"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript debugging and error handling",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript"
+  },
+  {
+   "title": "MDN: Handling text — strings in JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Strings"
+  }
+ ],
+ "grounded": true
+}

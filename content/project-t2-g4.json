@@ -1,0 +1,162 @@
+{
+ "en": [
+  {
+   "title": "Interactive Superhero Profile Card",
+   "desc": "Build a cool hero card that changes color, has a smooth glow shadow, and flips when hovered.",
+   "tags": [
+    "Transitions",
+    "Shadows",
+    "Transforms"
+   ],
+   "steps": [
+    "Create an HTML file with a main card container and an image of your hero inside.",
+    "Style the card with CSS variables for main colors so you can easily change the hero's theme.",
+    "Use border-radius to give the card and image soft, modern rounded corners.",
+    "Add box-shadow and text-shadow to make the title pop with a cool glowing effect.",
+    "Apply CSS image filters to the hero picture so it looks like vintage comic art.",
+    "Use CSS pseudo-classes like :hover to make the card lift up using 2D transforms.",
+    "Add smooth CSS transitions so the hover flip and glow effects happen gracefully.",
+    "Test your card in the browser and show it off to your friends!"
+   ],
+   "rubric": [
+    "Uses CSS variables for theme colors",
+    "Includes smooth hover transitions and 2D transforms",
+    "Applies text and box shadows effectively",
+    "Features rounded corners and styled images"
+   ],
+   "stretch": "Add a pseudo-element like ::before to create a shiny badge in the corner of the card."
+  },
+  {
+   "title": "Magical Photo Gallery Grid",
+   "desc": "Design a gorgeous photo gallery where pictures zoom, change filters, and show secret captions on hover.",
+   "tags": [
+    "Filters",
+    "Pseudo-Elements",
+    "Pseudo-Classes"
+   ],
+   "steps": [
+    "Set up a web page with multiple image boxes arranged in a nice grid layout.",
+    "Define CSS variables for your gallery's dark and light theme colors.",
+    "Round the corners of all your photos using border-radius for a neat look.",
+    "Give every image a default grayscale or brightness filter using CSS image filters.",
+    "Use the :hover pseudo-class to remove the filter and zoom the image in with 2D transforms.",
+    "Add a ::after pseudo-element to overlay a hidden caption that appears when hovered.",
+    "Apply box shadows to make each photo look like a floating polaroid picture.",
+    "Ensure all effects transition smoothly without any sudden jumping."
+   ],
+   "rubric": [
+    "Uses image filters and removes them on hover",
+    "Applies pseudo-elements for hover captions",
+    "Features smooth 2D scale transforms",
+    "Maintains a clean and organized layout"
+   ],
+   "stretch": "Make alternating photos rotate in opposite directions when hovered using transform: rotate()."
+  },
+  {
+   "title": "Cosmic Personal Portfolio",
+   "desc": "Create a mini portfolio website highlighting your favorite projects with glowing buttons and smooth animations.",
+   "tags": [
+    "Variables",
+    "Transitions",
+    "Portfolio"
+   ],
+   "steps": [
+    "Build the HTML structure with a header, about section, and project cards.",
+    "Set up root CSS variables for fonts, background colors, and glowing highlight colors.",
+    "Style your navigation links using pseudo-classes like :hover and :active.",
+    "Add gorgeous box shadows to your project cards to create depth.",
+    "Use text shadows on your main title to give it a neon glowing style.",
+    "Add CSS transitions to every clickable button so they bounce or grow smoothly.",
+    "Use pseudo-elements like ::first-letter to make your introduction paragraph stand out.",
+    "Review your code to make sure all variables and styles work together seamlessly."
+   ],
+   "rubric": [
+    "Implements a complete portfolio layout",
+    "Uses CSS variables for consistent theming",
+    "Applies neon text and box shadows",
+    "Features smooth transitions on interactive buttons"
+   ],
+   "stretch": "Add a dark mode toggle by changing CSS variables using a new class."
+  }
+ ],
+ "ar": [
+  {
+   "title": "بطاقة تعريفية تفاعلية للبطل الخارق",
+   "desc": "اصنع بطاقة بطل خارق جامدة تتغير ألوانها، ولها ظل منور، وبتلف بنعومة لما تقف عليها بالماوس.",
+   "tags": [
+    "انتقالات",
+    "ظلال",
+    "تحويلات ثنائية الأبعاد"
+   ],
+   "steps": [
+    "اعمل ملف HTML فيه صندوق رئيسي للبطاقة وجواها صورة البطل بتاعك.",
+    "ظبط البطاقة بـ CSS Variables عشان تقدر تغير ألوان البطل بسهولة.",
+    "استخدم border-radius عشان تخلي زوايا البطاقة والصورة دائرية وناعمة.",
+    "ضيف box-shadow و text-shadow عشان العنوان يبان ووراه تأثير إضاءة جامد.",
+    "استخدم CSS Image Filters على صورة البطل عشان تبل كأنها رسمة كوميكس قديمة.",
+    "استخدم Pseudo-classes زي :hover عشان تخلي البطاقة تترفع لفوق بـ 2D transforms.",
+    "ضيف CSS Transitions عشان حركة الرفع والإضاءة تحصل بنعومة وهدوء.",
+    "جرب البطاقة بتاعتك في المتصفح ووريها لأصحابك!"
+   ],
+   "rubric": [
+    "استخدام متغيرات CSS لألوان الثيم",
+    "تضمين انتقالات نعومة وحركات 2D عند المرور بالماوس",
+    "تطبيق ظلال النصوص والصناديق بمهارة",
+    "وجود زوايا دائرية وصور منسقة"
+   ],
+   "stretch": "ضيف Pseudo-element زي ::before عشان تعمل شارة لامعة في ركن البطاقة."
+  },
+  {
+   "title": "معرض صور سحري وجميل",
+   "desc": "صمم معرض صور رهيب الصور فيه بتكبر، تغير الفلتر بتاعها، وتظهر كلام سري لما تقف عليها.",
+   "tags": [
+    "فلاتر",
+    "عناصر وهمية",
+    "حالات شبه العناصر"
+   ],
+   "steps": [
+    "جهز صفحة ويب فيها كذا صندوق صور مترتبين بشكل شبكة منظمة.",
+    "عرف متغيرات CSS لألوان الثيم الفاتح والغامق في المعرض.",
+    "دور زوايا كل الصور بتاعتك باستخدام border-radius لشكل أنيق.",
+    "دي لكل صورة فلتر رمادي أو إضاءة افتراضي باستخدام فلاتر الصور.",
+    "استخدم الـ :hover عشان تشيل الفلتر وتكبر الصورة باستخدام التحويلات.",
+    "ضيف عنصر وهمي ::after عشان تعمل وصف مخفي بيظهر وقت الوقوف بالماوس.",
+    "ضيف ظلال الصناديق عشان كل صورة تبل كأنها صورة بولارويد طايرة.",
+    "اتأكد إن كل التأثيرات بتحصل بنعومة من غير أي نطة مفاجئة."
+   ],
+   "rubric": [
+    "استخدام فلاتر الصور وإزالتها عند المرور بالماوس",
+    "تطبيق عناصر وهمية لعرض النصوص التوضيحية",
+    "استخدام تحويلات التكبير السلسة",
+    "الحفاظ على تصميم مرتب ومنسق"
+   ],
+   "stretch": "خلي الصور بالتبادل تلف في اتجاهات عكس بعض لما تقف عليها بـ rotate."
+  },
+  {
+   "title": "موقع البورتفوليو الشخصي الفضائي",
+   "desc": "اعمل موقع بورتفوليو مصغر بيعرض مشاريعك المفضلة بأزرار مضيئة وحركات ناعمة.",
+   "tags": [
+    "متغيرات",
+    "انتقالات",
+    "بورتفوليو"
+   ],
+   "steps": [
+    "ابني هيكل HTML فيه هيدر، قسم نبذة عني، وبطاقات للمشاريع.",
+    "جهز متغيرات الـ root للخطوط وألوان الخلفية والإضاءة.",
+    "نسق روابط التنقل بتاعتك باستخدام حالات زي :hover و :active.",
+    "ضيف ظلال صناديق رائعة لبطاقات مشاريعك عشان تدي عمق للشاشة.",
+    "استخدم ظلال النصوص على عنوانك الرئيسي عشان تدي شكل نيون منور.",
+    "ضيف انتقالات CSS لكل زرار قابل للضغط عشان ينط أو يكبر بنعومة.",
+    "استخدم عنصر وهمي زي ::first-letter عشان تخلي أول حرف بارز وشكله جميل.",
+    "راجع كودك عشان تتأكد إن كل المتغيرات والتنسيق شغالين مع بعض تمام التمام."
+   ],
+   "rubric": [
+    "تنفيذ تصميم بورتفوليو كامل",
+    "استخدام متغيرات CSS لتوحيد الألوان",
+    "تطبيق ظلال نيون للنصوص والصناديق",
+    "وجود انتقالات سلسة على الأزرار التفاعلية"
+   ],
+   "stretch": "ضيف زرار لتبديل الوضع الليلي عن طريق تغيير متغيرات الـ CSS بكلاس جديد."
+  }
+ ]
+}

@@ -1,0 +1,300 @@
+{
+ "ar": {
+  "steps": [
+   "المخطط العمودي يساعدنا في مقارنة قيم مختلفة بين فئات منفصلة بسهولة تامة. تخيل أنك تقارن عدد النقاط التي جمعها أصدقاؤك الثلاثة في لعبة فيديو.",
+   "في لغة بايثون ومكتبة Matplotlib، نستخدم الدالة plt.bar() لرسم هذه الأكمام أو الأعمدة. نمرر لها الفئات على المحور الأفقي والقيم على المحور الرأسي.",
+   "لكي تكون المقارنة عادلة، يجب أن تبدأ الأعمِدة دائماً من خط أساس واضح وهو الصفر (0). إذا بدأنا من رقم آخر، فس يبدو الفرق كبيراً ومخادعاً!",
+   "يمكننا تخصيص ألوان الأعمدة باستخدام خاصية color مثل 'skyblue' أو 'orange' لنجعل الرسم البياني جميلاً ومميزاً لكل فئة.",
+   "إذا كان لدينا عدة مجموعات بيانات، نستخدم وسيلة الإيضاح (Legend) لتوضيح معنى كل لون، مع ضبط مكانها بوضوح حتى لا تغطي الأعمدة.",
+   "نستخدم هذه المهارة في حياتنا الواقعية عندما نعرض ميزانية مصروفك الشخصي أو إحصائيات الألعاب الرياضية في ملف إنجازك الرقمي."
+  ],
+  "example": "لنرسم مخططاً عمودياً يقارن نتائج اختبارات ثلاث مواد دراسية. نكتب الكود التالي:\nimport matplotlib.pyplot as plt\nsubjects = ['Math', 'Science', 'Art']\nscores = [85, 90, 95]\nfig, ax = plt.subplots()\nax.bar(subjects, scores, color=['red', 'green', 'blue'])\nplt.show()\n\nهذا الكود ينشئ ثلاثة أعمدة بألوان مختلفة تمثل درجات كل مادة.",
+  "mistake": "الخطأ الشائع هو نسيان البدء من الصفر أو جعل محور Y يبدأ من قيمة عالية مثل 80، مما يجعل الفرق يبدو ضخماً جداً بين 85 و90. الحل هو ترك المحور يبدأ طبيعياً من الصفر لتبقى المقارنة عادلة.",
+  "recap": "المخططات العمودية تقارن الفئات بوضوح بدءاً من خط أساس الصفر. استخدام الألوان ومفاتيح الإيضاح يجعل البيانات مميزة وسهلة القراءة.",
+  "q": [
+   {
+    "t": "ما هي الدالة المستخدمة لرسم مخطط عمودي في Matplotlib؟",
+    "o": [
+     "plt.plot()",
+     "plt.bar()",
+     "plt.scatter()"
+    ],
+    "a": 1,
+    "why": "plt.bar() مخصصة لإنشاء الأعمدة البيانية."
+   },
+   {
+    "t": "من أين يجب أن يبدأ خط الأساس للأعمدة ليكون عادلاً؟",
+    "o": [
+     "الصفر (0)",
+     "أصغر قيمة في البيانات",
+     "الرقم 100"
+    ],
+    "a": 0,
+    "why": "البدء من الصفر يضمن دقة وعدالة المقارنة البصرية."
+   },
+   {
+    "t": "ما الخاصية المستخدمة لتغيير لون الأعمدة؟",
+    "o": [
+     "size",
+     "color",
+     "shape"
+    ],
+    "a": 1,
+    "why": "خاصية color تحدد الألوان للأعمدة."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات إنشاء مخطط عمودي",
+   "goal": "رتب الخطوات التالية لبرمجة مخطط عمودي صحيح وملون",
+   "items": [
+    "import matplotlib.pyplot as plt",
+    "categories = ['A', 'B', 'C']",
+    "values = [10, 20, 30]",
+    "fig, ax = plt.subplots()",
+    "ax.bar(categories, values, color='blue')",
+    "plt.show()"
+   ],
+   "success": "رائع! لقد أنشأت بنجاح مخططاً عمودياً يقارن الفئات بألوان رائعة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو المخطط العمودي؟",
+    "text": "المخطط العمودي أو الشريطي هو أداة بصرية رائعة لمقارنة كميات الفئات المختلفة. تخيل أنك تقارن عدد التفاحات التي يمتلكها أصدقاؤك الثلاثة. الأعمدة الطويلة تعني قيماً أكبر، والأعمدة القصيرة تعني قيماً أصغر، مما يجعل الفهم فورياً.",
+    "code": "# فكرة مبسطة للمقارنة\nimport matplotlib.pyplot as plt\nprint('جاهز لرسم الأعمدة!')",
+    "output": "جاهز لرسم الأعمدة!"
+   },
+   {
+    "h": "استخدام الدالة plt.bar()",
+    "text": "في مكتبة Matplotlib، نستعمل الدالة plt.bar() أو ax.bar() لإنشاء الأعمدة. نعطيها قيم المحور الأفقي x مثل أسماء الفئات، وقيم المحور الرأسي y مثل الكميات أو الأرقام، لتقوم برسم الأشكال الفورية.",
+    "code": "import matplotlib.pyplot as plt\nx = ['Apple', 'Banana', 'Cherry']\ny = [5, 8, 3]\nprint(f'Categories: {x}, Values: {y}')",
+    "output": "Categories: ['Apple', 'Banana', 'Cherry'], Values: [5, 8, 3]"
+   },
+   {
+    "h": "أهمية خط الأساس (Zero Baseline)",
+    "text": "لكي تكون المقارنة عادلة ونزيهة، يجب أن يبدأ المخطط العمودي دائماً من الصفر. إذا بدأنا من رقم أعلى، فسيبدو العمود الصغير كأنه معدوم تماماً، وهذا يخدع الناظرين ويعطي انطباعاً خاطئاً عن البيانات.",
+    "code": "# القاعدة الذهبية: ابدأ دائماً من الصفر\nbaseline = 0\nprint(f'Baseline is set to: {baseline}')",
+    "output": "Baseline is set to: 0"
+   },
+   {
+    "h": "تخصيص ألوان الأعمدة",
+    "text": "لا داعي لأن تكون الأعمدة ملونة بلون واحد ممل! يمكنك تمرير قائمة ألوان لخاصية color أو c مثل ['red', 'green', 'blue'] لتتميز كل فئة بلونها الخاص وتجذب انتباه مشاهد لوحتك البيانية.",
+    "code": "import matplotlib.pyplot as plt\ncolors = ['red', 'green', 'blue']\nprint(f'Using colors: {colors}')",
+    "output": "Using colors: ['red', 'green', 'blue']"
+   },
+   {
+    "h": "ضبط وسيلة الإيضاح (Legend)",
+    "text": "عندما ترسم أعمدة متعددة أو فئات معقدة، تساعدك وسيلة الإيضاح (Legend) على شرح ما يعنيه كل لون. نستخدم الدالة ax.legend() مع تحديد مكانها بدقة حتى لا تغطي الأعمدة أو تخفي البيانات المهمة.",
+    "code": "# مثال لإضافة الإيضاح\nprint('ax.legend(loc=\"upper right\")')",
+    "output": "ax.legend(loc=\"upper right\")"
+   },
+   {
+    "h": "تسمية المحاور والعناوين",
+    "text": "الرسم الجيد يحتاج إلى معلومات واضحة. نستخدم ax.set_xlabel() لتسمية المحور الأفقي، و ax.set_ylabel() للمحور الرأسي، و ax.set_title() لعنوان المخطط العام، ليعرف القارئ ماذا يرى فوراً.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.set_title('Fruit Comparison')",
+    "output": ""
+   },
+   {
+    "h": "التطبيق العملي في ملفات الإنجاز",
+    "text": "في مشروعك الرقمي أو ملف الإنجاز (Desktop Portfolio)، تُعتبر المخططات العمودية ممتازة لعرض إحصائيات الألعاب أو ميزانية المشاريع المدرسية. إنها تظهر مهاراتك في تحليل البيانات بطريقة احترافية وممتعة.",
+    "code": "portfolio_project = 'Data Analytics'\nprint(f'Project type: {portfolio_project}')",
+    "output": "Project type: Data Analytics"
+   }
+  ],
+  "reference": [
+   {
+    "name": "plt.subplots()",
+    "desc": "ينشئ نافذة رسم ومحاور جديدة"
+   },
+   {
+    "name": "ax.bar()",
+    "desc": "يرسم المخطط العمودي للفئات"
+   },
+   {
+    "name": "color",
+    "desc": "خاصية لتحديد لون الأعمدة"
+   },
+   {
+    "name": "ax.legend()",
+    "desc": "يعرض مفتاح الإيضاح للبيانات"
+   },
+   {
+    "name": "ax.set_title()",
+    "desc": "يضيف عنواناً للمخطط البياني"
+   },
+   {
+    "name": "ax.set_xlabel()",
+    "desc": "يحدد تسمية المحور الأفقي"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر برمجياً لإنشاء أعمدة بالفئات ['Cats', 'Dogs'] والقيم [10, 15] باستخدام Matplotlib.",
+    "a": "ax.bar(['Cats', 'Dogs'], [10, 15])"
+   },
+   {
+    "q": "كيف تضيف عنواناً للمخطط باسم 'Pet Statistics'؟",
+    "a": "ax.set_title('Pet Statistics')"
+   },
+   {
+    "q": "ما هي الدالة التي تظهر مفتاح الإيضاح في الرسم؟",
+    "a": "ax.legend()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Bar charts help us compare different values across separate categories easily. Imagine comparing points earned by three friends in a video game.",
+   "In Python and Matplotlib, we use the plt.bar() function to draw these columns. We pass the categories for the horizontal axis and values for the vertical axis.",
+   "For a fair comparison, bars must always start from a clear zero baseline. If we start from another number, differences look fake and misleading!",
+   "We can customize bar colors using the color property, like 'skyblue' or 'orange', making every category look distinct and vibrant.",
+   "If we have multiple datasets, we use a Legend to explain each color, positioning it carefully so it never covers the data bars.",
+   "We use this skill in real life when showing our personal allowance budget or sports stats in our digital desktop portfolio."
+  ],
+  "example": "Let's draw a bar chart comparing test scores for three subjects. We write this code:\nimport matplotlib.pyplot as plt\nsubjects = ['Math', 'Science', 'Art']\nscores = [85, 90, 95]\nfig, ax = plt.subplots()\nax.bar(subjects, scores, color=['red', 'green', 'blue'])\nplt.show()\n\nThis code creates three distinct colored columns representing each subject score.",
+  "mistake": "A common mistake is forgetting to start from zero or setting the Y-axis to start at a high number like 80, making a tiny difference look huge. The fix is letting the axis start naturally at zero to keep comparisons fair.",
+  "recap": "Bar charts compare categories clearly starting from a zero baseline. Using colors and legends makes data distinct and easy to read.",
+  "q": [
+   {
+    "t": "What function is used to draw a bar chart in Matplotlib?",
+    "o": [
+     "plt.plot()",
+     "plt.bar()",
+     "plt.scatter()"
+    ],
+    "a": 1,
+    "why": "plt.bar() is specifically designed to create bar charts."
+   },
+   {
+    "t": "Where should the baseline of the bars start for a fair comparison?",
+    "o": [
+     "Zero (0)",
+     "The lowest data value",
+     "The number 100"
+    ],
+    "a": 0,
+    "why": "Starting at zero ensures accurate and fair visual comparison."
+   },
+   {
+    "t": "Which property is used to change the color of the bars?",
+    "o": [
+     "size",
+     "color",
+     "shape"
+    ],
+    "a": 1,
+    "why": "The color property specifies the fills for the bars."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order Bar Chart Creation Steps",
+   "goal": "Arrange the following steps to program a correct and colorful bar chart",
+   "items": [
+    "import matplotlib.pyplot as plt",
+    "categories = ['A', 'B', 'C']",
+    "values = [10, 20, 30]",
+    "fig, ax = plt.subplots()",
+    "ax.bar(categories, values, color='blue')",
+    "plt.show()"
+   ],
+   "success": "Awesome! You successfully created a bar chart comparing categories with cool colors!"
+  },
+  "sections": [
+   {
+    "h": "What is a Bar Chart?",
+    "text": "A bar chart is a fantastic visual tool for comparing quantities across different categories. Imagine comparing apples held by three friends. Taller bars mean bigger values, and shorter bars mean smaller values, making insights instant.",
+    "code": "# Simple idea for comparison\nimport matplotlib.pyplot as plt\nprint('Ready to plot bars!')",
+    "output": "Ready to plot bars!"
+   },
+   {
+    "h": "Using the plt.bar() Function",
+    "text": "In Matplotlib, we use plt.bar() or ax.bar() to create columns. We give it horizontal x values like category names, and vertical y values like quantities, to instantly draw shapes.",
+    "code": "import matplotlib.pyplot as plt\nx = ['Apple', 'Banana', 'Cherry']\ny = [5, 8, 3]\nprint(f'Categories: {x}, Values: {y}')",
+    "output": "Categories: ['Apple', 'Banana', 'Cherry'], Values: [5, 8, 3]"
+   },
+   {
+    "h": "Importance of the Zero Baseline",
+    "text": "For a fair and honest comparison, a bar chart must always start from zero. If we start from a higher number, a small bar looks completely missing, which tricks viewers and gives a false impression of the data.",
+    "code": "# Golden rule: always start from zero\nbaseline = 0\nprint(f'Baseline is set to: {baseline}')",
+    "output": "Baseline is set to: 0"
+   },
+   {
+    "h": "Customizing Bar Colors",
+    "text": "Your bars don't have to be a boring single color! You can pass a list of colors to the color or c property like ['red', 'green', 'blue'] so every category stands out and catches your viewers' eyes.",
+    "code": "import matplotlib.pyplot as plt\ncolors = ['red', 'green', 'blue']\nprint(f'Using colors: {colors}')",
+    "output": "Using colors: ['red', 'green', 'blue']"
+   },
+   {
+    "h": "Configuring the Legend",
+    "text": "When you draw multiple bars or complex categories, a legend helps explain what each color means. We use ax.legend() while carefully placing it so it never covers the bars or hides important data.",
+    "code": "# Example to add legend\nprint('ax.legend(loc=\"upper right\")')",
+    "output": "ax.legend(loc=\"upper right\")"
+   },
+   {
+    "h": "Labels and Titles",
+    "text": "A good plot needs clear labels. We use ax.set_xlabel() for the horizontal axis, ax.set_ylabel() for the vertical axis, and ax.set_title() for the main chart title, so readers immediately know what they are viewing.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.set_title('Fruit Comparison')",
+    "output": ""
+   },
+   {
+    "h": "Real-Life Desktop Portfolio Use",
+    "text": "In your digital project or desktop portfolio, bar charts are great for showing game stats or school project budgets. They showcase your data analytics skills in a professional and fun way.",
+    "code": "portfolio_project = 'Data Analytics'\nprint(f'Project type: {portfolio_project}')",
+    "output": "Project type: Data Analytics"
+   }
+  ],
+  "reference": [
+   {
+    "name": "plt.subplots()",
+    "desc": "Creates a new figure and axes window"
+   },
+   {
+    "name": "ax.bar()",
+    "desc": "Draws a categorical bar chart"
+   },
+   {
+    "name": "color",
+    "desc": "Property to specify bar fill color"
+   },
+   {
+    "name": "ax.legend()",
+    "desc": "Displays the data legend key"
+   },
+   {
+    "name": "ax.set_title()",
+    "desc": "Adds a title to the chart plot"
+   },
+   {
+    "name": "ax.set_xlabel()",
+    "desc": "Sets the horizontal axis label"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a code line to create bars with categories ['Cats', 'Dogs'] and values [10, 15] using Matplotlib.",
+    "a": "ax.bar(['Cats', 'Dogs'], [10, 15])"
+   },
+   {
+    "q": "How do you add a title to the plot named 'Pet Statistics'?",
+    "a": "ax.set_title('Pet Statistics')"
+   },
+   {
+    "q": "What function displays the legend key in the plot?",
+    "a": "ax.legend()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/introduction.html"
+  },
+  {
+   "title": "matplotlib.org docs",
+   "url": "https://matplotlib.org/stable/users/explain/quick_start.html"
+  }
+ ],
+ "grounded": true
+}

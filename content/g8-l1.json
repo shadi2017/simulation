@@ -1,0 +1,298 @@
+{
+ "ar": {
+  "steps": [
+   "الخطوط والاتجاهات بتساعدنا نشوف إزاي البيانات بتتغير مع مرور الوقت زي درجات الحرارة كل يوم أو أرباح المحل كل شهر.",
+   "عشان نرسم خط بياني، بنستعمل مكتبة مشهورة اسمها Matplotlib بنجيبها بالأمر import matplotlib.pyplot as plt.",
+   "بنرسم البيانات عن طريق تجهيز نقطتين محور س ومحور ص، ونستخدم دالة ax.plot عشان نوصل النقط ببعضها بخط واضح.",
+   "عشان نعرف الناس الرسمة دي بتتكلم عن ايه، بنضيف عنوان للرسمة باستخدام أمر ax.set_title ومينفعش ننساه.",
+   "قاعدة ذهبية: أي رسمة خطية من غير تسمية للمحاور (س وص) بتبقى ملهاش أي معنى، لازم نستعمل ax.set_xlabel وax.set_ylabel.",
+   "في حياتنا اليومية بنشوف الخطوط البيانية في أسعار الأسهم وفي تتبع عدد خطواتنا على الموبايل كل يوم."
+  ],
+  "example": "تخيل أنك بتتابع درجات حرارة الأسبوع: السبت ٢٠، الأحد ٢٥، الاثنين ٢٢. بنكتب الكود كالتالي:\nimport matplotlib.pyplot as plt\ndays = ['Sat', 'Sun', 'Mon']\ntemps = [20, 25, 22]\nfig, ax = plt.subplots()\nax.plot(days, temps)\nax.set_title('Weekly Temperatures')\nax.set_xlabel('Days')\nax.set_ylabel('Celsius')\nplt.show()\n\nالتفسير: عملنا إطار رسم وربطنا الأيام بالدرجات بخط، وكتبنا عنوان ومسميات للمحاور عشان الرسمة تبقى واضحة ومفهومة لأي شخص يبص عليها.",
+  "mistake": "الخطأ الشائع هو نسيان تسمية المحاور أو العنوان، والحل هو دائمًا استخدام ax.set_xlabel وax.set_ylabel قبل عرض الرسمة.",
+  "recap": "المخططات الخطية ممتازة لتتبع التغيرات عبر الزمن، واستخدام العناوين والمحاور يجعل قراءتها سهلة ومفهومة.",
+  "q": [
+   {
+    "t": "ما هي الدالة التي تستخدم لرسم خط بياني في Matplotlib؟",
+    "o": [
+     "ax.plot()",
+     "ax.draw()",
+     "ax.line()"
+    ],
+    "a": 0,
+    "why": "دالة plot هي المسؤولة عن رسم الخطوط وتوصيل النقاط ببعضها."
+   },
+   {
+    "t": "كيف نضيف عنواناً للرسم البياني؟",
+    "o": [
+     "ax.set_label()",
+     "ax.set_title()",
+     "ax.name()"
+    ],
+    "a": 1,
+    "why": "دالة set_title تضع عنواناً رئيسياً يوضح محتوى الرسمة."
+   },
+   {
+    "t": "ما هو دور محور ص (Y-axis) غالباً في المخططات الخطية؟",
+    "o": [
+     "تحديد الأيام",
+     "تحديد الأسماء",
+     "قياس القيم الرقمية المتغيرة"
+    ],
+    "a": 2,
+    "why": "المحور الرأسي يمثل عادة القيم والأرقام التي نقيسها مثل الحرارة أو السعر."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود المخطط الخطي",
+   "goal": "اكتشف السطر الخطأ في كود رسم الخطوط وأصلحه",
+   "lines": [
+    "import matplotlib.pyplot as plt",
+    "fig, ax = plt.subplots()",
+    "ax.plot([1, 2, 3], [10, 20, 15])",
+    "ax.title('My Chart')",
+    "ax.set_xlabel('Time')"
+   ],
+   "bug": 3,
+   "fix": "ax.set_title('My Chart')",
+   "success": "رائع! تم إصلاح العنوان وظهر المخطط الخطي بمحاوره وعنوانه بشكل صحيح."
+  },
+  "sections": [
+   {
+    "h": "ما هو المخطط الخطي؟",
+    "text": "المخطط الخطي هو رسم يربط بين نقاط البيانات بخط مستقيم، وهو ممتاز لمتابعة كيف تتغير الأشياء مع مرور الوقت، مثل نمو النبات أو درجات الحرارة.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3], [4, 5, 6])\nplt.show()",
+    "output": "يظهر نافذة تحتوي على خط صاعد"
+   },
+   {
+    "h": "فهم إطار العمل في Matplotlib",
+    "text": "لكي نرسم، نحتاج إلى نافذة رسم تسمى Figure ومنطقة رسم تسمى Axes، ونستخدم دالة subplots لإنشائهما معاً بسهولة.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nprint(type(ax))",
+    "output": "<class 'matplotlib.axes._axes.Axes'>"
+   },
+   {
+    "h": "إضافة البيانات للرسم",
+    "text": "تمرر البيانات في شكل قيم للمحور الأفقي س وقيم للمحور الرأسي ص كقوائم داخل دالة plot.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nx = [1, 2, 3, 4]\ny = [10, 20, 25, 30]\nax.plot(x, y)",
+    "output": "رسم خط يصل بين النقاط الأربع"
+   },
+   {
+    "h": "إضافة عنوان للرسم البياني",
+    "text": "العنوان هو أول ما يراه القارئ ليفهم موضوع الرسمة، ونستعمل دالة set_title لكتابته بوضوح.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_title('Monthly Sales')",
+    "output": "يظهر المخطط ومكتوب فوقه Monthly Sales"
+   },
+   {
+    "h": "تسمية المحور الأفقي (X-axis)",
+    "text": "المحور السيني يمثل عادة الفترة الزمنية أو الفئات، ونستعمل دالة set_xlabel لتسميته.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_xlabel('Month')",
+    "output": "يظهر اسم Month أسفل المحور الأفقي"
+   },
+   {
+    "h": "تسمية المحور الرأسي (Y-axis)",
+    "text": "المحور الصادي يمثل الكميات أو الأرقام، ونستعمل دالة set_ylabel لتوضيح ماذا تقيس هذه الأرقام.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_ylabel('USD ($)')",
+    "output": "يظهر اسم USD ($) بجانب المحور الرأسي"
+   },
+   {
+    "h": "جمع كل العناصر معاً",
+    "text": "الرسمة الاحترافية تجمع بين الخطوط والبيانات والعنوان والمحاور لتصبح قصة واضحة يفهمها الجميع.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_title('Growth')\nax.set_xlabel('Days')\nax.set_ylabel('CM')",
+    "output": "مخطط كامل بالعنوان والمحاور والخط"
+   }
+  ],
+  "reference": [
+   {
+    "name": "plt.subplots()",
+    "desc": "لإنشاء إطقة الرسم ومنطقة التخطيط"
+   },
+   {
+    "name": "ax.plot(x, y)",
+    "desc": "لرسم خط بياني يربط النقاط"
+   },
+   {
+    "name": "ax.set_title()",
+    "desc": "لإضافة عنوان للرسمة"
+   },
+   {
+    "name": "ax.set_xlabel()",
+    "desc": "لتسمية المحور الأفقي س"
+   },
+   {
+    "name": "ax.set_ylabel()",
+    "desc": "لتسمية المحور الرأسي ص"
+   },
+   {
+    "name": "plt.show()",
+    "desc": "لعرض نافذة الرسم البياني"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر إضافة عنوان للرسمة نصّه 'My Report'",
+    "a": "ax.set_title('My Report')"
+   },
+   {
+    "q": "ما هي الدالة المستخدمة لرسم الخطوط البيانية؟",
+    "a": "ax.plot()"
+   },
+   {
+    "q": "كيف تسمي المحور الرأسي باسم 'Score'؟",
+    "a": "ax.set_ylabel('Score')"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Line charts help us see how data changes over time, like daily temperatures or monthly shop profits.",
+   "To draw a line chart, we use a famous library called Matplotlib imported as import matplotlib.pyplot as plt.",
+   "We plot data by passing X and Y coordinates, then use the ax.plot function to connect points with a clear line.",
+   "To let people know what the chart is about, we add a chart title using ax.set_title, which is essential.",
+   "Golden rule: Any line chart without axis labels (X and Y) lacks meaning; always use ax.set_xlabel and ax.set_ylabel.",
+   "In real life, we see line charts in stock market prices and in tracking daily mobile step counts."
+  ],
+  "example": "Imagine tracking weekly temperatures: Sat 20, Sun 25, Mon 22. Code it like this:\nimport matplotlib.pyplot as plt\ndays = ['Sat', 'Sun', 'Mon']\ntemps = [20, 25, 22]\nfig, ax = plt.subplots()\nax.plot(days, temps)\nax.set_title('Weekly Temperatures')\nax.set_xlabel('Days')\nax.set_ylabel('Celsius')\nplt.show()\n\nExplanation: We created a figure window, connected days and temperatures with a line, and added a title and axis labels so the chart is clear and understandable to anyone looking at it.",
+  "mistake": "A common mistake is forgetting to label the axes or add a title. The fix is always using ax.set_xlabel and ax.set_ylabel before displaying.",
+  "recap": "Line charts are great for tracking changes over time, and adding titles and labeled axes makes them easy to read.",
+  "q": [
+   {
+    "t": "Which function is used to draw a line plot in Matplotlib?",
+    "o": [
+     "ax.plot()",
+     "ax.draw()",
+     "ax.line()"
+    ],
+    "a": 0,
+    "why": "The plot function is responsible for drawing lines and connecting points."
+   },
+   {
+    "t": "How do you add a title to the chart?",
+    "o": [
+     "ax.set_label()",
+     "ax.set_title()",
+     "ax.name()"
+    ],
+    "a": 1,
+    "why": "The set_title function sets a main header explaining the chart's content."
+   },
+   {
+    "t": "What does the Y-axis usually represent in line charts?",
+    "o": [
+     "The days",
+     "The names",
+     "The changing numerical values"
+    ],
+    "a": 2,
+    "why": "The vertical axis typically represents values and numbers we measure like temperature or price."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Line Chart Code",
+   "goal": "Find the wrong line in the line chart code and fix it",
+   "lines": [
+    "import matplotlib.pyplot as plt",
+    "fig, ax = plt.subplots()",
+    "ax.plot([1, 2, 3], [10, 20, 15])",
+    "ax.title('My Chart')",
+    "ax.set_xlabel('Time')"
+   ],
+   "bug": 3,
+   "fix": "ax.set_title('My Chart')",
+   "success": "Awesome! The title was fixed and the line chart rendered with correct axes and title."
+  },
+  "sections": [
+   {
+    "h": "What is a Line Chart?",
+    "text": "A line chart connects data points with a straight line, excellent for tracking how things change over time, like plant growth or temperatures.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3], [4, 5, 6])\nplt.show()",
+    "output": "Displays a window with an upward line"
+   },
+   {
+    "h": "Understanding Matplotlib Figures",
+    "text": "To plot, we need a drawing window called Figure and a plotting area called Axes. We use subplots to create them easily.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nprint(type(ax))",
+    "output": "<class 'matplotlib.axes._axes.Axes'>"
+   },
+   {
+    "h": "Adding Data to the Plot",
+    "text": "Data is passed as horizontal X values and vertical Y values inside lists into the plot function.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nx = [1, 2, 3, 4]\ny = [10, 20, 25, 30]\nax.plot(x, y)",
+    "output": "Draws a line connecting four points"
+   },
+   {
+    "h": "Adding a Chart Title",
+    "text": "The title is the first thing a reader sees to understand the chart topic. We use set_title to write it clearly.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_title('Monthly Sales')",
+    "output": "Shows the chart with Monthly Sales written on top"
+   },
+   {
+    "h": "Labeling the X-axis",
+    "text": "The X-axis usually represents time periods or categories, and we use set_xlabel to name it.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_xlabel('Month')",
+    "output": "Shows the name Month below the horizontal axis"
+   },
+   {
+    "h": "Labeling the Y-axis",
+    "text": "The Y-axis represents quantities or numbers, and we use set_ylabel to clarify what those numbers measure.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_ylabel('USD ($)')",
+    "output": "Shows the name USD ($) beside the vertical axis"
+   },
+   {
+    "h": "Bringing It All Together",
+    "text": "A professional chart combines lines, data, title, and axes to become a clear story everyone understands.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2], [3, 4])\nax.set_title('Growth')\nax.set_xlabel('Days')\nax.set_ylabel('CM')",
+    "output": "Full chart with title, axes, and line"
+   }
+  ],
+  "reference": [
+   {
+    "name": "plt.subplots()",
+    "desc": "To create figure and plot area"
+   },
+   {
+    "name": "ax.plot(x, y)",
+    "desc": "To draw a line chart connecting points"
+   },
+   {
+    "name": "ax.set_title()",
+    "desc": "To add a chart title"
+   },
+   {
+    "name": "ax.set_xlabel()",
+    "desc": "To label the horizontal X-axis"
+   },
+   {
+    "name": "ax.set_ylabel()",
+    "desc": "To label the vertical Y-axis"
+   },
+   {
+    "name": "plt.show()",
+    "desc": "To display the chart window"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the command to add a title 'My Report'",
+    "a": "ax.set_title('My Report')"
+   },
+   {
+    "q": "What function is used to draw line plots?",
+    "a": "ax.plot()"
+   },
+   {
+    "q": "How do you name the vertical axis 'Score'?",
+    "a": "ax.set_ylabel('Score')"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "matplotlib.org docs",
+   "url": "https://matplotlib.org/stable/users/explain/quick_start.html"
+  }
+ ],
+ "grounded": true
+}

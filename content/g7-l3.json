@@ -1,0 +1,310 @@
+{
+ "ar": {
+  "steps": [
+   "عالم البرمجة الرائع مليء بالملفات التي نحفظ فيها بياناتنا المهمة على القرص الصلب بدلاً من ضياعها عند إغلاق البرنامج، تماماً مثل كتابة الواجب في دفتر وتخزينه في حقيبتك المدرسية لليوم التالي.",
+   "نستخدم في بايثون جملة 'with open('file.txt', 'w') as f:' السحرية لفتح الملفات وكتابتها، وتضمن هذه الجملة إغلاق الملف تلقائياً فور انتهاء الأوامر لتجنب فقدان أي بيانات مذهلة.",
+   "تعمل طريقة الكاتب الافتراضية 'w' على مسح الملف القديم وكتابة محتوى جديد، بينما تستخدم الطريقة 'r' لقراءة الملفات وتحميل القيم المخزنة مثل مستويات اللعبة والنقاط بكل سهولة ويسر.",
+   "لنفترض أننا نريد حفظ نقاط اللاعب الحالي في ملف نصي، يمكننا كتابة السطر التالي: 'f.write('Score: 100')' وسيقوم بايثون بتسجيل الرقم بدقة شديدة داخل القرص.",
+   "القاعدة الذهبية لأي مبرمج محترف هي أن كل ملف تفتحه للقراءة أو الكتابة باستخدام with open يجب التعامل معه داخل الكتلة البرمجية المزاحة بمسافة بادئة لضمان حماية النظام.",
+   "تستخدم هذه المهارات المذهلة في حفظ تقدم الألعاب الإلكترونية، تسجيل درجات الطلاب في المدارس، وتخزين الإعدادات الخاصة بالتطبيقات التي تستخدمها يومياً على حاسوبك الشخصي."
+  ],
+  "example": "إليك مثال عملي متكامل لحفظ وتحميل نتيجة لاعب في لعبة مغامرات:\n\n```python\n# حفظ النتيجة في ملف\nwith open('game_save.txt', 'w') as file:\n    file.write('Level: 5')\n\n# قراءة النتيجة المحفوظة\nwith open('game_save.txt', 'r') as file:\n    saved_data = file.read()\n    print(saved_data)\n```\nالسبب والنتيجة: قمنا أولاً بفتح ملف باسم 'game_save.txt' وكتابة مستوى اللعبة داخله، ثم أغلق بايثون الملف تلقائياً. بعد ذلك، قمنا بفتحه مرة أخرى في وضع القراءة لاسترجاع النص وطباعته على الشاشة.\nالنتيجة المتوقعة:\nLevel: 5",
+  "mistake": "الخطأ الشائع هو نسيان تحديد وضع الفتح ('r' للقراءة أو 'w' للكتابة) أو محاولة قراءة ملف غير موجود دون معالجة الأخطاء. التصحيح هو دائماً كتابة نمط الفتح بوضوح داخل دالة open مثل open('file.txt', 'r').",
+  "recap": "تعلمنا كيفية فتح الملفات النصية واستخدام وضع الكتابة 'w' لتخزين البيانات ووضع القراءة 'r' لاسترجاعها. كما عرفنا أن جملة with open تغلق الملفات تلقائياً لحمايتها.",
+  "q": [
+   {
+    "t": "ما هو الوضع المناسب في open لفتح ملف بهدف قراءة محتوياته؟",
+    "o": [
+     "'w'",
+     "'r'",
+     "'x'"
+    ],
+    "a": 1,
+    "why": "حرف r هو اختصار لكلمة read ويعني وضع القراءة."
+   },
+   {
+    "t": "لماذا نستخدم جملة with open بدلاً من open العادية وحدها؟",
+    "o": [
+     "لأنها تغلق الملف تلقائياً عند انتهاء الكتلة",
+     "لأنها تلون النص بألوان جميلة",
+     "لأنها تبطئ سرعة الكمبيوتر"
+    ],
+    "a": 0,
+    "why": "جملة with تدير الموارد وتغلق الملفات تلقائياً لأمان النظام."
+   },
+   {
+    "t": "ماذا تفعل الطريقة 'w' بالمحتوى القديم للملف عند الكتابة فوقه؟",
+    "o": [
+     "تحفظه في مكان سري",
+     "تمسحه وتكتب المحتوى الجديد",
+     "تدمجه مع النص الجديد"
+    ],
+    "a": 1,
+    "why": "وضع الكتابة w يقوم بإنشاء ملف جديد أو مسح المحتوى القديم وكتابة الجديد."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح خطأ حفظ اللعبة",
+   "goal": "اكتشف السطر البرمجي الخاطئ في كود قراءة وكتابة الملفات وأصلحه.",
+   "lines": [
+    "with open('score.txt', 'w') as f:",
+    "    f.write(500)",
+    "with open('score.txt', 'r') as f:",
+    "    data = f.read()",
+    "    print(data)"
+   ],
+   "bug": 1,
+   "fix": "    f.write('500')",
+   "success": "رائع! تم كتابة وقراءة نتيجة اللاعب بنجاح تام."
+  },
+  "sections": [
+   {
+    "h": "لماذا نحتاج حفظ الملفات؟",
+    "text": "الذاكرة العشوائية تفقد كل شيء عند إغلاق البرنامج، لكن الملفات النصية تشبه الخزنة السرية التي تحتفظ ببياناتنا حتى بعد إعادة تشغيل الحاسوب، تماماً مثل حفظ لعبتك المفضلة.",
+    "code": "# فكرة تخزين البيانات على القرص\nprint('الملفات تحافظ على بقاء بياناتنا للأبد!')",
+    "output": "الملفات تحافظ على بقاء بياناتنا للأبد!"
+   },
+   {
+    "h": "فتح الملفات باستخدام with open",
+    "text": "تعد جملة with الطريقة الأكثر أماناً في بايثون للتعامل مع الملفات، فهي تفتح الباب للعمل وتغلقه تلقائياً فور انتهاء المهام، مثل إغلاق باب الثلاجة وحدك بعد إخراج العصير.",
+    "code": "with open('notes.txt', 'w') as my_file:\n    print('تم فتح الملف وإغلاقه بأمان!')",
+    "output": "تم فتح الملف وإغلاقب بأمان!"
+   },
+   {
+    "h": "وضع الكتابة w",
+    "text": "عندما تستخدم الحرف 'w' فهو يعني Write، ويقوم بفتح الملف للكتابة مع حذف أي محتوى قديم كان موجوداً بداخله وبدء صفحة جديدة تماماً.",
+    "code": "with open('player.txt', 'w') as f:\n    f.write('Hero_Ahmed')",
+    "output": ""
+   },
+   {
+    "h": "وضع القراءة r",
+    "text": "الحرف 'r' يرمز إلى Read، ويستخدم لجلب المعلومات والبيانات المخزنة مسبقاً في الملفات لعرضها داخل البرنامج أو استخدامها في حسابات اللعبة.",
+    "code": "with open('player.txt', 'r') as f:\n    name = f.read()\n    print(name)",
+    "output": "Hero_Ahmed"
+   },
+   {
+    "h": "تحميل مستويات اللعبة المحفوظة",
+    "text": "يمكننا تخزين مستويات أو عملات الألعاب في ملفات نصية بسيطة، ثم قراءتها عند بدء تشغيل اللعبة لكي يعود اللاعب إلى حيث انتهى تماماً.",
+    "code": "with open('save.txt', 'w') as f:\n    f.write('Score: 950')\nwith open('save.txt', 'r') as f:\n    print(f.read())",
+    "output": "Score: 950"
+   },
+   {
+    "h": "التعامل مع النصوص والأرقام",
+    "text": "دالة write تقبل النصوص فقط، لذلك إذا كان لديك رقم يجب تحويله إلى نص باستخدام دالة str قبل حفظه داخل الملف.",
+    "code": "score = 50\nwith open('score.txt', 'w') as f:\n    f.write(str(score))\nprint('تم الحفظ بنجاح')",
+    "output": "تم الحفظ بنجاح"
+   },
+   {
+    "h": "القراءة السريعة لمحتوى الملف",
+    "text": "طريقة read تقرأ محتوى الملف كاملاً كسلسلة نصية واحدة، وهو أمر رائع للملفات الصغيرة مثل إعدادات الألعاب ونتائج اللاعبين.",
+    "code": "with open('config.txt', 'w') as f:\n    f.write('Sound: On')\nwith open('config.txt', 'r') as f:\n    print(f.read())",
+    "output": "Sound: On"
+   },
+   {
+    "h": "تطبيقات واقعية هامة",
+    "text": "تستخدم برامج الشركات الكبرى قراءة وكتابة الملفات لتسجيل أخطاء البرامج، حفظ قواعد بيانات المستخدمين، وتحميل المستندات في برامج معالجة النصوص.",
+    "code": "with open('log.txt', 'w') as f:\n    f.write('System started OK')\nprint('تم تسجيل حالة النظام')",
+    "output": "تم تسجيل حالة النظام"
+   }
+  ],
+  "reference": [
+   {
+    "name": "open()",
+    "desc": "دالة لفتح الملفات وتحديد وضع التعامل معها."
+   },
+   {
+    "name": "with",
+    "desc": "أداة سحرية لإدارة الموارد وإغلاق الملفات تلقائياً."
+   },
+   {
+    "name": "'w'",
+    "desc": "وضع الكتابة وإنشاء الملفات أو مسح القديم."
+   },
+   {
+    "name": "'r'",
+    "desc": "وضع القراءة لجلب البيانات المخزنة."
+   },
+   {
+    "name": "write()",
+    "desc": "طريقة لكتابة النصوص داخل الملف المفتوح."
+   },
+   {
+    "name": "read()",
+    "desc": "طريقة لقراءة محتوى الملف كاملاً كنص."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً يفتح ملفاً اسمه 'hi.txt' في وضع الكتابة ويكتب بداخله 'مرحباً'.",
+    "a": "with open('hi.txt', 'w') as f:\n    f.write('مرحباً')"
+   },
+   {
+    "q": "كيف تقرأ المحتوى من ملف اسمه 'data.txt' وتطبعه؟",
+    "a": "with open('data.txt', 'r') as f:\n    print(f.read())"
+   },
+   {
+    "q": "ما هي ميزة استخدام جملة with مع دالة open؟",
+    "a": "تغلق الملف تلقائياً عند انتهاء العمل لحماية البيانات."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The amazing world of programming is full of files where we store our important data on the hard drive instead of losing it when programs close, just like writing homework in a notebook and storing it in your school bag.",
+   "In Python, we use the magical statement 'with open('file.txt', 'w') as f:' to open and write files, ensuring the file closes automatically as soon as our code finishes to prevent any data loss.",
+   "The default writer mode 'w' clears old file contents and writes new data, while the 'r' mode reads files and loads stored values like game levels and high scores easily and smoothly.",
+   "Suppose we want to save the current player score in a text file; we can write: 'f.write('Score: 100')' and Python will record that number accurately right onto the disk.",
+   "The golden rule for any professional programmer is that every file opened for reading or writing using with open must be handled inside the indented code block to keep system resources safe.",
+   "These wonderful skills are used in saving electronic game progress, recording student grades at schools, and storing configuration settings for applications you use daily on your personal computer."
+  ],
+  "example": "Here is a complete practical example of saving and loading a player's score in an adventure game:\n\n```python\n# Save score to a file\nwith open('game_save.txt', 'w') as file:\n    file.write('Level: 5')\n\n# Read the saved score\nwith open('game_save.txt', 'r') as file:\n    saved_data = file.read()\n    print(saved_data)\n```\nReasoning and Result: We first opened a file named 'game_save.txt' and wrote the game level inside it, then Python automatically closed the file. After that, we opened it again in read mode to retrieve the text and print it on the screen.\nExpected Output:\nLevel: 5",
+  "mistake": "A common mistake is forgetting to specify the open mode ('r' for reading or 'w' for writing) or trying to read a non-existent file without handling errors. The fix is always writing the mode clearly inside the open function like open('file.txt', 'r').",
+  "recap": "We learned how to open text files, use write mode 'w' to store data, and read mode 'r' to retrieve it. We also discovered how with open automatically closes files for safety.",
+  "q": [
+   {
+    "t": "What is the correct mode in open to read contents from a file?",
+    "o": [
+     "'w'",
+     "'r'",
+     "'x'"
+    ],
+    "a": 1,
+    "why": "The letter r stands for read mode."
+   },
+   {
+    "t": "Why do we use with open instead of just open alone?",
+    "o": [
+     "Because it automatically closes the file when the block ends",
+     "Because it colors text in nice colors",
+     "Because it slows down computer speed"
+    ],
+    "a": 0,
+    "why": "The with statement manages resources and closes files automatically for system safety."
+   },
+   {
+    "t": "What does the 'w' mode do to old file content when writing over it?",
+    "o": [
+     "Saves it in a secret place",
+     "Clears it and writes the new content",
+     "Merges it with the new text"
+    ],
+    "a": 1,
+    "why": "Write mode w creates a new file or clears old content and writes new data."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Game Save Bug",
+   "goal": "Find the buggy code line in file reading and writing and fix it.",
+   "lines": [
+    "with open('score.txt', 'w') as f:",
+    "    f.write(500)",
+    "with open('score.txt', 'r') as f:",
+    "    data = f.read()",
+    "    print(data)"
+   ],
+   "bug": 1,
+   "fix": "    f.write('500')",
+   "success": "Brilliant! The player score was written and read successfully."
+  },
+  "sections": [
+   {
+    "h": "Why Do We Need File Storage?",
+    "text": "RAM memory loses everything when a program closes, but text files are like a secret vault keeping our data safe even after rebooting the computer, just like saving your favorite game.",
+    "code": "# Idea of storing data on disk\nprint('Files keep our data alive forever!')",
+    "output": "Files keep our data alive forever!"
+   },
+   {
+    "h": "Opening Files with with open",
+    "text": "The with statement is Python's safest way to handle files. It opens the door for work and shuts it automatically when tasks finish, like closing the fridge door after taking juice.",
+    "code": "with open('notes.txt', 'w') as my_file:\n    print('File opened and closed safely!')",
+    "output": "File opened and closed safely!"
+   },
+   {
+    "h": "The Write Mode w",
+    "text": "When you use the character 'w', it means Write. It opens the file for writing while erasing any old content inside it, starting a completely fresh page.",
+    "code": "with open('player.txt', 'w') as f:\n    f.write('Hero_Alex')",
+    "output": ""
+   },
+   {
+    "h": "The Read Mode r",
+    "text": "The letter 'r' stands for Read, used to fetch pre-stored information and data from files to display them inside your program or use them in game calculations.",
+    "code": "with open('player.txt', 'r') as f:\n    name = f.read()\n    print(name)",
+    "output": "Hero_Alex"
+   },
+   {
+    "h": "Loading Saved Game Levels",
+    "text": "We can store game levels or currencies in simple text files, then read them when starting the game so the player returns right where they left off.",
+    "code": "with open('save.txt', 'w') as f:\n    f.write('Score: 950')\nwith open('save.txt', 'r') as f:\n    print(f.read())",
+    "output": "Score: 950"
+   },
+   {
+    "h": "Handling Strings and Numbers",
+    "text": "The write method accepts strings only, so if you have a number, you must convert it to a string using the str function before saving it inside a file.",
+    "code": "score = 50\nwith open('score.txt', 'w') as f:\n    f.write(str(score))\nprint('Saved successfully')",
+    "output": "Saved successfully"
+   },
+   {
+    "h": "Quick File Content Reading",
+    "text": "The read method reads the entire file content as a single string, which is wonderful for small files like game configurations and player high scores.",
+    "code": "with open('config.txt', 'w') as f:\n    f.write('Sound: On')\nwith open('config.txt', 'r') as f:\n    print(f.read())",
+    "output": "Sound: On"
+   },
+   {
+    "h": "Important Real-World Applications",
+    "text": "Major software company programs use file reading and writing to log errors, save user databases, and load documents in text editors.",
+    "code": "with open('log.txt', 'w') as f:\n    f.write('System started OK')\nprint('System state logged')",
+    "output": "System state logged"
+   }
+  ],
+  "reference": [
+   {
+    "name": "open()",
+    "desc": "Function to open files and specify handling mode."
+   },
+   {
+    "name": "with",
+    "desc": "Magical tool to manage resources and close files automatically."
+   },
+   {
+    "name": "'w'",
+    "desc": "Write mode to create files or clear old content."
+   },
+   {
+    "name": "'r'",
+    "desc": "Read mode to fetch stored data."
+   },
+   {
+    "name": "write()",
+    "desc": "Method to write text inside an open file."
+   },
+   {
+    "name": "read()",
+    "desc": "Method to read the entire file content as text."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code that opens a file named 'hi.txt' in write mode and writes 'Hello'.",
+    "a": "with open('hi.txt', 'w') as f:\n    f.write('Hello')"
+   },
+   {
+    "q": "How do you read content from a file named 'data.txt' and print it?",
+    "a": "with open('data.txt', 'r') as f:\n    print(f.read())"
+   },
+   {
+    "q": "What is the benefit of using the with statement with open?",
+    "a": "It closes the file automatically when work finishes to protect data."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  }
+ ],
+ "grounded": true
+}

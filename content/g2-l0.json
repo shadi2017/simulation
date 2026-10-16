@@ -1,0 +1,353 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً يا بطل! النهارده هنكتشف برنامج سكراتش اللي بيخلينا نعمل ألعاب وقصص فنانين زينا بالضبط.",
+   "عشان نعرف مكان أي شخصية (سبريت) على الشاشة، بنستخدم خطين متعامدين زي الخريطة وسريين خالص.",
+   "الخط الأفقي اسمه محور س (X) وبيحرك الشخصية يمين وشمال من -240 لحد 240 بكل سهولة.",
+   "الخط الرأسي اسمه محور ص (Y) وبيحرك الشخصية لفوق وتحت من -180 لحد 180 عشان نتحكم بدقة.",
+   "نقطة التقاطع في النص هي نقطة البداية السحرية (0, 0) ودي مركز العالم بتاعنا على المسرح.",
+   "في ألعابنا، بنستعمل البلاطة الخضراء اللي اسمها اذهب إلى الموضع س و ص عشان نرمي الشخصية في مكانها الصح!"
+  ],
+  "example": "تخيل إن قطة سكراتش واقفة في نص المسرح عند النقطة (0, 0). لو سحبنا بلوك 'اذهب إلى س: 100 وص: 50'، القطة هتتحرك يمين 100 خطوة وتطلع لفوق 50 خطوة! ده بيساعدنا نظبط مكان الأبطال بدقة تامة في اللعبة بتاعتك.",
+  "mistake": "لو كتبت رقم كبير جداً أكبر من حدود الشاشة زي س: 300، القطة هتختفي بره المسرح على الحرف خالص! التصحيح: خلي ددايماً أرقام س بين -240 و240 وأرقام ص بين -180 و180.",
+  "recap": "اتعلمنا إزاي نفتح واجهة سكراتش ونستخدم الإحداثيات (س، ص) عشان نتحكم في مكان الشخصيات على المسرح بكل سهولة. الإحداثيات دي هي خريطة ألعابنا!",
+  "q": [
+   {
+    "t": "ما هي نقطة مركز المسرح في سكراتش؟",
+    "o": [
+     "(100, 100)",
+     "(0, 0)",
+     "(-240, 180)"
+    ],
+    "a": 1,
+    "why": "نقطة التقاطع في وسط المسرح دائماً إحداثياتها هي صفر وصفر."
+   },
+   {
+    "t": "ما هو أكبر رقم يمكن أن تصل إليه محاور س (X) في اليمين؟",
+    "o": [
+     "180",
+     "240",
+     "500"
+    ],
+    "a": 1,
+    "why": "عرض المسرح في سكراتش يمتد أفقياً من -240 إلى 240."
+   },
+   {
+    "t": "إلى أي اتجاه تتحرك الشخصية إذا غيرنا محور ص (Y) إلى رقم بالموجب؟",
+    "o": [
+     "إلى أعلى",
+     "إلى أسفل",
+     "إلى اليمين"
+    ],
+    "a": 0,
+    "why": "الأرقام الموجبة في محور ص تحرك الشخصية إلى أعلى المسرح."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "لعبة إحداثيات سكراتش السحرية",
+   "goal": "أكمل الجمل التالية لتتعلم كيف تتحرك الشخصيات على مسرح سكراتش.",
+   "items": [
+    {
+     "text": "نقطة المنتصف على مسرح سكراتش تسمى دائماً (___, 0).",
+     "options": [
+      "0",
+      "100",
+      "-240"
+     ],
+     "a": 0
+    },
+    {
+     "text": "المحور الأفقي الذي يتحكم يمين ويسار يسمى محور ___.",
+     "options": [
+      "ص (Y)",
+      "س (X)",
+      "الزمن"
+     ],
+     "a": 1
+    },
+    {
+     "text": "أقصى ارتفاع للأعلى على محور ص (Y) هو رقم ___.",
+     "options": [
+      "180",
+      "240",
+      "0"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "يا سلام! لقد أصبحت مهندس إحداثيات محترف وجاهز لبناء لعبتك الأولى!"
+  },
+  "sections": [
+   {
+    "h": "مرحباً بك في عالم سكراتش (Scratch 3.0)",
+    "text": "سكراتش هو برنامج مدهش ومصمم خصيصاً عشان يعلمنا البرمجة بطريقة ممتعة تشبه تركيب المكعبات. زي ما بتبني بيت بلعبتك المفضلة، في سكراتش بتبني ألعاب وقصص ورسوم متحركة عن طريق سحب وإفلات البلاطات البرمجية الملونة. الواجهة سهلة جداً وفيه مسرح كبير بتظهر عليه إبداعاتك.",
+    "code": "اسحب بلوك: 'عند النقر على الأخضر' -> 'قل مرحباً!'",
+    "output": "ستظهر القطة على المسرح وهي تقول مرحباً بأصدقائها."
+   },
+   {
+    "h": "ما هو مسرح سكراتش؟",
+    "text": "مسرح سكراتش هو الشاشة البيضاء الكبيرة اللي بتشوف فيها اللعبة بتاعتك شغالة. المسرح ده مش مجرد صورة عادية، ده عامل زي لوحة الشطرنج أو خريطة كنز حقيقية مقسمة لخطوط طول وعرض خفية بتساعدنا نعرف مكان كل شخصية بدقة شديدة جداً.",
+    "code": "اعرض شبكة الإحداثيات على خلفية مسرح سكراتش",
+    "output": "ستظهر خطوط أفقية ورأسية توضح تقسيمات المسرح."
+   },
+   {
+    "h": "حكاية محور السينات (X Axis)",
+    "text": "تخيل إنك واقف في وسط غرفة وعاوز تمشي يمين أو شمال. محور س في سكراتش بيعمل نفس الحكاية بالضبط! هو الخط الأفقي اللي بيتحكم في حركة الشخصيات يمين (بأرقام موجبة) ويسار (بأرقام سالبة). أقصى اليمين هو 240 وأقصى اليسار هو -240.",
+    "code": "اجعل س = 100",
+    "output": "تتحرك الشخصية جهة اليمين بمسافة محددة."
+   },
+   {
+    "h": "حكاية محور الصادات (Y Axis)",
+    "text": "زي ما فيه يمين ويسار، لازم يكون فيه لفوق وتحت! محور ص هو الخط الرأسي في سكراتش اللي بيخلي الشخصية تطير لفوق (بأرقام موجبة) أو تنزل لتحت (بأرقام سالبة). القمة فوق خالص عند 180 والقاع تحت خالص عند -180.",
+    "code": "اجعل ص = -100",
+    "output": "تهبط الشخصية نحو أسفل المسرح."
+   },
+   {
+    "h": "نقطة السحر المركزية (0, 0)",
+    "text": "لما تفتح مشروع جديد في سكراتش، القطة بتوقف في نص المسرح بالضبط. النقطة دي بنسميها نقطة الأصل أو المركز، وإحداثياتها هي (0, 0). هي النقطة اللي بيتقاطع فيها محور س مع محور ص، ومنها بنحسب كل خطواتنا في اللعبة.",
+    "code": "اذهب إلى س: 0 وص: 0",
+    "output": "تعود الشخصية فوراً إلى مركز المسرح."
+   },
+   {
+    "h": "كيف نقرأ الإحداثيات المزدوجة؟",
+    "text": "في البرمجة والرياضيات، بنكتب المكان دايماً جوه قوسين بالشكل ده: (س، ص). الرقم الأولاني هو مكان الشخصية أفقياً (يمين/يسار)، والرقم التاني هو مكانها رأسياً (فوق/تحت). لما تقول (50، -50)، معناها امشي يمين 50 وأزل لتحت 50.",
+    "code": "اذهب إلى س: -120 وص: 90",
+    "output": "تنتقل الشخصية إلى أعلى اليسار."
+   },
+   {
+    "h": "استخدام بلوك اذهب إلى الموضع",
+    "text": "البلوك البرمجي 'اذهب إلى س: () وص: ()' هو البطل الخارق بتاعنا النهاردة! لما تحط جواها أرقام وتضغط عليها، الشخصية بتتنقل في ثانية واحدة للمكان ده بالظبط من غير ما تمشي خطوة بخطوة. دي طريقة ممتازة لبدء ألعابنا أو إعادة الشخصية لمكانها.",
+    "code": "متكرر: اذهب إلى س: (رقم عشوائي) وص: (رقم عشوائي)",
+    "output": "تطير الشخصية وتقفز في أماكن مختلفة عشوائياً."
+   },
+   {
+    "h": "التنقل النقطي وتوقع الأماكن",
+    "text": "التنقل النقطي يعني إننا نقدر نتوقع مكان الشخصية قبل ما تتحرك. لو عرفت إن س = 200، هتعرف فوراً إن القطة قربت جداً من الحافة اليمين للمسرح. التدرب على تخيل الأماكن دي بيخليك مبدع كبير وأستاذ تصميم ألعاب فنان!",
+    "code": "خمن: أين تقف الشخصية إذا كانت س = 0 وص = -180؟",
+    "output": "ستقف الشخصية في منتصف أسفل المسرح تماماً."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Scratch 3.0",
+    "desc": "بيئة برمجة مرئية للأطفال تعتمد على تجميع البلوكات."
+   },
+   {
+    "name": "Stage",
+    "desc": "المسرح الأبيض حيث تظهر الشخصيات وتدور أحداث الألعاب."
+   },
+   {
+    "name": "Sprite",
+    "desc": "الشخصية أو الكائن البرمجي الذي نبرمجه على المسرح."
+   },
+   {
+    "name": "X Axis",
+    "desc": "المحور الأفقي للحركة يميناً ويساراً (-240 إلى 240)."
+   },
+   {
+    "name": "Y Axis",
+    "desc": "المحور الرأسي للحركة صعوداً وهبوطاً (-180 إلى 180)."
+   },
+   {
+    "name": "Origin (0,0)",
+    "desc": "نقطة التقاطع في منتصف المسرح تماماً."
+   },
+   {
+    "name": "Go To Block",
+    "desc": "أمر برمجي لنقل الكائن فوراً إلى إحداثيات محددة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي إحداثيات مركز المسرح في سكراتش؟",
+    "a": "(0, 0)"
+   },
+   {
+    "q": "ما هو الحد الأقصى لمحور س (X) في جهة اليمين؟",
+    "a": "240"
+   },
+   {
+    "q": "أي محور نستخدمه لتحريك الشخصية إلى أعلى وأسفل؟",
+    "a": "محور ص (Y)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome, champion! Today we discover Scratch 3.0, a wonderful tool to build cool games and stories just like pro creators.",
+   "To know where any character (sprite) lives on the screen, we use a secret two-way map called a coordinate grid.",
+   "The horizontal line is the X-axis, moving sprites left and right from -240 all the way to 240 easily.",
+   "The vertical line is the Y-axis, moving sprites up and down from -180 to 180 for precise vertical control.",
+   "The crossing point right in the middle is our magical starting spot (0, 0), the exact center of our stage world.",
+   "In our games, we use the green block 'go to x: y:' to teleport our sprite precisely where it belongs!"
+  ],
+  "example": "Imagine the Scratch cat is chilling right in the middle of the stage at (0, 0). If we snap the block 'go to x: 100 y: 50', the cat teleports 100 steps to the right and 50 steps up! This helps us position game heroes with ultimate precision.",
+  "mistake": "If you type a huge number outside the stage bounds like x: 300, the cat vanishes completely off the edge! Fix: always keep your X numbers between -240 and 240, and Y numbers between -180 and 180.",
+  "recap": "We learned how to open the Scratch interface and use coordinates (X, Y) to precisely control character positions on stage. These coordinates are our game maps!",
+  "q": [
+   {
+    "t": "What is the center point of the Scratch stage?",
+    "o": [
+     "(100, 100)",
+     "(0, 0)",
+     "(-240, 180)"
+    ],
+    "a": 1,
+    "why": "The intersection point at the middle of the stage is always zero and zero."
+   },
+   {
+    "t": "What is the maximum positive value for the X-axis on the right?",
+    "o": [
+     "180",
+     "240",
+     "500"
+    ],
+    "a": 1,
+    "why": "The stage width in Scratch stretches horizontally from -240 to 240."
+   },
+   {
+    "t": "In which direction does a sprite move if you change the Y-axis to a positive number?",
+    "o": [
+     "Up",
+     "Down",
+     "Right"
+    ],
+    "a": 0,
+    "why": "Positive numbers on the Y-axis push the character upward on the stage."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Scratch Magic Coordinate Game",
+   "goal": "Complete the following sentences to learn how sprites move on the Scratch stage.",
+   "items": [
+    {
+     "text": "The center point on the Scratch stage is always called (___, 0).",
+     "options": [
+      "0",
+      "100",
+      "-240"
+     ],
+     "a": 0
+    },
+    {
+     "text": "The horizontal axis that controls left and right movement is called the ___ axis.",
+     "options": [
+      "Y",
+      "X",
+      "Time"
+     ],
+     "a": 1
+    },
+    {
+     "text": "The maximum upward height on the Y-axis is the number ___.",
+     "options": [
+      "180",
+      "240",
+      "0"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You are now a professional coordinate engineer ready to build your first game!"
+  },
+  "sections": [
+   {
+    "h": "Welcome to Scratch 3.0",
+    "text": "Scratch is an amazing visual programming language designed especially to help us learn coding by snapping blocks together like Lego bricks. Just like building a house with your favorite toys, Scratch lets you create games, stories, and animations using colorful code blocks. The interface is clean and features a large stage where your creations come alive.",
+    "code": "Drag block: 'when green flag clicked' -> 'say Hello!'",
+    "output": "The cat sprite appears on stage saying hello to its friends."
+   },
+   {
+    "h": "What is the Scratch Stage?",
+    "text": "The Scratch stage is the big white screen where your game runs. This stage is not just a plain picture; it is like a chessboard or a treasure map divided by invisible grid lines that help us pinpoint every character's exact location with incredible accuracy.",
+    "code": "Show grid overlay on the Scratch stage backdrop",
+    "output": "Horizontal and vertical lines appear showing stage divisions."
+   },
+   {
+    "h": "The Story of the X Axis",
+    "text": "Imagine standing in the middle of a room and walking left or right. The X-axis in Scratch does just that! It is the horizontal line controlling sprite movement to the right (positive numbers) and to the left (negative numbers). The far right edge is 240 and the far left edge is -240.",
+    "code": "set x to 100",
+    "output": "The character moves toward the right side by a set distance."
+   },
+   {
+    "h": "The Story of the Y Axis",
+    "text": "Just like left and right, we need up and down! The Y-axis is the vertical line in Scratch that lets characters fly upward (positive numbers) or drop downward (negative numbers). The top peak is 180 and the bottom floor is -180.",
+    "code": "set y to -100",
+    "output": "The character drops toward the bottom of the stage."
+   },
+   {
+    "h": "The Magical Center Point (0, 0)",
+    "text": "When you open a brand new project in Scratch, the cat starts right in the absolute middle of the stage. We call this point the origin or center, and its coordinates are (0, 0). It is where the X-axis and Y-axis intersect, serving as the home base for all our game math.",
+    "code": "go to x: 0 y: 0",
+    "output": "The character instantly snaps back to the center of the stage."
+   },
+   {
+    "h": "How to Read Coordinate Pairs",
+    "text": "In coding and math, we always write positions inside parentheses like this: (X, Y). The first number is horizontal (left/right), and the second number is vertical (up/down). Saying (50, -50) means walk right 50 steps and go down 50 steps.",
+    "code": "go to x: -120 y: 90",
+    "output": "The character teleports to the upper-left quadrant."
+   },
+   {
+    "h": "Using the 'Go To' Block",
+    "text": "The code block 'go to x: () y: ()' is our superhero today! When you put numbers inside and click it, your sprite teleports instantly to that exact spot without walking step by step. It is an amazing way to start games or reset positions.",
+    "code": "forever: go to x: (pick random) y: (pick random)",
+    "output": "The character flies and jumps around to different random spots."
+   },
+   {
+    "h": "Point Navigation & Predicting Positions",
+    "text": "Point navigation means we can predict where a sprite will land before it even moves. If you know X is 200, you instantly know the cat is standing very close to the right edge of the stage. Practicing spatial imagination makes you a master game designer!",
+    "code": "Guess: Where does the sprite stand if x = 0 and y = -180?",
+    "output": "The character stands right at the bottom center of the stage."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Scratch 3.0",
+    "desc": "A visual programming environment for kids using snap-together blocks."
+   },
+   {
+    "name": "Stage",
+    "desc": "The white screen where sprites perform and games happen."
+   },
+   {
+    "name": "Sprite",
+    "desc": "The character or object we program on the stage."
+   },
+   {
+    "name": "X Axis",
+    "desc": "The horizontal axis for moving left and right (-240 to 240)."
+   },
+   {
+    "name": "Y Axis",
+    "desc": "The vertical axis for moving up and down (-180 to 180)."
+   },
+   {
+    "name": "Origin (0,0)",
+    "desc": "The intersection point right in the middle of the stage."
+   },
+   {
+    "name": "Go To Block",
+    "desc": "A command block to instantly teleport a sprite to specific coordinates."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What are the coordinates of the stage center in Scratch?",
+    "a": "(0, 0)"
+   },
+   {
+    "q": "What is the maximum limit of the X-axis on the right side?",
+    "a": "240"
+   },
+   {
+    "q": "Which axis do we use to move a sprite up and down?",
+    "a": "Y-axis"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

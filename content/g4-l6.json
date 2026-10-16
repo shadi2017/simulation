@@ -1,0 +1,324 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن صفحة الويب الخاصة بك هي لوحة رسم كبيرة تحتاج إلى تنظيم، هنا يأتي دور نظام شبكة CSS (CSS Grid) كأداة سحرية تقسم المساحة إلى أعمدة وصفوف مرتبة ومنتظمة تماماً.",
+   "للبدء في بناء هذه الشبكة، نحتاج أولاً إلى تحديد الحاوية الرئيسية للعناصر عبر كتابة أمر بسيط وهو تعيين خاصية display لتصبح بقيمة grid تماماً مثل استخدامنا للعصا السحرية.",
+   "بشكل افتراضي، عند كتابة display: grid وحدها، ستظهر العناصر تحت بعضها في عمود واحد، تماماً مثل طابور الصباح المدرسي المنتظم والمصطف في خط طولي واحد مذهل.",
+   "لكن لكي نصنع الأبراج والأعمدة الحقيقية، نستخدم خاصية grid-template-columns لنحدد عدد أعمدة الشبكة وعرض كل عمود بدقة متناهية وسهولة مدهشة.",
+   "القاعدة الذهبية هنا هي أن وحدة القياس fr تعني جزءاً مرناً من المساحة المتاحة، مما يجعل العناصر تتمدد وتتقلص بذكاء مع أحجام الشاشات المختلفة دون مشاكل.",
+   "في الحياة اليومية، تشبه شبكة CSS أرفف المكتبة المتقاطعة حيث تنظم الكتب والألعاب في صفوف وأعمدة محددة تماماً لتجد كل شيء بسهولة تامة."
+  ],
+  "example": "لنقم بإنشاء شبكة من ثلاثة أعمدة متساوية لترتيب الألعاب. نكتب في ملف CSS:\n.container {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\nهنا يقوم المتصفح بتوزيع المساحة المتاحة بالتساوي على الألعاب الثلاث لتبدو منظمة وجذابة.",
+  "mistake": "من الأخطاء الشائعة كتابة display: grid ونسيان تحديد الأعمدة باستخدام grid-template-columns، مما يجعل العناصر تظهر فوق بعضها في عمود واحد. الحل هو إضافة قياسات الأعمدة بوضوح.",
+  "recap": "نظام CSS Grid هو نظام رائع لتنظيم عناصر الصفحة في بعدين (صفوف وأعمدة). استخدمنا display: grid و grid-template-columns للتحكم الكامل بالتصميم.",
+  "q": [
+   {
+    "t": "ما هي القيمة المناسبة لخاصية display لتحويل عنصر إلى شبكة؟",
+    "o": [
+     "flex",
+     "grid",
+     "block"
+    ],
+    "a": 1,
+    "why": "القيمة grid تحول الحاوية مباشرة إلى نظام شبكي يسمح بالتحكم في الصفوف والأعمدة."
+   },
+   {
+    "t": "ماذا تعني وحدة القياس fr في تصميم الشبكات؟",
+    "o": [
+     "جزء مرن من المساحة المتاحة",
+     "بكسل ثابت لا يتغير",
+     "لون خلفية الشبكة"
+    ],
+    "a": 0,
+    "why": "وحدة fr تعني (fraction) وتستخدم لتوزيع المساحة بطريقة مرنة ونسبية بين الأعمدة."
+   },
+   {
+    "t": "كيف يتم عرض العناصر افتراضياً عند كتابة display: grid فقط بدون تحديد أعمدة؟",
+    "o": [
+     "في شبكة معقدة من أربعة أعمدة",
+     "بشكل عمود واحد فوق بعضها",
+     "بشكل أفقي متجاور تماماً"
+    ],
+    "a": 1,
+    "why": "افتراضياً بدون تحديد أعمدة، تصطف العناصر في عمود واحد تحتي تماماً مثل التدفق العادي."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف أدوات وتقنيات CSS Grid",
+   "goal": "ضع كل مصطلح أو خاصية في الصندوق الصحيح الخاص به",
+   "buckets": [
+    "خصائص الشبكة (Grid)",
+    "قيم ووحدات القياس"
+   ],
+   "items": [
+    {
+     "t": "display: grid",
+     "b": 0
+    },
+    {
+     "t": "grid-template-columns",
+     "b": 0
+    },
+    {
+     "t": "1fr",
+     "b": 1
+    },
+    {
+     "t": "200px",
+     "b": 1
+    },
+    {
+     "t": "grid-template-rows",
+     "b": 0
+    },
+    {
+     "t": "repeat()",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت خصائص ووحدات الشبكة بنجاح تام لتصنع تصميماً مذهلاً!"
+  },
+  "sections": [
+   {
+    "h": "ما هو نظام CSS Grid؟",
+    "text": "شبكة CSS هي نظام ثنائي الأبعاد لتنظيم محتوى صفحات الويب في صفوف وأعمدة متقاطعة تشبه تماماً دفاتر الرسم المخططة بالتربيع لتضع كل عنصر في مكانه المناسب.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 10px;\"><div style=\"background: #ffeb3b; padding: 20px; text-align: center;\">عنصر 1</div><div style=\"background: #03a9f4; padding: 20px; text-align: center;\">عنصر 2</div></div>",
+    "output": "صفحة تعرض عنصرين جنباً إلى جنب في شبكة بسيطة."
+   },
+   {
+    "h": "تفعيل الشبكة بـ display: grid",
+    "text": "لكي تحول أي صندوق يحتوي على عناصر إلى شبكة عمل، نكتب خاصية display بقيمة grid. تماماً مثل فتح باب ورشة العمل ليبدأ المبدعون بتنظيم أدواتهم بدقة.",
+    "code": "<div style=\"display: grid; background: #e0f7fa; padding: 15px;\"><div style=\"background: #b2ebf2; padding: 10px; margin: 5px;\">ابن الشبكة</div></div>",
+    "output": "حاوية مفعلة بنظام الشبكة جاهزة لاستقبال العناصر."
+   },
+   {
+    "h": "بناء الأعمدة بـ grid-template-columns",
+    "text": "الأعمدة هي الطرق الرولية الطولية في مدينتك الرقمية. نستخدم grid-template-columns لنحدد عدد الأعمدة وعرضها، مثل تخطيط شوارع المدينة لتكون متساوية أو مختلفة.",
+    "code": "<div style=\"display: grid; grid-template-columns: 100px 200px; gap: 10px;\"><div style=\"background: #ffcdd2; padding: 15px;\">عمود 1</div><div style=\"background: #c8e6c9; padding: 15px;\">عمود 2</div></div>",
+    "output": "عرض عمودين بعرضين مختلفين ومحددين بدقة."
+   },
+   {
+    "h": "استخدام وحدة القياس المرنة fr",
+    "text": "وحدة fr اختصار لكلمة جزء (fraction). إنها تشبه قطع البيتزا التي تقسمها بين أصدقائك بمرونة تامة حسب المساحة المتاحة على الشاشة مهما كانت صغيرة أو كبيرة.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 10px;\"><div style=\"background: #ffe0b2; padding: 10px;\">1fr</div><div style=\"background: #d1c4e9; padding: 10px;\">2fr</div><div style=\"background: #ffe0b2; padding: 10px;\">1fr</div></div>",
+    "output": "ثلاثة أعمدة يكون الوسط فيها ضعف أطرافها."
+   },
+   {
+    "h": "إنشاء صفوف متعددة بوضوح",
+    "text": "الصفوف هي الخطوط الأفقية في الشبكة. من خلال دمج الأعمدة والصفوف معاً، نبني هيكلاً متكاملاً لصفحة الويب يشبه رفوف خزانة الملابس المنظمة بدقة شديدة.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 50px 50px; gap: 10px;\"><div style=\"background: #b3e5fc;\">صف 1</div><div style=\"background: #b3e5fc;\">صف 1</div><div style=\"background: #c8e6c9;\">صف 2</div><div style=\"background: #c8e6c9;\">صف 2</div></div>",
+    "output": "شبكة تحتوي على صفين وأعمدة واضحة ومنظمة."
+   },
+   {
+    "h": "ترتيب أقسام الصفحة الرئيسية",
+    "text": "تساعدنا الشبكات في تنظيم تخطيط مواقع الإنترنت الكبيرة مثل رأس الصفحة والمحتوى الجانبي والوسط، مما يجعل تصفح المواقع سهلاً وجميلاً لجميع المستخدمين.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 3fr; gap: 10px; height: 100px;\"><div style=\"background: #ffccbc; padding: 10px;\">القائمة</div><div style=\"background: #dcedc8; padding: 10px;\">المحتوى</div></div>",
+    "output": "تخطيط شاشة يضم قائمة جانبية ومحتوى رئيسي واسع."
+   }
+  ],
+  "reference": [
+   {
+    "name": "display: grid",
+    "desc": "يحول العنصر إلى حاوية شبكية ثنائية الأبعاد."
+   },
+   {
+    "name": "grid-template-columns",
+    "desc": "يحدد عدد وأعراض أعمدة الشبكة."
+   },
+   {
+    "name": "grid-template-rows",
+    "desc": "يحدد عدد وأطوال صفوف الشبكة."
+   },
+   {
+    "name": "fr",
+    "desc": "وحدة قياس مرنة توزع المساحة المتاحة نسبياً."
+   },
+   {
+    "name": "gap",
+    "desc": "يحدد المسافة الفاصلة بين صفوف وأعمدة الشبكة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS يحول حاوية إلى شبكة بأربعة أعمدة متساوية باستخدام وحدة fr.",
+    "a": ".container { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; }"
+   },
+   {
+    "q": "كيف تحدد مسافة فاصلة مقدارها 15 بكسل بين خلايا الشبكة؟",
+    "a": "تستخدم خاصية gap: 15px; داخل حاوية الشبكة."
+   },
+   {
+    "q": "ما الخاصية المستخدمة لتعريف صفوف الشبكة وأطوالها؟",
+    "a": "خاصية grid-template-rows."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine your web page is a big blank canvas that needs neat organization; this is where CSS Grid comes in as a magical tool dividing space into clean rows and columns.",
+   "To start building this grid, we first define the main container element by writing a simple property: setting display to grid, just like waving a magic wand over our layout.",
+   "By default, writing display: grid alone stacks items vertically in a single column, exactly like a neat morning school queue lined up in a straight vertical path.",
+   "To build real columns and rows instead, we use grid-template-columns to specify how many columns we want and the exact width of each one with wonderful ease.",
+   "The golden rule here is that the fr measurement unit stands for a flexible fraction of available space, helping elements resize intelligently across various screen sizes.",
+   "In daily life, a CSS grid is like crossing bookshelf shelves, neatly organizing books and toys into strict rows and columns so everything is extremely easy to find."
+  ],
+  "example": "Let's create a three-column grid to organize toys. In our CSS file we write:\n.container {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\nHere the browser divides the available space equally among the three toys so they look tidy and appealing.",
+  "mistake": "A common mistake is writing display: grid and forgetting to define columns using grid-template-columns, which leaves items stacked in a single column. The fix is clearly adding column measurements.",
+  "recap": "CSS Grid is a powerful system for laying out page elements in two dimensions (rows and columns). We used display: grid and grid-template-columns for complete layout control.",
+  "q": [
+   {
+    "t": "What is the correct value for the display property to turn an element into a grid?",
+    "o": [
+     "flex",
+     "grid",
+     "block"
+    ],
+    "a": 1,
+    "why": "The grid value directly transforms the container into a grid layout system allowing row and column control."
+   },
+   {
+    "t": "What does the fr unit mean in grid design?",
+    "o": [
+     "A flexible fraction of available space",
+     "A fixed pixel size that never changes",
+     "The background color of the grid"
+    ],
+    "a": 0,
+    "why": "The fr unit stands for fraction and is used to distribute space flexibly and proportionally among columns."
+   },
+   {
+    "t": "How do items display by default when writing only display: grid without specifying columns?",
+    "o": [
+     "In a complex four-column grid",
+     "Stacked vertically in a single column",
+     "Placed side by side horizontally"
+    ],
+    "a": 1,
+    "why": "By default without column definitions, items stack in a single vertical column just like normal block flow."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting CSS Grid Tools and Properties",
+   "goal": "Place each term or property into its correct category bucket",
+   "buckets": [
+    "Grid Properties",
+    "Values and Units"
+   ],
+   "items": [
+    {
+     "t": "display: grid",
+     "b": 0
+    },
+    {
+     "t": "grid-template-columns",
+     "b": 0
+    },
+    {
+     "t": "1fr",
+     "b": 1
+    },
+    {
+     "t": "200px",
+     "b": 1
+    },
+    {
+     "t": "grid-template-rows",
+     "b": 0
+    },
+    {
+     "t": "repeat()",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted the grid properties and units successfully to build an amazing layout!"
+  },
+  "sections": [
+   {
+    "h": "What is CSS Grid?",
+    "text": "CSS Grid is a two-dimensional layout system for web content in intersecting rows and columns, much like squared graph paper keeping every element precisely in place.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 10px;\"><div style=\"background: #ffeb3b; padding: 20px; text-align: center;\">Item 1</div><div style=\"background: #03a9f4; padding: 20px; text-align: center;\">Item 2</div></div>",
+    "output": "A page showing two items side by side in a simple grid."
+   },
+   {
+    "h": "Activating Grid with display: grid",
+    "text": "To turn any container holding items into a workshop grid, we write the display property with value grid. It is like opening a workshop door so creators organize their tools.",
+    "code": "<div style=\"display: grid; background: #e0f7fa; padding: 15px;\"><div style=\"background: #b2ebf2; padding: 10px; margin: 5px;\">Grid Box</div></div>",
+    "output": "A container enabled with grid system ready for items."
+   },
+   {
+    "h": "Building Columns with grid-template-columns",
+    "text": "Columns are vertical avenues in your digital city. We use grid-template-columns to define column count and width, like planning city streets to be equal or custom sized.",
+    "code": "<div style=\"display: grid; grid-template-columns: 100px 200px; gap: 10px;\"><div style=\"background: #ffcdd2; padding: 15px;\">Col 1</div><div style=\"background: #c8e6c9; padding: 15px;\">Col 2</div></div>",
+    "output": "Displaying two columns with distinct defined widths."
+   },
+   {
+    "h": "Using Flexible fr Units",
+    "text": "The fr unit stands for fraction. It is like slicing a pizza to share with friends flexibly according to available screen space, no matter how small or large.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 10px;\"><div style=\"background: #ffe0b2; padding: 10px;\">1fr</div><div style=\"background: #d1c4e9; padding: 10px;\">2fr</div><div style=\"background: #ffe0b2; padding: 10px;\">1fr</div></div>",
+    "output": "Three columns where the middle one is twice the side ones."
+   },
+   {
+    "h": "Creating Multiple Rows Clearly",
+    "text": "Rows are horizontal lines in the grid. By combining columns and rows together, we build a complete webpage skeleton resembling a neatly organized wardrobe shelf.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 50px 50px; gap: 10px;\"><div style=\"background: #b3e5fc;\">Row 1</div><div style=\"background: #b3e5fc;\">Row 1</div><div style=\"background: #c8e6c9;\">Row 2</div><div style=\"background: #c8e6c9;\">Row 2</div></div>",
+    "output": "A grid containing two rows and clear organized columns."
+   },
+   {
+    "h": "Arranging Main Page Sections",
+    "text": "Grids help us organize large website layouts such as headers, sidebars, and main content areas, making browsing websites smooth and gorgeous for all users.",
+    "code": "<div style=\"display: grid; grid-template-columns: 1fr 3fr; gap: 10px; height: 100px;\"><div style=\"background: #ffccbc; padding: 10px;\">Menu</div><div style=\"background: #dcedc8; padding: 10px;\">Content</div></div>",
+    "output": "A screen layout featuring a side menu and wide main content."
+   }
+  ],
+  "reference": [
+   {
+    "name": "display: grid",
+    "desc": "Turns an element into a two-dimensional grid container."
+   },
+   {
+    "name": "grid-template-columns",
+    "desc": "Defines the number and widths of grid columns."
+   },
+   {
+    "name": "grid-template-rows",
+    "desc": "Defines the number and heights of grid rows."
+   },
+   {
+    "name": "fr",
+    "desc": "A flexible unit distributing available space proportionally."
+   },
+   {
+    "name": "gap",
+    "desc": "Sets the spacing between grid rows and columns."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to turn a container into a grid with four equal columns using the fr unit.",
+    "a": ".container { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; }"
+   },
+   {
+    "q": "How do you specify a 15-pixel gap between grid cells?",
+    "a": "You use the gap: 15px; property inside the grid container."
+   },
+   {
+    "q": "What property is used to define grid rows and their sizes?",
+    "a": "The grid-template-rows property."
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: CSS grid layout",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids"
+  },
+  {
+   "title": "MDN: grid CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid"
+  }
+ ],
+ "grounded": true
+}

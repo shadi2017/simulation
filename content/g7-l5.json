@@ -1,0 +1,284 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً بيك يا بطل! اليوم هنتعلم إزاي نقرأ ملفات الجداول زي إكسيل أو CSV باستخدام مكتبة بنداس (Pandas) في بايثون عشان نحلل البيانات الضخمة.",
+   "عشان نبدأ، لازم نستورد المكتبة بالشكل ده: 'import pandas as pd'. دي الخطوة الأولى والأهم في أي برنامج تحليل بيانات.",
+   "بعدين بنستخدم الأمر 'pd.read_csv(\"file.csv\")' عشان نحول ملف البيانات لجدول منظم جوه بايثون اسمه DataFrame، وده بيسهل علينا الشغل جداً.",
+   "بنداس بتديك أدوات مذهلة لفحص الجدول من بره من غير ما تقرأ كل صف لوحدك، زي استخدام '.head()' عشان تشوف أول 5 صفوف وتتأكد إن البيانات اتحملت صح.",
+   "قاعدة ذهبية: دايماً ابدأ بـ head() و info() قبل ما تعمل أي تحليل معقد، عشان تعرف إيه نوع البيانات اللي عندك وهل فيه خانات فاضية ولا لأ.",
+   "في الحياة الحقيقية، دكاترة التحاليل ومهندسي الذكاء الاصطناعي بيستخدموا بنداس عشان يقرأوا ملايين السجلات الطبية أو درجات حرارة الطقس في ثوانٍ معدودة!"
+  ],
+  "example": "تخيل إن معاك ملف اسمه 'grades.csv' فيه درجات الطلاب، وعايز تحمله وتشوف أول صفوفه. الكود هيكون كالتالي:\nimport pandas as pd\ndf = pd.read_csv('grades.csv')\nprint(df.head(3))\nهنا بايثون هيقرا الملف ويطبع أول 3 صفوف بس عشان تتاكد إن الأسماء والأرقام ظهرت مظبوطة قدامك على الشاشة.",
+  "mistake": "الغلطة الشائعة هي نسيان كتابة 'import pandas as pd' في أول الكود، أو كتابة اسم ملف الـ CSV غلط. الحل هو التأكد من استيراد المكتبة وكتابة اسم الملف وامتداده بدقة داخل علامات التنصيص.",
+  "recap": "تعلمنا اليوم إزاي نحمل ملفات CSV باستخدام بنداس وإزاي نستعمل أدوات الفحص السريع زي head و info عشان نفهم جداول البيانات.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة المستخدمة لتحميل ملفات CSV في بنداس؟",
+    "o": [
+     "pd.read_csv()",
+     "pd.load_file()",
+     "pd.open_table()"
+    ],
+    "a": 0,
+    "why": "read_csv() هي الدالة الرسمية والمخصصة لقراءة ملفات CSV وتحويلها إلى DataFrame."
+   },
+   {
+    "t": "ماذا يفعل الأمر df.head() بشكل افتراضي؟",
+    "o": [
+     "يعرض آخر 5 صفوف",
+     "يعرض أول 5 صفوف",
+     "يحذف صفوف الجدول"
+    ],
+    "a": 1,
+    "why": "head() تعرض أول خمس صفوف افتراضياً لمساعدتك في معاينة الجدول بسرعة."
+   },
+   {
+    "t": "كيف نستورد مكتبة بنداس بطريقة مختصرة وشائعة؟",
+    "o": [
+     "import pandas as library",
+     "import pd as pandas",
+     "import pandas as pd"
+    ],
+    "a": 2,
+    "why": "الاسم التعارفي والمختصر عالمياً لاستيراد بنداس هو 'pd'."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة أدوات فحص بيانات بنداس",
+   "goal": "صل بين أمر بنداس ووظيفته الصحيحة التي تقرأ أو تفحص الجدول.",
+   "pairs": [
+    [
+     "pd.read_csv()",
+     "تحميل ملف بيانات جدول"
+    ],
+    [
+     "df.head()",
+     "عرض أول صفوف الجدول"
+    ],
+    [
+     "df.info()",
+     "إعطاء ملخص أنواع البيانات"
+    ],
+    [
+     "df.describe()",
+     "عرض الإحصائيات السريعة"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت أدوات استيراد وفحص الجداول بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في مكتبة بنداس",
+    "text": "بنداس هي مكتبة بايثون الخارقة لتحليل البيانات وتنظيمها في جداول تشبه جداول إكسيل، وتسمى هذه الجداول DataFrame، وهي تشبه كشك تسوق مرتب بعناية.",
+    "code": "import pandas as pd\nprint(pd.__version__)",
+    "output": "3.0.6"
+   },
+   {
+    "h": "استيراد ملفات CSV",
+    "text": "عندما يكون لديك ملف بيانات بصيغة CSV، يمكنك جلبه إلى بايثون بضغطة زر باستخدام دالة read_csv، وكأنك تفتح حقيبة مدرسية مليئة بالدفاتر.",
+    "code": "import pandas as pd\ndf = pd.read_csv('students.csv')\nprint(type(df))",
+    "output": "<class 'pandas.core.frame.DataFrame'>"
+   },
+   {
+    "h": "فحص البداية باستخدام head",
+    "text": "لا تحتاج لقراءة ملايين الصفوف دفعة واحدة؛ أمر head() يعطيك نظرة خاطفة على أول السطور لترى شكل الأعمدة والبيانات.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona', 'Omar'], 'Age': [12, 13, 14]})\nprint(df.head(2))",
+    "output": "   Name  Age\n0   Ali   12\n1  Mona   13"
+   },
+   {
+    "h": "معرفة التفاصيل بـ info",
+    "text": "أمر info() يشبه تقرير الطبيب الشامل؛ يخبرك بعدد الصفوف والأعمدة وأنواع البيانات في كل عمود وهل هناك خلايا فارغة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [90, 85], 'Pass': [True, True]})\nprint(df.info())",
+    "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 2 entries, 0 to 1\nData columns (total 2 columns):\n #   Column  Non-Null Count...\ndtypes: bool(1), int64(1)"
+   },
+   {
+    "h": "الملخص الإحصائي بـ describe",
+    "text": "إذا أردت معرفة أصغر وأكبر قيمة ومعدل الدرجات، فإن describe() يحسب لك الإحصائيات الحسابية للأعمدة الرقمية فوراً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [80, 90, 100]})\nprint(df.describe())",
+    "output": "       Score\ncount    3.0\nmean    90.0\nstd     10.0\nmin     80.0\n25%     85.0\n50%     90.0\n75%     95.0\nmax    100.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import pandas as pd",
+    "desc": "استيراد مكتبة بنداس واختصارها بـ pd."
+   },
+   {
+    "name": "pd.read_csv()",
+    "desc": "قراءة ملف CSV وتحويله إلى جدول DataFrame."
+   },
+   {
+    "name": "df.head()",
+    "desc": "عرض أول عدد محدد من الصفوف (افتراضياً 5)."
+   },
+   {
+    "name": "df.info()",
+    "desc": "عرض ملخص شامل للهيكل وأنواع البيانات والأعمدة."
+   },
+   {
+    "name": "df.describe()",
+    "desc": "توليد ملخص إحصائي سريع للأعمدة الرقمية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر الكود لاستيراد بنداس باسم مستعار pd.",
+    "a": "import pandas as pd"
+   },
+   {
+    "q": "كيف تقرأ ملف اسمه 'data.csv' وتخزنه في متغير اسمه df؟",
+    "a": "df = pd.read_csv('data.csv')"
+   },
+   {
+    "q": "ما هو الأمر لعرض أول 10 صفوف من جدول df؟",
+    "a": "df.head(10)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome hero! Today we learn how to read spreadsheet and CSV files using the Pandas library in Python to analyze big data.",
+   "To begin, we must import the library like this: 'import pandas as pd'. This is the first and most important step in any data project.",
+   "Next, we use 'pd.read_csv(\"file.csv\")' to turn our data file into an organized table inside Python called a DataFrame, making work super easy.",
+   "Pandas gives you amazing tools to inspect a table from the outside without reading every row, like using '.head()' to view the first 5 rows.",
+   "Golden rule: Always start with head() and info() before doing complex analysis, to know your data types and check for missing blanks.",
+   "In real life, data scientists and AI engineers use Pandas to read millions of medical records or weather temperatures in just a few seconds!"
+  ],
+  "example": "Imagine you have a file named 'grades.csv' with student scores, and you want to load it and view the top rows. The code is:\nimport pandas as pd\ndf = pd.read_csv('grades.csv')\nprint(df.head(3))\nHere Python reads the file and prints only the first 3 rows so you can verify names and numbers appear correctly on your screen.",
+  "mistake": "A common mistake is forgetting to write 'import pandas as pd' at the beginning, or typing the CSV file name incorrectly. The fix is to ensure the library is imported and the file name with its extension is exact inside quotes.",
+  "recap": "Today we learned how to load CSV files using Pandas and how to use quick inspection tools like head and info to understand data tables.",
+  "q": [
+   {
+    "t": "Which function is used to load CSV files in Pandas?",
+    "o": [
+     "pd.read_csv()",
+     "pd.load_file()",
+     "pd.open_table()"
+    ],
+    "a": 0,
+    "why": "read_csv() is the official dedicated function to read CSV files and convert them into a DataFrame."
+   },
+   {
+    "t": "What does df.head() do by default?",
+    "o": [
+     "Displays the last 5 rows",
+     "Displays the first 5 rows",
+     "Deletes table rows"
+    ],
+    "a": 1,
+    "why": "head() displays the first five rows by default to help you preview the table quickly."
+   },
+   {
+    "t": "How do we import the Pandas library in a short, standard way?",
+    "o": [
+     "import pandas as library",
+     "import pd as pandas",
+     "import pandas as pd"
+    ],
+    "a": 2,
+    "why": "The globally recognized short alias for importing Pandas is 'pd'."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching Pandas Data Inspection Tools",
+   "goal": "Connect each Pandas command to its correct data loading or inspection purpose.",
+   "pairs": [
+    [
+     "pd.read_csv()",
+     "Load a table data file"
+    ],
+    [
+     "df.head()",
+     "View top rows of a table"
+    ],
+    [
+     "df.info()",
+     "Give data types summary"
+    ],
+    [
+     "df.describe()",
+     "Show quick statistics"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered table loading and inspection tools!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Pandas",
+    "text": "Pandas is Python's superpower library for data analysis and organization into spreadsheet-like tables called DataFrames, acting like a neatly arranged filing cabinet.",
+    "code": "import pandas as pd\nprint(pd.__version__)",
+    "output": "3.0.6"
+   },
+   {
+    "h": "Importing CSV Files",
+    "text": "When you have a dataset file in CSV format, you can bring it into Python instantly using the read_csv function, just like opening a school binder full of notes.",
+    "code": "import pandas as pd\ndf = pd.read_csv('students.csv')\nprint(type(df))",
+    "output": "<class 'pandas.core.frame.DataFrame'>"
+   },
+   {
+    "h": "Inspecting the Beginning with head",
+    "text": "You do not need to read millions of rows at once; the head() method gives you a quick glance at the top lines to see columns and data structure.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona', 'Omar'], 'Age': [12, 13, 14]})\nprint(df.head(2))",
+    "output": "   Name  Age\n0   Ali   12\n1  Mona   13"
+   },
+   {
+    "h": "Checking Details with info",
+    "text": "The info() method acts like a thorough doctor's report, telling you the number of rows, columns, data types per column, and whether any cells are empty.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [90, 85], 'Pass': [True, True]})\nprint(df.info())",
+    "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 2 entries, 0 to 1\nData columns (total 2 columns):\n #   Column  Non-Null Count...\ndtypes: bool(1), int64(1)"
+   },
+   {
+    "h": "Statistical Summary with describe",
+    "text": "If you want to know minimum, maximum, and average scores, describe() immediately computes mathematical statistics for all numeric columns.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [80, 90, 100]})\nprint(df.describe())",
+    "output": "       Score\ncount    3.0\nmean    90.0\nstd     10.0\nmin     80.0\n25%     85.0\n50%     90.0\n75%     95.0\nmax    100.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import pandas as pd",
+    "desc": "Import the Pandas library and alias it as pd."
+   },
+   {
+    "name": "pd.read_csv()",
+    "desc": "Read a CSV file and load it into a DataFrame table."
+   },
+   {
+    "name": "df.head()",
+    "desc": "Display a specified number of top rows (default 5)."
+   },
+   {
+    "name": "df.info()",
+    "desc": "Display a comprehensive structural and data type summary."
+   },
+   {
+    "name": "df.describe()",
+    "desc": "Generate a quick statistical summary of numeric columns."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the line of code to import Pandas with the alias pd.",
+    "a": "import pandas as pd"
+   },
+   {
+    "q": "How do you read a file named 'data.csv' and store it in a variable called df?",
+    "a": "df = pd.read_csv('data.csv')"
+   },
+   {
+    "q": "What is the command to display the first 10 rows of table df?",
+    "a": "df.head(10)"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

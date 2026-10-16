@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "القصة الحلوة يا بطل مش بتخلص في مكان واحد، دي ممكن تكون كذا صفحة وراء بعض! زي الكتاب اللي بنقرأه في المدرسة، صفحة البداية بتعرفنا الحكاية، وبعدين نقلب للصفحة اللي بعدها.",
+   "عشان نخلي الشخصية تتحرك من صفحة للثانية في سكراتش جونيور، بنستخدم بلوك الانتقال لصفحة جديدة. البلوك ده عامل زي باب سحري بياخدنا لصفحة تانية خالص بكل حاجة فيها.",
+   "البلوك ده بيشتغل لما الشخصية تدوس عليه أو تخلص كلام، فتقوم دايسة على البلوك وتقوم ناقلتنا فوراً للصفحة رقم 2 اللي فيها المغامرة الكبيرة بتاعة وسط القصة.",
+   "مثلاً، نعمل صفحة أولى فيها البطل نايم في بيته، ولما ندوس عليه يفتح باب الصفحة التانية اللي فيها الغابة العجيبة والشجرة اللي بتتكلم، والصفحة الثالثة فيها النهاية السعيدة.",
+   "القاعدة الذهبية هنا هي: رتب صفحاتك دايماً بالترتيب الصح من الشمال لليمين (بداية، وسط، نهاية) عشان القصة تكون واضحة وممتعة لأي حد هيتفرج عليها.",
+   "الفكرة دي بتستخدم في ألعاب الكمبيوتر الحقيقية ورسوم الكارتون، لما المستوي بيخلص واللاعب بيكسب، اللعبة بتنقله للمستوى اللي بعده في مكان تاني خالص."
+  ],
+  "example": "تخيل إنك بتصمم قصة عن قطة شجاعة. الصفحة الأولى فيها القطة في بيتها (البداية)، ولما بتدوس عليها بتنتقل للصفحة الثانية اللي فيها الكهف المظلم (الوسط)، وفي الآخر الصفحة الثالثة فيها الكنز (النهاية). بنحط بلوك الصفحة في آخر كل صفحة عشان ننقل القصة بسلاسة.",
+  "mistake": "الخطأ المشهور هو إننا نلخبط ترتيب الصفحات ونخلي النهاية قبل البداية! الحل هو إننا نتأكد من أسماء الصفحات وأرقامها في شريط الصفحات على اليمين قبل ما نشغل القصة.",
+  "recap": "تعلمنا إزاي نعمل قصة من كذا صفحة ونربطهم ببعض ببلوكات الانتقال. كده قصصنا بقت أكبر وأجمل!",
+  "q": [
+   {
+    "t": "إيه هو البلوك اللي بيخلينا ننتقل لصفحة تانية في سكراتش جونيور؟",
+    "o": [
+     "بلوك القفز",
+     "بلوك الانتقال لصفحة",
+     "بلوك تكبير الحجم"
+    ],
+    "a": 1,
+    "why": "بلوك الانتقال لصفحة هو المسؤول عن نقل الشخصية والقصة لصفحة جديدة."
+   },
+   {
+    "t": "لما نبدأ قصة جديدة من كذا صفحة، المفروض نبدأ بإيه في الصفحة الأولى؟",
+    "o": [
+     "النهاية",
+     "الوسط",
+     "البداية"
+    ],
+    "a": 2,
+    "why": "القصة دايماً بتبدأ بالبداية عشان نفهم الحكاية من الأول."
+   },
+   {
+    "t": "فين بنلاقي أرقام الصفحات وشريط التنقل في تطبيق سكراتش جونيور؟",
+    "o": [
+     "في يمين الشاشة",
+     "في زر التشغيل الأخضر",
+     "في قائمة الألوان"
+    ],
+    "a": 0,
+    "why": "شريط الصفحات بيكون ظاهر على يمين الشاشة عشان نشوف كل الصفحات."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "لعبة توقع الصفحة الجديدة",
+   "goal": "اعرف إيه اللي هيحصل لما نحط بلوك الانتقال لصفحة 2 في نهاية صفحة البداية",
+   "code": "صفحة 1 (البداية): [العلم الأخضر] -> [امشِ خطوتين] -> [بلوك الانتقال لصفحة 2]",
+   "options": [
+    "القصة تقف مكانها وتخلص فوراً",
+    "الشخصية تختفي للأبد",
+    "القصة تنتقل فوراً للصفحة الثانية وتبدأ أحداث الوسط"
+   ],
+   "a": 2,
+   "success": "يا سلام! القصة نقلت بسلاسة للصفحة الثانية وبدأت المغامرة الجديدة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي صفحات القصة؟",
+    "text": "القصة الطويلة بتحتاج صفحات كتيرة عشان متكونش زحمة. زي كتابك المدرسي اللي فيه صفحة للعربي وصفحة للرياضيات، قصتك في سكراتش جونيور ممكن تكون مقسمة لصفحات منفصلة لكل جزء فيها.",
+    "code": "فكرة الكتاب المفتوح: صفحة 1، صفحة 2، صفحة 3",
+    "output": "كل صفحة لها مكانها الخاص والشخصيات الخاصة بيها"
+   },
+   {
+    "h": "صفحة البداية (Beginning Scene)",
+    "text": "دي أول صفحة في قصتك. بنحط فيها شكل المكان في الأول والشخصية الرئيسية وهي بتسلم على الجمهور أو بتصحى من النوم. دي بتعبر عن 'يا ما كان في قديم الزمان'.",
+    "code": "صفحة 1: [شخصية الولد] + [خلفية البيت]",
+    "output": "المشهد الأول جاهز ويحكي بداية الحكاية"
+   },
+   {
+    "h": "صفحة الوسط والأحداث (Action Scene)",
+    "text": "هنا بيحصل التحدي أو المشكلة أو المغامرة! الصفحة دي بيكون فيها خلفية تانية زي الغابة أو الفضاء، والشخصية بتعمل حاجات كتيرة ومثيرة زي الجري أو الطيران.",
+    "code": "صفحة 2: [خلفية الغابة] + [امشِ 5 خطوات]",
+    "output": "المشهد الثاني المليان حركة يبدأ فوراً"
+   },
+   {
+    "h": "صفحة النهاية (Ending Scene)",
+    "text": "دي آخر صفحة في قصتك الجميلة. المشهد ده بيحل المشكلة، والشخصية بتقول 'النهاية' أو بترقص فرحة بإنهاء المغامرة بنجاح كبير.",
+    "code": "صفحة 3: [خلفية البيت من جديد] + [نط الخاتمة]",
+    "output": "القصة تخلص بشكل سعيد وجميل"
+   },
+   {
+    "h": "بلوك الانتقال لصفحة جديدة",
+    "text": "ده البلوك السحري لونه أحمر وعليه سهم وصفحة. لما بنحطه في آخر الكود بتاعي، الشخصية بتدوس عليه أو بتخلصه، وتقوم ناقلة المشهد كله للصفحة اللي اخترناها.",
+    "code": "آخر السطر: [بلوك الانتقال للصفحة رقم 2]",
+    "output": "القفز الفوري للصفحة الجديدة بدون إغلاق اللعبة"
+   },
+   {
+    "h": "ربط الصفحات ببعضها بترتيب صحيح",
+    "text": "عشان القصة تكون مفهومة، لازم نربط الصفحة الأولى بالثانية، والثانية بالثالثة. لو لخبطنا الترتيب، الجمهور هيتلخبط ومش هيعرف القصة بدأت منين ولا خلصت فين.",
+    "code": "صفحة 1 -> توددي إلى -> صفحة 2 -> تودي إلى -> صفحة 3",
+    "output": "سلسلة أحداث مرتبة ومنطقية"
+   },
+   {
+    "h": "استخدام الخلفيات المختلفة لكل صفحة",
+    "text": "عشان نخلي القصة شكلها جميل وواقعي، بنغير خلفية كل صفحة. الصفحة الأولى خلفيتها نهار، الصفحة الثانية ليل، الصفحة الثالثة فضاء مثلاً.",
+    "code": "تغيير الخلفية في شريط الخصائص لكل صفحة",
+    "output": "كل صفحة ليها شكل مميز وجذاب"
+   },
+   {
+    "h": "تجربة القصة كاملة من الأول للآخر",
+    "text": "قبل ما نخلص شغلنا، لازم ندوس على علم الصفحة الأولى ونتفرج على القصة وهي بتتحرك من البداية للوسط للنهاية لوحدها من غير ما نتدخل.",
+    "code": "تشغيل من صفحة 1 ومشاهدة الانتقال التلقائي",
+    "output": "قصة متكاملة وناجحة مية مية"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Page Switch Block",
+    "desc": "البلوك الأحمر المسؤول عن نقل القصة لصفحة تانية."
+   },
+   {
+    "name": "Beginning Scene",
+    "desc": "صفحة البداية اللي بتبدأ بيها الحكاية."
+   },
+   {
+    "name": "Action Scene",
+    "desc": "صفحة الوسط اللي فيها المغامرة والحركة."
+   },
+   {
+    "name": "Ending Scene",
+    "desc": "صفحة النهاية اللي بتختم القصة."
+   },
+   {
+    "name": "Pages Strip",
+    "desc": "شريط على يمين الشاشة بيعرض كل صفحات قصتك."
+   },
+   {
+    "name": "Background",
+    "desc": "صورة خلفية المشهد اللي بتتغير حسب الصفحة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "كم عدد الصفحات الأساسية اللي بنحتاجها عشان نعمل قصة متكاملة (بداية، وسط، نهاية)؟",
+    "a": "3 صفحات"
+   },
+   {
+    "q": "إيه لون بلوك الانتقال لصفحة جديدة في سكراتش جونيور؟",
+    "a": "الأحمر"
+   },
+   {
+    "q": "فين بنلاقي زر إضافة صفحة جديدة في التطبيق؟",
+    "a": "في شريط الصفحات على يمين الشاشة"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "A wonderful story for a young hero doesn't just happen in one place; it can span multiple pages in a row! Just like a book we read at school, the opening page introduces the tale, and then we turn over to the next one.",
+   "To make our character move from one page to another in ScratchJr, we use the page-turn block. This block acts like a magical door taking us to a completely brand-new page with everything fresh inside it.",
+   "This block triggers when a character touches it or finishes talking, tapping the block and instantly transporting us to page number 2, where the big middle-story adventure awaits.",
+   "For example, let's create a first page where our hero sleeps at home, and when tapped, opens the door to page two featuring an enchanted forest and a talking tree, leading to page three for a happy ending.",
+   "The golden rule here is: always arrange your pages in the correct order from left to right (beginning, middle, ending) so the story remains clear and entertaining for anyone watching.",
+   "This exact concept is used in real computer games and cartoon shows; when a level finishes and the player wins, the game transitions them to the next level in a totally different setting."
+  ],
+  "example": "Imagine designing a story about a brave cat. Page one shows the cat at home (beginning), and when tapped, it transitions to page two featuring a dark cave (middle), and finally page three shows the treasure (ending). We place the page block at the end of every page to transition smoothly.",
+  "mistake": "A common mistake is mixing up the page order and putting the ending before the beginning! The fix is to check your page names and numbers on the right-side page strip before running your story.",
+  "recap": "We learned how to create a multi-page story and link them together using transition blocks. Now our stories are bigger and much more wonderful!",
+  "q": [
+   {
+    "t": "Which block allows us to switch to another page in ScratchJr?",
+    "o": [
+     "Jump block",
+     "Page switch block",
+     "Grow block"
+    ],
+    "a": 1,
+    "why": "The page switch block is responsible for moving the character and story to a new page."
+   },
+   {
+    "t": "When starting a multi-page story, what should ideally be on the first page?",
+    "o": [
+     "The ending",
+     "The middle",
+     "The beginning"
+    ],
+    "a": 2,
+    "why": "Stories always start with the beginning so viewers understand the tale from scratch."
+   },
+   {
+    "t": "Where can you find the page numbers and navigation strip in ScratchJr?",
+    "o": [
+     "On the right side of the screen",
+     "On the green run button",
+     "In the color menu"
+    ],
+    "a": 0,
+    "why": "The page strip appears on the right side of the screen to view all pages."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "New Page Prediction Game",
+   "goal": "Find out what happens when we place a page-2 transition block at the end of the beginning page",
+   "code": "Page 1 (Beginning): [Green Flag] -> [Move 2 steps] -> [Page 2 Switch Block]",
+   "options": [
+    "The story pauses and ends immediately",
+    "The character vanishes forever",
+    "The story instantly jumps to page two and starts the middle events"
+   ],
+   "a": 2,
+   "success": "Hooray! The story smoothly transitioned to page two and kicked off the new adventure!"
+  },
+  "sections": [
+   {
+    "h": "What are Story Pages?",
+    "text": "Long stories need multiple pages so they don't get crowded. Just like your schoolbook with a page for reading and a page for math, your ScratchJr story can be divided into separate pages for each part.",
+    "code": "Open book concept: Page 1, Page 2, Page 3",
+    "output": "Every page has its own space and unique characters"
+   },
+   {
+    "h": "Beginning Scene",
+    "text": "This is the very first page of your story. We place the starting scenery here along with the main character greeting the audience or waking up. This sets up the 'Once upon a time' feeling.",
+    "code": "Page 1: [Boy character] + [House background]",
+    "output": "The first scene is ready to tell the tale's opening"
+   },
+   {
+    "h": "Action Scene (Middle)",
+    "text": "Here is where the challenge, problem, or adventure happens! This page features a different background like a forest or outer space, and the character performs exciting actions like running or flying.",
+    "code": "Page 2: [Forest background] + [Move 5 steps]",
+    "output": "The second action-packed scene starts right away"
+   },
+   {
+    "h": "Ending Scene",
+    "text": "This is the final page of your wonderful story. This scene resolves the problem, and the character says 'The End' or dances happily after completing the grand adventure successfully.",
+    "code": "Page 3: [House background again] + [Ending jump]",
+    "output": "The story finishes in a happy and delightful way"
+   },
+   {
+    "h": "The Page Switch Block",
+    "text": "This is a magical red block featuring an arrow and a page icon. When placed at the end of our script, the character triggers it and shifts the entire scene to our chosen destination page.",
+    "code": "End of line: [Go to Page 2 block]",
+    "output": "Instant jump to the new page without closing the app"
+   },
+   {
+    "h": "Linking Pages in Correct Order",
+    "text": "To keep the story making sense, we must link page one to two, and two to three. If we scramble the order, the audience will get confused about where the story starts or ends.",
+    "code": "Page 1 -> links to -> Page 2 -> links to -> Page 3",
+    "output": "A well-ordered and logical chain of events"
+   },
+   {
+    "h": "Using Different Backgrounds per Page",
+    "text": "To make our story look gorgeous and realistic, we change the background for each page. Page one might be daytime, page two nighttime, and page three outer space, for instance.",
+    "code": "Change background in property tray for each page",
+    "output": "Every page looks unique and captivating"
+   },
+   {
+    "h": "Testing the Full Story End-to-End",
+    "text": "Before we finish our work, we must tap the green flag on page one and watch the story move through beginning, middle, and ending automatically without our interference.",
+    "code": "Run from Page 1 and watch automated page switching",
+    "output": "A fully cohesive and hundred-percent successful story"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Page Switch Block",
+    "desc": "The red block responsible for moving the story to another page."
+   },
+   {
+    "name": "Beginning Scene",
+    "desc": "The opening page where the tale begins."
+   },
+   {
+    "name": "Action Scene",
+    "desc": "The middle page featuring adventure and movement."
+   },
+   {
+    "name": "Ending Scene",
+    "desc": "The final page wrapping up the story."
+   },
+   {
+    "name": "Pages Strip",
+    "desc": "A strip on the right side of the screen displaying all your story pages."
+   },
+   {
+    "name": "Background",
+    "desc": "The scene backdrop image that changes depending on the page."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "How many basic pages do we need to make a complete story (beginning, middle, ending)?",
+    "a": "3 pages"
+   },
+   {
+    "q": "What color is the page transition block in ScratchJr?",
+    "a": "Red"
+   },
+   {
+    "q": "Where can you find the add-page button in the app?",
+    "a": "In the page strip on the right side of the screen"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

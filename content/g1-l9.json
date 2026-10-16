@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تخطيط القصة على الورق يا بطل هو أول خطوة لبناء مغامرة سحرية في سكراتش جونيور، حيث نرسم الأفكار قبل كتابة الأوامر لضمان ترتيب الأحداث بشكل رائع.",
+   "إليك مثال بسيط: نرسم في المربع الأول قطة تقف في الحديقة، وفي الثاني تتحرك لليمين، وفي الثالث تقفز مع إصدار صوت مواء جميل.",
+   "كيف يعمل التخطيط؟ هو بمثابة خارطة طريق توضح لنا أين تبدأ الشخصية وماذا تفعل، تماماً مثلما تخطط لرسمة أو لعبة قبل أن تبدأ بتلوينها.",
+   "مثال ثانٍ: تخطيط قصة عن سمكة صغيرة، المربع الأول للسباحة الهادئة، الثاني لظهور سمكة قرش لطيفة، والثالث لاختباء السمكة خلف مرجان ملون.",
+   "القاعدة الذهبية: \"خطط دائماً قبل أن تبدأ بالبرمجة\"، فالتخطيط يوفر الوقت ويجعل قصتك مرتبة ومفهومة لكل من يشاهدها على الشاشة.",
+   "تستخدم هذه المهارة في الحياة الواقعية لتصميم الأفلام الكرتونية، ألعاب الفيديو الضخمة، وحتى عند كتابة قصتك المدرسية المفضلة قبل عرضها على زملائك!"
+  ],
+  "example": "تخيل أنك تريد صنع قصة قصيرة لصاروخ ينطلق إلى الفضاء. نقسم الورقة إلى ثلاثة أقسام: الأول الصاروخ على الأرض، الثاني زر العد التنازلي، الثالث الصاروخ يطير بين النجوم. البرمجة تصبح سهلة جداً عندما نعرف ماذا سنضع في كل مشهد مسبقاً!",
+  "mistake": "الخطأ الشائع هو البدء بوضع الأوامر والرسومات عشوائياً دون تخطيط مسبق، مما يسبب ضياع الأفكار. الحل هو رسم القصة على الورق أولاً.",
+  "recap": "التخطيط على الورق وتنظيم الأصوات والشخصيات يسهل علينا برمجة القصص التفاعلية في سكراتش جونيور. ابدأ دائماً برسم أفكارك قبل الضغط على الأزرار.",
+  "q": [
+   {
+    "t": "ما هو أول شيء يجب أن تفعله قبل برمجة قصتك في سكراتش جونيور؟",
+    "o": [
+     "إغلاق الحاسوب",
+     "تخطيط ورسم المشاهد على الورق",
+     "حذف جميع الشخصيات"
+    ],
+    "a": 1,
+    "why": "التخطيط على الورق يساعدنا على تنظيم الأفكار والمشاهد قبل البدء بالبرمجة."
+   },
+   {
+    "t": "لماذا نستخدم تخطيط الأصوات والأدوار؟",
+    "o": [
+     "لجعل القصة مرتبة وممتعة وسهلة الفهم",
+     "لجعل اللعبة بطيئة",
+     "لمسح الشاشة نهائياً"
+    ],
+    "a": 0,
+    "why": "تنظيم الأصوات والشخصيات يضمن سير الأحداث بسلاسة وجاذبية."
+   },
+   {
+    "t": "ماذا تعني لوحة القصة (Storyboarding)؟",
+    "o": [
+     "نوع من الحلوى",
+     "مجموعة رسومات سريعة تخطط للقصة",
+     "لعبة كرة قدم"
+    ],
+    "a": 1,
+    "why": "لوحة القصة هي مجموعة رسومات توضيحية تمثل مشاهد القصة بالترتيب."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة التخطيط",
+   "goal": "اعرف ماذا سيحدث عند تنفيذ المشهد الأول المخطط له",
+   "code": "المشهد الأول في القصة المخططة:\n1. وضع الشخصية في البداية عند خط اليمين\n2. إضافة أمر الحركة لليسار\n3. النقر على العلم الأخضر",
+   "options": [
+    "تتحرك الشخصية إلى اليسار كما خططنا تماماً",
+    "تختفي الشخصية للأبد",
+    "يغلق البرنامج تلقائياً"
+   ],
+   "a": 0,
+   "success": "تحركت الشخصية لليسار بنجاح وفقاً للمخطط المرسوم!"
+  },
+  "sections": [
+   {
+    "h": "ما هو تخطيط القصة؟",
+    "text": "تخطيط القصة هو رسم أفكارك على الورق قبل برمجتها، مثل تصميم خريطة لكنز سري.",
+    "code": "رسومات سريعة لثلاثة أحداث",
+    "output": "خارطة طريق واضحة للقصة"
+   },
+   {
+    "h": "رسم المشاهد على الورق",
+    "text": "نقسم ورقة إلى أجزاء لنرسم ما يحدث في بداية القصة ووسطها ونهايتها.",
+    "code": "مربع 1: البداية | مربع 2: الوسط | مربع 3: النهاية",
+    "output": "مشاهد مرتبة ومنسقة"
+   },
+   {
+    "h": "تصميم شخصياتك الخاصة",
+    "text": "يمكنك رسم شخصيات فريدة تناسب قصتك الكرتونية واستخدامها في التطبيق.",
+    "code": "رسم قطة ترتدي قبعة فضاء",
+    "output": "شخصية مخصصة جاهزة للبرمجة"
+   },
+   {
+    "h": "كتابة سكريبت الشخصية",
+    "text": "السكريبت هو سلسلة الأوامر البرمجية التي تتحرك بها الشخصية وتتكلم.",
+    "code": "عند النقر -> تحرك للأمام -> اقفز",
+    "output": "الشخصية تتحرك وتقفز"
+   },
+   {
+    "h": "تخطيط الأصوات",
+    "text": "نحدد متى تصدر الشخصية صوتاً أو تسجل صوتاً خاصاً بك لتبدو القصة حية.",
+    "code": "تسجيل صوت: مرحبا يا أصدقاء!",
+    "output": "يسمع صوتك عند وصول الشخصية"
+   },
+   {
+    "h": "تنظيم الخلفيات والمشاهد",
+    "text": "كل مشهد يحتاج إلى خلفية تناسبه، مثل الشاطئ أو الفضاء الخارجي.",
+    "code": "تغيير الخلفية إلى الغابة في المشهد الثاني",
+    "output": "تظهر الغابة وراء الشخصيات"
+   },
+   {
+    "h": "ربط المشاهد معاً",
+    "text": "نجعل نهاية المشهد الأول تبدأ المشهد الثاني بسلاسة.",
+    "code": "إرسال رسالة عند نهاية المشهد 1",
+    "output": "يبدأ المشهد التالي تلقائياً"
+   },
+   {
+    "h": "المراجعة والتعديل",
+    "text": "قبل إنهاء مشروعك، راجع المخطط وتأكد أن كل شيء يعمل كما رغبت.",
+    "code": "تشغيل القصة بالكامل والتأكد من عدم وجود أخطاء",
+    "output": "قصة متكاملة وجاهزة للعرض"
+   }
+  ],
+  "reference": [
+   {
+    "name": "تخطيط القصة",
+    "desc": "رسم الأفكار والمشاهد على الورق قبل برمجتها"
+   },
+   {
+    "name": "السكريبت",
+    "desc": "مجموعة الأوامر البرمجية المرتبة للشخصية"
+   },
+   {
+    "name": "الشخصية المخصصة",
+    "desc": "شخصية ترسمها وتصممها بنفسك"
+   },
+   {
+    "name": "الصوت",
+    "desc": "تأثير صوتي أو تسجيلي يضيف متعة للقصة"
+   },
+   {
+    "name": "المشهد",
+    "desc": "جزء من القصة يقع في مكان وخلفية محددة"
+   },
+   {
+    "name": "خلفية",
+    "desc": "الصورة التي تظهر في خلفية الشاشة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ارسم على ورقة 3 مربعات لقصة قطة تلعب بالكرة.",
+    "a": "مربع 1: القطة تنظر للكرة، مربع 2: القطة تركض خلف الكرة، مربع 3: القطة تمسك الكرة."
+   },
+   {
+    "q": "ما هي الخطوة الأولى قبل إضافة الأوامر في سكراتش جونيور؟",
+    "a": "تخطيط المشاهد والأفكار على الورق."
+   },
+   {
+    "q": "اكتب أمراً برمجياً بسيطاً لبداية حركة الشخصية.",
+    "a": "عند النقر على العلم الأخضر -> تحرك خطوتين للأمام."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Storyboarding on paper is your first magical step to build an amazing adventure in ScratchJr, sketching ideas before writing code to organize events.",
+   "Here is a simple example: in the first box we draw a cat in the park, in the second it moves right, and in the third it jumps with a meow sound.",
+   "How does storyboarding work? It is like a road map showing where your character starts and what it does, just like planning a drawing before coloring.",
+   "Second example: story about a tiny fish, box one for calm swimming, box two for a friendly shark, box three for hiding behind colorful coral.",
+   "Golden rule: 'Always plan before you code.' Storyboarding saves time and keeps your interactive story organized and easy for everyone to enjoy.",
+   "We use this skill in real life to design cartoons, massive video games, and even when outlining your favorite school story before presenting it!"
+  ],
+  "example": "Imagine you want to make a short story about a rocket launching into space. We divide paper into three parts: first, the rocket on the ground; second, a countdown button; third, the rocket flying among stars. Coding becomes super easy when we know what goes in each scene beforehand!",
+  "mistake": "A common mistake is starting to place blocks and drawings randomly without planning, causing mixed-up ideas. The fix is to sketch your story on paper first.",
+  "recap": "Paper storyboarding, sound planning, and character design make it easy to code interactive stories in ScratchJr. Always sketch your ideas before tapping the blocks.",
+  "q": [
+   {
+    "t": "What is the very first thing you should do before coding your story in ScratchJr?",
+    "o": [
+     "Turn off the computer",
+     "Sketch and plan scenes on paper",
+     "Delete all characters"
+    ],
+    "a": 1,
+    "why": "Storyboarding on paper helps organize ideas and scenes before you start programming."
+   },
+   {
+    "t": "Why do we plan sounds and roles?",
+    "o": [
+     "To make the story organized, fun, and easy to follow",
+     "To make the game run very slowly",
+     "To wipe the screen completely"
+    ],
+    "a": 0,
+    "why": "Organizing sounds and characters ensures smooth and engaging storytelling."
+   },
+   {
+    "t": "What does a storyboard mean?",
+    "o": [
+     "A type of sweet candy",
+     "A set of quick drawings that plans a story",
+     "A soccer game match"
+    ],
+    "a": 1,
+    "why": "A storyboard is a set of quick illustrations representing story scenes in order."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Storyboard Result",
+   "goal": "Find out what happens when running the planned first scene",
+   "code": "First scene in storyboard:\n1. Place character at the right start line\n2. Add move left block\n3. Tap the green flag",
+   "options": [
+    "The character moves to the left exactly as planned",
+    "The character disappears forever",
+    "The app closes automatically"
+   ],
+   "a": 0,
+   "success": "The character moved left successfully according to the plan!"
+  },
+  "sections": [
+   {
+    "h": "What is a Storyboard?",
+    "text": "A storyboard is sketching your ideas on paper before coding them, like designing a map to a secret treasure.",
+    "code": "Quick sketches for three events",
+    "output": "A clear roadmap for the story"
+   },
+   {
+    "h": "Sketching Scenes on Paper",
+    "text": "We divide a paper into parts to draw what happens at the beginning, middle, and end of the story.",
+    "code": "Box 1: Start | Box 2: Middle | Box 3: End",
+    "output": "Ordered and neat scenes"
+   },
+   {
+    "h": "Designing Custom Sprites",
+    "text": "You can draw unique characters that fit your cartoon story and use them in the app.",
+    "code": "Drawing a cat wearing a space helmet",
+    "output": "A custom character ready for coding"
+   },
+   {
+    "h": "Writing Sprite Scripts",
+    "text": "A script is the sequence of programming blocks that makes your character move and talk.",
+    "code": "When tapped -> Move forward -> Jump",
+    "output": "The character moves and jumps"
+   },
+   {
+    "h": "Organizing Sound Plans",
+    "text": "We decide when the character makes a sound or record your own voice to make the story come alive.",
+    "code": "Record sound: Hello friends!",
+    "output": "Your voice plays when the character arrives"
+   },
+   {
+    "h": "Organizing Backgrounds and Scenes",
+    "text": "Each scene needs a matching background, like a beach or outer space.",
+    "code": "Change background to forest in Scene 2",
+    "output": "Forest appears behind characters"
+   },
+   {
+    "h": "Linking Scenes Together",
+    "text": "We make the end of scene one smoothly start scene two.",
+    "code": "Send message at the end of Scene 1",
+    "output": "Next scene starts automatically"
+   },
+   {
+    "h": "Review and Polish",
+    "text": "Before finishing your project, check your storyboard to make sure everything works the way you wanted.",
+    "code": "Run the full story and check for bugs",
+    "output": "A complete story ready to show"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Storyboard",
+    "desc": "Sketching ideas and scenes on paper before coding"
+   },
+   {
+    "name": "Script",
+    "desc": "The ordered sequence of code blocks for a sprite"
+   },
+   {
+    "name": "Custom Sprite",
+    "desc": "A character you draw and design yourself"
+   },
+   {
+    "name": "Sound",
+    "desc": "An audio effect or recording adding fun to the story"
+   },
+   {
+    "name": "Scene",
+    "desc": "A part of the story set in a specific place and background"
+   },
+   {
+    "name": "Background",
+    "desc": "The image displayed behind the screen action"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Sketch 3 boxes on paper for a story about a cat playing with a ball.",
+    "a": "Box 1: Cat looks at ball, Box 2: Cat runs after ball, Box 3: Cat catches ball."
+   },
+   {
+    "q": "What is the first step before adding blocks in ScratchJr?",
+    "a": "Planning scenes and ideas on paper."
+   },
+   {
+    "q": "Write a simple code instruction to start a character's movement.",
+    "a": "When green flag tapped -> Move 2 steps forward."
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

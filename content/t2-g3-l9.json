@@ -1,0 +1,284 @@
+{
+ "ar": {
+  "steps": [
+   "اليوم هو يوم التخرج العظيم يا بطل! سنقوم بدمج كل ما تعلمناه هذا الترم في صفحة ويب شخصية واحدة ومتكاملة تشبه موقع المطورين الحقيقيين.",
+   "تماماً مثل تركيب قطع LEGO الكبيرة، سنجمع العناوين (headings) والصور (images) والقوائم (lists) ومربعات التفاصيل لتكوين صفحة مذهلة.",
+   "نستخدم هيكلاً دلالياً (semantic layout) باستخدام عناصر مثل header و main و footer لكي يفهم المتصفح تنظيم موقعنا بكل وضوح.",
+   "مثال سريع: لربط مشروعنا، نكتب <main> ثم نضع بداخلها صورة شخصية باستخدام الوسم <img> مع خاصية alt لوصفها بدقة.",
+   "القاعدة الذهبية: قم بدمج مهاراتك بانتظام وفحص الكود خطوة بخطوة تماماً مثل مطوري البرمجيات الكبار لضمان عدم وجود أخطاء تكسر التصميم.",
+   "استخدامات حقيقية: بناء محفظة أعمال شخصية (Portfolio) تعرض مهاراتك، ومشاريعك البرمجية، ورسومك المفضلة لكل العالم ليروها في كل مكان!"
+  ],
+  "example": "لنقم ببناء مشروع مصغر يجمع كل المهارات. نكتب هيكل HTML متكامل:\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>محفظتي الشخصية</title>\n  </head>\n  <body>\n    <header>\n      <h1>مرحباً، أنا المبرمج الصغير</h1>\n    </header>\n    <main>\n      <img src=\"avatar.png\" alt=\"صورتي الشخصية\" width=\"100\">\n      <p>هذه صفحة تعرض مهاراتي في تصميم الويب.</p>\n    </main>\n  </body>\n</html>\n```\nبهذا نكون دمجنا العناوين والصور والنصوص في هيكل دلالي رائع!",
+  "mistake": "نسيان إغلاق أحد الوسوم المهمة مثل </main> أو عدم إضافة خاصية alt للصورة. الحل هو مراجعة الكود سطرًا بسطر والتأكد من إغلاق كل ووسم مفتوح.",
+  "recap": "لقد تعلمنا اليوم كيف ندمج جميع مهارات HTML في مشروع بورتفوليو شخصي متكامل ومرتب. تهانينا على إنهاء الترم بنجاح!",
+  "q": [
+   {
+    "t": "ما هو الغرض الرئيسي من دمج المهارات في مشروع بورتفوليو؟",
+    "o": [
+     "إظهار كل ما تعلمناه في صفحة واحدة متكاملة",
+     "مسح جميع الملفات من الحاسوب",
+     "إبطاء سرعة الإنترنت"
+    ],
+    "a": 0,
+    "why": "المشروع المتكامل يجمع كل المهارات في صفحة ويب واحدة."
+   },
+   {
+    "t": "أي عنصر يعتبر جزءاً من الهيكل الدلالي (Semantic Layout)؟",
+    "o": [
+     "main",
+     "color",
+     "pixel"
+    ],
+    "a": 0,
+    "why": "عنصر main يحدد المحتوى الرئيسي للصفحة بوضوح."
+   },
+   {
+    "t": "ما الخاصية المهمة التي يجب وضعها مع الوسم <img> في مشروعك؟",
+    "o": [
+     "alt",
+     "loop",
+     "href"
+    ],
+    "a": 0,
+    "why": "خاصية alt تصف الصورة في حال لم يتم تحميلها."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات بناء صفحة البورتفوليو",
+   "goal": "رتب خطوات إنشاء صفحة ويب شخصية متكاملة بشكل صحيح",
+   "items": [
+    "إنشاء هيكل الملف الأساسي <!DOCTYPE html>",
+    "إضافة قسم العنوان الرئيسي باستخدام <header>",
+    "وضع صورة شخصية باستخدام الوسم <img> مع alt",
+    "إضافة قائمة مهاراتك ومشاريعك في قسم المحتوى الرئيسي"
+   ],
+   "success": "رائع! لقد أنشأت موقع بورتفوليو احترافي ومذهل!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة مشروع البورتفوليو",
+    "text": "حان الوقت لجمع كل أجزاء لغز HTML التي تعلمناها طوال الترم في صفحة واحدة. تخيل أنك تبني منزلك الخاص وتجمع كل الأثاث الجميل فيه لتظهر إبداعك لكل الزوار.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>موقعي</title></head>\n<body>\n  <h1>أهلاً بكم في موقعي</h1>\n</body>\n</html>",
+    "output": "تعرض الصفحة عنوان ترحيبي بسيط."
+   },
+   {
+    "h": "الهيكل الدلالي للموقع",
+    "text": "التنظيم هو سر النجاح. باستخدام عناصر مثل header و main و footer، فإنك تقسم موقعك إلى غرف واضحة تماماً مثل تقسيم البيت إلى صالة ومطبخ وغرفة نوم.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <header><h2>رأس الصفحة</h2></header>\n  <main><p>المحتوى الأساسي هنا.</p></main>\n  <footer><p>نهاية الصفحة.</p></footer>\n</body>\n</html>",
+    "output": "تعرض الصفحة أقساماً مرتبة ومنظمة بوضوح."
+   },
+   {
+    "h": "دمج الصور والرسومات",
+    "text": "الصور تضفي حياة على موقعك! نستخدم الوسم <img> مع خاصية src لتحديد مسار الصورة وخاصية alt لوصفها، تماماً مثل كتابة ملصق تعريفي أسفل اللوحة الفنية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <img src=\"cat.jpg\" alt=\"قطة لطيفة\" width=\"120\">\n</body>\n</html>",
+    "output": "تعرض الصفحة صورة مع وصف نصي بديل."
+   },
+   {
+    "h": "إضافة القوائم والروابط",
+    "text": "لإظهار مهاراتك أو مشاريعك، القوائم مثل ul و ol هي أفضل صديق لك. إنها تشبه قائمة المشتريات التي تنظم أفكارك وترتبها تحت بعضها البعض.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3>مهاراتي:</h3>\n  <ul>\n    <li>تصميم HTML</li>\n    <li>إضافة الصور</li>\n  </ul>\n</body>\n</html>",
+    "output": "تعرض الصفحة قائمة منقطة بمهاراتك."
+   },
+   {
+    "h": "مربع التفاصيل التفاعلي",
+    "text": "هل تريد إخفاء بعض المعلومات الإضافية مثل تفاصيل مشاريعك؟ استخدم عنصري details و summary لإنشاء صندوق سحري يمكن فتحه وإغلاقه بنقرة واحدة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>مشروعي السري</summary>\n    <p>لقد بنيت لعبة فيديو بسيطة!</p>\n  </details>\n</body>\n</html>",
+    "output": "تعرض الصفحة صندوق تفاصيل قابل للفتح والإغلاق."
+   },
+   {
+    "h": "التكامل الشامل (Capstone Project)",
+    "text": "هنا تجتمع كل المهارات معاً! نربط العناوين، الصور، القوائم، والمربعات في ملف HTML واحد متكامل ليكون هو بورتفوليو أعمالك الشخصي الذي تفتخر به.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <header><h1>بورتفوليو أحمد</h1></header>\n  <main>\n    <p>أنا مبرمج ويب صاعد.</p>\n    <img src=\"avatar.png\" alt=\"أحمد\" width=\"80\">\n  </main>\n</body>\n</html>",
+    "output": "تعرض الصفحة موقع بورتفوليو شخصي متكامل."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<header>",
+    "desc": "يمثل رأس الصفحة أو القسم الترحيبي."
+   },
+   {
+    "name": "<main>",
+    "desc": "يحتوي على المحتوى الرئيسي والأساسي للصفحة."
+   },
+   {
+    "name": "<img>",
+    "desc": "يعرض صورة داخل صفحة الويب."
+   },
+   {
+    "name": "<ul>",
+    "desc": "ينشئ قائمة غير مرتبة من العناصر."
+   },
+   {
+    "name": "<details>",
+    "desc": "يصنع صندوق تفاصيل قابل للطي."
+   },
+   {
+    "name": "<footer>",
+    "desc": "يمثل ذيل أو تذييل الصفحة في الأسفل."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب وسماً دلالياً واحداً يستخدم لوضع المحتوى الرئيسي للموقع.",
+    "a": "<main>"
+   },
+   {
+    "q": "ما الخاصية المستخدمة لوصف الصورة في وسم <img>؟",
+    "a": "alt"
+   },
+   {
+    "q": "ما العنصر الذي يُستخدم لصنع صندوق تفاصيل قابل للفتح والإغلاق؟",
+    "a": "<details>"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Today is the grand graduation day, champion! We will combine everything we learned this term into one amazing, integrated personal portfolio web page.",
+   "Just like building with big LEGO pieces, we will assemble headings, images, lists, and details boxes to create a stunning web page.",
+   "We use a semantic layout with elements like header, main, and footer so the browser clearly understands our website's organization.",
+   "Quick example: To integrate our project, we write <main> and put a profile image inside using the <img> tag with an alt attribute for precise description.",
+   "The Golden Rule: Integrate your skills regularly and test your code step by step, just like real software developers, to ensure no bugs break the design.",
+   "Real-life uses: Building a personal portfolio showcasing your skills, coding projects, and favorite artwork for the whole world to see everywhere!"
+  ],
+  "example": "Let's build a mini project combining all skills. We write an integrated HTML structure:\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>My Portfolio</title>\n  </head>\n  <body>\n    <header>\n      <h1>Welcome, I am a Junior Developer</h1>\n    </header>\n    <main>\n      <img src=\"avatar.png\" alt=\"My Avatar\" width=\"100\">\n      <p>This page showcases my web design skills.</p>\n    </main>\n  </body>\n</html>\n```\nThis combines headings, images, and text in a wonderful semantic structure!",
+  "mistake": "Forgetting to close an important tag like </main> or omitting the alt attribute on an image. Fix this by reviewing your code line by line and ensuring every open tag is properly closed.",
+  "recap": "Today we learned how to combine all HTML skills into an integrated, well-organized personal portfolio project. Congratulations on successfully finishing the term!",
+  "q": [
+   {
+    "t": "What is the main purpose of integrating skills into a portfolio project?",
+    "o": [
+     "Showcasing everything we learned in one complete page",
+     "Deleting all files from the computer",
+     "Slowing down internet speed"
+    ],
+    "a": 0,
+    "why": "An integrated project brings all skills together onto a single web page."
+   },
+   {
+    "t": "Which element is part of a semantic layout?",
+    "o": [
+     "main",
+     "color",
+     "pixel"
+    ],
+    "a": 0,
+    "why": "The main element clearly defines the primary content of the page."
+   },
+   {
+    "t": "What is the essential attribute to include with the <img> tag in your project?",
+    "o": [
+     "alt",
+     "loop",
+     "href"
+    ],
+    "a": 0,
+    "why": "The alt attribute describes the image if it fails to load."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Portfolio Page Building Steps",
+   "goal": "Order the steps to create an integrated personal web page correctly",
+   "items": [
+    "Create the basic document structure <!DOCTYPE html>",
+    "Add the header section using <header>",
+    "Insert a profile picture using the <img> tag with alt",
+    "Add your skills list and projects in the main content section"
+   ],
+   "success": "Awesome! You created a professional and stunning portfolio website!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Portfolio Projects",
+    "text": "It is time to bring all the HTML puzzle pieces we learned all term into one single page. Imagine building your own house and gathering all your nice furniture inside to show your creativity to all visitors.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>My Site</title></head>\n<body>\n  <h1>Welcome to My Site</h1>\n</body>\n</html>",
+    "output": "The page displays a simple welcoming heading."
+   },
+   {
+    "h": "Semantic Layout Structure",
+    "text": "Organization is the secret to success. By using elements like header, main, and footer, you divide your site into clear rooms, just like dividing a house into a living room, kitchen, and bedroom.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <header><h2>Header Area</h2></header>\n  <main><p>Main content goes here.</p></main>\n  <footer><p>Footer area.</p></footer>\n</body>\n</html>",
+    "output": "The page displays clearly organized sections."
+   },
+   {
+    "h": "Integrating Images and Graphics",
+    "text": "Images bring life to your site! We use the <img> tag with src for the image path and alt for its description, just like writing a label tag under an art painting.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <img src=\"cat.jpg\" alt=\"Cute cat\" width=\"120\">\n</body>\n</html>",
+    "output": "The page displays an image with alternative text."
+   },
+   {
+    "h": "Adding Lists and Links",
+    "text": "To showcase your skills or projects, lists like ul and ol are your best friend. They are like a shopping list that organizes your thoughts neatly stacked one under another.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <h3>My Skills:</h3>\n  <ul>\n    <li>HTML Design</li>\n    <li>Adding Images</li>\n  </ul>\n</body>\n</html>",
+    "output": "The page displays a bulleted list of your skills."
+   },
+   {
+    "h": "Interactive Details Box",
+    "text": "Want to hide extra information like project details? Use details and summary elements to create a magical box that opens and closes with a single click.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <details>\n    <summary>My Secret Project</summary>\n    <p>I built a simple video game!</p>\n  </details>\n</body>\n</html>",
+    "output": "The page displays a toggleable details box."
+   },
+   {
+    "h": "Capstone Project Integration",
+    "text": "This is where all skills come together! We link headings, images, lists, and boxes into one integrated HTML file to form your personal portfolio you can be proud of.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <header><h1>Alex's Portfolio</h1></header>\n  <main>\n    <p>I am an aspiring web programmer.</p>\n    <img src=\"avatar.png\" alt=\"Alex\" width=\"80\">\n  </main>\n</body>\n</html>",
+    "output": "The page displays a fully integrated personal portfolio website."
+   }
+  ],
+  "reference": [
+   {
+    "name": "<header>",
+    "desc": "Represents the page header or introductory section."
+   },
+   {
+    "name": "<main>",
+    "desc": "Contains the primary and central content of the page."
+   },
+   {
+    "name": "<img>",
+    "desc": "Embeds an image inside a web page."
+   },
+   {
+    "name": "<ul>",
+    "desc": "Creates an unordered list of items."
+   },
+   {
+    "name": "<details>",
+    "desc": "Creates a collapsible details disclosure box."
+   },
+   {
+    "name": "<footer>",
+    "desc": "Represents the footer or bottom section of the page."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a single semantic tag used to place the main content of a website.",
+    "a": "<main>"
+   },
+   {
+    "q": "What attribute is used to describe an image in an <img> tag?",
+    "a": "alt"
+   },
+   {
+    "q": "Which element is used to create a collapsible details box?",
+    "a": "<details>"
+   }
+  ]
+ },
+ "lang": "html",
+ "sources": [
+  {
+   "title": "MDN: Continuous integration",
+   "url": "https://developer.mozilla.org/en-US/docs/Glossary/Continuous_integration"
+  },
+  {
+   "title": "MDN: HTML images",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images"
+  }
+ ],
+ "grounded": true
+}

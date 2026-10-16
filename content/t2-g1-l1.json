@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك كاتب قصة مميزة وعاوز ترسم بطل فريد من نوعه ملوش مثيل، عشان قِصتك في سكراتش جونيور تبقى خطيرة ومليانة أفكار جديدة مبهرة.",
+   "عشان تبدأ ترسم، اضغط على زر الزائد وكمان علامة الفرشاة السحرية؛ دي بتفتح لك لوحة الرسم المذهلة اللي بتخليك تلون براحتك.",
+   "لوحة الرسم عاملة زي كراسة الرسم الحقيقية، فيها قلم وألوان وأشكال هندسية بتقدر تستخدمها عشان ترسم شخصية نجمة لامعة وجميلة.",
+   "تقدر تلون النجمة بتاعتك بلون أصفر براق، وتحط لها عيون ضاحكة وفم جميل عشان تبان كأنها حية وبتتكلم مع أصحابها.",
+   "القاعدة الذهبية: كل ما كانت رسمتك بسيطة وواضحة، كل ما كانت أحلى وأسهل في التحريك جوه القصة بتاعتك.",
+   "المصممون الحقيقيون في شركات ألعاب الكارتون بيستخدموا أدوات الرسم دي عشان يخترعوا شخصيات جديدة ومحبوبة لكل الأطفال."
+  ],
+  "example": "افتح سكراتش جونيور واضغط على زر إضافة شخصية جديدة واختار علامة الفرشاة. ارسم شكل نجمة خماسية كبيرة في المنتصف، ولونها باللون الأصفر اللامع باستخدام علامة دلو الوان الطلاء. اضغط على علامة الصح لحفظ النجمة كبطل جديد في قصتك.",
+  "mistake": "لو نسيت تضغط على علامة الصح بعد ما خلصت الرسم، الرسمة مش هتتحفظ ومش هتظهر في القصة. الحل: دايماً تأكد إنك ضغطت على الصح الزرقاء فوق.",
+  "recap": "أدوات الرسم في سكراتش جونيور بتخلينا نرسم شخصيات أصلية جديدة بسهولة تامة. وبكدة نقدر نصمم أي بطل نحلم بيه.",
+  "q": [
+   {
+    "t": "إيه الزرار اللي بنفتحه عشان نرسم شخصية جديدة في سكراتش جونيور؟",
+    "o": [
+     "علامة الفرشاة السحرية",
+     "زر الحذف",
+     "زر التشغيل الأخضر"
+    ],
+    "a": 0,
+    "why": "زر الفرشاة بيفتح لنا لوحة الرسم المخصصة."
+   },
+   {
+    "t": "ليه بنرسم شخصيات أصلية ومبتكرة بنفسنا؟",
+    "o": [
+     "عشان تكون القصة مشابهة لكل القصص القديمة",
+     "عشان نعمل بطل فريد ملوش مثيل في قِصتنا",
+     "عشان نقفل البرنامج نهائياً"
+    ],
+    "a": 1,
+    "why": "الرسم الحر بيخلينا نبتكر أبطال مميزين يخصونا لوحدنا."
+   },
+   {
+    "t": "إيه اللي لازم نعمله بعد ما نخلص رسم البطل عشان يظهر في القصة؟",
+    "o": [
+     "نقفل الشاشة فوراً",
+     "نضغط على علامة الصح لحفظ الشخصية",
+     "نرمي التابلت في الشنطة"
+    ],
+    "a": 1,
+    "why": "علامة الصح هي اللي بتحفظ الشخصية الجديدة في المشروع."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "خطوات رسم شخصية نجمة جديدة",
+   "goal": "رتب خطوات تصميم بطل جديد في سكراتش جونيور بالترتيب الصحيح",
+   "items": [
+    "اضغط على زر إضافة شخصية جديدة بلس",
+    "اختر علامة الفرشاة لفتح لوحة الرسم",
+    "ارسم شكل نجمة جميلة بيديك",
+    "لون النجمة بالألوان المتاحة",
+    "اضغط على علامة الصح للحفظ"
+   ],
+   "success": "رائع! النجمة الجميلة ظهرت كبطلة جديدة في قصتك بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الشخصيات المخصصة؟",
+    "text": "الشخصيات المخصصة هي أبطال إنت اللي بتصممهم وترسمهم بنفسك بدل ما تستخدم الشخصيات الجاهزة في البرنامج، زي ما بتصنع لعبتك الخشبية بيدك في البيت.",
+    "code": "افتح سكراتش جونيور -> اضغط زر الرسم -> ارسم شخصيتك",
+    "output": "يظهر بطل جديد فريد من نوعه في قائمة الشخصيات"
+   },
+   {
+    "h": "فتح لوحة الرسم (Paint Editor)",
+    "text": "لوحة الرسم هي المكان السحري اللي بيسمح لك تطلع كل أفكارك على الشاشة، عاملة زي ورقة رسم بيضاء ومعاك أقلام ألوان سحرية.",
+    "code": "اختر الشخصية الجديدة -> اضغط علامة الفرشاة",
+    "output": "تفتح لك شاشة الرسم وبها أدوات التلوين والخطوط"
+   },
+   {
+    "h": "استخدام أدوات الرسم الأساسية",
+    "text": "عندك أقلام بأحجام مختلفة وخطوط مستقيمة ودوائر ومربعات، تقدر ترسم بيها أي شكل يخطر على بالك، زي ما بتستخدم أدوات الهندسة في المدرسة.",
+    "code": "اختر القلم -> ارسم دائرة أو خطوط نجمة",
+    "output": "يظهر الشكل المرسوم على الشاشة بوضوح"
+   },
+   {
+    "h": "تلوين الرسمة بدلو الألوان",
+    "text": "عشان تخلي رسمتك منورة وجميلة، بتستخدم أداة دلو اللبن أو طلاء الألوان وتختار لون، وتكبّه جوه الشكل عشان يملأه لون زاهي وجميل.",
+    "code": "اختر دلو الطلاء -> اختر اللون الأصفر -> اضغط داخل النجمة",
+    "output": "تتلون النجمة بالكامل باللون الأصفر الجميل"
+   },
+   {
+    "h": "حفظ الشخصية الجديدة",
+    "text": "بعد ما تخلص تحفة الأرت بتاعتك، لازم تقول للبرنامج أنا خلصت وحفظت، وده بيحصل لما تضغط على زر علامة الصح اللي فوق على اليمين.",
+    "code": "اضغط على زر الصح (Checkmark)",
+    "output": "يتم حفظ النجمة وتظهر في منطقة المسرح مع الشخصيات"
+   },
+   {
+    "h": "التحكم في أبعاد الشخصية المرسومة",
+    "text": "أحياناً بتطلع الرسمة كبيرة أو صغيرة خالص، بس متخافش، في سكراتش جونيور تقدر تكبرها أو تصغرها ببلوك الحجم عشان تناسب القصة.",
+    "code": "بلوك تكبير الحجم (Grow Block)",
+    "output": "تصصبح الشخصية بالحجم المناسب للقصة"
+   },
+   {
+    "h": "تغيير الأزياء (Costume Changes)",
+    "text": "ممكن ترسم أكتر من مظهر لنفس الشخصية، زي نجمة فرحانة ونجمة زعلانة، وتتنقل بينهم عشان تعمل حركة مذهلة كأنها بتتحرك وتتفاعل.",
+    "code": "تبديل المظهر (Switch Costume)",
+    "output": "تتغير ملامح البطل بسلاسة أثناء العرض"
+   },
+   {
+    "h": "سحر الأبطال الأصلية في القصص",
+    "text": "لما تعمل شخصية من تصميمك، قصتك بتبقى فريدة ومحدش في الدنيا عنده زيها، وده بيميز مهاراتك العالية في البرمجة والتصميم الإبداعي.",
+    "code": "قصة جديدة + بطل مرسوم = إبداع مذهل",
+    "output": "تبهر أصدقائك بقصة كرتونية من إبداعك الخالص"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Paint Editor",
+    "desc": "لوحة الرسم لابتكار ورسم شخصيات فريدة"
+   },
+   {
+    "name": "Costume",
+    "desc": "مظهر أو زي الشخصية الذي يمكن تغييره"
+   },
+   {
+    "name": "Original Sprite",
+    "desc": "بطل أصلي مصمم خصيصاً بواسطة المستخدم"
+   },
+   {
+    "name": "Checkmark",
+    "desc": "زر الحفظ لتثبيت الرسمة الجديدة"
+   },
+   {
+    "name": "Paint Bucket",
+    "desc": "أداة تعبئة الألوان لملء الأشكال"
+   },
+   {
+    "name": "Grow Block",
+    "desc": "أمر برمجي لتكبير حجم الشخصية"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الزر المسؤول عن فتح لوحة الرسم في سكراتش جونيور؟",
+    "a": "زر الفرشاة السحرية"
+   },
+   {
+    "q": "ماذا تفعل بأداة دلو الطلاء بعد رسم الشكل؟",
+    "a": "تلوين الشكل باللون المختار"
+   },
+   {
+    "q": "ما هو الزر الذي يجب الضغط عليه لحفظ الشخصية المرسومة؟",
+    "a": "علامة الصح (Checkmark)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you are a creative story writer and want to draw a unique hero that no one else has, making your ScratchJr story amazing and full of new ideas.",
+   "To start drawing, tap the plus button and then the magic paintbrush sign; this opens the incredible paint editor where you can color freely.",
+   "The paint editor is like a real drawing notebook, equipped with a pencil, colors, and shapes that you can use to draw a bright, beautiful star character.",
+   "You can color your star in a shiny yellow, and give it smiling eyes and a cute mouth so it looks alive and ready to chat with its friends.",
+   "Rule of thumb: The simpler and clearer your drawing is, the cooler it looks and the easier it is to animate inside your story.",
+   "Real cartoon game designers use these exact drawing tools to invent brand-new, lovable characters for kids everywhere."
+  ],
+  "example": "Open ScratchJr, tap the add new character button, and choose the paintbrush icon. Draw a large five-pointed star shape in the middle, and fill it with shiny yellow using the paint bucket tool. Tap the checkmark to save your star as a brand new hero in your story.",
+  "mistake": "If you forget to tap the checkmark after finishing your drawing, your artwork will not be saved and won't appear in the story. Solution: Always make sure you tap the blue checkmark at the top.",
+  "recap": "ScratchJr paint tools let us draw brand new original characters with total ease. This lets us design any hero we dream of.",
+  "q": [
+   {
+    "t": "Which button do we open to draw a new character in ScratchJr?",
+    "o": [
+     "Magic paintbrush icon",
+     "Delete button",
+     "Green flag start button"
+    ],
+    "a": 0,
+    "why": "The paintbrush button opens our custom paint editor."
+   },
+   {
+    "t": "Why do we draw original custom characters ourselves?",
+    "o": [
+     "To make the story look identical to all old stories",
+     "To create a totally unique hero for our own story",
+     "To close the app completely"
+    ],
+    "a": 1,
+    "why": "Freehand drawing lets us invent unique heroes that belong only to us."
+   },
+   {
+    "t": "What must we do after finishing our hero drawing so it appears in the story?",
+    "o": [
+     "Close the screen immediately",
+     "Tap the checkmark to save the character",
+     "Throw the tablet in the bag"
+    ],
+    "a": 1,
+    "why": "The checkmark saves the new character into the project."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Steps to Draw a New Star Character",
+   "goal": "Order the steps of designing a new hero in ScratchJr correctly",
+   "items": [
+    "Tap the add new character plus button",
+    "Choose the paintbrush icon to open paint editor",
+    "Draw a nice star shape with your finger",
+    "Color the star using available paint colors",
+    "Tap the checkmark button to save"
+   ],
+   "success": "Awesome! The lovely star appeared as a new hero in your story successfully!"
+  },
+  "sections": [
+   {
+    "h": "What are Custom Characters?",
+    "text": "Custom characters are heroes you design and draw yourself instead of using pre-made ones, just like crafting your own wooden toy at home.",
+    "code": "Open ScratchJr -> Tap Paint Button -> Draw Your Character",
+    "output": "A brand new unique hero appears in your character list"
+   },
+   {
+    "h": "Opening the Paint Editor",
+    "text": "The paint editor is your magical screen workspace, acting like a blank sheet of paper paired with magical color pens.",
+    "code": "Select New Character -> Tap Paintbrush Icon",
+    "output": "The drawing screen opens with coloring and line tools"
+   },
+   {
+    "h": "Using Basic Drawing Tools",
+    "text": "You have pens of various sizes, straight lines, circles, and squares to sketch any shape you imagine, just like using geometry tools at school.",
+    "code": "Select Pencil -> Draw circle or star lines",
+    "output": "The drawn shape appears clearly on the canvas"
+   },
+   {
+    "h": "Coloring with the Paint Bucket",
+    "text": "To make your artwork vibrant, use the paint bucket tool, pick a color, and pour it inside your shape to fill it with bright hues.",
+    "code": "Select Paint Bucket -> Choose Yellow -> Tap Inside Star",
+    "output": "The star gets completely filled with shiny yellow"
+   },
+   {
+    "h": "Saving Your New Character",
+    "text": "Once your master artwork is done, you tell the app you are finished by tapping the checkmark button at the top right.",
+    "code": "Tap the Checkmark Button",
+    "output": "The star is saved and appears on the stage area"
+   },
+   {
+    "h": "Adjusting Drawn Character Size",
+    "text": "Sometimes your drawing turns out too big or too small, but don't worry—in ScratchJr you can use size blocks to scale it perfectly for your story.",
+    "code": "Use Grow Block / Shrink Block",
+    "output": "The character becomes the right size for the scene"
+   },
+   {
+    "h": "Costume Changes",
+    "text": "You can draw multiple looks for the same character, like a happy star and a sad star, and switch between them to create smooth animations.",
+    "code": "Switch Costume Block",
+    "output": "The hero's expression shifts smoothly during playback"
+   },
+   {
+    "h": "The Magic of Original Heroes in Stories",
+    "text": "When you build your own custom character, your story becomes totally original—nobody else in the world has it, showing off your elite coding creativity.",
+    "code": "New Story + Drawn Hero = Amazing Creativity",
+    "output": "You amaze your friends with a cartoon story of your own creation"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Paint Editor",
+    "desc": "Canvas tool to invent and draw unique characters"
+   },
+   {
+    "name": "Costume",
+    "desc": "A character look or outfit that can be changed"
+   },
+   {
+    "name": "Original Sprite",
+    "desc": "A custom hero designed specifically by the user"
+   },
+   {
+    "name": "Checkmark",
+    "desc": "The save button to lock in your new drawing"
+   },
+   {
+    "name": "Paint Bucket",
+    "desc": "Color fill tool to flood shapes with color"
+   },
+   {
+    "name": "Grow Block",
+    "desc": "A coding command to increase character size"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What button opens the paint editor in ScratchJr?",
+    "a": "Magic paintbrush button"
+   },
+   {
+    "q": "What do you do with the paint bucket tool after drawing a shape?",
+    "a": "Color the shape with the chosen color"
+   },
+   {
+    "q": "What button must be tapped to save the drawn character?",
+    "a": "Checkmark button"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

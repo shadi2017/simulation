@@ -1,0 +1,299 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، الأنماط دي زي السر أو اللعبة! بنشوف حاجات بتتكرر ورا بعض بنفس الترتيب، زي نجمة بعدين هلال وبعدين نجمة كمان. ده بيخلينا نفكر بذكاء ونعرف إيه اللي جاي بعد كده في اللعبة أو الرسم.",
+   "تعال نبص على مثال سهل خالص للأنفال والترتيب: [أحمر، أزرق، أحمر، أزرق]. هنا الألوان بتتبادل بانتظام وبشكل يخلينا نفهم القاعدة بسرعة. اللون اللي عليه الدور بعد الأزرق هو الأحمر طبعاً!",
+   "الأنماط مش بس ألوان أو أشكال، دي كمان أرقام وحركات! مثلاً: [واحد، اتنين، واحد، اتنين]. أو الحركة دي: [سقفة، نط، سقفة، نط]. السر كله هو إننا نركز في المرتين أو التلاتة الأولانيين عشان نعرف السر.",
+   "لو شفت نمط بيبدأ كده: [مربع، دايرة، مربع، دايرة]، تقدر تتوقع إيه الشكل اللي هيجي بعد الدايرة؟ صح كده، هيكون مربع! التوقع الصح معناه إن مخك بقى عامل زي الكمبيوتر الذكي اللي بيفهم الألغاز بسرعة.",
+   "قاعدة ذهبية في الأنماط: 'ابحث عن التكرار'. أول ما تحس إن الحاجات بترجع تعيد نفسها من الأول، اعرف إنك مسكت طرف الخيط وعرفت النمط كله. مفيش أي حاجة صعبة تاني بعد الخطوة دي.",
+   "في حياتنا اليومية، الأنماط حوالينا في كل حتة! إشارات المرور (أحمر، أصفر، أخضر)، أيام الأسبوع (سبت، حد، اتنين...)، وحتى لما بنلبس ملابسنا بتصميمات معينة. فهم الأنماط بيخلينا منظمين وناجحين."
+  ],
+  "example": "تخيل إننا بنلعب لعبة في الحضانة وبنحط مكعبات على الترابيزة. حطينا مكعب أخضر، بعدين مكعب أصفر، بعدين مكعب أخضر تاني. يا ترى المفروض نحط إيه بعده؟ بما إن النمط بيقول أخضر وأصفر بالترتيب، يبقى المكعب الجاي هيكون أصفر! برافو عليك، كده رتبنا المكعبات صح وعملنا أحلى نمط.",
+  "mistake": "الخطأ الشائع هو إننا نبص لآخر شكل بس ونحط أي حاجة عشوائية من غير ما نراجع التسلسل من الأول. عشان نصلح الغلطة دي، لازم نراجع أول شكلين أو تلاتة ونتاكد إننا ماشيين على نفس القاعدة بالضبط.",
+  "recap": "الأنماط هي تكرار منتظم لأشكال أو ألوان أو أرقام بيساعدنا نتوقع اللي جاي. فهم الأنماط بيخلي تفكيرنا منظم وذكي جداً في كل الألعاب.",
+  "q": [
+   {
+    "t": "إيه الشكل اللي بيجي بعد 'نجمة، هلال، نجمة' في النمط ده؟",
+    "o": [
+     "مربع",
+     "هلال",
+     "شمس"
+    ],
+    "a": 1,
+    "why": "عشان النمط بيتكرر بنظام: نجمة بعدين هلال، فنجمة بعدها هلال تاني."
+   },
+   {
+    "t": "في نمط الألوان [أحمر، أزرق، أحمر، أزرق]، إيه اللون اللي بعد الأزرق؟",
+    "o": [
+     "أصفر",
+     "أحمر",
+     "أزرق"
+    ],
+    "a": 1,
+    "why": "الألوان بتبادل بانتظام، فاللون التالي بعد الأزرق هو الأحمر."
+   },
+   {
+    "t": "ليه فهم الأنماط مهم لينا كمبرمجين صغار؟",
+    "o": [
+     "عشان نتوقع الخطوة التالية بذكاء",
+     "عشان نلون صور بس",
+     "عشان ننام بدري"
+    ],
+    "a": 0,
+    "why": "الأنماط بتعلمنا نتوقع اللي جاي وتسهل حل المشكلات البرمجية."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب النمط",
+   "goal": "رتب الأشكال دي عشان تعمل نمط صحيح ومكتمل بالترتيب الصح",
+   "items": [
+    "نجمة",
+    "هلال",
+    "نجمة",
+    "هلال"
+   ],
+   "success": "يا سلام! رتبت الأشكال وعملت أجمل نمط متكرر بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "ما هو النمط؟",
+    "text": "النمط هو تسلسل من الحاجات زي الأشكال أو الألوان اللي بتتكرر بطريقة منتظمة وموثوقة. زي لما تقف في طابور المدرسة: ولد، بنت، ولد، بنت. ده بيدينا نظام جميل وسهل نفهمه.",
+    "code": "تسلسل: ولد -> بنت -> ولد -> بنت",
+    "output": "الترتيب واضح وكل واحد عارف مكانه"
+   },
+   {
+    "h": "أنماط الأشكال الهندسية",
+    "text": "الأشكال الهندسية زي المربع والدايرة والمثلث ممكن نعمل بيها أحلى سلاسل متكررة. لما تبدأ بمربع وبعدين دايرة، بيكرروا نفسهم عشان يعملوا شكل فني جميل على الورق أو الشاشة.",
+    "code": "شكل: مربع، دايرة، مربع، دايرة",
+    "output": "رسمنا نمط هندسي مذهل"
+   },
+   {
+    "h": "أنماط الألوان المبهجة",
+    "text": "الألوان بتخلي الأنماط واضحة جداً للعين! تخيل عندك بالونات أحمر وأصفر وأحمر وأصفر. عينك بتلقط التكرار ده بسرعة وتفهم إن اللون اللي جاي معروف ومش مفاجأة.",
+    "code": "لون: أحمر، أصفر، أحمر، أصفر",
+    "output": "البالونات مترتبة وشكلها حلو"
+   },
+   {
+    "h": "أنماط الأرقام الحسابية",
+    "text": "الأرقام كمان بتحب تقلد بعضها في أنماط ذكية! زي لما نعد: واحد، اتنين، واحد، اتنين. الأرقام بتعلمنا النظام والترتيب من وهما صغيرين في كل المسائل الرياضية.",
+    "code": "رقم: 1، 2، 1، 2",
+    "output": "عدينا الأرقام بنظام وسرعة"
+   },
+   {
+    "h": "لعبة التوقع السحري",
+    "text": "التوقع هو سر المهنة! لما تشوف نص النمط، مخك البطل بيكمل النص التاني لوحده كأنه سحر. التوقع ده بيساعد الكمبيوتر يفهم الأوامر اللي هتيجي بعد كده.",
+    "code": "سؤال: نجمة، هلال، [؟]",
+    "output": "عرفنا إن الإجابة الصحيحة هي هلال"
+   },
+   {
+    "h": "الأنماط في الحركات",
+    "text": "مين قال إن الأنماط على الورق بس؟ ممكن نعمل نمط بالحركة زي: سقفة بايديك، خبطة على الترابيزة، سقفة، خبطة. جسمك بيتحرك بنظام موسيقي جميل وممتع جداً.",
+    "code": "حركة: سقفة، خبطة، سقفة، خبطة",
+    "output": "عملنا إيقاع موسيقي رائع بالحركات"
+   },
+   {
+    "h": "الأنماط في الطبيعة والحياة",
+    "text": "الطبيعة مليانة أنماط مذهلة! تعاقب الليل والنهار (شمس، قمر، شمس، قمر)، فصول السنة الأربعة بترتيبها الثابت. ده بيثبت لنا إن الكون ماشي بنظام ذكي جداً ومنتظم.",
+    "code": "طبيعة: نهار، ليل، نهار، ليل",
+    "output": "فهمنا نظام الكون الجميل"
+   },
+   {
+    "h": "قواعد اكتشاف السر",
+    "text": "عشان تحل أي مسألة نمط زي الأبطال، اتبع 3 خطوات: 1. بص كويس. 2. اعرف وحدة التكرار (إيه اللي بيتكرر). 3. اكمل الباقي بنفس النظام من غير لخبطة.",
+    "code": "خطوات: ابحث -> اكتشف -> اكمل",
+    "output": "بقينا عباقرة في حل الأنماط"
+   }
+  ],
+  "reference": [
+   {
+    "name": "النمط (Pattern)",
+    "desc": "تسلسل مترتب بيتكرر بانتظام وثبات."
+   },
+   {
+    "name": "التكرار (Repetition)",
+    "desc": "إعادة نفس الشكل أو اللون أكتر من مرة."
+   },
+   {
+    "name": "التوقع (Prediction)",
+    "desc": "معرفة الشكل أو الرقم اللي عليه الدور قبل ما يظهر."
+   },
+   {
+    "name": "وحدة النمط (Pattern Unit)",
+    "desc": "أصغر جزء بيتكرر ويعرفنا سر التسلسل."
+   },
+   {
+    "name": "أشكال هندسية (Shapes)",
+    "desc": "مربع، دايرة، مثلث نستخدمها في التصميم."
+   },
+   {
+    "name": "تسلسل (Sequence)",
+    "desc": "ترتيب الأشياء ورا بعضها بنظام معين."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "كمل النمط ده: مثلث، دائرة، مثلث، [؟]",
+    "a": "دائرة"
+   },
+   {
+    "q": "ما هو الشكل التالي في النمط: أخضر، أصفر، أخضر، [؟]",
+    "a": "أصفر"
+   },
+   {
+    "q": "رتب الحركة التالية: سقفة، نط، سقفة، [؟]",
+    "a": "نط"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey hero, patterns are just like a secret game! We look at things repeating in a special order, like a star followed by a moon and another star. This helps us think smart and figure out what comes next.",
+   "Let us look at a super simple example of patterns: [Red, Blue, Red, Blue]. Here the colors alternate regularly so we can understand the rule fast. The color coming after blue is red, of course!",
+   "Patterns are not just shapes or colors; they can be numbers and body movements too! Like: [One, Two, One, Two]. Or this action: [Clap, Jump, Clap, Jump]. The secret is focusing on the first few steps.",
+   "If you see a pattern starting like this: [Square, Circle, Square, Circle], can you guess what shape comes after the circle? That is right, it is a square! Predicting correctly means your brain is like a smart computer.",
+   "Golden rule of patterns: 'Look for the repeat'. Once you feel things are looping back to the beginning, you found the secret of the whole pattern. Nothing is hard after this step!",
+   "In our daily life, patterns are everywhere! Traffic lights (Red, Yellow, Green), days of the week (Saturday, Sunday, Monday...), and even dressed outfits. Understanding patterns keeps us organized and successful."
+  ],
+  "example": "Imagine we are playing a game in class and putting blocks on the table. We placed a green block, then a yellow block, then another green block. What should come next? Since the pattern goes green and yellow in order, the next block is yellow! Awesome, we ordered the blocks correctly and made a lovely pattern.",
+  "mistake": "A common mistake is looking only at the very last shape and guessing randomly without checking the sequence from the beginning. To fix this, always review the first two or three items to make sure you follow the exact rule.",
+  "recap": "Patterns are regular repetitions of shapes, colors, or numbers that help us predict what comes next. Understanding patterns makes our thinking very organized and smart in all games.",
+  "q": [
+   {
+    "t": "What shape comes after 'Star, Moon, Star' in this pattern?",
+    "o": [
+     "Square",
+     "Moon",
+     "Sun"
+    ],
+    "a": 1,
+    "why": "Because the pattern repeats in order: star then moon, so star is followed by another moon."
+   },
+   {
+    "t": "In the color pattern [Red, Blue, Red, Blue], what color comes after blue?",
+    "o": [
+     "Yellow",
+     "Red",
+     "Blue"
+    ],
+    "a": 1,
+    "why": "Colors alternate regularly, so the color following blue is red."
+   },
+   {
+    "t": "Why is understanding patterns important for us as young coders?",
+    "o": [
+     "To predict the next step smartly",
+     "To only color pictures",
+     "To sleep early"
+    ],
+    "a": 0,
+    "why": "Patterns teach us to predict what is next and simplify solving coding problems."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Pattern Ordering",
+   "goal": "Arrange these shapes to make a correct and complete repeating pattern",
+   "items": [
+    "Star",
+    "Moon",
+    "Star",
+    "Moon"
+   ],
+   "success": "Yay! You ordered the shapes and successfully created the best repeating pattern!"
+  },
+  "sections": [
+   {
+    "h": "What is a Pattern?",
+    "text": "A pattern is a sequence of things like shapes or colors that repeat in a predictable and steady way. Like when you stand in a school line: boy, girl, boy, girl. This gives us a neat and easy system to understand.",
+    "code": "Sequence: boy -> girl -> boy -> girl",
+    "output": "The order is clear and everyone knows their spot"
+   },
+   {
+    "h": "Geometric Shape Patterns",
+    "text": "Geometric shapes like squares, circles, and triangles can make wonderful repeating chains. When you start with a square and then a circle, they loop themselves to form nice art on paper or a screen.",
+    "code": "Shape: square, circle, square, circle",
+    "output": "We drew an amazing geometric pattern"
+   },
+   {
+    "h": "Cheerful Color Patterns",
+    "text": "Colors make patterns super clear to the eye! Imagine having red, yellow, red, and yellow balloons. Your eyes catch this repetition quickly and understand that the upcoming color is no surprise.",
+    "code": "Color: red, yellow, red, yellow",
+    "output": "The balloons are ordered and look nice"
+   },
+   {
+    "h": "Number Math Patterns",
+    "text": "Numbers also love to copy each other in smart patterns! Like when we count: one, two, one, two. Numbers teach us order and arrangement early on in all math problems.",
+    "code": "Number: 1, 2, 1, 2",
+    "output": "We counted numbers orderly and quickly"
+   },
+   {
+    "h": "The Magic Prediction Game",
+    "text": "Prediction is the secret of the trade! When you see half of a pattern, your hero brain completes the other half by itself like magic. Prediction helps computers understand upcoming instructions.",
+    "code": "Question: star, moon, [?]",
+    "output": "We knew the correct answer is moon"
+   },
+   {
+    "h": "Movement Patterns",
+    "text": "Who said patterns are only on paper? We can make movement patterns like: clap your hands, tap the desk, clap, tap. Your body moves in a wonderful, fun, and musical system.",
+    "code": "Action: clap, tap, clap, tap",
+    "output": "We made a cool musical rhythm with movements"
+   },
+   {
+    "h": "Patterns in Nature and Life",
+    "text": "Nature is full of amazing patterns! Day and night alternation (sun, moon, sun, moon), the four seasons in fixed order. This proves to us that the universe runs on a very smart and regular system.",
+    "code": "Nature: day, night, day, night",
+    "output": "We understood the universe's lovely system"
+   },
+   {
+    "h": "Rules to Find the Secret",
+    "text": "To solve any pattern problem like pros, follow 3 steps: 1. Look closely. 2. Find the repeating unit (what repeats). 3. Complete the rest in the exact same system without confusion.",
+    "code": "Steps: search -> discover -> complete",
+    "output": "We became geniuses at solving patterns"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Pattern",
+    "desc": "An arranged sequence that repeats regularly and steadily."
+   },
+   {
+    "name": "Repetition",
+    "desc": "Doing the same shape or color more than once."
+   },
+   {
+    "name": "Prediction",
+    "desc": "Knowing the shape or number that comes next before it appears."
+   },
+   {
+    "name": "Pattern Unit",
+    "desc": "The smallest repeating part that tells us the sequence secret."
+   },
+   {
+    "name": "Shapes",
+    "desc": "Square, circle, triangle used in design."
+   },
+   {
+    "name": "Sequence",
+    "desc": "Ordering things one after another in a specific system."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Complete this pattern: triangle, circle, triangle, [?]",
+    "a": "circle"
+   },
+   {
+    "q": "What is the next shape in the pattern: green, yellow, green, [?]",
+    "a": "yellow"
+   },
+   {
+    "q": "Order the following action: clap, jump, clap, [?]",
+    "a": "jump"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

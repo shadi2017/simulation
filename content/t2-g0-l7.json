@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تعالوا نتخيل أننا نلعب لعبة كنز سرية! الخريطة عبارة عن مربعات شبكية منظمة، وكل مكان جميل له عنوان خاص بنعرفه بيه، وده بيخلينا نوصل لأي مكان بمنتهى السهولة والسرعة.",
+   "عشان نوصل لأي نقطة، بنمشي بطريقتين: الصفوف الأفقية النايمة والأعمدة الرأسية الواقفة. مثلاً عشان نروح عند الشجرة: [العمود 2، الصف 1] يعني نمشي خطوتين يمين ونطلع خطوة لفوق.",
+   "إزاي بتشتغل الشبكة؟ زي دفتر المربعات بالضبط! التقاطع بين العمود والصف بيعمل نقطة سحرية واحدة نقدر نخبي فيها الكنز أو نرسم عليها نجمة لامعة من غير لخبطة.",
+   "تخيل عندنا طبق كيكة في [العمود 3، الصف 2]؛ بنتحرك 3 أعمدة جهة اليمين وبعدين نطلع صفين لفوق عشان نلاقي الكيكة اللذيذة جاهزة للأكل.",
+   "قاعدة ذهبية: ابدأ دائمًا بقراءة رقم العمود من اليسار لليمين، وبعدين رقم الصف من تحت لفوق، وزي الضرب بنقول 'الأفقي مع الرأسي' عشان نوصح للهدف صح.",
+   "في الحقيقة، ألعاب الفيديو اللي بنلعبها على الموبايل والكمبيوتر بتستخدم نفس الفكرة دي بالضبط عشان تحرك الشخصيات وتعرف أماكن الوحوش والهدايا على الشاشة!"
+  ],
+  "example": "لعبة صيد الكنز في غرفة المعيشة! عندنا شبكة على السجادة مكونة من أعمدة وصفوف. صندوق اللعبة موجود في العمود 2 والصف 1. الخطوات: ابدأ من نقطة البداية (0,0)، امشي عمودين يمين، ثم ارفع قدمك صفًا واحدًا للأعلى. النتيجة: مبروك، لقد وجدت الصندوق السحري وتفتح اللعبة!",
+  "mistake": "الخطأ الشائع هو تبديل ترتيب الأرقام وكتابة الصف الأول بدل العمود. التصحيح: تذكر دائمًا أن تبحث عن رقم العمود أولاً ثم رقم الصف.",
+  "recap": "استخدمنا شبكة الخريطة لتحديد الأماكن بدقة باستخدام الأعمدة والصفوف. ونجحنا في الوصول للهدف بكل سهولة.",
+  "q": [
+   {
+    "t": "ماذا نمثل بالأعمدة في خريطة الشبكة؟",
+    "o": [
+     "الخطوط الرأسية",
+     "الخطوط الأفقية",
+     "لون المربعات"
+    ],
+    "a": 0,
+    "why": "الأعمدة هي الخطوط الواقفة (الرأسية) في الشبكة."
+   },
+   {
+    "t": "أين نتحرك أولاً عند قراءة الإحداثيات [العمود 2، الصف 1]؟",
+    "o": [
+     "للأعلى في الصفوف",
+     "يمينًا في الأعمدة",
+     "بشكل عشوائي"
+    ],
+    "a": 1,
+    "why": "نبدأ دائمًا بالتحرك حسب رقم العمود أولاً."
+   },
+   {
+    "t": "لماذا نستخدم شبكة الإحداثيات في ألعاب الفيديو؟",
+    "o": [
+     "لتلوين الشاشة فقط",
+     "لتحديد أماكن الشخصيات والأشياء بدقة",
+     "لإغلاق اللعبة"
+    ],
+    "a": 1,
+    "why": "تساعد الشبكة في معرفة مكان كل شيء بدقة على الشاشة."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إحداثيات الكنز السحري",
+   "goal": "املأ الفراغات بالكلمة الصحيحة لفهم شبكة الإحداثيات",
+   "items": [
+    {
+     "text": "الخطوط الواقفة في الشبكة تسمى ___",
+     "options": [
+      "أعمدة",
+      "صفوف",
+      "دوائر"
+     ],
+     "a": 0
+    },
+    {
+     "text": "الخطوط النايمة في الشبكة تسمى ___",
+     "options": [
+      "مربعات",
+      "صفوف",
+      "ألوان"
+     ],
+     "a": 1
+    },
+    {
+     "text": "نبدأ دائمًا بالبحث عن رقم ___ أولاً",
+     "options": [
+      "الصف",
+      "العمود",
+      "اللون"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! لقد أتقنت البحث بالأعمدة والصفوف ووجدت الكنز!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن خريطة الشبكة",
+    "text": "الشبكة هي عبارة عن خطوط مترابطة تشبه دفتر الرسم المربع. بنستخدمها عشان نقسم المساحة لمربعات صغيرة، وكل مربع ليه عنوان رقمي خاص بيه بيخلينا نعرف مكانه بدقة من غير ما نتيه في أي لعبة أو خريطة.",
+    "code": "شبكة المربعات:\n[عمود 1] [عمود 2]\n[صف 1]  [هدفنا هنا]",
+    "output": "تقسيم المكان لمربعات واضحة"
+   },
+   {
+    "h": "ما هي الأعمدة؟",
+    "text": "الأعمدة هي الخطوط الطولية اللي واقفة زي عمدة البيت أو السور. بنعدها من الشمال لليمين عشان نعرف إحنا في أنهي عمود، زي ما بنرتب الألعاب على الرفوف الواقفة.",
+    "code": "تحرك في الأعمدة:\nعمود 1 -> عمود 2 -> عمود 3",
+    "output": "الحركة يميناً ويساراً"
+   },
+   {
+    "h": "ما هي الصفوف؟",
+    "text": "الصفوف هي الخطوط العرضية النايمة زي السلم أو السرير المريح. بنعدها من تحت لفوق، وكل صف بياخد رقم بيعرفنا إحنا طلعنا لفوق قد إيه.",
+    "code": "تحرك في الصفوف:\nصف 1 -> صف 2 -> صف 3",
+    "output": "الحركة للأعلى ولأسفل"
+   },
+   {
+    "h": "فهم الإحداثيات",
+    "text": "الإحداثيات دي زي الباسورد أو العنوان السري. لما نقول [عمود 2، صف 1]، ده معناه إننا بنتقاطع في نقطة واحدة محددة على الخريطة، والنقطة دي هي المكان اللي بندور عليه.",
+    "code": "الإحداثيات = [رقم العمود, رقم الصف]",
+    "output": "تحديد نقطة تقاطع واحدة بدقة"
+   },
+   {
+    "h": "تحديد الأماكن بدقة",
+    "text": "عشان نلاقي أي لعبة ضايعة، بنمشي خطوة خطوة: الأول نمشي يمين في العمود المطلوب، وبعدين نطلع لفوق في الصف المطلوب. الطريقة دي بتخلينا دايما نوصح للهدف صح من أول محاولة.",
+    "code": "خطوات الوصول:\n1. قف في نقطة البداية\n2. اذهب للعمود 2\n3. اصعد للصف 1",
+    "output": "الوصول للهدف تماماً"
+   },
+   {
+    "h": "تطبيق عملي: لعبة الشجرة",
+    "text": "تخيل إن عندنا شجرة تفاح مرسومة في شبكة. الشجرة موجودة في العمود رقم 2 والصف رقم 1. ده معناه أننا لو مشينا خطوتين يمين وطلعنا خطوة لفوق هنقدر نقطف التفاحة فوراً!",
+    "code": "مكان التفاحة:\nالعمود: 2, الصف: 1",
+    "output": "قطف التفاحة بنجاح"
+   },
+   {
+    "h": "الربط بالواقع: ألعاب الفيديو",
+    "text": "في كل ألعاب الكمبيوتر والموبايل اللي بتحبها، الكاركتر أو البطل بيتحرك على شبكة مخفية من الإحداثيات عشان اللعبة تعرف هو واقف فين بالظبط وتطلع له النجوم والجوائز في مكانها الصحيح.",
+    "code": "اللعبة:\nشخصية البطل تتحرك إلى [عمود 4، صف 3]",
+    "output": "ظهور الجائزة في مكانها"
+   },
+   {
+    "h": "مراجعة سريعة وقواعد ذهبية",
+    "text": "دايماً افتكر: الأعمدة واقفة والصفوف نايمة. ابدأ بالأعمدة الأول وبعدين الصفوف. بالطريقة دي هتبقى مهندس خريطة شاطر جداً وتقدر تحل أي لغز شبكي يقابلك.",
+    "code": "القاعدة:\nالعمود أولاً، ثم الصف ثانياً!",
+    "output": "إتقان مهارة الإحداثيات"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Grid Map (خريطة الشبكة)",
+    "desc": "مساحة مقسمة لمربعات منظمة بأعمدة وصفوف."
+   },
+   {
+    "name": "Coordinates (الإحداثيات)",
+    "desc": "أرقام تدل على العنوان الدقيق لأي نقطة على الشبكة."
+   },
+   {
+    "name": "Columns (الأعمدة)",
+    "desc": "الخطوط الرأسية (الواقفة) في الشبكة."
+   },
+   {
+    "name": "Rows (الصفوف)",
+    "desc": "الخطوط الأفقية (النايمة) في الشبكة."
+   },
+   {
+    "name": "Locating (تحديد المكان)",
+    "desc": "معرفة الموقع الدقيق للشيء باستخدام تقاطع الخطوط."
+   },
+   {
+    "name": "Intersection (التقاطع)",
+    "desc": "النقطة السحرية التي يلتقي فيها العمود مع الصف."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "إذا كان الكنز في العمود 3 والصف 2، فما هو الترتيب الصحيح لقراءة الإحداثيات؟",
+    "a": "[العمود 3، الصف 2]"
+   },
+   {
+    "q": "أي خطوط نتحرك فيها أولاً: الأعمدة أم الصفوف؟",
+    "a": "الأعمدة أولاً"
+   },
+   {
+    "q": "ماذا نسمي الخطوط الواقفة في الشبكة؟",
+    "a": "الأعمدة"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine we are playing a secret treasure game! The map is made of an organized grid of squares, and every cool spot has a special address that helps us find it easily.",
+   "To reach any point, we move in two ways: horizontal sleeping rows and vertical standing columns. For example, to find the tree: [Column 2, Row 1] means walk two steps right and one step up.",
+   "How does a grid work? Just like graph paper! The crossing point between a column and a row creates one magic spot where we can hide treasure or draw a glowing star without confusion.",
+   "Imagine we have a cake at [Column 3, Row 2]; we move 3 columns to the right and then go up 2 rows to find the yummy cake ready to eat.",
+   "Golden rule: Always start by reading the column number from left to right, then the row number from bottom to top, just like 'horizontal with vertical' to reach the target right.",
+   "In real life, video games we play on phones and computers use this exact same idea to move characters and know the exact positions of monsters and gifts on the screen!"
+  ],
+  "example": "Living room treasure hunt! We have a grid on the carpet made of columns and rows. The toy box is at Column 2 and Row 1. Steps: Start at the home point (0,0), walk 2 columns right, then lift your foot 1 row up. Result: Hooray, you found the magic box and open the game!",
+  "mistake": "The common mistake is mixing up the order and writing the row first instead of the column. Fix: Always remember to look for the column number first, then the row number.",
+  "recap": "We used a grid map to pinpoint locations accurately using columns and rows, successfully reaching our target with ease.",
+  "q": [
+   {
+    "t": "What do columns represent on a grid map?",
+    "o": [
+     "Vertical lines",
+     "Horizontal lines",
+     "Square colors"
+    ],
+    "a": 0,
+    "why": "Columns are the standing (vertical) lines in the grid."
+   },
+   {
+    "t": "Where do we move first when reading coordinates [Column 2, Row 1]?",
+    "o": [
+     "Upwards in rows",
+     "Rightwards in columns",
+     "Randomly"
+    ],
+    "a": 1,
+    "why": "We always start moving according to the column number first."
+   },
+   {
+    "t": "Why do we use coordinate grids in video games?",
+    "o": [
+     "Only to color the screen",
+     "To precisely place characters and items",
+     "To close the game"
+    ],
+    "a": 1,
+    "why": "Grids help determine the exact position of every object on the screen."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Magic Treasure Coordinates",
+   "goal": "Fill in the blanks with the correct word to understand coordinate grids",
+   "items": [
+    {
+     "text": "The standing lines in a grid are called ___",
+     "options": [
+      "columns",
+      "rows",
+      "circles"
+     ],
+     "a": 0
+    },
+    {
+     "text": "The sleeping lines in a grid are called ___",
+     "options": [
+      "squares",
+      "rows",
+      "colors"
+     ],
+     "a": 1
+    },
+    {
+     "text": "We always start by looking for the ___ number first",
+     "options": [
+      "row",
+      "column",
+      "color"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! You mastered searching with columns and rows and found the treasure!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Grid Maps",
+    "text": "A grid is made of connected lines looking like squared drawing paper. We use it to divide space into tiny squares, giving every square a special numeric address so we never get lost in a game or map.",
+    "code": "Grid squares:\n[Column 1] [Column 2]\n[Row 1]    [Our goal here]",
+    "output": "Dividing space into clear squares"
+   },
+   {
+    "h": "What are Columns?",
+    "text": "Columns are vertical lines standing straight up like fence posts. We count them from left to right to know which column we are in, just like organizing toys on upright shelves.",
+    "code": "Moving in columns:\nColumn 1 -> Column 2 -> Column 3",
+    "output": "Moving left and right"
+   },
+   {
+    "h": "What are Rows?",
+    "text": "Rows are horizontal lines sleeping flat like stairs or a comfy bed. We count them from bottom to top, and each row has a number telling us how high up we climbed.",
+    "code": "Moving in rows:\nRow 1 -> Row 2 -> Row 3",
+    "output": "Moving up and down"
+   },
+   {
+    "h": "Understanding Coordinates",
+    "text": "Coordinates are like a secret password or address. When we say [Column 2, Row 1], it means they cross at one single specific point on the map, and that point is our target.",
+    "code": "Coordinates = [Column number, Row number]",
+    "output": "Pinpointing a single intersection"
+   },
+   {
+    "h": "Locating Items Accurately",
+    "text": "To find any missing toy, we move step by step: first walk right in the required column, then go up in the required row. This method ensures we always hit our target on the first try.",
+    "code": "Steps to reach target:\n1. Stand at start\n2. Go to Column 2\n3. Climb to Row 1",
+    "output": "Reaching the target perfectly"
+   },
+   {
+    "h": "Practical Example: The Apple Tree",
+    "text": "Imagine an apple tree drawn on a grid. The tree is at Column 2 and Row 1. This means if we walk two steps right and one step up, we can pick the apple right away!",
+    "code": "Apple location:\nColumn: 2, Row: 1",
+    "output": "Apple picked successfully"
+   },
+   {
+    "h": "Real-Life Connection: Video Games",
+    "text": "In every computer and mobile game you love, the character moves on a hidden grid of coordinates so the game knows exactly where they are standing and pops up rewards in the right place.",
+    "code": "In-game:\nHero character moves to [Column 4, Row 3]",
+    "output": "Reward appears in correct spot"
+   },
+   {
+    "h": "Quick Review and Golden Rules",
+    "text": "Always remember: columns stand up, rows sleep flat. Start with columns first, then rows. Following this rule makes you a great map engineer who can solve any grid puzzle!",
+    "code": "Rule:\nColumn first, then Row second!",
+    "output": "Mastery of coordinate skill"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Grid Map",
+    "desc": "An area divided into organized squares by columns and rows."
+   },
+   {
+    "name": "Coordinates",
+    "desc": "Numbers indicating the exact address of any point on a grid."
+   },
+   {
+    "name": "Columns",
+    "desc": "The vertical (standing) lines on a grid."
+   },
+   {
+    "name": "Rows",
+    "desc": "The horizontal (sleeping) lines on a grid."
+   },
+   {
+    "name": "Locating",
+    "desc": "Finding the exact position of an item using line intersections."
+   },
+   {
+    "name": "Intersection",
+    "desc": "The magic point where a column meets a row."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If treasure is at Column 3 and Row 2, what is the correct coordinate format?",
+    "a": "[Column 3, Row 2]"
+   },
+   {
+    "q": "Which lines do we move along first: columns or rows?",
+    "a": "Columns first"
+   },
+   {
+    "q": "What do we call the standing lines on a grid?",
+    "a": "Columns"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

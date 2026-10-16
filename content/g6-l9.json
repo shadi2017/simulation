@@ -1,0 +1,278 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك ذاهب إلى السوبرماركت وتحتاج لترتيب مشترياتك في سلة مرتبة. في بايثون، نسمي هذه السلة قائمة أو List، وهي تحفظ مجموعة من العناصر بالترتيب الذي تريده تماماً.",
+   "لإنشاء قائمة في بايثون، نضع العناصر بين قوسين مربعين هكذا: مشترياتنا = ['تفاح', 'موز', 'لبن']. كل عنصر له مكان يبدأ من الصفر.",
+   "يمكننا إضافة عناصر جديدة باستخدام دالة append() لإضافتها في نهاية القائمة، أو استخدام remove() لحذف عنصر معين تعبت منه أو لست بحاجة إليه.",
+   "أحياناً تحتاج لحفظ تفاصيل أو صفات لشيء واحد، مثل اسم لعبة وسعرها ومستواك فيها. هنا يأتي دور القواميس أو Dictionaries التي تستخدم مفاتيح وقيم (Key-Value) لتنظيم المعلومات بدقة.",
+   "القاعدة الذهبية: استخدم القوائم (Lists) عندما يكون لديك مجموعة عناصر مترتبة تريد تعديلها، واستخدم القواميس (Dictionaries) عندما تريد وصف شيء واحد بخصائص واضحة مثل ملف تعريف لاعب.",
+   "في الحياة اليومية، نستخدم القوائم في قوائم المهام (To-Do Lists) ونستخدم القواميس في جهات الاتصال بالهاتف حيث لكل اسم رقم هاتف خاص به."
+  ],
+  "example": "دعنا ننشئ قائمة تسوق ونضيف إليها عنصراً جديداً، ثم نصنع قاموساً لملف تعريف منتج. الكود التالي يوضح ذلك:\n\n```python\n# قائمة التسوق\nshopping_list = ['تفاح', 'خبز']\nshopping_list.append('حليب')\n\n# قاموس لمنتج معين\nproduct = {'name': 'عصير', 'price': 15, 'in_stock': True}\nprint(shopping_list)\nprint(product['name'])\n```\nالنتيجة ستكون طباعة قائمة المشتريات مضافاً إليها الحليب، ثم طباعة اسم المنتج وهو عصير. استخدام المفاتيح في القاموس يسهل علينا إيجاد البيانات بسرعة.",
+  "mistake": "الخطأ الشائع هو محاولة الوصول لعنصر في القاموس باستخدام رقم المؤشر (Index) مثل القوائم، أو نسيان علامات التنصيص حول المفتاح النصي. الحل هو استخدام اسم المفتاح الصحيح هكذا: product['name'] وليس product[0].",
+  "recap": "تعلمنا اليوم كيف نصنع ونعدل قوائم بايثون المرتبة، وكيف نستخدم القواميس لتخزين بيانات الأشياء بأسلوب المفاتيح والقيم.",
+  "q": [
+   {
+    "t": "أي طريقة صحيحة لإضافة عنصر لنهاية القائمة shopping_list؟",
+    "o": [
+     "shopping_list.append('عصير')",
+     "shopping_list.add('عصير')",
+     "shopping_list.insert(0, 'عصير')"
+    ],
+    "a": 0,
+    "why": "دالة append() مخصصة لإضافة العناصر في نهاية القائمة تماماً كما تشير وثائق بايثون الرسمية."
+   },
+   {
+    "t": "كيف نصل إلى قيمة مفتاح 'price' داخل قاموس اسمه item؟",
+    "o": [
+     "item(price)",
+     "item['price']",
+     "item.price()"
+    ],
+    "a": 1,
+    "why": "نستخدم الأقواس المربعة مع اسم المفتاح النصي لاسترجاع قيمته من القاموس."
+   },
+   {
+    "t": "ماذا تفعل دالة remove() في القوائم؟",
+    "o": [
+     "تحذف أول عنصر يطابق القيمة المعطاة",
+     "تحذف القائمة كلها",
+     "تضيف عنصراً جديداً"
+    ],
+    "a": 0,
+    "why": "دالة remove() تبحث عن أول عنصر تطابق قيمته القيمة المحددة وتقوم بحذفه."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة كود القوائم والقواميس",
+   "goal": "فهم كيف يعمل تعديل القوائم وطباعة قيم القواميس",
+   "code": "fruits = ['تفاح', 'موز']\nfruits.append('برتقال')\nhero = {'name': 'بطل', 'level': 5}\nprint(len(fruits))\nprint(hero['level'])",
+   "options": [
+    "3\n5",
+    "2\n5",
+    "3\nبطل"
+   ],
+   "a": 0,
+   "success": "رائع! طول القائمة صار 3 بعد الإضافة، ومستوى البطل في القاموس هو 5."
+  },
+  "sections": [
+   {
+    "h": "ما هي القوائم (Lists)؟",
+    "text": "القائمة هي وسيلة لتخزين عدة قيم داخل متغير واحد بالترتيب. مثل سلة تسوق تضع فيها الأغراض واحداً تلو الآخر. تبدأ المؤشرات في بايثون دائماً من الرقم صفر.",
+    "code": "items = ['قلم', 'كراسة', 'مسطرة']\nprint(items[0])",
+    "output": "قلم"
+   },
+   {
+    "h": "إضافة عناصر للقائمة",
+    "text": "يمكننا توسيع القائمة وإضافة عناصر جديدة إليها في النهاية باستخدام دالة append() بكل سهولة، مما يجعل القائمة تنمو مع زيادة بياناتنا.",
+    "code": "games = ['ماريو', 'ماينكرافت']\ngames.append('روبلوكس')\nprint(games)",
+    "output": "['ماريو', 'ماينكرافت', 'روبلوكس']"
+   },
+   {
+    "h": "حذف عناصر من القائمة",
+    "text": "إذا لم تعد بحاجة لعنصر معين داخل القائمة، تستطيع إزالته باستخدام دالة remove() وتحديد اسم العنصر الذي تريد التخلص منه.",
+    "code": "colors = ['أحمر', 'أخضر', 'أزرق']\ncolors.remove('أخضر')\nprint(colors)",
+    "output": "['أحمر', 'أزرق']"
+   },
+   {
+    "h": "فهم القواميس (Dictionaries)",
+    "text": "القاموس في بايثون يشبه دفتر الهواتف الحقيقي؛ تبحث عن اسم الشخص (المفتاح أو Key) فتجد رقمه (القيمة أو Value). هذا ممتاز لتخزين خصائص كينونة واحدة.",
+    "code": "student = {'name': 'أحمد', 'age': 12}\nprint(student['name'])",
+    "output": "أحمد"
+   },
+   {
+    "h": "إضافة وتعديل بيانات القاموس",
+    "text": "يمكنك تحديث قيم موجودة بالفعل داخل القاموس أو إضافة مفتاح وقيمة جديدة بكل بساطة عن طريق كتابة اسم القاموس والمفتاح الجديد وإعطائه قيمة.",
+    "code": "car = {'brand': 'تويوتا', 'year': 2020}\ncar['color'] = 'أحمر'\nprint(car['color'])",
+    "output": "أحمر"
+   },
+   {
+    "h": "دمج القوائم والقواميس",
+    "text": "أقوى البرامج تستخدم القوائم والقواميس معاً؛ مثل قائمة تحتوي على عدة قواميس تصف طلاب الفصل، حيث يكون كل طالب عبارة عن قاموس منفصل بخصائصه.",
+    "code": "classroom = [{'name': 'علي'}, {'name': 'سارة'}]\nprint(classroom[1]['name'])",
+    "output": "سارة"
+   }
+  ],
+  "reference": [
+   {
+    "name": "list.append(x)",
+    "desc": "يضيف عنصراً جديداً لنهاية القائمة."
+   },
+   {
+    "name": "list.remove(x)",
+    "desc": "يحذف أول مطابقة للعنصر من القائمة."
+   },
+   {
+    "name": "list.pop()",
+    "desc": "يحذف ويُرجع العنصر الأخير في القائمة."
+   },
+   {
+    "name": "dict[key]",
+    "desc": "يصل إلى قيمة مفتاح معين داخل القاموس."
+   },
+   {
+    "name": "len()",
+    "desc": "يعيد عدد العناصر في القائمة أو القاموس."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ قائمة اسمها my_list تحتوي على رقمين وأضف لهما رقماً ثالثاً باستخدام append.",
+    "a": "my_list = [1, 2]\nmy_list.append(3)"
+   },
+   {
+    "q": "أنشئ قاموساً يمثل قطة له مفتاح 'name' قيمته 'سوسو'.",
+    "a": "cat = {'name': 'سوسو'}"
+   },
+   {
+    "q": "احذف العنصر 'تفاح' من قائمة shopping_list.",
+    "a": "shopping_list.remove('تفاح')"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you are going to the supermarket and need to arrange your items in a neat basket. In Python, we call this basket a List, which stores a collection of items in the exact order you want.",
+   "To create a list in Python, we put items inside square brackets like this: items = ['apple', 'banana', 'milk']. Every item has a position index starting from zero.",
+   "We can add new items using the append() method to place them at the end of the list, or use remove() to delete a specific item you no longer need.",
+   "Sometimes you need to store properties or details for a single object, such as a game item's name, price, and level. This is where Dictionaries come in, using key-value pairs to organize information precisely.",
+   "Golden Rule: Use Lists when you have an ordered collection of items that you want to modify, and use Dictionaries when you want to describe one single object with clear attributes like a player profile.",
+   "In daily life, we use lists for to-do lists and dictionaries for phone contacts where each name is tied to its own specific phone number."
+  ],
+  "example": "Let's create a shopping list, add a new item to it, and then build a dictionary for a product profile. The following code demonstrates this:\n\n```python\n# Shopping list\nshopping_list = ['apple', 'bread']\nshopping_list.append('milk')\n\n# Product dictionary\nproduct = {'name': 'juice', 'price': 15, 'in_stock': True}\nprint(shopping_list)\nprint(product['name'])\n```\nThe output will print the shopping list with milk added, followed by printing the product name which is juice. Using keys in a dictionary helps us find data quickly.",
+  "mistake": "A common mistake is trying to access a dictionary value using an index number like a list, or forgetting quotation marks around a string key. The fix is to use the correct key name like product['name'] instead of product[0].",
+  "recap": "Today we learned how to build and modify ordered Python lists, and how to use dictionaries to store object data using key-value pairs.",
+  "q": [
+   {
+    "t": "Which method correctly adds an item to the end of shopping_list?",
+    "o": [
+     "shopping_list.append('juice')",
+     "shopping_list.add('juice')",
+     "shopping_list.insert(0, 'juice')"
+    ],
+    "a": 0,
+    "why": "The append() method is designed to add items to the very end of the list as specified in official Python documentation."
+   },
+   {
+    "t": "How do we access the value of the 'price' key inside a dictionary named item?",
+    "o": [
+     "item(price)",
+     "item['price']",
+     "item.price()"
+    ],
+    "a": 1,
+    "why": "We use square brackets with the string key name to retrieve its corresponding value from the dictionary."
+   },
+   {
+    "t": "What does the remove() method do in lists?",
+    "o": [
+     "Removes the first item matching the given value",
+     "Deletes the entire list",
+     "Adds a new item"
+    ],
+    "a": 0,
+    "why": "The remove() method searches for the first item matching the specified value and deletes it."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Lists & Dictionaries Code Output",
+   "goal": "Understand how list modification and dictionary lookups work",
+   "code": "fruits = ['apple', 'banana']\nfruits.append('orange')\nhero = {'name': 'knight', 'level': 5}\nprint(len(fruits))\nprint(hero['level'])",
+   "options": [
+    "3\n5",
+    "2\n5",
+    "3\nkight"
+   ],
+   "a": 0,
+   "success": "Awesome! The list length became 3 after appending, and the hero level in the dictionary is 5."
+  },
+  "sections": [
+   {
+    "h": "What are Lists?",
+    "text": "A list is a way to store multiple values inside a single variable in order. Think of it as a shopping basket where you place items one after another. Python indices always start at zero.",
+    "code": "items = ['pen', 'notebook', 'ruler']\nprint(items[0])",
+    "output": "pen"
+   },
+   {
+    "h": "Adding Items to a List",
+    "text": "We can expand our list and add new items to the end using the append() method easily, allowing our list to grow dynamically as our data increases.",
+    "code": "games = ['mario', 'minecraft']\ngames.append('roblox')\nprint(games)",
+    "output": "['mario', 'minecraft', 'roblox']"
+   },
+   {
+    "h": "Removing Items from a List",
+    "text": "If you no longer need a specific item in your list, you can remove it using the remove() method by passing the exact value you want to get rid of.",
+    "code": "colors = ['red', 'green', 'blue']\ncolors.remove('green')\nprint(colors)",
+    "output": "['red', 'blue']"
+   },
+   {
+    "h": "Understanding Dictionaries",
+    "text": "A dictionary in Python is like a real contact book; you look up a person's name (the Key) to find their phone number (the Value). This is fantastic for storing properties of a single entity.",
+    "code": "student = {'name': 'Alice', 'age': 12}\nprint(student['name'])",
+    "output": "Alice"
+   },
+   {
+    "h": "Adding and Modifying Dictionary Data",
+    "text": "You can update existing values inside a dictionary or add a brand new key-value pair simply by writing the dictionary name and the new key assigned to a value.",
+    "code": "car = {'brand': 'Toyota', 'year': 2020}\ncar['color'] = 'red'\nprint(car['color'])",
+    "output": "red"
+   },
+   {
+    "h": "Combining Lists and Dictionaries",
+    "text": "The most powerful programs combine lists and dictionaries together; for example, a list containing multiple dictionaries describing classroom students, where each student is a separate dictionary.",
+    "code": "classroom = [{'name': 'Ali'}, {'name': 'Sara'}]\nprint(classroom[1]['name'])",
+    "output": "Sara"
+   }
+  ],
+  "reference": [
+   {
+    "name": "list.append(x)",
+    "desc": "Adds an item to the end of the list."
+   },
+   {
+    "name": "list.remove(x)",
+    "desc": "Removes the first occurrence of a value from the list."
+   },
+   {
+    "name": "list.pop()",
+    "desc": "Removes and returns the last item in the list."
+   },
+   {
+    "name": "dict[key]",
+    "desc": "Accesses the value of a specific key in a dictionary."
+   },
+   {
+    "name": "len()",
+    "desc": "Returns the number of items in a list or dictionary."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a list named my_list with two numbers and add a third number using append.",
+    "a": "my_list = [1, 2]\nmy_list.append(3)"
+   },
+   {
+    "q": "Create a dictionary representing a cat with a 'name' key valued 'Soso'.",
+    "a": "cat = {'name': 'Soso'}"
+   },
+   {
+    "q": "Remove the item 'apple' from shopping_list.",
+    "a": "shopping_list.remove('apple')"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/datastructures.html"
+  }
+ ],
+ "grounded": true
+}

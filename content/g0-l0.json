@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "الخوارزمية هي وصفة سحرية أو مجموعة خطوات بسيطة وواضحة لحل مشكلة ما، تماماً مثل خطوات تحضير الكعكة المفضلة لديك بالمنزل.",
+   "الكمبيوتر آلة ذكية جداً لكنها لا تفكر بمفردها، بل تنفذ الأوامر الحرفية التي نكتبها لها بدقة شديدة خطوة بخطوة.",
+   "لكي يعمل أي شيء بذكاء، يجب ترتيب التعليمات بالترتيب الصحيح؛ فتقديم خطوة على أخرى يفسد النتيجة تماماً.",
+   "لنتخيل أننا نلعب لعبة الروبوت البشري بالصف؛ حيث يغمض صديقك عينيه وينفذ فقط ما تقوله له لكي يصل للباب.",
+   "القاعدة الذهبية: رتب أفكارك دائماً قبل أن تطلب من الآلة أو صديقك تنفيذها لتتجنب الأخطاء والمفاجآت غير السارة.",
+   "نستخدم الخوارزميات يومياً في كل مكان، مثل غسل الأسنان بالفرشاة والمعجون، أو ربط حذاء الكوتشي الرياضي."
+  ],
+  "example": "لنفترض أننا نريد تحضير حقيبة المدرسة؛ فالخوارزمية الصحيحة هي: 1. فتح حقيبة الظهر. 2. وضع كتاب القراءة بداخلها. 3. وضع المقلمة. 4. إغلاق السحاب جيداً. إذا وضعنا كتاب القراءة أولاً قبل فتح الحقيبة، فلن ينجح الأمر أبداً!",
+  "mistake": "الخطأ الشائع هو نسيان خطوة أساسية أو تغيير الترتيب مثل إغلاق الحقيبة قبل وضع الكتب بداخلها. التصحيح هو مراجعة كل خطوة بعناية قبل البدء.",
+  "recap": "الخوارزمية هي مجموعة خطوات متسلسلة بدقة. الكمبيوتر والآلات يحتاجون لهذه الخطوات لفهم ما يجب فعله.",
+  "q": [
+   {
+    "t": "ماذا تعني كلمة خوارزمية باختصار؟",
+    "o": [
+     "لعبة فيديو صعبة",
+     "مجموعة خطوات مرتبة لحل مشكلة",
+     "شاشة كمبيوتر ملونة"
+    ],
+    "a": 1,
+    "why": "الخوارزمية هي تسلسل خطوات واضح ومحدد يحل مشكلة أو ينفذ مهمة."
+   },
+   {
+    "t": "لماذا تتبع الآلات والكمبيوتر الخطوات بدقة؟",
+    "o": [
+     "لأنها تفكر وتخترع بمفردها",
+     "لأنها تنفذ الأوامر الحرفية التي نكتبها",
+     "لأنها تحب اللعب"
+    ],
+    "a": 1,
+    "why": "الآلات لا تفكر، بل تنفذ التعليمات التي نحددها لها حرفياً وبدون تعديل."
+   },
+   {
+    "t": "في لعبة الروبوت البشري، ماذا يفعل الروبوت؟",
+    "o": [
+     "يخترع ألعاباً جديدة",
+     "ينفذ التعليمات بالترتيب فقط",
+     "يرسم لوحة جميلة"
+    ],
+    "a": 1,
+    "why": "في لعبة الروبوت البشري، يكون صديقك هو الآلة التي تنفذ كلماتك بالترتيب."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب تجهيز الحقيبة المدرسية",
+   "goal": "رتب خطوات وضع حقيبة المدرسة بجانب الباب بشكل صحيح.",
+   "items": [
+    "إحضار حقيبة المدرسة الفارغة",
+    "فتح سحاب الحقيبة على وسعه",
+    "وضع الكتب والدفاتر بعناية بالداخل",
+    "إغلاق السحاب بإحكام تام",
+    "حمل الحقيبة ووضعها بجانب الباب"
+   ],
+   "success": "أحسنت! أصبحت الحقيبة جاهزة ومترتبة تماماً بجانب الباب للانطلاق."
+  },
+  "sections": [
+   {
+    "h": "ما هو الكمبيوتر؟",
+    "text": "الكمبيوتر ليس سحراً، بل هو آلة ذكية وسريعة للغاية تساعدنا في أداء المهام، لكنه يشبه تماماً طفلاً مطيعاً ينتظر الأوامر ولا يستطيع فعل أي شيء بدون تعليماتنا الواضحة والمحددة.",
+    "code": "الآلة = طفل مطيع ينتظر الأوامر",
+    "output": "الكمبيوتر ينفذ الأوامر التي ندخلها إليه."
+   },
+   {
+    "h": "كيف تفهم الآلات التعليمات؟",
+    "text": "الآلات لا تفهم المشاعر ولا تخمن ما نقصده، بل تتعامل معنا بلغة الأوامر الحرفية المباشرة. إذا كتبت لها أمراً خاطئاً أو غير مرتب، ستنفذه كما هو وتحصل على نتيجة غريبة وغير متوقعة.",
+    "code": "أمر خطأ -> نتيجة خطأ",
+    "output": "الآلة تنفذ الحرف الواحد كما كُتب لها."
+   },
+   {
+    "h": "ما هي الخوارزمية؟",
+    "text": "الخوارزمية هي وصفة عمل أو سلسلة خطوات مرتبة بعناية فائقة لحل مشكلة معينة. تخيل أنك تبني برجاً من المكعبات؛ يجب أن تضع القطعة السفلية أولاً ثم تعلوها قطعا أخرى، هذا هو تماماً مفهوم الخوارزمية.",
+    "code": "خطوة 1: ابدأ\nخطوة 2: افعل كذا\nخطوة 3: انتهى",
+    "output": "حل المشكلة أو إتمام المهمة بنجاح."
+   },
+   {
+    "h": "لعبة الروبوت البشري",
+    "text": "لكي نفهم كيف تعمل التعليمات المتسلسلة، نلعب لعبة الروبوت البشري في الفصل. صديقك يتحول إلى روبوت وأنت المبرمج الذي يقول: ارفع قدمك اليمنى، تقدم خطوة، قف. الروبوت لا يتحرك إلا بأمرك المباشر.",
+    "code": "أمر: امشي 3 خطوات للأمام",
+    "output": "صديقك يتحرك 3 خطوات بدقة."
+   },
+   {
+    "h": "أهمية الترتيب الصحيح",
+    "text": "الترتيب هو سر نجاح أي خوارزمية في العالم. إذا أردت ارتداء حذائك، يجب أن تلبس الجورب أولاً ثم الحذاء، فلو عكست الترتيب لصارت المشكلة مضحكة وغير عملية تماماً.",
+    "code": "1. لبس الجورب\n2. لبس الحذاء",
+    "output": "حذاء مرتب ومريح في قدمك."
+   },
+   {
+    "h": "الخوارزميات في حياتنا اليومية",
+    "text": "نحن نستخدم الخوارزميات في كل تفاصيل يومنا بدون أن نشعر، مثل طريقة غسل الأسنان، أو إعداد شطيرة الجبن، أو تشغيل التلفاز بالريموت كنترول. كلها خطوات تتبع مساراً ثابتاً.",
+    "code": "شطيرة الجبن: خبز -> جبن -> إغلاق",
+    "output": "الحصول على وجبة لذيذة ومرتبة."
+   },
+   {
+    "h": "كتابة أول خوارزمية خاصة بك",
+    "text": "لكتابة خوارزمية ممتازة، ابدأ بتحديد الهدف النهائي، ثم فكر في أصغر الخطوات الممكنة التي توصلك لهذا الهدف، واكتبها بورقة وقلم بترتيب صاعد من البداية وحتى النهاية.",
+    "code": "الهدف: فتح باب الغرفة\n1. اقتراب\n2. مد اليد\n3. لف المقبض",
+    "output": "فتح الباب بسهولة وبدون أخطاء."
+   },
+   {
+    "h": "مراجعة واختبار التعليمات",
+    "text": "بعد كتابة خطواتك، جرب تنفيذها بنفسك ببطء شديد كأنك روبوت. هل نسيت شيئاً؟ هل هناك خطوة سبقت الأخرى بالخطأ؟ التعديل والتصحيح جزء أساسي من عمل المبرمج الصغير الذكي.",
+    "code": "فحص الخطوات -> تعديل الخطأ -> نجاح",
+    "output": "خوارزمية مثالية جاهزة للتنفيذ."
+   }
+  ],
+  "reference": [
+   {
+    "name": "الخوارزمية",
+    "desc": "مجموعة خطوات متسلسلة ومنظمة لحل مشكلة أو إنجاز مهمة."
+   },
+   {
+    "name": "التسلسل",
+    "desc": "تنفيذ التعليمات والأوامر واحدة تلو الأخرى بالترتيب الصحيح."
+   },
+   {
+    "name": "الكمبيوتر",
+    "desc": "آلة إلكترونية ذكية تنفذ التعليمات الحرفية بسرعة هائلة."
+   },
+   {
+    "name": "الروبوت البشري",
+    "desc": "لعبة مدرسية تمثل فيها دور الآلة أو المبرمج لفهم الأوامر."
+   },
+   {
+    "name": "المبرمج",
+    "desc": "الشخص الذي يكتب التعليمات والأوامر الواضحة للآلة."
+   },
+   {
+    "name": "التعليمات",
+    "desc": "الأوامر الفردية البسيطة التي توضح ماذا يجب فعله."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ماذا نسمي مجموعة الخطوات المتسلسلة التي تحل مشكلة معينة؟",
+    "a": "خوارزمية"
+   },
+   {
+    "q": "إذا أردت ارتداء حذائك، هل تلبس الحذاء فوق الجورب أم الجورب أولاً؟",
+    "a": "الجورب أولاً ثم الحذاء"
+   },
+   {
+    "q": "هل يستطيع الكمبيوتر التفكير بمفرده بدون أوامر بشرية؟",
+    "a": "لا، الكمبيوتر يحتاج لتعليمات واضحة منا"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "An algorithm is like a magic recipe or a simple, clear set of steps to solve a problem, just like baking your favorite cake at home.",
+   "A computer is a very smart machine, but it cannot think on its own; it follows the exact literal commands we write for it step by step.",
+   "For anything to work smartly, instructions must be in the correct order; putting one step before another completely ruins the result.",
+   "Imagine playing the Human Robot classroom game where your friend closes their eyes and only follows your spoken commands to reach the door.",
+   "Golden rule: Always sequence your thoughts before asking a machine or friend to execute them to avoid mistakes and unpleasant surprises.",
+   "We use algorithms every day everywhere, such as brushing our teeth with toothpaste and a brush, or tying our sports shoes."
+  ],
+  "example": "Suppose we want to prepare a school bag; the correct algorithm is: 1. Open the backpack. 2. Put the reading book inside. 3. Put the pencil case. 4. Zip it up securely. If we put the book in before opening the bag, it will never work!",
+  "mistake": "A common mistake is forgetting a basic step or changing the order, like zipping the bag before putting books inside. The fix is to carefully review each step before starting.",
+  "recap": "An algorithm is a set of precisely sequenced steps. Computers and machines need these steps to understand what to do.",
+  "q": [
+   {
+    "t": "What does the word algorithm mean in short?",
+    "o": [
+     "A difficult video game",
+     "A set of ordered steps to solve a problem",
+     "A colorful computer screen"
+    ],
+    "a": 1,
+    "why": "An algorithm is a clear, specific sequence of steps that solves a problem or performs a task."
+   },
+   {
+    "t": "Why do machines and computers follow steps precisely?",
+    "o": [
+     "Because they think and invent on their own",
+     "Because they follow the literal commands we write",
+     "Because they love playing games"
+    ],
+    "a": 1,
+    "why": "Machines do not think; they execute the instructions we define for them literally and without modification."
+   },
+   {
+    "t": "In the Human Robot game, what does the robot do?",
+    "o": [
+     "Invents new games",
+     "Executes instructions in order only",
+     "Draws a nice painting"
+    ],
+    "a": 1,
+    "why": "In the Human Robot game, your friend is the machine executing your words in order."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "School Bag Preparation Order",
+   "goal": "Order the steps to correctly place your school bag by the door.",
+   "items": [
+    "Bring the empty school bag",
+    "Open the bag zipper wide open",
+    "Place books and notebooks carefully inside",
+    "Close the zipper completely and securely",
+    "Pick up the bag and place it next to the door"
+   ],
+   "success": "Great job! The bag is now ready and neatly placed by the door for departure."
+  },
+  "sections": [
+   {
+    "h": "What is a Computer?",
+    "text": "A computer is not magic; it is a very smart, fast machine that helps us perform tasks, but it is just like an obedient child waiting for commands and unable to do anything without our clear, specific instructions.",
+    "code": "Machine = obedient child waiting for commands",
+    "output": "The computer executes the commands we input into it."
+   },
+   {
+    "h": "How Do Machines Follow Instructions?",
+    "text": "Machines do not understand feelings or guess what we mean; they deal with us using direct literal command language. If you write a wrong or unordered command, it will execute it as is and give a weird, unexpected result.",
+    "code": "Wrong command -> Wrong result",
+    "output": "The machine executes every single character as written."
+   },
+   {
+    "h": "What is an Algorithm?",
+    "text": "An algorithm is a recipe or a series of carefully ordered steps to solve a specific problem. Imagine building a tower of blocks; you must place the bottom piece first and then stack others on top—this is the exact concept of an algorithm.",
+    "code": "Step 1: Start\nStep 2: Do this\nStep 3: End",
+    "output": "Problem solved or task completed successfully."
+   },
+   {
+    "h": "The Human Robot Game",
+    "text": "To understand how sequenced instructions work, we play the Human Robot game in class. Your friend turns into a robot and you are the programmer saying: lift your right foot, take a step, stop. The robot only moves on your direct command.",
+    "code": "Command: walk 3 steps forward",
+    "output": "Your friend moves 3 steps accurately."
+   },
+   {
+    "h": "The Importance of Correct Order",
+    "text": "Order is the secret to success for any algorithm in the world. If you want to wear your shoes, you must put on your sock first and then the shoe; reversing the order would make the problem funny and completely impractical.",
+    "code": "1. Put on sock\n2. Put on shoe",
+    "output": "Neat and comfortable shoe on your foot."
+   },
+   {
+    "h": "Algorithms in Our Daily Life",
+    "text": "We use algorithms in every detail of our day without realizing it, such as brushing teeth, making a cheese sandwich, or turning on the TV with a remote control. All follow a fixed path of steps.",
+    "code": "Cheese sandwich: bread -> cheese -> close",
+    "output": "A delicious and tidy meal obtained."
+   },
+   {
+    "h": "Writing Your First Algorithm",
+    "text": "To write an excellent algorithm, start by defining the final goal, then think of the smallest possible steps to reach that goal, and write them down with pen and paper in ascending order from start to finish.",
+    "code": "Goal: Open room door\n1. Approach\n2. Reach hand\n3. Turn knob",
+    "output": "Door opens easily and without errors."
+   },
+   {
+    "h": "Reviewing and Testing Instructions",
+    "text": "After writing your steps, try executing them yourself very slowly as if you were a robot. Did you forget something? Is there a step that mistakenly came before another? Editing and fixing is a key part of a smart young programmer's work.",
+    "code": "Check steps -> Fix error -> Success",
+    "output": "Perfect algorithm ready for execution."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Algorithm",
+    "desc": "A set of sequenced and organized steps to solve a problem or accomplish a task."
+   },
+   {
+    "name": "Sequence",
+    "desc": "Executing instructions and commands one after another in the correct order."
+   },
+   {
+    "name": "Computer",
+    "desc": "A smart electronic machine that executes literal instructions at massive speed."
+   },
+   {
+    "name": "Human Robot",
+    "desc": "A classroom game where you play the machine or programmer to understand commands."
+   },
+   {
+    "name": "Programmer",
+    "desc": "The person who writes clear instructions and commands for the machine."
+   },
+   {
+    "name": "Instructions",
+    "desc": "Simple individual commands that show what needs to be done."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What do we call the set of sequenced steps that solves a specific problem?",
+    "a": "Algorithm"
+   },
+   {
+    "q": "If you want to wear your shoes, do you put the shoe over the sock or the sock first?",
+    "a": "Sock first then the shoe"
+   },
+   {
+    "q": "Can a computer think on its own without human commands?",
+    "a": "No, the computer needs clear instructions from us"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

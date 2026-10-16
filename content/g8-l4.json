@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك ترسم نقاطاً على ورقة مربعات، حيث تعبر كل نقطة عن قياسين معاً مثل الطول والوزن. المخطط المبعثر هو طريقة بصرية رائعة لمشاهدة كيف ترتبط هذه الأرقام ببعضها.",
+   "في لغة بايثون، نستخدم مكتبة ماتبلوتليب الشهيرة لإنشاء هذه المخططات. نأخذ لوحة رسم ونستدعي دالة التشتت لتوزيع النقاط على محورين سين وصاد بناءً على بياناتنا.",
+   "عندما ترتفع القيمتان معاً، نرى خطاً وهمياً يصعد للأعلى، وهذا ما نسميه علاقة طردية. أما إذا ارتفعت قيمة وانخفضت الأخرى، فهذه علاقة عكسية تذهب للأسفل.",
+   "يمكننا جعل النقاط أصغر أو أكبر حسب قياس ثالث لتمييز البيانات بدقة أكبر. تغيير حجم النقاط يسمى مقياس الحجم ويعطى عبر معامل خاص.",
+   "القاعدة الذهبية لتحليل البيانات هي أن الارتباط لا يعني دائماً سبباً أكيداً. قد ترتبط الظاهرتان ببعضهما لكنهما لا تسببان احداهما الأخرى بالضرورة.",
+   "نستخدم هذه المخططات في الواقع الحقيقي لتحليل بيانات الطقس، أو دراسة علاقة ساعات المذاكرة بدرجات الاختبارات في المدارس والجامعات."
+  ],
+  "example": "لنرسم مخططاً يربط الساعات بالدرجات باستخدام بايثون:\n\nimport matplotlib.pyplot as plt\nx = [1, 2, 3, 4]\ny = [50, 65, 80, 95]\nfig, ax = plt.subplots()\nax.scatter(x, y, s=100)\nplt.show()\n\nهنا قمنا بتعريف س و ص، ثم أنشأنا شكلاً ورسمنا النقاط بحجم 100.",
+  "mistake": "الخطأ الشائع هو الاعتقاد بأن وجود شكل متصاعد للنقاط يعني حتماً أن المتغير الأول يسبب الثاني. تذكر دائماً: الارتباط لا يثبت السببية أبداً!",
+  "recap": "المخططات المبعثرة تساعدنا في اكتشاف العلاقات البصرية بين قياسين. وتغيير حجم وألوان النقاط يمنحنا فهماً أعمق لتحليلات البيانات.",
+  "q": [
+   {
+    "t": "ماذا يسمى المخطط الذي يعرض قياسين على محوري س وص؟",
+    "o": [
+     "مخطط دائري",
+     "مخطط مبعثر",
+     "مخطط شريطي"
+    ],
+    "a": 1,
+    "why": "المخطط المبعثر (Scatter Plot) مخصص لعرض قياسين رقميين على محوري x و y."
+   },
+   {
+    "t": "ماذا يعني وجود نقاط تتحرك صعوداً نحو اليمين؟",
+    "o": [
+     "علاقة طردية",
+     "علاقة عكسية",
+     "لا توجد علاقة"
+    ],
+    "a": 0,
+    "why": "حين ترتفع القيمتان معاً، تسمى العلاقة طردية."
+   },
+   {
+    "t": "ما هو معامل بايثون المستخدم لتعديل حجم النقاط في المخطط المبعثر؟",
+    "o": [
+     "c",
+     "s",
+     "x"
+    ],
+    "a": 1,
+    "why": "المعامل s يتحكم بحجم نقاط المخطط المبعثر."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز أنواع العلاقات والبيانات",
+   "goal": "صنف الجمل والخصائص التالية إلى الفئة المناسبة لها: علاقة طردية أو خصائص المخطط المبعثر.",
+   "buckets": [
+    "علاقة طردية",
+    "خصائص المخطط"
+   ],
+   "items": [
+    {
+     "t": "القيمتان ترتفعان معاً",
+     "b": 0
+    },
+    {
+     "t": "محورين س وص",
+     "b": 1
+    },
+    {
+     "t": "قيمة تنخفض والأخرى ترتفع",
+     "b": 0
+    },
+    {
+     "t": "استخدام معامل الحجم s",
+     "b": 1
+    },
+    {
+     "t": "الخط يتجه صعوداً لليمين",
+     "b": 0
+    },
+    {
+     "t": "عرض النقاط الموزعة",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد فرزت مفاهيم المخططات المبعثرة والعلاقات بمهارة فائقة."
+  },
+  "sections": [
+   {
+    "h": "مفهوم المخططات المبعثرة",
+    "text": "تخيل أنك تقيس أطوال أصدقائك وأوزانهم وتضعها على ورقة مربعات كنقاط. المخطط المبعثر هو رسم بياني يضع قيمتين عدديتين لكل عنصر على محوري سين وصاد لتظهر لك صورة واضحة عن شكل تجمع البيانات.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.scatter([1, 2, 3], [4, 5, 6])\nplt.show()",
+    "output": "يتم عرض نافذة تحتوي على ثلاثة نقاط مبعثرة."
+   },
+   {
+    "h": "تتبع الاتجاهات والمتغيرات",
+    "text": "عندما تنظر إلى النقاط المنتشرة، يمكنك ملاحظة ما إذا كانت تتجه صعوداً أو هبوطاً. هذا يساعد المحلل على اكتشاف الاتجاه العام للبيانات ومعرفة كيف يتفاعل المتغير الأول عندما يتغير المتغير الثاني.",
+    "code": "import matplotlib.pyplot as plt\nx = [10, 20, 30, 40]\ny = [15, 25, 35, 45]\nfig, ax = plt.subplots()\nax.scatter(x, y)",
+    "output": "رسم نقاط تميل للصعود نحو اليمين."
+   },
+   {
+    "h": "تغيير مقاييس وأحجام النقاط",
+    "text": "ليس كل النقاط يجب أن تكون بنفس الحجم. يمكنك استخدام متغير ثالث لتحديد حجم كل نقطة باستخدام معامل الحجم في دالة التشتت، مما يتيح لك تمثيل ثلاثة أبعاد من البيانات في رسم واحد.",
+    "code": "import matplotlib.pyplot as plt\nx = [1, 2, 3]\ny = [3, 2, 1]\nsizes = [20, 100, 200]\nfig, ax = plt.subplots()\nax.scatter(x, y, s=sizes)\nplt.show()",
+    "output": "ثلاث نقاط بأحجام مختلفة تتدرج في الكبر."
+   },
+   {
+    "h": "تحليل الارتباطات والعلاقات",
+    "text": "العلاقة قد تكون موجبة (طردية) حيث ترتفع القيمتان معاً، أو سالبة (عكسية) حيث ترتفع إحداهما وتنخفض الأخرى. تحليل الارتباط يمنحنا القدرة على وصف هذه الروابط بدقة رياضية وعلمية.",
+    "code": "import matplotlib.pyplot as plt\nx = [1, 2, 3, 4]\ny = [8, 6, 4, 2]\nfig, ax = plt.subplots()\nax.scatter(x, y)\nplt.show()",
+    "output": "نقاط تتجه نزولاً من اليسار لليمين."
+   },
+   {
+    "h": "الارتباط لا يعني السببية",
+    "text": "احذر من الوقوع في فخ اعتبار الارتباط سبباً مباشراً. مجرد رؤية نقط تتصاعد معاً لا يعني أن أحدهما يسبب الآخر بالضرورة، فقد يكون هناك عامل خفي ثالث يؤثر على الاثنين معا.",
+    "code": "print('Correlation does not imply causation!')",
+    "output": "Correlation does not imply causation!"
+   },
+   {
+    "h": "تنسيق مظهر النقاط والبيانات",
+    "text": "لتجعل مخططك احترافياً، يمكنك تعديل ألوان النقاط، وإضافة عناوين للمحاور، وتسمية الرسم البياني بوضوح. مكتبة ماتبلوتليب تمنحك تحكماً كاملاً بكل تفصيلة مرئية في اللوحة.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.scatter([1, 2], [3, 4], c='red')\nax.set_xlabel('X Axis')\nax.set_ylabel('Y Axis')",
+    "output": "رسم نقاط حمراء مع تسميات واضحة للمحاور."
+   },
+   {
+    "h": "التطبيقات الواقعية للمخططات المبعثرة",
+    "text": "يستخدم علماء البيانات هذه المخططات في كل مكان: لدراسة مبيعات المتاجر، مراقبة درجات الحرارة العالمية، وتتبع نمو النباتات بناءً على كميات المياه وأشعة الشمس.",
+    "code": "import matplotlib.pyplot as plt\ndays = [1, 2, 3, 4, 5]\ntemps = [22, 24, 19, 25, 28]\nfig, ax = plt.subplots()\nax.scatter(days, temps)\nplt.show()",
+    "output": "رسم يوضح قراءات درجات الحرارة اليومية."
+   },
+   {
+    "h": "بناء بورتفوليو البيانات الخاص بك",
+    "text": "إدراج المخططات المبعثرة في مشروعك النهائي يظهر مهاراتك العالية في تحليل البيانات. المديرون والخبراء يحبون الرسوم البيانية الواضحة التي تحكي قصة حقيقية عن الأرقام.",
+    "code": "print('My Data Portfolio is growing professionally!')",
+    "output": "My Data Portfolio is growing professionally!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "plt.subplots()",
+    "desc": "إنشاء شكل جديد ومنطقة محاور للرسم."
+   },
+   {
+    "name": "ax.scatter()",
+    "desc": "رسم مخطط مبعثر للنقاط على المحاور."
+   },
+   {
+    "name": "s=",
+    "desc": "معامل لتحديد حجم نقاط التشتت."
+   },
+   {
+    "name": "c=",
+    "desc": "معامل لتحديد لون نقاط المخطط."
+   },
+   {
+    "name": "ax.set_xlabel()",
+    "desc": "تسمية المحور الأفقي سين."
+   },
+   {
+    "name": "ax.set_ylabel()",
+    "desc": "تسمية المحور الرأسي صاد."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود بايثون لإنشاء شكل ومحاور باستخدام plt.subplots()",
+    "a": "fig, ax = plt.subplots()"
+   },
+   {
+    "q": "ما هو المعامل المسؤول عن تغيير حجم النقاط في ax.scatter؟",
+    "a": "s"
+   },
+   {
+    "q": "هل يعني وجود ارتباط بين متغيرين أن أحدهما يسبب الآخر حتماً؟",
+    "a": "لا، الارتباط لا يثبت السببية."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine plotting dots on grid paper where each dot represents two measurements together, like height and weight. A scatter plot is a brilliant visual way to see how these numbers relate.",
+   "In Python, we use the famous Matplotlib library to create these plots. We grab a drawing canvas and call the scatter function to distribute dots across x and y axes based on our data.",
+   "When both values rise together, we see an imaginary line going upwards, which we call a positive relationship. If one value rises while the other drops, it is a negative relationship going down.",
+   "We can make dots smaller or larger according to a third measurement to distinguish data more precisely. Changing point sizes is called the sizing metric and is passed via a special parameter.",
+   "The golden rule of data analysis is that correlation does not always prove causation. Two phenomena might be related to each other without one causing the other necessarily.",
+   "We use these plots in real life to analyze weather data, or study the relationship between study hours and exam grades in schools and universities."
+  ],
+  "example": "Let's plot hours versus grades using Python:\n\nimport matplotlib.pyplot as plt\nx = [1, 2, 3, 4]\ny = [50, 65, 80, 95]\nfig, ax = plt.subplots()\nax.scatter(x, y, s=100)\nplt.show()\n\nHere we defined x and y, then created a figure and plotted dots with size 100.",
+  "mistake": "A common mistake is believing that an upward pattern of dots means the first variable definitely causes the second. Always remember: correlation never proves causation!",
+  "recap": "Scatter plots help us discover visual relationships between two measurements. Changing point sizes and colors gives us deeper insight into data analytics.",
+  "q": [
+   {
+    "t": "What is the plot called that displays two measurements on x and y axes?",
+    "o": [
+     "Pie chart",
+     "Scatter plot",
+     "Bar chart"
+    ],
+    "a": 1,
+    "why": "A scatter plot is designed to show two numerical measurements on x and y axes."
+   },
+   {
+    "t": "What does it mean when dots move upwards to the right?",
+    "o": [
+     "Positive relationship",
+     "Negative relationship",
+     "No relationship"
+    ],
+    "a": 0,
+    "why": "When both values rise together, it is called a positive relationship."
+   },
+   {
+    "t": "What is the Python parameter used to adjust point sizes in a scatter plot?",
+    "o": [
+     "c",
+     "s",
+     "x"
+    ],
+    "a": 1,
+    "why": "The s parameter controls the point sizes of the scatter plot."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Relationship Types and Data",
+   "goal": "Classify the following sentences and properties into their appropriate category: Positive Relationship or Plot Characteristics.",
+   "buckets": [
+    "Positive Relationship",
+    "Plot Characteristics"
+   ],
+   "items": [
+    {
+     "t": "Both values rise together",
+     "b": 0
+    },
+    {
+     "t": "X and Y axes",
+     "b": 1
+    },
+    {
+     "t": "One value drops while other rises",
+     "b": 0
+    },
+    {
+     "t": "Using size parameter s",
+     "b": 1
+    },
+    {
+     "t": "Line trends upward right",
+     "b": 0
+    },
+    {
+     "t": "Displaying distributed dots",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted scatter plots and relationship concepts with superb skill."
+  },
+  "sections": [
+   {
+    "h": "The Concept of Scatter Plots",
+    "text": "Imagine measuring your friends heights and weights and placing them on grid paper as dots. A scatter plot is a graph that puts two numerical values for each item on x and y axes to show you a clear picture of data distribution.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.scatter([1, 2, 3], [4, 5, 6])\nplt.show()",
+    "output": "A window opens displaying three scattered points."
+   },
+   {
+    "h": "Tracking Trends and Variables",
+    "text": "When you look at distributed dots, you can notice whether they trend upward or downward. This helps the analyst discover the general data trend and see how the first variable reacts when the second changes.",
+    "code": "import matplotlib.pyplot as plt\nx = [10, 20, 30, 40]\ny = [15, 25, 35, 45]\nfig, ax = plt.subplots()\nax.scatter(x, y)",
+    "output": "Plot points tending upward to the right."
+   },
+   {
+    "h": "Altering Point Sizing Metrics",
+    "text": "Not all dots need to be the same size. You can use a third variable to determine each point's size using the size parameter in the scatter function, allowing you to represent three dimensions of data in one plot.",
+    "code": "import matplotlib.pyplot as plt\nx = [1, 2, 3]\ny = [3, 2, 1]\nsizes = [20, 100, 200]\nfig, ax = plt.subplots()\nax.scatter(x, y, s=sizes)\nplt.show()",
+    "output": "Three points with varying incremental sizes."
+   },
+   {
+    "h": "Analyzing Correlations and Relationships",
+    "text": "A relationship can be positive where both values rise together, or negative where one rises and the other drops. Correlation analysis gives us the ability to describe these links with mathematical and scientific precision.",
+    "code": "import matplotlib.pyplot as plt\nx = [1, 2, 3, 4]\ny = [8, 6, 4, 2]\nfig, ax = plt.subplots()\nax.scatter(x, y)\nplt.show()",
+    "output": "Points trending downward from left to right."
+   },
+   {
+    "h": "Correlation Does Not Imply Causation",
+    "text": "Beware of falling into the trap of assuming correlation means direct causation. Just seeing dots rise together doesn't mean one causes the other; a hidden third factor might affect both simultaneously.",
+    "code": "print('Correlation does not imply causation!')",
+    "output": "Correlation does not imply causation!"
+   },
+   {
+    "h": "Formatting Point Aesthetics",
+    "text": "To make your plot professional, you can customize point colors, add axis labels, and title the graph clearly. Matplotlib gives you full control over every visual detail on the canvas.",
+    "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.scatter([1, 2], [3, 4], c='red')\nax.set_xlabel('X Axis')\nax.set_ylabel('Y Axis')",
+    "output": "Red points plot with clear axis labels."
+   },
+   {
+    "h": "Real-Life Applications of Scatter Plots",
+    "text": "Data scientists use these plots everywhere: to study store sales, monitor global temperatures, and track plant growth based on water and sunlight quantities.",
+    "code": "import matplotlib.pyplot as plt\ndays = [1, 2, 3, 4, 5]\ntemps = [22, 24, 19, 25, 28]\nfig, ax = plt.subplots()\nax.scatter(days, temps)\nplt.show()",
+    "output": "Plot showing daily temperature readings."
+   },
+   {
+    "h": "Building Your Data Portfolio",
+    "text": "Including scatter plots in your final project showcases your advanced data analysis skills. Managers and experts love clear visualizations that tell a true story about the numbers.",
+    "code": "print('My Data Portfolio is growing professionally!')",
+    "output": "My Data Portfolio is growing professionally!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "plt.subplots()",
+    "desc": "Creates a new figure and axes area for plotting."
+   },
+   {
+    "name": "ax.scatter()",
+    "desc": "Draws a scatter plot of points on the axes."
+   },
+   {
+    "name": "s=",
+    "desc": "Parameter to specify scatter point sizes."
+   },
+   {
+    "name": "c=",
+    "desc": "Parameter to specify plot point colors."
+   },
+   {
+    "name": "ax.set_xlabel()",
+    "desc": "Labels the horizontal x-axis."
+   },
+   {
+    "name": "ax.set_ylabel()",
+    "desc": "Labels the vertical y-axis."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write Python code to create a figure and axes using plt.subplots()",
+    "a": "fig, ax = plt.subplots()"
+   },
+   {
+    "q": "What parameter is responsible for changing point sizes in ax.scatter?",
+    "a": "s"
+   },
+   {
+    "q": "Does a correlation between two variables mean one definitely causes the other?",
+    "a": "No, correlation does not prove causation."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/introduction.html"
+  },
+  {
+   "title": "matplotlib.org docs",
+   "url": "https://matplotlib.org/stable/users/explain/quick_start.html"
+  }
+ ],
+ "grounded": true
+}

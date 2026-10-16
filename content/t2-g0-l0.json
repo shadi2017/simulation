@@ -1,0 +1,277 @@
+{
+ "ar": {
+  "steps": [
+   "تعني خوارزمية التتابع المتقدمة ترتيب الخطوات بدقة شديدة بحيث تنفذ وراء بعضها بالترتيب الصحيح بدون أي تخطي لضمان نجاح المهمة.",
+   "تخيل أننا نصنع كوباً من الحليب الدافئ، الخطوة الأولى هي إحضار الكوب، والثانية صب الحليب، والثالثة تسخينه.",
+   "تعمل أجهزة الكمبيوتر تماماً مثل هذه الخطوات، فإذا قمت بتغيير الترتيب لن تحصل على النتيجة التي ترغب فيها أبداً.",
+   "مثال آخر لغسل اليدين: نبلل اليدين بالماء، ثم نضع الصابون، ثم نفرك جيداً، وأخيراً نشطف بالماء ونجفف.",
+   "القاعدة الذهبية هنا هي: الترتيب الدقيق يساوي عملاً صحيحاً، والترتيب الخاطئ يفسد النتيجة تماماً.",
+   "نستخدم هذا التخطيط المسبق في حياتنا اليومية مثل تحضير حقيبة المدرسة أو حل واجباتنا المدرسية خطوة بخطوة."
+  ],
+  "example": "دعنا نرتدي ملابس الخروج بطريقة صحيحة ودقيقة:\n1. ارتداء الجوارب أولاً.\n2. ارتداء الحذاء فوق الجوارب.\nإذا حاولنا ارتداء الحذاء أولاً ثم الجوارب، سيكون الأمر مضحكاً وغير صحيح! الترتيب المتسلسل يضمن أن تكون كل خطوة في مكانها الصحيح تماماً مثل أجهزة الروبوت التي تتبع التعليمات بذكاء.",
+  "mistake": "الخطأ الشائع هو تنفيذ الخطوات عشوائياً مثل لبس الحذاء قبل الجوارب، والحل هو التخطيط وكتابة الخطوات على ورقة بترتيبها الصحيح قبل البدء.",
+  "recap": "التتابع المتقدم هو ترتيب خطوات العمل بدقة تامة وبدون أخطاء للحصول على النتيجة المطلوبة. التخطيط الجيد يضمن نجاح كل مهامنا اليومية.",
+  "q": [
+   {
+    "t": "ماذا تعني كلمة تتابع متقدم؟",
+    "o": [
+     "ترتيب الخطوات بدقة وراء بعضها",
+     "اللعب العشوائي بالدمى",
+     "القفز بدون توقف"
+    ],
+    "a": 0,
+    "why": "التتابع المتقدم يعني ترتيب الخطوات بدقة شديدة."
+   },
+   {
+    "t": "لماذا يجب أن نرتدي الجوارب قبل الحذاء؟",
+    "o": [
+     "لأن الحذاء يوضع فوق الجوارب بالتتابع",
+     "لأن الألوان تتشابه",
+     "لأننا نحب الجوارب"
+    ],
+    "a": 0,
+    "why": "لأن الترتيب الصحيح يتطلب لبس الجوارب أولاً ثم الحذاء."
+   },
+   {
+    "t": "ما هي نتيجة الترتيب الخاطئ لخطوات العمل؟",
+    "o": [
+     "لا نحصل على النتيجة الصحيحة",
+     "يصبح العمل أسرع بكثير",
+     "يفرح المعلم بنا"
+    ],
+    "a": 0,
+    "why": "الترتيب الخاطئ يؤدي لنتيجة غير صحيحة أو فاشلة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع خطوة تحضير الشنطة",
+   "goal": "اختر الخطوة الصحيحة التالية لترتيب الحقيبة المدرسية.",
+   "code": "الخطوة 1: فتح الحقيبة\nالخطوة 2: وضع الكتب داخلها\nالخطوة 3: ؟؟؟",
+   "options": [
+    "إغلاق الحقيبة جيداً",
+    "رمي الكتب على الأرض",
+    "شرب الماء"
+   ],
+   "a": 0,
+   "success": "رائع! لقد أغلقت الحقيبة بنجاح وأصبحت جاهزاً للمدرسة."
+  },
+  "sections": [
+   {
+    "h": "ما هو التتابع؟",
+    "text": "التتابع هو مجموعة من الخطوات التي يتم تنفيذها واحدة تلو الأخرى بالترتيب. تخيل أنك تبني برجاً من المكعبات؛ لا يمكنك وضع المكعبة العلوية قبل بناء القاعدة السفلية أولاً. الكمبيوتر إنسان آلي غبي لكنه ذكي جداً في تنفيذ ما تطلبه منه بالحرف، لذا يجب أن تعطيه الخطوات مرتبة بدقة شديدة وبدون أي نقص لكي يفهم ما تريد منه تماماً.",
+    "code": "1. أحضر المكعبة\n2. ضعها في الأسفل\n3. ابنِ فوقها",
+    "output": "يتم بناء البرج بشكل صحيح ومستقر."
+   },
+   {
+    "h": "أهمية الترتيب الصارم",
+    "text": "الترتيب الصارم يعني أنه لا يمكنك تبديل خطوتين مكان بعضهما البعض أبداً. مثلاً عند عمل عجة البيض، يجب كسر البيض أولاً ثم قليه في المقلاة، ولا يمكن أبداً قليه ثم كسره! الأطفال الأذكياء يفهمون أن القواعد والخطوات المحددة تجعل المهام الصعبة سهلة وممتعة للغاية عند تطبيقها خطوة بخطوة.",
+    "code": "1. كسر البيض\n2. قليه في المقلاة",
+    "output": "تحصل على وجبة لذيذة وناجحة."
+   },
+   {
+    "h": "المهام متعددة الخطوات",
+    "text": "عندما نقوم بمهمة كبيرة مثل تحضير وجبة الإفطار أو تنظيف الغرفة، نقسمها إلى خطوات صغيرة متعددة. هذه الطريقة تساعد عقولنا على التركيز ولا تجعلنا ننسى أي شيء مهم. مثل خريطة الكنز، كل خطوة تقودك إلى الخطوة التي تليها حتى تصل في النهاية إلى الهدية أو النتيجة الرائعة التي تنتظرك.",
+    "code": "1. افتح الثلاجة\n2. أخرج الجبن\n3. ضعه على الخبز",
+    "output": "سندويتش جبن رائع ومجهز بعناية."
+   },
+   {
+    "h": "الدقة في كل حركة",
+    "text": "الدقة تعني أن تفعل الشيء تماماً كما طلُب منك وبدون زيادة أو نقصان. إذا طلبت منك المعلمة رسم دائرة ثم تلوينها بالأحمر، فلا يجب أن ترسم مربعاً أو تلونها بالأزرق. الروبوتات والبرامج الإلكترونية تموت شوقاً للدقة، فهي تنفذ الأمر البرمجي بحذافيره لتجنب الأخطاء ولتظهر الأعمال بأجمل وأروع صورة ممكنة.",
+    "code": "1. ارسم دائرة\n2. لونها بالأحمر فقط",
+    "output": "رسمة دقيقة مطابقة تماماً للتعليمات."
+   },
+   {
+    "h": "التخطيط المسبق قبل البدء",
+    "text": "قبل أن تبني قلعة بالمكعبات أو ترسم لوحة جميلة، فكر أولاً في عقلك أو على ورقة في الخطوات التي ستفعلها. التخطيط مثل رسم خريطة طريق للسفر، يمنعك من الضياع ويجعلك تصل لهدفك بسرعة وسلاسة. الأطفال الذين يخططون لأعمالهم ينجزون مشاريعهم بطريقة مذهلة ومبدعة جداً.",
+    "code": "1. فكر في الفكرة\n2. اكتب الخطوات\n3. نفذها بهدوء",
+    "output": "مشروع ناجح ومنظم بدون فوضى."
+   },
+   {
+    "h": "تطبيق روتيني يومي",
+    "text": "حياتنا اليومية مليئة بالتتابع، مثل الاستيقاظ، غسل الأسنان، ارتداء الملابس، ثم تناول الإفطار. إذا غيرت هذه الخطوات، مثل ارتداء الملابس قبل الاستيقاظ، فهذا مستحيل! فهم التتابع يساعدك على تنظيم وقتك وصباحك لتكون نشيطاً وسعيداً طوال اليوم الدراسي.",
+    "code": "1. استيقظ\n2. اغسل أسنانك\n3. البس ملابسك",
+    "output": "صباح منظم وجميل ومبهج."
+   }
+  ],
+  "reference": [
+   {
+    "name": "التتابع",
+    "desc": "ترتيب الخطوات واحدة تلو الأخرى."
+   },
+   {
+    "name": "الصرامة",
+    "desc": "تنفيذ التعليمات حرفياً بدون تغيير."
+   },
+   {
+    "name": "مهام متعددة",
+    "desc": "تقسيم العمل الكبير إلى خطوات صغيرة."
+   },
+   {
+    "name": "الدقة",
+    "desc": "إنجاز العمل بإتقان وبدون أخطاء."
+   },
+   {
+    "name": "التخطيط",
+    "desc": "تجهيز الخطوات وترتيبها قبل البدء بالتنفيذ."
+   },
+   {
+    "name": "الخوارزمية",
+    "desc": "سلسلة خطوات منطقية لحل مشكلة ما."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي الخطوة الأولى عند غسل اليدين بالماء والصابون؟",
+    "a": "تبليل اليدين بالماء أولاً."
+   },
+   {
+    "q": "رتب ذهنياً: هل نلبس الحذاء ثم الجوارب أم العكس؟",
+    "a": "نلبس الجوارب أولاً ثم الحذاء."
+   },
+   {
+    "q": "لماذا نقسم المهام الكبيرة إلى خطوات صغيرة؟",
+    "a": "حتى لا ننسى شيئاً ونفذها بدقة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Advanced sequence steps mean putting tasks in an exact, strict order so they run one after another without skipping, ensuring the goal is met.",
+   "Imagine making a warm cup of milk: the first step is getting the cup, the second is pouring the milk, and the third is heating it up.",
+   "Computers work just like these steps; if you change the order, you will never get the result you actually wanted to achieve.",
+   "Another example for washing hands: wet hands with water, apply soap, scrub well, and finally rinse with water and dry them.",
+   "The golden rule here is: strict order equals correct work, while a wrong order completely ruins the final result.",
+   "We use this planning in daily life, such as packing our school backpack or doing our homework step by step."
+  ],
+  "example": "Let's put on outdoor shoes and socks correctly and precisely:\n1. Put on socks first.\n2. Put on shoes over the socks.\nIf we tried to put on shoes first and then socks, it would be funny and completely wrong! Sequential order ensures every step is in its right place, just like smart robots following instructions.",
+  "mistake": "A common mistake is doing steps randomly, like wearing shoes before socks. The fix is to plan and write down the correct order on paper before starting.",
+  "recap": "Advanced sequencing is arranging work steps with high precision and no errors to get the desired result. Good planning ensures all our daily tasks succeed.",
+  "q": [
+   {
+    "t": "What does an advanced sequence mean?",
+    "o": [
+     "Ordering steps strictly one after another",
+     "Playing randomly with toys",
+     "Jumping without stopping"
+    ],
+    "a": 0,
+    "why": "An advanced sequence means ordering steps with high precision."
+   },
+   {
+    "t": "Why must we put on socks before shoes?",
+    "o": [
+     "Because shoes go over socks in sequence",
+     "Because colors match",
+     "Because we love socks"
+    ],
+    "a": 0,
+    "why": "Because the correct order requires putting on socks first, then shoes."
+   },
+   {
+    "t": "What is the result of wrong step ordering?",
+    "o": [
+     "We do not get the correct result",
+     "Work becomes much faster",
+     "The teacher gets happy"
+    ],
+    "a": 0,
+    "why": "Wrong ordering leads to an incorrect or failed result."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Backpack Step",
+   "goal": "Choose the correct next step for packing a school bag.",
+   "code": "Step 1: Open the backpack\nStep 2: Put books inside\nStep 3: ???",
+   "options": [
+    "Zip up the backpack tightly",
+    "Throw books on the floor",
+    "Drink water"
+   ],
+   "a": 0,
+   "success": "Great! You zipped the bag successfully and are ready for school."
+  },
+  "sections": [
+   {
+    "h": "What is a Sequence?",
+    "text": "A sequence is a set of steps executed one after another in order. Imagine building a block tower; you cannot place the top block before building the bottom base first. A computer is like a silly robot that is very smart at executing exactly what you ask letter by letter, so you must give it steps ordered precisely so it understands what you want.",
+    "code": "1. Grab the block\n2. Place it at the bottom\n3. Build on top",
+    "output": "The tower is built correctly and stably."
+   },
+   {
+    "h": "Importance of Strict Order",
+    "text": "Strict order means you can never swap two steps. For example, when making scrambled eggs, you must crack the eggs first and then fry them in the pan, never fry them first and then crack them! Smart kids understand that specific rules and steps make hard tasks easy and fun when applied step by step.",
+    "code": "1. Crack the eggs\n2. Fry them in the pan",
+    "output": "You get a delicious and successful meal."
+   },
+   {
+    "h": "Multi-Step Tasks",
+    "text": "When we do a big task like making breakfast or cleaning a room, we break it down into multiple small steps. This method helps our brains focus and prevents us from forgetting anything important. Like a treasure map, each step leads you to the next until you finally reach the amazing reward waiting for you.",
+    "code": "1. Open the fridge\n2. Take out cheese\n3. Place it on bread",
+    "output": "A wonderful and carefully prepared cheese sandwich."
+   },
+   {
+    "h": "Precision in Every Move",
+    "text": "Precision means doing things exactly as asked without adding or removing anything. If your teacher asks you to draw a circle and color it red, you must not draw a square or color it blue. Robots and software love precision; they execute code instructions word-for-word to avoid errors and make work look its absolute best.",
+    "code": "1. Draw a circle\n2. Color it red only",
+    "output": "A precise drawing matching instructions perfectly."
+   },
+   {
+    "h": "Planning Ahead Before Starting",
+    "text": "Before building a block castle or painting a picture, think first in your mind or on paper about the steps you will take. Planning is like drawing a road map for travel; it stops you from getting lost and helps you reach your goal smoothly and quickly. Kids who plan their work complete projects in amazing, creative ways.",
+    "code": "1. Think of the idea\n2. Write down steps\n3. Execute calmly",
+    "output": "A successful and organized project without clutter."
+   },
+   {
+    "h": "Daily Routine Application",
+    "text": "Our daily life is full of sequences, such as waking up, brushing teeth, getting dressed, and eating breakfast. If you change these steps, like getting dressed before waking up, that is impossible! Understanding sequencing helps you organize your time and morning so you stay energetic and happy all school day long.",
+    "code": "1. Wake up\n2. Brush teeth\n3. Get dressed",
+    "output": "An organized, beautiful, and joyful morning."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Sequence",
+    "desc": "Ordering steps one after another."
+   },
+   {
+    "name": "Strictness",
+    "desc": "Executing instructions literally without changes."
+   },
+   {
+    "name": "Multi-step",
+    "desc": "Breaking big work into small steps."
+   },
+   {
+    "name": "Precision",
+    "desc": "Completing work accurately and error-free."
+   },
+   {
+    "name": "Planning",
+    "desc": "Preparing and ordering steps before starting."
+   },
+   {
+    "name": "Algorithm",
+    "desc": "A logical series of steps to solve a problem."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is the first step when washing hands with water and soap?",
+    "a": "Wetting hands with water first."
+   },
+   {
+    "q": "Mentally order: Do we put on shoes then socks, or vice versa?",
+    "a": "We put on socks first, then shoes."
+   },
+   {
+    "q": "Why do we break big tasks into small steps?",
+    "a": "So we do not forget anything and execute accurately."
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

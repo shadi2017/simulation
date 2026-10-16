@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل الجيمينج، تأثيرات الجسيمات زي الانفجارات، النجوم السحرية، أو الدخان بتخلي لعبتك على سكراتش مذهلة! الفكرة هنا إننا بنصنع نسخ كتيرة جداً من كائن صغير عشان نعمل التأثير ده.",
+   "عشان نعمل كده، بنستخدم لبنة 'إنشاء نسخة من نفسي' (create clone of myself) داخل حلقة تكرار بسيطة عشان يطلع 5 جسيمات ورا بعض في نفس اللحظة.",
+   "لما بنعمل نسخة جديدة، بنستخدم لبنة 'عندما أبدأ كنسخة' (when I start as a clone) عشان نقول للنسخة دي هتعمل إيه لوحدها، زي إنها تتحرك في اتجاهات عشوائية.",
+   "الجسيمات الشجاعة مش بتفضل باينة للأبد! بنستخدم لبنة 'اجعل التأثير مساوي لـ' (set ghost effect to) ونزود الرقم تدريجياً عشان النسخة تختفي بالتدريج كأنها بتدوب في الهوا.",
+   "القاعدة الذهبية في سكراتش: كل نسخة تصنعها لازم تدمرها بنفسك! عشان كدة بننهي كود النسخة بـ 'حذف هذه النسخة' (delete this clone) عشان الجهاز ميهنجش.",
+   "استخدامات حقيقية في ألعابك: تخيل عربية سباق بتعمل عادم دخان وراها، أو سيف بيلف وبيطلع شرار ذهبي، ده كله بنفس فكرة الجسيمات المتقدمة!"
+  ],
+  "example": "تعالوا نعمل سحر صغير! هنعمل كائن لشرارة نارية. لما ندوس زر المسافة، بنعمل حلقة تتكرر 5 مرات: نتحرك خطوة باتجاه عشوائي (pick random)، ونغير تأثير الشبح (ghost effect) بمقدار 20 لحد ما يوصل 100 وتختفي، وفي الآخر خالص بنحط لبنة 'حذف هذه النسخة'. النتيجة: بتشوف 5 شرارات بتطير في كل حتة وتتلاشى بسرعة!",
+  "mistake": "نسيان وضع لبنة 'حذف هذه النسخة' (delete this clone) في آخر الكود! ده بيخلي النسخ تتراكم للأبد واللعبة تقفش وتبوظ. الحل: دايمًا اربط التأثير المؤقت بالحذف.",
+  "recap": "تأثيرات الجسيمات بتخلي الألعاب أروع باستخدام نسخ بتتحرك بعشوائية وبتتلاشى. وما تنساش تمسح النسخ لما تخلص عشان لعبتك تظل سريعة!",
+  "q": [
+   {
+    "t": "إيه اللبنة اللي بنستخدمها عشان نعمل نسخة جديدة من الكائن في سكراتش؟",
+    "o": [
+     "create clone of myself",
+     "delete this clone",
+     "when I start as a clone"
+    ],
+    "a": 0,
+    "why": "بنستخدم 'إنشاء نسخة من نفسي' عشان نطلع جسيم جديد."
+   },
+   {
+    "t": "ليه لازم نستخدم لبنة 'حذف هذه النسخة' في نهاية الكود؟",
+    "o": [
+     "علشان نلعب اللعبة من الأول",
+     "علشان نحافظ على ذاكرة الجهاز وميصلش بطء في اللعبة",
+     "علشان نغير لون الكائن الأصلي"
+    ],
+    "a": 1,
+    "why": "حذف النسخ القديمة بيمنع تراكمها ويهنج اللعبة."
+   },
+   {
+    "t": "عشان نخلي الجسيم يتحرك في اتجاهات مختلفة كل مرة، بنستخدم إيه مع حركة الاتجاه؟",
+    "o": [
+     "رقم ثابت زي 90",
+     "لبنة pick random",
+     "تأثير الشبح"
+    ],
+    "a": 1,
+    "why": "العشوائية بتخلي الشرارات تطير في كل الاتجاهات بشكل طبيعي."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع حركة الجسيمات",
+   "goal": "اعرف إيه اللي هيحصل لما نشغل كود النسخ والعشوائية",
+   "code": "عند الضغط على المسافة -> اكرر 5 مرات: (أنشئ نسخة من نفسي) -> عندما أبدأ كنسخة: (اتجه نحو اتجاه عشوائي من 1 إلى 360) -> (تحرك 10 خطوات) -> (احذف هذه النسخة)",
+   "options": [
+    "تظهر 5 نسخ في نفس المكان بدون حركة وتختفي فجأة",
+    "تظهر 5 نسخ وتطير في اتجاهات عشوائية مختلفة ثم تختفي فوراً",
+    "يكبر الكائن الأصلي ويتحول لشكل تاني"
+   ],
+   "a": 1,
+   "success": "رائع! النسخ طارت في كل الاتجاهات زي الألعاب الحقيقية وتدمرت بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الجسيمات السحرية",
+    "text": "الجسيمات هي قطع صغيرة كتيرة بنستخدمها مع بعض عشان نعمل تأثيرات بصرية زي الألعاب الكبيرة. تخيل لو بتعمل حفلة ميلاد وبتفرقع بالونة فيها آلاف القصاصات الملونة، الجسيمات في سكراتش بتعمل نفس الحاجة بس بالرموز البرمجية!",
+    "code": "when green flag clicked\nsay 'Let's make magic!' for 2 secs",
+    "output": "الشخصية بتعلن عن بدء عمل السحر والتأثيرات."
+   },
+   {
+    "h": "أنظمة الجسيمات ومفهومها",
+    "text": "نظام الجسيمات هو المسؤول عن إخراج نسخ كتيرة ورا بعض وبسرعة. شبه رشاش الميه اللي بيطلع قطرات كتيرة ومنتظمة في كل اتجاه، بنستخدمه في الألعاب عشان نعبر عن النار، الانفجارات، والمطر.",
+    "code": "repeat 10\n  create clone of myself\nend",
+    "output": "يتم إنشاء 10 نسخ من الكائن بسرعة البرق."
+   },
+   {
+    "h": "الحياة كنسخة (when I start as a clone)",
+    "text": "في سكراتش، الكائن الأصلي بيقدر يخلق نسخ عنه، بس كل نسخة محتاجة تعرف هتعمل إيه لوحدها. زي لما المدرس يوزع نسخ ورق الامتحان، كل طالب بيبدأ يحل الورقة اللي في إيده لوحده.",
+    "code": "when I start as a clone\n  move 5 steps",
+    "output": "كل نسخة جديدة تبدأ تتحرك لوحدها بمجرد ظهورها."
+   },
+   {
+    "h": "الحركة العشوائية للجسيمات (Random Motion)",
+    "text": "عشان الجسيمات تبدو طبيعية وجميلة، مش لازم كلها تمشي في نفس الاتجاه. بنستخدم لبنة الأرقام العشوائية (pick random) عشان كل جسيم ينطلق في زاوية مختلفة، زي ألعاب النيران والألعاب النارية في السما.",
+    "code": "point in direction (pick random 1 to 360)",
+    "output": "كل جسيم يختار اتجاه مختلف تماماً عن التاني."
+   },
+   {
+    "h": "تلاشي الجسيمات (Fading Clones)",
+    "text": "الجسيمات بتموت وهي بتختفي ببطء عشان متختفيش فجأة بشكل مزعج. ده شبه ذوبان قطعة سكر في كوباية شاي، بتقل وتختفي تدريجياً لحد ما تختفي خالص.",
+    "code": "repeat 10\n  change [ghost v] effect by 10\nend",
+    "output": "النسخة تصبح شفافة أكثر فأكثر حتى تختفي عن الرؤية."
+   },
+   {
+    "h": "حذف النسخ نهائياً (Delete This Clone)",
+    "text": "قاعدة مهمة جداً في سكراتش: النسخ بتفضل تاخد مكان في ذاكرة الكمبيوتر حتى لو اختفت بعينك. لازم تستخدم لبنة الحذف عشان تمسحها تماماً زي ما بتفضي سلة المهملات في جهازك.",
+    "code": "delete this clone",
+    "output": "يتم مسح النسخة نهائياً من الذاكرة والشاشة."
+   },
+   {
+    "h": "تجميع كل الأجزاء مع بعض",
+    "text": "عشان نعمل انفجار متكامل، بنجمع كل ده في سكريبت واحد: بنعمل النسخ، بنديهم اتجاه عشوائي، بنقلل ظهورهم بتأثير الشبح تدريجياً، وفي النهاية بنحذفهم. بكده لعبتك بقت احترافية جداً!",
+    "code": "when I start as a clone\npoint in direction (pick random 1 to 360)\nrepeat 10\n  change [ghost v] effect by 10\nend\ndelete this clone",
+    "output": "جسيم يظهر، يتحرك بعشوائية، يختفي، ويتم حذفه بسلام."
+   },
+   {
+    "h": "التطبيق العملي في ألعاب الفيديو",
+    "text": "الشركات الكبيرة في صناعة الألعاب بتستخدم تأثيرات الجسيمات في كل الألعاب المشهورة زي ماينكرافتم وفورتنايت عشان تخلي الانفجارات وضربات السيوف تبدو واقعية ومثيرة للاعبين.",
+    "code": "if [touching enemy?] then\n  broadcast [create_explosion v]\nend",
+    "output": "عند لمس العدو، يبدأ نظام الجسيمات في إنشاء تأثير الانفجار."
+   }
+  ],
+  "reference": [
+   {
+    "name": "create clone of myself",
+    "desc": "لبنة لإنشاء نسخة جديدة من الكائن."
+   },
+   {
+    "name": "when I start as a clone",
+    "desc": "تبدأ الأوامر التنفيذية للنسخة الجديدة من هنا."
+   },
+   {
+    "name": "delete this clone",
+    "desc": "تحذف النسخة وتفرغ ذاكرة الجهاز."
+   },
+   {
+    "name": "ghost effect",
+    "desc": "تأثير بصري للتحكم في شفافية الكائن."
+   },
+   {
+    "name": "pick random",
+    "desc": "تختار رقماً عشوائياً بين قيمتين لتنوع الحركة."
+   },
+   {
+    "name": "Particle System",
+    "desc": "نظام برمجي لإدارة آلاف النسخ لإنشاء تأثيرات بصرية."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هي اللبنة المسؤولة عن محو النسخة من الشاشة والذاكرة في سكراتش؟",
+    "a": "delete this clone"
+   },
+   {
+    "q": "كيف نجعل الجسيمات تتحرك في اتجاهات مختلفة وليست نفس الاتجاه؟",
+    "a": "باستخدام لبنة pick random داخل لبنة الاتجاه"
+   },
+   {
+    "q": "ما هو التأثير البصري الذي نستخدمه لجعل النسخة تتلاشى تدريجياً؟",
+    "a": "تأثير الشبح (ghost effect)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey gaming champion! Particle effects like explosions, magic stars, or smoke make your Scratch games look amazing. The idea is to spawn lots of short-lived clones to build the effect.",
+   "To do this, we use the 'create clone of myself' block inside a simple loop to quickly spawn 5 particles at the exact same moment.",
+   "When a new clone is born, we use the 'when I start as a clone' hat block to tell that specific clone what to do on its own, like moving in random directions.",
+   "Brave particles don't stay forever! We use the 'set ghost effect' or 'change ghost effect' block and increase it step-by-step so the clone slowly fades away like melting ice.",
+   "The Golden Rule in Scratch: Every clone you create must eventually be deleted! That's why we end the clone's script with 'delete this clone' so our game doesn't lag.",
+   "Real-world uses in your games: Imagine a race car leaving exhaust smoke behind, or a spinning sword flashing gold sparks—all built using advanced particle effects!"
+  ],
+  "example": "Let's make some mini magic! We create a sprite for a fire spark. When space key is pressed, a loop runs 5 times: we move a step in a random direction (using pick random), change the ghost effect by 20 until it reaches 100 and vanishes, and at the very end, we use 'delete this clone'. Result: You see 5 sparks flying everywhere and fading out instantly!",
+  "mistake": "Forgetting to put the 'delete this clone' block at the end of the script! This causes clones to pile up forever and freezes the game. Fix: Always match your temporary clone creation with a deletion block.",
+  "recap": "Particle effects make games epic by using random motion and fading clones. Remember to delete your clones when they finish so your game stays fast!",
+  "q": [
+   {
+    "t": "Which block do we use to spawn a new clone of a sprite in Scratch?",
+    "o": [
+     "create clone of myself",
+     "delete this clone",
+     "when I start as a clone"
+    ],
+    "a": 0,
+    "why": "We use 'create clone of myself' to generate a new particle."
+   },
+   {
+    "t": "Why must we use the 'delete this clone' block at the end?",
+    "o": [
+     "To restart the entire game",
+     "To save computer memory and prevent game lag",
+     "To change the original sprite's color"
+    ],
+    "a": 1,
+    "why": "Deleting old clones prevents memory buildup and keeps the game running smoothly."
+   },
+   {
+    "t": "To make particles move in different directions every time, what do we combine with the point direction block?",
+    "o": [
+     "A fixed number like 90",
+     "The pick random block",
+     "The ghost effect"
+    ],
+    "a": 1,
+    "why": "Randomness makes the sparks fly in all directions naturally."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Particle Motion",
+   "goal": "Find out what happens when we run the clone and random motion script",
+   "code": "when space key pressed -> repeat 5 times: (create clone of myself) -> when I start as a clone: (point in direction pick random 1 to 360) -> (move 10 steps) -> (delete this clone)",
+   "options": [
+    "5 clones appear in the same spot without moving and suddenly vanish",
+    "5 clones appear, fly in different random directions, and then instantly vanish",
+    "The original sprite grows bigger and changes costume"
+   ],
+   "a": 1,
+   "success": "Awesome! The clones flew in all directions like real video games and safely vanished!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Magic Particles",
+    "text": "Particles are many tiny pieces used together to create special visual effects just like big games. Imagine popping a party balloon filled with thousands of colorful confetti pieces; particles in Scratch do the exact same thing using code!",
+    "code": "when green flag clicked\nsay 'Let's make magic!' for 2 secs",
+    "output": "The character announces the start of magic effects."
+   },
+   {
+    "h": "Particle Systems and Concepts",
+    "text": "A particle system is responsible for producing many clones in rapid succession. Think of a water sprinkler shooting out lots of regular droplets in every direction, used in games to represent fire, explosions, and rain.",
+    "code": "repeat 10\n  create clone of myself\nend",
+    "output": "10 clones of the sprite are generated at lightning speed."
+   },
+   {
+    "h": "Life as a Clone (when I start as a clone)",
+    "text": "In Scratch, the original sprite can spawn copies, but every clone needs to know what to do by itself. Just like a teacher handing out quiz papers, every student starts solving their own paper independently.",
+    "code": "when I start as a clone\n  move 5 steps",
+    "output": "Each new clone starts moving independently upon appearance."
+   },
+   {
+    "h": "Random Motion for Particles",
+    "text": "To make particles look natural and cool, they shouldn't all march in the same direction. We use the pick random numbers block so each particle launches at a unique angle, like fireworks bursting across the sky.",
+    "code": "point in direction (pick random 1 to 360)",
+    "output": "Every particle chooses a completely different direction."
+   },
+   {
+    "h": "Fading Clones",
+    "text": "Particles fade out slowly instead of disappearing abruptly. This is like a sugar cube melting in a cup of tea, gradually getting fainter and fainter until it completely vanishes.",
+    "code": "repeat 10\n  change [ghost v] effect by 10\nend",
+    "output": "The clone becomes more and more transparent until hidden."
+   },
+   {
+    "h": "Deleting Clones Permanently",
+    "text": "A very important rule in Scratch: clones keep taking up computer memory even when hidden from view. You must use the delete block to wipe them out completely, just like emptying your computer's recycle bin.",
+    "code": "delete this clone",
+    "output": "The clone is permanently wiped from memory and screen."
+   },
+   {
+    "h": "Putting It All Together",
+    "text": "To build a complete explosion, we combine everything into one script: spawn the clones, give them random direction, fade them out using the ghost effect, and finally delete them. Now your game looks super professional!",
+    "code": "when I start as a clone\npoint in direction (pick random 1 to 360)\nrepeat 10\n  change [ghost v] effect by 10\nend\ndelete this clone",
+    "output": "A particle appears, moves randomly, fades out, and safely deletes itself."
+   },
+   {
+    "h": "Real-World Application in Video Games",
+    "text": "Top game development companies use particle effects in famous games like Minecraft and Fortnite to make explosions and sword strikes look realistic and exciting for players.",
+    "code": "if [touching enemy?] then\n  broadcast [create_explosion v]\nend",
+    "output": "Upon touching the enemy, the particle system triggers an explosion effect."
+   }
+  ],
+  "reference": [
+   {
+    "name": "create clone of myself",
+    "desc": "Block to spawn a new copy of the sprite."
+   },
+   {
+    "name": "when I start as a clone",
+    "desc": "Hat block where a new clone's script begins execution."
+   },
+   {
+    "name": "delete this clone",
+    "desc": "Deletes the clone and frees up computer memory."
+   },
+   {
+    "name": "ghost effect",
+    "desc": "Visual effect to control sprite transparency."
+   },
+   {
+    "name": "pick random",
+    "desc": "Picks a random number between two values for varied motion."
+   },
+   {
+    "name": "Particle System",
+    "desc": "Programming setup managing many clones for visual effects."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Which block is responsible for erasing a clone from the screen and memory in Scratch?",
+    "a": "delete this clone"
+   },
+   {
+    "q": "How do we make particles move in different directions instead of the same path?",
+    "a": "By using the pick random block inside the point in direction block"
+   },
+   {
+    "q": "What visual effect do we use to make a clone gradually disappear?",
+    "a": "ghost effect"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,350 @@
+{
+ "ar": {
+  "steps": [
+   "الفرق بين المتصفح و بيئة Python المحلية هو أن المتصفح ينفذ الكود داخل صفحات الويب بينما Python يعمل مباشرة على جهازك عبر برامج مثل Thonny IDE لتنفيذ الأوامر وربط البرمجة بالواقع.",
+   "كتابة كود بايثون تعتمد على السهولة والوضوح حيث نستخدم دالة الطباعة print() لعرض النصوص والنتائج مباشرة على الشاشة دون تعقيدات كثيرة أو رموز مزعجة.",
+   "المسافات البادئة أو Indentation تعتبر شيئاً مقدساً في بايثون، فهي ليست مجرد شكل جمالي، بل تحدد أي الأسطر تنتمي لبعضها البعض داخل الكتل البرمجية بدلاً من الأقواس.",
+   "تنفيذ أول سطر برمجي يعتمد على تسلسل الأوامر من الأعلى إلى الأسفل، تماماً مثل اتباع وصفة طهي أو خطوات بناء مجسم بازل بالترتيب الصحيح.",
+   "القاعدة الذهبية في بايثون: احرص دائماً على ترك مسافات بادئة متساوية (عادة 4 مسافات أو زر Tab) عند بناء الأوامر المتداخلة لتجنب خطأ المسافات الشهير.",
+   "تستخدم لغة بايثون في الحياة الواقعية لتحليل البيانات، وتطوير ألعاب الفيديو، وبناء البرامج المكتبية التي تسهل المهام اليومية في المدارس والشركات."
+  ],
+  "example": "لنفترض أننا نكتب برنامجاً بسيطاً لطباعة رسالة ترحيبية وحساب نتيجة بسيطة. نبدأ بفتح بيئة Thonny IDE ونكتب الكود التالي:\n\nprint(\"أهلاً بك في عالم بايثون!\")\nx = 10\ny = 5\nprint(f\"المجموع هو {x + y}\")\n\nعند الضغط على زر التشغيل، ينفذ المترجم الأوامر سطراً بسطر من الأعلى للأسفل، لتظهر النتيجة على الشاشة كالتالي:\nأهلاً بك في عالم بايثون!\nالمجموع هو 15\nالسبب في ذلك أن بايثون قرأ دالة الطباعة الأولى ثم قام بحفظ القيم وحساب الناتج وعرضه بشكل مرتب.",
+  "mistake": "الخطأ الشائع هو نسيان المسافة البادئة الصحيحة في بداية السطر أو خلط المسافات مع علامات التبويب، مما يسبب خطأ IndentationError. الحل هو استخدام مفتاح Tab بشكل منتظم داخل الكتل.",
+  "recap": "تعلمنا اليوم كيف نفرق بين المتصفح ومترجم Python المحلي، واستخدمنا دالة الطباعة لعرض النصوص والنتائج.\nكما فهمنا أهمية المسافات البادئة في تنظيم الكود وتجنب الأخطاء البرمجية.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لدالة print() في بايثون؟",
+    "o": [
+     "عرض النصوص والنتائج على الشاشة",
+     "حذف الملفات من الكمبيوتر",
+     "توصيل الجهاز بالإنترنت"
+    ],
+    "a": 0,
+    "why": "تُستخدم دالة print() لتقديم المخرجات وإظهارها للمستخدم."
+   },
+   {
+    "t": "لماذا تُعتبر المسافات البادئة مهمة جداً في لغة Python؟",
+    "o": [
+     "لتغيير لون شاشة الكمبيوتر",
+     "لتحديد الكتل البرمجية ومعرفة الأسطر التابعة لبعضها",
+     "لزيادة سرعة معالج الجهاز"
+    ],
+    "a": 1,
+    "why": "تعتمد بايثون على المسافات البادئة لتنظيم وترتيب كتل الأوامر البرمجية."
+   },
+   {
+    "t": "أي برنامج يُستخدم لتشغيل كود بايثون محلياً على جهازك؟",
+    "o": [
+     "متصفح جوجل كروم فقط",
+     "برنامج Thonny IDE",
+     "برنامج الرسام"
+    ],
+    "a": 1,
+    "why": "يعتبر Thonny IDE بيئة تطوير محلية رائعة للمبتدئين لتنفيذ أكواد بايثون."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود بايثون الأول",
+   "goal": "اختر الكلمات أو الأوامر الصحيحة لإكمال كود بايثون البسيط.",
+   "items": [
+    {
+     "text": "الدالة المستخدمة لعرض النصوص على الشاشة هي ___",
+     "options": [
+      "print()",
+      "show()",
+      "display()"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لتجنب الأخطاء البرمجية، يجب الانتباه إلى ___ الأسطر",
+     "options": [
+      "ألوان",
+      "مسافات بادئة",
+      "أوزان"
+     ],
+     "a": 1
+    },
+    {
+     "text": "البرنامج المحلي المخصص للمبتدئين لتشغيل بايثون هو ___",
+     "options": [
+      "Thonny IDE",
+      "Notepad",
+      "Calculator"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد أتممت برنامجك البرمجي الأول بنجاح وعمل المترجم المحلي بكل كفاءة."
+  },
+  "sections": [
+   {
+    "h": "المتصفح مقابل المترجم المحلي",
+    "text": "المتصفح يعرض صفحات الويب التفاعلية عبر الإنترنت، بينما بيئة Python المحلية مثل Thonny IDE تعمل مباشرة على حاسوبك لمعالجة وتنفيذ الأوامر البرمجية الثقيلة والبسيطة على حد سواء، وكأنك تمتلك ورشة عمل خاصة بك.",
+    "code": "# تشغيل محلي في بيئة Thonny\nprint('أنا أعمل على جهازي الشخصي!')",
+    "output": "أنا أعمل على جهازي الشخصي!"
+   },
+   {
+    "h": "كتابة أول أمر طباعة",
+    "text": "لكي يتحدث إليك الحاسوب، عليك استخدام دالة الطباعة print(). ضع النص الذي تريده بين علامات تنصيص مزدوجة أو مفردة، وسيقوم المترجم بعرضه فوراً على الشاشة وكأن الكاميرا تسلط الضوء على رسالتك.",
+    "code": "print('مرحباً بكم يا أبطال البرمجة!')",
+    "output": "مرحباً بكم يا أبطال البرمجة!"
+   },
+   {
+    "h": "التنفيذ المتسلسل للتعليمات",
+    "text": "بايثون يفكر وينفذ الأوامر مثل الإنسان تماماً؛ يبدأ من السطر الأول في الأعلى ثم ينزل تدريجياً للأسطر التي تليها بالترتيب. إذا أخطأت في الترتيب، قد يحاول البرنامج استخدام شيء لم يصنعه بعد.",
+    "code": "print('الخطوة الأولى')\nprint('الخطوة الثانية')",
+    "output": "الخطوة الأولى\nالخطوة الثانية"
+   },
+   {
+    "h": "أهمية المسافات البادئة",
+    "text": "المسافة البادئة هي عبارة عن الفراغ الموجود في بداية السطر البرمجي. في لغات أخرى تُستخدم الأقواس لتنظيم الأكواد، لكن في بايثون تُعتبر المسافات هي القانون الذي يحدد أي الأسطر تعمل معاً.",
+    "code": "# مثال على مسافة بادئة صحيحة داخل بلوك\nif True:\n    print('هذا السطر ينتمي للشرط')",
+    "output": "هذا السطر ينتمي للشرط"
+   },
+   {
+    "h": "تجنب خطأ المسافات البادئة",
+    "text": "إذا نسيت ترك مسافة في السطر المفترض أن يكون داخل كتلة برمجية، سيغضب المترجم ويخبرك بوجود IndentationError. حافظ دائماً على استخدام أربع مسافات واضحة أو زر Tab.",
+    "code": "# خطأ شائع: عدم ترك مسافة\n# IndentationError: expected an indented block",
+    "output": "Syntax / Indentation Error"
+   },
+   {
+    "h": "دمج النصوص والمتغيرات",
+    "text": "يمكنك استخدام الحرف f في بداية النص لدمج المتغيرات والرسائل بسهولة. هذا يشبه تماماً صنع صندوق هدايا تضع بدايته رسالة وفي داخله قيمة متغيرة.",
+    "code": "name = 'أحمد'\nprint(f'أهلاً بك يا {name}')",
+    "output": "أهلاً بك يا أحمد"
+   },
+   {
+    "h": "استخدام الأرقام والعمليات الحسابية",
+    "text": "بايثون ليس مجرد آلة لطباعة الكلمات، بل هو آلة حاسبة خارقة. يمكنك جمع الأرقام وطرحها داخل دالة الطباعة مباشرة ليقوم بحسابها بالنيابة عنك.",
+    "code": "print(10 + 20 * 2)",
+    "output": "50"
+   },
+   {
+    "h": "تطبيقات حقيقية للغة بايثون",
+    "text": "تُستخدم هذه الأساسيات البسيطة لبناء برامج ضخمة؛ مثل أدوات الذكاء الاصطناعي، وتطبيقات تحليل البيانات، والألعاب التفاعلية، مما يجعلها المهارة الأهم للمطورين الصغار.",
+    "code": "print('تطبيق بايثون جاهز للعمل!')",
+    "output": "تطبيق بايثون جاهز للعمل!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "print()",
+    "desc": "دالة لعرض المخرجات على الشاشة."
+   },
+   {
+    "name": "Thonny IDE",
+    "desc": "بيئة تطوير محلية مخصصة للمبتدئين في بايثون."
+   },
+   {
+    "name": "Indentation",
+    "desc": "المسافة البادئة لتحديد الكتل البرمجية."
+   },
+   {
+    "name": "IndentationError",
+    "desc": "خطأ يظهر عند عدم تناسق المسافات."
+   },
+   {
+    "name": "f-string",
+    "desc": "طريقة متقدمة لتنسيق النصوص مع المتغيرات."
+   },
+   {
+    "name": "Tab",
+    "desc": "مفتاح لوحة المفاتيح لإضافة مسافة بادئة منظمة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر بايثون لطباعة جملة: 'أنا أتعلم البرمجة'",
+    "a": "print('أنا أتعلم البرمجة')"
+   },
+   {
+    "q": "ما هو اسم البيئة المحلية البسيطة التي نستخدمها لتشغيل بايثون؟",
+    "a": "Thonny IDE"
+   },
+   {
+    "q": "ما اسم الخطأ الذي يحدث عند إهمال المسافات البادئة في بايثون؟",
+    "a": "IndentationError"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "The difference between browser execution and local Python interpreters is that browsers run code inside web pages, while Python runs directly on your computer via tools like Thonny IDE to execute commands and connect programming to reality.",
+   "Writing Python syntax is clean and straightforward; we use the print() function to display text and results directly on the screen without excessive clutter or confusing symbols.",
+   "Indentation is sacred in Python; it is not just for styling, but defines which lines belong together inside code blocks instead of relying on curly braces.",
+   "Executing your first script follows a top-to-bottom sequence of instructions, just like following a recipe or assembling puzzle pieces in the correct order.",
+   "The golden rule in Python: always maintain consistent indentation (usually 4 spaces or the Tab key) when building nested command blocks to avoid common spacing errors.",
+   "Python is used in real life for data science, video game development, and building desktop automation tools that simplify daily tasks in schools and companies."
+  ],
+  "example": "Suppose we write a simple program to print a greeting and calculate a basic result. We open Thonny IDE and write the following code:\n\nprint(\"Welcome to the world of Python!\")\nx = 10\ny = 5\nprint(f\"The sum is {x + y}\")\n\nWhen clicking run, the interpreter executes instructions from top to bottom, displaying the result on screen as:\nWelcome to the world of Python!\nThe sum is 15\nThis happens because Python reads the first print statement, stores values, calculates the result, and displays it neatly.",
+  "mistake": "A common mistake is missing proper indentation at the beginning of a block or mixing spaces with tabs, causing an IndentationError. The fix is to use the Tab key consistently inside blocks.",
+  "recap": "Today we learned how to compare browsers with local Python interpreters, and used the print function to display text and results.\nWe also understood the vital role of indentation in structuring code and avoiding syntax errors.",
+  "q": [
+   {
+    "t": "What is the primary purpose of the print() function in Python?",
+    "o": [
+     "To display text and results on the screen",
+     "To delete files from the computer",
+     "To connect the device to the internet"
+    ],
+    "a": 0,
+    "why": "The print() function is used to present outputs and show them to the user."
+   },
+   {
+    "t": "Why is indentation extremely important in Python?",
+    "o": [
+     "To change the computer screen color",
+     "To define code blocks and determine which lines belong together",
+     "To increase the processor speed"
+    ],
+    "a": 1,
+    "why": "Python relies on indentation to structure and organize blocks of programming commands."
+   },
+   {
+    "t": "Which program is used to run Python code locally on your device?",
+    "o": [
+     "Google Chrome browser only",
+     "Thonny IDE",
+     "MS Paint"
+    ],
+    "a": 1,
+    "why": "Thonny IDE is a fantastic local development environment for beginners to run Python code."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete Your First Python Code",
+   "goal": "Choose the correct words or commands to complete the simple Python code.",
+   "items": [
+    {
+     "text": "The function used to display text on the screen is ___",
+     "options": [
+      "print()",
+      "show()",
+      "display()"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To prevent programming errors, you must pay attention to line ___",
+     "options": [
+      "colors",
+      "indentation",
+      "weights"
+     ],
+     "a": 1
+    },
+    {
+     "text": "The beginner-friendly local program used to run Python is ___",
+     "options": [
+      "Thonny IDE",
+      "Notepad",
+      "Calculator"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You successfully completed your first script and the local interpreter ran it smoothly."
+  },
+  "sections": [
+   {
+    "h": "Browser vs. Local Interpreter",
+    "text": "A browser renders interactive web pages online, while a local Python environment like Thonny IDE runs directly on your computer to process both simple and complex scripts, acting like your own private workshop.",
+    "code": "# Running locally in Thonny environment\nprint('I am running on my personal device!')",
+    "output": "I am running on my personal device!"
+   },
+   {
+    "h": "Writing Your First Print Statement",
+    "text": "To make the computer talk back to you, use the print() function. Wrap your desired text inside single or double quotes, and the interpreter will display it instantly like a spotlight on your message.",
+    "code": "print('Hello, coding champions!')",
+    "output": "Hello, coding champions!"
+   },
+   {
+    "h": "Sequential Instruction Execution",
+    "text": "Python thinks and executes instructions just like a human; it starts at the top line and moves down line by line in order. If you mess up the order, the program might try using something before it exists.",
+    "code": "print('Step one')\nprint('Step two')",
+    "output": "Step one\nStep two"
+   },
+   {
+    "h": "The Importance of Indentation",
+    "text": "Indentation refers to the spacing at the beginning of a code line. In other languages, braces group code, but in Python, spaces are the law that decides which lines work together.",
+    "code": "# Example of correct indentation inside a block\nif True:\n    print('This line belongs to the condition')",
+    "output": "This line belongs to the condition"
+   },
+   {
+    "h": "Avoiding Indentation Errors",
+    "text": "If you forget to indent a line that belongs inside a code block, the interpreter will raise an IndentationError. Always maintain consistent spacing using four clear spaces or the Tab key.",
+    "code": "# Common mistake: missing indentation\n# IndentationError: expected an indented block",
+    "output": "Syntax / Indentation Error"
+   },
+   {
+    "h": "Combining Text and Variables",
+    "text": "You can prefix strings with the letter f to easily embed variables. This is like building a gift box where the outer wrapper is text and the inner content is a changing variable value.",
+    "code": "name = 'Ahmed'\nprint(f'Welcome, {name}!')",
+    "output": "Welcome, Ahmed!"
+   },
+   {
+    "h": "Using Numbers and Math",
+    "text": "Python isn't just a text printer; it's a super calculator. You can add and subtract numbers right inside the print function to let Python do the math for you.",
+    "code": "print(10 + 20 * 2)",
+    "output": "50"
+   },
+   {
+    "h": "Real-Life Python Applications",
+    "text": "These simple basics scale up to build massive programs like AI tools, data analytics apps, and interactive games, making Python an essential skill for young developers.",
+    "code": "print('Python application ready for action!')",
+    "output": "Python application ready for action!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "print()",
+    "desc": "Function to output data to the screen."
+   },
+   {
+    "name": "Thonny IDE",
+    "desc": "Local development environment built for Python beginners."
+   },
+   {
+    "name": "Indentation",
+    "desc": "Leading spaces that define code blocks."
+   },
+   {
+    "name": "IndentationError",
+    "desc": "Error raised when code block spacing is inconsistent."
+   },
+   {
+    "name": "f-string",
+    "desc": "Advanced string formatting method using embedded variables."
+   },
+   {
+    "name": "Tab",
+    "desc": "Keyboard key used to insert structured indentation."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python statement to print the sentence: 'I am learning code'",
+    "a": "print('I am learning code')"
+   },
+   {
+    "q": "What is the name of the simple local environment we use to run Python?",
+    "a": "Thonny IDE"
+   },
+   {
+    "q": "What error occurs when you neglect proper indentation in Python?",
+    "a": "IndentationError"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  }
+ ],
+ "grounded": true
+}

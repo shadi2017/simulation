@@ -1,0 +1,162 @@
+{
+ "en": [
+  {
+   "title": "Smart Farm Automatic Irrigation System",
+   "desc": "Build a paper-and-marker maze where a little robot waters thirsty crops based on grid coordinates and sensor conditions. You will combine nested loops, AND/OR logic, and pathfinding to keep the plants happy!",
+   "tags": [
+    "Grid & Path",
+    "Conditions",
+    "Nested Loops"
+   ],
+   "steps": [
+    "Draw a 5x5 farm grid on a large sheet of paper with different crops placed in specific coordinate squares.",
+    "Write down the starting position of your robot water-carrier at the top-left corner (0,0).",
+    "Use Nested Loops to make the robot systematically scan every single row and column of the farm grid.",
+    "Add Boolean Logic (AND/OR) to check if a square needs water AND the soil is dry.",
+    "Apply Complex Conditional Choices: if it rained OR the plant is a cactus, skip watering.",
+    "Calculate the shortest path using Advanced Pathfinding to avoid muddy puddles and rocks.",
+    "Test your step sequence and optimize it to use the least number of steps possible.",
+    "Run the final simulation to watch your smart farm come to life with happy, watered plants!"
+   ],
+   "rubric": [
+    "Correctly uses grid coordinates to map out the farm layout.",
+    "Implements nested loops to scan all rows and columns efficiently.",
+    "Applies AND/OR conditions accurately for watering decisions.",
+    "Optimizes the robot's path to avoid obstacles successfully."
+   ],
+   "stretch": "Add a special solar-power condition where the robot must pause its loop if it is too cloudy!"
+  },
+  {
+   "title": "Secret Agent Museum Security Patrol",
+   "desc": "Design a screenless patrol route for a security guard robot protecting a priceless diamond in a museum. Use memory states, conditional choices, and precise grid coordinates to catch sneaky thieves!",
+   "tags": [
+    "Memory State",
+    "Nested Loops",
+    "Pathfinding"
+   ],
+   "steps": [
+    "Design a museum floor plan on grid paper with exhibit rooms, laser hallways, and a central vault.",
+    "Establish the guard's starting state in memory: 'Patrol Mode' is active and 'Alarm' is false.",
+    "Write a repeating outer loop for the security guard to check each room every hour.",
+    "Use an inner loop to make the guard check every display case within each room.",
+    "Set up Complex Conditional Choices: if a motion sensor trips OR a door opens, switch memory state to 'Alert Mode'.",
+    "Map out an advanced escape path for the guard to reach the vault instantly when the alarm sounds.",
+    "Optimize the patrol steps so the guard wastes zero time walking empty hallways.",
+    "Roleplay the final simulation to prove your security system catches every intruder!"
+   ],
+   "rubric": [
+    "Tracks guard memory states (Patrol vs. Alert) correctly.",
+    "Uses nested loops for thorough room and display case checking.",
+    "Implements complex conditionals for sensor triggers.",
+    "Designs an efficient path to the vault during emergencies."
+   ],
+   "stretch": "Introduce a dual-guard system where two robots coordinate using Boolean AND to lock down the exit!"
+  },
+  {
+   "title": "Space Rover Alien Artifact Collector",
+   "desc": "Program a planetary rover to explore an alien planet, collect glowing crystals, and avoid danger zones. This project blends sequence optimization, pattern recognition, and smart decision-making into one epic mission!",
+   "tags": [
+    "Patterns",
+    "Optimization",
+    "Smart Maze"
+   ],
+   "steps": [
+    "Create an alien planet grid filled with crater hazards and glowing crystal artifacts.",
+    "Study the repeating patterns of alien crystals to predict where the best treasures appear.",
+    "Set up a nested loop sequence so the rover sweeps across the entire planet surface.",
+    "Apply Boolean Logic (AND/OR) to determine if a crystal is valuable AND safe to grab.",
+    "Use Conditional Choices to decide whether to store the artifact or bypass a meteor shower.",
+    "Trace an advanced path across the grid that collects all crystals with the fewest turns.",
+    "Review your instruction steps and optimize them to save precious spaceship battery power.",
+    "Launch your final simulation and watch your rover successfully bring home all the alien treasures!"
+   ],
+   "rubric": [
+    "Identifies and utilizes artifact patterns correctly.",
+    "Applies boolean logic for safe and valuable crystal collection.",
+    "Optimizes movement steps to conserve battery life.",
+    "Navigates the grid successfully using advanced pathfinding."
+   ],
+   "stretch": "Program a secret bonus maneuver that triggers whenever the rover finds three crystals in a row!"
+  }
+ ],
+ "ar": [
+  {
+   "title": "نظام الري الذكي للزرع في المزرعة",
+   "desc": "اصنع متاهة بالورق والقلم يخوضها روبوت يسقي النباتات العطشانة بناءً على الإحداثيات وحالة المستشعرات. هتجمع بين الحلقات المتداخلة، ومنطق وقواعد (و أو)، والبحث عن مسار عشان تخلي النباتات فرحانة!",
+   "tags": [
+    "شبكة ومسار",
+    "شروط",
+    "حلقات متداخلة"
+   ],
+   "steps": [
+    "ارسم شبكة مزرعة 5×5 على ورقة كبيرة وحط زرع مختلف في مربعات إحداثيات محددة.",
+    "اكتب مكان بداية الروبوت الساقي عند الزاوية اللي فوق على الشمال (0,0).",
+    "استخدم الحلقات المتداخلة عشان تخلي الروبوت يلف ويفحص كل صف وعمود في شبكة المزرعة بانتظام.",
+    "ضيف المنطق الشرقي (و/أو) عشان تتأكد إن المربع محتاج مية والتربة ناشفة.",
+    "طبق الشروط المعقدة: لو الدنيا مطرت أو النبات صبار، فوت سقية المية.",
+    "احسب أقصر مسار باستخدام البحث المتقدم عن طريق عشان تبعد عن الطين الصعب والصخور.",
+    "جرب خطواتك وظبطها عشان تستخدم أقل عدد ممكن من الخطوات.",
+    "شغل المحاكاة النهائية واتفرج على مزرعتك الذكية والنباتات الخضراء الطالعة!"
+   ],
+   "rubric": [
+    "بيستخدَم إحداثيات الشبكة صح عشان يخطط المزرعة.",
+    "بيعمل حلقات متداخلة عشان يفحص كل الصفوف والأعمدة بكفاءة.",
+    "بيطبق شروط (و/أو) بدقة في قرارات السقي.",
+    "بيظبط مسار الروبوت عشان يبعد عن العوائق بنجاح."
+   ],
+   "stretch": "ضيف شرط طاقة شمسية خاص يخلي الروبوت يوقف حلقه لو الجو غيوم جامد!"
+  },
+  {
+   "title": "دورية أمن متحف العميل السري",
+   "desc": "صمم مسار دورية بدون شاشة لروبوت حارس أمن بيحمي ماسة غالية في متحف. استخدم حالات الذاكرة، والخيارات الشرطية، والإحداثيات الدقيقة عشان تقبض على الحرامية الماكرين!",
+   "tags": [
+    "حالة الذاكرة",
+    "حلقات متداخلة",
+    "تتبع المسار"
+   ],
+   "steps": [
+    "صمم خريطة أرضية المتحف على ورقة مربعات فيها غرف العرض، ممرات الليزر، والخزنة الكبيرة.",
+    "حدد حالة بداية الحارس في الذاكرة: 'وضع الدورية' شغال و'الإنذار' مطفأ.",
+    "اكتب حلقة خارجية بتتكرر عشان حارس الأمن يلف ويفحص كل غرفة كل ساعة.",
+    "استخدم حلقة جوانية عشان تخلي الحارس يفحص كل فترينة عرض جوه كل غرفة.",
+    "حط شروط معقدة: لو مستشعر الحركة اشتغل أو الباب اتفتح، حول حالة الذاكرة لـ 'وضع الطوارئ'.",
+    "ارسم مسار هروب متقدم عشان الحارس يوصل للخزنة فوراً لما الإنذار يضرب.",
+    "ظبط خطوات الدورية عشان الحارس ميضيعش أي وقت في ممرات فاضية.",
+    "مثل المحاكاة النهائية عشان تثبت إن نظامك الأمني بيقفش أي متسلل!"
+   ],
+   "rubric": [
+    "بيتتبع حالات الذاكرة للحارس (دورية ضد طوارئ) صح.",
+    "بيستخدَم حلقات متداخلة لفحص الغرف وفاترينات العرض كويس.",
+    "بيطبق شروط معقدة عشان تشغيل مستشعرات الحركة.",
+    "بيصمم مسار فعال للخزنة في حالات الطوارئ."
+   ],
+   "stretch": "دخل نظام حارسين مع بعض بيتواصلوا باستخدام منطق (و) عشان يقفلوا مخرج الخروج تماماً!"
+  },
+  {
+   "title": "جامع القطع الأثرية الفضائية للمركبة",
+   "desc": "برمج مركبة استكشاف فضائية عشان تكتشف كوكب فضائي، وتجمع كريستالات بتلمع، وتبعد عن مناطق الخطر. المشروع ده بيجمع بين ترتيب الخطوات، واكتشاف الأنماط، واتخاذ القرار الذكي في مهمة أسطورية!",
+   "tags": [
+    "أنماط",
+    "تحسين",
+    "متاهة ذكية"
+   ],
+   "steps": [
+    "اعمل شبكة كوكب فضائي مليانة حفر خطر وقطع كريستال أثرية منورة.",
+    "ادرس الأنماط المتكررة للكريستالات الفضائية عشان تتوقع مكان الكنوز الحلوة.",
+    "حط تسلسل حلقة متداخلة عشان المركبة تمسح سطح الكوكب كله.",
+    "طبق المنطق البولياني (و/أو) عشان تعرف إذا كانت الكريستالة قيمة وآمنة للجمع.",
+    "استخدم الاختيارات الشرطية عشان تقرر تخزن القطعة ولا تبعد عن عاصفة النيزك.",
+    "ارسم مسار متقدم على الشبكة يجمع كل الكريستالات بأقل لفات ممكنة.",
+    "راجع خطوات التعليمات وظبطها عشان توفر بطارية المركبة الثمينة.",
+    "ابدأ المحاكاة النهائية واتفرج على مركبتك وهي بتجيب كل كنوز الفضاء للبيت!"
+   ],
+   "rubric": [
+    "بيحدد ويستخدم أنماط الكريستالات صح.",
+    "بيطبق المنطق لجمع الكريستالات الآمنة والقيمة.",
+    "بيظبط خطوات الحركة عشان يوفر شحن البطارية.",
+    "بيتحرك في الشبكة بنجاح باستخدام البحث المتقدم للمسار."
+   ],
+   "stretch": "برمج حركة سرية إضافية بتشتغل أول ما المركبة تلاقي تلات كريستالات ورا بعض!"
+  }
+ ]
+}

@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك بتلعب لعبة فيديو ووصلت للزعيم الأخير، هل يب3ه طول المعركة زي ما هو؟ لأ، الزعماء الكبار بيبقوا أذكياء وبيتغيروا. في سكراتش، بنستخدم \"معارك الزعماء متعددة المراحل\" عشان نخلي اللعبة ممتعة ومش مملة أبدًا.",
+   "عشان نعمل كده، بنحتاج متغير (Variable) اسمه صحة الزعيم (Boss Health) عشان نتابع هو باقي له قد إيه طاقة، ومتغير تاني اسمه مرحلة الزعيم (bossPhase) عشان نعرف إحنا في أنهي مستوى من القوة دلوقتي.",
+   "الفكرة بتشتغل ببساطة عن طريق اختبار شرطي (If block). بنقول للعبة: لو صحة الزعيم نزلت تحت رقم معين، غير الـ bossPhase للرقم اللي بعده، وساعتها شكل الزعيم أو سرعته بتتغير فورًا.",
+   "مثال عملي: لو الـ Boss Health وصل أقل من 20، بنستخدم أمر \"Set bossPhase to 2\" عشان يبدأ الزعيم يرمي هجمات سحرية أسرع وأقوى بكتير من المرحلة الأولى العادية.",
+   "قاعدة ذهبية في تصميم الألعاب: دائمًا اربط انتقال المراحل بنقاط واضحة (Health Thresholds) زي 50% أو 20%، عشان اللاعب يحس بإنجاز حقيقي وهو بيقاتل الزعيم خطوة بخطوة.",
+   "الاستخدام الحقيقي للموضوع ده بتشوفه في كل ألعاب الكونسول والكمبيوتر المشهورة، زي لما وحش اللعبة بيتحول لشكل تاني شرس في آخر المعركة عشان يختبر مهاراتك وذكائك في اللعب."
+  ],
+  "example": "في مشروع سكراتش الخاص بك، ضع لبنة (If) جوه حلقة تكرار (Forever). اسأل فيها: لو (Boss_Health < 20)، نفذ الآتي: غير المتغير (bossPhase) إلى 2، وغير مظهر الزعيم (Switch costume to angry_boss). ده بيخلي الزعيم يحس بالخطر ويغير طريقته في الهجوم تلقائيًا.",
+  "mistake": "الخطأ الشائع هو نسيان وضع أمر توقف (Wait) أو تغيير المظهر مرة واحدة بس، مما يخلي سكراتش يكرر تغيير المتغير بلا حدود ويحصل تهنيج. الحل هو استخدام لبنة (Wait 1 second) أو التحقق مرة واحدة بطريقة صحيحة.",
+  "recap": "معارك الزعماء متعددة المراحل بتخلي الألعاب أروع بكتير باستخدام المتغيرات والشرط. لما صحة الزعيم بتقل، بنغير مرحلته عشان يهجم بطرق جديدة وممتعة.",
+  "q": [
+   {
+    "t": "إيه هو الغرض الأساسي من استخدام متغير (bossPhase) في سكراتش؟",
+    "o": [
+     "تحديد لون الخلفية فقط",
+     "تتبع ومعرفة مستوى قوة وهجوم الزعيم الحالي",
+     "جعل الشخصية تتحرك أسرع بدون سبب"
+    ],
+    "a": 1,
+    "why": "متغير مرحلة الزعيم بيعرفنا الزعيم في أنهي مرحلة عشان نغير هجماته."
+   },
+   {
+    "t": "متى يجب أن يتغير الزعيم إلى المرحلة الثانية؟",
+    "o": [
+     "عندما تبدأ اللعبة فورًا",
+     "عندما تنخفض صحة الزعيم تحت عتبة معينة (Health Threshold)",
+     "عندما يضغط اللاعب على زر المسافة"
+    ],
+    "a": 1,
+    "why": "المراحل بتتغير لما صحة الزعيم تقل وتوصل لرقم محدد."
+   },
+   {
+    "t": "ما هي اللبنة المناسبة لفحص صحة الزعيم وتغيير المرحلة؟",
+    "o": [
+     "لبنة (If) الشرطية",
+     "لبنة (Next costume)",
+     "لبنة (Play sound)"
+    ],
+    "a": 0,
+    "why": "بنستخدم لبنة If عشان نسأل هل الصحة قلت عن رقم معين ولا لأ."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل كود معركة الزعيم في سكراتش",
+   "goal": "اختر الكلمات الصحيحة لإكمال كود انتقال مراحل الزعيم.",
+   "items": [
+    {
+     "text": "إذا كانت صحة الزعيم أقل من 20، قم بـ ___ متغير bossPhase إلى 2",
+     "options": [
+      "تعيين (Set)",
+      "حذف (Delete)",
+      "إخفاء (Hide)"
+     ],
+     "a": 0
+    },
+    {
+     "text": "نستخدم متغير ___ لتتبع طاقة الزعيم طوال فترة القتال",
+     "options": [
+      "صحة الزعيم (Boss Health)",
+      "عدد النقاط (Score)",
+      "وقت اللعبة (Timer)"
+     ],
+     "a": 0
+    },
+    {
+     "text": "عندما تتغير المرحلة، نقوم بـ ___ مظهر الزعيم لمظهر غاضب",
+     "options": [
+      "تغيير (Switch costume)",
+      "تكبير (Resize)",
+      "تكرار (Repeat)"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد نجحت في برمجة انتقال مراحل الزعيم بذكاء وأصبحت لعبتك مذهلة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في معارك الزعماء",
+    "text": "لما بتلعب لعبة فيديو، نهاية كل مرحلة بيكون فيها وحش كبير وقوي اسمه الزعيم (Boss). الزعيم ده مش بيتحرك بنفس الطريقة طول الوقت، بل بيغير أسلوبه، وده اللي بنسميه معركة متعددة المراحل، زي لما الشخص في الحقيقة بيتعصب أكتر لما يتعب.",
+    "code": "When green flag clicked\nSet bossPhase to 1",
+    "output": "يبدأ الزعيم اللعبة في مرحلته الأولى الهادئة."
+   },
+   {
+    "h": "فهم المتغيرات في سكراتش",
+    "text": "المتغير (Variable) عامل زي صندوق بنحط جوا جوة رقم أو كلمة ونغيره براحتنا. في معارك الزعماء، بنحتاج متغيرين أساسيين: واحد لصحة الزعيم (Boss Health) عشان نعرف هو باقي له طاقة قد إيه، والتاني لمرحلة الزعيم (bossPhase) عشان نحدد هو في أنهي مستوى.",
+    "code": "Make a Variable: Boss_Health\nMake a Variable: bossPhase",
+    "output": "تظهر خانات المتغيرات على شاشة اللعبة لمتابعة القيم."
+   },
+   {
+    "h": "ما هي عتبات الصحة (Health Thresholds)؟",
+    "text": "عتبة الصحة هي الرقم المحدد اللي أول ما الصحة بتنزله، بيحصل حدث مهم في اللعبة. مثلاً، زي خطوط الطاقة في ألعاب الكراتيه اللي لما بتنصرم، اللاعب بيعمل حركة خارقة. في سكراتش، بنراقب اللحظة دي بدقة.",
+    "code": "If <Boss_Health < 50> then\nSet bossPhase to 2",
+    "output": "عندما يقل الدم عن 50، يتحول الزعيم للمرحلة الثانية."
+   },
+   {
+    "h": "انتقال المراحل (Phase Transition)",
+    "text": "انتقال المرحلة هو اللحظة السحرية اللي الزعيم بيبطل فيها هجماته القديمة ويبدأ هجمات جديدة أسرع وأقوى. بتشبه لما بطل كارتون بيتحول لشكل أقوى لما يقرب يخسر، وده بيدي إثارة رهيبة للاعب.",
+    "code": "If <bossPhase = 2> then\nBroadcast [Super_Attack v]",
+    "output": "يبدأ الزعيم في إطلاق هجمات خارقة ومميزة."
+   },
+   {
+    "h": "استخدام الشروط (If Blocks)",
+    "text": "عشان نخلي اللعبة ذكية، بنستخدم لبنات الشرط (If). اللبنة دي بتسأل سؤال: هل الشرط تحقق؟ لو نعم، نفذ الأوامر اللي جواها. دي الطريقة اللي بيعرف بيها سكراتش إمتى يغير مرحلة الزعيم بناءً على المتغيرات.",
+    "code": "Forever\n  If <Boss_Health < 20> then\n    Set bossPhase to 3\n  end\nend",
+    "output": "يفحص الكود باستمرار صحة الزعيم وينقله للمرحلة الثالثة والأخيرة عند وصولها تحت 20."
+   },
+   {
+    "h": "تغيير المظهر والسلوك",
+    "text": "مش بس بنغير رقم المرحلة، لأزم كمان نخلي اللاعب يحس بالتغيير بصريًا. بنستخدم لبنة (Switch costume) عشان نخلي شكل الزعيم يبان غاضب أو عليه نيران، وبنغير سرعة حركته عشان يبמו صعب وخطير.",
+    "code": "Switch costume to [angry_boss v]\nSet [bossSpeed v] to 5",
+    "output": "يتغير شكل الزعيم ويتحرك بسرعة أكبر بكثير."
+   },
+   {
+    "h": "حلقة التكرار المستمرة (Forever Loop)",
+    "text": "عشان اللعبة تفضل صاحية وبتراقب صحة الزعيم طول وقت القتال، لازم نحط شرط فحص الصحة جوه حلقة تكرار مستمرة (Forever). لو نسيناها، الكود هيشتغل مرة واحدة ويقف، وده هيخلي الزعيم ما يتغيرش أبدًا.",
+    "code": "Forever\n  Check boss health\nend",
+    "output": "تظل اللعبة تراقب الزعيم طوال فترة المعركة دون توقف."
+   },
+   {
+    "h": "اختبار وتجربة اللعبة",
+    "text": "بعد ما نخلص تركيب اللبنات، لازم نضغط على العلم الأخضر ونجرب اللعبة بنفسنا. بنضرب الزعيم ونراقب هل الـ bossPhase بيتغير صح لما الصحة تنزل؟ التجربة هي السر الأساسي عشان نصلح أي غلطة قبل ما نوري اللعبة لأصحابنا.",
+    "code": "Click Green Flag -> Shoot Boss -> Watch bossPhase change",
+    "output": "تتأكد من أن كل مرحلة تعمل بسلاسة وبدون أخطاء برمجية."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Boss Health",
+    "desc": "متغير في سكراتش يتابع مقدار طاقة الزعيم المتبقية."
+   },
+   {
+    "name": "bossPhase",
+    "desc": "متغير يحدد رقم المرحلة الحالية التي يعيشها الزعيم في القتال."
+   },
+   {
+    "name": "Health Threshold",
+    "desc": "الرقم أو النسبة المحددة التي تتسبب في انتقال الزعيم للمرحلة التالية."
+   },
+   {
+    "name": "Phase Transition",
+    "desc": "اللحظة التي يتغير فيها سلوك وهجوم الزعيم بناءً على حالته الصحية."
+   },
+   {
+    "name": "If Block",
+    "desc": "لبنة شرطية تختبر سؤالاً معيناً، وتنفذ الأوامر إذا كانت الإجابة صحيحة."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "حلقة تكرار تجعل الكود يعمل بلا توقف طوال فترة اللعب."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ متغيرًا جديدًا في سكراتش باسم bossPhase، واجعل قيمته تبدأ بـ 1 عند الضغط على العلم الأخضر.",
+    "a": "When green flag clicked -> Set [bossPhase v] to 1"
+   },
+   {
+    "q": "اكتب شرطًا في سكراتش يغير متغير bossPhase إلى 2 إذا أصبحت صحة الزعيم أقل من 50.",
+    "a": "If < (Boss_Health) < 50 > then -> Set [bossPhase v] to 2"
+   },
+   {
+    "q": "كيف تجعل مظهر الزعيم يتغير إلى المظهر الغاضب عندما يدخل المرحلة الثانية؟",
+    "a": "If < (bossPhase) = 2 > then -> Switch costume to [boss_angry v]"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine playing a video game and reaching the final boss; does it fight the same way the whole time? No, great bosses are smart and change tactics. In Scratch, we use \"Multi-Phase Boss Fights\" to keep the game exciting and never boring.",
+   "To make this happen, we need a variable called Boss Health to track how much energy is left, and another variable called bossPhase to know which power level we are currently fighting.",
+   "The idea works simply using an If block. We tell the game: if the boss's health drops below a certain number, change the bossPhase to the next number, and instantly its appearance or speed will change.",
+   "Practical example: If Boss Health drops below 20, we use the block \"Set bossPhase to 2\" so the boss starts throwing much faster and stronger magic attacks than in the normal first phase.",
+   "Golden rule in game design: Always tie phase transitions to clear Health Thresholds, like 50% or 20%, so the player feels a real sense of achievement fighting the boss step by step.",
+   "Real-world use of this is seen in every famous console and PC game, like when a game monster transforms into a fierce second form near the end of the battle to test your skills and gaming wit."
+  ],
+  "example": "In your Scratch project, place an If block inside a Forever loop. Ask: if (Boss_Health < 20), do this: Set bossPhase to 2, and Switch costume to angry_boss. This makes the boss feel in danger and automatically change its attack style.",
+  "mistake": "A common mistake is forgetting to use a Wait block or updating the variable continuously without control, causing Scratch to glitch. The fix is using a proper check or a short pause so the phase changes cleanly.",
+  "recap": "Multi-phase boss fights make games much cooler using variables and conditions. As boss health drops, we change its phase to attack in new and fun ways.",
+  "q": [
+   {
+    "t": "What is the main purpose of using the bossPhase variable in Scratch?",
+    "o": [
+     "To set the background color only",
+     "To track and know the boss's current power level and attack style",
+     "ancis to make the character move faster for no reason"
+    ],
+    "a": 1,
+    "why": "The boss phase variable tells us which phase the boss is in so we can change its attacks."
+   },
+   {
+    "t": "When should the boss change to phase two?",
+    "o": [
+     "As soon as the game starts",
+     "When the boss's health drops below a specific Health Threshold",
+     "When the player presses the space bar"
+    ],
+    "a": 1,
+    "why": "Phases change when the boss health decreases and hits a set threshold."
+   },
+   {
+    "t": "What is the correct block to check boss health and change the phase?",
+    "o": [
+     "The If conditional block",
+     "The Next costume block",
+     "The Play sound block"
+    ],
+    "a": 0,
+    "why": "We use the If block to ask if health has dropped below a certain number."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Boss Fight Code in Scratch",
+   "goal": "Choose the correct words to complete the boss phase transition code.",
+   "items": [
+    {
+     "text": "If boss health is less than 20, ___ the bossPhase variable to 2",
+     "options": [
+      "set",
+      "delete",
+      "hide"
+     ],
+     "a": 0
+    },
+    {
+     "text": "We use a ___ variable to track the boss energy throughout the battle",
+     "options": [
+      "Boss Health",
+      "Score",
+      "Timer"
+     ],
+     "a": 0
+    },
+    {
+     "text": "When the phase changes, we ___ the boss costume to an angry look",
+     "options": [
+      "switch",
+      "resize",
+      "repeat"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You successfully programmed the boss phase transition smartly and your game is amazing!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Boss Fights",
+    "text": "When you play a video game, the end of every level features a big, tough monster called a Boss. This boss doesn't move the same way all the time; it changes its style. This is what we call a multi-phase battle, much like how a person gets more intense when they get tired.",
+    "code": "When green flag clicked\nSet bossPhase to 1",
+    "output": "The boss starts the game in its calm first phase."
+   },
+   {
+    "h": "Understanding Variables in Scratch",
+    "text": "A variable is like a box where we store a number or word and change it whenever we want. In boss battles, we need two main variables: one for Boss Health to track remaining energy, and another for bossPhase to know the current power level.",
+    "code": "Make a Variable: Boss_Health\nMake a Variable: bossPhase",
+    "output": "Variable monitors appear on the game screen to track values."
+   },
+   {
+    "h": "What are Health Thresholds?",
+    "text": "A health threshold is a specific number where, as soon as health drops past it, an important game event happens. For example, like health bars in fighting games where hitting half triggers a special move. In Scratch, we monitor this moment precisely.",
+    "code": "If <Boss_Health < 50> then\nSet bossPhase to 2",
+    "output": "When health drops below 50, the boss transforms to phase two."
+   },
+   {
+    "h": "Phase Transition",
+    "text": "A phase transition is the magical moment when the boss stops old attacks and starts new, faster, and stronger ones. It resembles how a cartoon hero transforms into a stronger form when close to losing, giving players incredible excitement.",
+    "code": "If <bossPhase = 2> then\nBroadcast [Super_Attack v]",
+    "output": "The boss starts launching special super attacks."
+   },
+   {
+    "h": "Using If Blocks",
+    "text": "To make the game smart, we use If blocks. This block asks a question: Is the condition met? If yes, it runs the commands inside. This is how Scratch knows when to change the boss phase based on variables.",
+    "code": "Forever\n  If <Boss_Health < 20> then\n    Set bossPhase to 3\n  end\nend",
+    "output": "The code continuously checks boss health and moves to phase 3 when below 20."
+   },
+   {
+    "h": "Changing Costumes and Behavior",
+    "text": "We don't just change the phase number; we also make the player feel the change visually. We use the Switch costume block to make the boss look angry or fiery, and we change its movement speed to make it tough and dangerous.",
+    "code": "Switch costume to [angry_boss v]\nSet [bossSpeed v] to 5",
+    "output": "The boss changes its appearance and moves much faster."
+   },
+   {
+    "h": "The Forever Loop",
+    "text": "To keep the game alive and checking the boss's health throughout the fight, we must place the health-checking condition inside a Forever loop. If we forget it, the code runs once and stops, meaning the boss will never change.",
+    "code": "Forever\n  Check boss health\nend",
+    "output": "The game keeps monitoring the boss throughout the entire battle."
+   },
+   {
+    "h": "Testing and Playing the Game",
+    "text": "After assembling the blocks, we must click the green flag and test the game ourselves. We hit the boss and check: does bossPhase change correctly when health drops? Testing is the secret to fixing any bug before showing friends.",
+    "code": "Click Green Flag -> Shoot Boss -> Watch bossPhase change",
+    "output": "You verify that every phase works smoothly without coding bugs."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Boss Health",
+    "desc": "A Scratch variable tracking the boss's remaining energy."
+   },
+   {
+    "name": "bossPhase",
+    "desc": "A variable defining the current combat phase of the boss."
+   },
+   {
+    "name": "Health Threshold",
+    "desc": "The specific number or percentage triggering the boss's next phase."
+   },
+   {
+    "name": "Phase Transition",
+    "desc": "The moment when boss behavior and attacks change based on health."
+   },
+   {
+    "name": "If Block",
+    "desc": "A conditional block testing a question and running code if true."
+   },
+   {
+    "name": "Forever Loop",
+    "desc": "A loop keeping code running continuously throughout gameplay."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a new variable in Scratch named bossPhase, and set its value to start at 1 when the green flag is clicked.",
+    "a": "When green flag clicked -> Set [bossPhase v] to 1"
+   },
+   {
+    "q": "Write a Scratch condition that changes bossPhase to 2 if the boss health becomes less than 50.",
+    "a": "If < (Boss_Health) < 50 > then -> Set [bossPhase v] to 2"
+   },
+   {
+    "q": "How do you make the boss costume change to the angry look when it enters the second phase?",
+    "a": "If < (bossPhase) = 2 > then -> Switch costume to [boss_angry v]"
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

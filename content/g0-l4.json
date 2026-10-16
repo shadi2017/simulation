@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل إنك ماشي في متاهة طويلة وليك خطوات بتتكرر كتير ورا بعض زي خطوة قدام ولفة يمين، بدل ما نكتبهم عشر مرات هنستخدم فكرة ذكية اسمها الحلقات التكرارية.",
+   "مثال بسيط: لو عندك روبوت عايز يتحرك ٣ خطوات قدام، بدل ما تكتب 'امشِ' ثلاث مرات، بتقول 'كرر ٣ مرات: امشِ قدام'.",
+   "إزاي ده بيشتغل؟ الكمبيوتر أو الروبوت بياخد الأمر ويقعد ينفذه جوه حلقة دائرية لحد ما يخلص العدد اللي طلبناه منه بالضبط.",
+   "مثال تاني: لو عندك طريق فيه حفرة ونطّة، بتقول 'كرر ٤ مرات: انطَ'، وده بيخلي الكود قصير وسهل ومفهوم جداً من غير تعقيد.",
+   "قاعدة ذهبية: لو لقيت نفسك بتكرر نفس السطور أكتر من مرتين، اعرف فوراً إنك محتاج تحطهم جوه حلقة تكرار عشان تكون برمجتك احترافية.",
+   "في الحياة اليومية، زي ما بتغسل أسنانك: 'كرر ١٠ مرات: حرك الفرشاه يمين وشمال'، الحلقات بتخلي حياتنا وبرمجتنا أسهل وأسرع بكتير."
+  ],
+  "example": "عايز تخلي الروبوت يمشي في ممر طويل ومستقيم؟ بدل ما تكتب:\nامشِ\nامشِ\nامشِ\nامشِ\nبنكتب أمر واحد بس:\nكرر ٤ مرات:\n- امشِ\nالتفكير هنا: بدل تكرار نفس السطر، بنستخدم حاوية اسمها حلقة ونحدد عدد المرات بـ ٤، فالروبوت بينفذها بسرعة وبدقة شديدة من غير أخطاء.",
+  "mistake": "الخطأ الشائع هو نسيان تحديد عدد المرات اللي المفروض الحلقة تتكرر فيها، وده بيخلي الروبوت يقف مش عارف يعمل إيه أو يفضل ماشي للأبد. الحل هو دايماً تحديد الرقم الواضح.",
+  "recap": "الحلقات البرمجية بتساعدنا نختصر الأوامر اللي بتتكرر في المتاهة بكل سهولة. بتخلي الكود أنضف وأسرع في التنفيذ.",
+  "q": [
+   {
+    "t": "ليه بنستخدم الحلقات التكرارية في المتاهة؟",
+    "o": [
+     "عشان نلخبط الروبوت",
+     "عشان نختصر الأوامر اللي بتتكرر كتير",
+     "عشان نبطئ سرعة الحركة"
+    ],
+    "a": 1,
+    "why": "الحلقات بتجمع الأوامر المتكررة في سطر واحد مختصر."
+   },
+   {
+    "t": "لو الروبوت محتاج يمشي ٥ خطوات قدام بنفس الطريقة، بنكتب إيه؟",
+    "o": [
+     "امشِ مرة واحدة",
+     "كرر ٥ مرات: امشِ",
+     "قف مكاك"
+    ],
+    "a": 1,
+    "why": "بنستخدم أمر التكرار وجنبه الرقم ٥ وخطوة المشي."
+   },
+   {
+    "t": "إيه هي القاعدة الذهبية لاستخدام الحلقات؟",
+    "o": [
+     "لو السطور بتتكرر أكتر من مرتين، حطها في حلقة",
+     "ممنوع استخدام الحلقات نهائياً",
+     "الحلقات مخصصة للصوت فقط"
+    ],
+    "a": 0,
+    "why": "التكرار الكتير بيتعالج بالحلقات عشان نوفر وقت."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل جمل الحلقات في المتاهة",
+   "goal": "اختر الكلمة أو الرقم المناسب لتكتمل الحلقة البرمجية بشكل صح.",
+   "items": [
+    {
+     "text": "لكتابة أمر مكرر لـ ٣ خطوات، نستخدم حاوية اسمها ___",
+     "options": [
+      "حلقة",
+      "دائرة",
+      "مربع"
+     ],
+     "a": 0
+    },
+    {
+     "text": "نضع الرقم ___ بجانب أمر التكرار لو الخطوات ٤ مرات",
+     "options": [
+      "٢",
+      "٤",
+      "١"
+     ],
+     "a": 1
+    },
+    {
+     "text": "الحلقات البرمجية تجعل الكود أكثر ___",
+     "options": [
+      "تعقيداً",
+      "اختصاراً",
+      "بطئاً"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! الروبوت عبر المتاهة بنجاح وبأقصر طريقة ممكنة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي المتاهة والطرق المتكررة؟",
+    "text": "لما نلعب في متاهة، أحياناً بنلاقي ممر طويل محتاج نمشي فيه خطوة ورا خطوة. ده بيفكرنا بالطريق للمدرسة اللي بنمشي فيه نفس الخطوات كل يوم. في البرمجة بنسمي الحركة دي طريق متكرر محتاج حل ذكي وسريع.",
+    "code": "خطوة\nخطوة\nخطوة",
+    "output": "الروبوت يتحرك ٣ خطوات منفصلة"
+   },
+   {
+    "h": "فكرة حاوية الحلقات",
+    "text": "تخيل صندوق سحري بتحط جوه منه الأكل المفضل ليك وتكرره كل يوم. حاوية الحلقات في الكود عاملة زي الصندوق ده، بنحط جواها الحركة ونقفلها، فبتتكرر لوحدها بالعدد اللي بنطلبه من غير ما نكتبها كتير.",
+    "code": "حاوية تكرار (٣ مرات)",
+    "output": "تجهيز الصندوق لتكرار الأوامر بداخلها"
+   },
+   {
+    "h": "تنظيم إيقاع حركة الشخصية",
+    "text": "عشان الشخصية جوه المتاهة تمشي بانتظام ومن غير ما تتلخبط، لازم نظبط إيقاع خطواتها. زي الموسيقى، خطوة ثابتة وبعدها خطوة ثابتة، والحلقة بتساعدنا نحافظ على السرعة والترتيب ده طول الطريق.",
+    "code": "كرر ٣ مرات: امشِ بانتظام",
+    "output": "الشخصية تتحرك بإيقاع ثابت ومرتب"
+   },
+   {
+    "h": "اختبار الحدود والجدران",
+    "text": "قبل ما الروبوت يخبط في حيطة المتاهة، لازم نختبر الحدود. بنقيس المسافة ونعرف الروبوت هيمشي كام خطوة بس جوه الحلقة عشان يقف في المكان الصح من غير ما يصطدم بالحيطة ويقع في المشكلة.",
+    "code": "كرر حتى الحائط: امشِ",
+    "output": "الروبوت يتوقف تماماً قبل الاصطدام"
+   },
+   {
+    "h": "تجاوز الممرات الطويلة بسهولة",
+    "text": "الممرات الطويلة ممكن تزهقنا لو كتبنا أمر لكل خطوة. لكن باستخدام الحلقات، الممر اللي طوله عشر خطوات بنختصره في سطر واحد جميل ونظيف، فالروبوت بيعدي الممر في ثانية واحدة.",
+    "code": "كرر ١٠ مرات: امشِ خطوة",
+    "output": "قطع الممر الطويل في خطوة برمجية واحدة"
+   },
+   {
+    "h": "قاعدة الكود النظيف والمختصر",
+    "text": "المبرمج الشاطر هو اللي بيخلي كوده قصير ومفهوم. القاعدة بتقول: متكررش كلامك، استخدم الحلقة! ده بيخلي الكمبيوتر ينفذ الأوامر بسرعة ومن غير أخطاء إملائية أو نسيان لسطر مهم.",
+    "code": "بدل ٥ أسطر -> سطر واحد بالحلقة",
+    "output": "كود مرتب وسريع الفهم"
+   },
+   {
+    "h": "تطبیق ربط اللفات والانحناءات",
+    "text": "المتاهة مش كلها مستقيمة، فيها كمان لفات يمين وشمال. ممكن نعمل حلقة تكرر (امشِ، ثم لف يمين) كذا مرة عشان نلف في مربعات المتاهة بذكاء وسرعة من غير مجهود كبير.",
+    "code": "كرر ٢ مرات: [امشِ، لف يمين]",
+    "output": "الروبوت ينفذ الدورة المزدوجة بنجاح"
+   },
+   {
+    "h": "الخلاصة والربط بالواقع",
+    "text": "الحلقات مش بس في الشاشات، دي حوالينا في كل مكان زي لفة العجلة وهي بتلف، أو دقات الساعة. لما نفهمها في المتاهة، بنقدر نحل أي مشكلة صعبة في حياتنا اليومية بتقسمها لخطوات متكررة.",
+    "code": "حياة ذكية وبسيطة",
+    "output": "فهم عميق للبرمجة وتطبيقها في الحياة"
+   }
+  ],
+  "reference": [
+   {
+    "name": "حلقة (Loop)",
+    "desc": "أمر برمجي يكرر مجموعة خطوات عدة مرات."
+   },
+   {
+    "name": "متاهة (Maze)",
+    "desc": "طريق مليان ممرات وجدران محتاج حل."
+   },
+   {
+    "name": "إيقاع (Pacing)",
+    "desc": "تنظيم سرعة وحركة الشخصية بانتظام."
+   },
+   {
+    "name": "اختبار الحدود (Boundary Testing)",
+    "desc": "التأكد من مكان الجدران عشان الروبوت ما يخبطش."
+   },
+   {
+    "name": "تكرار (Repeat)",
+    "desc": "كلمة مفتاحية لبدء الحلقة بعدد محدد."
+   },
+   {
+    "name": "كود مختصر (Clean Code)",
+    "desc": "كتابة الأوامر بأقل عدد ممكن من السطور."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب شكل الحلقة البرمجية لجعل الروبوت يمشي ٣ خطوات قدام.",
+    "a": "كرر ٣ مرات: امشِ قدام"
+   },
+   {
+    "q": "ما هي الفائدة الكبرى من استخدام الحلقات في المتاهة؟",
+    "a": "اختصار الأوامر المتكررة وجعل الكود أسرع وأنظف."
+   },
+   {
+    "q": "لو الروبوت كرر أمر (امشِ خطوة، لف يمين) مرتين، كيف نكتبها بالحلقة؟",
+    "a": "كرر ٢ مرات: [امشِ خطوة، لف يمين]"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine walking through a long maze with steps repeating over andซover like move forward and turn right. Instead of writing them ten times, we use a smart idea called loops.",
+   "Simple example: If your robot needs to move forward 3 steps, instead of writing 'move' three times, you say 'repeat 3 times: move forward'.",
+   "How does this work? The computer or robot takes the command and runs it inside a circular loop until it finishes the exact number of times we asked.",
+   "Another example: If your path has a jump and a duck, you say 'repeat 4 times: jump', making your code short, easy, and very clear without complexity.",
+   "Golden rule: If you find yourself repeating the same lines more than twice, immediately know you need to put them inside a loop to make your code professional.",
+   "In real life, like brushing your teeth: 'repeat 10 times: move brush left and right', loops make our lives and programming much easier and faster."
+  ],
+  "example": "Want to make your robot walk through a long straight corridor? Instead of writing:\nmove\nmove\nmove\nmove\nWe write just one command:\nrepeat 4 times:\n- move\nReasoning here: Instead of repeating the same line, we use a container called a loop and set the count to 4, so the robot executes it quickly and accurately without mistakes.",
+  "mistake": "A common mistake is forgetting to set the number of times the loop should repeat, leaving the robot stuck or running forever. The solution is always defining a clear number.",
+  "recap": "Programming loops help us shorten repeating commands in the maze easily. They make code cleaner and faster to execute.",
+  "q": [
+   {
+    "t": "Why do we use loops in the maze?",
+    "o": [
+     "To confuse the robot",
+     "To shorten repeating commands",
+     "To slow down movement"
+    ],
+    "a": 1,
+    "why": "Loops group repeating commands into a single short line."
+   },
+   {
+    "t": "If the robot needs to move 5 steps forward the same way, what do we write?",
+    "o": [
+     "move once",
+     "repeat 5 times: move",
+     "stop here"
+    ],
+    "a": 1,
+    "why": "We use the repeat command with the number 5 and the move step."
+   },
+   {
+    "t": "What is the golden rule for using loops?",
+    "o": [
+     "If lines repeat more than twice, put them in a loop",
+     "Never use loops ever",
+     "Loops are only for sound"
+    ],
+    "a": 0,
+    "why": "Frequent repetition is handled with loops to save time."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete Maze Loop Sentences",
+   "goal": "Choose the right word or number to complete the programming loop correctly.",
+   "items": [
+    {
+     "text": "To write a repeating command for 3 steps, we use a container called ___",
+     "options": [
+      "loop",
+      "circle",
+      "square"
+     ],
+     "a": 0
+    },
+    {
+     "text": "We put the number ___ next to the repeat command if steps happen 4 times",
+     "options": [
+      "2",
+      "4",
+      "1"
+     ],
+     "a": 1
+    },
+    {
+     "text": "Programming loops make the code more ___",
+     "options": [
+      "complex",
+      "concise",
+      "slow"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! The robot crossed the maze successfully in the shortest way possible!"
+  },
+  "sections": [
+   {
+    "h": "What is a Maze and Repeating Paths?",
+    "text": "When we play in a maze, sometimes we find a long corridor where we must walk step by step. This reminds us of walking to school taking the same steps every day. In programming, we call this movement a repeating path that needs a smart, fast solution.",
+    "code": "step\nstep\nstep",
+    "output": "Robot moves 3 separate steps"
+   },
+   {
+    "h": "The Loop Container Idea",
+    "text": "Imagine a magic box where you put your favorite snack and repeat it every day. The loop container in code is just like that box; we put the movement inside and close it, so it repeats by itself as many times as we ask without rewriting it.",
+    "code": "repeat container (3 times)",
+    "output": "Prepares the box to repeat commands inside"
+   },
+   {
+    "h": "Character Pacing and Rhythm",
+    "text": "To make the character inside the maze walk smoothly without getting confused, we must pace its steps. Just like music, a steady step followed by a steady step, loops help us maintain this speed and order all along the way.",
+    "code": "repeat 3 times: walk steadily",
+    "output": "Character moves at a steady, ordered rhythm"
+   },
+   {
+    "h": "Boundary Testing and Walls",
+    "text": "Before the robot crashes into a maze wall, we must test boundaries. We measure distance and tell the robot how many steps to walk inside the loop so it stops at the right spot without crashing into the wall.",
+    "code": "repeat until wall: walk",
+    "output": "Robot stops completely before colliding"
+   },
+   {
+    "h": "Navigating Long Corridors Easily",
+    "text": "Long corridors can be tiring if we write a command for every step. But using loops, a ten-step corridor is shortened into one nice and clean line, letting the robot pass the corridor in a single second.",
+    "code": "repeat 10 times: take a step",
+    "output": "Crosses the long corridor in one code line"
+   },
+   {
+    "h": "Clean and Short Code Rule",
+    "text": "A smart programmer keeps code short and understandable. The rule says: do not repeat yourself, use a loop! This helps the computer execute commands quickly without typos or missing an important line.",
+    "code": "instead of 5 lines -> one loop line",
+    "output": "Organized and quick-to-understand code"
+   },
+   {
+    "h": "Handling Turns and Corners",
+    "text": "Mazes are not just straight; they have right and left turns too. We can make a loop repeat (move, then turn right) several times to navigate maze squares cleverly and quickly with minimal effort.",
+    "code": "repeat 2 times: [move, turn right]",
+    "output": "Robot successfully executes the double cycle"
+   },
+   {
+    "h": "Summary and Real-Life Link",
+    "text": "Loops are not just on screens; they are all around us like a spinning wheel or ticking clock. When we understand them in a maze, we can solve any tough problem in daily life by breaking it down into repeating steps.",
+    "code": "smart and simple life",
+    "output": "Deep understanding of programming and real-life application"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Loop",
+    "desc": "A programming command that repeats a set of steps multiple times."
+   },
+   {
+    "name": "Maze",
+    "desc": "A path full of corridors and walls needing a solution."
+   },
+   {
+    "name": "Pacing",
+    "desc": "Organizing character speed and movement regularly."
+   },
+   {
+    "name": "Boundary Testing",
+    "desc": "Checking wall locations so the robot doesn't crash."
+   },
+   {
+    "name": "Repeat",
+    "desc": "A keyword to start a loop with a set count."
+   },
+   {
+    "name": "Clean Code",
+    "desc": "Writing commands with the fewest lines possible."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the loop structure to make the robot move 3 steps forward.",
+    "a": "repeat 3 times: move forward"
+   },
+   {
+    "q": "What is the biggest benefit of using loops in a maze?",
+    "a": "Shortening repeating commands and making code faster and cleaner."
+   },
+   {
+    "q": "If the robot repeats the command (take a step, turn right) twice, how do we write it with a loop?",
+    "a": "repeat 2 times: [take a step, turn right]"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

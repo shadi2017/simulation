@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "عمرك حسيت إن اللعبة حماسية لما الشخصية بتخبط في حاجة؟ ده اسمه اهتزاز الشاشة، بيخلي الأكشن يبان قوي وحقيقي كأن البيت بيترج من قوة الخبطة! تعالوا نتعلم نعمله في سكراتش بكل سهولة.",
+   "عشان نعمل اهتزاز، بنخلي الخلفية تتحرك يمين وشمال بسرعة جداً لفترة قصيرة. مثلاً: اذهب إلى الموضع س: (5)، ص: (0) وبعدين س: (-5)، ص: (0). الحركة السريعة دي بتدي إيحاء بالاهتزاز القوي.",
+   "طريقة العمل بتبدأ لما الكائن يلمس عدو أو حائط. أول ما يحصل الاصطدام، بنشغل حلقة تكرار (Repeat) سريعة، نغير فيها إحداثيات س (X) و ص (Y) بأرقام عشوائية صغيرة، وده بيدي تأثير اهتزاز الشاشة الممتع.",
+   "مثال تاني: ممكن نغير موضع ص كمان مع س عشان الاهتزاز يكون في كل الاتجاهات. مثلاً: كرر 5 مرات {غير موضع س بمقدار (اختر عدداً عشوائياً بين -10 و 10)، غير موضع ص بمقدار (اختر عدداً عشوائياً بين -10 و 10)}.",
+   "القاعدة الذهبية: اهتزاز الشاشة لازم يكون قصير وسريع جداً (أقل من نصف ثانية)، لو زاد عن كده هيتعب العين ومش هيبقى لطيف. السر هو القصر والسرعة في اللبنات البرمجية.",
+   "في ألعاب الفيديو الحقيقية (Game Juice)، استخدام اهتزاز الشاشة عند الانفجارات أو الضربات القوية بيخلي اللاعب يندمج جداً في اللعبة ويحس بكل حركة، وده السر في نجاح الألعاب المشهورة!"
+  ],
+  "example": "لما بطل اللعبة بيضرب الوحش، بنحط بلوك 'كرر 10 مرات' وجواه 'غير موضع س بمقدار (اختر عدداً عشوائياً بين -5 و 5)' وبعدين 'اجعل موضع س (0) وموضع ص (0)' في الآخر عشان الخلفية ترجع لمكانها الأصلي ومتبوظش اللعبة.",
+  "mistake": "نسيان إعادة الخلفية لموضعها الأصلي (0، 0) بعد الاهتزاز، وده بيخلي الشاشة تتحرك وتستقر في مكان غلط ومزعج. الحل: دايماً حط بلوك يرجع الموضع للصفر في نهاية كود الاهتزاز.",
+  "recap": "تعلمنا إزاي نعمل اهتزاز للشاشة في سكراتش باستخدام الأرقام العشوائية وتكرار الحركة. ده بيخلي الألعاب ممتعة وحماسية جداً!",
+  "q": [
+   {
+    "t": "إيه الفائدة من اهتزاز الشاشة في الألعاب؟",
+    "o": [
+     "إبطاء سرعة اللعبة",
+     "جعل الاصطدام يبدو قوياً وحقيقياً",
+     "تغيير لون الخلفية دائماً"
+    ],
+    "a": 1,
+    "why": "اهتزاز الشاشة بيضيف تفاعل بصري قوي بيحسس اللاعب بقوة الخبطة."
+   },
+   {
+    "t": "ليه بنستخدم أرقام عشوائية في الاهتزاز؟",
+    "o": [
+     "عشان الخلفية تهتز في اتجاهات مختلفة بشكل طبيعي",
+     "عشان الخلفية تختفي تماماً",
+     "عشان اللعبة تقف لوحدها"
+    ],
+    "a": 0,
+    "why": "الأرقام العشوائية بين سالب وموجب بتحرك الخلفية يمين وشمال وفوق وتحف بشكل عشوائي واقعي."
+   },
+   {
+    "t": "ايه اللي لازم نعمله بعد ما الاهتزاز يخلص؟",
+    "o": [
+     "نحذف الخلفية",
+     "نرجع الخلفية لموضعها الأصلي (س: 0، ص: 0)",
+     "نقفل برنامج سكراتش"
+    ],
+    "a": 1,
+    "why": "لازم نرجع الخلفية لمكانها الأصلي عشان متفضلش مايلة أو متحركة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز عناصر اهتزاز الشاشة",
+   "goal": "صنف العناصر دي إلى إما 'خطوات الاهتزاز' أو 'إعدادات غير صالحة'",
+   "buckets": [
+    "خطوات الاهتزاز",
+    "إعدادات غير صالحة"
+   ],
+   "items": [
+    {
+     "t": "تكرار تغيير موضع س برقم عشوائي",
+     "b": 0
+    },
+    {
+     "t": "جعل مدة الاهتزاز قصيرة جداً",
+     "b": 0
+    },
+    {
+     "t": "إرجاع الخلفية لموضع (0،0) في النهاية",
+     "b": 0
+    },
+    {
+     "t": "اهتزاز الشاشة للأبد بدون توقف",
+     "b": 1
+    },
+    {
+     "t": "تثبيت الخلفية وعدم تحريكها أبداً",
+     "b": 1
+    },
+    {
+     "t": "استخدام قيم ثابتة بدون عشوائية",
+     "b": 1
+    }
+   ],
+   "success": "رائع! أنت مهندس ألعاب شاطر وعرفت تنظم كود اهتزاز الشاشة باحترافية!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم اهتزاز الشاشة (Camera Shake)",
+    "text": "اهتزاز الشاشة هو حركة سريعة ومفاجئة للخلفية بتدي شعور بقوة الحدث. زي لما الزلزال بيخلي البيت يهتز، في اللعبة لما بطل بينط أو بيضرب عدو، الشاشة بتترج عشان نحس بالحماس.",
+    "code": "عند حدوث ضربة -> اهتز بسرعة",
+    "output": "الشاشة تترج وتجذب انتباه اللاعب."
+   },
+   {
+    "h": "استخدام الأرقام العشوائية (Random Offsets)",
+    "text": "عشان الاهتزاز يبوال طبيعي ومش منظم بزيادة، بنستخدم لبنة 'اختر عدداً عشوائياً'. الحركة العشوائية يمين وشمال وفوق وتحت بتخلي العين تحس بالارتجاج الحقيقي.",
+    "code": "غير موضع س بمقدار (اختر عدداً عشوائياً بين -10 و 10)",
+    "output": "الخلفية تتحرك يمين ويسار بشكل عشوائي سريع."
+   },
+   {
+    "h": "التغذية البصرية (Visual Feedback)",
+    "text": "التغذية البصرية هي أي إشارة بصرية بتعرف اللاعب إن حصل حاجة مهمة. اهتزاز الشاشة يعتبر أقوى نوع تغذية بصرية بيخلي اللاعب يتفاعل مع اللعبة كأنه جواها.",
+    "code": "إذا لامس العدو -> شغل الاهتزاز",
+    "output": "اللاعب يفهم فوراً إنه تلقى ضربة."
+   },
+   {
+    "h": "عصير الألعاب أو Screen Juice",
+    "text": "في عالم برمجة الألعاب، بنسمي الحركات الجمالية دي 'Screen Juice'. دي اللمسات السحرية اللي بتنقل اللعبة من لعبة عادية وباهتة إلى لعبة ممتعة ومليانة حياة وحركة.",
+    "code": "اهتزاز + تأثيرات صوتية + تطاير نجوم",
+    "output": "تجربة لعب مذهلة ومشوقة."
+   },
+   {
+    "h": "بناء حلقة الاهتزاز في سكراتش",
+    "text": "عشان نعمل الاهتزاز، بنحتاج نحط لبنة التكرار (Repeat) وجواها تغيير المواضع. التكرار السريع هو اللي بيعمل خدعة الاهتزاز البصري للعين.",
+    "code": "كرر (10) مرات { غير موضع س ... غير موضع ص ... }",
+    "output": "اهتزاز متوازن لفترة قصيرة."
+   },
+   {
+    "h": "التحكم في زمن الاهتزاز",
+    "text": "الاهتزاز لازم يكون خاطف وسريع. لو كررنا الحركة كتيير جداً، اللاعب هيتعب وممكن يحس بدوخة. من 5 إلى 10 مرات تكرار هو الرقم المثالي.",
+    "code": "كرر (8) مرات فقط",
+    "output": "اهتزاز سريع ومريح للعين."
+   },
+   {
+    "h": "العودة للموضع الأصلي",
+    "text": "بعد ما يخلص الاهتزاز، ضروري جداً نرجع الخلفية لإحداثيات الصفر (س: 0، ص: 0). لو منعملش كده، الخلفية هتفضل هاربة من مكانها واللعبة هتبوظ.",
+    "code": "اذهب إلى الموضع س: (0) ص: (0)",
+    "output": "استقرار الشاشة في مكانها الصحيح."
+   },
+   {
+    "h": "تطبيق عملي على الاصطدام",
+    "text": "نقدر نربط كود الاهتزاز بحدث اصطدام البطل بالكرة أو العدو. أول ما يتلامس الكائنين، يبدأ الاهتزاز فوراً كأنه رد فعل طبيعي للخبطة.",
+    "code": "عندما يلامس (العدو) -> نفذ الاهتزاز",
+    "output": "تفاعل حقيقي عند كل ضربة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Camera Shake",
+    "desc": "اهتزاز الشاشة السريع للإيحاء بقوة الاصطدام."
+   },
+   {
+    "name": "Random Offset",
+    "desc": "تغيير الإحداثيات بقيم عشوائية لحركة غير منتظمة."
+   },
+   {
+    "name": "Visual Feedback",
+    "desc": "إشارات مرئية تؤكد وقوع حدث في اللعبة."
+   },
+   {
+    "name": "Screen Juice",
+    "desc": "إضافات بصرية وحركية تجعل الألعاب ممتعة وحية."
+   },
+   {
+    "name": "Repeat Loop",
+    "desc": "حلقة تكرار لتنفيذ خطوات الاهتزاز بسرعة."
+   },
+   {
+    "name": "Reset Position",
+    "desc": "إعادة الخلفية لإحداثيات البداية (0،0)."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو عدد مرات التكرار المثالي لعمل اهتزاز خفيف ومريح؟",
+    "a": "من 5 إلى 10 مرات."
+   },
+   {
+    "q": "إلى أي موضع يجب إعادة الخلفية بعد انتهاء الاهتزاز؟",
+    "a": "الموضع س: 0، ص: 0."
+   },
+   {
+    "q": "ما هي اللبنة المستخدمة لجعل الحركة غير منتظمة في كل اتجاه؟",
+    "a": "لبنة اختر عدداً عشوائياً."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Have you ever noticed how exciting a game feels when your character hits something? That is screen shake! It makes action look powerful and real, like the room is rumbling from the impact. Let's learn how to make it in Scratch easily.",
+   "To create a shake, we move the backdrop left and right very quickly for a short moment. For example: go to X: 5, Y: 0, then X: -5, Y: 0. This fast movement gives the illusion of a strong rumble.",
+   "How it works starts when a sprite touches an enemy or wall. Once the collision happens, we run a fast repeat loop changing X and Y coordinates by small random numbers, creating that fun screen-shaking effect.",
+   "Another example: we can change both X and Y so the shake goes in all directions. For example: repeat 5 times { change X by (pick random -10 to 10), change Y by (pick random -10 to 10)}.",
+   "Golden rule: Screen shake must be short and very fast (less than half a second). If it lasts too long, it hurts the eyes and stops being fun. The secret is speed and brevity in code blocks.",
+   "In real video games (Game Juice), using screen shake during explosions or big hits makes players fully immersed and feel every action. That is the secret behind famous games!"
+  ],
+  "example": "When the game hero hits the monster, we use a 'repeat 10' block containing 'change x by (pick random -5 to 5)', and then 'go to x: 0 y: 0' at the very end so the backdrop returns to its original place and does not break the game.",
+  "mistake": "Forgetting to return the backdrop to its original position (0, 0) after shaking, which leaves the screen shifted in a wrong, annoying place. Solution: Always add a block to reset position to zero at the end of your shake code.",
+  "recap": "We learned how to make screen shake in Scratch using random numbers and repeating movement. This makes games super fun and exciting!",
+  "q": [
+   {
+    "t": "What is the benefit of screen shake in games?",
+    "o": [
+     "To slow down game speed",
+     "To make impacts look powerful and real",
+     "To always change the background color"
+    ],
+    "a": 1,
+    "why": "Screen shake adds strong visual feedback that makes the player feel the force of the hit."
+   },
+   {
+    "t": "Why do we use random numbers in the shake?",
+    "o": [
+     "So the backdrop shakes naturally in different directions",
+     "So the backdrop disappears completely",
+     "So the game stops by itself"
+    ],
+    "a": 0,
+    "why": "Random numbers between negative and positive move the backdrop left, right, up, and down in a realistic random way."
+   },
+   {
+    "t": "What must we do after the shake finishes?",
+    "o": [
+     "Delete the backdrop",
+     "Return the backdrop to its original position (X: 0, Y: 0)",
+     "Close the Scratch program"
+    ],
+    "a": 1,
+    "why": "We must return the backdrop to its home position so it doesn't stay tilted or shifted."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Screen Shake Elements Sorting",
+   "goal": "Sort these items into either 'Shake Steps' or 'Invalid Settings'",
+   "buckets": [
+    "Shake Steps",
+    "Invalid Settings"
+   ],
+   "items": [
+    {
+     "t": "Repeatedly change X by random number",
+     "b": 0
+    },
+    {
+     "t": "Keep shake duration very short",
+     "b": 0
+    },
+    {
+     "t": "Reset backdrop to (0,0) at the end",
+     "b": 0
+    },
+    {
+     "t": "Shake the screen forever without stopping",
+     "b": 1
+    },
+    {
+     "t": "Lock backdrop and never move it",
+     "b": 1
+    },
+    {
+     "t": "Use fixed values without randomness",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You are a clever game developer and organized the screen shake code professionally!"
+  },
+  "sections": [
+   {
+    "h": "Camera Shake Concept",
+    "text": "Camera shake is a fast, sudden movement of the backdrop that simulates the feeling of impact. Just like an earthquake makes a house rumble, in a game when a hero jumps or hits an enemy, the screen shakes so we feel the excitement.",
+    "code": "On impact -> Shake quickly",
+    "output": "The screen rumbles and grabs player attention."
+   },
+   {
+    "h": "Random Offsets",
+    "text": "To make the shake look natural and unscripted, we use the 'pick random' block. Moving randomly left, right, up, and down tricks the eye into seeing real vibration.",
+    "code": "change x by (pick random -10 to 10)",
+    "output": "Backdrop shifts left and right in a fast random pattern."
+   },
+   {
+    "h": "Visual Feedback",
+    "text": "Visual feedback is any visual signal letting the player know something important happened. Screen shake is the strongest form of visual feedback, making players feel like they are inside the game.",
+    "code": "If touching enemy -> trigger shake",
+    "output": "Player instantly understands they took a hit."
+   },
+   {
+    "h": "Screen Juice",
+    "text": "In game development, we call these aesthetic polishes 'Screen Juice'. These are the magic touches that turn a dull, basic game into an exciting experience full of life and motion.",
+    "code": "Shake + sound effect + flying particles",
+    "output": "An amazing and engaging gameplay experience."
+   },
+   {
+    "h": "Building the Shake Loop in Scratch",
+    "text": "To create the shake, we need a repeat block containing position changes. Rapid repetition is what creates the optical illusion of screen vibration for the human eye.",
+    "code": "repeat (10) { change x ... change y ... }",
+    "output": "Balanced shake for a brief moment."
+   },
+   {
+    "h": "Controlling Shake Duration",
+    "text": "The shake must be snappy and fast. If we repeat the motion too many times, the player will get tired and might feel dizzy. 5 to 10 repetitions is the sweet spot.",
+    "code": "repeat (8) times only",
+    "output": "Fast and eye-friendly shake."
+   },
+   {
+    "h": "Returning to Original Position",
+    "text": "After the shake ends, it is vital to return the backdrop to zero coordinates (X: 0, Y: 0). If we don't do this, the backdrop will stay displaced and break the game layout.",
+    "code": "go to x: (0) y: (0)",
+    "output": "Screen stabilizes in its correct place."
+   },
+   {
+    "h": "Practical Impact Implementation",
+    "text": "We can link the shake code to a collision event between the hero and a ball or enemy. As soon as the two sprites touch, the shake triggers instantly like a natural reaction.",
+    "code": "when touching (enemy) -> run shake",
+    "output": "Real interaction upon every hit."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Camera Shake",
+    "desc": "Rapid screen movement to simulate impact force."
+   },
+   {
+    "name": "Random Offset",
+    "desc": "Changing coordinates by random values for unscripted motion."
+   },
+   {
+    "name": "Visual Feedback",
+    "desc": "Visual cues confirming an in-game event occurred."
+   },
+   {
+    "name": "Screen Juice",
+    "desc": "Polish and effects that make games fun and lively."
+   },
+   {
+    "name": "Repeat Loop",
+    "desc": "A loop to execute shake steps quickly."
+   },
+   {
+    "name": "Reset Position",
+    "desc": "Returning the backdrop to home coordinates (0,0)."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What is the ideal repeat count for a smooth, mild shake?",
+    "a": "5 to 10 times."
+   },
+   {
+    "q": "To which position must the backdrop return after the shake ends?",
+    "a": "Position X: 0, Y: 0."
+   },
+   {
+    "q": "Which block is used to make motion unscripted in every direction?",
+    "a": "The pick random block."
+   }
+  ]
+ },
+ "lang": "scratch",
+ "sources": [],
+ "grounded": false
+}

@@ -1,0 +1,299 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً يا بطل! النهارده هنتعلم إزاي نخلي شخصياتنا في سكراتش جونيور تتكلم وتتغير قدامنا على الشاشة كأننا بنعمل كارتون حقيقي وممتع.",
+   "عشان نخلي الشخصية تتكلم، بنستخدم بلوك فقاعة الكلام (Say). مثلاً لو حطيت بلوك الكلام وكتبت جوه 'مرحباً'، الشخصية هتقول الكلمة دي في فقاعة جميلة.",
+   "بلوك الكلام بيشتغل بأننا بنسحبه ونحطه جنب بلوك العلم الأخضر، فلما نضغط، تظهر الكلمات فوق رأس الشخصية زي القصص المصورة.",
+   "كمان نقدر نغير حجم الشخصية! بلوك التكبير (Grow) بيخلي الشخصية أكبر، وبلوك التصغير (Shrink) بيخليها أصغر، زي ما تكون بتكبر بالبطاطس السحرية.",
+   "القاعدة الذهبية: استخدم التكبير والتصغير بحكمة عشان تظهر مشاعر الشخصية، وفقاعات الكلام عشان تقول القصة من غير صوت عالي.",
+   "في الحياة الحقيقية، ده عامل زي لما بترسم قصة في كشكولك وتكتب جوه بلالين الكلام كلام أبطالك وتكبر الرسمة لما يكون البطل شجاع!"
+  ],
+  "example": "تعالوا نتخيل قطة شقية في سكراتش جونيور! بنجيب القط ونحط جنبه بلوك العلم الأخضر، وبعدين بلوك فقاعة الكلام ونكتب فيه 'أنا قطة سريعة!'، وبعدها نحط بلوك التكبير مرتين عشان تبان كأنها بتكبر قدامنا. النتيجة: القط هيقول الجملة ويكبر حجمه بطريقة مرحة تخلّي القصة حية ومليانة حركة.",
+  "mistake": "الخطأ المشهور هو نسيان كتابة الكلام جوه فقاعة الكلام فبتطلع فاضية، أو نسيان ربط البلوكات ببعضها فالمشروع مش بيشتغل. الحل: تأكد إنك كتبت النص جوه البلوك وإن الأشكال متصلة كويس ببعضها.",
+  "recap": "اتعلمنا إزاي نخلي الشخصيات تتكلم بفقاعات الكلام وتكبر أو تصغر وتختفي وتظهر. بكده قصصك بقت أحلى بكتير وأكثر تفاعلاً!",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بنستخدمه عشان نخلي الشخصية تقول كلام؟",
+    "o": [
+     "بلوك التكبير",
+     "بلوك فقاعة الكلام",
+     "بلوك الاختفاء"
+    ],
+    "a": 1,
+    "why": "بلوك فقاعة الكلام مخصص لعرض الكلمات فوق الشخصية."
+   },
+   {
+    "t": "إيه اللي بيحصل لما نستخدم بلوك التكبير (Grow)؟",
+    "o": [
+     "الشخصية بتكبر في الحجم",
+     "الشخصية بتختفی",
+     "الشخصية بتغير لونها بس"
+    ],
+    "a": 0,
+    "why": "بلوك التكبير بيزيد من حجم عنصر الشخصية على الشاشة."
+   },
+   {
+    "t": "إزاي بنخلي الشخصية تختفي عن الشاشة؟",
+    "o": [
+     "باستخدام بلوك الاختفاء (Hide)",
+     "باستخدام بلوك الكلام",
+     "بإغلاق اللعبة"
+    ],
+    "a": 0,
+    "why": "بلوك الاختفاء (Hide) بيخلي الشخصية غير مرئية."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات إظهار القط المتكلم",
+   "goal": "رتب الخطوات عشان القط يتكلم ويكبر حجمه صح",
+   "items": [
+    "اسحب بلوك بداية التشغيل (العلم الأخضر)",
+    "أضف بلوك فقاعة الكلام واكتب 'مرحباً'",
+    "أضف بلوك التكبير (Grow) لزيادة حجم القط",
+    "اضغط على العلم الأخضر لتشغيل العرض"
+   ],
+   "success": "يا سلام! القط قال مرحباً وكبر قدامنا وبقى شكل القصة رائع!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في حوارات الشخصيات",
+    "text": "القصص بتبقى أجمل لما الشخصيات تتكلم وتتناقش مع بعضها. في سكراتش جونيور، بنقدر نضيف حوارات بصرية سهلة وممتعة.",
+    "code": "العلم الأخضر -> بلوك فقاعة الكلام (أهلاً بكم)",
+    "output": "تظهر فقاعة كلام فوق رأس الشخصية تحتوي على جملة أهلاً بكم"
+   },
+   {
+    "h": "كتابة فقاعات الكلام",
+    "text": "فقاعة الكلام عاملة زي اللي بنشوفها في كتب الكومكس وقصص الأطفال المصورة، بتوضح القارئ إيه اللي الشخصية بتقوله في اللحظة دي.",
+    "code": "بلوك فقاعة الكلام (أنا أستطيع الطيران!)",
+    "output": "الشخصية تنطق بهذه الجملة بصرياً لكل من يتابع المشروع"
+   },
+   {
+    "h": "تغيير حجم الشخصيات (التكبير)",
+    "text": "عشان نبين إن فيه حاجة قريبة أو شخصية بتكبر من الفرحة، بنستخدم بلوك التكبير. شبه العدسة المكبرة اللي بتكبر الأشياء.",
+    "code": "العلم الأخضر -> بلوك التكبير (Grow)",
+    "output": "يكبر حجم الشخصية بدرجة واضحة على الشاشة"
+   },
+   {
+    "h": "تغيير حجم الشخصيات (التصغير)",
+    "text": "لما نحب نخلي الشخصية تبعد في البعيد أو تبان أصغر، بنستعمل بلوك التصغير. كأنك بتبص للشخصية من بعيد خالص.",
+    "code": "العلم الأخضر -> بلوك التصغير (Shrink)",
+    "output": "يصغر حجم الشخصية تدريجياً أو فوراً حسب البلوك"
+   },
+   {
+    "h": "إخفاء العناصر (Hide)",
+    "text": "أحياناً بنحتاج إن الشخصية تختفي من على الشاشة، زي الألعاب السحرية لما الساحر يختفي فجأة عن الأعين.",
+    "code": "العلم الأخضر -> بلوك الاختفاء (Hide)",
+    "output": "تختفي الشخصية تماماً من منطقة العرض"
+   },
+   {
+    "h": "إظهار العناصر (Show)",
+    "text": "بعد ما الشخصية تختفي، ممكن نظهرها تاني في مكان جديد عشان نعمل مفاجأة حلوة لأصدقائنا، زي ظهور بطل الخارق في اللحظة الحاسمة.",
+    "code": "بلوك الاختفاء -> بلوك الانتظار -> بلوك الإظهار (Show)",
+    "output": "تعود الشخصية لتظهر وتملأ الشاشة مجدداً"
+   },
+   {
+    "h": "الجمع بين الكلام والحجم",
+    "text": "الإبداع بيبان لما ندمج الأوامر مع بعضها. نخلي الشخصية تتكلم وهي بتكبر في نفس الوقت، ده بيدي تأثير سينمائي رائع.",
+    "code": "العلم الأخضر -> بلوك الكلام + بلوك التكبير معا",
+    "output": "تتحدث الشخصية وفي نفس الوقت يزداد حجمها أمام الجمهور"
+   },
+   {
+    "h": "تصميم مشهد قصة كامل",
+    "text": "الخطوة الأخيرة هي ربط كل البلوكات دي في تسلسل زمني صحيح عشان نعمل قصة قصيرة متكاملة ليها بداية ونهاية.",
+    "code": "العلم الأخضر -> تكلم -> كبر -> اختفي -> أظهر",
+    "output": "مشهد كرتوني متكامل وممتع من صنع يديك"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Say (فقاعة الكلام)",
+    "desc": "لبنة تعرض النص داخل فقاعة فوق الشخصية"
+   },
+   {
+    "name": "Grow (التكبير)",
+    "desc": "لبنة تزيد من حجم الشخصية على الشاشة"
+   },
+   {
+    "name": "Shrink (التصغير)",
+    "desc": "لبنة تقلل من حجم الشخصية على الشاشة"
+   },
+   {
+    "name": "Hide (الإخفاء)",
+    "desc": "لبنة تجعل الشخصية غير مرئية"
+   },
+   {
+    "name": "Show (الإظهار)",
+    "desc": "لبنة تعيد إظهار الشخصية المختفية"
+   },
+   {
+    "name": "Green Flag (العلم الأخضر)",
+    "desc": "لبنة البداية لتشغيل الكود"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب الخطوات لجعل القط يقول 'مرحباً' ثم يختفي.",
+    "a": "العلم الأخضر -> بلوك فقاعة الكلام ('مرحباً') -> بلوك الاختفاء (Hide)"
+   },
+   {
+    "q": "ما هو البلوك المستخدم لجعل الشخصية تبدو أكبر حجماً؟",
+    "a": "بلوك التكبير (Grow)"
+   },
+   {
+    "q": "كيف تجعل شخصية مختفية تظهر مجدداً؟",
+    "a": "باستخدام بلوك الإظهار (Show)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hello hero! Today we will learn how to make our ScratchJr characters speak and transform right on the screen like a real cartoon.",
+   "To make a character talk, we use the Say block. For example, if we attach the speech block and type 'Hello', the character will say it in a nice bubble.",
+   "The speech block works by snapping it next to the green flag block, so when pressed, words appear right above the character's head like in comic books.",
+   "We can also change character sizes! The Grow block makes a character bigger, and the Shrink block makes it smaller, like magic beans.",
+   "Golden rule: use grow and shrink wisely to show character feelings, and speech bubbles to tell the story without sound.",
+   "In real life, this is like drawing a comic book and writing in dialogue balloons, then drawing the hero bigger when they are brave!"
+  ],
+  "example": "Imagine a playful cat in ScratchJr! We place the green flag, then the speech bubble block saying 'I am a fast cat!', and follow it with two Grow blocks. Result: The cat speaks the sentence and grows in size, making the story lively and full of motion.",
+  "mistake": "A common mistake is leaving the speech bubble empty or forgetting to connect the blocks together so nothing happens. Solution: Ensure text is typed inside the block and shapes snap securely.",
+  "recap": "We learned how to make characters talk with speech bubbles, grow, shrink, hide, and show. Now your stories are much more fun and interactive!",
+  "q": [
+   {
+    "t": "Which block is used to make a character say something?",
+    "o": [
+     "Grow block",
+     "Speech bubble block",
+     "Hide block"
+    ],
+    "a": 1,
+    "why": "The speech bubble block is designed to show words above the character."
+   },
+   {
+    "t": "What happens when you use the Grow block?",
+    "o": [
+     "The character increases in size",
+     "The character disappears",
+     "The character only changes color"
+    ],
+    "a": 0,
+    "why": "The Grow block increases the size of the character sprite on screen."
+   },
+   {
+    "t": "How do you make a character vanish from the screen?",
+    "o": [
+     "Using the Hide block",
+     "Using the speech block",
+     "Closing the game"
+    ],
+    "a": 0,
+    "why": "The Hide block makes the character invisible."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering the Talking Cat Steps",
+   "goal": "Arrange the steps so the cat speaks and grows properly",
+   "items": [
+    "Drag the Start block (Green Flag)",
+    "Add the Speech Bubble block and type 'Hello'",
+    "Add the Grow block to make the cat bigger",
+    "Tap the Green Flag to run the show"
+   ],
+   "success": "Hooray! The cat said hello and grew right before our eyes, making an awesome story!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Character Dialogue",
+    "text": "Stories are much better when characters talk and interact with each other. In ScratchJr, we can easily add fun visual conversations.",
+    "code": "Green Flag -> Speech Bubble block (Hello)",
+    "output": "A speech bubble appears above the character's head saying Hello"
+   },
+   {
+    "h": "Writing Speech Bubbles",
+    "text": "Speech bubbles are like what we see in comic books, clearly showing the reader what the character is saying at that moment.",
+    "code": "Speech Bubble block (I can fly!)",
+    "output": "The character visually speaks this sentence to everyone watching"
+   },
+   {
+    "h": "Changing Sizes: Grow",
+    "text": "To show something is getting closer or growing with excitement, we use the Grow block. It's like a magnifying glass for characters.",
+    "code": "Green Flag -> Grow block",
+    "output": "The character visibly increases in size on the screen"
+   },
+   {
+    "h": "Changing Sizes: Shrink",
+    "text": "When we want a character to look far away or tiny, we use the Shrink block, as if viewing them from a huge distance.",
+    "code": "Green Flag -> Shrink block",
+    "output": "The character decreases in size immediately or gradually"
+   },
+   {
+    "h": "Hiding Elements (Hide)",
+    "text": "Sometimes we need a character to vanish from the screen, just like a magic trick where the magician disappears.",
+    "code": "Green Flag -> Hide block",
+    "output": "The character completely disappears from the stage area"
+   },
+   {
+    "h": "Showing Elements (Show)",
+    "text": "After hiding, we can bring the character back in a new spot to surprise our friends, like a superhero arriving at the right moment.",
+    "code": "Hide block -> Wait block -> Show block",
+    "output": "The character returns and fills the stage once again"
+   },
+   {
+    "h": "Combining Speech and Size",
+    "text": "True creativity shines when we combine commands. Having a character speak while growing gives an amazing cinematic effect.",
+    "code": "Green Flag -> Say block + Grow block together",
+    "output": "The character speaks while simultaneously growing larger for the audience"
+   },
+   {
+    "h": "Designing a Full Story Scene",
+    "text": "The final step is linking all these blocks in the right sequence to build a complete short story with a beginning and end.",
+    "code": "Green Flag -> Say -> Grow -> Hide -> Show",
+    "output": "A complete and fun cartoon scene made by your own hands"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Say",
+    "desc": "A block displaying text inside a bubble above a character"
+   },
+   {
+    "name": "Grow",
+    "desc": "A block that increases the character's size on screen"
+   },
+   {
+    "name": "Shrink",
+    "desc": "A block that decreases the character's size on screen"
+   },
+   {
+    "name": "Hide",
+    "desc": "A block that makes the character invisible"
+   },
+   {
+    "name": "Show",
+    "desc": "A block that brings an invisible character back to view"
+   },
+   {
+    "name": "Green Flag",
+    "desc": "The starting trigger block for running code"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the steps to make the cat say 'Hello' then hide.",
+    "a": "Green Flag -> Say block ('Hello') -> Hide block"
+   },
+   {
+    "q": "Which block is used to make a character look bigger?",
+    "a": "Grow block"
+   },
+   {
+    "q": "How do you make a hidden character appear again?",
+    "a": "Using the Show block"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

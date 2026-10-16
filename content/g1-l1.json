@@ -1,0 +1,309 @@
+{
+ "ar": {
+  "steps": [
+   "تعالوا نعرف إزاي نحرك الشخصيات في سكراتش جونيور باستخدام كتل الحركة الزرقاء الجميلة! الشبكة دي عبارة عن مربعات صغيرة بتساعدنا نعرف الشخصية واقفة فين بالظبط بدل ما نتحرك عشوائي.",
+   "لما نسحب بلوك المشي للأمام ونكتب جوه الرقم 5، الشخصية هتمشي خمس خطوات قدام زي الشاطرين بكل سهولة ودقة.",
+   "كل خطوة في الشبكة بتعني مربع واحد. لو عايز ترجع ورا، بتستخدم بلوك السهم الخلفي وتحدد العدد اللي تحتاجه.",
+   "عايز الشخصية تنط فوق العوائق؟ بلوك القفز بيخليها تطير في الهواء وترجع تقف في مكانها الجديد بأمان تام وبدون تعب.",
+   "القاعدة الذهبية هنا هي: دايمًا احسب المربعات بعينك الأول قبل ما تحط الرقم في البلوك عشان متحصلش لخبطة في اللعبة.",
+   "في ألعاب القصص الكرتونية، الحركات دي هي اللي بتخلي الأبطال يجروا ويهربوا من الأشرار ويخلوا القصة ممتعة جدًا!"
+  ],
+  "example": "تخيل إن البطل الكرتوني واقف في نقطة البداية وعايز يروح للشجرة. بنحط بلوك المشي للأمام ونكتب رقم 4. بعدين بنحط بلوك الدوران عشان يبص لفوق. النتيجة النهائية إن البطل هيتحرك 4 خطوات ويغير اتجاهه مظبوط!",
+  "mistake": "الخطأ المشهور هو كتابة رقم كبير جداً زي 50 في بلوك الحركة، وده بيخلي الشخصية تختفي بره الشاشة! الحل هو استخدام أرقام صغيرة من 1 لـ 10.",
+  "recap": "تعلمنا إزاي نحرك الشخصية قدام وورا وننط وندور باستخدام مربعات الشبكة. الحركة المظبوطة بتخلي قصتنا منظمة وجميلة.",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بنستخدمه عشان نخلي الشخصية تمشي خطوة لقدام؟",
+    "o": [
+     "بلوك المشي للأمام الأزرق",
+     "بلوك الصوت الأخضر",
+     "بلوك إنهاء اللعبة الأحمر"
+    ],
+    "a": 0,
+    "why": "بلوك المشي للأمام هو المسؤول عن تحريك الشخصية خطوات أفقية."
+   },
+   {
+    "t": "ليه بنستخدم أرقام صغيرة زي 5 في شبكة سكراتش جونيور؟",
+    "o": [
+     "علشان الشخصية تخرج بره الشاشة خالص",
+     "علشان الحركة تبقى منظمة ومقدارها مظبوط على المربعات",
+     "علشان اللعبة تقفل لوحدها"
+    ],
+    "a": 1,
+    "why": "الأرقام الصغيرة بتناسب مربعات الشبكة الحقيقية على الشاشة."
+   },
+   {
+    "t": "إيه اللي بيحصل لو الشخصية بعدت كتير؟",
+    "o": [
+     "بترجع لنقطة البداية لو استخدمنا بلوك الرجوع",
+     "بتطير في الفضاء الخارجي",
+     "بتتحول لروبوت كبير"
+    ],
+    "a": 0,
+    "why": "أمر الرجوع يعيد الشخصية لإحداثيات البداية الأصلية."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "لعبة توقع حركة البطل",
+   "goal": "اعرف الشخصية هتوصل فين لما تتحرك 3 مربعات قدام.",
+   "code": "عند الضغط على العلم الأخضر:\n[المشي للأمام: 3]",
+   "options": [
+    "تتحرك الشخصية 3 مربعات لليمين على الشبكة",
+    "تنط الشخصية لأعلى الشاشة",
+    "تدور الشخصية دائرة كاملة بدون مشي"
+   ],
+   "a": 0,
+   "success": "عاش! الشخصية مشيت 3 مربعات مظبوطة ووصلت لهدفها!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن كتل الحركة والشبكة",
+    "text": "الشبكة في سكراتش جونيور عاملة زي كراسة الرسم مربعات. كل مربع ليه رقم مكاني بيساعدنا نعرف مكان الشخصية بدقة شديدة.",
+    "code": "اسحب بلوك الحركة الأزرق إلى منطقة البرمجة",
+    "output": "يظهر بلوك الحركة جاهزاً لتعديل رقمه"
+   },
+   {
+    "h": "المشي للأمام والخلف",
+    "text": "عشان تخلي البطل يتحرك يمين أو شمال، بتستخدم كتل الأسهم الأمامية والخلفية. زي ما بتمشي في البيت خطوة خطوة.",
+    "code": "[المشي للأمام: 4]",
+    "output": "تتحرك الشخصية 4 مربعات للأمام"
+   },
+   {
+    "h": "القفز والدوران",
+    "text": "عايز بهلوان في قصتك؟ بلوك القفز بيخلي الشخصية تفط فوق السحاب، وبلوك الدوران بيخليها تبص للناحية التانية.",
+    "code": "[قفز] + [دوران لليمين]",
+    "output": "تقفز الشخصية في مكانها ثم تدور رأسها للاتجاه الجديد"
+   },
+   {
+    "h": "أرقام قياس الشبكة",
+    "text": "الشبكة مقسمة لأعمدة وصفوف. لما تقول للشخصية تحرك 5 خطوات، يعني عدت 5 مربعات من مربعات الشبكة.",
+    "code": "[المشي للخلف: 2]",
+    "output": "ترجع الشخصية خطوتين للوراء"
+   },
+   {
+    "h": "إرجاع الشخصية للبداية",
+    "text": "لو الشخصية تيهت في اللعبة، فيه أوامر ترجعها لنقطة الصفر الأصلية اللي بدأت منها القصة.",
+    "code": "[الرجوع لبداية الإحداثيات]",
+    "output": "تقفز الشخصية فوراً لمكانها الأول"
+   },
+   {
+    "h": "التحكم الدقيق في المسافة",
+    "text": "السر في البرمجة الناجحة هو التجربة. جرب رقم صغير، شوف الشخصية وقفت فين، وزود لو حسيت إنها محتاجة.",
+    "code": "[المشي للأمام: 1] (كرر للتجربة)",
+    "output": "حركة بطيئة ومنضبطة للغاية"
+   },
+   {
+    "h": "الربط بالواقع المعاش",
+    "text": "فكر في خطوتك وأنت ماشي للمدرسة. كل خطوة برجلينك تساوي مربع واحد على شبكة الكمبيوتر.",
+    "code": "خطواتك الحقيقية = خطوات البطل الافتراضية",
+    "output": "فهم سهل لحركة الألعاب"
+   },
+   {
+    "h": "خلاصة الدرس الإبداعي",
+    "text": "الحركة والشبكة هما أساس أي قصة حية. اصنع قصتك بحركات مدروسة وممتعة للجميع.",
+    "code": "إبداع + دقة = قصة مذهلة",
+    "output": "لعبة تفاعلية رائعة جاهزة للعرض"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Motion Blocks",
+    "desc": "كتل زرقاء خاصة بتحريك الشخصيات"
+   },
+   {
+    "name": "Grid",
+    "desc": "خلفية مربعات لتحديد الأماكن"
+   },
+   {
+    "name": "Forward",
+    "desc": "أمر التحرك للأمام"
+   },
+   {
+    "name": "Backward",
+    "desc": "أمر التحرك للخلف"
+   },
+   {
+    "name": "Jump",
+    "desc": "أمر القفز لأعلى"
+   },
+   {
+    "name": "Turn",
+    "desc": "أمر تغيير اتجاه النظر"
+   },
+   {
+    "name": "Home",
+    "desc": "العودة لنقطة البداية"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "كم عدد المربعات التي تتحركها الشخصية عند وضع رقم 5 في بلوك الأمام؟",
+    "a": "5 مربعات"
+   },
+   {
+    "q": "ما هو لون كتل الحركة في برنامج سكراتش جونيور؟",
+    "a": "اللون الأزرق"
+   },
+   {
+    "q": "أي بلوك نستخدمه إذا أرادت الشخصية تخطي حفرة في طريقها؟",
+    "a": "بلوك القفز"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Let's learn how to move characters in ScratchJr using wonderful blue motion blocks! The grid is made of small squares helping us know exact character positions instead of guessing blindly.",
+   "When we drag the walk forward block and type the number 5 inside, our character happily walks five squares ahead with great ease and precision.",
+   "Every grid step equals one single square. If you want to move backward, use the reverse arrow block and type the exact number you need.",
+   "Want your character to jump over obstacles? The jump block makes them fly into the air and land safely in their new spot without tiring out.",
+   "The golden rule here is: always count the squares with your eyes first before typing the number into the block to avoid any game confusion.",
+   "In cartoon story games, these movements let heroes run, escape from villains, and make the whole storytelling experience super fun!"
+  ],
+  "example": "Imagine our cartoon hero standing at the starting point wanting to reach a tree. We attach the walk forward block and type number 4. Then we add a turn block to look up. The final result is the hero moving 4 squares and changing direction perfectly!",
+  "mistake": "A very common mistake is typing a huge number like 50 into the motion block, which makes the character disappear completely off screen! The fix is using small numbers from 1 to 10.",
+  "recap": "We learned how to move characters forward, backward, jump, and turn using grid squares. Precise movement keeps our stories organized and wonderful.",
+  "q": [
+   {
+    "t": "Which block do we use to make a character walk one step ahead?",
+    "o": [
+     "Blue walk forward block",
+     "Green sound block",
+     "Red end game block"
+    ],
+    "a": 0,
+    "why": "The walk forward block is responsible for horizontal character movement."
+   },
+   {
+    "t": "Why do we use small numbers like 5 on the ScratchJr grid?",
+    "o": [
+     "To make the character disappear off screen entirely",
+     "To keep movement organized and matching the grid squares",
+     "To close the app automatically"
+    ],
+    "a": 1,
+    "why": "Small numbers perfectly fit the actual screen grid squares."
+   },
+   {
+    "t": "What happens if the character wanders too far away?",
+    "o": [
+     "It returns to the start point if we use the home/return command",
+     "It flies straight into outer space",
+     "It turns into a giant robot"
+    ],
+    "a": 0,
+    "why": "The return command brings the character back to its original start coordinates."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Hero Movement Prediction Game",
+   "goal": "Find out where the character lands when moving 3 squares forward.",
+   "code": "When green flag clicked:\n[Move Forward: 3]",
+   "options": [
+    "The character moves 3 squares right across the grid",
+    "The character jumps up to the top of the screen",
+    "The character spins in a full circle without walking"
+   ],
+   "a": 0,
+   "success": "Awesome! The character walked 3 precise squares and reached its target!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Motion Blocks and Grid",
+    "text": "The ScratchJr grid works just like math graph paper. Every square has coordinate numbers helping us know the character's exact location with high precision.",
+    "code": "Drag the blue motion block into the coding area",
+    "output": "The motion block appears ready for number editing"
+   },
+   {
+    "h": "Walking Forward and Backward",
+    "text": "To make your hero move left or right, use the front and back arrow blocks. Just like taking steps around your house.",
+    "code": "[Move Forward: 4]",
+    "output": "The character moves 4 squares ahead"
+   },
+   {
+    "h": "Jumping and Turning",
+    "text": "Want an acrobat in your story? The jump block lifts characters above clouds, and turn blocks make them look in the opposite direction.",
+    "code": "[Jump] + [Turn Right]",
+    "output": "The character jumps in place then turns its head toward the new way"
+   },
+   {
+    "h": "Grid Measurement Numbers",
+    "text": "The grid divides into columns and rows. When you tell a character to move 5 steps, it crosses 5 exact grid squares.",
+    "code": "[Move Backward: 2]",
+    "output": "The character steps 2 squares backward"
+   },
+   {
+    "h": "Reverting Sprites to Start Coordinates",
+    "text": "If your character gets lost in the game, special reset commands bring it right back to the original zero point where the story began.",
+    "code": "[Return to Home Coordinates]",
+    "output": "The character instantly jumps back to its first spot"
+   },
+   {
+    "h": "Precise Distance Control",
+    "text": "The secret to successful coding is experimenting. Try a small number, check where the character stops, and increase if needed.",
+    "code": "[Move Forward: 1] (repeat to test)",
+    "output": "Slow and extremely controlled movement"
+   },
+   {
+    "h": "Real-Life Analogy",
+    "text": "Think of your own footsteps walking to school. Every step with your feet equals one single square on the computer grid.",
+    "code": "Your real steps = Virtual hero steps",
+    "output": "Easy understanding of game motion"
+   },
+   {
+    "h": "Creative Lesson Summary",
+    "text": "Motion and grids form the foundation of any living story. Build your tale with thoughtful and fun movements for everyone.",
+    "code": "Creativity + Precision = Amazing Story",
+    "output": "A wonderful interactive game ready for display"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Motion Blocks",
+    "desc": "Blue blocks used for character movement"
+   },
+   {
+    "name": "Grid",
+    "desc": "Square background for positioning"
+   },
+   {
+    "name": "Forward",
+    "desc": "Command to move ahead"
+   },
+   {
+    "name": "Backward",
+    "desc": "Command to move back"
+   },
+   {
+    "name": "Jump",
+    "desc": "Command to leap upward"
+   },
+   {
+    "name": "Turn",
+    "desc": "Command to change facing direction"
+   },
+   {
+    "name": "Home",
+    "desc": "Return to starting point"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "How many squares does a character move when entering 5 into the forward block?",
+    "a": "5 squares"
+   },
+   {
+    "q": "What color are the motion blocks in ScratchJr?",
+    "a": "Blue"
+   },
+   {
+    "q": "Which block do we use if the character needs to skip over a hole in its path?",
+    "a": "The jump block"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

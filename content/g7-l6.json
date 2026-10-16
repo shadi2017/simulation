@@ -1,0 +1,340 @@
+{
+ "ar": {
+  "steps": [
+   "لما بيكون عندنا جدول بيانات كبير في بايثون باستخدام مكتبة pandas، أول خطوة مفيدة هي اختيار أعمدة معينة بنحتاجها بس عشان نركز على المعلومات المهمة.",
+   "عشان نختار عمود واحد جوه DataFrame، بنكتب اسم الجدول وجنبه اسم العمود جوه أقواس مربعة، زي كدة: df['الاسم'].",
+   "الطريقة دي بتخلينا نعزل الأعمدة اللي فيها البيانات اللي بنهتم بيها، ونتجاهل وباقي الأعمدة الزائدة اللي ممكن تشتتنا في التحليل.",
+   "لو عاوزين أكتر من عمود، بنبعت ليستة من أسماء الأعمدة جوه الأقواس المربعة المزدوجة، زي كدة: df[['الاسم', 'الدرجة']].",
+   "القاعدة الذهبية هنا هي أننا نحدد دايماً الأعمدة اللي بتجاوب على السؤال اللي بندور عليه قبل ما نبدأ نعمل أي حسابات.",
+   "المهارة دي مفيدة جداً في حياتنا اليومية، زي لما بيكون عندك جدول بكل مواد المدرسة، بس أنت عاوز تطلع درجات مادة الرياضيات بس."
+  ],
+  "example": "تخيل إن عندنا جدول بيانات لطلبة الفصل وفيه أعمدة 'الاسم' و'الدرجة' و'العمر'. لو عاوزين نركز على درجات الطلبة بس، ممكن نكتب الكود ده:\n\n```python\nimport pandas as pd\ndata = {'الاسم': ['علي', 'مريم', 'يوسف'], 'الدرجة': [85, 92, 78], 'العمر': [13, 14, 13]}\ndf = pd.DataFrame(data)\nprint(df[['الاسم', 'الدرجة']])\n```\nالسبب والنتيجة هنا هي أننا عزلنا عمودين من أصل ثلاثة، وظهر قدامنا جدول أصغر فيه أسماء الطلبة ودرجاتهم بس بشكل مرتب وواضح.\n\nالنتيجة المتوقعة:\n   الاسم  الدرجة\n0   علي     85\n1  مريم     92\n2  يوسف     78",
+  "mistake": "الخطأ الشائع هو نسيان الأقواس المربعة المزدوجة لما نيجي نختار أكتر من عمود، فنكتب df['الاسم', 'الدرجة'] فيحصل خطأ. الصح هو استخدام أقواس مزدوجة كدة: df[['الاسم', 'الدرجة']].",
+  "recap": "اتعلمنا إزاي نختار ونعزل الأعمدة اللي بنحتاجها من جدول البيانات بسهولة باستخدام الأقواس المربعة. وده بيسهل علينا التركيز على البيانات المهمة للتحليل.",
+  "q": [
+   {
+    "t": "إزاي بنختار عمود واحد اسمه 'الدرجة' من جدول اسمه df؟",
+    "o": [
+     "df['الدرجة']",
+     "df.select('الدرجة')",
+     "df('الدرجة')"
+    ],
+    "a": 0,
+    "why": "عشان نختار عمود واحد بنستخدم أسماء الأعمدة جوه أقواس مربعة مفردة."
+   },
+   {
+    "t": "إيه هو الكود الصح لاختيار أكتر من عمود؟",
+    "o": [
+     "df['الاسم', 'العمر']",
+     "df[['الاسم', 'العمر']]",
+     "df.columns('الاسم', 'العمر')"
+    ],
+    "a": 1,
+    "why": "لما بنختار أكتر من عمود لازم نحط أسماء الأعمدة جوه ليستة داخل أقواس مربعة مزدوجة."
+   },
+   {
+    "t": "ليه بنعمل عزل للأعمدة في جدول البيانات؟",
+    "o": [
+     "عشان نمسح الجدول للأبد",
+     "عشان نركز على المعلومات المهمة ونمنع التشتت",
+     "عشان نغير نوع البيانات لرقم"
+    ],
+    "a": 1,
+    "why": "اختيار أعمدة معينة بيساعدنا نركز على البيانات اللي بنحتاجها بس ونستبعد الزيادة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف أوامر اختيار وتصفية وترتيب البيانات",
+   "goal": "صنف كل أمر من أوامر بايثون في المكان الصح بتاعه (اختيار أعمدة أو تصفية صفوف).",
+   "buckets": [
+    "اختيار أعمدة",
+    "تصفية وترتيب"
+   ],
+   "items": [
+    {
+     "t": "df[['الاسم', 'الدرجة']]",
+     "b": 0
+    },
+    {
+     "t": "df[df['الدرجة'] > 80]",
+     "b": 1
+    },
+    {
+     "t": "df['العمر']",
+     "b": 0
+    },
+    {
+     "t": "df.sort_values(by='الدرجة')",
+     "b": 1
+    },
+    {
+     "t": "df[['المادة']]",
+     "b": 0
+    },
+    {
+     "t": "df[df['العمر'] == 13]",
+     "b": 1
+    }
+   ],
+   "success": "رائع! نجحت في تصنيف الأوامر ورتبت بياناتك باحترافية تامة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن اختيار البيانات",
+    "text": "لما بنتعامل مع جداول ضخمة في بايثون عبر مكتبة pandas، بيكون عندنا أعمدة كتيرة جداً مش كلها مهمة لسؤالنا. اختيار الأعمدة بيشبه فتح درج خامات والدوران فيه عشان تطلع القلم المناسب بس وتسيب الباقي مكانه.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'الاسم': ['علي', 'مريم'], 'السن': [12, 13]})\nprint(df['الاسم'])",
+    "output": "0     علي\n1    مريم\nName: الاسم, dtype: object"
+   },
+   {
+    "h": "عزل عمود مفرد",
+    "text": "عشان تختار عمود واحد وتعزله للتركيز عليه، بتكتب اسم متغير الجدول وبعده أقواس مربعة وبداخلها اسم العمود بين علامتي تنصيص. ده بيدينا سلسلة بيانات (Series) بتمثل العمود ده لوحده.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'المادة': ['رياضيات', 'علوم'], 'الدرجة': [90, 95]})\nprint(df['الدرجة'])",
+    "output": "0    90\n1    95\nName: الدرجة, dtype: int32"
+   },
+   {
+    "h": "اختيار أعمدة متعددة",
+    "text": "لو عاوز تختار أكتر من عمود مع بعض، بتستخدم أقواس مربعة مزدوجة وتحط جواهم ليستة بأسماء الأعمدة. تشبيه ده زي لما تحط كتابين مختلفين مع بعض في نفس شنطة المدرسة عشان تراجعهم.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'أ': [1, 2], 'ب': [3, 4], 'ج': [5, 6]})\nprint(df[['أ', 'ج']])",
+    "output": "   أ  ج\n0  1  5\n1  2  6"
+   },
+   {
+    "h": "تصفية الصفوف بشرط معين",
+    "text": "التصفية بتسمح لنا نختار الصفوف اللي بتحقق شرط معين بس، زي اختيار الطلبة اللي درجاتهم أكبر من 80. التشبيه هنا هو زي بواب النادي اللي مش بيسمح غير للناس اللي معاهم تذكرة بالدخول.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'طالب': ['أحمد', 'سارة'], 'درجة': [75, 90]})\nprint(df[df['درجة'] > 80])",
+    "output": "    طالب  درجة\n1  سارة    90"
+   },
+   {
+    "h": "استخدام شروط متعددة في التصفية",
+    "text": "ممكن ندمج أكتر من شرط باستخدام علامات منطقية، زي علامة '&' للربط بين الشروط. ده بيخلينا نجيب بيانات دقيقة جداً، زي الطلبة اللي سنهم أكبر من 12 وكمان درجاتهم فوق الـ 85.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'سن': [12, 14, 13], 'نقاط': [80, 90, 95]})\nprint(df[(df['سن'] > 12) & (df['نقاط'] > 85)])",
+    "output": "   سن  نقاط\n1  14    90\n2  13    95"
+   },
+   {
+    "h": "ترتيب الجداول حسب القيم الرقمية",
+    "text": "بعد ما نصفي البيانات، غالباً بنحوز نرتبها تصاعدياً أو تنازلياً عشان نلاحظ مين الأفضل أو مين الأقل. بنستخدم دالة sort_values عشان نعمل ده، وتشبيهها هو ترتيب كتبك على المكتب من الأقصر للأطول.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'الفريق': ['أ', 'ب'], 'النقاط': [45, 80]})\nprint(df.sort_values(by='النقاط', ascending=False))",
+    "output": "  الفريق  النقاط\n1    ب      80\n0    أ      45"
+   },
+   {
+    "h": "الجمع بين الاختيار والتصفية والترتيب",
+    "text": "القوة الحقيقية لمكتبة pandas بتظهر لما نجمع الثلاث حاجات مع بعض: بنختار الأعمدة، نصفي الصفوف بشرط، ونرتب الناتج. دي خطوة متقدمة بتديك تقرير جاهز ونظيف تماماً في سطر كود واحد.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'الاسم': ['عمر', 'ليلي', 'زياد'], 'الدرجة': [60, 95, 85]})\nprint(df[df['الدرجة'] >= 80].sort_values(by='الدرجة', ascending=False))",
+    "output": "    الاسم  الدرجة\n1   ليلي     95\n2   زياد     85"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "اختيار عمود واحد وإرجاعه كـ Series"
+   },
+   {
+    "name": "df[['col1', 'col2']]",
+    "desc": "اختيار عدة أعمدة وإرجاع DataFrame جديدة"
+   },
+   {
+    "name": "df[df['col'] > val]",
+    "desc": "تصفية الصفوف بناءً على شرط عددي أو منطقي"
+   },
+   {
+    "name": "df.sort_values(by='col')",
+    "desc": "ترتيب الجدول تصاعدياً بناءً على عمود معين"
+   },
+   {
+    "name": "ascending=False",
+    "desc": "جعل الترتيب تنازلياً داخل دالة الترتيب"
+   },
+   {
+    "name": "&",
+    "desc": "أداة ربط الشروط معاً (و منطقية)"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود بايثون لاختيار عمود 'الاسم' من جدول اسمه df.",
+    "a": "df['الاسم']"
+   },
+   {
+    "q": "كيف تصفي جدول df بحيث تظهر فقط الصفوف اللي فيها عمود 'النقاط' أكبر من 50؟",
+    "a": "df[df['نقاط'] > 50]"
+   },
+   {
+    "q": "ما هي الدالة المستخدمة لترتيب جدول بيانات pandas حسب عمود معين؟",
+    "a": "sort_values(by='اسم_العمود')"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "When working with large data tables in Python using pandas, a very useful first step is picking specific columns we need to focus on important information.",
+   "To isolate a single column inside a DataFrame, we write the table name followed by square brackets containing the column name, like this: df['Name'].",
+   "This method lets us isolate columns holding data we care about while ignoring extra columns that might distract us during our data analysis.",
+   "If we want more than one column, we pass a list of column names inside double square brackets, like this: df[['Name', 'Score']].",
+   "The golden rule here is to always define the columns that answer our specific question before running any calculations or analysis.",
+   "This skill is super useful in real life, like when you have a table of all school subjects, but you only want to pull out your math grades."
+  ],
+  "example": "Imagine we have a student data table with columns 'Name', 'Score', and 'Age'. If we want to focus only on student scores, we can write this code:\n\n```python\nimport pandas as pd\ndata = {'Name': ['Ali', 'Mariam', 'Youssef'], 'Score': [85, 92, 78], 'Age': [13, 14, 13]}\ndf = pd.DataFrame(data)\nprint(df[['Name', 'Score']])\n```\nThe reasoning and result here are that we isolated two columns out of three, presenting a smaller table showing just student names and scores neatly and clearly.\n\nExpected Output:\n     Name  Score\n0     Ali     85\n1  Mariam     92\n2 Youssef     78",
+  "mistake": "A common mistake is forgetting the double square brackets when selecting multiple columns, writing df['Name', 'Score'] which causes an error. The correct way is using double brackets like this: df[['Name', 'Score']].",
+  "recap": "We learned how to select and isolate columns we need from a data table easily using square brackets. This makes it simpler to focus on key data for analysis.",
+  "q": [
+   {
+    "t": "How do we select a single column named 'Score' from a table named df?",
+    "o": [
+     "df['Score']",
+     "df.select('Score')",
+     "df('Score')"
+    ],
+    "a": 0,
+    "why": "To select a single column, we use column names inside single square brackets."
+   },
+   {
+    "t": "What is the correct code to select multiple columns?",
+    "o": [
+     "df['Name', 'Age']",
+     "df[['Name', 'Age']]",
+     "df.columns('Name', 'Age')"
+    ],
+    "a": 1,
+    "why": "When selecting multiple columns, we must put column names inside a list within double square brackets."
+   },
+   {
+    "t": "Why do we isolate columns in a data table?",
+    "o": [
+     "To delete the table forever",
+     "To focus on important information and avoid distraction",
+     "To change data types to numbers"
+    ],
+    "a": 1,
+    "why": "Selecting specific columns helps us focus on needed data and ignore extras."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Categorizing Data Selection, Filtering, and Sorting Commands",
+   "goal": "Sort each Python command into its correct category (Column Selection or Filtering & Sorting).",
+   "buckets": [
+    "Column Selection",
+    "Filtering and Sorting"
+   ],
+   "items": [
+    {
+     "t": "df[['Name', 'Score']]",
+     "b": 0
+    },
+    {
+     "t": "df[df['Score'] > 80]",
+     "b": 1
+    },
+    {
+     "t": "df['Age']",
+     "b": 0
+    },
+    {
+     "t": "df.sort_values(by='Score')",
+     "b": 1
+    },
+    {
+     "t": "df[['Subject']]",
+     "b": 0
+    },
+    {
+     "t": "df[df['Age'] == 13]",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You successfully categorized the commands and organized your data like a pro!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Data Selection",
+    "text": "When handling massive tables in Python via the pandas library, we have many columns, but not all matter for our specific question. Selecting columns is like opening a supply drawer and pulling out just the right pen while leaving the rest behind.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mariam'], 'Age': [12, 13]})\nprint(df['Name'])",
+    "output": "0     Ali\n1    Mariam\nName: Name, dtype: object"
+   },
+   {
+    "h": "Isolating a Single Column",
+    "text": "To select a single column and isolate it for focus, you type the table variable name followed by square brackets containing the column name in quotes. This yields a Series object representing that single column.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Subject': ['Math', 'Science'], 'Score': [90, 95]})\nprint(df['Score'])",
+    "output": "0    90\n1    95\nName: Score, dtype: int32"
+   },
+   {
+    "h": "Selecting Multiple Columns",
+    "text": "If you want to pick multiple columns together, use double square brackets enclosing a list of column names. An analogy is packing two specific notebooks together in your school bag for review.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2], 'B': [3, 4], 'C': [5, 6]})\nprint(df[['A', 'C']])",
+    "output": "   A  C\n0  1  5\n1  2  6"
+   },
+   {
+    "h": "Filtering Rows with Conditions",
+    "text": "Filtering lets us choose rows that meet a specific condition, like picking students with scores over 80. The analogy is a club bouncer letting in only people who hold a valid ticket.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Student': ['Ahmed', 'Sarah'], 'Score': [75, 90]})\nprint(df[df['Score'] > 80])",
+    "output": "  Student  Score\n1   Sarah     90"
+   },
+   {
+    "h": "Using Multiple Conditions in Filtering",
+    "text": "We can combine multiple conditions using logical operators like '&' to link them. This gives us precise data, such as students older than 12 and scoring above 85.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Age': [12, 14, 13], 'Points': [80, 90, 95]})\nprint(df[(df['Age'] > 12) & (df['Points'] > 85)])",
+    "output": "   Age  Points\n1   14      90\n2   13      95"
+   },
+   {
+    "h": "Sorting Tables by Numeric Values",
+    "text": "After filtering data, we often want to sort it ascending or descending to see who scored highest or lowest. We use the sort_values method for this, similar to organizing your bookshelf from shortest to tallest.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Team': ['A', 'B'], 'Points': [45, 80]})\nprint(df.sort_values(by='Points', ascending=False))",
+    "output": "  Team  Points\n0    B      80\n1    A      45"
+   },
+   {
+    "h": "Combining Selection, Filtering, and Sorting",
+    "text": "The true power of pandas shows when we combine all three: selecting columns, filtering rows by condition, and sorting the output. This advanced step gives you a clean, ready report in a single line of code.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Omar', 'Lily', 'Ziad'], 'Score': [60, 95, 85]})\nprint(df[df['Score'] >= 80].sort_values(by='Score', ascending=False))",
+    "output": "   Name  Score\n1  Lily     95\n2  Ziad     85"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "Select a single column and return it as a Series"
+   },
+   {
+    "name": "df[['col1', 'col2']]",
+    "desc": "Select multiple columns and return a new DataFrame"
+   },
+   {
+    "name": "df[df['col'] > val]",
+    "desc": "Filter rows based on a numeric or logical condition"
+   },
+   {
+    "name": "df.sort_values(by='col')",
+    "desc": "Sort the table ascending based on a specific column"
+   },
+   {
+    "name": "ascending=False",
+    "desc": "Make sorting descending inside the sort method"
+   },
+   {
+    "name": "&",
+    "desc": "Logical AND operator to combine multiple conditions"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write Python code to select the 'Name' column from a table named df.",
+    "a": "df['Name']"
+   },
+   {
+    "q": "How do you filter table df so that only rows where the 'Points' column is greater than 50 appear?",
+    "a": "df[df['Points'] > 50]"
+   },
+   {
+    "q": "What method is used to sort a pandas DataFrame by a specific column?",
+    "a": "sort_values(by='column_name')"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

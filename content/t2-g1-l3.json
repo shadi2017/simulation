@@ -1,0 +1,347 @@
+{
+ "ar": {
+  "steps": [
+   "القصة الحلوة لازم تبدأ ببداية، تكمل في الوسط، وتخلص بصفحة نهاية مميزة عشان نقفل الحكاية بشكل يفرح الكل.",
+   "لما تحب تعمل صفحة جديدة في سكراتش جونيور، بتدوس على زر إضافة صفحة جديدة على اليمين عشان تبدأ ترسم صفحة النهاية.",
+   "صفحة النهاية بتشتغل عن طريق الانتقال من الصفحة القديمة للصفحة الجديدة بأمر البرمجة المناسب لكل شخصية.",
+   "ممكن تخلي الشخصية تقول 'النهاية' أو تظهر لوحة مكتوب عليها 'النهاية' أول ما الصفحة الجديدة تبدأ تشتغل.",
+   "القاعدة الذهبية: اربط كل قصة بصفحة خاتمة واضحة عشان اللاعب أو القارئ يعرف إن الحكاية خلصت بنجاح.",
+   "في الحقيقة، زي أي كتاب حكايات أو فيلم كرتون جميل، لازم يكون فيه شاشة ختامية تفرحنا بالقصة."
+  ],
+  "example": "تعال نعمل صفحة النهاية لقصة القط المشاكس. في الصفحة الأولى، القط بيلعب ويجري. بعدين بنضيف صفحة جديدة رقم 2، ونحط فيها لوحة مكتوب عليها 'النهاية'. بنبرمج القط في الصفحة الأولى لما يوصل للنهاية إنه يبعث رسالة، وفي الصفحة الثانية بنخلي الشخصية تفرح وتقول 'مع السلامة!'. كده القصة بقت مظبوطة وجميلة جداً للأصدقاء.",
+  "mistake": "الغلط الشائع إننا ننسى نضيف صفحة جديدة ونحاول نحط كل حاجة في نفس الصفحة الأولى، والحل هو ندوس على علامة الزائد لفتح صفحة جديدة ونعمل عليها مشهد النهاية.",
+  "recap": "صفحات النهاية بتخلي قصصنا تبدو احترافية ومرتبة. الانتقال للصفحات الجديدة بيدي إحساس ممتع بإنهاء المغامرة.",
+  "q": [
+   {
+    "t": "إزاي بنعمل صفحة جديدة في سكراتش جونيور؟",
+    "o": [
+     "ندوس على علامة الزائد لإضافة صفحة",
+     "نمسح البرنامج كله ونعيده",
+     "نغير لون الشاشة بس"
+    ],
+    "a": 0,
+    "why": "علامة الزائد على جانب الشاشة هي اللي بتخلينا نزود صفحات جديدة للقصة."
+   },
+   {
+    "t": "إيه فايدة صفحة النهاية في قصتك؟",
+    "o": [
+     "تخلي الحكاية تخلص بشكل مرتب وجميل",
+     "تخلي الشخصية تختفي للأبد بدون رجعة",
+     "تبوظ ترتيب الأحداث"
+    ],
+    "a": 0,
+    "why": "صفحة النهاية بتعرف القارئ إن المغامرة خلصت بنجاح."
+   },
+   {
+    "t": "فين بنحط مشهد الختام عادة؟",
+    "o": [
+     "في الصفحة الأولى فقط",
+     "في الصفحة الأخيرة بعد الوسط",
+     "في نص الحكاية تماماً"
+    ],
+    "a": 1,
+    "why": "صفحة النهاية بتتحط في آخر القصة عشان تكون الخاتمة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز عناصر القصة",
+   "goal": "صنف الجمل والخطوات حسب مكانها الصح في صفحات القصة.",
+   "buckets": [
+    "صفحة البداية",
+    "صفحة النهاية"
+   ],
+   "items": [
+    {
+     "t": "شخصية القط تقول مرحباً بكم في قصتنا",
+     "b": 0
+    },
+    {
+     "t": "لوحة مكتوب عليها النهاية بخط كبير",
+     "b": 1
+    },
+    {
+     "t": "عرض مشهد المغامرة الأول",
+     "b": 0
+    },
+    {
+     "t": "شخصية تنحني وتقول مع السلامة",
+     "b": 1
+    },
+    {
+     "t": "ظهور العنوان الرئيسي في أول الشاشة",
+     "b": 0
+    },
+    {
+     "t": "الانتقال للمشهد الأخير لغلق الستار",
+     "b": 1
+    }
+   ],
+   "success": "يا سلام! رتبت صفحات قصتك وبقت جاهزة عشان كل أصحابك يشوفوها!"
+  },
+  "sections": [
+   {
+    "h": "لماذا نحتاج صفحات النهاية؟",
+    "text": "القصة الجميلة تحتاج لبداية ووسط ونهاية واضحة. صفحة النهاية هي زي قفل الكتاب لما نخلصه.",
+    "code": "مشهد البداية -> مشهد الوسط -> صفحة النهاية",
+    "output": "تظهر صفحة الختام للقصة"
+   },
+   {
+    "h": "إضافة صفحة جديدة",
+    "text": "في سكراتش جونيور، نضغط على زر الزائد لإنشاء صفحة جديدة تماماً.",
+    "code": "اضغط زر (+) في يمين الشاشة",
+    "output": "تفتح صفحة فارغة جديدة للقصة"
+   },
+   {
+    "h": "التنقل بين الصفحات",
+    "text": "يمكننا الانتقال من صفحة لأخرى باستخدام أوامر البرمجة المخصصة للصفحات.",
+    "code": "مكتوب: الانتقال للصفحة رقم 2",
+    "output": "ينتقل المشهد للصفحة التالية بسلاسة"
+   },
+   {
+    "h": "تصميم مشهد النهاية",
+    "text": "نضع خلفية هادئة وشخصية تودع الجمهور مع عبارة النهاية.",
+    "code": "الشخصية تقول: 'إلى اللقاء!'",
+    "output": "يفهم اللاعب أن القصة انتهت بنجاح"
+   },
+   {
+    "h": "ربط الأحداث بالصفحات",
+    "text": "يجب أن نرتب الأفكار بحيث تبدأ الصفحة الجديدة فقط بعد انتهاء أحداث الصفحة القديمة.",
+    "code": "انتظر 5 ثواني ثم انتقل للصفحة التالية",
+    "output": "تنتقل القصة في الوقت المناسب"
+   },
+   {
+    "h": "إظهار عبارات الختام",
+    "text": "استخدام النصوص أو فقاعات الكلام لكتابة كلمة النهاية أو شكراً للمتابعة.",
+    "code": "أمر فقاعة الكلام: 'النهاية!'",
+    "output": "تظهر الكلمة فوق الشخصية مباشرة"
+   },
+   {
+    "h": "تنظيم المشاهد المتعددة",
+    "text": "القصص الطويلة قد تتطلب أكثر من صفحة نهاية أو صفحة شكر للمصمم الصغير.",
+    "code": "صفحة 1 (البداية) -> صفحة 2 (الوسط) -> صفحة 3 (النهاية)",
+    "output": "قصة مرتبة ومصممة باحتراف"
+   },
+   {
+    "h": "مراجعة القصة كاملة",
+    "text": "قبل مشاركة قصتك، شغل العرض من الصفحة الأولى وتحقق من انتقالها بسلاسة حتى صفحة النهاية.",
+    "code": "تشغيل الأخضر الكامل للقصة",
+    "output": "عرض متكامل من البداية للنهاية"
+   }
+  ],
+  "reference": [
+   {
+    "name": "صفحة جديدة",
+    "desc": "إضافة مشهد جديد للقصة"
+   },
+   {
+    "name": "الانتقال للصفحة",
+    "desc": "أمر برمجي ينتقل لمشهد آخر"
+   },
+   {
+    "name": "صفحة النهاية",
+    "desc": "المشهد الختامي للقصة"
+   },
+   {
+    "name": "فقاعة الكلام",
+    "desc": "أداة لإظهار النصوص والشخصيات"
+   },
+   {
+    "name": "زر الزائد",
+    "desc": "الزر المسؤول عن فتح صفحات جديدة"
+   },
+   {
+    "name": "الخاتمة",
+    "desc": "اللحظة الأخيرة في الحكاية"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الزر الذي نضغط عليه لإضافة صفحة جديدة في سكراتش جونيور؟",
+    "a": "زر علامة الزائد (+)"
+   },
+   {
+    "q": "ماذا نكتب أو نقول في صفحة النهاية؟",
+    "a": "النهاية أو إلى اللقاء"
+   },
+   {
+    "q": "لماذا نقسم قصتنا إلى صفحات متعددة؟",
+    "a": "لكي تكون مرتبة ومنظمة وسهلة الفهم"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "A good story needs a clear beginning, a middle, and a wonderful ending page to wrap things up happily.",
+   "When you want to make a new page in ScratchJr, tap the new page button on the right to start your ending scene.",
+   "The ending page works by navigating from the old page to the new one using the right programming block for your character.",
+   "You can make your character say 'The End' or show a sign as soon as the new ending page starts playing.",
+   "Golden rule: Always connect your story to a clear closing page so the reader knows the adventure is complete.",
+   "In real life, just like any lovely storybook or cartoon movie, a proper closing screen brings joy to the audience."
+  ],
+  "example": "Let us make the ending page for our bouncy cat story. On page one, the cat plays and runs around. Then we add a new page number 2, and put a sign saying 'The End'. We program the cat on page one to send a message when reaching the goal, and on page two, we make the character smile and say 'Goodbye!'. Now our story feels complete and delightful for friends.",
+  "mistake": "A common mistake is forgetting to add a new page and trying to cram everything onto the first page. The fix is to tap the plus sign to open a fresh page for the ending scene.",
+  "recap": "Ending pages make our stories look professional and organized. Navigating to new pages gives a fun feeling of finishing an adventure.",
+  "q": [
+   {
+    "t": "How do we create a new page in ScratchJr?",
+    "o": [
+     "Tap the plus sign to add a page",
+     "Delete the whole app and restart",
+     "Just change the screen color"
+    ],
+    "a": 0,
+    "why": "The plus sign on the side of the screen lets us add new pages to our story."
+   },
+   {
+    "t": "What is the benefit of an ending page in your story?",
+    "o": [
+     "It finishes the tale neatly and nicely",
+     "It makes the character vanish forever",
+     "It messes up the story order"
+    ],
+    "a": 0,
+    "why": "The ending page lets the reader know the adventure concluded successfully."
+   },
+   {
+    "t": "Where do we usually place the closing scene?",
+    "o": [
+     "On the first page only",
+     "On the last page after the middle",
+     "Right in the middle of the tale"
+    ],
+    "a": 1,
+    "why": "The ending page is placed at the very end of the story as a conclusion."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Story Element Sorting",
+   "goal": "Sort the sentences and steps into their correct story pages.",
+   "buckets": [
+    "Start Page",
+    "Ending Page"
+   ],
+   "items": [
+    {
+     "t": "Cat character says welcome to our story",
+     "b": 0
+    },
+    {
+     "t": "A sign reading The End in big letters",
+     "b": 1
+    },
+    {
+     "t": "Show the opening adventure scene",
+     "b": 0
+    },
+    {
+     "t": "Character bows down and says goodbye",
+     "b": 1
+    },
+    {
+     "t": "Display main title at the top of screen",
+     "b": 0
+    },
+    {
+     "t": "Switch to final scene to close curtains",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You organized your story pages and they are ready for everyone to watch!"
+  },
+  "sections": [
+   {
+    "h": "Why Do We Need Ending Pages?",
+    "text": "A good story needs a clear beginning, middle, and end. The ending page is like closing a book when you finish reading it.",
+    "code": "Start Scene -> Middle Scene -> Ending Page",
+    "output": "The closing page of the story appears"
+   },
+   {
+    "h": "Adding a New Page",
+    "text": "In ScratchJr, we press the plus button to create a brand new page for our story.",
+    "code": "Tap the (+) button on the right of screen",
+    "output": "A fresh blank story page opens up"
+   },
+   {
+    "h": "Navigating Between Pages",
+    "text": "We can transition from one page to another using page-specific programming blocks.",
+    "code": "Block: Go to page number 2",
+    "output": "The scene switches to the next page smoothly"
+   },
+   {
+    "h": "Designing the Ending Scene",
+    "text": "We place a calm background and a character saying goodbye along with an ending phrase.",
+    "code": "Character says: 'See you later!'",
+    "output": "The player knows the story has finished successfully"
+   },
+   {
+    "h": "Linking Events to Pages",
+    "text": "We must organize ideas so the new page starts only after the old page actions are complete.",
+    "code": "Wait 5 seconds then go to next page",
+    "output": "The story transitions at the right moment"
+   },
+   {
+    "h": "Showing Closing Phrases",
+    "text": "Using text or speech bubbles to write the word 'The End' or 'Thanks for watching'.",
+    "code": "Speech bubble block: 'The End!'",
+    "output": "The word appears right above the character"
+   },
+   {
+    "h": "Organizing Multiple Scenes",
+    "text": "Longer stories might need more than one ending page or a thank-you page by the young coder.",
+    "code": "Page 1 (Start) -> Page 2 (Middle) -> Page 3 (End)",
+    "output": "An orderly and professionally designed story"
+   },
+   {
+    "h": "Reviewing the Full Story",
+    "text": "Before sharing your story, run the presentation from page one and check its smooth transition to the ending page.",
+    "code": "Green flag click for full story run",
+    "output": "A complete show from start to finish"
+   }
+  ],
+  "reference": [
+   {
+    "name": "New Page",
+    "desc": "Adding a fresh scene to the story"
+   },
+   {
+    "name": "Go to Page",
+    "desc": "A code block that switches to another scene"
+   },
+   {
+    "name": "Ending Page",
+    "desc": "The concluding scene of the tale"
+   },
+   {
+    "name": "Speech Bubble",
+    "desc": "A tool to display texts and characters talking"
+   },
+   {
+    "name": "Plus Button",
+    "desc": "The button responsible for opening new pages"
+   },
+   {
+    "name": "Conclusion",
+    "desc": "The final moment in the adventure"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What button do we press to add a new page in ScratchJr?",
+    "a": "The plus sign button (+)"
+   },
+   {
+    "q": "What do we write or say on the ending page?",
+    "a": "The End or Goodbye"
+   },
+   {
+    "q": "Why do we divide our story into multiple pages?",
+    "a": "To keep it organized, neat, and easy to follow"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

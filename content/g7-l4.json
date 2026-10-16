@@ -1,0 +1,324 @@
+{
+ "ar": {
+  "steps": [
+   "البيانات المنظمة هي وسيلة لتنظيم المعلومات في صفوف وأعمدة تشبه جدول الألعاب أو جدول الحصص المدرسي، مما يسهل قراءتها وتحليلها بواسطة الكمبيوتر.",
+   "ملفات CSV هي صيغة شائعة جداً لتخزين الجداول، حيث تفصل الفواصل بين القيم في السطر الواحد، ويحدد السطر الأول أسماء الأعمدة مثل الاسم والعمر.",
+   "لتثبيت مكتبات إضافية غير موجودة أساساً في بايثون، نستخدم أداة إدارة الحزم عبر كتابة الأمر pip install pandas في نافذة الأوامر.",
+   "بعد التثبيت، نقوم باستيراد مكتبة pandas في برنامجنا باستخدام اختصار شجاع ومشهور وهو import pandas as pd لنبدأ العمل مع الجداول.",
+   "قاعدة ذهبية: تذكر دائماً أن تثبيت المكتبات يكون في موجه الأوامر (Terminal) بينما كتابة الكود واستيرادها يتم داخل ملف بايثون الخاص بك.",
+   "في الحياة اليومية، تشبه قواعد بيانات CSV دفاتر الحضور والانصراف أو قوائم السوبرماركت التي ترقيم المنتجات والأسعار بانتظام وسهولة."
+  ],
+  "example": "لنفترض أننا نريد تنظيم مكتبة مدرسية صغيرة. نكتب كود بايثون بسيط باستخدام pandas لننشئ جدولاً (DataFrame) يحتوي على عناوين مثل عنوان الكتاب وعدد النسخ. نقوم بتعريف البيانات عبر قاموس بايثون ثم نمرره لـ pd.DataFrame()، وعندما نطبع الجدول يظهر بشكل منظم وجميل.",
+  "mistake": "الخطأ الشائع هو محاولة كتابة أمر التثبيت pip install داخل ملف كود بايثون بدلاً من كتابته في موجه الأوامر، مما يسبب خطأ في النحو. الحل هو تشغيله في الـ Terminal أولاً.",
+  "recap": "تعلمنا كيف ننظم البيانات في جداول CSV ونثبت مكتبة pandas باستخدام مدير الحزم لنبدأ تحليل البيانات الذكية.",
+  "q": [
+   {
+    "t": "ما هو الغرض الأساسي من ملفات الـ CSV؟",
+    "o": [
+     "تخزين البيانات بشكل جدول مرتب بصفوف وأعمدة",
+     "تشغيل الألعاب ثلاثية الأبعاد",
+     "رسم الصور الفوتوغرافية فقط"
+    ],
+    "a": 0,
+    "why": "ملفات CSV مصممة خصيصاً لتخزين البيانات الجدولية بفواصل بين القيم."
+   },
+   {
+    "t": "ما هو الأمر الصحيح لتثبيت مكتبة pandas؟",
+    "o": [
+     "import pandas",
+     "pip install pandas",
+     "download pandas-library"
+    ],
+    "a": 1,
+    "why": "نستخدم أداة pip لإدارة وتثبيت الحزم الخارجية في بايثون."
+   },
+   {
+    "t": "ماذا يمثل السطر الأول عادة في ملف CSV؟",
+    "o": [
+     "أكبر رقم في الجدول",
+     "كلمة السر للملف",
+     "عناوين الأعمدة (Header row)"
+    ],
+    "a": 2,
+    "why": "السطر الأول يعمل كرأس أو عناوين توضح ماذا يحتوي كل عمود."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات التعامل مع بيانات CSV",
+   "goal": "رتب الخطوات من تثبيت المكتبة وحتى عرض الجدول المنظم بشكل صحيح",
+   "items": [
+    "فتح موجه الأوامر وكتابة أمر التثبيت pip install pandas",
+    "فتح ملف بايثون واستيراد المكتبة عبر import pandas as pd",
+    "تجهيز بيانات جدولية على شكل قاموس بايثون",
+    "تحويل البيانات إلى هيكل DataFrame وعرضها"
+   ],
+   "success": "رائع! لقد رتبت خطوات العمل بذكاء وأصبح بإمكانك بناء جداول بيانات احترافية."
+  },
+  "sections": [
+   {
+    "h": "ما هي البيانات المنظمة؟",
+    "text": "البيانات المنظمة هي معلومات مرتبة بعناية في جدول مكون من صفوف وأعمدة، تماماً مثل جدول الحصص المدرسي. كل عمود يمثل صفة معينة مثل الاسم أو العمر، وكل صف يمثل عنصراً كاملاً. هذا التنظيم يجعل الكمبيوتر يفهم البيانات ويحللها بسرعة فائقة.",
+    "code": "# مثال تخيلي لتنظيم بيانات الطلاب\nstudent_name = \"أحمد\"\nstudent_age = 13\nprint(student_name, student_age)",
+    "output": "أحمد 13"
+   },
+   {
+    "h": "فهم بنية ملفات CSV",
+    "text": "ملف CSV يعني قيم يفصل بينها فاصلة (Comma-Separated Values). يشبه دفتر القوائم حيث يُكتب السطر الأول ليكون العنوان (مثل: اسم الكتاب، السعر)، والأسطر التالية تحتوي على البيانات مفصولة بفاصلة. إنها أبسط طريقة لحفظ الجداول ونقلها بين البرامج.",
+    "code": "# شكل البيانات داخل ملف CSV\n# title,author,price\n# Python,Ali,120",
+    "output": "title,author,price\nPython,Ali,120"
+   },
+   {
+    "h": "أهمية تثبيت حزم خارجية",
+    "text": "بايثون يأتي بالكثير من الأدوات الجاهزة، ولكن لتحليل البيانات باحترافية، نحتاج لمكتبات متخصصة مثل pandas. المكتبات هي هدايا برمجية جاهزة صنعها مطورون آخرون لتوفير وقتنا وجهدنا في كتابة آلاف الأسطر.",
+    "code": "# يتم كتابة هذا الأمر في موجه الأوامر Terminal وليس في بايثون\n# pip install pandas",
+    "output": "Requirement already satisfied: pandas..."
+   },
+   {
+    "h": "استخدام مدير الحزم pip",
+    "text": "أداة pip هي مدير الحزم الرسمي لبايثون، وهي تشبه متجر تطبيقات صغير على جهازك ولكن للمكتبات البرمجية. بكتابة أمر قصير، تذهب أداة pip إلى الإنترنت وتحضر لك المكتبة المطلوبة وتثبتها تلقائياً.",
+    "code": "# أمر التثبيت في الـ Terminal\npip install pandas",
+    "output": "Successfully installed pandas-x.y.z"
+   },
+   {
+    "h": "استيراد مكتبة pandas",
+    "text": "بعد تثبيت pandas بنجاح، يجب عليك إخبار برنامج بايثون بأنك تريد استخدامها في هذا الملف. نقوم بذلك باستخدام أمر الاستيراد ونعطيها عادة اسماً مختصراً وسهلاً وهو pd لكي نكتبه بسرعة لاحقاً.",
+    "code": "import pandas as pd\nprint(\"Pandas is ready!\")",
+    "output": "Pandas is ready!"
+   },
+   {
+    "h": "إنشاء جدول بيانات DataFrame",
+    "text": "هيكل DataFrame هو النجم الأساسي في مكتبة pandas. إنه جدول ثنائي الأبعاد يشبه جدول الإكسل، وله صفوف وأعمدة. يمكنك إنشاؤه بسهولة عن طريق تمرير قاموس (Dictionary) يحتوي على المفاتيح كأعمدة والقيم كصفوف.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Item': ['Apple', 'Banana'], 'Price': [5, 3]})\nprint(df)",
+    "output": "     Item  Price\n0   Apple      5\n1  Banana      3"
+   },
+   {
+    "h": "استعراض البداية والنهاية head() و tail()",
+    "text": "عندما يكون لديك جدول ضخم جداً يحتوي على آلاف الصفوف، فإن طباعته بالكامل ستملأ الشاشة بلا فائدة. تتيح لك دالة head() رؤية أول 5 صفوف، بينما تتيح لك دالة tail() رؤية آخر الصفوف لتفقد البيانات بسرعة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 4, 5]})\nprint(df.head(2))",
+    "output": "   A\n0  1\n1  2"
+   },
+   {
+    "h": "فحص أنواع البيانات dtypes",
+    "text": "كل عمود في جدول pandas يحتوي على نوع بيانات محدد (مثل أرقام صحيحة، أو نصوص). لمعرفة نوع البيانات في كل عمود والتأكد من أنها سليمة قبل إجراء العمليات الحسابية، نستخدم الخاصية dtypes.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali'], 'Age': [12]})\nprint(df.dtypes)",
+    "output": "Name    object\nAge      int64\ndtype: object"
+   },
+   {
+    "h": "الحصول على إحصاءات سريعة describe()",
+    "text": "إذا أردت معرفة المتوسط الحسابي، وأصغر وأكبر قيمة، وعدد العناصر لأرقام جدولك بلمح البصر، فإن دالة describe() هي السحر الحقيقي! تقوم بحساب كل هذه الإحصاءات المفيدة للعمود الرقمي تلقائياً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [80, 90, 100]})\nprint(df.describe())",
+    "output": "       Score\ncount    3.0\nmean    90.0\nstd     10.0\nmin     80.0\n25%     85.0\n50%     90.0\n75%     95.0\nmax    100.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pip install pandas",
+    "desc": "أمر في موجه الأوامر لتثبيت مكتبة pandas"
+   },
+   {
+    "name": "import pandas as pd",
+    "desc": "أمر استيراد المكتبة مع اختصار pd"
+   },
+   {
+    "name": "pd.DataFrame()",
+    "desc": "دالة لإنشاء جدول بيانات ثنائي الأبعاد"
+   },
+   {
+    "name": "df.head(n)",
+    "desc": "دالة لعرض أول n صفوف من الجدول"
+   },
+   {
+    "name": "df.tail(n)",
+    "desc": "دالة لعرض آخر n صفوف من الجدول"
+   },
+   {
+    "name": "df.dtypes",
+    "desc": "خاصية لمعرفة أنواع البيانات في كل عمود"
+   },
+   {
+    "name": "df.describe()",
+    "desc": "دالة لإعطاء ملخص إحصائي سريع للبيانات"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر بايثون لاستيراد مكتبة pandas بالاختصار الشائع pd.",
+    "a": "import pandas as pd"
+   },
+   {
+    "q": "ما هي الدالة التي تستخدمها لعرض أول 3 صفوف من جدول بيانات باسم df؟",
+    "a": "df.head(3)"
+   },
+   {
+    "q": "ما هو الأمر المكتوب في موجه الأوامر لتثبيت مكتبة pandas؟",
+    "a": "pip install pandas"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Structured data is a way of organizing information into rows and columns, just like a game scoreboard or a school timetable, making it easy for computers to read and analyze.",
+   "CSV files are a very common format for storing tables, where commas separate values in each line, and the first line specifies column names like name and age.",
+   "To install third-party packages that are not built into Python, we use the package manager command pip install pandas in our terminal or command prompt.",
+   "After installation, we import the pandas library in our Python script using the popular and short alias import pandas as pd to start working with tables.",
+   "Golden rule: Always remember that package installation happens in the terminal, while writing code and importing libraries happens inside your Python script.",
+   "In real life, CSV databases are like attendance registers or grocery lists that track items and prices neatly and efficiently."
+  ],
+  "example": "Suppose we want to organize a small school library. We write a simple Python code using pandas to create a DataFrame with column headers like book title and copy count. We define the data using a Python dictionary, pass it to pd.DataFrame(), and when we print the table, it displays neatly and cleanly.",
+  "mistake": "A common mistake is trying to write the installation command pip install inside a Python code file instead of the terminal, causing a syntax error. The fix is to run it in the Terminal first.",
+  "recap": "We learned how to organize data into CSV tables and install the pandas library using the package manager to start smart data analysis.",
+  "q": [
+   {
+    "t": "What is the primary purpose of CSV files?",
+    "o": [
+     "Storing data in a structured table with rows and columns",
+     "Running 3D video games",
+     "Drawing digital photographs only"
+    ],
+    "a": 0,
+    "why": "CSV files are specifically designed to store tabular data with comma-separated values."
+   },
+   {
+    "t": "What is the correct command to install the pandas library?",
+    "o": [
+     "import pandas",
+     "pip install pandas",
+     "download pandas-library"
+    ],
+    "a": 1,
+    "why": "We use the pip package manager to install external packages in Python."
+   },
+   {
+    "t": "What does the first line in a CSV file usually represent?",
+    "o": [
+     "The largest number in the table",
+     "The secret password for the file",
+     "Column headers (Header row)"
+    ],
+    "a": 2,
+    "why": "The first line acts as a header explaining what each column contains."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering CSV Data Handling Steps",
+   "goal": "Order the steps from installing the library up to displaying the structured table correctly",
+   "items": [
+    "Open the terminal and type the installation command pip install pandas",
+    "Open the Python file and import the library using import pandas as pd",
+    "Prepare tabular data in the form of a Python dictionary",
+    "Convert the data into a DataFrame structure and display it"
+   ],
+   "success": "Awesome! You ordered the workflow steps smartly and can now build professional data tables."
+  },
+  "sections": [
+   {
+    "h": "What is Structured Data?",
+    "text": "Structured data is information neatly arranged in a table of rows and columns, much like a school timetable. Each column represents a specific attribute like name or age, and each row represents a complete entry. This organization lets computers understand and analyze data lightning fast.",
+    "code": "# Fictional example of organizing student data\nstudent_name = \"Ahmed\"\nstudent_age = 13\nprint(student_name, student_age)",
+    "output": "Ahmed 13"
+   },
+   {
+    "h": "Understanding CSV File Structure",
+    "text": "CSV stands for Comma-Separated Values. It resembles a list ledger where the first line is the header (e.g., book title, price), and subsequent lines contain data separated by commas. It is the simplest way to store tables and share them between different apps.",
+    "code": "# File layout inside a CSV\n# title,author,price\n# Python,Ali,120",
+    "output": "title,author,price\nPython,Ali,120"
+   },
+   {
+    "h": "Why Install Third-Party Packages?",
+    "text": "Python comes with many built-in tools, but for advanced data analysis, we need specialized libraries like pandas. Packages are ready-made programming gifts built by other developers to save us time and effort from writing thousands of lines.",
+    "code": "# This command is typed in the Terminal, not in Python\n# pip install pandas",
+    "output": "Requirement already satisfied: pandas..."
+   },
+   {
+    "h": "Using the pip Package Manager",
+    "text": "The pip tool is Python's official package manager, acting like a tiny app store on your computer for code libraries. By typing a short command, pip reaches out to the internet, fetches the requested library, and installs it automatically.",
+    "code": "# Installation command in the Terminal\npip install pandas",
+    "output": "Successfully installed pandas-x.y.z"
+   },
+   {
+    "h": "Importing the pandas Library",
+    "text": "After successfully installing pandas, you must tell your Python program that you want to use it in this file. We do this using the import statement and usually give it a short, convenient alias like pd to type quickly later.",
+    "code": "import pandas as pd\nprint(\"Pandas is ready!\")",
+    "output": "Pandas is ready!"
+   },
+   {
+    "h": "Creating a DataFrame",
+    "text": "The DataFrame structure is the absolute superstar of the pandas library. It is a two-dimensional table resembling an Excel sheet, complete with rows and columns. You can easily create one by passing a Python dictionary with keys as columns and values as rows.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Item': ['Apple', 'Banana'], 'Price': [5, 3]})\nprint(df)",
+    "output": "     Item  Price\n0   Apple      5\n1  Banana      3"
+   },
+   {
+    "h": "Viewing Data with head() and tail()",
+    "text": "When you have a massive table with thousands of rows, printing the whole thing clutters your screen uselessly. The head() method lets you view the first 5 rows, while tail() lets you view the last rows to quickly inspect your data.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 4, 5]})\nprint(df.head(2))",
+    "output": "   A\n0  1\n1  2"
+   },
+   {
+    "h": "Checking Data Types with dtypes",
+    "text": "Every column in a pandas table holds a specific data type (like integers, floats, or strings). To check the data type of each column and ensure everything is correct before running calculations, we use the dtypes attribute.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali'], 'Age': [12]})\nprint(df.dtypes)",
+    "output": "Name    object\nAge      int64\ndtype: object"
+   },
+   {
+    "h": "Quick Statistical Summary with describe()",
+    "text": "If you want to know the mean, minimum, maximum, and count for your table's numerical columns in the blink of an eye, the describe() method is pure magic! It computes all these useful statistics for numerical columns automatically.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [80, 90, 100]})\nprint(df.describe())",
+    "output": "       Score\ncount    3.0\nmean    90.0\nstd     10.0\nmin     80.0\n25%     85.0\n50%     90.0\n75%     95.0\nmax    100.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pip install pandas",
+    "desc": "Terminal command to install the pandas library"
+   },
+   {
+    "name": "import pandas as pd",
+    "desc": "Command to import the library with the pd alias"
+   },
+   {
+    "name": "pd.DataFrame()",
+    "desc": "Function to create a 2D data table structure"
+   },
+   {
+    "name": "df.head(n)",
+    "desc": "Method to display the first n rows of a table"
+   },
+   {
+    "name": "df.tail(n)",
+    "desc": "Method to display the last n rows of a table"
+   },
+   {
+    "name": "df.dtypes",
+    "desc": "Attribute to inspect data types for each column"
+   },
+   {
+    "name": "df.describe()",
+    "desc": "Method to output a quick statistical summary of data"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python statement to import the pandas library using the standard alias pd.",
+    "a": "import pandas as pd"
+   },
+   {
+    "q": "What method do you use to display the first 3 rows of a DataFrame named df?",
+    "a": "df.head(3)"
+   },
+   {
+    "q": "What command is typed in the terminal to install pandas?",
+    "a": "pip install pandas"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

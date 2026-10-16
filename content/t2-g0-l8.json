@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "التنبؤ بسلوك الروبوت يعني أننا نشغل عقلنا الأول ونتخيل هو هيعمل إيه قبل ما ندوس تشغيل.",
+   "مثال صغير: لو الروبوت قدامه خطوتين للأمام ولف يمين، تخيل في دماغك إنه هيمشي خطوتين وبعدين يبص على اليمين.",
+   "إزاي بتشتغل؟ بنعمل محاكاة ذهنية، يعني بنمشي خطوة بخطوة في مخنا ونتتبع الأوامر بالترتيب الصحيح.",
+   "مثال تاني: لو الأمر بيقول 'ارفع إيدك' ثم 'انزل'، يبقى تخيلك إن إيده هتطلع لفوق الأول وبعدين ترجع لوضعها الطبيعي.",
+   "قاعدة ذهبية: شغل دماغك وتتبع كل أمر قبل التنفيذ عشان تتأكد إن الروبوت مش هيخبط في الحيطة.",
+   "الاستخدام في الحياة الواقعية: مهندسو ناسا بيستخدموا التنبؤ والمحاكاة عشان يتأكدوا إن مركبة الفضاء هتهبط صح على المريخ."
+  ],
+  "example": "تخيل إن عندنا روبوت اسمه 'بسبس' واقف في أول الغرفة ووصفتله الرحلة دي: 1) امشي خطوة للأمام. 2) لف يمين. 3) امشي خطوة كمان. المحاكاة الذهنية بتقول: بسبس هيمشي خطوة قدام، بعدين يبص يمين، وبعدين يتقدم خطوة في الاتجاه الجديد. النتيجة هي إننا عرفنا مكانه النهائي بدقة قبل ما يتحرك أصلاً، وده بيخلينا واثقين في كود البرمجة بتاعنا.",
+  "mistake": "الخطأ الشائع هو تسرع تشغيل الروبوت من غير ما نتخيل اللي هيحصل، والحل هو دايماً نعمل تتبع ومحاكاة في مخنا خطوة بخطوة.",
+  "recap": "التنبؤ بسلوك الروبوت بيساعدنا نفهم النتيجة قبل ما ننفذ الأوامر. المحاكاة الذهنية وتتبع الخطوات بيخلونا برمجتنا صح وذكية.",
+  "q": [
+   {
+    "t": "إيه معنى التنبؤ بسلوك الروبوت؟",
+    "o": [
+     "تخيل اللي هيعمله الروبوت قبل تشغيله",
+     "تخزين اللعبة على الكمبيوتر",
+     "شحن بطارية الروبوت بالكهرباء"
+    ],
+    "a": 0,
+    "why": "التنبؤ يعني توقع النتيجة في مخنا قبل التنفيذ الفعلي."
+   },
+   {
+    "t": "ليه بنعمل محاكاة ذهنية للأوامر؟",
+    "o": [
+     "عشان نتأكد إن الروبوت مش هيغلط",
+     "عشان نلون الروبوت",
+     "عشان نلعب ألعاب فيديو"
+    ],
+    "a": 0,
+    "why": "المحاكاة الذهنية بتحميني من الأخطاء وبتخليني أعرف مكان الروبوت النهائى."
+   },
+   {
+    "t": "لو الروبوت مشي خطوة ولف يمين، إيه أول خطوة تخيلناها؟",
+    "o": [
+     "لف يمين",
+     "امشي خطوة للأمام",
+     "اقفز لفوق"
+    ],
+    "a": 1,
+    "why": "دائماً بنمشي بالترتيب، أول أمر كان المشي للأمام."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع مكان الروبوت",
+   "goal": "اعمل محاكاة وتوقع فين الروبوت هيقف بعد لفة يمين",
+   "code": "الروبوت يقف عند النقطة أ -> 1) امشي خطوة للأمام -> 2) لف يمين",
+   "options": [
+    "يقف باصص لفوق",
+    "يقف باصص لليمين",
+    "يرجع لورا خالص"
+   ],
+   "a": 1,
+   "success": "رائع! الروبوت لف يمين ووقف في مكانه الصحيح بالظبط!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم التنبؤ",
+    "text": "التنبؤ هو إننا نعرف النتيجة قبل ما تحصل. زي لما تشوف سحب غامقة في السما، بتتوقع إنها هتمطر. مع الروبوت، بنقرا الأوامر ونتوقع مكانه.",
+    "code": "الروبوت: [خطوة للأمام] -> التوقع: هيتحرك مربع لقدام",
+    "output": "نتوقع مكان الروبوت بدقة"
+   },
+   {
+    "h": "المحاكاة الذهنية",
+    "text": "المحاكاة الذهنية زي الفيلم اللي بيشتغل جوة عقلك. بتتخيل فيه الروبوت وهو بينفذ كل أمر أمر بالترتيب من غير ما يتحرك بجد.",
+    "code": "تخيل عقلي: 1) افتح الباب 2) ادخل الغرفة",
+    "output": "رسمنا خطة الحركة في عقلنا"
+   },
+   {
+    "h": "تتبع الأوامر",
+    "text": "التتبع يعني صب تركيزك على كل سطر أمر وتفحصه. زي ما بتشاور بصوابعك على السطر وأنت بتِقْرأ قصة في كتاب.",
+    "code": "سهم التتبع: [أمر ١] ثم [أمر ٢] ثم [أمر ٣]",
+    "output": "لا يفوتنا أي أمر برمجي"
+   },
+   {
+    "h": "الترتيب مهم جداً",
+    "text": "لو عكست الأوامر، النتيجة بتتغير خالص. لو قلت 'البس الحذاء وبعدين الجورب' غير 'الجورب الأول وبعدين الحذاء'!",
+    "code": "خطأ: 1) لف يمين 2) امشي / الصح: 1) امشي 2) لف يمين",
+    "output": "التنفيذ بالترتيب الصحيح"
+   },
+   {
+    "h": "التحضير قبل التشغيل",
+    "text": "قبل ما تدوس زرار التشغيل على الروبوت الحقيقي، مخك هو الكمبيوتر الأول اللي بيكتشف لو فيه غلطة في السكة.",
+    "code": "التحقق الذهني: هل الروبوت هيخبط في الكرسي؟",
+    "output": "حماية الروبوت من الاصطدام"
+   },
+   {
+    "h": "التوقع والنتيجة",
+    "text": "كل حركة ليها رد فعل. لو الروبوت مشي خطوتين وبعدين لف شمال، توقُّعنا لازم يكون إنه باصص للاتجاه الجديد.",
+    "code": "امر: امشي خطوتين، لف شمال",
+    "output": "الروبوت يغير اتجاهه بسلام"
+   },
+   {
+    "h": "الربط بالحياة اليومية",
+    "text": "لما بتعبر الشارع، بتبص يمين وشمال وبتتوقع العربية هتوصل فين قبل ما تخطو خطوة. ده بالظبط اللي بنعمله مع الروبوت.",
+    "code": "توقع حركة الشارع قبل العبور",
+    "output": "عبور آمن وسليم"
+   },
+   {
+    "h": "مهندسو المستقبل",
+    "text": "المهندسين الكبار مش بيجربوا أجهزة الفضاء على طول، لازم يختبروا كل حاجة بالتنبؤ والمحاكاة الرياضية الأول عشان يضمنوا النجاح.",
+    "code": "محاكاة مركبة المريخ الفضائية",
+    "output": "نجاح المهمة بنسبة مئة بالمئة"
+   }
+  ],
+  "reference": [
+   {
+    "name": "التنبؤ",
+    "desc": "توقع النتيجة قبل حدوثها"
+   },
+   {
+    "name": "المحاكاة",
+    "desc": "تمثيل الشي في العقل أو الكمبيوتر"
+   },
+   {
+    "name": "التتبع",
+    "desc": "متابعة الأوامر خطوة بخطوة"
+   },
+   {
+    "name": "الترتيب",
+    "desc": "تسلسل الأوامر وراء بعضها"
+   },
+   {
+    "name": "الأمر",
+    "desc": "تعليمة واضحة ينفذها الروبوت"
+   },
+   {
+    "name": "التحقق",
+    "desc": "التأكد من صحة الخطوات"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "لو الروبوت قدامه أمر (امشي للأمام مرتين)، فين هيكون مكانه؟",
+    "a": "متقدم مربعين للأمام"
+   },
+   {
+    "q": "ماذا نفعل قبل تشغيل الروبوت الحقيقي؟",
+    "a": "نقوم بالمحاكاة الذهنية والتتبع"
+   },
+   {
+    "q": "لماذا الترتيب مهم في الأوامر؟",
+    "a": "لأن عكس الأوامر يغير النتيجة النهائية تماماً"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Predicting robot behavior means using our mind first to imagine what it will do before pressing run.",
+   "Small example: If the robot has two steps forward and a right turn, imagine in your head it walks two steps then looks right.",
+   "How it works: We do a mental simulation, stepping through the instructions one by one in the correct order.",
+   "Second example: If the command says 'raise hand' then 'lower hand', your mental picture has the hand going up first then returning.",
+   "Rule of thumb: Think and trace every instruction before execution to make sure the robot does not hit a wall.",
+   "Real-life use: NASA engineers use prediction and simulation to make sure a spacecraft will land safely on Mars."
+  ],
+  "example": "Imagine we have a robot named 'Bespis' standing at the start of the room with this trip: 1) Move one step forward. 2) Turn right. 3) Move one step again. The mental simulation says: Bespis will step forward, then look right, and then step forward in the new direction. The result is knowing its final position precisely before it moves, giving us confidence in our code.",
+  "mistake": "A common mistake is running the robot immediately without imagining what will happen. The fix is always to trace and simulate step-by-step in your mind.",
+  "recap": "Predicting robot behavior helps us understand the result before running instructions. Mental simulation and step tracing make our programming smart and correct.",
+  "q": [
+   {
+    "t": "What does predicting robot behavior mean?",
+    "o": [
+     "Imagining what the robot will do before running it",
+     "Saving the game on the computer",
+     "Charging the robot battery with electricity"
+    ],
+    "a": 0,
+    "why": "Prediction means anticipating the outcome in our minds before actual execution."
+   },
+   {
+    "t": "Why do we perform a mental simulation of instructions?",
+    "o": [
+     "To make sure the robot does not make mistakes",
+     "To color the robot",
+     "To play video games"
+    ],
+    "a": 0,
+    "why": "Mental simulation protects us from mistakes and reveals the final position."
+   },
+   {
+    "t": "If a robot moves one step and turns right, what is the very first step we imagined?",
+    "o": [
+     "Turn right",
+     "Move one step forward",
+     "Jump up"
+    ],
+    "a": 1,
+    "why": "We always follow the order; the first command was moving forward."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Robot Position",
+   "goal": "Simulate and predict where the robot stops after a right turn",
+   "code": "Robot stands at Point A -> 1) Move step forward -> 2) Turn right",
+   "options": [
+    "Stands facing up",
+    "Stands facing right",
+    "Walks all the way back"
+   ],
+   "a": 1,
+   "success": "Awesome! The robot turned right and stopped at the exact correct spot!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Prediction",
+    "text": "Prediction is knowing the outcome before it happens. Just like seeing dark clouds in the sky makes you expect rain. With a robot, we read instructions and predict its location.",
+    "code": "Robot: [Step forward] -> Prediction: Moves one square ahead",
+    "output": "We predict the robot location accurately"
+   },
+   {
+    "h": "Mental Simulation",
+    "text": "Mental simulation is like a movie playing inside your mind. You imagine the robot executing each command in order without it moving physically yet.",
+    "code": "Mental thought: 1) Open door 2) Enter room",
+    "output": "We sketched the movement plan in our minds"
+   },
+   {
+    "h": "Tracing Instructions",
+    "text": "Tracing means focusing on each line of command and examining it. Just like pointing your finger along the line while reading a storybook.",
+    "code": "Tracing arrow: [Command 1] then [Command 2] then [Command 3]",
+    "output": "No programming instruction is missed"
+   },
+   {
+    "h": "Order Matters Greatly",
+    "text": "If you reverse instructions, the result changes completely. Saying 'wear shoes then socks' is very different from 'socks first then shoes'!",
+    "code": "Wrong: 1) Turn right 2) Walk / Correct: 1) Walk 2) Turn right",
+    "output": "Execution in the right sequence"
+   },
+   {
+    "h": "Preparation Before Running",
+    "text": "Before you press the run button on a real robot, your brain is the first computer that spots if there is any mistake along the path.",
+    "code": "Mental check: Will the robot crash into the chair?",
+    "output": "Protecting the robot from collision"
+   },
+   {
+    "h": "Expectation and Result",
+    "text": "Every movement has a reaction. If the robot walks two steps and turns left, our expectation must be that it is facing the new direction.",
+    "code": "Command: walk two steps, turn left",
+    "output": "Robot changes direction safely"
+   },
+   {
+    "h": "Real-Life Connection",
+    "text": "When you cross the street, you look right and left and predict where cars will arrive before taking a step. This is exactly what we do with robots.",
+    "code": "Predict street traffic before crossing",
+    "output": "Safe and sound crossing"
+   },
+   {
+    "h": "Future Engineers",
+    "text": "Great engineers do not test space gadgets right away; they must test everything with prediction and mathematical simulation first to guarantee success.",
+    "code": "Simulate Mars space vehicle",
+    "output": "Mission success rate one hundred percent"
+   }
+  ],
+  "reference": [
+   {
+    "name": "Prediction",
+    "desc": "Anticipating the result before it happens"
+   },
+   {
+    "name": "Simulation",
+    "desc": "Representing action in mind or computer"
+   },
+   {
+    "name": "Tracing",
+    "desc": "Following instructions step by step"
+   },
+   {
+    "name": "Order",
+    "desc": "Sequence of instructions one after another"
+   },
+   {
+    "name": "Command",
+    "desc": "A clear instruction executed by a robot"
+   },
+   {
+    "name": "Verification",
+    "desc": "Ensuring the correctness of steps"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "If the robot has the command (move forward twice), where will it be?",
+    "a": "Advanced two squares forward"
+   },
+   {
+    "q": "What do we do before running the real robot?",
+    "a": "Perform mental simulation and tracing"
+   },
+   {
+    "q": "Why is order important in instructions?",
+    "a": "Because reversing instructions completely changes the final result"
+   }
+  ]
+ },
+ "lang": "unplugged",
+ "sources": [],
+ "grounded": false
+}

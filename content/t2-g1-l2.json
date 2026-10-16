@@ -1,0 +1,323 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، بلوك السرعة في سكراتش جونيور بيخلي شخصيتك تتحرك بسرعة أكبر أو ببطء شديد، زي السحر الحلال اللي بيتحكم في زمن اللعبة!",
+   "عشان تستخدمه، اسحب بلوك السرعة وحطه قبل بلوك الحركة. مثال بسيط: [بلوك السرعة: بطيء] بعدين [امشِ خطوات للخلف].",
+   "إزاي ده بيشتغل؟ البلوك ده بيدي أمر للكمبيوتر يغير عدد الخطوات في الثانية الواحدة، فالرقم الأكبر يخلي الحركة سريعة جداً زي الصاروخ.",
+   "تجربة ثانية: [بلوك السرعة: سريع جداً] بعدين [انطِ لفوق]، هتلاقي الشخصية نطت في الهوا زي السوبر هيرو في جزء من الثانية.",
+   "القاعدة الذهبية: دايماً حط بلوك السرعة قبل الحركة اللي عايز تأثر عليها، ومش تنسى ترجع السرعة للطبيعي في آخر القصة.",
+   "في الحياة الحقيقية، ده عامل زي السلحفاة والبطريق؛ بعض الكائنات تتحرك ببطء شديد والبعض تاني يجري بسرعة البرق!"
+  ],
+  "example": "تعال نعمل قصة قصيرة للقطة المتبهدلة! نبدأ بالضغط على العلم الأخضر، وبعدين نحط [سرعة بطيئة] عشان القطة تمشي بشويش كأنها تعبانة، وبعدها نحط [سرعة سريعة جداً] عشان تهرب من الكلب وتجري بسرعة الصاروخ لآخر الشاشة. القطة هتبدأ ببطء وتخلص بسرعة!",
+  "mistake": "الخطأ الشائع: نسيان تعديل السرعة فتفضل الشخصية سريعة طول اللعبة. الحل: استخدم بلوك إعادة السرعة للوضع الطبيعي في بداية المشهد الجديد.",
+  "recap": "بلوك السرعة بيخلي قصتك ممتعة وحية، نقدر نتحكم فيه عشان نعمل حركات بطيئة أو سريعة بكل سهولة.",
+  "q": [
+   {
+    "t": "إيه البلوك اللي بيخلي الشخصية تتحرك ببطء شديد؟",
+    "o": [
+     "بلوك السرعة البطء",
+     "بلوك القفز العالي",
+     "بلوك الاختفاء"
+    ],
+    "a": 0,
+    "why": "عشان بلوك السرعة البطيئة هو المسئول عن تقليل سرعة حركة الشخصية."
+   },
+   {
+    "t": "فين مكان بلوك السرعة الصح؟",
+    "o": [
+     "بعد حركة الشخصية نهائي",
+     "قبل حركة الشخصية مباشرة",
+     "خارج منطقة الكود خالص"
+    ],
+    "a": 1,
+    "why": "لازم يتحط قبل الحركة عشان يظبط سرعتها وهي بتحصل."
+   },
+   {
+    "t": "ليه بنستخدم بلوك إعادة السرعة؟",
+    "o": [
+     "عشان نخلي اللعبة تقفل لوحدها",
+     "عشان نرجع الشخصية لسرعتها العادية",
+     "عشان نمسح الشخصية من الشاشة"
+    ],
+    "a": 1,
+    "why": "إعادة السرعة بترجع السرعة للوضع العادي والمناسب للأحداث الباقية."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "لعبة سرعات سكراتش جونيور",
+   "goal": "وصّل كل بلوك سرعة بالنتيجة المناسبة ليه على الشاشة.",
+   "pairs": [
+    [
+     "بلوك السرعة البطارية (بطيء)",
+     "القطة تمشي بخطوات بطيئة جداً"
+    ],
+    [
+     "بلوك السرعة الصاروخ (سريع)",
+     "القطة تجري بسرعة البرق"
+    ],
+    [
+     "بلوك إعادة السرعة",
+     "القطة ترجع لسرعتها العادية الطبيعية"
+    ],
+    [
+     "بلوك الانتظار مع السرعة",
+     "القطة تقف ثواني قبل ما تجري تاني"
+    ]
+   ],
+   "success": "يا سلام! القطة ركضت ومشت بالسرعات الصح وبقت قصة مذهلة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن السرعة في الحكايات",
+    "text": "القصص بيبقى فيها إثارة؛ شوية الشخصية بتمشي براحتها وشوية تصرخ وتجري. بلوك السرعة هو السحر اللي بيخليك تسيطر على زمن الحركة في قصتك.",
+    "code": "الأمر: [العلم الأخضر] -> [سرعة عادية]",
+    "output": "الشخصية تستعد للتحرك بالسرعة الافتراضية."
+   },
+   {
+    "h": "الحركة البطيئة (Slow Motion)",
+    "text": "لما نحب نبين شخصية تعبانة أو بتفكر بعمق، بنستخدم السرعة البطيئة. زي السلحفاة وهي ماشية في الجنينة.",
+    "code": "الأمر: [سرعة بطيئة] + [امشِ خطوات للخلف]",
+    "output": "القطة تتحرك خطوة بخطوة ببطء شديد."
+   },
+   {
+    "h": "الحركة السريعة جداً (Fast Motion)",
+    "text": "لما يكون فيه خطر أو مطاردة، الشخصية لازم تجري بسرعة الصاروخ عشان تلحق تنقذ نفسها.",
+    "code": "الأمر: [سرعة سريعة] + [اجري يمين]",
+    "output": "الشخصية تختفي من الشاشة بسرعة البرق."
+   },
+   {
+    "h": "إعادة تعيين السرعة (Speed Reset)",
+    "text": "لو سبت السرعة سريعة، كل الحركات الجاية هتبقى سريعة جداً وغريبة. لازم ترجع السرعة لوضعها العادي.",
+    "code": "الأمر: [بلوك إعادة السرعة العادية]",
+    "output": "السرعة ترجع طبيعية زي أول اللعبة."
+   },
+   {
+    "h": "مقارنة بين السرعات المختلفة",
+    "text": "الكمبيوتر بيعالج الأوامر حسب رقم البلوك، السرعة البطيئة بتاخد وقت أطول، والسرعة السريعة بتخلص في لمح البصر.",
+    "code": "الأمر: [بطيء جداً] عكس [سريع جداً]",
+    "output": "تغيير واضح في زمن تنفيذ الخطوات."
+   },
+   {
+    "h": "تركيب السرعة مع حركات تانية",
+    "text": "تقدر تدمج السرعة مع القفز أو الدوران عشان تعمل ألعاب وحركات بهلوانية مضحكة وممتعة.",
+    "code": "الأمر: [سرعة] + [انطِ] + [دور]",
+    "output": "الشخصية تقفز وتدور بسرعة ممتعة."
+   },
+   {
+    "h": "نصائح لاختيار السرعة الصح",
+    "text": "مش كل المشاهد تكون سريعة! نوع في السرعات عشان تخلي المشاهد اللي بتعملها جذابة ومثيرة للمشاهد.",
+    "code": "الأمر: [بطيء للمقدمة] + [سريع للأكشن]",
+    "output": "قصة متوازنة وممتعة جداً."
+   },
+   {
+    "h": "تطبیق عملي على سرعة القطط",
+    "text": "تعال نجرب نخلي القطة تمشي لباب البيت ببطء، وبعدين تجري بسرعة جوه البيت.",
+    "code": "الأمر: [سرعة بطيء] -> [امشِ] -> [سرعة سريع] -> [امشِ]",
+    "output": "القطة تغير سرعتها في منتصف الطريق."
+   }
+  ],
+  "reference": [
+   {
+    "name": "بلوك السرعة",
+    "desc": "البلوك المسئول عن تغيير سرعة حركة الشخصيات."
+   },
+   {
+    "name": "الحركة البطيئة",
+    "desc": "جعل الشخصية تتحرك ببطء شديد وكأنها في حلم."
+   },
+   {
+    "name": "الحركة السريعة",
+    "desc": "جعل الشخصية تجري بسرعة الصاروخ."
+   },
+   {
+    "name": "إعادة السرعة",
+    "desc": "إرجاع سرعة الشخصية للوضع الطبيعي الافتراضي."
+   },
+   {
+    "name": "زمن الحركة",
+    "desc": "المدة التي تستغرقها الشخصية لتنفيذ الأمر."
+   },
+   {
+    "name": "التحكم بالزمن",
+    "desc": "ميزة إضافية لجعل القصص أكثر حيوية وتشويقاً."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو البلوك الذي نستخدمه لجعل القطة تتحرك ببطء شديد في سكراتش جونيور؟",
+    "a": "بلوك السرعة البطيئة (Slow Speed Block)"
+   },
+   {
+    "q": "أين يجب أن نضع بلوك السرعة بالنسبة لبلوك الحركة؟",
+    "a": "قبله مباشرة لتحديد سرعة الحركة القادمة"
+   },
+   {
+    "q": "لماذا نقوم بإعادة تعيين السرعة في نهاية القصة؟",
+    "a": "لكي تعود الشخصية لسرعتها العادية ولا تظل سريعة جداً"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey hero, the speed block in ScratchJr makes your character move faster or super slowly, like magic that controls game time!",
+   "To use it, drag the speed block and place it right before your motion block. Simple example: [Slow Speed] then [Walk Backwards].",
+   "How does this work? The block tells the computer to change the number of steps per second, so bigger numbers mean rocket speed.",
+   "Second experiment: [Super Fast Speed] then [Jump Up], and your character will leap into the air like a superhero in a fraction of a second.",
+   "Golden rule: Always place your speed block before the motion it should affect, and remember to reset the speed at the end of your story.",
+   "In real life, think of a tortoise and a cheetah; some creatures move very slowly while others sprint at lightning speed!"
+  ],
+  "example": "Let's make a short story for our cute cat! We start by tapping the green flag, then add [Slow Speed] so the cat walks slowly as if she is tired, and next we add [Super Fast Speed] so she runs away from a dog to the end of the screen. The cat starts slowly and finishes super fast!",
+  "mistake": "Common mistake: Forgetting to adjust the speed back, making the character fast all game long. Fix: Use the speed reset block at the start of your new scene.",
+  "recap": "The speed block makes your story lively and fun, letting us easily control slow or fast motions.",
+  "q": [
+   {
+    "t": "Which block makes the character move very slowly?",
+    "o": [
+     "Slow Speed Block",
+     "High Jump Block",
+     "Hide Block"
+    ],
+    "a": 0,
+    "why": "Because the slow speed block is responsible for decreasing the character's movement speed."
+   },
+   {
+    "t": "Where is the correct place to put the speed block?",
+    "o": [
+     "After the character's movement",
+     "Right before the character's movement",
+     "Outside the coding area"
+    ],
+    "a": 1,
+    "why": "It must be placed right before the movement so it adjusts the speed as it happens."
+   },
+   {
+    "t": "Why do we use the speed reset block?",
+    "o": [
+     "To close the game automatically",
+     "To return the character to normal speed",
+     "To erase the character from the screen"
+    ],
+    "a": 1,
+    "why": "Speed reset returns the speed to the normal and appropriate setting for remaining events."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "ScratchJr Speeds Match Game",
+   "goal": "Match each speed block with its correct result on the screen.",
+   "pairs": [
+    [
+     "Turtle Speed (Slow)",
+     "The cat walks with very slow steps"
+    ],
+    [
+     "Rocket Speed (Fast)",
+     "The cat runs at lightning speed"
+    ],
+    [
+     "Speed Reset",
+     "The cat returns to normal regular speed"
+    ],
+    [
+     "Wait Block with Speed",
+     "The cat pauses for seconds before running again"
+    ]
+   ],
+   "success": "Awesome! The cat walked and ran at the correct speeds and made an amazing story!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Story Speeds",
+    "text": "Stories need excitement; sometimes characters walk casually and sometimes they sprint. The speed block is the magic that controls motion timing in your story.",
+    "code": "Command: [Green Flag] -> [Normal Speed]",
+    "output": "The character prepares to move at default speed."
+   },
+   {
+    "h": "Slow Motion",
+    "text": "When we want to show a tired character or someone thinking deeply, we use slow speed. Just like a turtle walking in the garden.",
+    "code": "Command: [Slow Speed] + [Walk Backwards]",
+    "output": "The cat moves step by step very slowly."
+   },
+   {
+    "h": "Fast Motion",
+    "text": "When there is danger or a chase, the character must run at rocket speed to escape and save themselves.",
+    "code": "Command: [Fast Speed] + [Run Right]",
+    "output": "The character vanishes off the screen at lightning speed."
+   },
+   {
+    "h": "Speed Reset",
+    "text": "If you leave the speed fast, all future motions will be weirdly fast. You must reset the speed back to normal.",
+    "code": "Command: [Normal Speed Reset Block]",
+    "output": "Speed returns to normal just like at the start of the game."
+   },
+   {
+    "h": "Comparing Different Speeds",
+    "text": "The computer processes commands based on block numbers; slow speed takes longer, and fast speed finishes in a blink.",
+    "code": "Command: [Super Slow] vs [Super Fast]",
+    "output": "Clear difference in how long steps take to execute."
+   },
+   {
+    "h": "Combining Speed with Other Motions",
+    "text": "You can combine speed with jumping or turning to create hilarious and fun acrobatic animations.",
+    "code": "Command: [Speed] + [Jump] + [Turn]",
+    "output": "The character jumps and spins with fun speed."
+   },
+   {
+    "h": "Tips for Choosing the Right Speed",
+    "text": "Not every scene should be fast! Mix up your speeds to keep the scenes you create engaging and exciting for the audience.",
+    "code": "Command: [Slow for Intro] + [Fast for Action]",
+    "output": "A well-balanced and very entertaining story."
+   },
+   {
+    "h": "Practical Cat Speed Practice",
+    "text": "Let's try making the cat walk slowly to the house door, then run fast inside the house.",
+    "code": "Command: [Slow Speed] -> [Walk] -> [Fast Speed] -> [Walk]",
+    "output": "The cat changes its speed halfway through the path."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Speed Block",
+    "desc": "The block responsible for changing character movement speed."
+   },
+   {
+    "name": "Slow Motion",
+    "desc": "Making the character move very slowly as if in a dream."
+   },
+   {
+    "name": "Fast Motion",
+    "desc": "Making the character sprint at rocket speed."
+   },
+   {
+    "name": "Speed Reset",
+    "desc": "Returning the character's speed back to default normal."
+   },
+   {
+    "name": "Movement Timing",
+    "desc": "The duration taken by a character to execute a command."
+   },
+   {
+    "name": "Time Control",
+    "desc": "An extra feature to make stories more lively and engaging."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What block do we use to make the cat move very slowly in ScratchJr?",
+    "a": "Slow Speed Block"
+   },
+   {
+    "q": "Where should we place the speed block relative to the motion block?",
+    "a": "Directly before it to set the speed for the upcoming motion"
+   },
+   {
+    "q": "Why do we reset the speed at the end of the story?",
+    "a": "So the character returns to normal speed and doesn't stay super fast"
+   }
+  ]
+ },
+ "lang": "scratchjr",
+ "sources": [],
+ "grounded": false
+}

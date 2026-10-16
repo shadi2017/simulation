@@ -1,0 +1,308 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تقف عند بوابة حديقة ملاهي؛ إذا كان طولك أكبر من 120 سم، تدخل وحدك، وإلا تستمتع بركوب الأطفال. في جافاسكريبت، نستخدم عبارة if لتمثيل هذه البوابات واختبار الشروط البرمجية.",
+   "إليك اختبار بسيط: إذا كانت المتغيرات تدل على صحة الشرط، ينفذ الكود داخل الأقواس. مثلاً: if (score > 50) { console.log('ناجح'); }",
+   "تعمل الشروط عبر فحص تعبيرات المقارنة مثل أكبر من (>) أو أصغر من (<) أو المطابقة التامة (===)، لتعطي قيمة صحيحة أو خاطئة.",
+   "يمكننا التعامل مع الاحتمالات الأخرى باستخدام else، أو إضافة شروط متعددة بترتيب تصاعدي باستخدام else if لتقييم الحالات تباعاً حتى يتحقق شرط مناسب.",
+   "قاعدة ذهبية: افحص الشروط الأكثر تحديداً أولاً في الأعلى، ثم استخدم else للنهاية كشبكة أمان تلتقط أي حالة غير متوقعة.",
+   "تُستخدم هذه البوابات في الألعاب والفلاتر الإلكترونية؛ لتحديد من يفوز بوسام التميز، أو لتغيير شكل الموقع حسب تسجيل دخول المستخدم."
+  ],
+  "example": "لنفترض أننا نصمم نظام منح شارة في لعبة. إذا كان رصيد النقاط (score) يساوي 100، يمنح النظام 'شارة ذهبية'، وإذا كان أكبر من 50 يمنح 'شارة فضية'، وإلا يمنح 'شارة برونزية'.\n\n```javascript\nlet score = 75;\nif (score === 100) {\n  console.log('شارة ذهبية');\n} else if (score > 50) {\n  console.log('شارة فضية');\n} else {\n  console.log('شارة برونزية');\n}\n```\nهنا يقارن الكود العدد 75؛ فلا يساوي 100، ولكنه أكبر من 50، فيطبع 'شارة فضية' ويتوقف.",
+  "mistake": "خطأ شائع هو كتابة elseif كلمة واحدة متلاصقة، أو نسيان علامات التساوي الثلاث (===) عند مطابقة القيم. التصحيح هو كتابة else if بمسافة فاصلة واستخدام === للمقارنة الدقيقة.",
+  "recap": "تتيح لنا أدوات التحقق if وelse if وelse اتخاذ قرارات ذكية في الكود بناءً على بيانات المستخدم وشروط المقارنة. تساعد هذه الهياكل في توجيه البرمجيات نحو مسارات مختلفة حسب القيم الحقيقية.",
+  "q": [
+   {
+    "t": "ما هو الرمز الصحيح للمقارنة والمطابقة التامة للقيمة والنوع في جافاسكريبت؟",
+    "o": [
+     "=",
+     "==",
+     "==="
+    ],
+    "a": 2,
+    "why": "نستخدم ثلاثة علامات تساوي (===) لمقارنة القيمة ونوع البيانات بدقة."
+   },
+   {
+    "t": "كيف تُكتب جملة الشرط المتوسطة في جافاسكريبت؟",
+    "o": [
+     "elseif",
+     "else if",
+     "elif"
+    ],
+    "a": 1,
+    "why": "تُكتب else if بوجود مسافة بين الكلمتين وليس ككلمة واحدة."
+   },
+   {
+    "t": "متى يتم تنفيذ كود كتلة else؟",
+    "o": [
+     "عندما تكون جميع الشروط السابقة خاطئة",
+     "دائماً في بداية البرنامج",
+     "عندما يكون الشرط الأول صحيحاً"
+    ],
+    "a": 0,
+    "why": "تُنفذ جملة else كخيار أخير إذا لم يتحقق أي شرط من شروط if أو else if."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة بوابات القرارات",
+   "goal": "صل كل تعبير شرطي أو هيكل بمدلوله الصحيح في جافاسكريبت.",
+   "pairs": [
+    [
+     "if (x > 10)",
+     "يختبر إذا كان المتغير أكبر من 10"
+    ],
+    [
+     "else if (x === 5)",
+     "يختبر احتمالاً ثانياً محدداً"
+    ],
+    [
+     "else",
+     "ينفذ عندما تفشل كل الشروط السابقة"
+    ],
+    [
+     "score === 100",
+     "يطابق تماماً القيمة والنوع"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت تنظيم بوابات القرار البرمجية بنجاح."
+  },
+  "sections": [
+   {
+    "h": "ما هي بوابات if الشرطية؟",
+    "text": "تخيل أنك تسأل والدتك: 'إذا انتهيت من واجباتي، هل آكل الحلوى؟'. عبارة if في البرمجة تفعل نفس الشيء؛ فهي تفحص سؤالاً، فإذا كانت إجابته صحيحة، تنفذ الأوامر التي بداخلها.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let score = 80; if (score > 50) { document.getElementById('demo').innerHTML = 'ناجح!'; }</script></body></html>",
+    "output": "تعرض الصفحة كلمة ناجح لأن النقاط أكبر من 50."
+   },
+   {
+    "h": "استخدام علامة المطابقة التامة (===)",
+    "text": "عندما نريد التأكد من أن شيئاً ما يساوى قيمة معينة تماماً وبنفس نوع البيانات، نستخدم ثلاث علامات تساوي (===). تشبه مفتاح القفل الصحيح تماماً.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let rank = 1; if (rank === 1) { document.getElementById('demo').innerHTML = 'المركز الأول!'; }</script></body></html>",
+    "output": "تطبع الصفحة المركز الأول لمطابقة الرقم."
+   },
+   {
+    "h": "التحقق من القيم الأكبر والأصغر (> و <)",
+    "text": "نستخدم رموز المقارنة الرياضية المعتادة مثل أكبر من (>) وأصغر من (<) لفحص نطاقات الأرقام، مثل درجات الاختبارات أو أعمار اللاعبين في الألعاب الإلكترونية.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let age = 14; if (age > 12) { document.getElementById('demo').innerHTML = 'مرحلة يافع'; }</script></body></html>",
+    "output": "تظهر عبارة مرحلة يافع لأن العمر أكبر من 12."
+   },
+   {
+    "h": "البديل الافتراضي مع else",
+    "text": "ماذا لو لم يتحقق شرط if؟ هنا يأتي دور else كشبكة أمان. إذا لم يكن الشرط الأول صحيحاً، يتولى كود else تنفيذ مهمة بديلة.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let points = 30; if (points >= 50) { document.getElementById('demo').innerHTML = 'رائع'; } else { document.getElementById('demo').innerHTML = 'حاول مجدداً'; }</script></body></html>",
+    "output": "تطبع الصفحة حاول مجدداً لأن النقاط أقل من 50."
+   },
+   {
+    "h": "تعدد الاحتمالات مع else if",
+    "text": "عندما يكون لديك أكثر من اختيارين، مثل تقديرات المدرسة (ممتاز، جيد، مقبول)، تستخدم سلسلة من else if لتقييم عدة شروط الواحد تلو الآخر.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let grade = 85; if (grade >= 90) { document.getElementById('demo').innerHTML = 'ممتاز'; } else if (grade >= 75) { document.getElementById('demo').innerHTML = 'جيد جداً'; } else { document.getElementById('demo').innerHTML = 'مقبول'; }</script></body></html>",
+    "output": "تطبع الصفحة جيد جداً لملاءمتها النتيجة."
+   },
+   {
+    "h": "بناء قواعد شارة اللعبة",
+    "text": "لنجمع كل ما تعلمناه لصنع نظام شارات ألعاب حقيقي يفحص بيانات المستخدم: إذا كان الرصيد ممتازاً تأخذ شارة ذهبية، وإذا كان متوسطاً تأخذ فضية، وإلا برونزية.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let points = 60; let badge = ''; if (points >= 90) { badge = 'ذهبية'; } else if (points >= 50) { badge = 'فضية'; } else { badge = 'برونزية'; } document.getElementById('demo').innerHTML = badge;</script></body></html>",
+    "output": "تطبع الصفحة فضية بناءً على قيمة النقاط الحالية."
+   }
+  ],
+  "reference": [
+   {
+    "name": "if",
+    "desc": "يبدأ شرطاً برمجياً جديداً يتم فحصه"
+   },
+   {
+    "name": "else if",
+    "desc": "يختبر شرطاً إضافياً إذا فشلت الشروط السابقة"
+   },
+   {
+    "name": "else",
+    "desc": "ينفذ الأوامر إذا كانت جميع الشروط خاطئة"
+   },
+   {
+    "name": "===",
+    "desc": "عامل مقارنة للمطابقة التامة في القيمة والنوع"
+   },
+   {
+    "name": ">",
+    "desc": "عامل مقارنة أكبر من"
+   },
+   {
+    "name": "<",
+    "desc": "عامل مقارنة أصغر من"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب جملة if بسيطة تختبر إذا كان المتغير speed أكبر من 100 لتطبع تحذير 'سرعة زائدة'.",
+    "a": "if (speed > 100) { console.log('سرعة زائدة'); }"
+   },
+   {
+    "q": "كيف تكتب شرطين متتالين باستخدام if وelse لمقارنة متغير temp بـ 30؟",
+    "a": "if (temp > 30) { console.log('حار'); } else { console.log('معتدل'); }"
+   },
+   {
+    "q": "ما هي الصيغة الصحيحة لفرع الشروط المتعددة الإضافي في جافاسكريبت؟",
+    "a": "else if (condition)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine standing at an amusement park gate; if your height is over 120cm, you enter alone, otherwise you ride the kids' train. In JavaScript, we use the if statement to represent these gates and test conditions.",
+   "Here is a simple test: if the condition variables evaluate to true, the code inside the braces runs. For example: if (score > 50) { console.log('Passed'); }",
+   "Conditions work by evaluating comparison expressions like greater than (>), less than (<), or strict equality (===), resulting in true or false.",
+   "We can handle alternative paths using else, or add multiple conditions in sequential order using else if to evaluate cases one by one until a matching rule is met.",
+   "Golden rule: evaluate the most specific conditions first at the top, then use else at the end as a safety net to catch any unexpected cases.",
+   "These gates are used in games and web filters; to decide who earns an achievement badge, or to change website styles based on user logins."
+  ],
+  "example": "Suppose we build a game badge reward system. If the score equals 100, the system grants a 'Gold Badge', if it's greater than 50 it grants a 'Silver Badge', otherwise a 'Bronze Badge'.\n\n```javascript\nlet score = 75;\nif (score === 100) {\n  console.log('Gold Badge');\n} else if (score > 50) {\n  console.log('Silver Badge');\n} else {\n  console.log('Bronze Badge');\n}\n```\nHere the code checks 75; it does not equal 100, but is greater than 50, so it logs 'Silver Badge' and stops.",
+  "mistake": "A common mistake is writing elseif as one merged word, or forgetting the triple equals (===) when matching values. The fix is writing else if with a space and using === for precise comparison.",
+  "recap": "Conditional tools like if, else if, and else allow us to make smart decisions in code based on user data and comparison checks. These structures help guide software along different paths according to true values.",
+  "q": [
+   {
+    "t": "What is the correct operator for strict value and type equality in JavaScript?",
+    "o": [
+     "=",
+     "==",
+     "==="
+    ],
+    "a": 2,
+    "why": "We use three equals signs (===) to compare both value and data type strictly."
+   },
+   {
+    "t": "How is the middle conditional clause written in JavaScript?",
+    "o": [
+     "elseif",
+     "else if",
+     "elif"
+    ],
+    "a": 1,
+    "why": "It is written as else if with a space between the words, not as a single word."
+   },
+   {
+    "t": "When does the code inside an else block execute?",
+    "o": [
+     "When all previous conditions are false",
+     "Always at the start of the program",
+     "When the first condition is true"
+    ],
+    "a": 0,
+    "why": "The else statement runs as a final fallback if none of the preceding if or else if conditions match."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Decision Gates Matching",
+   "goal": "Match each conditional expression or structure to its correct JavaScript meaning.",
+   "pairs": [
+    [
+     "if (x > 10)",
+     "Tests if variable is greater than 10"
+    ],
+    [
+     "else if (x === 5)",
+     "Tests a specific second alternative"
+    ],
+    [
+     "else",
+     "Runs when all previous checks fail"
+    ],
+    [
+     "score === 100",
+     "Strictly matches value and type"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered organizing programmatic decision gates."
+  },
+  "sections": [
+   {
+    "h": "What are if Condition Gates?",
+    "text": "Imagine asking your parent: 'If I finish my homework, can I eat candy?'. An if statement in programming does the exact same thing; it checks a question, and if true, runs the commands inside.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let score = 80; if (score > 50) { document.getElementById('demo').innerHTML = 'Passed!'; }</script></body></html>",
+    "output": "The page displays Passed because the score is greater than 50."
+   },
+   {
+    "h": "Using Strict Equality (===)",
+    "text": "When we want to ensure something matches a specific value and data type precisely, we use three equals signs (===). This acts like the exact right key for a lock.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let rank = 1; if (rank === 1) { document.getElementById('demo').innerHTML = 'First Place!'; }</script></body></html>",
+    "output": "The page prints First Place due to exact number matching."
+   },
+   {
+    "h": "Checking Greater and Lesser (> and <)",
+    "text": "We use standard mathematical comparison symbols like greater than (>) and less than (<) to check number ranges, such as test scores or player ages in web games.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let age = 14; if (age > 12) { document.getElementById('demo').innerHTML = 'Teenager bracket'; }</script></body></html>",
+    "output": "The phrase Teenager bracket appears because age is over 12."
+   },
+   {
+    "h": "The Fallback Alternative with else",
+    "text": "What if the if condition is not met? This is where else steps in as a safety net. If the initial check is false, the else code handles a backup task.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let points = 30; if (points >= 50) { document.getElementById('demo').innerHTML = 'Great'; } else { document.getElementById('demo').innerHTML = 'Try again'; }</script></body></html>",
+    "output": "The page prints Try again because points are below 50."
+   },
+   {
+    "h": "Multiple Alternatives with else if",
+    "text": "When you have more than two choices, like school letter grades (A, B, C), you use a chain of else if statements to evaluate multiple conditions one after another.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let grade = 85; if (grade >= 90) { document.getElementById('demo').innerHTML = 'A Grade'; } else if (grade >= 75) { document.getElementById('demo').innerHTML = 'B Grade'; } else { document.getElementById('demo').innerHTML = 'C Grade'; }</script></body></html>",
+    "output": "The page prints B Grade matching the score result."
+   },
+   {
+    "h": "Building Game Badge Rules",
+    "text": "Let's combine everything to build a real game badge system checking user data: if score is high take a gold badge, if medium take silver, else bronze.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let points = 60; let badge = ''; if (points >= 90) { badge = 'Gold'; } else if (points >= 50) { badge = 'Silver'; } else { badge = 'Bronze'; } document.getElementById('demo').innerHTML = badge;</script></body></html>",
+    "output": "The page prints Silver based on current points value."
+   }
+  ],
+  "reference": [
+   {
+    "name": "if",
+    "desc": "Initiates a new condition block to be tested"
+   },
+   {
+    "name": "else if",
+    "desc": "Tests an extra condition if prior checks failed"
+   },
+   {
+    "name": "else",
+    "desc": "Runs commands if all previous conditions are false"
+   },
+   {
+    "name": "===",
+    "desc": "Comparison operator for strict value and type match"
+   },
+   {
+    "name": ">",
+    "desc": "Greater than comparison operator"
+   },
+   {
+    "name": "<",
+    "desc": "Less than comparison operator"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a simple if statement checking if variable speed is greater than 100 to log 'Speeding warning'.",
+    "a": "if (speed > 100) { console.log('Speeding warning'); }"
+   },
+   {
+    "q": "How do you write consecutive conditional checks using if and else to compare temp to 30?",
+    "a": "if (temp > 30) { console.log('Hot'); } else { console.log('Mild'); }"
+   },
+   {
+    "q": "What is the correct syntax for an extra multiple choice branch in JavaScript?",
+    "a": "else if (condition)"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: if...else",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"
+  },
+  {
+   "title": "MDN: if...else: Wasm text instruction",
+   "url": "https://developer.mozilla.org/en-US/docs/WebAssembly/Reference/Control_flow/if...else"
+  }
+ ],
+ "grounded": true
+}

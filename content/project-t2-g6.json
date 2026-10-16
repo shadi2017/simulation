@@ -1,0 +1,162 @@
+{
+ "en": [
+  {
+   "title": "Smart Student Record Keeper",
+   "desc": "A desktop-web hybrid app that stores student grades using Python file handling and lets teachers filter and analyze scores using JavaScript array methods.",
+   "tags": [
+    "Python",
+    "Local Storage",
+    "Array Methods"
+   ],
+   "steps": [
+    "Plan your data structure for student records containing names, subjects, and numerical scores.",
+    "Write a Python script using file handling (`open()`, `read()`, `write()`) to save student data securely into a local text or JSON file.",
+    "Create a Python module that includes custom exception handling to gracefully catch missing files or invalid score inputs.",
+    "Build a simple HTML/JS frontend that fetches this data and uses JavaScript arrow functions for clean event handling.",
+    "Implement `Array.map()` to transform raw grade numbers into letter grades (A, B, C) and `Array.filter()` to show only failing or passing students.",
+    "Use JS Local Storage to cache the filtered views so teachers don't lose their customized dashboard states upon page refresh.",
+    "Connect your Python backend operations with your JavaScript frontend using local file reads or simple data passing.",
+    "Test your entire workflow from adding a student score in Python to filtering it smoothly on the web interface."
+   ],
+   "rubric": [
+    "Correct use of Python file handling and exception management",
+    "Proper application of JavaScript `map()` and `filter()`",
+    "Functional data caching using JS Local Storage",
+    "Clean, understandable code structure with helpful comments"
+   ],
+   "stretch": "Add a Python list comprehension to quickly calculate the class average and display it dynamically on the web UI."
+  },
+  {
+   "title": "Pocket Budget Tracker",
+   "desc": "An expense manager where users log daily spendings via Python scripts and view categorized summaries and totals on an interactive web dashboard.",
+   "tags": [
+    "Python",
+    "Arrow Functions",
+    "Modules"
+   ],
+   "steps": [
+    "Design the expense data format including item name, cost, category, and date of purchase.",
+    "Create a dedicated Python module with functions for adding, deleting, and summarizing expenses from a text file.",
+    "Incorporate Python exception handling to prevent crashes when users input text instead of numbers for cost values.",
+    "Set up an HTML page with form inputs styled for quick expense entry by the user.",
+    "Write modern JavaScript using arrow functions to handle form submissions and update the webpage dynamically.",
+    "Utilize `Array.filter()` to let users view expenses belonging to a specific category like 'Food' or 'Transport'.",
+    "Use `Array.map()` to convert currency amounts or format date strings nicely for display.",
+    "Save user preference settings and recent entries using browser Local Storage for persistent access."
+   ],
+   "rubric": [
+    "Accurate exception handling for user numerical inputs",
+    "Effective filtering and mapping of expense arrays",
+    "Successful data persistence with Local Storage",
+    "Intuitive and responsive user interface layout"
+   ],
+   "stretch": "Use Python list comprehensions to extract and sum up all expenses greater than 100 EGP in a single line of code."
+  },
+  {
+   "title": "Interactive Habit Builder",
+   "desc": "A daily habit tracker that logs streaks using Python files, featuring custom object methods in JavaScript to manage streak statuses and milestones.",
+   "tags": [
+    "Objects",
+    "File Handling",
+    "Full-Stack"
+   ],
+   "steps": [
+    "Define what a habit object needs: name, target days, current streak count, and completion status.",
+    "Write a Python script that uses file handling to save and load habit progress from a local text log.",
+    "Write Python list comprehensions to quickly find habits that have reached a 7-day streak milestone.",
+    "Design a web dashboard using HTML and CSS to display each habit as an interactive card element.",
+    "Create JavaScript constructor functions or classes with methods (using `this`) to toggle habit completion states.",
+    "Use JavaScript arrow functions to update the UI instantly when a user clicks a habit checkbox.",
+    "Store the user's active streak records in browser Local Storage so their progress is never lost.",
+    "Perform final integration tests to ensure Python file logs and JS web displays match up perfectly."
+   ],
+   "rubric": [
+    "Correct use of object methods and `this` keyword in JavaScript",
+    "Effective Python file read/write operations",
+    "Proper utilization of list comprehensions for data filtering",
+    "Seamless interaction between web front-end and stored data"
+   ],
+   "stretch": "Create a custom Python exception that triggers a friendly warning message if a user tries to log a habit with an empty name."
+  }
+ ],
+ "ar": [
+  {
+   "title": "سجل درجات الطلاب الذكي",
+   "desc": "تطبيقة مكس بين سطح المكتب والويب بيخزن درجات الطلاب باستخدام ملفات بايثون وبيخلي المدرسين يفترقوا ويحللوا النتايج بطرق جافاسكريبت.",
+   "tags": [
+    "بايثون",
+    "التخزين المحلي",
+    "مصفوفات"
+   ],
+   "steps": [
+    "خطط لهيكل البيانات بتاعتك اللي بتشمل أسماء الطلاب، المواد، والدرجات الرقمية.",
+    "اكتب سكريبت بايثون بيستخدم التعامل مع الملفات (`open()`, `read()`, `write()`) عشان يحفظ بيانات الطلاب بأمان في ملف نصي أو JSON محلي.",
+    "اعمل موديول بايثون فيه معالجة استثناءات مخصصة عشان يمسك أي ملف ناقص أو إدخال درجات غلط بشكل شيك.",
+    "ابني واجهة HTML/JS بسيطة تجيب البيانات دي وتستخدم أسهم جافاسكريبت (Arrow Functions) عشان الأحداث.",
+    "استخدم `Array.map()` عشان تحول أرقام الدرجات لتقديرات حروف (A, B, C) و `Array.filter()` عشان تظهر الطلاب الراسبين أو الناجحين بس.",
+    "استخدم تخزين المتصفح المحلي (Local Storage) عشان تحتفظ بالنتايج المفلترة عشان المدرس ما يفقدش شغله لو الصفحة عملت ريفريش.",
+    "اربط عمليات بايثون الخلفية مع واجهة جافاسكريبت عن طريق قراءة الملفات المحلية أو تمرير البيانات البسيطة.",
+    "جرب الشغل كله من أول ما تضيف درجة طالب في بايثون لحد ما تفترقها بسلاسة على واجهة الويب."
+   ],
+   "rubric": [
+    "استخدام صح للتعامل مع ملفات بايثون وإدارة الاستثناءات",
+    "تطبيق مظبوط لدوال `map()` و `filter()` في جافاسكريبت",
+    "تخزين بيانات شغال تمام باستخدام Local Storage",
+    "كود نظيف ومفهوم مع تعليقات توضيحية مفيدة"
+   ],
+   "stretch": "ضيف List Comprehension في بايثون عشان تحسب متوسط درجات الفصل بسرعة وتعرّضه بشكل دياميك على واجهة الويب."
+  },
+  {
+   "title": "متعقب المصاريف الشخصية",
+   "desc": "مدير مصروفات بيخلي المستخدمين يسجلوا مصاريفهم اليومية بسكريبتات بايثون ويعرضوا ملخصات وتجميعات على داشبورد ويب تفاعلي.",
+   "tags": [
+    "بايثون",
+    "دوال الأسهم",
+    "موديولز"
+   ],
+   "steps": [
+    "صمم شكل بيانات المصروف زي اسم المنتج، السعر، الفئة، وتاريخ الشراء.",
+    "اعمل موديول بايثون مخصص فيه دوال لإضافة، حذف، وتلخيص المصروفات من ملف نصي.",
+    "ضيف معالجة استثناءات بايثون عشان تمنع البرنامج من الانهيار لو المستخدم كتب كلام بدل الأرقام في خانة الفلوس.",
+    "جهز صفحة HTML مع خانات إدخال مصممة عشان المستخدم يسجل مصروفه بسرعة.",
+    "اكتب جافاسكريبت حديث باستخدام دوال الأسهم عشان تتعامل مع إرسال النماذج وتحدث الصفحة أوتوماتيك.",
+    "استخدم `Array.filter()` عشان تخلي المستخدم يششوف المصروفات اللي تخص فئة معينة زي 'أكل' أو 'مواصلات'.",
+    "استخدم `Array.map()` عشان تحول مبالغ العملات أو تنسق نصوص التواريخ بشكل جميل للعرض.",
+    "احفظ إعدادات المستخدم والمدخلات الأخيرة باستخدام Local Storage في المتصفح عشان تفضل موجودة."
+   ],
+   "rubric": [
+    "معالجة استثناءات دقيقة لإدخالات المستخدم الرقمية",
+    "فلترة ومابينج فعال لمصفوفات المصروفات",
+    "نجاح حفظ البيانات باستخدام Local Storage",
+    "تصميم واجهة مستخدم سهل وسريع الاستجابة"
+   ],
+   "stretch": "استخدم List Comprehension في بايثون عشان تطلع وتجمع كل المصروفات اللي أكبر من 100 جنيه في سطر كود واحد بس."
+  },
+  {
+   "title": "بناء العادات التفاعلي",
+   "desc": "متعقب عادات يومية بيسجل الأيام المتتالية باستخدام ملفات بايثون، وفيه طرق كائنات (Object Methods) مخصصة في جافاسكريبت لإدارة حالة العادات.",
+   "tags": [
+    "كائنات",
+    "ملفات",
+    "تطوير شامل"
+   ],
+   "steps": [
+    "حدد إيه كائن العادة محتاجه: الاسم، الأيام المستهدفة، عداد التتابع الحالي، وحالة الإنجاز.",
+    "اكتب سكريبت بايثون بيستخدم التعامل مع الملفات عشان يحفظ ويحمل تقدم العادات من ملف نصي محلي.",
+    "اكتب List Comprehensions في بايثون عشان تلاقي بسرعة العادات اللي وصلت لهدف الـ 7 أيام متتالية.",
+    "صمم داشبورد ويب بـ HTML و CSS عشان تعرض كل عادة في شكل كارت تفاعلي.",
+    "اعمل Constructor Functions أو Classes في جافاسكريبت مع طرق (باستخدام `this`) عشان تقلب حالة إنجاز العادة.",
+    "استخدم دوال أسهم جافاسكريبت عشان تحدث الواجهة فوراً لما المستخدم يدوس على زر العادة.",
+    "احفظ سجلات التتابع بتاعت المستخدم في Local Storage عشان تقدمه ما يضيعش أبداً.",
+    "اعمل اختبارات نهائية للربط عشان تتأكد إن ملفات بايثون وشاشات الويب شغالين مع بعض تمام."
+   ],
+   "rubric": [
+    "استخدام مظبوط لطرق الكائنات وكلمة `this` في جافاسكريبت",
+    "عمليات قراءة وكتابة ملفات بايثون فعالة",
+    "استخدام صح للـ List Comprehensions لفلترة البيانات",
+    "تفاعل سلس بين واجهة الويب والبيانات المخزنة"
+   ],
+   "stretch": "اصنع استثناء بايثون مخصص بيطلع رسالة تحذير لطيفة لو المستخدم حاول يسجل عادة من غير اسم."
+  }
+ ]
+}
