@@ -1,0 +1,358 @@
+{
+ "ar": {
+  "steps": [
+   "تعلمنا إن الكائنات (Objects) في JavaScript بتميز وتجمع بيانات مرتبطة مع بعض زي صندوق العيل اللي فيه كرات مختلفة.",
+   "عشان نعدل قيمة جوه كائن أو نضيف خاصية جديدة، بنستعمل النقطة (Dot Notation) وبعدها علامة يساوي (=).",
+   "مثال بسيط: لو عندنا كائن اسمه player، نقدر نكتب player.score = 10 عشان نضيف النقاط بسهولة تامة.",
+   "إزاي بتشتغل؟ JavaScript بتبص على اسم الكائن، تدور على الخاصية، ولو مش موجودة بتخلقها فوراً!",
+   "تاني مثال: لو عندنا كائن سيارة car، ونحب نغير لونها الأحمر لأزرق، بنكتب car.color = 'blue' وتتحدث في ثواني.",
+   "القاعدة الذهبية: استخدم النقطة دايماً مع اسم الكائن عشان تغير أو تضيف أي حاجة بتحتاجها بكل ذكاء.",
+   "الاستخدام الحقيقي: في ألعاب الفيديو، بنحدث طاقة اللاعب (health) أو بنضيف درع جديد (shield) وهو بيلعب!"
+  ],
+  "example": "تخيل إنك بتصمم لعبة شخصية بطل خارق وتحديث طاقته وحالته:\n```javascript\nconst hero = { name: 'SuperCat', level: 1 };\nhero.level = 5;\nhero.power = 'flying';\nconsole.log(hero.level);\nconsole.log(hero.power);\n```\nالسبب والمنطق هنا: بدأنا بمستوى 1، بعدين استخدمنا علامة التساوي '=' مع النقطة عشان نرفع المستوى لـ 5 ونضيف خاصية جديدة خالص اسمها power بقيمة 'flying'!",
+  "mistake": "الغلطة الشائعة: كتابة اسم الخاصية بحروف مختلفة زي Hero.Level بدل hero.level لأن JavaScript حساسة جداً لحالة الحروف (Case-sensitive). التصحيح: راقب دايماً الحروف الكبيرة والصغيرة بدقة.",
+  "recap": "يمكننا بسهولة تحديث خصائص الكائنات الموجودة أو إضافة خصائص جديدة تماماً باستخدام النقطة وعلامة التساوي. دي طريقة رائعة لتنظيم وتطوير بيانات برامجنا وألعابنا.",
+  "q": [
+   {
+    "t": "إزاي بنضيف خاصية جديدة للكائن pet؟",
+    "o": [
+     "pet.hungry = true;",
+     "pet(hungry) = true;",
+     "add.pet.hungry = true;"
+    ],
+    "a": 0,
+    "why": "بنستخدم النقطة مع اسم الخاصية الجديدة وعلّامة التساوي لإضافتها للكائن."
+   },
+   {
+    "t": "لما نحب نحدث قيمة خاصية قديمة زي age في كائن user، بنعمل إيه؟",
+    "o": [
+     "user = age(15);",
+     "user.age = 15;",
+     "age.user = 15;"
+    ],
+    "a": 1,
+    "why": "بنكتب اسم الكائن دوت الخاصية القديمة ونساويه بالقيمة الجديدة."
+   },
+   {
+    "t": "ليه JavaScript بتعتبر player.Score مختلفة عن player.score؟",
+    "o": [
+     "لأنها صدفة غريبة",
+     "لأن JavaScript حساسة لحالة الحروف الكبيرة والصغيرة",
+     "لأن الرمز مختلف"
+    ],
+    "a": 1,
+    "why": "لغة JavaScript حساسة لأسماء الخصائص وحالة الحروف تماماً."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز وتصنيف عمليات الكائنات",
+   "goal": "صنف الجمل التالية إلى هل هي 'تحديث خاصية' ولا 'إضافة خاصية جديدة'!",
+   "buckets": [
+    "تحديث خاصية (Update)",
+    "إضافة خاصية (Add)"
+   ],
+   "items": [
+    {
+     "t": "cat.age = 4;",
+     "b": 0
+    },
+    {
+     "t": "cat.color = 'black';",
+     "b": 1
+    },
+    {
+     "t": "player.score = 50;",
+     "b": 0
+    },
+    {
+     "t": "player.shield = true;",
+     "b": 1
+    },
+    {
+     "t": "car.speed = 120;",
+     "b": 0
+    },
+    {
+     "t": "car.wings = 2;",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد قمت بتصنيف وتحديث وإضافة خصائص الكائنات بنجاح وبقيت بطل جافاسكريبت حقيقي!"
+  },
+  "sections": [
+   {
+    "h": "ما هي الكائنات ولماذا نعدلها؟",
+    "text": "الكائنات (Objects) هي صناديق ذكية بتجمع معلومات مرتبطة ببعضها زي اسمك، عمرك، ولعبتك المفضلة. الحياة بتتغير، وعشان كده بنحتاج نحدث المعلومات دي أو نضيف معلومات جديدة وقت اللزوم زي ما بتشتري هدوم جديدة لعيد ميلادك.",
+    "code": "<script>\nconst user = { name: 'Ali' };\nuser.age = 12;\ndocument.write(user.name + ' is ' + user.age);\n</script>",
+    "output": "تعرض الصفحة اسم المستخدم وعمره الجديد بعد التحديث."
+   },
+   {
+    "h": "استخدام النقطة (Dot Notation)",
+    "text": "النقطة هي مفتاحك السحري للدخول جوه الصندوق (الكائن). لما تكتب اسم الكائن وجنبه نقطة، كإنك بتفتح درج معين جوه مكتبك عشان تشوف أو تغير اللعبة اللي جواه.",
+    "code": "<script>\nconst book = { title: 'Math' };\nbook.price = 50;\ndocument.write(book.title + ' costs ' + book.price);\n</script>",
+    "output": "تعرض الصفحة اسم الكتاب وسعره المضاف حديثاً."
+   },
+   {
+    "h": "تحديث قيمة موجودة مسبقاً",
+    "text": "لو عندك خاصية قديمة جوه الكائن وعايز تغيرها، بتبعت القيمة الجديدة بنفس طريقة الإنشاء. عامل زي لما تكبر سنة وتغير عمرك في الملف الشخصي بتاعك.",
+    "code": "<script>\nconst player = { score: 10 };\nplayer.score = 25;\ndocument.write('New Score: ' + player.score);\n</script>",
+    "output": "تعرض الصفحة النقاط بعد تحديثها إلى 25."
+   },
+   {
+    "h": "إضافة خاصية جديدة كلياً",
+    "text": "عايز تحط حاجة مش كانت موجودة أصلاً؟ بسيطة جداً! اكتب اسم الكائن ونقطة واسم الخاصية الجديدة وساويها باللي تحبه، وكأنك بتلزق ملصق جديد على شنطة المدرسة.",
+    "code": "<script>\nconst monster = { name: 'Zorg' };\nmonster.isScary = true;\ndocument.write(monster.name + ' scary? ' + monster.isScary);\n</script>",
+    "output": "تعرض الصفحة اسم الوحش وما إذا كان مخيفاً أم لا."
+   },
+   {
+    "h": "دور علامة التساوي (=) في التعيين",
+    "text": "علامة التساوي (=) في جافاسكريبت مش معناها حسابي زي الرياضة المدرسية، دي معناها: 'خد القيمة اللي في النايم اليمين وحطها جوه المكان أو الخاصية اللي في الناحية الشمال'.",
+    "code": "<script>\nconst phone = { brand: 'Nokia' };\nphone.brand = 'iPhone';\ndocument.write(phone.brand);\n</script>",
+    "output": "تعرض الصفحة العلامة التجارية الجديدة بعد تحديثها."
+   },
+   {
+    "h": "التعامل مع أنواع بيانات مختلفة",
+    "text": "خصائص الكائنات مش بس أرقام أو نصوص، دي ممكن تكون قيم صح/خطأ (booleans)، أو حتى مصفوفات ودوال تانية، مما يجعل الكائنات قوية جداً لتخزين كل أسرار برنامجك.",
+    "code": "<script>\nconst student = { name: 'Mona' };\nstudent.skills = ['Drawing', 'Coding'];\ndocument.write(student.skills[1]);\n</script>",
+    "output": "تعرض الصفحة المهارة الثانية للطالبة من المصفوفة المضافة."
+   },
+   {
+    "h": "تجنب الأخطاء الشائعة وحساسية الحروف",
+    "text": "لغة جافاسكريبت بتدقق جداً في الحروف. لو كتبت player.Score بحرف S كبير، وهي أساساً player.score بحرف صغير، البرنامج هيتلخبط ويعتبرها خاصية تانية خالص.",
+    "code": "<script>\nconst game = { level: 1 };\ngame.Level = 5;\ndocument.write(game.level + ' and ' + game.Level);\n</script>",
+    "output": "تعرض الصفحة القيمتين كخاصيتين مختلفتين بسبب اختلاف الحروف."
+   },
+   {
+    "h": "الاستخدام في الألعاب والتطبيقات الحقيقية",
+    "text": "في كل الألعاب الحديثة، لما الشخصية تاخد درع أو تكسب نقطة، الكود بيغير خصائص الكائن بسرعة عشان الشاشة تتحدث قدام اللاعب في نفس اللحظة من غير ما الصفحة تعيد تحميل.",
+    "code": "<script>\nconst heroObj = { health: 100 };\nheroObj.health = 80;\ndocument.write('Hero Health: ' + heroObj.health);\n</script>",
+    "output": "تعرض الصفحة طاقة البطل بعد أن نقصت إلى 80."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object Literal {}",
+    "desc": "طريقة لإنشاء كائن جديد يحمل بيانات وخصائص."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "طريقة الوصول لخصائص الكائن أو تعديلها باستخدام النقطة."
+   },
+   {
+    "name": "Assignment Operator (=)",
+    "desc": "تخصيص أو تغيير قيمة لخاصية داخل الكائن."
+   },
+   {
+    "name": "Adding Property",
+    "desc": "إنشاء خاصية جديدة غير موجودة مسبقاً في الكائن."
+   },
+   {
+    "name": "Updating Property",
+    "desc": "تغيير القيمة الحالية لخاصية موجودة في الكائن."
+   },
+   {
+    "name": "Case Sensitivity",
+    "desc": "حساسية لغة البرمجة للحروف الكبيرة والصغيرة في الأسماء."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ كائن car بخاصية speed وقيمتها 60، ثم قم بتحديث السرعة لتصبح 100.",
+    "a": "const car = { speed: 60 }; car.speed = 100;"
+   },
+   {
+    "q": "أضف خاصية جديدة اسمها color بقيمة 'red' للكائن car.",
+    "a": "car.color = 'red';"
+   },
+   {
+    "q": "كيف تصل لخاصية name داخل كائن user باستخدام نقطة؟",
+    "a": "user.name"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "We learned that objects in JavaScript group related data together like a box containing different items.",
+   "To modify an existing value or add a brand-new property, we use Dot Notation followed by the equals sign (=).",
+   "Simple example: If we have a player object, we can write player.score = 10 to easily add points.",
+   "How does it work? JavaScript looks up the object name, finds the property, or creates it instantly if it's missing!",
+   "Second example: If we have a car object and want to change its red color to blue, we write car.color = 'blue' in seconds.",
+   "Golden rule: Always use the dot with the object name to smartly change or add whatever you need.",
+   "Real-life use: In video games, we update player health or add a new shield while they are playing!"
+  ],
+  "example": "Imagine designing a superhero character game and updating its power and status:\n```javascript\nconst hero = { name: 'SuperCat', level: 1 };\nhero.level = 5;\nhero.power = 'flying';\nconsole.log(hero.level);\nconsole.log(hero.power);\n```\nReasoning and logic: We started at level 1, then used '=' with the dot to raise the level to 5 and add a brand new property called power with the value 'flying'!",
+  "mistake": "Common mistake: Writing the property name with different casing like Hero.Level instead of hero.level because JavaScript is case-sensitive. Correction: Always watch your uppercase and lowercase letters carefully.",
+  "recap": "We can easily update existing object properties or add brand-new ones using dot notation and the assignment operator. This is a fantastic way to organize and evolve data in our programs and games.",
+  "q": [
+   {
+    "t": "How do we add a new property to the pet object?",
+    "o": [
+     "pet.hungry = true;",
+     "pet(hungry) = true;",
+     "add.pet.hungry = true;"
+    ],
+    "a": 0,
+    "why": "We use dot notation with the new property name and the equals sign to add it to the object."
+   },
+   {
+    "t": "When we want to update an old property value like age in a user object, what do we do?",
+    "o": [
+     "user = age(15);",
+     "user.age = 15;",
+     "age.user = 15;"
+    ],
+    "a": 1,
+    "why": "We type the object name dot the old property and assign it the new value."
+   },
+   {
+    "t": "Why does JavaScript consider player.Score different from player.score?",
+    "o": [
+     "It's a strange coincidence",
+     "Because JavaScript is case-sensitive",
+     "Because the symbol is different"
+    ],
+    "a": 1,
+    "why": "JavaScript is strictly sensitive to property names and letter casing."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Object Operations",
+   "goal": "Sort the following statements into whether they are an 'Update Property' or an 'Add Property' action!",
+   "buckets": [
+    "Update Property",
+    "Add Property"
+   ],
+   "items": [
+    {
+     "t": "cat.age = 4;",
+     "b": 0
+    },
+    {
+     "t": "cat.color = 'black';",
+     "b": 1
+    },
+    {
+     "t": "player.score = 50;",
+     "b": 0
+    },
+    {
+     "t": "player.shield = true;",
+     "b": 1
+    },
+    {
+     "t": "car.speed = 120;",
+     "b": 0
+    },
+    {
+     "t": "car.wings = 2;",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You successfully sorted, updated, and added object properties like a true JavaScript hero!"
+  },
+  "sections": [
+   {
+    "h": "What are Objects and Why Modify Them?",
+    "text": "Objects are smart boxes gathering related information like your name, age, and favorite game. Life changes, so we need to update this info or add new facts when needed, just like getting a new outfit for your birthday.",
+    "code": "<script>\nconst user = { name: 'Ali' };\nuser.age = 12;\ndocument.write(user.name + ' is ' + user.age);\n</script>",
+    "output": "The page displays the user's name and new age after updating."
+   },
+   {
+    "h": "Using Dot Notation",
+    "text": "The dot is your magic key to go inside the box (object). When you write the object name followed by a dot, it's like opening a specific drawer in your desk to view or change the toy inside.",
+    "code": "<script>\nconst book = { title: 'Math' };\nbook.price = 50;\ndocument.write(book.title + ' costs ' + book.price);\n</script>",
+    "output": "The page displays the book title and its newly added price."
+   },
+   {
+    "h": "Updating an Existing Property Value",
+    "text": "If you have an old property inside the object and want to change it, you assign the new value using the exact same creation method. It's like growing a year older and updating your age on your profile.",
+    "code": "<script>\nconst player = { score: 10 };\nplayer.score = 25;\ndocument.write('New Score: ' + player.score);\n</script>",
+    "output": "The page displays the score after updating it to 25."
+   },
+   {
+    "h": "Adding a Brand-New Property",
+    "text": "Want to put something that wasn't there before? Simple! Write the object name, a dot, the new property name, and assign whatever you like, as if sticking a new sticker on your school bag.",
+    "code": "<script>\nconst monster = { name: 'Zorg' };\nmonster.isScary = true;\ndocument.write(monster.name + ' scary? ' + monster.isScary);\n</script>",
+    "output": "The page displays the monster name and whether it is scary."
+   },
+   {
+    "h": "The Role of the Assignment Operator (=)",
+    "text": "The equals sign (=) in JavaScript isn't like school math equality; it means: 'Take the value on the right side and put it inside the storage space or property on the left side.'",
+    "code": "<script>\nconst phone = { brand: 'Nokia' };\nphone.brand = 'iPhone';\ndocument.write(phone.brand);\n</script>",
+    "output": "The page displays the updated brand name."
+   },
+   {
+    "h": "Handling Different Data Types",
+    "text": "Object properties aren't just numbers or strings; they can be booleans or even arrays and other functions, making objects extremely powerful for storing all secrets of your program.",
+    "code": "<script>\nconst student = { name: 'Mona' };\nstudent.skills = ['Drawing', 'Coding'];\ndocument.write(student.skills[1]);\n</script>",
+    "output": "The page displays the student's second skill from the added array."
+   },
+   {
+    "h": "Avoiding Common Mistakes & Case Sensitivity",
+    "text": "JavaScript is very strict with letters. If you write player.Score with a capital S, but it was originally player.score with a lowercase s, the program gets confused and treats it as a completely different property.",
+    "code": "<script>\nconst game = { level: 1 };\ngame.Level = 5;\ndocument.write(game.level + ' and ' + game.Level);\n</script>",
+    "output": "The page displays both values as separate properties due to letter casing."
+   },
+   {
+    "h": "Real-World Use in Games and Apps",
+    "text": "In every modern game, when a character picks up a shield or earns a point, the code quickly changes the object properties so the screen updates for the player instantly without reloading the page.",
+    "code": "<script>\nconst heroObj = { health: 100 };\nheroObj.health = 80;\ndocument.write('Hero Health: ' + heroObj.health);\n</script>",
+    "output": "The page displays the hero's health after dropping to 80."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object Literal {}",
+    "desc": "A way to create a new object holding data and properties."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "The method of accessing or modifying object properties using a dot."
+   },
+   {
+    "name": "Assignment Operator (=)",
+    "desc": "Assigning or changing a value for a property inside an object."
+   },
+   {
+    "name": "Adding Property",
+    "desc": "Creating a brand-new property that did not exist previously in the object."
+   },
+   {
+    "name": "Updating Property",
+    "desc": "Changing the current value of an existing property in the object."
+   },
+   {
+    "name": "Case Sensitivity",
+    "desc": "The programming language's strictness about uppercase and lowercase letters."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a car object with a speed property of 60, then update the speed to 100.",
+    "a": "const car = { speed: 60 }; car.speed = 100;"
+   },
+   {
+    "q": "Add a new property named color with the value 'red' to the car object.",
+    "a": "car.color = 'red';"
+   },
+   {
+    "q": "How do you access the name property inside a user object using a dot?",
+    "a": "user.name"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript: Adding interactivity",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity"
+  },
+  {
+   "title": "MDN: JavaScript object basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics"
+  }
+ ],
+ "grounded": true
+}

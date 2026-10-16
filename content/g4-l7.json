@@ -1,0 +1,274 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن عناصر صفحة الويب مثل ألعاب الفيديو التي تتفاعل عندما تمر الماوس فوقها، وهنا يأتي دور شبه الفئة أو 'Pseudo-class' لتحديد حالة العنصر مثل مرور مؤشر الماوس عليه.",
+   "نكتب شبه الفئة بإضافة نقطتين رأسيتين (:) ثم اسم الحالة بعد محدد العنصر، مثل كتابة زر مع حالة المرور هكذا: button:hover لتغيير شكله فوراً.",
+   "تعمل شبه الفئة كأنك أضفت سحراً يجعل العنصر يعرف مكان الماوس بدقة، دون الحاجة لتعديل ملف إتش تي إم إل أصلي أو إضافة فئات برمجية معقدة يدوياً.",
+   "لتجربة الانتقال السلس، نستخدم خاصية transition في سي إس إس، والتي تقرر كم يستغرق التغيير من وقت، مثل جعله يستغرق نصف ثانية بدلاً من القفز المفاجئ.",
+   "القاعدة الذهبية لتصميم الويب المريح للعين: استخدم دائمًا مدة انتقال قصيرة وبسيطة تتراوح بين 0.2 إلى 0.5 ثانية مع خاصية hover لتبدو الحركة طبيعية وغير مزعجة.",
+   "في التطبيقات الواقعية، نستخدم هذه الحركات والانتقالات في الأزرار وقوائم التنقل وبطاقات المنتجات بالمتاجر الإلكترونية لتشجيع المستخدم على النقر والتفاعل بسعادة."
+  ],
+  "example": "دعنا نرى كيف يتحول زر بسيط إلى اللون الأزرق ويتكبر بسلاسة عند مرور الماوس. نكتب في سي إس إس: button { background-color: gray; transition: 0.3s; } ثم button:hover { background-color: blue; transform: scale(1.1); }. عندما يمر الماوس، يتغير اللون ويكبر الزر في مدة 3 أجزاء من الثانية بفضل الانتقال.",
+  "mistake": "نسيان كتابة خاصية transition يجعل التغيير يحدث بشكل قفزة مفاجئة ومزعجة للعين، ولحل هذه المشكلة قم دائماً بإضافة مدة الانتقال داخل محدد العنصر الأساسي وليس داخل حالة الhover.",
+  "recap": "تتيح لنا حالات المرور (Pseudo-classes) تفاعل العناصر مع الماوس، بينما تجعل خاصية الانتقال (Transition) هذا التغيير تدريجياً وسلساً.",
+  "q": [
+   {
+    "t": "ما هو الرمز الذي يبدأ به استخدام شبه الفئة في لغة سي إس إس؟",
+    "o": [
+     "نقطتان رأسيتان (:)",
+     "علامة الـ هاش (#)",
+     "النقطة (.)"
+    ],
+    "a": 0,
+    "why": "تُكتب شبه الفئة دائماً باستخدام نقطتين رأسيتين تليها اسم الحالة مثل :hover."
+   },
+   {
+    "t": "أي من الخصائص التالية مسؤولة عن جعل التغيير في التصميم يحدث بشكل سلس وتدريجي؟",
+    "o": [
+     "transform",
+     "transition",
+     "background-color"
+    ],
+    "a": 1,
+    "why": "خاصية transition تحدد المدة الزمنية لجعل التغيير تدريجياً وليست قفزة مفاجئة."
+   },
+   {
+    "t": "متى يتم تفعيل التنسيق الموجود داخل محدد :hover؟",
+    "o": [
+     "عند تحميل الصفحة لأول مرة",
+     "عندما ينقر المستخدم نقراً مزدوجاً",
+     "عندما تمر مؤشر الماوس فوق العنصر"
+    ],
+    "a": 2,
+    "why": "حالة :hover تعمل فقط طالما مؤشر الماوس مستقر فوق العنصر المستهدف."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع تأثير كود الانتقال ومرور الماوس",
+   "goal": "معرفة كيف يغير كود CSS مظهر الزر عند مرور الماوس عليه",
+   "code": "<style>button { background: red; transition: 0.5s; } button:hover { background: green; }</style><button>اضغط هنا</button>",
+   "options": [
+    "يتغير لون الزر من الأحمر للأخضر بشكل مفاجئ",
+    "يتغير لون الزر من الأحمر للأخضر بشكل تدريجي خلال نصف ثانية",
+    "لا يحدث أي تغيير على الإطلاق"
+   ],
+   "a": 1,
+   "success": "رائع! لقد تحول الزر بلطف وسلاسة إلى اللون الأخضر."
+  },
+  "sections": [
+   {
+    "h": "ما هي حالات المرور (Pseudo-classes)؟",
+    "text": "شبه الفئة هي كلمة مفتاحية تُضاف إلى محدد CSS لتحديد حالة معينة للعنصر، مثل مرور الماوس فوقه. تشبه هذه الحالة بوابات الحديقة التي تفتح تلقائياً عندما تقترب منها، مما يجعل صفحة الويب حية وذكية دون الحاجة لتغيير هيكل كود HTML الأساسي.",
+    "code": "<!DOCTYPE html><html><head><style>p:hover { color: orange; }</style></head><body><p>مرر مؤشر الماوس فوق هذا النص لترى السحر!</p></body></html>",
+    "output": "يتغير لون النص إلى البرتقالي بمجرد مرور مؤشر الماوس فوقه."
+   },
+   {
+    "h": "استخدام شبه الفئة الشهيرة :hover",
+    "text": "تعتبر شبه الفئة :hover الأكثر استخداماً في تصميم الويب على الإطلاق. إنها تميز اللحظة التي يضع فيها المستخدم مؤشر الماوس فوق عنصر معين كالزر أو الرابط. يمكنك تخيلها كأن الزر يبتسم لك عندما تقترب منه بفضل تغيير لونه أو شكله.",
+    "code": "<!DOCTYPE html><html><head><style>a:hover { color: red; font-weight: bold; }</style></head><body><a href='#'>مرر الماوس فوق هذا الرابط الهام</a></body></html>",
+    "output": "يصبح الرابط باللون الأحمر وبخط عريض عند مرور الماوس عليه."
+   },
+   {
+    "h": "مفهوم الانتقالات السلسة (Transitions)",
+    "text": "بدلاً من أن يتغير لون أو حجم العنصر بشكل مفاجئ ومزعج للعين، تتيح لنا خاصية transition في CSS جعل التغيير يستغرق ثواني معدودة. تخيل أنك تضيء مصباحاً بمقبض تحكم تدريجي (Dimmer) بدلاً من مفتاح تشغيل سريع ومباشر.",
+    "code": "<!DOCTYPE html><html><head><style>div { width: 100px; height: 100px; background: blue; transition: 1s; } div:hover { background: yellow; }</style></head><body><div></div></body></html>",
+    "output": " يتحول المربع من الأزرق إلى الأصفر ببطء خلال ثانية واحدة كاملة عند مرور الماوس."
+   },
+   {
+    "h": "تكبير وتصغير العناصر بـ transform: scale",
+    "text": "يمكننا دمج حالات المرور مع وظيفة التحويل scale لتكبير العناصر عند مرور الماوس وكأنها تقترب منك. تشبه هذه الميزة تكبير الصور تدريجياً بيديك على شاشة الهاتف، مما يعطي إحساساً رائعاً بالتفاعل الحركي في الموقع.",
+    "code": "<!DOCTYPE html><html><head><style>button { padding: 10px 20px; transition: 0.3s; } button:hover { transform: scale(1.2); }</style></head><body><button>تكبير الزر</button></body></html>",
+    "output": "يكبر حجم الزر بنسبة 20 بالمئة بسلاسة عند تمرير الماوس فوقه."
+   },
+   {
+    "h": "التحكم في سرعة وقناة الانتقال",
+    "text": "تسمح لك خاصية transition بتحديد وقت محدد للتأثير (مثل 0.4s) أو حتى اختيار خصائص معينة لتتأثر وحدها مثل اللون أو الحجم فقط. إنه يشبه ضبط مدرب الرفع الرياضي لسرعة رفع الأثقال بدقة فائقة.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 80px; height: 80px; background: purple; transition: background 0.5s, transform 0.2s; } .box:hover { background: pink; transform: rotate(45deg); }</style></head><body><div class='box'></div></body></html>",
+    "output": "يدور المربع ويتغير لونه بسرعات مختلفة لكل تأثير عند مرور الماوس."
+   }
+  ],
+  "reference": [
+   {
+    "name": ":hover",
+    "desc": "شبه فئة تطبق التنسيق عندما يكون مؤشر الماوس فوق العنصر."
+   },
+   {
+    "name": "transition",
+    "desc": "خاصية لجعل التغييرات في التصميم تحدث بشكل تدريجي وناعم."
+   },
+   {
+    "name": "transform: scale()",
+    "desc": "دالة لتغيير حجم العنصر تكبيراً أو تصغيراً."
+   },
+   {
+    "name": ":focus",
+    "desc": "شبه فئة تطبق التنسيق عندما يتم اختيار العنصر بالنقرة أو لوحة المفاتيح."
+   },
+   {
+    "name": ":active",
+    "desc": "شبه فئة تطبق التنسيق لحظة النقر الفعلي على العنصر."
+   },
+   {
+    "name": "transition-duration",
+    "desc": "خاصية لتحديد المدة الزمنية التي يستغرقها الانتقال."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS يجعل الزر يتحول للون الأخضر عند مرور الماوس.",
+    "a": "button:hover { background-color: green; }"
+   },
+   {
+    "q": "ما هي الخاصية التي تستخدم لجعل الانتقال في لون العنصر يستغرق ثانية واحدة؟",
+    "a": "transition: 1s;"
+   },
+   {
+    "q": "كيف تجعل عنصراً يكبر بنسبة 1.5 مرة عند تمرير الماوس؟",
+    "a": "element:hover { transform: scale(1.5); }"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine webpage elements like video game objects that react when you touch them; this is where pseudo-classes come in to target elements based on a specific state like pointer hovering.",
+   "We write a pseudo-class by adding a colon (:) followed by the state name right after the selector, such as writing button:hover to change its appearance instantly.",
+   "A pseudo-class acts like magic, letting the element know where the mouse is without needing to manually edit your original HTML markup or add clumsy classes.",
+   "For smooth transitions, we use the CSS transition property, which decides how long the change takes, making it glide smoothly over half a second instead of jumping abruptly.",
+   "The golden rule for eye-friendly web design: always use a short, simple transition duration between 0.2 and 0.5 seconds with your hover effects to keep motion natural.",
+   "In real-world applications, we use these interactive movements on buttons, navigation menus, and online store product cards to encourage users to click happily."
+  ],
+  "example": "Let's see how a simple button turns blue and scales up smoothly on hover. In CSS we write: button { background-color: gray; transition: 0.3s; } then button:hover { background-color: blue; transform: scale(1.1); }. When hovered, the color changes and the button enlarges over 0.3 seconds thanks to the transition.",
+  "mistake": "Forgetting to write the transition property causes the style change to snap abruptly. Fix this by always declaring the transition inside the base element selector rather than inside the hover state itself.",
+  "recap": "Pseudo-classes let elements react to user interactions like mouse hovering, while the transition property makes these style changes gradual and smooth.",
+  "q": [
+   {
+    "t": "Which symbol is used to start a pseudo-class in CSS?",
+    "o": [
+     "Colon (:)",
+     "Hash (#)",
+     "Period (.)"
+    ],
+    "a": 0,
+    "why": "Pseudo-classes always begin with a colon followed by the state name like :hover."
+   },
+   {
+    "t": "Which property is responsible for making design changes happen smoothly and gradually?",
+    "o": [
+     "transform",
+     "transition",
+     "background-color"
+    ],
+    "a": 1,
+    "why": "The transition property defines the time duration to make changes smooth instead of sudden jumps."
+   },
+   {
+    "t": "When is the style inside a :hover selector activated?",
+    "o": [
+     "When the page first loads",
+     "When the user double-clicks",
+     "When the mouse pointer is over the element"
+    ],
+    "a": 2,
+    "why": "The :hover state only triggers as long as the mouse pointer rests over the target element."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Hover and Transition Effect",
+   "goal": "Understand how CSS changes a button's look on mouse hover",
+   "code": "<style>button { background: red; transition: 0.5s; } button:hover { background: green; }</style><button>Click Me</button>",
+   "options": [
+    "The button color snaps instantly from red to green",
+    "The button color transitions smoothly from red to green over half a second",
+    "No change happens at all"
+   ],
+   "a": 1,
+   "success": "Awesome! The button smoothly and gently shifted to green."
+  },
+  "sections": [
+   {
+    "h": "What are Pseudo-Classes?",
+    "text": "A pseudo-class is a keyword added to a CSS selector that specifies a special state of an element, like when a mouse hovers over it. Think of it like a garden gate that swings open automatically when you approach it, keeping web pages lively without altering core HTML structure.",
+    "code": "<!DOCTYPE html><html><head><style>p:hover { color: orange; }</style></head><body><p>Hover your mouse pointer over this text to see the magic!</p></body></html>",
+    "output": "The text color turns orange as soon as the mouse pointer hovers over it."
+   },
+   {
+    "h": "Using the Popular :hover Pseudo-Class",
+    "text": "The :hover pseudo-class is the most widely used interaction hook in web design. It marks the exact moment a user places their pointer over an element like a button or link. Imagine the button smiling back at you when you get close by changing its color or shape.",
+    "code": "<!DOCTYPE html><html><head><style>a:hover { color: red; font-weight: bold; }</style></head><body><a href='#'>Hover over this important link</a></body></html>",
+    "output": "The link turns red with bold text when hovered over."
+   },
+   {
+    "h": "The Concept of Smooth Transitions",
+    "text": "Instead of changing colors or sizes abruptly in a jarring way, the CSS transition property lets changes unfold over a few seconds. Imagine turning on a lamp with a gradual dimmer knob instead of a harsh, sudden on-off switch.",
+    "code": "<!DOCTYPE html><html><head><style>div { width: 100px; height: 100px; background: blue; transition: 1s; } div:hover { background: yellow; }</style></head><body><div></div></body></html>",
+    "output": "The box slowly transitions from blue to yellow over a full second when hovered."
+   },
+   {
+    "h": "Scaling Elements with transform: scale",
+    "text": "We can combine pseudo-classes with the scale transform function to grow elements on hover as if they are zooming in toward you. This feels just like pinching photos larger on your phone screen, adding wonderful tactile motion feedback.",
+    "code": "<!DOCTYPE html><html><head><style>button { padding: 10px 20px; transition: 0.3s; } button:hover { transform: scale(1.2); }</style></head><body><button>Enlarge Button</button></body></html>",
+    "output": "The button smoothly scales up by 20 percent when the mouse is placed over it."
+   },
+   {
+    "h": "Controlling Speed and Specific Properties",
+    "text": "The transition property lets you specify a exact time duration (like 0.4s) or target specific properties to animate like color or size alone. It is like a personal fitness trainer setting exact weights and speeds for different exercises.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 80px; height: 80px; background: purple; transition: background 0.5s, transform 0.2s; } .box:hover { background: pink; transform: rotate(45deg); }</style></head><body><div class='box'></div></body></html>",
+    "output": "The box rotates and changes color at different speeds upon mouse hover."
+   }
+  ],
+  "reference": [
+   {
+    "name": ":hover",
+    "desc": "A pseudo-class that applies styles when the mouse pointer is over an element."
+   },
+   {
+    "name": "transition",
+    "desc": "A property used to make design property changes gradual and smooth."
+   },
+   {
+    "name": "transform: scale()",
+    "desc": "A function to resize an element larger or smaller."
+   },
+   {
+    "name": ":focus",
+    "desc": "A pseudo-class applied when an element receives focus via click or keyboard."
+   },
+   {
+    "name": ":active",
+    "desc": "A pseudo-class applied during the exact moment an element is being clicked."
+   },
+   {
+    "name": "transition-duration",
+    "desc": "A property defining how long a transition effect takes to complete."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS to make a button turn green on mouse hover.",
+    "a": "button:hover { background-color: green; }"
+   },
+   {
+    "q": "Which property makes an element's color change take 1 second?",
+    "a": "transition: 1s;"
+   },
+   {
+    "q": "How do you make an element scale up to 1.5 times its size on hover?",
+    "a": "element:hover { transform: scale(1.5); }"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Pseudo-classes",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes"
+  },
+  {
+   "title": "MDN: Pseudo-classes and pseudo-elements",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements"
+  }
+ ],
+ "grounded": true
+}

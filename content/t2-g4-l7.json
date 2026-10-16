@@ -1,0 +1,282 @@
+{
+ "ar": {
+  "steps": [
+   "تتيح لك تأثيرات الفلتر في لغة CSS تعديل مظهر الصور والعناصر على صفحة الويب قبل ظهورها للمشاهد.",
+   "يمكنك إضافة فلتر الغباش باستخدام دالة blur() مثل: img { filter: blur(5px); } لجعل الصورة ضبابية.",
+   "تتحكم دالة brightness() في إضاءة العنصر، حيث تعني القيمة 1 اللون الطبيعي، بينما القيم الأكبر تزيد الإضاءة.",
+   "لإزالة الألوان وتحويل الصورة إلى أبيض وأسود، نستخدم دالة grayscale(100%) بكل سهولة وسرعة.",
+   "تساعد دالة contrast() في جعل الألوان أكثر وضوحاً وقوة عبر زيادة التباين بين المناطق الفاتحة والداكنة.",
+   "قاعدة مفيدة: يمكنك دمج عدة فلاتر معاً بكتابتها مسافة بينها داخل خاصية filter مثل blur() ثم grayscale()."
+  ],
+  "example": "تخيل أنك مصمم صور فوتوغرافية وتريد جعل صورة بطريق في القطب الشمالي تبدو قديمة بالأبيض والأسود مع إضاءة خافتة. يمكنك كتابة الكود التالي:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img {\n    filter: grayscale(100%) brightness(80%) contrast(120%);\n  }\n</style>\n</head>\n<body>\n  <img src=\"penguin.jpg\" alt=\"بطريق\">\n</body>\n</html>\n```\n\nبهذه الطريقة، قامت خاصية filter بتحويل الصورة تماماً عبر تطبيق ثلاثة تأثيرات مذهلة دفعة واحدة في متصفح الويب!",
+  "mistake": "خطأ شائع هو نسيان كتابة أقواس الدوال أو كتابة اسم الفلتر بشكل خاطئ مثل استخدام grisscale بدل grayscale، مما يجعل المتصفح يتجاهل التأثير تماماً. الحل هو التأكد من الإملاء الصحيح واستخدام الأقواس مثل (100%).",
+  "recap": "تمنح فلاتر CSS مهارات بصرية مذهلة لتعديل الصور والعناصر مباشرة. تعلمنا استخدام blur وbrightness وgrayscale وcontrast لإبداع تصاميم فريدة.",
+  "q": [
+   {
+    "t": "أي دالة تستخدم لتحويل الصورة إلى أبيض وأسود؟",
+    "o": [
+     "blur()",
+     "grayscale()",
+     "brightness()"
+    ],
+    "a": 1,
+    "why": "دالة grayscale تحول الصورة إلى درجات الرمادي والأبيض والأسود."
+   },
+   {
+    "t": "ماذا تفعل دالة blur() بالعنصر؟",
+    "o": [
+     "تجعل الصورة ضبابية",
+     "تزيد سطوع الألوان",
+     "تحذف الصورة تماماً"
+    ],
+    "a": 0,
+    "why": "دالة blur تقوم بتغبيش أو ضبابية العناصر بناءً على حجم البكسل."
+   },
+   {
+    "t": "كيف نطبق أكثر من فلتر على نفس العنصر؟",
+    "o": [
+     "نكتب كل فلتر في سطر منفصل وبخاصية مستقلة",
+     "نكتبها داخل نفس خاصية filter مفصولة بمسافات",
+     "لا يمكن دمج الفلاتر أبداً"
+    ],
+    "a": 1,
+    "why": "يمكننا جمع عدة فلاتر داخل خاصية filter واحدة مفصولة بمسافة بينهم."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب كود فلتر الصورة",
+   "goal": "رتب الأسطر لبناء صفحة ويب تحتوي على صورة محولة للأبيض والأسود مع غباش بسيط",
+   "items": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<style> img { filter: grayscale(100%) blur(2px); } </style>",
+    "<body>",
+    "<img src=\"photo.jpg\" alt=\"صورة\">",
+    "</body>",
+    "</html>"
+   ],
+   "success": "رائع! ظهرت الصورة باللونين الأبيض والأسود مع غباش فني جميل."
+  },
+  "sections": [
+   {
+    "h": "مقدمة في فلاتر CSS",
+    "text": "تخيل أنك تنظر من خلال نظارات ملونة أو عدسات سحرية تغير شكل الأشياء أمامك. هذا بالضبط ما تفعله فلاتر CSS؛ فهي تعالج وتعدل شكل العناصر والصور قبل أن تراها العين على الشاشة، تماماً مثل فلاتر التطبيقات الشهيرة ولكن بكود بسيط.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; background: orange; filter: brightness(150%); }\n</style>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n</html>",
+    "output": "يظهر مربع برتقالي مصباحه مضاء بقوة بسبب زيادة السطوع."
+   },
+   {
+    "h": "فلتر الغباش (Blur)",
+    "text": "هل نظرت يوماً عبر زجاج نافذة مغطى بقطرات المطر؟ تظهر الأشياء من خلفه غير واضحة. تفعل دالة blur() نفس الشيء تماماً في صفحات الويب، حيث تقوم بتغبيش الصورة أو العنصر بناءً على عدد البكسلات التي تحددها.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: blur(4px); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "تظهر الصورة عائمة وضبابية قليلاً."
+   },
+   {
+    "h": "فلتر السطوع (Brightness)",
+    "text": "عندما تشرق الشمس بقوة في الصباح الباكر، تصبح كل الأشياء مضيئة وساطعة. دالة brightness() تمنحك نفس التحكم؛ إذ ترفع إضاءة الصورة أو تخفضها لجعلها تبدو كأنها في غرفة مظلمة أو تحت ضوء الشمس الساطع.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: brightness(50%); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "تظهر الصورة مظلمة وكأنها التقطت في وقت الغروب."
+   },
+   {
+    "h": "فلتر التدرج الرمادي (Grayscale)",
+    "text": "هل شاهدت من قبل أفلام الكرتون القديمة جداً بالأبيض والأسود؟ يزيل فلتر grayscale الألوان الملونة تماماً ويترك درجات الرمادي فقط، مما يمنح الصور مظهراً كلاسيكياً تاريخياً مميزاً وجميلاً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: grayscale(100%); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "تتحول الصورة الملونة إلى الأبيض والأسود بالكامل."
+   },
+   {
+    "h": "فلتر التباين (Contrast)",
+    "text": "التباين هو الفرق بين المناطق الداكنة والمناطق الفاتحة في الصورة. عندما تزيد التباين باستخدام contrast()، تصبح الألوان الفاتحة أكثر إشراقاً والداكنة أكثر عتمة، مما يبرز التفاصيل الدقيقة بشكل مذهل.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: contrast(200%); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "تصبح ألوان الصورة قوية وحادة للغاية."
+   },
+   {
+    "h": "دمج الفلاتر معاً",
+    "text": "لماذا تكتفي بتأثير واحد بينما يمكنك دمج عدة تأثيرات معاً؟ يمكنك كتابة أكثر من دالة داخل خاصية filter بفصلها بمسافة فقط، لتصنع لوحة فنية فريدة تجمع بين الغباش والأبيض والأسود في نفس اللحظة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: grayscale(80%) blur(2px); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "تظهر الصورة بالأبيض والأسود مع غباش خفيف يغطي تفاصيلها."
+   }
+  ],
+  "reference": [
+   {
+    "name": "filter",
+    "desc": "خاصية في CSS تطبق تأثيرات بصرية مثل الفلاتر على العناصر."
+   },
+   {
+    "name": "blur()",
+    "desc": "دالة لتغبيش العناصر وتطبيق تأثير الضبابية."
+   },
+   {
+    "name": "brightness()",
+    "desc": "دالة لتعديل إضاءة وسطوع العنصر أو الصورة."
+   },
+   {
+    "name": "grayscale()",
+    "desc": "دالة لتحويل ألوان العنصر إلى تدرجات الرمادي (أبيض وأسود)."
+   },
+   {
+    "name": "contrast()",
+    "desc": "دالة لتغيير مستوى التباين بين الألوان الفاتحة والداكنة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لجعل جميع الصور على الصفحة رمادية بالكامل.",
+    "a": "img { filter: grayscale(100%); }"
+   },
+   {
+    "q": "كيف تطبق غباشاً بقيمة 5 بكسل على صندوق في الصفحة؟",
+    "a": ".box { filter: blur(5px); }"
+   },
+   {
+    "q": "اكتب كود يضاعف سطوع صورة معينة مرتين.",
+    "a": "img { filter: brightness(2); }"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "CSS filter effects let you modify the visual appearance of images and elements on your web page before they appear.",
+   "You can add a blur effect using the blur() function like this: img { filter: blur(5px); } to make images fuzzy.",
+   "The brightness() function controls element lighting, where a value of 1 keeps normal colors, and higher values increase brightness.",
+   "To remove colors and turn an image completely black and white, we use the grayscale(100%) function easily and quickly.",
+   "The contrast() function helps make colors stand out by increasing the difference between light and dark areas.",
+   "Rule of thumb: You can combine multiple filters together by writing them with spaces inside the filter property, such as blur() followed by grayscale()."
+  ],
+  "example": "Imagine you are a photo designer wanting to make a penguin picture look vintage, black and white, and dimly lit. You can write the following code:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img {\n    filter: grayscale(100%) brightness(80%) contrast(120%);\n  }\n</style>\n</head>\n<body>\n  <img src=\"penguin.jpg\" alt=\"Penguin\">\n</body>\n</html>\n```\n\nThis way, the filter property completely transformed the image by applying three amazing effects at once in the web browser!",
+  "mistake": "A common mistake is forgetting parentheses around functions or misspelling filter names like writing grisscale instead of grayscale, which makes the browser ignore the effect completely. The fix is checking spelling and using parentheses like (100%).",
+  "recap": "CSS filters give you amazing visual powers to style images and elements directly. We learned to use blur, brightness, grayscale, and contrast to create unique designs.",
+  "q": [
+   {
+    "t": "Which function is used to turn an image black and white?",
+    "o": [
+     "blur()",
+     "grayscale()",
+     "brightness()"
+    ],
+    "a": 1,
+    "why": "The grayscale() function converts the image colors to shades of gray."
+   },
+   {
+    "t": "What does the blur() function do to an element?",
+    "o": [
+     "Makes the image fuzzy and out of focus",
+     "Increases color saturation",
+     "Deletes the image entirely"
+    ],
+    "a": 0,
+    "why": "The blur() function applies a Gaussian blur to the element based on pixel size."
+   },
+   {
+    "t": "How do we apply more than one filter to the same element?",
+    "o": [
+     "Write each filter on a separate line with independent properties",
+     "Write them inside the same filter property separated by spaces",
+     "Combining filters is impossible"
+    ],
+    "a": 1,
+    "why": "We can combine multiple filter functions inside a single filter property separated by a space."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order Image Filter Code",
+   "goal": "Arrange the lines to build a web page containing a black and white image with a slight blur",
+   "items": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<style> img { filter: grayscale(100%) blur(2px); } </style>",
+    "<body>",
+    "<img src=\"photo.jpg\" alt=\"photo\">",
+    "</body>",
+    "</html>"
+   ],
+   "success": "Awesome! The image appeared in black and white with a nice artistic blur."
+  },
+  "sections": [
+   {
+    "h": "Introduction to CSS Filters",
+    "text": "Imagine looking through colored glasses or magical lenses that change how objects look. That is exactly what CSS filters do; they process and adjust elements and images before your eyes see them on the screen, just like popular photo app filters but with simple code.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; background: orange; filter: brightness(150%); }\n</style>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n</html>",
+    "output": "An orange box appears glowing brightly due to increased brightness."
+   },
+   {
+    "h": "The Blur Filter",
+    "text": "Have you ever looked through a window covered in raindrops? Things behind it appear out of focus. The blur() function does the exact same thing on web pages, fuzzing the image or element based on the pixel amount you specify.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: blur(4px); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "The image appears floating and slightly blurred."
+   },
+   {
+    "h": "The Brightness Filter",
+    "text": "When the sun shines brightly early in the morning, everything is illuminated and glowing. The brightness() function gives you the same control, raising or lowering image lighting to make it look like it's in a dark room or under glaring sunlight.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: brightness(50%); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "The image appears dark as if captured at sunset."
+   },
+   {
+    "h": "The Grayscale Filter",
+    "text": "Have you ever watched very old classic black and white cartoons? The grayscale filter completely removes vibrant colors and leaves only shades of gray, giving pictures a distinctive, historical vintage look.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: grayscale(100%); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "The colorful image is completely turned into black and white."
+   },
+   {
+    "h": "The Contrast Filter",
+    "text": "Contrast is the difference between dark and light areas in an image. When you increase contrast using contrast(), bright colors get brighter and darks get darker, making fine details stand out dramatically.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: contrast(200%); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "The image colors become very sharp and punchy."
+   },
+   {
+    "h": "Combining Multiple Filters",
+    "text": "Why settle for one effect when you can combine several together? You can write multiple functions inside the filter property separated just by a space, crafting a unique visual piece mixing blur and black-and-white simultaneously.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  img { width: 200px; filter: grayscale(80%) blur(2px); }\n</style>\n</head>\n<body>\n  <img src=\"https://picsum.photos/200\" alt=\"random\">\n</body>\n</html>",
+    "output": "The image appears in black and white with a soft blur hiding its details."
+   }
+  ],
+  "reference": [
+   {
+    "name": "filter",
+    "desc": "A CSS property that applies graphical effects like filters to elements."
+   },
+   {
+    "name": "blur()",
+    "desc": "A function to blur elements and apply fuzzy visual effects."
+   },
+   {
+    "name": "brightness()",
+    "desc": "A function to adjust the lighting and brightness of an element or image."
+   },
+   {
+    "name": "grayscale()",
+    "desc": "A function to convert element colors into grayscale (black and white)."
+   },
+   {
+    "name": "contrast()",
+    "desc": "A function to change the contrast level between light and dark colors."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to make all images on the page completely grayscale.",
+    "a": "img { filter: grayscale(100%); }"
+   },
+   {
+    "q": "How do you apply a 5px blur to a box element on the page?",
+    "a": ".box { filter: blur(5px); }"
+   },
+   {
+    "q": "Write code that doubles the brightness of a specific image.",
+    "a": "img { filter: brightness(2); }"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: CSS filter effects",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Filter_effects"
+  },
+  {
+   "title": "MDN: backdrop-filter CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter"
+  }
+ ],
+ "grounded": true
+}

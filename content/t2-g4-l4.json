@@ -1,0 +1,274 @@
+{
+ "ar": {
+  "steps": [
+   "تعتبر حقول الإدخال والأزرار أدوات مهمة جداً لأنها تجعل موقع الويب تفاعلياً وودوداً، مثل الأزرار الحقيقية التي نضغط عليها لتشغيل الألعاب.",
+   "يمكننا استخدام خاصية `border-radius` في لغة CSS لجعل حواف حقول النصوص والأزرار مستديرة وناعمة بدلاً من الزوايا الحادة.",
+   "نص التلميح أو المؤقت (`placeholder`) يظهر داخل الحقل قبل أن يكتب المستخدم شيئاً، ويمكننا تنسيقه بلون هادئ ليساعد المستخدم.",
+   "حالة التركيز (`:focus`) هي ما يحدث عندما ينقر المستخدم داخل الحقل للكتابة، ويمكننا تغيير لون الحد المحيط به ليكون مميزاً مثل اللون الوردي الناعم.",
+   "القاعدة الذهبية في تصميم النماذج هي جعل الحقول والأزرار مريحة للعين وسهلة الاستخدام بمسافات وألوان واضحة وجذابة.",
+   "تستخدم حقول الإدخال والأزرار في الحياة الواقعية في كل مكان، مثل تسجيل الدخول للألعاب، البحث في يوتيوب، أو إرسال رسالة لأصدقائك."
+  ],
+  "example": "لنجعل صندوق إدخال يبدو رائعاً؛ نكتب كود CSS يعطي الحقل حواف مستديرة بـ `border-radius: 12px;`، وعندما يضغط المستخدم عليه (في حالة `:focus`) يتغير لونه إلى وردي ناعم `border-color: pink;` مما يجعل الموقع يبدو ودوداً وتفاعلياً للغاية.",
+  "mistake": "الخطأ الشائع هو نسيان إضافة حالة التركيز (`:focus`)، مما يجعل المستخدم لا يلاحظ الحقل الذي يكتب فيه حالياً. الإصلاح هو دائماً إضافة تنسيق خاص لـ `input:focus`.",
+  "recap": "تعلمنا اليوم كيف نجعل حقول الإدخال والأزرار جذابة ومستديرة باستخدام خصائص CSS المختلفة. كما عرفنا أهمية تزيين نصوص التلميح وحالات التركيز.",
+  "q": [
+   {
+    "t": "أي خاصية نستخدمها لجعل حواف الأزرار وحقول الإدخال مستديرة؟",
+    "o": [
+     "border-radius",
+     "font-size",
+     "color"
+    ],
+    "a": 0,
+    "why": "خاصية border-radius هي المسؤولة عن جعل الحواف دائرية وناعمة."
+   },
+   {
+    "t": "متى يتم تطبيق تنسيق حالة التركيز (:focus) على حقل الإدخال؟",
+    "o": [
+     "عند إغلاق الموقع",
+     "عندما ينقر المستخدم داخل الحقل للكتابة",
+     "عند تحميل الصفحة لأول مرة"
+    ],
+    "a": 1,
+    "why": "حالة focus تحدث عندما يتفاعل المستخدم مع الحقل ويقوم بالنقر داخله."
+   },
+   {
+    "t": "ما فائدة نصوص التلميح (placeholder) داخل حقول الإدخال؟",
+    "o": [
+     "إخفاء الحقل تماماً",
+     "توضيح ما يجب على المستخدم كتابته قبل أن يبدأ",
+     "تغيير حجم الشاشة"
+    ],
+    "a": 1,
+    "why": "النص المؤقت يوجه المستخدم ويخبره بالمعلومة المطلوبة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع مظهر حقل الإدخال",
+   "goal": "توقع شكل حقل الإدخال عندما يتم تطبيق حواف مستديرة ولون وردي عند التركيز",
+   "code": "<style>\n  input {\n    border-radius: 15px;\n    border: 2px solid gray;\n    padding: 10px;\n  }\n  input:focus {\n    border-color: pink;\n    outline: none;\n  }\n</style>\n<input type=\"text\" placeholder=\"اكتب اسمك هنا...\">",
+   "options": [
+    "حقل بحدود حادة ولون أحمر",
+    "حقل بحواف مستديرة وحد وردي عند النقر داخله",
+    "صورة لزر كبير ملون"
+   ],
+   "a": 1,
+   "success": "رائع! لقد توقعت شكل حقل الإدخال الجميل ذو الحواف المستديرة واللون الوردي الناعم بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن تنسيق النماذج",
+    "text": "تعد حقول الإدخال والأزرار هي الباب الذي يتواصل من خلاله المستخدم مع موقع الويب. مثل الأزرار الموجودة في لوحة تحكم ألعاب الفيديو، تجعل الموقع حياً وتفاعلياً.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial; padding: 20px; }\n    input { padding: 8px; font-size: 16px; }\n  </style>\n</head>\n<body>\n  <input type=\"text\" value=\"أهلاً بك\">\n</body>\n</html>",
+    "output": "صفحة تحتوي على حقل إدخال نصي بسيط."
+   },
+   {
+    "h": "تدوير الحواف باستخدام border-radius",
+    "text": "الزوايا الحادة قد تبدو مملة أحياناً. باستخدام خاصية border-radius، يمكننا جعل الأزرار وحقول الإدخال تبدو وكأنها قطع حلوى دائرية وناعمة ومريحة للعين.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    input {\n      border-radius: 10px;\n      border: 2px solid #ccc;\n      padding: 10px;\n    }\n  </style>\n</head>\n<body>\n  <input type=\"text\" placeholder=\"حواف مستديرة\">\n</body>\n</html>",
+    "output": "حقل إدخال ذو زوايا مستديرة وناعمة."
+   },
+   {
+    "h": "تنسيق نص التلميح placeholder",
+    "text": "نص التلميح هو الرسالة المؤقتة داخل الحقل التي تختفي عندما يبدأ الطفل في الكتابة. مثل لوحة إرشادية صغيرة تخبرك بما يجب فعله.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    input::placeholder {\n      color: #ff69b4;\n      font-style: italic;\n    }\n    input {\n      border: 2px solid #ddd;\n      border-radius: 8px;\n      padding: 8px;\n    }\n  </style>\n</head>\n<body>\n  <input type=\"text\" placeholder=\"اكتب لعبتك المفضلة...\">\n</body>\n</html>",
+    "output": "حقل إدخال يحتوي على نص تلميح وردي ومائل."
+   },
+   {
+    "h": "استخدام حالة التركيز focus",
+    "text": "عندما تنقر داخل صندوق الإدخال، يتحول إلى حالة التركيز. تماماً مثل المصباح الذي يضيء عندما تقترب منه، يمكننا تغيير لون الحد ليدل على أننا نكتب هنا.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    input {\n      border: 2px solid #ccc;\n      border-radius: 8px;\n      padding: 8px;\n      outline: none;\n    }\n    input:focus {\n      border-color: #ff69b4;\n      box-shadow: 0 0 5px rgba(255,105,180,0.5);\n    }\n  </style>\n</head>\n<body>\n  <input type=\"text\" placeholder=\"انقر هنا للكتابة\">\n</body>\n</html>",
+    "output": "حقل إدخال يتغير لون حدوده إلى الوردي الناعم عند النقر بداخله."
+   },
+   {
+    "h": "تنسيق أزرار الإرسال",
+    "text": "الأزرار هي ما يضغط عليه المستخدم لإنهاء مهمة ما، مثل زر 'ابدأ اللعبة'. تنسيقها بخلفية ملونة وخط جميل يجعل المستخدم متحمساً للضغط عليها.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    button {\n      background-color: #ff69b4;\n      color: white;\n      border: none;\n      border-radius: 20px;\n      padding: 10px 20px;\n      font-size: 16px;\n      cursor: pointer;\n    }\n    button:hover {\n      background-color: #ff1493;\n    }\n  </style>\n</head>\n<body>\n  <button>اضغط هنا</button>\n</body>\n</html>",
+    "output": "زر وردي جميل ومستدير يتغير لونه عند مرور الفأرة فوقه."
+   }
+  ],
+  "reference": [
+   {
+    "name": "border-radius",
+    "desc": "خاصية لجعل حواف العناصر مستديرة."
+   },
+   {
+    "name": ":focus",
+    "desc": "محدد لاستهداف العنصر عندما ينقر المستخدم داخله."
+   },
+   {
+    "name": "::placeholder",
+    "desc": "محدد لتنسيق النص المؤقت داخل حقل الإدخال."
+   },
+   {
+    "name": "outline",
+    "desc": "خاصية للتحكم في الخط الخارجي المحيط بالعنصر."
+   },
+   {
+    "name": "padding",
+    "desc": "إضافة مسافة داخلية بين المحتوى والحدود."
+   },
+   {
+    "name": "background-color",
+    "desc": "تحديد لون خلفية العناصر مثل الأزرار."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS يجعل حواف حقل الإدخال مستديرة بقيمة 10 بكسل.",
+    "a": "input { border-radius: 10px; }"
+   },
+   {
+    "q": "كيف تغير لون حدود حقل الإدخال إلى اللون الوردي في حالة التركيز (focus)؟",
+    "a": "input:focus { border-color: pink; }"
+   },
+   {
+    "q": "اكتب محدد CSS لتنسيق لون نص التلميح (placeholder) داخل حقل الإدخال.",
+    "a": "input::placeholder { color: gray; }"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Inputs and buttons are very important tools because they make websites interactive and friendly, just like real buttons we press to play games.",
+   "We can use the `border-radius` property in CSS to make text inputs and buttons have rounded, smooth corners instead of sharp ones.",
+   "Placeholder text shows inside the field before the user types anything, and we can style it with a soft color to help the user.",
+   "The focus state (`:focus`) is what happens when a user clicks inside the input to type, and we can change its border color to something special like a soft pink.",
+   "The golden rule of form design is to make inputs and buttons comfortable to the eye and easy to use with clear, attractive spacing and colors.",
+   "Inputs and buttons are used everywhere in real life, such as logging into games, searching on YouTube, or sending a message to your friends."
+  ],
+  "example": "To make an input box look awesome, we write CSS code giving the field rounded corners with `border-radius: 12px;`, and when the user clicks on it (in the `:focus` state) its color changes to a soft pink `border-color: pink;`, making the website look extremely friendly and interactive.",
+  "mistake": "A common mistake is forgetting to add a focus state (`:focus`), which makes users unable to notice which field they are currently typing in. The fix is always to add custom styling for `input:focus`.",
+  "recap": "Today we learned how to make form inputs and buttons attractive and rounded using various CSS properties. We also discovered the importance of styling placeholders and focus states.",
+  "q": [
+   {
+    "t": "Which property do we use to make the corners of buttons and inputs rounded?",
+    "o": [
+     "border-radius",
+     "font-size",
+     "color"
+    ],
+    "a": 0,
+    "why": "The border-radius property is responsible for making corners round and smooth."
+   },
+   {
+    "t": "When is the focus state (:focus) applied to an input field?",
+    "o": [
+     "When closing the website",
+     "When the user clicks inside the field to type",
+     "When the page loads for the first time"
+    ],
+    "a": 1,
+    "why": "The focus state occurs when the user interacts with the field by clicking inside it."
+   },
+   {
+    "t": "What is the benefit of placeholder text inside input fields?",
+    "o": [
+     "Hiding the field completely",
+     "Clarifying what the user should type before they start",
+     "Changing the screen size"
+    ],
+    "a": 1,
+    "why": "Placeholder text guides the user and tells them the required information."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Input Appearance",
+   "goal": "Predict how the input field looks when given rounded corners and a pink focus border",
+   "code": "<style>\n  input {\n    border-radius: 15px;\n    border: 2px solid gray;\n    padding: 10px;\n  }\n  input:focus {\n    border-color: pink;\n    outline: none;\n  }\n</style>\n<input type=\"text\" placeholder=\"Type your name here...\">",
+   "options": [
+    "A field with sharp borders and red color",
+    "A field with rounded corners and a pink border when clicked inside",
+    "An image of a large colored button"
+   ],
+   "a": 1,
+   "success": "Awesome! You successfully predicted the lovely rounded input field with soft pink highlights!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Form Styling",
+    "text": "Inputs and buttons are the gateway through which users interact with a website. Like buttons on a video game controller, they make a website feel alive and interactive.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial; padding: 20px; }\n    input { padding: 8px; font-size: 16px; }\n  </style>\n</head>\n<body>\n  <input type=\"text\" value=\"Welcome\">\n</body>\n</html>",
+    "output": "A page containing a simple text input field."
+   },
+   {
+    "h": "Rounding Corners with border-radius",
+    "text": "Sharp corners can sometimes look boring. Using the border-radius property, we can make buttons and inputs look like smooth, eye-friendly candy shapes.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    input {\n      border-radius: 10px;\n      border: 2px solid #ccc;\n      padding: 10px;\n    }\n  </style>\n</head>\n<body>\n  <input type=\"text\" placeholder=\"Rounded corners\">\n</body>\n</html>",
+    "output": "An input field with smooth, rounded corners."
+   },
+   {
+    "h": "Styling Placeholder Text",
+    "text": "Placeholder text is the temporary message inside the input that disappears when a kid starts typing. Like a small guide sign telling you what to do.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    input::placeholder {\n      color: #ff69b4;\n      font-style: italic;\n    }\n    input {\n      border: 2px solid #ddd;\n      border-radius: 8px;\n      padding: 8px;\n    }\n  </style>\n</head>\n<body>\n  <input type=\"text\" placeholder=\"Type your favorite game...\">\n</body>\n</html>",
+    "output": "An input field containing pink italic placeholder text."
+   },
+   {
+    "h": "Using the Focus State",
+    "text": "When you click inside the input box, it enters the focus state. Just like a lamp turning on when you get close, we can change the border color to show we are typing here.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    input {\n      border: 2px solid #ccc;\n      border-radius: 8px;\n      padding: 8px;\n      outline: none;\n    }\n    input:focus {\n      border-color: #ff69b4;\n      box-shadow: 0 0 5px rgba(255,105,180,0.5);\n    }\n  </style>\n</head>\n<body>\n  <input type=\"text\" placeholder=\"Click here to type\">\n</body>\n</html>",
+    "output": "An input field whose border turns soft pink when clicked inside."
+   },
+   {
+    "h": "Styling Submit Buttons",
+    "text": "Buttons are what users click to finish a task, like a 'Start Game' button. Styling them with a colorful background and a nice font makes the user excited to click.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    button {\n      background-color: #ff69b4;\n      color: white;\n      border: none;\n      border-radius: 20px;\n      padding: 10px 20px;\n      font-size: 16px;\n      cursor: pointer;\n    }\n    button:hover {\n      background-color: #ff1493;\n    }\n  </style>\n</head>\n<body>\n  <button>Click Me</button>\n</body>\n</html>",
+    "output": "A lovely rounded pink button that changes color when hovered over."
+   }
+  ],
+  "reference": [
+   {
+    "name": "border-radius",
+    "desc": "Property to make element corners rounded."
+   },
+   {
+    "name": ":focus",
+    "desc": "Selector to target an element when the user clicks inside it."
+   },
+   {
+    "name": "::placeholder",
+    "desc": "Selector to style the temporary text inside an input field."
+   },
+   {
+    "name": "outline",
+    "desc": "Property to control the outer line surrounding an element."
+   },
+   {
+    "name": "padding",
+    "desc": "Adds internal spacing between content and borders."
+   },
+   {
+    "name": "background-color",
+    "desc": "Sets the background color of elements like buttons."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code that gives an input field rounded corners of 10 pixels.",
+    "a": "input { border-radius: 10px; }"
+   },
+   {
+    "q": "How do you change the input border color to pink on focus?",
+    "a": "input:focus { border-color: pink; }"
+   },
+   {
+    "q": "Write a CSS selector to style the placeholder text color inside an input.",
+    "a": "input::placeholder { color: gray; }"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Advanced form styling",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling"
+  },
+  {
+   "title": "MDN: Forms and buttons in HTML",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms"
+  }
+ ],
+ "grounded": true
+}

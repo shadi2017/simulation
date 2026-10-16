@@ -1,0 +1,330 @@
+{
+ "ar": {
+  "steps": [
+   "لما يكون عندك صندوق أصغر من الكلام أو الصور اللي جواه، بيحصل حاجة اسمها زحمة أو overflow، ودي مشكلة شكلية.",
+   "مثال بسيط: لو عندك صندوق مقاسه صغير وحطيت فيه قصة طويلة جداً، الكلام هيهرب ويطلع بره حدود الصندوق.",
+   "خاصية overflow في CSS هي الشرطي اللي بينظم زحمة المحتوى وبيقرر إيه اللي هيحصل للكلام الزائد ده.",
+   "مثال تاني: ممكن تستخدم overflow: hidden عشان تقص وتخفي أي كلام طالع بره الصندوق كأنه مش موجود.",
+   "القاعدة الذهبية: لو عايز الناس تقرأ باقي الكلام بس من غير ما يخربوا شكل الصفحة، استخدم scroll أو auto عشان تظهر أشرطة التمرير.",
+   "في الحياة الحقيقية، ده عامل زي شنطة السفر الصغيرة لما تحط فيها هدوم كتيرة؛ يا تقفلها بالعافية وتخفي الزيادة، يا تحط سوستة وسكول زي التمرير!"
+  ],
+  "example": "تخيل أنك صممت بطاقة تعريفية بروفايل بطول وعرض ثابتين، وكتبت فيها سيرة ذاتية طويلة جداً. لو سبتها على وضها الطبيعي، هتغطي على باقي عناصر الموقع. لما تكتب كود: div { width: 200px; height: 100px; overflow: auto; } هنا المتصفح بيفهم لوحده، ولو الكلام زاد، هيظهر شريط تمرير جميل يخلي المستخدم ينزل ويطلع بس جوه الصندوق من غير ما يأثر على تصميم الموقع خالص!",
+  "mistake": "الخطأ الشائع إن المبتدئين بينسوا يحددوا ارتفاع ثابت (height) للصندوق، وفيه الحالة دي خاصية overflow مش هتشتغل خالص لأن الصندوق بيفضل يكبر لوحده مع كل كلمة جديدة تكتبها!",
+  "recap": "خاصية overflow في CSS بتحكم في الكلام أو الصور اللي بتزيد عن حجم الصندوق. وبقيم زي hidden و scroll و auto بنقدر نخفي الزيادة أو نظهر أشرطة تمرير أنيقة.",
+  "q": [
+   {
+    "t": "إيه القيمة الافتراضية لخاصية overflow لو ما كتبناهاش؟",
+    "o": [
+     "hidden",
+     "visible",
+     "scroll"
+    ],
+    "a": 1,
+    "why": "القيمة الافتراضية هي visible يعني الكلام بيظهر بره الصندوق عادي لو زاد."
+   },
+   {
+    "t": "أنا عايز أخفي أي كلام طالع بره الصندوق تماماً ومش عايز أشرطة تمرير، أستخدم إيه؟",
+    "o": [
+     "overflow: hidden;",
+     "overflow: scroll;",
+     "overflow: auto;"
+    ],
+    "a": 0,
+    "why": "overflow: hidden بتقص وتقطع أي محتوى زايد بره الصندوق وبتخفيه عن عيون المستخدم."
+   },
+   {
+    "t": "إمتى بنحتاج نستخدم overflow مع الصناديق؟",
+    "o": [
+     "لما نغير لون خلفية الصفحة",
+     "لما يكون المحتوى أكبر من مساحة الصندوق المخصصة ليه",
+     "لما نحب نرسم دوائر وخطوط"
+    ],
+    "a": 1,
+    "why": "المشكلة اللي بتعالجها overflow بتظهر بالظبط لما يكون المحتوى أو حجم الكلام أكبر من الصندوق."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "اختار القيمة المناسبة لـ overflow",
+   "goal": "أكمل الجمل البرمجية الصحيحة للتحكم في المحتوى الزائد",
+   "items": [
+    {
+     "text": "overflow: ___ لخفي المحتوى الزائد تماماً",
+     "options": [
+      "hidden",
+      "scroll",
+      "visible"
+     ],
+     "a": 0
+    },
+    {
+     "text": "overflow: ___ لإظهار أشرطة التمرير دائماً",
+     "options": [
+      "auto",
+      "scroll",
+      "hidden"
+     ],
+     "a": 1
+    },
+    {
+     "text": "overflow: ___ لإظهار أشرطة التمرير فقط عند الحاجة",
+     "options": [
+      "visible",
+      "auto",
+      "scroll"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! لقد تحكمت في المحتوى الزائد وأصبحت الصفحة منظمة وجميلة!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم الزحمة في الويب (Overflow)",
+    "text": "لما بتصمم صندوق في صفحة الويب وتحدد له مقاس صغير، وتحط فيه كلام كتير، الكلام بيزعل ويقرر يطلع بره حدود الصندوق. الحكاية دي بنسميها في البرمجة Overflow أو المحتوى الزائد. تخيل كأنك بتحاول تقفل علبة هدية صغيرة على دبدوب حجمه كبير جداً، الغطاء مش هيتقفل كويس والعلبة هتتنفخ! في الويب، CSS بيدينا أدوات ذكية جداً عشان نحل المشكلة دي ونخلي صفحاتنا مرتبة مهما كانت كمية الكلام جوه الصناديق.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 80px; background: #ffeb3b; border: 2px solid #fbc02d; }</style></head><body><div class=\"box\">هذا نص طويل جداً سيفاجئك لأنه سيخرج تماماً عن حدود الصندوق الأصفر لأنه لا توجد قواعد تنظيمية بعد!</div></body></html>",
+    "output": "صفحة تعرض صندوقاً أصفر يخرج نصه الطويل خارجه لتوضيح مشكلة الزحمة."
+   },
+   {
+    "h": "القيمة الافتراضية: visible",
+    "text": "المتصفحات كسلانة بطبيعتها؛ لو ما كتبتش كود خاص بالـ overflow، بتعتبر القيمة الافتراضية هي visible. ده معناه إن المحتوى الزائد بيفضل ظاهر وشغال وعادي جداً يغطي على باقي العناصر اللي تحت الصندوق كأن شيئاً لم يكن. ده عامل زي لو عندك طاولة طعام صغيرة وحطيت عليها أطباق أكتر بكتير من مساحتها، الأطباق هتدخل على كراسي الجيران ومش هيهمهد. بنستخدمها لما نكون متأكدين إن المحتوى صغير ومش هيعمل مشاكل.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #e0f7fa; border: 2px solid #00acc1; overflow: visible; }</style></head><body><div class=\"box\">هذا نص طويل جداً يتدفق بحرية خارج الصندوق دون أي خوف أو قص!</div></body></html>",
+    "output": "صفحة تعرض صندوقاً يتدفق نصه بحرية خارجه دون أي قيود."
+   },
+   {
+    "h": "قص المحتوى: hidden",
+    "text": "لو عايز تفرض سيطرتك التامة وما تحبش أي فوضى في التصميم، خاصية overflow: hidden هي بطلك الخارق! بفضلها، أي حاجة تطلع بره حدود الصندوق بتتقص وتتخفي في الحال كأنها مش موجودة أساساً. تخيل مقص سحري بيقص الزيادات المزعجة من كرتونة الهدايا عشان تطلع متناسقة ومقفولة كويس. ممتازة جداً لو بتعمل صور دائرية أو مربعات بمعالم حادة وعايز تضمن إن جواتها يفضل متبحترش.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #ffebee; border: 2px solid #e53935; overflow: hidden; }</style></head><body><div class=\"box\">هذا نص طويل جداً سيتم قص الجزء الزائد منه واختفاؤه تماماً عن الأنظار!</div></body></html>",
+    "output": "صفحة تعرض صندوقاً يقص النص الزائد ويخفيه تماماً."
+   },
+   {
+    "h": "إجبار أشرطة التمرير: scroll",
+    "text": "ما تحبش تخفي كلام مهم؟ ولا يهمك، خاصية overflow: scroll بتعمل حركة ذكية جداً. هي بتقص المحتوى الزائد عشان يفضل جوه الصندوق، وفي نفس الوقت بتظهر أشرطة تمرير (Scrollbars) رأسية وأفقية عشان المستخدم يقدر يتحرك ويقرا كل كلمة براحته. تخيل شاشة تليفون فيها محتوى طويل وأنت بتحرك صباعك لفوق ولتحت. الخاصية دي بتظهر الأشرطة حتى لو الكلام قليل ومش محتاج تمرير أحياناً في بعض المتصفحات.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #e8f5e9; border: 2px solid #43a047; overflow: scroll; }</style></head><body><div class=\"box\">هذا نص طويل جداً يمكن قراءته كاملاً عن طريق تحريك شريط التمرير الظاهر في الصندوق!</div></body></html>",
+    "output": "صفحة تعرض صندوقاً يحتوي على أشرطة تمرير دائمة لقراءة النص الطويل."
+   },
+   {
+    "h": "التمرير الذكي: auto",
+    "text": "خاصية overflow: auto هي الأخت العاقلة والأكثر ذكاءً بين كل أخواتها! هي بتشتغل زي خاصية scroll بالظبط بس بأدب شديد؛ لو الكلام قليل وجوه الصندوق، بتسيبه هادئ ومن غير أشرطة تمرير شكلها مزعج. لكن أول ما الكلام يكتر ويزيد عن حد الصندوق، بتظهر أشرطة التمرير في ثانية واحدة لوحدها! دي أكتر قيمة بيستخدمها المبرمجون والمصممون المحترفون لأنها بتوفر شكل أنيق ونظيف للموقع طوال الوقت.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #fff3e0; border: 2px solid #fb8c00; overflow: auto; }</style></head><body><div class=\"box\">هذا نص طويل جداً يظهر شريط التمرير له فقط عند الحاجة لتنظيم مظهر الصفحة!</div></body></html>",
+    "output": "صفحة تعرض صندوقاً يظهر شريط التمرير فيه تلقائياً فقط عند زيادة المحتوى."
+   },
+   {
+    "h": "التحكم المنفصل: overflow-x و overflow-y",
+    "text": "أحياناً بتحتاج تتحكم في الزحمة باتجاه واحد بس؛ يعني مش عايز تمرير أفقي (يمين وشمال) وعايز تمرير رأسي (فوق وتحت) بس، أو العكس. خصائص CSS بتوفر لنا overflow-x عشان الزحمة الأفقية، و overflow-y عشان الزحمة الرأسية. تخيل كأنك بتنظم حركة المرور في شارع ضيق؛ بتسمح للعربيات تمشي قدام وورا بس تمنعها تطلع على الأرصفة الجانبية. ده بيدينا قوة تحكم مذهلة في تصميم مواقع الويب المعقدة.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #f3e5f5; border: 2px solid #8e24aa; overflow-y: scroll; overflow-x: hidden; }</style></head><body><div class=\"box\">هذا نص طويل يتيح التمرير الرأسي فقط ويمنع تماماً أي حركة أفقية مزعجة!</div></body></html>",
+    "output": "صفحة تعرض صندوقاً يسمح بالتمرير الرأسي فقط ويمنع الأفقي."
+   }
+  ],
+  "reference": [
+   {
+    "name": "overflow: visible;",
+    "desc": "القيمة الافتراضية التي تسمح للمحتوى الزائد بالخروج عن حدود الصندوق."
+   },
+   {
+    "name": "overflow: hidden;",
+    "desc": "تقص وتخفي أي محتوى يخرج عن حدود الصندوق."
+   },
+   {
+    "name": "overflow: scroll;",
+    "desc": "تخفي المحتوى الزائد وتعرض أشرطة تمرير بشكل دائم."
+   },
+   {
+    "name": "overflow: auto;",
+    "desc": "تعرض أشرطة التمرير تلقائياً فقط عند زيادة المحتوى عن حجم الصندوق."
+   },
+   {
+    "name": "overflow-x",
+    "desc": "تتحكم في الزحمة والمحتوى الزائد في الاتجاه الأفقي فقط."
+   },
+   {
+    "name": "overflow-y",
+    "desc": "تتحكم في الزحمة والمحتوى الزائد في الاتجاه الرأسي فقط."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لجعل عنصر div بمقاسات ثابتة يخفي أي كلام زائد عنه تماماً.",
+    "a": "div { width: 200px; height: 100px; overflow: hidden; }"
+   },
+   {
+    "q": "ما هي الخاصية الذكية التي تظهر أشرطة التمرير فقط عند زيادة المحتوى ولا تظهرها لو الصندوق فارغ؟",
+    "a": "overflow: auto;"
+   },
+   {
+    "q": "كيف تتحكم في المحتوى الزائد في الاتجاه الرأسي (فوق وتحت) فقط بدون الأفقي؟",
+    "a": "overflow-y: auto; (أو scroll)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "When your content is too big for its container box, things get crowded and an overflow happens, causing layout issues.",
+   "Simple example: If you place a very long story inside a small box, the text will spill out and escape the boundaries.",
+   "The CSS overflow property acts like a traffic cop that organizes crowded content and decides what happens to the extra text.",
+   "Another example: You can use overflow: hidden to clip and hide any text that overflows outside the container box like magic.",
+   "Golden rule: If you want users to read the rest of the text without messing up the page layout, use scroll or auto to add scrollbars.",
+   "In real life, this is just like packing too many clothes into a small suitcase; you either zip it tight to hide the bulge, or add a neat folding mechanism like scrollbars!"
+  ],
+  "example": "Imagine designing a profile card with fixed width and height, and writing a very long biography inside it. If left default, it would spill over other site elements. When you write the code: div { width: 200px; height: 100px; overflow: auto; } The browser figures it out; if the text overflows, a nice scrollbar appears so the user can scroll inside the box without breaking the website design at all!",
+  "mistake": "A common mistake beginners make is forgetting to set a fixed height on the box. In this case, the overflow property won't work at all because the box will just keep growing endlessly with every new line of text!",
+  "recap": "The CSS overflow property controls text or images that exceed container dimensions. Using values like hidden, scroll, and auto lets us hide excess or display clean, elegant scrollbars.",
+  "q": [
+   {
+    "t": "What is the default value of the overflow property if we don't write it?",
+    "o": [
+     "hidden",
+     "visible",
+     "scroll"
+    ],
+    "a": 1,
+    "why": "The default value is visible, meaning text overflows outside the box freely."
+   },
+   {
+    "t": "I want to hide any text spilling out of the box completely without scrollbars. What should I use?",
+    "o": [
+     "overflow: hidden;",
+     "overflow: scroll;",
+     "overflow: auto;"
+    ],
+    "a": 0,
+    "why": "overflow: hidden clips and hides any extra content outside the box."
+   },
+   {
+    "t": "When do we actually need to use the overflow property with boxes?",
+    "o": [
+     "When changing the background color of the page",
+     "When the content is larger than the container's allocated space",
+     "When we like drawing circles and lines"
+    ],
+    "a": 1,
+    "why": "The problem overflow solves occurs precisely when content size exceeds container constraints."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Choose the Right Overflow Value",
+   "goal": "Complete the CSS code snippets to properly handle overflowing content",
+   "items": [
+    {
+     "text": "overflow: ___ to completely hide overflowing content",
+     "options": [
+      "hidden",
+      "scroll",
+      "visible"
+     ],
+     "a": 0
+    },
+    {
+     "text": "overflow: ___ to always display scrollbars",
+     "options": [
+      "auto",
+      "scroll",
+      "hidden"
+     ],
+     "a": 1
+    },
+    {
+     "text": "overflow: ___ to display scrollbars only when needed",
+     "options": [
+      "visible",
+      "auto",
+      "scroll"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! You controlled the overflowing content and kept the page neat and clean!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Web Crowding (Overflow)",
+    "text": "When you design a container box on a webpage with a fixed size and pack too much text inside it, the text rebels and spills out of the box boundaries. In programming, we call this issue Overflow. Imagine trying to force-close a small gift box over a giant stuffed teddy bear; the lid won't close right and the box bulges! On the web, CSS gives us clever tools to solve this problem and keep our pages tidy no matter how much text goes into our boxes.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 80px; background: #ffeb3b; border: 2px solid #fbc02d; }</style></head><body><div class=\"box\">This is a very long text that will surprise you because it completely spills out of the yellow box since there are no layout rules yet!</div></body></html>",
+    "output": "A webpage showing a yellow box whose long text overflows outside of it to demonstrate crowding."
+   },
+   {
+    "h": "The Default Value: visible",
+    "text": "Browsers are lazy by nature; if you don't write any overflow code, the default value is visible. This means overflowing content stays visible, active, and happily spills over other elements below the box as if nothing happened. This is like having a tiny dining table and putting way too many dishes on it; the plates encroach onto your neighbors' chairs! We use it when we are sure the content is small and won't cause layout issues.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #e0f7fa; border: 2px solid #00acc1; overflow: visible; }</style></head><body><div class=\"box\">This is a very long text that flows freely outside the box without any fear or clipping!</div></body></html>",
+    "output": "A webpage showing a box where text flows freely outside its borders without restrictions."
+   },
+   {
+    "h": "Clipping Content: hidden",
+    "text": "If you want absolute control and hate messy designs, overflow: hidden is your superhero! Thanks to it, anything that goes beyond the box boundaries is instantly clipped and hidden as if it never existed. Imagine a magical pair of scissors trimming away annoying excess wrapping paper to make a gift box neat and tightly sealed. It is wonderful if you are making circular avatars or sharp-cornered cards and want to guarantee nothing leaks out.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #ffebee; border: 2px solid #e53935; overflow: hidden; }</style></head><body><div class=\"box\">This is a very long text where the excess part will be clipped and hidden completely from sight!</div></body></html>",
+    "output": "A webpage showing a box that clips excess text and hides it completely."
+   },
+   {
+    "h": "Forcing Scrollbars: scroll",
+    "text": "Don't want to hide important text? No problem, overflow: scroll does a clever trick. It clips the overflowing content so it stays inside the box, while simultaneously showing vertical and horizontal scrollbars so the user can move around and read every word comfortably. Imagine a phone screen with long content where you swipe up and down. This property shows scrollbars even if the content is short and doesn't strictly need scrolling in some browsers.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #e8f5e9; border: 2px solid #43a047; overflow: scroll; }</style></head><body><div class=\"box\">This is a very long text that can be fully read by moving the scrollbar shown inside the box!</div></body></html>",
+    "output": "A webpage showing a box featuring permanent scrollbars to read long text."
+   },
+   {
+    "h": "Smart Scrolling: auto",
+    "text": "The overflow: auto property is the smartest and most polite sibling of them all! It works just like scroll, but with great manners; if the content is short and fits inside the box, it stays quiet without annoying scrollbars. But the moment text piles up and exceeds the box capacity, scrollbars appear in a split second all by themselves! This is the most frequently used value by professional programmers and designers because it keeps websites looking clean and neat at all times.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #fff3e0; border: 2px solid #fb8c00; overflow: auto; }</style></head><body><div class=\"box\">This is a very long text where a scrollbar appears only when needed to keep the page looking organized!</div></body></html>",
+    "output": "A webpage showing a box where a scrollbar appears automatically only when content overflows."
+   },
+   {
+    "h": "Separate Control: overflow-x and overflow-y",
+    "text": "Sometimes you need to manage crowding in just one direction; meaning you don't want horizontal scrolling (left and right) and only want vertical scrolling (up and down), or vice versa. CSS provides overflow-x for horizontal crowding and overflow-y for vertical crowding. Imagine managing traffic in a narrow street; you allow cars to drive forward and backward but stop them from climbing onto the sidewalks. This gives us incredible control power in complex web layouts.",
+    "code": "<!DOCTYPE html><html><head><style>.box { width: 150px; height: 60px; background: #f3e5f5; border: 2px solid #8e24aa; overflow-y: scroll; overflow-x: hidden; }</style></head><body><div class=\"box\">This is a long text allowing vertical scrolling only while completely blocking any annoying horizontal movement!</div></body></html>",
+    "output": "A webpage showing a box that allows vertical scrolling only and blocks horizontal movement."
+   }
+  ],
+  "reference": [
+   {
+    "name": "overflow: visible;",
+    "desc": "Default value that allows overflowing content to render outside container bounds."
+   },
+   {
+    "name": "overflow: hidden;",
+    "desc": "Clips and hides any content exceeding container box bounds."
+   },
+   {
+    "name": "overflow: scroll;",
+    "desc": "Clipped overflowing content with permanent scrollbars displayed."
+   },
+   {
+    "name": "overflow: auto;",
+    "desc": "Displays scrollbars automatically only when content exceeds container size."
+   },
+   {
+    "name": "overflow-x",
+    "desc": "Controls crowding and overflowing content in the horizontal direction only."
+   },
+   {
+    "name": "overflow-y",
+    "desc": "Controls crowding and overflowing content in the vertical direction only."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to make a fixed-size div element completely hide any text overflowing past it.",
+    "a": "div { width: 200px; height: 100px; overflow: hidden; }"
+   },
+   {
+    "q": "What is the smart property that displays scrollbars only when content overflows and hides them if the box is empty?",
+    "a": "overflow: auto;"
+   },
+   {
+    "q": "How do you control overflowing content in the vertical direction (up and down) only without horizontal movement?",
+    "a": "overflow-y: auto; (or scroll)"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Introduction to CSS clipping",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Masking/Clipping"
+  },
+  {
+   "title": "MDN: overflow CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow"
+  }
+ ],
+ "grounded": true
+}

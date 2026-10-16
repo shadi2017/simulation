@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "نرحب بكم في الدرس الأخير من رحلة تصميم الويب، حيث نجمع كل الأسرار والمهارات الرائعة التي تعلمناها هذا الترم لنبني معاً معرض أعمال شخصي (Portfolio) مذهل ومميز.",
+   "تخيل أنك مهندس معمار يجمع أثاث الغرفة؛ هنا ندمج المتغيرات (CSS Variables) لحفظ الألوان، والظلال (box-shadow) لإعطاء عمق، والتنسيقات المتقدمة لتجعل موقعك ينبض بالحياة.",
+   "لنقم ببناء بطاقة تعريفية صغيرة تستخدم المتغيرات عبر تعريفها في الجذر :root ثم استدعاؤها باستخدام دالة var() لضمان توحيد الألوان بكل سهولة.",
+   "نضيف بعد ذلك لمسة جمالية سحرية عبر خاصية التحويل المؤثرة rotate() لتدوير شارة ترحيبية أو لقب ملفت للنظر يمنح التصميم طابعاً ديناميكياً فريداً.",
+   "القاعدة الذهبية لتصميم الويب الاحترافي هي النظافة والترتيب؛ استخدم دائماً المتغيرات لتسهيل تعديل التصميم بالكامل من مكان واحد دون الحاجة لتغيير كل سطر على حدة.",
+   "في الواقع العملي، يستخدم مبرمجو كبرى الشركات هذه التقنيات المجتمعة لإنشاء مواقع شخصية ومتاجر تفاعلية تجذب العيون وتعمل بسلاسة تامة على جميع الأجهزة."
+  ],
+  "example": "إليك مثال لبطاقة شخصية متكاملة تجمع المتغيرات والظلال والتحويلات:\n<!DOCTYPE html>\n<html>\n<head>\n<style>\n:root { --main-bg: #ff6b6b; --card-bg: white; }\nbody { background: #f0f0f0; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }\n.card { background: var(--card-bg); padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 250px; text-align: center; }\n.badge { background: var(--main-bg); color: white; display: inline-block; padding: 5px 15px; border-radius: 20px; transform: rotate(-5deg); }\n</style>\n</head>\n<body>\n<div class=\"card\">\n  <div class=\"badge\">مطور واجهات</div>\n  <h2>أحمد</h2>\n  <p>أهلاً بك في معرض أعمالي!</p>\n</div>\n</body>\n</html>\nلقد قمنا بتعريف متغير للألوان، وصنعنا ظلالاً ناعمة للبطاقة، وقمنا بتدوير الشارة بزاوية خمس درجات لتبدو كأنها ملصقة بعناية.",
+  "mistake": "الخطأ الشائع هو نسيان علامتي الشرطة (-- ) عند استدعاء المتغير بداخل دالة var()، مثل كتابة var(main-bg) بدلاً من var(--main-bg)، والصواب هو تذكر كتابة الشرطتين معاً.",
+  "recap": "لقد نجحنا في دمج المتغيرات والظلال والتحويلات لبناء بطاقة معرض أعمال احترافية. الآن أصبح بإمكانك إطلاق موقعك الشخصي بكل ثقة!",
+  "q": [
+   {
+    "t": "أين يتم عادةً تعريف المتغيرات العامة في لغة CSS؟",
+    "o": [
+     "داخل العنصر :root",
+     "في نهاية ملف HTML",
+     "داخل وسم العنوان <title>"
+    ],
+    "a": 0,
+    "why": "يتم تعريف المتغيرات العامة في المحدد :root لكي تكون متاحة للاستخدام في جميع أنحاء الصفحة."
+   },
+   {
+    "t": "ما هي الدالة المستخدمة لاستدعاء قيمة المتغير في CSS؟",
+    "o": [
+     "calc()",
+     "var()",
+     "rotate()"
+    ],
+    "a": 1,
+    "why": "تُستخدم دالة var() لجلب واستخدام قيمة المتغير المعرّف مسبقاً."
+   },
+   {
+    "t": "أي من الخصائص التالية تُستخدم لإعطاء عمق وواقعية لبطاقة التصميم؟",
+    "o": [
+     "box-shadow",
+     "object-fit",
+     "transform"
+    ],
+    "a": 0,
+    "why": "خاصية box-shadow تضيف ظلالاً تجعل العناصر تبدو بارزة وذات أبعاد ثلاثية."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف مهارات مشروع المعرض",
+   "goal": "صنف كل عنصر إلى مكانه الصحيح في كود المشروع: هل هو خاص بالمتغيرات والتنسيق أم بالتحويل والظلال؟",
+   "buckets": [
+    "متغيرات وتنسيق أساسي",
+    "تحويل وظلال ومرئيات"
+   ],
+   "items": [
+    {
+     "t": ":root { --main: #333; }",
+     "b": 0
+    },
+    {
+     "t": "transform: rotate(10deg);",
+     "b": 1
+    },
+    {
+     "t": "box-shadow: 0 4px 8px rgba(0,0,0,0.1);",
+     "b": 1
+    },
+    {
+     "t": "color: var(--main);",
+     "b": 0
+    },
+    {
+     "t": "object-fit: cover;",
+     "b": 1
+    },
+    {
+     "t": "background-color: var(--bg);",
+     "b": 0
+    }
+   ],
+   "success": "رائع! لقد قمت بتنظيم أدوات مشروعك الاحترافي بكل مهارة وإتقان!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة مشروع معرض الأعمال",
+    "text": "في هذا الدرس الأخير، سنقوم بجمع كل ما تعلمناه طوال الترم في مشروع واحد متكامل. تماماً مثل الشيف الذي يجمع أفضل مكوناته لصنع طبق رئيسي لذيذ، سنجمع الألوان والظلال والحركات لنبني بطاقة شخصية مذهلة تعبر عن إبداعك.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: sans-serif; background: #eef2f3; display: flex; justify-content: center; align-items: center; height: 100vh; }\n  .portfolio-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }\n</style>\n</head>\n<body>\n  <div class=\"portfolio-card\">\n    <h2>معرض أعمالي</h2>\n    <p>أهلاً بكم في مشروعي الختامي!</p>\n  </div>\n</body>\n</html>",
+    "output": "تعرض الصفحة بطاقة بيضاء بسيطة جاهزة لاستقبال التنسيقات المتقدمة."
+   },
+   {
+    "h": "قوة المتغيرات (CSS Variables)",
+    "text": "المتغيرات تشبه علب الألوان السحرية في غرفتك؛ تضع فيها لونك المفضل مرة واحدة، وكلما احتجت إليه في مكان آخر تستعيض عنه باسم العلبة بدلاً من إعادة خلط الألوان كل مرة. هذا يجعل تعديل موقعك في المستقبل أمراً في غاية السهولة والسرعة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  :root { --primary-color: #6c5ce7; }\n  .box { background-color: var(--primary-color); color: white; padding: 20px; border-radius: 10px; text-align: center; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <h3>متغيرات الألوان</h3>\n  </div>\n</body>\n</html>",
+    "output": "يظهر صندوق ملون باللون البنفسجي الجذاب المستمد مباشرة من المتغير العام."
+   },
+   {
+    "h": "إضافة العمق عبر الظلال (Box Shadows)",
+    "text": "هل لاحظت كيف تبدو الأشياء الحقيقية على مكتبك بارزة وتلقي ظلالاً على الخشب تحته؟ خاصية الظلال تمنح عناصر الويب الخاصة بك نفس هذا الشعور الرائع بالعمق، مما يجعل الزر أو البطاقة تبدو كأنها تطفو فوق الشاشة وجاهزة للضغط.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .shadow-box { width: 200px; height: 100px; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }\n</style>\n</head>\n<body>\n  <div class=\"shadow-box\">بطاقة ذات ظل</div>\n</body>\n</html>",
+    "output": "تظهر البطاقة وهي تطفو مع ظل ناعم تحتها يضفي عليها طابعاً ثلاثي الأبعاد."
+   },
+   {
+    "h": "التحويلات والحركات البسيطة (Transforms)",
+    "text": "التحويلات تشبه تماماً إمالة رأسك أو تدوير لوحة رسم معلقة على الحائط لتبدو بشكل فني جذاب. باستخدام خاصية التدوير، يمكنك جعل الشارات والنصوص تبدو حيوية ومرحة وكأنها تحيي زوار موقعك.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .badge { background: #fdcb6e; padding: 10px 20px; display: inline-block; transform: rotate(-8deg); font-weight: bold; border-radius: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"badge\">مبدع جديد</div>\n</body>\n</html>",
+    "output": "يظهر عنصر الشارة وهو مائل قليلاً بزاوية فنية مرحة."
+   },
+   {
+    "h": "ضبط الصور بذكاء (Object-fit)",
+    "text": "عندما تضع صورة شخصية في معرض أعمالك، قد تتشوه أحياناً إذا لم تكن متناسقة الأبعاد. خاصية ضبط الصور تعمل مثل إطار الصورة السحري الذي يقص الصورة أو يمددها بذكاء لتمتلئ المساحة تماماً دون أن تفقد جمالها وملامحها.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .pic-container { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid #6c5ce7; }\n  .pic-container img { width: 100%; height: 100%; object-fit: cover; }\n</style>\n</head>\n<body>\n  <div class=\"pic-container\">\n    <img src=\"https://picsum.photos/200\" alt=\"صورة شخصية\">\n  </div>\n</body>\n</html>",
+    "output": "تظهر صورة دائرية منضبطة تماماً وبأبعاد مثالية داخل الإطار."
+   },
+   {
+    "h": "بناء الهيكل الكامل لبطاقة المعرض",
+    "text": "الآن نجمع كل الأجزاء معاً في هيكل HTML مرتب ومنظم، حيث يحتوي المعرض على صورة شخصية، وعنوان تعريفي، وشارة مميزة مائلة، وأزرار تواصل، وكلها منسقة بملف CSS واحد نظيف يعتمد على المتغيرات.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  :root { --accent: #00b894; --bg-card: #ffffff; }\n  body { background: #dfe6e9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }\n  .portfolio { background: var(--bg-card); width: 280px; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); text-align: center; position: relative; }\n  .tag { background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; position: absolute; top: -10px; right: 20px; transform: rotate(10deg); }\n</style>\n</head>\n<body>\n  <div class=\"portfolio\">\n    <div class=\"tag\">مميز</div>\n    <h2>سارة أحمد</h2>\n    <p>مصممة مواقع ويب ناشئة</p>\n  </div>\n</body>\n</html>",
+    "output": "تظهر بطاقة معرض أعمال متكاملة مع شارة علوية مائلة وظل رائع."
+   },
+   {
+    "h": "لمسات التفاعل والجاذبية",
+    "text": "لكي نبهر الزوار أكثر، يمكننا إضافة تأثير عند مرور مؤشر الفأرة (Hover)، بحيث ترتفع البطاقة قليلاً أو يتغير لون الشارة، مما يجعل موقعك التفاعلي يبدو احترافياً وحياً وكأنه صُمم بواسطة محترفي هوليوود.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; width: 200px; text-align: center; }\n  .card:hover { transform: translateY(-8px); }\n</style>\n</head>\n<body>\n  <div class=\"card\">\n    <h3>مرر الفأرة هنا</h3>\n  </div>\n</body>\n</html>",
+    "output": "ترتفع البطاقة بسلاسة إلى الأعلى عند تحريك المؤشر فوقها."
+   },
+   {
+    "h": "العرض النهائي وإطلاق الموقع",
+    "text": "الخطوة الأخيرة هي مراجعة الكود والتأكد من نظافة التنسيقات وخلوها من الأخطاء. بمجرد رفع هذه الملفات إلى الخادم، يصبح معرض أعمالك الخاص متاحاً للعالم أجمع ليراه أصدقاؤك ومعلموك وتفخر بما انجزته طوال هذا الترم!",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { background: #2d3436; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; }\n  h1 { border-bottom: 3px solid #00b894; display: inline-block; padding-bottom: 5px; }\n</style>\n</head>\n<body>\n  <div>\n    <h1>مبروك إنجاز المشروع!</h1>\n    <p>أنت الآن مصمم ويب معتمد.</p>\n  </div>\n</body>\n</html>",
+    "output": "تظهر رسالة تهنئة احترافية بخلفية داكنة إيذاناً بإتمام الدورة بنجاح."
+   }
+  ],
+  "reference": [
+   {
+    "name": ":root",
+    "desc": "محدد عام لتعريف متغيرات CSS في أعلى الصفحة."
+   },
+   {
+    "name": "var()",
+    "desc": "دالة تستخدم لاستدعاء واستخدام قيمة المتغير المعرّف."
+   },
+   {
+    "name": "box-shadow",
+    "desc": "خاصية تضيف ظلالاً حول العناصر لإعطاء عمق وتجسيم."
+   },
+   {
+    "name": "transform: rotate()",
+    "desc": "خاصية تتيح تدوير العناصر بزوايا محددة."
+   },
+   {
+    "name": "object-fit",
+    "desc": "خاصية للتحكم في كيفية ملء الصور لمساحات إطاراتها."
+   },
+   {
+    "name": "transition",
+    "desc": "تضيف نعومة وحركة تدريجية عند تغير خصائص العنصر."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "قم بإنشاء متغير عام بلون أخضر (#00b894) واستخدمه كخلفية لزر داخل صفحتك.",
+    "a": ":root { --btn-color: #00b894; } .my-btn { background-color: var(--btn-color); }"
+   },
+   {
+    "q": "أكتب كود CSS لتدوير عنصر بطاقة بزاوية 5 درجات نحو اليمين.",
+    "a": ".card { transform: rotate(5deg); }"
+   },
+   {
+    "q": "أضف ظلالاً خفيفة لعنصر صندوق بحيث يكون الإزاحة الأفقية 0 والرأسية 10 بكسل والتمويه 20 بكسل بلون أسود شفافه 0.1.",
+    "a": ".box { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome to the final lesson of our web design journey, where we combine all the amazing skills and secrets learned this term to build an incredible personal portfolio.",
+   "Imagine you are an architect placing room furniture; here we combine CSS variables to store colors, box shadows to give depth, and advanced layouts to bring your site to life.",
+   "Let's build a small ID card using variables by defining them inside the :root selector and then recalling them using the var() function for easy and consistent styling.",
+   "Next, we add a magical aesthetic touch using the transform rotate() property to tilt a greeting badge or catchy title, giving the design a uniquely dynamic vibe.",
+   "The golden rule of professional web design is cleanliness and organization; always use variables to make global tweaks from a single place without editing every line.",
+   "In the real world, top company developers use these combined techniques to create personal sites and interactive stores that catch eyes and run smoothly on all devices."
+  ],
+  "example": "Here is an example of an integrated portfolio card combining variables, shadows, and transforms:\n<!DOCTYPE html>\n<html>\n<head>\n<style>\n:root { --main-bg: #ff6b6b; --card-bg: white; }\nbody { background: #f0f0f0; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }\n.card { background: var(--card-bg); padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 250px; text-align: center; }\n.badge { background: var(--main-bg); color: white; display: inline-block; padding: 5px 15px; border-radius: 20px; transform: rotate(-5deg); }\n</style>\n</head>\n<body>\n<div class=\"card\">\n  <div class=\"badge\">UI Dev</div>\n  <h2>Ahmed</h2>\n  <p>Welcome to my portfolio!</p>\n</div>\n</body>\n</html>\nWe defined a color variable, created soft card shadows, and rotated the badge by negative five degrees to look carefully pinned.",
+  "mistake": "A common mistake is forgetting the double hyphens (--) when calling a variable inside the var() function, like writing var(main-bg) instead of var(--main-bg). The correct way is remembering both hyphens.",
+  "recap": "We successfully combined variables, shadows, and transforms to build a professional portfolio card. Now you can launch your personal website with full confidence!",
+  "q": [
+   {
+    "t": "Where are global CSS variables typically defined?",
+    "o": [
+     "Inside the :root selector",
+     "At the very end of the HTML file",
+     "Inside the <title> tag"
+    ],
+    "a": 0,
+    "why": "Global variables are defined in the :root pseudo-class so they are accessible across the entire page."
+   },
+   {
+    "t": "Which function is used to retrieve a variable's value in CSS?",
+    "o": [
+     "calc()",
+     "var()",
+     "rotate()"
+    ],
+    "a": 1,
+    "why": "The var() function is used to fetch and use a previously defined variable value."
+   },
+   {
+    "t": "Which of the following properties is used to give depth and realism to a design card?",
+    "o": [
+     "box-shadow",
+     "object-fit",
+     "transform"
+    ],
+    "a": 0,
+    "why": "The box-shadow property adds shadows that make elements look raised and three-dimensional."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Portfolio Project Skill Categorization",
+   "goal": "Classify each item into its correct project code category: is it related to variables and basic layout, or transform, shadow and visuals?",
+   "buckets": [
+    "Variables & Layout",
+    "Transform, Shadow & Visuals"
+   ],
+   "items": [
+    {
+     "t": ":root { --main: #333; }",
+     "b": 0
+    },
+    {
+     "t": "transform: rotate(10deg);",
+     "b": 1
+    },
+    {
+     "t": "box-shadow: 0 4px 8px rgba(0,0,0,0.1);",
+     "b": 1
+    },
+    {
+     "t": "color: var(--main);",
+     "b": 0
+    },
+    {
+     "t": "object-fit: cover;",
+     "b": 1
+    },
+    {
+     "t": "background-color: var(--bg);",
+     "b": 0
+    }
+   ],
+   "success": "Awesome! You have organized your professional project tools skillfully and accurately!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to the Portfolio Project",
+    "text": "In this final lesson, we combine everything learned throughout the term into one complete project. Much like a chef combining top ingredients for a delicious main dish, we pull together colors, shadows, and motion to build an amazing personal card expressing your creativity.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: sans-serif; background: #eef2f3; display: flex; justify-content: center; align-items: center; height: 100vh; }\n  .portfolio-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }\n</style>\n</head>\n<body>\n  <div class=\"portfolio-card\">\n    <h2>My Portfolio</h2>\n    <p>Welcome to my final project!</p>\n  </div>\n</body>\n</html>",
+    "output": "The page displays a simple white card ready to receive advanced styling."
+   },
+   {
+    "h": "The Power of CSS Variables",
+    "text": "Variables act like magic paint boxes in your room; you place your favorite color in it once, and whenever you need it elsewhere, you call the box name instead of remixing colors every time. This makes updating your site in the future super easy and fast.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  :root { --primary-color: #6c5ce7; }\n  .box { background-color: var(--primary-color); color: white; padding: 20px; border-radius: 10px; text-align: center; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <h3>Color Variables</h3>\n  </div>\n</body>\n</html>",
+    "output": "Shows a box colored in an appealing purple derived directly from the global variable."
+   },
+   {
+    "h": "Adding Depth via Box Shadows",
+    "text": "Have you noticed how real objects on your desk look raised and cast shadows on the wood beneath them? The shadow property gives your web elements this wonderful feeling of depth, making buttons or cards look like they float above the screen.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .shadow-box { width: 200px; height: 100px; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }\n</style>\n</head>\n<body>\n  <div class=\"shadow-box\">Box with Shadow</div>\n</body>\n</html>",
+    "output": "The card floats with a smooth shadow underneath, giving it a 3D feel."
+   },
+   {
+    "h": "Transforms and Motion",
+    "text": "Transforms are just like tilting your head or turning a painting hanging on the wall to look artistic and engaging. Using rotation, you can make badges and text look lively and playful, as if greeting your visitors.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .badge { background: #fdcb6e; padding: 10px 20px; display: inline-block; transform: rotate(-8deg); font-weight: bold; border-radius: 5px; }\n</style>\n</head>\n<body>\n  <div class=\"badge\">New Creator</div>\n</body>\n</html>",
+    "output": "The badge element appears slightly tilted at a playful artistic angle."
+   },
+   {
+    "h": "Smart Image Fitting (Object-fit)",
+    "text": "When placing a profile picture in your portfolio, it might sometimes distort if dimensions don't match. Image fitting works like a magic picture frame that crops or stretches the image smartly to fill the space without losing its features.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .pic-container { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid #6c5ce7; }\n  .pic-container img { width: 100%; height: 100%; object-fit: cover; }\n</style>\n</head>\n<body>\n  <div class=\"pic-container\">\n    <img src=\"https://picsum.photos/200\" alt=\"Profile\">\n  </div>\n</body>\n</html>",
+    "output": "A perfectly proportioned circular profile picture appears inside the frame."
+   },
+   {
+    "h": "Building the Complete Portfolio Card",
+    "text": "Now we bring all parts together into a neat HTML structure containing a profile picture, title, tilted badge, and contact elements, all styled in a clean CSS file powered by variables.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  :root { --accent: #00b894; --bg-card: #ffffff; }\n  body { background: #dfe6e9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }\n  .portfolio { background: var(--bg-card); width: 280px; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); text-align: center; position: relative; }\n  .tag { background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; position: absolute; top: -10px; right: 20px; transform: rotate(10deg); }\n</style>\n</head>\n<body>\n  <div class=\"portfolio\">\n    <div class=\"tag\">Featured</div>\n    <h2>Sarah Ahmed</h2>\n    <p>Junior Web Designer</p>\n  </div>\n</body>\n</html>",
+    "output": "An integrated portfolio card appears complete with a top tilted tag and nice shadow."
+   },
+   {
+    "h": "Interactivity and Polish",
+    "text": "To impress visitors further, we can add a hover effect so the card lifts slightly or the badge color shifts, making your interactive site look professional and alive, as if crafted by Hollywood pros.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; width: 200px; text-align: center; }\n  .card:hover { transform: translateY(-8px); }\n</style>\n</head>\n<body>\n  <div class=\"card\">\n    <h3>Hover Over Me</h3>\n  </div>\n</body>\n</html>",
+    "output": "The card smoothly lifts upward when the cursor moves over it."
+   },
+   {
+    "h": "Final Showcase and Launch",
+    "text": "The final step is reviewing code and verifying clean, bug-free styles. Once these files are deployed, your personal portfolio becomes available for the world to see, making friends and teachers proud of what you achieved this term!",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { background: #2d3436; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; }\n  h1 { border-bottom: 3px solid #00b894; display: inline-block; padding-bottom: 5px; }\n</style>\n</head>\n<body>\n  <div>\n    <h1>Project Complete!</h1>\n    <p>You are now a certified web designer.</p>\n  </div>\n</body>\n</html>",
+    "output": "A professional congratulatory message appears on a dark background celebrating course completion."
+   }
+  ],
+  "reference": [
+   {
+    "name": ":root",
+    "desc": "Global selector to define CSS variables at the page top."
+   },
+   {
+    "name": "var()",
+    "desc": "Function used to fetch and apply defined variable values."
+   },
+   {
+    "name": "box-shadow",
+    "desc": "Property adding shadows around elements to create depth."
+   },
+   {
+    "name": "transform: rotate()",
+    "desc": "Property allowing elements to be rotated by specific angles."
+   },
+   {
+    "name": "object-fit",
+    "desc": "Property controlling how images fill their frame spaces."
+   },
+   {
+    "name": "transition",
+    "desc": "Adds smoothness and gradual motion when properties change."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a global variable with green color (#00b894) and use it as a button background inside your page.",
+    "a": ":root { --btn-color: #00b894; } .my-btn { background-color: var(--btn-color); }"
+   },
+   {
+    "q": "Write CSS code to rotate a card element by 5 degrees to the right.",
+    "a": ".card { transform: rotate(5deg); }"
+   },
+   {
+    "q": "Add soft shadows to a box element with 0 horizontal offset, 10px vertical offset, 20px blur, and black color at 0.1 opacity.",
+    "a": ".box { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: ARIA: term role",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role"
+  },
+  {
+   "title": "MDN: <dt> HTML description term element",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dt"
+  }
+ ],
+ "grounded": true
+}

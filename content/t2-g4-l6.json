@@ -1,0 +1,284 @@
+{
+ "ar": {
+  "steps": [
+   "لما العناصر تتداخل على الشاشة، نحتاج طريقة عشان نعرف مين يظهر فوق التاني وكأننا بنرتب ورق فوق بعضه في طابور. بنسمي الترتيب ده نظام الطبقات أو Stacking Context على صفحة الويب.",
+   "عشان نتحكم في مين فوق ومين تحت، بنستخدم خاصية CSS اسمها z-index. الخاصية دي بتدي أرقام صحيحة للعناصر المرتبة عشان تحدد مين يغطي التاني.",
+   "تخيل z-index زي طبقات الكيك أو أدوار العمارة؛ الدور اللي رقمه أكبر بيظهر قدامنا ومغطي الأدوار اللي تحته واللي أرقامها أصغر.",
+   "لو عندنا صندوقين فوق بعض وعايزين الصندوق الأصفر يظهر فوق الصندوق الأخضر، بندي الأصفر z-index أكبر زي 3 والأخضر z-index أصغر زي 2.",
+   "قاعدة ذهبية: خاصية z-index بتشتغل بس مع العناصر اللي ليها position زي absolute أو relative أو fixed، ومش بتشتغل مع position: static العادي.",
+   "بنستفيد من z-index في الحياة العملية لما بنعمل قوائم منسدلة Dropdown menus أو أزرار منبغشة Pop-ups تظهر فوق باقي محتوى الصفحة وماتختفيش وراه."
+  ],
+  "example": "لو عملنا مربعين متداخلين على الشاشة، المربع الأول الأخضر بياخد position: absolute و z-index: 2، والمربع التاني الذهبي بياخد position: absolute و z-index: 3. بما إن رقم 3 أكبر من رقم 2، هيظهر المربع الذهبي فوق المربع الأخضر ويغطيه كأنه كارت فوق كارت تاني.",
+  "mistake": "لو كتبت z-index: 10 لعنصر ومظهرش فوق العنصر التاني، غالباً نسيت تكتب خاصية position زي relative أو absolute للعنصر. الحل: تأكد إن العنصر عنده position مش static عشان z-index تشتغل معاك صح.",
+  "recap": "خاصية z-index بتساعدنا نرتب العناصر المتداخلة فوق بعضها باستخدام أرقام صحيحة. لازم العنصر يكون عنده position عشان الخاصية دي تشتغل وتتحكم في طبقات الصفحة.",
+  "q": [
+   {
+    "t": "إيه هي الخاصية اللي بنستخدمها عشان نتحكم في ترتيب طبقات العناصر المتداخلة؟",
+    "o": [
+     "font-size",
+     "z-index",
+     "background-color"
+    ],
+    "a": 1,
+    "why": "خاصية z-index هي المسؤولة عن تحديد مين يظهر فوق التاني في العناصر المتداخلة."
+   },
+   {
+    "t": "علشان z-index تشتغل مع العنصر، لازم يكون عنده أي نوع من الـ position؟",
+    "o": [
+     "static",
+     "relative أو absolute",
+     "hidden"
+    ],
+    "a": 1,
+    "why": "خاصية z-index لا تطبق على العناصر اللي فيها position: static."
+   },
+   {
+    "t": "عنصر عنده z-index: 5 وعنصر تاني عنده z-index: 2، مين اللي هيظهر فوق التاني؟",
+    "o": [
+     "عنصر 5 لأنه رقمه أكبر",
+     "عنصر 2 لأنه أصغر",
+     "هيتساووا في الظهور"
+    ],
+    "a": 0,
+    "why": "العنصر اللي عنده z-index أكبر يظهر فوق العنصر اللي عنده رقم أصغر."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود ترتيب الطبقات",
+   "goal": "عدل السطر الخاطئ عشان المربع يظهر فوق الثاني باستخدام z-index",
+   "lines": [
+    "<div style=\"position: relative; z-index: 1;\">صندوق تحت</div>",
+    "<div style=\"position: static; z-index: 5;\">صندوق فوق</div>"
+   ],
+   "bug": 1,
+   "fix": "<div style=\"position: absolute; z-index: 5;\">صندوق فوق</div>",
+   "success": "رائع! تحولت الطبقات وبقى الصندوق فوق المربع التاني بكل سهولة!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم التداخل والطبقات",
+    "text": "لما بنصمم صفحات الويب، أحياناً العناصر بتتحرك وتقع فوق بعضها البعض. في الحالة دي، المتصفح محتاج نظام منظم عشان يعرف مين يترسم الأول ومين يظهر فوق التاني. زي ما بنرتب الورق على المكتب، الورقة الأخيرة بتبقى فوق الورقة الأولى.",
+    "code": "<div style='position:relative;'><div style='background:lightblue; width:150px; height:100px; position:absolute;'>تحت</div><div style='background:pink; width:150px; height:100px; position:absolute; top:20px; left:20px;'>فوق</div></div>",
+    "output": "يظهر صندوق وردي يغطي جزءاً من صندوق أزرق تحته."
+   },
+   {
+    "h": "خاصية z-index الأساسية",
+    "text": "بنستخدم خاصية z-index في الـ CSS عشان نتحق في ترتيب العناصر فوق بعضها. الاسم جاي من المحور Z في الأبعاد الثلاثية، يعني البعد اللي جاي في وشك أو بعيد عنك. الرقم الأكبر معناه قرب أكتر وظهور فوق باقي العناصر.",
+    "code": "<div style='position:relative;'><div style='z-index:1; background:orange; width:150px; height:80px; position:absolute;'>رقم 1</div><div style='z-index:2; background:yellow; width:150px; height:80px; position:absolute; top:30px; left:30px;'>رقم 2</div></div>",
+    "output": "يظهر صندوق أصفر برقم 2 يغطي الصندوق البرتقالي تماماً."
+   },
+   {
+    "h": "الشرط الأساسي: العنصر المُرتَّب (Positioned)",
+    "text": "خاصية z-index مش بتشتغل مع أي عنصر كده وخلاص؛ لازم يكون العنصر عنده خاصية position محددة بقيمة زي relative أو absolute أو fixed. لو العنصر position بتاعته static، الـ z-index مش هتأثر فيه أبداً.",
+    "code": "<div style='z-index:100; background:lightgreen; position:static;'>لن تتأثر</div>",
+    "output": "عنصر أخضر في مكانه العادي بدون أي تأثير لـ z-index لأنه static."
+   },
+   {
+    "h": "الأرقام الموجبة والسالبة",
+    "text": "مش بس بنستخدم أرقام موجبة زي 1 و 5 و 10، لأ، ممكن كمان نستخدم أرقام سالبة زي -1 عشان نخلي العنصر يرجع وراء خلفية الصفحة أو وراء العناصر التانية، كأنه مستخبى تحت الترابيزة.",
+    "code": "<div style='position:relative;'><div style='z-index:-1; background:red; width:150px; height:100px; position:absolute;'>تحت الكل</div><div style='background:cyan; width:100px; height:50px; position:absolute;'>العادي</div></div>",
+    "output": "يظهر صندوق أحمر مختفي تحت الصندوق السماوي بسبب الرقم السالب."
+   },
+   {
+    "h": "سياق التراص (Stacking Context)",
+    "text": "سياق التراص هو زي عالم صغير مستقل لجزء من الصفحة. لما عنصر بياخد z-index رقم صحيح (غير auto)، بيعمل لنفسه ولأولاده سياق تراص جديد، وده معناه إن ترتيب أولاده محصور جواه ومش بيتقارن بعناصر بره عنه.",
+    "code": "<div style='position:absolute; z-index:1;'><div style='position:absolute; z-index:999;'>ابن داخلي</div></div>",
+    "output": "عنصر داخلي يتبع سياق الأب الخاص به في الترتيب."
+   },
+   {
+    "h": "تطبيقات عملية: القوائم المنبثقة (Pop-ups)",
+    "text": "في المواقع الحقيقية، لما بتدوس على زرار وتظهر قائمة منسدلة أو نافذة منبثقة، بنديها z-index عالي جداً زي 999 أو 1000 عشان تضمن إنها تظهر فوق محتوى الصفحة كله ومحدش يغطي عليها.",
+    "code": "<div style='position:relative; height:50px;'><div style='position:absolute; z-index:999; background:black; color:white; padding:10px;'>قائمة منبثقة</div><div style='position:absolute; z-index:1; background:gray; padding:10px; top:5px;'>محتوى الصفحة</div></div>",
+    "output": "قائمة سوداء تظهر فوق المحتوى الرمادي تماماً بفضل z-index العالي."
+   }
+  ],
+  "reference": [
+   {
+    "name": "z-index",
+    "desc": "تحديد الترتيب الرأسي للعنصر المرتب (المحور Z)."
+   },
+   {
+    "name": "position: absolute",
+    "desc": "تثبيت العنصر في إحداثيات محددة والسماح لـ z-index بالعمل."
+   },
+   {
+    "name": "position: relative",
+    "desc": "إزاحة العنصر من مكانه الأصلي وتفعيل طبقات z-index."
+   },
+   {
+    "name": "position: static",
+    "desc": "الوضع الافتراضي للعناصر ولا تقبل خاصية z-index."
+   },
+   {
+    "name": "stacking context",
+    "desc": "مجموع وترتيب الطبقات والعناصر داخل حاوية محددة."
+   },
+   {
+    "name": "auto",
+    "desc": "القيمة الافتراضية لـ z-index ولا تنشئ سياق تراص جديد."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لجعل عنصر له position absolute يظهر في أعلى طبقة برقم z-index يساوي 50.",
+    "a": "position: absolute; z-index: 50;"
+   },
+   {
+    "q": "لماذا لا يعمل z-index مع العنصر الذي له position: static؟",
+    "a": "لأن خاصية z-index تتطلب أن يكون العنصر positioned (أي غير static) لكي يتم تطبيق الترتيب عليه."
+   },
+   {
+    "q": "كيف تجعل عنصراً يختفي تحت العناصر الأخرى باستخدام z-index؟",
+    "a": "بإعطائه قيمة سالبة مثل z-index: -1."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "When elements overlap on a webpage, we need a way to decide which one appears on top, just like stacking papers in a pile. We call this ordering system Stacking Context.",
+   "To control which element is on top or bottom, we use the CSS property called z-index. This property assigns integer numbers to positioned elements to determine overlap.",
+   "Imagine z-index like cake layers or building floors; the floor with the larger number appears in front of us, covering the floors below with smaller numbers.",
+   "If we have two overlapping boxes and want the yellow box to sit on top of the green one, we give the yellow box a larger z-index like 3 and the green box a smaller z-index like 2.",
+   "Golden rule: The z-index property only works on elements with a position value like absolute, relative, or fixed. It does not work on normal position: static elements.",
+   "We use z-index in real life when building drop-down menus or pop-up modals so they appear cleanly above all other page content without getting hidden underneath."
+  ],
+  "example": "If we create two overlapping boxes on the screen, the first green box gets position: absolute and z-index: 2, while the second gold box gets position: absolute and z-index: 3. Since 3 is greater than 2, the gold box appears on top of the green box and covers it like a card over another.",
+  "mistake": "If you wrote z-index: 10 for an element and it did not appear on top of another, you likely forgot to set a position property like relative or absolute. Solution: Ensure the element has a position other than static for z-index to take effect.",
+  "recap": "The z-index property helps us order overlapping elements using integer numbers. The element must have a position set for this property to control page layers.",
+  "q": [
+   {
+    "t": "Which property do we use to control the stacking order of overlapping elements?",
+    "o": [
+     "font-size",
+     "z-index",
+     "background-color"
+    ],
+    "a": 1,
+    "why": "The z-index property is responsible for determining stacking order among overlapping elements."
+   },
+   {
+    "t": "For z-index to work on an element, what type of position must it have?",
+    "o": [
+     "static",
+     "relative or absolute",
+     "hidden"
+    ],
+    "a": 1,
+    "why": "The z-index property does not apply to elements with position: static."
+   },
+   {
+    "t": "An element has z-index: 5 and another has z-index: 2. Which one appears on top?",
+    "o": [
+     "Element 5 because its number is larger",
+     "Element 2 because it is smaller",
+     "They appear equally"
+    ],
+    "a": 0,
+    "why": "The element with the higher z-index value appears on top of the one with the smaller value."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Layer Stacking Code",
+   "goal": "Fix the wrong line so the box appears on top using z-index",
+   "lines": [
+    "<div style=\"position: relative; z-index: 1;\">Bottom box</div>",
+    "<div style=\"position: static; z-index: 5;\">Top box</div>"
+   ],
+   "bug": 1,
+   "fix": "<div style=\"position: absolute; z-index: 5;\">Top box</div>",
+   "success": "Awesome! The layers shifted and the box sits right on top of the other!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Overlapping and Layers",
+    "text": "When we design web pages, elements sometimes move and fall on top of each other. In this case, the browser needs an organized system to know which one is drawn first and which appears on top, just like organizing paper on a desk where the top paper covers the bottom one.",
+    "code": "<div style='position:relative;'><div style='background:lightblue; width:150px; height:100px; position:absolute;'>Bottom</div><div style='background:pink; width:150px; height:100px; position:absolute; top:20px; left:20px;'>Top</div></div>",
+    "output": "A pink box appears covering part of a blue box underneath it."
+   },
+   {
+    "h": "The Basic z-index Property",
+    "text": "We use the CSS z-index property to control the stacking order of elements. The name comes from the Z-axis in 3D dimensions, meaning coming towards you or moving away. A larger number means closer proximity and appearing above other elements.",
+    "code": "<div style='position:relative;'><div style='z-index:1; background:orange; width:150px; height:80px; position:absolute;'>Layer 1</div><div style='z-index:2; background:yellow; width:150px; height:80px; position:absolute; top:30px; left:30px;'>Layer 2</div></div>",
+    "output": "A yellow box labeled Layer 2 appears completely covering the orange box."
+   },
+   {
+    "h": "The Core Rule: Positioned Elements",
+    "text": "The z-index property does not work on just any element; the element must have a position property set to a value like relative, absolute, or fixed. If an element's position is static, z-index will have no effect on it at all.",
+    "code": "<div style='z-index:100; background:lightgreen; position:static;'>Will not work</div>",
+    "output": "A green box in its normal place without any effect from z-index."
+   },
+   {
+    "h": "Positive and Negative Numbers",
+    "text": "We don't just use positive numbers like 1, 5, and 10; we can also use negative numbers like -1 to push an element behind the page background or beneath other elements, as if it is hiding under the table.",
+    "code": "<div style='position:relative;'><div style='z-index:-1; background:red; width:150px; height:100px; position:absolute;'>Behind all</div><div style='background:cyan; width:100px; height:50px; position:absolute;'>Normal</div></div>",
+    "output": "A red box hiding underneath the cyan box due to the negative number."
+   },
+   {
+    "h": "Stacking Context",
+    "text": "A stacking context is like an independent small world for part of a page. When an element gets an integer z-index (other than auto), it establishes a new stacking context for itself and its children, meaning their order is contained within and not compared to outside elements.",
+    "code": "<div style='position:absolute; z-index:1;'><div style='position:absolute; z-index:999;'>Child item</div></div>",
+    "output": "An inner element following its parent context stacking order."
+   },
+   {
+    "h": "Real-Life Applications: Pop-ups",
+    "text": "On real websites, when you click a button and a drop-down menu or pop-up modal appears, we give it a very high z-index like 999 or 1000 to ensure it renders above all page content without anything covering it.",
+    "code": "<div style='position:relative; height:50px;'><div style='position:absolute; z-index:999; background:black; color:white; padding:10px;'>Pop-up menu</div><div style='position:absolute; z-index:1; background:gray; padding:10px; top:5px;'>Page content</div></div>",
+    "output": "A black pop-up menu appears clearly above the gray content thanks to high z-index."
+   }
+  ],
+  "reference": [
+   {
+    "name": "z-index",
+    "desc": "Sets the vertical stacking order of a positioned element (Z-axis)."
+   },
+   {
+    "name": "position: absolute",
+    "desc": "Positions an element at exact coordinates and allows z-index to work."
+   },
+   {
+    "name": "position: relative",
+    "desc": "Offsets an element from its normal spot and enables z-index layers."
+   },
+   {
+    "name": "position: static",
+    "desc": "Default element positioning where z-index is ignored."
+   },
+   {
+    "name": "stacking context",
+    "desc": "The grouping and ordering of layers and elements within a container."
+   },
+   {
+    "name": "auto",
+    "desc": "Default z-index value which does not create a new stacking context."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to make an absolute positioned element appear on the top layer with a z-index of 50.",
+    "a": "position: absolute; z-index: 50;"
+   },
+   {
+    "q": "Why doesn't z-index work on an element with position: static?",
+    "a": "Because the z-index property requires the element to be positioned (non-static) for stacking rules to apply."
+   },
+   {
+    "q": "How can you make an element hide beneath other elements using z-index?",
+    "a": "By giving it a negative value such as z-index: -1."
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: Stacking without the z-index property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_without_z-index"
+  },
+  {
+   "title": "MDN: z-index CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,292 @@
+{
+ "ar": {
+  "steps": [
+   "النصوص في لغة جافاسكريبت هي عبارة عن سلسلة من الحروف المتصلة التي نستخدمها لعرض الكلمات والجمل للمستخدمين، وتعتبر كأنها كائنات تحتوي على أدوات مفيدة جداً لتعديلها.",
+   "نحتاج أحياناً إلى اقتطاع جزء صغير من النص دون تغيير النص الأصلي؛ وهنا يأتي دور دالة slice التي تأخذ رقم بداية ونريد التوقف قبله.",
+   "لتجربة دالة slice، نكتب النص ثم نحدد مكان البداية والنهاية مثل text.slice(0, 4) لاختيار الحروف الأربعة الأولى بكل سهولة.",
+   "بجانب القص، يمكننا تحويل جملة كاملة إلى قائمة أو مصفوفة من الكلمات باستخدام دالة split عن طريق فصل الكلمات بناءً على الفراغات.",
+   "قاعدة ذهبية: دالة slice تقطع الأماكن بالحروف بينما دالة split تقسم النص إلى قطع مصفوفة منفصلة بناءً على الفاصل الذي نحدده مثل المسافة.",
+   "في الواقع، عندما يصمم المطورون تطبيقات مثل محركات البحث أو برامج الدردشة، فإنهم يستخدمون slice و split لفصل الرسائل وتحليل الكلمات المدخلة."
+  ],
+  "example": "تخيل أن لديك شريطاً طويلاً من الورق المكتوب عليه جملة 'Hello World' وتريد قص كلمة Hello وحدها وتحويل الجملة إلى كلمات منفصلة. باستخدام الكود: \nconst msg = 'Hello World';\nconst part = msg.slice(0, 5);\nconst words = msg.split(' ');\nهنا ستحصل على كلمة 'Hello' في المتغير part، ومصفوفة ['Hello', 'World'] في المتغير words.",
+  "mistake": "خطأ شائع هو نسيان أن الفهرس في جافاسكريبت يبدأ من الصفر، أو كتابة رقم نهاية دالة slice بحيث يكون أصغر من رقم البداية، مما يعطي نصاً فارغاً. الحل هو التأكد من ترتيب الأرقام تصاعدياً.",
+  "recap": "تعلمنا اليوم كيف نستخدم دالة slice لقص جزء من النص ودالة split لتحويل النص إلى مصفوفة كلمات بكل أمان وسهولة.",
+  "q": [
+   {
+    "t": "ماذا تفعل دالة slice للنصوص؟",
+    "o": [
+     "تقطع جزءاً من النص",
+     "تكبر حجم الشاشة",
+     "تحذف الملفات"
+    ],
+    "a": 0,
+    "why": "دالة slice تستخدم لاستخراج جزء من النص بناءً على أرقام الفهارس."
+   },
+   {
+    "t": "كيف نقسم جملة إلى مصفوفة كلمات؟",
+    "o": [
+     "باستخدام split(' ')",
+     "باستخدام length",
+     "باستخدام slice"
+    ],
+    "a": 0,
+    "why": "دالة split تقسم النص إلى مصفوفة بناءً على الفاصل المحدد مثل المسافة."
+   },
+   {
+    "t": "هل تغير دالة slice النص الأصلي؟",
+    "o": [
+     "نعم، تحذفه تماماً",
+     "لا، وتعيد جزءاً جديداً",
+     "تغير لونه فقط"
+    ],
+    "a": 1,
+    "why": "دوال النصوص في جافاسكريبت لا تغير النص الأصلي بل تعيد قيمة جديدة."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات قص وتقسيم النص",
+   "goal": "رتب خطوات استخدام دالة القص والتقسيم في جافاسكريبت بشكل صحيح.",
+   "items": [
+    "تعريف متغير يحمل النص الأصلي",
+    "استخدام دالة slice لقص جزء محدد",
+    "استخدام دالة split لتقسيم النص إلى مصفوفة",
+    "طباعة النتائج على الشاشة للمستخدم"
+   ],
+   "success": "رائع! لقد نجحت في قص النص وتقسيمه مثل المطورين المحترفين!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن النصوص في جافاسكريبت",
+    "text": "النصوص أو الـ Strings هي عبارة عن سلسلة من الحروف المتجاورة التي نخزنها داخل متغيرات. تشبه النصوص قطاراً طويلاً من العربات، حيث تحمل كل عربة حرفاً واحداً يبدأ عدها من الرقم صفر. نستطيع التعامل مع هذه النصوص كأنها كائنات تحتوي على خصائص وأوامر سحرية تساعدنا في تعديلها وفحصها وقصها بكل مرونة وسرعة دون أي تعقيد برمجي.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Test</title></head>\n<body>\n  <h1 id='res'></h1>\n  <script>\n    const str = 'JavaScript';\n    document.getElementById('res').innerText = str.length;\n  </script>\n</body>\n</html>",
+    "output": "تظهر الصفحة عدد حروف كلمة جافاسكريبت وهو 10 حروف."
+   },
+   {
+    "h": "ما هي دالة القص slice؟",
+    "text": "تخيل أن لديك شريطاً لاصقاً طويلاً ومكتوباً عليه اسمك، وتريد قص جزء معين منه بالمقص دون أن تفسد بقية الشريط. دالة slice تقوم بهذا الدور بالضبط في جافاسكريبت؛ فهي تأخذ رقمين يمثلان نقطة البداية والنهاية، وتعيد لك الجزء المحصور بينهما، تماماً كقص قطعة قماش من ثوب طويل لتصميم ملابس جديدة وجميلة للألعاب.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const text = 'Coding Kids';\n    document.getElementById('demo').innerText = text.slice(0, 6);\n  </script>\n</body>\n</html>",
+    "output": "تظهر على الصفحة كلمة Coding المستقطعة من النص الأصلي."
+   },
+   {
+    "h": "كيف تعمل الفهارس في slice؟",
+    "text": "عندما نحدد أرقام الفهارس لدالة slice، يجب أن نعرف أن الرقم الأول هو مكان البداية ويتم تضمينه، أما الرقم الثاني فهو مكان التوقف ولا يتم تضمين الحرف الموجود عنده. فمثلاً لو كان لدينا كلمة 'Apple' وطلبنا slice(0, 3)، فإن الحروف عند الفهارس 0 و 1 و 2 هي التي ستظهر فقط، بينما الحرف الثالث لا يدخل في النتيجة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const fruit = 'Apple';\n    document.getElementById('demo').innerText = fruit.slice(1, 4);\n  </script>\n</body>\n</html>",
+    "output": "تظهر الكلمة الجزئية ppl على الشاشة."
+   },
+   {
+    "h": "ما هي دالة التقسيم split؟",
+    "text": "بدلاً من قص أجزاء بالحروف، ماذا لو أردنا تفكيك جملة كاملة إلى كلمات منفصلة؟ هنا تاتي دالة split لتلعب دور السكين الذي يقطع الجملة من عند المسافات أو الرموز. تشبه هذه العملية تفكيك ليجو مركّب إلى قطع منفردة لكي تستطيع ترتيبها واللعب بكل قطعة على حدة داخل برنامجك البرمجي الرائع.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const sentence = 'Learn Web Development';\n    const arr = sentence.split(' ');\n    document.getElementById('demo').innerText = arr[1];\n  </script>\n</body>\n</html>",
+    "output": "تظهر الكلمة الثانية وهي Web بعد تقسيم الجملة."
+   },
+   {
+    "h": "تحويل النصوص إلى مصفوفات",
+    "text": "عندما نستعمل دالة split، فإن النتيجة النهائية لا تظل نصاً عادياً، بل تتحول فوراً إلى مصفوفة أو قائمة مرتبة من النصوص. هذا التحويل سحري ومفيد جداً لأنه يتيح لنا التعامل مع كل كلمة على حدة، مثل حساب عدد الكلمات في المقال، أو البحث عن كلمة معينة داخل جملة طويلة بكل سهولة ويسر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const colors = 'red,green,blue';\n    const list = colors.split(',');\n    document.getElementById('demo').innerText = list.length;\n  </script>\n</body>\n</html>",
+    "output": "يظهر الرقم 3 للدلالة على وجود ثلاثة عناصر في المصفوفة الناتجة."
+   },
+   {
+    "h": "الفرق بين slice و split",
+    "text": "من المهم جداً ألا نخلط بين الدالتين؛ فدالة slice تتعامل مع الحروف والفهارس الرقمية لقص قطعة نصية متصلة، بينما دالة split تبحث عن فاصل معين مثل الفراغ أو الفاصلة وتقطع النص كله لتصنع منه مصفوفة من العناصر المتعددة. كل دالة لها مهمتها الخاصة التي تساعدنا في بناء صفحات ويب تفاعلية وذكية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const text = 'Cat,Dog';\n    document.getElementById('demo').innerText = text.slice(0, 3) + ' & ' + text.split(',')[1];\n  </script>\n</body>\n</html>",
+    "output": "يظهر النص الناتج عن دمج العمليتين: Cat & Dog."
+   },
+   {
+    "h": "استخدامات حقيقية في البرمجة",
+    "text": "في المواقع الحقيقية، نستخدم هذه الطرق طوال الوقت. مثلاً عندما يكتب المستخدم بريده الإلكتروني، يمكننا استخدام split('@') لنفصل اسم المستخدم عن اسم النطاق. أو عندما نعرض عنوان مقال طويل جداً في قائمة المصغرات، نستخدم slice(0, 30) مع إضافة نقاط في النهاية ليظل التصميم مرتباً وجميلاً لجميع المستخدمين.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const email = 'hero@example.com';\n    const username = email.split('@')[0];\n    document.getElementById('demo').innerText = username;\n  </script>\n</body>\n</html>",
+    "output": "يظهر اسم المستخدم المستخرج hero على الشاشة."
+   },
+   {
+    "h": "قاعدة ذهبية للمطور الصغير",
+    "text": "تذكر دائماً أن النصوص في جافاسكريبت لا تتغير تلقائياً عند تطبيق هذه الدوال عليها؛ بل يجب عليك حفظ النتيجة في متغير جديد تماماً لكي تستخدمه لاحقاً. هذه القاعدة تحمي برامجك من الأخطاء وتجعل بياناتك آمنة ومرتبة طوال فترة تشغيل التطبيق.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const original = 'JavaScript';\n    const cut = original.slice(4);\n    document.getElementById('demo').innerText = cut;\n  </script>\n</body>\n</html>",
+    "output": "يظهر الجزء المتبقي من الكلمة وهو Script."
+   }
+  ],
+  "reference": [
+   {
+    "name": "slice(start, end)",
+    "desc": "تستخرج جزءاً من النص بناءً على فهارس البداية والنهاية."
+   },
+   {
+    "name": "split(separator)",
+    "desc": "تقسم النص إلى مصفوفة بناءً على الفاصل المحدد."
+   },
+   {
+    "name": "length",
+    "desc": "تعيد عدد الحروف الموجودة في النص."
+   },
+   {
+    "name": "indexOf()",
+    "desc": "تبحث عن مكان وجود كلمة داخل النص."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً لاقتطاع كلمة 'Web' من النص 'Learn Web Dev' باستخدام slice.",
+    "a": "const t = 'Learn Web Dev'; t.slice(6, 9);"
+   },
+   {
+    "q": "اكتب كوداً لتقسيم الجملة 'apple,banana' إلى مصفوفة باستخدام split.",
+    "a": "const s = 'apple,banana'; s.split(',');"
+   },
+   {
+    "q": "ما هو الحرف الأول في أي نص بلغة جافاسكريبت؟",
+    "a": "الحرف الذي يقع عند الفهرس صفر (0)."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Strings in JavaScript are sequences of connected characters used to display words and sentences to users, behaving like objects filled with useful tools for manipulation.",
+   "Sometimes we need to cut a small piece out of a string without changing the original text; this is where the slice method comes in, taking a start and an end point.",
+   "To test slice, we write the text followed by start and end indices like text.slice(0, 4) to easily select the first four characters.",
+   "Besides cutting, we can turn a whole sentence into an array of words using the split method by separating words based on spaces.",
+   "Golden rule: slice cuts pieces using character positions, while split chops text into separate array items based on a chosen separator like a space.",
+   "In reality, when developers build tools like search engines or chat apps, they use slice and split to break down messages and analyze user text."
+  ],
+  "example": "Imagine you have a long paper strip with the sentence 'Hello World' written on it and you want to isolate the word Hello and turn the sentence into separate words. Using code:\nconst msg = 'Hello World';\nconst part = msg.slice(0, 5);\nconst words = msg.split(' ');\nHere you get 'Hello' in the part variable, and the array ['Hello', 'World'] in the words variable.",
+  "mistake": "A common mistake is forgetting that JavaScript counts from zero, or setting the slice end index smaller than the start index, resulting in an empty string. The fix is to ensure indices are ordered correctly.",
+  "recap": "Today we learned how to use the slice method to cut parts of a string and the split method to turn strings into arrays safely and easily.",
+  "q": [
+   {
+    "t": "What does the slice method do to strings?",
+    "o": [
+     "Cuts a portion of the text",
+     "Increases screen size",
+     "Deletes files"
+    ],
+    "a": 0,
+    "why": "The slice method is used to extract a substring based on index numbers."
+   },
+   {
+    "t": "How do we split a sentence into an array of words?",
+    "o": [
+     "Using split(' ')",
+     "Using length",
+     "Using slice"
+    ],
+    "a": 0,
+    "why": "The split method divides text into an array based on a specified separator like a space."
+   },
+   {
+    "t": "Does slice change the original string?",
+    "o": [
+     "Yes, it deletes it completely",
+     "No, and it returns a new part",
+     "It only changes its color"
+    ],
+    "a": 1,
+    "why": "String methods in JavaScript do not change the original string; they return a new value."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering String Cutting and Splitting Steps",
+   "goal": "Arrange the steps to slice and split text in JavaScript correctly.",
+   "items": [
+    "Define a variable holding the original string",
+    "Use the slice method to extract a specific part",
+    "Use the split method to turn text into an array",
+    "Display the results on the screen for the user"
+   ],
+   "success": "Awesome! You successfully cut and split text like a professional developer!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Strings in JavaScript",
+    "text": "Strings are sequences of characters grouped together inside variables. Think of a string like a long train of carriages, where every carriage carries a single character starting its count from zero. We can treat these strings as objects equipped with helpful properties and magical commands to modify, inspect, and slice them with absolute flexibility and speed without any programming complexity.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Test</title></head>\n<body>\n  <h1 id='res'></h1>\n  <script>\n    const str = 'JavaScript';\n    document.getElementById('res').innerText = str.length;\n  </script>\n</body>\n</html>",
+    "output": "The page displays the character count of JavaScript, which is 10."
+   },
+   {
+    "h": "What is the slice Method?",
+    "text": "Imagine you have a long sticky tape with your name written on it, and you want to cut a specific piece with scissors without ruining the rest of the tape. The slice method performs this exact role in JavaScript; it takes two numbers representing start and end points, and returns the portion between them, just like cutting a fabric piece from a long garment.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const text = 'Coding Kids';\n    document.getElementById('demo').innerText = text.slice(0, 6);\n  </script>\n</body>\n</html>",
+    "output": "The word Coding is displayed on the page, extracted from the original text."
+   },
+   {
+    "h": "How Indexes Work in slice",
+    "text": "When we specify index numbers for slice, remember that the first number is the starting point and is included, while the second number is the stop point and is not included. For example, if we have the word 'Apple' and call slice(0, 3), characters at indices 0, 1, and 2 are shown, while the third index character is excluded from the result.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const fruit = 'Apple';\n    document.getElementById('demo').innerText = fruit.slice(1, 4);\n  </script>\n</body>\n</html>",
+    "output": "The substring ppl is shown on the screen."
+   },
+   {
+    "h": "What is the split Method?",
+    "text": "Instead of cutting character pieces, what if we want to break down an entire sentence into separate words? Here, the split method acts like a knife slicing through spaces or symbols. This is similar to dismantling a Lego model into individual pieces so you can arrange and play with each piece separately inside your cool programming project.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const sentence = 'Learn Web Development';\n    const arr = sentence.split(' ');\n    document.getElementById('demo').innerText = arr[1];\n  </script>\n</body>\n</html>",
+    "output": "The second word Web is displayed after splitting the sentence."
+   },
+   {
+    "h": "Turning Strings into Arrays",
+    "text": "When we use the split method, the final result is no longer a regular string; it instantly turns into an array or organized list of text items. This magical conversion is extremely useful because it lets us handle each word independently, like counting words in an article or searching for a specific keyword inside a long sentence easily.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const colors = 'red,green,blue';\n    const list = colors.split(',');\n    document.getElementById('demo').innerText = list.length;\n  </script>\n</body>\n</html>",
+    "output": "The number 3 appears, showing three items in the resulting array."
+   },
+   {
+    "h": "Difference Between slice and split",
+    "text": "It is vital not to mix up the two methods; slice deals with characters and numerical indices to cut a continuous text piece, while split looks for a separator like a space or comma and divides the entire text to build an array of multiple elements. Each method has its unique mission helping us build smart, interactive web pages.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const text = 'Cat,Dog';\n    document.getElementById('demo').innerText = text.slice(0, 3) + ' & ' + text.split(',')[1];\n  </script>\n</body>\n</html>",
+    "output": "The text combining both operations appears: Cat & Dog."
+   },
+   {
+    "h": "Real-World Uses in Programming",
+    "text": "On real websites, we use these methods constantly. For instance, when a user types their email, we can use split('@') to separate their username from the domain name. Or when displaying a long article title in a thumbnail list, we use slice(0, 30) with trailing dots to keep the layout neat and tidy for all users.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const email = 'hero@example.com';\n    const username = email.split('@')[0];\n    document.getElementById('demo').innerText = username;\n  </script>\n</body>\n</html>",
+    "output": "The extracted username hero appears on the screen."
+   },
+   {
+    "h": "Golden Rule for Junior Developers",
+    "text": "Always remember that strings in JavaScript do not change automatically when you apply these methods; you must save the resulting output inside a brand new variable to use it later. This rule protects your programs from bugs and keeps your data safe and organized throughout your app's runtime.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id='demo'></p>\n  <script>\n    const original = 'JavaScript';\n    const cut = original.slice(4);\n    document.getElementById('demo').innerText = cut;\n  </script>\n</body>\n</html>",
+    "output": "The remaining part of the word Script is displayed."
+   }
+  ],
+  "reference": [
+   {
+    "name": "slice(start, end)",
+    "desc": "Extracts a section of a string based on start and end index positions."
+   },
+   {
+    "name": "split(separator)",
+    "desc": "Splits a string into an array of substrings using a specified separator."
+   },
+   {
+    "name": "length",
+    "desc": "Returns the number of characters in a string."
+   },
+   {
+    "name": "indexOf()",
+    "desc": "Searches for the position of a substring within a string."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to extract the word 'Web' from 'Learn Web Dev' using slice.",
+    "a": "const t = 'Learn Web Dev'; t.slice(6, 9);"
+   },
+   {
+    "q": "Write code to split the string 'apple,banana' into an array using split.",
+    "a": "const s = 'apple,banana'; s.split(',');"
+   },
+   {
+    "q": "What is the index position of the very first character in any JavaScript string?",
+    "a": "The character located at index zero (0)."
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Useful string methods",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Useful_string_methods"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

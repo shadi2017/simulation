@@ -1,0 +1,310 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن لديك صندوق ألعاب كبير مليء بالأشياء وتريـد أن تعرف هل توجد لعبة معينة داخله أم لا، وكيف تفعل ذلك ببرمجة جافاسكريبت.",
+   "تأخذ دالة includes() لتسألها بسؤال بسيط: هل هذه اللعبة موجودة؟ وسترد عليك بنتيجة واضحة: إما نعم (true) أو لا (false).",
+   "تعمل دالة includes() بالبحث داخل المصفوفة وتفحص كل العناصر واحداً تلو الآخر حتى تجد المطلوب أو تنتهي العناصر.",
+   "إذا كنت تريد معرفة المكان أو الرقم التسلسلي (الإندكس) لمكان اللعبة في الصندوق، فإن دالة indexOf() هي صديقتك المفضلة.",
+   "القاعدة الذهبية: استخدم includes() إن كنت تريد التأكد من وجود العنصر كـ (نعم أو لا)، واستخدم indexOf() لمعرفة رقمه الترتيبى أو مكانه.",
+   "في الحياة اليومية، تشبه هذه الدوال عندما تبحث في حقيبتك المدرسية عن قلم الرصاص هل هو موجود؟ وفي أي جيب وضدته."
+  ],
+  "example": "لنفترض أن لديك قائمة بمهامك: let tasks = ['study', 'code', 'play']; وتريـد فحص هل مهمة 'code' موجودة؟ نكتب: tasks.includes('code'); وستعطيك true لأنها موجودة. وإذا سألت: tasks.indexOf('code'); فستعطيك 1 لأنها في المكان رقم 1 (تذكر أن العد يبدأ من الصفر في لغة جافاسكريبت).",
+  "mistake": "الخطأ الشائع هو نسيان أن العد في المصفوفات يبدأ من الصفر (0)، أو الاعتقاد بأن includes تعطي رقم المكان بدلاً من true وfalse. لتصحيح ذلك، تذكر دائماً أن includes تجيب بـ (صح أو خطأ) بينما indexOf يعطي رقم المكان.",
+  "recap": "تساعدنا دالتا includes و indexOf في البحث داخل المصفوفات بسهولة، حيث تفحص الأولى الوجود وتعيد قيمة منطقية، بينما تحدد الثانية مكان العنصر بدقة.",
+  "q": [
+   {
+    "t": "ماذا تعيد دالة includes() إذا وُجد العنصر؟",
+    "o": [
+     "false",
+     "true",
+     "رقم مكان العنصر"
+    ],
+    "a": 1,
+    "why": "تعيد دالة includes قيمة true إذا كان العنصر موجوداً، وfalse إذا لم يوجد."
+   },
+   {
+    "t": "ماذا تعيد دالة indexOf() إذا لم تجد العنصر تماماً؟",
+    "o": [
+     "-1",
+     "0",
+     "false"
+    ],
+    "a": 0,
+    "why": "تعيد دالة indexOf دائماً القيمة -1 إذا كان العنصر غير موجود في المصفوفة."
+   },
+   {
+    "t": "أي دالة تستخدمها لمعرفة الرقم التسلسلي الدقيق لمكان العنصر؟",
+    "o": [
+     "includes()",
+     "indexOf()",
+     "search()"
+    ],
+    "a": 1,
+    "why": "تُستخدم دالة indexOf للبحث عن فهرس أو مكان العنصر داخل المصفوفة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة البحث في حقيبة السحر",
+   "goal": "توقع ماذا سيطبع الكود عندما نفحص مصفوفة الأسلحة بسحر includes و indexOf.",
+   "code": "const items = ['sword', 'shield', 'potion'];\nconsole.log(items.includes('shield'));\nconsole.log(items.indexOf('potion'));",
+   "options": [
+    "true و 2",
+    "false و 1",
+    "true و -1"
+   ],
+   "a": 0,
+   "success": "رائع! لقد توقعت النتيجة الصحيحة: shield موجودة (true) و potion في المكان رقم 2!"
+  },
+  "sections": [
+   {
+    "h": "ما هي المصفوفات ولماذا نحتاج للبحث فيها؟",
+    "text": "المصفوفة تشبه صندوقاً كبيراً مقسماً لأدراج، وكل درج يحمل شيئاً معيناً. عندما يكبر الصندوق ويحتوي على ألعاب أو أدوات كثيرة، يصبح البحث اليدوي متعباً. هنا تأتي قوة لغة جافاسكريبت لتساعدنا في العثور على ما نريد بلمح البصر باستخدام أوامر ذكية.",
+    "code": "<script>\nconst toys = ['car', 'ball', 'doll'];\ndocument.write('عدد الألعاب: ' + toys.length);\n</script>",
+    "output": "تعرض الصفحة عدد الألعاب الموجودة داخل المصفوفة."
+   },
+   {
+    "h": "فحص الوجود باستخدام includes()",
+    "text": "فكر في دالة includes() كحارس أمن أمين تقف عند بوابة الصندوق وتسأله: هل توجد تفاحة هنا؟ يهز حارس الأمن رأسه بـ (نعم) أو (لا). هكذا تعمل includes، تبحث في كل عناصر المصفوفة وتخبرك إن كان العنصر المطلوب موجوداً أم لا.",
+    "code": "<script>\nconst fruits = ['apple', 'banana', 'orange'];\nlet hasBanana = fruits.includes('banana');\ndocument.write('هل توجد موز؟ ' + hasBanana);\n</script>",
+    "output": "تعرض الصفحة كلمة true لأن الموز موجود في المصفوفة."
+   },
+   {
+    "h": "القيم المنطقية الناتجة: true و false",
+    "text": "عندما تستخدم دالة includes()، فإنها لا تعيد لك شكلاً ولا رقماً، بل تعيد قيمة منطقية تسمى في البرمجة Boolean. إما أن تكون true (صحيح، العنصر موجود) أو false (خطأ، العنصر غير موجود). هذه القيم ممتازة لاتخاذ القرارات في الألعاب والمواقع.",
+    "code": "<script>\nconst colors = ['red', 'blue', 'green'];\ndocument.write(colors.includes('yellow'));\n</script>",
+    "output": "تعرض الصفحة false لأن اللون الأصفر غير موجود."
+   },
+   {
+    "h": "معرفة مكان العنصر باستخدام indexOf()",
+    "text": "ماذا لو لم ترد معرفة (هل هو موجود؟) بل أردت معرفة (في أي درج بالضبط وُضع؟) هنا يأتي دور دالة indexOf(). إنها تفحص المصفوفة وتعطيك الرقم التسلسلي (Index) لمكان العنصر، وتذكر دائماً أن العد البرمجي يبدأ من الصفر (0)!",
+    "code": "<script>\nconst pets = ['cat', 'dog', 'bird'];\ndocument.write(pets.indexOf('dog'));\n</script>",
+    "output": "تعرض الصفحة الرقم 1 لأن الكلب في الدرج الثاني (رقم 1)."
+   },
+   {
+    "h": "ماذا يحدث إذا لم يتم العثور على العنصر؟",
+    "text": "الأمر أشبه بالبحث عن ديناصور في حقيبتك المدرسية؛ بالطبع لن تجده! إذا طلبت من دالة indexOf() البحث عن عنصر غير موجود بتاتاً في المصفوفة، فإنها لا تشتكي ولا تتوقف، بل تعطيك بكل هدوء الرقم -1 لتدلّك على أن البحث باء بالفشل.",
+    "code": "<script>\nconst numbers = [10, 20, 30];\ndocument.write(numbers.indexOf(50));\n</script>",
+    "output": "تعرض الصفحة -1 لأن الرقم 50 غير موجود في مصفوفة الأرقام."
+   },
+   {
+    "h": "البحث من مكان معين (fromIndex)",
+    "text": "تتيح لك دالة includes ميزة رائعة وهي تحديد نقطة البداية للبحث. إذا أردت أن تبدأ البحث عن عنصر من الدرج رقم 2 صاعداً وتتجاهل الأدراج الأولى، يمكنك إضافة رقم البدء كمعامل ثانٍ داخل الأقواس لتصبح العملية أسرع وأكثر دقة.",
+    "code": "<script>\nconst letters = ['a', 'b', 'c', 'b'];\ndocument.write(letters.includes('b', 2));\n</script>",
+    "output": "تعرض الصفحة true لأن حرف b موجود بعد الدرج رقم 2."
+   },
+   {
+    "h": "مقارنة دقيقة بين includes و indexOf",
+    "text": "لكل دالة دورها البطل! استخدم includes دائماً في الجمل الشرطية (if) عندما تهتم فقط بالوجود مثل: هل معي تذكرة دخول؟ واستخدم indexOf عندما تحتاج لتعديل أو حذف العنصر لاحقاً بناءً على مكان وجوده بالتحديد.",
+    "code": "<script>\nconst bag = ['pen', 'book'];\nif (bag.includes('book')) {\n  document.write('الكتاب موجود في المكان رقم: ' + bag.indexOf('book'));\n}\n</script>",
+    "output": "تدمج الصفحة الدالتين لعرض رسالة تفصيلية عن مكان الكتاب."
+   },
+   {
+    "h": "تطبيقات حقيقية في مواقع الويب والألعاب",
+    "text": "في الألعاب، تستخدم دالة includes للتحقق مما إذا كان اللاعب يمتلك مفتاحاً سحرياً لفتح الباب. وفي المتاجر الإلكترونية، تستخدم للتحقق مما إذا كانت السلعة موجودة في سلة التسوق الخاصة بك قبل إتمام عملية الشراء.",
+    "code": "<script>\nconst cart = ['shoes', 'shirt', 'hat'];\nlet canCheckout = cart.includes('shoes');\ndocument.write('جاهز للدفع؟ ' + canCheckout);\n</script>",
+    "output": "تعرض الصفحة true لتأكيد إمكانية إتمام الدفع."
+   }
+  ],
+  "reference": [
+   {
+    "name": "includes()",
+    "desc": "تفحص ما إذا كان العنصر موجوداً في المصفوفة وتعيد true أو false."
+   },
+   {
+    "name": "indexOf()",
+    "desc": "تبحث عن العنصر وتعيد رقمه التتسلسلي (index) أو -1 إن لم توجده."
+   },
+   {
+    "name": "Array",
+    "desc": "هيكل بيانات لتخزين قائمة مرتبة من العناصر تحت اسم واحد."
+   },
+   {
+    "name": "Index",
+    "desc": "الرقم الترتيبي لمكان العنصر داخل المصفوفة ويبدأ دائماً من الصفر."
+   },
+   {
+    "name": "Boolean",
+    "desc": "قيمة منطقية تحتمل شيئين فقط: إما true (صح) أو false (خطأ)."
+   },
+   {
+    "name": "length",
+    "desc": "خاصية تخبرنا عن إجمالي عدد العناصر الموجودة داخل المصفوفة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليماً برمجياً لفحص ما إذا كانت المصفوفة ['apple', 'banana'] تحتوي على 'banana'.",
+    "a": "['apple', 'banana'].includes('banana');"
+   },
+   {
+    "q": "كيف تجد رقم مكان العنصر 'cat' في مصفوفة pets؟",
+    "a": "pets.indexOf('cat');"
+   },
+   {
+    "q": "ماذا تعيد دالة indexOf إذا بحثت عن عنصر غير موجود؟",
+    "a": "-1"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have a big toy box filled with items and you want to know if a specific toy is inside using JavaScript code.",
+   "You use the includes() method to ask a simple question: Is this toy here? It answers back clearly with either true or false.",
+   "The includes() method works by checking each item in the array one by one until it finds a match or runs out of items.",
+   "If you want to know the exact position or index number of where that toy is sitting in the box, indexOf() is your best friend.",
+   "Golden Rule: Use includes() when you only care if the item exists (yes or no), and use indexOf() when you need its exact spot number.",
+   "In real life, these methods are just like checking your school bag to see if your pencil is inside and figuring out which pocket holds it."
+  ],
+  "example": "Suppose you have a task list: let tasks = ['study', 'code', 'play']; and you want to check if 'code' exists. We write: tasks.includes('code'); which returns true because it is there. If you ask: tasks.indexOf('code'); it returns 1 because it sits at index 1 (remember, counting starts at zero in JavaScript).",
+  "mistake": "A common mistake is forgetting that array counting starts at zero (0), or thinking includes gives a position number instead of true and false. To fix this, always remember includes answers with yes/no while indexOf gives the position number.",
+  "recap": "The includes and indexOf methods help us search arrays easily; the first checks for existence returning a boolean, while the second locates the exact position of an item.",
+  "q": [
+   {
+    "t": "What does the includes() method return if the item is found?",
+    "o": [
+     "false",
+     "true",
+     "the index number"
+    ],
+    "a": 1,
+    "why": "The includes method returns true if the search element is present in the array."
+   },
+   {
+    "t": "What does indexOf() return if the item is completely missing?",
+    "o": [
+     "-1",
+     "0",
+     "false"
+    ],
+    "a": 0,
+    "why": "The indexOf method always returns -1 if the element is not found anywhere in the array."
+   },
+   {
+    "t": "Which method should you use to find the exact position number of an item?",
+    "o": [
+     "includes()",
+     "indexOf()",
+     "search()"
+    ],
+    "a": 1,
+    "why": "The indexOf method is used to locate the index or position of an item in an array."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Magic Bag Search Results",
+   "goal": "Predict what the code will print when we inspect our weapons array using includes and indexOf.",
+   "code": "const items = ['sword', 'shield', 'potion'];\nconsole.log(items.includes('shield'));\nconsole.log(items.indexOf('potion'));",
+   "options": [
+    "true and 2",
+    "false and 1",
+    "true and -1"
+   ],
+   "a": 0,
+   "success": "Brilliant! You predicted the correct result: shield exists (true) and potion is at index 2!"
+  },
+  "sections": [
+   {
+    "h": "What are Arrays and Why Search Them?",
+    "text": "An array is like a big storage box divided into numbered slots, with each slot holding a specific item. When the box grows large with toys or tools, manual searching becomes tiring. JavaScript steps in to help us find what we want in a fraction of a second using smart commands.",
+    "code": "<script>\nconst toys = ['car', 'ball', 'doll'];\ndocument.write('Toy count: ' + toys.length);\n</script>",
+    "output": "The page displays the total number of toys inside the array."
+   },
+   {
+    "h": "Checking Existence with includes()",
+    "text": "Think of the includes() method as a friendly security guard standing at the box gate asking: Is there an apple here? The guard shakes their head with a (yes) or (no). That is how includes works, scanning all array items to tell you if your target exists.",
+    "code": "<script>\nconst fruits = ['apple', 'banana', 'orange'];\nlet hasBanana = fruits.includes('banana');\ndocument.write('Has banana? ' + hasBanana);\n</script>",
+    "output": "The page displays true because banana is present in the array."
+   },
+   {
+    "h": "Boolean Results: true and false",
+    "text": "When you use the includes() method, it doesn't return a shape or a number; it returns a logical value known in programming as a Boolean. It is either true (yes, the item exists) or false (no, it is missing). These values are wonderful for making decisions in games and websites.",
+    "code": "<script>\nconst colors = ['red', 'blue', 'green'];\ndocument.write(colors.includes('yellow'));\n</script>",
+    "output": "The page displays false because yellow is not in the array."
+   },
+   {
+    "h": "Finding Item Position with indexOf()",
+    "text": "What if you do not want to know if it exists, but rather exactly which slot it occupies? That is where indexOf() comes in! It scans the array and gives you the index number of the item's location. Remember, programming counting always starts at zero (0)!",
+    "code": "<script>\nconst pets = ['cat', 'dog', 'bird'];\ndocument.write(pets.indexOf('dog'));\n</script>",
+    "output": "The page displays 1 because the dog is in the second slot (index 1)."
+   },
+   {
+    "h": "What Happens When an Item is Missing?",
+    "text": "It is like looking for a dinosaur in your school backpack; you certainly will not find it! If you ask indexOf() to search for an item that does not exist anywhere in the array, it does not complain or crash; it quietly returns -1 to signal a failed search.",
+    "code": "<script>\nconst numbers = [10, 20, 30];\ndocument.write(numbers.indexOf(50));\n</script>",
+    "output": "The page displays -1 because the number 50 is not in the array."
+   },
+   {
+    "h": "Searching from a Specific Point (fromIndex)",
+    "text": "The includes method gives you a cool feature to specify a starting point for your search. If you want to start looking for an item starting from slot 2 onwards and skip the early slots, you can add a start index number as a second argument inside the parentheses for greater precision.",
+    "code": "<script>\nconst letters = ['a', 'b', 'c', 'b'];\ndocument.write(letters.includes('b', 2));\n</script>",
+    "output": "The page displays true because letter b appears after index 2."
+   },
+   {
+    "h": "Comparing includes and indexOf",
+    "text": "Each method has its hero role! Always use includes in conditional statements (if) when you only care about presence, like: Do I have an entry ticket? Use indexOf when you need to later modify or remove the item based on its exact position.",
+    "code": "<script>\nconst bag = ['pen', 'book'];\nif (bag.includes('book')) {\n  document.write('Book found at index: ' + bag.indexOf('book'));\n}\n</script>",
+    "output": "The page combines both methods to show a detailed message about the book's location."
+   },
+   {
+    "h": "Real-Life Applications in Web Apps and Games",
+    "text": "In video games, includes is used to check if a player holds a magic key to unlock a door. In online stores, it is used to check if an item is already inside your shopping cart before proceeding to checkout.",
+    "code": "<script>\nconst cart = ['shoes', 'shirt', 'hat'];\nlet canCheckout = cart.includes('shoes');\ndocument.write('Ready to checkout? ' + canCheckout);\n</script>",
+    "output": "The page displays true confirming checkout can proceed."
+   }
+  ],
+  "reference": [
+   {
+    "name": "includes()",
+    "desc": "Checks whether an array contains a specific value, returning true or false."
+   },
+   {
+    "name": "indexOf()",
+    "desc": "Searches for a value and returns its index, or -1 if not found."
+   },
+   {
+    "name": "Array",
+    "desc": "A data structure used to store an ordered list of items under one name."
+   },
+   {
+    "name": "Index",
+    "desc": "The numeric position of an element in an array, always starting at zero."
+   },
+   {
+    "name": "Boolean",
+    "desc": "A logical data type with only two values: true or false."
+   },
+   {
+    "name": "length",
+    "desc": "A property telling us the total count of elements inside an array."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to check if the array ['apple', 'banana'] includes 'banana'.",
+    "a": "['apple', 'banana'].includes('banana');"
+   },
+   {
+    "q": "How do you find the index number of 'cat' in the pets array?",
+    "a": "pets.indexOf('cat');"
+   },
+   {
+    "q": "What does indexOf return if you search for a missing item?",
+    "a": "-1"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "title": "MDN: Array.prototype.includes()",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"
+  }
+ ],
+ "grounded": true
+}

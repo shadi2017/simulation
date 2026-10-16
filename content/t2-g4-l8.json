@@ -1,0 +1,332 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن لديك صورة لقطة لطيفة وتريد وضعها داخل إطار مربع صغير على موقعك الإلكتروني. ماذا يحدث إذا كان الإطار مستطيلاً والصورة مربعة؟ تبدو ممدودة أو مشوهة بشكل مضحك تماماً!",
+   "خاصية object-fit في لغة CSS تحل هذه المشكلة تماماً! فهي تخبر المتصفح كيف يجب أن تتصرف الصور أو مقاطع الفيديو داخل الصناديق الخاصة بها دون أن تفقد جمالها أو تتشوه.",
+   "القيمة الافتراضية هي fill وتعمل على مط وشد الصورة لتغطية الصندوق تماماً بغض النظر عن النسبة الأصلية، مما قد يسبب مطاً مضحكاً في وجوه الشخصيات داخل الصور.",
+   "إذا استخدمت القيمة contain فإن الصورة ستصغر أو تكبر لتظهر كاملة داخل الصندوق مع الحفاظ على أبعادها، لكن قد تظهر مساحات فارغة أو أشرطة بيضاء في الجوانب.",
+   "أما القيمة cover فهى السحر الحقيقي للمصممين؛ فهي تجعل الصورة تغطي الصندوق بالكامل مع الحفاظ على أبعادها، وتقوم بقص الأجزاء الزائدة بذكاء شديد دون أي تشوه.",
+   "القاعدة الذهبية لمتاجر الإنترنت هي استخدام object-fit: cover مع صور المنتجات لتبدو جميع المربعات متساوية ومنظمة مهما كانت قياسات الصور الأصلية للمنتجات."
+  ],
+  "example": "لنفترض أنك تصمم متجراً إلكترونياً لبيع الألعاب ولديك صور بأحجام مختلفة. كتبت في ملف CSS الكود التالي:\n\n```css\n.product-img {\n  width: 200px;\n  height: 200px;\n  object-fit: cover;\n}\n```\n\nبهذا الشكل، ضمنت أن كل صور الألعاب ستظهر داخل مربعات متساوية تماماً بقياس 200×200 بكسل، مع قص الأطراف الزائدة بأناقة ودون أي مط مشوه.",
+  "mistake": "الخطأ الشائع هو نسيان تحديد عرض (width) وارتفاع (height) للصندوق الحاضن للصورة، مما يجعل خاصية object-fit لا تلاحظ أي فرق لأن الصندوق سيتأثر بحجم الصورة الأصلي. الحل هو إعطاء العنصر الحاضن أبعاداً ثابتة أولاً.",
+  "recap": "خاصية object-fit تحكم كيفية ملاءمة الصور والأفلام لصناديقها. استخدمنا cover لقص الصور بذكاء داخل مربعات المنتجات.",
+  "q": [
+   {
+    "t": "ما هي القيمة التي تجعل الصورة تغطي الصندوق بالكامل مع قص الأجزاء الزائدة مع الحفاظ على الأبعاد؟",
+    "o": [
+     "fill",
+     "contain",
+     "cover"
+    ],
+    "a": 2,
+    "why": "cover تملأ الصندوق بالكامل وتقوم بقص الأطراف دون تشوه الأبعاد."
+   },
+   {
+    "t": "ماذا تفعل القيمة fill بالصورة إذا لم تتطابق أبعادها مع الصندوق؟",
+    "o": [
+     "تمط الصورة وتشدها لملء الصندوق",
+     "تخفي الصورة تماماً",
+     "تقص الصورة من المنتصف"
+    ],
+    "a": 0,
+    "why": "fill تشد الصورة لتملأ الصندوق بالقوة مما قد يسبب تشوهاً."
+   },
+   {
+    "t": "لماذا نستخدم object-fit في تصميم المتاجر الإلكترونية؟",
+    "o": [
+     "لتغيير لون خلفية الموقع",
+     "لجعل صور المنتجات متساوية ومنظمة في إطاراتها",
+     "لتسريع تحميل النصوص"
+    ],
+    "a": 1,
+    "why": "تضمن object-fit ظهور صور المنتجات بأحجام متناسقة مهما كانت أبعادها الأصلية مختلفة."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة قيم Object-Fit مع وظائفها",
+   "goal": "صل كل قيمة لخاصية object-fit بالنتيجة الصحيحة التي تحدث للصورة داخل الإطار.",
+   "pairs": [
+    [
+     "object-fit: fill;",
+     "تمدد الصورة وتطها لملء الصندوق بالكامل"
+    ],
+    [
+     "object-fit: contain;",
+     "تعرض الصورة كاملة مع إظهار فراغات عند عدم تطابق الأبعاد"
+    ],
+    [
+     "object-fit: cover;",
+     "تغطي الصندوق بالكامل وتقص الأجزاء الزائدة"
+    ],
+    [
+     "object-fit: none;",
+     "تحافظ على حجم الصورة الأصلي دون أي تغيير أو تحييد"
+    ]
+   ],
+   "success": "رائع! لقد رتبت خصائص عرض الصور باحترافية وأصبحت صور متجرك مرتبطة بإطاراتها بشكل مذهل!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن عناصر الصور والإطارات",
+    "text": "عندما نضع صورة داخل متصفح الويب، فإنها تأخذ حجماً افتراضياً خاصاً بها. لكن أحياناً نريدها أن تلتزم بمساحة محددة مثل مربع أو مستطيل صممناه في صفحتنا، مثل وضع صورة بروفایل دائرية أو مربعة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #ff6b6b; }\n  img { width: 100%; height: 100%; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/100\" alt=\"صورة عريضة\">\n  </div>\n</body>\n</html>",
+    "output": "تظهر صورة عريضة ممطوطة داخل الصندوق المربع لأننا لم نستخدم object-fit بعد."
+   },
+   {
+    "h": "خاصية object-fit الافتراضية: fill",
+    "text": "القيمة الافتراضية لأي صورة هي fill. هذا يعني أن المتصفح سيقوم بضغط أو مط الصورة بوحشية لكي تملأ المساحة المخصصة لها تماماً، حتى لو بدا وجه الشخص في الصورة عريضاً جداً أو طويلاً للغاية.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #4d96ff; }\n  img { width: 100%; height: 100%; object-fit: fill; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/100\" alt=\"صورة\">\n  </div>\n</body>\n</html>",
+    "output": "الصورة تملأ المربع تماماً ولكنها تبدو مشوهة وممطوطة أفقياً."
+   },
+   {
+    "h": "الحفاظ على النسبة بـ contain",
+    "text": "إذا كنت تريد أن ترى كل تفاصيل الصورة دون أي قص أو تشوه، يمكنك استخدام contain. تخيل أنك تضع لوحة فنية داخل إطار أكبر منها بقليل؛ ستبقى اللوحة سليمة لكن سترى حواف فارغة في الأعلى أو الجانبين.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #6bcb77; background: #eee; }\n  img { width: 100%; height: 100%; object-fit: contain; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/100\" alt=\"صورة\">\n  </div>\n</body>\n</html>",
+    "output": "تظهر الصورة كاملة داخل الصندوق الرمادي مع ظهور مساحات فارغة علوية وسفلية."
+   },
+   {
+    "h": "سحر القص الاحترافي: cover",
+    "text": "القيمة cover هي المفضلة لدى مصممي مواقع الويب. إنها تكبر الصورة لتملأ الصندوق بالكامل وتحافظ على أبعادها الأصلية، والأجزاء التي تخرج عن حدود الصندوق يتم قصها بذكاء ونظافة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #ffd93d; overflow: hidden; }\n  img { width: 100%; height: 100%; object-fit: cover; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/200\" alt=\"صورة\">\n  </div>\n</body>\n</html>",
+    "output": "تغطي الصورة المربع تماماً دون أي تشوه في شكلها مع قص الأطراف الزائدة."
+   },
+   {
+    "h": "ترك الصورة على طبيعتها: none",
+    "text": "القيمة none تعني عدم تغيير قياسات محتوى الصورة نهائياً. يتم عرض الصورة بأبعادها الأصلية بغض النظر عن حجم الصندوق الحاضن لها، وقد يظهر جزء فقط منها إذا كانت أكبر من الصندوق.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #9b59b6; }\n  img { width: 100%; height: 100%; object-fit: none; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/200\" alt=\"صورة\">\n  </div>\n</body>\n</html>",
+    "output": "تظهر عينة مركزية من الصورة بأبعادها الحقيقية الكبيرة ويختفي باقي أطرافها."
+   },
+   {
+    "h": "الذكاء الاصطناعي المصغر: scale-down",
+    "text": "تقوم القيمة scale-down بالمقارنة تلقائياً بين none و contain، وتختار القيمة التي تجعل حجم الصورة أصغر. هذا مفيد جداً لضمان عدم تمدد الصور الصغيرة وصدم المشاهد بجودة رديئة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 200px; height: 200px; border: 3px solid #e67e22; }\n  img { width: 100%; height: 100%; object-fit: scale-down; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/100/100\" alt=\"صورة صغيرة\">\n  </div>\n</body>\n</html>",
+    "output": "تستقر الصورة الصغيرة داخل الصندوق بحجمها الأصلي المريح دون تكبير مشوه."
+   },
+   {
+    "h": "تطبيق عملي: بطاقات المنتجات المتساوية",
+    "text": "في المتاجر الإلكترونية، ترفع المتاجر صوراً أفقية وأخرى رأسية. لحل هذه المشكلة وجعل الموقع يبدو احترافياً، نحدد عرضاً وارتفاعاً ثابتين للبطاقة ونستخدم object-fit: cover.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .card { width: 120px; height: 120px; border-radius: 10px; overflow: hidden; }\n  .card img { width: 100%; height: 100%; object-fit: cover; }\n</style>\n</head>\n<body>\n  <div class=\"card\">\n    <img src=\"https://picsum.photos/250/400\" alt=\"منتج\">\n  </div>\n</body>\n</html>",
+    "output": "تتحول الصورة الطويلة إلى مربع أنيق ومنسق يناسب تصميم المتجر تماماً."
+   },
+   {
+    "h": "التحكم في موضع الصورة: object-position",
+    "text": "عندما تستخدم object-fit: cover وتتم عملية القص، قد يتم قص الجزء الأهم من الصورة. يمكنك استخدام خاصية object-position لتحديد الجزء الذي يجب التركيز عليه، مثل (center top) أو (left right).",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #1abc9c; }\n  img { width: 100%; height: 100%; object-fit: cover; object-position: top; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/200/400\" alt=\"صورة رأسية\">\n  </div>\n</body>\n</html>",
+    "output": "تتمركز معاينة الصورة على الجزء العلوي منها بدلاً من المنتصف."
+   }
+  ],
+  "reference": [
+   {
+    "name": "object-fit: fill",
+    "desc": "تمدد الصورة لملء الصندوق بالكامل مع احتمال تشوه الأبعاد (القيمة الافتراضية)."
+   },
+   {
+    "name": "object-fit: contain",
+    "desc": "تعرض الصورة بالكامل مع الحفاظ على الأبعاد وإظهار فراغات عند اختلاف القياسات."
+   },
+   {
+    "name": "object-fit: cover",
+    "desc": "تملأ الصندوق بالكامل مع الحفاظ على الأبعاد وقص الأجزاء الزائدة."
+   },
+   {
+    "name": "object-fit: none",
+    "desc": "تبقي الصورة بحجمها الأصلي دون أي تغيير في القياس."
+   },
+   {
+    "name": "object-fit: scale-down",
+    "desc": "تختار القيمة الأصغر بين none و contain لعرض الصورة بأفضل مظهر."
+   },
+   {
+    "name": "object-position",
+    "desc": "تحدد موضع تركيز محتوى الصورة داخل الصندوق عند حدوث القص."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود CSS لجعل جميع الصور داخل الفئة .banner تغطي الصندوق بالكامل دون تشوه الأبعاد.",
+    "a": ".banner img { object-fit: cover; }"
+   },
+   {
+    "q": "ما هي القيمة المستخدمة في object-fit إذا أردت ضمان ظهور الصورة كاملة مع وجود مساحات فارغة متناسقة عند اختلاف القياسات؟",
+    "a": "contain"
+   },
+   {
+    "q": "كيف تحدد عرض وارتفاع لصندوق صور المنتجات ليصبح كل منها 180 بكسل وتستخدم خاصية قص الصور؟",
+    "a": "width: 180px; height: 180px; object-fit: cover;"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have a cute puppy photo and want to place it inside a small square frame on your website. What happens if the frame is rectangular and the photo is square? It looks stretched or squished comically!",
+   "The object-fit property in CSS solves this exact problem! It tells the browser how images or videos should behave inside their container boxes without losing their beauty or distorting.",
+   "The default value is fill, which stretches and squishes the image to completely fill the box regardless of its original aspect ratio, sometimes causing funny face distortions.",
+   "If you use contain, the image scales up or down to fit entirely inside the box while keeping its aspect ratio intact, though empty spaces or letterboxing might appear on the sides.",
+   "The cover value is true magic for designers; it makes the image fill the entire box while preserving its aspect ratio, intelligently cropping the overflow without any distortion.",
+   "The golden rule for online stores is to use object-fit: cover for product photos so all grid cards look uniform and neat no matter the original image dimensions."
+  ],
+  "example": "Suppose you are building a toy shop website with photos of various dimensions. You write this in your CSS file:\n\n```css\n.product-img {\n  width: 200px;\n  height: 200px;\n  object-fit: cover;\n}\n```\n\nThis guarantees all toy pictures fit nicely inside identical 200x200 pixel square cards, cleanly cropping the edges without any awkward stretching.",
+  "mistake": "A common mistake is forgetting to set a fixed width and height on the container box holding the image, making object-fit seem useless because the box will just take the image's native size. Always give the parent element explicit dimensions first.",
+  "recap": "The object-fit property controls how images and videos fit inside their containers. We used cover to smartly crop photos inside product grid cards.",
+  "q": [
+   {
+    "t": "Which value makes an image fill the entire box while cropping the overflow and preserving proportions?",
+    "o": [
+     "fill",
+     "contain",
+     "cover"
+    ],
+    "a": 2,
+    "why": "cover fills the box completely and crops the edges without distorting proportions."
+   },
+   {
+    "t": "What does the fill value do to an image if its aspect ratio doesn't match the box?",
+    "o": [
+     "Stretches and squishes it to fit",
+     "Hides the image entirely",
+     "Crops it from the center"
+    ],
+    "a": 0,
+    "why": "fill forcefully stretches the image to fill the box, which can cause distortion."
+   },
+   {
+    "t": "Why do we use object-fit when building online stores?",
+    "o": [
+     "To change the background color of the website",
+     "To make product photos neat and uniform in their grid cards",
+     "To make text load faster"
+    ],
+    "a": 1,
+    "why": "object-fit ensures product photos look consistent regardless of their original diverse dimensions."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching Object-Fit Values with Behaviors",
+   "goal": "Connect each object-fit property value to the correct visual result on the image inside its frame.",
+   "pairs": [
+    [
+     "object-fit: fill;",
+     "Stretches and squishes the image to completely fill the box"
+    ],
+    [
+     "object-fit: contain;",
+     "Scales the image entirely inside with empty spaces if ratios differ"
+    ],
+    [
+     "object-fit: cover;",
+     "Fills the box completely and crops any overflowing parts"
+    ],
+    [
+     "object-fit: none;",
+     "Keeps the image at its original size without any scaling"
+    ]
+   ],
+   "success": "Awesome! You styled your image layouts like a pro and your store items fit their frames amazingly!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Image Elements and Containers",
+    "text": "When we place an image inside a web browser, it takes its own natural native size. Sometimes we want it to obey a specific space like a square or rectangle we designed, such as circular or square profile avatars.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #ff6b6b; }\n  img { width: 100%; height: 100%; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/100\" alt=\"Wide Image\">\n  </div>\n</body>\n</html>",
+    "output": "A wide image appears squished inside the square box because we haven't used object-fit yet."
+   },
+   {
+    "h": "The Default Value: fill",
+    "text": "The default value for any image is fill. This means the browser will forcefully squeeze or stretch the image to completely occupy the allotted space, even if faces look unusually wide or stretched out.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #4d96ff; }\n  img { width: 100%; height: 100%; object-fit: fill; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/100\" alt=\"Image\">\n  </div>\n</body>\n</html>",
+    "output": "The image fills the square completely but looks stretched and horizontally distorted."
+   },
+   {
+    "h": "Preserving Aspect Ratio with contain",
+    "text": "If you want to see every detail of the image without any cropping or distortion, use contain. Imagine placing an art painting inside a slightly larger frame; the painting stays intact but you see empty margins on the sides or top.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #6bcb77; background: #eee; }\n  img { width: 100%; height: 100%; object-fit: contain; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/100\" alt=\"Image\">\n  </div>\n</body>\n</html>",
+    "output": "The image appears fully inside the gray box with empty top and bottom spacing."
+   },
+   {
+    "h": "The Magic of Clean Cropping: cover",
+    "text": "The cover value is a web designer favorite. It scales the image to fill the box entirely while preserving its original proportions, and any parts spilling outside the box boundaries are neatly and intelligently cropped.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #ffd93d; overflow: hidden; }\n  img { width: 100%; height: 100%; object-fit: cover; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/200\" alt=\"Image\">\n  </div>\n</body>\n</html>",
+    "output": "The image covers the square completely without shape distortion while trimming the excess edges."
+   },
+   {
+    "h": "Leaving Image Alone: none",
+    "text": "The none value means the image content is not resized at all. The picture displays at its natural native dimensions regardless of the container size, and only a portion of it may show if it exceeds the box.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #9b59b6; }\n  img { width: 100%; height: 100%; object-fit: none; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/300/200\" alt=\"Image\">\n  </div>\n</body>\n</html>",
+    "output": "A center snippet of the image shows at its large true size with outer edges hidden."
+   },
+   {
+    "h": "Smart Sizing: scale-down",
+    "text": "The scale-down value compares none and contain automatically, picking whichever results in a smaller concrete image size. This is great to ensure small pictures never upscale and shock viewers with poor blurry quality.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 200px; height: 200px; border: 3px solid #e67e22; }\n  img { width: 100%; height: 100%; object-fit: scale-down; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/100/100\" alt=\"Small Image\">\n  </div>\n</body>\n</html>",
+    "output": "The small image rests comfortably inside the box at its original cozy dimensions without blurry upscaling."
+   },
+   {
+    "h": "Practical Application: Uniform Product Cards",
+    "text": "In online shops, merchants upload horizontal and vertical photos. To solve this and keep the site looking professional, we set a fixed card width and height and apply object-fit: cover.",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .card { width: 120px; height: 120px; border-radius: 10px; overflow: hidden; }\n  .card img { width: 100%; height: 100%; object-fit: cover; }\n</style>\n</head>\n<body>\n  <div class=\"card\">\n    <img src=\"https://picsum.photos/250/400\" alt=\"Product\">\n  </div>\n</body>\n</html>",
+    "output": "The tall photo turns into a neat, uniform square fitting the store layout perfectly."
+   },
+   {
+    "h": "Controlling Image Position: object-position",
+    "text": "When using object-fit: cover, the center is cropped by default, which might cut out the most important part of the picture. You can use object-position to dictate where to focus, such as (center top) or (left right).",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box { width: 150px; height: 150px; border: 3px solid #1abc9c; }\n  img { width: 100%; height: 100%; object-fit: cover; object-position: top; }\n</style>\n</head>\n<body>\n  <div class=\"box\">\n    <img src=\"https://picsum.photos/200/400\" alt=\"Vertical Image\">\n  </div>\n</body>\n</html>",
+    "output": "The image preview centers on its top section instead of the middle."
+   }
+  ],
+  "reference": [
+   {
+    "name": "object-fit: fill",
+    "desc": "Stretches the image to completely fill the box with potential aspect distortion (default)."
+   },
+   {
+    "name": "object-fit: contain",
+    "desc": "Displays the full image while keeping proportions and showing empty spaces if ratios differ."
+   },
+   {
+    "name": "object-fit: cover",
+    "desc": "Fills the box completely while preserving aspect ratio and cropping excess overflow."
+   },
+   {
+    "name": "object-fit: none",
+    "desc": "Keeps the image at its native original size without any scaling."
+   },
+   {
+    "name": "object-fit: scale-down",
+    "desc": "Picks the smaller result between none and contain to display the image best."
+   },
+   {
+    "name": "object-position",
+    "desc": "Specifies the alignment of the image content inside the box when cropping occurs."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write CSS code to make all images inside the .banner class cover their container completely without distorting proportions.",
+    "a": ".banner img { object-fit: cover; }"
+   },
+   {
+    "q": "What object-fit value should you use if you want to ensure the entire image shows with nice matching empty spaces when dimensions differ?",
+    "a": "contain"
+   },
+   {
+    "q": "How do you set a width and height of 180 pixels for product image cards while applying image cropping?",
+    "a": "width: 180px; height: 180px; object-fit: cover;"
+   }
+  ]
+ },
+ "lang": "css",
+ "sources": [
+  {
+   "title": "MDN: object-fit CSS property",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/object-fit"
+  },
+  {
+   "title": "MDN: CSS images",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images"
+  }
+ ],
+ "grounded": true
+}

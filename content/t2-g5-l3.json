@@ -1,0 +1,302 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن لديك صندوقين مختلفين للألعاب، وتريد دمجهما معاً في صندوق أكبر يحتوي على جميع الألعاب. في لغة جافاسكريبت، يمكنك استخدام طريقة concat لدمج قائمتين أو مصفوفتين وتكوين مصفوفة جديدة ضخمة بسهولة تامة.",
+   "إليك مثال بسيط: إذا كان لديك مصفوفة للوجبات الخفيفة snacks ومصفوفة للمشروبات drinks، يمكنك كتابة partyMenu = snacks.concat(drinks); لدمج القائمتين معاً في قائمة حفلات واحدة متكاملة.",
+   "تعمل هذه الطريقة عن طريق أخذ عناصر المصفوفة الأولى وإضافة عناصر المصفوفة الثانية بعدها مباشرة لإنشاء مصفوفة جديدة تماماً، دون تغيير المصفوفات الأصلية التي بدأت بها، مما يحافظ على نظافة بياناتك.",
+   "يمكنك أيضاً دمج أكثر من مصفوفتين في نفس الوقت عن طريق فصلهن بفواصل، مثل: list1.concat(list2, list3). هذا يمنحك مرونة كبيرة عند ترتيب وتجميع البيانات الكبيرة في برامجك.",
+   "قاعدة ذهبية: تذكر دائماً أن دمج المصفوفات باستخدام concat لا يغير المصفوفات القديمة، بل يعيد لك مصفوفة جديدة تماماً، لذلك يجب عليك تخزين النتيجة في متغير جديد لاستخدامها لاحقاً.",
+   "في الحياة اليومية، تشبه هذه العملية دمج قائمة أصدقائك في المدرسة مع قائمة أصدقائك في النادي لتشكيل قائمة مدعوين واحدة لحفلة عيد ميلادك الكبيرة دون ضياع أي اسم!"
+  ],
+  "example": "لنفترض أنك تنظم حفلة عيد ميلاد ولديك مصفوفة للأطعمة وأخرى للحلويات. إليك الكود:\n\nconst foods = [\"pizza\", \"burger\"];\nconst sweets = [\"cake\", \"cookies\"];\nconst partyMenu = foods.concat(sweets);\nconsole.log(partyMenu);\n\nالسبب والنتيجة: قمنا باستدعاء دالة concat على مصفوفة foods وأمرناها بضم مصفوفة sweets إليها. النتيجة هي مصفوفة جديدة تحتوي على العناصر الأربعة مرتبة: pizza, burger, cake, cookies.",
+  "mistake": "الخطأ الشائع هو نسيان حفظ النتيجة في متغير جديد، مثل كتابة snacks.concat(drinks) وحدها دون ربطها بمتغير مثل partyMenu، مما يجعل جافاسكريبت تقوم بالدمج ولكنها تنسى النتيجة ولا تحفظها لك. الحل هو كتابة: const menu = snacks.concat(drinks);",
+  "recap": "تتيح لك طريقة concat دمج مصفوفتين أو أكثر لإنشاء مصفوفة جديدة ضخمة دون تعديل القوائم الأصلية. إنها أداة رائعة لتنظيم وترتيب بياناتك في مشاريع البرمجة.",
+  "q": [
+   {
+    "t": "ماذا تفعل دالة concat بالمصفوفات؟",
+    "o": [
+     "تحذف جميع العناصر",
+     "تدمج مصفوفتين أو أكثر معاً",
+     "ترتب الأرقام تصاعدياً فقط"
+    ],
+    "a": 1,
+    "why": "طريقة concat مخصصة لدمج مصفوفتين أو أكثر لتكوين مصفوفة جديدة."
+   },
+   {
+    "t": "هل تغير دالة concat المصفوفة الأصلية؟",
+    "o": [
+     "نعم، تغيرها دائماً",
+     "لا، تعيد مصفوفة جديدة ولا تغير الأصلية",
+     "تحذف المصفوفة الأصلية تماماً"
+    ],
+    "a": 1,
+    "why": "تحافظ concat على المصفوفات الأصلية سليمة وتنشئ مصفوفة جديدة بالنتيجة."
+   },
+   {
+    "t": "كيف ندمج ثلاث قوائم باستخدام concat؟",
+    "o": [
+     "list1.concat(list2, list3)",
+     "list1.merge(list2, list3)",
+     "concat(list1, list2, list3)"
+    ],
+    "a": 0,
+    "why": "نستدعي concat على المصفوفة الأولى ونمرر بقية المصفوفات كمدخلات داخل الأقواس."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود دمج القوائم",
+   "goal": "املأ الفراغات لتنفيذ عملية دمج مصفوفات الوجبات والمشروبات بنجاح.",
+   "items": [
+    {
+     "text": "const snacks = [\"chips\", \"popcorn\"];",
+     "options": [
+      "const",
+      "let",
+      "var"
+     ],
+     "a": 0
+    },
+    {
+     "text": "const drinks = [\"juice\", \"soda\"];",
+     "options": [
+      "const",
+      "let",
+      "var"
+     ],
+     "a": 0
+    },
+    {
+     "text": "const partyMenu = snacks.___ (drinks);",
+     "options": [
+      "concat",
+      "push",
+      "join"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد قمت بدمج الوجبات والمشروبات بنجاح وأصبح لديك قائمة حفلة مذهلة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو دمج القوائم؟",
+    "text": "دمج القوائم يعني أخذ مصفوفتين منفصلتين ولصقهما ببعضهما لتكوين قائمة واحدة طويلة وكبيرة. تخيل أن لديك صندوق ألوان أحمر وصندوق ألوان أزرق، وتريد تفريغ الاثنين في صندوق كبير واحد لتسهيل الرسم. في لغة جافاسكريبت، نقوم بهذه العملية البرمجية باستخدام أداة سحرية تسمى concat والتي تجمع كل العناصر معاً في خطوة واحدة سريعة ومنظمة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"demo\"></p>\n  <script>\n    const box1 = [\"أحمر\", \"أخضر\"];\n    const box2 = [\"أزرق\", \"أصفر\"];\n    const allColors = box1.concat(box2);\n    document.getElementById(\"demo\").innerHTML = allColors;\n  </script>\n</body>\n</html>",
+    "output": "يظهر على الشاشة: أحمر,أخضر,أزرق,أصفر"
+   },
+   {
+    "h": "استخدام طريقة concat",
+    "text": "طريقة concat هي دالة جاهزة في لغة جافاسكريبت نستخدمها مع المصفوفات. عندما نقوم بكتابة اسم المصفوفة الأولى متبوعاً بنقطة ثم كلمة concat وبداخل الأقواس نضع اسم المصفوفة الثانية، فإن الكمبيوتر يقوم تلقائياً بإنشاء قائمة جديدة تحتوي على عناصر الأولى تليها عناصر الثانية مباشرة. هذا يجعل تنظيم البيانات البرمجية أمراً ممتعاً وسهلاً للغاية دون الحاجة لكتابة حلقات تكرار معقدة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"result\"></p>\n  <script>\n    const fruits = [\"تفاح\", \"موز\"];\n    const veggies = [\"جزر\", \"خيار\"];\n    const basket = fruits.concat(veggies);\n    document.getElementById(\"result\").innerHTML = basket;\n  </script>\n</body>\n</html>",
+    "output": "يظهر على الشاشة: تفاح,موز,جزر,خيار"
+   },
+   {
+    "h": "الحفاظ على سلامة القوائم الأصلية",
+    "text": "من أهم مميزات دالة concat أنها لا تقوم بتخريب أو تعديل القوائم الأصلية التي بدأت بها. فإذا قمت بدمج قائمة الألعاب الخفيفة مع قائمة المشروبات، ستظل قائمة الألعاب الخفيفة وحدها وقائمة المشروبات وحدها كما هما، بينما يتم حفظ النتيجة الجديدة في متغير مخصص تماماً. هذا يشبه عمل نسخة من مفاتيح المنزل بدلاً من إعطاء مفتاحك الوحيد لشخص آخر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"original\"></p>\n  <script>\n    const nums1 = [1, 2];\n    const nums2 = [3, 4];\n    const combined = nums1.concat(nums2);\n    document.getElementById(\"original\").innerHTML = \"الأصلية تبقى كما هي: \" + nums1;\n  </script>\n</body>\n</html>",
+    "output": "يظهر على الشاشة: الأصلية تبقى كما هي: 1,2"
+   },
+   {
+    "h": "دمج أكثر من مصفوفتين",
+    "text": "لا تقتصر دالة concat على دمج مصفوفتين فقط، بل يمكنك ربط ثلاث أو أربع أو حتى عشر مصفوفات دفعة واحدة! كل ما عليك فعله هو فصل أسماء المصفوفات داخل الأقواس باستخدام الفواصل. على سبيل المثال، يمكنك تجميع قائمة الهدايا وقائمة الألعاب وقائمة الزينة في قائمة تحضير الحفلة الكبرى بفضل هذه المرونة الرائعة في لغة جافاسكريبت.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"multi\"></p>\n  <script>\n    const a = [1];\n    const b = [2];\n    const c = [3];\n    const all = a.concat(b, c);\n    document.getElementById(\"multi\").innerHTML = all;\n  </script>\n</body>\n</html>",
+    "output": "يظهر على الشاشة: 1,2,3"
+   },
+   {
+    "h": "إضافة عناصر مباشرة أثناء الدمج",
+    "text": "هل تعلم أنه يمكنك أيضاً دمج مصفوفة مع قيم عادية مباشرة؟ عندما تستخدم concat، لا يقتصر الأمر على ربط مصفوفة بمصفوفة أخرى فحسب، بل يمكنك كتابة نصوص أو أرقام مباشرة داخل الأقواس لتنضاف إلى نهاية المصفوفة الجديدة الناتجة. هذا يمنح المطورين قوة إضافية لتخصيص القوائم السريعة أثناء كتابة البرامج والتطبيقات التفاعلية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"values\"></p>\n  <script>\n    const base = [10, 20];\n    const extended = base.concat(30, 40);\n    document.getElementById(\"values\").innerHTML = extended;\n  </script>\n</body>\n</html>",
+    "output": "يظهر على الشاشة: 10,20,30,40"
+   }
+  ],
+  "reference": [
+   {
+    "name": "concat()",
+    "desc": "طريقة لدمج مصفوفتين أو أكثر وإنشاء مصفوفة جديدة."
+   },
+   {
+    "name": "Array",
+    "desc": "بنية بيانات لتخزين قائمة من العناصر في متغير واحد."
+   },
+   {
+    "name": "const",
+    "desc": "كلمة مفتاحية لتعريف متغير ثابث القيمة."
+   },
+   {
+    "name": "document.getElementById()",
+    "desc": "أمر للوصول إلى عنصر في صفحة الويب لتعديله."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود لدمج مصفوفة arr1 التي تحتوي على ['A', 'B'] مع مصفوفة arr2 التي تحتوي على ['C', 'D'] وتخزين النتيجة في متغير combined.",
+    "a": "const combined = arr1.concat(arr2);"
+   },
+   {
+    "q": "ما هي الميزة الأساسية لدالة concat مقارنة بتعديل المصفوفة الأصلية؟",
+    "a": "إنها لا تعدل المصفوفات الأصلية بل تعيد مصفوفة جديدة بالكامل."
+   },
+   {
+    "q": "كيف يمكنك دمج ثلاث مصفوفات x و y و z في مصفوفة واحدة اسمها total؟",
+    "a": "const total = x.concat(y, z);"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have two different toy boxes and you want to merge them into one giant box containing all the toys. In JavaScript, you can use the concat method to join two lists or arrays and create a brand new massive array easily.",
+   "Here is a simple example: if you have a snacks array and a drinks array, you can write partyMenu = snacks.concat(drinks); to merge both lists into a single complete party menu.",
+   "This method works by taking the elements of the first array and immediately appending the elements of the second array right after them to form a totally new array, without changing the original arrays you started with, keeping your data clean.",
+   "You can also merge more than two arrays at the same time by separating them with commas, like this: list1.concat(list2, list3). This gives you great flexibility when organizing and combining large data sets in your programs.",
+   "Golden rule: Always remember that merging arrays using concat does not alter your old arrays, but instead returns a brand new array, so you must store the result in a new variable to use it later.",
+   "In real life, this process is just like combining your school friends list with your club friends list to form a single guest list for your big birthday party without losing a single name!"
+  ],
+  "example": "Suppose you are organizing a birthday party and you have a food array and a sweets array. Here is the code:\n\nconst foods = [\"pizza\", \"burger\"];\nconst sweets = [\"cake\", \"cookies\"];\nconst partyMenu = foods.concat(sweets);\nconsole.log(partyMenu);\n\nReasoning and result: We called the concat function on the foods array and told it to attach the sweets array to it. The result is a new array containing all four items in order: pizza, burger, cake, cookies.",
+  "mistake": "A common mistake is forgetting to store the result in a new variable, such as writing snacks.concat(drinks) alone without assigning it to something like partyMenu, which makes JavaScript perform the merge but forget the result. The fix is to write: const menu = snacks.concat(drinks);",
+  "recap": "The concat method lets you merge two or more arrays to create a brand new combined array without modifying the original lists. It is a fantastic tool for organizing and structuring your data in coding projects.",
+  "q": [
+   {
+    "t": "What does the concat method do to arrays?",
+    "o": [
+     "Deletes all elements",
+     "Merges two or more arrays together",
+     "Sorts numbers in ascending order only"
+    ],
+    "a": 1,
+    "why": "The concat method is specifically designed to combine two or more arrays into a new one."
+   },
+   {
+    "t": "Does the concat method change the original array?",
+    "o": [
+     "Yes, it always modifies it",
+     "No, it returns a new array and leaves the original untouched",
+     "It completely deletes the original array"
+    ],
+    "a": 1,
+    "why": "Concat keeps your original arrays safe and outputs a brand new combined array."
+   },
+   {
+    "t": "How do we merge three lists using concat?",
+    "o": [
+     "list1.concat(list2, list3)",
+     "list1.merge(list2, list3)",
+     "concat(list1, list2, list3)"
+    ],
+    "a": 0,
+    "why": "We call concat on the first array and pass the remaining arrays as inputs inside the parentheses."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the List Merging Code",
+   "goal": "Fill in the blanks to successfully perform the snacks and drinks array combination.",
+   "items": [
+    {
+     "text": "const snacks = [\"chips\", \"popcorn\"];",
+     "options": [
+      "const",
+      "let",
+      "var"
+     ],
+     "a": 0
+    },
+    {
+     "text": "const drinks = [\"juice\", \"soda\"];",
+     "options": [
+      "const",
+      "let",
+      "var"
+     ],
+     "a": 0
+    },
+    {
+     "text": "const partyMenu = snacks.___ (drinks);",
+     "options": [
+      "concat",
+      "push",
+      "join"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You successfully merged the snacks and drinks to create an amazing party menu!"
+  },
+  "sections": [
+   {
+    "h": "What is List Merging?",
+    "text": "List merging means taking two separate arrays and gluing them together to form one long, big list. Imagine having a box of red crayons and a box of blue crayons, and wanting to dump both into one big container for easier drawing. In JavaScript, we do this coding operation using a magical tool called concat that gathers all items together in one fast, organized step.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"demo\"></p>\n  <script>\n    const box1 = [\"Red\", \"Green\"];\n    const box2 = [\"Blue\", \"Yellow\"];\n    const allColors = box1.concat(box2);\n    document.getElementById(\"demo\").innerHTML = allColors;\n  </script>\n</body>\n</html>",
+    "output": "Shows on screen: Red,Green,Blue,Yellow"
+   },
+   {
+    "h": "Using the concat Method",
+    "text": "The concat method is a built-in JavaScript function used with arrays. When we write the first array name followed by a dot, then the word concat, and inside the parentheses put the second array name, the computer automatically builds a new list containing the first elements followed immediately by the second ones. This makes organizing code data fun and very easy without writing complex loops.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"result\"></p>\n  <script>\n    const fruits = [\"Apple\", \"Banana\"];\n    const veggies = [\"Carrot\", \"Cucumber\"];\n    const basket = fruits.concat(veggies);\n    document.getElementById(\"result\").innerHTML = basket;\n  </script>\n</body>\n</html>",
+    "output": "Shows on screen: Apple,Banana,Carrot,Cucumber"
+   },
+   {
+    "h": "Keeping Original Lists Safe",
+    "text": "One of the best features of the concat method is that it does not mess up or alter your original lists. If you merge your snack list with your drink list, the snack list and drink list will remain completely untouched on their own, while the new result is securely stored in a dedicated variable. This is like making a copy of your house keys instead of handing your only key away.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"original\"></p>\n  <script>\n    const nums1 = [1, 2];\n    const nums2 = [3, 4];\n    const combined = nums1.concat(nums2);\n    document.getElementById(\"original\").innerHTML = \"Original stays safe: \" + nums1;\n  </script>\n</body>\n</html>",
+    "output": "Shows on screen: Original stays safe: 1,2"
+   },
+   {
+    "h": "Merging More Than Two Arrays",
+    "text": "The concat function is not limited to just two arrays; you can link three, four, or even ten arrays all at once! All you have to do is separate the array names inside the parentheses using commas. For instance, you can combine your gift list, game list, and decoration list into one grand party preparation list thanks to this wonderful flexibility in JavaScript.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"multi\"></p>\n  <script>\n    const a = [1];\n    const b = [2];\n    const c = [3];\n    const all = a.concat(b, c);\n    document.getElementById(\"multi\").innerHTML = all;\n  </script>\n</body>\n</html>",
+    "output": "Shows on screen: 1,2,3"
+   },
+   {
+    "h": "Adding Values Directly During Merge",
+    "text": "Did you know you can also merge an array with regular values directly? When you use concat, you are not restricted to just joining an array with another array; you can also type raw strings or numbers right inside the parentheses to tack them onto the end of the newly generated array. This gives developers extra power to customize quick lists while writing interactive programs and apps.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"values\"></p>\n  <script>\n    const base = [10, 20];\n    const extended = base.concat(30, 40);\n    document.getElementById(\"values\").innerHTML = extended;\n  </script>\n</body>\n</html>",
+    "output": "Shows on screen: 10,20,30,40"
+   }
+  ],
+  "reference": [
+   {
+    "name": "concat()",
+    "desc": "A method to merge two or more arrays and create a new array."
+   },
+   {
+    "name": "Array",
+    "desc": "A data structure for storing a list of elements in a single variable."
+   },
+   {
+    "name": "const",
+    "desc": "A keyword used to define a constant-valued variable."
+   },
+   {
+    "name": "document.getElementById()",
+    "desc": "A command to access an element on a web page to modify it."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to merge array arr1 containing ['A', 'B'] with array arr2 containing ['C', 'D'] and store the result in a variable called combined.",
+    "a": "const combined = arr1.concat(arr2);"
+   },
+   {
+    "q": "What is the key advantage of the concat function compared to modifying the original array?",
+    "a": "It does not modify the original arrays but returns a brand new array instead."
+   },
+   {
+    "q": "How can you merge three arrays x, y, and z into a single array named total?",
+    "a": "const total = x.concat(y, z);"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript typed arrays",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

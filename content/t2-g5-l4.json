@@ -1,0 +1,258 @@
+{
+ "ar": {
+  "steps": [
+   "النصوص في لغة جافاسكريبت ليست مجرد حروف، بل هي كائنات ذكية تحتوي على أدوات مدمجة تُسمى الخصائص والأساليب لمساعدتنا في التعامل معها وتعديلها بسهولة تامة.",
+   "تخيل أن لديك مسطرة سحرية لقياس طول أي نص، في جافاسكريبت نستخدم الخاصية length لمعرفة عدد الحروف والمسافات داخل النص بدقة.",
+   "تعمل خاصية length عن طريق كتابة اسم المتغير متبوعاً بنقطة ثم كلمة length، لتعود لنا برقم صحيح يمثل إجمالي الحروف الموجودة.",
+   "مثال على ذلك: المتغير الذي يحتوي على كلمة 'جافاسكريبت' إذا طبقنا عليه الخاصية، سيخبرنا الكمبيوتر بطوله كعدد حروف.",
+   "القاعدة الذهبية: الخصائص مثل length لا تحتاج إلى أقواس بعدها، بينما الأساليب (مثل الدوال) تحتاج دائماً إلى أقواس لتنفذ عملها.",
+   "في الواقع، نستخدم طول النصوص وخصائصها في التحقق من أن كلمة المرور أو اسم المستخدم طويل بما يكفي قبل إرساله إلى الخادم."
+  ],
+  "example": "لنقم بإنشاء نص يحتوي على اسم لعبة، ثم نستخدم خاصية length لمعرفة عدد حروفه، وأسلوب toUpperCase لجعل جميع حروفه كبيرة. الرمز البرمجي يكون هكذا: let game = 'Minecraft'; console.log(game.length); console.log(game.toUpperCase()); النتيجة ستظهر طول الكلمة وهو 9، ثم تطبع الكلمة كلها بأحرف كبيرة MINECRAFT، لأن هذه الأدوات تمنحنا تحكماً كاملاً في مظهر وطول النصوص داخل صفحات الويب بكل سهولة وبدون تعقيد.",
+  "mistake": "الخطأ الشائع هو كتابة الأقواس بعد خاصية length هكذا length()، والصحيح هو كتابتها بدون أقواس لأنها خاصية وليست أسلوباً أو دالة.",
+  "recap": "تعلمنا كيف نقيس طول النصوص باستخدام الخاصية length، وكيف نغير حالة الحروف باستخدام أساليب التحويل المختلفة لنجعل صفحاتنا أكثر ذكاءً وتفاعلاً.",
+  "q": [
+   {
+    "t": "ما هي الخاصية التي تستخدم لمعرفة عدد الحروف في النص؟",
+    "o": [
+     "size",
+     "length",
+     "count"
+    ],
+    "a": 1,
+    "why": "خاصية length هي المسؤولة عن إرجاع عدد الحروف في النصوص بلغة جافاسكريبت."
+   },
+   {
+    "t": "كيف يتم كتابة أسلوب تحويل الحروف إلى أحرف كبيرة؟",
+    "o": [
+     "toUpperCase()",
+     "toBig()",
+     "upperCase()"
+    ],
+    "a": 0,
+    "why": "أسلوب toUpperCase() هو الاسم الصحيح والمعتمد في جافاسكريبت لتحويل الحروف."
+   },
+   {
+    "t": "هل تحتاج خاصية length إلى أقواس بعدها عند الاستخدام؟",
+    "o": [
+     "نعم دائماً",
+     "فقط في النصوص الطويلة",
+     "لا، لأنها خاصية وليست دالة"
+    ],
+    "a": 2,
+    "why": "بما أنها خاصية (Property) وليست أسلوباً (Method)، فلا نضع بعدها أقواس."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود طول النص",
+   "goal": "صلح الخطأ في الكود ليقوم بعرض طول النص بشكل صحيح دون أخطاء.",
+   "lines": [
+    "let message = \"Welcome\";",
+    "let textLength = message.length();",
+    "console.log(textLength);"
+   ],
+   "bug": 1,
+   "fix": "let textLength = message.length;",
+   "success": "رائع! قام البرنامج بحساب طول النص بنجاح وعرضه على الشاشة."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن النصوص في جافاسكريبت",
+    "text": "النصوص أو الـ Strings هي سلاسل من الحروف التي نستخدمها في تصميم المواقع لعرض الرسائل والأسماء. تخيل أن النص هو عقد من اللؤلؤ، وكل حرف هو حبة لؤلؤ منفصلة داخل هذا العقد، وجافاسكريبت تمنحنا أدوات رائعة لفحص هذا العقد.",
+    "code": "<script>let text = \"أهلاً بك\"; document.write(text);</script>",
+    "output": "تعرض الصفحة النص المخزن داخل المتغير بشكل مباشر."
+   },
+   {
+    "h": "معرفة طول النص باستخدام length",
+    "text": "الخاصية length تعمل بمثابة شريط قياس رقمي للنص. إذا أعطيت الكمبيوتر جملة، فإنه يقوم بعد كل حرف ومسافة ويعطيك العدد النهائي فوراً. تماماً مثل عد ألوان الأقلام في مقلمتك المدرسية.",
+    "code": "<script>let word = \"JavaScript\"; document.write(word.length);</script>",
+    "output": "تعرض الصفحة الرقم 10 وهو عدد حروف كلمة JavaScript."
+   },
+   {
+    "h": "تحويل الحروف إلى أحرف كبيرة toUpperCase",
+    "text": "هل أردت يوماً أن تكتب جملة كاملة بصوت عالٍ في الحاسوب؟ أسلوب toUpperCase() يقوم بأخذ كل الحروف الصغيرة في النص ويحولها إلى أحرف إنجليزية كبيرة وواضحة، تماماً مثل الضغط على زر Caps Lock.",
+    "code": "<script>let name = \"coder\"; document.write(name.toUpperCase());</script>",
+    "output": "تظهر الكلمة على الشاشة بأحرف كبيرة كالتالي: CODER."
+   },
+   {
+    "h": "تحويل الحروف إلى أحرف صغيرة toLowerCase",
+    "text": "في المقابل، إذا كانت الحروف صاخبة وكبيرة، يمكنك استخدام أسلوب toLowerCase() لتهدئتها وجعلها كلها حروفاً صغيرة. هذا مفيد جداً عندما يدخل المستخدم بريده الإلكتروني ونريد توحيد شكله.",
+    "code": "<script>let shout = \"HELLO\"; document.write(shout.toLowerCase());</script>",
+    "output": "تظهر الكلمة على الشاشة بأحرف صغيرة كالتالي: hello."
+   },
+   {
+    "h": "خصائص النصوص وأساليبها",
+    "text": "من المهم أن نفرق بين الخاصية (Property) والأسلوب (Method). الخاصية تخبرنا بمعلومة جاهزة مثل الطول بدون أقواس، بينما الأسلوب يشبه الآلة التي تقوم بعملية معينة مثل التغيير وتحتاج دائماً إلى أقواس بعدها.",
+    "code": "<script>let msg = \"Web\"; document.write(msg.length + \" | \" + msg.toUpperCase());</script>",
+    "output": "تعرض الصفحة طول النص متبوعاً بنسخة منه بأحرف كبيرة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "length",
+    "desc": "خاصية تعيد عدد الحروف في النص."
+   },
+   {
+    "name": "toUpperCase()",
+    "desc": "أسلوب يحول جميع حروف النص إلى أحرف كبيرة."
+   },
+   {
+    "name": "toLowerCase()",
+    "desc": "أسلوب يحول جميع حروف النص إلى أحرف صغيرة."
+   },
+   {
+    "name": "String",
+    "desc": "الكائن الأساسي الذي يمثل النصوص في جافاسكريبت."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليماً برمجياً لمعرفة طول الكلمة 'Coding'.",
+    "a": "let w = 'Coding'; console.log(w.length);"
+   },
+   {
+    "q": "كيف تحول كلمة 'school' إلى أحرف كبيرة؟",
+    "a": "'school'.toUpperCase()"
+   },
+   {
+    "q": "ما هو ناتج تنفيذ الكود: 'JS'.toLowerCase()؟",
+    "a": "js"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Strings in JavaScript are not just plain characters; they are smart objects equipped with built-in tools called properties and methods to help us inspect and modify them easily.",
+   "Imagine having a magic ruler to measure the length of any text. In JavaScript, we use the length property to find the exact number of characters and spaces inside a string.",
+   "The length property works by writing the variable name followed by a dot and the word length, returning a precise integer representing the total character count.",
+   "For example, if a variable holds the word 'JavaScript', applying this property tells the computer its exact length as a number.",
+   "The golden rule: Properties like length do not need parentheses after them, whereas methods (like functions) always require parentheses to execute their action.",
+   "In the real world, we use string lengths and properties to check if a password or username is long enough before sending it to a server."
+  ],
+  "example": "Let's create a string containing a game name, then use the length property to count its characters, and the toUpperCase method to make all its letters uppercase. The code looks like this: let game = 'Minecraft'; console.log(game.length); console.log(game.toUpperCase()); The result will output the word length as 9, then print the entire word in capital letters MINECRAFT, because these tools give us full control over text appearance and length inside web pages easily and without complexity.",
+  "mistake": "A common mistake is writing parentheses after the length property like length(), but the correct way is without parentheses because it is a property, not a method.",
+  "recap": "We learned how to measure text length using the length property, and how to change letter cases using various conversion methods to make our web pages smarter and more interactive.",
+  "q": [
+   {
+    "t": "Which property is used to find the number of characters in a string?",
+    "o": [
+     "size",
+     "length",
+     "count"
+    ],
+    "a": 1,
+    "why": "The length property is responsible for returning the character count in JavaScript strings."
+   },
+   {
+    "t": "How is the method to convert letters to uppercase written?",
+    "o": [
+     "toUpperCase()",
+     "toBig()",
+     "upperCase()"
+    ],
+    "a": 0,
+    "why": "toUpperCase() is the correct and standard method name in JavaScript for uppercase conversion."
+   },
+   {
+    "t": "Does the length property require parentheses after it when used?",
+    "o": [
+     "Yes, always",
+     "Only for long texts",
+     "No, because it is a property, not a function"
+    ],
+    "a": 2,
+    "why": "Since it is a property and not a method, we do not put parentheses after it."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the String Length Code",
+   "goal": "Fix the error in the code so it displays the string length correctly without errors.",
+   "lines": [
+    "let message = \"Welcome\";",
+    "let textLength = message.length();",
+    "console.log(textLength);"
+   ],
+   "bug": 1,
+   "fix": "let textLength = message.length;",
+   "success": "Awesome! The program successfully calculated the string length and displayed it on the screen."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Strings in JavaScript",
+    "text": "Strings are sequences of characters used in web design to display messages and names. Imagine a string as a pearl necklace, where each character is an individual pearl, and JavaScript gives us amazing tools to inspect this necklace.",
+    "code": "<script>let text = \"Hello there\"; document.write(text);</script>",
+    "output": "The page displays the text stored inside the variable directly."
+   },
+   {
+    "h": "Finding String Length Using length",
+    "text": "The length property acts as a digital tape measure for text. If you give the computer a sentence, it counts every character and space and gives you the final number instantly, just like counting pencils in your pencil case.",
+    "code": "<script>let word = \"JavaScript\"; document.write(word.length);</script>",
+    "output": "The page displays the number 10, which is the character count of JavaScript."
+   },
+   {
+    "h": "Converting to Uppercase with toUpperCase",
+    "text": "Ever wanted to type an entire sentence out loud on the computer? The toUpperCase() method takes all lowercase letters in a string and turns them into clear, bold uppercase letters, just like pressing Caps Lock.",
+    "code": "<script>let name = \"coder\"; document.write(name.toUpperCase());</script>",
+    "output": "The word appears on the screen in uppercase as: CODER."
+   },
+   {
+    "h": "Converting to Lowercase with toLowerCase",
+    "text": "Conversely, if letters are loud and uppercase, you can use the toLowerCase() method to calm them down into lowercase letters. This is very useful when users enter their email and we want uniform formatting.",
+    "code": "<script>let shout = \"HELLO\"; document.write(shout.toLowerCase());</script>",
+    "output": "The word appears on the screen in lowercase as: hello."
+   },
+   {
+    "h": "String Properties vs Methods",
+    "text": "It is important to distinguish between a property and a method. A property tells us ready-made info like length without parentheses, while a method acts like a machine performing an action and always needs parentheses.",
+    "code": "<script>let msg = \"Web\"; document.write(msg.length + \" | \" + msg.toUpperCase());</script>",
+    "output": "The page displays the text length followed by its uppercase version."
+   }
+  ],
+  "reference": [
+   {
+    "name": "length",
+    "desc": "A property that returns the number of characters in a string."
+   },
+   {
+    "name": "toUpperCase()",
+    "desc": "A method that converts all string letters to uppercase."
+   },
+   {
+    "name": "toLowerCase()",
+    "desc": "A method that converts all string letters to lowercase."
+   },
+   {
+    "name": "String",
+    "desc": "The built-in object representing text in JavaScript."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to find the length of the word 'Coding'.",
+    "a": "let w = 'Coding'; console.log(w.length);"
+   },
+   {
+    "q": "How do you convert the word 'school' to uppercase?",
+    "a": "'school'.toUpperCase()"
+   },
+   {
+    "q": "What is the output of running the code: 'JS'.toLowerCase()?",
+    "a": "js"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Useful string methods",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Useful_string_methods"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

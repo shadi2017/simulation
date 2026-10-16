@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "في بعض الأحيان، نحتاج إلى إضافة أو إزالة عناصر في بداية المصفوفة تماماً، وليس في نهايتها. تخيل طابوراً من الأطفال، حيث يأتي شخص جديد ليقف في أول الطابور، أو يغادر الطفل الأول الطابور بعد حصوله على تذكرة السينما.",
+   "لإضافة عنصر جديد في بداية المصفوفة، نستخدم دالة تسمى unshift. على سبيل المثال، إذا كان لدينا مصفوفة درجات ألعاب [85, 90] وأردنا إضافة درجة جديدة أعلى في البداية، نكتب scores.unshift(95).",
+   "تعمل دالة unshift عن طريق إزاحة جميع العناصر القديمة يميناً خطوة واحدة لتوفير مساحة في الفهرس رقم صفر، ثم تضع العنصر الجديد في البداية وترجع الطول الجديد للمصفوفة.",
+   "أما إذا أردنا إزالة العنصر الأول من المصفوفة، فنحن نستخدم دالة تسمى shift. مثلاً، scores.shift() ستزيل العنصر الأول تماماً وتعيد لنا القيمة التي تم حذفها.",
+   "القاعدة الذهبية هنا هي أن shift تحذف من البداية وتعيد العنصر المحذوف، بينما unshift تضيف إلى البداية وتعيد الطول الجديد. تذكر دائماً أن هذه الدوال تغير المصفوفة الأصلية مباشرة.",
+   "في الحياة اليومية، تشبه هذه العمليات قائمة المهام اليومية، حيث تضع المهام العاجلة جداً في أعلى القائمة (unshift)، أو تقوم بإنجاز المهمة الأولى وشطبها من رأس القائمة (shift)."
+  ],
+  "example": "تخيل أن لديك قائمة لترتيب أفضل اللاعبين في لعبة الفيديو الخاصة بك:\nlet highScores = [500, 400, 300];\nإذا حطّم لاعب جديد الرقم القياسي وأحرز 600 نقطة، نستخدم unshift لإضافته:\nhighScores.unshift(600);\nالآن تصبح المصفوفة [600, 500, 400, 300]. وإذا أردنا إزالة أقدم نتيجة من القناة الأولى، نكتب:\nlet oldScore = highScores.shift();\nهنا ستكون oldScore مساوية لـ 600 والمتبقي [500, 400, 300]، مما يجعل الإدارة مرتبة وسهلة.",
+  "mistake": "الخطأ الشائع هو الخلط بين اسم الدالة shift وإلغاء مفتاح Shift في لوحة المفاتيح أو نسيان أن shift تحذف العنصر الأول بينما unshift تضيفه. الحل هو تذكر أن كلمة unshift الأطول هي التي تضيف عناصر جديدة.",
+  "recap": "تتيح لك دالة unshift إضافة عناصر في بداية المصفوفة، بينما تقوم دالة shift بإزالة العنصر الأول منها بكل سهولة.",
+  "q": [
+   {
+    "t": "ماذا تفعل دالة unshift للمصفوفة؟",
+    "o": [
+     "تضيف عناصر في النهاية",
+     "تضيف عناصر في البداية",
+     "تحذف العنصر الأول"
+    ],
+    "a": 1,
+    "why": "تُستخدم unshift خصيصاً لإدراج عناصر جديدة في أول المصفوفة."
+   },
+   {
+    "t": "أي دالة تستخدم لإزالة العنصر الأول من المصفوفة؟",
+    "o": [
+     "shift",
+     "pop",
+     "unshift"
+    ],
+    "a": 0,
+    "why": "دالة shift تقوم بحذف العنصر الموجود في الفهرس صفر."
+   },
+   {
+    "t": "ماذا تعيد دالة shift عند تنفيذها؟",
+    "o": [
+     "الطول الجديد للمصفوفة",
+     "العنصر الذي تم حذفه",
+     "قيمة منطقية صحيح أو خطأ"
+    ],
+    "a": 1,
+    "why": "تعيد دالة shift العنصر الأول الذي قامت بإزالته من المصفوفة."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز دوال المصفوفات البداية",
+   "goal": "صنف العمليات البرمجية حسب ما إذا كانت تضيف عنصراً أو تحذفه من البداية.",
+   "buckets": [
+    "إضافة للبداية unshift",
+    "حذف من البداية shift"
+   ],
+   "items": [
+    {
+     "t": "arr.unshift('Apple')",
+     "b": 0
+    },
+    {
+     "t": "arr.shift()",
+     "b": 1
+    },
+    {
+     "t": "إدخال رقم قياسي جديد بالأمام",
+     "b": 0
+    },
+    {
+     "t": "سحب أول عنصر وإرجاعه",
+     "b": 1
+    },
+    {
+     "t": "arr.unshift(10, 20)",
+     "b": 0
+    },
+    {
+     "t": "حذف العميل الأول من الطابور",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد نظّمت أوامر المصفوفات واكتشفت كيفية التحكم في بدايتها باحترافية."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن مصفوفات البداية",
+    "text": "في بعض الأحيان لا تريد إضافة العناصر في نهاية القائمة فقط، بل تحتاج إلى وضعها في الموضع الأول تماماً. تخيل طابور ألعاب تفاعلية حيث يأتي شخص مهم ويجب أن يدخل أولاً.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let arr=[2,3];arr.unshift(1);document.getElementById('demo').innerHTML=arr;</script></body></html>",
+    "output": "عرض المصفوفة بعد إضافة العنصر في البداية."
+   },
+   {
+    "h": "استخدام دالة unshift",
+    "text": "دالة unshift تتيح لك حقن عنصر واحد أو عدة عناصر دفعة واحدة في بداية المصفوفة، وتقوم بإزاحة العناصر القديمة لليمين.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let fruits=['banana'];fruits.unshift('apple','orange');document.getElementById('demo').innerHTML=fruits;</script></body></html>",
+    "output": "عرض الفواكه مرتبة بعد استخدام unshift."
+   },
+   {
+    "h": "القيمة المرتجعة من unshift",
+    "text": "هل تعلم أن unshift لا تقتصر على تعديل المصفوفة فحسب، بل تعيد لك أيضاً الطول أو الحجم الجديد للمصفوفة بعد الإضافة؟",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let list=[10];let len=list.unshift(5);document.getElementById('demo').innerHTML='Length: '+len;</script></body></html>",
+    "output": "عرض الطول الجديد للمصفوفة وهو 2."
+   },
+   {
+    "h": "مفهوم حذف العناصر من البداية",
+    "text": "مثلما توجد طريقة للإضافة في المقدمة، توجد طريقة للإزالة. دالة shift تأخذ العنصر الموجود في المؤشر صفر وتخرجه خارج المصفوفة.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let nums=[100,200,300];nums.shift();document.getElementById('demo').innerHTML=nums;</script></body></html>",
+    "output": "عرض المصفوفة بعد حذف العنصر الأول (100)."
+   },
+   {
+    "h": "القيمة المرتجعة من shift",
+    "text": "عندما تستخدم shift لإزالة العنصر الأول، فإنها لا تضيع بل تعود كقيمة يمكنك تخزينها في متغير لاستخدامها لاحقاً.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let queue=['Ali','Mona'];let first=queue.shift();document.getElementById('demo').innerHTML=first;</script></body></html>",
+    "output": "عرض اسم الشخص الذي تم حذفه وهو Ali."
+   },
+   {
+    "h": "تعديل المصفوفة الأصلية مباشرة",
+    "text": "دوال مثل shift و unshift تسمى دوال تفاعلية مباشرة (Mutating)، وهذا يعني أنها تغير مصفوفة البيانات الأصلية ولا تنشئ مصفوفة جديدة.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let scores=[50];scores.unshift(80);document.getElementById('demo').innerHTML=scores;</script></body></html>",
+    "output": "عرض المصفوفة الأصلية بعد تعديلها مباشرة."
+   },
+   {
+    "h": "إضافة عناصر متعددة بمرور الوقت",
+    "text": "إذا قمت باستدعاء unshift عدة مرات، فإن كل عنصر جديد يتم وضعه قبل العنصر الذي سبقه مباشرة، مما يتطلب الانتباه للترتيب.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let data=[3];data.unshift(2);data.unshift(1);document.getElementById('demo').innerHTML=data;</script></body></html>",
+    "output": "عرض الترتيب الصحيح 1, 2, 3 بعد استخدام unshift متكرر."
+   },
+   {
+    "h": "تطبيقات حقيقية في الألعاب والبرمجة",
+    "text": "تُستخدم هذه الدوال في إدارة قوائم انتظار اللاعبين، أو تحديث الأخبار العاجلة بحيث تظهر دائماً في أعلى الموقع الإلكتروني.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let news=['Weather'];news.unshift('Breaking News');document.getElementById('demo').innerHTML=news[0];</script></body></html>",
+    "output": "عرض الخبر العاجل في رأس القائمة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "unshift()",
+    "desc": "تضيف عناصر في بداية المصفوفة وتعيد الطول الجديد"
+   },
+   {
+    "name": "shift()",
+    "desc": "تحذف العنصر الأول من المصفوفة وتعيد العنصر المحذوف"
+   },
+   {
+    "name": "Array",
+    "desc": "هيكل بيانات لتخزين عدة قيم في متغير واحد"
+   },
+   {
+    "name": "length",
+    "desc": "خاصية تحدد عدد العناصر في المصفوفة"
+   },
+   {
+    "name": "Index 0",
+    "desc": "الموقع الأول في المصفوفة حيث تتم عمليات shift و unshift"
+   },
+   {
+    "name": "Mutating",
+    "desc": "صفة للدوال التي تغير المصفوفة الأصلية"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ مصفوفة تحتوي على الرقمين [2, 3] ثم أضف الرقم 1 في بدايتها باستخدام unshift.",
+    "a": "let arr = [2, 3]; arr.unshift(1); // arr يصبح [1, 2, 3]"
+   },
+   {
+    "q": "لديك مصفوفة ['apple', 'banana']. استخدم shift لإزالة الفاكهة الأولى وتخزينها في متغير.",
+    "a": "let fruits = ['apple', 'banana']; let removed = fruits.shift(); // removed هو 'apple'"
+   },
+   {
+    "q": "ماذا تعيد دالة unshift عند إضافتها لعنصرين إلى مصفوفة فارغة؟",
+    "a": "تعيد الرقم 2 وهو الطول الجديد للمصفوفة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Sometimes, we need to add or remove items at the very beginning of an array rather than the end. Imagine a line of kids where a new person arrives to stand at the very front, or the first child leaves after getting a ticket.",
+   "To add a new item at the start of an array, we use a method called unshift. For example, if we have game scores [85, 90] and want to add a higher score at the front, we write scores.unshift(95).",
+   "The unshift method works by shifting all existing items to the right by one step to make room at index zero, placing the new element at the beginning, and returning the new length of the array.",
+   "If we want to remove the first item from an array, we use a method called shift. For example, scores.shift() will remove the very first item and return the removed value back to us.",
+   "The golden rule here is that shift removes from the start and returns the deleted item, while unshift adds to the start and returns the new length. Always remember these methods modify the original array directly.",
+   "In daily life, these operations mimic a to-do list where urgent tasks are put right at the top (unshift), or you complete the top task and cross it off the list (shift)."
+  ],
+  "example": "Imagine you have a leaderboard for your video game:\nlet highScores = [500, 400, 300];\nIf a new player breaks the record with 600 points, we use unshift to add them:\nhighScores.unshift(600);\nNow the array becomes [600, 500, 400, 300]. If we want to remove the oldest score from the front, we write:\nlet oldScore = highScores.shift();\nHere, oldScore equals 600 and the remaining array is [500, 400, 300], keeping things organized and simple.",
+  "mistake": "A common mistake is confusing shift with the keyboard key or forgetting that shift deletes the first element while unshift adds elements. The fix is to remember that the longer word unshift adds new items.",
+  "recap": "The unshift method lets you add items to the beginning of an array, while the shift method removes the first item with ease.",
+  "q": [
+   {
+    "t": "What does the unshift method do to an array?",
+    "o": [
+     "Adds elements at the end",
+     "Adds elements at the beginning",
+     "Deletes the first element"
+    ],
+    "a": 1,
+    "why": "unshift is specifically used to insert new elements at the front of an array."
+   },
+   {
+    "t": "Which method is used to remove the first element from an array?",
+    "o": [
+     "shift",
+     "pop",
+     "unshift"
+    ],
+    "a": 0,
+    "why": "The shift method deletes the element located at index zero."
+   },
+   {
+    "t": "What does the shift method return when executed?",
+    "o": [
+     "The new length of the array",
+     "The element that was removed",
+     "A boolean true or false value"
+    ],
+    "a": 1,
+    "why": "The shift method returns the first element it removed from the array."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Start Array Methods Sorting",
+   "goal": "Categorize coding operations based on whether they add or remove an item from the beginning.",
+   "buckets": [
+    "Add to start unshift",
+    "Remove from start shift"
+   ],
+   "items": [
+    {
+     "t": "arr.unshift('Apple')",
+     "b": 0
+    },
+    {
+     "t": "arr.shift()",
+     "b": 1
+    },
+    {
+     "t": "Insert new high score at front",
+     "b": 0
+    },
+    {
+     "t": "Pull first element and return it",
+     "b": 1
+    },
+    {
+     "t": "arr.unshift(10, 20)",
+     "b": 0
+    },
+    {
+     "t": "Remove first customer from line",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You successfully organized array commands and mastered controlling their beginnings."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Start Arrays",
+    "text": "Sometimes you don't want to add items only at the end of a list, but rather put them at the very first position. Imagine a game queue where a VIP arrives and must enter first.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let arr=[2,3];arr.unshift(1);document.getElementById('demo').innerHTML=arr;</script></body></html>",
+    "output": "Displays the array after adding the item to the start."
+   },
+   {
+    "h": "Using the unshift Method",
+    "text": "The unshift method lets you inject one or multiple items at once into the beginning of an array, shifting existing items to the right.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let fruits=['banana'];fruits.unshift('apple','orange');document.getElementById('demo').innerHTML=fruits;</script></body></html>",
+    "output": "Displays fruits ordered after using unshift."
+   },
+   {
+    "h": "Return Value of unshift",
+    "text": "Did you know that unshift doesn't just modify the array, but also returns the new length or size of the array after insertion?",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let list=[10];let len=list.unshift(5);document.getElementById('demo').innerHTML='Length: '+len;</script></body></html>",
+    "output": "Displays the new array length of 2."
+   },
+   {
+    "h": "Removing Elements from the Start",
+    "text": "Just like there is a way to add at the front, there is a way to remove. The shift method takes the element at index zero and pops it out of the array.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let nums=[100,200,300];nums.shift();document.getElementById('demo').innerHTML=nums;</script></body></html>",
+    "output": "Displays the array after deleting the first element (100)."
+   },
+   {
+    "h": "Return Value of shift",
+    "text": "When you use shift to remove the first element, it isn't lost; instead, it is returned as a value you can store in a variable for later use.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let queue=['Ali','Mona'];let first=queue.shift();document.getElementById('demo').innerHTML=first;</script></body></html>",
+    "output": "Displays the name of the removed person, which is Ali."
+   },
+   {
+    "h": "Modifying the Original Array Directly",
+    "text": "Methods like shift and unshift are called mutating methods, meaning they alter the original data array directly rather than creating a new one.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let scores=[50];scores.unshift(80);document.getElementById('demo').innerHTML=scores;</script></body></html>",
+    "output": "Displays the original array modified directly."
+   },
+   {
+    "h": "Adding Multiple Items Over Time",
+    "text": "If you call unshift multiple times, each new item is placed directly before the previous one, requiring attention to the order.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let data=[3];data.unshift(2);data.unshift(1);document.getElementById('demo').innerHTML=data;</script></body></html>",
+    "output": "Displays the correct order 1, 2, 3 after repeated unshift calls."
+   },
+   {
+    "h": "Real-World Applications in Games and Web",
+    "text": "These methods are used in managing player queues or updating breaking news so they always appear at the top of a website.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let news=['Weather'];news.unshift('Breaking News');document.getElementById('demo').innerHTML=news[0];</script></body></html>",
+    "output": "Displays the breaking news at the top of the list."
+   }
+  ],
+  "reference": [
+   {
+    "name": "unshift()",
+    "desc": "Adds elements to the beginning of an array and returns the new length"
+   },
+   {
+    "name": "shift()",
+    "desc": "Removes the first element from an array and returns that removed element"
+   },
+   {
+    "name": "Array",
+    "desc": "A data structure for storing multiple values in a single variable"
+   },
+   {
+    "name": "length",
+    "desc": "A property specifying the number of elements in an array"
+   },
+   {
+    "name": "Index 0",
+    "desc": "The first position in an array where shift and unshift operations take place"
+   },
+   {
+    "name": "Mutating",
+    "desc": "A term for methods that change the original array"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create an array containing [2, 3] and add the number 1 to its beginning using unshift.",
+    "a": "let arr = [2, 3]; arr.unshift(1); // arr becomes [1, 2, 3]"
+   },
+   {
+    "q": "You have an array ['apple', 'banana']. Use shift to remove the first fruit and store it in a variable.",
+    "a": "let fruits = ['apple', 'banana']; let removed = fruits.shift(); // removed is 'apple'"
+   },
+   {
+    "q": "What does the unshift method return when adding two elements to an empty array?",
+    "a": "It returns the number 2, which is the new length of the array."
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Array.prototype.unshift()",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"
+  },
+  {
+   "title": "MDN: JavaScript typed arrays",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays"
+  }
+ ],
+ "grounded": true
+}

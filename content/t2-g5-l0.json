@@ -1,0 +1,292 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن المصفوفة (Array) هي صندوق قفزات ألعاب طويل. يمكنك إضافة عناصر جديدة إليه أو حذف القديمة بسهولة تامة باستخدام دوال البرمجة.",
+   "لإضافة عنصر جديد في نهاية المصفوفة، نستخدم دالة `push()`. مثال: `let games = ['Mario']; games.push('Sonic');` لتصبح القائمة تحتوي على لعبتين.",
+   "تعمل دالة `push()` على تغيير المصفوفة الأصلية وزيادة طولها بمقدار واحد، ثم تُرجع لك الطول الجديد.",
+   "أما لحذف آخر عنصر من المصفوفة، فنستخدم دالة `pop()`. مثال: `let last = games.pop();` مما يؤدي لإزالة العنصر الأخير.",
+   "القاعدة الذهبية: `push()` تدفع عنصراً جديداً للداخل من النهاية، بينما `pop()` تقذف العنصر الأخير وتخرجه للخارج تماماً.",
+   "نستخدم هذه الطرق في الألعاب الحقيقية لإدارة المستويات، وقوائم أعلى النقاط، وإضافة أو إزالة شخصيات الفريق بكل مرونة."
+  ],
+  "example": "لنفترض أننا نصمم لعبة مغامرات ولدينا مصفوفة للمستويات: `let levels = ['Level 1', 'Level 2'];`. عندما ينجح اللاعب في اجتياز مرحلة ويفتح مرحلة جديدة، نكتب: `levels.push('Level 3');`. الآن أصبحت المصفوفة `['Level 1', 'Level 2', 'Level 3']`. وإذا أردنا التراجع عن آخر مرحلة أضفناها، نكتب `let removed = levels.pop();` فتعود المصفوفة لحجمها السابق وتُرجع لنا النص 'Level 3'.",
+  "mistake": "الخطأ الشائع هو نسيان الأقواس `()` عند استدعاء `push()` أو `pop()`. التصحيح: اكتب دائماً `array.push('item')` ولا تترك الأقواس فارغة إذا كنت تريد إضافة شيء.",
+  "recap": "تسمح لنا طريقطا push و pop بتعديل المصفوفات عبر إضافة العناصر ونهايتها أو حذفها بكل سهولة. وهما أداتان أساسيتان لبناء تطبيقات وألعاب تفاعلية ديناميكية.",
+  "q": [
+   {
+    "t": "ماذا تفعل دالة push() في المصفوفة؟",
+    "o": [
+     "تحذف العنصر الأول",
+     "تضيف عنصراً جديداً للنهاية",
+     "تبحث عن عنصر معين"
+    ],
+    "a": 1,
+    "why": "دالة push() تقوم دائماً بإضافة عنصر جديد في آخر المصفوفة."
+   },
+   {
+    "t": "ما النتيجة المتوقعة عند استخدام pop() على مصفوفة؟",
+    "o": [
+     "إزالة وعرض العنصر الأخير",
+     "تفريغ المصفوفة بالكامل",
+     "نسخ المصفوفة"
+    ],
+    "a": 0,
+    "why": "طريقة pop() تحذف العنصر الأخير وتعيده كقيمة محذوفة."
+   },
+   {
+    "t": "هل تؤدي push() و pop() إلى تغيير الطول الأصلي للمصفوفة؟",
+    "o": [
+     "لا، الطول يظل ثابتاً",
+     "نعم، يتغير طول المصفوفة",
+     "تتغير قيم العناصر فقط دون الطول"
+    ],
+    "a": 1,
+    "why": "نعم، تتغير طول المصفوفة زيادة مع push ونقصاناً مع pop."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة دوال المصفوفات",
+   "goal": "صل بين الدالة ووظيفتها البرمجية الصحيحة.",
+   "pairs": [
+    [
+     "push()",
+     "إضافة عنصر للنهاية"
+    ],
+    [
+     "pop()",
+     "حذف العنصر الأخير"
+    ],
+    [
+     "length",
+     "معرفة عدد العناصر"
+    ],
+    [
+     "Array",
+     "هيكل لتخزين بيانات متعددة"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت فهم طرق تعديل المصفوفات في JavaScript بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "ما هي المصفوفة؟",
+    "text": "المصفوفة تشبه صندوقاً مقسماً لتخزين عدة أشياء معاً بترتيب معين. تخيل صندوق ألعاب يحتوي على سيارات وكرات مرتبة في صف واحد.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let toys=['Car','Ball','Doll'];document.getElementById('demo').innerHTML=toys;</script></body></html>",
+    "output": "تعرض الصفحة قائمة الألعاب المخزنة في المصفوفة."
+   },
+   {
+    "h": "فهم طريقة push",
+    "text": "دالة push تعمل مثل إدخال لعبة جديدة داخل صندوق الألعاب من الباب الخلفي ليصبح في نهاية القائمة تماماً.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let t=['Car'];t.push('Train');document.getElementById('demo').innerHTML=t;</script></body></html>",
+    "output": "تظهر الصفحة العنصرين بعد إضافة القطار بنجاح."
+   },
+   {
+    "h": "زيادة طول المصفوفة",
+    "text": "عندما تستخدم push لتوسيع القائمة، فإن خاصية الطول (length) تتحدث تلقائياً لتعكس العدد الجديد للعناصر.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let arr=['A','B'];arr.push('C');document.getElementById('demo').innerHTML=arr.length;</script></body></html>",
+    "output": "تعرض الصفحة الرقم 3 كطول جديد للمصفوفة."
+   },
+   {
+    "h": "فهم طريقة pop",
+    "text": "على عكس الإضافة، تقوم دالة pop بإخراج آخر عنصر من صندوق الألعاب وتأخذه معك.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let items=['Pen','Book'];let last=items.pop();document.getElementById('demo').innerHTML=last;</script></body></html>",
+    "output": "تعرض الصفحة العنصر الأخير المحذوف وهو الكتاب."
+   },
+   {
+    "h": "تعديل المصفوفات ديناميكياً",
+    "text": "يمكنك المزج بين push و pop لتحديث قوائمك باستمرار بناءً على تصرفات المستخدم أو أحداث اللعبة.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let scores=[10,20];scores.push(30);scores.pop();document.getElementById('demo').innerHTML=scores;</script></body></html>",
+    "output": "تعرض الصفحة المصفوفة بعد إدخال ثم حذف عنصر منها."
+   },
+   {
+    "h": "تطبيق على المستويات",
+    "text": "في الألعاب، تستخدم push لإضافة مستويات جديدة عندما يتقدم اللاعب، واستخدام pop للتراجع عند الحاجة.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let levels=['L1'];levels.push('L2');document.getElementById('demo').innerHTML=levels;</script></body></html>",
+    "output": "تعرض الصفحة مستويات اللعبة المحدثة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "push()",
+    "desc": "تضيف عنصراً أو أكثر إلى نهاية المصفوفة."
+   },
+   {
+    "name": "pop()",
+    "desc": "تحذف العنصر الأخير من المصفوفة وتعيده."
+   },
+   {
+    "name": "length",
+    "desc": "خاصية تحدد عدد العناصر داخل المصفوفة."
+   },
+   {
+    "name": "Array",
+    "desc": "نوع بيانات لتخزين قائمة مرتبة من القيم."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أضف العنصر 'Sword' إلى مصفوفة الأسلحة `let weapons = ['Shield'];` باستخدام push.",
+    "a": "weapons.push('Sword');"
+   },
+   {
+    "q": "احذف العنصر الأخير من المصفوفة `let fruits = ['Apple', 'Banana'];` باستخدام pop.",
+    "a": "fruits.pop();"
+   },
+   {
+    "q": "اكتب تعليمة تعرض طول المصفوفة بعد إضافة عنصرين.",
+    "a": "console.log(arr.length);"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine an array is a long toy box. You can easily add new items to it or remove old ones using built-in programming methods.",
+   "To add a new item to the very end of an array, we use the `push()` method. Example: `let games = ['Mario']; games.push('Sonic');` so the list now contains two items.",
+   "The `push()` method mutates the original array, increases its length by one, and returns the new length value.",
+   "To remove the last item from an array, we use the `pop()` method. Example: `let last = games.pop();` which takes away the final element.",
+   "Golden rule: `push()` pushes a new item inside from the end, while `pop()` pops the final element right out of the array.",
+   "We use these methods in real games to manage levels, high score lists, and dynamically add or remove team characters."
+  ],
+  "example": "Suppose we are building an adventure game with a levels array: `let levels = ['Level 1', 'Level 2'];`. When the player unlocks a new stage, we write: `levels.push('Level 3');`. Now the array becomes `['Level 1', 'Level 2', 'Level 3']`. If we want to undo the last added stage, we write `let removed = levels.pop();` restoring the previous size and returning the text 'Level 3'.",
+  "mistake": "A common mistake is forgetting the parentheses `()` when calling `push()` or `pop()`. Fix: Always write `array.push('item')` and never leave out parentheses when executing methods.",
+  "recap": "Both push and pop let us modify arrays by adding elements to the end or removing them effortlessly. They are essential tools for building dynamic interactive applications and games.",
+  "q": [
+   {
+    "t": "What does the push() method do to an array?",
+    "o": [
+     "Removes the first element",
+     "Adds a new element to the end",
+     "Searches for an item"
+    ],
+    "a": 1,
+    "why": "The push() method always adds a new element to the end of the array."
+   },
+   {
+    "t": "What is the expected result when using pop() on an array?",
+    "o": [
+     "Removes and returns the last element",
+     "Clears the entire array completely",
+     "Copies the array"
+    ],
+    "a": 0,
+    "why": "The pop() method removes the final element and returns it as the removed value."
+   },
+   {
+    "t": "Do push() and pop() change the original length of the array?",
+    "o": [
+     "No, the length stays constant",
+     "Yes, the array length changes",
+     "Only element values change without length"
+    ],
+    "a": 1,
+    "why": "Yes, array length increases with push and decreases with pop."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Array Methods Matching",
+   "goal": "Match each method with its correct programming function.",
+   "pairs": [
+    [
+     "push()",
+     "Add item to the end"
+    ],
+    [
+     "pop()",
+     "Remove the last item"
+    ],
+    [
+     "length",
+     "Count total items"
+    ],
+    [
+     "Array",
+     "Store multiple values"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered array modification methods in JavaScript!"
+  },
+  "sections": [
+   {
+    "h": "What is an Array?",
+    "text": "An array is like a divided storage box keeping multiple items together in a specific order. Imagine a toy box holding cars and balls arranged in one row.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let toys=['Car','Ball','Doll'];document.getElementById('demo').innerHTML=toys;</script></body></html>",
+    "output": "The page displays the list of toys stored inside the array."
+   },
+   {
+    "h": "Understanding push",
+    "text": "The push method works like putting a brand-new toy inside the toy box through the back door so it rests at the very end.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let t=['Car'];t.push('Train');document.getElementById('demo').innerHTML=t;</script></body></html>",
+    "output": "The page shows both items after successfully adding the train."
+   },
+   {
+    "h": "Increasing Array Length",
+    "text": "When you use push to expand your list, the length property automatically updates to reflect the new count of elements.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let arr=['A','B'];arr.push('C');document.getElementById('demo').innerHTML=arr.length;</script></body></html>",
+    "output": "The page displays the number 3 as the new array length."
+   },
+   {
+    "h": "Understanding pop",
+    "text": "Unlike adding, the pop method takes the last item right out of the toy box and hands it over to you.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let items=['Pen','Book'];let last=items.pop();document.getElementById('demo').innerHTML=last;</script></body></html>",
+    "output": "The page displays the removed last item which is the book."
+   },
+   {
+    "h": "Modifying Arrays Dynamically",
+    "text": "You can mix push and pop together to continuously update your lists based on user actions or game events.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let scores=[10,20];scores.push(30);scores.pop();document.getElementById('demo').innerHTML=scores;</script></body></html>",
+    "output": "The page displays the array after pushing and then popping an element."
+   },
+   {
+    "h": "Level Management Application",
+    "text": "In games, use push to append new levels as players progress, and use pop to undo stages when required.",
+    "code": "<!DOCTYPE html><html><body><p id='demo'></p><script>let levels=['L1'];levels.push('L2');document.getElementById('demo').innerHTML=levels;</script></body></html>",
+    "output": "The page displays the updated game levels."
+   }
+  ],
+  "reference": [
+   {
+    "name": "push()",
+    "desc": "Adds one or more elements to the end of an array."
+   },
+   {
+    "name": "pop()",
+    "desc": "Removes the last element from an array and returns it."
+   },
+   {
+    "name": "length",
+    "desc": "Property specifying the number of elements in an array."
+   },
+   {
+    "name": "Array",
+    "desc": "A data type used to store an ordered list of values."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Add the item 'Sword' to the weapons array `let weapons = ['Shield'];` using push.",
+    "a": "weapons.push('Sword');"
+   },
+   {
+    "q": "Remove the last item from the array `let fruits = ['Apple', 'Banana'];` using pop.",
+    "a": "fruits.pop();"
+   },
+   {
+    "q": "Write a statement displaying the array length after adding two items.",
+    "a": "console.log(arr.length);"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Array.prototype.pop()",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,332 @@
+{
+ "ar": {
+  "steps": [
+   "التعريف الأساسي: الكائنات (Objects) هي أدوات في لغة جافاسكريبت لتخزين معلومات مرتبطة ببعضها معاً، بدلاً من استخدام أرقام عادية.",
+   "مثال صغير: تخيل أنك تريد تخزين اسم طالب ودرجته. في الكائن، نستخدم أسماء مفاتيح واضحة مثل name و grade لتخزين القيم.",
+   "كيف يعمل: نكتب الكائن بين قوسين متعرجين {}، وكل معلومة تتكون من مفتاح (Key) وقيمة (Value) يفصل بينهما نقطتان رأسيتان.",
+   "مثال ثانٍ: كائن يمثل سيارة يحتوي على مفتاح brand والقيمة 'Toyota'، ومفتاح speed والقيمة 120 لتعبر عن السرعة.",
+   "قاعدة ذهبية: استخدم دائماً الأقواس المتعرجين {} وافصل بين الخصائص بفاصلة، واجعل أسماء المفاتيح تعبر بوضوح عن البيانات.",
+   "استخدام في الواقع: نستخدم الكائنات في تطبيقات الويب لتخزين بيانات المستخدمين، إعدادات الألعاب، وملفات المنتجات بطريقة منظمة."
+  ],
+  "example": "إليك كائن يمثل طالباً في المدرسة بخصائص محددة:\n\n```javascript\nconst student = {\n  name: 'أحمد',\n  grade: 6\n};\nconsole.log(student.name);\n```\n\nالسبب: قمنا بإنشاء كائن باسم student يحتوي على مفتاحين وهما name بقيمة 'أحمد' و grade بقيمة 6، ثم استخدمنا النقطة للوصول إلى اسم الطالب.",
+  "mistake": "خطأ شائع هو استخدام علامات التساوي = بدلاً من النقطتين الرأسيّتين : داخل الكائن لفصل المفتاح عن قيمته. التصحيح هو استخدام النقطة الرأسية لكل زوج مفتاح وقيمة.",
+  "recap": "تتيح لنا الكائنات في جافاسكريبت جمع البيانات المرتبطة في مكان واحد باستخدام أقواس متعرجة ومفاتيح مسماة. هذا يجعل تنظيم البيانات البرمجية واسترجاعها أسهل بكثير.",
+  "q": [
+   {
+    "t": "ما الرمز الذي نستخدمه لإنشاء كائن برمجي في جافاسكريبت؟",
+    "o": [
+     "الأقواس المتعرجة {}",
+     "الأقواس العادية ()",
+     "الأقواس المربعة []"
+    ],
+    "a": 0,
+    "why": "نستخدم الأقواس المتعرجة {} لتحديد بداية ونهاية الكائن البرمجي وحفظ خصائصه."
+   },
+   {
+    "t": "كيف نفصل بين المفتاح والقيمة داخل الكائن؟",
+    "o": [
+     "بعلامة التساوي =",
+     "بالنقطتين الرأسيّتين :",
+     "بالفاصلة المنقوطة ;"
+    ],
+    "a": 1,
+    "why": "نستخدم النقطتين الرأسيّتين (:) لربط اسم المفتاح بالقيمة الخاصة به داخل الكائن."
+   },
+   {
+    "t": "أي مما يلي يعتبر طريقة صحيحة للوصول إلى خاصية داخل كائن؟",
+    "o": [
+     "student(name)",
+     "student.name",
+     "student[name]"
+    ],
+    "a": 1,
+    "why": "نستخدم نقطة الوصول (.) مع اسم الخاصية مثل student.name لجلب قيمتها."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة عناصر الكائنات البرمجية",
+   "goal": "صل بين المفهوم البرمجي للكائنات ووصفه الصحيح.",
+   "pairs": [
+    [
+     "أقواس الكائن",
+     "{}"
+    ],
+    [
+     "الفصل بين المفتاح والقيمة",
+     ":"
+    ],
+    [
+     "طريقة الوصول للخصائص",
+     "النقطة (.)"
+    ],
+    [
+     "تخزين البيانات المرتبطة",
+     "Object"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت أساسيات الكائنات في جافاسكريبت بنجاح."
+  },
+  "sections": [
+   {
+    "h": "مفهوم الكائنات البرمجية",
+    "text": "الكائنات (Objects) هي مثل حقيبة مدرسية تضع فيها أدوات مترابطة؛ مقلمة، كتب، ودفاتر. بدلاً من تشتيت البيانات، يجمع الكائن كل ما يخص شيئاً معيناً (مثل طالب أو سيارة) في مكان واحد منظم يسهل الوصول إليه.",
+    "code": "<script>\n  const box = { item: 'قلم', count: 5 };\n  document.write(box.item);\n</script>",
+    "output": "تظهر الصفحة كلمة قلم التي تعبر عن محتوى الحقيبة."
+   },
+   {
+    "h": "أزواج المفتاح والقيمة",
+    "text": "يتكون الكائن من أزواج تسمى (Key-Value Pairs). المفتاح هو اسم الخاصية (مثل العنوان أو العمر) والقيمة هي المعلومة الفعلية (مثل الرياض أو 12). تماماً مثلما تقول اسمك وعمرك عندما يتعرف عليك صديق جديد.",
+    "code": "<script>\n  const user = { city: 'القاهرة', age: 12 };\n  document.write(user.city);\n</script>",
+    "output": "تظهر الصفحة اسم المدينة القاهرة."
+   },
+   {
+    "h": "خصائص الكائن Properties",
+    "text": "الخصائص (Properties) هي البيانات المخزنة داخل الكائن. كل خاصية لها اسم فريد وقيمة يمكن أن تكون نصاً أو رقماً أو حتى قيمة منطقية. تخيلها كبطاقة تعريفية لشخص تحتوي على معلوماته الشخصية.",
+    "code": "<script>\n  const pet = { type: 'قطة', active: true };\n  document.write(pet.type);\n</script>",
+    "output": "تظهر الصفحة نوع الحيوان وهو قطة."
+   },
+   {
+    "h": "استخدام الأقواس المتعرجة",
+    "text": "لكي تخبر جافاسكريبت أنك تبدأ بإنشاء كائن جديد، يجب أن تستخدم الأقواس المتعرجة (Curly Braces). القوس المفتوح { يبدأ الكائن، والقوس المغلق } ينتهي به، وبينها نكتب بياناتنا بكل ترتيب ونظافة.",
+    "code": "<script>\n  const myObj = { status: 'جاهز' };\n  document.write(myObj.status);\n</script>",
+    "output": "تظهر الصفحة كلمة جاهز."
+   },
+   {
+    "h": "إنشاء كائن طالب",
+    "text": "لنطبق ما تعلمناه بإنشاء كائن لطالب يسمى أحمد في الصف السادس. نستخدم المفتاح name للطالب و grade لصفه الدراسي، ليكون الكائن مرجعاً رائعاً لمعلومات الطالب بطريقة برمجية ذكية وسريعة.",
+    "code": "<script>\n  const student = { name: 'أحمد', grade: 6 };\n  document.write(student.name + ' في صف ' + student.grade);\n</script>",
+    "output": "تظهر الصفحة جملة أحمد في صف 6."
+   },
+   {
+    "h": "الوصول إلى الخصائص بالقطة",
+    "text": "بعد أن ننشئ الكائن، كيف نقرأ البيانات بداخله؟ نستخدم علامة النقطة (.) متبوعة باسم المفتاح. مثل مفتاح الباب الذي يفتح لك الغرفة، فالنقطة تفتح لك الكائن وتجلب لك القيمة المطلوبة فوراً.",
+    "code": "<script>\n  const phone = { brand: 'آبل', price: 500 };\n  document.write(phone.brand);\n</script>",
+    "output": "تظهر الصفحة اسم العلامة التجارية آبل."
+   },
+   {
+    "h": "تحديث وتغيير القيم",
+    "text": "الكائنات مرنة جداً! يمكنك تغيير قيمة أي خاصية داخل الكائن بعد إنشائه بكل سهولة عبر تحديد اسم الخاصية واستخدام علامة التساوي لإعطائها قيمة جديدة، تماماً كما تبدل ملابسك حسب حالة الطقس.",
+    "code": "<script>\n  const game = { level: 1 };\n  game.level = 2;\n  document.write(game.level);\n</script>",
+    "output": "تظهر الصفحة المستوى الجديد وهو 2."
+   },
+   {
+    "h": "استخدامات الكائنات في الواقع",
+    "text": "في الألعاب وتطبيقات الموبايل، كل شخصية في اللعبة عبارة عن كائن له طاقة وسرعة وموقع. وفي المتاجر الإلكترونية، كل منتج له كائن يحمل السعر والاسم والصورة، مما يجعل برمجة المواقع الكبيرة أمراً ممكناً ومنظماً.",
+    "code": "<script>\n  const hero = { name: 'بطل', hp: 100 };\n  document.write(hero.name + ' طاقته ' + hero.hp);\n</script>",
+    "output": "تظهر الصفحة اسم البطل وطاقته 100."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object",
+    "desc": "هيكل بيانات لتخزين معلومات مرتبطة باستخدام المفاتيح والقيم."
+   },
+   {
+    "name": "Key-Value",
+    "desc": "طريقة تخزين البيانات بحيث يكون لكل قيمة اسم مفتاح خاص بها."
+   },
+   {
+    "name": "Curly Braces {}",
+    "desc": "الأقواس المستخدمة لإنشاء وتحديد حدود الكائن البرمجي."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "طريقة تُستخدم للوصول إلى خصائص الكائن أو تعديلها."
+   },
+   {
+    "name": "Property",
+    "desc": "متغير مفرد مخزّن داخل الكائن يصف سمة معينة."
+   },
+   {
+    "name": "Colon (:)",
+    "desc": "الرمز الفاصل بين المفتاح والقيمة داخل الكائن."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ كائناً باسم car يحتوي على مفتاح brand بقيمة 'BMW' واطبع اسم العلامة.",
+    "a": "const car = { brand: 'BMW' }; document.write(car.brand);"
+   },
+   {
+    "q": "كيف تصل إلى خاصية age في كائن اسمه user باستخدام النقطة؟",
+    "a": "user.age"
+   },
+   {
+    "q": "ما الرمز الذي يفصل بين اسم المفتاح وقيمته داخل الكائن؟",
+    "a": "النقطتان الرأسيّتان (:)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Core concept: Objects are tools in JavaScript to store related information together, instead of using regular numbers.",
+   "Small example: Imagine storing a student's name and grade. In an object, we use clear key names like name and grade.",
+   "How it works: We write the object inside curly braces {}, and each piece of data consists of a Key and a Value separated by a colon.",
+   "Second example: A car object containing the key brand with value 'Toyota', and key speed with value 120.",
+   "Golden rule: Always use curly braces {}, separate properties with commas, and make key names clearly describe the data.",
+   "Real-life use: We use objects in web applications to store user profiles, game settings, and product details in an organized way."
+  ],
+  "example": "Here is an object representing a school student with specific properties:\n\n```javascript\nconst student = {\n  name: 'Ahmed',\n  grade: 6\n};\nconsole.log(student.name);\n```\n\nReasoning: We created an object named student containing two keys, name with value 'Ahmed' and grade with value 6, then used dot notation to access the student's name.",
+  "mistake": "A common mistake is using an equals sign = instead of a colon : inside the object to separate the key from its value. The fix is to use a colon for each key-value pair.",
+  "recap": "Objects in JavaScript let us bundle related data together using curly braces and named keys. This makes organizing and retrieving coded data much easier.",
+  "q": [
+   {
+    "t": "What symbol do we use to create a software object in JavaScript?",
+    "o": [
+     "Curly braces {}",
+     "Parentheses ()",
+     "Square brackets []"
+    ],
+    "a": 0,
+    "why": "We use curly braces {} to define the start and end of a software object and hold its properties."
+   },
+   {
+    "t": "How do we separate the key and value inside an object?",
+    "o": [
+     "With an equals sign =",
+     "With a colon :",
+     "With a semicolon ;"
+    ],
+    "a": 1,
+    "why": "We use a colon (:) to link the key name to its corresponding value inside the object."
+   },
+   {
+    "t": "Which of the following is a correct way to access a property inside an object?",
+    "o": [
+     "student(name)",
+     "student.name",
+     "student[name]"
+    ],
+    "a": 1,
+    "why": "We use dot notation (.) with the property name like student.name to fetch its value."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Matching JavaScript Object Elements",
+   "goal": "Match the object programming concept with its correct description.",
+   "pairs": [
+    [
+     "Object brackets",
+     "{}"
+    ],
+    [
+     "Separating key and value",
+     ":"
+    ],
+    [
+     "Accessing properties",
+     "Dot (.)"
+    ],
+    [
+     "Storing related data",
+     "Object"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered the basics of JavaScript objects."
+  },
+  "sections": [
+   {
+    "h": "Concept of Objects",
+    "text": "Objects are like a school backpack where you pack related tools together: a pencil case, books, and notebooks. Instead of scattering data, an object bundles everything belonging to a specific item (like a student or a car) into one organized, accessible place.",
+    "code": "<script>\n  const box = { item: 'pen', count: 5 };\n  document.write(box.item);\n</script>",
+    "output": "The page displays the word pen representing the backpack content."
+   },
+   {
+    "h": "Key-Value Pairs",
+    "text": "An object consists of pairs called Key-Value Pairs. The key is the property name (like title or age) and the value is the actual information (like math or 12). Just like stating your name and age when meeting a new friend.",
+    "code": "<script>\n  const user = { city: 'Cairo', age: 12 };\n  document.write(user.city);\n</script>",
+    "output": "The page displays the city name Cairo."
+   },
+   {
+    "h": "Object Properties",
+    "text": "Properties are the pieces of data stored inside an object. Each property has a unique name and a value that can be text, a number, or even a boolean. Imagine it like an ID card for a person containing their personal info.",
+    "code": "<script>\n  const pet = { type: 'cat', active: true };\n  document.write(pet.type);\n</script>",
+    "output": "The page displays the animal type cat."
+   },
+   {
+    "h": "Using Curly Braces",
+    "text": "To tell JavaScript you are starting a new object, you must use curly braces {}. The open brace { starts the object, and the closed brace } ends it, with our data neatly written inside.",
+    "code": "<script>\n  const myObj = { status: 'ready' };\n  document.write(myObj.status);\n</script>",
+    "output": "The page displays the word ready."
+   },
+   {
+    "h": "Creating a Student Object",
+    "text": "Let's apply what we learned by creating a student object named Ahmed in grade 6. We use the key name for the student and grade for their class level, making the object a brilliant reference for student info.",
+    "code": "<script>\n  const student = { name: 'Ahmed', grade: 6 };\n  document.write(student.name + ' is in grade ' + student.grade);\n</script>",
+    "output": "The page displays Ahmed is in grade 6."
+   },
+   {
+    "h": "Accessing Properties with Dots",
+    "text": "Once we create an object, how do we read data inside it? We use the dot symbol (.) followed by the key name. Just like a door key opens your room, the dot opens the object and brings you the requested value instantly.",
+    "code": "<script>\n  const phone = { brand: 'Apple', price: 500 };\n  document.write(phone.brand);\n</script>",
+    "output": "The page displays the brand name Apple."
+   },
+   {
+    "h": "Updating and Changing Values",
+    "text": "Objects are very flexible! You can change the value of any property inside an object after creating it easily by specifying the property name and using an equals sign to assign a new value, just like changing clothes based on the weather.",
+    "code": "<script>\n  const game = { level: 1 };\n  game.level = 2;\n  document.write(game.level);\n</script>",
+    "output": "The page displays the new level 2."
+   },
+   {
+    "h": "Real-Life Uses of Objects",
+    "text": "In games and mobile apps, every character is an object with health, speed, and position. In online stores, every product has an object holding price, name, and image, making large website programming organized and possible.",
+    "code": "<script>\n  const hero = { name: 'Hero', hp: 100 };\n  document.write(hero.name + ' hp is ' + hero.hp);\n</script>",
+    "output": "The page displays the hero name and hp 100."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object",
+    "desc": "A data structure to store related information using keys and values."
+   },
+   {
+    "name": "Key-Value",
+    "desc": "A data storage method where each value has its own specific key name."
+   },
+   {
+    "name": "Curly Braces {}",
+    "desc": "The brackets used to create and define the boundaries of a software object."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "The syntax used to access or modify object properties."
+   },
+   {
+    "name": "Property",
+    "desc": "A single variable stored inside an object describing a specific trait."
+   },
+   {
+    "name": "Colon (:)",
+    "desc": "The separator symbol between key and value inside an object."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create an object named car containing a brand key with value 'BMW' and print the brand name.",
+    "a": "const car = { brand: 'BMW' }; document.write(car.brand);"
+   },
+   {
+    "q": "How do you access the age property in an object named user using the dot?",
+    "a": "user.age"
+   },
+   {
+    "q": "What symbol separates the key name from its value inside an object?",
+    "a": "Colon (:)"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Advanced JavaScript objects",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects"
+  },
+  {
+   "title": "MDN: Introduction to using XPath in JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/XML/XPath/Guides/Introduction_to_using_XPath_in_JavaScript"
+  }
+ ],
+ "grounded": true
+}
