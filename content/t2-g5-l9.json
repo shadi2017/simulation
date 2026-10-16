@@ -1,0 +1,330 @@
+{
+ "ar": {
+  "steps": [
+   "وصلنا لنهاية الرحلة! اليوم سنجمع كل ما تعلمناه طوال الترم في مشروع متتبع الإحصائيات التفاعلي الرائع.",
+   "البداية تكون بتنظيم بيانات اللاعب أو المشروع في كائن (Object) يحتوي على خصائص متعددة مثل الاسم والنقاط والمستوى.",
+   "بعد ذلك نستعين بالمصفوفات (Arrays) لجمع وتخزين سجلات متعددة أو قائمة من الإحصائيات السابقة بشكل مرتب ومنظم.",
+   "نستخدم طرق النصوص (String methods) لتعديل النصوص وتنسيق العبارات التي ستظهر على الشاشة للاعب بشكل جميل ومفهوم.",
+   "نقوم بتحديث صفحة الويب عبر نموذج DOM لتغيير المحتوى ديناميكياً وعرض أحدث الإحصائيات فور حدوث أي تفاعل من المستخدم.",
+   "القاعدة الذهبية لأي مشروع كبير هي تقسيم العمل إلى أجزاء صغيرة: تخزين البيانات، معالجة النموذج، ثم تحديث الواجهة خطوة بخطوة."
+  ],
+  "example": "إليك كائن يمثل لاعباً مع مصفوفة لعرض سجله:\n```javascript\nconst player = {\n  name: 'أحمد',\n  score: 150,\n  badges: ['محترف', 'سريع']\n};\nconsole.log(player.name.toUpperCase());\n```\nالسبب: قمنا بجمع الكائنات والمصفوفات ودوال النصوص في مكان واحد لبناء نظام متكامل.",
+  "mistake": "نسيان استخدام preventDefault() عند التعامل مع النماذج، مما يؤدي إلى إعادة تحميل الصفحة وضياع البيانات قبل معالجتها. الحل: ضع دائماً الحدث في البداية لمنع السلوك الافتراضي.",
+  "recap": "لقد قمنا اليوم بدمج الكائنات، المصفوفات، وتحديثات DOM في تطبيق ويب تفاعلي كامل ومتكامل. هذا هو أساس بناء المشاريع البرجية الكبيرة!",
+  "q": [
+   {
+    "t": "ما هي الفائدة من استخدام الكائنات (Objects) في مشروعنا؟",
+    "o": [
+     "تخزين مجموعة خصائص مرتبطة بكيان واحد",
+     "حذف ملفات المتصفح",
+     "تصميم شكل الزر فقط"
+    ],
+    "a": 0,
+    "why": "الكائنات تجمع البيانات والخصائص الخاصة بشيء واحد مثل اللاعب."
+   },
+   {
+    "t": "كيف نمنع نموذج HTML من إعادة تحميل الصفحة عند الضغط على زر الإرسال؟",
+    "o": [
+     "event.stop()",
+     "event.preventDefault()",
+     "form.close()"
+    ],
+    "a": 1,
+    "why": "نستخدم preventDefault() لإيقاف الإرسال الافتراضي ومعالجة البيانات برمجياً."
+   },
+   {
+    "t": "ما هو دور DOM في تطبيقات الويب؟",
+    "o": [
+     "تغيير محتوى الصفحة ديناميكياً وتحديثه",
+     "كتابة الأكواد بلغة أخرى",
+     "تسريع الإنترنت"
+    ],
+    "a": 0,
+    "why": "يسمح DOM لجافاسكريبت بقراءة وتعديل عناصر HTML على الشاشة."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود متتبع الإحصائيات",
+   "goal": "املأ الفراغات بالكلمات البرمجية الصحيحة لإنهاء المشروع التفاعلي.",
+   "items": [
+    {
+     "text": "const player = { name: 'Ali', score: ___ };",
+     "options": [
+      "100",
+      "'مفتاح'",
+      "true"
+     ],
+     "a": 0
+    },
+    {
+     "text": "formEl.addEventListener('___', (e) => { e.preventDefault(); });",
+     "options": [
+      "submit",
+      "click",
+      "hover"
+     ],
+     "a": 0
+    },
+    {
+     "text": "document.getElementById('stats').textContent = ___;",
+     "options": [
+      "player.name",
+      "123",
+      "null"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! لقد أكملت كود المشروع وأصبح متتبع الإحصائيات يعمل بكفاءة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة المشروع النهائي",
+    "text": "مشروعنا اليوم هو دمج كل مهارات الترم في لوحة تحكم واحدة. تخيل أنك تبنى غرفة تحكم لسفينة فضائية تعرض فيها كل معلومات الرحلة في مكان واحد منظم.",
+    "code": "<!DOCTYPE html><html><body><h1>مرحباً بك في لوحة القيادة</h1><script>console.log('تشغيل النظام...');</script></body></html>",
+    "output": "صفحة ويب بسيطة تعرض عنوان المشروع."
+   },
+   {
+    "h": "إنشاء كائن اللاعب",
+    "text": "نستخدم الكائنات (Objects) لتنظيم البيانات مثل اسم اللاعب، مستواه، ونقاطه، تماماً مثل بطاقة الهوية التي تجمع كل معلوماتك الشخصية في بطاقة واحدة.",
+    "code": "<!DOCTYPE html><html><body><p id='p'></p><script>const p = {name: 'سارة', level: 5}; document.getElementById('p').textContent = p.name;</script></body></html>",
+    "output": "تعرض الصفحة اسم سارة من الكائن."
+   },
+   {
+    "h": "استخدام المصفوفات",
+    "text": "المصفوفات (Arrays) تشبه حقيبة الظهر التي ترتب فيها أدواتك واحداً تلو الآخر. نستخدمها هنا لحفظ قائمة النقاط السابقة أو قائمة الأوسمة.",
+    "code": "<!DOCTYPE html><html><body><p id='arr'></p><script>const scores = [10, 20, 30]; document.getElementById('arr').textContent = scores[2];</script></body></html>",
+    "output": "تعرض الصفحة الرقم 30 وهو العنصر الثالث."
+   },
+   {
+    "h": "طرق النصوص المتطورة",
+    "text": "طرق النصوص مثل toUpperCase أو trim تساعدنا في تجميل النصوص وتنظيفها قبل عرضها للمستخدم، مثل منسق الكلمات الذي يصحح الحروف.",
+    "code": "<!DOCTYPE html><html><body><p id='txt'></p><script>let t = 'hello'; document.getElementById('txt').textContent = t.toUpperCase();</script></body></html>",
+    "output": "تظهر كلمة HELLO بأحرف كبيرة."
+   },
+   {
+    "h": "الاستماع للنماذج",
+    "text": "عندما يدخل المستخدم بياناته في النموذج ويضغط إرسال، نستمع لهذا الحدث ونمنع إعادة تحميل الصفحة باستخدام دالة الإيقاف.",
+    "code": "<!DOCTYPE html><html><body><form id='f'><input id='i' value='نقاط'><button>إرسال</button></form><script>document.getElementById('f').addEventListener('submit', e => e.preventDefault());</script></body></html>",
+    "output": "نموذج لا يعيد تحميل الصفحة عند الضغط على إرسال."
+   },
+   {
+    "h": "تحديث عناصر DOM",
+    "text": "نقوم بإنشاء عناصر جديدة مثل <li> و <ul> وإضافتها لصفحة الويب ديناميكياً لعرض السجل الجديد، مثل لوحة النتائج في الملعب التي تتغير فور تسجيل نقطة.",
+    "code": "<!DOCTYPE html><html><ul id='list'></ul><script>const li = document.createElement('li'); li.textContent = 'إحصائية جديدة'; document.getElementById('list').appendChild(li);</script></body></html>",
+    "output": "تظهر قائمة تحتوي على عنصر جديد تم إضافته برمجياً."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object",
+    "desc": "بنية لتخزين البيانات على شكل مفتاح وقيمة."
+   },
+   {
+    "name": "Array",
+    "desc": "قائمة مرتبة لتخزين عناصر متعددة."
+   },
+   {
+    "name": "addEventListener",
+    "desc": "دالة للاستماع للأحداث مثل الضغط والإرسال."
+   },
+   {
+    "name": "preventDefault",
+    "desc": "تمنع السلوك الافتراضي للعنصر مثل إعادة تحميل الصفحة."
+   },
+   {
+    "name": "createElement",
+    "desc": "تنشئ عنصر HTML جديد في الذاكرة."
+   },
+   {
+    "name": "appendChild",
+    "desc": "تضيف عنصراً فرعياً داخل عنصر أب في DOM."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ كائنًا يسمى player يحتوي على اسم وعمر.",
+    "a": "const player = { name: 'عمر', age: 12 };"
+   },
+   {
+    "q": "اكتب كوداً يمنع إرسال النموذج الافتراضي في حدث click أو submit.",
+    "a": "event.preventDefault();"
+   },
+   {
+    "q": "كيف تنشئ عنصر قائمة <li> جديد برمجياً؟",
+    "a": "document.createElement('li');"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "We have reached the end of the journey! Today we combine everything learned this term into an amazing interactive stat tracker project.",
+   "We start by organizing player or project data inside an Object containing multiple properties like name, score, and level.",
+   "Next, we use Arrays to gather and store multiple records or past statistics in a neat and organized list.",
+   "We use String methods to modify text and format messages that will appear nicely and clearly to the player on screen.",
+   "We update the web page via DOM updates to dynamically change content and show fresh statistics as soon as user interaction happens.",
+   "The golden rule for any large project is breaking work into small parts: data storage, form handling, then updating the UI step by step."
+  ],
+  "example": "Here is an object representing a player with an array for records:\n```javascript\nconst player = {\n  name: 'Ahmed',\n  score: 150,\n  badges: ['Pro', 'Fast']\n};\nconsole.log(player.name.toUpperCase());\n```\nReason: We combined objects, arrays, and string methods in one place to build an integrated system.",
+  "mistake": "Forgetting to use preventDefault() when handling forms, causing the page to reload and data to be lost before processing. Fix: Always place it at the start to prevent default behavior.",
+  "recap": "Today we integrated objects, arrays, and DOM updates into a fully functional interactive web app. This is the foundation of building large projects!",
+  "q": [
+   {
+    "t": "What is the benefit of using Objects in our project?",
+    "o": [
+     "Storing a group of properties related to a single entity",
+     "Deleting browser files",
+     "Designing button styles"
+    ],
+    "a": 0,
+    "why": "Objects bundle data and properties belonging to one item like a player."
+   },
+   {
+    "t": "How do we prevent an HTML form from reloading the page on submit?",
+    "o": [
+     "event.stop()",
+     "event.preventDefault()",
+     "form.close()"
+    ],
+    "a": 1,
+    "why": "We use preventDefault() to stop default submission and handle data in code."
+   },
+   {
+    "t": "What is the role of the DOM in web applications?",
+    "o": [
+     "Dynamically changing and updating page content",
+     "Writing code in another language",
+     "Speeding up internet"
+    ],
+    "a": 0,
+    "why": "The DOM allows JavaScript to read and modify HTML elements on screen."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete the Stat Tracker Code",
+   "goal": "Fill in the blanks with the correct programming words to finish the interactive project.",
+   "items": [
+    {
+     "text": "const player = { name: 'Ali', score: ___ };",
+     "options": [
+      "100",
+      "'key'",
+      "true"
+     ],
+     "a": 0
+    },
+    {
+     "text": "formEl.addEventListener('___', (e) => { e.preventDefault(); });",
+     "options": [
+      "submit",
+      "click",
+      "hover"
+     ],
+     "a": 0
+    },
+    {
+     "text": "document.getElementById('stats').textContent = ___;",
+     "options": [
+      "player.name",
+      "123",
+      "null"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! You completed the project code and the stat tracker is working efficiently!"
+  },
+  "sections": [
+   {
+    "h": "Final Project Introduction",
+    "text": "Our project today merges all term skills into a single dashboard. Imagine building a spaceship control room showing all mission info in one organized place.",
+    "code": "<!DOCTYPE html><html><body><h1>Welcome to Dashboard</h1><script>console.log('System starting...');</script></body></html>",
+    "output": "A simple web page displaying the project title."
+   },
+   {
+    "h": "Creating the Player Object",
+    "text": "We use Objects to organize data like player name, level, and score, just like an ID card gathering all your personal info in one place.",
+    "code": "<!DOCTYPE html><html><body><p id='p'></p><script>const p = {name: 'Sarah', level: 5}; document.getElementById('p').textContent = p.name;</script></body></html>",
+    "output": "The page displays Sarah's name from the object."
+   },
+   {
+    "h": "Using Arrays",
+    "text": "Arrays are like a backpack where you neatly organize items one by one. We use them here to store past scores or badges.",
+    "code": "<!DOCTYPE html><html><body><p id='arr'></p><script>const scores = [10, 20, 30]; document.getElementById('arr').textContent = scores[2];</script></body></html>",
+    "output": "The page displays 30, the third item."
+   },
+   {
+    "h": "Advanced String Methods",
+    "text": "String methods like toUpperCase or trim help beautify and clean text before showing it to the user, like a text editor fixing letters.",
+    "code": "<!DOCTYPE html><html><body><p id='txt'></p><script>let t = 'hello'; document.getElementById('txt').textContent = t.toUpperCase();</script></body></html>",
+    "output": "The word HELLO appears in uppercase."
+   },
+   {
+    "h": "Listening to Forms",
+    "text": "When the user inputs form data and clicks submit, we listen to this event and prevent page reload using the stop function.",
+    "code": "<!DOCTYPE html><html><body><form id='f'><input id='i' value='score'><button>Submit</button></form><script>document.getElementById('f').addEventListener('submit', e => e.preventDefault());</script></body></html>",
+    "output": "A form that does not reload the page on submit."
+   },
+   {
+    "h": "Updating DOM Elements",
+    "text": "We create new elements like <li> and <ul> and add them to the webpage dynamically to show new logs, like a scoreboard updating instantly.",
+    "code": "<!DOCTYPE html><html><ul id='list'></ul><script>const li = document.createElement('li'); li.textContent = 'New stat'; document.getElementById('list').appendChild(li);</script></body></html>",
+    "output": "A list appears with a newly added programmatic item."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object",
+    "desc": "Structure for storing data in key-value pairs."
+   },
+   {
+    "name": "Array",
+    "desc": "Ordered list for storing multiple items."
+   },
+   {
+    "name": "addEventListener",
+    "desc": "Function to listen for events like click and submit."
+   },
+   {
+    "name": "preventDefault",
+    "desc": "Prevents default element behavior like page reload."
+   },
+   {
+    "name": "createElement",
+    "desc": "Creates a new HTML element in memory."
+   },
+   {
+    "name": "appendChild",
+    "desc": "Appends a child element inside a parent in the DOM."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create an object named player with a name and age.",
+    "a": "const player = { name: 'Omar', age: 12 };"
+   },
+   {
+    "q": "Write code to prevent default form submission inside an event listener.",
+    "a": "event.preventDefault();"
+   },
+   {
+    "q": "How do you create a new list item <li> element programmatically?",
+    "a": "document.createElement('li');"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: CycleTracker: JavaScript functionality",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/CycleTracker/JavaScript_functionality"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

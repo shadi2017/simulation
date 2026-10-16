@@ -1,0 +1,312 @@
+{
+ "ar": {
+  "steps": [
+   "الكائنات في البرمجة تشبه الصناديق السحرية التي تجمع البيانات والأفعال معاً في مكان واحد لتنظيم الشفرة البرمجية بشكل مذهل.",
+   "إليك مثالاً بسيطاً لكائن يمثل قطة: const cat = { name: 'مشمش', age: 2 }; يحتوي على اسم وعمر.",
+   "الخصائص (Properties) هي البيانات التي توصف الكائن مثل الاسم والعمر، بينما الطرق (Methods) هي الدوال التي تجعل الكائن يقوم بأفعال.",
+   "يمكننا إضافة دالة كطريقة داخل الكائن هكذا: const cat = { name: 'مشمش', meow() { console.log('مياو!'); } };",
+   "قاعدة ذهبية: استخدم النقطة للوصول لخصائص وطرق الكائن، مثل cat.meow() لتشغيل الفعل ودعوة القطة للإفصاح عن صوتها.",
+   "في الحياة اليومية، جهاز الهاتف المحمول يعتبر كئناً؛ خصائصه هي لونه وحجمه، وطُعرُه أو طُقه (طُرُقه) هي تشغيل الكاميرا أو إجراء مكالمة."
+  ],
+  "example": "لنفترض أننا نصنع لعبة فيديو ونريد إنشاء شخصية لاعب تستطيع القفز. نكتب الكود التالي:\nconst player = {\n  name: 'صقر',\n  score: 100,\n  jump() {\n    console.log(this.name + ' يقفز الآن عالياً!');\n  }\n};\nplayer.jump();\nهنا قمنا بتعريف كائن player يحمل بيانات مثل الاسم والنقاط، وأضفنا له دالة jump كطريقة (Method). عندما نادينا player.jump()، استخدمنا كلمة this لكي يفهم الحاسوب أننا نقصد اسم هذا اللاعب بالذات، فظهرت النتيجة تفيد بأن صقر يقفز.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة الأقواس () عند استدعاء الطريقة، مثل كتابة player.jump بدون أقواس فلا ينفذ الفعل. الصواب هو كتابة player.jump() دائماً لأنها دالة.",
+  "recap": "الكائنات تجمع البيانات والأفعال معاً، والدوال داخل الكائنات تسمى طرقاً لتمنحها سلوكاً تفاعلياً رائعاً.",
+  "q": [
+   {
+    "t": "ماذا نسمي الدالة عندما تكون داخل كائن برمجي؟",
+    "o": [
+     "خاصية",
+     "طريقة (Method)",
+     "متغير نصي"
+    ],
+    "a": 1,
+    "why": "الدوال داخل الكائنات تسمى طرقاً لأنها تمثل أفعال الكائن."
+   },
+   {
+    "t": "كيف نقوم باستدعاء طريقة داخل كائن اسمها run؟",
+    "o": [
+     "run.player()",
+     "player.run()",
+     "player[run]"
+    ],
+    "a": 1,
+    "why": "نستعمل نقطة بعد اسم الكائن ثم اسم الطريقة مع أقواسها."
+   },
+   {
+    "t": "ما فائدة كلمة this داخل طرق الكائن؟",
+    "o": [
+     "تشير إلى الكائن الحالي نفسه",
+     "توقف البرنامج عن العمل",
+     "تحذف الكائن نهائياً"
+    ],
+    "a": 0,
+    "why": "كلمة this هي مرجع للكائن الذي يحتوي على هذه الطريقة."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات إنشاء كائن له طريقة قفز",
+   "goal": "رتب الخطوات لتعريف كائن لاعب يحتوي على اسم وطريقة للقفز بشكل صحيح.",
+   "items": [
+    "const player = {",
+    "  name: 'بطل اللعبة',",
+    "  jump() {",
+    "    console.log(this.name + ' يقفز!');",
+    "  }",
+    "};"
+   ],
+   "success": "رائع! قمت ببرمجة كائن اللاعب بنجاح وأصبح يستطيع القفز في اللعبة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو الكائن؟",
+    "text": "الكائن في جافاسكريبت هو وعاء يجمع معلومات وأفعال مرتبطة ببعضها، مثل حقيبة المدرسة التي تحتوي على كتب وأقلام.",
+    "code": "<script>\n  const box = { color: 'أحمر', open() { console.log('تم فتح الصندوق!'); } };\n  box.open();\n</script>",
+    "output": "يظهر في وحدة التحكم رسالة تفيد بفتح الصندوق."
+   },
+   {
+    "h": "خصائص الكائن",
+    "text": "الخصائص هي البيانات والمعلومات التي يحملها الكائن، مثل اسم الشخص أو لونه أو عمره.",
+    "code": "<script>\n  const dog = { name: 'روكي', age: 3 };\n  console.log(dog.name);\n</script>",
+    "output": "يطبع اسم الكلب روكي."
+   },
+   {
+    "h": "طرق الكائنات (Methods)",
+    "text": "الطريقة هي دالة برمجية تسكن داخل الكائن لتسمح له بأداء أفعال معينة، تماماً مثلما يستطيع الإنسان التحدث أو الجري.",
+    "code": "<script>\n  const robot = { greet() { console.log('أهلاً بك!'); } };\n  robot.greet();\n</script>",
+    "output": "يطبع الروبوت تحية أهلاً بك."
+   },
+   {
+    "h": "استخدام نقطة الوصول",
+    "text": "نستخدم علامة النقطة (dot notation) للوصول إلى أي خاصية أو طريقة داخل الكائن بسرعة وسهولة.",
+    "code": "<script>\n  const car = { brand: 'تويوتا', start() { console.log('بدأت الحركة'); } };\n  car.start();\n</script>",
+    "output": "يطبع عبارة بدأت الحركة."
+   },
+   {
+    "h": "سلوك الكائنات (Behavior)",
+    "text": "سلوك الكائن يعبر عن كيفية تفاعله وتصرفه باستخدام طرقه المختلفة، مما يجعله يبدو كأنه كائن حي في البرمجة.",
+    "code": "<script>\n  const bird = { fly() { console.log('أنا أطير في السماء!'); } };\n  bird.fly();\n</script>",
+    "output": "يطبع رسالة طيران الطائر."
+   },
+   {
+    "h": "كلمة this السحرية",
+    "text": "تساعدنا كلمة this في الوصول إلى خصائص الكائن الحالي من داخل طرقه الخاصة دون الحاجة لكتابة اسم الكائن صراحة.",
+    "code": "<script>\n  const hero = { title: 'الفرسان', show() { console.log(this.title); } };\n  hero.show();\n</script>",
+    "output": "يطبع اسم الفرسان باستخدام this."
+   },
+   {
+    "h": "تحديث وتعديل الكائنات",
+    "text": "يمكننا إضافة خصائص أو طرق جديدة للكائن أو تعديل الموجودة بعد إنشائه بكل مرونة.",
+    "code": "<script>\n  const user = { name: 'علي' };\n  user.age = 12;\n  console.log(user.age);\n</script>",
+    "output": "يطبع عمر المستخدم الجديد 12."
+   },
+   {
+    "h": "تطبيق عملية كائنات الألعاب",
+    "text": "في تصميم الألعاب، نجمع بيانات اللاعب وطاقته وحركاته في كائن واحد لتسهيل التحكم والبرمجة.",
+    "code": "<script>\n  const gamePlayer = { hp: 100, heal() { this.hp += 10; console.log(this.hp); } };\n  gamePlayer.heal();\n</script>",
+    "output": "يزيد عداد الصحة ويطبع الرقم 110."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object Literal {}",
+    "desc": "طريقة كتابة كائن جديد مع خصائصه وطرقه بين أقواس مجعدة."
+   },
+   {
+    "name": "Property",
+    "desc": "متغير داخل الكائن يحفظ بيانات أو قيماً."
+   },
+   {
+    "name": "Method",
+    "desc": "دالة داخل الكائن تمثل فعلاً يقوم به."
+   },
+   {
+    "name": "this keyword",
+    "desc": "كلمة مفتاحية تشير إلى الكائن الحالي الذي يملك الطريقة."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "طريقة للوصول إلى خصائص وطرق الكائن باستخدام النقطة."
+   },
+   {
+    "name": "Function inside object",
+    "desc": "دالة مدمجة تؤدي سلوكاً خاصاً بالكائن."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ كائناً باسم car يحتوي على خاصية brand تساوي 'هوندا' وطريقة اسمها drive تطبع 'السيارة تتحرك'.",
+    "a": "const car = { brand: 'هوندا', drive() { console.log('السيارة تتحرك'); } };"
+   },
+   {
+    "q": "كيف تستدعي طريقة jump الموجودة داخل كائن player؟",
+    "a": "player.jump();"
+   },
+   {
+    "q": "ما الكلمة المفتاحية التي تستخدمها داخل الطريقة للوصول إلى اسم الكائن نفسه؟",
+    "a": "this"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Objects in programming are like magical boxes that group related data and actions together in one neat place.",
+   "Here is a simple cat object: const cat = { name: 'Mishmish', age: 2 }; holding a name and an age.",
+   "Properties are data describing the object like name and age, while methods are functions giving the object behaviors and actions.",
+   "We can add a function as a method inside an object like this: const cat = { name: 'Mishmish', meow() { console.log('Meow!'); } };",
+   "Golden rule: Use dot notation to access object properties and methods, such as cat.meow() to trigger its action.",
+   "In real life, a smartphone is an object; its properties are color and size, and its methods are taking pictures or making calls."
+  ],
+  "example": "Suppose we are making a video game and need a player object that can jump. We write this code:\nconst player = {\n  name: 'Falcon',\n  score: 100,\n  jump() {\n    console.log(this.name + ' is jumping high!');\n  }\n};\nplayer.jump();\nHere we defined a player object with data like name and score, and added a jump method. When we called player.jump(), we used the keyword this so the computer knows we mean this exact player's name, printing that Falcon is jumping.",
+  "mistake": "A common mistake is forgetting parentheses () when calling a method, like writing player.jump instead of player.jump(). The correct way always requires parentheses because it is a function.",
+  "recap": "Objects bundle data and actions together, and functions inside objects are called methods to give them wonderful interactive behavior.",
+  "q": [
+   {
+    "t": "What do we call a function when it is placed inside an object?",
+    "o": [
+     "A property",
+     "A method",
+     "A string variable"
+    ],
+    "a": 1,
+    "why": "Functions inside objects are called methods because they represent the object's actions."
+   },
+   {
+    "t": "How do you call a method named run inside an object named player?",
+    "o": [
+     "run.player()",
+     "player.run()",
+     "player[run]"
+    ],
+    "a": 1,
+    "why": "We use a dot after the object name followed by the method name and parentheses."
+   },
+   {
+    "t": "What is the purpose of the this keyword inside object methods?",
+    "o": [
+     "It refers to the current object itself",
+     "It stops the program from running",
+     "It deletes the object completely"
+    ],
+    "a": 0,
+    "why": "The this keyword acts as a reference to the object that owns the method."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Steps to Create an Object with a Jump Method",
+   "goal": "Arrange the steps to correctly define a player object with a name and a jump method.",
+   "items": [
+    "const player = {",
+    "  name: 'Game Hero',",
+    "  jump() {",
+    "    console.log(this.name + ' jumps!');",
+    "  }",
+    "};"
+   ],
+   "success": "Awesome! You successfully programmed the player object and it can now jump in the game!"
+  },
+  "sections": [
+   {
+    "h": "What is an Object?",
+    "text": "An object in JavaScript is a container grouping related information and actions together, just like a school backpack holding books and pens.",
+    "code": "<script>\n  const box = { color: 'red', open() { console.log('Box opened!'); } };\n  box.open();\n</script>",
+    "output": "Console displays a message that the box was opened."
+   },
+   {
+    "h": "Object Properties",
+    "text": "Properties are the data and facts carried by an object, such as a person's name, color, or age.",
+    "code": "<script>\n  const dog = { name: 'Rocky', age: 3 };\n  console.log(dog.name);\n</script>",
+    "output": "Prints the dog's name Rocky."
+   },
+   {
+    "h": "Object Methods",
+    "text": "A method is a programming function living inside an object allowing it to perform specific actions, just like humans speaking or running.",
+    "code": "<script>\n  const robot = { greet() { console.log('Hello!'); } };\n  robot.greet();\n</script>",
+    "output": "The robot prints a hello greeting."
+   },
+   {
+    "h": "Using Dot Notation",
+    "text": "We use the dot notation (.) to access any property or method inside an object quickly and easily.",
+    "code": "<script>\n  const car = { brand: 'Toyota', start() { console.log('Engine started'); } };\n  car.start();\n</script>",
+    "output": "Prints engine started."
+   },
+   {
+    "h": "Object Behavior",
+    "text": "An object's behavior describes how it interacts and behaves using its various methods, making it feel alive in code.",
+    "code": "<script>\n  const bird = { fly() { console.log('I am flying high!'); } };\n  bird.fly();\n</script>",
+    "output": "Prints bird flying message."
+   },
+   {
+    "h": "The Magical 'this' Keyword",
+    "text": "The this keyword helps us access the current object's properties from inside its own methods without explicitly writing the object name.",
+    "code": "<script>\n  const hero = { title: 'Knights', show() { console.log(this.title); } };\n  hero.show();\n</script>",
+    "output": "Prints Knights using this."
+   },
+   {
+    "h": "Updating and Modifying Objects",
+    "text": "We can add new properties or methods to an object or modify existing ones after creation with total flexibility.",
+    "code": "<script>\n  const user = { name: 'Ali' };\n  user.age = 12;\n  console.log(user.age);\n</script>",
+    "output": "Prints the new user age 12."
+   },
+   {
+    "h": "Game Object Practice",
+    "text": "In game design, we bundle player data, energy, and movements into a single object for easier control and coding.",
+    "code": "<script>\n  const gamePlayer = { hp: 100, heal() { this.hp += 10; console.log(this.hp); } };\n  gamePlayer.heal();\n</script>",
+    "output": "Increases health counter and prints 110."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object Literal {}",
+    "desc": "Syntax for writing a new object with its properties and methods inside curly braces."
+   },
+   {
+    "name": "Property",
+    "desc": "A variable inside an object storing data or values."
+   },
+   {
+    "name": "Method",
+    "desc": "A function inside an object representing an action it can perform."
+   },
+   {
+    "name": "this keyword",
+    "desc": "A keyword pointing to the current object that owns the method."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "A way to access object properties and methods using a dot."
+   },
+   {
+    "name": "Function inside object",
+    "desc": "An embedded function performing object-specific behavior."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create an object named car with a brand property equal to 'Honda' and a method named drive that prints 'Car is moving'.",
+    "a": "const car = { brand: 'Honda', drive() { console.log('Car is moving'); } };"
+   },
+   {
+    "q": "How do you call the jump method stored inside a player object?",
+    "a": "player.jump();"
+   },
+   {
+    "q": "What keyword do you use inside a method to access the object's own name property?",
+    "a": "this"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript object basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

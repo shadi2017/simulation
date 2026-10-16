@@ -1,0 +1,321 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً يا أبطال! اليوم سنقوم بدمج كل ما تعلمناه لنصنع تطبيق سطح مكتب حقيقي ومذهل يعمل بلغات البرمجة التي درسناها.",
+   "إليك مثال صغير لبداية تطبيق العداد: نستخدم مكتبة Tkinter في بايثون لنصنع نافذة تحتوي على زر وزدنا القيمة عند الضغط.",
+   "كيف يعمل هذا السحر؟ نقوم بربط دالة برمجية بحدث الضغط على الزر، فكلما ضغط المستخدم، تتحدث المتغيرات وتظهر النتيجة فوراً.",
+   "مثال ثانٍ: يمكننا إضافة أداة مصغرة تعرض رسالة ترحيبية تتغير بناءً على عدد الضغطات لجعل التطبيق أكثر تفاعلية.",
+   "قاعدة ذهبية: دائماً افصل بين واجهة المستخدم (التصميم) وبين الأكواد المسؤولة عن المنطق والعمليات الحسابية.",
+   "في الواقع العملي، هذه هي الطريقة التي تُبنى بها التطبيقات الشهيرة على حاسوبك مثل برامج الآداب أو ألعاب الكمبيوتر الصغيرة!"
+  ],
+  "example": "دعنا نصنع تطبيقاً مصغراً لعداد النقرات. نبدأ باستيراد مكتبة الواجهات، وننشئ نافذة تحتوي على رقم يبدأ من الصفر. نضيف زراً يحمل اسم 'اضغط هنا'. عندما يضغط المستخدم، يتم استدعاء دالة تزيد الرقم بواقع واحد وتحدث النص المعروض على الشاشة. هكذا نربط بين البرمجة وتفاعل المستخدم على سطح المكتب بكل سهولة.\n\n```python\nimport tkinter as tk\ncount = 0\ndef click():\n    global count\n    count += 1\n    lbl.config(text=f'النقرات: {count}')\nroot = tk.Tk()\nlbl = tk.Label(root, text='النقرات: 0')\nlbl.pack()\nbtn = tk.Button(root, text='اضغط هنا', command=click)\nbtn.pack()\nroot.mainloop()\n```",
+  "mistake": "من الأخطاء الشائعة نسيان كتابة 'global count' داخل الدالة مما يمنع تحديث المتغير. الحل هو إخبار بايثون أننا نستخدم المتغير العام لتعديل قيمته بنجاح.",
+  "recap": "لقد نجحنا اليوم في بناء مشروع تطبيق سطح مكتب كامل يجمع بايثون وواجهات المستخدم والتفاعل بنجاح. أنت الآن مهندس برمجيات محترف!",
+  "q": [
+   {
+    "t": "ما هي المكتبة الشهيرة التي استخدمناها لبناء نافذة تطبيق سطح المكتب في بايثون؟",
+    "o": [
+     "Tkinter",
+     "Pandas",
+     "JavaScript"
+    ],
+    "a": 0,
+    "why": "مكتبة Tkinter هي الأداة المدمجة والأساسية في بايثون لبناء واجهات المستخدم وتطبيقات سطح المكتب."
+   },
+   {
+    "t": "ما هو دور دالة 'command' في زر Tkinter؟",
+    "o": [
+     "تغير لون الخلفية فقط",
+     "تربط الزر بدالة برمجية لتنفيذها عند الضغط",
+     "تغلق البرنامج فوراً"
+    ],
+    "a": 1,
+    "why": "خاصية command تحدد الإجراء أو الدالة التي تعمل عند النقر على الزر."
+   },
+   {
+    "t": "لماذا نستخدم 'root.mainloop()' في نهاية البرنامج؟",
+    "o": [
+     "لحفظ الملف على القرص",
+     "لإبقاء النافذة مفتوحة وتستجيب لتفاعل المستخدم",
+     "لطباعة النص في الكونسول"
+    ],
+    "a": 1,
+    "why": "هذا الأمر يبقي النافذة تعمل وتنتظر نقرات المستخدم دون أن تغلق تلقائياً."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "خطوات بناء تطبيق سطح المكتب",
+   "goal": "رتب خطوات إنشاء وتشغيل تطبيق العداد المكتبي بشكل صحيح",
+   "items": [
+    "استيراد مكتبة واجهات المستخدم مثل tkinter",
+    "إنشاء النافذة الأساسية للبرنامج",
+    "تعريف متغير العداد والدالة المسؤولة عن زيادته",
+    "إضافة الزر والنص المرتبطين بالدالة",
+    "تشغيل حلقة النافذة بقمر mainloop"
+   ],
+   "success": "رائع! لقد رتبت الخطوات بنجاح وأصبح لديك تطبيق سطح مكتب يعمل بكفاءة عالية!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة مشاريع سطح المكتب",
+    "text": "اليوم هو ختام رحلتنا الممتعة! سنقوم ببناء تطبيق سطح مكتب حقيقي يعمل على جهازك مثل أي برنامج محترف. تخيل أنك تبني مطعماً افتراضياً وتصمم طاولاته ولوحة الإعلانات الخاصة به، هذا تماماً ما تفعله مع تطبيقات سطح المكتب.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nroot.title('تطبيقي الأول')\nroot.mainloop()",
+    "output": "تفتح نافذة فارغة بعنوان 'تطبيقي الأول'"
+   },
+   {
+    "h": "ربط جافاسكريبت وبايثون فكرياً",
+    "text": "في عالم الويب نستخدم جافاسكريبت للأحداث، وفي بايثون نستخدم نظام الأحداث في الواجهات. الفكرة واحدة: تفاعل يحدث (مثل النقر) فيقابله رد فعل برمجي.",
+    "code": "def say_hello():\n    print('أهلاً بك!')\nsay_hello()",
+    "output": "أهلاً بك!"
+   },
+   {
+    "h": "إنشاء نافذة البرنامج الأساسية",
+    "text": "كل تطبيق يحتاج إلى بيت يجمعه، وبيت بايثون هو نافذة Tkinter. مثل بناء هيكل خيمة قبل وضع الأثاث بداخلها.",
+    "code": "import tkinter as tk\napp = tk.Tk()\napp.geometry('200x150')\napp.mainloop()",
+    "output": "تفتح نافذة بحجم 200 في 150 بكسل"
+   },
+   {
+    "h": "إضافة النصوص والعناصر المرئية",
+    "text": "العناصر النصية (Labels) هي اللوحات الإرشادية داخل التطبيق التي تخبر المستخدم بالمعلومات أو النتائج.",
+    "code": "import tkinter as tk\napp = tk.Tk()\nlbl = tk.Label(app, text='مرحباً بالعالم')\nlbl.pack()\napp.mainloop()",
+    "output": "نافذة تحتوي على نص مرحباً بالعالم"
+   },
+   {
+    "h": "إضافة الأزرار التفاعلية",
+    "text": "الزر (Button) هو مفتاح الإضاءة في غرفتك؛ تضغط عليه فيضيء المصباح أو ينفذ أمراً مهماً.",
+    "code": "import tkinter as tk\napp = tk.Tk()\nbtn = tk.Button(app, text='اضغط هنا')\nbtn.pack()\napp.mainloop()",
+    "output": "نافذة تحتوي على زر قابل للضغط"
+   },
+   {
+    "h": "برمجة عداد النقرات (Click Counter)",
+    "text": "العداد هو قلب تطبيقنا اليوم. في كل مرة تنقر فيها، يزيد الرقم بمقدار واحد تماماً مثل عداد نقاط لعبة الفيديو.",
+    "code": "count = 0\ndef add():\n    global count\n    count += 1\n    print(count)\nadd()",
+    "output": "1"
+   },
+   {
+    "h": "تحديث واجهة المستخدم بالعداد",
+    "text": "لا يكفي أن يتغير الرقم في الكود الداخلي، بل يجب أن نحدث النص على الشاشة ليراه المستخدم فوراً.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nc = 0\ndef up():\n    global c\n    c += 1\n    l.config(text=str(c))\nl = tk.Label(root, text='0')\nl.pack()\nb = tk.Button(root, text='زيد', command=up)\nb.pack()\nroot.mainloop()",
+    "output": "نافذة بعداد يزيد مع كل نقرة"
+   },
+   {
+    "h": "أداة مصغرة متكاملة (Mini Tool)",
+    "text": "يمكننا تطوير العداد ليصبح أداة مفيدة، مثل تتبع عدد مرات الشرب أو إنجاز المهام اليومية في تطبيق مصغر.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nroot.title('عداد المهام')\nroot.mainloop()",
+    "output": "تطبيق مصغر لعداد المهام"
+   },
+   {
+    "h": "خاتمة الفصل والترم الثاني",
+    "text": "لقد أتممت رحلة مذهلة في البرمجة وتصميم الويب وتطبيقات سطح المكتب! أنت الآن مهندس تقني قادر على تحويل أفكارك إلى حقيقة.",
+    "code": "print('مبروك إتمام الفصل!')",
+    "output": "مبروك إتمام الفصل!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import tkinter",
+    "desc": "استيراد مكتبة بناء واجهات سطح المكتب"
+   },
+   {
+    "name": "tk.Tk()",
+    "desc": "إنشاء النافذة الرئيسية للبرنامج"
+   },
+   {
+    "name": "tk.Label()",
+    "desc": "إضافة عنصر نصي للعرض"
+   },
+   {
+    "name": "tk.Button()",
+    "desc": "إضافة زر تفاعلي"
+   },
+   {
+    "name": "command",
+    "desc": "ربط الزر بدالة برمجية"
+   },
+   {
+    "name": "mainloop()",
+    "desc": "إبقاء النافذة تعمل وتستجيب"
+   },
+   {
+    "name": "config()",
+    "desc": "تعديل خصائص عنصر واجهة المستخدم"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ نافذة سطح مكتب عنوانها 'العداص' بحجم 300 في 300.",
+    "a": "import tkinter as tk\nroot = tk.Tk()\nroot.title('العداص')\nroot.geometry('300x300')\nroot.mainloop()"
+   },
+   {
+    "q": "أضف نصاً في النافذة يرحب بالمستخدم.",
+    "a": "import tkinter as tk\nroot = tk.Tk()\ntxt = tk.Label(root, text='أهلاً بك')\ntxt.pack()\nroot.mainloop()"
+   },
+   {
+    "q": "اكتب دالة تزيد متغيراً بمقدار 2 وتطبعه.",
+    "a": "x = 0\ndef plus2():\n    global x\n    x += 2\n    print(x)\nplus2()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hello champions! Today we will combine everything we learned to build a real and amazing desktop app using the programming languages we studied.",
+   "Here is a small start for a counter app: we use Python's Tkinter library to make a window with a button and increase the value when clicked.",
+   "How does this magic work? We connect a function to the button click event, so whenever the user clicks, variables update and the result appears instantly.",
+   "Second example: we can add a mini tool that displays a greeting message changing based on the number of clicks to make the app more interactive.",
+   "Golden rule: always separate the user interface (design) from the code responsible for logic and math operations.",
+   "In the real world, this is how famous apps on your computer are built, like text editors or small computer games!"
+  ],
+  "example": "Let's build a mini click counter app. We start by importing the UI library and creating a window with a number starting at zero. We add a button named 'Click Me'. When the user clicks, a function is called that increases the number by one and updates the text displayed on the screen. This is how we easily connect coding to user interaction on the desktop.\n\n```python\nimport tkinter as tk\ncount = 0\ndef click():\n    global count\n    count += 1\n    lbl.config(text=f'Clicks: {count}')\nroot = tk.Tk()\nlbl = tk.Label(root, text='Clicks: 0')\nlbl.pack()\nbtn = tk.Button(root, text='Click Me', command=click)\nbtn.pack()\nroot.mainloop()\n```",
+  "mistake": "A common mistake is forgetting to write 'global count' inside the function, which prevents updating the variable. The fix is telling Python we are using the global variable to successfully modify its value.",
+  "recap": "Today we successfully built a complete desktop app project combining Python, user interfaces, and interaction. You are now a professional software engineer!",
+  "q": [
+   {
+    "t": "What is the famous library we used to build the desktop app window in Python?",
+    "o": [
+     "Tkinter",
+     "Pandas",
+     "JavaScript"
+    ],
+    "a": 0,
+    "why": "Tkinter is the built-in, essential tool in Python for building user interfaces and desktop apps."
+   },
+   {
+    "t": "What is the role of the 'command' option in a Tkinter button?",
+    "o": [
+     "Changes background color only",
+     "Connects the button to a function to execute when clicked",
+     "Closes the program immediately"
+    ],
+    "a": 1,
+    "why": "The command option specifies the action or function that runs when the button is clicked."
+   },
+   {
+    "t": "Why do we use 'root.mainloop()' at the end of the program?",
+    "o": [
+     "To save the file to disk",
+     "To keep the window open and responsive to user interaction",
+     "To print text in the console"
+    ],
+    "a": 1,
+    "why": "This command keeps the window running and waiting for user clicks instead of closing automatically."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Desktop App Building Steps",
+   "goal": "Order the steps of creating and running the desktop counter app correctly",
+   "items": [
+    "Import user interface library like tkinter",
+    "Create the primary window for the program",
+    "Define the counter variable and the function to increase it",
+    "Add the button and label linked to the function",
+    "Run the window loop with mainloop"
+   ],
+   "success": "Awesome! You ordered the steps successfully and now have a working desktop app!"
+  },
+  "sections": [
+   {
+    "h": "Desktop Projects Introduction",
+    "text": "Today is the grand finale of our exciting journey! We will build a real desktop app running on your computer like any professional program. Imagine building a virtual diner and designing its tables and billboards; this is exactly what you do with desktop apps.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nroot.title('My First App')\nroot.mainloop()",
+    "output": "An empty window opens titled 'My First App'"
+   },
+   {
+    "h": "Connecting JS and Python Conceptually",
+    "text": "In the web world, we use JavaScript for events, and in Python, we use the GUI event system. The idea is the same: an interaction happens (like a click) followed by a programmatic reaction.",
+    "code": "def say_hello():\n    print('Welcome!')\nsay_hello()",
+    "output": "Welcome!"
+   },
+   {
+    "h": "Creating the Basic Program Window",
+    "text": "Every app needs a home, and Python's home is the Tkinter window. It's like building a tent frame before putting furniture inside.",
+    "code": "import tkinter as tk\napp = tk.Tk()\napp.geometry('200x150')\napp.mainloop()",
+    "output": "A window opens with 200 by 150 pixels size"
+   },
+   {
+    "h": "Adding Texts and Visual Elements",
+    "text": "Labels are the signposts inside the app that tell the user information or results.",
+    "code": "import tkinter as tk\napp = tk.Tk()\nlbl = tk.Label(app, text='Hello World')\nlbl.pack()\napp.mainloop()",
+    "output": "A window containing Hello World text"
+   },
+   {
+    "h": "Adding Interactive Buttons",
+    "text": "A button is the light switch in your room; you press it and the bulb turns on or an important task runs.",
+    "code": "import tkinter as tk\napp = tk.Tk()\nbtn = tk.Button(app, text='Click Me')\nbtn.pack()\napp.mainloop()",
+    "output": "A window containing a clickable button"
+   },
+   {
+    "h": "Coding the Click Counter",
+    "text": "The counter is the heart of our app today. Every time you click, the number increases by one just like a video game score counter.",
+    "code": "count = 0\ndef add():\n    global count\n    count += 1\n    print(count)\nadd()",
+    "output": "1"
+   },
+   {
+    "h": "Updating UI with the Counter",
+    "text": "It is not enough for the number to change in internal code; we must update the screen text so the user sees it immediately.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nc = 0\ndef up():\n    global c\n    c += 1\n    l.config(text=str(c))\nl = tk.Label(root, text='0')\nl.pack()\nb = tk.Button(root, text='Add', command=up)\nb.pack()\nroot.mainloop()",
+    "output": "A window with a counter increasing on each click"
+   },
+   {
+    "h": "Integrated Mini Tool",
+    "text": "We can evolve the counter into a useful tool, like tracking water drinks or daily tasks completion in a mini app.",
+    "code": "import tkinter as tk\nroot = tk.Tk()\nroot.title('Task Counter')\nroot.mainloop()",
+    "output": "A mini task counter app"
+   },
+   {
+    "h": "Term 2 & Chapter Finale",
+    "text": "You have completed an amazing journey in coding, web design, and desktop apps! You are now a tech engineer capable of turning your ideas into reality.",
+    "code": "print('Congrats on finishing the term!')",
+    "output": "Congrats on finishing the term!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import tkinter",
+    "desc": "Import the desktop GUI library"
+   },
+   {
+    "name": "tk.Tk()",
+    "desc": "Create the main application window"
+   },
+   {
+    "name": "tk.Label()",
+    "desc": "Add a text display element"
+   },
+   {
+    "name": "tk.Button()",
+    "desc": "Add an interactive button"
+   },
+   {
+    "name": "command",
+    "desc": "Connect button to a Python function"
+   },
+   {
+    "name": "mainloop()",
+    "desc": "Keep the window running and responsive"
+   },
+   {
+    "name": "config()",
+    "desc": "Modify GUI element properties"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a desktop window titled 'Counter' with size 300 by 300.",
+    "a": "import tkinter as tk\nroot = tk.Tk()\nroot.title('Counter')\nroot.geometry('300x300')\nroot.mainloop()"
+   },
+   {
+    "q": "Add text in the window welcoming the user.",
+    "a": "import tkinter as tk\nroot = tk.Tk()\ntxt = tk.Label(root, text='Welcome')\ntxt.pack()\nroot.mainloop()"
+   },
+   {
+    "q": "Write a function that increases a variable by 2 and prints it.",
+    "a": "x = 0\ndef plus2():\n    global x\n    x += 2\n    print(x)\nplus2()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

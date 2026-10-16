@@ -1,0 +1,282 @@
+{
+ "ar": {
+  "steps": [
+   "لما بنتعامل مع جداول بيانات ضخمة في البايثون باستخدام مكتبة باندا، بيكون صعب جداً نقرأ كل الصفوف مرة واحدة لأنها بتملى الشاشة. الحل الذكي هو فحص جزء صغير منها بس، وده بيدينا نظرة سريعة وفورية على شكل البيانات من غير ما نتعب نفسنا.",
+   "عشان نبص على أول الجدول، بنستخدم دالة ممتازة اسمها head(). الدالة دي بتجيب لنا الصفوف الأولى من الجدول بشكل افتراضي. لو كتبنا df.head() من غير أرقام، باندا هتعرض أول خمس صفوف عشان تديك فكرة أولية سريعة وسهلة.",
+   "طريقة عمل head() بسيطة جداً: بتفحص الذاكرة وتبدأ تعد من أول صف فوق خالص لحد الصف الخامس. ده عامل زي ما تفتح أول صفحة في كتاب كشكول عشان تعرف المادة دي إيه من غير ما تقرأ الكتاب كله.",
+   "لو عايز تشوف عدد صفوف أكتر أو أقل من خمسة، تقدر تبعت رقم جوه الأقواس كمعامل. مثلاً، لو كتبت df.head(3)، البanda هتعرض أول ثلاثة صفوف بس، ودي ميزة عظيمة بتتحكم بيها في حجم المعلومات المعروضة قدامك.",
+   "القاعدة الذهبية هنا هي: استعمل head() أول ما تحمل أي ملف بيانات كبير عشان تتأكد إن الأعمدة اتحملت صح وإن البيانات سليمة، قبل ما تبدأ تضيع وقت في تحليل طويل وعريض ممكن يطلع غلط من الأول.",
+   "التطبيق الحقيقي للموضوع ده بتشوفه في تحليل بيانات مبيعات ألعاب الفيديو أو درجات المدرسة، حيث يقدر مهندس البيانات يشيك بسرعة على أول الصفوف ليطمن إن الأرقام والأسماء متستفة ومنظمة في مكانها الصح."
+  ],
+  "example": "تخيل إن معاك جدول بيانات بيحتوي على درجات الفصل كله. تقدر تستخدم دالة الباندا head عشان تفحص أول صفوف بكل سهولة:\n\nimport pandas as pd\ndf = pd.DataFrame({'الطالب': ['أحمد', 'سارة', 'كريم', 'منى', 'يوسف'], 'الدرجة': [90, 85, 95, 88, 92]})\nprint(df.head(2))\n\nالسبب المنطقي هنا هو إننا طلبنا أول صفين بس (الرقم 2)، فالبرنامج طبع اسم أحمد وسارة بدرجاتهم ووقف، وده بيوفر وقت ويوضح البنية فوراً.",
+  "mistake": "الخطأ الشائع هو كتابة اسم الدالة بحروف كبيرة زي Head بدلاً من head، أو نسيان الأقواس (). التصحيح: لازم تكتب الحروف سمول وتفتح وتقفل الأقواس بالشكل ده df.head() عشان باندا تفهم الأمر وتنفذه صح.",
+  "recap": "تعلمنا في الدرس ده إزاي نستخدم دالة head لفحص بداية الجدول ودالة tail لنهاية الجدول بكفاءة عالية. ده بيسهل علينا مراقبة البيانات الكبيرة وتجنب الأخطاء البرمجية بسرعة.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لدالة head() في باندا؟",
+    "o": [
+     "عرض أول صفوف الجدول",
+     "حذف الصفوف الأولى",
+     "حساب مجموع الأرقام"
+    ],
+    "a": 0,
+    "why": "دالة head مخصصة لعرض البداية أو الصفوف الأولى من الجدول افتراضياً."
+   },
+   {
+    "t": "كم عدد الصفوف التي تعرضها دالة df.head() افتراضياً لو لم نكتب رقماً؟",
+    "o": [
+     "3 صفوف",
+     "5 صفوف",
+     "10 صفوف"
+    ],
+    "a": 1,
+    "why": "القيمة الافتراضية لعرض البيانات في head هي 5 صفوف."
+   },
+   {
+    "t": "كيف يمكنك عرض آخر 4 صفوف من جدول البيانات؟",
+    "o": [
+     "df.head(4)",
+     "df.top(4)",
+     "df.tail(4)"
+    ],
+    "a": 2,
+    "why": "دالة tail تستخدم لفحص ونهاية البيانات وعرض آخر الصفوف."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع ناتج فحص البيانات",
+   "goal": "توقع الناتج الصحيح عند تنفيذ كود فحص بداية الجدول",
+   "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30, 40]})\nprint(df.head(2))",
+   "options": [
+    "A\\n0  10\\n1  20",
+    "A\\n2  30\\n3  40",
+    "A\\n0  10\\n3  40"
+   ],
+   "a": 0,
+   "success": "رائع! لقد نجحت في التنبؤ بعرض أول صفين بدقة تامة."
+  },
+  "sections": [
+   {
+    "h": "مقدمة فحص البيانات الكبيرة",
+    "text": "لما يكون عندك جدول بيانات ضخم، مش معقول تقرأ كل سطر فيه بعينك. انت محتاج أداة تفحص بيها العينة الأولى والأخيرة بسرعة، زي ما تبص على أول شريط في السينما عشان تعرف الفيلم كوميدي ولا أكشن.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame(np.random.randn(6, 4), columns=list('ABCD'))\nprint('تم تحميل البيانات بنجاح')",
+    "output": "تم تحميل البيانات بنجاح"
+   },
+   {
+    "h": "استخدام دالة head البسيطة",
+    "text": "دالة head() بتمكنك من رؤية بداية الجدول فوراً. كأنك بتفتح أول باب في العمارة عشان تشوف شكل المدخل من جوه من غير ما تطلع الدور العاشر.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 4, 5, 6]})\nprint(df.head(3))",
+    "output": "   A\n0  1\n1  2\n2  3"
+   },
+   {
+    "h": "التحكم في عدد صفوف البداية",
+    "text": "مكسب كبير إنك تقدر تحدد كمية السطور اللي عايز تشوفها جوه الأقواس. لو كتبت رقم جوه head، الباندا بتلتزم بيه وتجيبلك العدد ده بالظبط من فوق.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Cات': ['جزر', 'تفاح', 'موز', 'برتقال']})\nprint(df.head(2))",
+    "output": "     Cات\n0    جزر\n1   تفاح"
+   },
+   {
+    "h": "استخدام دالة tail للنهاية",
+    "text": "زي ما head بتجيب أول الجدول، دالة tail() بتجيب آخر الصفوف. ده بيفيدك جداً لو البيانات بتتحدث باستمرار وأحدث السطور بتتكتب تحت خالص.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'رقم': [10, 20, 30, 40, 50]})\nprint(df.tail(2))",
+    "output": "   رقم\n3   40\n4   50"
+   },
+   {
+    "h": "فهم مفهوم DataFrame Inspection",
+    "text": "عملية فحص البيانات أو DataFrame inspection هي مهارة أساسية للمحلل الناجح. بتبدلها بالنظر السريع، وتعرف الأعمدة وأنواع البيانات والأخطاء المحتملة قبل أي خطوة تالية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'الاسم': ['علي', 'مريم'], 'العمر': [12, 13]})\nprint(df.columns)",
+    "output": "Index(['الاسم', 'العمر'], dtype='object')"
+   },
+   {
+    "h": "دمج head و tail معاً",
+    "text": "المحترفين بيستعملوا التكتيكين مع بعض؛ يشوفوا البداية والنهاية عشان يتأكدوا إن الجدول سليم من أوله لآخره ومفيش بيانات ناقصة في النص أو في الآخر.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'X': range(10)})\nprint('بداية:', df.head(1).values[0][0])\nprint('نهاية:', df.tail(1).values[0][0])",
+    "output": "بداية: 0\nنهاية: 9"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df.head()",
+    "desc": "تعرض أول 5 صفوف من إطار البيانات افتراضياً"
+   },
+   {
+    "name": "df.tail()",
+    "desc": "تعرض آخر 5 صفوف من إطار البيانات افتراضياً"
+   },
+   {
+    "name": "DataFrame",
+    "desc": "هيكل بيانات ثنائي الأبعاد يشبه الجدول بصفوف وأعمدة"
+   },
+   {
+    "name": "df.columns",
+    "desc": "تعرض أسماء أعمدة الجدول"
+   },
+   {
+    "name": "df.index",
+    "desc": "تعرض فهرس أو ترقيم صفوف الجدول"
+   },
+   {
+    "name": "pandas",
+    "desc": "مكتبة بايثون الشهيرة لتحليل ومعالجة البيانات"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر بايثون لعرض أول 4 صفوف من جدول بيانات اسمه my_data",
+    "a": "my_data.head(4)"
+   },
+   {
+    "q": "ما هو الأمر المستخدم لعرض آخر 3 صفوف من الجدول sales_df؟",
+    "a": "sales_df.tail(3)"
+   },
+   {
+    "q": "كم عدد الصفوف التي تعرضها دالة tail() افتراضياً لو لم نحدد رقماً؟",
+    "a": "5 صفوف"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "When dealing with massive datasets in Python using the pandas library, reading every single row at once is impossible and clutters the screen. The smart solution is to inspect a small part of it, giving you an immediate preview of the data structure without getting overwhelmed.",
+   "To peek at the very beginning of the table, we use a fantastic method called head(). This method fetches the top rows of the data frame. If we type df.head() without arguments, pandas automatically displays the first five rows to give you a quick, effortless initial look.",
+   "The mechanism of head() is straightforward: it checks the memory and starts counting from the absolute top row down to the fifth one. This is just like opening the very first page of a notebook to know what the subject is without reading the whole book.",
+   "If you want to view more or fewer rows than five, you can pass a number inside the parentheses as an argument. For instance, if you write df.head(3), pandas will display only the first three rows, which is an amazing feature for controlling the size of displayed information.",
+   "The golden rule here is: always use head() right after loading any large dataset to confirm that columns loaded correctly and data looks sound, before wasting time on a long analysis that might be flawed from the start.",
+   "The real-world application of this is seen in analyzing video game sales or school grades, where a data engineer can quickly check the top rows to ensure that numbers and names are properly aligned and organized in their correct places."
+  ],
+  "example": "Imagine you have a dataset containing grades for the whole class. You can use the pandas head method to inspect the first few rows easily:\n\nimport pandas as pd\ndf = pd.DataFrame({'Student': ['Ahmed', 'Sarah', 'Karem', 'Mona', 'Youssef'], 'Grade': [90, 85, 95, 88, 92]})\nprint(df.head(2))\n\nThe logical reason here is that we requested only the first two rows (number 2), so the program printed Ahmed and Sarah with their grades and stopped, saving time and instantly revealing the structure.",
+  "mistake": "A common mistake is writing the method name with a capital letter like Head instead of head, or forgetting the parentheses (). Correction: Make sure to type lowercase letters and open/close parentheses like df.head() so pandas understands and executes the command correctly.",
+  "recap": "In this lesson, we learned how to use the head method to inspect the start of a table and the tail method for the end with high efficiency. This makes it much easier to monitor large datasets and avoid programming errors quickly.",
+  "q": [
+   {
+    "t": "What is the primary function of head() in pandas?",
+    "o": [
+     "Display the top rows of the table",
+     "Delete the first rows",
+     "Calculate the sum of numbers"
+    ],
+    "a": 0,
+    "why": "The head method is designed to display the beginning or top rows of a dataframe."
+   },
+   {
+    "t": "How many rows does df.head() display by default if no number is given?",
+    "o": [
+     "3 rows",
+     "5 rows",
+     "10 rows"
+    ],
+    "a": 1,
+    "why": "The default number of rows displayed by head is 5."
+   },
+   {
+    "t": "How can you display the last 4 rows of a dataframe?",
+    "o": [
+     "df.head(4)",
+     "df.top(4)",
+     "df.tail(4)"
+    ],
+    "a": 2,
+    "why": "The tail method is used to inspect the end of the data and show the bottom rows."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Data Inspection Output",
+   "goal": "Predict the correct output when running the table beginning inspection code",
+   "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30, 40]})\nprint(df.head(2))",
+   "options": [
+    "A\\n0  10\\n1  20",
+    "A\\n2  30\\n3  40",
+    "A\\n0  10\\n3  40"
+   ],
+   "a": 0,
+   "success": "Brilliant! You successfully predicted the display of the first two rows with absolute accuracy."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Inspecting Large Data",
+    "text": "When you have a massive dataset, reading every single line with your eyes is impossible. You need a tool to quickly check the first and last samples, just like glancing at the opening scene of a movie to know if it is a comedy or action.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame(np.random.randn(6, 4), columns=list('ABCD'))\nprint('Data loaded successfully')",
+    "output": "Data loaded successfully"
+   },
+   {
+    "h": "Using the Simple head Method",
+    "text": "The head() method lets you see the start of the table instantly. It is like opening the front door of a building to look at the lobby without having to ride the elevator to the tenth floor.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 4, 5, 6]})\nprint(df.head(3))",
+    "output": "   A\n0  1\n1  2\n2  3"
+   },
+   {
+    "h": "Controlling Starting Row Count",
+    "text": "A huge benefit is that you can specify the exact number of lines you want to see inside the parentheses. If you put a number inside head, pandas respects it and fetches that exact count from the top.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Items': ['Carrot', 'Apple', 'Banana', 'Orange']})\nprint(df.head(2))",
+    "output": "    Items\n0  Carrot\n1   Apple"
+   },
+   {
+    "h": "Using the tail Method for End Rows",
+    "text": "Just as head gets the top of the table, the tail() method fetches the bottom rows. This is extremely helpful if data is constantly updated and newer rows are appended at the very bottom.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Num': [10, 20, 30, 40, 50]})\nprint(df.tail(2))",
+    "output": "   Num\n3   40\n4   50"
+   },
+   {
+    "h": "Understanding DataFrame Inspection",
+    "text": "DataFrame inspection is an essential skill for any successful data analyst. You start with a quick look to understand columns, data types, and potential errors before taking any further steps.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Maryam'], 'Age': [12, 13]})\nprint(df.columns)",
+    "output": "Index(['Name', 'Age'], dtype='object')"
+   },
+   {
+    "h": "Combining Head and Tail Together",
+    "text": "Professionals use both tactics together; they check the beginning and the end to make sure the table is completely sound from start to finish with no missing data in the middle or end.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'X': range(10)})\nprint('Start:', df.head(1).values[0][0])\nprint('End:', df.tail(1).values[0][0])",
+    "output": "Start: 0\nEnd: 9"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df.head()",
+    "desc": "Displays the first 5 rows of the dataframe by default"
+   },
+   {
+    "name": "df.tail()",
+    "desc": "Displays the last 5 rows of the dataframe by default"
+   },
+   {
+    "name": "DataFrame",
+    "desc": "A two-dimensional table-like data structure with rows and columns"
+   },
+   {
+    "name": "df.columns",
+    "desc": "Shows the column labels of the dataframe"
+   },
+   {
+    "name": "df.index",
+    "desc": "Shows the row indices or labels of the dataframe"
+   },
+   {
+    "name": "pandas",
+    "desc": "The famous Python library for data analysis and manipulation"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python command to display the first 4 rows of a dataframe named my_data",
+    "a": "my_data.head(4)"
+   },
+   {
+    "q": "What command is used to display the last 3 rows of the dataframe sales_df?",
+    "a": "sales_df.tail(3)"
+   },
+   {
+    "q": "How many rows does the tail() method display by default if no number is specified?",
+    "a": "5 rows"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

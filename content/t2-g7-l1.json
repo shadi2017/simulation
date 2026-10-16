@@ -1,0 +1,301 @@
+{
+ "ar": {
+  "steps": [
+   "التصفية الشرطية هي مهارة ذكية تتيح لنا اختيار الصفوف التي تحقق شروطاً معينة فقط من جدول البيانات الضخم بناءً على قواعد نحددها.",
+   "تخيل أن لديك صندوق ألعاب، وتريد فقط الألعاب التي لونها أحمر. يمكنك فعل ذلك في بايثون باستخدام الأقنعة المنطقية.",
+   "الأقنعة المنطقية هي طريقة يعود فيها بايثون بكلمة True أو False لكل صف بناءً على هل يتحقق الشرط أم لا.",
+   "يمكننا تصفية جدول بيانات ليبقى فقط العناصر التي سعرها أقل من 50 هكذا: cheap_items = df[df['price'] < 50].",
+   "القاعدة الذهبية: استخدم الرمز '&' للربط بين الشروط بـ (و)، والرمز '|' للربط بـ (أو)، واحرص على وضع كل شرط داخل قوسين.",
+   "تُستخدم هذه الطريقة في الحياة الواقعية لتصفية المنتجات في المتاجر الإلكترونية أو البحث عن نتائج الطلاب الناجحين فقط."
+  ],
+  "example": "لنفترض أن لدينا جدول بيانات لمنتجات في متجر، ونريد اختيار المنتجات التي سعرها أقل من 50 وتُباع بكثرة. نكتب الكود التالي:\n\nimport pandas as pd\ndata = {'item': ['قلم', 'كتاب', 'مسطرة'], 'price': [20, 60, 10], 'stock': [100, 5, 200]}\ndf = pd.DataFrame(data)\nresult = df[(df['price'] < 50) & (df['stock'] > 50)]\nprint(result)\n\nالسبب: قمنا بإنشاء قناع منطقي يدمج الشرطين باستخدام '&' والأقواس لضمان دقة التصفية.",
+  "mistake": "خطأ شائع هو نسيان الأقواس حول كل شرط عند استخدام أدوات الربط مثل '&' أو '|'، مما يسبب خطأ في بايثون. الحل هو وضع كل شرط بين أقواس هكذا: (شرط1) & (شرط2).",
+  "recap": "التصفية الشرطية باستخدام بايثون ومكتبة باندا تمكننا من استخراج البيانات المطلوبة بدقة عالية. نستخدم الأقنعة المنطقية وأدوات الربط المنطقية لتطبيق شروط متعددة بسهولة.",
+  "q": [
+   {
+    "t": "ما هو الرمز المستخدم للربط بين شرطين بـ (و) في تصفية باندا؟",
+    "o": [
+     "&",
+     "|",
+     "!"
+    ],
+    "a": 0,
+    "why": "نستخدم الرمز & للربط بين شرطين يجب تحقيقهما معاً في باندا."
+   },
+   {
+    "t": "كيف نكتب شرطاً لاختيار الأعمار الأكبر من 10؟",
+    "o": [
+     "df['age'] > 10",
+     "df.age(> 10)",
+     "filter(age > 10)"
+    ],
+    "a": 0,
+    "why": "الطريقة الصحيحة هي استخدام القناع المنطقي داخل الأقواس المربعة df[df['age'] > 10]."
+   },
+   {
+    "t": "ماذا تعود نتيجة القناع المنطقي قبل تطبيق التصفية؟",
+    "o": [
+     "أرقام صحيحة",
+     "قيم صواب وخطأ True و False",
+     "نصوص عادية"
+    ],
+    "a": 1,
+    "why": "القناع المنطقي يفحص كل صف ويعيد True إذا تحقق الشرط أو False إذا لم يتحقق."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "خطوات تصفية البيانات في باندا",
+   "goal": "رتب خطوات تصفية جدول بيانات للحصول على المنتجات الرخيصة بالترتيب الصحيح.",
+   "items": [
+    "استيراد مكتبة باندا باسم pd",
+    "إنشاء جدول البيانات DataFrame",
+    "كتابة الشرط المنقي مثل df['price'] < 50",
+    "تطبيق القناع المنطقي على الجدول لاستخراج النتيجة",
+    "طباعة النتائج المصفاة على الشاشة"
+   ],
+   "success": "رائع! لقد قمت بتصفية جدول البيانات بنجاح واستخرجت المنتجات المطلوبة."
+  },
+  "sections": [
+   {
+    "h": "مقدمة في التصفية الشرطية",
+    "text": "التصفية الشرطية تشبه غربال المطبخ؛ فهي تسمح بمرور البيانات التي نحتاجها فقط وتحجب الباقي. في مكتبة باندا، نستخدم هذه التقنية لفحص ملايين الصفوف في ثوانٍ معدودة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'name': ['أحمد', 'سارة', 'علي'], 'score': [85, 92, 45]})\nprint(df[df['score'] > 80])",
+    "output": "   name  score\n0  أحمد     85\n1  سارة     92"
+   },
+   {
+    "h": "ما هو القناع المنطقي؟",
+    "text": "القناع المنطقي هو سلسلة من قيم الصواب والخطأ (True و False) تطابق عدد صفوف جدول البيانات. عندما نطبق شرطاً مثل df['score'] > 80، ينشئ باندا هذا القناع.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [50, 90, 70]})\nmask = df['score'] > 60\nprint(mask)",
+    "output": "0    False\n1     True\n2     True\nName: score, dtype: bool"
+   },
+   {
+    "h": "تصفية الصفوف بناءً على قيمة واحدة",
+    "text": "يمكننا تصفية الصفوف بسهولة عن طريق تمرير القناع المنطقي داخل الأقواس المربعة لجدول البيانات. هذا يخبر باندا بأن يحتفظ فقط بالصفوف التي تحمل قيمة True.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'fruit': ['تفاح', 'موز', 'برتقال'], 'price': [10, 5, 15]})\nprint(df[df['price'] > 8])",
+    "output": "     fruit  price\n0     تفاح     10\n2  برتقال     15"
+   },
+   {
+    "h": "استخدام معامل (و) & لعدة شروط",
+    "text": "عندما نريد تحقيق شرطين معاً في نفس الوقت، نستخدم معامل الربط (و) والذي يكتب على شكل رمز '&'. تذكر دائماً وضع كل شرط داخل أقواس مستقلة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'item': ['قلم', 'كتاب', 'دفتر'], 'price': [5, 40, 20], 'qty': [10, 2, 50]})\nprint(df[(df['price'] < 30) & (df['qty'] > 5)])",
+    "output": "  item  price  qty\n0  قلم      5   10\n2 دفتر     20   50"
+   },
+   {
+    "h": "استخدام معامل (أو) | لعدة شروط",
+    "text": "إذا كان كافياً أن يتحقق أحد الشرطين فقط، فنستخدم معامل (أو) والذي يكتب على شكل رمز '|'. هذا يعيد الصف إذا تحققت القاعدة الأولى أو الثانية أو كلاهما.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'color': ['أحمر', 'أزرق', 'أخضر'], 'size': ['صغير', 'كبير', 'صغير']})\nprint(df[(df['color'] == 'أحمر') | (df['size'] == 'كبير')])",
+    "output": "  color  size\n0  أحمر  صغير\n1  أزرق  كبير"
+   },
+   {
+    "h": "عكس الشرط باستخدام علامة التعجب ~",
+    "text": "يمكننا عكس أي شرط باستخدام الرمز '~'. هذا يعني أننا نريد جميع الصفوف التي لا تحقّق الشرط المحدد، تماماً مثل عكس الألوان في الصورة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'active': [True, False, True]})\nprint(df[~df['active']])",
+    "output": "   active\n1   False"
+   },
+   {
+    "h": "استخدام دالة isin() للتصفية",
+    "text": "بدلاً من كتابة شروط (أو) متعددة لنفس العمود، توفر لنا باندا دالة رائعة تسمى isin() للبحث عن عدة قيم دفعة واحدة بكل سهولة ويسر.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'city': ['القاهرة', 'الإسكندرية', 'أسوان']})\nprint(df[df['city'].isin(['القاهرة', 'أسوان'])])",
+    "output": "      city\n0  القاهرة\n2    أسوان"
+   },
+   {
+    "h": "تطبيقات واقعية للتصفية",
+    "text": "في الحياة اليومية، تُستخدم التصفية الشرطية في تطبيقات الطقس لعرض الأيام الممطرة فقط، أو في مواقع التسوق لعرض الملابس ذات المقاسات المحددة والأسعار المناسبة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'product': ['قميص', 'حذاء', 'حقيبة'], 'price': [120, 450, 200]})\nprint(df[df['price'] < 300])",
+    "output": "  product  price\n0    قميص    120\n2   حقيبة    200"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df[mask]",
+    "desc": "تصفية الجدول باستخدام قناع منطقي"
+   },
+   {
+    "name": "&",
+    "desc": "معامل الربط المنطقي (و)"
+   },
+   {
+    "name": "|",
+    "desc": "معامل الربط المنطقي (أو)"
+   },
+   {
+    "name": "~",
+    "desc": "معامل عكس الشرط (ليس)"
+   },
+   {
+    "name": "isin()",
+    "desc": "التحقق من وجود القيمة ضمن قائمة محددة"
+   },
+   {
+    "name": "DataFrame",
+    "desc": "هيكل بيانات الجدول في باندا"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليراً لتصفية جدول df لاختيار الصفوف التي يكون فيها العمود 'score' أكبر من 50.",
+    "a": "df[df['score'] > 50]"
+   },
+   {
+    "q": "كيف تربط بين شرطين (السعر أقل من 100) و(الكمية أكبر من 10)؟",
+    "a": "df[(df['price'] < 100) & (df['qty'] > 10)]"
+   },
+   {
+    "q": "أي رمز نستخدم لعكس الشرط في باندا؟",
+    "a": "~"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Conditional filtering is a clever skill that lets you select only the rows meeting specific rules from a huge dataset based on criteria you define.",
+   "Imagine you have a box of toys and you only want the red ones. You can do this in Python using boolean masks.",
+   "Boolean masks are a way where Python returns True or False for each row depending on whether the condition is met or not.",
+   "We can filter a dataset to keep only items costing less than 50 like this: cheap_items = df[df['price'] < 50].",
+   "Golden rule: Use '&' to combine conditions with AND, '|' for OR, and always enclose each condition inside parentheses.",
+   "Real-life use includes filtering products in online stores or searching for student records who passed an exam."
+  ],
+  "example": "Suppose we have a store dataset and want to pick products that cost less than 50 AND have high stock. We write this code:\n\nimport pandas as pd\ndata = {'item': ['pen', 'book', 'ruler'], 'price': [20, 60, 10], 'stock': [100, 5, 200]}\ndf = pd.DataFrame(data)\nresult = df[(df['price'] < 50) & (df['stock'] > 50)]\nprint(result)\n\nReasoning: We created a boolean mask combining two conditions using '&' and parentheses to ensure precise filtering.",
+  "mistake": "A common mistake is forgetting parentheses around each condition when using '&' or '|', causing a Python error. The fix is to wrap each condition like this: (condition1) & (condition2).",
+  "recap": "Conditional filtering using Python and Pandas lets us extract required data with high precision. We use boolean masks and logical operators to apply multiple conditions easily.",
+  "q": [
+   {
+    "t": "What symbol is used to combine two conditions with AND in Pandas?",
+    "o": [
+     "&",
+     "|",
+     "!"
+    ],
+    "a": 0,
+    "why": "We use the & symbol to combine two conditions that must both be true in Pandas."
+   },
+   {
+    "t": "How do we write a condition to select ages greater than 10?",
+    "o": [
+     "df['age'] > 10",
+     "df.age(> 10)",
+     "filter(age > 10)"
+    ],
+    "a": 0,
+    "why": "The correct way is using a boolean mask inside square brackets df[df['age'] > 10]."
+   },
+   {
+    "t": "What does a boolean mask return before applying the filter?",
+    "o": [
+     "Integers",
+     "True and False values",
+     "Plain text"
+    ],
+    "a": 1,
+    "why": "A boolean mask checks each row and returns True if the condition matches or False if it does not."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Steps for Data Filtering in Pandas",
+   "goal": "Order the steps to filter a DataFrame to get cheap products correctly.",
+   "items": [
+    "Import the pandas library as pd",
+    "Create the DataFrame dataset",
+    "Write the filtering condition like df['price'] < 50",
+    "Apply the boolean mask to the DataFrame to extract the result",
+    "Print the filtered results on the screen"
+   ],
+   "success": "Awesome! You successfully filtered the DataFrame and extracted the required products."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Conditional Filtering",
+    "text": "Conditional filtering acts like a kitchen sieve; it lets through only the data we need and blocks the rest. In Pandas, we use this technique to inspect millions of rows in mere seconds.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'name': ['Ali', 'Sara', 'John'], 'score': [85, 92, 45]})\nprint(df[df['score'] > 80])",
+    "output": "   name  score\n0   Ali     85\n1  Sara     92"
+   },
+   {
+    "h": "What is a Boolean Mask?",
+    "text": "A boolean mask is a series of True and False values matching the row count of a DataFrame. When we apply a condition like df['score'] > 80, Pandas generates this mask.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [50, 90, 70]})\nmask = df['score'] > 60\nprint(mask)",
+    "output": "0    False\n1     True\n2     True\nName: score, dtype: bool"
+   },
+   {
+    "h": "Filtering Rows Based on a Single Value",
+    "text": "We can filter rows easily by passing the boolean mask inside the square brackets of the DataFrame. This tells Pandas to keep only the rows holding a True value.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'fruit': ['apple', 'banana', 'orange'], 'price': [10, 5, 15]})\nprint(df[df['price'] > 8])",
+    "output": "    fruit  price\n0   apple     10\n2  orange     15"
+   },
+   {
+    "h": "Using the AND Operator & for Multiple Conditions",
+    "text": "When we want two conditions to be true simultaneously, we use the AND operator represented by '&'. Always remember to wrap each condition inside independent parentheses.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'item': ['pen', 'book', 'notebook'], 'price': [5, 40, 20], 'qty': [10, 2, 50]})\nprint(df[(df['price'] < 30) & (df['qty'] > 5)])",
+    "output": "       item  price  qty\n0       pen      5   10\n2  notebook     20   50"
+   },
+   {
+    "h": "Using the OR Operator | for Multiple Conditions",
+    "text": "If it is enough for just one condition to be met, we use the OR operator represented by '|'. This returns the row if the first rule, second rule, or both are true.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'color': ['red', 'blue', 'green'], 'size': ['small', 'large', 'small']})\nprint(df[(df['color'] == 'red') | (df['size'] == 'large')])",
+    "output": "   color   size\n0    red  small\n1   blue  large"
+   },
+   {
+    "h": "Negating Conditions Using the Tilde ~",
+    "text": "We can negate any condition using the '~' symbol. This means we want all rows that do NOT match the specified condition, much like negative colors in a photo.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'active': [True, False, True]})\nprint(df[~df['active']])",
+    "output": "   active\n1   False"
+   },
+   {
+    "h": "Using the isin() Method for Filtering",
+    "text": "Instead of writing multiple OR conditions for the same column, Pandas provides a wonderful method called isin() to search for several values at once easily.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'city': ['Cairo', 'Alexandria', 'Aswan']})\nprint(df[df['city'].isin(['Cairo', 'Aswan'])])",
+    "output": "     city\n0   Cairo\n2   Aswan"
+   },
+   {
+    "h": "Real-Life Applications of Filtering",
+    "text": "In daily life, conditional filtering is used in weather apps to display rainy days only, or on shopping websites to display clothing matching specific sizes and prices.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'product': ['shirt', 'shoes', 'bag'], 'price': [120, 450, 200]})\nprint(df[df['price'] < 300])",
+    "output": "  product  price\n0   shirt    120\n2     bag    200"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df[mask]",
+    "desc": "Filter DataFrame using a boolean mask"
+   },
+   {
+    "name": "&",
+    "desc": "Logical AND operator"
+   },
+   {
+    "name": "|",
+    "desc": "Logical OR operator"
+   },
+   {
+    "name": "~",
+    "desc": "Logical NOT operator"
+   },
+   {
+    "name": "isin()",
+    "desc": "Check if values exist in a given list"
+   },
+   {
+    "name": "DataFrame",
+    "desc": "Pandas table data structure"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to filter df keeping rows where 'score' column is greater than 50.",
+    "a": "df[df['score'] > 50]"
+   },
+   {
+    "q": "How do you combine two conditions (price less than 100) and (qty greater than 10)?",
+    "a": "df[(df['price'] < 100) & (df['qty'] > 10)]"
+   },
+   {
+    "q": "Which symbol do we use to negate a condition in Pandas?",
+    "a": "~"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

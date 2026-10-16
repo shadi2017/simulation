@@ -1,0 +1,290 @@
+{
+ "ar": {
+  "steps": [
+   "لما تكون شغال ببيانات في بايثون، ساعات بتلاقي أسماء الأعمدة أو الفهارس مش واضحة أو فيها اختصارات غريبة تلخبطك وتخلي شغلك أصعب.",
+   "عشان تحل المشكلة دي، مكتبة pandas بتديك دالة اسمها rename()، ودي بتخليك تقدر تغير أسماء الأعمدة أو الفهارس بكل سهولة وبدون تعقيد.",
+   "طريقة استخدام rename() بتعتمد أساساً على استخدام القواميس (dictionaries)، بحيث تربط الاسم القديم بالاسم الجديد اللي انت عايزه بكل دقة.",
+   "مثلاً، لو عندك عمود اسمه 'val' وعايز تخليه 'Value'، بتكتب df.rename(columns={'val': 'Value'}) عشان تنفذ التغيير ده فوراً.",
+   "القاعدة الذهبية هنا هي إنك لو عايز التغيير يحصل جوه الجدول الأساسي مباشرة، لازم تضيف معامل اسمه inplace=True عشان يحفظ التعديل.",
+   "المهارة دي مفيدة جداً في الحياة اليومية لما تنظف بيانات جداول مرتبة لفرق كرة القدم أو درجات الطلاب عشان تكون جاهزة للتحليل."
+  ],
+  "example": "تخيل إن عندك جدول بيبين درجات طلاب الألعاب الرياضية وفيه عمود اسمه 'scr'. الاسم ده قصير وممكن يلخبط أي حد يشوف الجدول بعدك. عشان نخليه واضح ومفهوم، هنستخدم دالة rename مع القاموس بالشكل ده: df = df.rename(columns={'scr': 'Score'}, inplace=True). بكده الجدول بقى أرتب وأسهل في قراءة النتائج.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة مفتاح columns أو index جوه دالة rename، زي كتابة df.rename({'val': 'Value'}) بدل تحديد المكان بدقة. التصحيح هو تحديد المكان بوضوح كالتالي: df.rename(columns={'val': 'Value'}).",
+  "recap": "تعلّنا كيفية استخدام دالة rename في بايثون لتغيير أسماء الأعمدة والفهارس باستخدام القواميس. هذا يجعل تنظيم البيانات وتحليلها أسهل وأكثر وضوحاً.",
+  "q": [
+   {
+    "t": "ما هي الدالة المستخدمة لتغيير أسماء الأعمدة في pandas؟",
+    "o": [
+     "change()",
+     "rename()",
+     "modify()"
+    ],
+    "a": 1,
+    "why": "الدالة rename هي المخصصة لتغيير أسماء الأعمدة والفهارس في جداول pandas."
+   },
+   {
+    "t": "كيف نحدد أننا نريد تغيير أسماء الأعمدة وليس الفهارس؟",
+    "o": [
+     "باستخدام columns parameter مع قاموس",
+     "باستخدام rows parameter",
+     "باستخدام names parameter"
+    ],
+    "a": 0,
+    "why": "نستخدم معامل columns ونمرر له قاموساً يحتوي على الأسماء القديمة والجديدة."
+   },
+   {
+    "t": "ماذا يفعل معامل inplace=True عند استخدامه مع rename؟",
+    "o": [
+     "يحذف الجدول نهائياً",
+     "يطبع النتيجة على الشاشة فقط",
+     "يطبق التعديل على الجدول الأصلي مباشرة"
+    ],
+    "a": 2,
+    "why": "معامل inplace=True يجعل التعديل يحدث داخل الجدول الأساسي بدون الحاجة لإنشاء جدول جديد."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة إعادة التسمية",
+   "goal": "توقع الناتج الصحيح عند تنفيذ كود تغيير اسم العمود",
+   "code": "import pandas as pd\ndf = pd.DataFrame({'val': [10, 20]})\ndf = df.rename(columns={'val': 'Value'})\nprint(df.columns[0])",
+   "options": [
+    "val",
+    "Value",
+    "val_new"
+   ],
+   "a": 1,
+   "success": "رائع! تم تغيير اسم العمود بنجاح وأصبح مظهره احترافياً."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن إعادة التسمية",
+    "text": "لما بتشتري كراسة جديدة، بتحب تكتب عليها اسم المادة بخط واضح عشان ما تتلخبطش. نفس الكلام في جداول البيانات، لما تكون أسماء الأعمدة مبهمة، بنحتاج نغيرها لأسماء واضحة ومفهومة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1, 2]})\nprint(df.columns)",
+    "output": "Index(['a'], dtype='object')"
+   },
+   {
+    "h": "استخدام دالة rename",
+    "text": "دالة rename في مكتبة pandas عاملة زي الأستيكة والقلم، بتمسح الاسم القديم وتكتب مكانه الاسم الجديد. بنستعملها عشان نخلي شكل الجدول نظيف ومرتب.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1, 2]})\ndf_new = df.rename(columns={'a': 'Alpha'})\nprint(df_new.columns)",
+    "output": "Index(['Alpha'], dtype='object')"
+   },
+   {
+    "h": "استخدام القواميس (Dictionaries)",
+    "text": "القاموس في بايثون عامل زي قاموس الترجمة؛ بياخد الكلمة القديمة ويديك قصادها الكلمة الجديدة. في دالة rename، بنستخدم القاموس عشان نربط الاسم القديم بالاسم الجديد.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'old_name': [5, 6]})\nprint(df.rename(columns={'old_name': 'New_Name'}).columns)",
+    "output": "Index(['New_Name'], dtype='object')"
+   },
+   {
+    "h": "معامل الأعمدة columns parameter",
+    "text": "عشان تقول لـ pandas إنك عايز تغير اسم عمود مش صف، بتستخدم معامل columns وتدي له القاموس. ده بيخلي بايثون يركز بس على رؤوس الأعمدة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [90, 85]})\nprint(df.rename(columns={'score': 'Final_Score'}).columns)",
+    "output": "Index(['Final_Score'], dtype='object')"
+   },
+   {
+    "h": "معامل الفهارس index parameter",
+    "text": "زي ما بنقدر نغير أسماء الأعمدة، نقدر كمان نغير أسماء الصفوف (الفهارس) باستخدام معامل index. ده مفيد جداً لما تحب تدي أسماء واضحة للخطوط الأفقية في الجدول.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'val': [10]}, index=['row1'])\nprint(df.rename(index={'row1': 'First_Row'}).index)",
+    "output": "Index(['First_Row'], dtype='object')"
+   },
+   {
+    "h": "معامل الحفظ الفوري inplace",
+    "text": "افتراضياً، دالة rename بتعمل جدول جديد وتسيب الجدول القديم زي ما هو. لو انت متأكد وعايز التغيير يحصل في الجدول الأصلي على طول، بتكتب inplace=True.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'x': [1]})\ndf.rename(columns={'x': 'X'}, inplace=True)\nprint(df.columns)",
+    "output": "Index(['X'], dtype='object')"
+   },
+   {
+    "h": "إعادة تسمية أكثر من عمود معاً",
+    "text": "مش لازم تغير عمود واحد بس في كل مرة؛ القاموس يقدر يشيل كذا اسم مع بعض. دي طريقة سريعة ومنظمة لتحديث الجدول كله دفعة واحدة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1], 'b': [2]})\nprint(df.rename(columns={'a': 'Col1', 'b': 'Col2'}).columns)",
+    "output": "Index(['Col1', 'Col2'], dtype='object')"
+   },
+   {
+    "h": "تطبيقات من الحياة اليومية",
+    "text": "تخيل معاك جدول لدرجات أصحابك في الفصل، والأسماء مختصرة جداً زي 'm' و 's'. إعادة التسمية بتخليهم 'Math' و 'Science' عشان أي حد يقدر يقراهم ويفهمهم بسهولة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'m': [95], 's': [90]})\nprint(df.rename(columns={'m': 'Math', 's': 'Science'}).columns)",
+    "output": "Index(['Math', 'Science'], dtype='object')"
+   }
+  ],
+  "reference": [
+   {
+    "name": "rename()",
+    "desc": "دالة لتغيير أسماء الأعمدة أو الفهارس في جدول pandas"
+   },
+   {
+    "name": "columns={...}",
+    "desc": "معامل يُستخدم لتحديد الأعمدة المراد تغيير أسمائها باستخدام قاموس"
+   },
+   {
+    "name": "index={...}",
+    "desc": "معامل يُستخدم لتحديد الفهارس المراد تغيير أسمائها باستخدام قاموس"
+   },
+   {
+    "name": "inplace=True",
+    "desc": "معامل لتطبيق التغييرات مباشرة على الجدول الأصلي بدون إنشاء نسخة جديدة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود لتغيير اسم العمود 'val' إلى 'Value' في DataFrame اسمها df.",
+    "a": "df.rename(columns={'val': 'Value'}, inplace=True)"
+   },
+   {
+    "q": "كيف تغير اسم الفهرس 'r1' إلى 'Row1' في نفس الجدول؟",
+    "a": "df.rename(index={'r1': 'Row1'}, inplace=True)"
+   },
+   {
+    "q": "لماذا نستخدم القاموس داخل دالة rename؟",
+    "a": "لنربط الاسم القديم بالاسم الجديد بشكل دقيق ومنظم."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "When working with data in Python, you sometimes encounter messy column headers or row indexes with strange abbreviations that confuse you.",
+   "To solve this, the pandas library provides the rename() function, allowing you to easily and clearly change column or index names.",
+   "The rename() method mainly relies on dictionaries, mapping each old name to the new name you want with precision.",
+   "For example, if you have a column named 'val' and want it to be 'Value', you write df.rename(columns={'val': 'Value'}) to make the change.",
+   "The golden rule here is that if you want the change to happen directly inside the original dataframe, you must include the inplace=True parameter.",
+   "This skill is extremely useful in daily life when cleaning tabular data for football teams or student grades to make them ready for analysis."
+  ],
+  "example": "Imagine you have a table showing sports student scores with a column named 'scr'. This short name might confuse anyone viewing the table later. To make it clear, we use the rename function with a dictionary like this: df = df.rename(columns={'scr': 'Score'}, inplace=True). Now the table is much tidier and easier to read.",
+  "mistake": "A common mistake is forgetting to specify the columns or index key inside the rename function, such as writing df.rename({'val': 'Value'}) without specifying the axis. The fix is to clearly specify: df.rename(columns={'val': 'Value'}).",
+  "recap": "We learned how to use the rename function in Python to change column and index names using dictionaries. This makes data organization and analysis much easier and clearer.",
+  "q": [
+   {
+    "t": "What is the function used to change column names in pandas?",
+    "o": [
+     "change()",
+     "rename()",
+     "modify()"
+    ],
+    "a": 1,
+    "why": "The rename function is designed specifically to change column and index names in pandas dataframes."
+   },
+   {
+    "t": "How do we specify that we want to change column names rather than indexes?",
+    "o": [
+     "By using the columns parameter with a dictionary",
+     "By using the rows parameter",
+     "By using the names parameter"
+    ],
+    "a": 0,
+    "why": "We use the columns parameter and pass a dictionary containing the old and new names."
+   },
+   {
+    "t": "What does inplace=True do when used with rename?",
+    "o": [
+     "Deletes the dataframe permanently",
+     "Prints the result on the screen only",
+     "Applies the change directly to the original dataframe"
+    ],
+    "a": 2,
+    "why": "The inplace=True parameter makes the modification happen right inside the base dataframe without needing a new variable."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Renaming Output",
+   "goal": "Predict the correct output when running column renaming code",
+   "code": "import pandas as pd\ndf = pd.DataFrame({'val': [10, 20]})\ndf = df.rename(columns={'val': 'Value'})\nprint(df.columns[0])",
+   "options": [
+    "val",
+    "Value",
+    "val_new"
+   ],
+   "a": 1,
+   "success": "Awesome! The column was successfully renamed and looks professional."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Renaming",
+    "text": "When you get a new notebook, you like to write the subject name clearly on the cover so you don't get confused. Similarly in data tables, when column headers are obscure, we need to change them to clear, understandable titles.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1, 2]})\nprint(df.columns)",
+    "output": "Index(['a'], dtype='object')"
+   },
+   {
+    "h": "Using the rename() Method",
+    "text": "The rename function in pandas acts like an eraser and pencil, wiping away the old name and writing the new one. We use it to keep our table layout clean and well-organized.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1, 2]})\ndf_new = df.rename(columns={'a': 'Alpha'})\nprint(df_new.columns)",
+    "output": "Index(['Alpha'], dtype='object')"
+   },
+   {
+    "h": "Using Dictionaries",
+    "text": "A dictionary in Python works like a translation book; it takes the old word and gives you the new word in return. Inside rename, we use a dictionary to map old names to new ones.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'old_name': [5, 6]})\nprint(df.rename(columns={'old_name': 'New_Name'}).columns)",
+    "output": "Index(['New_Name'], dtype='object')"
+   },
+   {
+    "h": "The columns Parameter",
+    "text": "To tell pandas you want to rename a column rather than a row, you use the columns parameter and pass your dictionary to it. This ensures pandas focuses strictly on column headers.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [90, 85]})\nprint(df.rename(columns={'score': 'Final_Score'}).columns)",
+    "output": "Index(['Final_Score'], dtype='object')"
+   },
+   {
+    "h": "The index Parameter",
+    "text": "Just like renaming columns, you can also rename row labels (indexes) using the index parameter. This is extremely helpful when you want to give descriptive names to horizontal table entries.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'val': [10]}, index=['row1'])\nprint(df.rename(index={'row1': 'First_Row'}).index)",
+    "output": "Index(['First_Row'], dtype='object')"
+   },
+   {
+    "h": "The inplace Parameter",
+    "text": "By default, rename creates a new dataframe and leaves the old one untouched. If you are certain and want the change to happen right away in the original table, set inplace=True.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'x': [1]})\ndf.rename(columns={'x': 'X'}, inplace=True)\nprint(df.columns)",
+    "output": "Index(['X'], dtype='object')"
+   },
+   {
+    "h": "Renaming Multiple Columns at Once",
+    "text": "You don't have to change just one column at a time; a single dictionary can hold multiple name mappings. This is a fast and organized way to update an entire table in one go.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1], 'b': [2]})\nprint(df.rename(columns={'a': 'Col1', 'b': 'Col2'}).columns)",
+    "output": "Index(['Col1', 'Col2'], dtype='object')"
+   },
+   {
+    "h": "Real-Life Applications",
+    "text": "Imagine having a friends' grade sheet with very short headers like 'm' and 's'. Renaming them to 'Math' and 'Science' makes it effortless for anyone to read and understand.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'m': [95], 's': [90]})\nprint(df.rename(columns={'m': 'Math', 's': 'Science'}).columns)",
+    "output": "Index(['Math', 'Science'], dtype='object')"
+   }
+  ],
+  "reference": [
+   {
+    "name": "rename()",
+    "desc": "Method to change column or index names in a pandas dataframe"
+   },
+   {
+    "name": "columns={...}",
+    "desc": "Parameter used to specify columns to rename using a dictionary mapping"
+   },
+   {
+    "name": "index={...}",
+    "desc": "Parameter used to specify indexes to rename using a dictionary mapping"
+   },
+   {
+    "name": "inplace=True",
+    "desc": "Parameter to apply modifications directly to the original dataframe without copying"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to rename the column 'val' to 'Value' in a DataFrame named df.",
+    "a": "df.rename(columns={'val': 'Value'}, inplace=True)"
+   },
+   {
+    "q": "How do you rename the index 'r1' to 'Row1' in the same DataFrame?",
+    "a": "df.rename(index={'r1': 'Row1'}, inplace=True)"
+   },
+   {
+    "q": "Why do we use a dictionary inside the rename method?",
+    "a": "To accurately and cleanly map old names to new names."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/datastructures.html"
+  }
+ ],
+ "grounded": true
+}

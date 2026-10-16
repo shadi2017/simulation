@@ -1,0 +1,282 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تبني برجاً من المكعبات؛ أحياناً يقع البرج ويتعثر الكود، هنا يأتي دور معالجة الأخطاء لتنقذ الموقف.",
+   "نستخدم try لاختبار الكود الخطير، فإذا حدث خطأ، يلتقطه except بدلاً من أن يتوقف البرنامج تماماً.",
+   "عندما تحدث مشكلة مثل القسمة على صفر أو كتابة حروف بدلاً من أرقام، لا ينزعج البرنامج بل يتصرف بذكاء.",
+   "مثال بسيط: try: print(10/0) except ZeroDivisionError: print('لا يمكن القسمة على صفر').",
+   "قاعدة ذهبية: ضع الكود الذي قد يسبب انهياراً داخل try، واسم الخطأ المحدد بجانب except.",
+   "في الواقع، تستخدم الشركات الكبرى هذه التقنية لتمنع تطبيقاتها من الإغلاق المفاجئ عندما يفقد المستخدم الاتصال بالإنترنت."
+  ],
+  "example": "لنفترض أننا نطلب من المستخدم إدخال عمره، لكنه كتب نصاً بدلاً من رقم. بدون حماية، سيتوقف البرنامج بانهيار (ValueError). أما مع try و except، فيمكننا اكتشاف الخطأ بلطف وطمأنة المستخدم.\n\n```python\ntry:\n    age = int(input('أدخل عمرك: '))\n    print('عمرك هو', age)\nexcept ValueError:\n    print('خطأ! من فضلك اكتب رقماً صحيحاً.')\n```\nالسبب أن دالة int() لا تستطيع تحويل الكلمات إلى أرقام، فيأتي except لإنقاذ الموقف وطباعة رسالة ودودة.",
+  "mistake": "الخطأ الشائع هو استخدام except بمفردها بدون تحديد نوع الخطأ، أو وضع كود آمن تماماً داخل try. الحل هو دائماً استهداف نوع الخطأ المحدد مثل ValueError أو ZeroDivisionError بدقة.",
+  "recap": "تساعدنا أدوات try و except في حماية برامجنا من الانهيار المفاجئ عند حدوث أخطاء تشغيلية. هذا يجعل السكريبت أكثر استقراراً وودداً للمستخدم.",
+  "q": [
+   {
+    "t": "أي كلمة مفتاحية نستخدمها لاختبار الكود المحفوف بالمخاطر؟",
+    "o": [
+     "try",
+     "except",
+     "error"
+    ],
+    "a": 0,
+    "why": "نستخدم try لنضع فيها الكود الذي يحتمل وقوع أخطاء."
+   },
+   {
+    "t": "ما هو الخطأ الذي يحدث عند محقسمة عدد على صفر؟",
+    "o": [
+     "NameError",
+     "ZeroDivisionError",
+     "TypeError"
+    ],
+    "a": 1,
+    "why": "ZeroDivisionError يظهر عند محاولة القسمة على صفر في بايثون."
+   },
+   {
+    "t": "ما فائدة استخدام except في البرنامج؟",
+    "o": [
+     "إيقاف البرنامج فوراً",
+     "التقاط الخطأ ومنع الانهيار",
+     "حذف الملفات"
+    ],
+    "a": 1,
+    "why": "except تلتقط الأخطاء لتعالجها بلطف وتمنع توقف البرنامج."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة معالجة الأخطاء",
+   "goal": "اكتشف ما سيطبعه الكود التالي عند حدوث خطأ قسمة على صفر.",
+   "code": "try:\n    result = 5 / 0\nexcept ZeroDivisionError:\n    print('خطأ في القسمة')",
+   "options": [
+    "خطأ في القسمة",
+    "5",
+    "ZeroDivisionError"
+   ],
+   "a": 0,
+   "success": "رائع! لقد التقط البرنامج خطأ القسمة على صفر وطبع رسالة النجاح بسلام."
+  },
+  "sections": [
+   {
+    "h": "ما هي الأخطاء الاستثنائية؟",
+    "text": "الأخطاء الاستثنائية (Exceptions) هي مشاكل تظهر أثناء تشغيل الكود رغم صحة كتابته من حيث القواعد. تماماً مثل محاولة فتح باب مغلق بمفتاح غير مناسب؛ يبدو كل شيء صحيحاً نظرياً، لكنه لا يعمل عملياً. في بايثون، تؤدي هذه الأخطاء إلى إيقاف البرنامج إذا لم نتعامل معها بذكاء.",
+    "code": "print(10 * (1 / 0))",
+    "output": "ZeroDivisionError: division by zero"
+   },
+   {
+    "h": "دور كتلة try",
+    "text": "تعتبر كتلة try بمثابة درع حماية أو شبكة أمان لبرنامجك. تضع بداخلها الأوامر التي تشعر بالقلق من تسببها في مشاكل، مثل قسمة أرقام أو قراءة مدخلات من مستخدم غير متوقع. بايثون تراقب هذا الكود، فإذا مر بسلام، تتجاهل مرحلة الطوارئ تماماً.",
+    "code": "try:\n    print('هذا كود آمن')",
+    "output": "هذا كود آمن"
+   },
+   {
+    "h": "دور كتلة except",
+    "text": "إذا حدث خطأ داخل كتلة try، تتوقف بايثون فوراً عن تنفيذ باقي تلك السطور، وتقفز مباشرة إلى كتلة except. تشبه هذه العملية طاقم الطوارئ الذي يتدخل عند حدوث عطل فني ليحل المشكلة ويمنع كارثة الكقاط الكلي للتيار الكهربائي في الطائرة.",
+    "code": "try:\n    print(5 / 0)\nexcept:\n    print('حدث خطأ ما!')",
+    "output": "حدث خطأ ما!"
+   },
+   {
+    "h": "تحديد أنواع الأخطاء بدقة",
+    "text": "من الأفضل دائماً تحديد نوع الخطأ بجانب except، مثل ZeroDivisionError أو ValueError. هذا يشبه تماماً الطبيب الذي يشخص مرضاً معيناً ليصف له الدواء المناسب، بدلاً من استخدام علاج عام لكل الأمراض. هذا يمنع إخفاء أخطاء أخرى قد تكون مهمة دون أن تدري.",
+    "code": "try:\n    x = int('abc')\nexcept ValueError:\n    print('خطأ في تحويل النص إلى رقم')",
+    "output": "خطأ في تحويل النص إلى رقم"
+   },
+   {
+    "h": "التعامل مع أنواع متعددة من الأخطاء",
+    "text": "قد يحتوي برنامجك على أخطاء متنوعة؛ أحياناً يقسم المستخدم على صفر، وأحياناً يدخل حروفاً مكان الأرقام. تتيح لك بايثون إضافة أكثر من فرع except لمعالجة كل حالة بشكل منفصل ومهذب، تماماً مثل وجود أزرار طوارئ مختلفة لكل نوع حريق في المبنى.",
+    "code": "try:\n    ans = 10 / int('0')\nexcept ZeroDivisionError:\n    print('لا يمكن القسمة على صفر')\nexcept ValueError:\n    print('أدخل رقماً صحيحاً')",
+    "output": "لا يمكن القسمة على صفر"
+   },
+   {
+    "h": "بناء سكريبتات مرنة وقوية",
+    "text": "السكريبت القوي (Robust Script) هو الذي لا ينهار مهما كانت مدخلات المستخدم غريبة أو خاطئة. باستخدام التكرار مع try و except، يمكنك الاستمرار في طلب البيانات حتى يحصل البرنامج على مدخلات سليمة تماماً، مما يضمن تجربة مستخدم مذهلة وخالية من الإحباط.",
+    "code": "while True:\n    try:\n        val = int(input('أدخل رقماً: '))\n        break\n    except ValueError:\n        print('حاول مرة أخرى!')",
+    "output": "أدخل رقماً: (إذا كتب المستخدم أحرفاً، سيطبع: حاول مرة أخرى!)"
+   }
+  ],
+  "reference": [
+   {
+    "name": "try",
+    "desc": "تبدأ كتلة الأكواد التي قد تحتوي على أخطاء محتملة."
+   },
+   {
+    "name": "except",
+    "desc": "تحدد الكود الذي يُنفذ عند وقوع خطأ معين لاحتوائه."
+   },
+   {
+    "name": "ZeroDivisionError",
+    "desc": "خطأ يظهر عند محاولة قسمة أي عدد على الرقم صفر."
+   },
+   {
+    "name": "ValueError",
+    "desc": "خطأ يظهر عند إعطاء دالة قيمة من نوع غير مناسب."
+   },
+   {
+    "name": "TypeError",
+    "desc": "خطأ يحدث عند إجراء عمليات على أنواع بيانات غير متوافقة."
+   },
+   {
+    "name": "NameError",
+    "desc": "خطأ يحدث عند استخدام متغير لم يتم تعريفه أو كتابة اسمه خطأً."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود يحميك من خطأ القسمة على صفر عند قسمة 10 على متغير اسمه divisor قيمته صفر.",
+    "a": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print('خطأ القسمة على صفر')"
+   },
+   {
+    "q": "ما اسم الخطأ الذي يظهر عند محاولة تحويل كلمة نصية غير أرقام إلى عدد صحيح باستخدام int()؟",
+    "a": "ValueError"
+   },
+   {
+    "q": "كيف تجعل حلقة التكرار تستمر في طلب رقم من المستخدم حتى يدخل رقماً صحيحاً بدون انهيار؟",
+    "a": "استخدام while True مع try و except ValueError و break داخل الكتلة الناجحة."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine building a tower of blocks; sometimes the tower tumbles and code crashes, which is when error handling saves the day.",
+   "We use try to test risky code, and if an error happens, except catches it instead of letting the program crash completely.",
+   "When problems like dividing by zero or typing letters instead of numbers occur, the program stays calm and handles it smartly.",
+   "Simple example: try: print(10/0) except ZeroDivisionError: print('Cannot divide by zero').",
+   "Golden rule: Put code that might cause a crash inside try, and name the specific error next to except.",
+   "In real life, major tech companies use this technique to stop apps from abruptly closing when users lose internet connection."
+  ],
+  "example": "Suppose we ask a user to type their age, but they type a word instead of a number. Without protection, the program crashes with a ValueError. With try and except, we can catch the error gently and reassure the user.\n\n```python\ntry:\n    age = int(input('Enter your age: '))\n    print('Your age is', age)\nexcept ValueError:\n    print('Oops! Please type a valid number.')\n```\nThe reason is that int() cannot convert letters into numbers, so except steps in to save the day with a friendly message.",
+  "mistake": "A common mistake is using bare except without specifying the error type, or putting completely safe code inside try. The solution is always to target specific error types like ValueError or ZeroDivisionError accurately.",
+  "recap": "The try and except statements help protect our programs from sudden crashes during runtime errors. This makes scripts much more stable and user-friendly.",
+  "q": [
+   {
+    "t": "Which keyword do we use to test risky code?",
+    "o": [
+     "try",
+     "except",
+     "error"
+    ],
+    "a": 0,
+    "why": "We use try to enclose code that might potentially raise errors."
+   },
+   {
+    "t": "What error occurs when you try to divide a number by zero?",
+    "o": [
+     "NameError",
+     "ZeroDivisionError",
+     "TypeError"
+    ],
+    "a": 1,
+    "why": "ZeroDivisionError appears when attempting division by zero in Python."
+   },
+   {
+    "t": "What is the purpose of using except in a program?",
+    "o": [
+     "To stop the program immediately",
+     "To catch the error and prevent a crash",
+     "To delete files"
+    ],
+    "a": 1,
+    "why": "except catches errors to handle them gracefully and keep the program running."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Error Handling Output",
+   "goal": "Find out what the following code prints when a division by zero error occurs.",
+   "code": "try:\n    result = 5 / 0\nexcept ZeroDivisionError:\n    print('Division error')",
+   "options": [
+    "Division error",
+    "5",
+    "ZeroDivisionError"
+   ],
+   "a": 0,
+   "success": "Awesome! The program caught the division by zero error and printed the success message safely."
+  },
+  "sections": [
+   {
+    "h": "What are Exceptions?",
+    "text": "Exceptions are problems that pop up while executing code, even if the syntax rules are completely correct. Think of it like trying to open a locked door with the wrong key; everything looks right in theory, but it doesn't work in practice. In Python, these errors stop execution unless handled cleverly.",
+    "code": "print(10 * (1 / 0))",
+    "output": "ZeroDivisionError: division by zero"
+   },
+   {
+    "h": "The Role of the try Block",
+    "text": "The try block acts like a safety shield or net for your program. You place commands inside it that you worry might cause trouble, like dividing numbers or reading input from an unpredictable user. Python monitors this code, and if it passes smoothly, it completely ignores the emergency stage.",
+    "code": "try:\n    print('This code is safe')",
+    "output": "This code is safe"
+   },
+   {
+    "h": "The Role of the except Block",
+    "text": "If an error occurs inside the try block, Python immediately stops executing the rest of those lines and jumps straight to the except block. This is similar to emergency crew stepping in during a technical glitch to fix the problem and prevent a total power outage on a plane.",
+    "code": "try:\n    print(5 / 0)\nexcept:\n    print('Something went wrong!')",
+    "output": "Something went wrong!"
+   },
+   {
+    "h": "Targeting Specific Error Types",
+    "text": "It is always best to specify the exact error type next to except, such as ZeroDivisionError or ValueError. This is like a doctor diagnosing a specific illness to prescribe the right medicine, instead of using a generic cure-all. This prevents hiding other important bugs accidentally.",
+    "code": "try:\n    x = int('abc')\nexcept ValueError:\n    print('Error converting text to number')",
+    "output": "Error converting text to number"
+   },
+   {
+    "h": "Handling Multiple Exception Types",
+    "text": "Your program might encounter various errors; sometimes a user divides by zero, and other times they type letters instead of numbers. Python lets you add multiple except branches to handle each case distinctly and politely, just like having different emergency buttons for different fire types in a building.",
+    "code": "try:\n    ans = 10 / int('0')\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')\nexcept ValueError:\n    print('Please enter a valid number')",
+    "output": "Cannot divide by zero"
+   },
+   {
+    "h": "Building Robust Scripts",
+    "text": "A robust script never crashes no matter how weird or incorrect user inputs are. By combining loops with try and except, you can keep asking for data until the program gets completely valid input, ensuring a fantastic and frustration-free user experience.",
+    "code": "while True:\n    try:\n        val = int(input('Enter a number: '))\n        break\n    except ValueError:\n        print('Try again!')",
+    "output": "Enter a number: (If user types letters, it prints: Try again!)"
+   }
+  ],
+  "reference": [
+   {
+    "name": "try",
+    "desc": "Starts a block of code that may contain potential errors."
+   },
+   {
+    "name": "except",
+    "desc": "Defines the code executed when a specific caught error occurs."
+   },
+   {
+    "name": "ZeroDivisionError",
+    "desc": "Error raised when attempting to divide any number by zero."
+   },
+   {
+    "name": "ValueError",
+    "desc": "Error raised when a function receives an argument of inappropriate type."
+   },
+   {
+    "name": "TypeError",
+    "desc": "Error raised when operations are performed on incompatible data types."
+   },
+   {
+    "name": "NameError",
+    "desc": "Error raised when using an undefined or misspelled variable name."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code protecting you from a division by zero error when dividing 10 by a variable named divisor equal to zero.",
+    "a": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print('Division by zero error')"
+   },
+   {
+    "q": "What is the error name shown when trying to convert a non-numeric string into an integer using int()?",
+    "a": "ValueError"
+   },
+   {
+    "q": "How do you make a loop keep asking a user for a number until they enter a valid integer without crashing?",
+    "a": "Use while True with try, except ValueError, and break inside the successful block."
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/errors.html"
+  }
+ ],
+ "grounded": true
+}

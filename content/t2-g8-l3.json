@@ -1,0 +1,353 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن عندك صندوق مليان ألعاب وعايز تعرف نوع كل لعبة وعددها من غير ما تفتح كل كيس لوحده، في البداية بنتعلم إزاي نبص على نظرة عامة سريعة للبيانات في الجدول.",
+   "عشان نعمل ده بلغة بايثون ومكتبة باندا، بنستخدم أمر بسيط جداً اسمه info() عشان نشوف أنواع البيانات وهل فيه بيانات ناقصة ولا لأ.",
+   "طريقة عمل الدالة info() إنها بتعد لك عدد الصفوف والأعمدة، وتوريك اسم كل عمود ونوع البيانات اللي جوه، هل هي أرقام ولا نصوص، وبتلخص كل ده في شاشة سوداء صغيرة.",
+   "مثال تاني، لو عندك جدول درجات الطلاب، تقدر تكتب df.info() عشان تعرف لو فيه طالب نسى يكتب درجته ودي بنسميها البيانات المفقودة.",
+   "القاعدة الذهبية: ابدأ دائماً بـ info() عشان تطمن إن جدولك سليم ومفيش أخطاء قبل ما تبدأ تحسب أي إحصائيات.",
+   "في الواقع العملي، مهندسو البيانات وعلما البيانات بيستخدموا الأمر ده في أول أي مشروع ضخم عشان يفهموا حجم البيانات اللي بيتعاملوا معاها زي بنك أو مستشفى."
+  ],
+  "example": "تخيل معاك جدول فيه أسعار الألعاب في المحل، وعايز تعرف متوسط الأسعار وأعلى سعر وأقل سعر. بنستخدم دالة مذهلة اسمها describe(). دي بتوفر عليك ساعات من الحساب اليدوي وبتديك ملخص إحصائي سريع لأرقام الجدول كله بكلمة واحدة.\n\nإليك الكود البسيط:\nimport pandas as pd\ndata = {'Price': [10, 20, 30, 40]}\ndf = pd.DataFrame(data)\nprint(df.describe())",
+  "mistake": "الخطأ الشائع هو نسيان كتابة الأقواس () بعد كلمة info أو describe، مما يطبع لك اسم الدالة نفسها ككائن في الذاكرة بدل تنفيذها. الحل هو التأكد دائماً من إضافة الأقواس المفتوحة والمغلقة هكذا: df.info().",
+  "recap": "تعلمنا اليوم كيف نستخدم دالة info لمعرفة تفصيل وأنواع البيانات، ودالة describe للحصول على ملخص الإحصائيات السريعة للأرقام بسهولة تامة.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لدالة info() في مكتبة باندا؟",
+    "o": [
+     "رسم رسومات بيانية ملونة",
+     "عرض نظرة عامة على الأعمدة وأنواعها والبيانات الناقصة",
+     "حذف جميع البيانات من الجدول"
+    ],
+    "a": 1,
+    "why": "دالة info مصممة خصيصاً لإعطائك هيكل الجدول وأنواع البيانات."
+   },
+   {
+    "t": "ماذا تعطيك دالة describe() عند تطبيقها على أعمدة رقمية؟",
+    "o": [
+     "ملخص إحصائي شامل مثل المتوسط والحد الأدنى والأقصى",
+     "أسماء الملفات المخزنة على الكمبيوتر",
+     "تغيير خلفية الشاشة للروبوت"
+    ],
+    "a": 0,
+    "why": "صفة describe تعني وصف، وهي تعطي إحصائيات وصفية للأرقام."
+   },
+   {
+    "t": "كيف نكتب دالة describe بالشكل الصحيح في بايثون؟",
+    "o": [
+     "df.describe",
+     "describe.df()",
+     "df.describe()"
+    ],
+    "a": 2,
+    "why": "الطريقة الصحيحة هي كتابة اسم الجدول متبوعاً بنقطة ثم اسم الدالة والأقواس."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال أوامر استكشاف البيانات",
+   "goal": "اختر الكلمة الصحيحة لإكمال أوامر بايثون لاستكشاف البيانات.",
+   "items": [
+    {
+     "text": "لمعرفة هيكل البيانات وأنواعها، نكتب الأمر df.___( )",
+     "options": [
+      "describe",
+      "info",
+      "summary"
+     ],
+     "a": 1
+    },
+    {
+     "text": "للحصول على ملخص إحصائي للأرقام، نستخدم الأمر df.___( )",
+     "options": [
+      "describe",
+      "info",
+      "count"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لفحص البيانات في باندا، يجب أولاً استيراد المكتبة باستخدام import ___ as pd",
+     "options": [
+      "numpy",
+      "pandas",
+      "math"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "رائع! لقد أتقنت استخدام أوامر استكشاف البيانات بنجاح تام."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن استكشاف البيانات",
+    "text": "عندما نحصل على ملف بيانات جديد، يشبه الأمر دخولنا لغرفة مظلمة لأول مرة. نحتاج إلى كشاف نضيء به المكان لنعرف ما يوجد بداخل الصناديق. في علم البيانات، دالتا info و describe هما الكشاف السحري الذي يكشف لنا كل أسرار الجدول في ثوانٍ معدودة.",
+    "code": "import pandas as pd\n# إنشاء جدول بيانات بسيط\ndf = pd.DataFrame({'Age': [10, 12, 14], 'Score': [85, 90, 95]})\nprint(df)",
+    "output": "   Age  Score\n0   10     85\n1   12     90\n2   14     95"
+   },
+   {
+    "h": "استخدام دالة info للحصول على الهيكل",
+    "text": "تخيل أنك تفتح فهرس كتاب لتعرف عدد الفصل ورقم الصفحات. دالة info() تفعل نفس الشيء مع جدول البيانات، حيث تخبرنا بعدد الصفوف، وأسماء الأعمدة، وكم عدد القيم الموجودة في كل عمود، مما يساعدنا في اكتشاف البيانات الناقصة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona'], 'Score': [90, 95]})\nprint(df.info())",
+    "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 2 entries, 2 columns..."
+   },
+   {
+    "h": "فهم أنواع البيانات في info",
+    "text": "الأعمدة في الجدول ليست متشابهة؛ فبعضها يحتوي على أرقام مثل الأعمار، والبعض الآخر يحتوي على كلمات مثل الأسماء. دالة info توضح لنا نوع البيانات لكل عمود، مثل int للأرقام و object للنصوص، لكي نعرف كيف نتعامل معها برمجياً دون أخطاء.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Toy': ['Car', 'Doll'], 'Price': [50, 30]})\nprint(df.dtypes)",
+    "output": "Toy      object\nPrice     int64\ndtpe: object"
+   },
+   {
+    "h": "كشف البيانات الناقصة",
+    "text": "في الحياة الواقعية، قد ننسى تسجيل إجابة سؤال في اختبار. دالة info() تساعدنا في رؤية عدد القيم غير الفارغة (Non-Null Count)، وإذا وجدنا رقماً أقل من إجمالي الصفوف، فهذا معناه أن هناك بيانات مفقودة تحتاج إلى معالجة سريعة قبل التحليل.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'Score': [80, np.nan, 90]})\nprint(df.info())",
+    "output": "Non-Null Count: 2 non-null..."
+   },
+   {
+    "h": "مقدمة عن دالة describe للإحصاء",
+    "text": "إذا كانت info تخبرنا عن شكل الجدول، فإن describe تخبرنا عن جوهر الأرقام بداخله! تخيل أنك مدرب فريق كرة قدم وتريد معرفة أطوال اللاعبين، متوسطهم، أقصر لاعب وأطول لاعب دفعة واحدة، هذا بالضبط ما تفعله دالة describe للأعمدة الرقمية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20, 30, 40]})\nprint(df.describe())",
+    "output": "       Points\ncount     4.0\nmean     25.0\nstd      12.9..."
+   },
+   {
+    "h": "معنى المؤشرات الإحصائية في describe",
+    "text": "عندما ننفذ describe، تظهر لنا كلمات مثل count (العدد)، mean (المتوسط الحسابي)، min (الحد الأدنى)، و max (الحد الأقصى)، بالإضافة إلى المئويات (Percentiles) التي توزع البيانات إلى أجزاء متساوية لفهم توزيع القيم بدقة عالية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Height': [120, 130, 140, 150]})\nprint(df.describe())",
+    "output": "mean = 135.0, min = 120.0, max = 150.0"
+   },
+   {
+    "h": "التعامل مع الأعمدة النصية في describe",
+    "text": "ماذا يحدث لو طبقنا describe على جدول يحتوي على نصوص؟ بايثون ذكية جداً، فهي تتجاهل الأرقام وتحسب إحصائيات مختلفة للنصوص مثل عدد القيم الفريدة (unique) والأكثر تكراراً (top)، مما يجعلها مفيدة جداً لتحليل بيانات الكلمات.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana', 'Apple']})\nprint(df.describe())",
+    "output": "unique: 2, top: Apple, freq: 2"
+   },
+   {
+    "h": "ربط info و describe في مشروع حقيقي",
+    "text": "في مشاريع علم البيانات الاحترافية، يبدأ المحلل دائماً بكتابة السطرين الكحليين: df.info() ثم df.describe(). هذا الثنائي الرائع يمنحه خريطة طريق كاملة للبيانات، فتتضح أمامه الصورة ويستطيع البدء في تنظيف البيانات ورسم الرسوم البيانية بثقة تامة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': ['X', 'Y', 'Z']})\nprint(df.info())\nprint(df.describe())",
+    "output": "Prints info summary and statistics summary."
+   }
+  ],
+  "reference": [
+   {
+    "name": "df.info()",
+    "desc": "يعرض ملخصاً لهيكل الجدول وأنواع البيانات والـ Non-Null."
+   },
+   {
+    "name": "df.describe()",
+    "desc": "ينتج ملخصاً إحصائياً للأعمدة الرقمية أو النصية."
+   },
+   {
+    "name": "mean",
+    "desc": "المتوسط الحسابي لمجموعة الأرقام."
+   },
+   {
+    "name": "count",
+    "desc": "عدد القيم الموجودة في العمود."
+   },
+   {
+    "name": "min / max",
+    "desc": "أقل قيمة وأكبر قيمة في العمود."
+   },
+   {
+    "name": "dtypes",
+    "desc": "خاصية تعرض نوع البيانات لكل عمود في الجدول."
+   },
+   {
+    "name": "std",
+    "desc": "الانحراف المعياري لمدى تباعد الأرقام عن المتوسط."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر بايثون لطباعة معلومات جدول بيانات اسمه df",
+    "a": "print(df.info())"
+   },
+   {
+    "q": "كيف تحسب الملخص الإحصائي لأعمدة جدول اسم متغيره my_data؟",
+    "a": "my_data.describe()"
+   },
+   {
+    "q": "ما هي الخاصية التي تعرض أنواع البيانات للأعمدة دون طباعة كل التفاصيل؟",
+    "a": "df.dtypes"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine having a box full of toys and wanting to know the type and count of each toy without opening every bag. First, we learn how to get a quick overview of data in a table.",
+   "To do this in Python using Pandas, we use a very simple command called info() to check data types and see if there are any missing values.",
+   "The info() method works by counting rows and columns, showing the name of each column and its data type, whether numbers or text, summarizing everything in a neat output.",
+   "For example, if you have a student grades table, you can type df.info() to check if any student forgot to write their score, which we call missing data.",
+   "Golden rule: Always start with info() to make sure your table is healthy and error-free before calculating any statistics.",
+   "In real life, data engineers and data scientists use this command at the very start of any huge project to understand the scale of data they are handling like in a bank or hospital."
+  ],
+  "example": "Imagine you have a table with toy prices in a shop, and you want to know the average price, highest price, and lowest price. We use an amazing method called describe(). This saves you hours of manual calculation and gives you a quick statistical summary of all table numbers in a single word.\n\nHere is the simple code:\nimport pandas as pd\ndata = {'Price': [10, 20, 30, 40]}\ndf = pd.DataFrame(data)\nprint(df.describe())",
+  "mistake": "A common mistake is forgetting to write the parentheses () after info or describe, which prints the method object itself in memory instead of executing it. The fix is to always ensure open and closed parentheses are added like this: df.info().",
+  "recap": "Today we learned how to use the info method to understand data types and structure, and the describe method to get a quick statistical summary of numbers with absolute ease.",
+  "q": [
+   {
+    "t": "What is the primary function of info() in Pandas?",
+    "o": [
+     "To draw colorful charts",
+     "To display an overview of columns, data types, and missing values",
+     "To delete all data from the table"
+    ],
+    "a": 1,
+    "why": "The info method is specially designed to give you the table structure and data types."
+   },
+   {
+    "t": "What does describe() give you when applied to numerical columns?",
+    "o": [
+     "A comprehensive statistical summary like mean, min, and max",
+     "The file names stored on the computer",
+     "To change the robot screen background"
+    ],
+    "a": 0,
+    "why": "Describe provides descriptive statistics for numerical values."
+   },
+   {
+    "t": "How do you correctly write the describe method in Python?",
+    "o": [
+     "df.describe",
+     "describe.df()",
+     "df.describe()"
+    ],
+    "a": 2,
+    "why": "The correct way is dataframe name followed by a dot, method name, and parentheses."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Completing Data Exploration Commands",
+   "goal": "Choose the correct word to complete the Python data exploration commands.",
+   "items": [
+    {
+     "text": "To check data structure and types, we write the command df.___( )",
+     "options": [
+      "describe",
+      "info",
+      "summary"
+     ],
+     "a": 1
+    },
+    {
+     "text": "To get a statistical summary of numbers, we use the command df.___( )",
+     "options": [
+      "describe",
+      "info",
+      "count"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To inspect data in Pandas, we must first import the library using import ___ as pd",
+     "options": [
+      "numpy",
+      "pandas",
+      "math"
+     ],
+     "a": 1
+    }
+   ],
+   "success": "Awesome! You have successfully mastered data exploration commands."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Data Exploration",
+    "text": "When we get a new dataset, it is like entering a dark room for the first time. We need a flashlight to see what is inside the boxes. In data science, info and describe are our magical flashlight that reveals all table secrets in mere seconds.",
+    "code": "import pandas as pd\n# Create a simple dataframe\ndf = pd.DataFrame({'Age': [10, 12, 14], 'Score': [85, 90, 95]})\nprint(df)",
+    "output": "   Age  Score\n0   10     85\n1   12     90\n2   14     95"
+   },
+   {
+    "h": "Using info() for Table Structure",
+    "text": "Imagine opening a book index to know the chapters and page numbers. The info() method does the exact same thing with a dataframe, telling us the row count, column names, and how many values exist in each column, helping us spot missing data.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona'], 'Score': [90, 95]})\nprint(df.info())",
+    "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 2 entries, 2 columns..."
+   },
+   {
+    "h": "Understanding Data Types in info",
+    "text": "Columns in a table are not all alike; some hold numbers like ages, while others hold words like names. The info method clarifies the data type for each column, such as int for numbers and object for text, so we know how to process them programmatically without errors.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Toy': ['Car', 'Doll'], 'Price': [50, 30]})\nprint(df.dtypes)",
+    "output": "Toy      object\nPrice     int64\ndtype: object"
+   },
+   {
+    "h": "Detecting Missing Values",
+    "text": "In real life, someone might forget to answer a question on a test. The info() method helps us see the Non-Null Count, and if we find a number lower than the total rows, it means there is missing data that needs quick handling before analysis.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'Score': [80, np.nan, 90]})\nprint(df.info())",
+    "output": "Non-Null Count: 2 non-null..."
+   },
+   {
+    "h": "Introduction to describe() for Statistics",
+    "text": "If info tells us about the table's shape, describe tells us about the core of its numbers! Imagine you are a soccer coach wanting to know player heights, average, shortest, and tallest player all at once—this is exactly what describe does for numerical columns.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20, 30, 40]})\nprint(df.describe())",
+    "output": "       Points\ncount     4.0\nmean     25.0\nstd      12.9..."
+   },
+   {
+    "h": "Meaning of Statistical Metrics in describe",
+    "text": "When we run describe, words appear like count, mean, min, and max, along with percentiles that split data into equal parts to understand value distribution with high precision.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Height': [120, 130, 140, 150]})\nprint(df.describe())",
+    "output": "mean = 135.0, min = 120.0, max = 150.0"
+   },
+   {
+    "h": "Handling Text Columns in describe",
+    "text": "What happens if we apply describe to a text-based table? Python is very smart; it skips numbers and calculates different statistics for text such as unique values count and top frequent items, making it super useful for word data analysis.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana', 'Apple']})\nprint(df.describe())",
+    "output": "unique: 2, top: Apple, freq: 2"
+   },
+   {
+    "h": "Combining info and describe in a Real Project",
+    "text": "In professional data science projects, an analyst always starts by writing two lines: df.info() then df.describe(). This wonderful duo gives them a complete data roadmap, making the picture clear so they can clean data and plot charts with absolute confidence.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': ['X', 'Y', 'Z']})\nprint(df.info())\nprint(df.describe())",
+    "output": "Prints info summary and statistics summary."
+   }
+  ],
+  "reference": [
+   {
+    "name": "df.info()",
+    "desc": "Displays a summary of table structure, data types, and non-null counts."
+   },
+   {
+    "name": "df.describe()",
+    "desc": "Generates a statistical summary for numerical or text columns."
+   },
+   {
+    "name": "mean",
+    "desc": "The arithmetic average of a set of numbers."
+   },
+   {
+    "name": "count",
+    "desc": "The number of non-empty values in a column."
+   },
+   {
+    "name": "min / max",
+    "desc": "The smallest and largest values in a column."
+   },
+   {
+    "name": "dtypes",
+    "desc": "Property displaying the data type of each column in the table."
+   },
+   {
+    "name": "std",
+    "desc": "Standard deviation measuring how spread out numbers are from the mean."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python command to print information for a dataframe named df",
+    "a": "print(df.info())"
+   },
+   {
+    "q": "How do you calculate the statistical summary for a table whose variable name is my_data?",
+    "a": "my_data.describe()"
+   },
+   {
+    "q": "What property displays column data types without printing all details?",
+    "a": "df.dtypes"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

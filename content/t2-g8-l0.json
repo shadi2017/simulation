@@ -1,0 +1,344 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً بك يا بطل البيانات! هل عيناك يوماً على جدول مرتب في برنامج إكسل يملؤه الصفوف والأعمدة؟ في مكتبة باندا (Pandas)، سنستخدم هياكل بيانات أساسية لتنظيم أرقامنا وكأننا نصنع جدولاً سحرياً مذهلاً داخل لغة بايثون.",
+   "لنفترض أننا نريد تخزين درجات مواد مدرسية أو أسماء ألعاب الفيديو المفضلة لديك مع تقييماتها، نبدأ أولاً بتركيب مكتبة باندا عبر الأمر الشهير import pandas as pd لتبدأ رحلة تحليل البيانات الذكية.",
+   "أول هيكل بيانات أساسي هو (Series)، وهو يشبه عموداً واحداً أو قائمة مفردة مزودة بأرقام توضيحية جانبية تسمى مؤشرات (Index). تخيلها كقائمة تسوق مرتبة تحتوي على أصناف وأرقامها بالتحديد.",
+   "الهيكل الثاني والأكثر قوة هو (DataFrame)، وهو جدول كامل ثنائي الأبعاد يتكون من صفوف وأعمدة متعددة، تماماً مثل جدول الحصص المدرسية أو جدول نتائج مباريات كرة القدم المفضل لديك تماماً.",
+   "قاعدة ذهبية: بينما تحفظ مصفوفة نبيوت (NumPy) نوع بيانات واحد لكل المصفوفة، فإن كل عمود في جدول باندا (DataFrame) يمكنه الاحتفاظ بنوع بيانات مستقل بذاته، مثل أرقام صحيحة، أو نصوص، أو تواريخ.",
+   "تستخدم هياكل باندا في الحياة اليومية لتنظيم بيانات طقس مدينتك، أو تحليل نتائج الألعاب الرياضية، أو حتى إدارة ميزانية مصروفك الشخصي بشكل رقمي منظم ومهني."
+  ],
+  "example": "دعنا نصنع جدولاً حقيقياً يجمع ألعابك المفضلة مع تقييماتها:\nimport pandas as pd\nmy_games = pd.DataFrame({'Game': ['Minecraft', 'Roblox'], 'Rating': [9.5, 9.0]})\nprint(my_games)\nالسبب: أنشأنا قاموساً بداخل DataFrame، حيث تحولت المفاتيح إلى أعمدة والقيم إلى صفوف، ليظهر الجدول مرتباً وجاهزاً للعرض.",
+  "mistake": "الخطأ الشائع هو نسيان استيراد المكتبة بالأمر 'import pandas as pd' قبل محاولة استخدام أي هيكل، والحل هو كتابة هذا السطر دائماً في أول الكود.",
+  "recap": "تعلمنا اليوم كيف تنظم باندا البيانات عبر هياكل Series ذات البعد الواحد و DataFrames ثنائية الأبعاد. وهما الأداة السحرية لكل مبرمج بيانات محترف.",
+  "q": [
+   {
+    "t": "ما هو الهيكل الذي يمثل عموداً واحداً أو قائمة مفردة في باندا؟",
+    "o": [
+     "DataFrame",
+     "Series",
+     "Array"
+    ],
+    "a": 1,
+    "why": "Series هو الهيكل المخصص للأبعاد الأحادية المكونة من قائمة مع مؤشرات."
+   },
+   {
+    "t": "كيف تصف هيكل DataFrame في باندا؟",
+    "o": [
+     "جدول ثنائي الأبعاد بصفوف وأعمدة",
+     "ملف نصي عادي",
+     "دالة رياضية بحتة"
+    ],
+    "a": 0,
+    "why": "DataFrame هو جدول بيانات ثنائي الأبعاد يحتوي على صفوف وأعمدة متنوعة الأنواع."
+   },
+   {
+    "t": "ما هو الأمر المستخدم عادة لاستيراد مكتبة باندا؟",
+    "o": [
+     "import pandas as pd",
+     "import pands",
+     "import table"
+    ],
+    "a": 0,
+    "why": "الاسم العرفي والمستعمل عالمياً لاستيراد باندا هو import pandas as pd."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة مفاهيم باندا",
+   "goal": "صل بين كل مصطلح في باندا ووصفه الصحيح.",
+   "pairs": [
+    [
+     "Series",
+     "هيكل أحادي البعد يشبه العمود الواحد"
+    ],
+    [
+     "DataFrame",
+     "جدول ثنائي الأبعاد بصفوف وأعمدة"
+    ],
+    [
+     "head()",
+     "عرض الصفوف الأولى من الجدول"
+    ],
+    [
+     "describe()",
+     "إعطاء ملخص إحصائي سريع للبيانات"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت ربط مفاهيم باندا بمهارة تامة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة إلى مكتبة باندا",
+    "text": "مكتبة باندا هي الصديق الأفضل لكل محلل بيانات في بايثون، فهي تحول الأرقام المبعثرة إلى جداول منظمة تشبه تماماً الجداول الموجودة في برامج الحاسوب المكتبية، مما يسهل قراءتها وفهمها للأطفال والكبار على حد سواء.",
+    "code": "import pandas as pd\nprint(pd.__version__)",
+    "output": "2.2.0"
+   },
+   {
+    "h": "فهم هياكل البيانات (Data Structures)",
+    "text": "توفر باندا نوعين أساسيين من الهياكل للتعامل مع البيانات: الأول هو Series للأبعاد الأحادية، والثاني هو DataFrame للأبعاد الثنائية، وكلاهما يمنحك قوة فائقة في ترتيب وتعديل المعلومات الرقمية والنصية.",
+    "code": "import pandas as pd\ns = pd.Series([10, 20, 30])\nprint(s)",
+    "output": "0    10\n1    20\n2    30\ndtype: int64"
+   },
+   {
+    "h": "إنشاء هيكل Series",
+    "text": "السيريس تشبه قائمة تسوق طولية، حيث يكون لكل عنصر رقم تعريفي جانبي يبدأ عادة من الصفر يسمى Index، ويمكن أن تحتوي على أرقام أو نصوص بكل سهولة.",
+    "code": "import pandas as pd\nfruits = pd.Series(['تفاح', 'موز', 'مانجو'])\nprint(fruits)",
+    "output": "0    تفاح\n1     موز\n2   مانجو\ndtype: object"
+   },
+   {
+    "h": "إنشاء جدول DataFrame",
+    "text": "جدول البيانات (DataFrame) يشبه لوحة نتائج الألعاب الرياضية؛ يحتوي على أعمدة بأسماء واضحة وصفوف تحمل البيانات. يمكنك صنعه بسهولة باستخدام قاموس (Dictionary) من بايثون.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Game': ['Roblox', 'Minecraft'], 'Score': [90, 95]})\nprint(df)",
+    "output": "        Game  Score\n0     Roblox     90\n1  Minecraft     95"
+   },
+   {
+    "h": "فحص أنواع البيانات (dtypes)",
+    "text": "في جداول باندا، كل عمود يمكنه الاحتفاظ بنوع بيانات مستقل؛ فقد يكون العمود الأول أرقاماً صحيحة والثاني نصوصاً. خاصية dtypes تتيح لك معرفة نوع البيانات في كل عمود بوضوح.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali'], 'Age': [14]})\nprint(df.dtypes)",
+    "output": "Name    object\nAge      int64\ndtype: object"
+   },
+   {
+    "h": "معاينة البداية والنهاية عبر head و tail",
+    "text": "إذا كان لديك جدول ضخم جداً يحتوي على آلاف الصفوف، يمكنك استخدام الدالة head لرؤية أول خمسة صفوف، أو الدالة tail لرؤية الصفوف الأخيرة، تماماً كمعاينة صفحة من كتاب ضخم.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 4, 5]})\nprint(df.head(2))",
+    "output": "   A\n0  1\n1  2"
+   },
+   {
+    "h": "استخراج المؤشرات والأعمدة",
+    "text": "يمكنك معرفة أسماء أعمدة الجدول عبر أمر columns، أو التعرف على مؤشرات الصفوف عبر أمر index، مما يمنحك تحكماً كاملاً وسريعاً في بنية الجدول الأساسية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1], 'B': [2]})\nprint(df.columns)",
+    "output": "Index(['A', 'B'], dtype='str')"
+   },
+   {
+    "h": "الملخص الإحصائي السريع بـ describe",
+    "text": "هل تريد معرفة المتوسط والحد الأدنى والأقصى لبياناتك بلمح البصر؟ الدالة describe تقوم بهذا السحر الرياضي لك وتخرج لك تقريراً إحصائياً كاملاً عن الأعمدة الرقمية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20, 30]})\nprint(df.describe())",
+    "output": "          Points\ncount   3.000000\nmean   20.000000\nstd    10.000000\nmin    10.000000\n25%    15.000000\n50%    20.000000\n75%    25.000000\nmax    30.000000"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import pandas as pd",
+    "desc": "استيراد مكتبة باندا بالاسم المختصر pd"
+   },
+   {
+    "name": "pd.Series()",
+    "desc": "إنشاء هيكل بيانات أحادي البعد مع مؤشرات"
+   },
+   {
+    "name": "pd.DataFrame()",
+    "desc": "إنشاء جدول ثنائي الأبعاد من صفوف وأعمدة"
+   },
+   {
+    "name": "df.head()",
+    "desc": "عرض الصفوف الأولى من الجدول"
+   },
+   {
+    "name": "df.tail()",
+    "desc": "عرض الصفوف الأخيرة من الجدول"
+   },
+   {
+    "name": "df.dtypes",
+    "desc": "معرفة نوع البيانات في كل عمود"
+   },
+   {
+    "name": "df.describe()",
+    "desc": "عرض ملخص إحصائي سريع للأرقام"
+   },
+   {
+    "name": "df.columns",
+    "desc": "الحصول على أسماء أعمدة الجدول"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود استيراد باندا وإنشاء Series تحتوي على الأرقام 5 و 10 و 15.",
+    "a": "import pandas as pd\ns = pd.Series([5, 10, 15])"
+   },
+   {
+    "q": "كيف تعرض أول 3 صفوف من جدول بيانات باسم df؟",
+    "a": "print(df.head(3))"
+   },
+   {
+    "q": "ما هي الدالة التي تعطينا ملخصاً إحصائياً سريعاً لبيانات الجدول؟",
+    "a": "df.describe()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome, data champion! Have you ever looked at a neat spreadsheet filled with rows and columns? In Pandas, we use core data structures to organize numbers as if we were building a magical, amazing table inside Python.",
+   "Suppose we want to store school subject grades or your favorite video game ratings. We first import the Pandas library using the famous command import pandas as pd to begin our smart data analysis journey.",
+   "The first fundamental data structure is the Series, which looks like a single column or list equipped with side labels called indices. Imagine it as an ordered shopping list containing items and exact numbers.",
+   "The second and more powerful structure is the DataFrame, a complete two-dimensional table made of multiple rows and columns, just like a school timetable or your favorite football match results table.",
+   "Gold rule: While a NumPy array holds a single data type for the whole array, every column in a Pandas DataFrame can hold its own independent data type, such as integers, strings, or dates.",
+   "Pandas structures are used in real life to organize your city's weather data, analyze sports stats, or even manage your personal allowance budget in a digitally organized and professional way."
+  ],
+  "example": "Let us build a real table combining your favorite games and their ratings:\nimport pandas as pd\nmy_games = pd.DataFrame({'Game': ['Minecraft', 'Roblox'], 'Rating': [9.5, 9.0]})\nprint(my_games)\nReasoning: We created a dictionary inside a DataFrame, where keys became columns and values became rows, making the table neat and ready to display.",
+  "mistake": "A common mistake is forgetting to import the library with 'import pandas as pd' before trying to use any structure. The fix is to always write this line at the very top of your code.",
+  "recap": "Today we learned how Pandas organizes data using one-dimensional Series and two-dimensional DataFrames. They are the magical tool for every professional data programmer.",
+  "q": [
+   {
+    "t": "Which structure represents a single column or single list in Pandas?",
+    "o": [
+     "DataFrame",
+     "Series",
+     "Array"
+    ],
+    "a": 1,
+    "why": "Series is the dedicated structure for one-dimensional arrays with labeled indices."
+   },
+   {
+    "t": "How would you describe a DataFrame in Pandas?",
+    "o": [
+     "A two-dimensional table with rows and columns",
+     "A plain text file",
+     "A pure mathematical function"
+    ],
+    "a": 0,
+    "why": "DataFrame is a 2D data structure that holds data like a table with rows and columns."
+   },
+   {
+    "t": "What is the customary command to import the Pandas library?",
+    "o": [
+     "import pandas as pd",
+     "import pands",
+     "import table"
+    ],
+    "a": 0,
+    "why": "The standard and universally used convention for importing Pandas is import pandas as pd."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Pandas Concepts Match",
+   "goal": "Match each Pandas concept with its correct description.",
+   "pairs": [
+    [
+     "Series",
+     "A one-dimensional labeled array holding any data type"
+    ],
+    [
+     "DataFrame",
+     "A two-dimensional table with rows and columns"
+    ],
+    [
+     "head()",
+     "View the top rows of the frame"
+    ],
+    [
+     "describe()",
+     "Show a quick statistical summary of your data"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered matching Pandas concepts!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Pandas",
+    "text": "Pandas is every data analyst's best friend in Python. It transforms scattered numbers into organized tables similar to desktop spreadsheet software, making data easy to read and understand for kids and adults alike.",
+    "code": "import pandas as pd\nprint(pd.__version__)",
+    "output": "2.2.0"
+   },
+   {
+    "h": "Understanding Data Structures",
+    "text": "Pandas provides two main types of classes for handling data: Series for one dimension, and DataFrame for two dimensions. Both give you supreme power to organize and manipulate numerical and textual information.",
+    "code": "import pandas as pd\ns = pd.Series([10, 20, 30])\nprint(s)",
+    "output": "0    10\n1    20\n2    30\ndtype: int64"
+   },
+   {
+    "h": "Creating a Series",
+    "text": "A Series is like a vertical shopping list where each item has a side identification number starting at zero called an Index. It can easily contain numbers or strings.",
+    "code": "import pandas as pd\nfruits = pd.Series(['Apple', 'Banana', 'Mango'])\nprint(fruits)",
+    "output": "0     Apple\n1    Banana\n2     Mango\ndtype: object"
+   },
+   {
+    "h": "Creating a DataFrame",
+    "text": "A DataFrame is like a video game scoreboard; it contains columns with clear names and rows carrying data. You can easily build one using a Python dictionary.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Game': ['Roblox', 'Minecraft'], 'Score': [90, 95]})\nprint(df)",
+    "output": "        Game  Score\n0     Roblox     90\n1  Minecraft     95"
+   },
+   {
+    "h": "Checking Data Types with dtypes",
+    "text": "In Pandas tables, each column can hold an independent data type; the first column might be integers while another is strings. The dtypes attribute lets you clearly inspect the data type of every column.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali'], 'Age': [14]})\nprint(df.dtypes)",
+    "output": "Name    object\nAge      int64\ndtype: object"
+   },
+   {
+    "h": "Viewing Data with head and tail",
+    "text": "If you have a massive table with thousands of rows, you can use the head() method to view the top rows, or tail() to view the bottom rows, just like previewing a page from a giant book.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 4, 5]})\nprint(df.head(2))",
+    "output": "   A\n0  1\n1  2"
+   },
+   {
+    "h": "Exploring Index and Columns",
+    "text": "You can inspect table column names using the columns attribute, or check row labels using index, giving you complete and rapid control over the table's underlying structure.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1], 'B': [2]})\nprint(df.columns)",
+    "output": "Index(['A', 'B'], dtype='str')"
+   },
+   {
+    "h": "Quick Statistical Summary with describe",
+    "text": "Want to know the mean, minimum, and maximum of your data in the blink of an eye? The describe() method performs this math magic for you, outputting a complete statistical report on numeric columns.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20, 30]})\nprint(df.describe())",
+    "output": "          Points\ncount   3.000000\nmean   20.000000\nstd    10.000000\nmin    10.000000\n25%    15.000000\n50%    20.000000\n75%    25.000000\nmax    30.000000"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import pandas as pd",
+    "desc": "Import the pandas library with standard alias pd"
+   },
+   {
+    "name": "pd.Series()",
+    "desc": "Create a one-dimensional labeled array"
+   },
+   {
+    "name": "pd.DataFrame()",
+    "desc": "Create a two-dimensional table of rows and columns"
+   },
+   {
+    "name": "df.head()",
+    "desc": "View the top rows of the DataFrame"
+   },
+   {
+    "name": "df.tail()",
+    "desc": "View the bottom rows of the DataFrame"
+   },
+   {
+    "name": "df.dtypes",
+    "desc": "Check the data type of each column"
+   },
+   {
+    "name": "df.describe()",
+    "desc": "Display a quick statistical summary of numeric data"
+   },
+   {
+    "name": "df.columns",
+    "desc": "Retrieve the column labels of the DataFrame"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to import Pandas and create a Series containing numbers 5, 10, and 15.",
+    "a": "import pandas as pd\ns = pd.Series([5, 10, 15])"
+   },
+   {
+    "q": "How do you view the first 3 rows of a DataFrame named df?",
+    "a": "print(df.head(3))"
+   },
+   {
+    "q": "What method gives us a quick statistical summary of table data?",
+    "a": "df.describe()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

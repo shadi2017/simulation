@@ -1,0 +1,324 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تريد إرسال صندوق ألعاب إلى صديقك عبر البريد، لكن البريد لا يفهم لغة ألعابك الداخلية، لذا عليك تغليف الألعاب في صندوق كرتون عادي مطبوع عليه كتابة واضحة يفهمها الجميع. هذا هو بالضبط ما تفعله صيغة جي سون (JSON)؛ فهي تحول بيانات برمجتك المعقدة إلى نص بسيط يمكن لأي جهاز قراءته.",
+   "لنفترض أن لديك كائنًا في جافاسكريبت يمثل لاعبك المفضل: `let player = {name: 'Ali', score: 100};`. لكي نرسل هذا الكائن عبر الإنترنت أو نحفظه، نستعمل أداة التحويل `JSON.stringify(player)`، لتصبح النتيجة نصًا مكتوبًا بين علامات التنصيص هكذا: `'{\"name\":\"Ali\",\"score\":100}'`.",
+   "كيف تعمل هذه العملية؟ الكائنات البرمجية والأقواس والأشياء الحية داخل كودك لا تسافر بسهولة عبر الأسلاك، فتحويلها إلى نصوص (Stringification) يجعلها مسطحة وسهلة النقل، تماماً مثل طي ورقة بيضاء وإرسالها في مظروف بريدي لتبحر بسلاسة عبر شبكة الإنترنت العالمية.",
+   "وعندما يستقبل صديقك أو جهازك الآخر هذا النص البريدي، يحتاج إلى تحويله مرة أخرى إلى كائن حقيقي يستطيع اللعب به وتعديله. وهنا يأتي دور أداة العكس `JSON.parse(text)`، والتي تحول النص القادم من الإنترنت إلى كائن مفيد يحتوي على خصائص ودوال يمكننا استخدامها فوراً في اللعبة.",
+   "قاعدة ذهبية مفيدة دائماً: تذكر أن الأسماء والخصائص داخل نصوص جي سون يجب أن تُوضع دائماً بين علامات تنصيص مزدوجة (`\"`)، وإلا سيغضب المفسر البريدي ويرفض قراءة البيانات، كما أننا نستخدم التخزين المحلي (Web Storage) لحفظ هذه النصوص وجعلها تبقى حتى بعد إغلاق المتصفح.",
+   "في التطبيقات الواقعية الكبرى مثل يوتيوب أو ألعاب الإنترنت، عندما تفتح متصفحك لجلب قائمة الفيديوهات أو مستويات اللعبة، فإن الخادم (Server) يرسل البيانات في هيئة ملفات JSON، ومتصفحك يقوم بتحويلها وفهمها فورا لتستمتع بمشاهدة الفيديوهات واللعب بسلاسة ودون انقطاع."
+  ],
+  "example": "لنفترض أننا نصمم مرحلة جديدة في لعبة مغامرات سحرية، ولدينا كائن يمثل تفاصيل المرحلة: `let levelData = { world: 3, boss: \"Dragon\", items: 5 };`. نحتاج لتخزين هذه البيانات في ذاكرة المتصفح ليراها اللاعب في المرة القادمة. أولاً، نقوم بتحويل الكائن إلى نص باستخدام `let jsonString = JSON.stringify(levelData);`. ثانياً، نحفظه في التخزين المحلي هكذا: `localStorage.setItem(\"currentLevel\", jsonString);`. بهذه الطريقة الذكية، نضمن بقاء مستوى اللاعب محفوظاً حتى لو أغلق المتصفح تماماً.",
+  "mistake": "الخطأ الشائع هو محاولة حفظ كائن جافاسكريبت مباشرة في الذاكرة المحلية هكذا: `localStorage.setItem('data', myObject);`، فتظهر النتيجة على شكل نص غير مفيد `[object Object]`. الحل هو تحويل الكائن أولاً إلى نص بواسطة `JSON.stringify()` قبل حفظه.",
+  "recap": "صيغة جي سون هي طريقة ذكية لتمثيل البيانات كنصوص بسيطة يمكن نقلها عبر الإنترنت وحفظها في التخزين المحلي. نستخدم stringify لتحويل الكائنات إلى نصوص، وparse لتحويل النصوص إلى كائنات.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لـ JSON.stringify في لغة جافاسكريبت؟",
+    "o": [
+     "تحويل كائن برمجي إلى نص عادي",
+     "تحويل نص عادي إلى كائن برمجي",
+     "حذف البيانات من التخزين المحلي"
+    ],
+    "a": 0,
+    "why": "الدالة stringify تأخذ الكائنات وتحولها إلى نصوص لتسهيل نقلها."
+   },
+   {
+    "t": "كيف نقوم بإعادة النص المستقبل من الإنترنت إلى كائن يمكننا استخدامه؟",
+    "o": [
+     "بواسطة localStorage",
+     "بواسطة JSON.parse",
+     "بواسطة JSON.stringify"
+    ],
+    "a": 1,
+    "why": "نستخدم parse لتحليل النصوص وتحويلها إلى كائنات برمجية قابلة للقراءة."
+   },
+   {
+    "t": "لماذا نستخدم التخزين المحلي (Web Storage) مع بيانات JSON؟",
+    "o": [
+     "لجعل شاشة المتصفح تلون باللون الأزرق",
+     "لحفظ بيانات اللعبة والإعدادات حتى بعد إغلاق المتصفح",
+     "لزيادة سرعة الإنترنت في المنزل"
+    ],
+    "a": 1,
+    "why": "التخزين المحلي يحفظ البيانات بشكل دائم على جهاز المستخدم لاسترجاعها لاحقاً."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة أدوات ومفاهيم JSON",
+   "goal": "صل كل مصطلح من مفاهيم بيانات جي سون بوظيفته الصحيحة",
+   "pairs": [
+    [
+     "JSON.stringify",
+     "تحويل كائن إلى نص"
+    ],
+    [
+     "JSON.parse",
+     "تحويل نص إلى كائن"
+    ],
+    [
+     "localStorage",
+     "التخزين المحلي في المتصفح"
+    ],
+    [
+     "JSON format",
+     "صيغة نصية لتبادل البيانات"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت ربط مفاهيم تنسيق ونقل البيانات بكل مهارة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي صيغة JSON؟",
+    "text": "تشبه صيغة JSON صندوق البريد المنظم بدقة، فهي طريقة لكتابة البيانات في شكل نصوص يفهمها أي برنامج حاسوبي في العالم، بغض النظر عن لغة برمجته. نستخدمها لنقل المعلومات بين خوادم الإنترنت وبرامجنا بكل سهولة.",
+    "code": "<div id='out'></div><script>let info = {game: 'Hero', active: true}; document.getElementById('out').innerText = JSON.stringify(info);</script>",
+    "output": "تعرض الصفحة بيانات الكائن محولة إلى نص JSON."
+   },
+   {
+    "h": "تحويل الكائنات إلى نصوص بـ stringify",
+    "text": "لكي ترسل شيئاً عبر الإنترنت، يجب أن يكون على شكل نص مسطح. الدالة `JSON.stringify()` تأخذ كائن جافاسكريبت الخاص بك وتلفه في غلاف نصي مرتب، تماماً مثل تغليف لعبتك المفضلة في صندوق كرتوني قبل شحنها بالبريد.",
+    "code": "<div id='res'></div><script>let player = {name: 'Sami', level: 5}; let text = JSON.stringify(player); document.getElementById('res').innerText = text;</script>",
+    "output": "تظهر بيانات اللاعب كصيغة نصية داخل المتصفح."
+   },
+   {
+    "h": "فهم النصوص واسترجاعها بـ parse",
+    "text": "عندما يستقبل حاسوبك صندوق البيانات النصي، لا يستطيع اللعب به مباشرة. هنا يأتي دور `JSON.parse()` التي تفتح الصندوق النصي وتعيد بناء الكائن البرمجي الأصلي، لتصبح قادرا على قراءة خصائصه وتعديلها بكل راحة.",
+    "code": "<div id='box'></div><script>let str = '{\"score\":500}'; let obj = JSON.parse(str); document.getElementById('box').innerText = obj.score;</script>",
+    "output": "تستخرج الصفحة قيمة النقاط من النص المحول."
+   },
+   {
+    "h": "التخزين المحلي Web Storage",
+    "text": "هل أردت يوماً أن تتذكر لعبتك أين وصلت حتى بعد إغلاق المتصفح؟ التخزين المحلي يعمل مثل دفتر ملاحظات سحري في متصفحك، يمكنك من حفظ نصوص JSON واسترجاعها في أي وقت يفتح فيه المستخدم اللعبة مجدداً.",
+    "code": "<div id='st'></div><script>localStorage.setItem('user', 'Amina'); document.getElementById('st').innerText = localStorage.getItem('user');</script>",
+    "output": "تحفظ الصفحة اسم المستخدم وتسترجعه من الذاكرة المحلية."
+   },
+   {
+    "h": "حفظ كائنات JSON في التخزين",
+    "text": "بما أن التخزين المحلي لا يحفظ سوى النصوص، فإننا نجمع بين مهارتين: نحول الكائن إلى نص بواسطة `stringify` ثم نخزنه في `localStorage`، وعندما نحتاجه نسترجعه ونحوله مرة أخرى بـ `parse`.",
+    "code": "<div id='flow'></div><script>let data = {coin: 10}; localStorage.setItem('save', JSON.stringify(data)); let loaded = JSON.parse(localStorage.getItem('save')); document.getElementById('flow').innerText = loaded.coin;</script>",
+    "output": "تخزن البيانات كـ JSON وتسترجع بنجاح."
+   },
+   {
+    "h": "قواعد كتابة النصوص البرمجية لـ JSON",
+    "text": "تحتوي صيغة JSON على قوانين صارمة وصغيرة: يجب أن تكون مفاتيح الخصائص محاطة بعلامات تنصيص مزدوجة، ويُمنع ترك فاصلة زائدة في نهاية القوائم، فالحاسوب دقيق جداً ولا يقبل الأخطاء الإملائية الصغيرة في هذه الصيغة.",
+    "code": "<div id='rule'></div><script>let correctJson = '{\"item\": \"Sword\"}'; let parsed = JSON.parse(correctJson); document.getElementById('rule').innerText = parsed.item;</script>",
+    "output": "تعمل قراءة بيانات JSON بدقة وسلاسة."
+   },
+   {
+    "h": "جلب البيانات من خوادم الإنترنت",
+    "text": "في العالم الحقيقي، تتحدث التطبيقات مع خوادم ضخمة عبر الإنترنت. هذه الخوادم ترسل إجاباتها على هيئة نصوص JSON طويلة (مثل أسعار الطقس أو قوائم الأصدقاء)، ومهمة برمجتك هي استقبالها وتحليلها لتحديث الشاشة أمام المستخدم.",
+    "code": "<div id='srv'></div><script>let serverData = '{\"status\": \"online\", \"users\": 42}'; let res = JSON.parse(serverData); document.getElementById('srv').innerText = res.status;</script>",
+    "output": "تعرض الشاشة حالة الخادم الواردة من البيانات النصية."
+   },
+   {
+    "h": "بناء تطبيق صغير متكامل",
+    "text": "الآن يمكنك تجميع كل ما تعلمته: إنشاء كائن، تحويله إلى JSON، حفظه في التخزين المحلي، ثم استرجاعه وتحليله لعرضه على الشاشة. هذا هو أساس بناء التطبيقات ومواقع الويب الحديثة والذكية!",
+    "code": "<div id='app'></div><script>let settings = {theme: 'dark'}; localStorage.setItem('s', JSON.stringify(settings)); let appSet = JSON.parse(localStorage.getItem('s')); document.getElementById('app').innerText = appSet.theme;</script>",
+    "output": "يتم حفظ واسترجاع إعدادات المظهر بنجاح تام."
+   }
+  ],
+  "reference": [
+   {
+    "name": "JSON.stringify()",
+    "desc": "يحول كائن جافاسكريبت إلى نص بصيغة JSON."
+   },
+   {
+    "name": "JSON.parse()",
+    "desc": "يحول نص JSON إلى كائن جافاسكريبت قابل للقراءة."
+   },
+   {
+    "name": "localStorage",
+    "desc": "أداة لتخزين البيانات بشكل دائم في المتصفح."
+   },
+   {
+    "name": "setItem()",
+    "desc": "دالة لحفظ قيمة نصية مرتبطة بمفتاح في التخزين المحلي."
+   },
+   {
+    "name": "getItem()",
+    "desc": "دالة لاسترجاع القيمة المخزنة باستخدام مفتاحها."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليمة برمجية لتحويل كائن اسمه user يحتوي على خاصية name إلى نص JSON مخزّن في متغير باسم jsonText.",
+    "a": "let jsonText = JSON.stringify(user);"
+   },
+   {
+    "q": "كيف تحول نصاً مخزناً في متغير rawData إلى كائن جافاسكريبت وتخزينه في متغير obj؟",
+    "a": "let obj = JSON.parse(rawData);"
+   },
+   {
+    "q": "اكتب كوداً لحفظ نص JSON باسم 'gameData' في التخزين المحلي باستخدام مفتاح 'save1'.",
+    "a": "localStorage.setItem('save1', gameData);"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you want to ship a box of toys to your friend, but the mail service doesn't understand your inner game language, so you must pack the toys into a standard cardboard box with clear writing everyone understands. This is exactly what JSON does; it turns your complex programming data into simple text that any device can read.",
+   "Suppose you have an object in JavaScript representing your favorite player: `let player = {name: 'Ali', score: 100};`. To send this object across the internet or save it, we use the conversion tool `JSON.stringify(player)`, resulting in text wrapped in quotes like this: `'{\"name\":\"Ali\",\"score\":100}'`.",
+   "How does this work? Code objects and brackets don't travel easily across wires, so turning them into text (stringification) makes them flat and easy to transport, much like folding a white paper and putting it in an envelope to sail smoothly across the global internet.",
+   "When your friend or another device receives this text packet, they need to turn it back into a real object they can play with and modify. This is where the reverse tool `JSON.parse(text)` comes in, turning incoming text from the internet into a useful object with properties and methods we can immediately use in our game.",
+   "A golden rule to always remember: keys and property names inside JSON strings must always be enclosed in double quotes (`\"`), otherwise the parser will get angry and refuse to read the data. We also use Web Storage to save these strings so they persist even after closing the browser.",
+   "In major real-world applications like YouTube or online games, when you open your browser to fetch video lists or game levels, the server sends data as JSON files, and your browser immediately parses and understands them so you can watch videos and play smoothly without interruption."
+  ],
+  "example": "Suppose we are designing a new stage in a magical adventure game, and we have an object representing the stage details: `let levelData = { world: 3, boss: \"Dragon\", items: 5 };`. We need to store this data in browser memory so the player sees it next time. First, we convert the object to text using `let jsonString = JSON.stringify(levelData);`. Second, we save it in local storage like this: `localStorage.setItem(\"currentLevel\", jsonString);`. This smart method ensures the player's level progress remains saved even if they close the browser completely.",
+  "mistake": "A common mistake is trying to save a JavaScript object directly into local storage like this: `localStorage.setItem('data', myObject);`, which results in unhelpful text like `[object Object]`. The fix is to first convert the object into a text string using `JSON.stringify()` before saving it.",
+  "recap": "JSON is a clever way to represent data as simple text that can be sent over the internet and saved in web storage. We use stringify to turn objects into text, and parse to turn text back into objects.",
+  "q": [
+   {
+    "t": "What is the primary function of JSON.stringify in JavaScript?",
+    "o": [
+     "To convert a programming object into a plain text string",
+     "To convert a plain text string into a programming object",
+     "To delete data from local storage"
+    ],
+    "a": 0,
+    "why": "The stringify method takes objects and turns them into text for easy transmission."
+   },
+   {
+    "t": "How do we turn a text string received from the internet back into a usable object?",
+    "o": [
+     "Using localStorage",
+     "Using JSON.parse",
+     "Using JSON.stringify"
+    ],
+    "a": 1,
+    "why": "We use parse to analyze text strings and convert them into readable programming objects."
+   },
+   {
+    "t": "Why do we use Web Storage with JSON data?",
+    "o": [
+     "To turn the browser screen blue",
+     "To save game data and settings even after closing the browser",
+     "To increase home internet speed"
+    ],
+    "a": 1,
+    "why": "Local storage saves data persistently on the user's device to retrieve later."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "JSON Tools and Concepts Match",
+   "goal": "Match each JSON concept or tool with its correct description",
+   "pairs": [
+    [
+     "JSON.stringify",
+     "Convert object to text"
+    ],
+    [
+     "JSON.parse",
+     "Convert text to object"
+    ],
+    [
+     "localStorage",
+     "Browser persistent storage"
+    ],
+    [
+     "JSON format",
+     "Text format for data exchange"
+    ]
+   ],
+   "success": "Brilliant! You have mastered linking data formatting and transmission concepts!"
+  },
+  "sections": [
+   {
+    "h": "What is the JSON Format?",
+    "text": "JSON acts like a neatly organized mail box; it is a way to write data in text form that any computer program in the world understands, regardless of programming language. We use it to move information between internet servers and our programs easily.",
+    "code": "<div id='out'></div><script>let info = {game: 'Hero', active: true}; document.getElementById('out').innerText = JSON.stringify(info);</script>",
+    "output": "The page displays the object data converted into JSON text."
+   },
+   {
+    "h": "Converting Objects to Text with stringify",
+    "text": "To send something across the internet, it must be in a flat text format. The `JSON.stringify()` method takes your JavaScript object and wraps it in a neat text wrapper, much like packaging your favorite toy in a cardboard box before shipping it by mail.",
+    "code": "<div id='res'></div><script>let player = {name: 'Sami', level: 5}; let text = JSON.stringify(player); document.getElementById('res').innerText = text;</script>",
+    "output": "The player data appears as text string format inside the browser."
+   },
+   {
+    "h": "Understanding Text and Restoring with parse",
+    "text": "When your computer receives the text data box, it cannot play with it directly. This is where `JSON.parse()` steps in, opening the text box and rebuilding the original programming object so you can read and modify its properties comfortably.",
+    "code": "<div id='box'></div><script>let str = '{\"score\":500}'; let obj = JSON.parse(str); document.getElementById('box').innerText = obj.score;</script>",
+    "output": "The page extracts the score value from the parsed text."
+   },
+   {
+    "h": "Web Storage",
+    "text": "Have you ever wanted your game to remember where you left off even after closing the browser? Local storage works like a magical notepad in your browser, letting you save JSON text strings and retrieve them whenever the user opens the game again.",
+    "code": "<div id='st'></div><script>localStorage.setItem('user', 'Amina'); document.getElementById('st').innerText = localStorage.getItem('user');</script>",
+    "output": "The page saves and retrieves the username from local memory."
+   },
+   {
+    "h": "Saving JSON Objects in Storage",
+    "text": "Since local storage only saves strings, we combine two skills: we turn the object into text using `stringify` then save it in `localStorage`, and when we need it back, we retrieve and convert it using `parse`.",
+    "code": "<div id='flow'></div><script>let data = {coin: 10}; localStorage.setItem('save', JSON.stringify(data)); let loaded = JSON.parse(localStorage.getItem('save')); document.getElementById('flow').innerText = loaded.coin;</script>",
+    "output": "Data is stored as JSON and retrieved successfully."
+   },
+   {
+    "h": "JSON Formatting Rules",
+    "text": "JSON has strict and small rules: property keys must be enclosed in double quotes, and trailing commas at the end of lists are forbidden. The computer is extremely precise and does not tolerate small typos in this format.",
+    "code": "<div id='rule'></div><script>let correctJson = '{\"item\": \"Sword\"}'; let parsed = JSON.parse(correctJson); document.getElementById('rule').innerText = parsed.item;</script>",
+    "output": "JSON data parsing works accurately and smoothly."
+   },
+   {
+    "h": "Fetching Data from Internet Servers",
+    "text": "In the real world, apps talk to massive servers over the internet. These servers send responses as long JSON strings (like weather prices or friend lists), and your program's job is to receive and parse them to update the screen for the user.",
+    "code": "<div id='srv'></div><script>let serverData = '{\"status\": \"online\", \"users\": 42}'; let res = JSON.parse(serverData); document.getElementById('srv').innerText = res.status;</script>",
+    "output": "The screen shows the server status derived from text data."
+   },
+   {
+    "h": "Building a Small Complete App",
+    "text": "Now you can assemble everything you've learned: creating an object, converting it to JSON, saving it to local storage, then retrieving and parsing it to display on screen. This is the foundation of building modern, smart web applications!",
+    "code": "<div id='app'></div><script>let settings = {theme: 'dark'}; localStorage.setItem('s', JSON.stringify(settings)); let appSet = JSON.parse(localStorage.getItem('s')); document.getElementById('app').innerText = appSet.theme;</script>",
+    "output": "Theme settings are saved and retrieved with total success."
+   }
+  ],
+  "reference": [
+   {
+    "name": "JSON.stringify()",
+    "desc": "Converts a JavaScript object into a JSON text string."
+   },
+   {
+    "name": "JSON.parse()",
+    "desc": "Converts a JSON text string into a readable JavaScript object."
+   },
+   {
+    "name": "localStorage",
+    "desc": "A tool to store persistent data in the browser."
+   },
+   {
+    "name": "setItem()",
+    "desc": "Function to save a text value linked to a key in local storage."
+   },
+   {
+    "name": "getItem()",
+    "desc": "Function to retrieve a stored value using its key."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to convert an object named user containing a property name into a JSON string stored in a variable named jsonText.",
+    "a": "let jsonText = JSON.stringify(user);"
+   },
+   {
+    "q": "How do you convert a text string stored in rawData into a JavaScript object and store it in a variable obj?",
+    "a": "let obj = JSON.parse(rawData);"
+   },
+   {
+    "q": "Write code to save a JSON string named gameData into local storage using the key 'save1'.",
+    "a": "localStorage.setItem('save1', gameData);"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript data types and data structures",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures"
+  },
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "في عالم البيانات الكبير، نحتاج أحياناً لقراءة ملفات خارجية مخزنة بصيغة سي إس في (CSV)، وهي تشبه جداً الجداول المنظمة بصفوف وأعمدة مفصولة بفواصل.",
+   "لجلب هذه البيانات إلى بايثون واستخدامها، نبدأ دائماً باستيراد مكتبة بانداز الشهيرة عبر كتابة الكلمة المفتاحية import pandas as pd.",
+   "تعتبر دالة read_csv() الأداة السحرية داخل مكتبة بانداز لقراءة ملفات النصوص وتحويلها مباشرة إلى جدول منظم يُعرف باسم DataFrame.",
+   "على سبيل المثال، لقراءة ملف حالة الطقس والمسمى 'weather.csv'، نكتب بكل بساطة الدالة مع اسم الملف بين أقواس وعلامات تنصيص.",
+   "القاعدة الذهبية هنا هي حفظ النتيجة داخل متغير واضح، مثل weather_df = pd.read_csv('weather.csv')، لسهولة استخدام الجدول لاحقاً.",
+   "تستخدم هذه الطريقة في الحياة اليومية لتحليل درجات الحرارة، مبيعات الألعاب، أو حتى نتائج مباريات كرة القدم المخزنة في أجهزة الكمبيوتر."
+  ],
+  "example": "لنفترض أنك تعمل محلل بيانات وتريد معرفة حالة الطقس في مدينتك. قمت بإنشاء ملف باسم 'weather.csv' يحتوي على درجات الحرارة. لتخزين هذه البيانات في متغير، تكتب:\n\n```python\nimport pandas as pd\nweather_df = pd.read_csv('weather.csv')\nprint(weather_df.head(2))\n```\n\nالسبب في استخدام pd.read_csv هو أن بايثون يفهم كيف يترجم النصوص والفواصل إلى جدول جميل به أعمدة وصفوف.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة امتداد الملف أو كتابة اسم الملف بخطأ إملائي مثل 'weaher.csv'. الحل هو التأكد من اسم الملف تماماً ومكانه بجانب ملف الكود.",
+  "recap": "تعلمنا اليوم كيف نستورد مكتبة بانداز ونستخدم دالة read_csv لقراءة ملفات البيانات النصية وتخزينها في متغيرات بكل سهولة.",
+  "q": [
+   {
+    "t": "ما هي الدالة المستخدمة لقراءة ملفات سي إس في في بانداز؟",
+    "o": [
+     "pd.read_csv()",
+     "pd.open_file()",
+     "pd.load_csv()"
+    ],
+    "a": 0,
+    "why": "دالة read_csv هي الطريقة الرسمية في مكتبة بانداز لقراءة ملفات CSV."
+   },
+   {
+    "t": "كيف نقوم عادةً باختصار اسم مكتبة بانداز عند استيرادها؟",
+    "o": [
+     "import pandas as data",
+     "import pandas as pd",
+     "import pd as pandas"
+    ],
+    "a": 1,
+    "why": "الاسم المعتاد والمعياري عالمياً لاستيراد بانداز هو pd."
+   },
+   {
+    "t": "ما هو اسم المتغير المقترح في الدرس لتخزين ملف الطقس؟",
+    "o": [
+     "weather_data",
+     "weather_df",
+     "df_weather"
+    ],
+    "a": 1,
+    "why": "المتغير المستخدم فيseed idea هو weather_df."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف أوامر مكتبة بانداز والملفات",
+   "goal": "ضع كل عنصر في الصندوق الصحيح الخاص به (أوامر بانداز مقابل أنواع الملفات أو المتغيرات).",
+   "buckets": [
+    "أوامر بانداز وبايثون",
+    "أسماء الملفات والمتغيرات"
+   ],
+   "items": [
+    {
+     "t": "import pandas as pd",
+     "b": 0
+    },
+    {
+     "t": "weather.csv",
+     "b": 1
+    },
+    {
+     "t": "pd.read_csv()",
+     "b": 0
+    },
+    {
+     "t": "weather_df",
+     "b": 1
+    },
+    {
+     "t": "df.head()",
+     "b": 0
+    },
+    {
+     "t": "sales_data.csv",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد نظّمت أوامر بايثون وملفات البيانات باحترافية تامة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن ملفات البيانات سي إس في (CSV)",
+    "text": "ملفات CSV هي طريقة بسيطة لتخزين الجداول عبر فصل القيم بفواصل نصية. تشبه كراسة مربعات مدرسية حيث يتم فصل البيانات بعلامات واضحة ليفهمها الكمبيوتر.",
+    "code": "# مثال لشكل بيانات داخل ملف CSV\n# Day,Temperature\n# Monday,25\n# Tuesday,28",
+    "output": "# بيانات نصية مفصولة بفواصل"
+   },
+   {
+    "h": "استيراد مكتبة بانداز (import pandas as pd)",
+    "text": "قبل أن نتمكن من قراءة أي جدول، يجب أن نطلب من بايثون إحضار صندوق أدوات تحليل البيانات الخاص به، والمسمى pandas، ونختصره عادةً بالحرفين pd.",
+    "code": "import pandas as pd\nprint('Pandas is ready!')",
+    "output": "Pandas is ready!"
+   },
+   {
+    "h": "استخدام دالة قراءة الملفات read_csv",
+    "text": "تعتبر دالة read_csv() الأداة الذكية التي تفتح ملفات السي إس في وتقرأها سطراً بصطر لتحولها إلى جدول رائع.",
+    "code": "import pandas as pd\n# weather_df = pd.read_csv('weather.csv')",
+    "output": "# تم تحضير الأمر بنجاح"
+   },
+   {
+    "h": "تخزين البيانات في متغير weather_df",
+    "text": "لكي لا تضيع البيانات، نضع الجدول الناتج داخل متغير باسم weather_df ليكون بمثابة حقيبة يد تحافظ على الجدول سليماً ويسهل استخدامه.",
+    "code": "import pandas as pd\nweather_df = pd.DataFrame({'Temp': [25, 28]})\nprint(weather_df)",
+    "output": "   Temp\n0    25\n1    28"
+   },
+   {
+    "h": "معاينة أول سطرين باستخدام head()",
+    "text": "بعد تحميل الملف، قد يحتوي على آلاف الصفوف. نستعمل دالة head() لرؤية البداية فقط للتأكد من نجاح العملية.",
+    "code": "import pandas as pd\nweather_df = pd.DataFrame({'Temp': [25, 28, 30]})\nprint(weather_df.head(2))",
+    "output": "   Temp\n0    25\n1    28"
+   },
+   {
+    "h": "التعامل مع المسارات وأسماء الملفات",
+    "text": "يجب أن نكتب اسم الملف بدقة داخل علامات التنصيص، تماماً كما تكتب اسم صديقك الصحيح لكي ينتبه لك.",
+    "code": "filename = 'weather.csv'\nprint(filename)",
+    "output": "weather.csv"
+   },
+   {
+    "h": "فهم نوع البيانات الناتج (DataFrame)",
+    "text": "عندما تقرأ دالة read_csv الملف، فإنها تنشئ هيكل بيانات ثنائي الأبعاد يسمى DataFrame يشبه جدول Excel تماماً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame()\nprint(type(df))",
+    "output": "<class 'pandas.core.frame.DataFrame'>"
+   },
+   {
+    "h": "أهمية تتبع الأخطاء في المسارات",
+    "text": "إذا لم يجد بايثون الملف، سيرسل رسالة خطأ تُدعى FileNotFoundError. تأكد دائماً من وجود الملف في نفس المجلد.",
+    "code": "# تأكد من وجود weather.csv بجوار ملف بايثون الخاص بك",
+    "output": "# نصيحة ذهبية لتجنب الأخطاء"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import pandas as pd",
+    "desc": "استيراد مكتبة بانداز واختصارها باسم pd."
+   },
+   {
+    "name": "pd.read_csv()",
+    "desc": "دالة لقراءة ملفات CSV وتحويلها إلى DataFrame."
+   },
+   {
+    "name": "weather_df",
+    "desc": "متغير مقترح لتخزين جدول بيانات الطقس."
+   },
+   {
+    "name": "df.head()",
+    "desc": "عرض الصفوف الأولى من الجدول."
+   },
+   {
+    "name": "DataFrame",
+    "desc": "هيكل البيانات ثنائي الأبعاد في بانداز."
+   },
+   {
+    "name": "str",
+    "desc": "نوع البيانات النصية في بايثون."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر البرمجة لاستيراد مكتبة بانداز بالاسم المختصر pd.",
+    "a": "import pandas as pd"
+   },
+   {
+    "q": "اكتب كود قراءة ملف 'weather.csv' وتخزينه في المتغير weather_df.",
+    "a": "weather_df = pd.read_csv('weather.csv')"
+   },
+   {
+    "q": "ما هي الدالة التي تعرض أول 5 صفوف من جدول البيانات؟",
+    "a": "head()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In the big data world, we often need to read external files saved in CSV format, which look very much like organized tables with rows and columns separated by commas.",
+   "To bring this data into Python for analysis, we always start by importing the famous pandas library using the keyword import pandas as pd.",
+   "The read_csv() function acts as a magical tool inside pandas to read text files and convert them directly into an organized table known as a DataFrame.",
+   "For example, to read a weather dataset named 'weather.csv', we simply write the function with the filename enclosed in quotation marks inside parentheses.",
+   "The golden rule here is to save the result inside a clear variable, such as weather_df = pd.read_csv('weather.csv'), making it easy to use the table later.",
+   "This approach is used in daily life to analyze temperatures, game sales, or even sports match results stored on computers."
+  ],
+  "example": "Suppose you are a data analyst and want to check your city's weather. You created a file named 'weather.csv' containing temperature values. To store this data in a variable, you write:\n\n```python\nimport pandas as pd\nweather_df = pd.read_csv('weather.csv')\nprint(weather_df.head(2))\n```\n\nThe reason for using pd.read_csv is that Python understands how to translate text and commas into a neat table with rows and columns.",
+  "mistake": "A common mistake is forgetting the file extension or misspelling the filename like 'weaher.csv'. The fix is to double-check the exact filename and ensure it sits next to your code file.",
+  "recap": "Today we learned how to import the pandas library and use the read_csv function to read text data files and store them in variables effortlessly.",
+  "q": [
+   {
+    "t": "What function is used to read CSV files in pandas?",
+    "o": [
+     "pd.read_csv()",
+     "pd.open_file()",
+     "pd.load_csv()"
+    ],
+    "a": 0,
+    "why": "The read_csv function is the official way in pandas to read CSV files."
+   },
+   {
+    "t": "How do we standardly alias the pandas library when importing it?",
+    "o": [
+     "import pandas as data",
+     "import pandas as pd",
+     "import pd as pandas"
+    ],
+    "a": 1,
+    "why": "The standard and globally accepted alias for pandas is pd."
+   },
+   {
+    "t": "What is the suggested variable name in the lesson to store the weather file?",
+    "o": [
+     "weather_data",
+     "weather_df",
+     "df_weather"
+    ],
+    "a": 1,
+    "why": "The variable used in the seed idea is weather_df."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Pandas Commands and Data Files",
+   "goal": "Sort each item into its correct bucket (Pandas commands vs Files and variables).",
+   "buckets": [
+    "Pandas & Python Commands",
+    "Files & Variables"
+   ],
+   "items": [
+    {
+     "t": "import pandas as pd",
+     "b": 0
+    },
+    {
+     "t": "weather.csv",
+     "b": 1
+    },
+    {
+     "t": "pd.read_csv()",
+     "b": 0
+    },
+    {
+     "t": "weather_df",
+     "b": 1
+    },
+    {
+     "t": "df.head()",
+     "b": 0
+    },
+    {
+     "t": "sales_data.csv",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You have perfectly organized your Python commands and data files!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to CSV Data Files",
+    "text": "CSV files are a simple way to store tables by separating values with commas. Think of it like a school grid notebook where entries are clearly separated for computer reading.",
+    "code": "# Example of data inside a CSV file\n# Day,Temperature\n# Monday,25\n# Tuesday,28",
+    "output": "# Comma-separated text data"
+   },
+   {
+    "h": "Importing Pandas (import pandas as pd)",
+    "text": "Before reading any table, we must ask Python to bring its data analysis toolkit named pandas, usually abbreviated as pd.",
+    "code": "import pandas as pd\nprint('Pandas is ready!')",
+    "output": "Pandas is ready!"
+   },
+   {
+    "h": "Using the read_csv Function",
+    "text": "The read_csv() function is the smart tool that opens CSV text files and reads them line by line to turn them into an amazing table.",
+    "code": "import pandas as pd\n# weather_df = pd.read_csv('weather.csv')",
+    "output": "# Command prepared successfully"
+   },
+   {
+    "h": "Storing Data in weather_df",
+    "text": "To keep our data safe, we store the resulting table inside a variable named weather_df, acting like a sturdy bag holding our table intact.",
+    "code": "import pandas as pd\nweather_df = pd.DataFrame({'Temp': [25, 28]})\nprint(weather_df)",
+    "output": "   Temp\n0    25\n1    28"
+   },
+   {
+    "h": "Previewing Rows with head()",
+    "text": "After loading a file, it might contain thousands of rows. We use the head() function to view just the beginning and verify success.",
+    "code": "import pandas as pd\nweather_df = pd.DataFrame({'Temp': [25, 28, 30]})\nprint(weather_df.head(2))",
+    "output": "   Temp\n0    25\n1    28"
+   },
+   {
+    "h": "Handling Paths and Filenames",
+    "text": "We must write the exact filename inside quotation marks, just like writing a friend's correct name so they notice you.",
+    "code": "filename = 'weather.csv'\nprint(filename)",
+    "output": "weather.csv"
+   },
+   {
+    "h": "Understanding the DataFrame Type",
+    "text": "When read_csv reads a file, it creates a 2D data structure called a DataFrame, very similar to an Excel spreadsheet.",
+    "code": "import pandas as pd\ndf = pd.DataFrame()\nprint(type(df))",
+    "output": "<class 'pandas.core.frame.DataFrame'>"
+   },
+   {
+    "h": "Tracking Path Errors",
+    "text": "If Python cannot find the file, it raises a FileNotFoundError. Always make sure your file is in the same folder as your code.",
+    "code": "# Ensure weather.csv is next to your Python file",
+    "output": "# Golden tip to avoid errors"
+   }
+  ],
+  "reference": [
+   {
+    "name": "import pandas as pd",
+    "desc": "Imports the pandas library with the standard alias pd."
+   },
+   {
+    "name": "pd.read_csv()",
+    "desc": "Function to read CSV files and convert them into a DataFrame."
+   },
+   {
+    "name": "weather_df",
+    "desc": "Suggested variable name to store the weather dataset."
+   },
+   {
+    "name": "df.head()",
+    "desc": "Displays the first few rows of the data frame."
+   },
+   {
+    "name": "DataFrame",
+    "desc": "The 2D tabular data structure in pandas."
+   },
+   {
+    "name": "str",
+    "desc": "String data type in Python."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write the code line to import pandas with the short alias pd.",
+    "a": "import pandas as pd"
+   },
+   {
+    "q": "Write the code to read 'weather.csv' and store it in weather_df.",
+    "a": "weather_df = pd.read_csv('weather.csv')"
+   },
+   {
+    "q": "What function displays the first 5 rows of a data frame?",
+    "a": "head()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  },
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

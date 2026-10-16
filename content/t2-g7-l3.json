@@ -1,0 +1,328 @@
+{
+ "ar": {
+  "steps": [
+   "في لغة بايثون ومكتبة بانდას، نتعامل أحياناً مع بيانات نصية داخل الأعمدة بدلاً من الأرقام، مثل أسماء المنتجات أو المدن.",
+   "لتعديل النصوص بداخل عمود كامل دفعة واحدة، نوفر أداة خاصة تسمى `str` accessor وتُكتب هكذا `df['column'].str`.",
+   "تعمل هذه الأداة كأنها سحر يعالج جميع نصوص العمود خطوة بخطوة وبدون الحاجة لكتابة حلقات تكرار معقدة.",
+   "يمكننا استخدام دالة `lower()` لتحويل كل الحروف الكبيرة إلى حروف صغيرة لتوحيد شكل الكلمات.",
+   "القاعدة الذهبية هي دائماً تذكر كتابة `.str` قبل أي دالة تخص النصوص في بانდას، وإلا سيحدث خطأ.",
+   "في الواقع العملي، يستخدم محللو البيانات هذه الأدوات لتنظيف أسماء المنتجات أو البحث داخل قاعدة بيانات ضخمة عن كلمة معينة."
+  ],
+  "example": "تخيل أن لديك جدول منتجات بأسماء مختلطة الحروف مثل 'Laptop' و 'MOUSE'. لتحويلها كلها لحروف صغيرة، نكتب:\n`import pandas as pd`\n`df = pd.DataFrame({'Product': ['Laptop', 'MOUSE']})`\n`df['Product'] = df['Product'].str.lower()`\nالسبب أن `.str.lower()` تدخل لكل خلية في العمود وتجعل حروفها صغيرة ليصبح الجدول مرتباً ومتناسقاً.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة `.str` وكتابة الدالة مباشرة مثل `df['Product'].lower()`، وهذا يسبب خطأ في بانდას لأن الدالة تخص السلاسل النصية الفردية وليست أعمدة بانდას بشكل مباشر.",
+  "recap": "نستخدم أداة `str` accessor لتعديل النصوص داخل أعمدة بانდას بكفاءة وسهولة. تتيح لنا دوال مثل `lower` و `upper` و `contains` التحكم الكامل بالبيانات النصية.",
+  "q": [
+   {
+    "t": "ما هي الأداة التي نستخدمها للوصول لعمليات النصوص في بانდას؟",
+    "o": [
+     ".text",
+     ".str",
+     ".string"
+    ],
+    "a": 1,
+    "why": "نستخدم `.str` accessor للوصول إلى دوال النصوص في أعمدة بانდას."
+   },
+   {
+    "t": "أي دالة تحول جميع حروف النص إلى حروف صغيرة؟",
+    "o": [
+     "lower()",
+     "upper()",
+     "contains()"
+    ],
+    "a": 0,
+    "why": "الدالة lower() مسؤولة عن تصغير جميع الحروف النصية."
+   },
+   {
+    "t": "ماذا تفعل الدالة contains() في بانდას؟",
+    "o": [
+     "تحذف النصوص",
+     "تبحث عن نص معين داخل السلسلة",
+     "تدمج عمودين معاً"
+    ],
+    "a": 1,
+    "why": "الدالة contains() تبحث عما إذا كان النص يحتوي على كلمة أو حرف معين."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف عمليات بانდას النصية",
+   "goal": "صنف العبارات الآتية إلى دوال تعديل نصوص أو دوال بحث واكتشاف.",
+   "buckets": [
+    "تعديل ونصوص (Manipulation)",
+    "بحث واكتشاف (Search)"
+   ],
+   "items": [
+    {
+     "t": "df['name'].str.lower()",
+     "b": 0
+    },
+    {
+     "t": "df['name'].str.upper()",
+     "b": 0
+    },
+    {
+     "t": "df['name'].str.contains('apple')",
+     "b": 1
+    },
+    {
+     "t": "df['desc'].str.strip()",
+     "b": 0
+    },
+    {
+     "t": "df['email'].str.contains('@')",
+     "b": 1
+    },
+    {
+     "t": "df['city'].str.capitalize()",
+     "b": 0
+    }
+   ],
+   "success": "رائع! لقد قسّمت عمليات النصوص في بانდას بشكل صحيح ومرتب."
+  },
+  "sections": [
+   {
+    "h": "مقدمة النصوص في بانდას",
+    "text": "في جداول البيانات، غالباً ما تحتوي الأعمدة على كلمات ونصوص مثل أسماء الأشخاص أو المنتجات. معامل `.str` هو بوابتنا السحرية للتعامل مع هذه البيانات النصية ككتلة واحدة.",
+    "code": "import pandas as pd\ns = pd.Series(['Apple', 'Banana', 'Cherry'])",
+    "output": "0     Apple\n1    Banana\n2    Cherry\ndtype: object"
+   },
+   {
+    "h": "تصغير الحروف باستخدام lower()",
+    "text": "لكي تتشابه الكلمات وتتجنب الأخطاء عند البحث، نستخدم دالة `lower()` لتحويل كل الحروف الكبيرة إلى صغيرة. تخيل أنك توحد زي فريق المدرسة ليكون متناسقاً تماماً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['APPLE', 'Banana']})\ndf['Fruit'] = df['Fruit'].str.lower()\nprint(df)",
+    "output": "    Fruit\n0   apple\n1  banana"
+   },
+   {
+    "h": "تكبير الحروف باستخدام upper()",
+    "text": "على العكس تماماً، إذا أردت جعل كل حروف النص كبيرة وبارزة، يمكنك استخدام دالة `upper()`. هذا يشبه الكتابة بخط عريض وصراخ فرح في الملعب.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'City': ['cairo', 'alex']})\ndf['City'] = df['City'].str.upper()\nprint(df)",
+    "output": "     City\n0   CAIRO\n1    ALEX"
+   },
+   {
+    "h": "البحث داخل النصوص بـ contains()",
+    "text": "هل ترغب في معرفة أي المنتجات يحتوي على كلمة 'Pro' مثلاً؟ دالة `contains()` تبحث بداخل كل خلية وتعطيك إجابة بـ True أو False، تماماً كالمحقق الذكي.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Item': ['Phone Pro', 'Case', 'Tablet Pro']})\nprint(df['Item'].str.contains('Pro'))",
+    "output": "0     True\n1    False\n2     True\nName: Item, dtype: bool"
+   },
+   {
+    "h": "التلاعب وتعديل النصوص",
+    "text": "يتيح لك الوصول `.str` إجراء عمليات متقدمة مثل استبدال الكلمات أو قص المسافات الزائدة. هذا ينظف البيانات ويجعلها جاهزة للتحليل الإحصائي.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Text': [' hello ', ' world ']})\nprint(df['Text'].str.strip())",
+    "output": "0    hello\n1    world\nName: Text, dtype: object"
+   },
+   {
+    "h": "القاعدة الذهبية لمعامل str",
+    "text": "تذكر دائماً أن تكتب `.str` قبل استدعاء أي دالة نصية على عمود بانდას. إذا نسيتها، سيعطيك بايثون رسالة خطأ لأن دوال النصوص لا تعمل مباشرة على السلسلة دون إخبار بانდას بأننا نتعامل مع بيانات نصية.",
+    "code": "# خطأ شائع:\n# df['Col'].lower()\n# الصحيح:\ndf = pd.DataFrame({'Col': ['A']})\nprint(df['Col'].str.lower())",
+    "output": "0    a\nName: Col, dtype: object"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col'].str",
+    "desc": "أداة الوصول لجميع العمليات النصية في العمود"
+   },
+   {
+    "name": ".str.lower()",
+    "desc": "يتحول النص إلى حروف صغيرة بالكامل"
+   },
+   {
+    "name": ".str.upper()",
+    "desc": "يتحول النص إلى حروف كبيرة بالكامل"
+   },
+   {
+    "name": ".str.contains()",
+    "desc": "يبحث عن وجود كلمة أو حرف معين داخل النص"
+   },
+   {
+    "name": ".str.strip()",
+    "desc": "يزيل المسافات الفارغة من بداية ونهاية النص"
+   },
+   {
+    "name": ".str.replace()",
+    "desc": "يستبدل جزءاً من النص بنص آخر جديد"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود بانდას لتحويل جميع النصوص في عمود 'Name' إلى حروف كبيرة.",
+    "a": "df['Name'] = df['Name'].str.upper()"
+   },
+   {
+    "q": "كيف تبحث في عمود 'Email' عما إذا كان يحتوي على الرمز '@'؟",
+    "a": "df['Email'].str.contains('@')"
+   },
+   {
+    "q": "ما هو معامل بانდას الذي يفتح لنا باب التعامل مع الدوال النصية؟",
+    "a": ".str accessor"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In Python and Pandas, we sometimes work with text data inside columns instead of numbers, such as product names or cities.",
+   "To modify text across an entire column at once, we provide a special tool called the `str` accessor, written as `df['column'].str`.",
+   "This tool acts like magic, processing all texts in the column step by step without needing complex loops.",
+   "We can use the `lower()` method to convert all uppercase letters to lowercase, standardizing the word formats.",
+   "The golden rule is to always remember to write `.str` before any text function in Pandas, otherwise an error will occur.",
+   "In real life, data analysts use these tools to clean product names or search massive databases for specific keywords."
+  ],
+  "example": "Imagine you have a product table with mixed-case names like 'Laptop' and 'MOUSE'. To make them all lowercase, we write:\n`import pandas as pd`\n`df = pd.DataFrame({'Product': ['Laptop', 'MOUSE']})`\n`df['Product'] = df['Product'].str.lower()`\nThe reason is that `.str.lower()` dives into each cell of the column and lowercases its letters to keep the table neat and uniform.",
+  "mistake": "A common mistake is forgetting to write `.str` and calling the method directly like `df['Product'].lower()`, which causes a Pandas error because standard string functions do not apply directly to columns without the accessor.",
+  "recap": "We use the `str` accessor to manipulate text inside Pandas columns efficiently and easily. Methods like `lower`, `upper`, and `contains` give us full control over textual data.",
+  "q": [
+   {
+    "t": "What tool do we use to access string operations in Pandas?",
+    "o": [
+     ".text",
+     ".str",
+     ".string"
+    ],
+    "a": 1,
+    "why": "We use the `.str` accessor to reach string methods on Pandas columns."
+   },
+   {
+    "t": "Which method converts all letters in a text to lowercase?",
+    "o": [
+     "lower()",
+     "upper()",
+     "contains()"
+    ],
+    "a": 0,
+    "why": "The lower() method is responsible for turning all text characters into lowercase."
+   },
+   {
+    "t": "What does the contains() method do in Pandas?",
+    "o": [
+     "Deletes texts",
+     "Searches for a specific text inside the string",
+     "Merges two columns together"
+    ],
+    "a": 1,
+    "why": "The contains() method checks if a text contains a specific word or character."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Categorizing Pandas String Operations",
+   "goal": "Sort the following expressions into text manipulation methods or search methods.",
+   "buckets": [
+    "Manipulation",
+    "Search"
+   ],
+   "items": [
+    {
+     "t": "df['name'].str.lower()",
+     "b": 0
+    },
+    {
+     "t": "df['name'].str.upper()",
+     "b": 0
+    },
+    {
+     "t": "df['name'].str.contains('apple')",
+     "b": 1
+    },
+    {
+     "t": "df['desc'].str.strip()",
+     "b": 0
+    },
+    {
+     "t": "df['email'].str.contains('@')",
+     "b": 1
+    },
+    {
+     "t": "df['city'].str.capitalize()",
+     "b": 0
+    }
+   ],
+   "success": "Awesome! You sorted the string operations in Pandas correctly."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Strings in Pandas",
+    "text": "In dataframes, columns often contain words and text such as names or products. The `.str` accessor is our magical gateway to handle this text data as a single block.",
+    "code": "import pandas as pd\ns = pd.Series(['Apple', 'Banana', 'Cherry'])",
+    "output": "0     Apple\n1    Banana\n2    Cherry\ndtype: object"
+   },
+   {
+    "h": "Lowercasing with lower()",
+    "text": "To standardize words and avoid errors during searching, we use the `lower()` method to turn all uppercase letters into lowercase. Imagine matching uniform colors for a school sports team.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['APPLE', 'Banana']})\ndf['Fruit'] = df['Fruit'].str.lower()\nprint(df)",
+    "output": "    Fruit\n0   apple\n1  banana"
+   },
+   {
+    "h": "Uppercasing with upper()",
+    "text": "Conversely, if you want to make all text characters bold and uppercase, you can use the `upper()` method. This is like writing in big bold letters for maximum visibility.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'City': ['cairo', 'alex']})\ndf['City'] = df['City'].str.upper()\nprint(df)",
+    "output": "     City\n0   CAIRO\n1    ALEX"
+   },
+   {
+    "h": "Searching Text with contains()",
+    "text": "Want to find out which products contain the word 'Pro'? The `contains()` method looks inside every cell and returns True or False, acting like a clever digital detective.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Item': ['Phone Pro', 'Case', 'Tablet Pro']})\nprint(df['Item'].str.contains('Pro'))",
+    "output": "0     True\n1    False\n2     True\nName: Item, dtype: bool"
+   },
+   {
+    "h": "Text Manipulation and Cleaning",
+    "text": "The `.str` accessor lets you perform advanced tasks like replacing words or trimming extra whitespace. This cleans up raw data and prepares it for statistical analysis.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Text': [' hello ', ' world ']})\nprint(df['Text'].str.strip())",
+    "output": "0    hello\n1    world\nName: Text, dtype: object"
+   },
+   {
+    "h": "The Golden Rule of the str Accessor",
+    "text": "Always remember to write `.str` before calling any string method on a Pandas column. If you forget it, Python will raise an error because standard methods do not apply directly to Series objects without telling Pandas we are handling text.",
+    "code": "# Common mistake:\n# df['Col'].lower()\n# Correct:\ndf = pd.DataFrame({'Col': ['A']})\nprint(df['Col'].str.lower())",
+    "output": "0    a\nName: Col, dtype: object"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col'].str",
+    "desc": "Accessor object for string methods in a column"
+   },
+   {
+    "name": ".str.lower()",
+    "desc": "Converts all characters in the text to lowercase"
+   },
+   {
+    "name": ".str.upper()",
+    "desc": "Converts all characters in the text to uppercase"
+   },
+   {
+    "name": ".str.contains()",
+    "desc": "Searches for a specific substring pattern"
+   },
+   {
+    "name": ".str.strip()",
+    "desc": "Removes leading and trailing whitespace"
+   },
+   {
+    "name": ".str.replace()",
+    "desc": "Replaces occurrences of a pattern with new text"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write Pandas code to convert all strings in the 'Name' column to uppercase.",
+    "a": "df['Name'] = df['Name'].str.upper()"
+   },
+   {
+    "q": "How do you check if the 'Email' column contains the '@' symbol?",
+    "a": "df['Email'].str.contains('@')"
+   },
+   {
+    "q": "What is the Pandas property that opens access to string manipulation methods?",
+    "a": ".str accessor"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,278 @@
+{
+ "ar": {
+  "steps": [
+   "الكائنات لا تحفظ بيانات أو معلومات فقط، بل يمكنها أن تحتوي أيضاً على أفعال ودوال تسمى ميثودز أو طرقاً لتنفذ مهام معينة.",
+   "إليك مثال بسيط: كائن الروبوت يمكن أن يحتوي على دالة speak تقوم بطباعة كلمة 'بيووب' في وحدة التحكم بالمتصفح.",
+   "لكتابة دالة داخل كائن، نربط اسماً للدالة بقيمة عبارة عن دالة عادية، وتصبح جزءاً من خصائص ذلك الكائن المنظم.",
+   "مثال ثانٍ: كائن القط يمكنه أن يحتوي على دالة meow تقوم بطباعة صوت 'مياو' لتعبر عن سلوك الكائن الحي.",
+   "قاعدة ذهبية: استخدم كلمة this دائماً داخل الكائن للوصول إلى خصائصه الأخرى وتغييرها أو قراءتها بسهولة وبشكل دقيق.",
+   "في الحياة اليومية، جهاز التلفاز له خصائص مثل اللون والحجم، وفيه زر أو طريقة (ميثود) لتغيير القناة أو إيقاف التشغيل."
+  ],
+  "example": "تخيل أننا نصنع روبوتاً ذكياً يلعب معك الألعاب الرياضية. سنكتب كائنًا برمجياً يسمى robot وله خاصية الاسم، بالإضافة إلى دالة تسمى greet ترحب باللاعب قائلة 'أهلاً بك في اللعبة!'. عندما ننادي robot.greet()، يظهر الترحيب فوراً.\n\n```javascript\nconst robot = {\n  name: \"روبو\",\n  greet: function() {\n    console.log(\"أهلاً بك يا صديقي!\");\n  }\n};\nrobot.greet();\n```\nهذه الطريقة تربط سلوك الروبوت ببياناته الخاصة في مكان واحد مرتب ومفيد جداً.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة الأقواس () عند استدعاء الدالة (الميثود) الخاصة بالكائن، مما يطبع كود الدالة نفسه بدلاً من تنفيذها. الحل هو إضافة الأقواس robot.speak() دائماً.",
+  "recap": "الكائنات البرمجية في جافاسكريبت قادرة على حفظ البيانات وجمع الأفعال والدوال معاً بداخلها. استخدام الدوال المعروفة بالميثودز يساعدنا على تنظيم مشاريع الويب وتسهيل برمجتها.",
+  "q": [
+   {
+    "t": "ماذا نسمى الدالة عندما تصبح داخل الكائن البرمجي؟",
+    "o": [
+     "متغير",
+     "ميثود أو طريقة",
+     "حلقة تكرار"
+    ],
+    "a": 1,
+    "why": "الدالة التي توجد داخل الكائن تسمى ميثود (Method) أو طريقة."
+   },
+   {
+    "t": "أي من الخيارات التالية يستدعي دالة اسمها jump موجودة داخل كائن اسمه rabbit بشكل صحيح؟",
+    "o": [
+     "rabbit.jump()",
+     "jump.rabbit()",
+     "rabbit(jump)"
+    ],
+    "a": 0,
+    "why": "نستدعي الميثود عبر كتابة اسم الكائن ثم نقطة ثم اسم الميثود مع الأقواس."
+   },
+   {
+    "t": "ما هي الفائدة الأساسية من كلمة this داخل الكائن؟",
+    "o": [
+     "حذف الكائن نهائياً",
+     "الوصول لخصائص وأفعال نفس الكائن",
+     "تغيير لون صفحة الويب"
+    ],
+    "a": 1,
+    "why": "تستخدم كلمة this للإشارة إلى الكائن الحالي والوصول إلى بياناته."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع ناتج الروبوت",
+   "goal": "توقع ما سيظهر في الصفحة بعد تشغيل ميثود التحدث للروبوت",
+   "code": "const bot = { name: 'زورو', speak: function() { console.log('مرحباً بكم'); } }; bot.speak();",
+   "options": [
+    "مرحباً بكم",
+    "زورو",
+    "خطأ برمجي"
+   ],
+   "a": 0,
+   "success": "رائع! قام الروبوت بطباعة كلمة مرحباً بكم بنجاح في وحدة التحكم."
+  },
+  "sections": [
+   {
+    "h": "مقدمة الكائنات والأفعال",
+    "text": "تشبه الكائنات في البرمجة الصناديق السحرية التي لا تحفظ أشياء ثابتة فحسب، بل تقوم بأفعال أيضاً. مثل حقيبة المدرسة التي تحتوي على كتب، ولديها سحاب يفتح ويغلق. في جافاسكريبت، نجمع المعلومات والأفعال المرتبطة ببعضها داخل كائن واحد منظم ومفيد جداً لتسهيل بناء مواقع الويب التفاعلية.",
+    "code": "<!DOCTYPE html><html><body><script>const box = { item: 'لعبة', open: function() { console.log('تم فتح الصندوق!'); } }; box.open();</script></body></html>",
+    "output": "يظهر في وحدة التحكم عبارة تم فتح الصندوق!"
+   },
+   {
+    "h": "ما هي الميثودز (الطرق أو الدوال)",
+    "text": "الميثود هي ببساطة دالة (Function) عادية لكنها مسجلة كقيمة لخاصية داخل الكائن. تماماً كما أن للإنسان صفات مثل الطول، ولديه أفعال مثل المشي والجري، فإن الكائن البرمجي له خصائص وأفعال تسمى ميثودز تقوم بتنفيذ مهام محددة كلما احتجنا إليها في البرنامج.",
+    "code": "<!DOCTYPE html><html><body><script>const dog = { sound: 'نباح', bark: function() { console.log('هو هو!'); } }; dog.bark();</script></body></html>",
+    "output": "يطبع المتصفح صوت هو هو! في وحدة التحكم."
+   },
+   {
+    "h": "استدعاء الأفعال والدوال",
+    "text": "لكي نجعل الكائن ينفذ فعله أو دالته، نكتب اسم الكائن متبوعاً بنقطة، ثم اسم الدالة المتبوع بقوسين فارغين. هذا يشبه الضغط على زر التشغيل في جهاز التحكم عن بُعد لكي يبدأ التلفاز بعرض القناة المفضلة لديك فوراً ودون تأخير.",
+    "code": "<!DOCTYPE html><html><body><script>const car = { brand: 'تويوتا', start: function() { console.log('السيارة تتحرك!'); } }; car.start();</script></body></html>",
+    "output": "تطبع الصفحة عبارة السيارة تتحرك!"
+   },
+   {
+    "h": "سر كلمة this السحرية",
+    "text": "كلمة this هي كلمة خاصة ومفيدة جداً داخل جافاسكريبت. إنها تشير إلى الكائن الحالي الذي يمتلك الكود حالياً. عندما تريد أن تستخدم اسم الكائن أو خصائصه من داخل دالة تخصه، تستخدم this.name بدلاً من تكرار اسم الكائن، تماماً مثلما تقول أنا بدلاً من ذكر اسمك كل مرة.",
+    "code": "<!DOCTYPE html><html><body><script>const user = { name: 'أحمد', hello: function() { console.log('مرحباً يا ' + this.name); } }; user.hello();</script></body></html>",
+    "output": "يطبع المتصفح مرحباً يا أحمد."
+   },
+   {
+    "h": "تغيير بيانات الكائن عبر الأفعال",
+    "text": "لا تقتصر الميثودز على طباعة الرسائل فحسب، بل يمكنها أيضاً تعديل بيانات الكائن وتحديثها. تخيل شخصية لعبة فيديو تزيد نقاطها كلما جمعت قطعة نقدية؛ الدالة داخل الكائن تستطيع زيادة قيمة العدّاد بمقدار واحد في كل مرة يتم استدعاؤها.",
+    "code": "<!DOCTYPE html><html><body><script>const game = { score: 0, addPoint: function() { this.score++; console.log(this.score); } }; game.addPoint();</script></body></html>",
+    "output": "يطبع المتصفح الرقم 1 في وحدة التحكم."
+   },
+   {
+    "h": "ربط الكائنات بواقعنا اليومي",
+    "text": "كل شيء حولنا في الواقع يمكن تمثيله بكائن يحتوي على بيانات وأفعال. الهاتف المحمول له لون وحجم، ولديه ميثود لالتقاط الصور. تطبيق الموسيقى له قائمة أغاني، ولديه ميثود لتشغيل الأغنية أو إيقافها. هذا التفكير المنظم يسهل علينا كتابة برامج مذهلة ومعقدة ببساطة.",
+    "code": "<!DOCTYPE html><html><body><script>const phone = { battery: 100, call: function() { console.log('جاري الاتصال...'); } }; phone.call();</script></body></html>",
+    "output": "يطبع المتصفح عبارة جاري الاتصال..."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object",
+    "desc": "هيكل لتخزين البيانات والأفعال معاً في مكان واحد."
+   },
+   {
+    "name": "Method",
+    "desc": "دالة مبرمجة داخل الكائن لتنفذ فعلاً أو مهمة محددة."
+   },
+   {
+    "name": "this",
+    "desc": "كلمة مفتاحية تشير إلى الكائن الحالي للوصول لخصائصه."
+   },
+   {
+    "name": "Function",
+    "desc": "كتلة برمجية تؤدي مهمة معينة عند استدعائها."
+   },
+   {
+    "name": "Console.log",
+    "desc": "أمر لطباعة النصوص والنتائج في وحدة التحكم."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ كائن cat يحتوي على خاصية name باسم 'مشمش' وميثود meow تطبع 'مياو'.",
+    "a": "const cat = { name: 'مشمش', meow: function() { console.log('مياو'); } }; cat.meow();"
+   },
+   {
+    "q": "كيف تستخدم كلمة this لطباعة اسم الكائن داخل ميثود تخصه؟",
+    "a": "console.log(this.name);"
+   },
+   {
+    "q": "ما هو الرمز الناقص في استدعاء الميثود: myObj.run___",
+    "a": "() القوسان الفارغان."
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Objects don't just store data or info; they can also contain actions and functions called methods to perform specific tasks.",
+   "Here is a simple example: a robot object can contain a speak function that logs the word 'Beep' in the browser console.",
+   "To write a function inside an object, we assign a function value to a property name, making it part of that organized object.",
+   "A second example: a cat object can contain a meow function that logs 'Meow' to represent the living animal's behavior.",
+   "Golden rule: always use the 'this' keyword inside an object to access its other properties and change or read them accurately.",
+   "In real life, a television has properties like color and size, and it has a button or method to change the channel or turn off."
+  ],
+  "example": "Imagine we are building a smart robot that plays sports games with you. We write a code object called robot with a name property and a greet function that welcomes the player by saying 'Welcome to the game!'. When we call robot.greet(), the greeting appears immediately.\n\n```javascript\nconst robot = {\n  name: \"Robo\",\n  greet: function() {\n    console.log(\"Hello my friend!\");\n  }\n};\nrobot.greet();\n```\nThis approach links the robot's behavior to its own data in a single, neat, and very useful place.",
+  "mistake": "A common mistake is forgetting to write the parentheses () when calling an object's method, which logs the function code itself instead of executing it. The fix is always to add parentheses like robot.speak().",
+  "recap": "JavaScript objects can store data and bundle actions and functions together inside them. Using functions known as methods helps us organize web projects and makes programming easier.",
+  "q": [
+   {
+    "t": "What do we call a function when it is placed inside a code object?",
+    "o": [
+     "Variable",
+     "Method",
+     "Loop"
+    ],
+    "a": 1,
+    "why": "A function that lives inside an object is called a method."
+   },
+   {
+    "t": "Which option correctly calls a method named jump inside an object named rabbit?",
+    "o": [
+     "rabbit.jump()",
+     "jump.rabbit()",
+     "rabbit(jump)"
+    ],
+    "a": 0,
+    "why": "We call a method by writing the object name, a dot, then the method name with parentheses."
+   },
+   {
+    "t": "What is the primary benefit of the 'this' keyword inside an object?",
+    "o": [
+     "Delete the object completely",
+     "Access properties and actions of the same object",
+     "Change the web page color"
+    ],
+    "a": 1,
+    "why": "The 'this' keyword refers to the current object and accesses its data."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict the Robot Output",
+   "goal": "Predict what appears on the page after running the robot's speak method",
+   "code": "const bot = { name: 'Zoro', speak: function() { console.log('Welcome'); } }; bot.speak();",
+   "options": [
+    "Welcome",
+    "Zoro",
+    "Syntax error"
+   ],
+   "a": 0,
+   "success": "Awesome! The robot successfully printed Welcome in the console."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Objects and Actions",
+    "text": "Objects in programming are like magic boxes that not only hold fixed items but also perform actions. Think of a school bag containing books and a zipper that opens and closes. In JavaScript, we group related information and actions into a single organized object, which is very useful for building interactive web pages.",
+    "code": "<!DOCTYPE html><html><body><script>const box = { item: 'toy', open: function() { console.log('Box opened!'); } }; box.open();</script></body></html>",
+    "output": "Box opened! appears in the console."
+   },
+   {
+    "h": "What are Methods (Functions in Objects)",
+    "text": "A method is simply a regular function stored as a property value inside an object. Just as humans have traits like height and actions like walking and running, a code object has properties and actions called methods that perform specific tasks whenever we need them in our program.",
+    "code": "<!DOCTYPE html><html><body><script>const dog = { sound: 'bark', speak: function() { console.log('Woof woof!'); } }; dog.speak();</script></body></html>",
+    "output": "The browser logs Woof woof! in the console."
+   },
+   {
+    "h": "Calling Actions and Functions",
+    "text": "To make an object execute its action or function, we write the object name followed by a dot, then the function name followed by empty parentheses. This is like pressing the power button on a remote control so your television instantly starts showing your favorite channel without delay.",
+    "code": "<!DOCTYPE html><html><body><script>const car = { brand: 'Toyota', start: function() { console.log('Car is moving!'); } }; car.start();</script></body></html>",
+    "output": "The page prints Car is moving!"
+   },
+   {
+    "h": "The Magic Secret of 'this'",
+    "text": "The 'this' keyword is a special and very useful tool in JavaScript. It refers to the current object that owns the code right now. When you want to use the object's name or properties from inside its own function, you use this.name instead of repeating the object's name, just like saying 'me' instead of your name every time.",
+    "code": "<!DOCTYPE html><html><body><script>const user = { name: 'Adam', hello: function() { console.log('Hello ' + this.name); } }; user.hello();</script></body></html>",
+    "output": "The browser logs Hello Adam."
+   },
+   {
+    "h": "Modifying Object Data Through Actions",
+    "text": "Methods are not limited to printing messages; they can also modify and update object data. Imagine a video game character whose points increase every time it collects a coin; a function inside the object can increase the counter value by one each time it is called.",
+    "code": "<!DOCTYPE html><html><body><script>const game = { score: 0, addPoint: function() { this.score++; console.log(this.score); } }; game.addPoint();</script></body></html>",
+    "output": "The browser prints the number 1 in the console."
+   },
+   {
+    "h": "Connecting Objects to Daily Life",
+    "text": "Everything around us in real life can be represented as an object containing data and actions. A mobile phone has color and size, and a method to take pictures. A music app has a playlist, and a method to play or stop music. This organized thinking makes writing amazing and complex programs much easier.",
+    "code": "<!DOCTYPE html><html><body><script>const phone = { battery: 100, call: function() { console.log('Calling...'); } }; phone.call();</script></body></html>",
+    "output": "The browser logs Calling..."
+   }
+  ],
+  "reference": [
+   {
+    "name": "Object",
+    "desc": "A structure to store data and actions together in one place."
+   },
+   {
+    "name": "Method",
+    "desc": "A function programmed inside an object to perform a specific action."
+   },
+   {
+    "name": "this",
+    "desc": "A keyword pointing to the current object to access its properties."
+   },
+   {
+    "name": "Function",
+    "desc": "A block of code that performs a specific task when called."
+   },
+   {
+    "name": "Console.log",
+    "desc": "A command to print texts and results to the console."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a cat object with a name property set to 'Mishmish' and a meow method that logs 'Meow'.",
+    "a": "const cat = { name: 'Mishmish', meow: function() { console.log('Meow'); } }; cat.meow();"
+   },
+   {
+    "q": "How do you use 'this' to print an object's name inside its own method?",
+    "a": "console.log(this.name);"
+   },
+   {
+    "q": "What is the missing symbol when calling the method: myObj.run___",
+    "a": "() The empty parentheses."
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: Advanced JavaScript objects",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects"
+  },
+  {
+   "title": "MDN: Working with objects",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects"
+  }
+ ],
+ "grounded": true
+}

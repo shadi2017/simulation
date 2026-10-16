@@ -1,0 +1,268 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن عندك دفترين رسم صغيرين وعايز تحط ورقهم فوق بعض عشان تعمل دفتر أكبر. في مكتبة برانداس، بنعمل كده بحاجة اسمها الدمج أو الـ concat عشان نجمع جداول البيانات.",
+   "عشان نجمع جدولين مع بعض، بنستخدم الدالة الممتازة pd.concat() وبنحط جواها الجداول اللي عايزين نضمها جوة قوسين مربعين شكل ليست كدة.",
+   "لما بنحب نضم جداول تحت بعضها يعني نركز على صفوف جديدة، بنستخدم الخاصية axis أو بنسيبها على وضعها الافتراضي عشان تجمع الصفوف فوق بعضها.",
+   "تجميع الصفوف أو ما يعرف بـ combining rows بيخلينا ناخد جدولين لهم نفس الأسماء للأعمدة ونلحقهم ببعض عشان يبقوا جدول واحد طويل.",
+   "القاعدة الذهبية هنا هي التأكد إن الأعمدة في الجدولين متطابقة تقريباً عشان البيانات تنزل مكانها صح ومنلاقيش فراغات ملخبطة.",
+   "في الحياة اليومية، زي ما بتجمع درجات الفصل الأول مع الفصل التاني في ملف إكسل واحد كبير، الـ concat بيساعد الشركات تجمع تقارير الفروع المختلفة بسهولة."
+  ],
+  "example": "علشان نطبق ده، هنفترض عندنا جدولين صغيرين لدرجات طلاب. الجدول الأول فيه اسم الطالب وعلامته في الرياضيات، والجدول التاني لنفس المادة لطلاب تانيين. لما نكتب pd.concat([df1, df2])، بيندمج الجدولين ويطلع لنا جدول كبير فيه كل الطلاب وراء بعضهم بصفوف متتالية وبشكل مرتب ومنظم جداً.",
+  "mistake": "الغلطة الشائعة هي نسيان وضع الجداول داخل قائمة مربعة [] جوة الدالة، زي كتابة pd.concat(df1, df2) بدل القوسين الصح. الحل هو محاصرة الجداول بـ [ ] عشان تفهم الدالة إنهم مجموعة واحدة.",
+  "recap": "استخدام دالة pd.concat بيسمح لنا بضم جداول بيانات متعددة فوق بعضها لإنشاء جدول ضخم وموحد بكل سهولة. دي أداة رائعة لتنظيم البيانات الكبيرة.",
+  "q": [
+   {
+    "t": "ما هي الدالة المستخدمة لدمج جدولين في بانداس؟",
+    "o": [
+     "pd.concat()",
+     "pd.mergeTable()",
+     "pd.joinAll()"
+    ],
+    "a": 0,
+    "why": "الدالة الأساسية والرسمية لضم الجداول في بانداس هي pd.concat"
+   },
+   {
+    "t": "كيف نمرر الجداول إلى الدالة concat؟",
+    "o": [
+     "داخل قوسين دائريين عاديين مفصولين بمسافة",
+     "داخل قائمة مربعة []",
+     "بدون أي أقواس"
+    ],
+    "a": 1,
+    "why": "يجب وضع الجداول داخل قائمة لكي تفهم الدالة أنها وحدة واحدة"
+   },
+   {
+    "t": "ماذا تعني عملية stacking tables؟",
+    "o": [
+     "حذف الصفوف المتشابهة",
+     "رسم بياني للبيانات",
+     "وضع الجداول فوق بعضها البعض"
+    ],
+    "a": 2,
+    "why": "التكديس يعني وضع الجداول فوق بعضها البعض لزيادة عدد الصفوف"
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات دمج جدولين بيانات",
+   "goal": "رتب الخطوات التالية لكي تتمكن من دمج جدولين بنجاح",
+   "items": [
+    "استيراد مكتبة بانداس باسم pd",
+    "إنشاء الجدول الأول df1 والجدول التاني df2",
+    "كتابة الدالة pd.concat([df1, df2])",
+    "طباعة الجدول الجديد لرؤية النتائج مجتمعة"
+   ],
+   "success": "رائع! لقد قمت بدمج الجدولين بنجاح وصنع جدول ضخم وممتاز!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم الدمج والضم",
+    "text": "الدمج في بانداس بيشبه بناء برج من المكعبات؛ بنحط القطع فوق بعضها عشان نعمل هيكل أكبر. لما يكون عندنا جداول بيانات منفصلة وعايزين نجمعهم في مكان واحد، بنستخدم عمليات الضم.",
+    "code": "import pandas as pd\nprint('جاهز للدمج')",
+    "output": "جاهز للدمج"
+   },
+   {
+    "h": "استخدام دالة concat",
+    "text": "الدالة الرئيسية للدمج هي pd.concat(). الفكرة منها هي ربط عدة هياكل بيانات مع بعضها بطريقة مرتبة، سواء فوق بعضها أو جنب بعضها.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2]})\nprint(pd.concat([df, df]))",
+    "output": "   A\n0  1\n1  2\n0  1\n1  2"
+   },
+   {
+    "h": "تجميع الصفوف وتكديسها",
+    "text": "تكديس الجداول أو stacking يعني وضع صفوف جدول تحت صفوف جدول تاني. بنستخدم ده لما تكون الأعمدة متشابهة وعايزين نجمع كل السجلات في قائمة واحدة.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'اسم': ['علي', 'مريم']})\ndf2 = pd.DataFrame({'اسم': ['حسين', 'فاطمة']})\nprint(pd.concat([df1, df2]))",
+    "output": "     اسم\n0    علي\n1   مريم\n0   حسين\n1  فاطمة"
+   },
+   {
+    "h": "دور معامل axis",
+    "text": "معامل axis بيحدد اتجاه الدمج. لما يكون axis=0 (وهو الافتراضي)، بتتحط الجداول فوق بعضها (صفوف). ولما نغيره، ممكن ندمج جنب بعض.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'س': [1]})\ndf2 = pd.DataFrame({'س': [2]})\nprint(pd.concat([df1, df2], axis=0))",
+    "output": "   س\n0  1\n0  2"
+   },
+   {
+    "h": "جمع الصفوف المتشابهة",
+    "text": "عملية combining rows بتفيدنا جداً لما نقسم بيانات شهر معين لأجزاء ونحب نرجع نجمعهم تاني في تقرير شهري واحد شامل لكل الأيام.",
+    "code": "import pandas as pd\nأسبوع1 = pd.DataFrame({'مبيعات': [10, 20]})\nأسبوع2 = pd.DataFrame({'مبيعات': [15, 25]})\nprint(pd.concat([أسبوع1, أسبوع2]))",
+    "output": "   مبيعات\n0      10\n1      20\n0      15\n1      25"
+   },
+   {
+    "h": "إعادة ضبط الفهارس (Indexes)",
+    "text": "بعد الدمج، ممكن نلاحظ إن الأرقام التسلسلية للفهارس بتتكرر (زي 0 و 1 مرتين). بنقدر نصلح ده باستخدام خاصية لطيفة عشان الأرقام تبقى مترتبة صح.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'x': [1]})\ndf2 = pd.DataFrame({'x': [2]})\nprint(pd.concat([df1, df2], ignore_index=True))",
+    "output": "   x\n0  1\n1  2"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pd.concat()",
+    "desc": "الدالة الأساسية لربط وضم جداول بانداس ببعضها."
+   },
+   {
+    "name": "axis=0",
+    "desc": "المعامل الافتراضي لدمج الجداول رأسياً (فوق بعضها)."
+   },
+   {
+    "name": "ignore_index=True",
+    "desc": "خاصية لتجاهل الفهارس القديمة وترتيب فهارس جديدة متسلسلة."
+   },
+   {
+    "name": "DataFrame",
+    "desc": "جدول البيانات ثنائي الأبعاد في مكتبة بانداس."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر برمجيا لدمج جدولين باسم t1 و t2 رأسياً.",
+    "a": "pd.concat([t1, t2])"
+   },
+   {
+    "q": "ما هي القيمة الافتراضية لمعامل axis في الدالة concat؟",
+    "a": "0"
+   },
+   {
+    "q": "كيف نجعل الفهارس مترتبة وتسلسلية بعد الدمج؟",
+    "a": "ignore_index=True"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have two small drawing notebooks and you want to stack their papers together to make a bigger book. In Pandas, we do this using something called concatenation to combine data tables.",
+   "To combine two tables together, we use the fantastic function pd.concat() and put the tables we want to join inside square brackets like a list.",
+   "When we want to join tables underneath each other, focusing on new rows, we use the axis parameter or leave it at its default setting to stack rows vertically.",
+   "Stacking rows, or combining rows, allows us to take two tables with matching column names and attach them to each other to become one long table.",
+   "The golden rule here is to make sure the columns in both tables match nicely so that the data falls into the right places without messy gaps.",
+   "In real life, just like combining first-term and second-term grades into one big Excel file, concat helps companies easily merge reports from different branches."
+  ],
+  "example": "To apply this, suppose we have two small student grade tables. The first table has student names and math scores, and the second table has the same subject for other students. When we type pd.concat([df1, df2]), the two tables merge, producing a big table containing all students consecutively in a very neat and organized way.",
+  "mistake": "A common mistake is forgetting to put the tables inside a square bracket list [] inside the function, like writing pd.concat(df1, df2) instead of the correct brackets. The fix is to enclose the tables in [ ] so the function understands they are a single group.",
+  "recap": "Using the pd.concat function allows us to join multiple data tables on top of each other to create a huge, unified table with ease. It's a wonderful tool for organizing big data.",
+  "q": [
+   {
+    "t": "What function is used to combine two tables in pandas?",
+    "o": [
+     "pd.concat()",
+     "pd.mergeTable()",
+     "pd.joinAll()"
+    ],
+    "a": 0,
+    "why": "The primary and official function for joining tables in pandas is pd.concat"
+   },
+   {
+    "t": "How do we pass tables into the concat function?",
+    "o": [
+     "Inside normal round brackets separated by a space",
+     "Inside a square bracket list []",
+     "Without any brackets at all"
+    ],
+    "a": 1,
+    "why": "Tables must be placed inside a list so the function understands they are a single unit"
+   },
+   {
+    "t": "What does stacking tables mean?",
+    "o": [
+     "Deleting matching rows",
+     "Plotting data into a chart",
+     "Placing tables on top of each other"
+    ],
+    "a": 2,
+    "why": "Stacking means placing tables on top of each other to increase the row count"
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Ordering Steps to Concatenate Two DataFrames",
+   "goal": "Arrange the following steps in the correct order to successfully concatenate two tables",
+   "items": [
+    "Import the pandas library as pd",
+    "Create the first table df1 and the second table df2",
+    "Write the function pd.concat([df1, df2])",
+    "Print the new table to view the combined results"
+   ],
+   "success": "Awesome! You successfully concatenated the tables and built a fantastic large dataframe!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Concatenation",
+    "text": "Concatenation in pandas is like building a tower of blocks; we place pieces on top of each other to build a larger structure. When we have separate data tables and want to gather them in one place, we use joining operations.",
+    "code": "import pandas as pd\nprint('Ready to concatenate')",
+    "output": "Ready to concatenate"
+   },
+   {
+    "h": "Using the concat Function",
+    "text": "The main function for concatenation is pd.concat(). The idea is to connect multiple data structures together neatly, whether vertically or horizontally.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2]})\nprint(pd.concat([df, df]))",
+    "output": "   A\n0  1\n1  2\n0  1\n1  2"
+   },
+   {
+    "h": "Stacking Rows Together",
+    "text": "Table stacking means placing rows of one table underneath rows of another. We use this when columns are similar and we want to gather all records into a single list.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'Name': ['Ali', 'Maryam']})\ndf2 = pd.DataFrame({'Name': ['Hussain', 'Fatma']})\nprint(pd.concat([df1, df2]))",
+    "output": "      Name\n0      Ali\n1   Maryam\n0  Hussain\n1    Fatma"
+   },
+   {
+    "h": "The Role of the axis Parameter",
+    "text": "The axis parameter determines the direction of concatenation. When axis=0 (the default), tables are stacked on top of each other (rows). When changed, we can concatenate side by side.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'X': [1]})\ndf2 = pd.DataFrame({'X': [2]})\nprint(pd.concat([df1, df2], axis=0))",
+    "output": "   X\n0  1\n0  2"
+   },
+   {
+    "h": "Combining Rows",
+    "text": "The combining rows process is super helpful when we divide a month's data into parts and want to merge them back into a single comprehensive monthly report covering all days.",
+    "code": "import pandas as pd\nweek1 = pd.DataFrame({'Sales': [10, 20]})\nweek2 = pd.DataFrame({'Sales': [15, 25]})\nprint(pd.concat([week1, week2]))",
+    "output": "   Sales\n0     10\n1     20\n0     15\n1     25"
+   },
+   {
+    "h": "Resetting Indexes",
+    "text": "After concatenation, we might notice that sequential index numbers repeat (like 0 and 1 twice). We can fix this using a neat property so the numbers stay properly ordered.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'x': [1]})\ndf2 = pd.DataFrame({'x': [2]})\nprint(pd.concat([df1, df2], ignore_index=True))",
+    "output": "   x\n0  1\n1  2"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pd.concat()",
+    "desc": "The primary function to link and concatenate pandas dataframes."
+   },
+   {
+    "name": "axis=0",
+    "desc": "The default parameter to concatenate tables vertically (on top of each other)."
+   },
+   {
+    "name": "ignore_index=True",
+    "desc": "Property to ignore old indexes and generate a fresh sequential index."
+   },
+   {
+    "name": "DataFrame",
+    "desc": "The two-dimensional data table structure in the pandas library."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a python line to vertically concatenate two tables named t1 and t2.",
+    "a": "pd.concat([t1, t2])"
+   },
+   {
+    "q": "What is the default value of the axis parameter in the concat function?",
+    "a": "0"
+   },
+   {
+    "q": "How do we make the indexes sequential and orderly after concatenation?",
+    "a": "ignore_index=True"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions"
+  },
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,323 @@
+{
+ "ar": {
+  "steps": [
+   "إضافة وحذف الأعمدة في Pandas يشبه تعديل قائمة المشتريات في يدك؛ فالجدول أو الـ DataFrame يشبه جدولاً منظماً يسهل علينا تعديل بياناته بإضافة معلومات جديدة نحتاجها أو التخلص من أعمدة قديمة لم تعد تفيدنا في التحليل.",
+   "لإضافة عمود جديد، نكتب اسم الجدول ثم نضع اسم العمود الجديد بين قوسين مربعين ونعطيه قيمة، مثل: df['Tax'] = 5 حيث يتم وضع الرقم خمسة في كل صف من صفوف هذا العمود الجديد دفعة واحدة وبسرعة مذهلة.",
+   "طريقة العمل تعتمد على تخصيص قيم لعمود غير موجود مسبقاً، فتقوم مكتبة Pandas بإنشائه تلقائياً وملئه بالبيانات التي حددتها، سواء كانت قيمة ثابتة لكل الصفوف أو قائمة تحتوي على بيانات مختلفة تتطابق مع عدد الصفوف.",
+   "يمكننا أيضاً تعديل قيمة عمود موجود بالفعل بنفس الطريقة، مثل: df['Price'] = df['Price'] * 1.1 لزيادة جميع الأسعار بنسبة عشرة بالمائة عبر سطر واحد من الكود الذكي ودون الحاجة لحلقات تكرار طويلة.",
+   "القاعدة الذهبية هنا هي أن الأعمدة الجديدة تُضاف باستخدام الأقواس المربعة والتعيين، بينما لحذف عمود نستخدم الدالة drop() مع ضرورة تحديد المعامل axis=1 لنخبر بايثون أننا نحذف عموداً رأسياً وليس صفاً أفقياً.",
+   "تُستخدم هذه المهارات في الحياة العملية بكثرة، مثل حساب الضرائب للمنتجات، أو حذف الأعمدة التي تحتوي على معلومات سرية أو غير مهمة قبل مشاركة جدول البيانات مع الآخرين في الشركات أو الأبحاث المدرسية."
+  ],
+  "example": "تخيل أن لديك جدول بيانات لمنتجات متجرك الإلكتروني وتريد إضافة عمود للضرائب وحذف عمود قديم للخصومات المؤقتة. نكتب الكود التالي بكل سهولة وبساطة لترى النتيجة:\n\nimport pandas as pd\ndata = {'Item': ['Apple', 'Banana'], 'Price': [10, 20]}\ndf = pd.DataFrame(data)\ndf['Tax'] = 5\ndf = df.drop('Discount', axis=1, errors='ignore')\nprint(df)\n\nالسبب المنطقي هو أننا استخدمنا الأقواس المربعة لإنشاء عمود الضريبة بالقيمة خمسة، ثم استخدمنا الدالة drop مع معامل المحور axis=1 لتحديد أن الهدف هو عمود وليس صفاً، مما يجعل الجدول نظيفاً وجاهزاً للتحليل.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة المعامل axis=1 عند محاولة حذف عمود، مما يؤدي إلى ظهور خطأ لأن بايثون يبحث افتراضياً عن الصفوف وليس الأعمدة. الحل هو دائماً كتابة axis=1 أو axis='columns' بوضوح داخل دالة الحذف.",
+  "recap": "يمكننا بكل سهولة إضافة أعمدة جديدة وتعديلها باستخدام الأقواس المربعة في مكتبة Pandas. كما نستطيع حذف الأعمدة الغير مرغوب فيها بأمان تام باستخدام الدالة drop مع تحديد معامل المحور الصحيح.",
+  "q": [
+   {
+    "t": "ما هي الطريقة الأسهل لإضافة عمود جديد في DataFrame؟",
+    "o": [
+     "استخدام الأقواس المربعة والتعيين مثل df['NewCol'] = 10",
+     "استخدام الدالة drop()",
+     "استخدام المعامل axis=1"
+    ],
+    "a": 0,
+    "why": "نستخدم الأقواس المربعة مع اسم العمود الجديد وقيمته لإضافته فوراً."
+   },
+   {
+    "t": "لماذا نستخدم المعامل axis=1 عند حذف عمود؟",
+    "o": [
+     "لتحديد أننا نحذف صفاً أفقياً",
+     "لنخبر بايثون أننا نحذف عموداً رأسياً",
+     "لتغيير اسم الجدول"
+    ],
+    "a": 1,
+    "why": "المعامل axis=1 يحدد أن العملية تخص الأعمدة الرأسية وليس الصفوف."
+   },
+   {
+    "t": "كيف نقوم بتعديل قيم عمود موجود بالفعل؟",
+    "o": [
+     "بحذفه ثم إعادة إنشائه حصراً",
+     "بتعيين قيم جديدة له مباشرة باستخدام الأقواس المربعة",
+     "باستخدام الدالة axis فقط"
+    ],
+    "a": 1,
+    "why": "يمكننا تعديل العمود مباشرة بكتابة اسمه وإعطائه القيم الجديدة."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة مهارات الأعمدة",
+   "goal": "صل كل عملية بآلية تنفيذها الصحيحة في Pandas",
+   "pairs": [
+    [
+     "إضافة عمود جديد",
+     "df['Tax'] = 5"
+    ],
+    [
+     "حذف عمود رأسي",
+     "df.drop('Col', axis=1)"
+    ],
+    [
+     "تعديل عمود موجود",
+     "df['Price'] = df['Price'] * 2"
+    ],
+    [
+     "معامل تحديد الأعمدة",
+     "axis=1"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت مهارات إضافة وتعديل وحذف الأعمدة باحترافية تامة!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن الأعمدة في Pandas",
+    "text": "الجدول في بايثون أو الـ DataFrame يشبه جدولاً مدرسياً منظماً في صفوف وأعمدة. إضافة أو حذف الأعمدة يشبه إضافة خانة جديدة لجدول الواجبات أو شطب خانة قديمة لا نحتاجها. هذا يمنحنا مرونة هائلة في تنظيم وتعديل بياناتنا.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona']})\nprint(df)",
+    "output": "   Name\n0   Ali\n1  Mona"
+   },
+   {
+    "h": "إنشاء عمود جديد وتعبئته بقيمة ثابتة",
+    "text": "لإضافة عمود جديد يحمل نفس القيمة لكل الصفوف، نكتب اسم الجدول متبوعاً باسم العمود الجديد بين قوسين مربعين وعلامة اقتباس، ثم نضع علامة التساوي والقيمة المطلوبة. يشبه ذلك توزيع نفس الهدية على جميع طلاب الفصل دفعة واحدة.",
+    "code": "df['School'] = 'Cairo Prep'\nprint(df)",
+    "output": "   Name      School\n0   Ali  Cairo Prep\n1  Mona  Cairo Prep"
+   },
+   {
+    "h": "إنشاء عمود بقائمة من البيانات المختلفة",
+    "text": "يمكننا أيضاً إضافة عمود يحتوي على بيانات متنوعة لكل صف، شريطة أن يكون عدد العناصر في القائمة مساوياً تماماً لعدد صفوف الجدول. يشبه ذلك إعطاء درجة مختلفة لكل طالب في اختبار الرياضيات.",
+    "code": "df['Score'] = [95, 88]\nprint(df)",
+    "output": "   Name      School  Score\n0   Ali  Cairo Prep     95\n1  Mona  Cairo Prep     88"
+   },
+   {
+    "h": "تعديل قيم عمود موجود مسبقاً",
+    "text": "إذا كان العمود موجوداً وترغب في تحديث بياناته، يمكنك التعامل معه تماماً مثل إضافة عمود جديد. بايثون سيقوم بتحديث القيم القديمة بالقيم الجديدة فوراً دون أي مشاكل. يشبه ذلك تصحيح درجة طالب بعد مراجعة ورقة الإجابة.",
+    "code": "df['Score'] = [100, 92]\nprint(df)",
+    "output": "   Name      School  Score\n0   Ali  Cairo Prep    100\n1  Mona  Cairo Prep     92"
+   },
+   {
+    "h": "إجراء عمليات حسابية على الأعمدة",
+    "text": "يمكننا تعديل العمود بناءً على حسابات رياضية سريعة تستخدم الأعمدة الحالية. على سبيل المثال، زيادة جميع القيم بنسبة معينة أو ضرب السعر في الكمية. يشبه ذلك حساب السعر الإجمالي لجميع منتجات سلة التسوق.",
+    "code": "df['Score_Bonus'] = df['Score'] + 5\nprint(df)",
+    "output": "   Name      School  Score  Score_Bonus\n0   Ali  Cairo Prep    100          105\n1  Mona  Cairo Prep     92           97"
+   },
+   {
+    "h": "استخدام الدالة drop لحذف عمود",
+    "text": "عندما لا نحتاج إلى عمود معين، نستخدم الدالة drop() للتخلص منه. هذه الدالة تبحث عن اسم العمود وتقوم بإزالته من الجدول. يشبه ذلك مسح ملاحظة قديمة من على سبورة الفصل لم تعد مهمة.",
+    "code": "df = df.drop('School', axis=1)\nprint(df)",
+    "output": "   Name  Score  Score_Bonus\n0   Ali    100          105\n1  Mona     92           97"
+   },
+   {
+    "h": "أهمية معامل المحور axis=1",
+    "text": "في مكتبة Pandas، يعني الرقم صفر (0) الصفوف الأفقية، بينما يعني الرقم واحد (1) الأعمدة الرأسية. عند حذف عمود، يجب أن نحدد axis=1 لنخبر بايثون أننا نستهدف عموداً رأسياً وليس صفاً. هذا ضروري جداً لتجنب الأخطاء.",
+    "code": "# axis=1 specifies columns\ndf_slim = df.drop('Score_Bonus', axis=1)\nprint(df_slim)",
+    "output": "   Name  Score\n0   Ali    100\n1  Mona     92"
+   },
+   {
+    "h": "حذف عدة أعمدة دفعة واحدة",
+    "text": "لا تقتصر الدالة drop على حذف عمود واحد، بل يمكنها حذف عدة أعمدة في نفس الوقت من خلال وضع أسمائها داخل قائمة مربعة. يشبه ذلك تنظيف حقيبة المدرسة وإخراج عدة كتب قديمة دفعة واحدة لتوفير مساحة.",
+    "code": "df['Temp'] = [1, 2]\ndf = df.drop(['Score_Bonus', 'Temp'], axis=1)\nprint(df)",
+    "output": "   Name  Score\n0   Ali    100\n1  Mona     92"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "طريقة الوصول إلى عمود محدد أو إنشائه في جدول البيانات"
+   },
+   {
+    "name": "drop()",
+    "desc": "دالة تستخدم لحذف صفوف أو أعمدة من جدول البيانات"
+   },
+   {
+    "name": "axis=1",
+    "desc": "معامل يخبر بايثون بأن العملية تستهدف الأعمدة الرأسية"
+   },
+   {
+    "name": "axis=0",
+    "desc": "معامل يخبر بايثون بأن العملية تستهدف الصفوف الأفقية"
+   },
+   {
+    "name": "inplace=True",
+    "desc": "معامل لتطبيق التعديل مباشرة على الجدول الأصلي دون حفظه في متغير جديد"
+   },
+   {
+    "name": "errors='ignore'",
+    "desc": "معامل لمنع ظهور خطأ إذا كان العمود المراد حذفه غير موجود"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود بايثون لإضافة عمود جديد اسمه 'Age' بقيمة 14 لجميع الصفوف في جدول df.",
+    "a": "df['Age'] = 14"
+   },
+   {
+    "q": "كيف تحذف عمود 'Age' من جدول df بشكل صحيح؟",
+    "a": "df = df.drop('Age', axis=1)"
+   },
+   {
+    "q": "اكتب كود لتحديث عمود 'Score' بزيادة كل قيمة بمقدار 10 درجات.",
+    "a": "df['Score'] = df['Score'] + 10"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Adding and deleting columns in Pandas is like modifying a shopping list in your hand; a DataFrame is like a neat table where we can easily update data by adding new information we need or getting rid of old columns that are no longer useful for our analysis.",
+   "To add a new column, type the DataFrame name, put the new column name inside square brackets, and assign a value to it, like: df['Tax'] = 5, where the number five is placed in every row of this new column all at once with amazing speed.",
+   "The working method relies on assigning values to a previously non-existent column, and Pandas automatically creates it and fills it with the data you specified, whether it is a constant value for all rows or a list containing different data matching the row count.",
+   "We can also modify the values of an already existing column in the same way, like: df['Price'] = df['Price'] * 1.1 to increase all prices by ten percent in a single line of clever code without needing long loops.",
+   "The golden rule here is that new columns are added using square brackets and assignment, while to delete a column we use the drop() method, making sure to specify the axis=1 parameter to tell Python we are deleting a vertical column rather than a horizontal row.",
+   "These skills are used frequently in real life, such as calculating taxes for products, or deleting columns containing confidential or unimportant information before sharing the dataset with others in companies or school research."
+  ],
+  "example": "Imagine you have a dataset of your online store products and you want to add a tax column and delete an old column for temporary discounts. We write the following code easily and simply to see the result:\n\nimport pandas as pd\ndata = {'Item': ['Apple', 'Banana'], 'Price': [10, 20]}\ndf = pd.DataFrame(data)\ndf['Tax'] = 5\ndf = df.drop('Discount', axis=1, errors='ignore')\nprint(df)\n\nThe logical reason is that we used square brackets to create the tax column with a value of five, then we used the drop method with the axis=1 parameter to specify that the target is a column and not a row, keeping the table clean and ready for analysis.",
+  "mistake": "A common mistake is forgetting to write the axis=1 parameter when trying to delete a column, which results in an error because Python looks for rows by default instead of columns. The solution is always to write axis=1 or axis='columns' clearly inside the drop function.",
+  "recap": "We can easily add new columns and modify them using square brackets in the Pandas library. We can also delete unwanted columns safely using the drop method with the correct axis parameter specified.",
+  "q": [
+   {
+    "t": "What is the easiest way to add a new column in a DataFrame?",
+    "o": [
+     "Using square brackets and assignment like df['NewCol'] = 10",
+     "Using the drop() method",
+     "Using the axis=1 parameter"
+    ],
+    "a": 0,
+    "why": "We use square brackets with the new column name and its value to add it instantly."
+   },
+   {
+    "t": "Why do we use the axis=1 parameter when deleting a column?",
+    "o": [
+     "To specify that we are deleting a horizontal row",
+     "To tell Python that we are deleting a vertical column",
+     "To change the table name"
+    ],
+    "a": 1,
+    "why": "The axis=1 parameter specifies that the operation targets vertical columns rather than rows."
+   },
+   {
+    "t": "How do we modify the values of an already existing column?",
+    "o": [
+     "By deleting it and recreating it exclusively",
+     "By assigning new values directly using square brackets",
+     "By using the axis function only"
+    ],
+    "a": 1,
+    "why": "We can modify the column directly by writing its name and assigning the new values."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Match Column Skills",
+   "goal": "Connect each operation to its correct execution mechanism in Pandas",
+   "pairs": [
+    [
+     "Add a new column",
+     "df['Tax'] = 5"
+    ],
+    [
+     "Delete a vertical column",
+     "df.drop('Col', axis=1)"
+    ],
+    [
+     "Modify an existing column",
+     "df['Price'] = df['Price'] * 2"
+    ],
+    [
+     "Parameter specifying columns",
+     "axis=1"
+    ]
+   ],
+   "success": "Awesome! You have mastered the skills of adding, modifying, and deleting columns with total professionalism!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Columns in Pandas",
+    "text": "A DataFrame in Python is like a neat school table organized in rows and columns. Adding or deleting columns is like adding a new column to a homework schedule or crossing out an old column we do not need. This gives us tremendous flexibility in organizing and modifying our data.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona']})\nprint(df)",
+    "output": "   Name\n0   Ali\n1  Mona"
+   },
+   {
+    "h": "Creating a New Column with a Constant Value",
+    "text": "To add a new column holding the same value for all rows, write the DataFrame name followed by the new column name inside square brackets and quotes, then an equals sign and the desired value. This is like handing out the exact same gift to all students in the class at once.",
+    "code": "df['School'] = 'Cairo Prep'\nprint(df)",
+    "output": "   Name      School\n0   Ali  Cairo Prep\n1  Mona  Cairo Prep"
+   },
+   {
+    "h": "Creating a Column with a List of Different Data",
+    "text": "We can also add a column containing varied data for each row, provided that the number of elements in the list equals the exact number of rows in the table. This is like giving a different grade to each student on a math test.",
+    "code": "df['Score'] = [95, 88]\nprint(df)",
+    "output": "   Name      School  Score\n0   Ali  Cairo Prep     95\n1  Mona  Cairo Prep     88"
+   },
+   {
+    "h": "Modifying Values of an Existing Column",
+    "text": "If the column already exists and you want to update its data, you can handle it exactly like adding a new column. Python will update the old values with the new values instantly without any issues. This is like correcting a student's grade after reviewing their test paper.",
+    "code": "df['Score'] = [100, 92]\nprint(df)",
+    "output": "   Name      School  Score\n0   Ali  Cairo Prep    100\n1  Mona  Cairo Prep     92"
+   },
+   {
+    "h": "Performing Calculations on Columns",
+    "text": "We can modify a column based on quick math calculations using existing columns. For example, increasing all values by a certain percentage or multiplying price by quantity. This is like calculating the total price for all items in a shopping cart.",
+    "code": "df['Score_Bonus'] = df['Score'] + 5\nprint(df)",
+    "output": "   Name      School  Score  Score_Bonus\n0   Ali  Cairo Prep    100          105\n1  Mona  Cairo Prep     92           97"
+   },
+   {
+    "h": "Using the Drop Method to Remove a Column",
+    "text": "When we no longer need a specific column, we use the drop() method to get rid of it. This method looks for the column name and removes it from the table. This is like erasing an old note from the classroom whiteboard that is no longer important.",
+    "code": "df = df.drop('School', axis=1)\nprint(df)",
+    "output": "   Name  Score  Score_Bonus\n0   Ali    100          105\n1  Mona     92           97"
+   },
+   {
+    "h": "The Importance of the Axis=1 Parameter",
+    "text": "In Pandas, the number zero (0) represents horizontal rows, while the number one (1) represents vertical columns. When deleting a column, we must specify axis=1 to tell Python we are targeting a vertical column and not a row. This is vital to avoid errors.",
+    "code": "# axis=1 specifies columns\ndf_slim = df.drop('Score_Bonus', axis=1)\nprint(df_slim)",
+    "output": "   Name  Score\n0   Ali    100\n1  Mona     92"
+   },
+   {
+    "h": "Deleting Multiple Columns at Once",
+    "text": "The drop method is not limited to deleting a single column; it can also delete multiple columns at the same time by putting their names inside a square list. This is like cleaning a school bag and pulling out several old books all at once to make space.",
+    "code": "df['Temp'] = [1, 2]\ndf = df.drop(['Score_Bonus', 'Temp'], axis=1)\nprint(df)",
+    "output": "   Name  Score\n0   Ali    100\n1  Mona     92"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "Method to access a specific column or create one in a DataFrame"
+   },
+   {
+    "name": "drop()",
+    "desc": "Method used to delete rows or columns from a DataFrame"
+   },
+   {
+    "name": "axis=1",
+    "desc": "Parameter telling Python that the operation targets vertical columns"
+   },
+   {
+    "name": "axis=0",
+    "desc": "Parameter telling Python that the operation targets horizontal rows"
+   },
+   {
+    "name": "inplace=True",
+    "desc": "Parameter to apply the modification directly to the original table without saving to a new variable"
+   },
+   {
+    "name": "errors='ignore'",
+    "desc": "Parameter to prevent errors if the column intended for deletion does not exist"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write Python code to add a new column named 'Age' with value 14 for all rows in dataframe df.",
+    "a": "df['Age'] = 14"
+   },
+   {
+    "q": "How do you correctly delete the 'Age' column from dataframe df?",
+    "a": "df = df.drop('Age', axis=1)"
+   },
+   {
+    "q": "Write code to update the 'Score' column by increasing each value by 10 points.",
+    "a": "df['Score'] = df['Score'] + 10"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

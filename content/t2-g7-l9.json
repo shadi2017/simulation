@@ -1,0 +1,307 @@
+{
+ "ar": {
+  "steps": [
+   "مرحباً يا بطل! اليوم سنقوم بعمل مشروعنا الأخير في معالجة البيانات وتحليلها بلغة بايثون وPandas.",
+   "تخيل أنك تعمل في مطعم، وتجمع طلبات العملاء من عدة ورقات وتدمجها معاً، تماماً مثل دمج ملفات البيانات باستخدام دالة merge.",
+   "بعد دمج الملفات، قد تجد بيانات ناقصة أو أخطاء، وهنا يأتي دور تنظيف البيانات (Data Cleaning) لحذف أو تصحيح القيم المفقودة.",
+   "الخطوة التالية هي إنشاء جدول محوري (Pivot Table) لتلخيص البيانات الكبيرة، مثل معرفة إجمالي مبيعات كل وجبة بسرعة وسهولة.",
+   "القاعدة الذهبية لأي مشروع بيانات ناجح هي: خط أنابيب بيانات (Pipeline) منظم ومترتب من القراءة حتى حفظ التقرير النهائي.",
+   "تُستخدم هذه المهارات المتقدمة في الواقع الحقيقي من قبل الشركات الكبرى لتحليل بيانات المبيعات، ومراقبة الطقس، واتخاذ قرارات ذكية!"
+  ],
+  "example": "لنفترض أن لدينا ملفين للمبيعات، ونريد دمجهم وتنظيفهم واستخراج تقرير نهائي. الكود كالتالي:\n```python\nimport pandas as pd\ndf1 = pd.read_csv('sales1.csv')\ndf2 = pd.read_csv('sales2.csv')\nmerged = pd.merge(df1, df2, on='id')\ncleaned = merged.dropna()\npivot = cleaned.pivot_table(index='city', values='sales', aggfunc='sum')\npivot.to_csv('final_report.csv')\nprint('تم إنتاج التقرير بنجاح!')\n```\nالسبب: قمنا ببناء خط بيانات متكامل يقرأ، يدمج، ينظف، يلخص، ويحفظ النتيجة في ملف جديد.",
+  "mistake": "الخطأ الشائع هو نسيان تحديد عمود الربط (on=) عند استخدام دالة merge، مما يؤدي إلى حدوث خطأ في الدمج. الحل هو التأكد دائماً من وجود عمود مشترك وكتابة اسمه بشكل صحيح.",
+  "recap": "لقد جمعت اليوم كل مهارات بايثون وPandas في مشروع متكامل لمعالجة وتحليل وحفظ البيانات. أنت الآن مبرمج بيانات محترف!",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لدالة pd.merge في Pandas؟",
+    "o": [
+     "رسم البيانات",
+     "دمج جدولين بناءً على عمود مشترك",
+     "حذف البيانات المفقودة"
+    ],
+    "a": 1,
+    "why": "تُستخدم دالة merge لربط جدولين أو أكثر معاً عبر عمود مشترك."
+   },
+   {
+    "t": "أي دالة تُستخدم لإنشاء جدول تلخيصي للبيانات في Pandas؟",
+    "o": [
+     "pivot_table()",
+     "dropna()",
+     "read_csv()"
+    ],
+    "a": 0,
+    "why": "دالة pivot_table مخصصة لتلخيص وإعادة تشكيل البيانات بناءً على قيم محددة."
+   },
+   {
+    "t": "ماذا تعني عملية Data Cleaning أو تنظيف البيانات؟",
+    "o": [
+     "تلوين الجدول",
+     "إزالة الأخطاء والبيانات المفقودة",
+     "حفظ الملف بصيغة PDF"
+    ],
+    "a": 1,
+    "why": "تنظيف البيانات يعني التعامل مع القيم المفقودة والأخطاء لضمان دقة التحليل."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "تصنيف خطوات خط أنابيب البيانات",
+   "goal": "صنف كل عملية في خط الأنابيب إلى مرحلتها الصحيحة (تجهيز أو تلخيص).",
+   "buckets": [
+    "خطوات التنظيف والدمج",
+    "خطوات التحليل والتصدير"
+   ],
+   "items": [
+    {
+     "t": "pd.merge()",
+     "b": 0
+    },
+    {
+     "t": "df.dropna()",
+     "b": 0
+    },
+    {
+     "t": "pivot_table()",
+     "b": 1
+    },
+    {
+     "t": "to_csv()",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد رتبت خطوات خط البيانات بنجاح وأصبحت جاهزاً لإنتاج التقارير!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة مشروع معالجة البيانات",
+    "text": "مشروعنا الأخير يجمع كل ما تعلمناه في الفصل الثاني. تخيل أنك تنظم حفلة كبرى وتجمع قائمة المدعوّين من أصدقائك في المدرسة والنادي؛ أنت بحاجة لجمعهم، ترتيب الأسماء، حذف المكرر، وعمل جدول نهائي للمدعوين. هذا تماماً ما يفعله مهندس البيانات!",
+    "code": "import pandas as pd\n# خطوة 1: قراءة البيانات\ndf = pd.read_csv('data.csv')\nprint(df.head(2))",
+    "output": "   id  score\n0   1     85\n1   2     90"
+   },
+   {
+    "h": "قراءة متعددة ومسار البيانات الكامل",
+    "text": "خط أنابيب البيانات (Data Pipeline) يشبه حزام المصنع في مصنع ألعاب. تدخل المواد الخام من جهة وتمر بمراحل (تنظيف، تركيب، تلوين) لتخرج لعبة جاهزة. في بايثون، يبدأ الخط بقراءة الملفات وينتهي بحفظ تقرير نظيف.",
+    "code": "import pandas as pd\n# محاكاة خط أنابيب\nfile_list = ['file1.csv', 'file2.csv']\nprint('جاهز لقراءة الملفات:', len(file_list))",
+    "output": "جاهز لقراءة الملفات: 2"
+   },
+   {
+    "h": "دمج البيانات الاحترافي (Merging)",
+    "text": "عندما يكون لديك بيانات عن درجات الطلاب في ملف، وبيانات عن هواياتهم في ملف آخر، تربطهما معاً عبر رقم الطالب (ID). هذا يشبه توصيل قطعتين من الألعاب ببعضهما باستخدام قطعة توصيل مشتركة.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'id': [1, 2], 'name': ['علي', 'مريم']})\ndf2 = pd.DataFrame({'id': [1, 2], 'score': [90, 95]})\nmerged_df = pd.merge(df1, df2, on='id')\nprint(merged_df)",
+    "output": "   id name  score\n0   1  علي     90\n1   2 مريم     95"
+   },
+   {
+    "h": "تنظيف البيانات المفقودة والأخطاء",
+    "text": "أحياناً تجد صفوفاً فارغة أو بيانات غير منطقية. تنظيف البيانات يشبه مسح الغبار وترتيب غرفتك قبل استقبال الضيوف، حتى تظهر كل الأشياء بوضوح ودون فوضى.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [85, None, 95]})\ncleaned_df = df.dropna()\nprint(cleaned_df)",
+    "output": "   score\n0   85.0\n2   95.0"
+   },
+   {
+    "h": "إنشاء الجداول المحورية (Pivot Tables)",
+    "text": "الجدول المحوري يشبه آلة سحرية تلخص الأرقام الضخمة. بدل قراءة مئات الصفوف، يعطيك الجدول المحوري مجموع مبيعات كل فرع أو معدل درجات كل صف دراسي بلمح البصر.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'city': ['القاهرة', 'القاهرة', 'الإسكندرية'], 'sales': [100, 200, 150]})\npivot = df.pivot_table(index='city', values='sales', aggfunc='sum')\nprint(pivot)",
+    "output": "            sales\ncity             \nالإسكندرية    150\nالقاهرة       300"
+   },
+   {
+    "h": "تصدير التقرير النهائي (Final Report)",
+    "text": "بعد الانتهاء من دمج البيانات وتنظيفها وتلخيصها، يجب حفظها في ملف جديد لتقدمه لمعلمك أو مديرك. هذا يشبه حفظ رسمتك الجميلة على الكمبيوتر لتطبعها لاحقاً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'report': ['ممتاز']})\ndf.to_csv('final_report.csv', index=False)\nprint('تم الحفظ بنجاح!')",
+    "output": "تم الحفظ بنجاح!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pd.merge()",
+    "desc": "دمج جدولين أو أكثر اعتماداً على عمود مشترك."
+   },
+   {
+    "name": "dropna()",
+    "desc": "إزالة الصفوف التي تحتوي على قيم مفقودة."
+   },
+   {
+    "name": "fillna()",
+    "desc": "تعبئة القيم المفقودة بقيمة محددة."
+   },
+   {
+    "name": "pivot_table()",
+    "desc": "إنشاء جدول تلخيصي للبيانات."
+   },
+   {
+    "name": "to_csv()",
+    "desc": "حفظ الإطار كملف CSV."
+   },
+   {
+    "name": "groupby()",
+    "desc": "تجميع البيانات حسب عمود معين لإجراء العمليات."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر بايثون لدمج جدولين df1 و df2 عبر عمود 'student_id'.",
+    "a": "pd.merge(df1, df2, on='student_id')"
+   },
+   {
+    "q": "كيف تحذف القيم المفقودة من إطار بيانات باسم df؟",
+    "a": "df.dropna()"
+   },
+   {
+    "q": "ما الدالة المستخدمة لحفظ إطار بيانات باسم df إلى ملف باسم 'report.csv' بدون فهرس؟",
+    "a": "df.to_csv('report.csv', index=False)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hello champion! Today we will build our final data wrangling and analysis project using Python and Pandas.",
+   "Imagine you work at a restaurant, collecting customer orders from multiple slips and combining them, just like merging datasets using the merge function.",
+   "After merging, you might find missing data or errors; this is where Data Cleaning comes in to drop or fix missing values.",
+   "The next step is creating a Pivot Table to summarize big data easily, such as quickly finding total sales per meal.",
+   "The golden rule for any successful data project is an organized Data Pipeline that flows smoothly from reading data to saving the final report.",
+   "These advanced skills are used in the real world by top companies to analyze sales data, track weather, and make smart decisions!"
+  ],
+  "example": "Suppose we have two sales files and want to merge, clean, and output a final report. The code is:\n```python\nimport pandas as pd\ndf1 = pd.read_csv('sales1.csv')\ndf2 = pd.read_csv('sales2.csv')\nmerged = pd.merge(df1, df2, on='id')\ncleaned = merged.dropna()\npivot = cleaned.pivot_table(index='city', values='sales', aggfunc='sum')\npivot.to_csv('final_report.csv')\nprint('Report generated successfully!')\n```\nReason: We built a full data pipeline that reads, merges, cleans, summarizes, and saves the result to a new file.",
+  "mistake": "A common mistake is forgetting to specify the join column (on=) when using the merge function, causing a merge error. The fix is to always ensure a common column exists and write its name correctly.",
+  "recap": "Today you combined all Python and Pandas skills into a complete project to wrangle, analyze, and save data. You are now a professional data programmer!",
+  "q": [
+   {
+    "t": "What is the primary function of pd.merge in Pandas?",
+    "o": [
+     "Plot data",
+     "Join two DataFrames based on a common column",
+     "Remove missing data"
+    ],
+    "a": 1,
+    "why": "The merge function is used to link two or more tables together via a shared column."
+   },
+   {
+    "t": "Which function is used to create a summary table in Pandas?",
+    "o": [
+     "pivot_table()",
+     "dropna()",
+     "read_csv()"
+    ],
+    "a": 0,
+    "why": "The pivot_table function is designed to summarize and reshape data based on specific values."
+   },
+   {
+    "t": "What does Data Cleaning mean?",
+    "o": [
+     "Coloring the table",
+     "Removing errors and missing data",
+     "Saving the file as PDF"
+    ],
+    "a": 1,
+    "why": "Data cleaning means handling missing values and errors to ensure analysis accuracy."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Categorize Data Pipeline Steps",
+   "goal": "Sort each pipeline operation into its correct stage (preparation or summarization).",
+   "buckets": [
+    "Cleaning & Merging Steps",
+    "Analysis & Export Steps"
+   ],
+   "items": [
+    {
+     "t": "pd.merge()",
+     "b": 0
+    },
+    {
+     "t": "df.dropna()",
+     "b": 0
+    },
+    {
+     "t": "pivot_table()",
+     "b": 1
+    },
+    {
+     "t": "to_csv()",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You successfully ordered the data pipeline steps and are ready to generate reports!"
+  },
+  "sections": [
+   {
+    "h": "Data Wrangling Project Introduction",
+    "text": "Our final project brings together everything learned in Term 2. Imagine organizing a big party and collecting guest lists from school and club friends; you need to gather them, sort names, remove duplicates, and make a final guest table. This is exactly what a data engineer does!",
+    "code": "import pandas as pd\n# Step 1: Read data\ndf = pd.read_csv('data.csv')\nprint(df.head(2))",
+    "output": "   id  score\n0   1     85\n1   2     90"
+   },
+   {
+    "h": "Multiple Reads & Complete Data Pipeline",
+    "text": "A Data Pipeline is like a conveyor belt in a toy factory. Raw materials enter on one side and go through stages (cleaning, assembling, painting) to exit as a ready toy. In Python, the pipeline starts by reading files and ends by saving a clean report.",
+    "code": "import pandas as pd\n# Pipeline simulation\nfile_list = ['file1.csv', 'file2.csv']\nprint('Ready to read files:', len(file_list))",
+    "output": "Ready to read files: 2"
+   },
+   {
+    "h": "Professional Data Merging",
+    "text": "When you have student grade data in one file and hobby data in another, you link them using the student ID. This is like connecting two toy lego pieces together using a shared connector block.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'id': [1, 2], 'name': ['Ali', 'Maryam']})\ndf2 = pd.DataFrame({'id': [1, 2], 'score': [90, 95]})\nmerged_df = pd.merge(df1, df2, on='id')\nprint(merged_df)",
+    "output": "   id    name  score\n0   1     Ali     90\n1   2  Maryam     95"
+   },
+   {
+    "h": "Cleaning Missing Data and Errors",
+    "text": "Sometimes you find empty rows or illogical data. Cleaning data is like dusting and tidying your room before guests arrive, so everything looks clear and clutter-free.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [85, None, 95]})\ncleaned_df = df.dropna()\nprint(cleaned_df)",
+    "output": "   score\n0   85.0\n2   95.0"
+   },
+   {
+    "h": "Creating Pivot Tables",
+    "text": "A pivot table is like a magic machine that summarizes huge numbers. Instead of reading hundreds of rows, a pivot table gives you total sales per branch or average scores per grade in the blink of an eye.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'city': ['Cairo', 'Cairo', 'Alex'], 'sales': [100, 200, 150]})\npivot = df.pivot_table(index='city', values='sales', aggfunc='sum')\nprint(pivot)",
+    "output": "       sales\ncity        \nAlex     150\nCairo    300"
+   },
+   {
+    "h": "Exporting the Final Report",
+    "text": "After finishing data merging, cleaning, and summarizing, you must save it to a new file to present to your teacher or manager. This is like saving your drawing on the computer to print later.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'report': ['Excellent']})\ndf.to_csv('final_report.csv', index=False)\nprint('Saved successfully!')",
+    "output": "Saved successfully!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pd.merge()",
+    "desc": "Join two or more DataFrames based on a common column."
+   },
+   {
+    "name": "dropna()",
+    "desc": "Remove rows containing missing values."
+   },
+   {
+    "name": "fillna()",
+    "desc": "Fill missing values with a specified value."
+   },
+   {
+    "name": "pivot_table()",
+    "desc": "Create a summarized pivot table of data."
+   },
+   {
+    "name": "to_csv()",
+    "desc": "Save DataFrame as a CSV file."
+   },
+   {
+    "name": "groupby()",
+    "desc": "Group data by a specific column for operations."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python command to merge two DataFrames df1 and df2 on 'student_id'.",
+    "a": "pd.merge(df1, df2, on='student_id')"
+   },
+   {
+    "q": "How do you drop missing values from a DataFrame named df?",
+    "a": "df.dropna()"
+   },
+   {
+    "q": "What function saves a DataFrame df to a file named 'report.csv' without index?",
+    "a": "df.to_csv('report.csv', index=False)"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

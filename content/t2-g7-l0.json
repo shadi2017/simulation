@@ -1,0 +1,260 @@
+{
+ "ar": {
+  "steps": [
+   "الفهرسة المتقدمة في بانდას بتساعدنا نمسك ونختار صفوف وأعمدة محددة بالمللّي من الجدول الكبير بتاعنا.",
+   "عشان نجيب البيانات بالأسماء أو العناوين، بنستخدم أداة سحرية اسمها 'loc' زي لما تدور على اسم صاحبك في الدليل.",
+   "لو عايز تنادي على البيانات برقم الصف أو العمود الترتيبي (0، 1، 2)، بنستخدم أداة تانية اسمها 'iloc'.",
+   "مثال سريع: لو عندنا جدول، بنكتب df.loc['2013-01-01'] عشان نجيب صف اليوم ده بالعنوان بتاعه بالضبط.",
+   "قاعدة ذهبية: مع 'loc' بنستعمل أسماء الليبلز الحقيقية، لكن مع 'iloc' بنستعمل الأرقام الصحيحة بس زي الشطارة.",
+   "في الحياة اليومية، ده عامل زي لما تفتح دروج مكتبك وتجيب الدراج رقم 2 أو الدرج المكتوب عليه 'ألوان'."
+  ],
+  "example": "تخيل إن عندنا جدول بيانات فيه درجات مواد مدرسية متسمية بأسماء الأيام. لو كتبنا df.loc['2013-01-01', ['A', 'B']]، إحنا هنا بنستخدم الفهرسة المعتمدة على الليبل 'loc' عشان نسحب بالضبط صف اليوم ده وأعمدة A وB. التفصيل ده بيخلينا نوصل لأي معلومة في ثواني معدودة كأننا بنستخدم كشاف ماء خارق في وسط جدول ضخم مليان أرقام.",
+  "mistake": "الغلطة الشهيرة إننا نتلخبط ونستخدم أرقام مع 'loc' أو أسماء مع 'iloc'. دايماً افتكر: loc للأسماء (Labels) وiloc للأرقام (Integers).",
+  "recap": "تعلمنا إزاي نستخدم loc للوصول بالأسماء وiloc للوصول بالأرقام عشان نتحكم في الجداول باحترافية تامة.",
+  "q": [
+   {
+    "t": "أي أداة بنستخدمها للوصول للبيانات باستخدام أسماء أو عناوين الليبلز؟",
+    "o": [
+     "iloc",
+     "loc",
+     "print"
+    ],
+    "a": 1,
+    "why": "loc مخصصة للبحث بالأسماء أو الليبلز (Label-based indexing)."
+   },
+   {
+    "t": "لو عاوزين نجيب أول صفين باستخدام الأرقام الترتيبية، هنستخدم إيه؟",
+    "o": [
+     "df.iloc[0:2]",
+     "df.loc[0:2]",
+     "df.head(10)"
+    ],
+    "a": 0,
+    "why": "iloc بتعتمد على الأرقام الصحيحة (Integer-based indexing) في التحديد."
+   },
+   {
+    "t": "إيه الفرق الجوهري بين loc و iloc؟",
+    "o": [
+     "loc للأسماء و iloc للأرقام",
+     "iloc للأسماء و loc للأرقام",
+     "مفيش فرق بينهم خالص"
+    ],
+    "a": 0,
+    "why": "loc تتعامل مع الليبلز بينما iloc تتعامل مع مواقع الأرقام الصحيحة."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "صطاد الباج في كود الفهرسة",
+   "goal": "صلح الغلط في السطر اللي بيستخدم الفهرسة بـ iloc عشان نجيب أول صفين.",
+   "lines": [
+    "import pandas as pd",
+    "df = pd.DataFrame({'A': [1, 2, 3]})",
+    "result = df.loc[0:2]",
+    "print(result)"
+   ],
+   "bug": 2,
+   "fix": "result = df.iloc[0:2]",
+   "success": "يا سلام! الكود اشتغل وطلع أول صفين بالظبط باستخدام الأرقام!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في الفهرسة المتقدمة",
+    "text": "لما يكون عندنا جدول بيانات كبير فيه مئات الصفوف والأعمدة، مش هينفع نقرأ كله مرة واحدة. الفهرسة المتقدمة بتعمل زي نظارة مكبرة تخليك تختار اللي على مزاجك بدقة شديدة وسرعة رهيبة.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame(np.random.randn(4, 2), columns=['A', 'B'])\nprint(df)",
+    "output": "   A        B\n0  0.469 -0.282\n1  1.212 -0.173\n2 -0.861 -2.104\n3  0.721 -0.706"
+   },
+   {
+    "h": "استخدام loc للبحث بالعناوين",
+    "text": "خاصية loc بتسمح لك تنده على البيانات باستخدام أسماء الليبلز بتاعت الصفوف والأعمدة. زي لما تنادي على صاحبك باسمه الثلاثي بدل رقمه في الكشف.",
+    "code": "import pandas as pd\ndates = pd.date_range('20130101', periods=2)\ndf = pd.DataFrame({'A': [1, 2]}, index=dates)\nprint(df.loc['2013-01-01'])",
+    "output": "A    1\nName: 2013-01-01, dtype: int64"
+   },
+   {
+    "h": "اختيار صفوف وأعمدة متعددة بـ loc",
+    "text": "ممكن تطلب من loc تطلع لك شريحة كاملة من الجدول بتحديد اسم البداية ونهاية المدى للأسماء، مع تحديد الأعمدة اللي تحب تظهر معاك.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]}, index=['row1', 'row2', 'row3'])\nprint(df.loc['row1':'row2', ['A']])",
+    "output": "      A\nrow1  1\nrow2  2"
+   },
+   {
+    "h": "استخدام iloc للأرقام الترتيبية",
+    "text": "أما iloc فهي بتحب الأرقام الصريحة للمكان أو الترتيب (Index positions)، وتبدأ العد من الصفر زي الكمبيوتر تماماً. كأنك بتختار العنصر رقم واحد في طابور الانتظار.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30], 'B': [40, 50, 60]})\nprint(df.iloc[0])",
+    "output": "A    10\nB    40\nName: 0, dtype: int64"
+   },
+   {
+    "h": "تحديد شريحة باستخدام iloc",
+    "text": "عشان تجيب أول صفين وتاني عمود مثلاً، بتقدر تستخدم أرقام مؤشرات iloc وتحدد المدى بتاعك بكل سهولة ويسر دون الحاجة لمعرفة أسماء الليبلز.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30], 'B': [40, 50, 60]})\nprint(df.iloc[0:2, 0])",
+    "output": "0    10\n1    20\nName: A, dtype: int64"
+   },
+   {
+    "h": "الفروق الجوهرية بين loc و iloc",
+    "text": "الفرق الأساسي إن loc بتتعامل مع أسماء الليبلز الحقيقية (ومبتستبعدش الحد الأخير في المدى بل بتشمله)، بينما iloc بتتعامل مع الأرقام الصرفة (وبتشمل البداية وتستبعد النهاية زي بايثون القياسية).",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3]}, index=['x', 'y', 'z'])\nprint(df.loc['x':'y'])",
+    "output": "   A\nx  1\ny  2"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df.loc[]",
+    "desc": "الفهرسة المعتمدة على الليبلز أو أسماء الصفوف والأعمدة."
+   },
+   {
+    "name": "df.iloc[]",
+    "desc": "الفهرسة المعتمدة على الأرقام الترتيبية البحتة (مواقع الصفوف والأعمدة)."
+   },
+   {
+    "name": "index",
+    "desc": "عناوين الصفوف في جدول البيانات."
+   },
+   {
+    "name": "columns",
+    "desc": "أسماء الأعمدة في جدول البيانات."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود باستخدام iloc لاختيار أول صفين من جدول اسمه df.",
+    "a": "df.iloc[0:2]"
+   },
+   {
+    "q": "اكتب كود باستخدام loc لاختيار صف يحمل اسم '2013-01-01' وعمود 'A'.",
+    "a": "df.loc['2013-01-01', 'A']"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Advanced indexing in pandas helps us grab exact rows and columns precisely from our big data table.",
+   "To get data using labels or names, we use a magical tool called 'loc', just like looking up a friend in a directory.",
+   "If you want to call data by its integer position number (0, 1, 2), we use another tool named 'iloc'.",
+   "Quick example: if we have a DataFrame, we type df.loc['2013-01-01'] to get that exact date row by its label.",
+   "Golden rule: use 'loc' for actual label names, but use 'iloc' for pure integer position numbers like a pro.",
+   "In real life, this is like opening your desk drawers and grabbing drawer number 2 or the one labeled 'pencils'."
+  ],
+  "example": "Imagine we have a dataset of school grades named by calendar days. If we write df.loc['2013-01-01', ['A', 'B']], we use label-based indexing 'loc' to pull exactly that day's row and columns A and B. This detail lets us access any piece of information in seconds as if using a laser beam inside a massive table full of numbers.",
+  "mistake": "A common mistake is mixing up names and numbers when using loc and iloc. Always remember: loc is for labels (names) and iloc is for integers (numbers).",
+  "recap": "We learned how to use loc for label-based access and iloc for integer-based access to control dataframes with total proficiency.",
+  "q": [
+   {
+    "t": "Which tool do we use to access data using label names?",
+    "o": [
+     "iloc",
+     "loc",
+     "print"
+    ],
+    "a": 1,
+    "why": "loc is designed specifically for label-based indexing."
+   },
+   {
+    "t": "If we want to grab the first two rows using integer positions, what should we use?",
+    "o": [
+     "df.iloc[0:2]",
+     "df.loc[0:2]",
+     "df.head(10)"
+    ],
+    "a": 0,
+    "why": "iloc relies on integer-based indexing for selection."
+   },
+   {
+    "t": "What is the core difference between loc and iloc?",
+    "o": [
+     "loc is for labels and iloc is for integers",
+     "iloc is for labels and loc is for integers",
+     "There is no difference at all"
+    ],
+    "a": 0,
+    "why": "loc handles labels while iloc handles integer position numbers."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Catch the Bug in Indexing Code",
+   "goal": "Fix the error in the line that uses iloc indexing to fetch the first two rows.",
+   "lines": [
+    "import pandas as pd",
+    "df = pd.DataFrame({'A': [1, 2, 3]})",
+    "result = df.loc[0:2]",
+    "print(result)"
+   ],
+   "bug": 2,
+   "fix": "result = df.iloc[0:2]",
+   "success": "Awesome! The code ran successfully and outputted the exact first two rows using integers!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Advanced Indexing",
+    "text": "When we have a large dataframe with hundreds of rows and columns, we cannot read everything at once. Advanced indexing acts like a magnifying glass letting you pick exactly what you want with extreme precision and speed.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame(np.random.randn(4, 2), columns=['A', 'B'])\nprint(df)",
+    "output": "   A        B\n0  0.469 -0.282\n1  1.212 -0.173\n2 -0.861 -2.104\n3  0.721 -0.706"
+   },
+   {
+    "h": "Using loc for Label-Based Access",
+    "text": "The loc property allows you to call data using the label names of rows and columns. It is like calling your friend by their actual name instead of their queue ticket number.",
+    "code": "import pandas as pd\ndates = pd.date_range('20130101', periods=2)\ndf = pd.DataFrame({'A': [1, 2]}, index=dates)\nprint(df.loc['2013-01-01'])",
+    "output": "A    1\nName: 2013-01-01, dtype: int64"
+   },
+   {
+    "h": "Selecting Multiple Rows and Columns with loc",
+    "text": "You can ask loc to return a full slice of the table by specifying start and end label names, along with the columns you wish to display.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]}, index=['row1', 'row2', 'row3'])\nprint(df.loc['row1':'row2', ['A']])",
+    "output": "      A\nrow1  1\nrow2  2"
+   },
+   {
+    "h": "Using iloc for Integer Position Access",
+    "text": "Meanwhile, iloc loves explicit position numbers (index positions), starting its count from zero just like computers do. It is like picking the item at position number one in a waiting line.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30], 'B': [40, 50, 60]})\nprint(df.iloc[0])",
+    "output": "A    10\nB    40\nName: 0, dtype: int64"
+   },
+   {
+    "h": "Slicing with iloc",
+    "text": "To get the first two rows and the first column for example, you can use iloc integer indicators and specify your range smoothly without needing to know label names.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30], 'B': [40, 50, 60]})\nprint(df.iloc[0:2, 0])",
+    "output": "0    10\n1    20\nName: A, dtype: int64"
+   },
+   {
+    "h": "Core Differences Between loc and iloc",
+    "text": "The main difference is that loc deals with actual label names (and is inclusive of the endpoint in slices), whereas iloc deals with raw integers (inclusive of start, exclusive of end like standard Python).",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3]}, index=['x', 'y', 'z'])\nprint(df.loc['x':'y'])",
+    "output": "   A\nx  1\ny  2"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df.loc[]",
+    "desc": "Label-based indexing for rows and columns."
+   },
+   {
+    "name": "df.iloc[]",
+    "desc": "Integer-based position indexing for rows and columns."
+   },
+   {
+    "name": "index",
+    "desc": "Row labels of a dataframe."
+   },
+   {
+    "name": "columns",
+    "desc": "Column names of a dataframe."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code using iloc to select the first two rows of a dataframe named df.",
+    "a": "df.iloc[0:2]"
+   },
+   {
+    "q": "Write code using loc to select a row labeled '2013-01-01' and column 'A'.",
+    "a": "df.loc['2013-01-01', 'A']"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

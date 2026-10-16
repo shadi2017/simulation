@@ -1,0 +1,302 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن المصفوفة عبارة عن قطار ممتع يحتوي على عربات تحمل بيانات مرتبة. في لغة جافا سكربت، نمتلك أدوات سحرية جاهزة تُدعى 'الميثودز' أو الدوال المدمجة، وهي تساعدنا على التحكم الكامل في هذا القطار بكل سهولة.",
+   "لنفترض أننا نريد إضافة عنصر جديد إلى نهاية القطار، وهنا يأتي دور ميثود 'push()'. إذا كان لدينا قائمة ألعاب، يمكننا كتابة games.push('لعبة جديدة') لتصبح في آخر القائمة.",
+   "تعمل هذه الدوال بطريقة ذكية؛ فالدالة 'push' تضيف العنصر في النهاية، بينما الدالة 'pop' تقوم بحذف العنصر الأخير من المصفوفة وتعيد لنا القيمة التي حذفتها لكي نستخدمها.",
+   "على الجانب الآخر، إذا أردنا إزالة عنصر من بداية المصفوفة تماماً، نستخدم الدالة 'shift()'. هذه الدالة تحذف أول عنصر وتزحف باقي العناصر خطوة إلى الأمام.",
+   "القاعدة الذهبية هنا هي أن 'push' و 'pop' يتعاملان مع نهاية القائمة، بينما 'shift' و 'unshift' يتعاملان مع البداية. اختر الأداة المناسبة حسب مكان العنصر الذي تريد تغييره.",
+   "في التطبيقات الواقعية، نستخدم هذه الطرق طوال الوقت؛ مثل إضافة رسائل جديدة إلى شاشة الدردشة في الأعلى أو الأسفل، أو ترتيب مهامك اليومية بحسب الأولوية."
+  ],
+  "example": "دعنا نرى كيف يعمل سحر المصفوفات في مثال عملي مبسط:\n\n```javascript\nlet fruits = ['تفاح', 'موز'];\nfruits.push('برتقال');\nlet removed = fruits.shift();\n```\n\nالسبب في أن القائمة تصبح ['موز', 'برتقال'] هو أن 'push' أضافت 'برتقال' للنهاية، ثم جاءت 'shift' فحذفت 'تفاح' من البداية.",
+  "mistake": "الخطأ الشائع هو نسيان كتابة الأقواس () بعد اسم الميثود مثل كتابة fruits.push بدون أقواس. الحل هو تذكر دائماً وضع الأقواس لأنها دوال برمجية تحتاج للتنفيذ.",
+  "recap": "تعلمنا اليوم كيف نتحكم بالمصفوفات عبر إضافة وحذف العناصر من البداية والنهاية باستخدام دوال جاهزة. هذه المهارات تمنح برامجك مرونة فائقة في تنظيم البيانات.",
+  "q": [
+   {
+    "t": "أي دالة تستخدم لإضافة عنصر في نهاية المصفوفة؟",
+    "o": [
+     "pop()",
+     "push()",
+     "shift()"
+    ],
+    "a": 1,
+    "why": "دالة push() تضيف العناصر دائماً إلى نهاية المصفوفة."
+   },
+   {
+    "t": "ماذا تفعل دالة shift() بالعنصر الأول؟",
+    "o": [
+     "تحذفه من البداية",
+     "تضيفه للنهاية",
+     "تتركه مكانه"
+    ],
+    "a": 0,
+    "why": "shift() تقوم بإزالة العنصر الأول من المصفوفة."
+   },
+   {
+    "t": "إذا أردنا إضافة عنصر لبداية المصفوفة، ماذا نستخدم؟",
+    "o": [
+     "unshift()",
+     "push()",
+     "pop()"
+    ],
+    "a": 0,
+    "why": "unshift() مخصصة لإضافة عناصر في بداية المصفوفة."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة المصفوفة",
+   "goal": "اعرف ماذا سيكون محتوى المصفوفة بعد تنفيذ الأوامر البرمجية التالية.",
+   "code": "let colors = ['أحمر'];\ncolors.unshift('أزرق');\ncolors.push('أخضر');",
+   "options": [
+    "['أحمر', 'أزرق', 'أخضر']",
+    "['أزرق', 'أحمر', 'أخضر']",
+    "['أخضر', 'أحمر', 'أزرق']"
+   ],
+   "a": 1,
+   "success": "رائع! لقد أضاف unshift الأزرق للبداية ثم أضاف push الأخضر للنهاية!"
+  },
+  "sections": [
+   {
+    "h": "ما هي مصفوفات جافا سكربت؟",
+    "text": "المصفوفة تشبه صندوقاً كبيراً ومقسماً إلى خانات مرقمة لحفظ مجموعة من القيم داخل متغير واحد. فكر فيها مثل حقيبة مدرسية مرتبة تحتوي على أدواتك الدراسية بالترتيب.",
+    "code": "<script>let box = ['قلم', 'كتاب', 'مسطرة']; document.write(box[1]);</script>",
+    "output": "تعرض الصفحة كلمة كتاب لأنها العنصر رقم واحد."
+   },
+   {
+    "h": "قوة الأساليب المدمجة (Methods)",
+    "text": "تمتلك المصفوفات في جافا سكربت دوال جاهزة تسمى ميثودز. هذه الدوال تشبه الأدوات السحرية التي تتيح لك تعديل محتويات الصندوق دون الحاجة لكتابة أكواد معقدة وطويلة من الصفر.",
+    "code": "<script>let nums = [1, 2]; nums.push(3); document.write(nums.length);</script>",
+    "output": "تعرض الصفحة الرقم 3 لأن حجم المصفوفة زاد."
+   },
+   {
+    "h": "إضافة عنصر للنهاية باستخدام push",
+    "text": "عندما تريد وضع شيء جديد في آخر الصف، استخدم دالة push. فكر في الأمر كشخص يقف في طابور طويل ويأتي شخص جديد ليقف في آخر الصف بانتظام تام.",
+    "code": "<script>let zoo = ['أسد']; zoo.push('قرد'); document.write(zoo);</script>",
+    "output": "تعرض الصفحة أسد,قرد."
+   },
+   {
+    "h": "إزالة عنصر من النهاية باستخدام pop",
+    "text": "تسمح لك دالة pop بأخذ آخر عنصر من المصفوفة وحذفه منها. تماماً مثلما يأخذ الشخص آخر طبق حلوى من على الطاولة ويتر لصق الصينية دونه.",
+    "code": "<script>let toys = ['كرة', 'دمية']; toys.pop(); document.write(toys);</script>",
+    "output": "تعرض الصفحة كرة وحدها بعد حذف الدمية."
+   },
+   {
+    "h": "إزالة عنصر من البداية باستخدام shift",
+    "text": "تعمل دالة shift كحارس بوابة يطلب من الشخص الأول في الصف المغادرة. تخرج العنصر الأول وتتحرك باقي العناصر خطوة واحدة إلى الأمام لملء الفراغ.",
+    "code": "<script>let q = ['أول', 'ثاني']; q.shift(); document.write(q);</script>",
+    "output": "تعرض الصفحة كلمة ثاني وحدها."
+   },
+   {
+    "h": "إضافة عنصر للبداية باستخدام unshift",
+    "text": "إذا أردت وضع عنصر في المرتبة الأولى ودفع الباقين للخلف، فاستخدم unshift. إنها تشبه طفلاً يتسلل ليقف في أول صف المدرسة تماماً قبل طابور الصباح.",
+    "code": "<script>let items = ['ب']; items.unshift('أ'); document.write(items);</script>",
+    "output": "تعرض الصفحة أ,ب."
+   },
+   {
+    "h": "التحكم المزدوج في البداية والنهاية",
+    "text": "يمكنك الجمع بين هذه الأساليب لتحقيق نتائج مذهلة. يمكنك إضافة عنصر في البداية بـ unshift ثم حذف عنصر من النهاية بـ pop في نفس البرنامج بكل سهولة ويسر.",
+    "code": "<script>let arr = [2]; arr.unshift(1); arr.pop(); document.write(arr);</script>",
+    "output": "تعرض الصفحة الرقم 1 وحدها."
+   },
+   {
+    "h": "التطبيقات الواقعية في الويب",
+    "text": "تُستخدم هذه الطرق لبناء تطبيقات مذهلة؛ مثل إضافة رسائل الشات الجديدة إلى شاشة المحادثة أو إدارة قائمة مهامك اليومية بحيث تحذف المهام المنجزة وتضيف أخرى جديدة.",
+    "code": "<script>let tasks = ['تنظيف']; tasks.unshift('مذاكرة'); document.write(tasks[0]);</script>",
+    "output": "تعرض الصفحة مذاكرة كأول مهمة في القائمة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "push()",
+    "desc": "يضيف عنصراً أو أكثر إلى نهاية المصفوفة."
+   },
+   {
+    "name": "pop()",
+    "desc": "يحذف العنصر الأخير من المصفوفة ويعيده."
+   },
+   {
+    "name": "shift()",
+    "desc": "يحذف العنصر الأول من المصفوفة ويعيده."
+   },
+   {
+    "name": "unshift()",
+    "desc": "يضيف عنصراً أو أكثر إلى بداية المصفوفة."
+   },
+   {
+    "name": "length",
+    "desc": "خاصية تعيد عدد العناصر الموجودة بالمصفوفة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كوداً ينشئ مصفوفة بألوان ويضيف لوناً أخضر في النهاية.",
+    "a": "let colors = ['أحمر', 'أزرق']; colors.push('أخضر');"
+   },
+   {
+    "q": "كيف تحذف العنصر الأول من مصفوفة تدعى numbers؟",
+    "a": "numbers.shift();"
+   },
+   {
+    "q": "أضف العنصر 'قطة' إلى بداية مصفوفة اسمها animals باستخدام unshift.",
+    "a": "animals.unshift('قطة');"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine an array is a fun train with carriages holding ordered data. In JavaScript, we have built-in helper tools called 'methods' that give us complete control over this data train with ease.",
+   "Suppose we want to add a new item to the very end of the train; this is where the 'push()' method comes in. If we have a game list, we can write games.push('New Game') to place it last.",
+   "These methods work smartly: 'push' adds an item to the end, while 'pop' removes the very last item from the array and returns the deleted value for us to use.",
+   "On the flip side, if we want to remove an item from the very beginning of the array, we use 'shift()'. This method deletes the first item and shifts all other elements one step forward.",
+   "The golden rule here is that 'push' and 'pop' handle the end of the list, while 'shift' and 'unshift' handle the beginning. Choose the right tool depending on where you want to make changes.",
+   "In real-world applications, we use these methods all the time, such as adding new messages to a chat screen at the top or bottom, or organizing your daily to-do tasks by priority."
+  ],
+  "example": "Let us see how array magic works in a simple code example:\n\n```javascript\nlet fruits = ['Apple', 'Banana'];\nfruits.push('Orange');\nlet removed = fruits.shift();\n```\n\nThe reason the list becomes ['Banana', 'Orange'] is that 'push' added 'Orange' to the end, and then 'shift' removed 'Apple' from the beginning.",
+  "mistake": "A common mistake is forgetting to write parentheses () after the method name, like writing fruits.push without brackets. The fix is to always include parentheses because they are functions requiring execution.",
+  "recap": "Today we learned how to manipulate arrays by adding and removing items from the beginning and end using built-in methods. These skills give your programs great flexibility in organizing data.",
+  "q": [
+   {
+    "t": "Which method is used to add an item to the end of an array?",
+    "o": [
+     "pop()",
+     "push()",
+     "shift()"
+    ],
+    "a": 1,
+    "why": "The push() method always adds items to the end of an array."
+   },
+   {
+    "t": "What does the shift() method do to the first item?",
+    "o": [
+     "Removes it from the start",
+     "Adds it to the end",
+     "Leaves it in place"
+    ],
+    "a": 0,
+    "why": "shift() removes the very first item from the array."
+   },
+   {
+    "t": "If we want to add an item to the start of an array, what do we use?",
+    "o": [
+     "unshift()",
+     "push()",
+     "pop()"
+    ],
+    "a": 0,
+    "why": "unshift() is specifically designed to add items at the beginning of an array."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Array Result",
+   "goal": "Find out what the array content will be after executing the following code snippets.",
+   "code": "let colors = ['Red'];\ncolors.unshift('Blue');\ncolors.push('Green');",
+   "options": [
+    "['Red', 'Blue', 'Green']",
+    "['Blue', 'Red', 'Green']",
+    "['Green', 'Red', 'Blue']"
+   ],
+   "a": 1,
+   "success": "Awesome! unshift added Blue to the start and push added Green to the end!"
+  },
+  "sections": [
+   {
+    "h": "What are JavaScript Arrays?",
+    "text": "An array is like a large box divided into numbered compartments to store multiple values inside a single variable. Think of it like a neat school pencil case holding your tools in order.",
+    "code": "<script>let box = ['Pen', 'Book', 'Ruler']; document.write(box[1]);</script>",
+    "output": "The page displays Book because it is element number one."
+   },
+   {
+    "h": "The Power of Built-in Methods",
+    "text": "JavaScript arrays come with ready-made functions called methods. These are like magical tools that let you modify the box contents without writing long, complex code from scratch.",
+    "code": "<script>let nums = [1, 2]; nums.push(3); document.write(nums.length);</script>",
+    "output": "The page displays 3 because the array size increased."
+   },
+   {
+    "h": "Adding to the End with push",
+    "text": "When you want to place something new at the back of the line, use the push method. Think of it like a person joining the very end of a long queue politely.",
+    "code": "<script>let zoo = ['Lion']; zoo.push('Monkey'); document.write(zoo);</script>",
+    "output": "The page displays Lion,Monkey."
+   },
+   {
+    "h": "Removing from the End with pop",
+    "text": "The pop method lets you take the last item off the array and delete it. Just like taking the final piece of candy from a plate and leaving the tray empty behind it.",
+    "code": "<script>let toys = ['Ball', 'Doll']; toys.pop(); document.write(toys);</script>",
+    "output": "The page displays Ball alone after removing the doll."
+   },
+   {
+    "h": "Removing from the Start with shift",
+    "text": "The shift method acts like a gatekeeper asking the first person in line to leave. It removes the first item and slides all other elements one step forward to fill the gap.",
+    "code": "<script>let q = ['First', 'Second']; q.shift(); document.write(q);</script>",
+    "output": "The page displays Second alone."
+   },
+   {
+    "h": "Adding to the Start with unshift",
+    "text": "If you want to put an item in the top rank and push everyone else back, use unshift. It is like a clever child sneaking into the very front of the morning school assembly.",
+    "code": "<script>let items = ['B']; items.unshift('A'); document.write(items);</script>",
+    "output": "The page displays A,B."
+   },
+   {
+    "h": "Dual Control of Start and End",
+    "text": "You can combine these methods to achieve amazing results. You can add an item at the beginning using unshift and then delete an item from the end using pop in the same script smoothly.",
+    "code": "<script>let arr = [2]; arr.unshift(1); arr.pop(); document.write(arr);</script>",
+    "output": "The page displays the number 1 alone."
+   },
+   {
+    "h": "Real-World Web Applications",
+    "text": "These methods are used to build awesome apps, like adding new chat messages to a conversation feed or managing your daily to-do tasks by removing finished items and adding fresh ones.",
+    "code": "<script>let tasks = ['Clean']; tasks.unshift('Study'); document.write(tasks[0]);</script>",
+    "output": "The page displays Study as the first task in the list."
+   }
+  ],
+  "reference": [
+   {
+    "name": "push()",
+    "desc": "Adds one or more elements to the end of an array."
+   },
+   {
+    "name": "pop()",
+    "desc": "Removes the last element from an array and returns it."
+   },
+   {
+    "name": "shift()",
+    "desc": "Removes the first element from an array and returns it."
+   },
+   {
+    "name": "unshift()",
+    "desc": "Adds one or more elements to the beginning of an array."
+   },
+   {
+    "name": "length",
+    "desc": "Property returning the number of elements in an array."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code that creates an array of colors and adds green to the end.",
+    "a": "let colors = ['Red', 'Blue']; colors.push('Green');"
+   },
+   {
+    "q": "How do you remove the first item from an array named numbers?",
+    "a": "numbers.shift();"
+   },
+   {
+    "q": "Add the item 'Cat' to the start of an array named animals using unshift.",
+    "a": "animals.unshift('Cat');"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "title": "MDN: JavaScript reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+  }
+ ],
+ "grounded": true
+}

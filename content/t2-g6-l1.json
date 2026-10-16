@@ -1,0 +1,346 @@
+{
+ "ar": {
+  "steps": [
+   "عشان نعدي على كل عنصر جوة مصفوفة (Array) من غير ما نكتب لوبس طويلة ومعقدة، عندنا أدوات جاهزة في جافاسكريبت زي forEach و map.",
+   "مثلاً، لو عندك لستة أصحابك، تقدر تستخدم أسلوب .forEach() عشان تطبع اسم كل واحد بطريقة سهلة وسريعة ومنظمة جداً.",
+   "طريقة عملها إنها بتاخد دالة (Function) صغيرة جوة الأقواس وتطبقها على كل عنصر في المصفوفة واحد ورا التاني بالترتيب.",
+   "تاني أداة مفيدة جداً هي .map()، ودي بتسمyك تاخد كل عنصر وتغيره وتبني مصفوفة جديدة تماماً بالقيم الجديدة دي.",
+   "القاعدة الذهبية هنا هي اختيار الأداة الصح: استخدم forEach لو عايز تنفذ أمر لكل عنصر، واستخدم map لو عايز تحول العناصر لمصفوفة جديدة.",
+   "في الحياة اليومية، ده عامل زي ما يكون عندك قايمة طلبات السوبر ماركت، وبتمشي عليها عنصر عنصر تحطهم في العربيات واحد ورا التاني!"
+  ],
+  "example": "تخيل إن عندنا مصفوفة فيها درجات وحابين نعدي عليها عشان نزود كل درجة 5 درجات كهدية:\n```javascript\nlet grades = [80, 85, 90];\nlet bonusGrades = grades.map(g => g + 5);\nconsole.log(bonusGrades);\n```\nالسبب هنا إن `map` بتعدي على 80 تخليها 85، وعلى 85 تخليها 90، وهكذا، وترجع لنا مصفوفة جديدة بالقيم الزيادة من غير ما نغير القديمة مباشرة بشكل معقد.",
+  "mistake": "الغلطة المشهورة هي نسيان إن ميثود map دايماً بترجع مصفوفة جديدة، بينما forEach بترجع undefined ومش بتعمل مصفوفة جديدة. الحل هو استخدام map لو محتاج النتيجة في متغير جديد.",
+  "recap": "اتعلمنا إزاي نستخدم أدوات المرور على المصفوفات زي forEach عشان ننفذ أوامر، و map عشان نحول البيانات لمصفوفة جديدة بكل سهولة.",
+  "q": [
+   {
+    "t": "إيه الميثود اللي بنستخدمها عشان نمر على العناصر ونرجع مصفوفة جديدة؟",
+    "o": [
+     "forEach",
+     "map",
+     "filter"
+    ],
+    "a": 1,
+    "why": "لأن map بتقوم بتحويل العناصر وإرجاع مصفوفة جديدة بالنتائج."
+   },
+   {
+    "t": "مين في دول بترجع دايماً undefined ومش بتبني مصفوفة جديدة؟",
+    "o": [
+     "forEach",
+     "map",
+     "لا شيء مما سبق"
+    ],
+    "a": 0,
+    "why": "forEach مخصصة لتنفيذ كود لكل عنصر فقط ومش بترجع مصفوفة جديدة."
+   },
+   {
+    "t": "لو عايزين نشيل عناصر مش عاجبانا من المصفوفة بناءً على شرط، بنستخدم إيه؟",
+    "o": [
+     "map",
+     "forEach",
+     "filter"
+    ],
+    "a": 2,
+    "why": "لأن filter مخصصة لتصفية العناصر وإبقاء اللي بيحققوا الشرط بس."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود المصفوفات",
+   "goal": "املأ الفراغات بالأوامر الصح عشان الكود يشتغل تمام",
+   "items": [
+    {
+     "text": "friends.___((name) => { console.log(name); });",
+     "options": [
+      "map",
+      "forEach",
+      "filter"
+     ],
+     "a": 1
+    },
+    {
+     "text": "let newNums = numbers.___((n) => n * 2);",
+     "options": [
+      "forEach",
+      "map",
+      "log"
+     ],
+     "a": 1
+    },
+    {
+     "text": "let passed = scores.___((s) => s >= 50);",
+     "options": [
+      "filter",
+      "forEach",
+      "map"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "مبروك! الكود اشتغل ومر على المصفوفة وعمل المطلوب بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن المصفوفات",
+    "text": "المصفوفة هي صندوق منظم بنخزن فيه أكتر من قيمة جوه متغير واحد. بدل ما نعمل متغير لكل اسم أو رقم، بنجمعهم مع بعض ونقدر نوصلهم بسهولة.",
+    "code": "<script>\nlet fruits = ['تفاح', 'موز', 'فراولة'];\ndocument.write(fruits[0]);\n</script>",
+    "output": "الصفحة هتعرض كلمة تفاح لأنها العنصر الأول في المصفوفة."
+   },
+   {
+    "h": "المرور التقليدي مقابل الحديث",
+    "text": "زمان كنا بنستخدم حلقة for العادية عشان نعدي على عناصر المصفوفة ونطبعها. دلوقتي بقى عندنا أساليب أدق وأقصر بكتير بتوفر وقتنا.",
+    "code": "<script>\nlet colors = ['أحمر', 'أخضر'];\ncolors.forEach(c => document.write(c + ' '));\n</script>",
+    "output": "الصفحة هتعرض أحمر أخضر ورا بعض باستخدام forEach."
+   },
+   {
+    "h": "استخدام forEach بالتفصيل",
+    "text": "ميثود forEach بتمر على كل عنصر في المصفوفة وبتنفذ عليه دالة معينة. هي عاملة زي المعلم اللي بيبص على كشكول كل طالب طالب.",
+    "code": "<script>\nlet numbers = [1, 2, 3];\nnumbers.forEach(n => document.write(n * 10 + '<br>'));\n</script>",
+    "output": "الصفحة هتعرض الأرقام 10، 20، 30 كل واحد في سطر."
+   },
+   {
+    "h": "التحويل باستخدام map",
+    "text": "لما تحب تغير كل عنصر في المصفوفة وتعمل مصفوفة جديدة بالقيم الجديدة، ميثود map هي بطلة الموقف دي. مش بتغير القديمة، بل بتطلع لك نسخة جديدة مطورة.",
+    "code": "<script>\nlet nums = [1, 2, 3];\nlet doubled = nums.map(n => n * 2);\ndocument.write(doubled);\n</script>",
+    "output": "الصفحة هتعرض الأرقام الجديدة: 2,4,6."
+   },
+   {
+    "h": "تصفية العناصر باستخدام filter",
+    "text": "عايز تطلع بس العناصر اللي بتحقق شرط معين؟ ميثود filter بتعمل غربلة للمصفوفة وبتسيب بس الحاجات اللي إنت طالبها.",
+    "code": "<script>\nlet scores = [40, 60, 80];\nlet passed = scores.filter(s => s >= 50);\ndocument.write(passed);\n</script>",
+    "output": "الصفحة هتصفية الدرجات وتعرض بس الأرقام اللي أكبر من أو تساوى 50 وهي: 60,80."
+   },
+   {
+    "h": "الفرق الجوهري بين map و forEach",
+    "text": "الفرق البسيط هو إن map بترجع مصفوفة جديدة وتقدر تكمل بيها شغلك، بينما forEach بتنفذ المهمة وتسكت ومش بترجع مصفوفة جديدة.",
+    "code": "<script>\nlet a = [1, 2];\nlet b = a.map(x => x + 1);\ndocument.write(b);\n</script>",
+    "output": "الصفحة هتعرض المصفوفة الجديدة [2, 3]."
+   },
+   {
+    "h": "الدمج بين الأساليب الحديثة",
+    "text": "في البرمجة الحديثة، تقدر تربط أكتر من أداة ببعض، زي إنك تعمل filter وبعدها map في سطر واحد عشان توصل لنتائج ذكية جداً وسريعة.",
+    "code": "<script>\nlet n = [1, 2, 3, 4];\nlet res = n.filter(x => x > 2).map(x => x * 10);\ndocument.write(res);\n</script>",
+    "output": "الصفحة هتعرض الأرقام بعد التصفية والضرب: 30,40."
+   },
+   {
+    "h": "الخلاصة والتطبيق العملي",
+    "text": "التعامل مع المصفوفات بأساليب جافاسكريبت الحديثة بيخلي الكود بتاعنا نظيف وسهل القراءة وخالي من الأخطاء المتكررة.",
+    "code": "<script>\nlet team = ['أحمد', 'سارة', 'علي'];\nteam.forEach(t => document.write('أهلاً ' + t + '<br>'));\n</script>",
+    "output": "الصفحة هترحب بكل أعضاء الفريق واحد ورا التاني."
+   }
+  ],
+  "reference": [
+   {
+    "name": "forEach()",
+    "desc": "تنفذ دالة على كل عنصر في المصفوفة بالترتيب."
+   },
+   {
+    "name": "map()",
+    "desc": "تنشئ مصفوفة جديدة بنتيجة تطبيق دالة على كل عناصر المصفوفة القديمة."
+   },
+   {
+    "name": "filter()",
+    "desc": "تنشئ مصفوفة جديدة تحتوي فقط على العناصر التي تحقق الشرط."
+   },
+   {
+    "name": "Array",
+    "desc": "كائن أساسي لتخزين قوائم متعددة العناصر في متغير واحد."
+   },
+   {
+    "name": "Arrow Function =>",
+    "desc": "طريقة مختصرة لكتابة الدوال في جافاسكريبت الحديثة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "استخدم forEach لطباعة جميع أسامي الأصحاب في مصفوفة تحتوي على ثلاثة أسماء.",
+    "a": "friends.forEach(name => console.log(name));"
+   },
+   {
+    "q": "استخدم map لضرب كل رقم في مصفوفة أرقام في 2.",
+    "a": "let doubled = numbers.map(n => n * 2);"
+   },
+   {
+    "q": "استخدم filter لإيجاد الأرقام الأكبر من 10 في مصفوفة.",
+    "a": "let big = numbers.filter(n => n > 10);"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "To loop through every item inside an array without writing complicated long loops, JavaScript gives us handy built-in tools like forEach and map.",
+   "For example, if you have a list of friends, you can use the .forEach() method to print each person's name in a super clean and fast way.",
+   "It works by taking a small function inside its parentheses and running it automatically on each item in the array one by one in order.",
+   "Another super useful tool is .map(), which lets you take every item, transform it, and build a brand new array with those updated values.",
+   "The golden rule here is to pick the right tool: use forEach when you want to execute an action per item, and map when you want a transformed new array.",
+   "In real life, this is just like having a supermarket shopping list and checking off items one by one into your cart!"
+  ],
+  "example": "Imagine we have an array of grades and we want to loop through them to add 5 bonus points to each grade:\n```javascript\nlet grades = [80, 85, 90];\nlet bonusGrades = grades.map(g => g + 5);\nconsole.log(bonusGrades);\n```\nThe reason is that `map` visits 80 to make it 85, 85 to make it 90, and so on, returning a fresh new array with the increased values without altering the original one directly.",
+  "mistake": "A common mistake is forgetting that map always returns a new array, whereas forEach returns undefined and does not build a new array. The fix is using map when you need the resulting data stored.",
+  "recap": "We learned how to use array iteration tools like forEach to execute actions and map to transform data into a brand new array effortlessly.",
+  "q": [
+   {
+    "t": "Which method is used to iterate and return a brand new transformed array?",
+    "o": [
+     "forEach",
+     "map",
+     "filter"
+    ],
+    "a": 1,
+    "why": "Because map transforms items and returns a brand new array with the results."
+   },
+   {
+    "t": "Which one always returns undefined and does not create a new array?",
+    "o": [
+     "forEach",
+     "map",
+     "none of the above"
+    ],
+    "a": 0,
+    "why": "forEach is designed purely for executing side effects per item and does not return a new array."
+   },
+   {
+    "t": "If we want to remove unwanted items from an array based on a condition, what do we use?",
+    "o": [
+     "map",
+     "forEach",
+     "filter"
+    ],
+    "a": 2,
+    "why": "Because filter is designed specifically to filter items and keep only those meeting a condition."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Array Methods Completion",
+   "goal": "Fill in the blanks with the correct array methods so the code runs successfully",
+   "items": [
+    {
+     "text": "friends.___((name) => { console.log(name); });",
+     "options": [
+      "map",
+      "forEach",
+      "filter"
+     ],
+     "a": 1
+    },
+    {
+     "text": "let newNums = numbers.___((n) => n * 2);",
+     "options": [
+      "forEach",
+      "map",
+      "log"
+     ],
+     "a": 1
+    },
+    {
+     "text": "let passed = scores.___((s) => s >= 50);",
+     "options": [
+      "filter",
+      "forEach",
+      "map"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Great job! The code successfully iterated over the array and executed the task!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Arrays",
+    "text": "An array is an organized box where we store multiple values inside a single variable. Instead of creating a separate variable for every name or number, we group them together and access them easily.",
+    "code": "<script>\nlet fruits = ['Apple', 'Banana', 'Strawberry'];\ndocument.write(fruits[0]);\n</script>",
+    "output": "The page will display Apple because it is the first item in the array."
+   },
+   {
+    "h": "Traditional vs Modern Loops",
+    "text": "In the past, we used standard for loops to traverse array items and print them out. Today, we have much more concise and precise modern methods that save our time.",
+    "code": "<script>\nlet colors = ['Red', 'Green'];\ncolors.forEach(c => document.write(c + ' '));\n</script>",
+    "output": "The page will display Red Green consecutively using forEach."
+   },
+   {
+    "h": "Using forEach in Detail",
+    "text": "The forEach method visits every item in the array and executes a specific function on it. It acts like a teacher checking each student's notebook one by one.",
+    "code": "<script>\nlet numbers = [1, 2, 3];\nnumbers.forEach(n => document.write(n * 10 + '<br>'));\n</script>",
+    "output": "The page will display the numbers 10, 20, 30 each on a new line."
+   },
+   {
+    "h": "Transformation using map",
+    "text": "When you want to modify every item in an array and build a brand new array with the updated values, the map method is the champion. It leaves the old one untouched and gives you an upgraded copy.",
+    "code": "<script>\nlet nums = [1, 2, 3];\nlet doubled = nums.map(n => n * 2);\ndocument.write(doubled);\n</script>",
+    "output": "The page will display the new numbers: 2,4,6."
+   },
+   {
+    "h": "Filtering Elements with filter",
+    "text": "Want to extract only elements that meet a certain condition? The filter method sifts through the array and keeps only what you requested.",
+    "code": "<script>\nlet scores = [40, 60, 80];\nlet passed = scores.filter(s => s >= 50);\ndocument.write(passed);\n</script>",
+    "output": "The page will filter the grades and display only numbers greater than or equal to 50: 60,80."
+   },
+   {
+    "h": "Core Difference between map and forEach",
+    "text": "The simple difference is that map returns a brand new array so you can keep working with it, whereas forEach executes the task quietly and returns no new array.",
+    "code": "<script>\nlet a = [1, 2];\nlet b = a.map(x => x + 1);\ndocument.write(b);\n</script>",
+    "output": "The page will display the new array [2, 3]."
+   },
+   {
+    "h": "Chaining Modern Methods",
+    "text": "In modern programming, you can chain multiple tools together, like running a filter followed by a map in a single statement to achieve smart and fast results.",
+    "code": "<script>\nlet n = [1, 2, 3, 4];\nlet res = n.filter(x => x > 2).map(x => x * 10);\ndocument.write(res);\n</script>",
+    "output": "The page will display the numbers after filtering and multiplying: 30,40."
+   },
+   {
+    "h": "Summary and Practical Practice",
+    "text": "Handling arrays with modern JavaScript methods keeps our code clean, readable, and free of repetitive boilerplate errors.",
+    "code": "<script>\nlet team = ['Ahmed', 'Sara', 'Ali'];\nteam.forEach(t => document.write('Hello ' + t + '<br>'));\n</script>",
+    "output": "The page will greet every team member one after another."
+   }
+  ],
+  "reference": [
+   {
+    "name": "forEach()",
+    "desc": "Executes a provided function once for each array element in order."
+   },
+   {
+    "name": "map()",
+    "desc": "Creates a new array populated with the results of calling a provided function on every element."
+   },
+   {
+    "name": "filter()",
+    "desc": "Creates a shallow copy of a portion of a given array filtered down to just the elements that pass the test."
+   },
+   {
+    "name": "Array",
+    "desc": "A standard built-in object used to store multiple items in a single variable."
+   },
+   {
+    "name": "Arrow Function =>",
+    "desc": "A concise syntax for writing function expressions in modern JavaScript."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Use forEach to print all friend names in an array containing three names.",
+    "a": "friends.forEach(name => console.log(name));"
+   },
+   {
+    "q": "Use map to multiply every number in a numbers array by 2.",
+    "a": "let doubled = numbers.map(n => n * 2);"
+   },
+   {
+    "q": "Use filter to find numbers greater than 10 in an array.",
+    "a": "let big = numbers.filter(n => n > 10);"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "title": "MDN: JavaScript reference",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+  }
+ ],
+ "grounded": true
+}

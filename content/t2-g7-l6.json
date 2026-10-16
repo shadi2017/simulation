@@ -1,0 +1,288 @@
+{
+ "ar": {
+  "steps": [
+   "الدمج (Merging) في مكتبة باندز يخلينا نربط جدولين ببعض، زي ما بنوصل قطع البازل لما نلاقي حتة مشتركة بينهم، وعشان نعمل ده بنحتاج عمود مشترك موجود في الجدولين.",
+   "عشان ندمج جدولين سوا، بنستعمل دالة اسمها merge وبنكتب جواها اسم الجدول الأول والجدول الثاني، وكمان بنحدد العمود المشترك اللي هنربط بيه الجدولين ببعض.",
+   "خاصية on هي المسؤولة عن تحديد اسم العمود المشترك اللي الجدولين هيتطابقوا عنده، مثلاً لو عندنا عمود 'Code' في الجدولين بنكتب on='Code' عشان الباندز تفهم.",
+   "الدمج اليسار (left join) بيحافظ على كل صفوف الجدول الأول بالكامل، حتى لو ماليهاش شبيه أو مقابل في الجدول الثاني، والصفوف الناقصة بيتحط مكانها قيم فارغة NaN.",
+   "الدمج اليمين (right join) بيعكس العملية وبيحافظ على كل صفوف الجدول الثاني بالكامل، وبيجيب البيانات اللي تطابقها من الجدول الأول، ويسيب الفاضي بـ NaN.",
+   "قاعدة عامة: اختار نوع الدمج المناسب حسب الجدول الأساسي اللي تحب تحافظ على كل بياناته، واستخدم عموداً مشتركاً صحيحاً عشان تمنع أي أخطاء في النتائج."
+  ],
+  "example": "تخيل عندنا جدول للمنتجات وجدول للمبيعات، وفي الاتنين عمود اسمه 'Code'. لو كتبنا pd.merge(products, sales, on='Code', how='left')، الباندز هتاخد كل منتج وتربطه بمبيعاته عبر الكود المشترك. لو منتج ملوش مبيعات، الباندز هتحط قيم فارغة NaN بدل ما تحذفه، وده بيساعدنا نحلل البيانات بدون ما نفقد تفاصيل مهمة.",
+  "mistake": "نسيان تحديد اسم العمود المشترك بدقة أو كتابة اسم خطأ غير موجود في الجدولين بيخلي البرنامج يطلع خطأ KeyError. الحل هو التأكد من أسماء الأعمدة باستخدام head أو columns قبل الدمج.",
+  "recap": "الدمج في باندز بيساعدنا نجمع معلومات من جدولين مختلفين باستخدام دالة merge وعمود مشترك. اختيار نوع الدمج مثل اليسار أو اليمين بيحدد البيانات اللي هتفضل موجودة في الجدول النهائي.",
+  "q": [
+   {
+    "t": "ما هي الدالة المستخدمة لدمج جدولين في مكتبة باندز؟",
+    "o": [
+     "join_tables()",
+     "pd.merge()",
+     "combine()"
+    ],
+    "a": 1,
+    "why": "نستعمل دالة merge من مكتبة باندز لربط جدولين بيانات معاً."
+   },
+   {
+    "t": "أي معامل (parameter) نستخدمه لنحدد العمود المشترك بين الجدولين؟",
+    "o": [
+     "key",
+     "match",
+     "on"
+    ],
+    "a": 2,
+    "why": "معامل on يُحدد اسم العمود المشترك الذي يتم بناء الدمج عليه."
+   },
+   {
+    "t": "ماذا يفعل الدمج اليساري (left join) لصفوف الجدول الأول؟",
+    "o": [
+     "يحافظ عليها كلها",
+     "يحذفها تماماً",
+     "يستبدلها بجدول فارغ"
+    ],
+    "a": 0,
+    "why": "الدمج اليساري يحافظ على كافة صفوف الجدول الأيسر ولا يحذف منها شيئاً."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح كود دمج الجداول",
+   "goal": "صحح الخطأ في كود دمج جدولين بيانات باستخدام عمود Code.",
+   "lines": [
+    "import pandas as pd",
+    "df1 = pd.DataFrame({'Code': [1, 2], 'Name': ['A', 'B']})",
+    "df2 = pd.DataFrame({'Code': [1, 3], 'Score': [90, 80]})",
+    "result = pd.merge(df1, df2, key='Code')"
+   ],
+   "bug": 3,
+   "fix": "result = pd.merge(df1, df2, on='Code')",
+   "success": "رائع! تم دمج الجدولين بنجاح بناءً على العمود المشترك Code."
+  },
+  "sections": [
+   {
+    "h": "ما هو دمج البيانات؟",
+    "text": "دمج البيانات يشبه تركيب قطع بازل معاً. لو عندك جدولين بيكملوا بعض، زي جدول أسماء الطلاب وجدول درجاتهم، تقدر تجمعهم في جدول واحد كبير باستخدام نقطة التقاء مشتركة بين الجدولين.",
+    "code": "import pandas as pd\nprint('Ready to merge!')",
+    "output": "Ready to merge!"
+   },
+   {
+    "h": "استخدام دالة merge",
+    "text": "في مكتبة باندز، دالة pd.merge هي الأداة السحرية لربط جدولين (DataFrames). بتمرر الجدول الأول ثم الجدول الثاني، وبتحدد لهم إزاي يتواصلوا مع بعض بناءً على بيانات متطابقة بينهم.",
+    "code": "import pandas as pd\na = pd.DataFrame({'Code': [1, 2]})\nb = pd.DataFrame({'Code': [1, 2]})\nprint(pd.merge(a, b, on='Code'))",
+    "output": "   Code\n0     1\n1     2"
+   },
+   {
+    "h": "أهمية معامل on",
+    "text": "عشان الباندز تعرف تربط الصفوف ببعضها صح، لازم تقولها على اسم العمود المشترك باستخدام معامل on. العمود ده لازم يكون موجود بنفس الاسم في الجدولين، زي كود التلميذ أو رقم المنتج.",
+    "code": "import pandas as pd\nt1 = pd.DataFrame({'Code': [10, 20], 'Item': ['Pen', 'Book']})\nt2 = pd.DataFrame({'Code': [10, 20], 'Price': [5, 15]})\nprint(pd.merge(t1, t2, on='Code'))",
+    "output": "   Code  Item  Price\n0    10   Pen      5\n1    20  Book     15"
+   },
+   {
+    "h": "الدمج اليسار (Left Join)",
+    "text": "لو استخدمت how='left'، الباندز هتضمن إن كل صفوف الجدول الأول (الأيسر) تفضل موجودة مهما حصل. لو فيه صف في الجدول الأول ملوش شبيه في الجدول الثاني، الباندز بتحط مكانه قيمة فاضية اسمها NaN.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'Code': [1, 2], 'Fruit': ['Apple', 'Banana']})\ndf2 = pd.DataFrame({'Code': [1], 'Color': ['Red']})\nprint(pd.merge(df1, df2, on='Code', how='left'))",
+    "output": "   Code   Fruit Color\n0     1   Apple   Red\n1     2  Banana   NaN"
+   },
+   {
+    "h": "الدمج اليمين (Right Join)",
+    "text": "الدمج اليمين (how='right') بيعمل العكس تماماً! بيحافظ على كل صفوف الجدول الثاني (الأيمن) بالكامل، وبيجيب البيانات المطابقة من الجدول الأول. الصفوف اللي ملهاش تطابق في الجدول الأول بيتحط قدامها NaN.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'Code': [1], 'Fruit': ['Apple']})\ndf2 = pd.DataFrame({'Code': [1, 2], 'Color': ['Red', 'Yellow']})\nprint(pd.merge(df1, df2, on='Code', how='right'))",
+    "output": "   Code  Fruit   Color\n0     1  Apple     Red\n1     2    NaN  Yellow"
+   },
+   {
+    "h": "دمج الجداول وتجميع البيانات",
+    "text": "تجميع الجداول بيفتح لنا باب واسع لتحليل بيانات ضخمة. بدل ما تخزن كل المعلومات في مكان واحد مبعثر، بتقسمها لجداول صغيرة وتربطها وقت الحاجة باستخدام دالة merge، وده بيخلي برامجك احترافية وسريعة.",
+    "code": "import pandas as pd\ns1 = pd.DataFrame({'Code': [1, 2], 'A': [10, 20]})\ns2 = pd.DataFrame({'Code': [2, 3], 'B': [30, 40]})\nprint(pd.merge(s1, s2, on='Code', how='inner'))",
+    "output": "   Code   A   B\n0     2  20  30"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pd.merge()",
+    "desc": "دالة لدمج جدولين بيانات في باندز بناءً على أعمدة مشتركة."
+   },
+   {
+    "name": "on",
+    "desc": "معامل يُستخدم لتحديد اسم العمود المشترك بين الجدولين."
+   },
+   {
+    "name": "how='left'",
+    "desc": "يُبقي على جميع صفوف الجدول الأيسر بغض النظر عن التطابق."
+   },
+   {
+    "name": "how='right'",
+    "desc": "يُبقي على جميع صفوف الجدول الأيمن بغض النظر عن التطابق."
+   },
+   {
+    "name": "how='inner'",
+    "desc": "يجلب فقط الصفوف المتطابقة في الجدولين معاً."
+   },
+   {
+    "name": "NaN",
+    "desc": "قيمة تظهر في باندز عندما تكون البيانات غير موجودة أو فارغة."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود لدمج جدولين df1 و df2 بالاعتماد على عمود Code باستخدام الدمج العادي.",
+    "a": "pd.merge(df1, df2, on='Code')"
+   },
+   {
+    "q": "كيف تجعل الدمج يحافظ على جميع صفوف الجدول الأيسر؟",
+    "a": "باستخدام معامل how='left'"
+   },
+   {
+    "q": "ما هو اسم المعامل الذي يحدد العمود المشترك في دالة merge؟",
+    "a": "on"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Merging in pandas lets us connect two separate tables together, just like fitting puzzle pieces when we find a shared matching part between them.",
+   "To combine two tables, we use a function named merge, passing the first table, the second table, and specifying the shared column to link them.",
+   "The on parameter specifies the shared column name where both tables will match up, for example, writing on='Code' when 'Code' exists in both.",
+   "A left join keeps every single row from the first table, even if there is no matching partner in the second table, placing NaN for missing values.",
+   "A right join does the opposite, keeping all rows from the second table completely and matching whatever corresponds from the first table.",
+   "Rule of thumb: Choose your join type carefully depending on which table's data you must keep, and ensure the shared column name is spelled correctly."
+  ],
+  "example": "Imagine we have a products table and a sales table, both sharing a column named 'Code'. By writing pd.merge(products, sales, on='Code', how='left'), pandas pairs each product with its sales via the shared code. If a product has no sales, pandas inserts NaN instead of deleting it, keeping our analysis complete.",
+  "mistake": "Forgetting to specify the shared column name or misspelling it causes a KeyError in Python. Always double-check column names using head or columns before merging.",
+  "recap": "Merging in pandas helps combine information from two different tables using the merge function and a shared column. Selecting join types like left or right controls which records stay in the final table.",
+  "q": [
+   {
+    "t": "Which function is used to merge two DataFrames in pandas?",
+    "o": [
+     "join_tables()",
+     "pd.merge()",
+     "combine()"
+    ],
+    "a": 1,
+    "why": "We use the merge function from pandas to connect two data tables together."
+   },
+   {
+    "t": "Which parameter do we use to specify the shared column between tables?",
+    "o": [
+     "key",
+     "match",
+     "on"
+    ],
+    "a": 2,
+    "why": "The on parameter defines the exact column name used for matching rows."
+   },
+   {
+    "t": "What does a left join do to the rows of the first table?",
+    "o": [
+     "Keeps all of them",
+     "Deletes them completely",
+     "Replaces them with an empty table"
+    ],
+    "a": 0,
+    "why": "A left join preserves every single row from the left table."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Table Merging Code",
+   "goal": "Fix the error in the code that merges two dataframes using the Code column.",
+   "lines": [
+    "import pandas as pd",
+    "df1 = pd.DataFrame({'Code': [1, 2], 'Name': ['A', 'B']})",
+    "df2 = pd.DataFrame({'Code': [1, 3], 'Score': [90, 80]})",
+    "result = pd.merge(df1, df2, key='Code')"
+   ],
+   "bug": 3,
+   "fix": "result = pd.merge(df1, df2, on='Code')",
+   "success": "Great! The two tables were successfully merged based on the shared Code column."
+  },
+  "sections": [
+   {
+    "h": "What is Data Merging?",
+    "text": "Data merging is like snapping puzzle pieces together. If you have two tables that complement each other, such as student names and their respective grades, you can combine them into one big table using a shared meeting point.",
+    "code": "import pandas as pd\nprint('Ready to merge!')",
+    "output": "Ready to merge!"
+   },
+   {
+    "h": "Using the merge Function",
+    "text": "In pandas, the pd.merge function is the magical tool to link two DataFrames. You pass the first table, then the second table, and tell them how to connect based on matching data elements.",
+    "code": "import pandas as pd\na = pd.DataFrame({'Code': [1, 2]})\nb = pd.DataFrame({'Code': [1, 2]})\nprint(pd.merge(a, b, on='Code'))",
+    "output": "   Code\n0     1\n1     2"
+   },
+   {
+    "h": "The Importance of the 'on' Parameter",
+    "text": "For pandas to link rows correctly, you must specify the shared column name using the on parameter. This column must exist in both tables with identical names, such as student id or product code.",
+    "code": "import pandas as pd\nt1 = pd.DataFrame({'Code': [10, 20], 'Item': ['Pen', 'Book']})\nt2 = pd.DataFrame({'Code': [10, 20], 'Price': [5, 15]})\nprint(pd.merge(t1, t2, on='Code'))",
+    "output": "   Code  Item  Price\n0    10   Pen      5\n1    20  Book     15"
+   },
+   {
+    "h": "Left Join Operation",
+    "text": "If you specify how='left', pandas guarantees that all rows from the first (left) table remain intact. If a row in the left table has no match in the right table, pandas inserts an empty NaN value instead.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'Code': [1, 2], 'Fruit': ['Apple', 'Banana']})\ndf2 = pd.DataFrame({'Code': [1], 'Color': ['Red']})\nprint(pd.merge(df1, df2, on='Code', how='left'))",
+    "output": "   Code   Fruit Color\n0     1   Apple   Red\n1     2  Banana   NaN"
+   },
+   {
+    "h": "Right Join Operation",
+    "text": "A right join (how='right') does the exact opposite! It preserves every single row from the second (right) table and fetches matching data from the first table. Rows with no match in the first table show NaN.",
+    "code": "import pandas as pd\ndf1 = pd.DataFrame({'Code': [1], 'Fruit': ['Apple']})\ndf2 = pd.DataFrame({'Code': [1, 2], 'Color': ['Red', 'Yellow']})\nprint(pd.merge(df1, df2, on='Code', how='right'))",
+    "output": "   Code  Fruit   Color\n0     1  Apple     Red\n1     2    NaN  Yellow"
+   },
+   {
+    "h": "Combining Tables for Deep Analysis",
+    "text": "Table combination opens up powerful data analysis capabilities. Instead of storing all information in one messy place, you split it into neat tables and merge them when needed using merge, keeping code professional and efficient.",
+    "code": "import pandas as pd\ns1 = pd.DataFrame({'Code': [1, 2], 'A': [10, 20]})\ns2 = pd.DataFrame({'Code': [2, 3], 'B': [30, 40]})\nprint(pd.merge(s1, s2, on='Code', how='inner'))",
+    "output": "   Code   A   B\n0     2  20  30"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pd.merge()",
+    "desc": "Function to merge two pandas DataFrames based on shared columns."
+   },
+   {
+    "name": "on",
+    "desc": "Parameter used to specify the common column name between tables."
+   },
+   {
+    "name": "how='left'",
+    "desc": "Keeps all rows from the left table regardless of matches."
+   },
+   {
+    "name": "how='right'",
+    "desc": "Keeps all rows from the right table regardless of matches."
+   },
+   {
+    "name": "how='inner'",
+    "desc": "Retains only rows that match in both tables."
+   },
+   {
+    "name": "NaN",
+    "desc": "Value shown in pandas when data is missing or nonexistent."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to merge df1 and df2 based on the 'Code' column using a default merge.",
+    "a": "pd.merge(df1, df2, on='Code')"
+   },
+   {
+    "q": "How do you make the merge keep all rows of the left table?",
+    "a": "By using how='left'"
+   },
+   {
+    "q": "What is the parameter name that defines the shared column in merge?",
+    "a": "on"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions"
+  },
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

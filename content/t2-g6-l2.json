@@ -1,0 +1,312 @@
+{
+ "ar": {
+  "steps": [
+   "دوال السهم (Arrow Functions) هي طريقة عصرية ومختصرة جداً لكتابة الدوال في لغة JavaScript الحديثة، وتساعدنا على جعل الأكواد أنظف وأسهل في القراءة.",
+   "بدلاً من كتابة كلمة function واستخدام الأقواس الكبيرة، نستخدم رمز السهم العجيب () => لإنشاء الدالة بطريقة سريعة تشبه إرسال رسالة سريعة لصديق.",
+   "تعمل دوال السهم تماماً مثل الدوال العادية، لكنها توفر علينا كتابة العديد من الكلمات المكررة، مما يجعل البرمجة أسرع وأكثر متعة للمطورين الصغار والكبار.",
+   "مثال بسيط: كتابة دالة تقوم بجمع رقمين تصبح قصيرة جداً هكذا: const add = (a, b) => a + b؛ بدون الحاجة لكتابة كلمة return الطويلة.",
+   "قاعدة ذهبية: إذا كانت الدالة تحتوي على سطر واحد فقط للتنفيذ، يمكننا الاستغناء عن أقواس الكود {} وكلمة return لأن السهم يقوم بالمهمة نيابة عنا.",
+   "تستخدم دوال السهم في الحياة اليومية لتنفيذ المهام السريعة جداً، مثل الآلة الحاسبة الفورية أو تمرير دوال داخل دوال أخرى (Callbacks) عند التعامل مع الأزرار."
+  ],
+  "example": "لنفترض أننا نريد طباعة اسمك على الشاشة باستخدام دالة سهمية عصرية. نكتب الكود التالي: const showName = (name) => { console.log('مرحباً يا ' + name); }; عند استدعاء هذه الدالة وإعطائها اسم 'أحمد'، تقوم بطاعة 'مرحباً يا أحمد' في وحدة التحكم (Console) بسرعة فائقة وبأقل عدد ممكن من الأسطر.",
+  "mistake": "الخطأ الشائع هو نسيان وضع الأقواس حول المعاملات عندما يكون لدينا أكثر من معامل واحد. الحل هو التأكد دائماً من كتابة المعاملات داخل قوسين هكذا: (a, b) => a + b.",
+  "recap": "تمنحنا دوال السهم طريقة سريعة ونظيفة لكتابة الدوال في JavaScript. كما أنها تسهل علينا استخدام الـ Callbacks في البرمجة.",
+  "q": [
+   {
+    "t": "ما هو الرمز المستخدم لإنشاء دالة سهمية في JavaScript؟",
+    "o": [
+     "->",
+     "=>",
+     "=="
+    ],
+    "a": 1,
+    "why": "الرمز => يسمى سهم سمين (Fat Arrow) وهو الأساس في تعريف دوال السهم."
+   },
+   {
+    "t": "متى يمكننا حذف الأقواس الكبيرة {} وكلمة return في دوال السهم؟",
+    "o": [
+     "عندما تحتوي الدالة على سطر برمجي واحد فقط",
+     "دائماً في كل الحالات",
+     "عندما تكون الدالة طويلة جداً"
+    ],
+    "a": 0,
+    "why": "التنفيذ السطري الواحد يسمح بالإرجاع الضمني (Implicit Return) بدون الحاجة لكتابة return."
+   },
+   {
+    "t": "أي من الطرق التالية هي الطريقة الصحيحة لكتابة دالة سهمية بلا معاملات؟",
+    "o": [
+     "() => console.log('Hi')",
+     "function => console.log('Hi')",
+     "=> console.log('Hi')"
+    ],
+    "a": 0,
+    "why": "يجب دائماً وضع أقواس فارغة () لتمثيل مكان المعاملات قبل السهم."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "إصلاح دالة السهم",
+   "goal": "قم بإصلاح الخطأ في كود دالة السهم حتى تطبع الاسم بنجاح.",
+   "lines": [
+    "const greet = name => {",
+    "  console.log('مرحباً ' + name)",
+    "};",
+    "greett('أحمد');"
+   ],
+   "bug": 3,
+   "fix": "greet('أحمد');",
+   "success": "رائع! تم استدعاء دالة السهم وطباعة التحية بنجاح!"
+  },
+  "sections": [
+   {
+    "h": "ما هي دوال السهم؟",
+    "text": "تعتبر دوال السهم طريقة حديثة ومختصرة لكتابة الأوامر البرمجية في لغة JavaScript. مثلما تستخدم اختصارات لوحة المفاتيح لتوفير الوقت، توفر لك دوال السهم وقتاً كبيراً في كتابة الدوال البرمجية دون الحاجة لتكرار كلمة function في كل مرة.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Arrow</title></head>\n<body>\n  <p id=\"demo\"></p>\n  <script>\n    const sayHello = () => \"مرحباً بك في عالم دوال السهم!\";\n    document.getElementById(\"demo\").innerText = sayHello();\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة جملة ترحيبية تم إنشاؤها عبر دالة سهمية."
+   },
+   {
+    "h": "تركيب دالة السهم (Syntax)",
+    "text": "يتكون تركيب دالة السهم من ثلاثة أجزاء رئيسية: الأقواس الخاصة بالمعاملات، ثم رمز السهم السمين (=>)، ثم جسم الدالة الذي يحمل الكود. تخيل أن السهم يوجه البيانات مباشرة إلى مكان تنفيذها.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"res\"></p>\n  <script>\n    const multiply = (x, y) => x * y;\n    document.getElementById(\"res\").innerText = \"الناتج: \" + multiply(4, 5);\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة ناتج ضرب الرقمين 4 في 5 ويساوي 20."
+   },
+   {
+    "h": "السهم السمين (Fat Arrow)",
+    "text": "رمز السهم السمين (=>) هو التوقيع المميز لهذا النوع من الدوال. سمي بالسهم السمين لأنه يأخذ شكلاً عريضاً مقارنة بالسهم العادي، وهو يربط المدخلات بالناتج بطريقة ذكية وسريعة للغاية.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"box\"></p>\n  <script>\n    const square = num => num * num;\n    document.getElementById(\"box\").innerText = \"مربع العدد 6 هو: \" + square(6);\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة مربع العدد 6 وهو 36."
+   },
+   {
+    "h": "الاختصار والوضوح (Concise Code)",
+    "text": "عندما يكون كود الدالة قصيراً ومكوناً من سطر واحد، تتخلص دوال السهم من الأقواس الكبيرة وزيادة الكتابة. هذا يجعل الأكواد تبدو كأنها قصيدة شعرية قصيرة وسهلة الفهم بدلاً من الجمل الطويلة والمعقدة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"out\"></p>\n  <script>\n    const isEven = n => n % 2 === 0;\n    document.getElementById(\"out\").innerText = \"هل الرقم 10 زوجي؟ \" + isEven(10);\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة كلمة true لأن الرقم 10 عدد زوجي."
+   },
+   {
+    "h": "دوال رد النداء (Callbacks)",
+    "text": "تستخدم دوال السهم بشكل مذهل داخل دوال أخرى تُعرف باسم الـ Callbacks. تخيل أنك تعطي صديقك مهمة وتقول له: 'عندما تنتهي من هذه المهمة، قم بتنفيذ هذه الدالة السهمية الصغيرة فوراً'.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"list\"></p>\n  <script>\n    const numbers = [1, 2, 3];\n    const doubled = numbers.map(n => n * 2);\n    document.getElementById(\"list\").innerText = doubled.join(', ');\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة الأرقام المضاعفة: 2, 4, 6."
+   },
+   {
+    "h": "التعامل مع معامل واحد",
+    "text": "إذا كانت دالتك تستقبل معاملًا واحدًا فقط (مثل اسم واحد أو رقم واحد)، فلست بحاجة حتى لكتابة الأقواس الهلالية العادية حول المعامل. يمكنك كتابة اسمه مباشرة قبل السهم مثل الرياضي الماهر.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"msg\"></p>\n  <script>\n    const greetUser = name => \"أهلاً بك يا \" + name;\n    document.getElementById(\"msg\").innerText = greetUser(\"سارة\");\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة رسالة ترحيبية مخصصة للاسم سارة."
+   },
+   {
+    "h": "التعامل مع عدة معاملات",
+    "text": "حين تحتاج الدالة إلى أكثر من مدخل أو معامل (مثل الطول والعرض)، يصبح إجباريًا وضع الأقواس الهلالية العادية حول المعاملات لكي تفهم لغة JavaScript أين تبدأ وأين تنتهي.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"area\"></p>\n  <script>\n    const calcArea = (w, h) => w * h;\n    document.getElementById(\"area\").innerText = \"مساحة المستطيل: \" + calcArea(5, 3);\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة مساحة المستطيل وهي 15."
+   },
+   {
+    "h": "الإرجاع الضمني (Implicit Return)",
+    "text": "عندما يكون سطر الكود في دالة السهم بدون أقواس كبيرة {}, تقوم لغة JavaScript بإرجاع الناتج تلقائياً ودون الحاجة لكتابة كلمة return. هذا يشبه طاهٍ يقدم لك الطبق الجاهز فوراً دون الحاجة لطلبه بكلمات كثيرة.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"sum\"></p>\n  <script>\n    const addTen = x => x + 10;\n    document.getElementById(\"sum\").innerText = addTen(5);\n  </script>\n</body>\n</html>",
+    "output": "تعرض الصفحة ناتج جمع 5 مع 10 وهو 15."
+   }
+  ],
+  "reference": [
+   {
+    "name": "() => {}",
+    "desc": "التركيب الأساسي لدالة السهم في JavaScript"
+   },
+   {
+    "name": "Fat Arrow (=>)",
+    "desc": "الرمز الذي يربط بين معاملات الدالة وجسمها التنفيذي"
+   },
+   {
+    "name": "Implicit Return",
+    "desc": "إرجاع الناتج تلقائياً بدون كتابة كلمة return"
+   },
+   {
+    "name": "Callback Function",
+    "desc": "دالة يتم تمريرها كمعامل داخل دالة أخرى لتنفيذها لاحقاً"
+   },
+   {
+    "name": "Single Parameter",
+    "desc": "حالة وجود معامل واحد تسمح بحذف أقواس المعاملات"
+   },
+   {
+    "name": "Multiple Parameters",
+    "desc": "استخدام أقواس () عند وجود معاملين أو أكثر"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب دالة سهمية تسمى cube تأخذ رقماً وتعيد مكعبه (ضرب الرقم في نفسه 3 مرات).",
+    "a": "const cube = n => n * n * n;"
+   },
+   {
+    "q": "حول الدالة التالية إلى دالة سهمية: function sayHi() { return 'أهلاً'; }",
+    "a": "const sayHi = () => 'أهلاً';"
+   },
+   {
+    "q": "اكتب دالة سهمية تأخذ اسمين وتدمجهما في نص واحد.",
+    "a": "const joinNames = (n1, n2) => n1 + ' و ' + n2;"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Arrow functions are a modern, highly concise way to write functions in JavaScript, helping us keep our code clean and readable.",
+   "Instead of typing the word 'function' and using bulky code blocks, we use the neat arrow symbol () => to create functions quickly like sending a quick text message.",
+   "Arrow functions work just like regular functions, but they save us from typing repetitive words, making programming faster and more fun for developers of all ages.",
+   "Simple example: writing a function that adds two numbers becomes super short: const add = (a, b) => a + b; without needing the long 'return' keyword.",
+   "Golden rule: If the function contains only a single execution line, we can omit the curly braces {} and the return keyword because the arrow handles it for us.",
+   "Arrow functions are used in real life for quick tasks, such as instant calculators or passing callbacks into other functions when managing interactive web buttons."
+  ],
+  "example": "Suppose we want to print your name on the screen using a modern arrow function. We write the following code: const showName = (name) => { console.log('Hello ' + name); }; When we call this function and pass 'Ahmed', it prints 'Hello Ahmed' to the console instantly with minimal lines of code.",
+  "mistake": "A common mistake is forgetting to put parentheses around parameters when there is more than one parameter. The fix is to always ensure parameters are wrapped in parentheses like this: (a, b) => a + b.",
+  "recap": "Arrow functions give us a fast and clean way to write functions in JavaScript. They also make using callbacks much easier in programming.",
+  "q": [
+   {
+    "t": "What is the symbol used to create an arrow function in JavaScript?",
+    "o": [
+     "->",
+     "=>",
+     "=="
+    ],
+    "a": 1,
+    "why": "The symbol => is called a fat arrow and is the core of defining arrow functions."
+   },
+   {
+    "t": "When can we omit the curly braces {} and the return keyword in arrow functions?",
+    "o": [
+     "When the function has only a single expression line",
+     "Always in every single case",
+     "When the function is very long"
+    ],
+    "a": 0,
+    "why": "Single-line execution allows implicit return without needing to type the return keyword."
+   },
+   {
+    "t": "Which of the following is the correct way to write an arrow function with zero parameters?",
+    "o": [
+     "() => console.log('Hi')",
+     "function => console.log('Hi')",
+     "=> console.log('Hi')"
+    ],
+    "a": 0,
+    "why": "Empty parentheses () must always be placed to represent parameters before the arrow."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fixing the Arrow Function",
+   "goal": "Fix the bug in the arrow function code so it prints the name successfully.",
+   "lines": [
+    "const greet = name => {",
+    "  console.log('Hello ' + name)",
+    "};",
+    "greett('Ahmed');"
+   ],
+   "bug": 3,
+   "fix": "greet('Ahmed');",
+   "success": "Awesome! The arrow function was called and the greeting was printed successfully!"
+  },
+  "sections": [
+   {
+    "h": "What are Arrow Functions?",
+    "text": "Arrow functions are a modern, streamlined way to write code instructions in JavaScript. Just like keyboard shortcuts save you time, arrow functions save you from repeatedly typing the word 'function' every single time.",
+    "code": "<!DOCTYPE html>\n<html>\n<head><title>Arrow</title></head>\n<body>\n  <p id=\"demo\"></p>\n  <script>\n    const sayHello = () => \"Welcome to arrow functions!\";\n    document.getElementById(\"demo\").innerText = sayHello();\n  </script>\n</body>\n</html>",
+    "output": "The page displays a welcome sentence created via an arrow function."
+   },
+   {
+    "h": "Arrow Function Syntax",
+    "text": "The syntax of an arrow function consists of three main parts: parameter parentheses, the fat arrow symbol (=>), and the body holding the code. Imagine the arrow directing data straight to its execution place.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"res\"></p>\n  <script>\n    const multiply = (x, y) => x * y;\n    document.getElementById(\"res\").innerText = \"Result: \" + multiply(4, 5);\n  </script>\n</body>\n</html>",
+    "output": "The page displays the product of 4 and 5 which equals 20."
+   },
+   {
+    "h": "The Fat Arrow",
+    "text": "The fat arrow symbol (=>) is the signature of this function type. It's called 'fat' because it looks wider than a normal arrow, cleverly connecting inputs to outputs extremely fast.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"box\"></p>\n  <script>\n    const square = num => num * num;\n    document.getElementById(\"box\").innerText = \"Square of 6 is: \" + square(6);\n  </script>\n</body>\n</html>",
+    "output": "The page displays the square of 6 which is 36."
+   },
+   {
+    "h": "Concise Code",
+    "text": "When a function body is short and fits on one line, arrow functions drop the curly braces and extra typing. This makes your code look like a short, easy-to-read poem instead of long, complex sentences.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"out\"></p>\n  <script>\n    const isEven = n => n % 2 === 0;\n    document.getElementById(\"out\").innerText = \"Is 10 even? \" + isEven(10);\n  </script>\n</body>\n</html>",
+    "output": "The page displays true because 10 is an even number."
+   },
+   {
+    "h": "Callback Functions",
+    "text": "Arrow functions are amazingly useful inside other functions known as callbacks. Imagine giving your friend a task and saying: 'When you finish this task, immediately run this tiny arrow function.'",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"list\"></p>\n  <script>\n    const numbers = [1, 2, 3];\n    const doubled = numbers.map(n => n * 2);\n    document.getElementById(\"list\").innerText = doubled.join(', ');\n  </script>\n</body>\n</html>",
+    "output": "The page displays doubled numbers: 2, 4, 6."
+   },
+   {
+    "h": "Handling a Single Parameter",
+    "text": "If your function takes just one parameter (like a single name or number), you don't even need to type the regular parentheses around that parameter. You can write its name right before the arrow like a skilled athlete.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"msg\"></p>\n  <script>\n    const greetUser = name => \"Hello \" + name;\n    document.getElementById(\"msg\").innerText = greetUser(\"Sara\");\n  </script>\n</body>\n</html>",
+    "output": "The page displays a custom greeting message for Sara."
+   },
+   {
+    "h": "Handling Multiple Parameters",
+    "text": "When your function needs more than one input or parameter (like width and height), it becomes mandatory to wrap the parameters in regular parentheses so JavaScript knows where they start and end.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"area\"></p>\n  <script>\n    const calcArea = (w, h) => w * h;\n    document.getElementById(\"area\").innerText = \"Area: \" + calcArea(5, 3);\n  </script>\n</body>\n</html>",
+    "output": "The page displays the rectangle area which is 15."
+   },
+   {
+    "h": "Implicit Return",
+    "text": "When the code line in an arrow function has no curly braces {}, JavaScript automatically returns the result without needing the return keyword. This is like a chef serving your ready dish immediately without extra words.",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"sum\"></p>\n  <script>\n    const addTen = x => x + 10;\n    document.getElementById(\"sum\").innerText = addTen(5);\n  </script>\n</body>\n</html>",
+    "output": "The page displays the sum of 5 and 10 which is 15."
+   }
+  ],
+  "reference": [
+   {
+    "name": "() => {}",
+    "desc": "Basic syntax of an arrow function in JavaScript"
+   },
+   {
+    "name": "Fat Arrow (=>)",
+    "desc": "The symbol connecting function parameters to its execution body"
+   },
+   {
+    "name": "Implicit Return",
+    "desc": "Automatically returning a result without typing the return keyword"
+   },
+   {
+    "name": "Callback Function",
+    "desc": "A function passed as an argument inside another function to run later"
+   },
+   {
+    "name": "Single Parameter",
+    "desc": "Having one parameter allows omitting parameter parentheses"
+   },
+   {
+    "name": "Multiple Parameters",
+    "desc": "Using parentheses () when there are two or more parameters"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write an arrow function named cube that takes a number and returns its cube (multiplying it by itself 3 times).",
+    "a": "const cube = n => n * n * n;"
+   },
+   {
+    "q": "Convert this function to an arrow function: function sayHi() { return 'Hi'; }",
+    "a": "const sayHi = () => 'Hi';"
+   },
+   {
+    "q": "Write an arrow function that takes two names and combines them into one text string.",
+    "a": "const joinNames = (n1, n2) => n1 + ' and ' + n2;"
+   }
+  ]
+ },
+ "lang": "javascript",
+ "sources": [
+  {
+   "title": "MDN: JavaScript",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "title": "MDN: JavaScript Guide",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+  }
+ ],
+ "grounded": true
+}

@@ -1,0 +1,345 @@
+{
+ "ar": {
+  "steps": [
+   "الترتيب هو مهارة أساسية لتنظيم بياناتك في جدول باندانز (Pandas)، زي ما بترتب كتبك في المكتبة من الأطصر للأقصر أو بالعكس، وعشان نعمل ده بنستخدم أمر sort_values الجميل.",
+   "تعال نشوف مثال بسيط: لو عندنا جدول درجات طلاب، نقدر نكتب df.sort_values(by='score') عشان نرتب الطلاب تصاعدياً من الأصغر للأكبر.",
+   "الدالة بتشتغل عن طريق إنها بتاخذ اسم العمود اللي عايز ترتب بيه جوه معامل by، وتقوم بإعادة ترتيب الصفوف بناءً على القيم دي بكل سهولة.",
+   "لو عايز ترتب من الكبير للصغير (تنازلي)، بنضيف معامل سحري اسمه ascending=False، زي مثلاً df.sort_values(by='score', ascending=False) وده بيجيب الأبطال في الأول.",
+   "القاعدة الذهبية هنا هي التأكد من كتابة أسماء الأعمدة بنفس الحروف تماماً (حساس لحالة الأحرف)، واستخدام ascending=False لما تحب تشوف أعلى القيم الأول.",
+   "في الحياة الواقعية، بنستخدم الترتيب في ترتيب جدول هدايا المسابقات حسب النقاط، أو ترتيب ترتيب المتاجر الإلكترونية للمنتجات حسب السعر من الأرخص للأغلى."
+  ],
+  "example": "تخيل إنك مدرس عندك جدول بيانات لطلابك فيه الأسماء والدرجات، وعايز تعرف مين الطالب اللي جاب الدرجة النهائية عشان تديله هدية. تستخدم دالة sort_values مع معامل ascending=False عشان تحط أعلى درجة فوق خالص. الكود هيكون كده:\n\nimport pandas as pd\ndf = pd.DataFrame({'name': ['Ali', 'Mona', 'Omar'], 'score': [85, 95, 90])\nprint(df.sort_values(by='score', ascending=False))\n\nالنتيجة هتطلع Mona أولاً بـ 95 وبعدها Omar بـ 90 ثم Ali بـ 85.",
+  "mistake": "الخطأ الشائع هو نسيان حفظ الترتيب في المتغير أو نسيان كتابة أسماء الأعمدة بين أقواس مربعة لما نكون بنرتب أكتر من عمود، والحل هو كتابة df = df.sort_values(...) أو استخدام inplace=True.",
+  "recap": "الترتيب والتصنيف في باندانز بيخلينا ننظم البيانات تصاعدياً أو تنازلياً بكل سهولة باستخدام sort_values و ascending. كمان نقدر نستخدم دالة rank لتحديد مركز كل صف.",
+  "q": [
+   {
+    "t": "ما هو المعامل المسؤول عن الترتيب التنازلي في دالة sort_values؟",
+    "o": [
+     "descending=True",
+     "ascending=False",
+     "reverse=True"
+    ],
+    "a": 1,
+    "why": "المعامل ascending بياخد قيمة True للترتيب التصاعدي و False للترتيب التنازلي."
+   },
+   {
+    "t": "كيف نرتب جدولاً بناءً على عمودين معاً؟",
+    "o": [
+     "df.sort_values(by=['col1', 'col2'])",
+     "df.sort(col1, col2)",
+     "df.arrange('col1', 'col2')"
+    ],
+    "a": 0,
+    "why": "نمرر قائمة بأسماء الأعمدة للمتغير by لترتيب البيانات حسب الأول والأحدث."
+   },
+   {
+    "t": "ما وظيفة الدالة rank() في باندانز؟",
+    "o": [
+     "حذف القيم المتكررة",
+     "حساب ترتيب أو مركز القيم في العمود",
+     "تغيير اسم العمود"
+    ],
+    "a": 1,
+    "why": "الدالة rank تحسب ترتيب كل قيمة (المركز الأول، الثاني، إلخ) داخل السلسلة أو الجدول."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود الترتيب والتصنيف",
+   "goal": "أكمل الفراغات في أكواد باندانز الصحيحة لترتيب وتصنيف البيانات.",
+   "items": [
+    {
+     "text": "df.sort_values(by='score', ___=False)",
+     "options": [
+      "ascending",
+      "descending",
+      "reverse"
+     ],
+     "a": 0
+    },
+    {
+     "text": "df['rank'] = df['score'].___()",
+     "options": [
+      "sort",
+      "rank",
+      "order"
+     ],
+     "a": 1
+    },
+    {
+     "text": "df.sort_values(by=['score', '___'])",
+     "options": [
+      "name",
+      "score",
+      "index"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "رائع! تم ترتيب البيانات وتصنيفها بنجاح وبقى الجدول منظم تماماً."
+  },
+  "sections": [
+   {
+    "h": "مقدمة في ترتيب البيانات",
+    "text": "الترتيب بيساعدنا نشوف البيانات بشكل مرتب بدل ما تكون متلخبطة. زي ما بتنظم ألعابك حسب الحجم، باندانز بترتب صفوف الجدول باستخدام دالة مذهلة اسمها sort_values.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'item': ['Apple', 'Banana', 'Cherry'], 'price': [5, 2, 8])\nprint(df.sort_values(by='price'))",
+    "output": "   item  price\n1  Banana      2\n0   Apple      5\n2  Cherry      8"
+   },
+   {
+    "h": "الترتيب التصاعدي الافتراضي",
+    "text": "لما تستخدم sort_values لوحدها، باندانز بترتب البيانات تصاعدياً (من الصغير للكبير أو من الألف للياء). هذا هو الوضع الافتراضي أو الـ default لعملية الترتيب.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'letter': ['C', 'A', 'B']})\nprint(df.sort_values(by='letter'))",
+    "output": "  letter\n1      A\n2      B\n0      C"
+   },
+   {
+    "h": "الترتيب التنازلي مع ascending=False",
+    "text": "لو عايز تجيب الأكبر الأول (زي أعلى درجات الطلاب أو أغلى المنتجات)، بتستعمل معامل سحري اسمه ascending وجنبه False عشان تعكس الاتجاه تماماً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [50, 90, 70]})\nprint(df.sort_values(by='score', ascending=False))",
+    "output": "   score\n1     90\n2     70\n0     50"
+   },
+   {
+    "h": "التعامل مع القيم المفقودة NaN",
+    "text": "أحياناً بيكون فيه قيم ناقصة في الجدول (NaN). باندانز ممتازة وبتخلي القيم الناقصة تظهر في الآخر دايماً لما ترتب، بس تقدر تتحكم في مكانها باستخدام معامل na_position.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'val': [3, np.nan, 1]})\nprint(df.sort_values(by='val', na_position='first'))",
+    "output": "   val\n1  NaN\n2  1.0\n0  3.0"
+   },
+   {
+    "h": "ترتيب البيانات حسب أكثر من عمود",
+    "text": "ممكن تحتاج ترتب الجدول حسب عمودين مع بعض، زي إنك ترتب الطلاب حسب الفصل الأول، وبعدين حسب الدرجة لو تساووا. بنمرر قائمة أعمدة لـ by.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'class': ['A', 'A', 'B'], 'score': [80, 90, 85])\nprint(df.sort_values(by=['class', 'score']))",
+    "output": "  class  score\n0     A     80\n1     A     90\n2     B     85"
+   },
+   {
+    "h": "تحديد اتجاهات مختلفة لكل عمود",
+    "text": "لما ترتب بأكتر من عمود، تقدر تخليهم باتجاهات مختلفة، زي إنك ترتب الفصل تصاعدياً والدرجة تنازلياً. بنبعت قائمة لـ ascending بالقيمتين.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'class': ['A', 'A', 'B'], 'score': [80, 90, 85])\nprint(df.sort_values(by=['class', 'score'], ascending=[True, False]))",
+    "output": "  class  score\n1     A     90\n0     A     80\n2     B     85"
+   },
+   {
+    "h": "استخدام دالة التصنيف rank",
+    "text": "دالة rank() بتعطي لكل عنصر رقمه أو مركزه (الأول، الثاني، إلخ) بناءً على قيمته. دي مفيدة جداً في معرفة مركز كل طالب من غير ما تغير ترتيب الجدول الأصلي.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [50, 90, 70]})\ndf['rank'] = df['score'].rank(ascending=False)\nprint(df)",
+    "output": "   score  rank\n0     50   3.0\n1     90   1.0\n2     70   2.0"
+   },
+   {
+    "h": "طرق التعامل مع التساوي في rank",
+    "text": "لما يكون فيه طلاب بنفس الدرجة، دالة rank بتوفر طرق للتعامل مع التعادل زي method='min' أو method='max' أو method='average' عشان تظبط المراكز بعدالة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [80, 80, 90]})\ndf['rank'] = df['score'].rank(method='min', ascending=False)\nprint(df)",
+    "output": "   score  rank\n0     80   2.0\n1     80   2.0\n2     90   1.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "sort_values()",
+    "desc": "ترتيب صفوف جدول باندانز بناءً على قيم أعمدة معينة."
+   },
+   {
+    "name": "ascending",
+    "desc": "معامل يحدد ما إذا كان الترتيب تصاعدياً (True) أم تنازلياً (False)."
+   },
+   {
+    "name": "by",
+    "desc": "معامل يحدد اسم العمود أو قائمة الأعمدة المراد الترتيب بناءً عليها."
+   },
+   {
+    "name": "rank()",
+    "desc": "دالة تحسب ترتيب أو مركز القيم في السلسلة أو العمود."
+   },
+   {
+    "name": "na_position",
+    "desc": "يحدد مكان ظهور القيم المفقودة (first أو last)."
+   },
+   {
+    "name": "method",
+    "desc": "يحدد طريقة التعامل مع القيم المتساوية في دالة rank."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "كيف ترتب جدولاً اسمه df بناءً على عمود 'age' تصاعدياً؟",
+    "a": "df.sort_values(by='age')"
+   },
+   {
+    "q": "كيف ترتب جدولاً اسمه df بناءً على عمود 'price' تنازلياً؟",
+    "a": "df.sort_values(by='price', ascending=False)"
+   },
+   {
+    "q": "كيف تضيف عمود جديد 'position' يحتوي على رتب القيم في عمود 'score'؟",
+    "a": "df['position'] = df['score'].rank()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Sorting is a core skill to organize your rows in a Pandas DataFrame, just like sorting your books by height, and we use the wonderful sort_values command for this.",
+   "Let's see a simple example: if we have a student grades table, we can write df.sort_values(by='score') to sort students ascending from smallest to largest.",
+   "The method works by taking the column name you want to sort by inside the 'by' parameter, easily rearranging the rows based on those values.",
+   "If you want to sort from highest to lowest (descending), we add a magical parameter called ascending=False, like df.sort_values(by='score', ascending=False) which puts champions first.",
+   "The golden rule here is to match column names precisely (case-sensitive) and use ascending=False when you want to see the highest values first.",
+   "In real life, we use sorting to arrange competition leaderboards by points, or ordering e-commerce products by price from cheapest to most expensive."
+  ],
+  "example": "Imagine you are a teacher with a student DataFrame containing names and scores, and you want to find the top student to give them a prize. You use sort_values with ascending=False to put the highest score at the very top. The code looks like this:\n\nimport pandas as pd\ndf = pd.DataFrame({'name': ['Ali', 'Mona', 'Omar'], 'score': [85, 95, 90]})\nprint(df.sort_values(by='score', ascending=False))\n\nOutput shows Mona first with 95, then Omar with 90, and Ali with 85.",
+  "mistake": "A common mistake is forgetting to save the sorted result back into the variable or forgetting brackets when sorting multiple columns. The fix is writing df = df.sort_values(...) or using inplace=True.",
+  "recap": "Sorting and ranking in Pandas allow us to organize data ascendingly or descendingly easily using sort_values and ascending. We can also use the rank method to determine each row's position.",
+  "q": [
+   {
+    "t": "Which parameter is responsible for descending sorting in sort_values?",
+    "o": [
+     "descending=True",
+     "ascending=False",
+     "reverse=True"
+    ],
+    "a": 1,
+    "why": "The ascending parameter takes True for ascending and False for descending order."
+   },
+   {
+    "t": "How do you sort a DataFrame based on two columns together?",
+    "o": [
+     "df.sort_values(by=['col1', 'col2'])",
+     "df.sort(col1, col2)",
+     "df.arrange('col1', 'col2')"
+    ],
+    "a": 0,
+    "why": "We pass a list of column names to the 'by' parameter to sort sequentially."
+   },
+   {
+    "t": "What is the purpose of the rank() function in Pandas?",
+    "o": [
+     "Drop duplicate values",
+     "Compute numerical ranks (positions) of values in a column",
+     "Rename a column"
+    ],
+    "a": 1,
+    "why": "The rank function computes the position of each value (1st, 2nd, etc.) inside a Series or DataFrame."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Sorting and Ranking Code Completion",
+   "goal": "Fill in the blanks in correct Pandas code snippets for sorting and ranking data.",
+   "items": [
+    {
+     "text": "df.sort_values(by='score', ___=False)",
+     "options": [
+      "ascending",
+      "descending",
+      "reverse"
+     ],
+     "a": 0
+    },
+    {
+     "text": "df['rank'] = df['score'].___()",
+     "options": [
+      "sort",
+      "rank",
+      "order"
+     ],
+     "a": 1
+    },
+    {
+     "text": "df.sort_values(by=['score', '___'])",
+     "options": [
+      "name",
+      "score",
+      "index"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Awesome! Data was sorted and ranked successfully, leaving the table perfectly organized."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Sorting Data",
+    "text": "Sorting helps us view data neatly instead of a messy jumble. Just like organizing your toys by size, Pandas sorts DataFrame rows using a wonderful method called sort_values.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'item': ['Apple', 'Banana', 'Cherry'], 'price': [5, 2, 8]})\nprint(df.sort_values(by='price'))",
+    "output": "   item  price\n1  Banana      2\n0   Apple      5\n2  Cherry      8"
+   },
+   {
+    "h": "Default Ascending Order",
+    "text": "When you use sort_values by itself, Pandas sorts the data ascendingly (smallest to largest, or A to Z). This is the default behavior for sorting operations.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'letter': ['C', 'A', 'B']})\nprint(df.sort_values(by='letter'))",
+    "output": "  letter\n1      A\n2      B\n0      C"
+   },
+   {
+    "h": "Descending Order with ascending=False",
+    "text": "If you want the largest values first (like top student scores or most expensive items), use the magical parameter ascending and set it to False to reverse direction.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [50, 90, 70]})\nprint(df.sort_values(by='score', ascending=False))",
+    "output": "   score\n1     90\n2     70\n0     50"
+   },
+   {
+    "h": "Handling Missing Values (NaN)",
+    "text": "Sometimes tables have missing values (NaN). Pandas is smart and puts missing values at the very end during sorting, but you can control their position using na_position.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'val': [3, np.nan, 1]})\nprint(df.sort_values(by='val', na_position='first'))",
+    "output": "   val\n1  NaN\n2  1.0\n0  3.0"
+   },
+   {
+    "h": "Sorting by Multiple Columns",
+    "text": "You might need to sort a table by two columns together, like sorting students by class first, then by score if there's a tie. We pass a list of columns to 'by'.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'class': ['A', 'A', 'B'], 'score': [80, 90, 85]})\nprint(df.sort_values(by=['class', 'score']))",
+    "output": "  class  score\n0     A     80\n1     A     90\n2     B     85"
+   },
+   {
+    "h": "Different Directions per Column",
+    "text": "When sorting by multiple columns, you can specify different directions, like sorting class ascending and score descending. We send a list of booleans to ascending.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'class': ['A', 'A', 'B'], 'score': [80, 90, 85]})\nprint(df.sort_values(by=['class', 'score'], ascending=[True, False]))",
+    "output": "  class  score\n1     A     90\n0     A     80\n2     B     85"
+   },
+   {
+    "h": "Using the rank() Function",
+    "text": "The rank() method assigns each item its position (1st, 2nd, etc.) based on its value. This is extremely useful for finding each student's rank without altering the original table order.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [50, 90, 70]})\ndf['rank'] = df['score'].rank(ascending=False)\nprint(df)",
+    "output": "   score  rank\n0     50   3.0\n1     90   1.0\n2     70   2.0"
+   },
+   {
+    "h": "Handling Ties in rank()",
+    "text": "When students have the exact same score, rank provides tie-handling methods like method='min', method='max', or method='average' to assign positions fairly.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'score': [80, 80, 90]})\ndf['rank'] = df['score'].rank(method='min', ascending=False)\nprint(df)",
+    "output": "   score  rank\n0     80   2.0\n1     80   2.0\n2     90   1.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "sort_values()",
+    "desc": "Sorts the rows of a Pandas DataFrame based on specific column values."
+   },
+   {
+    "name": "ascending",
+    "desc": "Parameter specifying whether sorting is ascending (True) or descending (False)."
+   },
+   {
+    "name": "by",
+    "desc": "Parameter specifying the column name or list of columns to sort by."
+   },
+   {
+    "name": "rank()",
+    "desc": "Function computing numerical ranks (positions) of values in a Series or column."
+   },
+   {
+    "name": "na_position",
+    "desc": "Specifies where missing values should appear (first or last)."
+   },
+   {
+    "name": "method",
+    "desc": "Specifies how ties are handled in the rank function."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "How do you sort a DataFrame named df based on the 'age' column ascending?",
+    "a": "df.sort_values(by='age')"
+   },
+   {
+    "q": "How do you sort a DataFrame named df based on the 'price' column descending?",
+    "a": "df.sort_values(by='price', ascending=False)"
+   },
+   {
+    "q": "How do you add a new column 'position' containing ranks of values in 'score'?",
+    "a": "df['position'] = df['score'].rank()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

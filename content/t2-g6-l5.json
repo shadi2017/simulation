@@ -1,0 +1,356 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن الذاكرة المؤقتة تشبه لوح رسم نمسحه كلما أغلقنا البرنامج، لكن حفظ الملفات يشبه دفتر ملاحظات نكتب فيه ذكرياتنا لتبقى للأبد على الكمبيوتر.",
+   "نستخدم دالة open() لفتح الملف، حيث نحدد اسمه ونمط الاستخدام مثل 'r' للقراءة أو 'w' للكتابة.",
+   "لإضافة نصوص جديدة داخل ملفنا، نستخدم الأمر write() لنقل الكلمات من شاشة البرنامج إلى داخل الملف المخزن.",
+   "يمكننا قراءة محتوى الملف بأكمله دفعة واحدة باستخدام دالة read() واستعراضه في المخرجات كأنه قصة جديدة.",
+   "القاعدة الذهبية هي استخدام العبارة السحرية with لأنها تتأكد من إغلاق الملف تلقائياً فور الانتهاء تماماً مثل إغلاق حقيبة السفر.",
+   "نستفيد من حفظ الملفات في الواقع العملي لتسجيل درجات الألعاب، حفظ إعدادات اللاعب، أو حفظ نصوص المقالات المفضلة."
+  ],
+  "example": "عندما نكتب عبارة مفضلة داخل ملف نصي، فإننا نضمن بقاءها حتى بعد إغلاق البرنامج. إليك كيف نكتب ونقرأ بسرعة باستخدام بايثون:\n\nwith open('quote.txt', 'w') as f:\n    f.write('Code is poetry.')\n\nwith open('quote.txt', 'r') as f:\n    print(f.read())\n\nالسبب المنطقي هو أن الأمر 'w' ينشئ الملف ويكتب داخله، بينما 'r' يقرأ ما بداخله ويظهره على الشاشة، وكلمة with تحمي الملف من التلف.",
+  "mistake": "نسيان إغلاق الملف أو عدم استخدام عبارة with قد يؤدي إلى فقدان البيانات أو بقاء الملف تالفاً، والحل دائماً هو الاعتماد على صيغة with open(...) as f للحماية الكاملة.",
+  "recap": "تعلمنا كيف نفتح ونقرأ ونكتب في الملفات النصية باستخدام بايثون بكل سهولة. كما فهمنا أهمية استخدام عبارة with للحفاظ على سلامة بياناتنا.",
+  "q": [
+   {
+    "t": "ما هو النمط المستخدم لفتح ملف بغرض الكتابة فيه؟",
+    "o": [
+     "'r'",
+     "'w'",
+     "'x'"
+    ],
+    "a": 1,
+    "why": "النمط 'w' يرمز إلى الكتابة Write ويقوم بإنشاء أو فتح الملف للكتابة."
+   },
+   {
+    "t": "أي دالة تستخدم لقراءة محتوى الملف النصي كاملاً؟",
+    "o": [
+     "write()",
+     "read()",
+     "open()"
+    ],
+    "a": 1,
+    "why": "دالة read() تقرأ كل المحتوى الموجود داخل الملف."
+   },
+   {
+    "t": "لماذا نستخدم العبارة with عند التعامل مع الملفات؟",
+    "o": [
+     "لإغلاق الملف تلقائياً بأمان",
+     "لتلوين النص باللون الأحمر",
+     "لجعل البرنامج أسرع بمليون مرة"
+    ],
+    "a": 0,
+    "why": "العبارة with تتكفل بإغلاق الملف بشكل صحيح بعد انتهاء الأوامر."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "صنّف أوامر الملفات في بايثون",
+   "goal": "ضع كل أمر أو رمز في مكانه الصحيح: هل هو خاص بالقراءة والكتابة أم لا؟",
+   "buckets": [
+    "أوامر الملفات",
+    "أوامر عادية أخرى"
+   ],
+   "items": [
+    {
+     "t": "open('file.txt', 'r')",
+     "b": 0
+    },
+    {
+     "t": "print('Hello')",
+     "b": 1
+    },
+    {
+     "t": "f.write('Python')",
+     "b": 0
+    },
+    {
+     "t": "range(5)",
+     "b": 1
+    },
+    {
+     "t": "f.read()",
+     "b": 0
+    },
+    {
+     "t": "input('Name:')",
+     "b": 1
+    }
+   ],
+   "success": "رائع! لقد نظّمت أوامر الملفات وصنفتها بمهارة فائقة."
+  },
+  "sections": [
+   {
+    "h": "ما هو حفظ الملفات؟",
+    "text": "الذاكرة العادية تنسى كل شيء بمجرد إغلاق البرنامج. الملفات تمنحنا القدرة على الاحتفاظ بالمعلومات على القرص الصلب تماماً مثل كتابة يومياتك في دفتر ورقي.",
+    "code": "# حفظ بيانات للأبد\nprint('Preparing files...')",
+    "output": "Preparing files..."
+   },
+   {
+    "h": "فتح الملفات باستخدام open()",
+    "text": "لكي تتعامل مع أي ملف، يجب أولاً أن تطلبه من بايثون باستخدام دالة open(). تشبه هذه الدالة مفتاح الغرفة الذي يفتح لك الباب لتبدأ العمل.",
+    "code": "my_file = open('note.txt', 'w')\nprint('File is open!')\nmy_file.close()",
+    "output": "File is open!"
+   },
+   {
+    "h": "الكتابة في الملفات باستخدام write()",
+    "text": "بعد أن تفتح الملف للكتباية باستخدام النمط 'w'، تستطيع استخدام دالة write() لنقش الكلمات والجمل بداخله كأنك كاتب على الآلة الكاتبة.",
+    "code": "f = open('quote.txt', 'w')\nf.write('Python is awesome!')\nf.close()\nprint('Done writing!')",
+    "output": "Done writing!"
+   },
+   {
+    "h": "قراءة الملفات باستخدام read()",
+    "text": "إذا أردت استرجاع ما كتبته قديماً، تفتح الملف بنمط القراءة 'r' وتستعين بدالة read() لجلب كل الكلمات وعرضها على الشاشة.",
+    "code": "f = open('quote.txt', 'r')\ncontent = f.read()\nprint(content)\nf.close()",
+    "output": "Python is awesome!"
+   },
+   {
+    "h": "عبارة السحر with",
+    "text": "بدلاً من نسيان إغلاق الملف يدوياً بـ close()، توفر لنا بايثون عبارة with السحرية التي تغلق الملف تلقائياً وبأمان تام فور انتهاء العمل.",
+    "code": "with open('quote.txt', 'r') as f:\n    print(f.read())",
+    "output": "Python is awesome!"
+   },
+   {
+    "h": "أنماط الملفات المختلفة",
+    "text": "هناك أنماط متعددة مثل 'r' للقراءة فقط، 'w' للكتابة (وتمسح القديم)، و 'a' للإلحاق وإضافة كلام جديد في نهاية الملف دون حذف القديم.",
+    "code": "with open('quote.txt', 'a') as f:\n    f.write(' Learning is fun.')\n\nwith open('quote.txt', 'r') as f:\n    print(f.read())",
+    "output": "Python is awesome! Learning is fun."
+   },
+   {
+    "h": "تطبيقات واقعية لملفات بايثون",
+    "text": "يستخدم المبرمجون الملفات لحفظ أعلى النقاط في الألعاب، تخزين سجل الدردشة في تطبيقات المحادثة، وحفظ إعدادات البرامج المفضلة.",
+    "code": "with open('score.txt', 'w') as f:\n    f.write('High Score: 950')\n\nprint('Score saved!')",
+    "output": "Score saved!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "open()",
+    "desc": "فتح ملف نصي لتحديد النمط والاسم"
+   },
+   {
+    "name": "read()",
+    "desc": "قراءة محتوى الملف بأكمله"
+   },
+   {
+    "name": "write()",
+    "desc": "كتابة نصوص جديدة داخل الملف"
+   },
+   {
+    "name": "close()",
+    "desc": "إغلاق الملف يدوياً"
+   },
+   {
+    "name": "with",
+    "desc": "عبارة سحرية لإدارة الملفات وإغلاقها تلقائياً"
+   },
+   {
+    "name": "'r'",
+    "desc": "نمط القراءة Read"
+   },
+   {
+    "name": "'w'",
+    "desc": "نمط الكتابة Write"
+   },
+   {
+    "name": "'a'",
+    "desc": "نمط الإلحاق Append"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب تعليمة بايثون لفتح ملف باسم 'game.txt' بنمط القراءة.",
+    "a": "open('game.txt', 'r')"
+   },
+   {
+    "q": "ما هي الدالة المستخدمة لكتابة نص داخل ملف مفتوح؟",
+    "a": "write()"
+   },
+   {
+    "q": "كيف نحمى ملفاتنا من عدم الإغلاق التلقائي في بايثون؟",
+    "a": "باستخدام عبارة with"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine computer memory like a whiteboard wiped clean when turned off, but file saving is like a paper notebook where memories stay forever.",
+   "We use the open() function to open a file, specifying its name and mode like 'r' for reading or 'w' for writing.",
+   "To add new texts inside our file, we use the write() command to transfer words from the program screen into the stored file.",
+   "We can read the entire content of a file at once using the read() function and display it in the output like a new story.",
+   "The golden rule is using the magical with statement because it ensures the file closes automatically just like zipping a suitcase.",
+   "We use file saving in real life to record game scores, store player settings, or keep our favorite quote texts."
+  ],
+  "example": "When we write a favorite quote inside a text file, we ensure it stays even after the program closes. Here is how we write and read quickly using Python:\n\nwith open('quote.txt', 'w') as f:\n    f.write('Code is poetry.')\n\nwith open('quote.txt', 'r') as f:\n    print(f.read())\n\nThe logical reason is that 'w' creates and writes to the file, while 'r' reads what is inside and shows it on screen, and the with keyword protects the file from corruption.",
+  "mistake": "Forgetting to close the file or omitting the with statement can lead to data loss or file corruption. The solution is always relying on the with open(...) as f syntax for full protection.",
+  "recap": "We learned how to open, read, and write text files using Python easily. We also understood the importance of using the with statement to keep our data safe.",
+  "q": [
+   {
+    "t": "What is the mode used to open a file for writing?",
+    "o": [
+     "'r'",
+     "'w'",
+     "'x'"
+    ],
+    "a": 1,
+    "why": "The 'w' mode stands for Write and creates or opens a file for writing."
+   },
+   {
+    "t": "Which function is used to read the entire text file content?",
+    "o": [
+     "write()",
+     "read()",
+     "open()"
+    ],
+    "a": 1,
+    "why": "The read() function reads all the content present inside the file."
+   },
+   {
+    "t": "Why do we use the with statement when handling files?",
+    "o": [
+     "To close the file automatically and safely",
+     "To color the text red",
+     "To make the program a million times faster"
+    ],
+    "a": 0,
+    "why": "The with statement takes care of properly closing the file after commands finish."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Categorize Python File Commands",
+   "goal": "Place each command or element in its correct bucket: Is it a file handling operation or not?",
+   "buckets": [
+    "File Operations",
+    "Other Python Commands"
+   ],
+   "items": [
+    {
+     "t": "open('file.txt', 'r')",
+     "b": 0
+    },
+    {
+     "t": "print('Hello')",
+     "b": 1
+    },
+    {
+     "t": "f.write('Python')",
+     "b": 0
+    },
+    {
+     "t": "range(5)",
+     "b": 1
+    },
+    {
+     "t": "f.read()",
+     "b": 0
+    },
+    {
+     "t": "input('Name:')",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted and categorized the file commands with brilliant skill."
+  },
+  "sections": [
+   {
+    "h": "What is File Saving?",
+    "text": "Regular memory forgets everything as soon as the program closes. Files give us the ability to keep information on the hard drive just like writing your diary in a paper notebook.",
+    "code": "# Saving data forever\nprint('Preparing files...')",
+    "output": "Preparing files..."
+   },
+   {
+    "h": "Opening Files with open()",
+    "text": "To interact with any file, you must first request it from Python using the open() function. This function acts like a room key opening the door for you to start working.",
+    "code": "my_file = open('note.txt', 'w')\nprint('File is open!')\nmy_file.close()",
+    "output": "File is open!"
+   },
+   {
+    "h": "Writing to Files with write()",
+    "text": "After you open the file for writing using the 'w' mode, you can use the write() function to engrave words and sentences inside it like a typist.",
+    "code": "f = open('quote.txt', 'w')\nf.write('Python is awesome!')\nf.close()\nprint('Done writing!')",
+    "output": "Done writing!"
+   },
+   {
+    "h": "Reading Files with read()",
+    "text": "If you want to retrieve what you wrote earlier, open the file in read mode 'r' and use the read() function to fetch all the words and display them on screen.",
+    "code": "f = open('quote.txt', 'r')\ncontent = f.read()\nprint(content)\nf.close()",
+    "output": "Python is awesome!"
+   },
+   {
+    "h": "The Magic with Statement",
+    "text": "Instead of forgetting to close the file manually with close(), Python provides the magical with statement which closes the file automatically and safely as soon as work finishes.",
+    "code": "with open('quote.txt', 'r') as f:\n    print(f.read())",
+    "output": "Python is awesome!"
+   },
+   {
+    "h": "Different File Modes",
+    "text": "There are multiple modes like 'r' for reading only, 'w' for writing (erasing old data), and 'a' for appending new text at the end of the file without deleting the old stuff.",
+    "code": "with open('quote.txt', 'a') as f:\n    f.write(' Learning is fun.')\n\nwith open('quote.txt', 'r') as f:\n    print(f.read())",
+    "output": "Python is awesome! Learning is fun."
+   },
+   {
+    "h": "Real-Life Applications of Python Files",
+    "text": "Programmers use files to save high scores in games, store chat histories in messaging apps, and save favorite program settings.",
+    "code": "with open('score.txt', 'w') as f:\n    f.write('High Score: 950')\n\nprint('Score saved!')",
+    "output": "Score saved!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "open()",
+    "desc": "Opens a text file to specify name and mode"
+   },
+   {
+    "name": "read()",
+    "desc": "Reads the entire content of the file"
+   },
+   {
+    "name": "write()",
+    "desc": "Writes new text inside the file"
+   },
+   {
+    "name": "close()",
+    "desc": "Closes the file manually"
+   },
+   {
+    "name": "with",
+    "desc": "Magical statement for managing files and closing them automatically"
+   },
+   {
+    "name": "'r'",
+    "desc": "Read mode"
+   },
+   {
+    "name": "'w'",
+    "desc": "Write mode"
+   },
+   {
+    "name": "'a'",
+    "desc": "Append mode"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python instruction to open a file named 'game.txt' in read mode.",
+    "a": "open('game.txt', 'r')"
+   },
+   {
+    "q": "What function is used to write text inside an open file?",
+    "a": "write()"
+   },
+   {
+    "q": "How do we protect our files from not closing automatically in Python?",
+    "a": "By using the with statement"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "docs.python.org docs",
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html"
+  }
+ ],
+ "grounded": true
+}

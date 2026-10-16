@@ -1,0 +1,361 @@
+{
+ "ar": {
+  "steps": [
+   "تعالوا نتخيل بايثون كأنها شنطة أدوات مدرسية فيها الأساصيات. بس أحياناً بنحتاج أدوات زيادة زي الألوان أو المقصات الخاصة، دي بنسميها 'المكتبات' أو الـ Modules، وهي ملفات جاهزة فيها كود كتبه غيرنا عشان يسهل علينا الشغل.",
+   "عشان نستخدم أي صندوق أدوات أو مكتبة في بايثون، بنكتب كلمة سحرية في الأول وهي import. مثلاً لو عايزين مكتبة الرياضيات، بنكتب import math عشان بايثون تفتح الصندوق ده وتخليه جاهز للاستخدام.",
+   "إزاي بنستخدم اللي جوه الصندوق؟ بنكتب اسم المكتبة، بعدها نقطة (.)، وبعدين اسم الأداة أو الدالة. مثلاً math.sqrt(16) معناها هات الجذر التربيعي للرقم 16 من مكتبة الرياضيات.",
+   "عندنا كمان مكتبة ممتعة جداً اسمها random، ودي مسؤولة عن العشوائية واختيار حاجات بالصدفة. لو كتبنا random.randint(1, 6)، بايثون هترمي لنا زهر نرد وهمي وتطلع لنا رقم عشوائي بين 1 و6.",
+   "القاعدة الذهبية هنا هي 'عدم اختراع العجلة'! بدل ما نكتب كود طويل وعريض عشان نحسب جذر تربيعي أو نعمل لعبة حظ، بناخد الكود الجاهز (Code Reuse) ونستخدمه في ثواني، وده بيخلي برامجنا أسرع وأذكى.",
+   "في الحياة اليومية، ده عامل زي لما تشتري لعبة لجو باكت جاهز بدل ما تصنع المكعبات بنفسك. المطورين المحترفين في مصر والعالم بيعتمدوا على المكتبات عشان يبنوا مواقع وتطبيقات ضخمة في وقت قياسي."
+  ],
+  "example": "تخيل إننا عايزين نصمم لعبة نرد سريعة وكمان نحسب مساحة دائرة. هنكتب:\n```python\nimport random\nimport math\n\n# نرمي زهر النرد العشوائي\nzar = random.randint(1, 6)\nprint(zar)\n\n# نحسب الجذر التربيعي للعدد 16\ngazr = math.sqrt(16)\nprint(gazr)\n```\nهنا استخدمنا `import` عشان ننادي على `random` و `math`. بعدين نادينا على الدوال بنقطة (.) لنحصل على النتائج بسرعة ودقة.",
+  "mistake": "الخطأ الشائع إننا نستخدم الدالة علطول من غير ما نعمل import للمكتبة في الأول، زي إننا نكتب math.sqrt(16) من غير ما نكتب import math فوق خالص. الحل إننا نتأكد دايماً إننا كتبنا أمر الاستيراد في أول السطور.",
+  "recap": "مكتبات بايثون هي أدوات جاهزة بنستوردها بكلمة import لتوفير الوقت. وبنستخدمها لعمل عمليات رياضية وعشوائية ذكية بكل سهولة.",
+  "q": [
+   {
+    "t": "ما هي الكلمة المفتاحية المستخدمة لاستيراد مكتبة في بايثون؟",
+    "o": [
+     "get",
+     "import",
+     "load"
+    ],
+    "a": 1,
+    "why": "كلمة import هي الأمر الرسمي في بايثون لجلب المكتبات الجاهزة."
+   },
+   {
+    "t": "كيف نحسب الجذر التربيعي لعدد باستخدام مكتبة math؟",
+    "o": [
+     "math.sqrt(16)",
+     "math.random(16)",
+     "import.math(16)"
+    ],
+    "a": 0,
+    "why": "الدالة sqrt من مكتبة math تستخدم لحساب الجذر التربيعي."
+   },
+   {
+    "t": "ما الفائدة الكبرى من استخدام مكتبات بايثون الجاهزة؟",
+    "o": [
+     "إبطاء سرعة الكمبيوتر",
+     "إعادة استخدام الكود وتوفير الوقت",
+     "منع تشغيل البرامج نهائياً"
+    ],
+    "a": 1,
+    "why": "المكتبات تتيح لنا إعادة استخدام كود جاهز (Code Reuse) لتوفير الوقت والجهد."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إكمال كود مكتبات بايثون",
+   "goal": "أكمل الفراغات بالكلمات الصحيحة لتشغيل مكتبات بايثون.",
+   "items": [
+    {
+     "text": "___ math",
+     "options": [
+      "import",
+      "print",
+      "def"
+     ],
+     "a": 0
+    },
+    {
+     "text": "x = math.___ (16)",
+     "options": [
+      "sqrt",
+      "random",
+      "loop"
+     ],
+     "a": 0
+    },
+    {
+     "text": "z = random.___ (1, 6)",
+     "options": [
+      "randint",
+      "sqrt",
+      "math"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "أحسنت! نجحت في استيراد المكتبات واستخدام أدواتها ببراعة!"
+  },
+  "sections": [
+   {
+    "h": "ما هي مكتبات بايثون؟ (Python Modules)",
+    "text": "تخيل أن بايثون عبارة عن مطعم كبير يقدم الأطباق الأساسية، ولكنه يمتلك 'قائمة إضافية' فيها حلويات وأشياء مميزة لا يتم تحضيرها إلا عند الطلب. في عالم البرمجة، هذه القائمة الإضافية هي 'المكتبات' (Modules)، وهي ملفات تحتوي على آلاف الأوامر والدوال الجاهزة التي كتبها مبرمجون محترفون لنستخدمها فوراً دون أن نضطر لكتابتها من الصفر.",
+    "code": "# المكتبة هي مجرد ملف بايثون جاهز\n# يحتوي على دوال وأدوات مساعدة.",
+    "output": "لا يوجد مخرج مباشر، هذا مفهوم نظري."
+   },
+   {
+    "h": "الكلمة السحرية: import",
+    "text": "لكي تستخدم أي مكتبة في برنامجك، يجب عليك أولاً أن تطلبها من بايثون باستخدام الكلمة السحرية import. الأمر يشبه تماماً عندما تطلب من صديقك أن يعيرك قلمه الأزرق; أنت تقول له 'أعطني القلم'. في بايثون تقول 'استورد المكتبة'. بمجرد كتابة هذا الأمر، تصبح كل أدوات تلك المكتبة تحت تصرفك الكامل في الملف البرمجي.",
+    "code": "import math\nprint('تم استيراد مكتبة الرياضيات بنجاح!')",
+    "output": "تم استيراد مكتبة الرياضيات بنجاح!"
+   },
+   {
+    "h": "مكتبة الرياضيات: math module",
+    "text": "هل تحب حصة الرياضيات في المدرسة؟ مكتبة math في بايثون هي صديقتك المفضلة هنا! فهي تحتوي على آلة حاسبة جبارة داخل الكمبيوتر. بدلاً من أن تبرمج بنفسك كيفية حساب الجذور التربيعية أو الزوايا وحساب المثلثات، تقدم لك هذه المكتبة دوال جاهزة تماماً للعمل وبدقة متناهية وسرعة فائقة.",
+    "code": "import math\n# حساب قيمة الباي (Pi)\nprint(math.pi)",
+    "output": "3.141592653589793"
+   },
+   {
+    "h": "حساب الجذر التربيعي باستخدام sqrt",
+    "text": "من أشهر الدوال داخل مكتبة math هي دالة sqrt (مأخوذة من كلمة Square Root). هذه الدالة تطلب منك رقماً، وتفرقع أصابعها لتخبرك فوراً بجذره التربيعي. نكتب اسم المكتبة أولاً math يليه نقطة . ثم اسم الدالة sqrt وبين قوسين نضع الرقم المطلوب. الرياضيون والمبرمجون يستخدمونها في ألعاب الأبعاد والرسومات.",
+    "code": "import math\nresult = math.sqrt(16)\nprint(result)",
+    "output": "4.0"
+   },
+   {
+    "h": "مكتبة العشوائية: random module",
+    "text": "ماذا لو كنت تريد من الكمبيوتر أن يختار لعبة عشوائية أو يرمي زهر نرد في لعبة حظ؟ هنا يأتي دور مكتبة random العجيبة. إنها تضفي روح المرح والحياة على برامجك، لأن الكمبيوتر في العادة دقيق ومكرر، ولكن هذه المكتبة تجعله يتخذ قرارات عشوائية تشبه البشر تماماً.",
+    "code": "import random\n# اختيار عدد عشوائي بين 1 و 6\nnumber = random.randint(1, 6)\nprint(number)",
+    "output": "رقم عشوائي بين 1 و 6 (مثلاً: 4)"
+   },
+   {
+    "h": "إعادة استخدام الكود (Code Reuse)",
+    "text": "أعظم مبدأ في هندسة الويب والبرمجيات هو 'عدم اختراع العجلة مرتين' ويسمى Code Reuse. لماذا تتعب نفسك في كتابة مئات السطور لعمل لعبة حظ أو حسابات هندسية معقدة بينما كتبها غيرك وتم اختبارها مليون مرة؟ عبر استيراد المكتبات، أنت تستغل مجهود المطورين حول العالم وتبني برامج قوية ونظيفة وبأسرع وقت ممكن.",
+    "code": "# استخدام كود جاهز يوفر الوقت\nimport math\nprint(math.factorial(5))",
+    "output": "120"
+   },
+   {
+    "h": "كيفية كتابة واستخدام النقطة (Dot Notation)",
+    "text": "عندما تستورد مكتبة، كيف تعرف بايثون من أين تأتي الدالة؟ نستخدم ما يسمى Dot Notation (كتابة النقطة). نكتب اسم المكتبة أولاً، ثم نقطة، ثم اسم الأداة أو الدالة. هذا يشبه تماماً كتابة العنوان البريدي: اسم المدينة . اسم الشارع . رقم البيت. النقطة تنظم الوصول للأدوات بداخل الصندوق.",
+    "code": "import math\n# مثال على استخدام النقطة للوصول لدالة التقريب للأعلى\nprint(math.ceil(4.2))",
+    "output": "5"
+   },
+   {
+    "h": "بناء مشروعك البرمجي الأول بالمكتبات",
+    "text": "الآن وبعد أن عرفت كيف تستخدم import ومكتبتي math و random، يمكنك البدء في بناء ألعاب تفاعلية، حاسبة متطورة، أو حتى برامج رسم هندسي بسيطة. المكتبات هي بوابتك للانتقال من مبرمج مبتدئ يكتب سطوراً بسيطة إلى مطور حقيقي يبني تطبيقات مفيدة يعتمد عليها الناس في حياتهم اليومية.",
+    "code": "import random\nimport math\n\n# تطبيق صغير يدمج المكتبتين\nrandom_num = random.randint(1, 25)\nprint('الرقم العشوائي:', random_num)\nprint('جذره التربيعي:', math.sqrt(random_num))",
+    "output": "يظهر رقم عشوائي بين 1 و 25 وجذره التربيعي بدقة."
+   }
+  ],
+  "reference": [
+   {
+    "name": "import",
+    "desc": "كلمة مفتاحية لجلب واستيراد المكتبات الجاهزة في بايثون."
+   },
+   {
+    "name": "math",
+    "desc": "مكتبة بايثون المدمجة للعمليات الرياضية المتقدمة."
+   },
+   {
+    "name": "random",
+    "desc": "مكتبة بايثون لتوليد الأرقام العشوائية واختيار العناصر بالصدفة."
+   },
+   {
+    "name": "math.sqrt()",
+    "desc": "دالة لحساب الجذر التربيعي للعدد المدخل."
+   },
+   {
+    "name": "random.randint()",
+    "desc": "دالة لتوليد عدد صحيح عشوائي بين نطاقين محددين."
+   },
+   {
+    "name": "Code Reuse",
+    "desc": "مبدأ إعادة استخدام الأكواد الجاهزة لتوفير الوقت والجهد."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "طريقة للوصول إلى الدوال والأدوات داخل المكتبة المستوردة."
+   },
+   {
+    "name": "math.pi",
+    "desc": "متغير جاهز في مكتبة الرياضيات يمثل قيمة ط (Pi)."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب سطر برمجي لاستيراد مكتبة الرياضيات في بايثون.",
+    "a": "import math"
+   },
+   {
+    "q": "كيف تحسب الجذر التربيعي للعدد 25 باستخدام مكتبة math؟",
+    "a": "math.sqrt(25)"
+   },
+   {
+    "q": "اكتب دالة تولد رقماً عشوائياً بين 1 و 10 باستخدام مكتبة random.",
+    "a": "random.randint(1, 10)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine Python as a school pencil case with basic supplies. Sometimes we need extra tools like special markers or scissors, which we call 'modules' or libraries—ready-made files filled with code written by others to make our job easier.",
+   "To use any toolbox or module in Python, we write a magic keyword at the top: import. For example, if we want the math library, we write import math so Python opens that box and makes it ready for use.",
+   "How do we use what is inside the box? We write the module name, followed by a dot (.), and then the tool or function name. For example, math.sqrt(16) means get the square root of 16 from the math module.",
+   "We also have a very fun module called random, which handles randomness and picking things by chance. If we write random.randint(1, 6), Python rolls a virtual die and gives us a random number between 1 and 6.",
+   "The golden rule here is 'Don't reinvent the wheel'! Instead of writing a long, complex code to calculate a square root or build a lucky game, we use Code Reuse and grab pre-made tools in seconds, making our programs faster and smarter.",
+   "In real life, this is like buying a Lego set with pre-made blocks instead of molding every plastic brick yourself. Professional developers in Egypt and worldwide rely on modules to build massive websites and apps in record time."
+  ],
+  "example": "Imagine we want to design a quick dice game and also calculate a circle's area. We write:\n```python\nimport random\nimport math\n\n# Roll a random die\nzar = random.randint(1, 6)\nprint(zar)\n\n# Calculate the square root of 16\ngazr = math.sqrt(16)\nprint(gazr)\n```\nHere we used `import` to call `random` and `math`. Then we called functions using a dot (.) to get results quickly and accurately.",
+  "mistake": "A common mistake is using a function directly without importing the module first, like typing math.sqrt(16) without import math at the top. The fix is to always ensure the import statement is at the very beginning of your code.",
+  "recap": "Python modules are pre-made toolboxes imported using the import keyword to save time. We use them to easily perform mathematical calculations and smart random choices.",
+  "q": [
+   {
+    "t": "What is the keyword used to import a module in Python?",
+    "o": [
+     "get",
+     "import",
+     "load"
+    ],
+    "a": 1,
+    "why": "The import keyword is the official Python command to bring in pre-made modules."
+   },
+   {
+    "t": "How do you calculate the square root of a number using the math module?",
+    "o": [
+     "math.sqrt(16)",
+     "math.random(16)",
+     "import.math(16)"
+    ],
+    "a": 0,
+    "why": "The sqrt function from the math module is used to calculate square roots."
+   },
+   {
+    "t": "What is the main benefit of using Python modules?",
+    "o": [
+     "Slowing down the computer",
+     "Code reuse and saving time",
+     "Preventing programs from running entirely"
+    ],
+    "a": 1,
+    "why": "Modules allow us to reuse pre-written code (Code Reuse) to save time and effort."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Python Modules Code Completion",
+   "goal": "Fill in the blanks with the correct words to run Python modules.",
+   "items": [
+    {
+     "text": "___ math",
+     "options": [
+      "import",
+      "print",
+      "def"
+     ],
+     "a": 0
+    },
+    {
+     "text": "x = math.___ (16)",
+     "options": [
+      "sqrt",
+      "random",
+      "loop"
+     ],
+     "a": 0
+    },
+    {
+     "text": "z = random.___ (1, 6)",
+     "options": [
+      "randint",
+      "sqrt",
+      "math"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Great job! You successfully imported modules and used their tools brilliantly!"
+  },
+  "sections": [
+   {
+    "h": "What are Python Modules?",
+    "text": "Imagine Python is a large restaurant serving basic dishes, but it has a 'special menu' containing desserts and special items made only upon request. In programming, this special menu consists of 'Modules'—files containing thousands of ready-made commands and functions written by professional developers for us to use immediately without writing them from scratch.",
+    "code": "# A module is simply a ready-made Python file\n# containing helpful functions and tools.",
+    "output": "No direct output, this is a conceptual explanation."
+   },
+   {
+    "h": "The Magic Keyword: import",
+    "text": "To use any module in your program, you must first ask Python for it using the magic keyword import. This is just like asking your friend to borrow their blue pen; you say 'give me the pen.' In Python, you say 'import the module.' Once written, all tools in that module become fully available in your script.",
+    "code": "import math\nprint('Math module imported successfully!')",
+    "output": "Math module imported successfully!"
+   },
+   {
+    "h": "The Math Module: math module",
+    "text": "Do you like math class at school? Python's math module is your best friend here! It contains a powerful calculator built right into your computer. Instead of coding how to calculate square roots, angles, or trigonometry yourself, this module gives you ready-to-use functions with extreme accuracy and blazing speed.",
+    "code": "import math\n# Print the value of Pi\nprint(math.pi)",
+    "output": "3.141592653589793"
+   },
+   {
+    "h": "Calculating Square Roots using sqrt",
+    "text": "One of the most famous functions inside the math module is sqrt (short for Square Root). This function asks for a number and instantly calculates its square root. We write the module name math first, followed by a dot . and then the function name sqrt enclosing the number in parentheses. Mathematicians and programmers use this in dimension and graphics games.",
+    "code": "import math\nresult = math.sqrt(16)\nprint(result)",
+    "output": "4.0"
+   },
+   {
+    "h": "The Random Module: random module",
+    "text": "What if you want the computer to pick a random game or roll a dice in a lucky game? That's where the amazing random module comes in! It brings fun and life to your programs because computers are usually precise and repetitive, but this module makes them make human-like random decisions.",
+    "code": "import random\n# Pick a random number between 1 and 6\nnumber = random.randint(1, 6)\nprint(number)",
+    "output": "A random number between 1 and 6 (e.g., 4)"
+   },
+   {
+    "h": "Code Reuse",
+    "text": "The greatest principle in web engineering and software development is 'Don't reinvent the wheel,' known as Code Reuse. Why bother writing hundreds of lines to make a guessing game or complex geometry calculations when someone else already wrote them and tested them a million times? By importing modules, you leverage global developer efforts to build powerful, clean apps in record time.",
+    "code": "# Using ready-made code saves time\nimport math\nprint(math.factorial(5))",
+    "output": "120"
+   },
+   {
+    "h": "Dot Notation",
+    "text": "When you import a module, how does Python know where a function comes from? We use Dot Notation. We write the module name first, then a dot, then the tool or function name. This is just like writing a mailing address: City . Street . House Number. The dot organizes access to the tools inside the box.",
+    "code": "import math\n# Example of dot notation to round up a number\nprint(math.ceil(4.2))",
+    "output": "5"
+   },
+   {
+    "h": "Building Your First Module-Powered Project",
+    "text": "Now that you know how to use import, math, and random, you can start building interactive games, advanced calculators, or even simple geometric drawing programs. Modules are your gateway from a beginner writing simple lines to a real developer building useful apps people rely on daily.",
+    "code": "import random\nimport math\n\n# A mini-app combining both modules\nrandom_num = random.randint(1, 25)\nprint('Random number:', random_num)\nprint('Its square root:', math.sqrt(random_num))",
+    "output": "Displays a random number between 1 and 25 and its exact square root."
+   }
+  ],
+  "reference": [
+   {
+    "name": "import",
+    "desc": "Keyword to bring and load pre-made modules in Python."
+   },
+   {
+    "name": "math",
+    "desc": "Python's built-in module for advanced mathematical operations."
+   },
+   {
+    "name": "random",
+    "desc": "Python module for generating random numbers and choosing items by chance."
+   },
+   {
+    "name": "math.sqrt()",
+    "desc": "Function to calculate the square root of an input number."
+   },
+   {
+    "name": "random.randint()",
+    "desc": "Function to generate a random integer within a specified range."
+   },
+   {
+    "name": "Code Reuse",
+    "desc": "The principle of reusing pre-written code to save time and effort."
+   },
+   {
+    "name": "Dot Notation (.)",
+    "desc": "The syntax used to access functions and tools inside an imported module."
+   },
+   {
+    "name": "math.pi",
+    "desc": "A ready-made constant variable in the math module representing Pi."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a line of code to import the math module in Python.",
+    "a": "import math"
+   },
+   {
+    "q": "How do you calculate the square root of 25 using the math module?",
+    "a": "math.sqrt(25)"
+   },
+   {
+    "q": "Write a function call that generates a random integer between 1 and 10 using the random module.",
+    "a": "random.randint(1, 10)"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

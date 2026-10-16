@@ -1,0 +1,296 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أن لديك جدول بيانات ضخم لطلبات المطعم ومليء بالتفاصيل الكثيرة. جداول المحاور أو Pivot Tables تساعدك في تلخيص هذه البيانات المعقدة وترتيبها في تقارير مختصرة وسهلة الفهم.",
+   "في مكتبة باندا، يمكنك إنشاء جدول محاور باستخدام الدالة pivot_table(). تقوم هذه الدالة بتجميع البيانات بناءً على أعمدة محددة لتسهيل مقارنة النتائج.",
+   "لتحديد الصفوف التي سترتب بياناتك بناءً عليها، تستخدم خاصية index. مثل ترتيب الطلبات حسب اسم الوجبة أو فئة الطعام في المطعم.",
+   "تحديد الأعمدة التي تحتوي على الأرقام التي تريد حسابها يتم عبر خاصية values، مثل تحديد أسعار الوجبات أو الكميات المطلوبة.",
+   "تقوم خاصية aggfunc بتحديد العملية الحسابية التي تريد تطبيقها على البيانات، مثل حساب المتوسط (mean) أو المجموع (sum) أو العد (count). القاعدة الذهبية هي اختيار aggfunc المناسبة لنوع السؤال الذي تسأله.",
+   "تستخدم جداول المحاور في الواقع العملي لتلخيص مبيعات الشركات الكبرى، معرفة أي الفئات حققت أرباحاً أعلى، وتحويل جداول البيانات المعقدة إلى تقارير مالية واضحة ومفيدة."
+  ],
+  "example": "لنفترض أن لدينا جدول بيانات لأسعار المنتجات في المتجر ونريد معرفة متوسط السعر لكل فئة باستخدام جدول المحاور:\n\nimport pandas as pd\ndf = pd.DataFrame({'Category': ['Fruit', 'Fruit', 'Bakery', 'Bakery'], 'Price': [10, 20, 5, 15]})\npivot = df.pivot_table(index='Category', values='Price', aggfunc='mean')\nprint(pivot)\n\nالنتيجة ستكون تقريراً مرتباً يظهر متوسط سعر الفواكه (15) ومتوسط سعر المخبوزات (10)، مما يسهل قراءة البيانات مقارنة بالجدول الأصلي.",
+  "mistake": "الخطأ الشائع هو نسيان تحديد خاصية values أو كتابة اسم العمود بخطأ إملائي، مما يؤدي إلى ظهور رسالة خطأ KeyError. الحل هو التأكد من مطابقة أسماء الأعمدة لحروف الجدول الأصلي بدقة.",
+  "recap": "تساعدنا جداول المحاور في باندا على تنظيم تلخيص البيانات المعقدة بسهولة. نستخدم index للتقسيم، values للبيانات الحسابية، وaggfunc لتحديد العملية مثل المتوسط.",
+  "q": [
+   {
+    "t": "ما هي الوظيفة الأساسية لجدول المحاور (pivot_table) في باندا؟",
+    "o": [
+     "حذف الصفوف الفارغة فقط",
+     "تلخيص وتنظيم البيانات المعقدة في تقارير",
+     "رسم رسوم بيانية ملونة"
+    ],
+    "a": 1,
+    "why": "جداول المحاور مصممة خصيصاً لتلخيص وإعادة تنظيم البيانات الكبيرة."
+   },
+   {
+    "t": "أي خاصية نستخدمها لتحديد العملية الحسابية مثل المتوسط أو المجموع؟",
+    "o": [
+     "aggfunc",
+     "index",
+     "columns"
+    ],
+    "a": 0,
+    "why": "خاصية aggfunc مسؤولة عن تطبيق الدالة الإحصائية المطلوبة على البيانات."
+   },
+   {
+    "t": "ما هي الخاصية التي تحدد العمود الذي يحتوي على الأرقام المراد حسابها؟",
+    "o": [
+     "index",
+     "values",
+     "head"
+    ],
+    "a": 1,
+    "why": "خاصية values تحدد الأرقام أو القيم التي سيتم إجراء العمليات عليها."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة مفاهيم جدول المحاور",
+   "goal": "صل كل مصطلح من باندا بوظيفته الصحيحة في جدول المحاور",
+   "pairs": [
+    [
+     "pivot_table",
+     "دالة إنشاء الجدول"
+    ],
+    [
+     "index",
+     "تحديد صفوف التجميع"
+    ],
+    [
+     "values",
+     "القيم الرقمية المحسوبة"
+    ],
+    [
+     "aggfunc",
+     "نوع العملية الحسابية"
+    ]
+   ],
+   "success": "رائع! لقد فهمت كيف تعمل جداول المحاور لتنظيم وتلخيص البيانات بكفاءة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو جدول المحاور؟",
+    "text": "تخيل أنك تمتلك حقيبة مليئة بالألعاب المختلفة وتريد فرزها في صناديق حسب نوعها وحجمها. جدول المحاور (Pivot Table) يقوم بنفس الفكرة مع البيانات الضخمة، حيث يجمع البيانات ويقسمها لتراها بصورة واضحة وسريعة بدلاً من ضياعك وسط الأرقام الكثيرة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Apple', 'Banana', 'Banana'], 'Price': [5, 7, 3, 4]})\nprint(df)",
+    "output": "   Fruit  Price\n0  Apple      5\n1  Apple      7\n2 Banana      3\n3 Banana      4"
+   },
+   {
+    "h": "دالة pivot_table() الأساسية",
+    "text": "لإنشاء جدول محاور في باندا، نستخدم الدالة pivot_table(). هذه الدالة تأخذ جدول البيانات الخام وتلخصه بناءً على القواعد التي تحددها أنت، مما يمنحك تقريراً منظماً يشبه جدول الحصص المدرسية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Cat': ['A', 'A', 'B', 'B'], 'Val': [10, 20, 30, 40]})\nprint(df.pivot_table(index='Cat'))",
+    "output": "      Val\nCat      \nA    15.0\nB    35.0"
+   },
+   {
+    "h": "استخدام index لتقسيم الصفوف",
+    "text": "خاصية index تشبه الفصول الدراسية في المدرسة؛ فهي تقسم بياناتك إلى مجموعات منفصلة بناءً على عمود معين. مثلاً، إذا كان لديك منتجات، يمكنك جعل الفئات هي الصفوف الأساسية لجدولك.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Type': ['Toy', 'Toy', 'Book', 'Book'], 'Cost': [10, 20, 15, 25]})\nprint(df.pivot_table(index='Type'))",
+    "output": "      Cost\nType      \nBook  20.0\nToy   15.0"
+   },
+   {
+    "h": "تحديد الأرقام عبر values",
+    "text": "عندما تقوم بتجميع البيانات، يجب أن تخبر باندا بأي أرقام تهتم بها. خاصية values تقوم بتحديد عمود الأرقام أو الأسعار أو الكميات الذي سيقوم جدول المحاور بإجراء الحسابات عليه.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Store': ['S1', 'S1', 'S2', 'S2'], 'Sales': [100, 200, 150, 250], 'Qty': [2, 4, 3, 5]})\nprint(df.pivot_table(index='Store', values='Sales'))",
+    "output": "       Sales\nStore       \nS1     150.0\nS2     200.0"
+   },
+   {
+    "h": "العمليات الحسابية مع aggfunc",
+    "text": "ماذا تريد أن تفعل بالأرقام؟ هل تريد حساب المجموع (sum) أم المتوسط (mean) أم عدد العناصر (count)؟ خاصية aggfunc هي التي تحدد نوع العملية الحسابية التي سيجريها جدول المحاور على البيانات.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'Team': ['Red', 'Red', 'Blue', 'Blue'], 'Score': [10, 20, 15, 25]})\nprint(df.pivot_table(index='Team', values='Score', aggfunc='sum'))",
+    "output": "      Score\nTeam       \nRed      30\nBlue     40"
+   },
+   {
+    "h": "تلخيص البيانات المعقدة",
+    "text": "جداول المحاور ممتازة لتلخيص البيانات (Data Summarization) الضخمة وإظهار الأنماط المخفية. بدلاً من قراءة ألف صف من المبيعات، يمكنك تلخيصها في أسطر معدودة تفهم منها أداء كل قسم بسرعة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'City': ['Cairo', 'Cairo', 'Alex', 'Alex'], 'Temp': [30, 32, 25, 27]})\nprint(df.pivot_table(index='City', values='Temp', aggfunc='mean'))",
+    "output": "       Temp\nCity       \nAlex   26.0\nCairo  31.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pivot_table()",
+    "desc": "دالة لإنشاء جدول محاور لتلخيص البيانات"
+   },
+   {
+    "name": "index",
+    "desc": "خاصية لتحديد أعمدة الصفوف في التجميع"
+   },
+   {
+    "name": "values",
+    "desc": "خاصية لتحديد الأعمدة الرقمية المراد حسابها"
+   },
+   {
+    "name": "aggfunc",
+    "desc": "خاصية لتحديد الدالة الإحصائية مثل mean أو sum"
+   },
+   {
+    "name": "Data Summarization",
+    "desc": "عملية تلخيص البيانات المعقدة إلى تقارير"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ جدول محاور يلخص متوسط الأسعار لعمود 'Price' حسب فئة 'Category' لجدول اسمه df.",
+    "a": "df.pivot_table(index='Category', values='Price', aggfunc='mean')"
+   },
+   {
+    "q": "ما هي الخاصية التي تستخدمها لتحديد العمود الذي ستقوم بتجميع الصفوف بناءً عليه؟",
+    "a": "index"
+   },
+   {
+    "q": "كيف تحدد أنك تريد حساب المجموع (sum) في جدول المحاور؟",
+    "a": "aggfunc='sum'"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine you have a huge table of restaurant orders filled with lots of details. Pivot tables help you summarize and reorganize this complex data into neat, easy-to-understand summary reports.",
+   "In the pandas library, you can create a pivot table using the pivot_table() function. This function groups data based on specified columns to make comparing results much simpler.",
+   "To specify the rows for organizing your data, you use the index parameter, much like sorting orders by meal name or food category in a restaurant.",
+   "Specifying the columns containing the numbers you want to calculate is done via the values parameter, such as selecting meal prices or requested quantities.",
+   "The aggfunc parameter determines the mathematical operation you want to apply to the data, such as calculating the mean, sum, or count. The golden rule is to choose the right aggfunc for your question.",
+   "Pivot tables are used in real life to summarize major corporate sales, find which categories earned higher profits, and turn complex datasets into clear, useful financial reports."
+  ],
+  "example": "Suppose we have a dataframe of store product prices and want to find the average price per category using a pivot table:\n\nimport pandas as pd\ndf = pd.DataFrame({'Category': ['Fruit', 'Fruit', 'Bakery', 'Bakery'], 'Price': [10, 20, 5, 15]})\npivot = df.pivot_table(index='Category', values='Price', aggfunc='mean')\nprint(pivot)\n\nThe output will be a neat report showing the average price for fruit (15) and bakery (10), making data reading much easier compared to the raw table.",
+  "mistake": "A common mistake is forgetting to specify the values parameter or misspelling a column name, which triggers a KeyError. The fix is to ensure column names match the exact spelling in the original dataframe.",
+  "recap": "Pivot tables in pandas help us organize and summarize complex data easily. We use index for grouping, values for numerical data, and aggfunc to specify the calculation like mean.",
+  "q": [
+   {
+    "t": "What is the primary function of a pivot table in pandas?",
+    "o": [
+     "To delete empty rows only",
+     "To summarize and reorganize complex data into reports",
+     "To draw colorful charts"
+    ],
+    "a": 1,
+    "why": "Pivot tables are specifically designed to summarize and reorganize large datasets."
+   },
+   {
+    "t": "Which parameter do we use to specify the math operation like mean or sum?",
+    "o": [
+     "aggfunc",
+     "index",
+     "columns"
+    ],
+    "a": 0,
+    "why": "The aggfunc parameter is responsible for applying the required statistical function to the data."
+   },
+   {
+    "t": "Which parameter specifies the column containing the numbers to be calculated?",
+    "o": [
+     "index",
+     "values",
+     "head"
+    ],
+    "a": 1,
+    "why": "The values parameter determines the numbers or values upon which calculations will be performed."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Pivot Table Concepts Matching",
+   "goal": "Match each pandas term with its correct role in a pivot table",
+   "pairs": [
+    [
+     "pivot_table",
+     "Table creation function"
+    ],
+    [
+     "index",
+     "Row grouping definition"
+    ],
+    [
+     "values",
+     "Calculated numerical data"
+    ],
+    [
+     "aggfunc",
+     "Mathematical operation type"
+    ]
+   ],
+   "success": "Awesome! You now understand how pivot tables organize and summarize data efficiently!"
+  },
+  "sections": [
+   {
+    "h": "What is a Pivot Table?",
+    "text": "Imagine having a bag full of different toys and wanting to sort them into boxes by type and size. A Pivot Table does the exact same thing with big data, grouping and splitting data so you can view it clearly and quickly instead of getting lost in endless numbers.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Apple', 'Banana', 'Banana'], 'Price': [5, 7, 3, 4]})\nprint(df)",
+    "output": "   Fruit  Price\n0  Apple      5\n1  Apple      7\n2 Banana      3\n3 Banana      4"
+   },
+   {
+    "h": "The pivot_table() Function",
+    "text": "To create a pivot table in pandas, we use the pivot_table() function. This function takes raw dataframe records and summarizes them based on rules you define, giving you an organized report similar to a school timetable.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Cat': ['A', 'A', 'B', 'B'], 'Val': [10, 20, 30, 40]})\nprint(df.pivot_table(index='Cat'))",
+    "output": "      Val\nCat      \nA    15.0\nB    35.0"
+   },
+   {
+    "h": "Using index for Row Grouping",
+    "text": "The index parameter works like school classrooms; it splits your data into separate groups based on a specific column. For example, if you have products, you can make categories the primary rows of your table.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Type': ['Toy', 'Toy', 'Book', 'Book'], 'Cost': [10, 20, 15, 25]})\nprint(df.pivot_table(index='Type'))",
+    "output": "      Cost\nType      \nBook  20.0\nToy   15.0"
+   },
+   {
+    "h": "Targeting Numbers via values",
+    "text": "When aggregating data, you must tell pandas which numbers you care about. The values parameter specifies the column of numbers, prices, or quantities that the pivot table will perform calculations on.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Store': ['S1', 'S1', 'S2', 'S2'], 'Sales': [100, 200, 150, 250], 'Qty': [2, 4, 3, 5]})\nprint(df.pivot_table(index='Store', values='Sales'))",
+    "output": "       Sales\nStore       \nS1     150.0\nS2     200.0"
+   },
+   {
+    "h": "Calculations with aggfunc",
+    "text": "What do you want to do with the numbers? Do you want the sum, mean, or count? The aggfunc parameter determines the exact math operation the pivot table will apply to your data.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'Team': ['Red', 'Red', 'Blue', 'Blue'], 'Score': [10, 20, 15, 25]})\nprint(df.pivot_table(index='Team', values='Score', aggfunc='sum'))",
+    "output": "      Score\nTeam       \nRed      30\nBlue     40"
+   },
+   {
+    "h": "Data Summarization",
+    "text": "Pivot tables are fantastic for data summarization of large datasets and revealing hidden patterns. Instead of reading a thousand rows of sales, you can summarize them into a few rows to quickly understand department performance.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'City': ['Cairo', 'Cairo', 'Alex', 'Alex'], 'Temp': [30, 32, 25, 27]})\nprint(df.pivot_table(index='City', values='Temp', aggfunc='mean'))",
+    "output": "       Temp\nCity       \nAlex   26.0\nCairo  31.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "pivot_table()",
+    "desc": "Function to create a pivot table for summarization"
+   },
+   {
+    "name": "index",
+    "desc": "Parameter to specify row grouping columns"
+   },
+   {
+    "name": "values",
+    "desc": "Parameter to specify numerical columns for calculation"
+   },
+   {
+    "name": "aggfunc",
+    "desc": "Parameter to specify statistical function like mean or sum"
+   },
+   {
+    "name": "Data Summarization",
+    "desc": "Process of condensing complex data into reports"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a pivot table summarizing average prices for 'Price' by 'Category' for a dataframe named df.",
+    "a": "df.pivot_table(index='Category', values='Price', aggfunc='mean')"
+   },
+   {
+    "q": "What parameter do you use to specify the column by which rows will be grouped?",
+    "a": "index"
+   },
+   {
+    "q": "How do you specify that you want to calculate the sum in a pivot table?",
+    "a": "aggfunc='sum'"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}
