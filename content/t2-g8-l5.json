@@ -1,0 +1,288 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً بك يا بطل! اليوم سنتعلم كيف نصنع ونعدل الأعمدة في جداول البيانات باستخدام مكتبة باندا (Pandas). الجدول يشبه صفحة الكراسة، وكل عمود له اسم وقيمة.",
+   "لإضافة عمود جديد، نكتب اسم الجدول بين قوسين مربعين وندخل الاسم الجديد هكذا: df['New_Column'] ونعطيه القيم التي نريدها.",
+   "يمكننا أيضاً استخدام العمليات الحسابية مثل الضرب أو الجمع على الأعمدة الموجودة لصنع عمود جديد تماماً بناءً على البيانات القديمة.",
+   "مثال صغير: إذا كان لديك عمود نقاط يسمى 'Points'، يمكنك إنشاء عمود 'Double_Points' عبر ضرب عمود النقاط في الرقم 2 بكل سهولة.",
+   "القاعدة الذهبية: عند تعديل أو إضافة عمود، تأكد من كتابة اسم العمود بدقة داخل علامات التنصيص حتى لا يغضب الكمبيوتر ويظهر لك خطأ.",
+   "في الحياة اليومية، هذا يشبه تماماً عندما يكون لديك جدول علامات الطلاب في المدرسة وتضيف عموداً جديداً لحساب مجموع الدرجات النهائية لكل طالب!"
+  ],
+  "example": "تخيل أنك صانع ألعاب فيديو ولديك جدول نقاط اللاعبين.\nimport pandas as pd\ndata = {'Player': ['Ali', 'Mona'], 'Points': [50, 80]}\ndf = pd.DataFrame(data)\ndf['Double_Points'] = df['Points'] * 2\nprint(df)\nالسبب وراء ذلك هو أن باندا يمر على كل صف في عمود النقاط ويضربه في 2 ليملأ العمود الجديد تلقائياً.\nالنتيجة:\n  Player  Points  Double_Points\n0    Ali      50            100\n1   Mona      80            160",
+  "mistake": "الخطأ الشائع هو نسيان أقواس المربع أو كتابة اسم العمود القديم بشكل خاطئ. الحل هو التحقق دائماً من أسماء الأعمدة وحروفها الكبيرة والصغيرة بدقة.",
+  "recap": "تعلمنا اليوم كيف نضيف أعمدة جديدة بكل سهولة ونقوم بالعمليات الحسابية عليها. هذا يمنحنا قوة كبيرة لتحليل البيانات في جدولنا الرقمي.",
+  "q": [
+   {
+    "t": "كيف نضيف عموداً جديداً يسمى 'Score' إلى جدول بيانات باسم df؟",
+    "o": [
+     "df.add('Score')",
+     "df['Score'] = [...]",
+     "df.column('Score')"
+    ],
+    "a": 1,
+    "why": "نستخدم الأقواس المربعية مع اسم العمود الجديد لإضافته أو تعديله في باندا."
+   },
+   {
+    "t": "ماذا يحدث عند ضرب عمود رقمي في 2؟",
+    "o": [
+     "يتضاعف كل رقم في هذا العمود لكل صف",
+     "يتوقف البرنامج عن العمل",
+     "يتم حذف الجدول بالكامل"
+    ],
+    "a": 0,
+    "why": "العمليات الحسابية في باندا تطبق على كل صف في العمود تلقائياً."
+   },
+   {
+    "t": "أي مما يلي يُعتبر خطأً عند التعامل مع أعمدة باندا؟",
+    "o": [
+     "استخدام الأقواس المربعة لإضافة عمود",
+     "كتابة اسم عمود بطريقة خاطئة أو حرف مختلف",
+     "استيراد مكتبة باندا باسم pd"
+    ],
+    "a": 1,
+    "why": "الخطأ في كتابة اسم العمود يؤدي إلى ظهور رسالة خطأ KeyError."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "ترتيب خطوات إضافة عمود حسابي",
+   "goal": "رتب الخطوات البرمجية لإنشاء عمود نقاط مضاعفة بالشكل الصحيح.",
+   "items": [
+    "import pandas as pd",
+    "df = pd.DataFrame({'Points': [10, 20, 30]})",
+    "df['Double'] = df['Points'] * 2",
+    "print(df)"
+   ],
+   "success": "رائع! لقد أنشأت بنجاح عموداً جديداً يحسب النقاط المضاعفة بدقة فائقة!"
+  },
+  "sections": [
+   {
+    "h": "ما هو العمود في جدول البيانات؟",
+    "text": "العمود في جدول بيانات باندا يشبه عموداً في دفتر الرياضيات، يحمل اسماً ويعبر عن صفة معينة لكل العناصر تحته، مثل الأعمار أو الأسماء أو النقاط.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Aya', 'Omar']})\nprint(df.columns)",
+    "output": "Index(['Name'], dtype='object')"
+   },
+   {
+    "h": "إضافة عمود جديد بسيط",
+    "text": "لإضافة عمود جديد بكل سهولة، نكتب اسم الجدول متبوعاً باسم العمود الجديد بين قوسين مربعين وعلامات تنصيص، ثم نساويها بالقيم المطلوبة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Aya', 'Omar']})\ndf['Age'] = [12, 14]\nprint(df)",
+    "output": "   Name  Age\n0   Aya   12\n1  Omar   14"
+   },
+   {
+    "h": "إجراء العمليات الحسابية",
+    "text": "لا تقتصر الأعمدة الجديدة على الثوابت، بل يمكنك إجراء عمليات رياضية باستخدام الأعمدة الموجودة مسبقاً، مثل الجمع والضرب والقسمة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Price': [100, 200]})\ndf['Tax'] = df['Price'] * 0.1\nprint(df)",
+    "output": "   Price  Tax\n0    100 10.0\n1    200 20.0"
+   },
+   {
+    "h": "تعديل الأعمدة الموجودة",
+    "text": "إذا كان العمود موجوداً بالفعل وترغب في تغيير محتواه، يمكنك إعادة تعيين قيمته بنفس الطريقة عبر كتابة اسمه وتحديث بياناته أو حساباته.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [5, 8]})\ndf['Score'] = df['Score'] + 2\nprint(df)",
+    "output": "   Score\n0      7\n1     10"
+   },
+   {
+    "h": "إنشاء عمود بناءً على عمودين معاً",
+    "text": "يمكنك جمع أو ضرب عمودين مختلفين معاً لتوليد عمود ثالث جديد تماماً، تماماً مثل حساب إجمالي السعر عن طريق ضرب السعر في الكمية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Price': [10, 20], 'Qty': [2, 3]})\ndf['Total'] = df['Price'] * df['Qty']\nprint(df)",
+    "output": "   Price  Qty  Total\n0     10    2     20\n1     20    3     60"
+   },
+   {
+    "h": "استخدام قيم ثابتة لجميع الصفوف",
+    "text": "عندما تعين قيمة واحدة لعمود جديد، ستقوم باندا بتكرار هذه القيمة تلقائياً لكل صفوف الجدول بالتساوي.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Sara']})\ndf['Active'] = True\nprint(df)",
+    "output": "   Name  Active\n0   Ali    True\n1  Sara    True"
+   },
+   {
+    "h": "التحقق من أسماء الأعمدة",
+    "text": "تأكد دائماً من أسماء الأعمدة باستخدام خاصية .columns لمعرفة الكلمات الصحيحة وكيفية كتابتها قبل إجراء أي تعديلات.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Cat': [1, 2], 'Dog': [3, 4]})\nprint(df.columns)",
+    "output": "Index(['Cat', 'Dog'], dtype='str')"
+   },
+   {
+    "h": "تجنب الأخطاء الإملائية",
+    "text": "الباندا حساسة جداً لحالة الأحرف (حروف كبيرة وصغيرة)، لذا فإن عمود 'Points' يختلف تماماً عن عمود 'points' في لغة بايثون.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20]})\n# df['points'] * 2 سيسبب خطأ إذا لم يكن موجوداً",
+    "output": "# خطأ KeyError إذا اختلف الحرف"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "تحديد أو إنشاء عمود في جدول البيانات"
+   },
+   {
+    "name": "df.columns",
+    "desc": "عرض أسماء جميع الأعمدة في الجدول"
+   },
+   {
+    "name": "df['A'] * df['B']",
+    "desc": "ضرب عمودين معاً صفاً بصصف"
+   },
+   {
+    "name": "pd.DataFrame()",
+    "desc": "إنشاء جدول بيانات جديد في باندا"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "أنشئ عموداً جديداً باسم 'Bonus' بقيمة 5 لكل الصفوف في جدول يحتوي على عمود 'Points'.",
+    "a": "df['Bonus'] = 5"
+   },
+   {
+    "q": "اكتب الكود لإنشاء عمود 'Final' عن طريق جمع عمود 'Score' مع عمود 'Extra'.",
+    "a": "df['Final'] = df['Score'] + df['Extra']"
+   },
+   {
+    "q": "كيف تعرض أسماء جميع الأعمدة في جدولك يسمى df؟",
+    "a": "print(df.columns)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Welcome hero! Today we will learn how to create and modify columns in data tables using Pandas. A table is like a notebook page, and each column has a name and values.",
+   "To add a new column, write the dataframe name with square brackets containing the new name like this: df['New_Column'] and assign the values you want.",
+   "We can also use math operations like multiplication or addition on existing columns to create a brand new column based on old data.",
+   "Small example: If you have a column named 'Points', you can easily create a 'Double_Points' column by multiplying the points column by 2.",
+   "Golden rule: When modifying or adding a column, make sure to spell the column name precisely inside quotes so the computer doesn't get upset with an error.",
+   "In real life, this is just like having a student grades table at school and adding a new column to calculate everyone's final total score!"
+  ],
+  "example": "Imagine you are a video game creator with a table of player points.\nimport pandas as pd\ndata = {'Player': ['Ali', 'Mona'], 'Points': [50, 80]}\ndf = pd.DataFrame(data)\ndf['Double_Points'] = df['Points'] * 2\nprint(df)\nThe reason is that Pandas loops through every row in the points column, multiplies it by 2, and fills the new column automatically.\nOutput:\n  Player  Points  Double_Points\n0    Ali      50            100\n1   Mona      80            160",
+  "mistake": "A common mistake is forgetting square brackets or misspelling the old column name. The fix is to always double-check your column names and exact capitalization.",
+  "recap": "Today we learned how to add new columns effortlessly and perform math operations on them. This gives us immense power to analyze data in our digital table.",
+  "q": [
+   {
+    "t": "How do we add a new column named 'Score' to a dataframe named df?",
+    "o": [
+     "df.add('Score')",
+     "df['Score'] = [...]",
+     "df.column('Score')"
+    ],
+    "a": 1,
+    "why": "We use square brackets with the new column name to add or modify it in Pandas."
+   },
+   {
+    "t": "What happens when you multiply a numeric column by 2?",
+    "o": [
+     "Every number in that column for each row is doubled",
+     "The program stops working completely",
+     "The entire table gets deleted"
+    ],
+    "a": 0,
+    "why": "Math operations in Pandas are applied to every row in the column automatically."
+   },
+   {
+    "t": "Which of the following is considered a mistake when handling Pandas columns?",
+    "o": [
+     "Using square brackets to add a column",
+     "Misspelling a column name or using wrong capitalization",
+     "Importing the pandas library as pd"
+    ],
+    "a": 1,
+    "why": "Typo in a column name results in a KeyError message."
+   }
+  ],
+  "act": {
+   "type": "order",
+   "title": "Order the Math Column Addition Steps",
+   "goal": "Arrange the code steps to create a doubled points column correctly.",
+   "items": [
+    "import pandas as pd",
+    "df = pd.DataFrame({'Points': [10, 20, 30]})",
+    "df['Double'] = df['Points'] * 2",
+    "print(df)"
+   ],
+   "success": "Awesome! You successfully created a new column calculating doubled points with high precision!"
+  },
+  "sections": [
+   {
+    "h": "What is a Column in a Data Table?",
+    "text": "A column in a Pandas DataFrame is like a column in a math notebook, holding a name and representing a specific attribute for every item underneath it, like ages, names, or points.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Aya', 'Omar']})\nprint(df.columns)",
+    "output": "Index(['Name'], dtype='object')"
+   },
+   {
+    "h": "Adding a Simple New Column",
+    "text": "To add a new column easily, write the dataframe name followed by the new column name inside square brackets and quotes, then assign your required values.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Aya', 'Omar']})\ndf['Age'] = [12, 14]\nprint(df)",
+    "output": "   Name  Age\n0   Aya   12\n1  Omar   14"
+   },
+   {
+    "h": "Performing Math Operations",
+    "text": "New columns aren't limited to constants; you can perform mathematical operations using existing columns, such as addition, multiplication, and division.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Price': [100, 200]})\ndf['Tax'] = df['Price'] * 0.1\nprint(df)",
+    "output": "   Price  Tax\n0    100 10.0\n1    200 20.0"
+   },
+   {
+    "h": "Modifying Existing Columns",
+    "text": "If a column already exists and you want to change its contents, you can reassign its values using the exact same syntax to update its data or calculations.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Score': [5, 8]})\ndf['Score'] = df['Score'] + 2\nprint(df)",
+    "output": "   Score\n0      7\n1     10"
+   },
+   {
+    "h": "Creating a Column from Two Columns",
+    "text": "You can add or multiply two different columns together to generate a brand new third column, just like calculating total price by multiplying price by quantity.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Price': [10, 20], 'Qty': [2, 3]})\ndf['Total'] = df['Price'] * df['Qty']\nprint(df)",
+    "output": "   Price  Qty  Total\n0     10    2     20\n1     20    3     60"
+   },
+   {
+    "h": "Using Constant Values for All Rows",
+    "text": "When you assign a single value to a new column, Pandas will automatically broadcast and duplicate that value equally across all rows in the table.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Sara']})\ndf['Active'] = True\nprint(df)",
+    "output": "   Name  Active\n0   Ali    True\n1  Sara    True"
+   },
+   {
+    "h": "Checking Column Names",
+    "text": "Always verify column names using the .columns attribute to see the correct words and spellings before performing any modifications.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Cat': [1, 2], 'Dog': [3, 4]})\nprint(df.columns)",
+    "output": "Index(['Cat', 'Dog'], dtype='str')"
+   },
+   {
+    "h": "Avoiding Spelling Errors",
+    "text": "Pandas is case-sensitive, meaning column 'Points' is entirely different from column 'points' in Python code.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Points': [10, 20]})\n# df['points'] * 2 would cause an error if it doesn't exist",
+    "output": "# KeyError if casing does not match"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "Select or create a column in the DataFrame"
+   },
+   {
+    "name": "df.columns",
+    "desc": "View all column names in the DataFrame"
+   },
+   {
+    "name": "df['A'] * df['B']",
+    "desc": "Multiply two columns together row by row"
+   },
+   {
+    "name": "pd.DataFrame()",
+    "desc": "Create a new pandas DataFrame"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Create a new column named 'Bonus' with a value of 5 for all rows in a table containing a 'Points' column.",
+    "a": "df['Bonus'] = 5"
+   },
+   {
+    "q": "Write code to create a 'Final' column by adding the 'Score' column and the 'Extra' column.",
+    "a": "df['Final'] = df['Score'] + df['Extra']"
+   },
+   {
+    "q": "How do you display all column names in your dataframe named df?",
+    "a": "print(df.columns)"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

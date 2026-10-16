@@ -1,0 +1,268 @@
+{
+ "ar": {
+  "steps": [
+   "في تحليل البيانات، أحيانًا نحتاج إلى جمع العناصر المتشابهة معًا لمعرفة ما يحدث في كل مجموعة على حدة.",
+   "تخيل أن لديك صندوق ألعاب يحتوي على سيارات وكرات، وتريد جمع كل سيارة وحدها وكل كرة وحدها لحساب عددها.",
+   "دالة groupby في مكتبة pandas تقوم بهذا العمل تمامًا؛ فهي تقسم جدول البيانات بناءً على قيم عمود معين.",
+   "بعد تقسيم الجدول إلى مجموعات، يمكننا حساب مجموع القيم عبر دالة sum أو المتوسط عبر دالة mean.",
+   "القاعدة الذهبية هي اختيار عمود التصنيف لعمل groupby، ثم تحديد العمود الرقمي لحساب المجموع أو المتوسط.",
+   "في الحياة اليومية، يشبه ذلك فرز مصروفك الشهري حسب نوع المصروف (أكل، مواصلات، ترفيه) ثم حساب متوسط ما تنفقه في كل فئة."
+  ],
+  "example": "لنفترض أن لديك جدول بيانات لمتجر صغير يحتوي على أعمدة 'Category' و'Price'. يمكنك حساب متوسط الأسعار لكل فئة كتابة: import pandas as pd\ndf = pd.DataFrame({'Category': ['Fruit', 'Fruit', 'Toy', 'Toy'], 'Price': [10, 20, 30, 50]})\nresult = df.groupby('Category')['Price'].mean()\nprint(result)\nهنا سيتم تجميع الفاكهة وحدها بمتوسط 15 والألعاب وحدها بمتوسط 40.",
+  "mistake": "الخطأ الشائع هو نسيان تحديد العمود الرقمي المطلوب بعد groupby، مثل كتابة df.groupby('Category').mean() مباشرة دون اختيار عمود معين مما قد يسبب خطأ إذا وُجدت أعمدة نصية.",
+  "recap": "تتيح لك دالة groupby تنظيم البيانات في مجموعات، بينما تساعدك دوال مثل sum وmean في استخراج ملخصات رقمية سريعة.",
+  "q": [
+   {
+    "t": "أي دالة في pandas تُستخدم لتجميع البيانات بناءً على عمود معين؟",
+    "o": [
+     "groupby",
+     "sort_values",
+     "describe"
+    ],
+    "a": 0,
+    "why": "دالة groupby تخصص لتجميع الصفوف بناءً على قيم عمود محدد."
+   },
+   {
+    "t": "كيف نحسب متوسط القيم داخل كل مجموعة؟",
+    "o": [
+     "sum()",
+     "mean()",
+     "count()"
+    ],
+    "a": 1,
+    "why": "دالة mean تحسب المتوسط الحسابي للبيانات العددية."
+   },
+   {
+    "t": "ماذا تفعل دالة sum عند استخدامها بعد groupby؟",
+    "o": [
+     "تحسب مجموع القيم في كل مجموعة",
+     "تحذف القيم المفقودة",
+     "ترتب الجدول تصاعدياً"
+    ],
+    "a": 0,
+    "why": "دالة sum تقوم بجمع الأرقام داخل كل مجموعة تم إنشاؤها."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "مطابقة مفاهيم التجميع والتحليل",
+   "goal": "صل كل دالة أو عملية في pandas بوظيفتها الصحيحة",
+   "pairs": [
+    [
+     "groupby",
+     "تقسيم البيانات إلى مجموعات حسب عمود"
+    ],
+    [
+     "mean",
+     "حساب متوسط القيم العددية"
+    ],
+    [
+     "sum",
+     "حساب إجمالي القيم العددية"
+    ],
+    [
+     "DataFrame",
+     "جدول بيانات ثنائي الأبعاد"
+    ]
+   ],
+   "success": "رائع! لقد أتقنت ربط دوال التجميع والتحليل في pandas بنجاح."
+  },
+  "sections": [
+   {
+    "h": "ما هو التجميع (Grouping)؟",
+    "text": "التجميع هو عملية تنظيم صفوف جدول البيانات بناءً على تشابه القيم في عمود معين. فكر في الأمر وكأنك ترتب ملابسك في دولابك حسب النوع: القمصان وحدها والبنطلونات وحدها. في البيانات، نستخدم groupby لفعل ذلك تمامًا.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Team': ['A', 'A', 'B', 'B'], 'Score': [10, 20, 15, 25]})\ngrouped = df.groupby('Team')\nprint(grouped.groups)",
+    "output": "{'A': [0, 1], 'B': [2, 3]}"
+   },
+   {
+    "h": "استخدام دالة groupby",
+    "text": "لكي تبدأ التجميع، تستدعي دالة groupby وتمرر لها اسم العمود الذي ترغب في تجميع البيانات وفقه. بعد ذلك، تصبح جاهزًا لتطبيق عمليات تحليلية على كل مجموعة على حدة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana', 'Apple'], 'Qty': [5, 3, 2]})\nprint(df.groupby('Fruit').sum())",
+    "output": "        Qty\nFruit      \nApple     7\nBanana    3"
+   },
+   {
+    "h": "حساب المجموع (Sum)",
+    "text": "بعد إنشاء المجموعات، قد ترغب في معرفة الإجمالي لكل فئة. دالة sum تجمع كافة الأرقام الموجودة في كل مجموعة وتطهن لك النتيجة النهائية بشكل مرتب.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Store': ['Cairo', 'Cairo', 'Alex'], 'Sales': [100, 150, 200]})\nprint(df.groupby('Store')['Sales'].sum())",
+    "output": "Store\nAlex     200\nCairo    250\nName: Sales, dtype: int64"
+   },
+   {
+    "h": "حساب المتوسط (Mean)",
+    "text": "بدلاً من الإجمالي، قد تحتاج لمعرفة القيمة المتوسطة لكل مجموعة، مثل متوسط درجات الطلاب في كل فصل. هنا يأتي دور دالة mean التي تحسب الوسط الحسابي بكفاءة عالية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Class': ['One', 'One', 'Two', 'Two'], 'Score': [80, 90, 70, 85]})\nprint(df.groupby('Class')['Score'].mean())",
+    "output": "Class\nOne    85.0\nTwo    77.5\nName: Score, dtype: float64"
+   },
+   {
+    "h": "تحديد عمود معين للعمليات",
+    "text": "عندما يكون جدول البيانات كبيراً ويحتوي على أعمدة رقمية متعددة، من الأفضل أن تحدد العمود الذي ترغب في إجراء العملية عليه بين أقواس مربعة، لكي لا تحاول الدالة حساب المتوسط أو المجموع لأعمدة نصية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Dept': ['IT', 'IT', 'HR'], 'Salary': [5000, 7000, 4000], 'Age': [25, 30, 28]})\nprint(df.groupby('Dept')['Salary'].mean())",
+    "output": "Dept\nHR    4000.0\nIT    6000.0\nName: Salary, dtype: float64"
+   }
+  ],
+  "reference": [
+   {
+    "name": "groupby()",
+    "desc": "تقسيم DataFrame إلى مجموعات بناءً على عمود محدد"
+   },
+   {
+    "name": "mean()",
+    "desc": "حساب المتوسط الحسابي للبيانات العددية"
+   },
+   {
+    "name": "sum()",
+    "desc": "حساب المجموع الكلي للبيانات العددية"
+   },
+   {
+    "name": "DataFrame",
+    "desc": "جدول بيانات ثنائي الأبعاد مكون من صفوف وأعمدة"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود لتجميع جدول باسم df حسب عمود 'City' وحساب متوسط عمود 'Temperature'.",
+    "a": "df.groupby('City')['Temperature'].mean()"
+   },
+   {
+    "q": "كيف تحسب إجمالي المبيعات 'Sales' لكل منتج 'Product' باستخدام groupby؟",
+    "a": "df.groupby('Product')['Sales'].sum()"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "In data analytics, we often need to group similar items together to understand what is happening in each category.",
+   "Imagine having a toy box with cars and balls, and you want to gather all cars together and all balls together to count them.",
+   "The groupby function in pandas does exactly this; it splits your data frame based on values in a specific column.",
+   "After splitting the table into groups, we can calculate summary values using the sum function or the mean function.",
+   "The golden rule is to choose your category column for groupby, then specify the numeric column to calculate the sum or mean.",
+   "In real life, this is like sorting your monthly allowance by expense type (food, transport, fun) and finding the average spent in each category."
+  ],
+  "example": "Suppose you have a small shop dataframe with 'Category' and 'Price' columns. You can calculate average prices per category by writing: import pandas as pd\ndf = pd.DataFrame({'Category': ['Fruit', 'Fruit', 'Toy', 'Toy'], 'Price': [10, 20, 30, 50]})\nresult = df.groupby('Category')['Price'].mean()\nprint(result)\nHere, fruits are grouped with a mean of 15 and toys with a mean of 40.",
+  "mistake": "A common mistake is forgetting to specify the target numeric column after groupby, like writing df.groupby('Category').mean() directly without picking a specific column, which can cause errors if text columns exist.",
+  "recap": "The groupby function lets you organize data into categories, while functions like sum and mean help extract quick numerical summaries.",
+  "q": [
+   {
+    "t": "Which pandas function is used to group data based on a column?",
+    "o": [
+     "groupby",
+     "sort_values",
+     "describe"
+    ],
+    "a": 0,
+    "why": "The groupby function is specifically designed to split rows into groups based on specific column values."
+   },
+   {
+    "t": "How do we calculate the average of values inside each group?",
+    "o": [
+     "sum()",
+     "mean()",
+     "count()"
+    ],
+    "a": 1,
+    "why": "The mean function calculates the arithmetic average for numerical data."
+   },
+   {
+    "t": "What does the sum function do when used after groupby?",
+    "o": [
+     "Calculates the total of values in each group",
+     "Removes missing values",
+     "Sorts the table ascending"
+    ],
+    "a": 0,
+    "why": "The sum function adds up the numbers within each created group."
+   }
+  ],
+  "act": {
+   "type": "match",
+   "title": "Grouping & Aggregation Concepts Matching",
+   "goal": "Connect each pandas function or operation to its correct role",
+   "pairs": [
+    [
+     "groupby",
+     "Split data into groups by column"
+    ],
+    [
+     "mean",
+     "Calculate average of numeric values"
+    ],
+    [
+     "sum",
+     "Calculate total of numeric values"
+    ],
+    [
+     "DataFrame",
+     "Two-dimensional data table"
+    ]
+   ],
+   "success": "Awesome! You have successfully mastered grouping and aggregation functions in pandas."
+  },
+  "sections": [
+   {
+    "h": "What is Grouping?",
+    "text": "Grouping is the process of organizing table rows based on matching values in a specific column. Think of it like sorting your clothes in a closet by type: shirts together and trousers together. In data, we use groupby to do exactly this.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Team': ['A', 'A', 'B', 'B'], 'Score': [10, 20, 15, 25]})\ngrouped = df.groupby('Team')\nprint(grouped.groups)",
+    "output": "{'A': [0, 1], 'B': [2, 3]}"
+   },
+   {
+    "h": "Using the groupby Function",
+    "text": "To start grouping, call the groupby function and pass the name of the column you want to group by. Afterward, you are ready to apply analytical operations to each group individually.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana', 'Apple'], 'Qty': [5, 3, 2]})\nprint(df.groupby('Fruit').sum())",
+    "output": "        Qty\nFruit      \nApple     7\nBanana    3"
+   },
+   {
+    "h": "Calculating the Sum",
+    "text": "After creating groups, you might want to find the total for each category. The sum function adds up all the numbers in each group and presents the final result neatly.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Store': ['Cairo', 'Cairo', 'Alex'], 'Sales': [100, 150, 200]})\nprint(df.groupby('Store')['Sales'].sum())",
+    "output": "Store\nAlex     200\nCairo    250\nName: Sales, dtype: int64"
+   },
+   {
+    "h": "Calculating the Mean",
+    "text": "Instead of totals, you might need to find the average value per group, such as student grades per classroom. This is where the mean function comes in handy to compute the arithmetic average efficiently.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Class': ['One', 'One', 'Two', 'Two'], 'Score': [80, 90, 70, 85]})\nprint(df.groupby('Class')['Score'].mean())",
+    "output": "Class\nOne    85.0\nTwo    77.5\nName: Score, dtype: float64"
+   },
+   {
+    "h": "Selecting a Specific Column for Operations",
+    "text": "When your dataframe is large with multiple numeric columns, it is best to specify the target column in square brackets so pandas doesn't attempt to compute averages or totals on text columns.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Dept': ['IT', 'IT', 'HR'], 'Salary': [5000, 7000, 4000], 'Age': [25, 30, 28]})\nprint(df.groupby('Dept')['Salary'].mean())",
+    "output": "Dept\nHR    4000.0\nIT    6000.0\nName: Salary, dtype: float64"
+   }
+  ],
+  "reference": [
+   {
+    "name": "groupby()",
+    "desc": "Splits a DataFrame into groups based on a specific column"
+   },
+   {
+    "name": "mean()",
+    "desc": "Calculates the arithmetic average of numeric data"
+   },
+   {
+    "name": "sum()",
+    "desc": "Calculates the total sum of numeric data"
+   },
+   {
+    "name": "DataFrame",
+    "desc": "A two-dimensional data table consisting of rows and columns"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to group a dataframe named df by 'City' and calculate the mean of the 'Temperature' column.",
+    "a": "df.groupby('City')['Temperature'].mean()"
+   },
+   {
+    "q": "How do you calculate total 'Sales' for each 'Product' using groupby?",
+    "a": "df.groupby('Product')['Sales'].sum()"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}

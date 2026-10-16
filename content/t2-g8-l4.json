@@ -1,0 +1,305 @@
+{
+ "ar": {
+  "steps": [
+   "تخيل أنك تقف أمام مكتبة ضخمة مليئة بالكتب، وتريد فقط الكتب التي تتحدث عن البرمجة وأعمار أصحابها فوق 13 سنة. في لغة بايثون، جدول بياناتنا يشبه هذه المكتبة، وتحديد الأعمدة وتصفية الصفوف يساعدنا في اختيار ما نريد بدقة فائقة وسرعة مذهلة دون إهدار وقتنا.",
+   "لنفترض أن لدينا جدولاً صغيراً يحفظ أسماء الطلاب وأعمارهم. لاختيار عمود واحد فقط مثل الأسماء، نكتب اسم الجدول متبوعاً بقوسين مربعين واسم العمود هكذا: df['Name']. هذا يشبه أن تطلب من صديقك أن يحضر لك صندوق الألعاب فقط ويترك الباقي.",
+   "كيف يعمل اختيار الأعمدة؟ بايثون تستخدم مكتبة البانداس (pandas) لترتيب البيانات في صفوف وأعمدة مثل الجداول المدرسية. عندما نكتب اسم العمود داخل الأقواس المربعية، فإننا نخبر البرنامج أننا مهتمون بهذا النوع من المعلومات فقط ونريد تجاهل باقي الأجزاء الزائدة.",
+   "إذا أردنا اختيار أكثر من عمود في نفس الوقت، فإننا نضع أسماء الأعمدة داخل قائمة مزدوجة الأقواس المربعة هكذا: df[['Name', 'Age']]. هذه القاعدة تشبه تماماً عندما تختار كتابين معاً من الرف وتضعهما في حقيبتك المدرسية لتقرأهما في حصة القراءة اليوم.",
+   "قاعدة ذهبية في بايثون: لاختيار عمود واحد نستخدم أقواس مربعة مفردة df['col']، أما لاختيار عدة أعمدة أو لتصفية الصفوف بشرط، فنحتاج أحياناً لأقواس إضافية أو استخدام الفلترة الذكية (Boolean Indexing) التي تسأل سؤالاً إجماعياً: هل هذا الشرط صحيح أم خطأ؟",
+   "تخيل أنك تعمل مديراً للعبة إلكترونية وتريد معرفة اللاعبين الذين تجاوزوا مستوى معيناً، هنا تستخدم تصفية الصفوف (Filtering). في الحياة اليومية، هذا يشبه تطبيق تسوق يطلب منك إظهار الأحذية التي يقل سعرها عن 200 جنيه فقط، فترى النتائج المطابقة لطلبك مباشرة."
+  ],
+  "example": "لنفترض أن لدينا جدولاً يسمى df يحتوي على أعمدة 'Name' و'Age'. لنفترض أننا نريد تصفية الصفوف بحيث نظهر فقط الطلاب الذين تزيد أعمارهم عن 13 سنة. نكتب الكود التالي: filtered_df = df[df['Age'] > 13]. السبب وراء هذا هو أن التعبير df['Age'] > 13 يُنتج قيماً منطقية (True أو False) لكل صف، وبايثون تحتفظ فقط بالصفوف التي تحمل القيمة True.",
+  "mistake": "الخطأ الشائع هو نسيان وضع الأقواس المربعة المزدوجة عند محاولة اختيار أكثر من عمود مثل كتابة df['Name', 'Age'] مما يسبب خطأ في الكود. الصواب هو وضعها داخل قائمة هكذا: df[['Name', 'Age']].",
+  "recap": "تحديد الأعمدة يسمح لنا بالتركيز على نوع معلومات واحد أو عدة أنواع محددة باستخدام الأقواس المربعة. بينما تساعدنا التصفية والفهرسة المنطقية (Boolean Indexing) في استخراج الصفوف التي تحقق شروطاً معينة فقط.",
+  "q": [
+   {
+    "t": "كيف نختار عموداً واحداً يسمى 'Age' من الجدول df؟",
+    "o": [
+     "df('Age')",
+     "df['Age']",
+     "df.Age()"
+    ],
+    "a": 1,
+    "why": "نستخدم الأقواس المربعة المفردة مع اسم العمود لتحديد عمود واحد في بانداس."
+   },
+   {
+    "t": "ما هو الغرض من الفهرسة المنطقية (Boolean Indexing)؟",
+    "o": [
+     "حذف الجدول تماماً",
+     "تصفية الصفوف بناءً على شرط صحيح أو خطأ",
+     "تغيير لون خلفية الشاشة"
+    ],
+    "a": 1,
+    "why": "الفهرسة المنطقية تفحص كل صف بناءً على شرط وتعيد الصفوف التي تحقق الشرط فقط."
+   },
+   {
+    "t": "أي كود صحيح لاختيار عمودين 'Name' و'Age' معاً؟",
+    "o": [
+     "df[['Name', 'Age']]",
+     "df['Name', 'Age']",
+     "df(Name, Age)"
+    ],
+    "a": 0,
+    "why": "نحتاج إلى وضع أسماء الأعمدة داخل قائمة (أقواس مربعة مزدوجة) لاختيار أكثر من عمود."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "تصحيح كود تصفية الأعمار",
+   "goal": "اكتشف السطر الخاطئ الذي يمنع فلترة الطلاب الأكبر من 13 سنة.",
+   "lines": [
+    "import pandas as pd",
+    "data = {'Name': ['Ali', 'Mona'], 'Age': [12, 14]}",
+    "df = pd.DataFrame(data)",
+    "old_students = df.Age > 13",
+    "print(old_students)"
+   ],
+   "bug": 3,
+   "fix": "old_students = df[df['Age'] > 13]",
+   "success": "رائع! تم تصفية الجدول بنجاح وأظهر الطلاب الذين تزيد أعمارهم عن 13 سنة فقط!"
+  },
+  "sections": [
+   {
+    "h": "مقدمة في تحديد الأعمدة",
+    "text": "تخيل أن لديك صندوق ألوان يحتوي على ألوان مختلفة، وأنت تريد فقط إخراج اللون الأحمر للرسم. في مكتبة البانداس بلغة بايثون، الجدول (DataFrame) هو صندوق الألوان الكبير، وتحديد الأعمدة هو طريقتنا لسحب عمود واحد أو عدة أعمدة محددة للعمل عليها وحدها دون باقي الجدول لتوفير وقتك وجهدك.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Sara'], 'Age': [12, 15]})\nprint(df['Name'])",
+    "output": "0    Ali\n1    Sara\nName: Name, dtype: object"
+   },
+   {
+    "h": "استخدام الأقواس المربعة المفردة",
+    "text": "عندما ترغب في اختيار عمود واحد فقط، فإن الأداة السحرية هي الأقواس المربعة []. تكتب اسم الجدول ثم تفتح قوسين مربعين وتضع بينهما اسم العمود الذي تبحث عنه كسلسلة نصية (بين علامات اقتراتمام). هذا يشبه تماماً عندما تفتح درجا واحدا فقط في مكتبك المدرسي لتأخذ قلمك الجاف فقط وتترك باقي الأدوات.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana'], 'Price': [5, 3]})\nprint(df['Fruit'])",
+    "output": "0     Apple\n1    Banana\nName: Fruit, dtype: object"
+   },
+   {
+    "h": "اختيار عدة أعمدة معاً",
+    "text": "ماذا لو أردت اختيار أكثر من عمود في نفس الوقت؟ مثل أخذ اسم الفاكهة وسعرها معاً. هنا نستخدم قائمة داخل الأقواس المربعة، مما يعني أننا نضع زوجاً إضافياً من الأقواس المربعة [[...]]. تشبه هذه العملية تماماً عندما تختار كتابين معا من حقيبتك المدرسية لتضعهما على الطاولة للدراسة.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana'], 'Price': [5, 3], 'Color': ['Red', 'Yellow']})\nprint(df[['Fruit', 'Price']])",
+    "output": "    Fruit  Price\n0   Apple      5\n1  Banana      3"
+   },
+   {
+    "h": "ما هي تصفية الصفوف؟",
+    "text": "التصفية (Filtering) تشبه استخدام غربال أو مصفاة في المطبخ؛ تدع المكرونة تمر أو تحجزها بناءً على حجمها. في الجداول، نريد إظهار الصفوف التي تحقق شرطاً معينا فقط. تخيل أنك تبحث في حديقة عن الزهور الحمراء فقط وتتجاهل بقية الألوان، هذا هو بالضبط ما تفعله التصفية في البيانات الرقمية والنصية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona'], 'Age': [12, 14]})\nprint(df['Age'] > 13)",
+    "output": "0    False\n1     True\nName: Age, dtype: bool"
+   },
+   {
+    "h": "مفهوم الفهرسة المنطقية (Boolean Indexing)",
+    "text": "الفهرسة المنطقية هي الطريقة الذكية التي تسأل بها بايثون سؤالاً إجابته 'صح' (True) أو 'خطأ' (False) لكل صف في الجدول. عندما نكتب شرطاً مثل عمر أكبر من 13، يقوم الكمبيوتر بفحص كل صف وإعطائنا علامة صح أو خطأ، ثم نستخدم هذه العلامات لتصفية الصفوف وعرض المطابق فقط.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona'], 'Age': [12, 14]})\nprint(df[df['Age'] > 13])",
+    "output": "    Name  Age\n1   Mona   14"
+   },
+   {
+    "h": "تطبيق شرط العمر أكبر من 13",
+    "text": "في مشروعنا اليوم، نريد التركيز على الطلاب الذين تتجاوز أعمارهم 13 عاماً. نكتب الشرط داخل الأقواس المربعة الكبيرة للجدول هكذا: df[df['Age'] > 13]. سيقوم البرنامج بالمرور على كل صف، وفحص عمود العمر، وإظهار صفوف الطلاب الأكبر سنًا فقط، تماماً مثل نادي يطلب من الأعضاء أن يكونوا فوق سن معينة للدخول.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Student': ['Omar', 'Laila', 'Ziad'], 'Age': [11, 14, 15]})\nprint(df[df['Age'] > 13])",
+    "output": "  Student  Age\n1   Laila   14\n2    Ziad   15"
+   },
+   {
+    "h": "دمج الشروط والأعمدة معاً",
+    "text": "يمكننا الجمع بين المهارتين: اختيار أعمدة معينة وتصفية الصفوف في نفس الوقت! تخيل أنك تطلب أسماء الطلاب فقط لأولئك الذين أعمارهم أكبر من 13 سنة. نقوم بذلك عن طريق وضع شرط التصفية ثم اختيار العمود المطلوب، لنحصل على نتيجة دقيقة ومختصرة للغاية.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Student': ['Omar', 'Laila', 'Ziad'], 'Age': [11, 14, 15]})\nprint(df.loc[df['Age'] > 13, 'Student'])",
+    "output": "1    Laila\n2     Ziad\nName: Student, dtype: series"
+   },
+   {
+    "h": "أهمية الفلترة في الحياة اليومية",
+    "text": "تطبيقات الهاتف التي تستخدمها كل يوم تعتمد كلياً على التصفية وتحديد الأعمدة. عندما تبحث في تطبيق يوتيوب عن فيديوهات تعليمية قصيرة، أو تبحث في متجر إلكتروني عن ألعاب فيديو تقل أسعارها عن مبلغ معين، فإن النظام يقوم بعمليات الفهرسة وتحديد الأعمدة في الخلفية ليظهر لك ما تريده فوراً.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Game': ['Chess', 'Racing', 'Puzzle'], 'Price': [0, 50, 10]})\nprint(df[df['Price'] < 20])",
+    "output": "     Game  Price\n0   Chess      0\n1  Puzzle     10"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "تحديد واستخراج عمود واحد كـ Series"
+   },
+   {
+    "name": "df[['col1', 'col2']]",
+    "desc": "تحديد واستخراج عدة أعمدة كـ DataFrame"
+   },
+   {
+    "name": "df[df['col'] > value]",
+    "desc": "تصفية الصفوف باستخدام شرط مقارنة (Boolean Indexing)"
+   },
+   {
+    "name": "df.loc[row, col]",
+    "desc": "تحديد الصفوف والأعمدة بناءً على التسميات أو الشروط"
+   },
+   {
+    "name": "True / False",
+    "desc": "القيم المنطقية التي تنتج عن شروط الفلترة"
+   },
+   {
+    "name": "pandas",
+    "desc": "مكتبة بايثون الأساسية لتحليل وتنظيم البيانات"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود بايثون لاختيار عمود 'Name' من جدول بيانات يسمى df.",
+    "a": "df['Name']"
+   },
+   {
+    "q": "كيف تكتب شرطاً لتصفية الصفوف حيث عمود 'Age' أكبر من 13؟",
+    "a": "df[df['Age'] > 13]"
+   },
+   {
+    "q": "ما هو الكود لاختيار عمودين 'Name' و 'Age' معاً من الجدول df؟",
+    "a": "df[['Name', 'Age']]"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Imagine standing in front of a giant library, wanting only programming books where the owners are older than 13. In Python, our DataFrame is like this library, and selecting columns and filtering rows helps us pinpoint exactly what we need with incredible speed.",
+   "Suppose we have a small table storing student names and ages. To pick just a single column like names, we write the table name followed by square brackets and the column name: df['Name']. This is like asking your friend to bring only the toy box and leave the rest.",
+   "How does column selection work? Python uses the pandas library to organize data in rows and columns like school schedules. When we write the column name inside square brackets, we tell the program we care only about this specific type of info and want to ignore the rest.",
+   "If we want to pick more than one column at the same time, we put the column names inside a double set of square brackets like this: df[['Name', 'Age']]. This rule is just like picking two books together from the shelf to put in your school bag for reading class.",
+   "A golden rule in Python: to select a single column, use single square brackets df['col']; to select multiple columns or filter rows by a condition, we sometimes need extra brackets or smart filtering (Boolean Indexing) that asks a true/false question.",
+   "Imagine you manage an online game and want to know players who passed a certain level; here you use row filtering. In real life, this is like a shopping app asking you to show shoes under $200 only, so you see matching results instantly."
+  ],
+  "example": "Suppose we have a table called df with columns 'Name' and 'Age'. Suppose we want to filter rows to show only students older than 13. We write: filtered_df = df[df['Age'] > 13]. The reason is that df['Age'] > 13 produces boolean values (True or False) for each row, and Python keeps only rows where it's True.",
+  "mistake": "A common mistake is forgetting to use double square brackets when trying to select multiple columns, such as writing df['Name', 'Age'] which causes an error. The correct way is putting them inside a list like this: df[['Name', 'Age']].",
+  "recap": "Selecting columns allows us to focus on one or specific types of info using square brackets. Meanwhile, filtering and Boolean Indexing help us extract rows that meet specific conditions.",
+  "q": [
+   {
+    "t": "How do we select a single column named 'Age' from a table df?",
+    "o": [
+     "df('Age')",
+     "df['Age']",
+     "df.Age()"
+    ],
+    "a": 1,
+    "why": "We use single square brackets with the column name to select one column in pandas."
+   },
+   {
+    "t": "What is the purpose of Boolean Indexing?",
+    "o": [
+     "To delete the table entirely",
+     "To filter rows based on true or false conditions",
+     "To change the screen background color"
+    ],
+    "a": 1,
+    "why": "Boolean indexing checks each row against a condition and returns rows that satisfy it."
+   },
+   {
+    "t": "Which code correctly selects two columns 'Name' and 'Age' together?",
+    "o": [
+     "df[['Name', 'Age']]",
+     "df['Name', 'Age']",
+     "df(Name, Age)"
+    ],
+    "a": 0,
+    "why": "We need to put column names inside a list (double square brackets) to select multiple columns."
+   }
+  ],
+  "act": {
+   "type": "bug",
+   "title": "Fix the Age Filtering Code",
+   "goal": "Find the wrong line that prevents filtering students older than 13.",
+   "lines": [
+    "import pandas as pd",
+    "data = {'Name': ['Ali', 'Mona'], 'Age': [12, 14]}",
+    "df = pd.DataFrame(data)",
+    "old_students = df.Age > 13",
+    "print(old_students)"
+   ],
+   "bug": 3,
+   "fix": "old_students = df[df['Age'] > 13]",
+   "success": "Awesome! The table was filtered successfully showing only students older than 13!"
+  },
+  "sections": [
+   {
+    "h": "Introduction to Column Selection",
+    "text": "Imagine you have a paint box with different colors, and you only want to take out the red color for drawing. In Python's pandas library, a DataFrame is the big paint box, and selecting columns is our way of pulling out one or specific columns to work with alone, saving your time and effort.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Sara'], 'Age': [12, 15]})\nprint(df['Name'])",
+    "output": "0    Ali\n1    Sara\nName: Name, dtype: object"
+   },
+   {
+    "h": "Using Single Square Brackets",
+    "text": "When you want to select just a single column, the magic tool is square brackets []. You write the table name, open brackets, and put the column name as a string inside. This is just like opening a single drawer in your school desk to grab only your pen and leave other tools alone.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana'], 'Price': [5, 3]})\nprint(df['Fruit'])",
+    "output": "0     Apple\n1    Banana\nName: Fruit, dtype: object"
+   },
+   {
+    "h": "Selecting Multiple Columns",
+    "text": "What if you want to select more than one column at once? Like grabbing both the fruit name and its price together. Here we use a list inside the square brackets, meaning we wrap them in a double set of square brackets [[...]]. This is like picking two books together from your school bag to put on your desk.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Fruit': ['Apple', 'Banana'], 'Price': [5, 3], 'Color': ['Red', 'Yellow']})\nprint(df[['Fruit', 'Price']])",
+    "output": "    Fruit  Price\n0   Apple      5\n1  Banana      3"
+   },
+   {
+    "h": "What is Row Filtering?",
+    "text": "Filtering is like using a kitchen sieve; it lets pasta pass through or catches it based on size. In tables, we want to show rows that meet a specific condition only. Imagine looking in a garden for red flowers only and ignoring other colors, which is exactly what filtering does in data.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona'], 'Age': [12, 14]})\nprint(df['Age'] > 13)",
+    "output": "0    False\n1     True\nName: Age, dtype: bool"
+   },
+   {
+    "h": "The Concept of Boolean Indexing",
+    "text": "Boolean Indexing is the smart way you ask Python a true or false question for every row in the table. When we write a condition like age greater than 13, the computer checks each row, gives us a True or False mark, and then we use these marks to filter rows and show matches.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Name': ['Ali', 'Mona'], 'Age': [12, 14]})\nprint(df[df['Age'] > 13])",
+    "output": "    Name  Age\n1   Mona   14"
+   },
+   {
+    "h": "Applying the Age > 13 Condition",
+    "text": "In our project today, we want to focus on students older than 13 years. We write the condition inside the large square brackets of the table like this: df[df['Age'] > 13]. The program will scan each row, check the age column, and show older students' rows only, just like a club requiring a minimum age.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Student': ['Omar', 'Laila', 'Ziad'], 'Age': [11, 14, 15]})\nprint(df[df['Age'] > 13])",
+    "output": "  Student  Age\n1   Laila   14\n2    Ziad   15"
+   },
+   {
+    "h": "Combining Conditions and Columns",
+    "text": "We can combine both skills: selecting specific columns and filtering rows at the same time! Imagine asking for student names only for those whose age is greater than 13. We do this by applying the filter condition and then picking the target column for a precise result.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Student': ['Omar', 'Laila', 'Ziad'], 'Age': [11, 14, 15]})\nprint(df.loc[df['Age'] > 13, 'Student'])",
+    "output": "1    Laila\n2     Ziad\nName: Student, dtype: series"
+   },
+   {
+    "h": "Filtering Importance in Real Life",
+    "text": "Phone apps you use every day rely entirely on filtering and column selection. When searching YouTube for short educational videos, or filtering an online store for video games under a specific price, the system performs indexing and column selection in the background to show results instantly.",
+    "code": "import pandas as pd\ndf = pd.DataFrame({'Game': ['Chess', 'Racing', 'Puzzle'], 'Price': [0, 50, 10]})\nprint(df[df['Price'] < 20])",
+    "output": "     Game  Price\n0   Chess      0\n1  Puzzle     10"
+   }
+  ],
+  "reference": [
+   {
+    "name": "df['col']",
+    "desc": "Select and extract a single column as a Series"
+   },
+   {
+    "name": "df[['col1', 'col2']]",
+    "desc": "Select and extract multiple columns as a DataFrame"
+   },
+   {
+    "name": "df[df['col'] > value]",
+    "desc": "Filter rows using a comparison condition (Boolean Indexing)"
+   },
+   {
+    "name": "df.loc[row, col]",
+    "desc": "Select rows and columns based on labels or conditions"
+   },
+   {
+    "name": "True / False",
+    "desc": "Boolean values produced by filtering conditions"
+   },
+   {
+    "name": "pandas",
+    "desc": "Core Python library for data analysis and organization"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write Python code to select the 'Name' column from a DataFrame named df.",
+    "a": "df['Name']"
+   },
+   {
+    "q": "How do you write a condition to filter rows where the 'Age' column is greater than 13?",
+    "a": "df[df['Age'] > 13]"
+   },
+   {
+    "q": "What is the code to select both 'Name' and 'Age' columns together from df?",
+    "a": "df[['Name', 'Age']]"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [],
+ "grounded": false
+}

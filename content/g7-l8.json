@@ -1,0 +1,310 @@
+{
+ "ar": {
+  "steps": [
+   "البيانات اللي بنجمعها أحياناً بيكون فيها خانات فاضية أو ناقصة بسبب خطأ في الإدخال. البيانات الناقصة دي ممكن تخلي الحسابات والنتائج بتاعتنا غلط ومش دقيقة خالص.",
+   "عشان نعرف مكان البيانات الناقصة في جدول البانداس، بنستخدم دالة بسيطة جداً اسمها isnull ودي بترجع لنا قيم صح أو خطأ لكل خلية في الجدول.",
+   "لما بنكتشف مكان الفراغات، بيكون قدامنا حلين: إما نحذف الصفوف اللي فيها نقص باستخدام دالة dropna أو نملاها بقيم افتراضية معقولة.",
+   "دالة dropna بتساعدنا نتخلص من أي صف فيه قيمة ناقصة عشان تفضل تحليلاتنا نظيفة ومبنية على بيانات كاملة من غير تخمين.",
+   "لو مش عايزين نحذف بيانات مهمة، نقدر نستخدم دالة fillna عشان نحط قيمة افتراضية في الأماكن الفاضية زي الصفر أو المتوسط.",
+   "القاعدة الذهبية هي فحص البيانات الأول دايماً قبل أي تحليل، واختيار الحل المناسب بحكمة؛ الحذف لو البيانات تالفة، والتعبئة لو الفراغات بسيطة."
+  ],
+  "example": "تخيل أنك بتسجل درجات الطلاب في مادة البرمجة ونسيت تسجل درجة طالبين. لو سيبنا الخانات دي فاضية، حساب المتوسط هيطلع غلط. في بانداس، بنكتب df.isnull() عشان نعرف مكان الفراغات، وبعدين نكتب df.fillna(0) عشان نحط صفر مكان الدرجة الناقصة، أو df.dropna() عشان نحذف السطر ده خالص ونضمن دقة الحسابات.",
+  "mistake": "الغلط الشائع هو تطبيق دالة dropna() على كل الجدول من غير ما نخليها في متغير جديد أو نستخدم inplace=True، فبنكتشف إن الجدول الأصلي اتغير أو اتحذف منه صفوف بطريقة غير مقصودة.",
+  "recap": "البيانات الناقصة بتأثر على دقة النتائج، وبنقدر نكتشفها بدالة isnull ونعالجها بالحذف عبر dropna أو بالتعبئة عبر fillna.",
+  "q": [
+   {
+    "t": "ما هي الدالة التي تستخدم للكشف عن القيم الناقصة في جدول بانداس؟",
+    "o": [
+     "isnull()",
+     "dropna()",
+     "fillna()"
+    ],
+    "a": 0,
+    "why": "دالة isnull مخصصة للبحث عن الخلايا الفارغة وإرجاع قيمة True أو False لكل مكان."
+   },
+   {
+    "t": "كيف نتخلص من الصفوف التي تحتوي على خلايا ناقصة تماماً؟",
+    "o": [
+     "fillna()",
+     "dropna()",
+     "isnull()"
+    ],
+    "a": 1,
+    "why": "دالة dropna تقوم بحذف أي صف أو عمود يحتوي على قيم ناقصة."
+   },
+   {
+    "t": "إذا أردنا وضع قيمة صفر مكان الفراغات، أي دالة نستخدم؟",
+    "o": [
+     "dropna()",
+     "isnull()",
+     "fillna()"
+    ],
+    "a": 2,
+    "why": "دالة fillna تستخدم لملء الفراغات بقيم افتراضية محددة مثل الصفر."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "إصلاح البيانات الناقصة",
+   "goal": "اختر الدالة المناسبة في كل جملة لمعالجة البيانات الناقصة في بانداس.",
+   "items": [
+    {
+     "text": "لكشف مكان الخلايا الفارغة في الجدول، نستخدم دالة ___",
+     "options": [
+      "isnull()",
+      "dropna()",
+      "fillna()"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لحذف الصفوف التي تحتوي على أخطاء وفراغات، نستخدم دالة ___",
+     "options": [
+      "isnull()",
+      "dropna()",
+      "fillna()"
+     ],
+     "a": 1
+    },
+    {
+     "text": "لملء الفراغات بقيمة افتراضية مثل الصفر، نستخدم دالة ___",
+     "options": [
+      "dropna()",
+      "isnull()",
+      "fillna()"
+     ],
+     "a": 2
+    }
+   ],
+   "success": "رائع! لقد أصبحت خبيراً في تنظيف البيانات ومعالجة الفراغات بمهارة."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن بيانات غير مكتملة",
+    "text": "في العالم الحقيقي، البيانات اللي بنجمعها غالباً بتكون مشغولة أو فيها خلايا ناقصة بسبب نسيان تسجيلها. البيانات الناقصة دي ممكن تبوظ حساباتنا وتخلينا ناخد قرارات غلط في البرمجة وتحليل البيانات.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'A': [1, 2, np.nan], 'B': [5, np.nan, 8]})\nprint(df)",
+    "output": "     A    B\n0  1.0  5.0\n1  2.0  NaN\n2  NaN  8.0"
+   },
+   {
+    "h": "اكتشاف الفراغات باستخدام isnull()",
+    "text": "أول خطوة في تنظيف البيانات هي إننا نعرف مكان المشكلة. دالة isnull() بتفحص كل خلية في الجدول وبتقول لنا هل هي فارغة (NaN) ولا لأ، وبتعرض النتيجة في صورة قيم منطقية صح أو خطأ.",
+    "code": "print(df.isnull())",
+    "output": "       A      B\n0  False  False\n1  False   True\n2   True  False"
+   },
+   {
+    "h": "عد الخلايا الناقصة مع sum()",
+    "text": "عشان نعرف عدد الخلايا الناقصة في كل عمود بدل ما نبص على كل خل لوحدها، نقدر ندمج دالة isnull() مع دالة sum(). ده بيدينا إحصائية سريعة وواضحة عن حجم النقص في كل عمود.",
+    "code": "print(df.isnull().sum())",
+    "output": "A    1\nB    1\ndtype: int64"
+   },
+   {
+    "h": "التخلص من البيانات الناقصة بـ dropna()",
+    "text": "لو الفراغات كتير والبيانات اللي ناقصة مش هتنفعنا في حاجة، نقدر نحذف الصفوف دي تماماً باستخدام دالة dropna(). الطريقة دي بتضمن إننا بنتعامل مع بيانات كاملة ونظيفة مية في المية.",
+    "code": "clean_df = df.dropna()\nprint(clean_df)",
+    "output": "     A    B\n0  1.0  5.0"
+   },
+   {
+    "h": "ملء الفراغات بـ fillna()",
+    "text": "مش دايمين بنحب نحذف البيانات، أحياناً الحذف بيفقدنا معلومات مهمة. في الحالة دي، دالة fillna() بتسمح لنا نحط قيمة افتراضية في الأماكن الفارغة، زي رقم صفر أو متوسط القيم.",
+    "code": "filled_df = df.fillna(0)\nprint(filled_df)",
+    "output": "     A    B\n0  1.0  5.0\n1  2.0  0.0\n2  0.0  8.0"
+   },
+   {
+    "h": "تحديد أعمدة معينة للمعالجة",
+    "text": "أحياناً بنكون عاوزين نصلح الفراغات في عمود معين بس ومش في كل الجدول. في بانداس، نقدر نحدد العمود المستهدف بالاسم ونطبق عليه دالة fillna أو dropna بكل سهولة ومرونة.",
+    "code": "df['A'] = df['A'].fillna(10)\nprint(df)",
+    "output": "      A    B\n0   1.0  5.0\n1   2.0  NaN\n2  10.0  8.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "isnull()",
+    "desc": "يكتشف الخلايا الناقصة ويرجع قيم منطقية True أو False"
+   },
+   {
+    "name": "dropna()",
+    "desc": "يحذف الصفوف أو الأعمدة التي تحتوي على قيم ناقصة"
+   },
+   {
+    "name": "fillna()",
+    "desc": "يملأ الخلايا الفارغة بقيمة افتراضية محددة"
+   },
+   {
+    "name": "np.nan",
+    "desc": "يمثل القيمة المفقودة أو غير الموجودة في بايثون وبانداس"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود لإنشاء جدول فيه عمود يحتوي على قيمة ناقصة np.nan ثم اعرض نتيجة isnull().",
+    "a": "import pandas as pd, numpy as np; df = pd.DataFrame({'X': [10, np.nan, 30]}); print(df.isnull())"
+   },
+   {
+    "q": "كيف تحذف الصفوف التي تحتوي على قيم ناقصة في جدول باسم df؟",
+    "a": "df.dropna()"
+   },
+   {
+    "q": "كيف تملأ جميع القيم الناقصة في جدول df برقم 5؟",
+    "a": "df.fillna(5)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Data we collect often has empty or missing cells due to input mistakes. These missing values can make our calculations and final results completely misleading and inaccurate.",
+   "To find where missing data is located in a pandas DataFrame, we use a very simple method called isnull() which returns True or False for each cell in the table.",
+   "Once we discover the gaps, we have two main choices: either drop the rows containing missing fields using dropna() or fill them with sensible default values.",
+   "The dropna() method helps us get rid of any row with missing data so our analysis remains clean and based on complete records without guessing.",
+   "If we do not want to delete important data, we can use the fillna() method to put a default value into the blank slots, such as zero or the column mean.",
+   "The golden rule is always to inspect data first before any analysis, and choose the right action wisely; drop if data is corrupted, fill if gaps are minor."
+  ],
+  "example": "Imagine recording student scores in programming and forgetting two grades. Leaving them blank ruins the average calculation. In pandas, we run df.isnull() to spot blanks, then df.fillna(0) to put a zero in place of the missing score, or df.dropna() to remove that row entirely and ensure calculation accuracy.",
+  "mistake": "A common mistake is calling dropna() without assigning it to a new variable or using inplace=True, meaning the original table remains unchanged or rows are unintentionally dropped.",
+  "recap": "Missing values affect result accuracy, and we can detect them using isnull and handle them by dropping via dropna or filling via fillna.",
+  "q": [
+   {
+    "t": "Which method is used to detect missing values in a pandas DataFrame?",
+    "o": [
+     "isnull()",
+     "dropna()",
+     "fillna()"
+    ],
+    "a": 0,
+    "why": "The isnull method is designed to search for empty cells and return True or False for each position."
+   },
+   {
+    "t": "How do we get rid of rows containing missing cells entirely?",
+    "o": [
+     "fillna()",
+     "dropna()",
+     "isnull()"
+    ],
+    "a": 1,
+    "why": "The dropna method removes any row or column containing missing values."
+   },
+   {
+    "t": "If we want to place a zero in place of blanks, which method should we use?",
+    "o": [
+     "dropna()",
+     "isnull()",
+     "fillna()"
+    ],
+    "a": 2,
+    "why": "The fillna method is used to fill blank spots with specified default values."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Fixing Missing Data",
+   "goal": "Choose the correct method in each sentence to handle missing data in pandas.",
+   "items": [
+    {
+     "text": "To detect the location of empty cells in a table, we use the ___ method.",
+     "options": [
+      "isnull()",
+      "dropna()",
+      "fillna()"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To remove rows containing errors and gaps, we use the ___ method.",
+     "options": [
+      "isnull()",
+      "dropna()",
+      "fillna()"
+     ],
+     "a": 1
+    },
+    {
+     "text": "To fill blank spots with a default value like zero, we use the ___ method.",
+     "options": [
+      "dropna()",
+      "isnull()",
+      "fillna()"
+     ],
+     "a": 2
+    }
+   ],
+   "success": "Awesome! You have become an expert in data cleaning and handling gaps skillfully."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Incomplete Data",
+    "text": "In the real world, data we gather often has missing cells because values were forgotten during entry. These missing pieces can break our calculations and lead to wrong conclusions in programming and data analysis.",
+    "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'A': [1, 2, np.nan], 'B': [5, np.nan, 8]})\nprint(df)",
+    "output": "     A    B\n0  1.0  5.0\n1  2.0  NaN\n2  NaN  8.0"
+   },
+   {
+    "h": "Detecting Gaps with isnull()",
+    "text": "The first step in data cleaning is finding where the problem lies. The isnull() method checks every cell in the table and tells us whether it is empty (NaN) or not, showing boolean True or False values.",
+    "code": "print(df.isnull())",
+    "output": "       A      B\n0  False  False\n1  False   True\n2   True  False"
+   },
+   {
+    "h": "Counting Missing Cells with sum()",
+    "text": "To know how many missing cells exist in each column rather than inspecting every cell manually, we can combine isnull() with sum(). This gives us a quick and clear statistic of missingness per column.",
+    "code": "print(df.isnull().sum())",
+    "output": "A    1\nB    1\ndtype: int64"
+   },
+   {
+    "h": "Dropping Missing Data with dropna()",
+    "text": "If gaps are numerous and incomplete records are useless, we can remove those rows entirely using the dropna() method. This approach ensures we work with one-hundred percent complete and clean data.",
+    "code": "clean_df = df.dropna()\nprint(clean_df)",
+    "output": "     A    B\n0  1.0  5.0"
+   },
+   {
+    "h": "Filling Gaps with fillna()",
+    "text": "We do not always want to drop data, as deletion can lose important information. In this case, the fillna() method lets us place a default value in empty spots, such as the number zero or a mean value.",
+    "code": "filled_df = df.fillna(0)\nprint(filled_df)",
+    "output": "     A    B\n0  1.0  5.0\n1  2.0  0.0\n2  0.0  8.0"
+   },
+   {
+    "h": "Targeting Specific Columns",
+    "text": "Sometimes we only want to fix gaps in a single column rather than the entire table. In pandas, we can select the target column by name and apply fillna or dropna with complete ease and flexibility.",
+    "code": "df['A'] = df['A'].fillna(10)\nprint(df)",
+    "output": "      A    B\n0   1.0  5.0\n1   2.0  NaN\n2  10.0  8.0"
+   }
+  ],
+  "reference": [
+   {
+    "name": "isnull()",
+    "desc": "Detects missing cells and returns boolean True or False values"
+   },
+   {
+    "name": "dropna()",
+    "desc": "Drops rows or columns containing missing values"
+   },
+   {
+    "name": "fillna()",
+    "desc": "Fills empty cells with a specified default value"
+   },
+   {
+    "name": "np.nan",
+    "desc": "Represents missing or null values in Python and pandas"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write code to create a DataFrame with a column containing a missing value np.nan and print the isnull() result.",
+    "a": "import pandas as pd, numpy as np; df = pd.DataFrame({'X': [10, np.nan, 30]}); print(df.isnull())"
+   },
+   {
+    "q": "How do you drop rows with missing values in a DataFrame named df?",
+    "a": "df.dropna()"
+   },
+   {
+    "q": "How do you fill all missing values in df with the number 5?",
+    "a": "df.fillna(5)"
+   }
+  ]
+ },
+ "lang": "python",
+ "sources": [
+  {
+   "title": "pandas.pydata.org docs",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html"
+  }
+ ],
+ "grounded": true
+}
