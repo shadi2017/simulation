@@ -1,156 +1,186 @@
 {
  "en": [
   {
-   "title": "Smart City Traffic Analyzer",
-   "desc": "Analyze traffic sensor data across Cairo bridges, merging multiple district files, fixing timestamps, and creating pivot tables for peak rush hours.",
+   "title": "Egyptian Premier League Match Analytics Engine",
+   "desc": "Combine multiple monthly fixture sheets and player statistics into a clean, unified football performance dashboard. You will wrangle messy player names, remove duplicate match reports, parse fixture dates, and build pivot tables to rank the top-performing teams.",
    "tags": [
-    "Pandas",
-    "DataCleaning",
-    "Traffic"
+    "Sports Analytics",
+    "Merging & Concat",
+    "Pivot Tables"
    ],
    "steps": [
-    "Import pandas and load traffic sensor CSV files for different Cairo districts using proper date parsing.",
-    "Concatenate all district dataframes into one master dataframe, making sure rows line up correctly.",
-    "Merge the master dataframe with a bridge metadata lookup table using advanced joining techniques.",
-    "Clean and standardize string columns like street names and weather conditions using string accessor methods.",
-    "Detect and drop duplicate sensor readings to ensure accurate traffic counts.",
-    "Apply a custom Python function to classify vehicle speeds into traffic jam severity levels.",
-    "Generate a pivot table to summarize average vehicle speed by district and time of day, finding peak hours."
+    "Concatenate monthly match CSV files from the season into one master DataFrame using pd.concat().",
+    "Clean player and team name strings by trimming whitespace and standardizing letter cases with .str.strip() and .str.title().",
+    "Parse fixture timestamp strings into datetime objects using pd.to_datetime() and extract the month name.",
+    "Detect and eliminate duplicate match entry rows based on match IDs using drop_duplicates().",
+    "Merge the match data with a separate team coach and stadium roster using pd.merge() on team IDs.",
+    "Write a custom scoring function to compute 'Player Impact Score' from goals and assists, applying it with .apply().",
+    "Construct a pivot table displaying total goals and impact points grouped by team and match month."
    ],
    "rubric": [
-    "Successfully merges and concatenates all data sources without data loss.",
-    "Accurately parses date and time columns for time-based grouping.",
-    "Applies string methods and custom functions correctly to transform data.",
-    "Produces a clear pivot table showing peak traffic patterns."
+    "Data Hygiene: Successfully removes all duplicate records and trims whitespace from names.",
+    "Transformations: Accurately converts date strings to datetime and extracts month properties.",
+    "Integration: Correctly merges the fixtures dataset with the team reference dataset without row explosion.",
+    "Analysis: Builds a fully functional pivot table and applies a custom performance metric."
    ],
-   "stretch": "Add a feature that calculates the percentage change in traffic volume between morning and evening rush hours."
+   "stretch": "Calculate a 3-match rolling average of player performance scores using index-based grouping.",
+   "demo": {
+    "title": "Football League Analytics Quick Test",
+    "code": "import pandas as pd\n\nm1 = pd.DataFrame({'match_id': [101, 102, 102], 'player': [' Zizo ', 'Afsha', 'Afsha'], 'goals': [2, 1, 1], 'date': ['2024-01-15', '2024-01-18', '2024-01-18']})\nteams = pd.DataFrame({'player': ['Zizo', 'Afsha'], 'team': ['Zamalek', 'Ahly']})\n\nm1 = m1.drop_duplicates(subset=['match_id', 'player'])\nm1['player'] = m1['player'].str.strip()\nm1['date'] = pd.to_datetime(m1['date'])\n\ndf = pd.merge(m1, teams, on='player')\ndf['points'] = df['goals'].apply(lambda g: g * 5)\npivot = df.pivot_table(index='team', columns=df['date'].dt.month_name(), values='points', aggfunc='sum')\nprint(pivot)",
+    "output": "Displays a clean pivot table showing total goals-based points scored by each team in January."
+   }
   },
   {
-   "title": "Nile Basin Water Quality Monitor",
-   "desc": "Track water testing metrics across various Nile stations by cleaning messy strings, handling duplicate test logs, and pivoting parameters.",
+   "title": "Cairo Metro Smart Transit Card Tracker",
+   "desc": "Analyze commuter traffic flow across Cairo Metro stations by wrangling raw smartcard tap data. You will clean messy station labels, eliminate accidental double-taps, calculate dynamic fares, and pinpoint rush-hour hotspots.",
    "tags": [
-    "Pandas",
-    "StringOps",
-    "Environment"
+    "Smart Cities",
+    "DateTime Parsing",
+    "Custom Functions"
    ],
    "steps": [
-    "Import pandas and load water sample datasets containing various chemical measurements.",
-    "Concatenate monthly sample reports into a single comprehensive dataframe.",
-    "Merge water sample data with station GPS location tables using unique station keys.",
-    "Clean string formatting in river name and testing agency columns by removing extra spaces and standardizing casing.",
-    "Identify and remove duplicate water sample entries recorded by mistake during testing.",
-    "Use custom functions to flag samples where contamination levels exceed safe drinking standards.",
-    "Create a pivot table showing average pH levels per station grouped by month and water depth."
+    "Load multiple swipe log files and concatenate them into a continuous daily log.",
+    "Normalize station strings by fixing typos and stripping extra spaces using pandas string operations.",
+    "Convert swipe timestamp strings into datetime objects and extract hourly intervals.",
+    "Identify and drop accidental double-swipe duplicates occurring within the same station and minute.",
+    "Define a custom Python function to calculate metro fare based on peak hours and stations traveled, then map it with .apply().",
+    "Merge commuter demographic categories (Student, Senior, Regular) into the swipe table.",
+    "Generate a pivot table illustrating passenger counts across stations during morning and evening rush hours."
    ],
    "rubric": [
-    "Cleanly concatenates and merges all monthly reports.",
-    "Removes duplicates and formats strings properly.",
-    "Correctly applies custom functions to flag safety violations.",
-    "Builds an insightful pivot table summarizing water metrics."
+    "Data Cleaning: Cleans all station text and drops repeated swipe errors effectively.",
+    "Time Intelligence: Parses datetime accurately and groups swipes into morning and evening windows.",
+    "Custom Logic: Applies a reliable tiered fare calculation function across all transaction rows.",
+    "Aggregation: Produces an informative pivot table highlighting peak transit station demand."
    ],
-   "stretch": "Calculate the moving average of pH levels across consecutive months for each station."
+   "stretch": "Flag riders eligible for student card renewals based on monthly swipe frequency thresholds.",
+   "demo": {
+    "title": "Metro Tap Analyzer",
+    "code": "import pandas as pd\n\nswipes = pd.DataFrame({'card_id': [1, 2, 2, 3], 'time': ['2024-03-01 08:15', '2024-03-01 08:20', '2024-03-01 08:20', '2024-03-01 17:45'], 'station': ['Sadat ', ' Dokki', ' Dokki', 'Attaba']})\nswipes = swipes.drop_duplicates()\nswipes['station'] = swipes['station'].str.strip()\nswipes['time'] = pd.to_datetime(swipes['time'])\nswipes['hour'] = swipes['time'].dt.hour\nswipes['fare'] = swipes['hour'].apply(lambda h: 10 if (7 <= h <= 9 or 16 <= h <= 19) else 7)\npivot = swipes.pivot_table(index='station', columns='hour', values='fare', aggfunc='count', fill_value=0)\nprint(pivot)",
+    "output": "Displays an hourly passenger count pivot table for each metro station during morning and evening periods."
+   }
   },
   {
-   "title": "Pharaonic Museum Artifact Catalog",
-   "desc": "Organize museum inventory records by merging donor lists with artifact logs, fixing date formats, and summarizing collection values.",
+   "title": "Khan el-Khalili Artisan E-Commerce Optimizer",
+   "desc": "Help traditional craft workshops optimize their online sales by consolidating quarterly orders and reviews. You will clean product categories, filter out duplicate customer ratings, calculate holiday discounts, and analyze revenue trends by workshop.",
    "tags": [
-    "Pandas",
-    "PivotTables",
-    "History"
+    "E-Commerce",
+    "Data Cleaning",
+    "Business Intelligence"
    ],
    "steps": [
-    "Import pandas and load separate CSV files containing artifact details and donor contributions.",
-    "Join the artifact and donor dataframes using appropriate merge techniques based on donor ID.",
-    "Parse excavation discovery dates into true datetime objects for chronological sorting.",
-    "Clean string columns for artifact material types and museum gallery locations.",
-    "Check for and eliminate duplicate artifact catalog entries to maintain accurate counts.",
-    "Apply a custom function to calculate estimated insurance values based on artifact age and material.",
-    "Generate a pivot table summarizing total artifact value and count per gallery and material type."
+    "Concatenate Q1, Q2, and Q3 sales sheets into one unified quarterly DataFrame.",
+    "Clean product titles and artisan workshop names using .str.upper() and regex replacement.",
+    "Parse purchase timestamps to extract month names and weekdays for shopping trend discovery.",
+    "Drop duplicate customer feedback records to prevent skewed satisfaction ratings.",
+    "Merge the sales table with an artisan supplier details sheet using inner and outer joins.",
+    "Create a custom discount and tax function and apply it to raw prices using .apply().",
+    "Build a comprehensive pivot table comparing monthly revenue generated across different craft categories."
    ],
    "rubric": [
-    "Accurately merges artifact records with donor information.",
-    "Parses dates and cleans string attributes effectively.",
-    "Applies custom functions to compute estimated insurance values.",
-    "Creates a comprehensive pivot table of museum gallery statistics."
+    "Dataset Unification: Successfully merges and concatenates multiple quarterly tables without losing entries.",
+    "Text Processing: Standardizes casing and removes noisy characters from product descriptions.",
+    "Custom Calculations: Implements a clean discount function using .apply() without runtime errors.",
+    "Executive Pivot: Summarizes revenue patterns cleanly by category and month."
    ],
-   "stretch": "Export the final pivoted summary report into a new formatted CSV file."
+   "stretch": "Segment top buyers into VIP tiers using a multi-condition custom function based on total spent.",
+   "demo": {
+    "title": "Artisan Revenue Summarizer",
+    "code": "import pandas as pd\n\nq1 = pd.DataFrame({'id': [1, 2], 'item': ['Brass Lantern', 'Leather Bag'], 'date': ['2024-02-10', '2024-03-05'], 'price': [350, 450]})\nq2 = pd.DataFrame({'id': [3, 3], 'item': ['Silver Tray', 'Silver Tray'], 'date': ['2024-04-12', '2024-04-12'], 'price': [600, 600]})\n\ndf = pd.concat([q1, q2]).drop_duplicates(subset=['id'])\ndf['item'] = df['item'].str.upper()\ndf['date'] = pd.to_datetime(df['date'])\ndf['month'] = df['date'].dt.month_name()\ndf['final_price'] = df['price'].apply(lambda p: p * 0.9 if p > 400 else p)\npivot = df.pivot_table(index='item', columns='month', values='final_price', aggfunc='sum', fill_value=0)\nprint(pivot)",
+    "output": "Displays a revenue pivot table showing discounted sales for each handcrafted item across the months."
+   }
   }
  ],
  "ar": [
   {
-   "title": "تحليل مرور العاصمة الذكية",
-   "desc": "حلل بيانات حساسات المرور عبر كبارى القاهرة، وادمج ملفات مناطق مختلفة، وظبط التواريخ، واعمل جداول محورية لساعات الذروة.",
+   "title": "محلل مباريات الدوري المصري الممتاز",
+   "desc": "اجمع بيانات مباريات وإحصائيات لاعبي الدوري المصري من كذا شهر في لوحة تحليلات واحدة ونظيفة. هتنضف أسماء اللعيبة، وتشيل التكرارات، وتحول التواريخ، وتبني بايفوت تيبل يوضح أقوى الفرق أداءً.",
    "tags": [
-    "بانداس",
-    "تنظيف_بيانات",
-    "مرور"
+    "تحليل رياضي",
+    "دمج وتجميع البيانات",
+    "بايفوت تيبل"
    ],
    "steps": [
-    "استورد مكتبة pandas وحمل ملفات CSV الخاصة بحساسات المرور لمختلف مناطق القاهرة مع قراءة التواريخ صح.",
-    "اجمع (Concatenate) كل داتا فريدز المناطق في داتا فريم رئيسي واحد مع التأكد من تنظيم الصفوف.",
-    "ادمج (Merge) الداتا الرئيسي مع جدول بيانات الكبارى باستخدام تقنيات الربط المتقدمة.",
-    "نظف ووحد أعمدة النصوص زي أسماء الشوارع وحالة الطقس باستخدام أوامر النصوص في بانداس.",
-    "اكشف وازيل قراءات الحساسات المكررة عشان تضمن دقة عداد المرور.",
-    "طبق دالة مخصصة (Custom function) من كتابتك عشان تصنف سرعات العربيات لمستويات زحمة مختلفة.",
-    "اعمل جدول محوري (Pivot Table) يوضح متوسط سرعة العربيات حسب المنطقة ووقت اليوم عشان تطلع ساعات الذروة."
+    "اجمع ملفات CSV الخاصة بالمباريات الشهرية في داتا فريم واحدة كبيرة باستخدام pd.concat().",
+    "نضف أسماء اللعيبة والفرق وشيل المسافات الزيادة وظبط الحروف بـ .str.strip() و .str.title().",
+    "حول نصوص التواريخ إلى صيغة datetime حقيقية بـ pd.to_datetime() واستخرج اسم الشهر.",
+    "اكتشف واحذف الصفوف المكررة لنفس الماتش باستخدام drop_duplicates().",
+    "ادمج داتا المباريات مع داتا الملاعب والمدربين باستخدام pd.merge() عن طريق كود الفريق.",
+    "اعمل دالة خاصة لحساب 'نقاط تأثير اللاعب' بناءً على الأهداف وصناعتها وطبقها بـ .apply().",
+    "ابني بايفوت تيبل يعرض مجموع الأهداف ونقاط التأثير متقسمين حسب الفريق والشهر."
    ],
    "rubric": [
-    "دمج وجمع كل مصادر البيانات بنجاح من غير فقدان بيانات.",
-    "قراءة أعمدة التواريخ والأوقات بدقة للتحليل الزمني.",
-    "تطبيق دوال النصوص والدوال المخصصة صح لتعديل البيانات.",
-    "إنتاج جدول محوري واضح يوضح مواعيد الزحمة."
+    "نظافة الداتا: حذف كل الصفوف المكررة ومسح المسافات الزايدة من أسماء اللعيبة بدقة.",
+    "التحويلات الزمنية: تحويل عمود التاريخ بنجاح واستخراج أسماء الشهور بدون أخطاء.",
+    "دمج الجداول: دمج جدول الماتشات مع جدول الفرق بطريقة صحيحة من غير تكرار عشوائي.",
+    "التحليل والعرض: إنشاء بايفوت تيبل شغال وتطبيق دالة حساب النقاط المخصصة بنجاح."
    ],
-   "stretch": "ضيف ميزة تحسب نسبة التغير في حجم المرور بين زحمة الصبح وزحمة بالليل."
+   "stretch": "احسب متوسط أداء اللاعب في آخر 3 مباريات متتالية باستخدام التجميع المعتمد على الفهرس.",
+   "demo": {
+    "title": "تجربة سريعة لمحلل الدوري",
+    "code": "import pandas as pd\n\nm1 = pd.DataFrame({'match_id': [101, 102, 102], 'player': [' Zizo ', 'Afsha', 'Afsha'], 'goals': [2, 1, 1], 'date': ['2024-01-15', '2024-01-18', '2024-01-18']})\nteams = pd.DataFrame({'player': ['Zizo', 'Afsha'], 'team': ['Zamalek', 'Ahly']})\n\nm1 = m1.drop_duplicates(subset=['match_id', 'player'])\nm1['player'] = m1['player'].str.strip()\nm1['date'] = pd.to_datetime(m1['date'])\n\ndf = pd.merge(m1, teams, on='player')\ndf['points'] = df['goals'].apply(lambda g: g * 5)\npivot = df.pivot_table(index='team', columns=df['date'].dt.month_name(), values='points', aggfunc='sum')\nprint(pivot)",
+    "output": "بيطبع جدول بايفوت تيبل بيوضح مجموع النقاط اللي سجلها كل فريق في شهر يناير."
+   }
   },
   {
-   "title": "مراقب جودة مياه نهر النيل",
-   "desc": "تابع مقاييس اختبارات المياه عبر محطات النيل المختلفة عن طريق تنظيف النصوص، والتعامل مع سجلات الاختبار المكررة، وعمل جدول محوري للمؤشرات.",
+   "title": "متتبع كروت مترو القاهرة الذكي",
+   "desc": "حلل حركة ركاب مترو القاهرة من خلال تنظيف ومعالجة داتا كروت التمرير الذكية اليومية. هتنضف أسماء المحطات، وتمنع احتساب التمريرات المزدوجة بالغلط، وتحسب التذكرة تلقائياً وتحدد ساعات الذروة.",
    "tags": [
-    "بانداس",
-    "عمليات_نصوص",
-    "بيئة"
+    "مدن ذكية",
+    "تحليل التواريخ والأوقات",
+    "دوال مخصصة"
    ],
    "steps": [
-    "استورد مكتبة pandas وحمل ملفات عينات المياه اللي فيها قياسات كيميائية مختلفة.",
-    "اجمع تقارير العينات الشهرية في داتا فريم واحدة شاملة.",
-    "ادمج بيانات عينات المياه مع جدول مواقع إحداثيات GPS للمحطات باستخدام مفاتيح المحطة الفريدة.",
-    "نظف تنسيق النصوص في أسماء النهر وأسماء جهات الاختبار عن طريق شيل المسافات الزيادة وتوحيد الحروف.",
-    "حدد واحذف مدخلات عينات المياه المكررة اللي اتسجلت بالغلط وقت الاختبارات.",
-    "استخدم دالة مخصصة عشان تعلم على العينات اللي مستويات التلوث فيها بتعدي معايير الشرب الآمنة.",
-    "اصنع جدول محوري بيبين متوسط مستويات الحموضة لكل محطة مقسمة حسب الشهر وعمق المية."
+    "حمل ملفات سجلات التمرير لكذا يوم واجمعهم في جدول واحد باستخدام دمج الباندا.",
+    "صلح أسماء المحطات اللي فيها أخطاء إملائية وشيل الفراغات بأساليب النصوص .str.",
+    "حول وقت التمرير إلى كائن datetime واستخرج منه رقم الساعة واليوم.",
+    "اكتشف واحذف التمريرات المزدوجة لنفس الكارت في نفس الدقيقة والمحطة بـ drop_duplicates().",
+    "اكتب دالة بايثون مخصصة لحساب سعر التذكرة في ساعات الذروة وطبقها بـ .apply().",
+    "ادمج فئات الركاب (طالب، كبار سن، عادي) مع جدول التمريرات عن طريق رقم الكارت.",
+    "أنشئ بايفوت تيبل يوضح عدد الركاب في المحطات الرئيسية وقت ذروة الصبح وبليل."
    ],
    "rubric": [
-    "جمع ودمج كل التقارير الشهرية بشكل نضيف.",
-    "حذف التكرارات وتنسيق النصوص صح.",
-    "تطبيق الدوال المخصصة بفاعلية للتحذير من مخالفات الأمان.",
-    "بناء جدول محوري مفيد بيتلخص مؤشرات المياه."
+    "تنظيف النصوص: توحيد أسماء المحطات وحذف التمريرات المكررة بالغلط بكفاءة.",
+    "التعامل مع الوقت: تحويل التاريخ بنجاح وتصنيف الرحلات لفترات صباحية ومسائية.",
+    "الدوال المخصصة: تطبيق كود سليم لحساب أسعار التذاكر بحسب ساعات اليوم باستخدام .apply().",
+    "تلخيص البيانات: إخراج بايفوت تيبل بيحدد بوضوح أكتر المحطات زحمة في وقت الذروة."
    ],
-   "stretch": "احسب المتوسط المتحرك لمستويات الحموضة عبر الشهور المتتالية لكل محطة."
+   "stretch": "حدد الركاب اللي يستحقوا تجديد اشتراك الطلبة تلقائياً بناءً على عدد رحلاتهم الشهرية.",
+   "demo": {
+    "title": "محلل تمريرات المترو",
+    "code": "import pandas as pd\n\nswipes = pd.DataFrame({'card_id': [1, 2, 2, 3], 'time': ['2024-03-01 08:15', '2024-03-01 08:20', '2024-03-01 08:20', '2024-03-01 17:45'], 'station': ['Sadat ', ' Dokki', ' Dokki', 'Attaba']})\nswipes = swipes.drop_duplicates()\nswipes['station'] = swipes['station'].str.strip()\nswipes['time'] = pd.to_datetime(swipes['time'])\nswipes['hour'] = swipes['time'].dt.hour\nswipes['fare'] = swipes['hour'].apply(lambda h: 10 if (7 <= h <= 9 or 16 <= h <= 19) else 7)\npivot = swipes.pivot_table(index='station', columns='hour', values='fare', aggfunc='count', fill_value=0)\nprint(pivot)",
+    "output": "بيطبع جدول بايفوت تيبل بيعرض عدد الركاب لكل محطة خلال ساعات الصباح والمساء."
+   }
   },
   {
-   "title": "كتالوج متحف الآثار الفرعونية",
-   "desc": "نظم سجلات مخزن المتحف عن طريق دمج قوائم المتبرعين مع سجلات القطع الأثرية، وظبط صيغ التواريخ، وتلخيص قيم المجموعات.",
+   "title": "محسن مبيعات متجر خان الخليلي للحرف اليدوية",
+   "desc": "ساعد ورش الحرف اليدوية في خان الخليلي على تطوير مبيعاتهم أونلاين بتجميع وتنظيم داتا الطلبات والمراجعات. هتنضف أقسام المنتجات، وتشيل تقييمات العملاء المكررة، وتحسب خصومات المواسم وتبني ملخص أرباح.",
    "tags": [
-    "بانداس",
-    "جداول_محورية",
-    "تاريخ"
+    "تجارة إلكترونية",
+    "تنظيف البيانات",
+    "ذكاء الأعمال"
    ],
    "steps": [
-    "استورد مكتبة pandas وحمل ملفات CSV المنفصلة اللي فيها تفاصيل القطع الأثرية ومساهمات المتبرعين.",
-    "اربط داتا القطع الأثرية والمتبرعين باستخدام تقنيات الدمج المناسبة بناءً على رقم المتبرع.",
-    "حول تواريخ اكتشاف الحفريات لكائنات تاريخ حقيقية (Datetime) عشان تقدر ترتبها زمنياً.",
-    "نظف أعمدة النصوص لأنواع مواد القطع الأثرية وأماكن قاعات المتحف.",
-    "افحص واقفل مدخلات كتالوج الآثار المكررة عشان تحافظ على أعداد صحيحة ومضبوطة.",
-    "طبق دالة مخصصة عشان تحسب القيمة التأمينية التقديرية بناءً على عمر القطعة الأثرية والمادة بتاعتها.",
-    "اصنع جدول محوري بيلخص القيمة الإجمالية للآثار والعدد لكل قاعة ونوع مادة."
+    "ادمج شيتات مبيعات الربع الأول والتاني والتالت في داتا فريم واحدة باستخدام pd.concat().",
+    "نضف عناوين المنتجات وأسماء الورش بأساليب النصوص زي .str.upper() وإزالة الرموز.",
+    "حول تواريخ الشراء إلى datetime عشان تكتشف أكتر الشهور وأيام الأسبوع اللي فيها طلبات.",
+    "شيل تقييمات العملاء المكررة عشان التقييم العام للمنتجات يفضل عادل وحقيقي.",
+    "ادمج جدول المبيعات مع جدول بيانات ورش التصنيع باستخدام الدمج المناسب (merge).",
+    "اعمل دالة خاصة لحساب الخصومات وضريبة القيمة المضافة وطبقها على الأسعار بـ .apply().",
+    "ابني بايفوت تيبل يقارن بين إجمالي الأرباح الشهرية لكل ورشة ونوع منتج."
    ],
    "rubric": [
-    "دمج سجلات الآثار مع معلومات المتبرعين بدقة.",
-    "قراءة التواريخ وتنظيف سمات النصوص بفاعلية.",
-    "تطبيق الدوال المخصصة لحساب قيم التأمين التقديرية.",
-    "إنشاء جدول محوري شامل لإحصائيات قاعات المتحف."
+    "تجميع الجداول: دمج وربط ملفات الشهور المختلفة من غير فقدان أي صفوف أو بيانات.",
+    "معالجة النصوص: توحيد شكل النصوص وتعديل أسماء المنتجات بطريقة احترافية.",
+    "الحسابات المخصصة: تطبيق دالة الخصم والضرائب باستخدام .apply() بشكل سليم وبدون أخطاء.",
+    "التقرير النهائي: إنشاء بايفوت تيبل واضح بيبين مسار المبيعات والأرباح الشهرية."
    ],
-   "stretch": "صدر تقرير الملخص المحوري النهائي لملف CSV جديد ومنسق."
+   "stretch": "صنف الزباين لفئات (عميل مميز / عادي) بدالة متعددة الشروط تعتمد على إجمالي الفلوس اللي صرفوها.",
+   "demo": {
+    "title": "ملخص أرباح ورش الحرف",
+    "code": "import pandas as pd\n\nq1 = pd.DataFrame({'id': [1, 2], 'item': ['Brass Lantern', 'Leather Bag'], 'date': ['2024-02-10', '2024-03-05'], 'price': [350, 450]})\nq2 = pd.DataFrame({'id': [3, 3], 'item': ['Silver Tray', 'Silver Tray'], 'date': ['2024-04-12', '2024-04-12'], 'price': [600, 600]})\n\ndf = pd.concat([q1, q2]).drop_duplicates(subset=['id'])\ndf['item'] = df['item'].str.upper()\ndf['date'] = pd.to_datetime(df['date'])\ndf['month'] = df['date'].dt.month_name()\ndf['final_price'] = df['price'].apply(lambda p: p * 0.9 if p > 400 else p)\npivot = df.pivot_table(index='item', columns='month', values='final_price', aggfunc='sum', fill_value=0)\nprint(pivot)",
+    "output": "بيطبع جدول بايفوت تيبل بيوضح إجمالي المبيعات بعد الخصم لكل منتج عبر الشهور."
+   }
   }
  ]
 }

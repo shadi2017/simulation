@@ -1,162 +1,192 @@
 {
  "en": [
   {
-   "title": "The Magic Egyptian Bazaar",
-   "desc": "Design a bustling street market in Cairo where characters chat, walk, and collect items. It brings together backdrops, speech bubbles, and looping animations into a lively scene.",
+   "title": "The Lost Dino's Journey Home",
+   "desc": "Help a cute baby dinosaur find its mother across three exciting jungle pages! Use messages, custom painted characters, and your own recorded roars to bring the adventure to life.",
    "tags": [
-    "ScratchJr",
-    "Story",
-    "Animation"
-   ],
-   "steps": [
-    "Choose a vibrant outdoor background backdrop like a Cairo street or pyramid desert.",
-    "Design two custom characters, like a friendly merchant and a curious tourist.",
-    "Place the characters on different story pages to represent moving from the market entrance to the shop.",
-    "Use repeat forever loops to make a bird fly back and forth across the sky continuously.",
-    "Add speed control magic so the tourist walks slowly while the merchant moves at normal speed.",
-    "Use wait blocks so the characters pause before speaking to each other naturally.",
-    "Pass a message from the merchant to the tourist so the tourist starts walking when greeted.",
-    "Add fun sound effects like coins clinking and cheerful Egyptian folk music to complete the vibe."
-   ],
-   "rubric": [
-    "Has at least two customized characters and a matching backdrop.",
-    "Uses repeat forever loops and speed control properly.",
-    "Links multiple pages smoothly with message passing.",
-    "Includes sound effects and well-timed wait blocks."
-   ],
-   "stretch": "Add a third hidden character that appears only when you tap a specific prop!"
-  },
-  {
-   "title": "Nile River Adventure",
-   "desc": "Guide a brave little explorer sailing a boat down the magical River Nile past landmarks. Players experience multiple pages, sound effects, and secret messages between sprites.",
-   "tags": [
-    "Adventure",
-    "Navigation",
+    "Multi-Page",
+    "Messages",
     "Sound"
    ],
    "steps": [
-    "Pick a river backdrop for page one and a temple backdrop for page two.",
-    "Design a custom wooden sailboat character and a jumping fish companion.",
-    "Program the fish to jump up and down endlessly using a repeat forever loop.",
-    "Control the speed of the sailboat so it moves gently across the water waves.",
-    "Insert wait blocks so the boat pauses at each ancient monument for three seconds.",
-    "Link page one to page two by tapping a golden key sprite at the end of the river.",
-    "Pass a message from the sailboat to the temple door so it opens automatically upon arrival.",
-    "Record your own voice saying 'Welcome to the temple!' and play it using sound blocks."
+    "Sketch a 3-box storyboard on paper showing the jungle, the wide river, and the happy family cave.",
+    "Create 3 separate pages in ScratchJr and pick a different outdoor backdrop for each scene.",
+    "Open the paint editor to draw a unique baby dinosaur and paint colorful feathers on a guide bird.",
+    "On Page 1, set the baby dino to Slow Speed, make it walk, and play a recorded voice crying for mom.",
+    "Add an Orange Send Message block so the baby dino calls the guide bird into action.",
+    "Program the guide bird with an Orange Receive Message block and a Repeat Forever loop to flap its wings.",
+    "Connect Page 1 to Page 2, and Page 2 to Page 3 using the Red Go-to-Page transition blocks.",
+    "On Page 3, set the dino's speed to Fast so it races joyfully into mother dinosaur's hug!"
    ],
    "rubric": [
-    "Successfully links at least two different story pages.",
-    "Features smooth repeat loops and custom character designs.",
-    "Uses wait blocks and speed changes for good pacing.",
-    "Integrates recorded voice or sound effects."
+    "Connects at least 3 story pages smoothly using Red Go-to-Page blocks.",
+    "Uses Orange Send and Receive Message blocks to trigger character actions.",
+    "Includes at least one custom-painted character or edited backdrop from the paint tool.",
+    "Features recorded sound effects and uses both Slow and Fast speed blocks effectively."
    ],
-   "stretch": "Make an animal pop out of the water using a message trigger when the boat gets close."
+   "stretch": "Add a Wait block on Page 3 so mother dino pauses before bending down to give the baby a hug!",
+   "demo": {
+    "title": "Dino Guide Script",
+    "code": "Baby Dino (Page 1): When Green Flag Clicked -> Set Speed Slow -> Move Right 3 -> Play Sound (Record 1: 'Mommy?') -> Send Orange Message\nGuide Bird (Page 1): When Orange Message Received -> Set Speed Fast -> Repeat 4 [Move Right 2] -> Go to Page 2",
+    "output": "The baby dinosaur walks slowly, calls out with a recorded voice, and triggers the bird to guide it to the next page."
+   }
   },
   {
-   "title": "Pharaoh's Secret Pyramid",
-   "desc": "Help a clever cat unlock the secrets of an ancient pyramid by solving visual clues. This project combines multi-page navigation, custom art, and lively sound design.",
+   "title": "Alien Planet Dance Party",
+   "desc": "Blast off into outer space and teach a friendly alien how to dance! Connect space scenes, record silly alien sounds, and keep the party looping forever.",
    "tags": [
-    "Mystery",
-    "Puzzles",
-    "Design"
+    "Space",
+    "Loops",
+    "Timing"
    ],
    "steps": [
-    "Create a dark pyramid entrance backdrop for page one and a treasure room for page two.",
-    "Design a custom Egyptian cat detective wearing a tiny detective hat.",
-    "Use repeat forever loops to make torches flicker on the stone walls continuously.",
-    "Adjust the cat's walking speed so it creeps cautiously inside the dark tomb.",
-    "Add wait blocks so the cat looks around carefully before stepping forward.",
-    "Pass a secret message from a glowing gem to a heavy stone door to make it slide open.",
-    "Link page one to the treasure room page when the door finishes opening.",
-    "Add spooky background music and magical chime sound effects when the treasure is found."
+    "Draw a quick storyboard showing your rocket flying through space and landing on a mystery planet.",
+    "Create Page 1 with a starry sky backdrop and Page 2 with a rocky planet surface backdrop.",
+    "Use the paint editor to design your own funny three-eyed alien with neon colors.",
+    "On Page 1, program the rocket to zoom across the screen using the Fast Speed block.",
+    "Place a Red Go-to-Page block at the end of the rocket's flight to jump smoothly onto the planet.",
+    "On Page 2, make the astronaut walk down slowly and broadcast a Yellow Message to greet the alien.",
+    "Program the alien to receive the Yellow Message, play a recorded alien giggle, and start dancing.",
+    "Wrap the alien's dance moves inside a Yellow Repeat Forever loop so the party never stops!"
    ],
    "rubric": [
-    "Original custom character and fitting atmospheric backdrops.",
-    "Correct use of message passing between items and doors.",
-    "Proper timing with wait blocks and speed adjustments.",
-    "Working sound effects and multi-page story flow."
+    "Includes 2 connected pages that tell a clear space exploration story.",
+    "Features an original alien character drawn in the ScratchJr paint editor.",
+    "Uses Yellow Message blocks to start the dance right after the astronaut lands.",
+    "Runs an endless dance animation using the Yellow Repeat Forever loop."
    ],
-   "stretch": "Hide a secret mini-game on page two where players must tap gems in the right order."
+   "stretch": "Add a flying space saucer in the background that shrinks and grows continuously using loops!",
+   "demo": {
+    "title": "Astronaut & Alien Meet Script",
+    "code": "Astronaut (Page 2): When Green Flag Clicked -> Set Speed Slow -> Move Down 3 -> Send Yellow Message\nAlien (Page 2): When Yellow Message Received -> Play Sound (Record 1: 'Zorp Beep!') -> Repeat Forever [Hop 2 -> Turn Right 2 -> Turn Left 2]",
+    "output": "The astronaut lands, sends a secret message, and the alien bursts into a non-stop spinning dance with funny noises."
+   }
+  },
+  {
+   "title": "The Sleepy Bear's Surprise Party",
+   "desc": "Organize a secret birthday surprise in the woods for a giant sleepy bear! Coordinate animal friends using wait timers, broadcast messages, and cheer sounds.",
+   "tags": [
+    "Storytelling",
+    "Timing",
+    "Costumes"
+   ],
+   "steps": [
+    "Plan a 2-page surprise story on paper with a quiet nap scene and a big party scene.",
+    "Set up Page 1 in a peaceful forest and Page 2 inside a cozy decorated treehouse.",
+    "Use the paint editor to draw party hats on a rabbit and a little squirrel friend.",
+    "On Page 1, program the sleepy bear to rest while snoozing with your recorded 'Zzz' snoring sound.",
+    "Use a Wait block to make the rabbit sneak past the sleeping bear quietly before turning the page.",
+    "Link Page 1 to Page 2 using the Red Go-to-Page block once the rabbit sneaks off screen.",
+    "On Page 2, make the rabbit send an Orange Message when the bear walks into the room.",
+    "Program the hidden squirrel to receive the message, jump out, and shout a recorded 'Surprise!' cheer!"
+   ],
+   "rubric": [
+    "Transitions cleanly between 2 distinct pages with beginning and finale scenes.",
+    "Uses Orange Message blocks so multiple animals react together at the exact right moment.",
+    "Applies the Orange Wait block correctly to create funny pauses and suspense.",
+    "Includes custom drawn party decorations or hats and real recorded party voices."
+   ],
+   "stretch": "Add a birthday cake sprite that shrinks away slice by slice every time the bear taps it!",
+   "demo": {
+    "title": "Surprise Party Cue Script",
+    "code": "Rabbit (Page 2): When Green Flag Clicked -> Wait 15 -> Send Orange Message\nBear (Page 2): When Green Flag Clicked -> Set Speed Slow -> Move Right 3\nSquirrel (Page 2): When Orange Message Received -> Hop 3 -> Play Sound (Record 1: 'Surprise!')",
+    "output": "The animals wait quietly until the rabbit gives the secret signal, then everyone jumps up and shouts surprise."
+   }
   }
  ],
  "ar": [
   {
-   "title": "البازار المصري السحري",
-   "desc": "اصمم سوق شعبي جميل في القاهرة فيه شخصيات بتتكلم وبتتحرك وتجمع حاجات. المشروع ده بيجمع الخلفيات الملونة، فقاعات الكلام، وحركات التكرار في مشهد حيوي ممتع.",
+   "title": "رحلة الديناصور الصغير إلى بيته",
+   "desc": "ساعد كتكوت الديناصور اللطيف يرجع لمامته عبر ٣ صفحات غابة ممتعة! استخدم الرسايل، والشخصيات اللي هترسمها بإيدك، وصوت زئيرك الحقيقي عشان تحكي الحدوتة.",
    "tags": [
-    "سكراتش جونيور",
-    "قصة",
-    "تحريك"
-   ],
-   "steps": [
-    "اختار خلفية شوارع القاهرة الملونة أو خلفية صحراوية مع الأهرامات كمشهد أساسي.",
-    "صمم شخصيتين مخصصتين بنفسك، زي تاجر طيب وسائح بيسأل عن المكان.",
-    "حط الشخصيات على صفحات قصة مختلفة عشان نمثل الانتقال من باب السوق جوه المحل.",
-    "استخدم حلقات التكرار المستمر (Forever) عشان تخلي طيارة الورق تطير في السما على طول.",
-    "ظبط سرعة الحركة عشان السائح يمشي ببطء والتاجر يتحرك بسرعة عادية.",
-    "حط بلوكات الانتظار (Wait) عشان الشخصيات تقف ثواني قبل ما تبدأ تتكلم مع بعض.",
-    "ابعث رسالة (Message) من التاجر للسائح عشان السائح يبدأ يتحرك أول ما التاجر يسلم عليه.",
-    "ضيف مؤثرات صوتية ممتعة زي صوت الفلوس وهي بتعد وموسيقى مصرية جميلة تكمل الجو."
-   ],
-   "rubric": [
-    "المشروع فيه شخصيتين متصممين وخلفية مناسبة.",
-    "بيستخدم تكرار مستمر وتحكم في السرعة بطريقة صحيحة.",
-    "بينتقل بسلاسة بين كذا صفحة باستخدام نظام الرسائل.",
-    "فيه مؤثرات صوتية وبلوكات انتظار مظبوطة."
-   ],
-   "stretch": "ضيف شخصية تالتة مخفية بتظهر بس لما تدوس على حاجة معينة على الشاشة!"
-  },
-  {
-   "title": "مغامرة نهر النيل",
-   "desc": "وجه مركب صغير وشجاع بيسافر في نهر النيل السحري وبيعدي على المعالم الجميلة. اللاعبين بيجربوا التنقل بين كذا صفحة، المؤثرات الصوتية، والرسائل السرية بين الشخصيات.",
-   "tags": [
-    "مغامرة",
-    "استكشاف",
+    "صفحات متعددة",
+    "رسايل",
     "أصوات"
    ],
    "steps": [
-    "اختار خلفية نهر النيل للصفحة الأولى وخلفية معبد فرعوني للصفحة التانية.",
-    "صمم مركب شراع خشبية بنفسك وكمان سمكة جميلة بتنط في المية.",
-    "برمج السمكة عشان تنط لفوق وتحت من غير ما تقف باستخدام تكرار مستمر.",
-    "ظبط سرعة المركب عشان يتحرك بهدوء وسط موج المية الجميل.",
-    "ضيف بلوكات الانتظار عشان المركب يقف قدام كل معبد قديم لمدة ٣ ثواني.",
-    "اربط الصفحة الأولى بالصفحة التانية عن طريق الضغط على مفتاح ذهبي في آخر النهر.",
-    "ابعث رسالة من المركب لباب المعبد عشان يتفتح لوحده أول ما المركب يوصل.",
-    "سجل صوتك وأنت بتقول 'أهلاً بكم في المعبد!' وشغله باستخدام بلوكات الصوت."
+    "ارسم على ورقة لوحة قصة سريعة من ٣ مربعات: الغابة، والنهر الكبير، وكهف العيلة.",
+    "اعمل ٣ صفحات جديدة في سكراتش جونيور واختار خلفية طبيعية مختلفة لكل صفحة.",
+    "افتح محرر الرسم وارسم ديناصور صغير لطيف بنفسك ولون ريش عصفور مرشد يساعده.",
+    "في صفحة ١، خلي الديناصور يمشي بسرعة بطيئة وسجل صوتك وأنت بتنادي 'فينك يا ماما؟'.",
+    "حط بلوك إرسال الرسالة البرتقالية عشان الديناصور يطلب المساعدة من العصفور أول ما يخلص كلام.",
+    "برمج العصفور ببلوك استلام الرسالة البرتقالية وبلوك التكرار للأبد عشان يفضل يرفرف بجناحاته.",
+    "اربط صفحة ١ بصفحة ٢، وصفحة ٢ بصفحة ٣ باستخدام بلوكات الانتقال الحمراء.",
+    "في صفحة ٣، غير سرعة الديناصور لسرعة عالية عشان يجري في حضن مامته بفرحة!"
    ],
    "rubric": [
-    "بيربط بنجاح بين صفحتين قصة مختلفين أو أكتر.",
-    "فيه حلقات تكرار ممتازة وشخصيات متصممة بحب.",
-    "بيستعمل بلوكات الانتظار وتغيير السرعة عشان إيقاع القصة.",
-    "بيحتوي على صوت مسجل أو مؤثرات صوتية واضحة."
+    "يربط التلميذ ٣ صفحات في القصة بنجاح باستخدام بلوك الانتقال الأحمر.",
+    "يستخدم إرسال واستقبال الرسايل البرتقالية عشان شخصية تشغل حركة شخصية تانية.",
+    "يصمم شخصية مرسومة بنفسه أو يعدل على خلفية باستخدام محرر الرسم.",
+    "يسجل صوته الحقيقي داخل المشروع ويتحكم في السرعة بالبلوك البطيء والسريع."
    ],
-   "stretch": "خلي حيوان يظهر من المية باستخدام رسالة سرية لما المركب يقرب منه."
+   "stretch": "ضيف بلوك الانتظار (Wait) في صفحة ٣ عشان مامة الديناصور تستنى شوية قبل ما تنزل راسها وتحضنه!",
+   "demo": {
+    "title": "كود إنقاذ الديناصور",
+    "code": "الديناصور الصغير (صفحة ١): عند الضغط على العلم الأخضر -> اضبط السرعة بطيئة -> تحرك يميناً ٣ -> شغل صوت (تسجيل ١: 'يا ماما؟') -> أرسل رسالة برتقالية\nالعصفور (صفحة ١): عند استلام الرسالة البرتقالية -> اضبط السرعة سريعة -> كرر ٤ مرات [تحرك يميناً ٢] -> اذهب إلى صفحة ٢",
+    "output": "يمشي الديناصور الصغير ببطء وينادي بصوت مسجل، فيبدأ العصفور الطيران فوراً ويرشده للصفحة التالية."
+   }
   },
   {
-   "title": "هرم الفراعنة السرّي",
-   "desc": "ساعد قط ذكي وحكيم يفتح أسرار هرم قديم عن طريق حل الألغاز البصرية. المشروع ده بيجمع التنقل بين الصفحات، الرسم المخصص، وتصميم الصوت الممتع.",
+   "title": "حفلة رقص الكوكب الفضائي",
+   "desc": "انطلق بالصاروخ في الفضاء وعلّم كائن فضائي طيب إزاي يرقص بلوب تكرار مبيقفش! اربط مشاهد الفضاء، وسجل أصوات فضائية مضحكة، واظبط سرعة الحركة.",
    "tags": [
-    "غموض",
-    "ألغاز",
-    "تصميم"
+    "فضاء",
+    "تكرار",
+    "توقيت"
    ],
    "steps": [
-    "اعمل خلفية مدخل هرم مظلم للصفحة الأولى وغرفة كنز للصفحة التانية.",
-    "صمم قط محقق فرعوني لابس طاقية تحقيق صغيرة بنفسك.",
-    "استخدم تكرار مستمر عشان الشموع تولع وتطفي جوه المقبرة على طول.",
-    "ظبط سرعة حركة القط عشان يمشي بحذر شديد جوه المقبرة المظلمة.",
-    "ضيف بلوكات الانتظار عشان القط يبص حواليه كويس قبل ما ياخد خطوة قدام.",
-    "ابعث رسالة سرية من جوهرة منورة لباب حجري ثقيل عشان يتزحلق ويتفتح.",
-    "اربط الصفحة الأولى بصفحة غرفة الكنز أول ما باب المقبرة يخلص فتح.",
-    "ضيف موسيقى خلفية غامضة ومؤثرات صوتية سحرية زي الرنين أول ما نلاقي الكنز."
+    "ارسم لوحة قصة على ورقة توضح الصاروخ وهو طاير في الفضاء وبعدين لحظة هبوطه على كوكب عجيب.",
+    "جهز صفحة ١ بخلفية النجوم والفضاء، وصفحة ٢ بخلفية سطح الكوكب الفضائي.",
+    "افتح أداة الرسم وصمم كائن فضائي لطيف من خيالك عنده ٣ عيون وألوان فسفورية.",
+    "في صفحة ١، برمج الصاروخ إنه ينطلق بسرعة عالية جداً عبر النجوم باستخدام بلوك السرعة السريعة.",
+    "حط بلوك الانتقال الأحمر في نهاية حركة الصاروخ عشان ينتقل فوراً لسطح الكوكب في صفحة ٢.",
+    "في صفحة ٢، خلي رائد الفضاء ينزل من الصاروخ ويبعت رسالة صفراء يرحب بيها بالفضائي.",
+    "برمج الفضائي إنه يستلم الرسالة الصفراء، ويشغل صوت فضائي مضحك من تسجيلك، ويبدأ الرقص.",
+    "حط حركات رقص الفضائي جوة بلوك التكرار للأبد الأصفر عشان الحفلة متخلصش أبداً!"
    ],
    "rubric": [
-    "شخصية أصلية ومتصممة وخلفيات معبرة عن الجو.",
-    "استخدام صحيح لنظام إرسال الرسالة بين الأبواب والأدوات.",
-    "توقيت مظبوط باستخدام بلوكات الانتظار وتغيير السرعة.",
-    "مؤثرات صوتية شغالة وتنقل ممتاز بين صفحات القصة."
+    "يحتوي المشروع على صفحتين مربوطتين ببعض تحكيان مغامرة فضائية كاملة.",
+    "يحتوي على كائن فضائي مميز مرسوم ومعدل باليد في أداة الرسم.",
+    "يستخدم الرسايل الصفراء عشان رقص الفضائي يبدأ فور وصول رائد الفضاء.",
+    "يستخدم تكرار للأبد بحركة رقص مستمرة مع إضافة تسجيل صوتي."
    ],
-   "stretch": "اخفي لعبة صغيرة في الصفحة التانية اللاعبين لازم يضغطوا على الجواهر بالترتيب الصح عشان تكسب."
+   "stretch": "ضيف طبق طائر صغير في الخلفية يفضل يكبر ويصغر باستمرار باستخدام حلقة تكرار!",
+   "demo": {
+    "title": "كود لقاء الفضائي ورائد الفضاء",
+    "code": "رائد الفضاء (صفحة ٢): عند الضغط على العلم الأخضر -> اضبط السرعة بطيئة -> تحرك لأسفل ٣ -> أرسل رسالة صفراء\nالفضائي (صفحة ٢): عند استلام الرسالة الصفراء -> شغل صوت (تسجيل ١: 'زورب بيب!') -> كرر للأبد [اقفز ٢ -> لف يميناً ٢ -> لف يساراً ٢]",
+    "output": "يهبط رائد الفضاء ببطء ويرسل إشارة سرية، فيبدأ الفضائي رقصة بهلوانية ممتعة تتكرر للأبد مع صوت مضحك."
+   }
+  },
+  {
+   "title": "حفلة المفاجأة للدب النعسان",
+   "desc": "جهّز حفلة عيد ميلاد سرية في الغابة لصديقنا الدب الضخم النعسان! نسّق حركة الحيوانات باستخدام بلوكات الانتظار، ورسايل التنبيه، وأصوات الاحتفال.",
+   "tags": [
+    "حكايات",
+    "توقيت",
+    "أزياء"
+   ],
+   "steps": [
+    "خطط لقصتك في صفحتين: مشهد الغابة الهادية والدب نايم، ومشهد الحفلة جوة بيت الشجرة.",
+    "اعمل صفحة ١ في غابة شجرية، وصفحة ٢ في غرفة مزينة بالبلالين والزينة.",
+    "افتح محرر الرسم وارسم طراطير عيد ميلاد ملونة على راس الأرنب والسنجاب الصغير.",
+    "في صفحة ١، خلي الدب ينام ويطلع صوت شخير 'خخخ' من تسجيل صوتك مع استخدام بلوك الانتظار.",
+    "استخدم بلوك الانتظار (Wait) عشان الأرنب يتسحب بالراحة على أطراف صوابعه من غير ما يصحيه.",
+    "اربط صفحة ١ بصفحة ٢ ببلوك الانتقال الأحمر أول ما الأرنب يخرج من الشاشة.",
+    "في صفحة ٢، خلي الأرنب يرسل رسالة برتقالية أول ما الدب يدخل باب بيت الشجرة.",
+    "برمج السنجاب المستخبي يستلم الرسالة، وينط فجأة ويصرخ بصوتك المسجل: 'مفاجأة'!"
+   ],
+   "rubric": [
+    "تنتقل القصة بسلاسة بين صفحتين مختلفتين ببداية ونهاية احتفالية واضحة.",
+    "يستخدم التلميذ إرسال الرسالة البرتقالية لتنبيه الحيوانات بالقفز في نفس الثانية.",
+    "يستخدم بلوك الانتظار البرتقالي بشكل صحيح لصناعة لحظة تشويق كوميدية.",
+    "يعدل ملابس الشخصيات بقبعات الحفلة ويضيف تسجيلات أصوات الفرحة الحقيقية."
+   ],
+   "stretch": "ضيف تورتة عيد ميلاد كل ما الدب يلمسها بإصبعه يختفي منها جزء كأنه بياكلها!",
+   "demo": {
+    "title": "كود لحظة المفاجأة",
+    "code": "الأرنب (صفحة ٢): عند الضغط على العلم الأخضر -> انتظر ١٥ -> أرسل رسالة برتقالية\nالدب (صفحة ٢): عند الضغط على العلم الأخضر -> اضبط السرعة بطيئة -> تحرك يميناً ٣\nالسنجاب (صفحة ٢): عند استلام الرسالة البرتقالية -> اقفز ٣ -> شغل صوت (تسجيل ١: 'مفاجأة!')",
+    "output": "تنتظر الحيوانات بهدوء في مخبئها حتى يعطي الأرنب الإشارة، فيقفز السنجاب صارخاً بصوت المفاجأة السعيدة."
+   }
   }
  ]
 }

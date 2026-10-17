@@ -2,149 +2,185 @@
  "en": [
   {
    "title": "The Treasure Map Run",
-   "desc": "Guide a brave character through an obstacle-filled maze to find hidden treasure using clear steps, loops, and path triggers. You will combine everything you learned about sequencing and conditions into one epic adventure!",
+   "desc": "Plan an adventure route across a grid maze full of rocks and rivers to find the golden chest! Use directional arrows, loop counters for long walks, and simple rules to steer clear of traps.",
    "tags": [
-    "Maze",
+    "Maze Navigation",
     "Loops",
-    "Conditions"
+    "Debugging"
    ],
    "steps": [
-    "Draw a grid maze on paper or screen with at least one obstacle and a treasure chest.",
-    "Write down the starting position and the final destination coordinates.",
-    "List the basic movement steps like step-forward and turn-right in the correct order.",
-    "Find repeated movements, like walking three steps, and replace them with a loop command.",
-    "Add a condition using 'If/Then' for when the character hits a wall or trap.",
-    "Test your complete algorithm step-by-step with a friend playing the character to ensure success."
+    "Draw a 5x5 grid map on paper with a Start point, rocks, a river, and a Treasure chest.",
+    "Mark the safest path by placing direction cards like Up, Down, Left, and Right from square to square.",
+    "Count straight stretches and replace repeated single steps with a loop card like 'Repeat 3 times: Step Forward'.",
+    "Add an If/Then rule card to handle surprises: 'If you reach water, step onto the bridge'.",
+    "Test your route using a toy figure or coin, moving it step by step according to your cards.",
+    "Watch closely for bugs where the toy bumps into rocks, and swap out the wrong direction cards.",
+    "Hand your finished instruction deck to a friend or family member to see if they can reach the treasure!"
    ],
    "rubric": [
-    "Sequence: Instructions are in the correct chronological order.",
-    "Loops: Repeated steps are correctly compressed using loops.",
-    "Conditions: At least one If/Then decision is used for obstacles.",
-    "Debugging: The final path successfully reaches the treasure without errors."
+    "Path Accuracy: Character safely reaches the treasure without landing on obstacles.",
+    "Using Loops: Replaces 3 or more consecutive identical steps with a correct loop card.",
+    "Condition Check: Includes at least one clear If/Then rule to handle a maze obstacle.",
+    "Debugging: Demonstrates finding and fixing at least one wrong card during testing."
    ],
-   "stretch": "Add a secret trapdoor that only opens if two conditions are true at the same time!"
+   "stretch": "Add a locked gate right before the treasure that requires collecting a key card on the map first!",
+   "demo": {
+    "title": "Pirate Pete's Gold Quest",
+    "code": "when start clicked:\n  repeat 3:\n    walk forward\n  turn right\n  if see rock:\n    turn left\n    walk forward\n  repeat 2:\n    walk forward\n  open treasure chest",
+    "output": "Pete walks 3 squares forward, bypasses a big rock safely, moves 2 more squares, and unlocks the sparkling treasure chest."
+   }
   },
   {
    "title": "Unplugged Family Robot",
-   "desc": "Write a fun paper instruction guide that helps a family member draw a complete house, using repetition and simple conditions. Transform your kitchen table into a robotics lab without using a computer!",
+   "desc": "Turn a family member into a drawing robot using command cards you write on paper! Guide your robot to sketch a cozy house using straight lines, repeated wall bricks, and fun conditions.",
    "tags": [
+    "Algorithms",
     "Unplugged",
-    "Drawing",
-    "Conditions"
+    "Conditionals"
    ],
    "steps": [
-    "Gather paper, markers, and a willing family member to act as your drawing robot.",
-    "Draft the sequence of lines needed to draw the house base, roof, and door.",
-    "Identify parts that repeat, like windows or bricks, and write them as a loop.",
-    "Include a condition, such as 'If the marker runs out of ink, then grab a new color.'",
-    "Test your instruction manual by reading it aloud while your human robot draws.",
-    "Refine any unclear steps so your robot can finish the drawing smoothly."
+    "Cut small paper cards and write simple robot commands: 'Draw Line', 'Turn Right 90 Degrees', and 'Lift Pen'.",
+    "Arrange the cards in order to instruct your robot how to draw a big square for the house base.",
+    "Use a repetition card like 'Repeat 4 times: Draw line, Turn' so you do not have to write the same line four times.",
+    "Add new command cards to draw a triangle roof right on top of the square base.",
+    "Create an If/Then rule: 'If the paper is white, draw a blue door; else draw a red door'.",
+    "Have a parent or sibling act as the robot, following only your exact written cards without guessing.",
+    "Check what they drew, spot any missing turns or incomplete walls, and debug your card sequence."
    ],
    "rubric": [
-    "Clarity: Instructions are easy for another person to follow precisely.",
-    "Repetition: Loops are used efficiently for drawing similar shapes.",
-    "Logic: Conditions handle potential drawing changes or mistakes.",
-    "Completion: The final drawing clearly looks like a house with all parts."
+    "Algorithm Completeness: Card sequence successfully directs the human robot to draw a complete house.",
+    "Loop Implementation: Correctly uses a repetition card to draw the four walls of the house.",
+    "Rule Precision: The If/Then rule is written clearly and followed properly by the robot.",
+    "Testing & Debugging: Demonstrates testing with a person and fixing unclear instructions."
    ],
-   "stretch": "Command your robot to draw a magical garden around the house using nested loops for flowers!"
+   "stretch": "Add commands to draw 3 chimney smoke puffs using a loop and a color-switch command!",
+   "demo": {
+    "title": "Paper House Programmer",
+    "code": "when robot starts:\n  repeat 4:\n    draw straight line 10 cm\n    turn right 90 degrees\n  draw triangle roof on top\n  if pen is blue:\n    draw square window\n  say 'House is finished!'",
+    "output": "The human robot follows every card to draw a neat square house with a pointed roof and a square blue window."
+   }
   },
   {
    "title": "My Digital Painting",
-   "desc": "Program a virtual artist to draw a colorful castle flag from geometric lines and shapes using code blocks. Bring geometry and creativity together to make a masterpiece!",
+   "desc": "Use block commands to guide an art pen to sketch a brilliant castle banner with bright geometric shapes! Combine repeated straight lines and color choices to create your royal masterpiece.",
    "tags": [
-    "DigitalArt",
-    "Shapes",
-    "Sequencing"
+    "Drawing Shapes",
+    "Sequencing",
+    "Digital Art"
    ],
    "steps": [
-    "Open your drawing workspace and set a colorful background for your castle scene.",
-    "Write the initial sequence to position your digital artist at the starting point.",
-    "Code the geometric lines for the flagpole using precise length and direction blocks.",
-    "Use loop blocks to repeat the pattern for the flag's colorful stripes or banner.",
-    "Add an If/Then condition to change the flag's color if it touches the castle wall.",
-    "Run your code, watch the digital artist paint, and fix any misplaced shapes."
+    "Open your block coding workspace and place a 'When Green Flag Clicked' starting block.",
+    "Select your starting pen color and set the pen thickness so your lines stand out clearly.",
+    "Program the pen to move straight down to draw a tall flagpole, then lift the pen up.",
+    "Create a loop block to draw the flag shape, repeating forward moves and turns to make a triangle banner.",
+    "Add an If/Then condition block: 'If flag color is red, draw a bright yellow star in the middle'.",
+    "Run the script to test whether the flag connects neatly to the flagpole without leaving a gap.",
+    "Adjust turn angles or step numbers if any lines overlap or face the wrong direction."
    ],
    "rubric": [
-    "Precision: Geometric shapes and lines are drawn accurately.",
-    "Efficiency: Loops are used to repeat drawing patterns.",
-    "Logic: Conditional color changes work correctly.",
-    "Aesthetics: The final castle flag is colorful, neat, and complete."
+    "Shape Construction: Successfully draws at least two clear geometric shapes like a pole line and triangular flag.",
+    "Loop Usage: Uses a loop block correctly to repeat side-drawing and turning steps.",
+    "Color & Condition: Changes pen color and uses an If-check to add a decorative emblem.",
+    "Code Order: Commands follow a clean, logical sequence from start to finish without stray lines."
    ],
-   "stretch": "Program the artist to draw a second, bigger flag fluttering in the wind using variables!"
+   "stretch": "Program the pen to draw 3 waving flag streamers using a loop that shrinks step size each time!",
+   "demo": {
+    "title": "Royal Castle Flag",
+    "code": "when green flag clicked:\n  set pen color to brown\n  move 100 steps (flagpole)\n  set pen color to red\n  repeat 3:\n    move 60 steps\n    turn right 120 degrees\n  if flag is red:\n    stamp golden star in middle",
+    "output": "The digital pen draws a tall brown pole, outlines a bright red triangle flag, and stamps a shiny golden star in the center."
+   }
   }
  ],
  "ar": [
   {
    "title": "رحلة خريطة الكنز",
-   "desc": "وجه شخصية شجاعة خلال متاهة مليئة بالعقبات لتجد الكنز المخفي باستخدام خطوات واضحة وحلقات تكرارية وشروط. ستدمج كل ما تعلمته عن الترتيب والشروط في مغامرة واحدة رائعة!",
+   "desc": "خطط لمغامرة شيقة على شبكة المتاهة المليانة صخور وأنهار عشان توصل لصندوق الدهب! استخدم كروت الأسهم والتكرار (الـ Loops) والقواعد البسيطة عشان تبعد عن الفخاخ.",
    "tags": [
-    "متاهة",
-    "تكرار",
-    "شروط"
+    "متاهة وخرائط",
+    "التكرار",
+    "اكتشاف الأخطاء"
    ],
    "steps": [
-    "ارسم شبكة متاهة على الورق أو الشاشة تحتوي على عقبة واحدة على الأقل وصندوق كنز.",
-    "اكتب نقطة البداية وإحداثيات الوجهة النهائية بدقة.",
-    "سجل خطوات الحركة الأساسية مثل خطوة للأمام ولف يمين بالترتيب الصحيح.",
-    "ابحث عن الحركات المتكررة، مثل المشي ثلاث خطوات، واستبدلها بأمر حلقة تكرارية.",
-    "أضف شرطاً باستخدام 'إذا/إذن' عندما تقابل الشخصية جداراً أو فخاً.",
-    "اختبر خوارزميتك الكاملة خطوة بخطوة مع صديق يمثل دور الشخصية لضمان النجاح."
+    "ارسم شبكة 5×5 على ورقة بيضاء، وحط نقطة بداية، وصخور، ونهر، وصندوق الكنز في المربع الأخير.",
+    "حدد أأمن طريق للمشي باستخدام كروت الاتجاهات (فوق، تحت، يمين، شمال) من مربع للتاني.",
+    "عد الخطوات المستقيمة واستبدل الخطوات المكررة بكرت تكرار: 'كرر 3 مرات: خطوة للأمام'.",
+    "ضيف كرت قاعدة شرطية عشان تحل المفاجآت: 'لو وصلت للنهر، اعدي فوق الكوبري'.",
+    "جرب تمشي بلعبة صغيرة أو عملة معدنية خطوة بخطوة بالظبط زي ما الكروت بتقولك.",
+    "راقب حركتك كويس: لو اللعبة خبطت في صخرة، شيل الكرت الغلط وحط الكرت المظبوط (دي عملية الـ Debugging).",
+    "سلّم كروت الأوامر لحد من أصحابك أو عيلتك عشان يجرب بنفسه ويوصل للكنز!"
    ],
    "rubric": [
-    "التسلسل: التعليمات مرتبة زمنياً بشكل صحيح.",
-    "التكرار: تم اختصار الخطوات المتكررة باستخدام الحلقات بكفاءة.",
-    "الشروط: استخدام قرار 'إذا/إذن' واحد على الأقل للعقبات.",
-    "تصحيح الأخطاء: المسار النهائي يوصل الشخصية للكنز بدون أخطاء."
+    "دقة المسار: البطل يوصل لصندوق الكنز بسلام ومن غير ما يقع في أي عائق.",
+    "استخدام التكرار: استبدال 3 خطوات متتالية أو أكتر بأمر تكرار واحد مظبوط.",
+    "وجود شرط: استخدام قاعدة 'لو / إذن' (If/Then) واضحة للتعامل مع عائق في الطريق.",
+    "تصليح الأخطاء: تجربة الكروت عملياً وتصليح أي خطوة غلط سببت مشكلة."
    ],
-   "stretch": "أضف باباً سحرياً لا يفتح إلا إذا تحقق شرطان في نفس الوقت!"
+   "stretch": "ضيف بوابة مقفولة جنب صندوق الكنز تتطلب جمع كرت المفتاح الأول من الخريطة!",
+   "demo": {
+    "title": "مغامرة القرصان بيتر",
+    "code": "عند الضغط على ابدأ:\n  كرر 3 مرات:\n    امشِ للأمام\n  اتجه يميناً\n  إذا وجدت صخرة:\n    اتجه يساراً\n    امشِ للأمام\n  كرر مرتين:\n    امشِ للأمام\n  افتح صندوق الكنز",
+    "output": "القرصان بيتر بيمشي 3 مربعات للأمام، يتفادى الصخرة الكبيرة، يكمل مربعين، ويفتح صندوق الكنز الذهبي بنجاح."
+   }
   },
   {
-   "title": "روبوت العائلة بدون شاشات",
-   "desc": "اكتب دليل تعليمات ورقي ممتع يساعد أحد أفراد عائلتك في رسم منزل كامل، باستخدام التكرار والشروط البسيطة. حول طاولة مطبخك إلى مختبر روبوتات بدون استخدام الكمبيوتر!",
+   "title": "روبوت العيلة الورقي",
+   "desc": "حوّل حد من أفراد عيلتك لروبوت رسام باستخدام كروت أوامر مكتوبة على الورق! وجّه الروبوت يرسم بيت جميل باستخدام خطوط مستقيمة، وتكرار للحيطان، وقواعد شرطية ممتعة.",
    "tags": [
-    "بدون_شاشات",
-    "رسم",
-    "شروط"
+    "خوارزميات",
+    "أنشطة ورقية",
+    "جمل شرطية"
    ],
    "steps": [
-    "احضر ورقاً وأقلام ملونة، واطلب من أحد أفراد العائلة أن يكون روبوت الرسم الخاص بك.",
-    "اكتب تسلسل الخطوط اللازمة لرسم أساس المنزل، السقف، والباب.",
-    "حدد الأجزاء التي تتكرر، مثل النوافذ أو الطوب، واكتبها على شكل حلقة تكرارية.",
-    "أضف شرطاً، مثل 'إذا انتهى الحبر، خذ لوناً جديداً'.",
-    "اختبر دليل التعليمات الخاص بك بقراءته بصوت عالٍ بينما يقوم الروبوت البشري بالرسم.",
-    "قم بتحسين أي خطوات غير واضحة لكي يتمكن الروبوت من إنهاء الرسم بسلاسة."
+    "قص كروت ورقية صغيرة واكتب عليها أوامر واضحة: 'ارسم خط'، 'لف 90 درجة يمين'، و'ارفع القلم'.",
+    "رتّب الأوامر ورا بعض عشان توجّه الروبوت يرسم مربع كبير يمثل جدران البيت.",
+    "استعمل كرت تكرار زي: 'كرر 4 مرات: ارسم خط ولف' عشان توفر وقت وماتكتبش نفس الخطوة كتير.",
+    "ضيف أوامر جديدة ترشد الروبوت يرسم سقف على شكل مثلث مظبوط فوق المربع.",
+    "حط قاعدة شرطية مرحة: 'لو الورقة بيضاء، ارسم باب أزرق؛ غير كده ارسم باب أحمر'.",
+    "خلّي بابا أو ماما أو أخوك يمثل دور الروبوت وينفذ المكتوب في الكروت بس من غير ما يخمّن.",
+    "راقب الرسمة كويس، واكتشف لو فيه خطوة ناقصة أو أمر مش مفهوم، وصلّحه في كروتك فوراً."
    ],
    "rubric": [
-    "الوضوح: التعليمات سهلة لشخص آخر ليتبعها بدقة.",
-    "التكرار: استخدام الحلقات بفاعلية لرسم أشكال متشابهة.",
-    "المنطق: الشروط تتعامل مع التغييرات أو الأخطاء المحتملة.",
-    "الإكتمال: الرسم النهائي يشبه المنزل بوضوح مع كافة أجزائه."
+    "اكتمال الخوارزمية: تسلسل الكروت يوجّه الروبوت لرسم بيت كامل ومترابط بنجاح.",
+    "استخدام التكرار: استعمال حلقة تكرار صحيحة لرسم جدران البيت الأربعة.",
+    "وضوح الشروط: كتابة قاعدة 'لو / إذن' واضحة وسهلة التنفيذ على الروبوت البشري.",
+    "الاختبار والتصليح: تجربة الكروت عملياً مع شخص وتعديل الأوامر اللي عملت لخبطة."
    ],
-   "stretch": "أمر روبوتك برسم حديقة سحرية حول المنزل باستخدام حلقات متداخلة للزهور!"
+   "stretch": "ضيف أوامر ترسم 3 كور دخان طالعة من المدخنة باستخدام حلقة تكرار وألوان مختلفة!",
+   "demo": {
+    "title": "مبرمج بيت العيلة",
+    "code": "عند تشغيل الروبوت:\n  كرر 4 مرات:\n    ارسم خطاً مستقيماً 10 سم\n    اتجه يميناً 90 درجة\n  ارسم سقفاً مثلثاً في الأعلى\n  إذا كان القلم أزرق:\n    ارسم شباكاً مربعاً\n  قل 'تم بناء البيت بنجاح!'",
+    "output": "الروبوت البشري ينفذ الكروت خطوة بخطوة ويرسم بيتاً مربعاً فوقه سقف مثلث مع شباك أزرق جميل."
+   }
   },
   {
    "title": "لوحتي الرقمية",
-   "desc": "برمج فناناً افتراضياً لرسَم علم قلعة ملون من خطوط وأشكال هندسية باستخدام أوامر البرمجة. اجمع بين الهندسة والإبداع لصنع تحفة فنية رائعة!",
+   "desc": "استخدم بلوكات الأوامر عشان توجّه قلم الرسم الرقمي يرسم علم قلعة رائع بأشكال هندسية مبهجة! ادمج التكرار في رسم الأضلاع واختار أحلى الألوان لرايتك الملكية.",
    "tags": [
-    "رسم_رقمي",
-    "أشكال",
-    "تسلسل"
+    "رسم أشكال",
+    "ترتيب الأوامر",
+    "فن رقمي"
    ],
    "steps": [
-    "افتح مساحة العمل الخاصة بالرسم وضع خلفية ملونة لمشهد القلعة.",
-    "اكتب التسلسل الأولي لوضع الفنان الرقمي في نقطة البداية.",
-    "برمج الخطوط الهندسية لعمود العلم باستخدام كتل الطول والاتجاه بدقة.",
-    "استخدم كتل التكرار لإعادة نمط خطوط أو شارات العلم الملونة.",
-    "أضف شرط 'إذا/إذن' لتغيير لون العلم إذا لامس جدار القلعة.",
-    "شغل الكود الخاص بك، شاهد الفنان الرقمي يرسم، وأصلح أي أشكال في غير مكانها."
+    "افتح مساحة العمل البرمجية وحط بلوك البداية: 'عند النقر على العلم الأخضر'.",
+    "اختار لون القلم الأولي واضبط سُمك الخط عشان الرسمة تطلع واضحة وقوية.",
+    "برمج القلم يتحرك لتحت عشان يرسم عصا العلم الطويلة، وبعدين ارفع سن القلم.",
+    "اعمل حلقة تكرار عشان ترسم راية العلم، بإنك تكرر رسم الأضلاع والدوران لحد ما يكتمل المثلث.",
+    "ضيف بلوك شرطي: 'لو لون الراية أحمر، ارسم نجمة صفراء منورة في نص العلم'.",
+    "شغّل الكود واختبر هل الراية لازقة في العصا مظبوط ولا فيه مسافة فاضية في النص.",
+    "عدّل زوايا اللف أو عدد الخطوات لو لقيت خط طلع معوج أو مش في مكانه الصح."
    ],
    "rubric": [
-    "الدقة: الأشكال والخطوط الهندسية مرسومة بصورة صحيحة.",
-    "الكفاءة: استخدام الحلقات لتكرار أنماط الرسم.",
-    "المنطق: تغييرات الألوان الشرطية تعمل بشكل سليم.",
-    "الجماليات: علم القلعة النهائي ملون، مرتب، ومكتمل."
+    "تكوين الأشكال: رسم شكلين هندسيين واضحين على الأقل زي عصا العلم والراية المثلثة.",
+    "حلقة التكرار: استخدام بلوك التكرار بشكل سليم لرسم أضلاع العلم والالتفاف.",
+    "الألوان والشرط: تغيير ألوان القلم واستخدام فحص شرطي لإضافة رسمة مميزة للعلم.",
+    "ترتيب الأوامر: تسلسل البلوكات منطقي من البداية للنهاية بدون خطوط ملخبطة."
    ],
-   "stretch": "برمج الفنان ليرسم علماً ثانياً أكبر يرفرف في الهواء باستخدام المتغيرات!"
+   "stretch": "برمج القلم يكرر رسم 3 شرايط زينة ترفرف مع الهوا وتصغر في الحجم مع كل تكرار!",
+   "demo": {
+    "title": "راية القلعة الملكية",
+    "code": "عند النقر على العلم الأخضر:\n  اجعل لون القلم بني\n  تحرك 100 خطوة (سارية العلم)\n  اجعل لون القلم أحمر\n  كرر 3 مرات:\n    تحرك 60 خطوة\n    استدر يميناً 120 درجة\n  إذا كان العلم أحمر:\n    اطبع نجمة ذهبية في المنتصف",
+    "output": "يرسم الفنان الرقمي سارية بنية طويلة ثم راية مثلثة حمراء يتوسطها ختم نجمة ذهبية جميلة."
+   }
   }
  ]
 }

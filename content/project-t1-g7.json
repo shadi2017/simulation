@@ -2,149 +2,185 @@
  "en": [
   {
    "title": "The Candy Catcher Game",
-   "desc": "Build an interactive arcade game where a turtle player moves with the keyboard to catch falling candy. The program tracks the score, handles missing data safely, and saves high scores to a file.",
+   "desc": "Build an interactive arcade game where your turtle catches delicious treats dropping from the sky. Track scores dynamically and safely save the high score to a local file after each session!",
    "tags": [
-    "Turtle",
-    "Keyboard",
-    "Files"
+    "Turtle Graphics",
+    "Keyboard Events",
+    "File Storage"
    ],
    "steps": [
-    "First, set up a game window and create a turtle player that responds smoothly to left and right arrow keys using listener functions.",
-    "Next, spawn candy items at random top positions that move downward step-by-step inside the main game loop.",
-    "Write a collision detection check using distance formulas to see if the player touches the candy, then increase the score.",
-    "Implement a try-except block to safely read previous high scores from a text file without crashing if the file is missing.",
-    "Use Pandas or file writing to save the updated high score back to the disk when the game ends successfully.",
-    "Finally, test your game thoroughly to make sure score counters update correctly and keyboard controls feel smooth and responsive."
+    "Initialize the screen dimensions, background color, and turtle screen listener.",
+    "Create the player turtle at the bottom and bind left and right arrow keys to movement functions.",
+    "Spawn a falling candy turtle that resets to a random top position when reaching the floor.",
+    "Write a game loop that updates candy movement and checks distance to the player.",
+    "Display and update the player score dynamically using turtle text writing.",
+    "Wrap the game loop inside a try-except block to gracefully catch window closure.",
+    "Save the final high score to a text file using a safe with open() context manager."
    ],
    "rubric": [
-    "Turtle moves smoothly using keyboard arrow keys.",
-    "Candy spawns and collision detection updates the score.",
-    "File reading and writing safely handles high scores without crashing.",
-    "Code is well-commented and organized into functions."
+    "Player paddle responds smoothly to keyboard events without lagging or freezing.",
+    "Collision detection accurately detects catches and resets the candy position.",
+    "High scores load and write safely using proper file handling and error checks.",
+    "Game code is organized into clear functions with readable variable names."
    ],
-   "stretch": "Add a timer or golden candies that give extra points!"
+   "stretch": "Add a countdown timer and introduce falling rocks that reduce points if caught!",
+   "demo": {
+    "title": "Candy Catcher Core Loop",
+    "code": "import turtle, random\n\nwn = turtle.Screen()\nwn.title('Candy Catcher')\nwn.bgcolor('lightblue')\nwn.setup(400, 400)\n\nplayer = turtle.Turtle()\nplayer.shape('square')\nplayer.penup()\nplayer.goto(0, -150)\n\ndef left(): player.setx(max(-180, player.xcor() - 20))\ndef right(): player.setx(min(180, player.xcor() + 20))\nwn.listen()\nwn.onkey(left, 'Left')\nwn.onkey(right, 'Right')\n\ncandy = turtle.Turtle()\ncandy.shape('circle')\ncandy.color('red')\ncandy.penup()\ncandy.goto(0, 150)\n\nscore = 0\ntry:\n    for _ in range(50):\n        candy.sety(candy.ycor() - 10)\n        if candy.distance(player) < 20:\n            score += 10\n            candy.goto(random.randint(-150, 150), 150)\n        elif candy.ycor() < -180:\n            candy.goto(random.randint(-150, 150), 150)\n        wn.update()\n    print(f'Game Over! Final Score: {score}')\nexcept turtle.Terminator:\n    print('Window closed cleanly.')",
+    "output": "A small graphical window opens where a player moves left/right to catch falling red candy dots, printing the final score."
+   }
   },
   {
-   "title": "Grade Analyzer Program",
-   "desc": "Load a classroom CSV dataset using Pandas, clean missing values, calculate statistics, filter failing results, and export a clean final report.",
+   "title": "Classroom Grade Analyzer",
+   "desc": "Inspect, clean, and analyze student exam marks using Pandas to uncover class achievements. Filter out missing marks, group results by subject, and export an executive performance CSV report.",
    "tags": [
-    "Pandas",
-    "CSV",
-    "Statistics"
+    "Pandas DataFrames",
+    "Data Cleaning",
+    "CSV Export"
    ],
    "steps": [
-    "First, create or load a classroom CSV file containing student names, subjects, and numerical scores.",
-    "Use pandas to read the dataset into a DataFrame and inspect the first few rows using head().",
-    "Find missing or empty scores in the table and fill them with default values or drop them safely.",
-    "Filter the DataFrame to find students who scored below a passing threshold and list them separately.",
-    "Calculate useful statistics like average scores and group results by subject using groupby.",
-    "Finally, export your clean, analyzed data into a brand-new polished CSV report file."
+    "Import the pandas library and read a messy student grade CSV file into a DataFrame.",
+    "Identify missing exam scores with isna() and fill them with the class median score.",
+    "Filter and display students who scored below the passing mark of fifty.",
+    "Group the dataset by subject to calculate average and highest scores using groupby().",
+    "Sort the top five academic achievers in descending order using sort_values().",
+    "Add a new status column that labels each student as Passed or Needs Support.",
+    "Export the polished summary dataset to a clean CSV file without row index numbers."
    ],
    "rubric": [
-    "CSV data loads correctly into a Pandas DataFrame.",
-    "Missing data is detected and handled properly.",
-    "Filtering and grouping calculate accurate statistics.",
-    "Clean report is successfully exported to a new CSV file."
+    "Missing values are correctly detected and filled without corrupting data types.",
+    "Filtering and sorting accurately identify both struggling and top-ranking students.",
+    "Aggregation with groupby() produces accurate mean and maximum scores per subject.",
+    "Cleaned DataFrame exports successfully to a valid CSV that opens without errors."
    ],
-   "stretch": "Add a visual chart using matplotlib to display average grades per subject!"
+   "stretch": "Calculate a letter grade column (A, B, C, F) and print a summary table of grade counts per subject!",
+   "demo": {
+    "title": "Pandas Grade Processor",
+    "code": "import pandas as pd\nimport io\n\nraw_data = '''Student,Subject,Score\nNour,Math,85\nOmar,Math,\nSalma,Science,92\nZiad,Math,45\nLayla,Science,78\nOmar,Science,88'''\n\ndf = pd.read_csv(io.StringIO(raw_data))\nmedian_score = df['Score'].median()\ndf['Score'] = df['Score'].fillna(median_score)\n\ndf['Status'] = df['Score'].apply(lambda x: 'Passed' if x >= 50 else 'Needs Support')\nsummary = df.groupby('Subject')['Score'].mean().reset_index()\n\nprint('Cleaned Data:')\nprint(df)\nprint('\\nSubject Averages:')\nprint(summary)\n\ndf.to_csv('cleaned_grades.csv', index=False)",
+    "output": "Fills Omar's missing score with the median, tags Ziad as needing support, computes subject averages, and saves cleaned_grades.csv."
+   }
   },
   {
    "title": "Safe Login Vault",
-   "desc": "Create a secure authentication program that reads user credentials from a file, handles invalid login attempts with try-except blocks, and prevents crashes.",
+   "desc": "Construct a secure authentication terminal that checks login attempts against a stored CSV credentials file. Protect against crashes with try-except blocks and maintain an audit log of all access events.",
    "tags": [
-    "Files",
-    "Errors",
-    "Security"
+    "Error Handling",
+    "File I/O",
+    "CSV Tables"
    ],
    "steps": [
-    "First, create a text file containing valid usernames and passwords separated by commas or colons.",
-    "Write a Python function to prompt the user for their login credentials through the console.",
-    "Open and read the credentials file inside a try block to handle potential FileNotFoundError errors gracefully.",
-    "Loop through the file lines to verify if the entered username and password match any stored record.",
-    "Implement an except block to catch unexpected file corruption or permission issues and inform the user.",
-    "Finally, lock out the user or display an error message after three consecutive failed login attempts."
+    "Create a CSV file storing registered usernames and passwords safely.",
+    "Use a try-except FileNotFoundError block to open and load the user database.",
+    "Prompt the user to enter their username and password through the terminal.",
+    "Check whether credentials match any registered record in the system.",
+    "Enforce a maximum limit of three consecutive login attempts before locking out.",
+    "Safely open an audit_log.txt file to append timestamps and access outcomes.",
+    "Handle unexpected keyboard interruptions or empty inputs gracefully without program crashes."
    ],
    "rubric": [
-    "Credentials file is read correctly by the program.",
-    "Try and except blocks prevent crashes when files are missing.",
-    "Login verification logic works accurately for valid users.",
-    "Failed attempts are counted and handled securely."
+    "FileNotFoundError and invalid input formats are handled without application crashes.",
+    "User authentication logic accurately validates matching credentials.",
+    "Lockout counter strictly enforces the three-attempt restriction upon failure.",
+    "Audit log accurately records both successful logins and rejected attempts."
    ],
-   "stretch": "Hash the passwords using a basic algorithm instead of storing them as plain text!"
+   "stretch": "Allow authenticated users to change their password and write the updated database back to the CSV file safely!",
+   "demo": {
+    "title": "Secure Vault Authenticator",
+    "code": "import csv, io\n\nvault_csv = '''username,pin\namina,1234\nkarim,9988'''\n\nusers = {}\ntry:\n    reader = csv.DictReader(io.StringIO(vault_csv))\n    for row in reader:\n        users[row['username']] = row['pin']\nexcept Exception as e:\n    print(f'Error reading vault: {e}')\n\nattempts = 3\nwhile attempts > 0:\n    try:\n        u = 'amina'  # simulated input\n        p = '1234'   # simulated input\n        if u in users and users[u] == p:\n            print(f'Welcome, {u}! Access granted.')\n            break\n        else:\n            attempts -= 1\n            print(f'Wrong PIN. {attempts} attempts left.')\n    except (ValueError, KeyError) as err:\n        print('Invalid input format.')\n        break",
+    "output": "Verifies username and pin safely from CSV data and prints access granted with error protection."
+   }
   }
  ],
  "ar": [
   {
-   "title": "لعبة صيد الحلويات",
-   "desc": "اصنع لعبة تفاعلية يتحرك فيها سلحفاة اللاعب باستخدام الكيبورد لصيد الحلويات الساقطة. البرنامج يحسب النقاط، يتعامل مع الأخطاء بأمان، ويحفظ أعلى النقاط في ملف.",
+   "title": "لعبة صائد الحلوى الساقطة",
+   "desc": "ابنِ لعبة أركيد ممتعة تتحكم فيها بسلحفاة ذكية تلتقط قطع الحلوى المتساقطة من السماء. سجّل النقاط واحتفظ بأعلى نتيجة في ملف نصي على جهازك بأمان بعد كل جولة!",
    "tags": [
-    "سلحفاة",
-    "كيبورد",
-    "ملفات"
+    "رسومات السلحفاة",
+    "التحكم بالمفاتيح",
+    "حفظ الملفات"
    ],
    "steps": [
-    "أولاً، اعمل شاشة للعبة واصنع سلحفاة للاعب تتحرك بسلاسة مع أزرار السهم اليمين واليسار باستخدام الدوال.",
-    "بعدين، خلي حلويات تظهر عشوائياً من أعلى الشاشة وتنزل خطوة بخطوة جوه لوب اللعبة الأساسي.",
-    "اكتب كود فحص الاصطدام باستخدام المسافة عشان تعرف لو اللاعب لمس الحلوية، وبعدين زود النقاط.",
-    "استخدم try و except عشان تقرأ أعلى النقاط السابقة من ملف نصي بأمان من غير ما اللعبة تقف لو الملف مش موجود.",
-    "استخدم بينداس أو كتابة الملفات عشان تحفظ أعلى النقاط المحدثة على الجهاز لما اللعبة تخلص بنجاح.",
-    "في الآخر، جرب لعبتك كويس عشان تتأكد إن عداد النقاط شغال صح وحركة الكيبورد سريعة ومظبوطة."
+    "اضبط إعدادات الشاشة، ولون الخلفية، وفعّل الاستماع لمدخلات لوحة المفاتيح عبر Screen.",
+    "أنشئ سلحفاة اللاعب في أسفل الشاشة واربط حركتها يمينًا ويسارًا بأسهم الكيبورد.",
+    "أنشئ سلحفاة تمثل قطعة الحلوى تسقط لأسفل وتعود للأعلى بمكان عشوائي عند ملامسة الأرض.",
+    "اكتب حلقة اللعبة الأساسية لتحديث الحركة وحساب المسافة بين السلحفاة والحلويات.",
+    "اعرض سكور النقاط على الشاشة وحدّثه في كل مرة تنجح فيها بالتقاط الحلوى.",
+    "ضع كود حركة اللعبة داخل try و except لتفادي أخطاء إغلاق نافذة السلحفاة فجأة.",
+    "احفظ السكور الأعلى في ملف نصي باستخدام with open() لضمان عدم ضياع النتائج."
    ],
    "rubric": [
-    "السلحفاة بتحرك بسلاسة باستخدام أزرار الكيبورد.",
-    "الحلويات بتظهر وفحص الاصطدام بيحدث النقاط.",
-    "قراءة وكتابة الملفات بتتعامل مع أعلى النقاط بأمان من غير أخطاء.",
-    "الكود مترتب ومنظم جوه دالات واضحة."
+    "استجابة اللاعب سريعة وسلسة لأسهم الكيبورد دون تقطيع أو تجميد في الشاشة.",
+    "حساب التصادم دقيق ويعيد تعيين مكان الحلوى ويزيد النقاط فورًا.",
+    "قراءة السكور الأعلى وحفظه في الملف تتم بأمان وبدون حدوث أخطاء كراش.",
+    "الكود منظم داخل دوال واضحة وأسماء المتغيرات معبرة وسهلة الفهم."
    ],
-   "stretch": "ضيف مؤقت زمني أو حلويات ذهبية تديك نقاط إضافية!"
+   "stretch": "أضف عداد وقت تنازلي وصخورًا تسقط تخصم من نقاطك لو اصطدمت بها بالخطأ!",
+   "demo": {
+    "title": "محرك لعبة صائد الحلوى",
+    "code": "import turtle, random\n\nwn = turtle.Screen()\nwn.title('Candy Catcher')\nwn.bgcolor('lightblue')\nwn.setup(400, 400)\n\nplayer = turtle.Turtle()\nplayer.shape('square')\nplayer.penup()\nplayer.goto(0, -150)\n\ndef left(): player.setx(max(-180, player.xcor() - 20))\ndef right(): player.setx(min(180, player.xcor() + 20))\nwn.listen()\nwn.onkey(left, 'Left')\nwn.onkey(right, 'Right')\n\ncandy = turtle.Turtle()\ncandy.shape('circle')\ncandy.color('red')\ncandy.penup()\ncandy.goto(0, 150)\n\nscore = 0\ntry:\n    for _ in range(50):\n        candy.sety(candy.ycor() - 10)\n        if candy.distance(player) < 20:\n            score += 10\n            candy.goto(random.randint(-150, 150), 150)\n        elif candy.ycor() < -180:\n            candy.goto(random.randint(-150, 150), 150)\n        wn.update()\n    print(f'انتهت اللعبة! مجموعك: {score}')\nexcept turtle.Terminator:\n    print('تم إغلاق النافذة بنجاح دون أخطاء.')",
+    "output": "تفتح نافذة رسومية يتحرك فيها اللاعب يمينًا ويسارًا لالتقاط الحلوى المتساقطة، وتُطبع النتيجة النهائية في التيرمينال."
+   }
   },
   {
-   "title": "برنامج تحليل الدرجات",
-   "desc": "حمل ملف CSV لدرجات الفصل باستخدام بينداس، نظف البيانات المفقودة، احسب الإحصائيات، افصل الدرجات الضعيفة، وصدر تقرير نضيف.",
+   "title": "محلل درجات الفصل الذكي",
+   "desc": "افحص ونظف وحلل درجات الطلاب في الامتحانات باستخدام مكتبة Pandas لاكتشاف المتفوقين. تخلص من القيم المفقودة، واجمع النتائج حسب المواد، وصدر تقرير CSV نهائي ونظيف.",
    "tags": [
-    "بينداس",
-    "CSV",
-    "إحصائيات"
+    "جداول بانداس",
+    "تنظيف البيانات",
+    "تصدير CSV"
    ],
    "steps": [
-    "أولاً، اعمل أو حمل ملف CSV لفصل دراسي فيه أسماء الطلاب والمواد والدرجات الرقمية.",
-    "استخدم بينداس عشان تقرأ الداتا جوه DataFrame وافحص أول كام صف باستخدام head().",
-    "ابحث عن الدرجات المفقودة أو الفارغة في الجدول وعوضها بقيم افتراضية أو احذفها بأمان.",
-    "افصل الداتا عشان تطلع الطلاب اللي جابوا درجات أقل من النجاح وتعرضهم لوحدهم.",
-    "احسب الإحصائيات المهمة زي متوسط الدرجات وجمع النتائج حسب المادة باستخدام groupby.",
-    "في الآخر، صدر الداتا النظيفة والمحللة لملف CSV جديد ومنسق تماماً."
+    "استورد مكتبة pandas واقرأ ملف درجات الطلاب بصيغة CSV إلى داتافريم.",
+    "ابحث عن الدرجات المفقودة بواسطة isna() وعوّضها باستخدام وسيط الدرجات median.",
+    "قم بتصفية وعرض أسماء الطلاب الذين حصلوا على أقل من 50 لتحديد من يحتاج لمساعدة.",
+    "جمّع البيانات حسب المادة باستخدام groupby() لحساب المتوسط وأعلى درجة لكل مادة.",
+    "رتّب أعلى 5 طلاب متفوقين تنازليًا باستخدام دالة sort_values().",
+    "أضف عمودًا جديدًا يوضح حالة الطالب: ناجح أم يحتاج دعمًا دراسيًا.",
+    "صدّر جدول البيانات بعد تنظيفه إلى ملف CSV جديد بدون كتابة عمود الأرقام index."
    ],
    "rubric": [
-    "داتا الCSV بتتحمل صح جوه DataFrame بتاعت بينداس.",
-    "البيانات المفقودة بتكتشف وتتعالج بطريقة سليمة.",
-    "الفلترة والتجميع بيحسبوا إحصائيات مضبوطة.",
-    "التقرير النضيف بيتعمله إكسبورت بنجاح لملف CSV جديد."
+    "معالجة القيم المفقودة بطريقة صحيحة دون إتلاف نوع بيانات الأعمدة.",
+    "تطبيق الفلترة والترتيب بدقة لتحديد الطلاب الأوائل والطلاب المتعثرين.",
+    "استخدام groupby() لإخراج متوسطات وأعلى الدرجات لكل مادة بنجاح.",
+    "تصدير ملف CSV نظيف يمكن فتحه في إكسيل أو بايثون بدون أي مشاكل."
    ],
-   "stretch": "ضيف رسم بياني باستخدام مكتبة matplotlib عشان تعرض متوسط الدرجات لكل مادة!"
+   "stretch": "أضف عمودًا للتقديرات (ممتاز، جيد، راسب) واطبع جدولًا يلخص عدد طلاب كل تقدير لكل مادة!",
+   "demo": {
+    "title": "برنامج معالجة الدرجات ببانداس",
+    "code": "import pandas as pd\nimport io\n\nraw_data = '''Student,Subject,Score\nNour,Math,85\nOmar,Math,\nSalma,Science,92\nZiad,Math,45\nLayla,Science,78\nOmar,Science,88'''\n\ndf = pd.read_csv(io.StringIO(raw_data))\nmedian_score = df['Score'].median()\ndf['Score'] = df['Score'].fillna(median_score)\n\ndf['Status'] = df['Score'].apply(lambda x: 'ناجح' if x >= 50 else 'يحتاج دعم')\nsummary = df.groupby('Subject')['Score'].mean().reset_index()\n\nprint('البيانات بعد التنظيف:')\nprint(df)\nprint('\\nمتوسط المواد:')\nprint(summary)\n\ndf.to_csv('cleaned_grades.csv', index=False)",
+    "output": "يملأ درجة عمر المفقودة بالوسيط، ويحدد الطلاب المحتاجين للدعم، ويحسب متوسط كل مادة، ثم يحفظ النتيجة في ملف cleaned_grades.csv."
+   }
   },
   {
    "title": "خزنة تسجيل الدخول الآمنة",
-   "desc": "اصنع برنامج تحقق آمن بيقرأ بيانات المستخدمين من ملف، يتعامل مع محاولات الدخول الغلط باستخدام try و except، ويمنع انهيار البرنامج.",
+   "desc": "ابنِ نظام مصادقة وتسجيل دخول قوي يتحقق من بيانات المستخدمين المخزنة في ملف CSV. احمِ برنامجك من التوقف المفاجئ بواسطة try-except واحتفظ بسجل أمني لكل محاولات الدخول.",
    "tags": [
-    "ملفات",
-    "أخطاء",
-    "أمان"
+    "معالجة الأخطاء",
+    "الملفات النصية",
+    "جداول CSV"
    ],
    "steps": [
-    "أولاً، اعمل ملف نصي فيه أسماء المستخدمين وكلمات السر الصحيحة مفصولين بفواصل.",
-    "اكتب دالة في بايثون تطلب من المستخدم يكتب بيانات الدخول بتاعة حسابه عبر الشاشة.",
-    "افتح واقرأ ملف بيانات الدخول جوه كتلة try عشان تتعامل مع أخطاء فقدان الملفات بأداة ذكية.",
-    "عدي على سطور الملف عشان تتأكد لو اسم المستخدم وكلمة السر بيطابقوا أي سجل محفوظ.",
-    "استخدم كتلة except عشان تلقط أي مشكلة غير متوقعة في الملفات وتبلغ المستخدم بها.",
-    "في الآخر، اقفل الحساب أو اعرض رسالة خطأ بعد ثلاث محاولات دخول فاشلة ورا بعض."
+    "أنشئ ملف CSV يحتوي على أسماء المستخدمين وأرقامهم السرية المخزنة.",
+    "استخدم كتلة try و except من نوع FileNotFoundError لقراءة الملف بأمان.",
+    "اطلب من المستخدم إدخال اسم المستخدم وكلمة المرور عبر التيرمينال.",
+    "قارن البيانات المدخلة بقاعدة البيانات للتأكد من صحتها تمامًا.",
+    "حدّد عدد المحاولات بحد أقصى ثلاث محاولات فقط قبل غلق النظام أوتوماتيكيًا.",
+    "افتح ملف audit_log.txt وسجّل فيه كل محاولة دخول ناجحة أو فاشلة بالتاريخ والوقت.",
+    "تعامل مع المدخلات الفارغة وضغطات المفاتيح المفاجئة بأمان دون كراش للبرنامج."
    ],
    "rubric": [
-    "ملف بيانات الدخول بيتقرا صح بواسطة البرنامج.",
-    "أكواد try و except بتمنع البرنامج من الانهيار لو الملفات مش موجودة.",
-    "منطق التحقق من الدخول شغال بدقة للمستخدمين الصح.",
-    "المحاولات الفاشلة بتتحسب وبتتعالج بشكل آمن."
+    "معالجة أخطاء عدم وجود الملف ومدخلات المستخدم الخاطئة دون توقف البرنامج.",
+    "دقة التحقق من صحة اسم المستخدم وكلمة المرور طبقًا لبيانات الـ CSV.",
+    "تطبيق شرط إيقاف الحساب بعد 3 محاولات خاطئة متتالية بدقة وحزم.",
+    "كتابة سجل المراقبة audit log بدقة في كل محاولة تمت سواء نجحت أو فشلت."
    ],
-   "stretch": "شفر كلمات السر باستخدام خوارزمية بسيطة بدل ما تسجلها كصوص عادية!"
+   "stretch": "اسمح للمستخدم المسجل بتغيير كلمة مروره وتحديث ملف الـ CSV بأمان دون التأثير على باقي الحسابات!",
+   "demo": {
+    "title": "نظام أمان الخزنة الذكي",
+    "code": "import csv, io\n\nvault_csv = '''username,pin\namina,1234\nkarim,9988'''\n\nusers = {}\ntry:\n    reader = csv.DictReader(io.StringIO(vault_csv))\n    for row in reader:\n        users[row['username']] = row['pin']\nexcept Exception as e:\n    print(f'خطأ أثناء قراءة الخزنة: {e}')\n\nattempts = 3\nwhile attempts > 0:\n    try:\n        u = 'amina'  # مدخل تجريبي\n        p = '1234'   # مدخل تجريبي\n        if u in users and users[u] == p:\n            print(f'أهلاً بك يا {u}! تم الدخول بنجاح.')\n            break\n        else:\n            attempts -= 1\n            print(f'الرقم السري غير صحيح. تبقى لك {attempts} محاولات.')\n    except (ValueError, KeyError) as err:\n        print('صيغة الإدخال غير صحيحة.')\n        break",
+    "output": "يقرأ بيانات الحسابات من ملف CSV بأمان، ويتحقق من الرمز السري بدون أخطاء، ويطبع رسالة ترحيبية."
+   }
   }
  ]
 }

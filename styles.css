@@ -35,3 +35,19 @@
 .pack-sections details{margin:6px 0;padding:8px 10px;border:1px solid #e1e8df;border-radius:7px;background:#f8faf6}
 .pack-sections summary{cursor:pointer;font-weight:600}
 .project-card details{margin-top:10px;font-size:12px;line-height:1.8}.project-card summary{cursor:pointer;font-weight:700}
+
+/* --- activities and grade games --- */
+#playground .playground-caption{padding:0 2px 8px;font-size:13px;line-height:1.9}
+#playground .playground-caption strong{display:block;margin-bottom:4px;font-size:16px}
+#playground .demo-control{font-size:13px;line-height:1.5;min-height:42px;padding:6px 12px;text-align:start;transition:transform .12s,background .12s}
+#playground .demo-control:hover:not(:disabled){transform:translateY(-1px);background:#37503f}
+#playground .demo-control.accent:hover:not(:disabled){background:#d6f58a}
+#playground .demo-controls>div{flex:1 1 220px}
+#playground .demo-controls>div>.demo-control{width:100%}
+#playground .demo-output{font-size:13px;min-height:44px}
+.py-fig{max-width:100%;overflow:auto;background:#fff;border-radius:8px;margin-top:6px}
+#gradeGames{margin-top:26px}
+.mem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}
+.mem-card{min-height:62px;padding:6px;border:1px solid #46584d;border-radius:8px;background:#2b3c31;color:#eef4ed;font-size:12px;line-height:1.4;cursor:pointer;overflow:hidden}
+.mem-card.up{background:#3a5a49}.mem-card.ok{background:#c9ed74;color:#16221b;border-color:#c9ed74;cursor:default}
+#gradeGames .arcade-card button{font-size:13px}#gradeGames .game-feedback,#gradeGames p{font-size:13px;line-height:1.8}

@@ -2,155 +2,189 @@
  "en": [
   {
    "title": "Web-Based Virtual Piano",
-   "desc": "Build interactive piano keys that play synthesized musical notes on mouse click or when pressing matching keyboard keys. Combine your skills in web audio, DOM events, and timing to create a playable web instrument.",
+   "desc": "A digital synthesizer keyboard that plays musical frequencies right inside your web browser. You can click on-screen piano keys or press physical keyboard letters to compose catchy tunes in real time.",
    "tags": [
     "Web Audio",
     "DOM Events",
     "JavaScript"
    ],
    "steps": [
-    "Design your virtual piano layout in HTML by creating distinct key elements for notes like C, D, E, and F inside a main container.",
-    "Style your keys using CSS so they look realistic, adding active state classes that change their background color when pressed down.",
-    "Initialize the Web Audio API using an AudioContext inside your JavaScript script to prepare for sound generation.",
-    "Write a reusable tone-generation function that creates an oscillator node, sets its frequency, and connects it to the audio destination.",
-    "Attach click event listeners to each DOM key element so that clicking a key triggers its specific musical frequency.",
-    "Add a global keydown event listener to your document that reads event.key and plays the matching note when keyboard buttons are pressed.",
-    "Test your piano by clicking and typing rapidly, ensuring notes stop cleanly and do not overlap awkwardly or cause lag."
+    "Structure an HTML container holding multiple button elements representing musical notes like C, D, E, F, G, A, and B.",
+    "Style the keys with CSS flexbox so they resemble real piano keys with active press states.",
+    "Initialize a single browser AudioContext when the user first clicks on the page.",
+    "Write a helper function playTone(freq) that creates an oscillator node, configures its sound wave, and connects it to the speakers.",
+    "Connect an exponential volume decay using a gain node so notes fade out naturally after half a second.",
+    "Store the note frequencies inside a JavaScript object mapping letters to Hz values.",
+    "Attach click event listeners to the visual keys and a keydown listener on the window to play tones whenever matching keys are triggered."
    ],
    "rubric": [
-    "HTML and CSS layout clearly displays at least four distinct, clickable piano keys.",
-    "Web Audio API successfully produces recognizable notes when interacting with the keys.",
-    "JavaScript event listeners correctly capture both mouse clicks and keyboard presses.",
-    "Code is organized cleanly with helpful comments explaining audio and event logic."
+    "Audio Synthesis: AudioContext and oscillator nodes create smooth, glitch-free tones.",
+    "Event Handling: Both mouse clicks and keyboard presses trigger the correct musical pitch.",
+    "Visual Interactivity: Keys visually highlight or depress when triggered by keyboard or click.",
+    "Code Structure: Note mappings and audio logic are organized cleanly without repeated code."
    ],
-   "stretch": "Add a recording feature that saves your played notes in an array and plays them back using a setInterval loop."
+   "stretch": "Add a selector dropdown to toggle between oscillator wave types like 'sine', 'square', and 'sawtooth' to emulate different electronic instruments.",
+   "demo": {
+    "title": "Mini Web Synthesizer Keys",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { display:flex; flex-direction:column; align-items:center; font-family:sans-serif; background:#1e293b; color:#fff; padding-top:30px; }\n    .piano { display:flex; gap:8px; margin-top:20px; }\n    .key { width:55px; height:160px; background:#fff; color:#111; font-weight:bold; display:flex; align-items:flex-end; justify-content:center; padding-bottom:12px; border-radius:6px; cursor:pointer; user-select:none; transition:transform 0.1s; }\n    .key:active, .key.pressed { background:#93c5fd; transform:translateY(4px); }\n  </style>\n</head>\n<body>\n  <h2>Mini Virtual Piano</h2>\n  <p>Click a key or press A, S, D, F, G, H, J</p>\n  <div class=\"piano\" id=\"piano\"></div>\n  <script>\n    const ctx = new (window.AudioContext || window.webkitAudioContext)();\n    const notes = { 'a': 261.63, 's': 293.66, 'd': 329.63, 'f': 349.23, 'g': 392.00, 'h': 440.00, 'j': 493.88 };\n    function play(freq) {\n      if (ctx.state === 'suspended') ctx.resume();\n      const osc = ctx.createOscillator();\n      const gain = ctx.createGain();\n      osc.frequency.value = freq;\n      gain.gain.setValueAtTime(0.3, ctx.currentTime);\n      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.5);\n      osc.connect(gain); gain.connect(ctx.destination);\n      osc.start(); osc.stop(ctx.currentTime + 0.5);\n    }\n    const piano = document.getElementById('piano');\n    Object.keys(notes).forEach(k => {\n      const b = document.createElement('div');\n      b.className = 'key'; b.id = 'k-' + k;\n      b.textContent = k.toUpperCase();\n      b.onclick = () => play(notes[k]);\n      piano.appendChild(b);\n    });\n    window.addEventListener('keydown', e => {\n      const k = e.key.toLowerCase();\n      if (notes[k]) {\n        play(notes[k]);\n        const el = document.getElementById('k-' + k);\n        if (el) { el.classList.add('pressed'); setTimeout(() => el.classList.remove('pressed'), 150); }\n      }\n    });\n  </script>\n</body>\n</html>",
+    "output": "A row of piano keys on a dark background that play synthesized musical pitches and depress visually when clicked or typed."
+   }
   },
   {
    "title": "Console Chatbot Assistant",
-   "desc": "Create a friendly Python console assistant that asks for your name, calculates a mock age, checks your current mood, and plays an interactive text guessing game. Use variables, input, conditions, and loops to bring your bot to life.",
+   "desc": "An interactive Python terminal companion that greets you, estimates your birth year, and responds to your mood. It also invites you to play a multi-round secret number guessing game built using loops and functions.",
    "tags": [
-    "Python",
-    "Console",
-    "Logic"
+    "Python Basics",
+    "Loops & Logic",
+    "Functions"
    ],
    "steps": [
-    "Start your Python script by greeting the user and using the input() function to ask for their name and birth year.",
-    "Calculate the user's approximate age by subtracting their birth year from the current year stored in a variable.",
-    "Use Python conditions (if, elif, else) to respond warmly based on whether the user inputs a happy or sad mood.",
-    "Design a text-based guessing game loop using a while loop where the user tries to guess a secret number.",
-    "Provide helpful hints inside the loop like 'too high' or 'too low' to guide the player toward the correct answer.",
-    "Count the number of attempts the user takes and print a congratulatory message once they guess the secret number.",
-    "Run your script multiple times in the console to test all condition branches and ensure your loops terminate correctly."
+    "Display a warm greeting banner and prompt the user for their name and current age using input().",
+    "Cast the age input into an integer and calculate their approximate birth year.",
+    "Prompt the user about how they feel and evaluate the text using if, elif, and else conditionals to give comforting or cheerful advice.",
+    "Store a list of Egyptian trivia or tips inside a Python list and display one randomly.",
+    "Create a reusable function play_guessing_game() containing the game logic.",
+    "Generate a secret random number between 1 and 10 and give the player three attempts using a while loop.",
+    "Provide higher or lower hints after each attempt and print an encouraging victory or game-over message.",
+    "Wrap the conversation flow into an organized main routine that bids the user goodbye."
    ],
    "rubric": [
-    "Python program successfully takes user input for name, age, and mood.",
-    "Conditional branching handles different user moods and inputs accurately.",
-    "While loop creates a working guessing game with proper exit conditions.",
-    "Output messages are clear, friendly, and properly formatted in the console."
+    "Type Conversion: Correctly converts string inputs to integers for arithmetic and comparisons.",
+    "Branching Logic: Employs nested or chained if/elif/else conditions to respond dynamically to mood and guesses.",
+    "Modular Functions: Encapsulates game mechanics and calculation logic into reusable Python functions.",
+    "Loop Control: Implements while loops with counter decrements to manage guess limits without infinite loops."
    ],
-   "stretch": "Add a Python dictionary to store trivia facts that the chatbot can share when asked by the user."
+   "stretch": "Store custom keyword responses in a Python dictionary so the bot can identify words like 'stressed', 'bored', or 'excited' and give specialized recommendations.",
+   "demo": {
+    "title": "Python Terminal Buddy",
+    "code": "import random\n\ndef calc_birth_year(age):\n    return 2025 - age\n\ndef get_mood_reply(mood):\n    mood = mood.strip().lower()\n    if \"good\" in mood or \"happy\" in mood:\n        return \"Awesome! Keep sharing those positive vibes!\"\n    elif \"tired\" in mood or \"sad\" in mood:\n        return \"Take it easy today. Drink some water and get some rest!\"\n    return \"Thanks for sharing! Let's make the best of today.\"\n\ndef play_game():\n    secret = random.randint(1, 10)\n    print(\"\\n--- Mini Number Challenge ---\")\n    print(\"I am thinking of a number from 1 to 10. You have 3 tries!\")\n    tries = 3\n    while tries > 0:\n        guess = int(input(f\"Tries left ({tries}) - Enter guess: \"))\n        if guess == secret:\n            print(\"Bravo! You guessed the exact number!\")\n            return\n        elif guess < secret:\n            print(\"Too low, try higher!\")\n        else:\n            print(\"Too high, try lower!\")\n        tries -= 1\n    print(f\"Game over! My secret number was {secret}.\")\n\nname = input(\"Hello! What is your name? \")\nage = int(input(f\"Great to meet you, {name}! How old are you? \"))\nprint(f\"Cool, you were probably born in {calc_birth_year(age)}!\")\nmood = input(\"How are you feeling today? \")\nprint(get_mood_reply(mood))\nplay_game()\nprint(f\"See you later, {name}! Keep coding!\")",
+    "output": "A friendly terminal dialogue that calculates your birth year, reacts to your feelings, and runs an interactive number-guessing game."
+   }
   },
   {
    "title": "Interactive Score Card",
-   "desc": "Build a dynamic web scoreboard featuring running timers, score update buttons, and a game-over alert. Combine HTML forms, DOM manipulation, and interval timers to manage a complete game session.",
+   "desc": "A fast-paced sports scoreboard that tracks scores for two teams while a countdown timer ticks away. When the match clock runs out, point buttons are disabled and a match winner is announced.",
    "tags": [
-    "DOM",
     "Timers",
-    "Scoreboard"
+    "DOM Manipulation",
+    "JavaScript"
    ],
    "steps": [
-    "Create the HTML structure for your scorecard, including display elements for the score, remaining time, and control buttons.",
-    "Style the scoreboard with CSS to make the digits bold, clear, and easy to read during a fast-paced game.",
-    "Write JavaScript variables to track the current score and remaining game time in seconds.",
-    "Use setInterval to create a countdown timer that decreases the remaining time every second and updates the DOM.",
-    "Attach click event listeners to your score buttons so players can add points when they score successfully.",
-    "Write a condition inside your timer loop that checks when time hits zero, stops the interval, and triggers a game-over alert.",
-    "Add a reset button that restores the score to zero and resets the timer back to its starting value."
+    "Create an HTML layout featuring two team score cards, action buttons, a match timer box, and an announcement banner.",
+    "Use CSS flexbox and bold athletic styling to make points readable from a distance.",
+    "Store the team points and match seconds remaining as JavaScript variables.",
+    "Write an addScore(team) function that increments the selected team's score and updates the DOM text.",
+    "Start a countdown using setInterval to decrease the timer variable every 1000 milliseconds.",
+    "Check inside the interval callback if the remaining time has reached zero.",
+    "Clear the interval using clearInterval to stop the timer cleanly.",
+    "Disable all point buttons and evaluate which team has more points to display the champion banner."
    ],
    "rubric": [
-    "Scoreboard displays clear elements for score and countdown timer.",
-    "setInterval successfully decreases time and updates the DOM every second.",
-    "Buttons correctly update the score when clicked by the user.",
-    "Game-over alert triggers properly when the timer reaches zero."
+    "Timer Precision: Uses setInterval and clearInterval accurately without timer drift or multiple running intervals.",
+    "DOM Updates: Updates scores and remaining seconds instantly in response to state changes.",
+    "Game State Management: Successfully prevents score changes after the match timer hits zero.",
+    "User Interface: Sports clean layout, visible buttons, and prominent winner announcements."
    ],
-   "stretch": "Add a high score feature that saves the best score in your script using conditional checks."
+   "stretch": "Add a match reset button that clears scores and restores the timer, alongside text inputs to let players rename the competing teams.",
+   "demo": {
+    "title": "Live Match Scoreboard",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family:sans-serif; text-align:center; background:#0f172a; color:#fff; margin-top:20px; }\n    .board { display:flex; justify-content:center; gap:25px; margin:20px; }\n    .team { background:#1e293b; padding:20px; border-radius:12px; width:140px; border:2px solid #334155; }\n    .pts { font-size:52px; font-weight:bold; color:#38bdf8; margin:10px 0; }\n    button { padding:10px 18px; font-size:16px; font-weight:bold; border:none; border-radius:6px; cursor:pointer; background:#22c55e; color:#fff; }\n    button:disabled { background:#475569; cursor:not-allowed; opacity:0.6; }\n    #timer { font-size:30px; font-weight:bold; color:#facc15; }\n    #msg { font-size:22px; color:#f43f5e; margin-top:15px; }\n  </style>\n</head>\n<body>\n  <h2>Arena Championship</h2>\n  <div id=\"timer\">Time Left: 15s</div>\n  <div class=\"board\">\n    <div class=\"team\">\n      <h3>Red Hawks</h3>\n      <div class=\"pts\" id=\"scoreA\">0</div>\n      <button class=\"btn\" onclick=\"addScore('A')\">+1 Point</button>\n    </div>\n    <div class=\"team\">\n      <h3>Blue Jays</h3>\n      <div class=\"pts\" id=\"scoreB\">0</div>\n      <button class=\"btn\" onclick=\"addScore('B')\">+1 Point</button>\n    </div>\n  </div>\n  <div id=\"msg\"></div>\n  <script>\n    let ptsA = 0, ptsB = 0, timeLeft = 15;\n    function addScore(team) {\n      if (timeLeft <= 0) return;\n      if (team === 'A') document.getElementById('scoreA').textContent = ++ptsA;\n      else document.getElementById('scoreB').textContent = ++ptsB;\n    }\n    const timerId = setInterval(() => {\n      timeLeft--;\n      document.getElementById('timer').textContent = `Time Left: ${timeLeft}s`;\n      if (timeLeft <= 0) {\n        clearInterval(timerId);\n        document.querySelectorAll('.btn').forEach(b => b.disabled = true);\n        const winner = ptsA > ptsB ? 'Red Hawks Win!' : ptsB > ptsA ? 'Blue Jays Win!' : \"It's a Tie!\";\n        document.getElementById('msg').textContent = 'GAME OVER - ' + winner;\n      }\n    }, 1000);\n  </script>\n</body>\n</html>",
+    "output": "A live scoreboard counting down from 15 seconds, allowing clicks to boost scores until time runs out and announces the victor."
+   }
   }
  ],
  "ar": [
   {
    "title": "بيانو افتراضي على الويب",
-   "desc": "ابني مفاتيح بيانو تفاعلية تعزف نغمات موسيقية عند النقر بالماوس أو عند الضغط على مفاتيح لوحة المفاتيح المطابقة. ادمج مهاراتك في صوت الويب، وأحداث DOM، والوقت لإنشاء آلة موسيقية قابلة للعب.",
+   "desc": "آلة بيانو رقمية بتشتغل مباشرة جوة متصفح الويب وبتعزف نغمات موسيقية حقيقية! تقدر تدوس على المفاتيح بالماوس أو تستخدم كيبورد الكمبيوتر عشان تعزف ألحان ممتعة.",
    "tags": [
-    "صوت الويب",
-    "أحداث DOM",
-    "جافاسكريبت"
+    "Web Audio",
+    "DOM Events",
+    "JavaScript"
    ],
    "steps": [
-    "صمم تخطيط البيانو الافتراضي في HTML من خلال إنشاء عناصر مفاتيح مميزة للنغمات مثل C وD وE داخل حاوية رئيسية.",
-    "قم بتنسيق المفاتيح باستخدام CSS لتظهر بشكل واقعي، مع إضافة فئات تتغير لون خلفيتها عند الضغط عليها.",
-    "قم بتنشيط واجهة برمجة تطبيقات الصوت AudioContext داخل سكربت جافاسكريبت الخاص بك لتجهيز توليد الأصوات.",
-    "اكتب دالة توليد نغمات قابلة لإعادة الاستخدام تنشئ مذبذبًا، وتضبط تردده، وتصله بوجهة الصوت.",
-    "اربط مستمعي أحداث النقر بكل عنصر مفتاح في DOM بحيث يؤدي النقر على المفتاح إلى تشغيل تردده الموسيقي المحدد.",
-    "أضف مستمع أحداث عام للوحة المفاتيح يقرأ المفتاح المضغوط ويعزف النغمة المطابقة عند الضغط على الأزرار.",
-    "اختبر البيانو الخاص بك بالنقر والكتابة بسرعة، مع التأكد من توقف النغمات بشكل نظيف وعدم تداخلها بشكل مزعج."
+    "ابني هيكل الصفحة بـ HTML واعمل أزرار بتمثل نغمات البيانو الموسيقية زي C و D و E و F و G و A و B.",
+    "نسق أزرار البيانو بـ CSS flexbox عشان تظهر كأنها مفاتيح بيانو بيضاء أنيقة وبتنزل لتحت لما تضغط عليها.",
+    "شغل الـ AudioContext في الجافا سكريبت أول ما المستخدم يتفاعل مع الصفحة.",
+    "اعمل دالة مساعدة playTone(freq) تنشئ مذبذب صوتي (Oscillator) وتحدد تردد النغمة وتوصله بالسماعات.",
+    "استخدم Gain Node عشان الصوت ينخفض تدريجياً وبنعومة بعد نص ثانية زي البيانو الحقيقي.",
+    "احفظ الترددات الصوتية لكل نغمة داخل كائن (Object) يربط كل حرف بالتردد المناسب ليه بالهرتز.",
+    "ضيف مستمع للأحداث click على المفاتيح وحدث keydown على الصفحة عشان تعزف النغمات بالكيبورد والماوس."
    ],
    "rubric": [
-    "تخطيط HTML وCSS يعرض بوضوح أربعة مفاتيح بيانو قابلة للنقر على الأقل.",
-    "واجهة برمجة تطبيقات الصوت تنتج بنجاح نغمات معروفة عند التفاعل مع المفاتيح.",
-    "مستمعي أحداث جافاسكريبت يلتقطون بدقة نقرات الماوس وضغطات لوحة المفاتيح.",
-    "الكود منظّم بشكل نظيف مع تعليقات مفيدة تشرح منطق الصوت والأحداث."
+    "توليد الصوت: تشغيل الـ AudioContext والمذبذبات لإنتاج نغمات واضحة ونقية بدون أخطاء.",
+    "معالجة الأحداث: استجابة الأزرار للنقر بالماوس ولضغطات الكيبورد بدقة متطابقة.",
+    "التفاعل البصري: إضاءة المفاتيح أو حركتها عند الضغط عليها لتبدو كبيانو حقيقي.",
+    "تنظيم الكود: كتابة ترددات النغمات ومنطق تشغيل الصوت بشكل منظم وبدون تكرار."
    ],
-   "stretch": "أضف ميزة تسجيل تحفظ النغمات التي عزفتها في مصفوفة وتعيد تشغيلها باستخدام حلقة setInterval."
+   "stretch": "ضيف قائمة اختيار تغير نوع موجة الصوت (Wave Type) بين sine و square و sawtooth عشان تحاكي أصوات آلات موسيقية مختلفة.",
+   "demo": {
+    "title": "مفاتيح البيانو الافتراضي",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n  <style>\n    body { display:flex; flex-direction:column; align-items:center; font-family:sans-serif; background:#1e293b; color:#fff; padding-top:30px; }\n    .piano { display:flex; gap:8px; margin-top:20px; }\n    .key { width:55px; height:160px; background:#fff; color:#111; font-weight:bold; display:flex; align-items:flex-end; justify-content:center; padding-bottom:12px; border-radius:6px; cursor:pointer; user-select:none; transition:transform 0.1s; }\n    .key:active, .key.pressed { background:#93c5fd; transform:translateY(4px); }\n  </style>\n</head>\n<body>\n  <h2>بيانو الويب الافتراضي</h2>\n  <p>اضغط بالماوس أو استخدم الحروف: A, S, D, F, G, H, J</p>\n  <div class=\"piano\" id=\"piano\"></div>\n  <script>\n    const ctx = new (window.AudioContext || window.webkitAudioContext)();\n    const notes = { 'a': 261.63, 's': 293.66, 'd': 329.63, 'f': 349.23, 'g': 392.00, 'h': 440.00, 'j': 493.88 };\n    function play(freq) {\n      if (ctx.state === 'suspended') ctx.resume();\n      const osc = ctx.createOscillator();\n      const gain = ctx.createGain();\n      osc.frequency.value = freq;\n      gain.gain.setValueAtTime(0.3, ctx.currentTime);\n      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.5);\n      osc.connect(gain); gain.connect(ctx.destination);\n      osc.start(); osc.stop(ctx.currentTime + 0.5);\n    }\n    const piano = document.getElementById('piano');\n    Object.keys(notes).forEach(k => {\n      const b = document.createElement('div');\n      b.className = 'key'; b.id = 'k-' + k;\n      b.textContent = k.toUpperCase();\n      b.onclick = () => play(notes[k]);\n      piano.appendChild(b);\n    });\n    window.addEventListener('keydown', e => {\n      const k = e.key.toLowerCase();\n      if (notes[k]) {\n        play(notes[k]);\n        const el = document.getElementById('k-' + k);\n        if (el) { el.classList.add('pressed'); setTimeout(() => el.classList.remove('pressed'), 150); }\n      }\n    });\n  </script>\n</body>\n</html>",
+    "output": "صف من مفاتيح البيانو على خلفية داكنة يعزف أصواتاً موسيقية وينضغط بصرياً عند الضغط بالماوس أو الكيبورد."
+   }
   },
   {
-   "title": "مساعد الدردشة في وحدة التحكم",
-   "desc": "أنشئ مساعد وحدة تحكم Python ودودًا يطلب اسمك، ويحسب عمرك التقريبي، ويفحص حالتك المزاجية، ويلعب معك لعبة تخمين أرقام تفاعلية. استخدم المتغيرات والإدخال والشروط والحلقات لجعل مساعدك ينبض بالحياة.",
+   "title": "مساعد الشات بوت التفاعلي",
+   "desc": "صديق ذكي على شاشة بايثون يرحب بيك، يحسب سنة ميلادك، ويرد على حالتك النفسية. ومش بس كده، كمان بيتحداك في لعبة تخمين أرقام مسلية مبنية بالدوال والتكرار!",
    "tags": [
-    "بايثون",
-    "وحدة التحكم",
-    "المنطق"
+    "أساسيات بايثون",
+    "التكرار والشروط",
+    "الدوال"
    ],
    "steps": [
-    "ابدأ سكربت بايثون بتحية المستخدم واستخدام دالة input() للسؤال عن الاسم وسنة الميلاد.",
-    "احسب عمر المستخدم التقريبي عن طريق طرح سنة الميلاد من السنة الحالية المخزنة في متغيّر.",
-    "استخدم شروط بايثون (if, elif, else) للاستجابة بدفء بناءً على ما إذا كانت حالة المستخدم سعيدة أو حزينة.",
-    "صمم حلقة لعبة تخمين تعتمد على النصوص باستخدام while بحيث يحاول المستخدم تخمين رقم سرّي.",
-    "قدم تلميحات مفيدة داخل الحلقة مثل 'كبر الرقم' أو 'صغر الرقم' لتوجيه اللاعب نحو الإجابة الصحيحة.",
-    "احسب عدد المحاولات التي استغرقها المستخدم واطبع رسالة تهنئة بمجرد تخمين الرقم السرّي بنجاح.",
-    "قم بتشغيل السكربت عدة مرات في وحدة التحكم لاختبار جميع فروع الشروط والتأكد من انتهاء الحلقات بشكل صحيح."
+    "اطبع رسالة ترحيبية لطيفة واطلب من المستخدم اسمه وعمره باستخدام أمر input().",
+    "حول نص العمر إلى رقم صحيح (int) واحسب سنة ميلاده التقريبية بعملية حسابية بسيطة.",
+    "اسأل المستخدم عن مزاجه واستخدم الشروط if و elif و else لتقديم نصيحة لطيفة ومشجعة.",
+    "خزن مجموعة من النصائح أو المعلومات العامة في قائمة (List) واعرض نصيحة منها للمستخدم.",
+    "اكتب دالة مستقلة play_game() مسؤولة عن تشغيل لعبة تخمين الأرقام.",
+    "اختار رقم سري عشوائي بين 1 و 10، وادي اللاعب 3 محاولات باستخدام تكرار while.",
+    "قدم تلميحات للاعب (الرقم أكبر أو أصغر) مع كل تخمين خاطئ، واحتفل بيه لو خمن صح.",
+    "نظم الكود في تسلسل واضح ومفهوم واختم البرنامج برسالة وداع جميلة."
    ],
    "rubric": [
-    "برنامج بايثون يأخذ بنجاح إدخال المستخدم للاسم والعمر والحالة المزاجية.",
-    "التفرع الشرطي يتعامل مع حالات المزاج والإدخالات المختلفة بدقة.",
-    "حلقة while تنشئ لعبة تخمين فعالة مع شروط خروج صحيحة.",
-    "رسائل الإخراج واضحة وودودة ومنسقة بشكل صحيح في وحدة التحكم."
+    "تحويل الأنواع: تحويل المدخلات النصية إلى أرقام صحيحة لإجراء الحسابات والمقارنات بدون أخطاء.",
+    "المنطق الشرطي: استخدام شروط if/elif/else للرد على المزاج وتوجيه اللاعب أثناء التخمين.",
+    "الدوال البرمجية: بناء دالة منظمة للعبة التخمين واستدعائها في الوقت المناسب.",
+    "التحكم في التكرار: استخدام حلقة while مع عداد للمحاولات بدون الوقوع في تكرار لا نهائي."
    ],
-   "stretch": "أضف قاموس بايثون لتخزين حقائق ترفيهية يمكن للشات بوت مشاركتها عند طلب المستخدم."
+   "stretch": "استخدم قاموس (Dictionary) في بايثون لربط الكلمات المفتاحية (زي 'فرحان'، 'تعبان'، 'زهقان') بإجابات ونصائح مخصصة لكل كلمة.",
+   "demo": {
+    "title": "شات بوت بايثون الذكي",
+    "code": "import random\n\ndef calc_birth_year(age):\n    return 2025 - age\n\ndef get_mood_reply(mood):\n    mood = mood.strip().lower()\n    if \"فرحان\" in mood or \"تمام\" in mood or \"happy\" in mood:\n        return \"يا رب دايماً مبسوط وطاقتك إيجابية!\"\n    elif \"تعبان\" in mood or \"زهقان\" in mood or \"sad\" in mood:\n        return \"خد نفس عميق، اشرب شوية مية وريح شوية يا بطل!\"\n    return \"شكراً لمشاركتك! يلا نخلي يومنا أحسن مع بعض.\"\n\ndef play_game():\n    secret = random.randint(1, 10)\n    print(\"\\n--- تحدي تخمين الرقم السري ---\")\n    print(\"أنا اخترت رقم من 1 لـ 10، ومعاك 3 محاولات تكتشفه!\")\n    tries = 3\n    while tries > 0:\n        guess = int(input(f\"محاولاتك الباقية ({tries}) - خمن الرقم: \"))\n        if guess == secret:\n            print(\"عاش يا بطل! جبت الرقم بالظبط وصح!\")\n            return\n        elif guess < secret:\n            print(\"رقمك أصغر من السري، جرب رقم أكبر!\")\n        else:\n            print(\"رقمك أكبر من السري، جرب رقم أصغر!\")\n        tries -= 1\n    print(f\"خلصت المحاولات! الرقم السري كان: {secret}.\")\n\nname = input(\"أهلاً بيك! اسمك إيه؟ \")\nage = int(input(f\"أهلاً يا {name}! عندك كام سنة؟ \"))\nprint(f\"ما شاء الله، شكلك مولود تقريباً سنة {calc_birth_year(age)}!\")\nmood = input(\"حاسس بإيه النهاردة؟ \")\nprint(get_mood_reply(mood))\nplay_game()\nprint(f\"أشوفك قريب يا {name}! استمر في البرمجة!\")",
+    "output": "محادثة نصية تفاعلية تحسب سنة ميلادك وترد على مشاعرك وتلعب معاك لعبة تخمين رقم ممتعة."
+   }
   },
   {
    "title": "لوحة النتائج التفاعلية",
-   "desc": "ابني لوحة نتائج ديناميكية على الويب تتميز بمؤقتات تشغيل، وأزرار لتحديث النقاط، وتنبيه انتهاء اللعبة. ادمج نماذج HTML، ومعالجة DOM، ومؤقتات الفواصل الزمنية لإدارة جلسة لعب كاملة.",
+   "desc": "لوحة نتائج رياضية حماسية تسجل نقاط فريقين مع مؤقت تنازلي يعد الوقت ثانية بثانية. أول ما ينتهي وقت المباراة، اللوحة بتقفل أزرار النقاط وتعلن الفريق الفائز بالكأس!",
    "tags": [
-    "DOM",
-    "مؤقتات",
-    "لوحة النتائج"
+    "المؤقتات",
+    "التعامل مع DOM",
+    "JavaScript"
    ],
    "steps": [
-    "أنشئ هيكل HTML للوحة النتائج، بما في ذلك عناصر عرض النقاط، ووقت اللعب المتبقي، وأزرار التحكم.",
-    "قم بتنسيق لوحة النتائج باستخدام CSS لجعل الأرقام واضحة وسهلة القراءة أثناء اللعبة السريعة.",
-    "اكتب متغيرات جافاسكريبت لتتبع النتيجة الحالية ووقت اللعبة المتبقي بالثواني.",
-    "استخدم setInterval لإنشاء مؤقت تنازلي يقلل الوقت المتبقي كل ثانية ويحدث DOM.",
-    "اربط مستمعي أحداث النقر بأزرار النقاط لتمكين اللاعبين من إضافة نقاط عند تسجيل النجاح.",
-    "اكتب شرطًا داخل حلقة المؤقت يتحقق متى يصل الوقت إلى الصفر، ويوقف المؤقت، ويطلق تنبيه انتهاء اللعبة.",
-    "أضف زر إعادة تعيين يعيد النتيجة إلى الصفر ويعيد المؤقت إلى قيمته البدائية."
+    "صمم واجهة بـ HTML تحتوي على بطاقتين للفريقين، أزرار لإضافة النقاط، ومربع لمؤقت المباراة.",
+    "نسق اللوحة بـ CSS flexbox بألوان حماسية وخطوط رياضية واضحة ومقروءة.",
+    "عرف متغيرات في جافا سكريبت لنقاط كل فريق ووقت المباراة المتبقي بالثواني.",
+    "ابني دالة addScore(team) تزود نقاط الفريق وتحدث النص في شاشة الـ DOM مباشرة.",
+    "شغل مؤقت تنازلي باستخدام setInterval يقلل ثانية واحدة كل 1000 مللي ثانية.",
+    "افحص جوة المؤقت إذا كان الوقت المتبقي وصل لصفر.",
+    "وقف المؤقت نهائياً باستخدام دالة clearInterval أول ما الوقت يخلص.",
+    "عطل أزرار زيادة النقاط وافحص مين جايب نقاط أكتر عشان تعرض رسالة فوز الفريق البطل."
    ],
    "rubric": [
-    "لوحة النتائج تعرض عناصر واضحة للنتيجة ومؤقت تنازلي.",
-    "setInterval يقلل الوقت بنجاح ويحدث DOM كل ثانية.",
-    "الأزرار تحدث النتيجة بشكل صحيح عند النقر عليها من قبل المستخدم.",
-    "تنبيه انتهاء اللعبة ينطلق بشكل صحيح عندما يصل المؤقت إلى الصفر."
+    "دقة المؤقت: استخدام setInterval و clearInterval بشكل سليم لمنع تكرار المؤقت أو تسارعه.",
+    "تحديث الـ DOM: تحديث أرقام النقاط والمؤقت على الشاشة فوراً عند الضغط أو مرور الوقت.",
+    "إدارة نهاية المباراة: منع أي زيادة في النقاط فور انتهاء الوقت وإظهار النتيجة الصحيحة بدقة.",
+    "التصميم وتجربة المستخدم: تصميم رياضي مرتب وواضح مع تعطيل الأزرار بشكل بصري مقنع."
    ],
-   "stretch": "أضف ميزة أفضل نتيجة تحفظ أعلى رقم قياسي في السكربت الخاص بك باستخدام التحقق الشرطي."
+   "stretch": "ضيف زر لإعادة تشغيل المباراة من جديد مع خانات إدخال (Inputs) تتيح للاعبين كتابة أسماء مخصصة للفرق مع التحقق من صحة المدخلات.",
+   "demo": {
+    "title": "لوحة تحكيم المباراة المباشرة",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n  <style>\n    body { font-family:sans-serif; text-align:center; background:#0f172a; color:#fff; margin-top:20px; }\n    .board { display:flex; justify-content:center; gap:25px; margin:20px; }\n    .team { background:#1e293b; padding:20px; border-radius:12px; width:140px; border:2px solid #334155; }\n    .pts { font-size:52px; font-weight:bold; color:#38bdf8; margin:10px 0; }\n    button { padding:10px 18px; font-size:16px; font-weight:bold; border:none; border-radius:6px; cursor:pointer; background:#22c55e; color:#fff; }\n    button:disabled { background:#475569; cursor:not-allowed; opacity:0.6; }\n    #timer { font-size:30px; font-weight:bold; color:#facc15; }\n    #msg { font-size:22px; color:#f43f5e; margin-top:15px; }\n  </style>\n</head>\n<body>\n  <h2>لوحة نتائج البطولة الحماسية</h2>\n  <div id=\"timer\">الوقت المتبقي: 15 ثانية</div>\n  <div class=\"board\">\n    <div class=\"team\">\n      <h3>فريق النجوم</h3>\n      <div class=\"pts\" id=\"scoreA\">0</div>\n      <button class=\"btn\" onclick=\"addScore('A')\">+1 نقطة</button>\n    </div>\n    <div class=\"team\">\n      <h3>فريق الأبطال</h3>\n      <div class=\"pts\" id=\"scoreB\">0</div>\n      <button class=\"btn\" onclick=\"addScore('B')\">+1 نقطة</button>\n    </div>\n  </div>\n  <div id=\"msg\"></div>\n  <script>\n    let ptsA = 0, ptsB = 0, timeLeft = 15;\n    function addScore(team) {\n      if (timeLeft <= 0) return;\n      if (team === 'A') document.getElementById('scoreA').textContent = ++ptsA;\n      else document.getElementById('scoreB').textContent = ++ptsB;\n    }\n    const timerId = setInterval(() => {\n      timeLeft--;\n      document.getElementById('timer').textContent = `الوقت المتبقي: ${timeLeft} ثانية`;\n      if (timeLeft <= 0) {\n        clearInterval(timerId);\n        document.querySelectorAll('.btn').forEach(b => b.disabled = true);\n        const winner = ptsA > ptsB ? 'فريق النجوم كسب البطولة!' : ptsB > ptsA ? 'فريق الأبطال كسب البطولة!' : 'المباراة انتهت بالتعادل!';\n        document.getElementById('msg').textContent = 'انتهت المباراة - ' + winner;\n      }\n    }, 1000);\n  </script>\n</body>\n</html>",
+    "output": "لوحة نتائج تنازلية تعد 15 ثانية وتتيح زيادة النقاط بالضغط على الأزرار حتى انتهاء الوقت وإعلان الفائز."
+   }
   }
  ]
 }

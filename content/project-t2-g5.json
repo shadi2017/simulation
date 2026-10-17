@@ -1,150 +1,192 @@
 {
  "en": [
   {
-   "title": "Pet Care Tamagotchi Game",
-   "desc": "Create a virtual pet dashboard where you manage its happiness, hunger, and energy using arrays of objects and methods. Feed it, play with it, and watch its stats update live on the screen!",
-   "tags": [
-    "Objects",
-    "Arrays",
-    "Dashboard"
-   ],
-   "steps": [
-    "First, create a JavaScript object for your pet with keys like name, hunger, happiness, and energy to store its starting stats.",
-    "Next, build an array of items or toys using strings like push() and unshift() to keep track of what you bought for your pet.",
-    "Then, write functions that use string methods like length or uppercase to format your pet's name nicely in a status banner.",
-    "After that, use indexOf() to search your inventory array to see if you actually own a specific toy before playing with your pet.",
-    "Next, update your pet object's properties (like lowering hunger or increasing happiness) whenever a button on the dashboard is clicked.",
-    "Finally, combine everything inside an array of objects representing a history log of recent actions, and render it neatly on the screen."
-   ],
-   "rubric": [
-    "Pet object correctly uses key-value pairs for stats.",
-    "Array methods (push, pop, indexOf) work properly on inventory.",
-    "String methods correctly format displayed text.",
-    "Dashboard updates pet properties without breaking."
-   ],
-   "stretch": "Add an array of achievements that unlocks new items when your pet reaches high happiness!"
-  },
-  {
-   "title": "Superhero Team HQ Manager",
-   "desc": "Build a command center dashboard to manage your ultimate superhero roster, track missions, and update power stats using everything learned this term.",
+   "title": "Pet Rescue & Adoption Hub",
+   "desc": "Build an interactive shelter manager to register rescue pets, track adoption queues, and format profile badges. The app organizes pets as an array of objects and updates the list using core array and string methods.",
    "tags": [
     "Arrays of Objects",
-    "Properties",
-    "Dashboard"
+    "Queue Methods",
+    "String Formatting"
    ],
    "steps": [
-    "Start by creating individual superhero objects with keys like heroName, powerLevel, and secretIdentity.",
-    "Put all your hero objects inside a single main array to represent your team headquarters roster.",
-    "Use push() and pop() to add new recruits to your team or send the last hero on a solo mission.",
-    "Use shift() and unshift() to handle urgent emergency queue responses at the front of your mission list.",
-    "Write a search feature using indexOf() to find out the exact position of a hero in your team array by name.",
-    "Finally, loop through your array of objects to display each hero's uppercase name and power stats on the dashboard."
+    "Create an HTML layout with inputs for pet name and type, along with action buttons and a display area.",
+    "Initialize an array of objects where each pet has properties like name, type, and badge.",
+    "Write a render function to display all pet cards by reading each object's properties.",
+    "Add a function that uses push() to add a newly rescued pet to the end of the shelter list.",
+    "Use shift() to handle the adoption of the first pet in line and alert congratulations to the family.",
+    "Format each pet's display badge by taking the first 3 letters with slice(0, 3) and applying toUpperCase().",
+    "Add a search bar that checks if an entered species exists in an accepted-types array using indexOf().",
+    "Allow users to click a pet card to update its 'isVaccinated' property from false to true."
    ],
    "rubric": [
-    "Heroes are correctly stored as an array of objects.",
-    "All array methods (push, pop, shift, unshift, indexOf) are used accurately.",
-    "Object properties are successfully read and updated.",
-    "Dashboard clearly displays all team data."
+    "Data Structure: Accurately creates and manages an array containing multiple pet objects.",
+    "Array Methods: Correctly uses push() to add pets and shift() to process adoptions.",
+    "String Methods: Formats badge codes properly using slice() and toUpperCase() or toLowerCase().",
+    "Object Modification: Reads and updates object properties dynamically based on user interaction."
    ],
-   "stretch": "Add a feature to slice hero codenames to create funny secret acronyms!"
+   "stretch": "Add an unshift() VIP button to place injured animals at the very front of the rescue queue.",
+   "demo": {
+    "title": "Pet Rescue Hub Sample",
+    "code": "<!DOCTYPE html><html><head><style>body{font-family:sans-serif;background:#f3f4f6;padding:15px;}.card{background:#fff;padding:8px;margin:6px 0;border-radius:6px;border-left:4px solid #10b981;}</style></head><body><h3>🐾 Rescue Hub</h3><input id='pName' placeholder='Pet Name'><input id='pType' placeholder='Type (cat/dog)'><button onclick='addPet()'>Rescue Pet</button><button onclick='adopt()'>Adopt Next</button><div id='list'></div><script>let pets = [{name:'Milo', type:'CAT', code:'MIL'}, {name:'Luna', type:'DOG', code:'LUN'}];function render(){let box = document.getElementById('list'); box.innerHTML = '';pets.forEach((p, i) => {box.innerHTML += `<div class='card'><b>[${p.code}]</b> ${p.name} (${p.type})</div>`;});}function addPet(){let n = document.getElementById('pName').value;let t = document.getElementById('pType').value.toLowerCase();if(!n || !t) return;let c = n.slice(0,3).toUpperCase();pets.push({name: n, type: t.toUpperCase(), code: c});render();}function adopt(){if(pets.length > 0){alert('Adopted: ' + pets[0].name); pets.shift(); render();}}render();</script></body></html>",
+    "output": "An interactive pet adoption app showing pet cards with uppercase badge codes and buttons to rescue or adopt."
+   }
   },
   {
-   "title": "Gourmet Restaurant Order Hub",
-   "desc": "Design a digital kitchen ticket system where customers can order food, customize dishes with string methods, and track order status using objects and arrays.",
+   "title": "Hero Guild Quest Board",
+   "desc": "Construct an adventurer quest registry where players accept bounties and claim mission rewards. The system stores quest objects, generates secret contract codes, and sorts priority missions.",
    "tags": [
-    "String Methods",
-    "Objects",
-    "Dashboard"
+    "Object Properties",
+    "Array Manipulation",
+    "Text Casing"
    ],
    "steps": [
-    "First, create menu item objects containing key-value pairs for dishName, price, and spicyLevel.",
-    "Next, store all available menu items in an array so customers can browse delicious options.",
-    "Then, use string methods like slice() and lowercase/uppercase to format customer special request notes cleanly.",
-    "Use push() to add new food orders to the active kitchen ticket queue array as they come in.",
-    "Use shift() to remove and process orders from the front of the queue once the chef finishes cooking them.",
-    "Finally, update order status properties inside your objects and display the final receipt on the dashboard."
+    "Build the page layout with an adventure board container and quest creation controls.",
+    "Create an array of quest objects with properties: title, reward, and rank.",
+    "Write a render function that loops through quests and displays them as guild mission cards.",
+    "Use unshift() to pin emergency high-priority quests directly to the top of the board.",
+    "Use pop() to complete and remove the latest standard mission from the bottom of the board.",
+    "Generate a Guild Code for each quest using slice(0, 4) of the title combined with toUpperCase().",
+    "Implement a search box that uses indexOf() to check if a specific guild reward exists in a rewards list.",
+    "Add a button that increases an active quest's gold reward property by 50 coins."
    ],
    "rubric": [
-    "Menu and orders use objects and arrays correctly.",
-    "String methods properly clean up customer input notes.",
-    "Queue management works smoothly with shift and push.",
-    "Dashboard successfully renders live ticket statuses."
+    "Object Design: Clearly structures quests with key-value pairs for title, reward, and rank.",
+    "Queue Control: Correctly prioritizes quests using unshift() and removes items with pop().",
+    "String Processing: Generates uniform quest tags using slice() and toUpperCase().",
+    "Interactivity: Dynamically updates quest properties and refreshes the user interface."
    ],
-   "stretch": "Add a customer review system that stores feedback strings in an array and checks their length!"
+   "stretch": "Check quest title lengths with length; if longer than 15 characters, shorten them and add '...'.",
+   "demo": {
+    "title": "Quest Board Sample",
+    "code": "<!DOCTYPE html><html><head><style>body{font-family:sans-serif;background:#1e1e2e;color:#fff;padding:16px;}button{margin:4px;padding:6px 10px;cursor:pointer;}.quest{background:#2a2b3d;padding:8px;margin:6px 0;border-radius:4px;border-left:4px solid #f59e0b;}</style></head><body><h2>⚔️ Hero Guild Quests</h2><input id='qTitle' placeholder='Quest Title'><button onclick='addUrgent()'>Add Urgent</button><button onclick='completeQuest()'>Clear Last</button><div id='board'></div><script>let quests = [{title:'Dragon Cave', reward:200, id:'DRAG'}, {title:'Lost Ring', reward:50, id:'LOST'}];function render(){let el = document.getElementById('board'); el.innerHTML = '';quests.forEach(q => {el.innerHTML += `<div class='quest'>[${q.id}] <b>${q.title}</b> - ${q.reward} Gold</div>`;});}function addUrgent(){let t = document.getElementById('qTitle').value;if(!t) return;let code = t.slice(0,4).toUpperCase();quests.unshift({title: t, reward: 100, id: code});render();}function completeQuest(){if(quests.length > 0){alert('Completed: ' + quests[quests.length-1].title); quests.pop(); render();}}render();</script></body></html>",
+    "output": "A quest board showing guild contracts with generated ID codes and buttons to add urgent missions or clear completed quests."
+   }
+  },
+  {
+   "title": "School Cafeteria Fast-Pass Manager",
+   "desc": "Develop a cafeteria lunch tracker to organize student food orders and process meal tickets rapidly. It keeps orders in an array of objects, formats student names, and checks items off the queue.",
+   "tags": [
+    "Array Methods",
+    "String Logic",
+    "Object Arrays"
+   ],
+   "steps": [
+    "Create an HTML layout with an order form, meal selector dropdown, and orders queue section.",
+    "Set up an array of order objects containing studentName, mealChoice, and ticketCode.",
+    "Build a display function that outputs each student's order card onto the screen.",
+    "Use push() to add standard student lunch orders to the back of the queue.",
+    "Use unshift() to insert express teacher orders to the very front of the line.",
+    "Serve orders in order of arrival using shift() to remove the ready meal from the queue.",
+    "Format student names with toLowerCase() and generate ticket codes with slice(0, 3) in toUpperCase().",
+    "Use indexOf() to verify if a requested drink is currently available in the cafeteria stock array."
+   ],
+   "rubric": [
+    "Data Handling: Correctly initializes and manipulates an array of order objects.",
+    "Queue Management: Implements push(), unshift(), and shift() correctly according to order priority.",
+    "String Accuracy: Uses slice(), toUpperCase(), and toLowerCase() to sanitize names and build tickets.",
+    "User Experience: Provides immediate visual updates to the order list after every action."
+   ],
+   "stretch": "Add a feature that counts total letters in a student's notes with .length and warns them if it exceeds 20 characters.",
+   "demo": {
+    "title": "Cafeteria Manager Sample",
+    "code": "<!DOCTYPE html><html><head><style>body{font-family:sans-serif;background:#fffbeb;padding:16px;}#orders{margin-top:12px;}.ticket{background:#fef3c7;border:1px solid #d97706;padding:8px;margin:4px 0;border-radius:4px;}</style></head><body><h2>🥪 Cafeteria Fast-Pass</h2><input id='sName' placeholder='Student Name'><button onclick='order(false)'>Student Order</button><button onclick='order(true)'>Teacher VIP</button><button onclick='serve()'>Serve First</button><div id='orders'></div><script>let orders = [{student:'omar', item:'Burger', code:'OMA'}];function render(){let div = document.getElementById('orders'); div.innerHTML = '';orders.forEach(o => {div.innerHTML += `<div class='ticket'>#${o.code} - ${o.student.toUpperCase()} (${o.item})</div>`;});}function order(isVIP){let s = document.getElementById('sName').value.trim();if(!s) return;let item = isVIP ? 'VIP Salad' : 'Lunch Combo';let tCode = s.slice(0,3).toUpperCase();let obj = {student: s.toLowerCase(), item: item, code: tCode};if(isVIP){orders.unshift(obj);} else {orders.push(obj);}render();}function serve(){if(orders.length > 0){alert('Served: ' + orders[0].student); orders.shift(); render();}}render();</script></body></html>",
+    "output": "A cafeteria order display that queues student and VIP orders, creates ticket codes, and serves orders from the front."
+   }
   }
  ],
  "ar": [
   {
-   "title": "لعبة تربية الحيوان الأليف الرقمي",
-   "desc": "اعمل لوحة تحكم لحيوان أليف افتراضي تدير بيها أكله وسعادته وطاقته باستخدام الأوبجكتس والمصفوفات. أكله والعب معاها وشوف الإحصائيات بتتحدث قدامك على الشاشة!",
+   "title": "مركز إنقاذ وتبني الحيوانات الأليفة",
+   "desc": "صمم موقعاً تفاعلياً لإدارة مأوى الحيوانات وتسجيل الحيوانات الجديدة وتنظيم طابور التبني. يعتمد المشروع على مصفوفة من الكائنات وتطبيق دوال المصفوفات والنصوص.",
    "tags": [
-    "أوبجكتس",
-    "مصفوفات",
-    "لوحة تحكم"
+    "مصفوفة كائنات",
+    "طابور البيانات",
+    "تنسيق النصوص"
    ],
    "steps": [
-    "أول حاجة، اعمل أوبجكت (Object) لحيوانك الأليف فيه مفاتيح زي name و hunger و happiness و energy عشان تخزن إحصائياته.",
-    "بعد كده، اعمل مصفوفة (Array) للألعاب أو الأكل باستخدام دوال زي push() و unshift() عشان تتابع إنت اشتريت إيه لحيوانك.",
-    "بعدين، اكتب كود بيستخدم دوال النصوص زي length أو تحويل الحروف لكبيرة (Uppercase) عشان تعرض اسم الحيوان بشكل شيك.",
-    "استخدم دالة indexOf() عشان تبحث جوه مصفوفة الألعاب وتشوف هل معاك لعبة معينة ولا لأ قبل ما تلعب مع حيوانك.",
-    "حدث خصائص الأوبجكت بتاع الحيوان (زي تقليل الجوع أو زيادة السعادة) كل ما المستخدم يدوس على زرار في لوحة التحكم.",
-    "في الآخر، اجمع كل ده جوه مصفوفة أوبجكتس بتعبر عن سجل العمليات الأخيرة واعرضها بشكل مرتب على الشاشة."
+    "ابنِ واجهة HTML تحتوي على حقول لكتابة اسم الحيوان ونوعه، مع أزرار للعمليات ومكان للعرض.",
+    "أنشئ مصفوفة من الكائنات تحتوي على حيوانات أولية بخصائص: الاسم (name)، والنوع (type)، والرمز (code).",
+    "اكتب دالة عرض (render) تقرأ خصائص كل كائن وتُظهره في بطاقة مرتبة على الشاشة.",
+    "أضف زراً يستخدم ()push لإضافة حيوان تم إنقاذه حديثاً إلى نهاية قائمة المأوى.",
+    "استخدم ()shift لتسليم أول حيوان في الطابور للعائلة التي تبنته مع إظهار رسالة تهنئة.",
+    "اصنع كوداً مميزاً لكل حيوان باستخدام (3 ,0)slice وتحويل الحروف لكبيرة عبر ()toUpperCase.",
+    "أضف خانة بحث تتأكد إن كان نوع الحيوان موجوداً في قائمة الأنواع المسموحة باستخدام ()indexOf.",
+    "اجعل المستخدم قادراً على الضغط على الكائن لتحديث خاصية التطعيم (isVaccinated) من false إلى true."
    ],
    "rubric": [
-    "أوبجكت الحيوان الأليف بيستخدم المفاتيح والقيم صح.",
-    "دوال المصفوفات (push, pop, indexOf) شغالين مظبوط.",
-    "دوال النصوص بتنسق الكلام المعروض صح.",
-    "لوحة التحكم بتحدث خصائص الحيوان من غير أخطاء."
+    "هيكل البيانات: بناء مصفوفة كائنات والتعامل مع الخصائص بدقة واحترافية.",
+    "دوال المصفوفات: استخدام ()push للإضافة و()shift لإتمام عمليات التبني.",
+    "دوال النصوص: تجهيز كود الحيوان وتنسيقه باستخدام ()slice و()toUpperCase.",
+    "تعديل الكائنات: قراءة وتحديث قيم الكائنات ديناميكياً عند تفاعل المستخدم."
    ],
-   "stretch": "ضيف مصفوفة للإنجازات تفتح ألعاب جديدة لما حيوانك يوصل لمستوى سعادة عالي!"
+   "stretch": "أضف زر طوارئ يستخدم ()unshift لوضع الحيوانات المصابة في أول طابور الرعاية فوراً.",
+   "demo": {
+    "title": "نموذج مركز الإنقاذ",
+    "code": "<!DOCTYPE html><html dir='rtl'><head><style>body{font-family:sans-serif;background:#f3f4f6;padding:15px;}.card{background:#fff;padding:8px;margin:6px 0;border-radius:6px;border-right:4px solid #10b981;}</style></head><body><h3>🐾 مأوى الأبطال للحيوانات</h3><input id='pName' placeholder='اسم الحيوان'><input id='pType' placeholder='النوع (قط/كلب)'><button onclick='addPet()'>إنقاذ حيوان</button><button onclick='adopt()'>تبني الأول</button><div id='list'></div><script>let pets = [{name:'Milo', type:'CAT', code:'MIL'}, {name:'Luna', type:'DOG', code:'LUN'}];function render(){let box = document.getElementById('list'); box.innerHTML = '';pets.forEach((p, i) => {box.innerHTML += `<div class='card'><b>[${p.code}]</b> ${p.name} (${p.type})</div>`;});}function addPet(){let n = document.getElementById('pName').value;let t = document.getElementById('pType').value.toLowerCase();if(!n || !t) return;let c = n.slice(0,3).toUpperCase();pets.push({name: n, type: t.toUpperCase(), code: c});render();}function adopt(){if(pets.length > 0){alert('تم تبني: ' + pets[0].name); pets.shift(); render();}}render();</script></body></html>",
+    "output": "لوحة تفاعلية لتبني الحيوانات تعرض بطاقات بأكواد مختصرة وأزرار لإضافة حيوان أو تبني أول حيوان."
+   }
   },
   {
-   "title": "مدير مقر الأبطال الخارقين",
-   "desc": "اصنع مركز قيادة لإدارة فريق الأبطال الخارقين، متابعة المهام، وتحديث مستويات القوة باستخدام كل اللي اتعلمناه الترم ده.",
+   "title": "لوحة مهام نقابة الأبطال",
+   "desc": "أنشئ لوحة مغامرات تفاعلية تُمكّن الأبطال من استعراض المهمات وقبول المهام العاجلة وحصد الجوائز. يتم حفظ المهمات في مصفوفة كائنات مع توليد أكواد سرية وتعديل الخصائص.",
    "tags": [
-    "مصفوفة أوبجكتس",
-    "خصائص",
-    "لوحة تحكم"
+    "خصائص الكائنات",
+    "عمليات المصفوفات",
+    "حالة النصوص"
    ],
    "steps": [
-    "ابدأ بإنشاء أوبجكتس منفصلة للأبطال الخارقين بمفاتيح زي heroName و powerLevel و secretIdentity.",
-    "حط كل أوبجكتس الأبطال جوه مصفوفة رئيسية واحدة عشان تمثل مقر فريقك الخارق.",
-    "استخدم push() و pop() عشان تضيف أعضاء جدد للفريق أو تبعت آخر بطل في مهمة فردية.",
-    "استخدم shift() و unshift() عشان تدير طوابير الطوارئ العاجلة في أول قائمة المهام.",
-    "اكتب ميزة بحث باستخدام indexOf() عشان تعرف مكان البطل بالظبط جوه مصفوفة الفريق باستخدام اسمه.",
-    "في الآخر، عدّي على مصفوفة الأوبجكتس عشان تعرض اسم كل بطل بحروف كبيرة ومستويات قوته على لوحة التحكم."
+    "صمم واجهة الصفحة لتضم منطقة عرض للمهمات، وخانات إدخال، وأزرار تحكم للأبطال.",
+    "أنشئ مصفوفة من كائنات المهمات تحتوي على: عنوان المهمة (title)، والجائزة (reward)، والرتبة (rank).",
+    "اكتب دالة تعرض المهمات على الشاشة وتحدث المحتوى عند أي تغيير في المصفوفة.",
+    "استخدم ()unshift لتثبيت المهمات الطارئة والفورية في أعلى القائمة مباشرة.",
+    "استخدم ()pop لإنهاء وحذف آخر مهمة عادية في أسفل اللوحة بعد اكتمالها.",
+    "ولّد كوداً رسمياً لكل مهمة بأخذ أول 4 حروف عبر (4 ,0)slice وتحويلها لحروف كبيرة بـ ()toUpperCase.",
+    "أضف ميزة بحث تتأكد من وجود مكافأة معينة ضمن قائمة الجوائز المتاحة باستخدام ()indexOf.",
+    "أضف زراً يزيد قيمة جائزة الذهب لمهمة معينة بمقدار 50 قطعة نقدية بتحديث الخاصية مباشرة."
    ],
    "rubric": [
-    "الأبطال متخزنين صح كمصفوفة أوبجكتس.",
-    "كل دوال المصفوفات مستخدمة بدقة.",
-    "خصائص الأوبجكت بتتقرا وتتحدث بنجاح.",
-    "لوحة التحكم بتعرض بيانات الفريق بوضوح."
+    "تصميم الكائنات: تمثيل المهمات بدقة عبر كائنات تحتوي على مفاتيح وقيم مناسبة.",
+    "إدارة المصفوفة: التحكم في أولوية المهام بنجاح عبر ()unshift وحذفها عبر ()pop.",
+    "معالجة النصوص: توليد بطاقات المهام باحتراف باستخدام ()slice و()toUpperCase.",
+    "التفاعل والربط: تحديث الواجهة وتعديل خصائص الكائنات بشكل فوري عند الضغط."
    ],
-   "stretch": "ضيف ميزة لتقطيع (slice) الأسامي السرية للأبطال عشان تعمل اختصارات سرية مضحكة!"
+   "stretch": "افحص طول عنوان المهمة باستخدام length؛ وإذا زاد عن 15 حرفاً، قُصّه وأضف '...' في نهايته.",
+   "demo": {
+    "title": "نموذج لوحة مهام الأبطال",
+    "code": "<!DOCTYPE html><html dir='rtl'><head><style>body{font-family:sans-serif;background:#1e1e2e;color:#fff;padding:16px;}button{margin:4px;padding:6px 10px;cursor:pointer;}.quest{background:#2a2b3d;padding:8px;margin:6px 0;border-radius:4px;border-right:4px solid #f59e0b;}</style></head><body><h2>⚔️ مهام نقابة الأبطال</h2><input id='qTitle' placeholder='عنوان المهمة'><button onclick='addUrgent()'>مهمة طارئة</button><button onclick='completeQuest()'>إنهاء الأخيرة</button><div id='board'></div><script>let quests = [{title:'Dragon Cave', reward:200, id:'DRAG'}, {title:'Lost Ring', reward:50, id:'LOST'}];function render(){let el = document.getElementById('board'); el.innerHTML = '';quests.forEach(q => {el.innerHTML += `<div class='quest'>[${q.id}] <b>${q.title}</b> - ${q.reward} ذهبة</div>`;});}function addUrgent(){let t = document.getElementById('qTitle').value;if(!t) return;let code = t.slice(0,4).toUpperCase();quests.unshift({title: t, reward: 100, id: code});render();}function completeQuest(){if(quests.length > 0){alert('أنجزت: ' + quests[quests.length-1].title); quests.pop(); render();}}render();</script></body></html>",
+    "output": "لوحة مهام تعرض عقود المغامرين مع أكواد تعريفية وأزرار لإضافة مهمة طارئة بالأعلى أو إنجاز الأخيرة."
+   }
   },
   {
-   "title": "لوحة تحكم مطعم الأكلات الفاخرة",
-   "desc": "صمم نظام طلبات ديجيتال للمطبخ يقدر فيه الزباين يطلبوا أكل، ويعدلوا الطلبات بدوال النصوص، ويتابعوا حالة الطلب باستخدام الأوبجكتس والمصفوفات.",
+   "title": "مدير طلبات كافتيريا المدرسة السريع",
+   "desc": "ابنِ نظاماً لتنظيم وجبات الطلاب في فسحة المدرسة ومعالجة تذاكر الطعام بترتيب وصولها. يُنظم البرنامج الطلبات في مصفوفة كائنات مع توليد كود إيصال مختصر لكل وجبة.",
    "tags": [
-    "دوال النصوص",
-    "أوبجكتس",
-    "لوحة تحكم"
+    "طوابير المصفوفات",
+    "منطق النصوص",
+    "مصفوفات الكائنات"
    ],
    "steps": [
-    "أول حاجة، اعمل أوبجكتس لأصناف القائمة فيها مفاتيح زي dishName و price و spicyLevel.",
-    "بعدين، خزّن كل أصناف القائمة المتاحة جوه مصفوفة عشان الزباين يتصفحوا الأكل اللذيذ.",
-    "استخدم دوال النصوص زي slice() وتعديل الحروف عشان تنظم ملاحظات الطلبات الخاصة للزباين.",
-    "استخدم push() عشان تضيف طلبات أكل جديدة لطابور تذاكر المطبخ النشط أول بأول.",
-    "استخدم shift() عشان تشيله وتعالج الطلبات من أول الطابور أول ما الشيف يخلص طبخهم.",
-    "في الآخر، حدث حالة الطلب جوه الأوبجكتس واعرض الإيصال النهائي على لوحة التحكم."
+    "صمم واجهة بسيطة تحتوي على نموذج لإدخال اسم الطالب واختيار الوجبة وقائمة للطلبات الحالية.",
+    "أنشئ مصفوفة طلبات من الكائنات، بحيث يحتوي كل كائن على: اسم الطالب، والوجبة، وكود التذكرة.",
+    "اكتب دالة تعرض تذاكر الطلبات بوضوح على الشاشة بترتيبها الحالي في الطابور.",
+    "استخدم ()push لإضافة طلبات الطلاب العادية إلى نهاية طابور الانتظار.",
+    "استخدم ()unshift لإضافة طلبات المعلمين السريعة ذات الأولوية في مقدمة الطابور مباشرة.",
+    "استخدم ()shift لتسليم الوجبة الأولى الجاهزة في بداية الطابور وحذفها من القائمة.",
+    "نسّق اسم الطالب بحروف صغيرة عبر ()toLowerCase، وأنشئ كود الإيصال بأول 3 حروف عبر (3 ,0)slice و()toUpperCase.",
+    "تأكد من توفر المشروب المطلوب بمطابقته مع قائمة المشروبات المخزونة باستخدام ()indexOf."
    ],
    "rubric": [
-    "القائمة والطلبات بيستخدموا الأوبجكتس والمصفوفات صح.",
-    "دوال النصوص بتنضف ملاحظات الزباين كويس.",
-    "إدارة الطابور شغالة بسلاسة مع shift و push.",
-    "لوحة التحكم بتعرض حالة التذاكر الحية بنجاح."
+    "تنظيم البيانات: حفظ وتعديل بيانات الوجبات بدقة داخل مصفوفة من الكائنات.",
+    "منطق الطابور: استخدام ()push و()unshift و()shift لتنظيم دخول وخروج الوجبات بحسب الأولوية.",
+    "التعامل مع النصوص: توليد كود التذكرة بدقة عبر ()slice وضبط حالة الحروف.",
+    "التجربة التفاعلية: ظهور التحديثات والتنبيهات بوضوح على الشاشة فور كل إجراء."
    ],
-   "stretch": "ضيف نظام تقييمات للعملاء بيخزن آراءهم في مصفوفة ويتاكد من طول النص!"
+   "stretch": "احسب عدد حروف ملاحظات الطالب باستخدام length؛ وأظهر تنبيهاً إذا تجاوزت 20 حرفاً.",
+   "demo": {
+    "title": "نموذج كافتيريا المدرسة",
+    "code": "<!DOCTYPE html><html dir='rtl'><head><style>body{font-family:sans-serif;background:#fffbeb;padding:16px;}#orders{margin-top:12px;}.ticket{background:#fef3c7;border:1px solid #d97706;padding:8px;margin:4px 0;border-radius:4px;}</style></head><body><h2>🥪 المنظم السريع للكافتيريا</h2><input id='sName' placeholder='اسم الطالب'><button onclick='order(false)'>طلب طالب</button><button onclick='order(true)'>طلب معلم VIP</button><button onclick='serve()'>تسليم الأول</button><div id='orders'></div><script>let orders = [{student:'omar', item:'Burger', code:'OMA'}];function render(){let div = document.getElementById('orders'); div.innerHTML = '';orders.forEach(o => {div.innerHTML += `<div class='ticket'>#${o.code} - ${o.student.toUpperCase()} (${o.item})</div>`;});}function order(isVIP){let s = document.getElementById('sName').value.trim();if(!s) return;let item = isVIP ? 'سلطة المعلم' : 'وجبة الفسحة';let tCode = s.slice(0,3).toUpperCase();let obj = {student: s.toLowerCase(), item: item, code: tCode};if(isVIP){orders.unshift(obj);} else {orders.push(obj);}render();}function serve(){if(orders.length > 0){alert('تم تسليم: ' + orders[0].student); orders.shift(); render();}}render();</script></body></html>",
+    "output": "شاشة كافتيريا تُظهر طابور الطلبات وتذاكر الوجبات المجهزة، مع أزرار للطلبات العادية والفورية والتسليم."
+   }
   }
  ]
 }

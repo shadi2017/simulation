@@ -2,149 +2,191 @@
  "en": [
   {
    "title": "The Jungle Concert",
-   "desc": "Create a lively musical show where jungle animals play recorded sounds when tapped. Background birds loop across the screen to set the tropical scene.",
+   "desc": "Welcome to the wildest musical show in the jungle! Tap your animal musicians to play recorded beats while birds loop continuously across the canopy.",
    "tags": [
-    "ScratchJr",
-    "Animation",
-    "Sound"
+    "Loops",
+    "Sound Recording",
+    "Tap Trigger"
    ],
    "steps": [
-    "Open ScratchJr and choose a jungle background to set the stage for your concert.",
-    "Add three different animal sprites, like a monkey, a parrot, and a tiger, and place them on the grid.",
-    "Use the record sound block to record your own fun animal noises or musical beats for each character.",
-    "Attach the green flag and tap trigger blocks so each animal starts its action when touched by the player.",
-    "Use motion blocks and repeat loops to make the background birds fly smoothly across the screen over and over.",
-    "Test your project by tapping different animals to make sure their sounds play and the music flows nicely."
+    "Choose the colorful jungle background and place three animal friends on stage, like a lion, a monkey, and a parrot.",
+    "Add a flying toucan or bird sprite high in the sky to act as your background performer.",
+    "Program the bird using the yellow Start on Green Flag block, blue Move Right blocks, and the red Repeat Forever loop block.",
+    "Tap the microphone icon in the green sound category to record your own beatbox rhythm, funny jungle roar, or greeting.",
+    "Program the lion: use the yellow Start on Tap block and snap your custom recorded sound block right next to it.",
+    "Program the monkey: use the yellow Start on Tap block, then add pink Grow and Shrink blocks so it dances to the rhythm.",
+    "Program the parrot: when tapped, make it hop up and down and play a cheerful pop sound.",
+    "Test your concert by tapping all three animal performers one by one to create a lively jungle beat!"
    ],
    "rubric": [
-    "Jungle background and three distinct animal sprites are added.",
-    "At least two unique sounds are recorded and attached to tap triggers.",
-    "Repeat loops are used to make birds move continuously across the background.",
-    "Project runs smoothly when the green flag and tap triggers are tested."
+    "Jungle background and at least three distinct animal sprites are set up properly.",
+    "At least one background sprite loops continuously across the screen using Repeat Forever.",
+    "At least two animals respond immediately when tapped by the user.",
+    "A custom voice recording is created and plays back clearly during the concert."
    ],
-   "stretch": "Add a speech bubble above each animal showing musical notes when its sound plays!"
+   "stretch": "Use the orange Send Message block so tapping the lion automatically sends a message to make the monkey dance too!",
+   "demo": {
+    "title": "Monkey Beat & Flying Bird",
+    "code": "[Bird] When Green Flag: Repeat Forever [Move Right 4, Hop, Move Left 4]\n[Monkey] When Tapped: Play Recorded Sound 1 -> Grow 2 -> Shrink 2",
+    "output": "The bird glides endlessly across the jungle sky while the monkey bounces and plays your custom drum beat whenever tapped."
+   }
   },
   {
    "title": "Undersea Adventure Movie",
-   "desc": "Animate a brave little fish escaping from a big shark. The scene changes when they bump into each other, ending with a voice message inside a safe cave.",
+   "desc": "Dive deep under the waves in an exciting two-page interactive rescue movie! Help a tiny fish escape a speeding shark, change scenes at a bump, and cheer in a secret cave.",
    "tags": [
-    "ScratchJr",
-    "Storytelling",
-    "Triggers"
+    "Scene Change",
+    "Bump Trigger",
+    "Speech & Voice"
    ],
    "steps": [
-    "Choose an ocean background and add a small fish, a shark, and a cave background for the second page.",
-    "Program the small fish to swim forward using motion blocks and grid steps.",
-    "Set up the shark to chase the fish using speed blocks and motion triggers.",
-    "Use the bump trigger so that when the shark touches the fish, the story automatically switches to the cave page.",
-    "On the cave page, use the record sound block so the fish can share a happy voice message about being safe.",
-    "Review your story from start to finish to ensure the page switch and voice message work smoothly."
+    "Set up Page 1 with an open ocean background, placing a fast shark on the left and a tiny fish in the center.",
+    "Program the shark to swim quickly toward the fish using the orange Speed block set to fast and blue Move Right blocks.",
+    "Click the plus icon on the right side of the screen to add Page 2 with a safe underwater cave background.",
+    "Add your tiny fish sprite to Page 2, positioning it safely inside the quiet coral cave.",
+    "Return to Page 1 and program the tiny fish: start with the yellow Start on Bump block and attach the red Change Page (Page 2) block.",
+    "On Page 2, program the tiny fish to celebrate using the yellow Start on Green Flag block followed by the pink Say block with 'I am safe!'.",
+    "Record your own triumphant cheer with the microphone and attach your green sound block to the fish on Page 2.",
+    "Run the movie from Page 1 to watch the chase, witness the automatic scene switch upon bumping, and hear the victory cheer!"
    ],
    "rubric": [
-    "Two story pages are created: ocean and cave.",
-    "Motion and speed blocks make the fish and shark move naturally.",
-    "Bump trigger successfully switches the story to the second page.",
-    "Recorded voice message plays clearly once the fish reaches the safe cave."
+    "Project features two connected pages with appropriate underwater backgrounds.",
+    "Shark sprite moves smoothly using motion and speed blocks.",
+    "The Start on Bump trigger successfully transports the story from Page 1 to Page 2.",
+    "Page 2 includes both a visible speech bubble and a recorded victory sound."
    ],
-   "stretch": "Send a hidden message between sprites just before changing scenes to coordinate the chase!"
+   "stretch": "Add a colorful sea anemone on Page 2 and use the pink Hide and Show blocks to make your fish play peek-a-boo!",
+   "demo": {
+    "title": "Ocean Escape Script",
+    "code": "[Page 1 Shark] When Green Flag: Set Speed Fast -> Move Right 8\n[Page 1 Fish] When Bumped: Go to Page 2\n[Page 2 Fish] When Green Flag: Say 'Phew, I escaped!' -> Play Recorded Sound 1",
+    "output": "The speedy shark bumps the little fish, automatically switching to the safe cave scene where the fish speaks and cheers."
+   }
   },
   {
    "title": "Vehicle Racing Game",
-   "desc": "Start three cool vehicles with a single tap, compare their different speeds across the grid, and celebrate the winning car with sounds and growing animations.",
+   "desc": "Ready, steady, go! Race three vehicles across the grid at different speeds and crown the winner with sound and motion.",
    "tags": [
-    "ScratchJr",
-    "Games",
-    "Speed"
+    "Sprite Speed",
+    "Grid Steps",
+    "Broadcast Messages"
    ],
    "steps": [
-    "Pick a race track background and add three different vehicle sprites, like a car, a truck, and a motorcycle.",
-    "Use tap triggers so all three vehicles start moving forward when the player touches them.",
-    "Give each vehicle a different speed block to make the race exciting and unpredictable.",
-    "Add repeat loops so the vehicles travel all the way across the grid to the finish line.",
-    "Program the winning vehicle to grow larger and play a celebratory sound when it finishes.",
-    "Test your racing game multiple times to see which vehicle wins and make sure the animations look great."
+    "Pick a city road or racetrack background and turn on the grid tool to count steps to the finish line.",
+    "Add three vehicles lined up on the left side of the screen at grid number 2, such as a race car, a bicycle, and a van.",
+    "Add a referee sprite, like the Scratch cat, standing near the start line ready to flag off the race.",
+    "Program the referee: start with the yellow Start on Tap block, play a pop sound, and attach the orange Send Message block.",
+    "Program each vehicle with the yellow Start on Message block so they all listen for the referee's starting signal.",
+    "Give each vehicle a different orange Speed block: slow for the bicycle, medium for the van, and fast for the race car.",
+    "Attach blue Move Right blocks (14 steps) to every vehicle so they all travel the exact same distance.",
+    "Program the fast race car to celebrate when it reaches the end by using pink Grow blocks and a cheerful recorded cheer!"
    ],
    "rubric": [
-    "Three distinct vehicle sprites are placed on a race track background.",
-    "Tap triggers start the movement for all vehicles simultaneously.",
-    "Different speed blocks are applied to create a competitive race.",
-    "Winning vehicle successfully grows and plays a sound at the finish line."
+    "Three vehicles are aligned accurately at the starting line using grid numbers.",
+    "The race starts cleanly using a tap trigger and an orange broadcast message.",
+    "Each vehicle uses a different speed block setting to create a visible race.",
+    "The winning vehicle celebrates with an animation and sound effect."
    ],
-   "stretch": "Add a cheering crowd sprite that uses speech bubbles to announce the winner!"
+   "stretch": "Place a traffic cone obstacle in one lane that uses a Bump trigger to make the van bounce backwards!",
+   "demo": {
+    "title": "Three-Speed Grand Prix",
+    "code": "[Referee] When Tapped: Send Orange Message\n[Race Car] When Receive Orange Message: Set Speed Fast -> Move Right 14 -> Grow 2 -> Play Pop Sound\n[Bicycle] When Receive Orange Message: Set Speed Slow -> Move Right 14",
+    "output": "Tapping the referee launches all vehicles across the track at different speeds, and the race car wins with a victory jump!"
+   }
   }
  ],
  "ar": [
   {
    "title": "حفلة الغابة الموسيقية",
-   "desc": "اصنع عرضًا موسيقيًا ممتعًا حيث تقوم حيوانات الغابة بتشغيل أصوات مسجلة عند لمسها. وتتحرك الطيور في الخلفية بشكل متكرر لإكمال أجواء الغابة.",
+   "desc": "أهلاً بك في أمتع حفل موسيقي في قلب الغابة! اضغط على الحيوانات عشان تعزف أصواتك المسجلة، بينما الطيور بتطير في السماء بحلقات تكرار مابتخلصش.",
    "tags": [
-    "سكراتش جونيور",
-    "رسوم متحركة",
-    "أصوات"
+    "حلقات التكرار",
+    "تسجيل الصوت",
+    "زر اللمس"
    ],
    "steps": [
-    "افتح برنامج سكراتش جونيور واختر خلفية الغابة المناسبة لبدء الحفلة.",
-    "أضف ثلاث شخصيات حيوانات مختلفة مثل القرد والبغداد والنمر وضعهم على شبكة الحركة.",
-    "استخدم أداة تسجيل الصوت لتسجيل أصوات حيوانات مضحكة أو نغمات موسيقية لكل شخصية.",
-    "اربط لبنة العلم الأخضر ولبنة اللمس لكي تبدأ كل حيوانات الغابة بالحركة عند نقرها.",
-    "استخدم لبنات الحركة وحلقة التكرار لجعل طيور الخلفية تطير بسلاسة عبر الشاشة مراراً وتكراراً.",
-    "جرب مشروعك عبر النقر على الحيوانات للتأكد من عمل الأصوات وتدفق الموسيقى بشكل جميل."
+    "اختار خلفية الغابة الجميلة وحط على المسرح 3 شخصيات زي الأسد والقرد والببغاء.",
+    "ضيف عصفور أو طائر فوق في السماء عشان يطير في الخلفية طول الحفلة.",
+    "برمج العصفور: ابدأ بزر العلم الأخضر، وحط حركة لليمين مع مكعب التكرار اللانهائي الأحمر عشان يفضل يطير رايح جاي.",
+    "افتح علامة الميكروفون في المكعبات الخضراء وسجل صوتك بصوت طبلة أو زئير أسد مضحك.",
+    "برمج الأسد: استخدم مكعب اللمس الأصفر (رمز اليد) وجنبه مكعب الصوت الأخضر اللي سجلته بصوتك.",
+    "برمج القرد: لما نلمسه، خليه يكبر ويصغر بمكعبات الحجم الوردية عشان يرقص على النغمة.",
+    "برمج الببغاء: لما نلمسه، خليه ينط لفوق ويطلع صوت بوب مبهج.",
+    "جرب الحفلة واضغط على الحيوانات ورا بعض عشان تعزف سيمفونية الغابة الرهيبة!"
    ],
    "rubric": [
-    "تمت إضافة خلفية الغابة وثلاث شخصيات حيوانات مميزة.",
-    "تم تسجيل صوتين فريدين على الأقل وربطهما بأوامر اللمس.",
-    "تم استخدام حلقات التكرار لحركة الطيور باستمرار عبر الخلفية.",
-    "المشروع يعمل بسلاسة عند اختبار العلم الأخضر وأوامر اللمس."
+    "إضافة خلفية الغابة و3 شخصيات حيوانات على الأقل بشكل منظم.",
+    "استخدام مكعب التكرار اللانهائي لتحريك طائر في الخلفية باستمرار.",
+    "برمجة شخصيتين على الأقل لتستجيب لزر اللمس بالصوت والحركة.",
+    "تسجيل صوت حقيقي واستخدامه بنجاح داخل المشروع."
    ],
-   "stretch": "أضف فقاعة كلام فوق كل حيوان تظهر نغمات موسيقية عند صدور الصوت!"
+   "stretch": "استخدم مكعب الرسائل البرتقالي، بحيث لما تضغط على الأسد يبعت إشارة تخلي القرد يرقص معاه في نفس اللحظة!",
+   "demo": {
+    "title": "إيقاع القرد والطائر الطائر",
+    "code": "[العصفور] عند نقر العلم: كرر دائماً [تحرك يميناً 4، اقفز، تحرك يساراً 4]\n[القرد] عند اللمس: شغل الصوت المسجل 1 -> كبر 2 -> صغر 2",
+    "output": "العصفور بيطير رايح جاي في السماء بدون توقف، والقرد بيتنطط ويشغل إيقاع الطبلة اللي سجلته كل ما تلمسه."
+   }
   },
   {
-   "title": "مغامرة تحت الماء",
-   "desc": "حرك سمكة شجاعة تهرب من سمكة قرش كبيرة، وتتغير المشاهد عند التصادم، وتنتهي القصة برسالة صوتية داخل كهف آمن.",
+   "title": "مغامرة أعماق البحار",
+   "desc": "انزل لأعماق المحيط في فيلم كرتوني من صفحتين وساعد السمكة تهرب من القرش السريع! أول ما يخبطوا في بعض، المشهد هيتغير لكهف الأمان وتسمع صوت فرحتها.",
    "tags": [
-    "سكراتش جونيور",
-    "قصص تفاعلية",
-    "محفزات"
+    "تغيير المشهد",
+    "زر الاصطدام",
+    "الكلام والصوت"
    ],
    "steps": [
-    "اختر خلفية البحر وأضف سمكة صغيرة وقرشاً، ثم جهز خلفية الكهف للصفحة الثانية.",
-    "برمج السمكة الصغيرة لكي تسبح للأمام باستخدام لبنات الحركة وخطوات الشبكة.",
-    "اضبط حركة القرش لكي يلاحق السمكة باستخدام لبنات السرعة وأوامر الحركة.",
-    "استخدم أمر الاصطدام (البمپ) لكي تنتقل القصة تلقائياً إلى صفحة الكهف عندما يلمس القرش السمكة.",
-    "في صفحة الكهف، استخدم لبنة تسجيل الصوت لكي تشارك السمكة رسالة صوتية سعيدة بأنها بأمان.",
-    "راجع قصتك من البداية للنهاية للتأكد من نجاح انتقال الصفحات وعمل الرسالة الصوتية."
+    "اعمل الصفحة الأولى بخلفية البحر المفتوح، وحط قرش سريع على الشمال وسمكة صغيرة في النص.",
+    "برمج القرش يتحرك بسرعة ناحية السمكة باستخدام مكعب السرعة السريعة ومكعب الحركة لليمين.",
+    "اضغط على علامة الزائد (+) على يمين الشاشة عشان تعمل صفحة تانية فيها كهف بحري هادي.",
+    "ضيف نفس السمكة الصغيرة في الصفحة التانية وخليها واقفة جوه الكهف في أمان.",
+    "ارجع للصفحة الأولى وبرمج السمكة: استخدم زر الاصطدام الأصفر (رمز الخبطة) وجنبه مكعب الانتقال للصفحة التانية الأحمر.",
+    "في الصفحة التانية، برمج السمكة لما تبدأ تقول فقاعة كلام وردية مكتوب فيها 'أنا في أمان!'.",
+    "سجل بصوتك صيحة فرحة 'هييه هربت!' باستخدام الميكروفون، وحط مكعب الصوت الأخضر جنب فقاعة الكلام.",
+    "شغل الفيلم من الصفحة الأولى، وشوف المطاردة ولحظة انتقال السمكة للكهف وصوتها الفرحان!"
    ],
    "rubric": [
-    "تم إنشاء صفحتين للقصة: البحر والكهف.",
-    "تم استخدام لبنات الحركة والسرعة لتحريك السمكة والقرش بطريقة طبيعية.",
-    "أمر الاصطدام ينتقل بنجاح إلى الصفحة الثانية.",
-    "الرسالة الصوتية المسجلة تعمل بوضوح فور وصول السمكة للكهف الآمن."
+    "وجود صفحتين مختلفتين مرتبطتين بقصة بحرية متناسقة.",
+    "تحرك القرش باستخدام مكعبات الحركة والسرعة العالية.",
+    "نجاح مكعب الاصطدام في نقل المشهد تلقائياً من الصفحة الأولى للثانية.",
+    "ظهور فقاعة كلام وصوت مسجل للسمكة في الصفحة الثانية."
    ],
-   "stretch": "أرسل رسالة خفية بين الشخصيات قبل تغيير المشهد لتنسيق المطاردة!"
+   "stretch": "ضيف شقائق نعمان أو صخرة في الصفحة التانية وخلي السمكة تختفي وتظهر وراها بمكعبات الاختفاء الوردية كأنها بتلعب استغماية!",
+   "demo": {
+    "title": "كود الهروب البحري",
+    "code": "[صفحة 1 - القرش] عند نقر العلم: اضبط السرعة سريعة -> تحرك يميناً 8\n[صفحة 1 - السمكة] عند الاصطدام: اذهب إلى صفحة 2\n[صفحة 2 - السمكة] عند نقر العلم: قل 'الحمد لله هربت!' -> شغل الصوت المسجل 1",
+    "output": "القرش السريع بيخبط في السمكة، فالمشهد بيتحول فوراً لكهف الأمان والسمكة بتتكلم وتفرح بصوتك المسجل."
+   }
   },
   {
-   "title": "لعبة سباق السيارات",
-   "desc": "ابدأ سباق ثلاث سيارات بلمسة واحدة، وقارن بين سرعاتهن المختلفة على الشبكة، واحتفل بالسيارة الفائزة بالصوت والحركة.",
+   "title": "سباق العربيات الخارق",
+   "desc": "استعد، جاهز، انطلق في أقوى سباق عربيات على شبكة الحركة! قارن بين سرعات 3 عربيات واحتفل بالعربية الفائزة بالصوت والرقص.",
    "tags": [
-    "سكراتش جونيور",
-    "ألعاب",
-    "سرعة"
+    "سرعة الشخصيات",
+    "خطوات الشبكة",
+    "إرسال الرسائل"
    ],
    "steps": [
-    "اختر خلفية مضمار السباق وأضف ثلاث سيارات مختلفة مثل سيارة رياضية وشاحنة ودراجة.",
-    "استخدم أوامر اللمس لكي تبدأ السيارات الثلاث بالتحرك للأمام عندما يلمسها اللاعب.",
-    "امنح كل سيارة لبنة سرعة مختلفة لجعل السباق مثيراً وغير متوقع.",
-    "أضف حلقات التكرار لكي تقطع السيارات المسافة كاملة عبر الشبكة حتى خط النهاية.",
-    "برمج السيارة الفائزة لكي تكبر في الحجم وتصدر صوت احتفالي عند الوصول.",
-    "جرب لعبة السباق عدة مرات لمعرفة السيارة الفائزة والتأكد من جمال الحركات."
+    "اختار خلفية طريق أو حلبة سباق وافتح أداة الشبكة عشان تحسب الخطوات لخط النهاية.",
+    "ضيف 3 مركبات زي عربية سباق وعجلة وأوتوبيس ورتبهم على خط البداية عند رقم 2 في الشبكة.",
+    "ضيف شخصية الحكم زي قط سكراتش واقف على خط البداية ماسك علم السباق.",
+    "برمج الحكم: لما نلمسه (زر اللمس الأصفر)، يطلع صوت بوب ويبعت رسالة إشارة البدء البرتقالية.",
+    "برمج كل عربية: تبدأ بمكعب استلام الرسالة البرتقالي عشان يسمعوا إشارة الحكم في نفس اللحظة.",
+    "غير سرعة كل عربية بمكعب السرعة: العجلة بطيئة، الأوتوبيس متوسط، وعربية السباق سريعة جداً.",
+    "حط لكل العربيات نفس عدد خطوات الحركة لليمين (مثلاً 14 خطوة) عشان يوصلوا لخط النهاية سوا.",
+    "برمج عربية السباق الفائزة إنها تحتفل: تكبر في الحجم وتلف وتطلع صوت تشجيع وفرحة!"
    ],
    "rubric": [
-    "تم وضع ثلاث سيارات مختلفة على خلفية مضمار السباق.",
-    "أوامر اللمس تبدأ حركة جميع السيارات في نفس الوقت.",
-    "تم تطبيق سرعات مختلفة لكل سيارة لخلق منافسة قوية.",
-    "السيارة الفائزة تكبر بالحجم وتصدر صوتاً ناجحاً عند خط النهاية."
+    "ترتيب 3 مركبات بدقة على خط البداية باستخدام أرقام الشبكة.",
+    "بدء السباق بنجاح عن طريق لمس الحكم وإرسال الرسالة البرتقالية.",
+    "تطبيق 3 سرعات مختلفة للمركبات لإظهار الفارق بوضوح.",
+    "برمجة احتفال جميل للعربة الفائزة بالحركة وتأثيرات الصوت."
    ],
-   "stretch": "أضف شخصية جمهور مشجع تستخدم فقاعات الكلام لإعلان اسم الفائز!"
+   "stretch": "حط قمع مرور في حارة الأوتوبيس، بحيث لما يخبط فيه يرجع خطوتين لورا باستخدام زر الاصطدام ومكعب الانتظار!",
+   "demo": {
+    "title": "سباق السرعات الثلاثة",
+    "code": "[الحكم] عند اللمس: أرسل الرسالة البرتقالية\n[عربية السباق] عند استلام الرسالة: اضبط السرعة سريعة -> تحرك يميناً 14 -> كبر 2 -> شغل صوت بوب\n[العجلة] عند استلام الرسالة: اضبط السرعة بطيئة -> تحرك يميناً 14",
+    "output": "أول ما تلمس الحكم، العربيات بتنطلق بسرعات مختلفة، وعربية السباق بتعدي خط النهاية الأول وتكبر فرحانة بالفوز!"
+   }
   }
  ]
 }

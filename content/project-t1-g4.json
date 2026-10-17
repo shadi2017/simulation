@@ -2,149 +2,185 @@
  "en": [
   {
    "title": "Animal Directory Showcase",
-   "desc": "Create a responsive animal catalog with cards that respond to hover using CSS Grid and Flexbox.",
+   "desc": "Build an interactive wildlife catalog displaying cards for different animals. Visitors can hover over cards to see smooth animations and view them easily on both phones and laptops.",
    "tags": [
-    "Grid",
-    "Hover",
-    "Responsive"
+    "Cards",
+    "CSS Grid",
+    "Hover Effects"
    ],
    "steps": [
-    "Set up an HTML file with a main container and multiple animal card divs, each containing an image, a title, and a short description.",
-    "Link an external stylesheet and set up basic page styles including background colors and a clean font family for typography.",
-    "Use CSS Grid on the main container to create a responsive multi-column layout that automatically adjusts to screen sizes.",
-    "Style the individual animal cards using the CSS Box Model with proper padding, margins, and border-radius for rounded corners.",
-    "Add CSS transitions and hover states so the cards lift up slightly and change shadow depth when the mouse moves over them.",
-    "Test your layout using media queries to ensure it looks amazing and readable on both phones and big computer screens."
+    "Create the HTML layout with a header and a grid container for the cards.",
+    "Build reusable card elements containing an animal photo, title, habitat tag, and bio.",
+    "Pick friendly fonts from Google Fonts and set a nature-themed background gradient.",
+    "Arrange the cards with CSS Grid using auto-fit and minmax to make them flexible.",
+    "Style card borders, border-radius, inner padding, and soft box-shadows.",
+    "Add smooth hover transitions so cards lift up and shadows deepen when hovered.",
+    "Write a media query to adjust font sizes and grid spacing on smaller phone screens."
    ],
    "rubric": [
-    "Grid layout correctly organizes animal cards.",
-    "Cards feature smooth hover effects and transitions.",
-    "Typography and colors make the page look attractive.",
-    "Media queries ensure the site works on mobile devices."
+    "Grid Layout: Uses CSS Grid with auto-fit or media queries to create a flexible card wall.",
+    "Box Model: Applies proper margins, paddings, and borders to keep cards readable.",
+    "Interactive Hover: Uses CSS transitions and transform: translateY() for smooth card lifts.",
+    "Visual Polish: Combines clear typography, border-radius, and gradients consistently."
    ],
-   "stretch": "Add a cute floating badge to each card that changes color when hovered over!"
+   "stretch": "Use absolute positioning to pin a floating 'Status' badge (like 'Vulnerable' or 'Safe') in the top corner of each card.",
+   "demo": {
+    "title": "Safari Cards Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: sans-serif; background: #eef7ee; margin: 0; padding: 20px; }\n  h1 { text-align: center; color: #1b4332; }\n  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 800px; margin: 0 auto; }\n  .card { background: white; border-radius: 12px; padding: 14px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); transition: transform 0.25s, box-shadow 0.25s; text-align: center; }\n  .card:hover { transform: translateY(-6px); box-shadow: 0 10px 16px rgba(0,0,0,0.15); }\n  .pic { font-size: 40px; margin-bottom: 8px; }\n  .badge { background: #d8f3dc; color: #2d6a4f; padding: 4px 8px; border-radius: 20px; font-size: 12px; font-weight: bold; }\n  p { color: #555; font-size: 13px; line-height: 1.4; }\n</style>\n</head>\n<body>\n  <h1>🦁 Safari Explorer</h1>\n  <div class=\"grid\">\n    <div class=\"card\"><div class=\"pic\">🦁</div><h3>Lion</h3><span class=\"badge\">Savannah</span><p>King of the pride lands, known for loud roars.</p></div>\n    <div class=\"card\"><div class=\"pic\">🐬</div><h3>Dolphin</h3><span class=\"badge\">Ocean</span><p>Playful marine swimmer that travels in pods.</p></div>\n    <div class=\"card\"><div class=\"pic\">🐼</div><h3>Panda</h3><span class=\"badge\">Bamboo Forest</span><p>Loves munching leaves and relaxing all day.</p></div>\n  </div>\n</body>\n</html>",
+    "output": "Displays a grid of three animal cards that smoothly float upward with a shadow when hovered."
+   }
   },
   {
    "title": "Mobile-First Coffee Shop",
-   "desc": "Design a café page with a navigation bar, a hero banner, and a responsive menu using Flexbox.",
+   "desc": "Design a modern webpage for your cozy neighborhood café with a responsive menu. Customers can explore drinks and pastries with clear prices on any device screen.",
    "tags": [
     "Flexbox",
-    "Navigation",
-    "Mobile-First"
+    "Media Queries",
+    "Box Model"
    ],
    "steps": [
-    "Build the basic HTML structure including a header navigation bar, a big hero banner section, and a menu list section.",
-    "Apply mobile-first styles, setting up a vertical flex column layout for smaller phone screens first.",
-    "Design the navigation bar using Flexbox to space out the logo and menu links evenly across the top.",
-    "Style the hero banner with a warm coffee background color, catchy heading typography, and a call-to-action button.",
-    "Create a responsive menu section using Flexbox rows that wrap nicely as the screen gets wider.",
-    "Add media queries to expand your layout into a multi-column desktop masterpiece when viewed on larger monitors."
+    "Write semantic HTML starting with a navbar, a hero banner, and a menu section.",
+    "Use Flexbox in the navbar to keep the café logo and nav links neatly separated.",
+    "Style the hero banner with a warm coffee-toned gradient and welcoming heading.",
+    "Design menu item rows showing the item name, description, and price badge.",
+    "Use Flexbox to align price badges neatly to the right side of each menu row.",
+    "Build mobile-first styles so the menu looks great on phones right away.",
+    "Add a desktop media query (@media min-width: 650px) to turn the menu into two columns."
    ],
    "rubric": [
-    "Navigation bar is clean and properly aligned with Flexbox.",
-    "Hero banner grabs attention with great colors and typography.",
-    "Menu items wrap nicely on different screen sizes.",
-    "Mobile-first design principles are clearly followed."
+    "Flexbox Alignment: Correctly spaces navbar items and menu prices using justify-content.",
+    "Mobile-First Thinking: Default styles target phones and expand smoothly with media queries.",
+    "Box Model Application: Sets clean padding and margins so text never feels cramped.",
+    "Styling & Theme: Warm, appetizing color choices paired with clean typography."
    ],
-   "stretch": "Include a hover animation on the coffee cups in your menu to make them spin slightly!"
+   "stretch": "Add a sticky 'Order Pickup' button at the bottom of the screen that stays fixed while scrolling.",
+   "demo": {
+    "title": "Bean & Brew Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n  body { font-family: system-ui, sans-serif; margin: 0; background: #faf6f0; color: #3e2723; }\n  nav { display: flex; justify-content: space-between; align-items: center; background: #4e342e; color: white; padding: 12px 20px; }\n  .hero { background: linear-gradient(135deg, #6d4c41, #8d6e63); color: white; padding: 24px; text-align: center; }\n  .menu { padding: 16px; max-width: 700px; margin: 0 auto; display: grid; gap: 12px; }\n  .item { background: white; padding: 12px 16px; border-radius: 8px; border-left: 5px solid #8d6e63; display: flex; justify-content: space-between; align-items: center; }\n  .price { font-weight: bold; color: #2e7d32; background: #e8f5e9; padding: 4px 8px; border-radius: 6px; }\n  @media (min-width: 600px) { .menu { grid-template-columns: 1fr 1fr; } }\n</style>\n</head>\n<body>\n  <nav><strong>☕ Bean & Brew</strong><span>Home • Menu</span></nav>\n  <div class=\"hero\"><h2>Fresh Roasted Daily</h2><p>Cozy drinks made with love.</p></div>\n  <div class=\"menu\">\n    <div class=\"item\"><div><strong>Caramel Latte</strong><div style=\"font-size:12px;color:#777\">Espresso & milk</div></div><span class=\"price\">$4.50</span></div>\n    <div class=\"item\"><div><strong>Iced Matcha</strong><div style=\"font-size:12px;color:#777\">Sweet green tea</div></div><span class=\"price\">$5.00</span></div>\n  </div>\n</body>\n</html>",
+    "output": "Shows a café header, a warm hero section, and menu items that shift from single column to two columns on wider screens."
+   }
   },
   {
    "title": "My Portfolio Gallery",
-   "desc": "Build a filtered project gallery with screenshots and clear descriptions using CSS layout tools.",
+   "desc": "Showcase your favorite coding and creative projects in a sleek online gallery. Each project card features a preview snapshot, tech tags, and a short summary.",
    "tags": [
-    "Gallery",
-    "Cards",
-    "Layout"
+    "CSS Grid",
+    "Typography",
+    "Positioning"
    ],
    "steps": [
-    "Create an HTML file with a header introducing yourself, a category filter bar, and a grid of project showcase items.",
-    "Style the typography and choose a professional color palette with pleasing background gradients for your header.",
-    "Use CSS Flexbox to style the filter buttons neatly in a row across the top of your gallery section.",
-    "Build the project showcase cards using the CSS Box Model, ensuring images and text fit perfectly inside.",
-    "Implement CSS Grid to arrange your project cards into neat, balanced rows and columns.",
-    "Add smooth hover transitions to your project cards so they glow or zoom in slightly when clicked or hovered."
+    "Plan your HTML layout with an introduction header and a projects container.",
+    "Pick distinct fonts for bold titles and readable paragraph descriptions.",
+    "Create project cards with a thumbnail area, title, tech tags, and project link.",
+    "Use CSS Grid to lay out cards in balanced rows and columns with a neat gap.",
+    "Style the tech tags with inline-flex, rounded pill corners, and custom background colors.",
+    "Use relative positioning on the card and absolute positioning for an 'Active' badge.",
+    "Add hover effects so project buttons glow or change color when hovered."
    ],
    "rubric": [
-    "Project gallery uses CSS Grid effectively for a clean layout.",
-    "Filter buttons are well-aligned using Flexbox.",
-    "Cards include clear screenshots, titles, and descriptions.",
-    "Hover transitions add a polished, interactive feel."
+    "Typography Hierarchy: Clear distinction between headings, body text, and small tag labels.",
+    "Positioning: Uses position: relative and absolute to place badges over thumbnails.",
+    "Grid Organization: Projects form a tidy grid that responds gracefully to screen size.",
+    "Component Reusability: Cards share uniform CSS classes with consistent styling."
    ],
-   "stretch": "Add a dark mode toggle button using CSS variables to switch the portfolio colors!"
+   "stretch": "Build a simple CSS filter bar at the top with buttons that change style when hovered or focused.",
+   "demo": {
+    "title": "Coder Portfolio Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }\n  header { text-align: center; margin-bottom: 24px; }\n  h1 { margin: 0; color: #38bdf8; }\n  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; max-width: 800px; margin: 0 auto; }\n  .card { background: #1e293b; border-radius: 10px; padding: 16px; position: relative; border: 1px solid #334155; transition: border-color 0.2s; }\n  .card:hover { border-color: #38bdf8; }\n  .badge { position: absolute; top: 12px; right: 12px; background: #0284c7; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; }\n  .tag { display: inline-block; background: #334155; color: #7dd3fc; font-size: 11px; padding: 3px 8px; border-radius: 12px; margin-top: 8px; }\n  a { display: inline-block; margin-top: 10px; color: #38bdf8; text-decoration: none; font-weight: bold; font-size: 13px; }\n</style>\n</head>\n<body>\n  <header><h1>🚀 My Code Studio</h1><p>Junior Web Developer</p></header>\n  <div class=\"gallery\">\n    <div class=\"card\"><span class=\"badge\">NEW</span><h3>Alien Game</h3><p style=\"font-size:13px;color:#94a3b8\">A space game made with HTML & JS.</p><span class=\"tag\">Scratch</span><br><a href=\"#\">View Project →</a></div>\n    <div class=\"card\"><span class=\"badge\">TOP</span><h3>Pet Finder</h3><p style=\"font-size:13px;color:#94a3b8\">Helps people adopt cute rescue cats.</p><span class=\"tag\">CSS Grid</span><br><a href=\"#\">View Project →</a></div>\n  </div>\n</body>\n</html>",
+    "output": "Displays a dark-themed project showcase with corner badges, tech pill tags, and glowing borders on hover."
+   }
   }
  ],
  "ar": [
   {
-   "title": "معرض الحيوانات الرائع",
-   "desc": "اصنع كتالوج حيوانات متجاوب مع كروت بتتفاعل مع حركة الماوس باستخدام جرد وفليكس بوكس.",
+   "title": "معرض دليل الحيوانات",
+   "desc": "ابنِ كتالوج حيوانات تفاعلي ممتع يعرض كروت بتتحرك لما تحط الماوس عليها. الزوار هيقدروا يتفرجوا عليها براحتهم سواء فاتحين من الموبايل أو اللابتوب.",
    "tags": [
-    "جرد",
-    "تفاعل",
-    "متجاوب"
-   ],
-   "steps": [
-    "اعمل ملف HTML فيه حاوية رئيسية ومجموعة كروت للحيوانات، كل كارت جواه صورة، عنوان، ووصف قصير.",
-    "اربط ملف تصميم CSS وظبط ألوان الخلفية الأساسية ونوع خط جميل عشان الكلام يبان واضح.",
-    "استخدم CSS Grid على الحاوية الرئيسية عشان تعمل تخطيط متعدد الأعمدة بيتظبط لوحده حسب الشاشة.",
-    "صمم كروت الحيوانات باستخدام نموذج الصندوق (Box Model) مع ظبط المسافات الداخلية والخارجية وحواف دائرية.",
-    "ضيف تأثيرات انتقال وتفاعل (Hover) عشان الكروت ترتفع لفوق شوية وتعمل ظل لما الماوس يقف عليها.",
-    "جرب شكل التصميم باستخدام الوسائط (Media Queries) عشان تتأكد إنه شغال وزي الفل على التليفونات والكمبيوتر."
-   ],
-   "rubric": [
-    "تخطيط الجرد بينظم كروت الحيوانات بشكل مظبوط.",
-    "الكروت فيها تأثيرات تفاعل ناعمة ولطيفة.",
-    "الخطوط والألوان بتخلي شكل الصفحة جميل ومريح.",
-    "استخدام وسائل التجاوب بيخلي الموقع شغال على الموبايل."
-   ],
-   "stretch": "ضيف علامة مميزة صغيرة على كل كارت لونه بيغيير أول ما الماوس يعدي عليه!"
-  },
-  {
-   "title": "مقهى القهوة الذكي",
-   "desc": "صمم صفحة كافيه فيها شريط تنقل، لافتة رئيسية، وقائمة طعام متجاوبة باستخدام فليكس بوكس.",
-   "tags": [
-    "فليكس",
-    "تنقل",
-    "موبايل"
-   ],
-   "steps": [
-    "ابني هيكل HTML الأساسي اللي بيحتوي على شريط التنقل، قسم اللافتة الكبيرة، وقائمة المنيو.",
-    "ابدأ بالتصميم المناسب للموبايل الأول، واعمل تخطيط عمودي لشاشات التليفون الصغيرة.",
-    "صمم شريط التنقل باستخدام Flexbox عشان توزع اللوجو والروابط بشكل متساوي فوق خالص.",
-    "صمم اللافتة الرئيسية بلون خلفية دافئ للقهوة، عنوان جذاب، وزرار طلب مميز.",
-    "اعمل قسم المنيو باستخدام صفوف Flexbox اللي بتنزل تحت بعضها بمرونة لما الشاشة توسع.",
-    "ضيف قواعد التجاوب عشان التصميم يتحول لشاشة واسعة ومليانة أعمدة لما نفتحه من كمبيوتر."
-   ],
-   "rubric": [
-    "شريط التنقل مرتب ومتظبط صح باستخدام فليكس بوكس.",
-    "اللافتة الرئيسية بتشد العيون بألوان وخطوط ممتازة.",
-    "عناصر المنيو بتترتب بمرونة على أحجام الشاشات المختلفة.",
-    "مبادئ التصميم للموبايل أولاً مطبقة بوضوح."
-   ],
-   "stretch": "ضيف حركة بسيطة لكوباية القهوة في المنيو تخليها تلف سنة صغيرة!"
-  },
-  {
-   "title": "معرض أعمالي الفني",
-   "desc": "ابني معرض مشاريع فيه فلترة، صور واضحة، ووصف مرتب باستخدام أدوات تنسيق CSS.",
-   "tags": [
-    "معرض",
     "كروت",
-    "تنسيق"
+    "CSS Grid",
+    "تأثيرات Hover"
    ],
    "steps": [
-    "اعمل ملف HTML فيه عنوان بيكتب عنك، شريط أزرار للفلترة، وشبكة لعرض المشاريع.",
-    "ظبط الخطوط واختار ألوان احترافية مع تدرجات خلفية جميلة للعنوان الرئيسي.",
-    "استخدم CSS Flexbox عشان ترتب أزرار الفلترة بشكل جميل جنب بعض فوق المعرض.",
-    "اصنع كروت المشاريع باستخدام نموذج الصندوق، واتأكد إن الصور والكلام جوه الكارت مظبوطين.",
-    "استخدم CSS Grid عشان ترتب كروت المشاريع في صفوف وأعمدة متناسقة وجميلة.",
-    "ضيف تأثيرات انتقال ناعمة للكروت عشان تنور أو تكبر شوية أول ما تدوس عليها أو تقف بالماوس."
+    "جهّز كود الـ HTML الأساسي بعنوان رئيسي وحاوية Grid تشيل كل الكروت.",
+    "اعمل كروت قابلة للتكرار فيها صورة الحيوان واسمه وبيئته وجملة قصيرة عنه.",
+    "اختر خطوط شكلها حلو من Google Fonts واعمل خلفية متدرجة تليق بالطبيعة.",
+    "رتّب الكروت بـ CSS Grid واستخدم auto-fit و minmax عشان تكون مرنة.",
+    "ظبّط حواف الكروت بالـ border-radius والـ padding وظلال خفيفة بالـ box-shadow.",
+    "أضف تأثير الـ hover عشان الكارت يترفع لفوق بانسيابية وتظهر ظلّه لما الماوس ييجي عليه.",
+    "استخدم media query عشان تظبّط حجم الخط والمسافات لشاشات الموبايل الصغيرة."
    ],
    "rubric": [
-    "معرض المشاريع بيستخدم الجرد بشكل ممتاز لتصميم منظم.",
-    "أزرار الفلترة متظبطة كويس جداً باستخدام فليكس بوكس.",
-    "الكروت فيها صور واضحة وعناوين ووصف مرتب.",
-    "تأثيرات التفاعل بتدي إحساس احترافي وحيوي."
+    "تنسيق الـ Grid: استخدام سليم لـ CSS Grid لتنظيم الكروت في صفوف وأعمدة مرنة.",
+    "نموذج الصندوق (Box Model): ضبط ممتاز للمسافات الداخلية (padding) والخارجية (margins).",
+    "تفاعلية الـ Hover: استخدام transition مع transform: translateY() لحركة ناعمة.",
+    "الشكل الجمالي: تناسق الخطوط والألوان والظلال والـ border-radius عبر كل الكروت."
    ],
-   "stretch": "ضيف زرار للوضع الليلي (Dark Mode) باستخدام متغيرات CSS عشان تغير ألوان المعرض!"
+   "stretch": "استخدم الـ absolute positioning عشان تحط شارة صغيرة في زاوية الكارت (زي: 'مهدد بالانقراض' أو 'آمن').",
+   "demo": {
+    "title": "عرض كروت السفاري",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n<style>\n  body { font-family: sans-serif; background: #eef7ee; margin: 0; padding: 20px; }\n  h1 { text-align: center; color: #1b4332; }\n  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 800px; margin: 0 auto; }\n  .card { background: white; border-radius: 12px; padding: 14px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); transition: transform 0.25s, box-shadow 0.25s; text-align: center; }\n  .card:hover { transform: translateY(-6px); box-shadow: 0 10px 16px rgba(0,0,0,0.15); }\n  .pic { font-size: 40px; margin-bottom: 8px; }\n  .badge { background: #d8f3dc; color: #2d6a4f; padding: 4px 8px; border-radius: 20px; font-size: 12px; font-weight: bold; }\n  p { color: #555; font-size: 13px; line-height: 1.4; }\n</style>\n</head>\n<body>\n  <h1>🦁 مستكشف السفاري</h1>\n  <div class=\"grid\">\n    <div class=\"card\"><div class=\"pic\">🦁</div><h3>الأسد</h3><span class=\"badge\">السافانا</span><p>ملك الغابة، معروف بزئيره القوي وشجاعته.</p></div>\n    <div class=\"card\"><div class=\"pic\">🐬</div><h3>الدولفين</h3><span class=\"badge\">المحيط</span><p>حيوان بحري ذكي جداً وبيحب اللعب في مجموعات.</p></div>\n    <div class=\"card\"><div class=\"pic\">🐼</div><h3>الباندا</h3><span class=\"badge\">غابات الخيزران</span><p>بيحب يقضي يومه كله ياكل خيزران وينام براحته.</p></div>\n  </div>\n</body>\n</html>",
+    "output": "بيعرض شبكة كروت حيوانات بتترفع لفوق بسلاسة وبتعمل ظل جميل أول ما الماوس ييجي عليها."
+   }
+  },
+  {
+   "title": "كافيه الموبايل أولاً",
+   "desc": "صمم موقع لكافيه الحي بتاعك بقائمة مشروبات منظمة وسهلة التصفح. الزباين هيقدروا يشوفوا المشروبات والأسعار بوضوح تام على الموبايل والكمبيوتر.",
+   "tags": [
+    "Flexbox",
+    "Media Queries",
+    "Box Model"
+   ],
+   "steps": [
+    "ابنِ هيكل HTML بسيط فيه شريط تنقل (nav) ولافتة ترحيب وقسم للمنيو.",
+    "استخدم Flexbox في شريط التنقل عشان ترص اللوجو وروابط الصفحات بمسافات مظبوطة.",
+    "صمم اللافتة الترحيبية بلون قهوة متدرج وكلام يفتح النفس.",
+    "اعمل كروت أصناف المنيو بحيث تحتوي على اسم المشروب وسعره ووصفه.",
+    "استخدم Flexbox عشان تخلي السعر على جنب واسم المشروب في الجنب التاني بنظام.",
+    "ابدأ بتصميم الموبايل أولاً (Mobile-First) عشان المنيو يظهر ممتاز على الشاشات الصغيرة.",
+    "أضف media query تحوّل المنيو لعمودين متجاورين لما الشاشة تكبر."
+   ],
+   "rubric": [
+    "محاذاة Flexbox: توزيع مظبوط للعناصر في شريط التنقل والأسعار باستخدام justify-content.",
+    "التصميم للموبايل أولاً: البداية بشاشة التليفون والتوسّع مع الشاشات الأكبر بـ media queries.",
+    "إتقان Box Model: مسافات داخلية وهوامش متناسقة تخلّي القراءة مريحة بدون زحمة.",
+    "تناسق الهوية: اختيار ألوان دافية للقهوة مع خطوط واضحة وأزرار أنيقة."
+   ],
+   "stretch": "ثبّت زرار 'اطلب أونلاين' في أسفل شاشة الموبايل باستخدام الـ position: fixed عشان يفضل ظاهر دايماً.",
+   "demo": {
+    "title": "عرض كافيه قهوتنا",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n  body { font-family: system-ui, sans-serif; margin: 0; background: #faf6f0; color: #3e2723; }\n  nav { display: flex; justify-content: space-between; align-items: center; background: #4e342e; color: white; padding: 12px 20px; }\n  .hero { background: linear-gradient(135deg, #6d4c41, #8d6e63); color: white; padding: 24px; text-align: center; }\n  .menu { padding: 16px; max-width: 700px; margin: 0 auto; display: grid; gap: 12px; }\n  .item { background: white; padding: 12px 16px; border-radius: 8px; border-right: 5px solid #8d6e63; display: flex; justify-content: space-between; align-items: center; }\n  .price { font-weight: bold; color: #2e7d32; background: #e8f5e9; padding: 4px 8px; border-radius: 6px; }\n  @media (min-width: 600px) { .menu { grid-template-columns: 1fr 1fr; } }\n</style>\n</head>\n<body>\n  <nav><strong>☕ قهوتنا الجميلة</strong><span>الرئيسية • المنيو</span></nav>\n  <div class=\"hero\"><h2>قهوة طازجة كل صباح</h2><p>أحلى المشروبات معمولة بكل حب.</p></div>\n  <div class=\"menu\">\n    <div class=\"item\"><div><strong>لاتيه كراميل</strong><div style=\"font-size:12px;color:#777\">إسبريسو مع حليب مكثف</div></div><span class=\"price\">٤٥ ج.م</span></div>\n    <div class=\"item\"><div><strong>ماتشا مثلجة</strong><div style=\"font-size:12px;color:#777\">شاي أخضر منعش مع حليب</div></div><span class=\"price\">٥٠ ج.م</span></div>\n  </div>\n</body>\n</html>",
+    "output": "بيعرض واجهة كافيه دافية مع منيو يتحول من عمود واحد في الموبايل لعمودين في الشاشات الأكبر."
+   }
+  },
+  {
+   "title": "معرض أعمالي ومشاريعي",
+   "desc": "اعرض مشروعاتك البرمجية وإبداعاتك في معرض صور أنيق على الويب. كل كارت مشروع فيه ملخص سريع والشارة التقنية ورابط لتجربته.",
+   "tags": [
+    "CSS Grid",
+    "تنسيق الخطوط",
+    "تحديد المواقع Positioning"
+   ],
+   "steps": [
+    "خطط لهيكل الـ HTML بمقدمة سريعة عنك ومعرض يشيل كروت المشروعات.",
+    "اختر خط مميز للعناوين وخط مريح وبسيط لنصوص الشرح والوصف.",
+    "صمم كارت المشروع بحيث يحتوي على العنوان والشارة ووسم التكنولوجيا المستخدمة.",
+    "نظم الكروت باستخدام CSS Grid عشان تطلع في صفوف وأعمدة متساوية وبمسافات gap أنيقة.",
+    "نسق وسوم التكنولوجيا (Tags) بأركان دائرية وألوان خلفية لطيفة تميزها.",
+    "استخدم position: relative على الكارت و position: absolute للشارة اللي فوق في الزاوية.",
+    "أضف تأثيرات حركة للروابط والأزرار تنوّر أو تغيّر لونها عند وقوف الماوس."
+   ],
+   "rubric": [
+    "التسلسل الهرمي للخطوط: فرق واضح بين العناوين والنصوص العادية والوسوم التوضيحية.",
+    "المواقع (Positioning): استخدام صحيح للـ relative والـ absolute لوضع الشارات فوق الكروت.",
+    "تنظيم الـ Grid: ترتيب كروت المشروعات في شبكة متجاوبة وجميلة.",
+    "إعادة استخدام الـ Classes: استخدام كلاسات موحدة للكروت تضمن تكرار التصميم بدقة."
+   ],
+   "stretch": "اعمل شريط فلاتر بسيط في الأعلى يتغير لون أزراره لما تدوس عليها أو تمرر الماوس.",
+   "demo": {
+    "title": "عرض بورتفوليو المبرمج الصغير",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n<style>\n  body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }\n  header { text-align: center; margin-bottom: 24px; }\n  h1 { margin: 0; color: #38bdf8; }\n  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; max-width: 800px; margin: 0 auto; }\n  .card { background: #1e293b; border-radius: 10px; padding: 16px; position: relative; border: 1px solid #334155; transition: border-color 0.2s; }\n  .card:hover { border-color: #38bdf8; }\n  .badge { position: absolute; top: 12px; left: 12px; background: #0284c7; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; }\n  .tag { display: inline-block; background: #334155; color: #7dd3fc; font-size: 11px; padding: 3px 8px; border-radius: 12px; margin-top: 8px; }\n  a { display: inline-block; margin-top: 10px; color: #38bdf8; text-decoration: none; font-weight: bold; font-size: 13px; }\n</style>\n</head>\n<body>\n  <header><h1>🚀 استوديو مشاريعي</h1><p>مطور ويب مبتكر</p></header>\n  <div class=\"gallery\">\n    <div class=\"card\"><span class=\"badge\">جديد</span><h3>لعبة الفضاء</h3><p style=\"font-size:13px;color:#94a3b8\">لعبة فضائية ممتعة بالـ HTML والـ JS.</p><span class=\"tag\">Scratch</span><br><a href=\"#\">شاهد المشروع ←</a></div>\n    <div class=\"card\"><span class=\"badge\">مميز</span><h3>مأوى الحيوانات</h3><p style=\"font-size:13px;color:#94a3b8\">موقع يساعد الناس تتبنى قطط جميلة.</p><span class=\"tag\">CSS Grid</span><br><a href=\"#\">شاهد المشروع ←</a></div>\n  </div>\n</body>\n</html>",
+    "output": "معرض مشروعات بتصميم ليلي جذاب وشارات في الزوايا ووسوم تقنية وإطارات بتنوّر مع حركة الماوس."
+   }
   }
  ]
 }

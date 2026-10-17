@@ -1,150 +1,186 @@
 {
  "en": [
   {
-   "title": "Interactive School Club Portal",
-   "desc": "Build a vibrant hub for a school club featuring member registration, polls, and project showcases. It puts all your HTML skills together into one fun page.",
+   "title": "Space Explorer Lab Journal",
+   "desc": "Build an interactive Mars rover scientific logbook that records space discoveries and robot status. You will show real mission data using interactive tags, meters, and rich text formatting.",
    "tags": [
-    "Forms",
-    "Widgets",
-    "Layout"
+    "Science Log",
+    "Interactive HTML",
+    "Space Explorer"
    ],
    "steps": [
-    "Create the main HTML structure and add a cool favicon using the link tag.",
-    "Use header, figure, and figcaption elements to display the club's logo and title.",
-    "Add quotes and citations from famous club members using blockquote and cite tags.",
-    "Design a registration form with advanced attributes like required, placeholder, and pattern.",
-    "Include progress bars to show club fundraising goals and details tags for FAQs.",
-    "Use inline formatting like mark and code to highlight special rules, then finish with helpful HTML comments."
+    "Create your HTML document structure and add an astronaut or rocket SVG favicon link in the head.",
+    "Add hidden code documentation comments explaining each section of your rover mission log.",
+    "Use <meter> to display robot battery life and <progress> to track rock sample collection goals.",
+    "Insert a space photo inside a <figure> element and write an official caption with <figcaption>.",
+    "Add a famous scientist quotation using <blockquote>, <q>, and <cite> with character entities like &copy; and &trade;.",
+    "Build a hidden hint box with <details> and <summary> holding secret lab discoveries formatted with <mark>.",
+    "Design a discovery submission form with input attributes like required, min, and placeholder."
    ],
    "rubric": [
-    "Uses a custom favicon and proper heading hierarchy.",
-    "Includes a working advanced form with validation attributes.",
-    "Features figure, figcaption, progress bars, and details tags.",
-    "Cleanly commented code and correct use of inline text formatting."
+    "Correct use of <meter> and <progress> bars to show clear numerical measurements.",
+    "Accurate photo documentation with <figure> and <figcaption> containing HTML entities.",
+    "Proper quote structure using <blockquote>, <q>, and <cite> alongside clean HTML comments.",
+    "A working interactive form with required fields and an expandable <details> drawer."
    ],
-   "stretch": "Add a meter element to display the temperature or battery level of a club robot project!"
+   "stretch": "Add a <kbd> tag instructing the astronaut which keyboard shortcut sends the radio signal back to Earth!",
+   "demo": {
+    "title": "Mars Rover Log Sample",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Mars Rover Log</title>\n  <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>\">\n  <style>\n    body { font-family: sans-serif; background: #fff8f0; padding: 15px; color: #2c3e50; }\n    figure { border: 1px solid #d35400; padding: 8px; background: #fff; width: fit-content; }\n  </style>\n</head>\n<body>\n  <!-- Mars Rover Explorer Journal Section -->\n  <h1>Mission Ares &trade;</h1>\n  <p>Battery: <meter value=\"0.85\" min=\"0\" max=\"1\" low=\"0.2\" high=\"0.8\" optimum=\"0.9\">85%</meter></p>\n  <p>Sample Goal: <progress value=\"3\" max=\"5\"></progress> 3/5 rocks</p>\n  <figure>\n    <img src=\"https://picsum.photos/200/100\" alt=\"Red dust crater\" width=\"200\" height=\"100\">\n    <figcaption>Fig. 1: Crater sample site &amp; coordinates.</figcaption>\n  </figure>\n  <blockquote cite=\"https://nasa.gov\">\n    <q>Exploring Mars helps us protect Earth.</q> &mdash; <cite>Dr. Sarah</cite>\n  </blockquote>\n  <details>\n    <summary>Secret Mission Note</summary>\n    <p>Found underground <mark>frozen water</mark> crystals &hearts;!</p>\n  </details>\n  <form>\n    <label>New Log: <input type=\"text\" placeholder=\"Enter finding...\" required></label>\n    <button type=\"submit\">Upload</button>\n  </form>\n  <p><small>&copy; 2025 Young Space Cadets</small></p>\n</body>\n</html>",
+    "output": "A neat Mars research journal displaying rover battery meters, progress bars, an image figure with caption, and an interactive reveal box."
+   }
   },
   {
-   "title": "Egyptian Museum Mini Guide",
-   "desc": "Create an educational webpage showcasing famous ancient Egyptian artifacts with images, descriptions, and interactive widgets.",
+   "title": "Pixel Knight Quest Log",
+   "desc": "Create an epic gaming hero profile and inventory card for your favorite adventurer. Visitors can inspect health levels, unlock secret battle combos, and join the guild.",
    "tags": [
-    "Artifacts",
-    "Widgets",
-    "Media"
+    "Gamer Profile",
+    "Quest Tracker",
+    "Interactive UI"
    ],
    "steps": [
-    "Set up the page title and link a unique historical icon as your favicon.",
-    "Build a hero section using figure and figcaption elements for the main exhibit photo.",
-    "Incorporate quotations and citations from historians using blockquote and cite elements.",
-    "Add interactive details and summary dropdowns for extra artifact history facts.",
-    "Use progress bars to show restoration progress percentages for different monuments.",
-    "Add a visitor feedback form with advanced attributes and leave clean comments throughout."
+    "Set up the basic page layout with a heroic shield favicon in the <head> element.",
+    "Document your code sections with helpful HTML comments for your guild developers.",
+    "Add a health meter (<meter>) and quest experience bar (<progress>) with custom values.",
+    "Display the hero's legendary weapon using <figure> and an explanatory <figcaption>.",
+    "Include a wise guild master quote using <blockquote>, <q>, and the author inside <cite>.",
+    "Create an expandable secret combo guide using <details> and style the keys with <kbd> and <code>.",
+    "Build a guild signup form that uses required, minlength, and placeholder attributes."
    ],
    "rubric": [
-    "Correct use of figure and figcaption for exhibit images.",
-    "Includes details and summary tags for expandable trivia.",
-    "At least two progress bars showing valid percentage values.",
-    "Working form with advanced attributes and clear HTML comments."
+    "Correct implementation of health and quest status using <meter> and <progress>.",
+    "Clear image presentation with <figure>, <figcaption>, and inline emphasis like <strong>.",
+    "Proper keyboard styling (<kbd>, <code>) inside an interactive <details> toggle.",
+    "A functioning hero recruitment form with advanced validation attributes."
    ],
-   "stretch": "Use character entities like &copy; or special hieroglyph symbols in your text content!"
+   "stretch": "Use HTML entities to create gold star icons (&starf;) displaying your knight's adventure difficulty tier!",
+   "demo": {
+    "title": "Pixel Knight Profile Sample",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Knight Quest Log</title>\n  <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>\">\n  <style>\n    body { font-family: sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 15px; }\n    kbd { background: #333; padding: 2px 6px; border-radius: 4px; color: #ffeb3b; }\n    figure { background: #16213e; padding: 8px; border-radius: 6px; width: fit-content; }\n  </style>\n</head>\n<body>\n  <!-- Player Status Section -->\n  <h1>Hero Leo &starf; Knight of Valor</h1>\n  <p>HP: <meter min=\"0\" max=\"100\" value=\"85\" low=\"30\" high=\"90\" optimum=\"100\">85%</meter></p>\n  <p>Quest EXP: <progress value=\"70\" max=\"100\">70%</progress></p>\n  <figure>\n    <img src=\"https://picsum.photos/180/100\" alt=\"Pixel sword\" width=\"180\" height=\"100\">\n    <figcaption>Relic Sword of <mark>Sunlight</mark> &amp; Honor</figcaption>\n  </figure>\n  <blockquote>\n    <q>Bravery is moving forward even when afraid.</q> &mdash; <cite>Guild Master</cite>\n  </blockquote>\n  <details>\n    <summary>Secret Attack Combo</summary>\n    <p>Press <kbd>SPACE</kbd> then <kbd>&uarr;</kbd> to perform a <em>Sky Strike</em>!</p>\n  </details>\n  <form>\n    <input type=\"text\" placeholder=\"Hero Tag (3-6 chars)\" required minlength=\"3\" maxlength=\"6\">\n    <button type=\"submit\">Join Guild</button>\n  </form>\n  <p><small>&copy; 2025 Pixel Knights Guild</small></p>\n</body>\n</html>",
+    "output": "A colorful game profile showcasing hero stats with progress bars, keyboard tags inside an expandable details section, and a guild join form."
+   }
   },
   {
-   "title": "Personal Hobby & Game Showcase",
-   "desc": "Show off your favorite games, books, or sports in a polished personal webpage complete with interactive forms and status meters.",
+   "title": "Junior Book Critic Magazine",
+   "desc": "Design a fun book review website highlighting your favorite story of the year. Readers can view star ratings, track reading challenges, and read spoiler-free recommendations.",
    "tags": [
-    "Portfolio",
-    "Forms",
-    "Design"
+    "Book Review",
+    "Story Club",
+    "Interactive Web"
    ],
    "steps": [
-    "Start your HTML document and set up a custom favicon for your gaming channel.",
-    "Create an intro section using figure and figcaption for your gamer profile picture.",
-    "Add favorite quotes using blockquote and cite tags to inspire your visitors.",
-    "Use meter elements to display your current game skill levels or daily activity scores.",
-    "Build a contact or newsletter sign-up form using advanced form validation attributes.",
-    "Organize extra tips inside details tags and format key terms with inline elements like mark."
+    "Create the HTML skeleton and attach an open-book icon favicon in the <head> tag.",
+    "Add HTML comments organizing your reviews into genres and reading levels.",
+    "Show the book's rating using a <meter> tag and reading goal progress with a <progress> bar.",
+    "Display the cover art inside a <figure> element with copyright details in <figcaption>.",
+    "Quote your favorite dialogue from the story using <blockquote>, <q>, and <cite>.",
+    "Wrap secret chapter twists inside a <details> spoiler warning box using a clear <summary>.",
+    "Include a review submission form that enforces required rating numbers between 1 and 5."
    ],
    "rubric": [
-    "Includes a custom favicon and well-structured headings.",
-    "Accurately uses meter and progress elements for stats.",
-    "Features functional forms with advanced HTML5 attributes.",
-    "Uses inline formatting and comments to explain sections."
+    "Accurate use of <meter> for star ratings and <progress> for annual reading goals.",
+    "Thoughtful quotation formatting using <blockquote>, <q>, and <cite> elements.",
+    "Protective spoiler alert tag using <details> and <summary> with inline highlights (<mark>).",
+    "A validated book rating form with min, max, and required attributes."
    ],
-   "stretch": "Add character entities to display mathematical symbols or copyright notices properly!"
+   "stretch": "Add a <small> element in the footer containing copyright symbol entities and a published date!",
+   "demo": {
+    "title": "Book Critic Hub Sample",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Kids Book Hub</title>\n  <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>\">\n  <style>\n    body { font-family: sans-serif; background: #eef7f2; padding: 15px; color: #1e392a; }\n    blockquote { background: #fff; border-left: 4px solid #2e7d32; padding: 6px 12px; }\n    figure { background: #fff; padding: 6px; border: 1px solid #c8e6c9; width: fit-content; }\n  </style>\n</head>\n<body>\n  <!-- Book of the Week Review -->\n  <h1>The Magic Treehouse &trade;</h1>\n  <p>Reader Score: <meter value=\"4.8\" min=\"0\" max=\"5\">4.8/5</meter> &starf;</p>\n  <p>Yearly Challenge: <progress value=\"12\" max=\"20\"></progress> 12 of 20 books</p>\n  <figure>\n    <img src=\"https://picsum.photos/160/100\" alt=\"Forest Treehouse\" width=\"160\" height=\"100\">\n    <figcaption>Official Cover Art &copy; Scholastic Press</figcaption>\n  </figure>\n  <blockquote cite=\"https://treehouse.com\">\n    <q>Books take you on magical journeys without moving your feet.</q> &mdash; <cite>Mary Pope</cite>\n  </blockquote>\n  <details>\n    <summary>Spoiler Alert: Chapter 4 Secret!</summary>\n    <p>They discovered a <em>magic gold medallion</em> inscribed with <code>M</code>!</p>\n  </details>\n  <form>\n    <input type=\"number\" min=\"1\" max=\"5\" placeholder=\"Stars (1-5)\" required>\n    <button type=\"submit\">Send Review</button>\n  </form>\n  <p><small>&copy; 2025 Young Readers Magazine</small></p>\n</body>\n</html>",
+    "output": "An interactive book magazine featuring reader meters, reading goal progress bars, quote citations, and a spoiler alert toggle."
+   }
   }
  ],
  "ar": [
   {
-   "title": "بوابة نادي المدرسة التفاعلية",
-   "desc": "اصنع موقعاً مبهجاً لنادي المدرسة يضم تسجيل الأعضاء، الاستطلاعات، وعروض المشاريع. يجمع هذا المشروع كل مهاراتك في صفحة واحدة ممتعة.",
+   "title": "دفتر معمل مستكشف الفضاء",
+   "desc": "صمم دفتر ملاحظات علمي وتفاعلي لمركبة الفضاء على كوكب المريخ لتسجيل الاكتشافات وحالة الروبوت. ستعرض بيانات المهمة الحقيقية باستخدام وسوم تفاعلية وعدادات دقيقة وتنسيقات نصية ممتعة.",
    "tags": [
-    "نماذج",
-    "أدوات",
-    "تصميم"
+    "سجل علمي",
+    "صفحات تفاعلية",
+    "مستكشف الفضاء"
    ],
    "steps": [
-    "أنشئ هيكل HTML الأساسي وأضف أيقونة موقع مميزة (Favicon) باستخدام الوسم link.",
-    "استخدم عناصر figure و figcaption لعرض شعار النادي وعنوانه بشكل جميل.",
-    "أضف اقتباسات واقتباسات مرجعية لأعضاء النادي المشهورين باستخدام الوسمين blockquote و cite.",
-    "صمم نموذج تسجيل مع سمات متقدمة مثل required و placeholder و pattern.",
-    "أضف أشرطة تقدم (progress bars) لعرض أهداف التبرعات ووسوم details للأسئلة الشائعة.",
-    "استخدم التنسيق الداخلي مثل mark و code لتمييز القواعد الخاصة، ثم انهِ العمل بتعليقات HTML واضحة."
+    "ابنِ هيكل صفحة HTML الأساسي وأضف أيقونة مفضلة (Favicon) على شكل صاروخ فضائي داخل وسم head.",
+    "اكتب تعليقات توثيقية سرية في كودك لشرح أقسام يوميات مركبة المريخ.",
+    "استخدم وسم <meter> لعرض مستوى شحن بطارية الروبوت ووسم <progress> لمتابعة جمع عينات الصخور.",
+    "أضف صورة لكوكب المريخ داخل وسم <figure> واكتب وصفاً رسمياً لها عبر <figcaption>.",
+    "اكتب مقولة ملهمة لعالم فضاء باستخدام <blockquote> و <q> و <cite> مع رموز خاصة مثل &copy; و &trade;.",
+    "أنشئ صندوقاً منسدلاً للملاحظات السرية بواسطة <details> و <summary> وميز الكلمات المهمة بـ <mark>.",
+    "صمم نموذجاً لإرسال النتائج الجديدة مع خصائص متقدمة مثل required و min و placeholder."
    ],
    "rubric": [
-    "استخدام أيقونة موقع مخصصة وترتيب صحيح للعناوين.",
-    "تضمين نموذج متقدم يعمل بشكل صحيح مع سمات التحقق.",
-    "استخدام عناصر figure و figcaption و progress و details.",
-    "كود نظيف مع تعليقات واستخدام صحيح للتنسيق الداخلي."
+    "استخدام صحيح لوسمي <meter> و <progress> لعرض قياسات ونسب واضحة.",
+    "توثيق دقيق للصورة باستخدام <figure> و <figcaption> مع الرموز الخاصة.",
+    "تنسيق سليم للاقتباس والمصدر عبر <blockquote> و <q> و <cite> مع تعليقات برمجية نظيفة.",
+    "نموذج إدخال تفاعلي يحتوي على حقول مطلوبة وصندوق تفاصيل قابل للفتح والإغلاق."
    ],
-   "stretch": "أضف عنصر meter لعرض درجة الحرارة أو مستوى البطارية لمشروع روبوت خاص بالنادي!"
+   "stretch": "أضف وسم <kbd> لتوضيح زر لوحة المفاتيح الذي يضغط عليه رائد الفضاء لإرسال إشارة اللاسلكي للأرض!",
+   "demo": {
+    "title": "نموذج سجل مركبة المريخ",
+    "code": "<!DOCTYPE html>\n<html lang=\"ar\" dir=\"rtl\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>سجل مركبة المريخ</title>\n  <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>\">\n  <style>\n    body { font-family: sans-serif; background: #fff8f0; padding: 15px; color: #2c3e50; }\n    figure { border: 1px solid #d35400; padding: 8px; background: #fff; width: fit-content; }\n  </style>\n</head>\n<body>\n  <!-- قسم يوميات مستكشف المريخ -->\n  <h1>مهمة الكوكب الأحمر &trade;</h1>\n  <p>البطارية: <meter value=\"0.85\" min=\"0\" max=\"1\" low=\"0.2\" high=\"0.8\" optimum=\"0.9\">85%</meter></p>\n  <p>جمع العينات: <progress value=\"3\" max=\"5\"></progress> 3 من 5 صخور</p>\n  <figure>\n    <img src=\"https://picsum.photos/200/100\" alt=\"فوهة المريخ\" width=\"200\" height=\"100\">\n    <figcaption>شكل 1: موقع جمع الصخور &amp; الإحداثيات.</figcaption>\n  </figure>\n  <blockquote cite=\"https://nasa.gov\">\n    <q>استكشاف الفضاء يساعدنا في حماية كوكب الأرض.</q> &mdash; <cite>د. سارة</cite>\n  </blockquote>\n  <details>\n    <summary>ملاحظة استكشافية سرية</summary>\n    <p>عثرنا على <mark>جليد مائي</mark> نقي تحت الرمال الحمراء &hearts;!</p>\n  </details>\n  <form>\n    <label>ملاحظة جديدة: <input type=\"text\" placeholder=\"اكتب اكتشافك...\" required></label>\n    <button type=\"submit\">حفظ</button>\n  </form>\n  <p><small>&copy; 2025 نادي رواد الفضاء الصغار</small></p>\n</body>\n</html>",
+    "output": "صفحة سجل علمي للمريخ تعرض بطارية المستكشف بمقياس ملون، وشريط تقدم للعينات، وصورة توضيحية، وقائمة تفاصيل مخفية ممتعة."
+   }
   },
   {
-   "title": "دليل المتحف المصري المصغر",
-   "desc": "أنشئ صفحة ويب تعليمية تعرض آثاراً مصرية قديمة مشهورة مع صور، أوصاف، وأدوات تفاعلية.",
+   "title": "سجل مهمات الفارس البطل",
+   "desc": "اصنع بطاقة لاعب رائعة للبطل المفضل لديك لمتابعة مستواه وعتاده الحربي. سيتمكن زوار صفحتك من فحص نقاط الصحة، واكتشاف حركات سرية، والانضمام إلى نقابة الأبطال.",
    "tags": [
-    "آثار",
-    "أدوات",
-    "وسائط"
+    "ملف لاعب",
+    "سجل مهمات",
+    "واجهة تفاعلية"
    ],
    "steps": [
-    "قم بإعداد عنوان الصفحة وربط أيقونة تاريخية فريدة كأيقونة للموقع (Favicon).",
-    "ابنِ قسماً رئيسياً باستخدام عناصر figure و figcaption لصورة المعرض الأساسية.",
-    "أدخل اقتباسات ومصادر من المؤرخين باستخدام عناصر blockquote و cite.",
-    "أضف قوائم منسدلة تفاعلية (details و summary) لحقائق التاريخ الإضافية.",
-    "استخدم أشرطة التقدم (progress bars) لإظهار نسب تقدم ترميم الآثار المختلفة.",
-    "أضف نموذج ملاحظات الزوار مع سمات متقدمة واترك تعليقات نظيفة في جميع الأجزاء."
+    "أنشئ الهيكل العام لصفحتك وضع أيقونة Favicon على شكل درع بطولي داخل وسم head.",
+    "وثق أقسام كودك بتعليقات واضحة تساعد أصدقاءك في فهم أجزاء اللعبة.",
+    "أضف مقياس صحة البطل باستخدام <meter> وشريط تقدم المستوى والخبرة عبر <progress>.",
+    "اعرض سيف البطل الخارق داخل وسم <figure> واشرح مميزاته في <figcaption>.",
+    "اقتبس حكمة قائد النقابة القديم عبر <blockquote> و <q> ووثق اسمه داخل <cite>.",
+    "صمم دليلاً قابلاً للطي بالأزرار والحركات القتالية بواسطة <details> و <kbd> و <code>.",
+    "أضف نموذجاً للانضمام للنقابة يستخدم خصائص متقدمة مثل required و minlength و placeholder."
    ],
    "rubric": [
-    "استخدام صحيح لعناصر figure و figcaption لصور المعرض.",
-    "تضمين وسوم details و summary لمعلومات قابلة للتوسيع.",
-    "وجود شريطين تقدم على الأقل بقيم صحيحة.",
-    "نموذج يعمل بشكل صحيح مع سمات متقدمة وتعليقات HTML واضحة."
+    "استخدام عداد <meter> وشريط <progress> لتمثيل نقاط الصحة والخبرة بدقة.",
+    "إدراج صورة العتاد بأسلوب صحيح عبر <figure> و <figcaption> وتنسيقات نصية مميزة.",
+    "عرض أزرار التحكم عبر <kbd> داخل وسم <details> القابل للفتح والإغلاق.",
+    "بناء استمارة تسجيل أبطال تفاعلية تطبق شروط الإدخال المتقدمة."
    ],
-   "stretch": "استخدم كيانات الأحرف (Character Entities) مثل &copy; أو رموز خاصة في النصوص!"
+   "stretch": "استخدم رموز HTML الخاصة لإضافة نجوم ذهبية (&starf;) تعبر عن تصنيف صعوبة مهمة الفارس!",
+   "demo": {
+    "title": "نموذج بطاقة الفارس",
+    "code": "<!DOCTYPE html>\n<html lang=\"ar\" dir=\"rtl\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>سجل مهمات الفارس</title>\n  <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>\">\n  <style>\n    body { font-family: sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 15px; }\n    kbd { background: #333; padding: 2px 6px; border-radius: 4px; color: #ffeb3b; }\n    figure { background: #16213e; padding: 8px; border-radius: 6px; width: fit-content; }\n  </style>\n</head>\n<body>\n  <!-- بطاقة معلومات البطل -->\n  <h1>الفارس ليو &starf; حامي القلعة</h1>\n  <p>نقاط الصحة: <meter min=\"0\" max=\"100\" value=\"85\" low=\"30\" high=\"90\" optimum=\"100\">85%</meter></p>\n  <p>مستوى الخبرة: <progress value=\"70\" max=\"100\">70%</progress></p>\n  <figure>\n    <img src=\"https://picsum.photos/180/100\" alt=\"سيف ناري\" width=\"180\" height=\"100\">\n    <figcaption>سيف <mark>اللهب</mark> والجليد الأسطوري &amp; الفولاذ</figcaption>\n  </figure>\n  <blockquote>\n    <q>الشجاعة هي أن تتقدم حتى لو كنت خائفاً.</q> &mdash; <cite>قائد الفرسان</cite>\n  </blockquote>\n  <details>\n    <summary>الحركة القتالية السرية</summary>\n    <p>اضغط على <kbd>المسافة</kbd> ثم <kbd>&uarr;</kbd> لقفزة <em>ضربة الصاعقة</em>!</p>\n  </details>\n  <form>\n    <input type=\"text\" placeholder=\"اسم البطل (3-6 حروف)\" required minlength=\"3\" maxlength=\"6\">\n    <button type=\"submit\">انضم للنقابة</button>\n  </form>\n  <p><small>&copy; 2025 نقابة الفرسان الأبطال</small></p>\n</body>\n</html>",
+    "output": "صفحة ألعاب جذابة تعرض طاقة البطل وتقدمه، وتوضح أزرار التحكم داخل قائمة تفاصيل منسدلة، مع استمارة انضمام سريعة."
+   }
   },
   {
-   "title": "معرض الهوايات والألعاب الشخصي",
-   "desc": "اعرض ألعابك أو كتبك أو رياضتك المفضلة في صفحة ويب شخصية مصقولة مع نماذج تفاعلية ومؤشرات حالة.",
+   "title": "مجلة نادي القراء الصغار",
+   "desc": "صمم موقعاً لمراجعة قصتك المفضلة وشارك توصياتك مع زملائك في الفصل. سيتمكن أصدقاؤك من رؤية تقييم القصة، ومتابعة تحدي القراءة، والتعرف على أحداث الكتاب المشوقة.",
    "tags": [
-    "محفظة",
-    "نماذج",
-    "تصميم"
+    "نادي القراءة",
+    "مراجعة كتب",
+    "صفحات ويب"
    ],
    "steps": [
-    "ابدأ مستند HTML الخاص بك وقم بتعيين أيقونة مخصصة لقناتك الألعاب.",
-    "أنشئ قسماً تعريفياً باستخدام figure و figcaption لصورة ملفك الشخصي كلاعب.",
-    "أضف مقولات مفضلة باستخدام وسوم blockquote و cite لإلهام زوارك.",
-    "استخدم عناصر meter لعرض مستويات مهاراتك في الألعاب أو نقاط نشاطك اليومي.",
-    "ابنِ نموذج اتصال أو اشتراك في النشرة البريدية باستخدام سمات التحقق المتقدمة.",
-    "نظم النصائح الإضافية داخل وسوم details ونسق المصطلحات بمفاتيح مثل mark."
+    "ابنِ صفحة مراجعة الكتب وضع أيقونة Favicon لكتاب مفتوح وممتع في رأس الصفحة.",
+    "استعن بالتعليقات البرمجية لتنظيم أقسام الصفحة بحسب فصول الكتاب ونوعه.",
+    "استخدم <meter> لعرض تقييم القصة من خمس نجوم و <progress> لتتبع هدف قراءة 20 كتاباً.",
+    "ضع صورة لغلاف القصة داخل وسم <figure> واكتب حقوق الرسام في <figcaption>.",
+    "اقتبس أجمل حوار دار بين أبطال القصة بـ <blockquote> و <q> مع تحديد اسم الكاتب بـ <cite>.",
+    "ضع تنبيهاً لحرق الأحداث داخل عنصر <details> حتى لا يقرأه الصديق إلا بعد الضغط على <summary>.",
+    "أضف نموذج تقييم سريع يلزم القارئ باختيار عدد نجوم من 1 إلى 5 باستخدام min و max."
    ],
    "rubric": [
-    "يتضمن أيقونة موقع مخصصة وعناوين منظمة بشكل جيد.",
-    "يستخدم عناصر meter و progress بدقة للإحصائيات.",
-    "يحتوي على نماذج فعالة مع سمات HTML5 المتقدمة.",
-    "يستخدم التنسيق الداخلي والتعليقات لشرح الأقسام."
+    "توظيف سليم لـ <meter> لإظهار التقييم الرقمي و <progress> لهدف القراءة السنوي.",
+    "كتابة وتنسيق اقتباس أدبي بدقة عبر <blockquote> و <q> و <cite>.",
+    "حماية أسرار القصة بتنبيه حرق الأحداث عبر <details> و <summary> وتنسيقات النص.",
+    "تصميم نموذج إدخال فعال يحدد الحد الأدنى والأقصى مع صفة required."
    ],
-   "stretch": "أضف كيانات الأحرف لعرض الرموز الرياضية أو إشعارات حقوق النشر بشكل صحيح!"
+   "stretch": "أضف وسم <small> أسفل الصفحة يحتوي على رمز حقوق النشر &copy; وسنة نشر كتابك المفضل!",
+   "demo": {
+    "title": "نموذج مجلة مراجعة الكتب",
+    "code": "<!DOCTYPE html>\n<html lang=\"ar\" dir=\"rtl\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>نادي القراء الصغار</title>\n  <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>\">\n  <style>\n    body { font-family: sans-serif; background: #eef7f2; padding: 15px; color: #1e392a; }\n    blockquote { background: #fff; border-right: 4px solid #2e7d32; padding: 6px 12px; }\n    figure { background: #fff; padding: 6px; border: 1px solid #c8e6c9; width: fit-content; }\n  </style>\n</head>\n<body>\n  <!-- مراجعة قصة الأسبوع -->\n  <h1>شجرة المغامرات السحرية &trade;</h1>\n  <p>تقييم القراء: <meter value=\"4.8\" min=\"0\" max=\"5\">4.8/5</meter> &starf;</p>\n  <p>تحدي القراءة السنوي: <progress value=\"12\" max=\"20\"></progress> 12 من 20 كتاباً</p>\n  <figure>\n    <img src=\"https://picsum.photos/160/100\" alt=\"شجرة سحرية\" width=\"160\" height=\"100\">\n    <figcaption>غلاف القصة الرسمي &copy; دار النشر المتميزة</figcaption>\n  </figure>\n  <blockquote cite=\"https://treehouse.com\">\n    <q>الكتب تسافر بك إلى عوالم ساحرة وأنت جالس في مكانك.</q> &mdash; <cite>ماري الكاتبة</cite>\n  </blockquote>\n  <details>\n    <summary>تنبيه لحرق الأحداث: سر الفصل الرابع!</summary>\n    <p>عثر الأصدقاء على <em>ميدالية ذهبية</em> محفور عليها حرف <code>M</code> الغامض!</p>\n  </details>\n  <form>\n    <input type=\"number\" min=\"1\" max=\"5\" placeholder=\"تقييمك (1-5)\" required>\n    <button type=\"submit\">أرسل التقييم</button>\n  </form>\n  <p><small>&copy; 2025 مجلة القراء المبدعين</small></p>\n</body>\n</html>",
+    "output": "صفحة مراجعات كتب ممتعة تعرض تقييم القصة بعداد خاص وشريط تحدي القراءة، مع اقتباسات أدبية وصندوق كشف المفاجآت."
+   }
   }
  ]
 }

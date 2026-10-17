@@ -502,6 +502,7 @@ const T1=rawGrades.map((g,i)=>({lessonNamesEn:g.lessonNamesEn,lessonNamesAr:g.le
 const ck=(g,l)=>(app.term?'t2-':'')+g+'-'+l, TOTAL=()=>window.TERM2?180:90;
 function applyTerm(){const T=app.term&&window.TERM2?window.TERM2:T1;rawGrades.forEach((g,i)=>{['lessonNamesEn','lessonNamesAr','teachingEn','examplesEn','examplesAr','practiceEn','practiceAr'].forEach(k=>{g[k]=T[i][k]});arabicExplanations[i].splice(0,arabicExplanations[i].length,...T[i].arabicExplanations)})}
 applyTerm();
+{const _rg=renderGames;renderGames=function(){_rg();addGradeGames()}}
 document.addEventListener('click',e=>{if(e.target.closest('#termToggle')){app.term=app.term?0:1;localStorage.setItem('codeLabTerm',app.term);applyTerm();app.lesson=0;app.answers=[null,null,null];app.grid={x:0,y:0};app.score=0;render()}});
 function save(){localStorage.setItem(progressId,JSON.stringify(completed))}
 function render(){

@@ -2,155 +2,191 @@
  "en": [
   {
    "title": "Ninja Jump Platformer",
-   "desc": "Guide a ninja jumping across floating platforms to collect glowing orbs while avoiding patrolling spikes. Survive as the lava slowly rises to reach the exit portal!",
+   "desc": "Guide a nimble ninja across floating platforms to collect glowing orbs before the rising lava catches up. Use gravity physics, high jumps, and patrol dodging to reach the safe portal at the top!",
    "tags": [
     "Platformer",
-    "Gravity",
-    "Clones"
+    "Gravity Physics",
+    "Patrol AI"
    ],
    "steps": [
-    "Set up the Scratch stage with a platform background and create a Ninja sprite with left and right arrow controls.",
-    "Add gravity and jumping blocks using variables so the ninja falls naturally and jumps when pressing the space bar.",
-    "Create floating platform sprites and program the ninja to stop falling when touching a platform color or sprite.",
-    "Use the Clone block to spawn glowing orbs randomly across the screen that disappear and add points when collected.",
-    "Add a patrolling spike enemy that moves back and forth using simple motion blocks and resets the player if touched.",
-    "Create a rising lava sprite that slowly changes its Y position over time to push the player upward.",
-    "Add a score variable and win/lose game states using broadcast messages when time or health runs out."
+    "Paint a multi-level stage with floating platforms, a goal portal, and a red lava sprite at the bottom.",
+    "Create a custom My Block called 'Apply Gravity' that changes the ninja's y-velocity by -1 until touching a platform.",
+    "Program smooth left and right arrow keys to glide the ninja across the platforms.",
+    "Add an upward jump script that sets y-velocity to 12 whenever the Up Arrow is pressed and the ninja touches a platform.",
+    "Create patrolling spike enemies using a loop that moves them back and forth between two x-coordinates.",
+    "Place glowing orb collectibles that add 10 points to 'Score' and disappear when touched by the ninja.",
+    "Make the lava sprite slowly glide upward over time to create an exciting race against the clock.",
+    "Program win and game-over screens triggered when touching the portal or the rising lava."
    ],
    "rubric": [
-    "Smooth movement and responsive jumping mechanics.",
-    "Accurate collision detection with platforms and spikes.",
-    "Score updates correctly when collecting glowing orbs.",
-    "Game over state triggers properly when lava touches the player."
+    "Ninja jumps and falls realistically using gravity and platform collision.",
+    "Spike patrol enemy moves back and forth smoothly between two points.",
+    "Collectibles increase the score variable and vanish correctly upon touch.",
+    "Lava and portal switch game states cleanly to Game Over or You Win."
    ],
-   "stretch": "Add a speed boost power-up that makes the ninja jump higher for 5 seconds."
+   "stretch": "Add a double-jump feature by using a 'jumpsLeft' variable that resets to 2 only when touching the ground!",
+   "demo": {
+    "title": "Ninja Gravity & Jump Engine",
+    "code": "when green flag clicked:\nset [y_velocity v] to [0]\nforever:\n  change y by (y_velocity)\n  if <touching color [#33aa33]?> then:\n    change y by (1)\n    set [y_velocity v] to [0]\n    if <key [up arrow v] pressed?> then:\n      set [y_velocity v] to [12]\n  else:\n    change [y_velocity v] by (-1)",
+    "output": "The ninja sprite drops downward onto green platforms and leaps smoothly into the air when you press Up Arrow."
+   }
   },
   {
    "title": "Space Defender Invaders",
-   "desc": "Pilot a spaceship at the bottom of the screen, firing cloned laser shots upward at incoming alien waves. Dodge floating asteroids and destroy the mother ship before your health runs out!",
+   "desc": "Pilot your defender starship across the screen to blast invading alien waves using cloned laser blasts. Dodge tumbling asteroids and protect your 3 shield points before the countdown ends!",
    "tags": [
-    "Shooter",
     "Clones",
-    "Collisions"
+    "Shooter",
+    "Health System"
    ],
    "steps": [
-    "Position your spaceship sprite at the bottom of the stage and enable arrow key movement along the X-axis.",
-    "Program the space bar to create a clone of a laser sprite that shoots straight upward toward the top.",
-    "Create an alien sprite that spawns at the top and moves downward in waves across the screen.",
-    "Use touching blocks inside the laser clone to detect hits on aliens, hiding both and increasing the score.",
-    "Add falling asteroid sprites that reduce the spaceship's health variable when they crash into it.",
-    "Create a health bar display and a game over broadcast when health reaches zero.",
-    "Add a win condition that triggers after destroying 20 aliens."
+    "Create the player's starship sprite with smooth left and right movement along the bottom x-axis.",
+    "Make a laser sprite that hides until the spacebar is pressed, spawning a clone that flies upward and deletes upon touching the edge.",
+    "Build an alien enemy sprite that clones itself along the top row and slowly marches down the stage.",
+    "Code collision sensing so touching a laser clone deletes the alien clone and adds 1 to the 'Score' variable.",
+    "Create tumbling asteroid clones that drop from random x positions at the top of the screen.",
+    "Program a 'Shields' variable starting at 3 that decreases by 1 whenever an asteroid collides with the starship.",
+    "Set up a 45-second mission timer variable that counts down by 1 every second.",
+    "Trigger a victory broadcast if the player survives the timer, or game-over if 'Shields' drop to 0."
    ],
    "rubric": [
-    "Spaceship moves smoothly left and right using arrow keys.",
-    "Laser clones spawn correctly and travel upward.",
-    "Alien destruction and score keeping work accurately.",
-    "Health variable decreases correctly upon asteroid impact."
+    "Laser clones spawn smoothly on spacebar press and delete at the top edge.",
+    "Alien wave clones move downward and vanish when hit by lasers.",
+    "Shields variable accurately decrements on asteroid collision with invulnerability delay.",
+    "Mission timer countdown drives clear Win and Game Over broadcast messages."
    ],
-   "stretch": "Add a boss alien that requires 5 laser hits to defeat and fires back its own laser clones."
+   "stretch": "Add a rare golden supply pod clone that floats down and restores 1 Shield point when captured!",
+   "demo": {
+    "title": "Cloned Laser Blaster",
+    "code": "when [space v] key pressed:\ncreate clone of [myself v]\n\nwhen I start as a clone:\ngo to [Starship v]\nshow\nrepeat until <touching [edge v]?>:\n  change y by (15)\n  if <touching [Alien v]?> then:\n    change [Score v] by (1)\n    delete this clone\ndelete this clone",
+    "output": "Rapidly pressing space fires bright laser clones from the ship that fly upward and vanish after striking alien targets."
+   }
   },
   {
    "title": "Maze Escape with AI Guard",
-   "desc": "Navigate a tricky maze to find the hidden key and reach the exit door before the timer runs out. Avoid the wandering AI ghost that patrols the corridors!",
+   "desc": "Navigate a dark stone maze to find a hidden golden key and unlock the exit gate before time expires. Keep your distance because a smart ghost guard will patrol the halls and chase you if you get too close!",
    "tags": [
-    "Maze",
-    "AI Guard",
-    "Timers"
+    "Maze Runner",
+    "Enemy AI",
+    "Timer States"
    ],
    "steps": [
-    "Draw a custom maze backdrop with walls, a starting point, a key, and an exit door.",
-    "Program your character sprite to move with arrow keys, ensuring it bounces back or stops when touching wall colors.",
-    "Place a key sprite in the maze that hides and sets a 'hasKey' variable to true when touched by the player.",
-    "Program the exit door to only open and win the game if the player touches it while 'hasKey' is true.",
-    "Create a ghost enemy that uses simple AI to glide toward the player's position inside the maze.",
-    "Add a countdown timer variable that decreases every second until time runs out.",
-    "Set up game over screens for both getting caught by the ghost and running out of time."
+    "Draw a maze backdrop with thick colored walls and clear walking corridors.",
+    "Program 4-directional player movement that senses wall color and bounces back 3 steps to prevent walking through walls.",
+    "Place a golden key sprite that sets a 'hasKey' variable to 1 and hides when touched.",
+    "Create an exit gate sprite that stays locked until 'hasKey' equals 1, allowing the player to win upon contact.",
+    "Code an AI ghost guard that normally glides back and forth along a fixed hallway patrol route.",
+    "Add a sensing check inside the ghost's loop: if 'distance to Player < 100', point towards Player and chase them!",
+    "Build a 30-second escape countdown timer using a variable and a repeat-30 loop.",
+    "Broadcast 'Caught' if the ghost touches the player, or 'Escaped' if the player touches the unlocked gate."
    ],
    "rubric": [
-    "Player cannot walk through maze walls.",
-    "Key collection unlocks the exit door correctly.",
-    "AI ghost successfully tracks and catches the player.",
-    "Timer counts down and triggers game over at zero."
+    "Player navigates cleanly without passing through maze wall boundaries.",
+    "Key pickup mechanism updates the variable and unlocks the exit gate.",
+    "AI guard switches between patrol movement and player chasing based on distance.",
+    "Timer countdown and guard collision reliably trigger proper end game screens."
    ],
-   "stretch": "Add a freeze power-up that stops the AI ghost for 4 seconds when collected."
+   "stretch": "Drop speed boost potions around the maze that temporarily double the player's movement speed for 4 seconds!",
+   "demo": {
+    "title": "Ghost Patrol & Chase AI",
+    "code": "when green flag clicked:\nforever:\n  if <(distance to [Player v]) < [90]> then:\n    point towards [Player v]\n    move (3) steps\n  else:\n    move (2) steps\n    if <touching color [#0000ff]?> then:\n      turn ccw (180) degrees",
+    "output": "The ghost patrols its blue hallway calmly, but suddenly turns and chases the player whenever they get within 90 steps."
+   }
   }
  ],
  "ar": [
   {
-   "title": "لعبة النينجا القافز",
-   "desc": "قُد شخصية النينجا في القفز بين المنصات العائمة لجمع الكرات المضيئة مع تجنب المسامير المتحركة. اصمد بينما ترتفع الحمم البركانية ببطء للوصول إلى بوابة الخروج!",
+   "title": "منصة قفز النينجا",
+   "desc": "وجّه بطل النينجا السريع ينط بين المنصات الخشبية ويجمع كرات الطاقة قبل ما الحمم البركانية تحصله. استخدم فيزياء الجاذبية والقفز وتجنب الأسنان الحادة عشان توصل لبوابة الأمان!",
    "tags": [
-    "منصات",
-    "جاذبية",
-    "نسخ الكائنات"
+    "ألعاب منصات",
+    "فيزياء الجاذبية",
+    "ذكاء الحراسة"
    ],
    "steps": [
-    "قم بإعداد منصة سكراتش بخلفية مناسبة وأنشئ كائن النينجا مع أدوات تحكم الأسهم يميناً ويساراً.",
-    "أضف لبنات الجاذبية والقفز باستخدام المتغيرات لكي يسقط النينجا بشكل طبيعي ويقفز عند الضغط على مسافة.",
-    "أنشئ كائنات منصات عائمة وبرمج النينجا لكي يتوقف عن السقط عند ملامسة لون أو كائن المنصة.",
-    "استخدم لبنة التكرار والنسخ (Clone) لإنهور كرات مضيئة عشوائياً تختفي وتزيد النقاط عند جمعها.",
-    "أضف كائن مسمار متحرك يتحرك ذهاباً وإياباً باستخدام لبنات الحركة البسيطة ويعيد اللاعب إذا لمسه.",
-    "أنشئ كائن حمم بركانية صاعدة يغير موضع الصاد (Y) ببطء بمرور الوقت لدفع اللاعب للأعلى.",
-    "أضف متغير النقاط وحالات الفوز والخسارة باستخدام رسائل البث عند انتهاء الوقت أو الصحة."
+    "ارسم خلفية مرحلة فيها منصات عايمة، وبوابة فوز في القمة، ومجسم لافا حمرا تحت في القاع.",
+    "اعمل بلوك خاص سميه 'تطبيق الجاذبية' ينزل النينجا لتحت بتغيير سرعة ص بقيمة -1 لحد ما يلمس المنصة.",
+    "برمج حركة يمين وشمال ناعمة بأسهم الكيبورد عشان النينجا يجري على المنصات.",
+    "اعمل أمر قفز يخلي سرعة ص تزيد لـ 12 أول ما تدوس سهم فوق ويكون النينجا لامس المنصة.",
+    "صمم عائق مسامير بيتحرك رايح جاي بين نقطتين على محور س كدورية حراسة.",
+    "وزع كرات طاقة بتزود متغير 'النقاط' بمقدار 10 وتختفي أول ما النينجا يلمسها.",
+    "برمج اللافا بحيث تطلع لفوق بالراحة مع الوقت عشان تعمل سباق سريع وممتع ضد الزمن.",
+    "اعمل شاشات فوز وخسارة تظهر لما النينجا يلمس بوابة الأمان أو الحمم البركانية."
    ],
    "rubric": [
-    "حركة سلسة وآلية قفز مستجيبة.",
-    "اكتشاف دقيق للاصطدام بالمنصات والمسامير.",
-    "تحديث النقاط بشكل صحيح عند جمع الكرات المضيئة.",
-    "تفعيل شاشة خسارة اللعبة بشكل صحيح عند لمس الحمم للاعب."
+    "حركة النينجا والجاذبية واقعية ومظبوطة لما يلمس المنصة.",
+    "عائق المسامير بيتحرك رايح جاي بنعومة وبانتظام.",
+    "الكرات بتزود متغير النقاط وبتختفي صح أول ما تتلمس.",
+    "اللافا وبوابة الفوز بيغيروا حالة اللعبة لشاشة الفوز أو الخسارة بشكل سليم."
    ],
-   "stretch": "أضف قوة إضافية لزيادة السرعة تجعل النينجا يقفز أعلى لمدة 5 ثوانٍ."
+   "stretch": "ضيف ميزة القفزة المزدوجة باستخدام متغير يعد عدد النطات وما يسمحش بأكتر من نطتين إلا لما تلمس الأرض!",
+   "demo": {
+    "title": "محرك الجاذبية والقفز للنينجا",
+    "code": "عند نقر الراية الخضراء:\nاجعل [سرعة_ص v] مساوياً [0]\nكرر باستمرار:\n  غير ص بمقدار (سرعة_ص)\n  إذا <ملامس للون [#33aa33]؟> حينئذ:\n    غير ص بمقدار (1)\n    اجعل [سرعة_ص v] مساوياً [0]\n    إذا <مفتاح [سهم علوي v] مضغوط؟> حينئذ:\n      اجعل [سرعة_ص v] مساوياً [12]\n  وإلا:\n    غير [سرعة_ص v] بمقدار (-1)",
+    "output": "النينجا بينزل لتحت بفعل الجاذبية على المنصات الخضراء وينط في الهوا بسلاسة لما تدوس السهم الفوقاني."
+   }
   },
   {
-   "title": "مدافع الفضاء الغازي",
-   "desc": "قم بقيادة مركبة فضائية أسفل الشاشة، وأطلق طلقات الليزر المنسوخة نحو الأعلى على موجات الكائنات الفضائية القادمة. تفادى الكويكبات العائمة ودمر المركبة الأم قبل نفاد صحتك!",
+   "title": "حماة الفضاء الغزاة",
+   "desc": "قود سفينتك الفضائية يمين وشمال واضرب ليزر مستنسخ على موجات الكائنات الفضائية. تفادى الكويكبات اللي بتنزل من فوق وحافظ على قلوب طاقتك التلاتة لحد ما الوقت يخلص!",
    "tags": [
-    "إطلاق نار",
-    "نسخ الكائنات",
-    "اصطدامات"
+    "استنساخ",
+    "لعبة تصويب",
+    "نظام الطاقة"
    ],
    "steps": [
-    "ضع كائن المركبة الفضائية أسفل المسرح وقم بتمكين حركة مفاتيح الأسهم على المحور السيني (X).",
-    "برمج مفتاح المسافة لإنشاء نسخة (Clone) من كائن الليزر الذي ينطلق مباشرة نحو الأعلى.",
-    "أنشئ كائن كائن فضائي يظهر في الأعلى ويتحرك نحو الأسفل في موجات عبر الشاشة.",
-    "استخدم لبنات التلامس داخل نسخة الليزر لاكتشاف الإصابات على الفضائيين، مع إخفائهما وزيادة النقاط.",
-    "أضف كائنات كويكبات ساقطة تقلل متغير صحة المركبة الفضائية عند اصطدامها بها.",
-    "أنشئ عرضاً لشريط الصحة وبثاً لنهاية اللعبة عندما تصل الصحة إلى الصفر.",
-    "أضف شرط الفوز الذي يتم تفعيله بعد تدمير 20 كائناً فضائياً."
+    "صمم سفينة فضاء اللاعب تتحرك بنعومة يمين وشمال في شريط الحركة اللي تحت.",
+    "اعمل مجسم ليزر مخفي يظهر منه استنساخ أول ما تدوس مسافة، يطير لفوق ويتمسح عند الحافة.",
+    "صمم كائن فضائي يعمل نسخ من نفسه فوق، وتتحرك النسخ كلها سوا بالراحة لتحت.",
+    "برمج كود استشعار: لو الليزر لمس الفضائي، تختفي نسخة الفضائي ونزود 1 على متغير 'النقاط'.",
+    "اعمل صخور نيزكية بتنزل نسخ منها من أماكن عشوائية فوق الشاشة نحو الأسفل.",
+    "اعمل متغير 'الدروع' يبدأ بـ 3 وينقص 1 لما أي نيزك يصطدم بسفينة اللاعب.",
+    "حط تايمر للمهمة مدته 45 ثانية يقل بمقدار ثانية كل ثانية.",
+    "ابعت رسالة فوز لو صمدت لنهاية الوقت، أو رسالة خسارة لو الدروع وصلت لصفر."
    ],
    "rubric": [
-    "تتحرك المركبة الفضائية بسلاسة يميناً ويساراً باستخدام مفاتيح الأسهم.",
-    "تظهر نسخ الليزر بشكل صحيح وتتجه نحو الأعلى.",
-    "تدمير الفضائيين والحفاظ على النقاط يعمل بدقة.",
-    "ينخفض متغير الصحة بشكل صحيح عند اصطدام الكويكب."
+    "نسخ الليزر بتنطلق مظبوط بزر المسافة وتتمسح أول ما تلمس الحافة أو العدو.",
+    "موجات الفضائيين بتنزل لتحت وتختفي عند إصابتها بضربات الليزر.",
+    "متغير الدروع بينقص بدقة مع الاصطدام بالنيازك.",
+    "التايمر بيشغل شاشة الفوز أو الخسارة بشكل سليم حسب النتيجة."
    ],
-   "stretch": "أضف كائناً فضائياً زعيماً يتطلب 5 ضربات ليزر لهزيمته ويطلق هو الآخر نسخه الخاصة من الليزر."
+   "stretch": "ضيف كبسولة طاقة دهبية بتنزل نادراً من السما ولو لمستها تزود دروعك نقطة زيادة!",
+   "demo": {
+    "title": "مطلق الليزر بالاستنساخ",
+    "code": "عند ضغط مفتاح [المسافة v]:\nأنشئ نسخة من [نفسي v]\n\nعندما أبدأ كنسخة:\nاذهب إلى [سفينة_الفضاء v]\nاظهر\nكرر حتى <ملامس لـ [حافة v]؟>:\n  غير ص بمقدار (15)\n  إذا <ملامس لـ [الفضائي v]؟> حينئذ:\n    غير [النقاط v] بمقدار (1)\n    احذف هذه النسخة\nاحذف هذه النسخة",
+    "output": "كل دوسة على زرار المسافة بتطلع طلقة ليزر تجري لفوق وتختفي أول ما تصيب الفضائيين أو تلمس الحافة."
+   }
   },
   {
    "title": "الهروب من المتاهة مع الحارس الذكي",
-   "desc": "تنقل في متاهة صعبة للعثور على المفتاح المخفي والوصول إلى باب الخروج قبل نفاد الوقت. تجنب شبح الذكاء الاصطناعي الجوال الذي يقوم بدوريات في الممرات!",
+   "desc": "اتحرك جوه متاهة صخرية عشان تدور على المفتاح الدهبي وتفتح بوابة الخروج قبل ما التايمر يخلص. خليك حذر علشان فيه شبح حارس بيلف في الممرات وهيجري وراك لو قربت منه!",
    "tags": [
-    "متاهة",
-    "حارس ذكي",
-    "مؤقتات"
+    "لعبة متاهة",
+    "ذكاء العدو",
+    "مؤقت وحالات"
    ],
    "steps": [
-    "ارسم خلفية متاهة مخصصة بها جدران، نقطة بداية، مفتاح، وباب خروج.",
-    "برمج كائن شخصيتك للتحرك بمفاتيح الأسهم، مع التأكد من ارتداده أو توقفه عند ملامسة ألوان الجدران.",
-    "ضع كائن مفتاح في المتاهة يختفي ويحدد متغير 'يملك المفتاح' ليصبح صحيحاً (true) عند لمسه بواسطة اللاعب.",
-    "برمج باب الخروج لكي يفتح فقط ويفوز باللعبة إذا لمسه اللاعب بينما متغير 'يملك المفتاح' صحيحاً.",
-    "أنشئ كائن شبح يستخدم ذكاء اصطناعي بسيطاً للانزلاق نحو موضع اللاعب داخل المتاهة.",
-    "أضف متغير عداد تنازلي يتناقص كل ثانية حتى نفاد الوقت.",
-    "قم بإعداد شاشات نهاية اللعبة لكل من الإمساك بالشبح ونفاد الوقت."
+    "ارسم خلفية متاهة بحيطان سميكة وممرات واضحة للبطل عشان يمشي فيها.",
+    "برمج حركة اللاعب في الاتجاهات الأربعة مع استشعار لون الحيطة عشان يرتد خطوة وميعديش من الحيط.",
+    "حط مفتاح دهبي يخلي متغير 'معايا_المفتاح' يساوي 1 ويختفي أول ما اللاعب يلمسه.",
+    "اعمل بوابة خروج مقفولة متفتحش وماتسمحش بالفوز إلا لو 'معايا_المفتاح' بقى 1.",
+    "برمج شبح الحارس بحيث يتحرك رايح جاي في ممر ثابت كدورية حراسة عادية.",
+    "ضيف شرط ذكي جوه حركة الشبح: لو 'المسافة إلى اللاعب < 100'، يلف للشخصية ويطاردها فوراً!",
+    "اعمل تايمر عد تنازلي مدته 30 ثانية باستخدام متغير وبلوك كرر 30 مرة.",
+    "ابعت رسالة 'اتمسكت' لو الشبح لمس اللاعب، أو 'فوز' لو اللاعب لمس البوابة ومعاه المفتاح."
    ],
    "rubric": [
-    "لا يمكن للاعب المشي عبر جدران المتاهة.",
-    "جمع المفتاح يفتح باب الخروج بشكل صحيح.",
-    "شبح الذكاء الاصطناعي يتعقب اللاعب ويقبض عليه بنجاح.",
-    "العداد التنازلي يعمل وينشط نهاية اللعبة عند الصفر."
+    "اللاعب بيتحرك بسلاسة وبيرتد وما بيخترقش حيطان المتاهة.",
+    "التقاط المفتاح بيحدث المتغير ويفتح بوابة الخروج بنجاح.",
+    "شبح الحارس بيتحول من دورية عادية لمطاردة أول ما يقرب من اللاعب.",
+    "التايمر واصطدام الحارس بيشغلوا شاشات الفوز والخسارة بشكل سليم."
    ],
-   "stretch": "أضف قوة تجميد توقف شبح الذكاء الاصطناعي لمدة 4 ثوانٍ عند جمعها."
+   "stretch": "وزع قوارير سرعة خارقة في المتاهة بتضاعف سرعة اللاعب لمدة 4 ثواني أول ما ياخدها!",
+   "demo": {
+    "title": "ذكاء دورية ومطاردة الشبح",
+    "code": "عند نقر الراية الخضراء:\nكرر باستمرار:\n  إذا <(المسافة إلى [اللاعب v]) < [90]> حينئذ:\n    اتجه نحو [اللاعب v]\n    تحرك (3) خطوة\n  وإلا:\n    تحرك (2) خطوة\n    إذا <ملامس للون [#0000ff]؟> حينئذ:\n      استدر عكس عقارب الساعة (180) درجة",
+    "output": "الشبح ماشي في دوريته الهادية في الممر، لكن أول ما تقرب منه لأقل من 90 خطوة يلف ويطاردك بسرعة!"
+   }
   }
  ]
 }

@@ -2,149 +2,187 @@
  "en": [
   {
    "title": "Ultimate Recipe Hub",
-   "desc": "Build a multi-page recipe site with ingredient lists, preparation steps, a video, and cooking-time tables.",
+   "desc": "Build an appetizing cooking website featuring your favorite traditional dishes. Show ingredients in clean lists, step-by-step cooking tables, and embed a tutorial video.",
    "tags": [
-    "HTML5",
     "Recipes",
-    "Media"
+    "Multimedia",
+    "Semantic Web"
    ],
    "steps": [
-    "Plan your site structure with a home page and at least one recipe detail page.",
-    "Write the main HTML skeleton and add page titles using headings.",
-    "Insert a mouth-watering food image with alt text and a video showing the recipe.",
-    "Create unordered lists for ingredients and ordered lists for step-by-step cooking instructions.",
-    "Add a neat HTML table to display cooking times, serving sizes, and calorie counts.",
-    "Connect your pages together using anchor tags so users can click and navigate smoothly."
+    "Create the index.html structure using semantic tags like <header>, <main>, and <footer>.",
+    "Add a primary <h1> heading for the recipe title and an introductory paragraph describing the dish.",
+    "List ingredients using an unordered list (<ul>) and preparation steps using an ordered list (<ol>).",
+    "Insert a delicious photo of the meal using an <img> tag with a clear alt text description.",
+    "Construct a <table> displaying prep time, cooking temperature, and serving portions.",
+    "Embed a cooking guide using the <video controls> element with a fallback message.",
+    "Add an internal navigation bar with anchor links (<a>) jumping straight to ingredients and steps."
    ],
    "rubric": [
-    "Uses correct HTML5 structural tags and page titles.",
-    "Includes both ordered and unordered lists for ingredients and steps.",
-    "Embeds an image and a video with proper sources and alt text.",
-    "Features a working table and navigation links between pages."
+    "Semantic Structure: Correctly uses <header>, <main>, <footer>, and sequential heading tags.",
+    "List Variety: Accurately implements both <ul> for ingredients and <ol> for sequential steps.",
+    "Data Organization: Formats cooking facts into a clear <table> with <th> and <td> cells.",
+    "Media & Links: Includes a working <img> with alt text, a functional <video>, and working links."
    ],
-   "stretch": "Add a form at the bottom allowing visitors to submit their own secret family recipe!"
+   "stretch": "Add an <audio> tag with chef narration and a mini feedback form for guest reviews.",
+   "demo": {
+    "title": "Koshari Master Recipe Page",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Egyptian Koshari</title>\n  <style>\n    body { font-family: sans-serif; background: #fff8f0; color: #333; padding: 20px; }\n    header { background: #e76f51; color: white; padding: 10px; border-radius: 8px; }\n    table, th, td { border: 1px solid #d62828; border-collapse: collapse; padding: 8px; }\n    th { background: #f4a261; }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>The Ultimate Koshari Hub</h1>\n    <nav><a href=\"#steps\">Jump to Steps</a></nav>\n  </header>\n  <main>\n    <h2>Beloved Egyptian Street Food</h2>\n    <p>A hearty bowl of rice, lentils, pasta, and spicy tomato salsa!</p>\n    <img src=\"https://placehold.co/300x180\" alt=\"Bowl of fresh Egyptian Koshari with fried onions\">\n    <h3>Quick Facts</h3>\n    <table>\n      <tr><th>Prep Time</th><th>Cook Time</th><th>Servings</th></tr>\n      <tr><td>20 mins</td><td>40 mins</td><td>4 people</td></tr>\n    </table>\n    <h3>Ingredients</h3>\n    <ul>\n      <li>1 cup brown lentils</li>\n      <li>1 cup rice</li>\n      <li>Crispy fried onions</li>\n    </ul>\n    <h3 id=\"steps\">Cooking Steps</h3>\n    <ol>\n      <li>Boil lentils until tender.</li>\n      <li>Cook rice and mix together.</li>\n      <li>Top with tomato sauce and onions!</li>\n    </ol>\n    <video width=\"300\" controls>\n      <source src=\"koshari.mp4\" type=\"video/mp4\">\n      Cooking video not supported.\n    </video>\n  </main>\n  <footer><p>Made with love by Grade 4 Chef!</p></footer>\n</body>\n</html>",
+    "output": "Displays a styled recipe page with an image, quick facts table, ingredient lists, and an embedded video player."
+   }
   },
   {
    "title": "School Subject Survey Quiz",
-   "desc": "Create a school survey with text fields, club checkboxes, and a student review form.",
+   "desc": "Design an interactive school feedback website to find out what classmates love most about school. Collect student opinions using text boxes, radio picks, club checkboxes, and dropdown menus.",
    "tags": [
     "Forms",
-    "Inputs",
-    "Survey"
+    "Interactive",
+    "User Input"
    ],
    "steps": [
-    "Design the layout of your survey form using a main form element.",
-    "Add text input fields for the student's name and favorite subject.",
-    "Insert radio buttons for single-choice questions like 'Do you love homework? (Yes/No)'.",
-    "Add checkboxes so students can select multiple after-school clubs they join.",
-    "Use a select dropdown menu for picking their grade level or homeroom teacher.",
-    "Include a submit button to finish the survey and test your inputs."
+    "Set up the page boilerplate with a descriptive <title> and semantic <header> banner.",
+    "Add an introductory paragraph explaining the survey purpose and motivating classmates to participate.",
+    "Wrap input controls inside a semantic <form> container with an action-ready submit button.",
+    "Include text input fields for the student's full name and current grade level.",
+    "Group radio buttons with identical name attributes so students can pick only one favorite subject.",
+    "Provide checkboxes allowing users to select multiple after-school activity clubs.",
+    "Add a <select> dropdown list to rate the school cafeteria from 1 to 5 stars.",
+    "Include a multiline <textarea> for custom school improvement suggestions."
    ],
    "rubric": [
-    "Correctly uses form elements for gathering user data.",
-    "Includes text inputs, radio buttons, and checkboxes appropriately.",
-    "Features a select dropdown menu with multiple options.",
-    "Organizes questions clearly with headings and labels."
+    "Form Architecture: Contains a complete <form> element with text inputs and a working submit button.",
+    "Exclusive Choice: Groups radio buttons correctly using shared name attributes for single selection.",
+    "Multiple Choices: Implements multiple independent checkboxes for school club choices.",
+    "Input Diversity: Successfully incorporates a <select> dropdown and a <textarea> message box."
    ],
-   "stretch": "Group your form questions neatly using fieldset and legend tags."
+   "stretch": "Group the questions inside styled <fieldset> and <legend> tags to make the survey look like an official test paper.",
+   "demo": {
+    "title": "Student Voice Survey",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>School Survey</title>\n  <style>\n    body { font-family: Arial, sans-serif; background: #eef2f7; padding: 20px; }\n    form { background: white; padding: 15px; border-radius: 8px; max-width: 420px; }\n    label { display: block; margin-top: 10px; font-weight: bold; }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Smart School Student Survey</h1>\n    <p>Tell us what you think about this school term!</p>\n  </header>\n  <main>\n    <form>\n      <label for=\"name\">Your Name:</label>\n      <input type=\"text\" id=\"name\" placeholder=\"e.g. Salma\">\n      <label>Favorite Subject:</label>\n      <input type=\"radio\" id=\"math\" name=\"sub\" value=\"math\">\n      <label for=\"math\" style=\"display:inline;\">Math</label>\n      <input type=\"radio\" id=\"code\" name=\"sub\" value=\"code\">\n      <label for=\"code\" style=\"display:inline;\">Coding</label>\n      <label>Join School Clubs:</label>\n      <input type=\"checkbox\" id=\"art\"><label for=\"art\" style=\"display:inline;\">Art Club</label>\n      <input type=\"checkbox\" id=\"robot\"><label for=\"robot\" style=\"display:inline;\">Robotics</label>\n      <label for=\"rate\">Rate Computer Lab:</label>\n      <select id=\"rate\">\n        <option>Super Awesome</option>\n        <option>Good</option>\n        <option>Needs Work</option>\n      </select>\n      <label for=\"notes\">Suggestions:</label>\n      <textarea id=\"notes\" rows=\"3\" style=\"width:100%;\"></textarea>\n      <br><br>\n      <button type=\"submit\">Send Survey</button>\n    </form>\n  </main>\n</body>\n</html>",
+    "output": "Presents a clean school survey form with radio picks, club checkboxes, a dropdown, and a submit button."
+   }
   },
   {
    "title": "My Coding Autobiography Portal",
-   "desc": "Make a personal site with a project catalog, milestone lists, images, and contact links.",
+   "desc": "Build an inspiring personal portfolio showcasing your coding adventures and achievements. Share your digital milestones, favorite project screenshots, and ways for friends to contact you.",
    "tags": [
     "Portfolio",
-    "Semantics",
-    "Links"
+    "About Me",
+    "Web Profile"
    ],
    "steps": [
-    "Create an introductory homepage using semantic tags like header, main, and footer.",
-    "Add a profile picture of yourself with a friendly alt text description.",
-    "Build a project catalog using tables or structured lists of your favorite coding creations.",
-    "List your coding milestones in chronological order using ordered lists.",
-    "Add external links to your favorite learning websites or scratch profiles.",
-    "Create a footer with contact links and a span tag for your copyright year."
+    "Organize the page using <header>, <section>, and <footer> tags for clear personal branding.",
+    "Add an <h1> heading with your name and insert a friendly avatar image with detailed alt text.",
+    "Write an inspiring 'About Me' paragraph explaining why you love coding computers.",
+    "Create an ordered list (<ol>) showcasing your learning journey milestones term by term.",
+    "Build a project showcase <table> showing project names, tools used, and completion badges.",
+    "Add an <audio controls> element with a voice message introducing yourself to web visitors.",
+    "Create hyperlinks (<a>) connecting to your school projects and an email mailto link in the footer."
    ],
    "rubric": [
-    "Uses semantic HTML elements like header, footer, and main.",
-    "Displays images with accurate alt text.",
-    "Presents milestones and projects using lists and tables.",
-    "Includes working links for navigation and external resources."
+    "Page Layout: Uses semantic tags (<header>, <section>, <footer>) with tidy visual hierarchy.",
+    "Milestones List: Employs an ordered list (<ol>) to show clear chronological coding achievements.",
+    "Showcase Table: Details projects inside a structured table containing headers and data cells.",
+    "Multimedia & Links: Includes working audio playback and clickable navigation links."
    ],
-   "stretch": "Style your text with some inline spans or add an audio greeting clip to welcome visitors!"
+   "stretch": "Add an embedded video walkthrough of your best Scratch game alongside the audio greeting.",
+   "demo": {
+    "title": "Junior Developer Portfolio",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Youssef's Coding Journey</title>\n  <style>\n    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0fdf4; margin: 20px; }\n    header { text-align: center; color: #166534; }\n    section { background: white; padding: 15px; margin-bottom: 12px; border-radius: 8px; }\n    table { width: 100%; border-collapse: collapse; }\n    th, td { border: 1px solid #86efac; padding: 6px; text-align: left; }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Hi, I'm Youssef! &#128187;</h1>\n    <p>Grade 4 Coder & Web Explorer</p>\n    <img src=\"https://placehold.co/120x120\" alt=\"Profile avatar of coder Youssef\">\n  </header>\n  <main>\n    <section>\n      <h2>Welcome Audio</h2>\n      <audio controls>\n        <source src=\"intro.mp3\" type=\"audio/mpeg\">\n        Audio not supported.\n      </audio>\n    </section>\n    <section>\n      <h2>My Milestones</h2>\n      <ol>\n        <li>Wrote my first HTML tag in September.</li>\n        <li>Built colorful lists and styled tables.</li>\n        <li>Created forms with clickable buttons!</li>\n      </ol>\n    </section>\n    <section>\n      <h2>Projects Archive</h2>\n      <table>\n        <tr><th>Project</th><th>Tags</th></tr>\n        <tr><td>Space Quiz</td><td>Forms & Radio</td></tr>\n        <tr><td>Zoo Guide</td><td>Images & Tables</td></tr>\n      </table>\n    </section>\n  </main>\n  <footer>\n    <p>Contact me: <a href=\"mailto:youssef@example.com\">youssef@example.com</a></p>\n  </footer>\n</body>\n</html>",
+    "output": "Renders a bright portfolio with an avatar, audio greeting player, milestone list, and completed project table."
+   }
   }
  ],
  "ar": [
   {
-   "title": "مركز الوصفات الكبرى",
-   "desc": "ابني موقع وصفات متعدد الصفحات يضم قوائم مكونات، خطوات تحضير، فيديو، وجداول وقت الطهي.",
+   "title": "موقع ركن الوصفات الجبارة",
+   "desc": "ابنِ موقع طبخ شهي يعرض أكلتك المفضلة بكل فخر. رتب المقادير في قوائم نظيفة، وجدول لأوقات التسوية، وفيديو لطريقة التحضير.",
    "tags": [
-    "إتش تي إم إل",
     "وصفات",
-    "وسائط"
+    "وسائط متعددة",
+    "هيكلة الويب"
    ],
    "steps": [
-    "خطط لهيكل موقعك بصفحة رئيسية وصفحة تفاصيل وصفة واحدة على الأقل.",
-    "اكتب الهيكل الأساسي للغة إتش تي إم إل وأضف عناوين للصفحات باستخدام العناوين الرئيسية.",
-    "أدخل صورة طعام شهية مع نص بديل وفيديو يوضح طريقة تحضير الوصفة.",
-    "أنشئ قوائم غير مرتبة للمكونات وقوائم مرتبة لخطوات الطهي خطوة بخطوة.",
-    "أضف جدولاً منظماً لعرض أوقات الطهي، أحجام الوجبات، وعدد السعرات الحرارية.",
-    "اربط صفحاتك ببعضها باستخدام روابط التنقل لكي يتمكن المستخدمون من الانتقال بسلاسة."
+    "أنشئ هيكل ملف index.html باستخدام وسوم دلالية واضحة مثل <header> و <main> و <footer>.",
+    "اكتب عنوان الأكلة الرئيسي داخل وسم <h1> مع فقرة بسيطة تحكي سر حبك للوجبة.",
+    "اكتب مقادير الأكلة بقائمة غير مرتبة (<ul>)، وخطوات التحضير بقائمة مرتبة بالأرقام (<ol>).",
+    "أضف صورة جذابة للطبق بوسم <img> مع كتابة وصف بديل واضح في خاصية alt.",
+    "صمم جدولاً <table> يوضح وقت التحضير، ودرجة حرارة الفرن، وعدد الأشخاص.",
+    "أدرج فيديو يشرح طريقة الطبخ عملياً باستخدام وسم <video controls> مع نص بديل.",
+    "أضف روابط سريعة <a> في أعلى الصفحة لتأخذ الزائر فوراً لقسم المقادير أو الخطوات."
    ],
    "rubric": [
-    "يستخدم وسوم إتش تي إم إل 5 الهيكلية وعناوين الصفحات بشكل صحيح.",
-    "يتضمن قوائم مرتبة وغير مرتبة للمكونات والخطوات.",
-    "يحتوي على صورة وفيديو مع المصادر والنصوص البديلة المناسبة.",
-    "يتميز بوجود جدول وروابط تنقل عاملة بين الصفحات."
+    "الهيكلة الدلالية: استخدام منظم لوسوم <header> و <main> و <footer> وعناوين متسلسلة.",
+    "تنوع القوائم: استخدام سليم للقائمة غير المرتبة <ul> للمقادير والمرتبة <ol> للخطوات.",
+    "تنظيم البيانات: عرض معلومات الطبخ داخل جدول <table> منظم بخلايا <th> و <td>.",
+    "الوسائط والروابط: إدراج صورة بـ alt سليم، وفيديو شغال، وروابط تنقل سهلة."
    ],
-   "stretch": "أضف نموذجاً في الأسفل يتيح للزوار إرسال وصفاتهم العائلية السرية الخاصة!"
+   "stretch": "أضف وسم صوت <audio> بصوت الشيف وهو يشرح، مع نموذج صغير ليترك الزوار تقييمهم للأكلة.",
+   "demo": {
+    "title": "صفحة أستاذ الكشري المصري",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n  <title>كشري مصري أصيل</title>\n  <style>\n    body { font-family: sans-serif; background: #fff8f0; color: #333; padding: 20px; }\n    header { background: #e76f51; color: white; padding: 10px; border-radius: 8px; }\n    table, th, td { border: 1px solid #d62828; border-collapse: collapse; padding: 8px; }\n    th { background: #f4a261; }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>موقع ركن الكشري الجبار</h1>\n    <nav><a href=\"#steps\">انتقل للخطوات مباشرة</a></nav>\n  </header>\n  <main>\n    <h2>أشهر أكلة مصرية يحبها الجميع</h2>\n    <p>طبق غني يجمع العدس والأرز والمكرونة والصلصة الحارة المقرمشة!</p>\n    <img src=\"https://placehold.co/300x180\" alt=\"طبق كشري مصري طازج مغطى بالبصل المقرمش\">\n    <h3>معلومات الطبخ السريعة</h3>\n    <table>\n      <tr><th>وقت التجهيز</th><th>وقت الطهي</th><th>يكفي لـ</th></tr>\n      <tr><td>20 دقيقة</td><td>40 دقيقة</td><td>4 أفراد</td></tr>\n    </table>\n    <h3>المقادير المطلوبة</h3>\n    <ul>\n      <li>كوب عدس بني</li>\n      <li>كوب أرز مصري</li>\n      <li>بصل محمر ومقرمش</li>\n    </ul>\n    <h3 id=\"steps\">خطوات التحضير</h3>\n    <ol>\n      <li>اسلق العدس حتى ينضج تماماً.</li>\n      <li>اطبخ الأرز واخلطه مع العدس.</li>\n      <li>صب الصلصة ورش البصل المقرمش وبالهنا والشفا!</li>\n    </ol>\n    <video width=\"300\" controls>\n      <source src=\"koshari.mp4\" type=\"video/mp4\">\n      متصفحك لا يدعم تشغيل الفيديو.\n    </video>\n  </main>\n  <footer><p>صنع بكل حب بواسطة شيف سنة رابعة!</p></footer>\n</body>\n</html>",
+    "output": "تعرض صفحة وصفة كشري منسقة تحتوي على صورة، وجدول أوقات، وقوائم مقادير، ومشغل فيديو."
+   }
   },
   {
-   "title": "استطلاع رأي المواد المدرسية",
-   "desc": "أنشئ استطلاعاً مدرسياً يحتوي على حقول نصية، مربعات اختيار للأنشطة، وننموذج تقييم للطلاب.",
+   "title": "استطلاع رأي أبطال المدرسة",
+   "desc": "صمم موقع استطلاع تفاعلي لتكتشف آراء زملائك في المدرسة وتجاربهم الممتعة. اجمع الإجابات بحقول نصية، وأزرار اختيار، ومربعات تحديد للأنشطة.",
    "tags": [
-    "نماذج",
-    "مدخلات",
-    "استطلاع"
+    "نماذج مدخلات",
+    "تفاعلي",
+    "بيانات"
    ],
    "steps": [
-    "صمم تخطيط نموذج الاستطلاع الخاص بك باستخدام عنصر النموذج الرئيسي.",
-    "أضف حقول إدخال نصية لاسم الطالب ومادته الدراسية المفضلة.",
-    "أدخل أزرار اختيار دائرية للأسئلة ذات الإجابة الواحدة مثل 'هل تحب الواجبات؟ (نعم/لا)'.",
-    "أضف مربعات اختيار لكي يتمكن الطلاب من اختيار عدة أنشطة مدرسية يشاركون فيها.",
-    "استخدم قائمة منسدلة لاختيار المرحلة الدراسية أو معلم الفصل.",
-    "قم بتضمين زر إرسال لإنهاء الاستطلاع واختبار المدخلات الخاصة بك."
+    "جهّز هيكل الصفحة بوضع عنوان مناسب في <title> وشريط علوي ترحيبي عبر <header>.",
+    "اكتب فقرة توضيحية تشرح لأصحابك هدف الاستبيان وتشجعهم على المشاركة بأمانة.",
+    "ضع عناصر الإدخال داخل وسم النموذج <form> وزوّده بزر إرسال واضح وجذاب.",
+    "أضف حقلاً نصياً يكتب فيه الطالب اسمه، وحقلاً آخر لفصله الدراسي.",
+    "اصنع أزرار اختيار (Radio) لها نفس الاسم ليختار الطالب مادة دراسية واحدة فقط مفضلة.",
+    "وفّر مربعات تحديد (Checkboxes) لتمكين الطالب من اختيار أكثر من نشاط مدرسي يحبه.",
+    "أدرج قائمة اختيار منسدلة <select> لتقييم وجبة المقصف المدرسي بالنجوم.",
+    "أضف مساحة كتابة واسعة <textarea> لكتابة اقتراحات حرة لتطوير فناء المدرسة."
    ],
    "rubric": [
-    "يستخدم عناصر النماذج بشكل صحيح لجمع بيانات المستخدم.",
-    "يتضمن مدخلات نصية، أزرار اختيار دائرية، ومربعات اختيار بشكل ملائم.",
-    "يحتوي على قائمة منسدلة ذات خيارات متعددة.",
-    "ينظم الأسئلة بوضوح باستخدام العناوين والتسميات التوضيحية."
+    "بناء النموذج: احتواء الصفحة على وسم <form> متكامل بحقول واضحة وزر إرسال.",
+    "أزرار الاختيار المنفرد: توحيد خاصية name لأزرار الراديو ليختار خياراً واحداً فقط.",
+    "تعدد الاختيارات: استخدام مربعات الـ Checkbox بنجاح لاختيار أكثر من نشاط.",
+    "تنوع الحقول: دمج ناجح بين القائمة المنسدلة <select> وحقل الرسائل <textarea>."
    ],
-   "stretch": "قم بتجميعه أسئلة نموذجك بدقة باستخدام وسوم مجموعات الحقول والعناوين."
+   "stretch": "نسق الأسئلة داخل وسوم <fieldset> و <legend> ليظهر النموذج كورقة اختبار مدرسية رسمية وأنيقة.",
+   "demo": {
+    "title": "نموذج صوت الطالب المدرسي",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n  <title>استطلاع المدرسة</title>\n  <style>\n    body { font-family: Arial, sans-serif; background: #eef2f7; padding: 20px; }\n    form { background: white; padding: 15px; border-radius: 8px; max-width: 420px; }\n    label { display: block; margin-top: 10px; font-weight: bold; }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>استطلاع رأي أبطال مدرستنا</h1>\n    <p>شاركنا رأيك في هذا الفصل الدراسي بكل صراحة!</p>\n  </header>\n  <main>\n    <form>\n      <label for=\"name\">اسم البطل:</label>\n      <input type=\"text\" id=\"name\" placeholder=\"مثال: سلمى أحمد\">\n      <label>المادة المفضلة لديك:</label>\n      <input type=\"radio\" id=\"math\" name=\"sub\" value=\"math\">\n      <label for=\"math\" style=\"display:inline;\">الرياضيات</label>\n      <input type=\"radio\" id=\"code\" name=\"sub\" value=\"code\">\n      <label for=\"code\" style=\"display:inline;\">البرمجة</label>\n      <label>أنشطة تحب الانضمام إليها:</label>\n      <input type=\"checkbox\" id=\"art\"><label for=\"art\" style=\"display:inline;\">نادي الرسم</label>\n      <input type=\"checkbox\" id=\"robot\"><label for=\"robot\" style=\"display:inline;\">فريق الروبوت</label>\n      <label for=\"rate\">تقييم معمل الكمبيوتر:</label>\n      <select id=\"rate\">\n        <option>ممتاز ورائع جداً</option>\n        <option>جيد وممتع</option>\n        <option>يحتاج تحسينات</option>\n      </select>\n      <label for=\"notes\">اقتراحاتك لتطوير المدرسة:</label>\n      <textarea id=\"notes\" rows=\"3\" style=\"width:100%;\"></textarea>\n      <br><br>\n      <button type=\"submit\">إرسال الاستطلاع</button>\n    </form>\n  </main>\n</body>\n</html>",
+    "output": "يُظهر نموذج استطلاع مدرسي منسق يحتوي على حقول إدخال، واختيارات راديو، ومربعات تحديد، وزر إرسال."
+   }
   },
   {
-   "title": "بوابة سيرتي الذاتية البرمجية",
-   "desc": "اصنع موقعاً شخصياً يحتوي على كتالوج مشاريع، قوائم إنجازات، صور، وروابط تواصل.",
+   "title": "بورتفوليو رحلتي مع البرمجة",
+   "desc": "ابنِ موقعك الشخصي الفخم لتعرض إنجازاتك في عالم البرمجة وتشارك شغفك مع أصحابك. استعرض محطات تعلمك ومشاريعك الرائعة بروابط اتصال مباشرة.",
    "tags": [
-    "محفظة",
-    "معاني",
-    "روابط"
+    "بورتفوليو",
+    "عني",
+    "ملف شخصي"
    ],
    "steps": [
-    "أنشئ صفحة رئيسية تعريفية باستخدام الوسوم الدلالية مثل الرأس والمحتوى والتذييل.",
-    "أضف صورة شخصية لك مع وصف نصي بديل لطيف.",
-    "ابنِ كتالوج مشاريع باستخدام الجداول أو القوائم المنظمة لإبداعاتك البرمجية المفضلة.",
-    "اذكر إنجازاتك البرمجية بترتيب زمني باستخدام القوائم المرتبة.",
-    "أضف روابط خارجية لمواقع التعلم المفضلة لديك أو لملفك الشخصي.",
-    "أنشئ تذييلاً للموقع يحتوي على روابط تواصل ووسم مخصص لسنة حقوق النشر."
+    "نظم تقسيم صفحتك باستخدام وسوم الويب الدلالية مثل <header> و <section> و <footer>.",
+    "ضع اسمك في عنوان <h1> مميز، وأدرج صورة شخصية أو أفاتار يحمل وسم alt دقيق.",
+    "اكتب فقرة تعريفية ملهمة في قسم (عني) تحكي متى بدأت حب البرمجة وكتابة الأكواد.",
+    "أنشئ قائمة مرتبة (<ol>) ترصد أهم المحطات والإنجازات التي حققتها خطوة بخطوة.",
+    "ابنِ جدولاً <table> يضم أسماء مشروعاتك السابقة والوسوم التي استخدمتها في كل مشروع.",
+    "أدرج مقطع صوتي يرحب بزوار موقعك بصوتك عبر الوسم التفاعلي <audio controls>.",
+    "أضف روابط سريعة <a> لمشاريعك مع رابط بريد إلكتروني في التذييل ليتواصل معك الأصدقاء."
    ],
    "rubric": [
-    "يستخدم عناصر إتش تي إم إل الدلالية مثل الرأس والتذييل والمحتوى الأساسي.",
-    "يعرض الصور مع نصوص بديلة دقيقة.",
-    "يعرض الإنجازات والمشاريع باستخدام القوائم والجداول.",
-    "يحتوي على روابط عاملة للتنقل والموارد الخارجية."
+    "ترتيب العناصر: استخدام دقيق للوسوم الدلالية مع تسلسل مريح وجميل للعين.",
+    "قائمة الإنجازات: بناء قائمة رقمية <ol> توضح تسلسل خطوات تعلم التلميذ البرمجية.",
+    "جدول المشروعات: تنظيم المشاريع داخل جدول <table> يضم عناوين أعمدة وبيانات مرتبة.",
+    "الوسائط والروابط: عمل مشغل الصوت الترحيبي بنجاح مع روابط نقر فعالة."
    ],
-   "stretch": "قم بتنسيق نصوصك باستخدام وسوم داخلية أو أضف مقطع صوتي ترحيبي لتحية الزوار!"
+   "stretch": "أضف فيديو قصير تسجل فيه شاشتك وأنت تشغل لعبتك المصنوعة في سكراتش بجانب المقطع الصوتي.",
+   "demo": {
+    "title": "معرض أعمال المبرمج الصغير",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n  <title>رحلة يوسف مع البرمجة</title>\n  <style>\n    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0fdf4; margin: 20px; }\n    header { text-align: center; color: #166534; }\n    section { background: white; padding: 15px; margin-bottom: 12px; border-radius: 8px; }\n    table { width: 100%; border-collapse: collapse; }\n    th, td { border: 1px solid #86efac; padding: 6px; text-align: right; }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>أهلاً بكم، أنا يوسف! &#128187;</h1>\n    <p>مبرمج في الصف الرابع ومستكشف لعالم الويب</p>\n    <img src=\"https://placehold.co/120x120\" alt=\"الصورة الرمزية للمبرمج الصغير يوسف\">\n  </header>\n  <main>\n    <section>\n      <h2>رسالة ترحيب صوتية</h2>\n      <audio controls>\n        <source src=\"intro.mp3\" type=\"audio/mpeg\">\n        المتصفح لا يدعم مشغل الصوت.\n      </audio>\n    </section>\n    <section>\n      <h2>محطاتي البرمجية</h2>\n      <ol>\n        <li>كتبت أول كود HTML في شهر أكتوبر.</li>\n        <li>تعلمت تصميم القوائم والجداول المنظمة.</li>\n        <li>صممت نماذج واستطلاعات تفاعلية كاملة!</li>\n      </ol>\n    </section>\n    <section>\n      <h2>أرشيف مشروعاتي</h2>\n      <table>\n        <tr><th>المشروع</th><th>التقنيات المستخدمة</th></tr>\n        <tr><td>مسابقة الفضاء</td><td>النماذج وأزرار الراديو</td></tr>\n        <tr><td>دليل الحيوانات</td><td>الصور والجداول</td></tr>\n      </table>\n    </section>\n  </main>\n  <footer>\n    <p>تواصل معي عبر الإيميل: <a href=\"mailto:youssef@example.com\">youssef@example.com</a></p>\n  </footer>\n</body>\n</html>",
+    "output": "يعرض صفحة بورتفوليو مبهجة تشمل صورة رمزية، ومشغل ترحيب صوتي، وقائمة إنجازات وجدول مشاريع."
+   }
   }
  ]
 }

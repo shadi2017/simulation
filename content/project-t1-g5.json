@@ -2,149 +2,183 @@
  "en": [
   {
    "title": "The Digital Moodboard",
-   "desc": "Create an interactive webpage where users click mood buttons to instantly change the page theme, display a matching image, and reveal a random quote.",
+   "desc": "Create an interactive web app where clicking mood buttons transforms the entire page theme, icon, and background color. It also pulls a random motivational quote from a list of sayings to match your vibe!",
    "tags": [
-    "DOM",
-    "Events",
-    "Arrays"
+    "DOM Styling",
+    "Arrays & Random",
+    "Event Listeners"
    ],
    "steps": [
-    "Plan your HTML layout with a main container, title, mood buttons, image element, and a quote paragraph box.",
-    "Style your page with basic CSS so it looks neat and ready to receive dynamic theme color changes.",
-    "Write JavaScript variables using const to select your key HTML elements like the body, image, and quote box.",
-    "Create an array of uplifting quotes and use Math.random() to pick a random quote every time a button is clicked.",
-    "Set up click event listeners on your mood buttons to trigger functions when the user interacts with them.",
-    "Use if/else or switch statements inside your functions to update the theme colors and match the correct image source."
+    "Create the HTML structure with a header, three mood buttons (Happy, Calm, Energetic), and placeholders for an emoji and quote text.",
+    "Add CSS styles for the base layout and define specific background colors and fonts for each mood theme.",
+    "Store collections of mood-specific quotes inside JavaScript arrays.",
+    "Select the buttons and display elements using document.getElementById().",
+    "Write a helper function that selects a random quote from an array using Math.random() and Math.floor().",
+    "Attach click event listeners to each button to switch background colors, update the main emoji, and inject the random quote."
    ],
    "rubric": [
-    "Page theme changes color successfully on button clicks.",
-    "A matching image loads for the selected mood.",
-    "A random quote appears from an array using Math.random().",
-    "Code is clean and uses proper event listeners and functions."
+    "Interactive Buttons: All three mood buttons respond reliably to click events.",
+    "Dynamic Styling: Background color and theme switch smoothly through JavaScript.",
+    "Random Logic: Generates varied quotes correctly using Math.random() and arrays.",
+    "Clean Structure: HTML, CSS, and JS are organized and easy to read."
    ],
-   "stretch": "Add a text input where users can type their own custom quote and add it to the quotes array using push()!"
+   "stretch": "Add an input box where users can type their own custom quote and push it into the mood array!",
+   "demo": {
+    "title": "Moodboard Mini Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: sans-serif; text-align: center; padding: 30px; transition: 0.3s; }\n  button { padding: 10px 16px; margin: 5px; font-size: 16px; cursor: pointer; border-radius: 8px; border: none; }\n  #box { margin-top: 20px; font-size: 22px; font-weight: bold; }\n</style>\n</head>\n<body id=\"bdy\">\n  <h1>Digital Moodboard</h1>\n  <button id=\"hBtn\">😄 Happy</button>\n  <button id=\"cBtn\">🌊 Calm</button>\n  <div id=\"box\">Pick a mood!</div>\n  <script>\n    const happyQuotes = [\"Keep smiling!\", \"Today is full of sunshine!\", \"You got this!\"];\n    const calmQuotes = [\"Breathe deeply.\", \"Peace begins inside.\", \"Take it easy.\"];\n    function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }\n    document.getElementById(\"hBtn\").addEventListener(\"click\", function() {\n      document.getElementById(\"bdy\").style.backgroundColor = \"#FFF3B0\";\n      document.getElementById(\"box\").textContent = \"😄 \" + pickRandom(happyQuotes);\n    });\n    document.getElementById(\"cBtn\").addEventListener(\"click\", function() {\n      document.getElementById(\"bdy\").style.backgroundColor = \"#CBE896\";\n      document.getElementById(\"box\").textContent = \"🌊 \" + pickRandom(calmQuotes);\n    });\n  </script>\n</body>\n</html>",
+    "output": "Displays mood buttons that change the page background color and show a random matching quote."
+   }
   },
   {
    "title": "Smart Age & Ticket Validator",
-   "desc": "Build a ticket booth simulator that checks a visitor's age and budget using complex conditions to see if they can buy a ride ticket.",
+   "desc": "Build an amusement park kiosk app that checks a visitor's age and budget before issuing a ride pass. It uses logical AND/OR conditions to decide if the rider can enter the Super Coaster, Kids Zone, or needs more coins!",
    "tags": [
-    "Input",
-    "Conditions",
-    "Logic"
+    "Logical Conditions",
+    "Number Inputs",
+    "DOM Updates"
    ],
    "steps": [
-    "Design a simple form in HTML with input fields for the user's age and available budget money.",
-    "Add a 'Check Ticket' submit button and an empty paragraph area to display the final result message.",
-    "Write JavaScript code to select the input fields, button, and result display element using querySelector.",
-    "Attach a click event listener to the button so it reads the values entered by the user.",
-    "Use Number() to convert the input text values into actual numbers for proper mathematical calculations.",
-    "Write if, else if, and else conditions combined with AND (&&) operators to verify age and budget requirements."
+    "Design an HTML form with two input boxes: one for visitor age and one for available money in EGP.",
+    "Add a 'Check Ticket' button and an output message card with clear text sizing.",
+    "Add CSS styling to make approved passes show green and denied passes show red.",
+    "In JavaScript, read the input values and convert them into numbers using Number().",
+    "Use if and else if blocks with && (AND) to verify safety requirements (e.g., age >= 12 AND budget >= 50).",
+    "Calculate and display any remaining change or show how much money is missing.",
+    "Display friendly, customized feedback explaining the decision directly on the screen."
    ],
    "rubric": [
-    "Inputs for age and budget are correctly captured as numbers.",
-    "Logical AND (&&) operators check both age and money rules accurately.",
-    "Clear success or failure messages are displayed to the user.",
-    "Code handles empty inputs or invalid numbers gracefully."
+    "Input Conversion: Reads values and converts them to valid numbers without NaN errors.",
+    "Logical Accuracy: Uses if/else and logical operators (&&, ||) to test rules properly.",
+    "User Feedback: Clearly shows admission status and calculates remaining money.",
+    "Visual Polish: Changes result message color based on pass approval or denial."
    ],
-   "stretch": "Add a VIP pass checkbox and use an OR (||) operator so VIP holders get free entry regardless of budget!"
+   "stretch": "Add a VIP checkbox that costs an extra 20 EGP and grants instant express queue access!",
+   "demo": {
+    "title": "Park Ticket Validator Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: sans-serif; text-align: center; padding: 25px; }\n  input { padding: 8px; margin: 6px; width: 120px; }\n  #res { margin-top: 15px; font-weight: bold; font-size: 18px; }\n</style>\n</head>\n<body>\n  <h2>🎢 Park Ticket Checker</h2>\n  <input id=\"age\" type=\"number\" placeholder=\"Age\">\n  <input id=\"cash\" type=\"number\" placeholder=\"Money (EGP)\"><br>\n  <button id=\"btn\">Check Ride</button>\n  <div id=\"res\">Enter details above</div>\n  <script>\n    document.getElementById(\"btn\").addEventListener(\"click\", function() {\n      const age = Number(document.getElementById(\"age\").value);\n      const cash = Number(document.getElementById(\"cash\").value);\n      const res = document.getElementById(\"res\");\n      if (age >= 12 && cash >= 40) {\n        res.textContent = \"✅ Roller Coaster Approved! Change: \" + (cash - 40) + \" EGP\";\n        res.style.color = \"green\";\n      } else if (age < 12 && cash >= 20) {\n        res.textContent = \"🎈 Kids Zone Approved! Change: \" + (cash - 20) + \" EGP\";\n        res.style.color = \"blue\";\n      } else {\n        res.textContent = \"❌ Cannot ride. Check age or bring more cash!\";\n        res.style.color = \"red\";\n      }\n    });\n  </script>\n</body>\n</html>",
+    "output": "Evaluates user age and cash inputs to display whether a ticket is granted along with remaining change."
+   }
   },
   {
    "title": "Mini Math Solver App",
-   "desc": "Build a dynamic calculator app with buttons for four basic operations that instantly calculates and displays the result.",
+   "desc": "Build a responsive pocket calculator that takes two numbers and calculates results when clicking arithmetic buttons. It features dedicated helper functions for operations and safely handles dividing by zero!",
    "tags": [
-    "Math",
-    "Functions",
-    "DOM"
+    "Functions & Return",
+    "Calculations",
+    "Click Handlers"
    ],
    "steps": [
-    "Create two number input boxes and four operation buttons (+, -, *, /) in your HTML file.",
-    "Add a dedicated results display box to show the final calculated answer to the user.",
-    "Select all calculator inputs, buttons, and the output display box using JavaScript variables.",
-    "Write reusable JavaScript functions that take two inputs and return the sum, difference, product, or quotient.",
-    "Attach click event listeners to each operation button to call the correct math function.",
-    "Update the text content of the result element with the returned value from your math functions."
+    "Construct HTML input fields for first and second numbers plus a clear result panel.",
+    "Create four buttons for addition (+), subtraction (-), multiplication (*), and division (/).",
+    "Style the buttons with bright, contrasting colors and smooth hover effects.",
+    "Write JavaScript functions that take two parameters, compute the math, and return the answer.",
+    "Add event listeners to each button that grab values and trigger the right math function.",
+    "Include an if statement inside the division logic to prevent dividing by zero with a warning.",
+    "Update the result display with the complete formula (e.g., '8 × 4 = 32')."
    ],
    "rubric": [
-    "All four mathematical operations (+, -, *, /) work correctly.",
-    "Reusable functions with parameters and return values are utilized.",
-    "Buttons trigger the right calculation when clicked.",
-    "Results display clearly on the screen for the user to see."
+    "Math Accuracy: Computes all four arithmetic operations (+, -, *, /) correctly.",
+    "Function Usage: Implements reusable functions that accept arguments and return values.",
+    "Edge-Case Handling: Prevents division by zero with a helpful message instead of Infinity.",
+    "Interface Clarity: Displays complete equations cleanly on the screen."
    ],
-   "stretch": "Add a clear button that resets both input fields and the result display back to zero!"
+   "stretch": "Add a 'Clear' button and keep an array of the last 3 calculations shown as a history list!",
+   "demo": {
+    "title": "Mini Math Solver Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body { font-family: sans-serif; text-align: center; padding: 25px; }\n  input { padding: 8px; width: 90px; margin: 5px; font-size: 16px; }\n  button { padding: 8px 16px; margin: 4px; font-size: 18px; cursor: pointer; }\n  #ans { margin-top: 18px; font-size: 24px; color: #2b2d42; }\n</style>\n</head>\n<body>\n  <h2>🧮 Mini Math Solver</h2>\n  <input id=\"n1\" type=\"number\" placeholder=\"Num 1\">\n  <input id=\"n2\" type=\"number\" placeholder=\"Num 2\"><br>\n  <button id=\"add\">+</button><button id=\"sub\">-</button>\n  <button id=\"mul\">×</button><button id=\"div\">÷</button>\n  <div id=\"ans\">Result will show here</div>\n  <script>\n    function calculate(op) {\n      const a = Number(document.getElementById(\"n1\").value);\n      const b = Number(document.getElementById(\"n2\").value);\n      const out = document.getElementById(\"ans\");\n      if (op === \"+\") out.textContent = a + \" + \" + b + \" = \" + (a + b);\n      if (op === \"-\") out.textContent = a + \" - \" + b + \" = \" + (a - b);\n      if (op === \"*\") out.textContent = a + \" × \" + b + \" = \" + (a * b);\n      if (op === \"/\") {\n        out.textContent = (b === 0) ? \"⚠️ Cannot divide by zero!\" : a + \" ÷ \" + b + \" = \" + (a / b);\n      }\n    }\n    document.getElementById(\"add\").onclick = function() { calculate(\"+\"); };\n    document.getElementById(\"sub\").onclick = function() { calculate(\"-\"); };\n    document.getElementById(\"mul\").onclick = function() { calculate(\"*\"); };\n    document.getElementById(\"div\").onclick = function() { calculate(\"/\"); };\n  </script>\n</body>\n</html>",
+    "output": "A working four-function calculator that shows the complete equation and handles division by zero."
+   }
   }
  ],
  "ar": [
   {
-   "title": "لوحة المزاج الرقمية",
-   "desc": "اعمل صفحة ويب تفاعلية المستخدمين يقدروا يدوسوا على أزرار المزاج عشان يغيروا شكل الصفحة، يظهروا صورة مناسبة، ويطلعوا حكمة عشوائية.",
+   "title": "لوحة المزاج الرقمية (Digital Moodboard)",
+   "desc": "اصنع صفحة ويب تفاعلية وذكية، لما تدوس على زرار مزاجك يتغير لون الصفحة والإيموجي بالكامل. كمان هتختار لك حكمة تشجيعية عشوائية من قايمة جميلة تناسب مودك في ثواني!",
    "tags": [
-    "DOM",
-    "أحداث",
-    "مصفوفات"
+    "تنسيق بالـ DOM",
+    "مصفوفات وعشوائية",
+    "أحداث الضغط"
    ],
    "steps": [
-    "خطط تصميم HTML بتاعك مع مكان رئيسي، عنوان، أزرار للمزاج، عنصر للصورة، ومربع فقرة للحكمة.",
-    "زين صفحتك بـ CSS بسيط عشان شكلها يبقى حلو وجاهز لتغيير الألوان بشكل ديناميكي.",
-    "اكتب متغيرات JavaScript باستخدام const عشان تختار عناصر HTML الأساسية زي الجسم والصورة ومربع الحكمة.",
-    "اعمل مصفوفة فيها حكم جميلة واستخدم Math.random() عشان تختار حكمة عشوائية كل ما المستخدم يدوس على زرار.",
-    "اضبط مستمعات الأحداث (event listeners) على أزرار المزاج عشان تشغل الدوال لما المستخدم يتفاعل معاها.",
-    "استخدم شروط if/else جوه الدوال بتاعتك عشان تحدد ألوان الثيم وتجيب مصدر الصورة الصح."
+    "ابنِ هيكل الـ HTML: عنوان حلو، 3 أزرار للمود (فرحان، هادي، نشيط)، ومكان مخصص للإيموجي وجملة المود.",
+    "اكتب شوية CSS عشان تظبط أماكن الأزرار وتحدد ألوان مبهجة تناسب كل حالة مزاجية.",
+    "جهّز مصفوفات (Arrays) في الجافاسكريبت فيها جمل تشجيعية لكل مود تبرمجه.",
+    "امسك عناصر الصفحة من خلال الجافاسكريبت باستخدام document.getElementById().",
+    "اعمل دالة (Function) صغيرة تختار جملة عشوائية من المصفوفة بـ Math.random() و Math.floor().",
+    "اربط كل زرار بحدث الضغط (click event) عشان يغير لون الخلفية والإيموجي ويكتب الجملة العشوائية."
    ],
    "rubric": [
-    "ثيم الصفحة بتغير لونها صح أول ما تدوس على الأزرار.",
-    "الصورة المناسبة للمزاج المختار بتظهر.",
-    "حكمة عشوائية بتظهر من المصفوفة باستخدام Math.random().",
-    "الكود نضيف وبيستخدم مستمعات أحداث ودوال بشكل مظبوط."
+    "تفاعل الأزرار: كل زرار مود بيستجيب للضغط بدون أي أخطاء برمجية.",
+    "تغيير التنسيق: خلفية الصفحة والألوان بتتغير فوراً من الجافاسكريبت.",
+    "العشوائية والمصفوفات: استخدام سليم لـ Math.random والمصفوفات لعرض اقتباس عشوائي.",
+    "نظافة الكود: تنسيق ممتاز وسهل القراءة للـ HTML والـ CSS والجافاسكريبت."
    ],
-   "stretch": "ضيف مكان إدخال نصي عشان المستخدمين يقدروا يكتبوا حكمتهم الخاصة ويضيفوها للمصفوفة باستخدام push()!"
+   "stretch": "ضيف مربع إدخال (input) يخلي المستخدم يكتب حكمته المفضلة ويضيفها للمصفوفة بنفسه!",
+   "demo": {
+    "title": "نموذج لوحة المزاج",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n<style>\n  body { font-family: sans-serif; text-align: center; padding: 30px; transition: 0.3s; }\n  button { padding: 10px 16px; margin: 5px; font-size: 16px; cursor: pointer; border-radius: 8px; border: none; }\n  #box { margin-top: 20px; font-size: 22px; font-weight: bold; }\n</style>\n</head>\n<body id=\"bdy\">\n  <h1>لوحة المزاج اليومية</h1>\n  <button id=\"hBtn\">😄 مبسوط</button>\n  <button id=\"cBtn\">🌊 هادي</button>\n  <div id=\"box\">اختار مودك النهاردة!</div>\n  <script>\n    const happyQuotes = [\"ابتسامتك بتنوّر الدنيا!\", \"النهاردة يومك يا بطل!\", \"طاقتك الإيجابية معدية!\"];\n    const calmQuotes = [\"خد نَفَس عميق وارتاح.\", \"الهدوء سر التركيز.\", \"كل حاجة هتبقى تمام.\"];\n    function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }\n    document.getElementById(\"hBtn\").addEventListener(\"click\", function() {\n      document.getElementById(\"bdy\").style.backgroundColor = \"#FFF3B0\";\n      document.getElementById(\"box\").textContent = \"😄 \" + pickRandom(happyQuotes);\n    });\n    document.getElementById(\"cBtn\").addEventListener(\"click\", function() {\n      document.getElementById(\"bdy\").style.backgroundColor = \"#CBE896\";\n      document.getElementById(\"box\").textContent = \"🌊 \" + pickRandom(calmQuotes);\n    });\n  </script>\n</body>\n</html>",
+    "output": "صفحة تفاعلية تغير لون الخلفية وتعرض إيموجي وحكمة عشوائية بمجرد الضغط على زر المزاج."
+   }
   },
   {
-   "title": "مدقق التذاكر والسن الذكي",
-   "desc": "ابني محاكي لشباك التذاكر بيتاكد من سن الزائر وفلوسه باستخدام شروط مركبة عشان يعرف يقدر يشترى تذكرة لعبة ولا لأ.",
+   "title": "فاحص تذاكر الملاهي الذكي",
+   "desc": "ابنِ شاشة كشك حجز الملاهي اللي بتفحص سن الزائر وفلوسه عشان تديله التذكرة المناسبة. هتستخدم الشروط الذكية ورموز AND و OR للتأكد هل ينفع يركب قطار الموت ولا يروح ألعاب الصغار!",
    "tags": [
-    "مدخلات",
-    "شروط",
-    "منطق"
+    "شروط برمجية",
+    "مدخلات رقمية",
+    "تحديث الصفحة"
    ],
    "steps": [
-    "صمم نموذج بسيط في HTML فيه خانات إدخال لسن المستخدم ومبلغ الفلوس المتاح معاه.",
-    "ضيف زرار إرسال اسمه 'افحص التذكرة' ومكان فقرة فاضي عشان تظهر رسالة النتيجة النهائية.",
-    "اكتب كود JavaScript عشان تختار خانات الإدخال والزرار وعنصر عرض النتيجة باستخدام querySelector.",
-    "اربط مستمع أحداث النقر بالزرار عشان يقرا القيم اللي المستخدم كتبها.",
-    "استخدم Number() عشان تحول النصوص المدخلة لأرقام حقيقية عشان العمليات الحسابية تظبط.",
-    "اكتب شروط if و else if و else مع استخدام أدوات الربط زي AND (&&) عشان تتاكد من شروط السن والفلوس."
+    "صمم واجهة HTML فيها خانتين للمدخلات: واحدة لسن الزائر والتانية للميزانية بالجنيه، مع زرار للحجز.",
+    "جهّز صندوق رسائل لعرض نتيجة التذكرة وباقي الفلوس بوضوح.",
+    "استخدم CSS عشان تلوّن الرسالة بالأخضر لو مسموح وبالأحمر لو الشروط مش كاملة.",
+    "اقرأ القيم اللي كتبها الزائر في الجافاسكريبت وحولها لأرقام بـ Number().",
+    "استخدم جمل if و else if مع علامة && (و) عشان تتأكد إن السن والفلوس يسمحوا باللعبة.",
+    "احسب باقي الفلوس بعد سعر التذكرة أو طلع رسالة بالفلوس اللي ناقصة.",
+    "اطبع النتيجة والترحيب المخصص على شاشة الصفحة مباشرة."
    ],
    "rubric": [
-    "مدخلات السن والفلوس بتتقرا صح كأرقام.",
-    "أدوات الربط المنطقية AND (&&) بتفحص شروط السن والفلوس بدقة.",
-    "رسائل نجاح أو فشل واضحة بتظهر للمستخدم.",
-    "الكود بيتعامل مع الخانات الفاضية أو الأرقام الغلط بذكاء."
+    "قراءة المدخلات: استخراج السن والفلوس وتحويلها لأرقام من غير أخطاء NaN.",
+    "دقة الشروط: استخدام ذكي لجمل if وعلامات && و || للتحقق من القواعد.",
+    "حساب الباقي: إظهار الفلوس المتبقية أو المبلغ الناقص بطريقة حسابية سليمة.",
+    "وضوح الواجهة: تلوين النتيجة ورسائل واضحة وسهلة الفهم للزائر الصغير."
    ],
-   "stretch": "ضيف صندوق اختيار VIP واستخدم أداة OR (||) عشان أصحاب الـ VIP يدخلوا ببلاش بغض النظر عن فلوسهم!"
+   "stretch": "ضيف خيار VIP (تذكرة سريعة) بـ 20 جنيه إضافية ومخصصة للأعمار فوق 10 سنين!",
+   "demo": {
+    "title": "نموذج فاحص التذاكر",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n<style>\n  body { font-family: sans-serif; text-align: center; padding: 25px; }\n  input { padding: 8px; margin: 6px; width: 120px; }\n  #res { margin-top: 15px; font-weight: bold; font-size: 18px; }\n</style>\n</head>\n<body>\n  <h2>🎢 فاحص تذاكر الملاهي</h2>\n  <input id=\"age\" type=\"number\" placeholder=\"السن\">\n  <input id=\"cash\" type=\"number\" placeholder=\"الفلوس (جنيه)\"><br>\n  <button id=\"btn\">احجز التذكرة</button>\n  <div id=\"res\">اكتب بياناتك فوق ودوس فحص</div>\n  <script>\n    document.getElementById(\"btn\").addEventListener(\"click\", function() {\n      const age = Number(document.getElementById(\"age\").value);\n      const cash = Number(document.getElementById(\"cash\").value);\n      const res = document.getElementById(\"res\");\n      if (age >= 12 && cash >= 40) {\n        res.textContent = \"✅ مبروك! تذكرة قطار الرعب. الباقي: \" + (cash - 40) + \" جنيه\";\n        res.style.color = \"green\";\n      } else if (age < 12 && cash >= 20) {\n        res.textContent = \"🎈 مرحى! تذكرة عالم الصغار. الباقي: \" + (cash - 20) + \" جنيه\";\n        res.style.color = \"blue\";\n      } else {\n        res.textContent = \"❌ للأسف الفلوس مش كافية أو السن غير مناسب!\";\n        res.style.color = \"red\";\n      }\n    });\n  </script>\n</body>\n</html>",
+    "output": "يتحقق البرنامج من سن وفلوس المستخدم ويعرض التذكرة المسموحة وقيمة الباقي بالألوان."
+   }
   },
   {
-   "title": "تطبيق حاسبة الرياضيات الصغيرة",
-   "desc": "ابني تطبيق حاسبة ديناميكي فيه أزرار لأربع عمليات حسابية بيحسب النتيجة ويعرضها فوراً.",
+   "title": "آلة الحساب السريعة",
+   "desc": "ابنِ آلة حاسبة رقمية ملونة تاخد رقمين وتحسب الناتج بضغطة زرار واحدة للجمع أو الطرح أو الضرب أو القسمة. البرنامج بيعتمد على دوال منظمة ويتعامل بذكاء مع خطأ القسمة على صفر!",
    "tags": [
-    "رياضيات",
-    "دوال",
-    "DOM"
+    "دوال ونتائج",
+    "عمليات حسابية",
+    "أحداث الكليك"
    ],
    "steps": [
-    "اعمل صندوقين إدخال أرقام وأربع أزرار عمليات (+, -, *, /) في ملف HTML بتاعك.",
-    "ضيف صندوق مخصص لعرض النتيجة عشان تبين الإجابة النهائية المحسوبة للمستخدم.",
-    "اختر كل مدخلات الحاسبة والأزرار وصندوق النتيجة باستخدام متغيرات JavaScript.",
-    "اكتب دلالات JavaScript قابلة لإعادة الاستخدام بتاخد مدخلين وترجع المجموع أو الفرق أو حاصل الضرب أو القسمة.",
-    "اربط مستمعات أحداث النقر بكل زرار عملية عشان ينادي دالة الرياضة الصح.",
-    "حدث محتوى النص الخاص بعنصر النتيجة بالقيمة الراجعة من دالتك الرياضية."
+    "ابنِ مدخلين للأرقام في صفحة الـ HTML مع شاشة عرض كبيرة عشان النتيجة تكون واضحة.",
+    "اعمل أربعة أزرار للعمليات الحسابية: الجمع (+) والطرح (-) والضرب (×) والقسمة (÷).",
+    "نسق أزرار العمليات بألوان مميزة وتأثيرات شكلية حلوة بالـ CSS.",
+    "اكتب دالة (Function) في الجافاسكريبت تستقبل المدخلات وتحسب الناتج وترجعه.",
+    "اربط كل زرار بحدث كليك ينادي دالة الحساب بالعملية المناسبة.",
+    "ضيف شرط if في عملية القسمة يحذر المستخدم فوراً لو حاول يقسم على صفر.",
+    "اعرض المعادلة كاملة بالنتيجة (مثلاً: 12 × 5 = 60) جوه صفحة الويب."
    ],
    "rubric": [
-    "الأربع عمليات الرياضية (+, -, *, /) شغالين تمام.",
-    "استخدام دالات قابلة لإعادة الاستخدام مع مدخلات وقيم راجعة.",
-    "الأزرار بتشغل الحسابات الصح لما المستخدم يدوس عليها.",
-    "النتائج بتظهر بوضوح على الشاشة للمستخدم."
+    "دقة الحسابات: صحة نواتج العمليات الأربعة (+، -، ×، ÷) بدون أخطاء.",
+    "بناء الدوال: كتابة دالة منظمة تستلم المدخلات وترجع الحل السليم.",
+    "التعامل مع الأخطاء: منع القسمة على صفر وإظهار تنبيه لطيف بدل الأرقام الغريبة.",
+    "وضوح العرض: كتابة المسألة والناتج بشكل منظم ومريح للعين."
    ],
-   "stretch": "ضيف زرار مسح (clear) بيصفر خانتي الإدخال وعرض النتيجة لصفر تاني!"
+   "stretch": "ضيف زرار 'مسح' (Clear) ومصفوفة تحفظ آخر 3 عمليات اتعملت في تاريخ الحسابات!",
+   "demo": {
+    "title": "نموذج آلة الحساب",
+    "code": "<!DOCTYPE html>\n<html dir=\"rtl\">\n<head>\n<style>\n  body { font-family: sans-serif; text-align: center; padding: 25px; }\n  input { padding: 8px; width: 90px; margin: 5px; font-size: 16px; }\n  button { padding: 8px 16px; margin: 4px; font-size: 18px; cursor: pointer; }\n  #ans { margin-top: 18px; font-size: 22px; color: #2b2d42; font-weight: bold; }\n</style>\n</head>\n<body>\n  <h2>🧮 حاسبتي الذكية</h2>\n  <input id=\"n1\" type=\"number\" placeholder=\"الرقم 1\">\n  <input id=\"n2\" type=\"number\" placeholder=\"الرقم 2\"><br>\n  <button id=\"add\">+</button><button id=\"sub\">-</button>\n  <button id=\"mul\">×</button><button id=\"div\">÷</button>\n  <div id=\"ans\">النتيجة هتظهر هنا</div>\n  <script>\n    function calculate(op) {\n      const a = Number(document.getElementById(\"n1\").value);\n      const b = Number(document.getElementById(\"n2\").value);\n      const out = document.getElementById(\"ans\");\n      if (op === \"+\") out.textContent = a + \" + \" + b + \" = \" + (a + b);\n      if (op === \"-\") out.textContent = a + \" - \" + b + \" = \" + (a - b);\n      if (op === \"*\") out.textContent = a + \" × \" + b + \" = \" + (a * b);\n      if (op === \"/\") {\n        out.textContent = (b === 0) ? \"⚠️ ماينفعش نقسم على صفر!\" : a + \" ÷ \" + b + \" = \" + (a / b);\n      }\n    }\n    document.getElementById(\"add\").onclick = function() { calculate(\"+\"); };\n    document.getElementById(\"sub\").onclick = function() { calculate(\"-\"); };\n    document.getElementById(\"mul\").onclick = function() { calculate(\"*\"); };\n    document.getElementById(\"div\").onclick = function() { calculate(\"/\"); };\n  </script>\n</body>\n</html>",
+    "output": "آلة حاسبة تفاعلية للعمليات الأربعة تعرض المسألة والناتج وتمنع القسمة على صفر."
+   }
   }
  ]
 }

@@ -1,162 +1,186 @@
 {
  "en": [
   {
-   "title": "Smart Farm Automatic Irrigation System",
-   "desc": "Build a paper-and-marker maze where a little robot waters thirsty crops based on grid coordinates and sensor conditions. You will combine nested loops, AND/OR logic, and pathfinding to keep the plants happy!",
+   "title": "The Smart Zoo Keeper Floor Map",
+   "desc": "Design a giant cardboard grid floor map to guide a toy keeper robot to feed hungry animals. Use coordinates, key tokens in your pocket for memory, and nested loops to wash cages efficiently!",
    "tags": [
-    "Grid & Path",
-    "Conditions",
-    "Nested Loops"
-   ],
-   "steps": [
-    "Draw a 5x5 farm grid on a large sheet of paper with different crops placed in specific coordinate squares.",
-    "Write down the starting position of your robot water-carrier at the top-left corner (0,0).",
-    "Use Nested Loops to make the robot systematically scan every single row and column of the farm grid.",
-    "Add Boolean Logic (AND/OR) to check if a square needs water AND the soil is dry.",
-    "Apply Complex Conditional Choices: if it rained OR the plant is a cactus, skip watering.",
-    "Calculate the shortest path using Advanced Pathfinding to avoid muddy puddles and rocks.",
-    "Test your step sequence and optimize it to use the least number of steps possible.",
-    "Run the final simulation to watch your smart farm come to life with happy, watered plants!"
-   ],
-   "rubric": [
-    "Correctly uses grid coordinates to map out the farm layout.",
-    "Implements nested loops to scan all rows and columns efficiently.",
-    "Applies AND/OR conditions accurately for watering decisions.",
-    "Optimizes the robot's path to avoid obstacles successfully."
-   ],
-   "stretch": "Add a special solar-power condition where the robot must pause its loop if it is too cloudy!"
-  },
-  {
-   "title": "Secret Agent Museum Security Patrol",
-   "desc": "Design a screenless patrol route for a security guard robot protecting a priceless diamond in a museum. Use memory states, conditional choices, and precise grid coordinates to catch sneaky thieves!",
-   "tags": [
-    "Memory State",
+    "Grid Coordinates",
     "Nested Loops",
-    "Pathfinding"
+    "State Memory"
    ],
    "steps": [
-    "Design a museum floor plan on grid paper with exhibit rooms, laser hallways, and a central vault.",
-    "Establish the guard's starting state in memory: 'Patrol Mode' is active and 'Alarm' is false.",
-    "Write a repeating outer loop for the security guard to check each room every hour.",
-    "Use an inner loop to make the guard check every display case within each room.",
-    "Set up Complex Conditional Choices: if a motion sensor trips OR a door opens, switch memory state to 'Alert Mode'.",
-    "Map out an advanced escape path for the guard to reach the vault instantly when the alarm sounds.",
-    "Optimize the patrol steps so the guard wastes zero time walking empty hallways.",
-    "Roleplay the final simulation to prove your security system catches every intruder!"
+    "Draw a 4x4 coordinate grid on paper or taped across the floor, labeling columns 1 to 4 and rows A to D.",
+    "Place animal tokens on specific grid squares (such as Lion at B2 and Monkey at D3).",
+    "Create a 'Pocket' card to hold physical key tokens representing memory state.",
+    "Write movement arrows to guide the keeper robot step-by-step from A1 to the animals.",
+    "Add condition cards: IF an animal is awake AND hungry, give 1 food token; ELSE move on.",
+    "Use a nested loop instruction card to clean cages: Repeat 3 times: [Repeat 2 times: Scrub floor, Turn right].",
+    "Test your complete sequence with a friend acting as the toy robot following your code cards exactly."
    ],
    "rubric": [
-    "Tracks guard memory states (Patrol vs. Alert) correctly.",
-    "Uses nested loops for thorough room and display case checking.",
-    "Implements complex conditionals for sensor triggers.",
-    "Designs an efficient path to the vault during emergencies."
+    "Grid accuracy: Uses row letters and column numbers correctly to place animal targets.",
+    "Loop structure: Correctly demonstrates a loop inside another loop for the cleaning task.",
+    "Logic & State: Successfully checks two conditions (AND) and updates the key pocket state.",
+    "Testing: Executes the entire path smoothly without skipping instructions or crashing."
    ],
-   "stretch": "Introduce a dual-guard system where two robots coordinate using Boolean AND to lock down the exit!"
+   "stretch": "Add a rain event where the keeper must skip all outdoor cages IF it is raining OR dark!",
+   "demo": {
+    "title": "Zoo Keeper Route Cards",
+    "code": "When Go card played:\n  Set pocket_key to True\n  Move to grid [B, 2]\n  If animal == awake AND animal == hungry:\n    Give 1 food token\n  Repeat 2 times:\n    Repeat 3 times:\n      Scrub cage floor\n      Step forward\n    Turn right\n  Change pocket_key to False",
+    "output": "The keeper travels to square B2, feeds the lion, scrubs the cage perimeter completely, and puts away the key."
+   }
   },
   {
-   "title": "Space Rover Alien Artifact Collector",
-   "desc": "Program a planetary rover to explore an alien planet, collect glowing crystals, and avoid danger zones. This project blends sequence optimization, pattern recognition, and smart decision-making into one epic mission!",
+   "title": "Treasure Island Compass Quest",
+   "desc": "Map out a dangerous island grid with hidden traps, treasure chests, and swamp obstacles. Program your explorer token with optimized paths and Boolean safety shields to reach the chest first!",
    "tags": [
-    "Patterns",
-    "Optimization",
-    "Smart Maze"
+    "Path Optimization",
+    "Logical AND OR",
+    "Advanced Pathfinding"
    ],
    "steps": [
-    "Create an alien planet grid filled with crater hazards and glowing crystal artifacts.",
-    "Study the repeating patterns of alien crystals to predict where the best treasures appear.",
-    "Set up a nested loop sequence so the rover sweeps across the entire planet surface.",
-    "Apply Boolean Logic (AND/OR) to determine if a crystal is valuable AND safe to grab.",
-    "Use Conditional Choices to decide whether to store the artifact or bypass a meteor shower.",
-    "Trace an advanced path across the grid that collects all crystals with the fewest turns.",
-    "Review your instruction steps and optimize them to save precious spaceship battery power.",
-    "Launch your final simulation and watch your rover successfully bring home all the alien treasures!"
+    "Sketch a 5x5 pirate map grid with starting dock at (1,1) and treasure at (5,5).",
+    "Draw hazard squares representing mud, quicksand, and fallen trees across the middle rows.",
+    "Write a rule using OR logic: IF tile has mud OR quicksand, DO NOT step forward, turn left instead.",
+    "Draft two different routes to reach the treasure, counting the exact number of steps for each.",
+    "Optimize the path by picking the route with the fewest steps and least turns.",
+    "Add a coin counter box where your explorer adds 1 coin each time they pass an open chest.",
+    "Run your paper robot token through the optimized path to verify you never touch a hazard."
    ],
    "rubric": [
-    "Identifies and utilizes artifact patterns correctly.",
-    "Applies boolean logic for safe and valuable crystal collection.",
-    "Optimizes movement steps to conserve battery life.",
-    "Navigates the grid successfully using advanced pathfinding."
+    "Path efficiency: Identifies and explains the shortest path using step-count comparison.",
+    "Hazard logic: Correctly implements the OR condition card to avoid danger tiles.",
+    "Coordinate tracking: Accurately names every tile passed along the route (e.g., 1,1 to 1,2).",
+    "Memory updates: Accurately counts and updates collected coins on the counter box."
    ],
-   "stretch": "Program a secret bonus maneuver that triggers whenever the rover finds three crystals in a row!"
+   "stretch": "Introduce a broken bridge tile that requires holding a rope token (State = True) to cross safely!",
+   "demo": {
+    "title": "Treasure Navigator Algorithm",
+    "code": "When start flag placed:\n  Set coins to 0\n  Repeat 4 times:\n    Move forward 1 tile\n    If tile == mud OR tile == quicksand:\n      Back up 1 tile\n      Turn 90 degrees right\n  Pick up chest\n  Change coins by +5\n  Say 'Treasure found in fewest steps!'",
+    "output": "The explorer bypasses the mud swamp, advances safely along the perimeter, collects 5 coins, and reaches the treasure in only 6 steps."
+   }
+  },
+  {
+   "title": "The Robo-Chef Breakfast Factory",
+   "desc": "Build an algorithmic breakfast assembly line using food cutout cards and command tiles. Follow sequence patterns, check logical freshness states, and repeat packing routines to serve happy customers!",
+   "tags": [
+    "Pattern Sequences",
+    "Complex Conditionals",
+    "Optimizing Steps"
+   ],
+   "steps": [
+    "Create paper cutout tokens for toast, falafel, boiled eggs, and juice glasses.",
+    "Establish an order sequence pattern on the conveyor board (e.g., Toast, Falafel, Egg, Toast, Falafel, Egg).",
+    "Write condition cards: IF bread is warm AND plate is empty, place bread on plate.",
+    "Add an alternate choice: IF tea is requested, pour tea; ELSE IF juice is requested, pour juice; ELSE pour water.",
+    "Use a nested loop routine to pack lunchboxes: Repeat 2 times: [Repeat 3 times: Pack 1 food token, Stamp wrapper].",
+    "Review your recipe steps to remove redundant hand movements and make the breakfast ready faster.",
+    "Act out the automated kitchen assembly with a classmate placing the correct food tokens."
+   ],
+   "rubric": [
+    "Pattern recognition: Correctly predicts and continues the repeating meal pattern sequence.",
+    "Nested repetition: Clearly separates the inner loop actions from outer loop repetitions.",
+    "Logical decisions: Correctly handles nested IF-ELSE decisions based on order requirements.",
+    "Optimization: Successfully shortens the assembly sequence by eliminating unnecessary steps."
+   ],
+   "stretch": "Program a VIP order card that immediately interrupts the sequence to prepare fresh juice first!",
+   "demo": {
+    "title": "Robo-Chef Assembly Algorithm",
+    "code": "When customer arrives:\n  Pattern: [Toast, Falafel, Toast, Falafel]\n  Repeat 2 times:\n    If bread == warm AND plate == empty:\n      Place Toast on plate\n      Place Falafel on plate\n  Repeat 2 times:\n    Repeat 2 times:\n      Stamp napkin\n      Slide into tray\n  Say 'Order Complete!'",
+    "output": "The chef checks conditions, plates 2 pairs of toast and falafel in order, stamps 4 napkins, and serves the breakfast."
+   }
   }
  ],
  "ar": [
   {
-   "title": "نظام الري الذكي للزرع في المزرعة",
-   "desc": "اصنع متاهة بالورق والقلم يخوضها روبوت يسقي النباتات العطشانة بناءً على الإحداثيات وحالة المستشعرات. هتجمع بين الحلقات المتداخلة، ومنطق وقواعد (و أو)، والبحث عن مسار عشان تخلي النباتات فرحانة!",
+   "title": "خريطة حارس حديقة الحيوان الذكي",
+   "desc": "صمم شبكة مربعات كرتونية عملاقة على الأرض لتوجيه روبوت حارس الحديقة لإطعام الحيوانات الجائعة. استخدم الإحداثيات، وبطاقات المفاتيح في جيبك كذاكرة، وحلقات تكرار متداخلة لتنظيف الأقفاص بنظام!",
    "tags": [
-    "شبكة ومسار",
-    "شروط",
-    "حلقات متداخلة"
+    "إحداثيات الشبكة",
+    "تكرار متداخل",
+    "حفظ الحالة والذاكرة"
    ],
    "steps": [
-    "ارسم شبكة مزرعة 5×5 على ورقة كبيرة وحط زرع مختلف في مربعات إحداثيات محددة.",
-    "اكتب مكان بداية الروبوت الساقي عند الزاوية اللي فوق على الشمال (0,0).",
-    "استخدم الحلقات المتداخلة عشان تخلي الروبوت يلف ويفحص كل صف وعمود في شبكة المزرعة بانتظام.",
-    "ضيف المنطق الشرقي (و/أو) عشان تتأكد إن المربع محتاج مية والتربة ناشفة.",
-    "طبق الشروط المعقدة: لو الدنيا مطرت أو النبات صبار، فوت سقية المية.",
-    "احسب أقصر مسار باستخدام البحث المتقدم عن طريق عشان تبعد عن الطين الصعب والصخور.",
-    "جرب خطواتك وظبطها عشان تستخدم أقل عدد ممكن من الخطوات.",
-    "شغل المحاكاة النهائية واتفرج على مزرعتك الذكية والنباتات الخضراء الطالعة!"
+    "ارسم شبكة مربعات 4x4 على ورق كرتون أو باللصق على الأرض، وسمّ الأعمدة 1 إلى 4 والصفوف أ إلى د.",
+    "ضع بطاقات الحيوانات في مربعات محددة (مثل الأسد في ب2 والقرد في د3).",
+    "اصنع بطاقة 'الجيب' لوضع رموز المفاتيح فيها لتمثيل ذاكرة الروبوت.",
+    "اكتب أسهم الحركة خطوة بخطوة لتوجيه الحارس من المربع أ1 إلى أماكن الحيوانات.",
+    "أضف بطاقات شروط ذكية: إذا كان الحيوان مستيقظاً ومعه بطاقة 'جائع' معاً، أعطه طعاماً؛ وإلا تحرك للقفص التالي.",
+    "استخدم كارت تكرار متداخل لتنظيف القفص: كرر 3 مرات: [كرر مرتين: امسح الأرضية، لف يميناً].",
+    "جرّب الكود كله مع زميلك بحيث يتحرك كأنه الروبوت وينفذ تعليمات البطاقات خطوة بخطوة."
    ],
    "rubric": [
-    "بيستخدَم إحداثيات الشبكة صح عشان يخطط المزرعة.",
-    "بيعمل حلقات متداخلة عشان يفحص كل الصفوف والأعمدة بكفاءة.",
-    "بيطبق شروط (و/أو) بدقة في قرارات السقي.",
-    "بيظبط مسار الروبوت عشان يبعد عن العوائق بنجاح."
+    "دقة الشبكة: استخدام حروف الصفوف وأرقام الأعمدة بشكل سليم لتحديد أهداف الحيوانات.",
+    "هيكل التكرار: توضيح تكرار داخلي داخل تكرار خارجي لمهمة التنظيف بطريقة صحيحة.",
+    "المنطق والذاكرة: فحص شرطين معاً (معاً AND) وتحديث حالة مفتاح الجيب بنجاح.",
+    "التجربة والاختبار: تنفيذ المسار بالكامل بسلاسة دون نسيان أي خطوة أو الخروج عن الشبكة."
    ],
-   "stretch": "ضيف شرط طاقة شمسية خاص يخلي الروبوت يوقف حلقه لو الجو غيوم جامد!"
+   "stretch": "أضف كارت طقس ماطر، بحيث يتخطى الحارس الأقفاص الخارجية إذا كان الجو ممطراً أو مظلماً!",
+   "demo": {
+    "title": "كروت مسار حارس الحديقة",
+    "code": "عند وضع بطاقة البداية:\n  اجعل مفتاح_الجيب = صحيح\n  تحرك إلى المربع [ب، 2]\n  إذا كان الحيوان == مستيقظ AND الحيوان == جائع:\n    أعطه 1 مكعب طعام\n  كرر مرتين:\n    كرر 3 مرات:\n      امسح أرضية القفص\n      خطوة للأمام\n    لف يميناً\n  اجعل مفتاح_الجيب = خطأ",
+    "output": "يتحرك الحارس للمربع ب2، يطعم الأسد الجائع، ينظف محيط القفص بالكامل بحركات التكرار، ويفرغ جيبه من المفتاح."
+   }
   },
   {
-   "title": "دورية أمن متحف العميل السري",
-   "desc": "صمم مسار دورية بدون شاشة لروبوت حارس أمن بيحمي ماسة غالية في متحف. استخدم حالات الذاكرة، والخيارات الشرطية، والإحداثيات الدقيقة عشان تقبض على الحرامية الماكرين!",
+   "title": "مغامرة بوصلة جزيرة الكنز",
+   "desc": "ارسم خريطة شبكية لجزيرة كنز سرية مليئة بالمستنقعات والحفر الخطيرة. برمج مستكشفك باستخدام قواعد منطقية ذكية وطرق مختصرة ليصل إلى صندوق الذهب بأقل عدد خطوات!",
    "tags": [
-    "حالة الذاكرة",
-    "حلقات متداخلة",
-    "تتبع المسار"
+    "تحديد أفضل مسار",
+    "المنطق والروابط",
+    "مسارات متقدمة"
    ],
    "steps": [
-    "صمم خريطة أرضية المتحف على ورقة مربعات فيها غرف العرض، ممرات الليزر، والخزنة الكبيرة.",
-    "حدد حالة بداية الحارس في الذاكرة: 'وضع الدورية' شغال و'الإنذار' مطفأ.",
-    "اكتب حلقة خارجية بتتكرر عشان حارس الأمن يلف ويفحص كل غرفة كل ساعة.",
-    "استخدم حلقة جوانية عشان تخلي الحارس يفحص كل فترينة عرض جوه كل غرفة.",
-    "حط شروط معقدة: لو مستشعر الحركة اشتغل أو الباب اتفتح، حول حالة الذاكرة لـ 'وضع الطوارئ'.",
-    "ارسم مسار هروب متقدم عشان الحارس يوصل للخزنة فوراً لما الإنذار يضرب.",
-    "ظبط خطوات الدورية عشان الحارس ميضيعش أي وقت في ممرات فاضية.",
-    "مثل المحاكاة النهائية عشان تثبت إن نظامك الأمني بيقفش أي متسلل!"
+    "ارسم خريطة قراصنة بشبكة 5x5 تبدأ من الميناء عند (1،1) وينتهي الكنز عند (5،5).",
+    "ارسم مربعات فخاخ تمثل الوحل والرمال المتحركة في الصفوف الوسطى.",
+    "اكتب قاعدة منطقية باستخدام الرابط (أو OR): إذا كان المربع طيناً أو رملاً متحركاً، لا تتقدم ولُف يساراً.",
+    "ارسم مسارين مختلفين تماماً للوصول إلى الكنز، واعدّ خطوات كل مسار بدقة.",
+    "اختصر المسار باختيار الطريق الذي يحتوي على أقل عدد من الخطوات والانعطافات.",
+    "اصنع صندوق عداد الذهب بحيث يضيف المستكشف قطعة ذهب كلما مر على صندوق مفتوح.",
+    "حرّك قطعة المستكشف الورقية على الطريق المختصر لتتأكد أنها تتجنب كل الفخاخ بنجاح."
    ],
    "rubric": [
-    "بيتتبع حالات الذاكرة للحارس (دورية ضد طوارئ) صح.",
-    "بيستخدَم حلقات متداخلة لفحص الغرف وفاترينات العرض كويس.",
-    "بيطبق شروط معقدة عشان تشغيل مستشعرات الحركة.",
-    "بيصمم مسار فعال للخزنة في حالات الطوارئ."
+    "كفاءة المسار: معرفة واختيار أقصر طريق من خلال مقارنة عدد الخطوات بوضوح.",
+    "منطق الفخاخ: تنفيذ شرط (أو OR) بنجاح لتجنب مربعات الخطر.",
+    "متابعة الإحداثيات: نطق وكتابة اسم كل مربع يمر عليه المستكشف (مثل 1،1 ثم 1،2).",
+    "تحديث الذاكرة: زيادة عداد قطع الذهب بشكل صحيح عند جمع الجوائز."
    ],
-   "stretch": "دخل نظام حارسين مع بعض بيتواصلوا باستخدام منطق (و) عشان يقفلوا مخرج الخروج تماماً!"
+   "stretch": "أضف مربع جسر مكسور يتطلب عبوره أن يكون المستكشف حاملاً حبلاً في حقيبته (الحالة = صحيح)!",
+   "demo": {
+    "title": "خوارزمية ملاح الجزيرة",
+    "code": "عند رفع علم البداية:\n  اجعل الذهب = 0\n  كرر 4 مرات:\n    تحرك خطوة للأمام\n    إذا كان المربع == وحل OR المربع == رمال متحركة:\n      ارجع خطوة للخلف\n      لف 90 درجة يميناً\n  التقط الصندوق\n  غيّر الذهب بمقدار +5\n  قل 'وصلت للكنز بأسرع طريق!'",
+    "output": "يتفادى المستكشف الرمال المتحركة، ويسير بمحاذاة الشاطئ في 6 خطوات فقط لجمع 5 قطع ذهبية من الكنز."
+   }
   },
   {
-   "title": "جامع القطع الأثرية الفضائية للمركبة",
-   "desc": "برمج مركبة استكشاف فضائية عشان تكتشف كوكب فضائي، وتجمع كريستالات بتلمع، وتبعد عن مناطق الخطر. المشروع ده بيجمع بين ترتيب الخطوات، واكتشاف الأنماط، واتخاذ القرار الذكي في مهمة أسطورية!",
+   "title": "مصنع الفطار الآلي العجيب",
+   "desc": "ابنِ خط إنتاج كرتوني عبقري لتحضير أطباق الفطار المصري اللذيذ بالخوارزميات. اكتشف نمط الوجبات المتكررة، وافحص جودة المكونات بكروت الشروط، ونظم تكرار التغليف بسرعة وذكاء!",
    "tags": [
-    "أنماط",
-    "تحسين",
-    "متاهة ذكية"
+    "أنماط متسلسلة",
+    "شروط مركبة",
+    "اختصار الخطوات"
    ],
    "steps": [
-    "اعمل شبكة كوكب فضائي مليانة حفر خطر وقطع كريستال أثرية منورة.",
-    "ادرس الأنماط المتكررة للكريستالات الفضائية عشان تتوقع مكان الكنوز الحلوة.",
-    "حط تسلسل حلقة متداخلة عشان المركبة تمسح سطح الكوكب كله.",
-    "طبق المنطق البولياني (و/أو) عشان تعرف إذا كانت الكريستالة قيمة وآمنة للجمع.",
-    "استخدم الاختيارات الشرطية عشان تقرر تخزن القطعة ولا تبعد عن عاصفة النيزك.",
-    "ارسم مسار متقدم على الشبكة يجمع كل الكريستالات بأقل لفات ممكنة.",
-    "راجع خطوات التعليمات وظبطها عشان توفر بطارية المركبة الثمينة.",
-    "ابدأ المحاكاة النهائية واتفرج على مركبتك وهي بتجيب كل كنوز الفضاء للبيت!"
+    "قص بطاقات ورقية صغيرة تمثل العيش، والفلافل، والبيض، وعصير الليمون المنعش.",
+    "رتب نمط تسلسل الطعام على شريط الطلبات (مثلاً: عيش، فلافل، بيض، عيش، فلافل، بيض).",
+    "اكتب بطاقات الشروط: إذا كان العيش ساخناً والطبق فارغاً معاً، ضع العيش في الطبق.",
+    "أضف قاعدة اختيار المشروب: إذا طلب الزبون شاياً اسكب الشاي؛ وإلا إذا طلب عصيراً اسكب العصير؛ وإلا اسكب ماء.",
+    "استخدم كود تكرار متداخل لتجهيز علب الطعام: كرر مرتين: [كرر 3 مرات: ضع صنف طعام، الصق ستيكر].",
+    "راجع خطوات تحضير الوجبة واحذف الحركات الزائدة حتى يخرج الساندوتش بأسرع وقت.",
+    "مثل حركة الروبوت الطاهي مع صديقك وهو يوزع بطاقات الطعام على الأطباق بالترتيب."
    ],
    "rubric": [
-    "بيحدد ويستخدم أنماط الكريستالات صح.",
-    "بيطبق المنطق لجمع الكريستالات الآمنة والقيمة.",
-    "بيظبط خطوات الحركة عشان يوفر شحن البطارية.",
-    "بيتحرك في الشبكة بنجاح باستخدام البحث المتقدم للمسار."
+    "التعرف على الأنماط: إكمال نمط تتابع الأطعمة المتكرر بشكل صحيح وبدون خطأ.",
+    "التكرار المتداخل: التفريق بوضوح بين خطوات التكرار الداخلي والتكرار الخارجي للتغليف.",
+    "القرارات المنطقية: تطبيق شروط الاختيار المتعددة (إذا وإلا) بدقة حسب الطلب.",
+    "تقليل الخطوات: تحسين خوارزمية العمل وإزالة الخطوات غير الضرورية بنجاح."
    ],
-   "stretch": "برمج حركة سرية إضافية بتشتغل أول ما المركبة تلاقي تلات كريستالات ورا بعض!"
+   "stretch": "أضف بطاقة طلب زبون مميز توقف الشريط فوراً لتجهيز طبق الفاكهة الطازج أولاً!",
+   "demo": {
+    "title": "خوارزمية الشيف الآلي",
+    "code": "عند وصول الزبون:\n  النمط: [عيش، فلافل، عيش، فلافل]\n  كرر مرتين:\n    إذا كان العيش == ساخن AND الطبق == فارغ:\n      ضع العيش في الطبق\n      ضع الفلافل في الطبق\n  كرر مرتين:\n    كرر مرتين:\n      اختم المنديل الورقي\n      مرر العلبة على الصينية\n  قل 'الفطار جاهز وبالهنا والشفا!'",
+    "output": "يفحص الشيف الشروط، ويضع العيش والفلافل بالترتيب، ويختم 4 مناديل بالروتين المتكرر، ويقدم الطلب في ثوانٍ."
+   }
   }
  ]
 }

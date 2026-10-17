@@ -1,162 +1,186 @@
 {
  "en": [
   {
-   "title": "Interactive Superhero Profile Card",
-   "desc": "Build a cool hero card that changes color, has a smooth glow shadow, and flips when hovered.",
+   "title": "Mythic Hero Trading Cards",
+   "desc": "Build an interactive collector card collection for legendary heroes using modern CSS3 effects. Hover over each card to see it tilt, glow, and change colors smoothly with variables and transitions!",
    "tags": [
-    "Transitions",
-    "Shadows",
+    "Cards",
+    "Hover Effects",
+    "CSS Variables"
+   ],
+   "steps": [
+    "Create an HTML layout with three card elements, each containing a hero image, title, and power stats.",
+    "Set up CSS root variables for your card theme colors such as primary color, background, and neon glow.",
+    "Give each card soft rounded corners with border-radius and a realistic box-shadow.",
+    "Add a mysterious vintage look to hero images using CSS filter: grayscale(70%) blur(0.5px).",
+    "Use the ::before pseudo-element on each card to automatically display a shiny 'LEGEND' badge at the top corner.",
+    "Apply transition: all 0.4s ease to your cards and images for silky smooth animations.",
+    "Add a :hover pseudo-class to scale the card up, remove the image filter, and boost the box-shadow glow."
+   ],
+   "rubric": [
+    "CSS variables are defined in :root and reused across card styles.",
+    "Box-shadow, text-shadow, and border-radius are used effectively for depth.",
+    "Pseudo-element (::before or ::after) creates decorative badges cleanly.",
+    "Hover state smoothly combines 2D transform (scale) with filter transitions."
+   ],
+   "stretch": "Add an :active pseudo-class state that tilts the card slightly with transform: rotate(-3deg) when clicked!",
+   "demo": {
+    "title": "Interactive Hero Card Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<style>\n  :root {\n    --hero-gold: #ffb703;\n    --card-bg: #14213d;\n    --glow: rgba(255, 183, 3, 0.6);\n  }\n  body {\n    background: #000814;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    min-height: 90vh;\n    font-family: sans-serif;\n  }\n  .card {\n    position: relative;\n    width: 200px;\n    padding: 16px;\n    background: var(--card-bg);\n    border-radius: 20px;\n    box-shadow: 0 8px 20px rgba(0,0,0,0.5);\n    text-align: center;\n    color: white;\n    cursor: pointer;\n    transition: transform 0.4s ease, box-shadow 0.4s ease;\n  }\n  .card::before {\n    content: \"★ HERO\";\n    position: absolute;\n    top: -10px;\n    left: 20px;\n    background: var(--hero-gold);\n    color: #000;\n    font-weight: bold;\n    padding: 4px 10px;\n    border-radius: 10px;\n    font-size: 11px;\n  }\n  .card img {\n    width: 100%;\n    border-radius: 12px;\n    filter: grayscale(80%);\n    transition: filter 0.4s ease, transform 0.4s ease;\n  }\n  .card h2 {\n    margin: 12px 0 6px;\n    font-size: 18px;\n    text-shadow: 0 2px 4px rgba(0,0,0,0.6);\n  }\n  .card:hover {\n    transform: translateY(-10px) scale(1.05);\n    box-shadow: 0 12px 28px var(--glow);\n  }\n  .card:hover img {\n    filter: grayscale(0%);\n    transform: scale(1.03);\n  }\n</style>\n</head>\n<body>\n  <div class=\"card\">\n    <img src=\"https://picsum.photos/200/220?random=1\" alt=\"Hero\">\n    <h2>Falcon Knight</h2>\n    <p style=\"color:var(--hero-gold); font-size:13px;\">Power: 9500 XP</p>\n  </div>\n</body>\n</html>",
+    "output": "Displays a styled hero card that floats upward, glows with golden shadows, and reveals full vibrant colors on hover."
+   }
+  },
+  {
+   "title": "Egyptian Wonders Travel Gallery",
+   "desc": "Create an interactive travel photo album showcasing Egypt's most famous landmarks with awesome visual effects. Visitors can explore each destination with smooth zoom effects, dynamic image filters, and stylish glowing frames!",
+   "tags": [
+    "Image Filters",
+    "Photo Gallery",
     "Transforms"
    ],
    "steps": [
-    "Create an HTML file with a main card container and an image of your hero inside.",
-    "Style the card with CSS variables for main colors so you can easily change the hero's theme.",
-    "Use border-radius to give the card and image soft, modern rounded corners.",
-    "Add box-shadow and text-shadow to make the title pop with a cool glowing effect.",
-    "Apply CSS image filters to the hero picture so it looks like vintage comic art.",
-    "Use CSS pseudo-classes like :hover to make the card lift up using 2D transforms.",
-    "Add smooth CSS transitions so the hover flip and glow effects happen gracefully.",
-    "Test your card in the browser and show it off to your friends!"
+    "Structure an HTML page with a glowing gallery title and three landmark photo containers.",
+    "Declare CSS custom properties for landmark theme colors like sand-gold and deep-sky blue.",
+    "Round the photo frames smoothly using border-radius and add layered soft box-shadows.",
+    "Apply an initial sepia or warm brightness filter on the photos to create an ancient look.",
+    "Add a ::after pseudo-element on the card to display a small location pin symbol under each title.",
+    "Set up transitions on image transform, filters, and shadows for smooth interactions.",
+    "Write a :hover rule that removes the sepia filter, zooms the image slightly, and raises the frame with translateY."
    ],
    "rubric": [
-    "Uses CSS variables for theme colors",
-    "Includes smooth hover transitions and 2D transforms",
-    "Applies text and box shadows effectively",
-    "Features rounded corners and styled images"
+    "CSS variables are used to theme the gallery colors and shadows.",
+    "Image filters (sepia/brightness) transition cleanly on hover.",
+    "Smooth 2D transforms (scale/translate) bring life to user interaction.",
+    "Text shadows and box shadows create realistic depth on all elements."
    ],
-   "stretch": "Add a pseudo-element like ::before to create a shiny badge in the corner of the card."
+   "stretch": "Add a glowing gold text-shadow on the landmark title whenever the card is hovered!",
+   "demo": {
+    "title": "Egyptian Landmarks Gallery Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<style>\n  :root {\n    --gold: #e0a96d;\n    --card-surface: #201e1f;\n    --text-glow: 0 0 10px rgba(224, 169, 109, 0.7);\n  }\n  body {\n    background: #121212;\n    font-family: sans-serif;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 30px 10px;\n  }\n  h1 {\n    color: var(--gold);\n    text-shadow: var(--text-glow);\n    margin-bottom: 25px;\n  }\n  .gallery {\n    display: flex;\n    gap: 20px;\n  }\n  .frame {\n    background: var(--card-surface);\n    padding: 12px;\n    border-radius: 18px;\n    box-shadow: 0 6px 16px rgba(0,0,0,0.6);\n    text-align: center;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n  }\n  .frame img {\n    width: 180px;\n    height: 140px;\n    object-fit: cover;\n    border-radius: 12px;\n    filter: sepia(70%) brightness(90%);\n    transition: filter 0.3s ease, transform 0.3s ease;\n  }\n  .frame p {\n    color: white;\n    font-weight: bold;\n    margin: 10px 0 4px;\n    transition: text-shadow 0.3s ease;\n  }\n  .frame p::after {\n    content: \" 📍\";\n  }\n  .frame:hover {\n    transform: translateY(-8px);\n    box-shadow: 0 12px 24px rgba(224, 169, 109, 0.3);\n  }\n  .frame:hover img {\n    filter: sepia(0%) brightness(105%);\n    transform: scale(1.05);\n  }\n  .frame:hover p {\n    text-shadow: var(--text-glow);\n  }\n</style>\n</head>\n<body>\n  <h1>Wonders of Egypt</h1>\n  <div class=\"gallery\">\n    <div class=\"frame\">\n      <img src=\"https://picsum.photos/250/200?random=11\" alt=\"Pyramids\">\n      <p>Giza Pyramids</p>\n    </div>\n  </div>\n</body>\n</html>",
+    "output": "Displays an Egyptian landmark card that shifts from a sepia vintage look to full brightness with a gold glow on hover."
+   }
   },
   {
-   "title": "Magical Photo Gallery Grid",
-   "desc": "Design a gorgeous photo gallery where pictures zoom, change filters, and show secret captions on hover.",
+   "title": "Neon Arcade Game Hub",
+   "desc": "Design a retro-futuristic arcade game selector packed with glowing neon lights and playful animations. Players can browse games with glowing buttons, floating badges, and reactive button clicks!",
    "tags": [
-    "Filters",
-    "Pseudo-Elements",
+    "Text Shadows",
+    "2D Transforms",
     "Pseudo-Classes"
    ],
    "steps": [
-    "Set up a web page with multiple image boxes arranged in a nice grid layout.",
-    "Define CSS variables for your gallery's dark and light theme colors.",
-    "Round the corners of all your photos using border-radius for a neat look.",
-    "Give every image a default grayscale or brightness filter using CSS image filters.",
-    "Use the :hover pseudo-class to remove the filter and zoom the image in with 2D transforms.",
-    "Add a ::after pseudo-element to overlay a hidden caption that appears when hovered.",
-    "Apply box shadows to make each photo look like a floating polaroid picture.",
-    "Ensure all effects transition smoothly without any sudden jumping."
+    "Create an HTML layout with an arcade main header and at least two game selection buttons.",
+    "Define CSS variables for your neon theme colors: cyan glow, hot pink, and dark space blue.",
+    "Style the main arcade title with multi-layered text-shadow to make it look like a real neon tube.",
+    "Give your game cards rounded corners and a vibrant border with an outer box-shadow glow.",
+    "Use a ::before pseudo-element on the game card to show a flashy 'NEW!' ribbon tag.",
+    "Configure CSS transitions on box-shadow, transform, and background for silky-smooth interactions.",
+    "Add :hover and :active pseudo-classes that rotate, scale, and push down the game buttons when clicked."
    ],
    "rubric": [
-    "Uses image filters and removes them on hover",
-    "Applies pseudo-elements for hover captions",
-    "Features smooth 2D scale transforms",
-    "Maintains a clean and organized layout"
+    "Multi-layered text-shadow creates an authentic glowing neon sign effect.",
+    "CSS variables manage all neon color palettes across selectors.",
+    "Pseudo-element (::before or ::after) renders an arcade badge or tag.",
+    ":hover and :active states combine 2D transforms (scale/rotate) with smooth transitions."
    ],
-   "stretch": "Make alternating photos rotate in opposite directions when hovered using transform: rotate()."
-  },
-  {
-   "title": "Cosmic Personal Portfolio",
-   "desc": "Create a mini portfolio website highlighting your favorite projects with glowing buttons and smooth animations.",
-   "tags": [
-    "Variables",
-    "Transitions",
-    "Portfolio"
-   ],
-   "steps": [
-    "Build the HTML structure with a header, about section, and project cards.",
-    "Set up root CSS variables for fonts, background colors, and glowing highlight colors.",
-    "Style your navigation links using pseudo-classes like :hover and :active.",
-    "Add gorgeous box shadows to your project cards to create depth.",
-    "Use text shadows on your main title to give it a neon glowing style.",
-    "Add CSS transitions to every clickable button so they bounce or grow smoothly.",
-    "Use pseudo-elements like ::first-letter to make your introduction paragraph stand out.",
-    "Review your code to make sure all variables and styles work together seamlessly."
-   ],
-   "rubric": [
-    "Implements a complete portfolio layout",
-    "Uses CSS variables for consistent theming",
-    "Applies neon text and box shadows",
-    "Features smooth transitions on interactive buttons"
-   ],
-   "stretch": "Add a dark mode toggle by changing CSS variables using a new class."
+   "stretch": "Use filter: hue-rotate(90deg) on the game thumbnail image during hover to create an alien laser effect!",
+   "demo": {
+    "title": "Neon Arcade Launcher Demo",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<style>\n  :root {\n    --neon-cyan: #00f0ff;\n    --neon-pink: #ff007f;\n    --bg-dark: #070714;\n  }\n  body {\n    background: var(--bg-dark);\n    font-family: sans-serif;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    min-height: 90vh;\n  }\n  h1 {\n    color: #fff;\n    font-size: 26px;\n    text-shadow: 0 0 5px #fff, 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);\n    margin-bottom: 25px;\n  }\n  .arcade-card {\n    position: relative;\n    background: #111126;\n    border: 2px solid var(--neon-pink);\n    border-radius: 18px;\n    padding: 20px;\n    width: 220px;\n    text-align: center;\n    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n  }\n  .arcade-card::before {\n    content: \"HOT!\";\n    position: absolute;\n    top: -12px;\n    right: 15px;\n    background: var(--neon-pink);\n    color: white;\n    font-size: 11px;\n    font-weight: bold;\n    padding: 3px 8px;\n    border-radius: 8px;\n    box-shadow: 0 0 8px var(--neon-pink);\n  }\n  .play-btn {\n    display: inline-block;\n    margin-top: 15px;\n    padding: 10px 20px;\n    border-radius: 25px;\n    background: var(--neon-cyan);\n    color: #000;\n    font-weight: bold;\n    text-decoration: none;\n    box-shadow: 0 0 10px var(--neon-cyan);\n    transition: transform 0.2s ease, filter 0.2s ease;\n    cursor: pointer;\n  }\n  .arcade-card:hover {\n    transform: translateY(-8px) scale(1.03);\n    box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);\n  }\n  .play-btn:hover {\n    transform: scale(1.1) rotate(-3deg);\n    filter: brightness(1.2);\n  }\n  .play-btn:active {\n    transform: scale(0.95);\n  }\n</style>\n</head>\n<body>\n  <h1>CYBER ARCADE</h1>\n  <div class=\"arcade-card\">\n    <h2 style=\"color:white; margin:0 0 8px;\">Space Racer 3D</h2>\n    <p style=\"color:#aaa; font-size:12px; margin:0;\">High Score: 88,400</p>\n    <span class=\"play-btn\">START GAME</span>\n  </div>\n</body>\n</html>",
+    "output": "Displays a vibrant cyberpunk game card with glowing neon text, floating HOT badge, and an interactive animated play button."
+   }
   }
  ],
  "ar": [
   {
-   "title": "بطاقة تعريفية تفاعلية للبطل الخارق",
-   "desc": "اصنع بطاقة بطل خارق جامدة تتغير ألوانها، ولها ظل منور، وبتلف بنعومة لما تقف عليها بالماوس.",
+   "title": "بطاقات الأبطال الأسطورية",
+   "desc": "صمم كروت ألعاب تفاعلية لأبطالك الخارقين باستخدام كل تأثيرات CSS3 اللي اتعلمتها. لما تعدي بالماوس، الكارت هيتحرك وينور وتظهر ألوانه بنعومة وسلاسة!",
    "tags": [
-    "انتقالات",
-    "ظلال",
-    "تحويلات ثنائية الأبعاد"
+    "كروت تفاعلية",
+    "تأثيرات الماوس",
+    "متغيرات CSS"
    ],
    "steps": [
-    "اعمل ملف HTML فيه صندوق رئيسي للبطاقة وجواها صورة البطل بتاعك.",
-    "ظبط البطاقة بـ CSS Variables عشان تقدر تغير ألوان البطل بسهولة.",
-    "استخدم border-radius عشان تخلي زوايا البطاقة والصورة دائرية وناعمة.",
-    "ضيف box-shadow و text-shadow عشان العنوان يبان ووراه تأثير إضاءة جامد.",
-    "استخدم CSS Image Filters على صورة البطل عشان تبل كأنها رسمة كوميكس قديمة.",
-    "استخدم Pseudo-classes زي :hover عشان تخلي البطاقة تترفع لفوق بـ 2D transforms.",
-    "ضيف CSS Transitions عشان حركة الرفع والإضاءة تحصل بنعومة وهدوء.",
-    "جرب البطاقة بتاعتك في المتصفح ووريها لأصحابك!"
+    "ابني هيكل الصفحة بـ HTML وضع 3 كروت، كل كارت جواه صورة البطل وعنوانه ومستوى قوته.",
+    "اعمل متغيرات CSS في الـ root لألوان الكارت زي اللون الذهبي والخلفية وتوهج الإضاءة.",
+    "دَوَّر زوايا الكارت باستخدام border-radius واديله ظل واقعي باستخدام box-shadow.",
+    "خلّي صورة البطل غامضة في الأول باستخدام الفلتر filter: grayscale(70%) blur(0.5px).",
+    "استخدم العنصر الوهمي ::before عشان تظهر شارة ذهبية مكتوب عليها 'LEGEND' في زاوية الكارت تلقائياً.",
+    "ضيف transition: all 0.4s ease للكارت والصورة عشان الحركة والتغيير يكونوا ناعمين جداً وبدون أي تقطيع.",
+    "استخدم حالة :hover عشان الكارت يكبر شوية لفوق وتتحول الصورة لألوانها الطبيعية ويزيد توهج الظل."
    ],
    "rubric": [
-    "استخدام متغيرات CSS لألوان الثيم",
-    "تضمين انتقالات نعومة وحركات 2D عند المرور بالماوس",
-    "تطبيق ظلال النصوص والصناديق بمهارة",
-    "وجود زوايا دائرية وصور منسقة"
+    "استخدام متغيرات CSS المتكررة في :root لتنسيق الألوان بسهولة.",
+    "تطبيق box-shadow و border-radius و text-shadow لإعطاء عمق جمالي.",
+    "استخدام عنصر وهمي (::before أو ::after) لإضافة شارة تزيينية للكارت.",
+    "دمج حالة :hover بسلاسة مع التكبير scale وفلاتر الصور مع وجود transition."
    ],
-   "stretch": "ضيف Pseudo-element زي ::before عشان تعمل شارة لامعة في ركن البطاقة."
+   "stretch": "ضيف تأثير :active يخلي الكارت يميل بزاوية بسيطة transform: rotate(-3deg) أول ما تضغط عليه بالماوس!",
+   "demo": {
+    "title": "تجربة كارت البطل التفاعلي",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<style>\n  :root {\n    --hero-gold: #ffb703;\n    --card-bg: #14213d;\n    --glow: rgba(255, 183, 3, 0.6);\n  }\n  body {\n    background: #000814;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    min-height: 90vh;\n    font-family: sans-serif;\n  }\n  .card {\n    position: relative;\n    width: 200px;\n    padding: 16px;\n    background: var(--card-bg);\n    border-radius: 20px;\n    box-shadow: 0 8px 20px rgba(0,0,0,0.5);\n    text-align: center;\n    color: white;\n    cursor: pointer;\n    transition: transform 0.4s ease, box-shadow 0.4s ease;\n  }\n  .card::before {\n    content: \"★ HERO\";\n    position: absolute;\n    top: -10px;\n    left: 20px;\n    background: var(--hero-gold);\n    color: #000;\n    font-weight: bold;\n    padding: 4px 10px;\n    border-radius: 10px;\n    font-size: 11px;\n  }\n  .card img {\n    width: 100%;\n    border-radius: 12px;\n    filter: grayscale(80%);\n    transition: filter 0.4s ease, transform 0.4s ease;\n  }\n  .card h2 {\n    margin: 12px 0 6px;\n    font-size: 18px;\n    text-shadow: 0 2px 4px rgba(0,0,0,0.6);\n  }\n  .card:hover {\n    transform: translateY(-10px) scale(1.05);\n    box-shadow: 0 12px 28px var(--glow);\n  }\n  .card:hover img {\n    filter: grayscale(0%);\n    transform: scale(1.03);\n  }\n</style>\n</head>\n<body>\n  <div class=\"card\">\n    <img src=\"https://picsum.photos/200/220?random=1\" alt=\"Hero\">\n    <h2>فارس الصقر</h2>\n    <p style=\"color:var(--hero-gold); font-size:13px;\">القوة: 9500 XP</p>\n  </div>\n</body>\n</html>",
+    "output": "يظهر كارت بطل أنيق يرتفع لأعلى وينور بظل ذهبي وتظهر ألوانه الطبيعية المبهرة فور التمرير عليه بالماوس."
+   }
   },
   {
-   "title": "معرض صور سحري وجميل",
-   "desc": "صمم معرض صور رهيب الصور فيه بتكبر، تغير الفلتر بتاعها، وتظهر كلام سري لما تقف عليها.",
+   "title": "معرض عجائب مصر السياحي",
+   "desc": "صمم ألبوم صور تفاعلي لمعالم مصر التاريخية بتأثيرات بصرية جذابة وممتعة. يقدر الزوار يستكشفوا كل مكان بتأثيرات زووم ناعمة، فلاتر صور بتتحول بذكاء، وبراويز منورة!",
    "tags": [
-    "فلاتر",
-    "عناصر وهمية",
-    "حالات شبه العناصر"
+    "فلاتر الصور",
+    "معرض صور",
+    "تحويلات الأبعاد"
    ],
    "steps": [
-    "جهز صفحة ويب فيها كذا صندوق صور مترتبين بشكل شبكة منظمة.",
-    "عرف متغيرات CSS لألوان الثيم الفاتح والغامق في المعرض.",
-    "دور زوايا كل الصور بتاعتك باستخدام border-radius لشكل أنيق.",
-    "دي لكل صورة فلتر رمادي أو إضاءة افتراضي باستخدام فلاتر الصور.",
-    "استخدم الـ :hover عشان تشيل الفلتر وتكبر الصورة باستخدام التحويلات.",
-    "ضيف عنصر وهمي ::after عشان تعمل وصف مخفي بيظهر وقت الوقوف بالماوس.",
-    "ضيف ظلال الصناديق عشان كل صورة تبل كأنها صورة بولارويد طايرة.",
-    "اتأكد إن كل التأثيرات بتحصل بنعومة من غير أي نطة مفاجئة."
+    "ابني صفحة HTML فيها عنوان المعرض المضيء ومجموعة براويز لصور المعالم السياحية.",
+    "عرف متغيرات CSS لألوان المعرض زي الذهبي الرملي والأزرق الداكن عشان تستخدمها بسهولة.",
+    "دَوَّر حواف البراويز باستخدام border-radius واديلها ظلال ناعمة متعددة بـ box-shadow.",
+    "حط في الأول فلتر تاريخي كلاسيكي على الصور زي فلتر السيبيا filter: sepia(70%).",
+    "استخدم العنصر الوهمي ::after عشان تحط دبوس خريطة 📍 بعد اسم المكان تلقائياً.",
+    "اضبط خاصية transition على الصور والظلال عشان أي حركة تكون ناعمة وسلسة جداً.",
+    "اكتب قاعدة :hover تلغي فلتر السيبيا وتكبر الصورة بـ scale وترفع البرواز لفوق."
    ],
    "rubric": [
-    "استخدام فلاتر الصور وإزالتها عند المرور بالماوس",
-    "تطبيق عناصر وهمية لعرض النصوص التوضيحية",
-    "استخدام تحويلات التكبير السلسة",
-    "الحفاظ على تصميم مرتب ومنسق"
+    "استخدام متغيرات CSS للتحكم في درجات الألوان وظلال البراويز.",
+    "انتقال فلاتر الصور (sepia أو brightness) بنعومة شديدة عند الوقوف بالماوس.",
+    "استخدام تحويلات 2D (scale و translateY) لإعطاء روح وحياة للصور.",
+    "إبراز العناوين والبراويز بظلال نصوص text-shadow وظلال صناديق متقنة."
    ],
-   "stretch": "خلي الصور بالتبادل تلف في اتجاهات عكس بعض لما تقف عليها بـ rotate."
+   "stretch": "ضيف لمعة ذهبية بـ text-shadow على عنوان المعلم السياحي لما الماوس ييجي على الكارت بتاعه!",
+   "demo": {
+    "title": "تجربة معرض معالم مصر",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<style>\n  :root {\n    --gold: #e0a96d;\n    --card-surface: #201e1f;\n    --text-glow: 0 0 10px rgba(224, 169, 109, 0.7);\n  }\n  body {\n    background: #121212;\n    font-family: sans-serif;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 30px 10px;\n  }\n  h1 {\n    color: var(--gold);\n    text-shadow: var(--text-glow);\n    margin-bottom: 25px;\n  }\n  .gallery {\n    display: flex;\n    gap: 20px;\n  }\n  .frame {\n    background: var(--card-surface);\n    padding: 12px;\n    border-radius: 18px;\n    box-shadow: 0 6px 16px rgba(0,0,0,0.6);\n    text-align: center;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n  }\n  .frame img {\n    width: 180px;\n    height: 140px;\n    object-fit: cover;\n    border-radius: 12px;\n    filter: sepia(70%) brightness(90%);\n    transition: filter 0.3s ease, transform 0.3s ease;\n  }\n  .frame p {\n    color: white;\n    font-weight: bold;\n    margin: 10px 0 4px;\n    transition: text-shadow 0.3s ease;\n  }\n  .frame p::after {\n    content: \" 📍\";\n  }\n  .frame:hover {\n    transform: translateY(-8px);\n    box-shadow: 0 12px 24px rgba(224, 169, 109, 0.3);\n  }\n  .frame:hover img {\n    filter: sepia(0%) brightness(105%);\n    transform: scale(1.05);\n  }\n  .frame:hover p {\n    text-shadow: var(--text-glow);\n  }\n</style>\n</head>\n<body>\n  <h1>عجائب مصر</h1>\n  <div class=\"gallery\">\n    <div class=\"frame\">\n      <img src=\"https://picsum.photos/250/200?random=11\" alt=\"الأهرامات\">\n      <p>أهرامات الجيزة</p>\n    </div>\n  </div>\n</body>\n</html>",
+    "output": "يعرض كارت مَعلَم مصري يتحول من الصورة القديمة ذات اللون البني إلى ألوان زاهية وساطعة مع توهج ذهبي عند التحويم بالماوس."
+   }
   },
   {
-   "title": "موقع البورتفوليو الشخصي الفضائي",
-   "desc": "اعمل موقع بورتفوليو مصغر بيعرض مشاريعك المفضلة بأزرار مضيئة وحركات ناعمة.",
+   "title": "صالة ألعاب النيون المستقبلية",
+   "desc": "صمم منصة اختيار ألعاب بأسلوب أجهزة الأركيد القديمة مع أضواء نيون مضيئة ومبهرة. يقدر اللاعب يختار اللعبة بأزرار تلمع وشارات تطفو وتأثيرات ضغط ممتعة!",
    "tags": [
-    "متغيرات",
-    "انتقالات",
-    "بورتفوليو"
+    "ظلال النصوص",
+    "تحويلات الأبعاد",
+    "فئات الحالة"
    ],
    "steps": [
-    "ابني هيكل HTML فيه هيدر، قسم نبذة عني، وبطاقات للمشاريع.",
-    "جهز متغيرات الـ root للخطوط وألوان الخلفية والإضاءة.",
-    "نسق روابط التنقل بتاعتك باستخدام حالات زي :hover و :active.",
-    "ضيف ظلال صناديق رائعة لبطاقات مشاريعك عشان تدي عمق للشاشة.",
-    "استخدم ظلال النصوص على عنوانك الرئيسي عشان تدي شكل نيون منور.",
-    "ضيف انتقالات CSS لكل زرار قابل للضغط عشان ينط أو يكبر بنعومة.",
-    "استخدم عنصر وهمي زي ::first-letter عشان تخلي أول حرف بارز وشكله جميل.",
-    "راجع كودك عشان تتأكد إن كل المتغيرات والتنسيق شغالين مع بعض تمام التمام."
+    "ابني صفحة HTML فيها عنوان الصالة الرئيسي وكارت لعبة يحتوي على زر تشغيل تفاعلي.",
+    "حدد متغيرات CSS لألوان النيون المشعة: اللبني المتوهج والوردي الفاقع والأسود الفضائي.",
+    "نسق عنوان الألعاب بظلال نصوص متعددة text-shadow عشان يبان زي لمبة نيون حقيقية في الضلمة.",
+    "اعمل زوايا دائرية لكارت اللعبة مع إطار متوهج بـ box-shadow بألوان النيون.",
+    "استخدم العنصر الوهمي ::before على الكارت عشان تظهر شارة 'HOT!' أو 'NEW!' بارزة فوق.",
+    "اضبط خاصية transition على الكارت والزرار عشان التوهج والحركة يكونوا في منتهى النعومة.",
+    "استخدم حالتي :hover و :active لتدوير الزرار rotate وتكبيره أو ضغطه لأسفل عند النقر عليه."
    ],
    "rubric": [
-    "تنفيذ تصميم بورتفوليو كامل",
-    "استخدام متغيرات CSS لتوحيد الألوان",
-    "تطبيق ظلال نيون للنصوص والصناديق",
-    "وجود انتقالات سلسة على الأزرار التفاعلية"
+    "استخدام متقن لعدة طبقات من text-shadow لعمل إضاءة نيون واقعية ومشرقة.",
+    "تنظيم ألوان النيون والمتغيرات بالكامل داخل :root.",
+    "استخدام عنصر وهمي (::before أو ::after) لعمل شارة ألعاب مميزة.",
+    "دمج حالتي :hover و :active مع تحويلات scale و rotate وسلاسة الـ transition."
    ],
-   "stretch": "ضيف زرار لتبديل الوضع الليلي عن طريق تغيير متغيرات الـ CSS بكلاس جديد."
+   "stretch": "جرب تضيف فلتر filter: hue-rotate(90deg) لما تقف بالماوس على صورة اللعبة عشان تغير لونها زي ليزر الفضاء!",
+   "demo": {
+    "title": "تجربة منصة ألعاب النيون",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<style>\n  :root {\n    --neon-cyan: #00f0ff;\n    --neon-pink: #ff007f;\n    --bg-dark: #070714;\n  }\n  body {\n    background: var(--bg-dark);\n    font-family: sans-serif;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    min-height: 90vh;\n  }\n  h1 {\n    color: #fff;\n    font-size: 26px;\n    text-shadow: 0 0 5px #fff, 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);\n    margin-bottom: 25px;\n  }\n  .arcade-card {\n    position: relative;\n    background: #111126;\n    border: 2px solid var(--neon-pink);\n    border-radius: 18px;\n    padding: 20px;\n    width: 220px;\n    text-align: center;\n    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n  }\n  .arcade-card::before {\n    content: \"HOT!\";\n    position: absolute;\n    top: -12px;\n    right: 15px;\n    background: var(--neon-pink);\n    color: white;\n    font-size: 11px;\n    font-weight: bold;\n    padding: 3px 8px;\n    border-radius: 8px;\n    box-shadow: 0 0 8px var(--neon-pink);\n  }\n  .play-btn {\n    display: inline-block;\n    margin-top: 15px;\n    padding: 10px 20px;\n    border-radius: 25px;\n    background: var(--neon-cyan);\n    color: #000;\n    font-weight: bold;\n    text-decoration: none;\n    box-shadow: 0 0 10px var(--neon-cyan);\n    transition: transform 0.2s ease, filter 0.2s ease;\n    cursor: pointer;\n  }\n  .arcade-card:hover {\n    transform: translateY(-8px) scale(1.03);\n    box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);\n  }\n  .play-btn:hover {\n    transform: scale(1.1) rotate(-3deg);\n    filter: brightness(1.2);\n  }\n  .play-btn:active {\n    transform: scale(0.95);\n  }\n</style>\n</head>\n<body>\n  <h1>ألعاب النيون</h1>\n  <div class=\"arcade-card\">\n    <h2 style=\"color:white; margin:0 0 8px;\">سباق الفضاء 3D</h2>\n    <p style=\"color:#aaa; font-size:12px; margin:0;\">أعلى نتيجة: 88,400</p>\n    <span class=\"play-btn\">ابدأ اللعب</span>\n  </div>\n</body>\n</html>",
+    "output": "تعرض شاشة لعبة نيون مستقبلية مع عنوان مشع وشارة HOT ووزر تفاعلي يميل ويكبر عند الوقوف والضغط عليه."
+   }
   }
  ]
 }

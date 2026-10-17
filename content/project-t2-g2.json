@@ -1,156 +1,186 @@
 {
  "en": [
   {
-   "title": "Cosmic Ninja Escape",
-   "desc": "Help our ninja bounce, wall-jump, and slide through an alien obstacle course! Players must combine double jumps and moving platforms to reach the spaceship before time runs out.",
+   "title": "Sky Tower Escape",
+   "desc": "Help your hero climb to the top of an ancient mechanical tower before the rising lava catches up! Use sticky wall slides, springy trampolines, and one-way wooden ledges to reach the escape blimp.",
    "tags": [
-    "Platformer",
-    "Physics",
-    "Action"
+    "Wall Jump",
+    "Trampoline",
+    "Platformer"
    ],
    "steps": [
-    "Create a player sprite and set up variable gravity so the ninja falls naturally with arrow key movement.",
-    "Add Scratch blocks for double jumping by tracking jump counts when touching the ground or air.",
-    "Program wall sliding and wall jump launch so the ninja grips vertical walls and springs away.",
-    "Design moving platforms that carry the player horizontally and vertically across the screen.",
-    "Place bouncy trampolines and slippery ice patches to add fun physics challenges.",
-    "Add a screen wrap-around effect so falling off the left edge teleports the ninja to the right side.",
-    "Build a goal spaceship at the end to win the game when touched."
+    "Create your player sprite with 'y_velocity' and 'x_velocity' variables for realistic jumping.",
+    "Add variable gravity jumps so holding space jumps higher, and tapping it makes a short hop.",
+    "Program wall sliding by slowing down falling speed whenever the player touches green ivy walls.",
+    "Add a wall jump launch that pushes the player up and away when pressing jump while sliding.",
+    "Place bouncy trampoline mushrooms that instantly boost 'y_velocity' to 15 when stepped on.",
+    "Code one-way wooden bridges that turn solid when falling, but allow jumping up through them or dropping with Down Arrow.",
+    "Add rising lava at the bottom and a rescue blimp at the very top to trigger victory!"
    ],
    "rubric": [
-    "Player moves smoothly with gravity and double jump.",
-    "Wall sliding and wall jumps work properly.",
-    "Moving platforms and ice physics are integrated.",
-    "Screen wrap-around functions without bugs."
+    "Player jumps smoothly with variable gravity and falls at a realistic speed.",
+    "Wall sliding slows the hero, and wall jumping launches them horizontally and vertically.",
+    "Trampolines and one-way platforms interact correctly with the player's feet.",
+    "Game clearly detects falling into lava (Game Over) and touching the blimp (Win)."
    ],
-   "stretch": "Add a boss arena at the end where the ninja must dodge falling projectiles using all learned mechanics!"
+   "stretch": "Add a glowing feather item that unlocks a Double Jump skill for 10 seconds!",
+   "demo": {
+    "title": "Wall Slide and Trampoline Controller",
+    "code": "when green flag clicked\nforever\n  change y_velocity by -1\n  change y by y_velocity\n  if <touching [Wall v]?> and <(y_velocity) < [0]> then\n    set y_velocity to -2\n    if <key [space v] pressed?> then\n      set y_velocity to 12\n      set x_velocity to (-8 * direction_facing)\n    end\n  end\n  if <touching [Trampoline v]?> then\n    set y_velocity to 16\n    start sound [Boing v]\n  end\nend",
+    "output": "The hero slides gently down walls, kicks off to leap away, and bounces high on trampolines."
+   }
   },
   {
-   "title": "Underwater Temple Explorer",
-   "desc": "Dive deep into an ancient temple using floating physics and tricky one-way platforms! Collect all the golden gems while avoiding bouncing hazards and slippery floors.",
+   "title": "Cosmic Ice Boss Arena",
+   "desc": "Battle a rogue robot boss on slippery frozen asteroids floating in deep space! Glide across slick ice platforms and use screen wrap-around to dodge incoming laser blasts.",
    "tags": [
-    "Exploration",
-    "Physics",
-    "Adventure"
+    "Ice Physics",
+    "Screen Wrap",
+    "Boss Fight"
    ],
    "steps": [
-    "Draw an explorer character and program smooth left-right arrow movement.",
-    "Set up low gravity to simulate floating underwater jumps and smooth falls.",
-    "Program one-way platform drop mechanics so the player can fall through floors by pressing down arrow.",
-    "Add bouncy trampoline pads on the temple floor for high super-jumps.",
-    "Place slippery ice blocks that make the explorer slide realistically when stopping.",
-    "Code screen wrap-around for secret looping rooms on the left and right borders.",
-    "Create score variables to count collected gems and display a victory screen."
+    "Build the hero movement script using an 'x_velocity' variable with low friction for slippery sliding.",
+    "Add screen wrap-around so walking past the right edge teleports your sprite to the far left edge seamlessly.",
+    "Code a double jump so the player can flip a second time in mid-air to dodge tall attacks.",
+    "Create floating ice platforms that the hero can slide across while dodging hazards.",
+    "Program an Arcade Boss sprite with 10 HP that hovers side-to-side and launches plasma projectiles.",
+    "Add a stomping mechanic or projectile hitboxes to damage the boss when you time your jump right.",
+    "Design clear health bars for both the player and the boss to show fight progress."
    ],
    "rubric": [
-    "Low gravity and smooth movement feel underwater.",
-    "One-way platforms allow dropping down correctly.",
-    "Trampolines and ice add fun physics variety.",
-    "Gems collect and track score accurately."
+    "Slippery ice momentum feels smooth with gradual deceleration instead of instant stopping.",
+    "Screen wrap-around works on both left and right screen borders without getting stuck.",
+    "Double jump resets only when the hero firmly touches the ground.",
+    "The boss attacks in repeating cycles and properly tracks taken damage."
    ],
-   "stretch": "Add a moving platform elevator puzzle that requires timing your jumps perfectly to reach the highest chamber."
+   "stretch": "Make the boss crack the icy platforms, forcing you to constantly jump to safe spots!",
+   "demo": {
+    "title": "Ice Friction and Screen Wrap Engine",
+    "code": "when green flag clicked\nforever\n  if <key [right arrow v] pressed?> then\n    change x_velocity by 1\n  end\n  if <key [left arrow v] pressed?> then\n    change x_velocity by -1\n  end\n  set x_velocity to (x_velocity * 0.95)\n  change x by x_velocity\n  if <(x position) > [240]> then\n    set x to [-239]\n  end\n  if <(x position) < [-240]> then\n    set x to [239]\n  end\nend",
+    "output": "The astronaut glides smoothly on slippery ice and teleports across screen borders."
+   }
   },
   {
-   "title": "Cyber City Rooftop Dash",
-   "desc": "Race across futuristic neon rooftops in a high-speed physics challenge! Master wall jumps, double jumps, and bouncy trampolines to beat the high score.",
+   "title": "Clockwork Factory Run",
+   "desc": "Navigate a bustling gear factory loaded with moving machinery and tricky platform hazards! Ride mechanical elevators, drop through floor grates, and leap between moving gears.",
    "tags": [
-    "Speedrun",
-    "Physics",
-    "Arcade"
+    "Moving Platforms",
+    "One-Way Drop",
+    "Physics"
    ],
    "steps": [
-    "Design a cyberpunk cat character and apply gravity and jump variables.",
-    "Program double jump mechanics to leap over wide gaps between skyscrapers.",
-    "Add wall sliding and wall jump launch scripts for vertical skyscraper escapes.",
-    "Insert moving platforms that act like flying drones between buildings.",
-    "Place bouncy neon trampolines on rooftop corners for massive vertical boosts.",
-    "Set up screen wrap-around so missing a jump on the edge teleports you safely or adds a cool loop effect.",
-    "Program a timer to track how fast you can finish the rooftop dash."
+    "Set up the hero with full physics: gravity, variable jump height, and horizontal movement.",
+    "Build horizontal and vertical moving platforms that slide using gliding loops.",
+    "Code moving platform carrier physics so your character stays locked to the platform as it moves.",
+    "Create one-way metal grates where pressing Down Arrow plus Jump lets the hero drop through.",
+    "Place steam vent trampolines that shoot the hero high up into secret gear rooms.",
+    "Add spinning gear hazards that reset the player to the latest checkpoint upon collision.",
+    "Add a golden clockwork key at the end that opens the factory exit door."
    ],
    "rubric": [
-    "Double jump and wall jump combos feel smooth.",
-    "Moving platforms transport the player accurately.",
-    "Trampolines give satisfying high bounces.",
-    "Timer tracks gameplay successfully."
+    "Hero stays securely on moving platforms without jittering or slipping off.",
+    "One-way platforms support standing from above and dropping down on command.",
+    "Variable jumping responds accurately to how long the player holds the button.",
+    "Checkpoints save player location correctly upon hitting spinning gear hazards."
    ],
-   "stretch": "Include an arcade boss arena at the end of the rooftops where you must dodge laser beams using all physics tricks."
+   "stretch": "Add magnetic conveyor belts that push you faster in one direction while you run!",
+   "demo": {
+    "title": "Moving Platform and Drop-Down Grate",
+    "code": "when green flag clicked\nforever\n  if <touching [Lift v]?> and <(y_velocity) < [0]> then\n    set y_velocity to 0\n    change x by ([x_speed v] of [Lift v])\n    change y by ([y_speed v] of [Lift v])\n  end\n  if <touching [Grate v]?> and <key [down arrow v] pressed?> then\n    change y by -5\n  end\nend",
+    "output": "The player rides moving lifts naturally and slips down through grates when ducking."
+   }
   }
  ],
  "ar": [
   {
-   "title": "هروب النينجا الفضائي",
-   "desc": "ساعد النينجا بتاعنا يقفز قفزة مزدوجة ويتزحلق على الحوائط جوه مغامرة فضائية! اللاعب لازم يجمع المهارات دي كلها عشان يوصل للصاروخ قبل ما الوقت يخلص.",
+   "title": "الهروب من برج السماء",
+   "desc": "ساعد بطلك في تسلق برج آلي قديم قبل أن تبتلعه الحمم البركانية المتصاعدة من الأسفل! استخدم التزحلق على الجدران، ونطاطات الترامبولين، والمنصات الخشبية للوصول إلى منطاد النجاة.",
    "tags": [
-    "منصات",
-    "فيزياء",
-    "أكشن"
+    "قفز الحائط",
+    "ترامبولين",
+    "ألعاب منصات"
    ],
    "steps": [
-    "اعمل كائن نينجا وظبط الجاذبية بتاعته عشان يقع بشكل طبيعي مع حركة الأسهم.",
-    "ضيف بلوكات سكراتش للقفزة المزدوجة عن طريق حساب عدد القفزات في الهواء.",
-    "برمج التزحلق على الحيطة ونطت الحيطة عشان النينجا يمسك في الحوائط وينط منها.",
-    "صمم منصات متحركة تشيل اللاعب يمين وشمال وفوق وتحت.",
-    "حط ترامبولين نطاط وزحاليق جليد عشان تزود تحديات الفيزياء الممتعة.",
-    "ضيف تأثير لف الشاشة بحيث لو خرجت من الشمال تطلع من اليمين.",
-    "ابني صاروخ النهاية عشان تكسب لما تلمسه."
+    "صمم كائن البطل وأنشئ متغيرات 'سرعة_ص' و 'سرعة_س' لمحاكاة حركة القفز الطبيعية.",
+    "برمج القفز بالجاذبية المتغيرة: ضغطة قصيرة تعطي قفزة صغيرة، وضغطة طويلة تعطي قفزة عالية.",
+    "أضف خاصية التزحلق على الجدار لتقليل سرعة الهبوط عندما يلمس البطل جدران البرج الخضراء.",
+    "برمج قفزة الحائط لتدفع بطلك إلى الأعلى والجهة المعاكسة عند الضغط على مسافة أثناء التزحلق.",
+    "ضع فطر الترامبولين المطاطي ليجعل 'سرعة_ص' تقفز فجأة إلى 15 مع صوت ممتع.",
+    "اصنع جسوراً خشبية تسمح بالمرور للأعلى فقط، وتسمح بالهبوط للأسفل عند الضغط على السهم السفلي.",
+    "أضف خط الحمم بالأسفل ومنطاد النجاة في القمة لإعلان الفوز وإنهاء التحدي!"
    ],
    "rubric": [
-    "حركة اللاعب والجاذبية والقفزة المزدوجة شغالين بسلاسة.",
-    "التزحلق على الحوائط ونطاتها مظبوطين.",
-    "المنصات المتحركة وفيزياء الجليد شغالين تمام.",
-    "تأثير لف الشاشة بيشتغل من غير مشاكل."
+    "حركة قفز البطل انسيابية وتتغير ارتفاعاتها بدقة حسب مدة الضغط.",
+    "التزحلق على الحائط يبطئ الهبوط، وقفزة الحائط تدفع البطل بنجاح في الاتجاه المعاكس.",
+    "الترامبولين والمنصات ذات الاتجاه الواحد تتفاعل بفيزياء ممتازة مع قدم اللاعب.",
+    "اللعبة تحدد الخسارة عند ملامسة الحمم والفوز عند الوصول لمنطاد النجاة بوضوح."
    ],
-   "stretch": "ضيف حلبة زعيم في الآخر يضطر فيها النينجا يتفادى الكور الساقطة بكل المهارات!"
+   "stretch": "أضف ريشة ذهبية سحرية عند لمسها تمنح بطلك مهارة القفزة المزدوجة لمدة 10 ثوانٍ!",
+   "demo": {
+    "title": "متحكم زحلقة الحائط ونطاطة الترامبولين",
+    "code": "عند النقر على الراية الخضراء\nكرر باستمرار\n  غير [سرعة_ص v] بمقدار (-1)\n  غير ص بمقدار (سرعة_ص)\n  إذا كان <ملامس لـ [الجدار v]؟> و <(سرعة_ص) < [0]> فـ\n    اجعل [سرعة_ص v] مساوياً (-2)\n    إذا كان <مفتاح [مسافة v] مضغوط؟> فـ\n      اجعل [سرعة_ص v] مساوياً (12)\n      غير س بمقدار (10)\n    نهاية\n  نهاية\n  إذا كان <ملامس لـ [الترامبولين v]؟> فـ\n    اجعل [سرعة_ص v] مساوياً (16)\n    ابدأ الصوت [Boing v]\n  نهاية\nنهاية",
+    "output": "البطل ينزلق برفق على الحائط، ويقفز بعيداً، وينطلق عالياً جداً عند لمس الترامبولين."
+   }
   },
   {
-   "title": "مستكشف معبد الأعماق",
-   "desc": "انزل جوه معبد قديم باستخدام فيزياء الطفو ومنصات النزول السريع! اجمع كل الجواهر الدهبية وتجنب الحواجز النطاطة والأرضيات الزلقة.",
+   "title": "حلبة الفضاء الجليدية",
+   "desc": "واجه الزعيم الآلي الطائر فوق كويكبات جليدية زلقة تسبح في أعماق الفضاء الخارجي! تزحلق بخفة على الجليد واستخدم ميزة الالتفاف حول أطراف الشاشة لتفادي الليزر المفاجئ.",
    "tags": [
-    "مغامرة",
-    "فيزياء",
-    "استكشاف"
+    "فيزياء الجليد",
+    "التفاف الشاشة",
+    "قتال الزعيم"
    ],
    "steps": [
-    "ارسم شخصية مستكشف وبرمج الحركة السريعة يمين وشمال.",
-    "ظبط جاذبية خفيفة عشان تحاكي القفزات تحت المية والسقوط الهادي.",
-    "برمج منصات النزول من اتجاه واحد عشان اللاعب يقدر ينزل تحت بضغط سهم التحت.",
-    "ضيف ترامبولين على أرضية المعبد عشان يعمل قفزات سوبر عالية.",
-    "حط بلوكات جليد زلقة تخلي المستكشف يتزحلق بواقعية وهو واقف.",
-    "اعمل تأثير لف الشاشة للغرف السرية على الجنبين.",
-    "انشئ متغيرات النقاط عشان تعد الجواهر وتظهر شاشة الفوز."
+    "ابنِ حركة البطل الأفقية باستخدام 'سرعة_س' واجعل الاحتكاك خفيفاً ليتزحلق بانسيابية كأنه فوق الجليد.",
+    "أضف التفاف الشاشة بحيث إذا خرج البطل من الحافة اليمنى يظهر فوراً على أقصى الحافة اليسرى.",
+    "برمج مهارة القفزة المزدوجة ليتمكن بطلك من الشقلبة في الهواء والهروب من ضربات الزعيم.",
+    "صمم منصات جليدية عائمة يتزحلق البطل فوقها وتتطلب مهارة عالية في التوازن.",
+    "أنشئ كائن 'الزعيم الآلي' بـ 10 نقاط طاقة يطير يميناً ويساراً ويطلق قذائف ليزر سريعة.",
+    "أضف طريقة للهجوم على الزعيم بالقفز فوق رأسه أو رمي كرات ثلجية لإنقاص طاقته.",
+    "صمم شريط طاقة لكل من اللاعب والزعيم لمعرفة الفائز في المعركة الفضائية."
    ],
    "rubric": [
-    "الجاذبية الخفيفة والحركة بيفكرونا بالمية.",
-    "منصات اتجاه واحد بتخليك تنزل لتحت صح.",
-    "الترامبولين والجليد بيضيفوا تنوع حلو.",
-    "الجواهر بتتحسب وتسجل النقاط مظبوط."
+    "حركة التزحلق على الجليد تعطي إحساس الاندفاع والتباطؤ التدريجي بدون توقف مفاجئ.",
+    "الالتفاف حول حواف الشاشة يعمل بسلاسة من الجهتين دون أن يعلق البطل.",
+    "القفزة المزدوجة تنضبط وتعمل لمرة واحدة فقط في الهواء حتى يلمس الأرض مجدداً.",
+    "الزعيم يهاجم في دورات متكررة ويتأثر بالضربات وتنقص نقاط صحته بنجاح."
    ],
-   "stretch": "ضيف لغز أسانسير منصات متحركة محتاج توقيت دقيق في النط للوصول لأعلى غرفة."
+   "stretch": "اجعل الزعيم يطلق شعاعاً يكسر أجزاء من المنصات الجليدية ليجبرك على التحرك باستمرار!",
+   "demo": {
+    "title": "محرك احتكاك الجليد والتفاف الشاشة",
+    "code": "عند النقر على الراية الخضراء\nكرر باستمرار\n  إذا كان <مفتاح [السهم الأيمن v] مضغوط؟> فـ\n    غير [سرعة_س v] بمقدار (1)\n  نهاية\n  إذا كان <مفتاح [السهم الأيسر v] مضغوط؟> فـ\n    غير [سرعة_س v] بمقدار (-1)\n  نهاية\n  اجعل [سرعة_س v] مساوياً ((سرعة_س) * (0.95))\n  غير س بمقدار (سرعة_س)\n  إذا كان <الموضع س > [240]> فـ\n    اجعل س مساوياً [-239]\n  نهاية\n  إذا كان <الموضع س < [-240]> فـ\n    اجعل س مساوياً [239]\n  نهاية\nنهاية",
+    "output": "رائد الفضاء يتزحلق بسلاسة ممتعة على الجليد وينتقل بين طرفي الشاشة كالسحر."
+   }
   },
   {
-   "title": "جري مدينة المستقبل",
-   "desc": "اجري فوق عمارات نيون مستقبلية في تحدي فيزياء سريع جداً! اتقن نطات الحائط، القفزة المزدوجة، والترامبولين عشان تحطم الرقم القياسي.",
+   "title": "مغامرة مصنع التروس",
+   "desc": "انطلق في مصنع آلي مليء بالآلات المتحركة والتروس الدوارة العملاقة لتصل لبوابة الخروج! اركب المصاعد المتحركة، واهبط عبر الشباك الحديدية، واقفز فوق فوهات البخار المندفعة.",
    "tags": [
-    "سرعة",
-    "فيزياء",
-    "أركيد"
+    "منصات متحركة",
+    "هبوط المنصة",
+    "ألعاب منصات"
    ],
    "steps": [
-    "صمم شخصية قطة سايبربانك وطبق عليها الجاذبية ومتغيرات النط.",
-    "برمج القفزة المزدوجة عشان تعدي الفراغات الواسعة بين ناطحات السحاب.",
-    "ضيف سكربتات التزحلق على الحائط والنط للهروب من المباني.",
-    "حط منصات متحركة بتطير زي الطيارات المسيرة بين المباني.",
-    "رص ترامبولين نيون على حروف السطوح عشان تاخد دفعات لفوق قوية.",
-    "ظبط لف الشاشة بحيث لو وقعت من الحرف تظهر في الناحية التانية.",
-    "برمج مؤقت عشان تحسب الوقت اللي خدته في السباق."
+    "جهز البطل بفيزياء الجاذبية، القفز عالي الدقة، والتحكم بالسرعة الأفقية.",
+    "صمم مصاعد ومنصات ميكانيكية تتحرك أفقياً وعمودياً داخل المصنع بنمط مستمر.",
+    "برمج فيزياء الركوب بحيث يتحرك بطلك مع المنصة المتحركة تلقائياً دون أن يسقط منها.",
+    "اصنع شباكاً حديدية ذات اتجاه واحد، تسقط من خلالها إذا ضغطت السهم السفلي مع القفز.",
+    "ضع فوهات بخار قوية تعمل مثل الترامبولين وتدفع البطل لغرف التروس العلوية السرية.",
+    "أضف تروساً مسننة خطيرة تعيد اللاعب لنقطة البداية أو نقطة الحفظ إذا لمسها.",
+    "ضع مفتاحاً ميكانيكياً ذهبياً في نهاية المصنع لفتح بوابة النصر الكبرى."
    ],
    "rubric": [
-    "القفزة المزدوجة ونطة الحيطة شكلهم سلس.",
-    "المنصات المتحركة بتنقل اللاعب بدقة.",
-    "الترامبولين بيدي نطات عالية وممتعة.",
-    "المؤقت بيسجل وقت اللعبة بنجاح."
+    "البطل يثبت فوق المنصات المتحركة ويتحرك معها بدون أي اهتزاز.",
+    "المنصات ذات الاتجاه الواحد تدعم الوقوف فوقها والسقوط منها بأمر السهم السفلي.",
+    "القفز يستجيب بدقة لزمن ضغط زر المسافة (قفزة صغيرة أو عملاقة).",
+    "نقاط الحفظ تعيد اللاعب إلى مكانه الصحيح عند لمس التروس الخطرة."
    ],
-   "stretch": "حط حلبة زعيم في نهاية السطوح عشان تتفادى أشعة الليزر بكل حيل الفيزياء."
+   "stretch": "أضف سيوراً متحركة مدهونة بالزيت تدفعك بسرعة إضافية وتزيد من صعوبة الوقوف!",
+   "demo": {
+    "title": "فيزياء ركوب المنصة والهبوط من الشباك",
+    "code": "عند النقر على الراية الخضراء\nكرر باستمرار\n  إذا كان <ملامس لـ [المصعد v]؟> و <(سرعة_ص) < [0]> فـ\n    اجعل [سرعة_ص v] مساوياً (0)\n    غير س بمقدار ([سرعة_المصعد_س v] من [المصعد v])\n    غير ص بمقدار ([سرعة_المصعد_ص v] من [المصعد v])\n  نهاية\n  إذا كان <ملامس لـ [الشبكة v]؟> و <مفتاح [السهم السفلي v] مضغوط؟> فـ\n    غير ص بمقدار (-5)\n  نهاية\nنهاية",
+    "output": "البطل يركب المصاعد بسلاسة فائقة وينزل عبر الفتحات الأرضية بضغطة زر سريعة."
+   }
   }
  ]
 }

@@ -2,161 +2,191 @@
  "en": [
   {
    "title": "Sports Analytics Dashboard",
-   "desc": "Build a desktop app where users select an athlete to view career trends plotted via Matplotlib inside Tkinter, with Git tracking every change.",
+   "desc": "A desktop Tkinter application that lets fans select an athlete to inspect career scoring trends and performance distributions through embedded Matplotlib charts. The full codebase is tracked with Git commits and published to GitHub with a professional README.",
    "tags": [
     "Tkinter",
     "Matplotlib",
     "Git"
    ],
    "steps": [
-    "Create a new folder and run 'git init' to start tracking your project.",
-    "Design a Tkinter desktop window with a dropdown menu to choose an athlete.",
-    "Write a Python function to filter athlete career data and compute trends.",
-    "Use Matplotlib to generate a clear line chart of the player's yearly stats.",
-    "Embed the generated Matplotlib chart canvas directly inside the Tkinter window.",
-    "Add a button that updates the chart dynamically when a new athlete is selected.",
-    "Write a professional README.md file explaining how to run your sports dashboard.",
-    "Commit all your code changes to Git and push your repository to GitHub."
+    "Initialize your project folder and set up version control using 'git init' with a clean .gitignore file.",
+    "Structure athlete records in Python dictionaries containing years, matches played, goals, and assist numbers.",
+    "Construct the main Tkinter desktop window featuring a title bar, control sidebar, and chart display panel.",
+    "Add a dropdown combobox allowing users to switch between different sports stars dynamically.",
+    "Embed a Matplotlib FigureCanvasTkAgg element directly inside the Tkinter frame to host interactive plots.",
+    "Write plotting routines to draw career trend line charts and seasonal contribution bar charts.",
+    "Hook Tkinter dropdown events to an update function that redraws the canvas whenever a new player is chosen.",
+    "Commit milestone changes to Git with descriptive messages and write a thorough GitHub README.md."
    ],
    "rubric": [
-    "Tkinter window launches smoothly with a working athlete dropdown menu.",
-    "Matplotlib successfully plots accurate career trend line charts.",
-    "Charts are correctly embedded inside the desktop user interface.",
-    "Git history shows regular commits and GitHub README is clear."
+    "GUI Architecture: Window layout is responsive and cleanly nests Tkinter widgets alongside Matplotlib canvas.",
+    "Data Visualization: Line and bar charts use distinct colors, clear axis labels, titles, and legible legends.",
+    "Interactivity: Switching athletes updates data and redraws charts without crashing or duplicating windows.",
+    "Git & Documentation: Repository shows at least 3 incremental commits and a README with feature screenshots."
    ],
-   "stretch": "Add a second tab or button to show category bar charts comparing player salaries using Pandas."
+   "stretch": "Add a pie chart showing trophy distributions or a scatter plot correlating minutes played against goals scored.",
+   "demo": {
+    "title": "Embedded Athlete Trend Viewer",
+    "code": "import tkinter as tk\nfrom matplotlib.figure import Figure\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\n\nroot = tk.Tk()\nroot.title('Athlete Career Trends')\nroot.geometry('500x400')\n\nyears = [2021, 2022, 2023, 2024]\ngoals = [18, 27, 31, 29]\n\nfig = Figure(figsize=(5, 3), dpi=100)\nax = fig.add_subplot(111)\nax.plot(years, goals, marker='o', color='#007acc', linewidth=2)\nax.set_title('Mo Salah - Goals Per Season')\nax.set_ylabel('Goals')\nax.grid(True)\n\ncanvas = FigureCanvasTkAgg(fig, master=root)\ncanvas.draw()\ncanvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)\n\nroot.mainloop()",
+    "output": "A desktop window opens displaying Mo Salah's seasonal scoring progression on an embedded Matplotlib line chart."
+   }
   },
   {
    "title": "Daily Habits Visual Dashboard",
-   "desc": "Create a habit-tracking desktop tool that records study, sleep, and screen time, displaying correlation patterns using scatter plots.",
+   "desc": "A desktop tracking tool that logs sleep, study hours, and screen time to uncover wellness correlations using scatter and bar charts. Students can analyze their weekly routines visually and publish their portfolio project on GitHub.",
    "tags": [
-    "Scatter Plots",
+    "Matplotlib",
     "Tkinter",
-    "Pandas"
+    "Data Analytics"
    ],
    "steps": [
-    "Initialize a Git repository and create your initial commit.",
-    "Build a Tkinter form with entry boxes and sliders to input daily study, sleep, and screen hours.",
-    "Store the entered habit records into a Pandas DataFrame inside your script.",
-    "Write Matplotlib code to generate a scatter plot exploring sleep versus study hours.",
-    "Embed the scatter plot figure seamlessly into your Tkinter dashboard layout.",
-    "Add a save button to export daily habit entries to a local CSV file.",
-    "Document your habit tracker project inside a detailed GitHub README.md file.",
-    "Stage, commit, and push your final working project files to GitHub."
+    "Create your workspace folder, initialize Git, and draft an initial README outlining project goals.",
+    "Build a Tkinter input form with labels and Entry widgets for study hours, sleep duration, and screen time.",
+    "Maintain logged daily records in Python lists and compute weekly averages for each habit category.",
+    "Embed a Matplotlib figure widget inside the Tkinter window beneath the entry forms.",
+    "Implement a scatter plot function mapping sleep hours against study productivity to highlight clusters.",
+    "Include a toggle button to display a comparative bar chart showing total hours spent across all habits.",
+    "Clear and refresh the embedded canvas upon submitting new entries without restarting the program.",
+    "Push your final code to GitHub complete with usage instructions and project reflections in README.md."
    ],
    "rubric": [
-    "Tkinter interface accepts and stores daily habit numbers correctly.",
-    "Scatter plots accurately reveal relationships between different habits.",
-    "Charts update or save data without crashing the desktop window.",
-    "Project is properly version-controlled and shared on GitHub."
+    "Data Capture: Entry fields reliably accept numeric values and store them in structured lists.",
+    "Correlation Insights: Scatter plot effectively visualizes relationships between sleep and study efficiency.",
+    "Tkinter Integration: Figure updates dynamically on screen without memory leaks or frozen frames.",
+    "Portfolio Presentation: Well-formatted README markdown including project purpose, setup steps, and license."
    ],
-   "stretch": "Add a pie chart showing the percentage breakdown of daily time spent on each activity."
+   "stretch": "Calculate an automated daily balance rating that alerts the user with a Tkinter label if screen time exceeds study time.",
+   "demo": {
+    "title": "Habit Correlation Scatter Viewer",
+    "code": "import tkinter as tk\nfrom matplotlib.figure import Figure\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\n\nroot = tk.Tk()\nroot.title('Habits: Sleep vs Study')\nroot.geometry('500x400')\n\nsleep = [6, 7, 8, 5, 7.5, 8.5, 6.5]\nstudy = [3, 5, 6, 2, 5.5, 6.5, 4]\n\nfig = Figure(figsize=(5, 3), dpi=100)\nax = fig.add_subplot(111)\nax.scatter(sleep, study, color='#28a745', s=60, edgecolors='black')\nax.set_title('Sleep vs Study Hours')\nax.set_xlabel('Sleep Hours')\nax.set_ylabel('Study Hours')\n\ncanvas = FigureCanvasTkAgg(fig, master=root)\ncanvas.draw()\ncanvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)\n\nroot.mainloop()",
+    "output": "A desktop Tkinter window renders a scatter plot illustrating how higher sleep hours correlate with longer study sessions."
+   }
   },
   {
    "title": "Weather History Hub",
-   "desc": "Design a desktop dashboard that compares monthly rainfall and temperature data using professional charts inside a Tkinter app.",
+   "desc": "An interactive desktop weather comparison hub that displays monthly temperature lines and rainfall bars for Egyptian cities inside Tkinter. Users switch views effortlessly while the source code remains cleanly versioned on GitHub.",
    "tags": [
-    "Bar Charts",
-    "Desktop",
-    "GitHub"
+    "Tkinter",
+    "Matplotlib",
+    "Climate Data"
    ],
    "steps": [
-    "Set up a local Git repository and create your project file structure.",
-    "Create a Tkinter window titled 'Weather History Hub' with clean button layouts.",
-    "Prepare weather datasets containing monthly temperature and rainfall values.",
-    "Use Matplotlib to create grouped bar charts for category comparisons.",
-    "Embed the weather charts inside the main Tkinter dashboard window.",
-    "Add a toggle feature to switch between temperature and rainfall views.",
-    "Write a comprehensive README.md file describing installation steps.",
-    "Push your complete weather hub repository to GitHub for others to view."
+    "Initialize a Git repository and construct modular script files for data handling and interface layout.",
+    "Prepare historical monthly averages of temperature and rainfall for cities like Cairo and Alexandria.",
+    "Design a Tkinter window featuring Radiobutton selectors to choose which city data to inspect.",
+    "Embed a dual-plot or single Matplotlib canvas that responds to button clicks using FigureCanvasTkAgg.",
+    "Plot monthly temperature as a styled line chart with markers, and rainfall as a paired bar chart.",
+    "Format chart axes with month abbreviations (Jan to Dec), gridlines, and bilingual labels.",
+    "Implement a 'Compare' button that overlays both cities on the same axis for immediate climate contrast.",
+    "Write commit messages for each feature, create a GitHub repo, and publish a structured README.md."
    ],
    "rubric": [
-    "Tkinter window displays weather buttons and charts correctly.",
-    "Bar charts clearly display monthly climate comparisons.",
-    "Code is well-organized and easy to navigate.",
-    "GitHub repository includes a professional README and commit history."
+    "Data Visualization: Correct usage of line charts for temperatures and bar charts for precipitation.",
+    "Widget Control: Radiobuttons and buttons smoothly toggle datasets and trigger canvas redraws.",
+    "Code Cleanliness: Well-named variables, modular functions, and clear separation between data and GUI.",
+    "Git History: Logical commit tree showing step-by-step progress from basic window to full dashboard."
    ],
-   "stretch": "Incorporate a trend line for yearly temperature increases alongside the bar charts."
+   "stretch": "Add a pie chart showing the percentage of sunny versus rainy days across the entire year.",
+   "demo": {
+    "title": "City Climate Comparison Plotter",
+    "code": "import tkinter as tk\nfrom matplotlib.figure import Figure\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\n\nroot = tk.Tk()\nroot.title('Cairo Climate History')\nroot.geometry('500x420')\n\nmonths = ['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov']\ncairo_temp = [14, 18, 26, 29, 26, 19]\n\nfig = Figure(figsize=(5, 3), dpi=100)\nax = fig.add_subplot(111)\nax.bar(months, cairo_temp, color='#e67e22', width=0.5)\nax.set_title('Cairo Monthly Avg Temperature (°C)')\nax.set_ylabel('Temp (°C)')\n\ncanvas = FigureCanvasTkAgg(fig, master=root)\ncanvas.draw()\ncanvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)\n\nroot.mainloop()",
+    "output": "A desktop GUI displays a clean bar chart showing average temperatures across six milestone months in Cairo."
+   }
   }
  ],
  "ar": [
   {
-   "title": "لوحة تحليل الرياضيين",
-   "desc": "ابني تطبيق سطح مكتب يتيح للمستخدمين اختيار رياضي وعرض تطور مسيرته عبر رسوم بيانية داخل نافذة Tkinter، مع تتبع كل تعديل بـ Git.",
+   "title": "لوحة تحليلات الرياضيين",
+   "desc": "تطبيق ديسك توب باستخدام Tkinter يتيح للمشجع اختيار بطله الرياضي المفضل ومتابعة تطور أهدافه وأدائه عبر رسوم Matplotlib بيانية مدمجة. الكود منظم بالكامل داخل مستودع Git ومرفوع على GitHub بملف README احترافي.",
    "tags": [
     "Tkinter",
     "Matplotlib",
     "Git"
    ],
    "steps": [
-    "اعمل مجلد جديد وشغل أمر 'git init' عشان تبدأ تتابع مشروعك.",
-    "صمم نافذة Tkinter فيها قائمة منسدلة عشان تختار الرياضي المطلوب.",
-    "اكتب دالة بايثون عشان تصفي بيانات الرياضي وتحسب الإحصائيات.",
-    "استخدم Matplotlib عشان ترسم خط بياني واضح لمستوى اللاعب سنوياً.",
-    "ادمج لوحة الرسم البياني جوه نافذة Tkinter بطريقة مرتبة.",
-    "ضيف زرار يحدث الرسم البياني تلقائياً أول ما تختار رياضي تاني.",
-    "اكتب ملف README.md احترافي يشرح إزاي تشغل لوحة التحكم بتاعتك.",
-    "اعمل Commit لكل التعديلات وارفع المشروع على مستودع GitHub."
+    "أنشئ مجلد المشروع وابدأ نظام التتبع باستخدام الأمر 'git init' مع ملف .gitignore نظيف.",
+    "نظم بيانات اللاعبين في قواميس Python تشمل السنوات، المباريات، الأهداف، وصناعة اللعب.",
+    "ابنِ نافذة Tkinter الرئيسية مع شريط عنوان، وقائمة تحكم جانبية، ومنطقة لعرض الرسم البياني.",
+    "أضف قائمة منسدلة (Combobox) تسمح للمستخدم بالاختيار بين مختلف النجوم بسهولة.",
+    "ادمج عنصر FigureCanvasTkAgg من مكتبة Matplotlib مباشرة داخل إطار نافذة Tkinter.",
+    "اكتب دوال الرسم البياني لإنشاء خط زمني لتطور الأهداف (Line Chart) وأعمدة للبطولات (Bar Chart).",
+    "اربط حدث تغيير اللاعب بدالة تعيد رسم المخطط فوراً بالبيانات الجديدة دون فتح نوافذ مكررة.",
+    "احفظ التعديلات في Git برسائل واضحة، واكتب ملف README.md احترافي بالصور لشرح مشروعك."
    ],
    "rubric": [
-    "نافذة Tkinter بتفتح كويس وقائمة الرياضيين شغال تمام.",
-    "مكتبة Matplotlib بترسم خطوط البيانية بدقة وصح.",
-    "الرسوم البيانية مدمجة جوه واجهة سطح المكتب مظبوط.",
-    "تاريخ Git فيه عمليات commit منتظمة و ملف README واضح."
+    "تصميم الواجهة: نافذة Tkinter منظمة وسريعة الاستجابة وتدمج مساحة الرسم بسلاسة.",
+    "دقة الرسوم: مخططات بيانية واضحة بألوان مميزة وتسميات دقيقة للمحاور والعناوين.",
+    "التفاعلية: تبديل بيانات الرياضيين يحدث الرسم فوراً بدون أي أخطاء برمجية.",
+    "التوثيق وGit: المستودع يحتوي على 3 تعديلات (Commits) على الأقل وملف README متكامل."
    ],
-   "stretch": "ضيف تبويب تاني بيعرض أعمدة مقارنة مرتبة لرواتب اللاعبين باستخدام Pandas."
+   "stretch": "أضف رسماً دائرياً (Pie Chart) يوضح نسب البطولات أو مخطط انتشار (Scatter) يقارن الدقائق بالأهداف.",
+   "demo": {
+    "title": "مستعرض أداء الرياضيين المدمج",
+    "code": "import tkinter as tk\nfrom matplotlib.figure import Figure\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\n\nroot = tk.Tk()\nroot.title('Athlete Career Trends')\nroot.geometry('500x400')\n\nyears = [2021, 2022, 2023, 2024]\ngoals = [18, 27, 31, 29]\n\nfig = Figure(figsize=(5, 3), dpi=100)\nax = fig.add_subplot(111)\nax.plot(years, goals, marker='o', color='#007acc', linewidth=2)\nax.set_title('Mo Salah - Goals Per Season')\nax.set_ylabel('Goals')\nax.grid(True)\n\ncanvas = FigureCanvasTkAgg(fig, master=root)\ncanvas.draw()\ncanvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)\n\nroot.mainloop()",
+    "output": "تفتح نافذة ديسك توب تعرض مسار أهداف محمد صلاح عبر المواسم في رسم بياني خطي مدمج داخل Tkinter."
+   }
   },
   {
-   "title": "لوحة تتبع العادات اليومية",
-   "desc": "اصمم أداة لسطح المكتب تسجل ساعات المذاكرة، النوم، والموبايل، وبتعرض العلاقات بينهم باستخدام النقاط المشتتة.",
+   "title": "لوحة عاداتي اليومية الذكية",
+   "desc": "أداة ديسك توب لتسجيل ساعات النوم والمذاكرة واستخدام الشاشات لاكتشاف الأنماط الصحية باستخدام مخططات الانتشار والأعمدة. يتعلم الطالب كيفية تحليل الروتين الأسبوعي ومشاركة مشروعه البرمجي على GitHub.",
    "tags": [
-    "Scatter Plots",
+    "Matplotlib",
     "Tkinter",
-    "Pandas"
+    "Data Analytics"
    ],
    "steps": [
-    "ابدأ مستودع Git جديد واعمل أول commit للمشروع.",
-    "ابني نموذج Tkinter فيه خانات إدخال ومؤشرات لتسجيل ساعات المذاكرة والنوم.",
-    "احفظ البيانات المدخلة جوه جدول Pandas DataFrame داخل الكود.",
-    "اكتب كود Matplotlib عشان تعمل رسم بياني يوضح العلاقة بين النوم والمذاكرة.",
-    "ادمج الرسم البياني بسلاسة جوه واجهة لوحة تحكم Tkinter.",
-    "ضيف زرار حفظ عشان تصدر البيانات اليومية لملف CSV محلي.",
-    "اكتب تفاصيل مشروع متتبع العادات جوه ملف README.md على GitHub.",
-    "اعمل commit ورفع للملفات النهائية للمشروع على GitHub."
+    "جهز مساحة العمل وابدأ مستودع Git مع كتابة مسودة أولية لملف README توضح أهداف البرنامج.",
+    "صمم نموذج إدخال في Tkinter باستخدام حقول نصوص لكتابة ساعات المذاكرة والنوم والشاشة.",
+    "احفظ السجلات اليومية في قوائم Python واحسب المتوسطات الأسبوعية لكل عادة.",
+    "ادمج لوحة Matplotlib التفاعلية أسفل حقول الإدخال داخل نافذة Tkinter.",
+    "اكتب دالة لرسم مخطط انتشار (Scatter Plot) يوضح العلاقة بين ساعات النوم ونشاط المذاكرة.",
+    "أضف زراً للتبديل لعرض مخطط أعمدة (Bar Chart) يقارن إجمالي ساعات كل نشاط أسبوعياً.",
+    "نظف لوحة الرسم وحدّثها عند إضافة مدخلات جديدة مباشرة دون الحاجة لإعادة تشغيل البرنامج.",
+    "ارفع الكود النهائي إلى مستودع GitHub مع شرح طريقة الاستخدام وصور توضيحية في README.md."
    ],
    "rubric": [
-    "واجهة Tkinter بتقبل وتسجل أرقام العادات اليومية صح.",
-    "الرسوم المشتتة بتوضح بوضوح العلاقة بين العادات المختلفة.",
-    "الرسوم بتتحدث أو بتحفظ البيانات من غير ما التطبيق يهنج.",
-    "المشروع متوثق ومنشور صح على GitHub."
+    "دقة الإدخال: استقبال الأرقام وتخزينها في هياكل بيانات صحيحة دون أعطال.",
+    "قوة التحليل: مخطط الانتشار يوضح بوضوح العلاقة والتجمع بين النوم والمذاكرة.",
+    "التكامل البرمجي: دمج سلس لرسومات Matplotlib داخل أطر وأزرار Tkinter.",
+    "جودة الملفات: سجل Git منظم برمز commit واضح وملف README مرتب يشرح المشروع."
    ],
-   "stretch": "ضيف رسم دائري (Pie Chart) بيوضح نسبة الوقت اليومي لكل نشاط."
+   "stretch": "برمج تقييماً ذكياً يظهر تنبيهاً بلون مميز في الواجهة إذا زاد وقت الشاشة عن وقت المذاكرة.",
+   "demo": {
+    "title": "مستعرض انتشار ارتباط العادات",
+    "code": "import tkinter as tk\nfrom matplotlib.figure import Figure\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\n\nroot = tk.Tk()\nroot.title('Habits: Sleep vs Study')\nroot.geometry('500x400')\n\nsleep = [6, 7, 8, 5, 7.5, 8.5, 6.5]\nstudy = [3, 5, 6, 2, 5.5, 6.5, 4]\n\nfig = Figure(figsize=(5, 3), dpi=100)\nax = fig.add_subplot(111)\nax.scatter(sleep, study, color='#28a745', s=60, edgecolors='black')\nax.set_title('Sleep vs Study Hours')\nax.set_xlabel('Sleep Hours')\nax.set_ylabel('Study Hours')\n\ncanvas = FigureCanvasTkAgg(fig, master=root)\ncanvas.draw()\ncanvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)\n\nroot.mainloop()",
+    "output": "تظهر نافذة برنامج ديسك توب تعرض مخطط انتشار يوضح كيف تزيد ساعات المذاكرة مع انتظام ساعات النوم."
+   }
   },
   {
-   "title": "مركز تاريخ الطقس",
-   "desc": "صمم لوحة تحكم لسطح المكتب بتقارن بين كميات الأمطار ودرجات الحرارة الشهرية باستخدام رسوم بيانية واضحة داخل تطبيق Tkinter.",
+   "title": "مركز تاريخ الطقس والمناخ",
+   "desc": "لوحة تحكم تفاعلية تقارن درجات الحرارة ومعدلات الأمطار الشهرية للمدن المصرية داخل نافذة Tkinter. يتنقل المستخدم بين المدن بنقرة زر ويبقى كود المشروع موثقاً ومحفوظاً على GitHub كبورتفوليو احترافي.",
    "tags": [
-    "Bar Charts",
-    "Desktop",
-    "GitHub"
+    "Tkinter",
+    "Matplotlib",
+    "Climate Data"
    ],
    "steps": [
-    "جهز مستودع Git محلي ونظم ملفات المشروع بطريقة مرتبة.",
-    "اعمل نافذة Tkinter باسم 'Weather History Hub' مع أزرار مرتبة.",
-    "جهز بيانات الطقس اللي فيها درجات الحرارة وكميات المطر الشهرية.",
-    "استخدم Matplotlib عشان تعمل أعمدة بيانية لمقارنة الفئات.",
-    "ادمج رسوم الطقس البيانية جوه النافذة الرئيسية لتطبيق Tkinter.",
-    "ضيف خاصية تبديل عشان تعرض الحرارة أو الأمطار بسهولة.",
-    "اكتب ملف README.md شامل يشرح خطوات تشغيل البرنامج.",
-    "ارفعه على GitHub عشان زمايلك يشوفوا الشغل الجميل."
+    "أنشئ مستودع Git محلي ونظم ملفات الكود في هيكل واضح يفصل البيانات عن الواجهة.",
+    "جهز بيانات مناخية دقيقة لمتوسطات الحرارة والأمطار الشهرية لمدينتي القاهرة والإسكندرية.",
+    "ابنِ واجهة Tkinter تحتوي على أزرار اختيار (Radiobuttons) لتحديد المدينة المراد فحصها.",
+    "ادمج لوحة Matplotlib في الواجهة باستخدام FigureCanvasTkAgg لتحديث المخطط عند النقر.",
+    "ارسم خطاً بيانياً لتغيرات الحرارة ومخطط أعمدة لكميات الأمطار بألوان واضحة ومميزة.",
+    "نسق محاور الرسم بأسماء الشهور المختصرة وشبكة توضيحية خفيفة وعناوين باللغتين.",
+    "أضف زراً للمقارنة يدمج بيانات المدينتين في رسم واحد لتسهيل المقارنة المباشرة.",
+    "وثق كل خطوة في Git ونظم ملف README.md يشمل صور التطبيق وطريقة تثبيت المكتبات."
    ],
    "rubric": [
-    "نافذة Tkinter بتعرض أزرار الطقس والرسوم البيانية صح.",
-    "الأعمدة البيانية بتوضح مقارنات المناخ الشهرية بوضوح.",
-    "الكود منظم ومرتب وسهل القراءة.",
-    "مستودع GitHub فيه ملف README احترافي وتاريخ commits مظبوط."
+    "التمثيل البياني: استخدام ملائم للخطوط البيانية لدرجات الحرارة والأعمدة لهطول الأمطار.",
+    "التحكم التفاعلي: أزرار الاختيار تبدل بيانات المدن بسلاسة وتحدث الرسم مباشرة.",
+    "نظافة الكود: كتابة دوال مرتبة ومتسقة مع تسميات معبرة للمتغيرات والمحاور.",
+    "توثيق المشروع: مستودع GitHub احترافي يضم خطوات التثبيت ولقطات شاشة لواجهة البرنامج."
    ],
-   "stretch": "ضيف خط بياني بيوضح ارتفاع درجات الحرارة سنوياً جنب الأعمدة البيانية."
+   "stretch": "أضف رسماً دائرياً (Pie Chart) يوضح النسبة المئوية للأيام المشمسة مقابل الأيام الممطرة خلال العام.",
+   "demo": {
+    "title": "راسم مقارنة مناخ المدن",
+    "code": "import tkinter as tk\nfrom matplotlib.figure import Figure\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\n\nroot = tk.Tk()\nroot.title('Cairo Climate History')\nroot.geometry('500x420')\n\nmonths = ['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov']\ncairo_temp = [14, 18, 26, 29, 26, 19]\n\nfig = Figure(figsize=(5, 3), dpi=100)\nax = fig.add_subplot(111)\nax.bar(months, cairo_temp, color='#e67e22', width=0.5)\nax.set_title('Cairo Monthly Avg Temperature (°C)')\nax.set_ylabel('Temp (°C)')\n\ncanvas = FigureCanvasTkAgg(fig, master=root)\ncanvas.draw()\ncanvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)\n\nroot.mainloop()",
+    "output": "واجهة مستخدم ديسك توب تعرض رسماً بيانياً بالأعمدة لمتوسط درجات الحرارة في القاهرة عبر شهور العام."
+   }
   }
  ]
 }

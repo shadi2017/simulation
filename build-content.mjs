@@ -31,13 +31,15 @@ Schema for each of "ar" and "en": {
   {"type":"bug","title","goal","lines":[4-6 code/instruction lines],"bug":index of wrong line,"fix":"corrected line","success"}
 }
 "success" = a fun sentence showing the RESULT (what the program/robot did). The activity must differ in idea from other lessons: use real content of this lesson. Both languages must use the same activity type and the same answer positions.`;
+let note = '';
 async function ask(prompt) {
   for (const model of models) for (let a = 0; a < 3; a++) {
     const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
       method: 'POST', headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY, 'content-type': 'application/json' },
       body: JSON.stringify({ systemInstruction: { parts: [{ text: SYSTEM }] }, contents: [{ role: 'user', parts: [{ text: prompt }] }], generationConfig: { maxOutputTokens: 16000, responseMimeType: 'application/json' } }), signal: AbortSignal.timeout(240_000)
-    }).catch(() => null);
-    if (res?.ok) { const d = await res.json(); const t = d.candidates?.[0]?.content?.parts?.map(p => p.text || '').join(''); try { return JSON.parse(t); } catch { continue; } }
+    }).catch(() => { note = 'network/timeout'; return null; });
+    if (res?.ok) { const d = await res.json(); const t = d.candidates?.[0]?.content?.parts?.map(p => p.text || '').join(''); try { return JSON.parse(t); } catch { note = 'invalid JSON (' + (d.candidates?.[0]?.finishReason || '?') + ')'; continue; } }
+    if (res && !res.ok) note = 'HTTP ' + res.status;
     if (res && ![429, 500, 503].includes(res.status)) break;
     await sleep(8000);
   }
@@ -86,22 +88,28 @@ const flags = process.argv.slice(2), args = flags.filter(a => !a.startsWith('--'
 const ROT = ['order', 'match', 'bucket', 'predict', 'fill', 'bug'];
 let S = null;
 const ALLOWED = [['unplugged'], ['scratchjr'], ['scratch'], ['html'], ['css'], ['javascript'], ['javascript', 'python'], ['python'], ['python', 'git']];
-const norm = x => { x?.lessons?.forEach(y => { y.en = y.titleEn || y.en; y.ar = y.titleAr || y.ar; }); return x; };
-const okSyl = (x, g) => x?.lessons?.length === 10 && x.lessons.every(y => typeof y.en === 'string' && y.en.length < 80 && y.en.split(/\s+/).length <= 10 && y.ar && ALLOWED[g].includes(y.lang) && y.teaching?.length >= 3 && y.explainAr);
+const ALIAS = { 'scratch jr': 'scratchjr', js: 'javascript', py: 'python', 'html5': 'html', 'css3': 'css' };
+const norm = (x, g) => { x?.lessons?.forEach?.(y => {
+  y.en = y.titleEn || y.en; y.ar = y.titleAr || y.ar; if (typeof y.teaching === 'string') y.teaching = [y.teaching];
+  let l = String(y.lang || '').toLowerCase().trim(); l = ALIAS[l] || l;
+  if (!ALLOWED[g]?.includes(l)) { const txt = `${y.en} ${y.sub}`; l = ALLOWED[g].includes('python') && /python|pandas|matplotlib|tkinter|turtle|dataframe/i.test(txt) ? 'python' : ALLOWED[g].includes('git') && /\bgit\b|github|readme|markdown/i.test(txt) ? 'git' : ALLOWED[g][0]; }
+  y.lang = l; }); return x; };
+const why = x => !x?.lessons ? 'no lessons array' : x.lessons.length !== 10 ? `got ${x.lessons.length} lessons, need 10` : x.lessons.map((y, i) => typeof y.en !== 'string' || !y.en ? `L${i + 1} has no title` : (y.en.length >= 80 || y.en.split(/\s+/).length > 10) ? `L${i + 1} title is a sentence` : !y.ar ? `L${i + 1} no Arabic title` : !(y.teaching?.length >= 3) ? `L${i + 1} teaching too short` : !y.explainAr ? `L${i + 1} no explainAr` : '').find(Boolean) || '';
+const okSyl = x => !why(x);
 if (term2) { // Term 2 syllabus: designed once from your Term 1 lessons; edit content/term2-syllabus.json by hand if you like, then re-run.
   const sf = path.join(root, 'content', 'term2-syllabus.json');
-  S = existsSync(sf) && !flags.includes('--resyllabus') ? JSON.parse(readFileSync(sf, 'utf8')).map(norm) : [];
+  S = existsSync(sf) && !flags.includes('--resyllabus') ? JSON.parse(readFileSync(sf, 'utf8')).map((x, g) => norm(x, g)) : [];
   for (let g = 0; g < rawGrades.length; g++) {
-    if (okSyl(S[g], g)) continue;
+    if (okSyl(S[g])) continue;
     const G = rawGrades[g]; process.stdout.write(`Term 2 syllabus, grade ${g + 1} ... `);
     const others = rawGrades.filter((_, i) => i !== g).map(x => x.en).join(' | ');
     const prompt = `Design TERM 2 (second semester) of Grade ${g + 1}, course: "${G.en}" (${G.levelEn}). Term 1 already covered: ${G.lessonNamesEn.join('; ')}.\nSCOPE RULES: stay strictly inside this grade's course and age; NEVER teach topics that belong to other grades' courses (${others}). Allowed lesson "lang" values for this grade: ${ALLOWED[g].join(' or ')}. Titles must be SHORT (max 8 words, like "Nested Conditions"), never sentences.\nTerm 2 = 10 NEW lessons (no repeats) that continue and deepen this course in a logical order following official documentation topics, the last lesson integrating the term.\nReturn JSON {"lessons":[10 x {"titleEn":"short title","titleAr":"short Arabic title","sub":"semicolon-separated sub-topics","lang":"${ALLOWED[g].join('|')}","teaching":[4 short English sentences: idea, example, small task, tip],"explainAr":"2-sentence simple Arabic explanation","exampleEn":"one sentence","exampleAr":"one sentence","practiceEn":"one sentence","practiceAr":"one sentence"}]}`;
-    let j = null; for (let t = 0; t < 3 && !okSyl(j, g); t++) j = norm(await ask(prompt));
-    if (okSyl(j, g)) { S[g] = j; console.log('ok'); } else { delete S[g]; console.log('FAILED (re-run)'); }
+    let j = null; for (let t = 0; t < 3 && !okSyl(j); t++) { note = ''; j = norm(await ask(prompt), g); }
+    if (okSyl(j)) { S[g] = j; console.log('ok'); } else { delete S[g]; console.log(`FAILED: ${j ? why(j) : note || 'no answer'} (re-run)`); }
     await sleep(4000);
   }
   writeFileSync(sf, JSON.stringify(Array.from({ length: rawGrades.length }, (_, g) => S[g] || null), null, 1));
-  if (rawGrades.every((_, g) => okSyl(S[g], g))) writeFileSync(path.join(root, 'content', 'term2.js'), 'window.TERM2=' + JSON.stringify(S.map(x => ({ lessonNamesEn: x.lessons.map(y => y.en), lessonNamesAr: x.lessons.map(y => y.ar), teachingEn: x.lessons.map(y => y.teaching), arabicExplanations: x.lessons.map(y => y.explainAr), examplesEn: x.lessons.map(y => y.exampleEn), examplesAr: x.lessons.map(y => y.exampleAr), practiceEn: x.lessons.map(y => y.practiceEn), practiceAr: x.lessons.map(y => y.practiceAr) }))) + ';');
+  if (rawGrades.every((_, g) => okSyl(S[g]))) writeFileSync(path.join(root, 'content', 'term2.js'), 'window.TERM2=' + JSON.stringify(S.map(x => ({ lessonNamesEn: x.lessons.map(y => y.en), lessonNamesAr: x.lessons.map(y => y.ar), teachingEn: x.lessons.map(y => y.teaching), arabicExplanations: x.lessons.map(y => y.explainAr), examplesEn: x.lessons.map(y => y.exampleEn), examplesAr: x.lessons.map(y => y.exampleAr), practiceEn: x.lessons.map(y => y.practiceEn), practiceAr: x.lessons.map(y => y.practiceAr) }))) + ';');
   else { console.error('\nSyllabus incomplete: run the same command again until every grade says ok.'); process.exit(1); }
 }
 if (flags.includes('--projects')) { // detailed capstone projects per grade and term -> content/project-tN-gX.json
@@ -110,7 +118,7 @@ if (flags.includes('--projects')) { // detailed capstone projects per grade and 
     const file = path.join(root, 'content', `project-t${term2 ? 2 : 1}-g${g}.json`); if (existsSync(file) && !force) continue;
     const G = rawGrades[g], titles = term2 ? S[g].lessons.map(x => x.en) : G.lessonNamesEn;
     process.stdout.write(`Projects T${term2 ? 2 : 1} G${g + 1} ... `);
-    const proj = `{"title","desc":"2 sentences","tags":[3 short],"steps":[6-8 clear build steps],"rubric":[4 grading criteria],"stretch":"extra challenge"}`;
+    const proj = `{"title","desc":"2 sentences","tags":[3 short],"steps":[6-8 clear build steps],"rubric":[4 grading criteria],"stretch":"extra challenge","demo":{"title":"name of the finished sample","code":"a small WORKING sample of the finished project: for Grades 4-6 and web projects a COMPLETE standalone HTML document (max 60 lines, with <style>/<script>); for Grades 8-9 a short runnable Python script using only print/standard library, pandas or matplotlib; for Grades 1-3 block-style script lines (e.g. when green flag clicked: repeat 3: move 10 steps)","output":"one sentence on what it shows"}}`;
     let j = null; for (let t = 0; t < 3 && !(j?.en?.length === 3 && j?.ar?.length === 3 && j.en.every(p => p.steps?.length >= 5)); t++) j = await ask(`Grade ${g + 1}: ${G.en}, TERM ${term2 ? 2 : 1}. Lessons covered this term: ${titles.join('; ')}.\n${term2 ? 'Design 3 NEW, different capstone project options that integrate the whole term.' : `Improve and detail these 3 capstone options: ${capstones[g].map(c => c[0] + ': ' + c[1]).join(' | ')}`}\nReturn JSON {"en":[3 x ${proj}],"ar":[same 3 projects in simple Egyptian-flavoured Arabic]}. Projects must be doable by the grade's age in 1-2 weeks using only what was taught.`);
     if (j?.en?.length === 3) { writeFileSync(file, JSON.stringify(j, null, 1)); console.log('ok'); } else console.log('FAILED (re-run)');
     await sleep(5000);

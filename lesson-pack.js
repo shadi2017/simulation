@@ -59,7 +59,7 @@ window.packSimOld=function(box){
 window.actEngine=function(box,A){
  const ar=app.lang==='ar',sh=a=>[...a].sort(()=>Math.random()-.5),esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
  box.innerHTML=`<p class="playground-caption"><strong>${esc(A.title||'')}</strong><br>${esc(A.goal||'')}</p><div id="actBody"></div><div class="demo-controls" style="margin-top:9px"><button class="demo-control" id="actReset">${tr('reset')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
- const body=$('#actBody'),out=m=>{$('#demoOutput').textContent=m},win=()=>out('🎉 '+A.success),bad=m=>out(m||(ar?'جرّب تاني، قريب!':'Try again, close!'));
+ const body=$('#actBody',box),out=m=>{$('#demoOutput',box).textContent=m},win=()=>out('🎉 '+A.success),bad=m=>out(m||(ar?'جرّب تاني، قريب!':'Try again, close!'));
  const btn=(t,f,cls)=>{const b=document.createElement('button');b.className='demo-control '+(cls||'');b.textContent=t;b.onclick=()=>f(b);return b};
  const code=t=>{const p=document.createElement('pre');p.dir='ltr';p.style.cssText='text-align:left;white-space:pre-wrap;margin:6px 0';p.textContent=t;return p};
  const run={
@@ -80,10 +80,19 @@ window.actEngine=function(box,A){
  fill(){let ok=0;A.items.forEach(it=>{const row=document.createElement('div'),p=document.createElement('p');p.dir='auto';p.textContent=it.text;row.append(p);const d=document.createElement('div');d.className='demo-controls';it.options.forEach((o,i)=>d.append(btn(o,b=>{if(i===it.a){b.classList.add('accent');d.querySelectorAll('button').forEach(x=>x.disabled=true);if(++ok===A.items.length)win();else out('✔')}else bad()})));row.append(d);body.append(row)});this.reset=()=>out(tr('output'))},
  bug(){const pre=document.createElement('div');A.lines.forEach((ln,i)=>{const b=btn(ln,()=>{if(i===A.bug){win();out('🎉 '+A.success+'  ✔ '+A.fix)}else bad(ar?'السطر ده سليم، دوّر تاني.':'That line is fine, look again.')});b.dir='ltr';b.style.cssText='display:block;text-align:left;width:100%;margin:3px 0;font-family:monospace';pre.append(b)});body.append(pre);this.reset=()=>out(tr('output'))}
  };
- const eng=Object.create(run);eng[A.type]();$('#actReset').onclick=()=>{if(A.type==='order')eng.reset();else{body.innerHTML='';eng[A.type]()}out(tr('output'))};
+ const eng=Object.create(run);eng[A.type]();$('#actReset',box).onclick=()=>{if(A.type==='order')eng.reset();else{body.innerHTML='';eng[A.type]()}out(tr('output'))};
 };
 
 window.getPy=()=>window._py||(window._py=new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js';s.onload=()=>loadPyodide().then(res,rej);s.onerror=()=>{window._py=null;rej(new Error('Could not load Python (check internet)'))};document.head.append(s)}));
+
+window.runPy=async function(code,res){const ar=app.lang==='ar';res.style.display='block';
+ if(/^\s*(import|from)\s+(turtle|tkinter)\b/m.test(code)){res.textContent=ar?'turtle وtkinter محتاجين نافذة على جهازك. شغّل الكود على Python العادي (مثل Thonny).':'turtle and tkinter need a desktop window. Run this code in regular Python (e.g. Thonny).';return}
+ res.textContent=ar?'جاري تجهيز بايثون والمكتبات (أول مرة بتاخد وقت)...':'Preparing Python and libraries (the first time takes a while)...';let out='';
+ try{const py=await getPy();py.setStdout({batched:x=>out+=x+'\n'});py.setStderr({batched:x=>out+=x+'\n'});py.setStdin({stdin:()=>prompt('input')});
+  let fig=res.nextElementSibling;if(!fig||!fig.classList.contains('py-fig')){fig=document.createElement('div');fig.className='py-fig';res.after(fig)}fig.innerHTML='';document.pyodideMplTarget=fig;
+  await py.loadPackagesFromImports(code);await py.runPythonAsync(code)}
+ catch(e){out+=String(e.message||e).split('\n').slice(-4).join('\n')}
+ res.textContent=out||(ar?'(مفيش ناتج نصي)':'(no text output)')};
 window.packSections=function(P,lang){
  const ar=app.lang==='ar',live=['html','css','javascript'].includes(lang),root=document.createElement('section'),mk=(tag,txt,st)=>{const e=document.createElement(tag);if(txt!=null)e.textContent=txt;if(st)e.style.cssText=st;return e};
  root.className='pack-sections';root.append(mk('h3',ar?'الشرح الكامل والأمثلة':'Full tutorial with examples'));
@@ -94,7 +103,7 @@ window.packSections=function(P,lang){
    const run=mk('button',ar?'جرّبها بنفسك ▶':'Try it Yourself ▶');run.className='demo-control accent';run.onclick=()=>{pre.style.display='none';ed.style.display='block';fr.style.display='block';fr.srcdoc=ed.value};
    const go=mk('button',ar?'شغّل':'Run');go.className='demo-control';go.onclick=()=>{fr.srcdoc=ed.value};box.append(run,' ',go,ed,fr)}
   if(lang==='python'&&s.code){const ed=mk('textarea',s.code,'display:none;width:100%;min-height:150px;direction:ltr;text-align:left;font-family:monospace'),res=mk('pre',null,'display:none;direction:ltr;text-align:left;background:#111;color:#9f9;padding:10px;border-radius:8px;white-space:pre-wrap'),b=mk('button',ar?'شغّل بايثون ▶':'Run Python ▶');b.className='demo-control accent';
-   b.onclick=async()=>{pre.style.display='none';ed.style.display='block';res.style.display='block';res.textContent=ar?'جاري تجهيز بايثون (أول مرة بتاخد وقت)...':'Loading Python (first time takes a while)...';let out='';try{const py=await getPy();py.setStdout({batched:t=>out+=t+'\n'});py.setStderr({batched:t=>out+=t+'\n'});py.setStdin({stdin:()=>prompt('input')});await py.runPythonAsync(ed.value)}catch(e){out+=String(e.message||e).split('\n').slice(-3).join('\n')}res.textContent=out||(ar?'(مفيش ناتج)':'(no output)')};box.append(b,' ',ed,res)}
+   b.onclick=async()=>{pre.style.display='none';ed.style.display='block';await runPy(ed.value,res)};box.append(b,' ',ed,res)}
   if(s.output)box.append(mk('p',(live?(ar?'النتيجة: ':'Result: '):(ar?'الناتج: ':'Output: '))+s.output,'font-weight:600'));
   root.append(box)});
  if(P.reference?.length){const tb=mk('table',null,'width:100%;border-collapse:collapse;margin:10px 0');P.reference.forEach(r=>{const tr_=mk('tr'),a=mk('td',r.name,'border:1px solid rgba(128,128,128,.3);padding:6px;direction:ltr;font-family:monospace'),b=mk('td',r.desc,'border:1px solid rgba(128,128,128,.3);padding:6px');tr_.append(a,b);tb.append(tr_)});root.append(mk('h4',ar?'جدول مرجعي':'Quick reference'),tb)}
@@ -103,4 +112,34 @@ window.packSections=function(P,lang){
 
 window.PROJ={};
 window.projData=()=>{const k=`${app.term?2:1}-${app.grade}`;if(!(k in PROJ)){PROJ[k]=null;fetch(`content/project-t${app.term?2:1}-g${app.grade}.json`).then(r=>r.ok?r.json():null).then(j=>{if(j){PROJ[k]=j;if(app.view==='projects')render()}}).catch(()=>{})}return PROJ[k]};
-window.addProjectDetail=function(PJ){if(!PJ)return;const L=PJ[app.lang],ar=app.lang==='ar';$$('#projectsView .project-card').forEach((card,i)=>{const p=L[i];if(!p)return;const d=document.createElement('details');d.innerHTML=`<summary>${ar?'خطوات التنفيذ ومعايير التقييم':'Steps & grading rubric'}</summary><ol></ol><h4>${ar?'معايير التقييم':'Rubric'}</h4><ul></ul><p></p>`;(p.steps||[]).forEach(x=>{const li=document.createElement('li');li.textContent=x;$('ol',d).append(li)});(p.rubric||[]).forEach(x=>{const li=document.createElement('li');li.textContent=x;$('ul',d).append(li)});$('p',d).textContent=(ar?'تحدي إضافي: ':'Stretch goal: ')+(p.stretch||'');card.append(d)})};
+window.addProjectDetail=function(PJ){if(!PJ)return;const L=PJ[app.lang],ar=app.lang==='ar';$$('#projectsView .project-card').forEach((card,i)=>{const p=L[i];if(!p)return;const d=document.createElement('details');d.innerHTML=`<summary>${ar?'خطوات التنفيذ ومعايير التقييم':'Steps & grading rubric'}</summary><ol></ol><h4>${ar?'معايير التقييم':'Rubric'}</h4><ul></ul><p></p>`;(p.steps||[]).forEach(x=>{const li=document.createElement('li');li.textContent=x;$('ol',d).append(li)});(p.rubric||[]).forEach(x=>{const li=document.createElement('li');li.textContent=x;$('ul',d).append(li)});$('p',d).textContent=(ar?'تحدي إضافي: ':'Stretch goal: ')+(p.stretch||'');
+  if(p.demo?.code){const dm=document.createElement('div'),h=document.createElement('h4'),pre=document.createElement('pre');h.textContent=(ar?'نموذج جاهز للمشروع: ':'Finished sample: ')+(p.demo.title||'');pre.textContent=p.demo.code;pre.style.cssText='direction:ltr;text-align:left;white-space:pre-wrap;overflow:auto';dm.append(h,pre);
+   if(/^\s*</.test(p.demo.code)){const fr=document.createElement('iframe');fr.setAttribute('sandbox','allow-scripts');fr.style.cssText='width:100%;height:280px;background:#fff;border:1px solid #bbb;border-radius:8px';fr.srcdoc=p.demo.code;dm.append(fr)}
+   else if(app.grade>=7){const res=document.createElement('pre');res.style.cssText='display:none;direction:ltr;text-align:left;background:#111;color:#9f9;padding:10px;border-radius:8px;white-space:pre-wrap';const b=document.createElement('button');b.className='demo-control accent';b.textContent=ar?'شغّل النموذج ▶':'Run the sample ▶';b.onclick=()=>runPy(p.demo.code,res);dm.append(b,res)}
+   if(p.demo.output){const o=document.createElement('p');o.textContent=(ar?'النتيجة: ':'Result: ')+p.demo.output;o.style.fontWeight='600';dm.append(o)}
+   d.querySelector('summary').after(dm)}
+  card.append(d)})};
+
+window.GP={};window.shuf=a=>[...a].sort(()=>Math.random()-.5);
+window.gradePool=async()=>{const k=`${app.lang}${app.term?2:1}-${app.grade}`;if(GP[k])return GP[k];const pool={ref:[],q:[],act:[]};await Promise.all(Array.from({length:10},async(_,l)=>{try{const r=await fetch(`content/${app.term?'t2-':''}g${app.grade}-l${l}.json`);if(!r.ok)return;const P=(await r.json())[app.lang];(P.reference||[]).forEach(x=>pool.ref.push(x));(P.q||[]).forEach(x=>pool.q.push(x));if(P.act)pool.act.push(P.act)}catch{}}));return GP[k]=pool};
+window.addGradeGames=async function(){
+ const ar=app.lang==='ar',el=(tag,txt,cls)=>{const e=document.createElement(tag);if(txt)e.textContent=txt;if(cls)e.className=cls;return e},NA=ar?'ولّد دروس هذا الصف أولاً عشان تظهر اللعبة.':'Generate this grade’s lessons first to unlock this game.';
+ $('#gradeGames')?.remove();const host=el('section');host.id='gradeGames';$('#gamesView').append(host);
+ const hd=el('header',null,'arcade-header');hd.append(el('h2',ar?'ألعاب هذا الصف':'Games for this grade'),el('p',ar?'ألعاب متنوعة مبنية على دروس الصف والترم الحاليين.':'Mixed games built from the lessons of this grade and term.'));host.append(hd);
+ const pool=await gradePool();if(!host.isConnected)return;const grid=el('div',null,'arcade-grid');host.append(grid);
+ const card=(n,title,sub)=>{const a=el('article',null,'arcade-card'),h=el('div',null,'arcade-card-head'),w=el('div');w.append(el('h3',title),el('span',sub,'game-language'));h.append(el('span',n,'arcade-number'),w);const b=el('div');a.append(h,b);grid.append(a);return b};
+ const again=(f,txt)=>{const x=el('button',txt||(ar?'العب تاني':'Play again'),'demo-control accent');x.onclick=f;return x};
+ // A) memory
+ {const b=card('A',ar?'لعبة الذاكرة':'Memory Match','MEMORY'),run=()=>{b.innerHTML='';if(pool.ref.length<4){b.textContent=NA;return}const picks=shuf(pool.ref).slice(0,6);let open=[],found=0,moves=0;const info=el('p',null,'game-feedback'),g=el('div',null,'mem-grid');
+  shuf(picks.flatMap((r,i)=>[{t:r.name,i},{t:r.desc,i}])).forEach(c=>{const x=el('button','?','mem-card');x.onclick=()=>{if(x.disabled||open.length===2||open.includes(x))return;x.textContent=c.t;x.classList.add('up');x._c=c;open.push(x);if(open.length===2){moves++;const[p,q]=open;if(p._c.i===q._c.i){[p,q].forEach(y=>{y.disabled=true;y.classList.add('ok')});open=[];if(++found===picks.length)info.textContent=ar?`🎉 خلصت في ${moves} محاولة!`:`🎉 Done in ${moves} moves!`}else setTimeout(()=>{open.forEach(y=>{y.textContent='?';y.classList.remove('up')});open=[]},900)}};g.append(x)});b.append(g,info,again(run,ar?'ابدأ من جديد':'New game'))};run()}
+ // B) true / false blitz
+ {const b=card('B',ar?'صح أم غلط؟':'True or False Blitz','BLITZ'),run=()=>{let n=0,score=0;const next=()=>{b.innerHTML='';if(pool.ref.length<3){b.textContent=NA;return}if(n===10){b.append(el('p',(ar?'النتيجة: ':'Score: ')+score+' / 10','game-feedback'),again(()=>{n=0;score=0;next()}));return}
+  const r=shuf(pool.ref)[0],truth=Math.random()<.5,o=shuf(pool.ref).find(x=>x.desc!==r.desc)||r,d=truth?r.desc:o.desc;b.append(el('p',`${n+1}/10`,'game-meta'),el('p',r.name),el('p','= '+d));
+  [[ar?'صح':'True',true],[ar?'غلط':'False',false]].forEach(([l,v])=>{const x=el('button',l,'demo-control');x.onclick=()=>{if(v===(d===r.desc))score++;n++;next()};b.append(x,' ')})};next()};run()}
+ // C) quiz race
+ {const b=card('C',ar?'سباق الأسئلة':'Quiz Race','45 SEC'),run=()=>{b.innerHTML='';if(pool.q.length<3){b.textContent=NA;return}let t=45,score=0,streak=0,alive=true;const bar=el('p',null,'game-meta'),qb=el('div'),fb=el('p',null,'game-feedback');b.append(bar,qb,fb);
+  const show=()=>{qb.innerHTML='';const q=shuf(pool.q)[0];qb.append(el('p',q.t));shuf(q.o.map((o,i)=>[o,i])).forEach(([o,i])=>{const x=el('button',o,'demo-control');x.style.cssText='display:block;margin:4px 0';x.onclick=()=>{if(!alive)return;if(i===q.a){score+=1+Math.min(streak,3);streak++;fb.textContent='✔'}else{streak=0;t=Math.max(0,t-3);fb.textContent='✘ '+(q.why||'')}show()};qb.append(x)})};
+  const iv=setInterval(()=>{if(!b.isConnected){clearInterval(iv);return}t--;bar.textContent=`⏱ ${t}   ★ ${score}`;if(t<=0){clearInterval(iv);alive=false;qb.innerHTML='';fb.textContent=(ar?'خلص الوقت! نقاطك: ':'Time is up! Score: ')+score;qb.append(again(run))}},1000);bar.textContent=`⏱ ${t}   ★ 0`;show()};run()}
+ // D) random challenge from the lessons' own activities
+ {const b=card('D',ar?'تحدي عشوائي':'Random Challenge','MIX'),go=()=>{b.innerHTML='';if(!pool.act.length){b.textContent=NA;return}const h=el('div');b.append(h,again(go,ar?'تحدي جديد':'New challenge'));actEngine(h,shuf(pool.act)[0])};go()}
+};
