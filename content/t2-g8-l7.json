@@ -1,0 +1,343 @@
+{
+ "ar": {
+  "steps": [
+   "يا بطل، المحفظة المهنية دي هي الشنطة السحرية بتاعتك اللي بتحط فيها كل مشاريع تحليل البيانات بتاعتك عشان الناس تشوف شغلك الحلو وتبهرهم.",
+   "عشان نبدأ صح، بنعمل مجلد رئيسي كبير بنسميه 'portfolio'، وده بيلم كل حاجة تخصك في مكان واحد ومنظم.",
+   "طريقة الشغل الصح بتقولنا إننا نقسم المجلد الكبير ده لمجلدات فرعية أصغر، زي مجلد للبيانات الخام ومجلد تاني للسكريبتات والأكواد.",
+   "تخيل لو عندك مكتبة كبيرة، اكيد بتحط الكتب العلمية لوحدها وقصص المغامرات لوحدها عشان تلاقيها بسرعة وسهولة.",
+   "القاعدة الذهبية هنا هي: تنظيم الملفات من أول يوم بيوفر عليك ساعات من التدوير واللخبطة لما المشروع يكبر ويبقى ضخم.",
+   "المهندسين والمحللين الكبار في الشركات العالمية بينظموا مشاريعهم بنفس الطريقة دي عشان يسهلوا مشاركتها مع زملائهم."
+  ],
+  "example": "تعالوا نعمل مع بعض محفظة مشاريع منظمة. هنفتح جهاز الكمبيوتر ونعمل مجلد جديد باسم 'portfolio'. جوه المجلد ده، هنعمل مجلدين فرعيين: الأول اسمه 'data' عشان نحط فيه ملفات الداتا، والتاني اسمه 'scripts' عشان نحط فيه أكواد بايثون. بكده الشغل بقى مرتب جدا وجاهز لأي مشروع تحليل بيانات خطير!",
+  "mistake": "الخطأ الشائع هو حفظ كل الملفات (بيانات وأكواد وصور) في مجلد واحد من غير تقسيم. الحل هو دايماً استخدام مجلدات فرعية واضحة زي data و scripts من بداية أي مشروع.",
+  "recap": "اتعلمنا إزاي نعمل هيكل محفظة مشاريع احترافي ونظمنا مساحة العمل بمجلدات واضحة. التنظيم هو أول خطوة لإنك تبقا محلل بيانات محترف.",
+  "q": [
+   {
+    "t": "إيه هو الاسم المقترح للمجلد الرئيسي للمحفظة؟",
+    "o": [
+     "portfolio",
+     "game",
+     "temp"
+    ],
+    "a": 0,
+    "why": "اسم portfolio بيعبر بشكل مباشر واحترافي عن محفظة مشاريعك."
+   },
+   {
+    "t": "ليه بنعمل مجلدات فرعية جوه المجلد الرئيسي؟",
+    "o": [
+     "لإبطاء الكمبيوتر",
+     "لتنظيم وترتيب الملفات بسهولة",
+     "لمسح البيانات"
+    ],
+    "a": 1,
+    "why": "المجلدات الفرعية بتساعدنا نلاقي الملفات ونرتبها بسرعة."
+   },
+   {
+    "t": "إيه المجلد المناسب لوضع أكواد بايثون تحليلك فيه؟",
+    "o": [
+     "data",
+     "images",
+     "scripts"
+    ],
+    "a": 2,
+    "why": "مجلد scripts مخصص للأكواد والسكريبتات البرمجية."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "فرز محتويات المحفظة",
+   "goal": "صنف كل ملف أو مجلد في مكانه الصحيح داخل هيكل المحفظة.",
+   "buckets": [
+    "مجلد data",
+    "مجلد scripts"
+   ],
+   "items": [
+    {
+     "t": "sales.csv",
+     "b": 0
+    },
+    {
+     "t": "analyze.py",
+     "b": 1
+    },
+    {
+     "t": "customers.xlsx",
+     "b": 0
+    },
+    {
+     "t": "clean_data.py",
+     "b": 1
+    },
+    {
+     "t": "prices.json",
+     "b": 0
+    },
+    {
+     "t": "visualize.py",
+     "b": 1
+    }
+   ],
+   "success": "يا سلام! رتبت ملفاتك وأكوادك باحترافية، ومحفظتك جاهزة لمشاركة أروع مشاريع تحليل البيانات!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم محفظة المشاريع",
+    "text": "محفظة المشاريع هي معرض أعمالك الرقمي الذي يضم أفضل تحليلاتك وأكوادك. تشبه تماماً ألبوم رسومات الفنان الذي يعرضه على الناس لإظهار مهاراته وإبداعه في ربط البيانات ببعضها.",
+    "code": "# إنشاء مجلد أساسي للمحفظة\nimport os\nos.makedirs('portfolio/data', exist_ok=True)\nos.makedirs('portfolio/scripts', exist_ok=True)",
+    "output": "تم إنشاء المجلدات بنجاح"
+   },
+   {
+    "h": "أهمية التنظيم الهيكلي",
+    "text": "تنظيم مساحة العمل الخاصة بك يوفر عليك وقتاً طويلاً ويمنع ضياع الملفات المهمة. تماماً مثل غرفتك المرتبة حيث تجد كل شيء في مكانه المخصص دون بحث طويل ومجهد.",
+    "code": "# عرض محتويات مجلد المحفظة\nprint(os.listdir('portfolio'))",
+    "output": "['data', 'scripts']"
+   },
+   {
+    "h": "مجلد البيانات الخام (Data)",
+    "text": "هذا المجلد يخصص لجميع ملفات البيانات التي ستعمل على تحليلها، مثل ملفات CSV أو Excel. تخيلها كصندوق المكونات في المطبخ قبل أن تبدأ في إعداد وجبتك الشهية.",
+    "code": "# حفظ مسار البيانات في متغير\ndata_path = 'portfolio/data/sales.csv'\nprint(data_path)",
+    "output": "portfolio/data/sales.csv"
+   },
+   {
+    "h": "مجلد السكريبتات والأكواد (Scripts)",
+    "text": "تضع هنا ملفات بايثون الخاصة بك والتي تقوم بمعالجة البيانات واستخراج الرؤى منها. إنه بمثابة عقل المشروع الذي يترجم البيانات إلى رسوم بيانية وأرقام مفهومة.",
+    "code": "# حفظ ملف الكود في مساره الصحيح\nscript_path = 'portfolio/scripts/analysis.py'\nprint(script_path)",
+    "output": "portfolio/scripts/analysis.py"
+   },
+   {
+    "h": "إعداد مساحة العمل (Workspace Setup)",
+    "text": "إعداد مساحة العمل يعني تهيئة بيئة التطوير والملفات بطريقة تسمح لك بالعمل بسلاسة. مثل تجهيز مكتبك وأقلامك ودفاترك قبل بدء المذاكرة أو رسم لوحة فنية.",
+    "code": "# التحقق من وجود مجلد البيانات\nimport os\nprint(os.path.exists('portfolio/data'))",
+    "output": "True"
+   },
+   {
+    "h": "تسمية الملفات باحترافية",
+    "text": "استخدام أسماء واضحة وبسيطة للملفات والمجلدات بدون مسافات فارغة يساعد البرامج في قراءتها بسهولة. مثل إعطاء لقب واضح لكل صديق حتى لا يحدث خلط بين الأسماء.",
+    "code": "filename = 'q1_sales_report.csv'\nprint(filename.replace(' ', '_'))",
+    "output": "q1_sales_report.csv"
+   },
+   {
+    "h": "التجهيز للمشاركة والنشر",
+    "text": "عندما تنظم مشاريعك بهذه الطريقة النظيفة، يصبح رفعها على مواقع مثل GitHub أمرًا في غاية السهولة والبساطة. كأنك ترتدي ملابس مرتبة ومنسقة قبل الذهاب لمقابلة مهمة.",
+    "code": "# تجهيز ملف وصف المشروع README\nwith open('portfolio/README.md', 'w') as f:\n    f.write('# My Data Portfolio')",
+    "output": "تم إنشاء ملف الوصف"
+   }
+  ],
+  "reference": [
+   {
+    "name": "portfolio",
+    "desc": "المجلد الرئيسي للمحفظة المهنية"
+   },
+   {
+    "name": "data",
+    "desc": "مجلد فرعي لملفات البيانات الخام"
+   },
+   {
+    "name": "scripts",
+    "desc": "مجلد فرعي لأكواد وبرامج بايثون"
+   },
+   {
+    "name": "os.makedirs()",
+    "desc": "دالة لإنشاء مجلدات جديدة في بايثون"
+   },
+   {
+    "name": "os.listdir()",
+    "desc": "دالة لعرض محتويات مجلد معين"
+   },
+   {
+    "name": "os.path.exists()",
+    "desc": "دالة للتحقق من وجود مجلد أو ملف"
+   },
+   {
+    "name": "README.md",
+    "desc": "ملف تعريفي يشرح محتوى المحفظة للمشاهدين"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب أمر بايثون لإنشاء مجلد رئيسي باسم my_portfolio.",
+    "a": "import os; os.makedirs('my_portfolio', exist_ok=True)"
+   },
+   {
+    "q": "كيف تسمي ملف بيانات المبيعات بطريقة احترافية بدون مسافات؟",
+    "a": "sales_data.csv"
+   },
+   {
+    "q": "ما هو اسم المجلد الفرعي المناسب لحفظ أكواد بايثون التحليلية؟",
+    "a": "scripts"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hey hero, your professional portfolio is your magical bag where you keep all your data analytics projects so people can see your amazing work and be impressed.",
+   "To start right, we create a main master folder called 'portfolio', which brings everything that belongs to you into one neat and organized place.",
+   "The right workflow tells us to divide this big folder into smaller subfolders, like one for raw data and another for scripts and code.",
+   "Imagine having a big library; you definitely put science books separately from adventure stories so you can find them quickly and easily.",
+   "The golden rule here is: organizing files from day one saves you hours of searching and chaos when your project grows large.",
+   "Top engineers and analysts in global companies organize their projects in this exact way to make sharing with teammates seamless."
+  ],
+  "example": "Let's build an organized project portfolio together. We'll open our computer and make a new folder named 'portfolio'. Inside it, we will make two subfolders: the first named 'data' to store data files, and the second named 'scripts' to store Python codes. Now our work is super neat and ready for any awesome data analytics project!",
+  "mistake": "A common mistake is saving all files (data, code, images) in a single folder without separation. The fix is always using clear subfolders like data and scripts from the start.",
+  "recap": "We learned how to structure a professional project portfolio and organized our workspace with clear subfolders. Organization is the first step to becoming a pro data analyst.",
+  "q": [
+   {
+    "t": "What is the suggested name for the main portfolio folder?",
+    "o": [
+     "portfolio",
+     "game",
+     "temp"
+    ],
+    "a": 0,
+    "why": "The name portfolio directly and professionally represents your project collection."
+   },
+   {
+    "t": "Why do we create subfolders inside the main folder?",
+    "o": [
+     "To slow down the computer",
+     "To organize and sort files easily",
+     "To delete data"
+    ],
+    "a": 1,
+    "why": "Subfolders help us find and arrange files quickly."
+   },
+   {
+    "t": "What is the appropriate folder to store your analysis Python codes?",
+    "o": [
+     "data",
+     "images",
+     "scripts"
+    ],
+    "a": 2,
+    "why": "The scripts folder is dedicated to programming codes and scripts."
+   }
+  ],
+  "act": {
+   "type": "bucket",
+   "title": "Sorting Portfolio Contents",
+   "goal": "Classify each file or folder into its correct place within the portfolio structure.",
+   "buckets": [
+    "data folder",
+    "scripts folder"
+   ],
+   "items": [
+    {
+     "t": "sales.csv",
+     "b": 0
+    },
+    {
+     "t": "analyze.py",
+     "b": 1
+    },
+    {
+     "t": "customers.xlsx",
+     "b": 0
+    },
+    {
+     "t": "clean_data.py",
+     "b": 1
+    },
+    {
+     "t": "prices.json",
+     "b": 0
+    },
+    {
+     "t": "visualize.py",
+     "b": 1
+    }
+   ],
+   "success": "Awesome! You sorted your files and scripts professionally, and your portfolio is ready to share top data analytics projects!"
+  },
+  "sections": [
+   {
+    "h": "Project Portfolio Concept",
+    "text": "A project portfolio is your digital showcase featuring your best analytics and code. It is just like an artist's sketchbook shown to people to display skills and creativity in connecting data.",
+    "code": "# Create a main portfolio folder\nimport os\nos.makedirs('portfolio/data', exist_ok=True)\nos.makedirs('portfolio/scripts', exist_ok=True)",
+    "output": "Folders created successfully"
+   },
+   {
+    "h": "Importance of Structural Organization",
+    "text": "Organizing your workspace saves you plenty of time and prevents losing important files. Just like your tidy room where everything is in its designated place without exhausting searches.",
+    "code": "# List portfolio directory contents\nprint(os.listdir('portfolio'))",
+    "output": "['data', 'scripts']"
+   },
+   {
+    "h": "Raw Data Folder (Data)",
+    "text": "This folder is dedicated to all data files you will analyze, such as CSV or Excel files. Think of it as the ingredients box in the kitchen before you start making your delicious meal.",
+    "code": "# Save data path in a variable\ndata_path = 'portfolio/data/sales.csv'\nprint(data_path)",
+    "output": "portfolio/data/sales.csv"
+   },
+   {
+    "h": "Scripts and Code Folder (Scripts)",
+    "text": "You place your Python files here which process data and extract insights. It acts as the brain of the project translating data into understandable charts and numbers.",
+    "code": "# Save script path correctly\nscript_path = 'portfolio/scripts/analysis.py'\nprint(script_path)",
+    "output": "portfolio/scripts/analysis.py"
+   },
+   {
+    "h": "Workspace Setup",
+    "text": "Setting up the workspace means preparing your development environment and files to let you work smoothly. Like setting up your desk, pens, and notebooks before studying or painting.",
+    "code": "# Check if data folder exists\nimport os\nprint(os.path.exists('portfolio/data'))",
+    "output": "True"
+   },
+   {
+    "h": "Professional File Naming",
+    "text": "Using clear, simple names for files and folders without spaces helps programs read them easily. Like giving a clear nickname to each friend so names never get mixed up.",
+    "code": "filename = 'q1_sales_report.csv'\nprint(filename.replace(' ', '_'))",
+    "output": "q1_sales_report.csv"
+   },
+   {
+    "h": "Preparation for Sharing and Publishing",
+    "text": "When you organize your projects in this clean manner, uploading them to platforms like GitHub becomes extremely easy and simple. Like wearing neat, coordinated clothes before an important meeting.",
+    "code": "# Prepare README project description file\nwith open('portfolio/README.md', 'w') as f:\n    f.write('# My Data Portfolio')",
+    "output": "Description file created"
+   }
+  ],
+  "reference": [
+   {
+    "name": "portfolio",
+    "desc": "Main folder for the professional portfolio"
+   },
+   {
+    "name": "data",
+    "desc": "Subfolder for raw data files"
+   },
+   {
+    "name": "scripts",
+    "desc": "Subfolder for Python code and scripts"
+   },
+   {
+    "name": "os.makedirs()",
+    "desc": "Function to create new directories in Python"
+   },
+   {
+    "name": "os.listdir()",
+    "desc": "Function to list contents of a directory"
+   },
+   {
+    "name": "os.path.exists()",
+    "desc": "Function to check if a folder or file exists"
+   },
+   {
+    "name": "README.md",
+    "desc": "Introductory file explaining portfolio content to viewers"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write a Python command to create a main folder named my_portfolio.",
+    "a": "import os; os.makedirs('my_portfolio', exist_ok=True)"
+   },
+   {
+    "q": "How do you name a sales data file professionally without spaces?",
+    "a": "sales_data.csv"
+   },
+   {
+    "q": "What is the appropriate subfolder name to store analytical Python codes?",
+    "a": "scripts"
+   }
+  ]
+ },
+ "lang": "git",
+ "sources": [],
+ "grounded": false
+}

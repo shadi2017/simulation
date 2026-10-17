@@ -1,0 +1,350 @@
+{
+ "ar": {
+  "steps": [
+   "الخطوة الأولى: أنشئ مجلداً على جهازك ليكون محفظتك الكاملة، وضَع بداخله كل مشاريع تحليل البيانات التي صنعتها خلال الفصل الدراسي.",
+   "الخطوة الثانية: افتح سطر الأوامر في مجلد محفظتك واكتب أمر 'git init' لتحويله إلى مستودع محلي يتتبع كل تغييراتك.",
+   "الخطوة الثالثة: استخدم أمر 'git add .' و 'git commit -m' لحفظ لقطة سريعة لكل ملفات مشروعك وتأمين عملك الرائع.",
+   "الخطوة الرابعة: توجه إلى موقع GitHub وأنشئ مستودعاً جديداً (Remote Repository) ليكون بيتك الرقمي على الإنترنت ومحفظتك المعروضة.",
+   "الخطوة الخامسة: اربط مستودعك المحلي بالمستودع البعيد عبر الإنترنت باستخدام أمر الربط الشهير 'git remote add origin'.",
+   "الخطوة السادسة: ادفع كل ملفاتك ومحفظتك إلى الإنترنت بأمان باستخدام أمر 'git push -u origin main' ليراها العالم أجمع!"
+  ],
+  "example": "تخيل أنك صنعت معرضاً فنياً لرسومات البيانات الخاصة بك وتريد تعليقه على الإنترنت. أولاً، تقوم بتجهيز اللوحات في مجلد جهازك وتفعيل نظام جيت. ثانياً، تذهب إلى موقع GitHub وتفتح قاعة عرض جديدة تسمى مستودع بعيد (Remote Repository). ثالثاً، تربط حاسوبك بقاعة العرض وترسل لوحاتك عبر أمر الدفع، لتصبح محفظتك جاهزة ليراها أصدقاؤك ومديروك في أي مكان بالعالم بكل فخر واعتزاز.",
+  "mistake": "نسيان ربط المستودع المحلي بالرابط البعيد على GitHub قبل محاولة الرفع، مما يجعل برنامج Git ضائعاً ولا يعرف أين يرسل الملفات. الحل هو التأكد من استخدام أمر 'git remote add origin' مع رابط مستودعك الصحيح أولاً.",
+  "recap": "تعلمنا كيف نجمع مشاريعنا في مستودع محلي ونربطه بمستودع بعيد على GitHub. هكذا تصبح محفظة تحليل البيانات جاهزة للعرض على الإنترنت.",
+  "q": [
+   {
+    "t": "ما هو الأمر المستخدم لإنشاء مستودع Git محلي جديد داخل مجلد المحفظة؟",
+    "o": [
+     "git start",
+     "git init",
+     "git create"
+    ],
+    "a": 1,
+    "why": "أمر git init يبدأ تتبع الملفات في المجلد المحلي."
+   },
+   {
+    "t": "ماذا يُقصد بمصطلح Remote Repository؟",
+    "o": [
+     "مستودع مخزن على خوادم الإنترنت مثل GitHub ليراه الآخرون",
+     "ملف نصي عادي على سطح المكتب",
+     "برنامج تشغيل للرسومات البيانية"
+    ],
+    "a": 0,
+    "why": "المستودع البعيد هو نسختك الموجودة على السحابة أو الإنترنت."
+   },
+   {
+    "t": "أي أمر يُستخدم لرفع ملفات محفظتك من جهازك إلى GitHub؟",
+    "o": [
+     "git download",
+     "git push",
+     "git pull"
+    ],
+    "a": 1,
+    "why": "أمر git push يرفع التغييرات والمحفظة إلى المستودع البعيد."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "أكمل خطوات نشر المحفظة على جيت هب",
+   "goal": "اختر الأوامر والكلمات الصحيحة لإتمام نشر محفظتك الكاملة أونلاين.",
+   "items": [
+    {
+     "text": "لتحويل مجلدك المحلي إلى مستودع جيت نكتب أمر ___",
+     "options": [
+      "git init",
+      "git push",
+      "git remote"
+     ],
+     "a": 0
+    },
+    {
+     "text": "لربط جهازك بمستودع GitHub البعيد نستخدم أمر git remote add ___",
+     "options": [
+      "local",
+      "origin",
+      "branch"
+     ],
+     "a": 1
+    },
+    {
+     "text": "لنشر ورفع المحفظة بشكل نهائي على الإنترنت نستعمل أمر ___",
+     "options": [
+      "git push",
+      "git commit",
+      "git add"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "ياي! لقد نشرت محفظتك الكاملة على جيت هب وباتت متاحة لكل العالم!"
+  },
+  "sections": [
+   {
+    "h": "مفهوم نشر المحفظة الكاملة",
+    "text": "عندما تنتهي من بناء مشاريع تحليل البيانات، تحتاج إلى وضعها في مكان واحد يسمى المحفظة (Portfolio). نشر المحفظة يشبه تماماً فتح معرض فني حقيقي ليرى الناس إبداعاتك؛ فقط بدلاً من اللوحات الخشبية، تعرض جداول البيانات والرسوم البيانية المذهلة على منصة GitHub الشهيرة ليراها أصحاب العمل والمدرسون.",
+    "code": "# تجميع مشاريع تحليل البيانات في مجلد واحد\nls -la data_portfolio/",
+    "output": "README.md  sales_analysis.py  customer_churn.csv"
+   },
+   {
+    "h": "المستودع المحلي مقابل البعيد",
+    "text": "في عالم Git، يوجد نوعان من المستودعات. المستودع المحلي (Local Repository) هو مجلد على حاسوبك الشخصي تعمل فيه بحرية وتعدل كما تشاء بدون إنترنت. أما المستودع البعيد (Remote Repository) فهو نسختك المخزنة على خوادم GitHub السحابية، وهو المكان الآمن الذي يشارك العالم رؤية أعمالك وتحليلاتك.",
+    "code": "# التحقق من حالة المستودع المحلي\ngit status",
+    "output": "On branch main\nYour branch is up to date with 'origin/main'."
+   },
+   {
+    "h": "تهيئة المستودع المحلي بـ git init",
+    "text": "لكي تحول أي مجلد عادي على حاسوبك إلى محفظة ذكية يتتبعها نظام Git، تستخدم أمر التهيئة 'git init'. يشبه هذا الأمر إعطاء دفتر ملاحظات خاص لمجلدك ليسجل فيه كل قصة وكل تعديل تجريه على ملفات البيانات الخاصة بك.",
+    "code": "git init",
+    "output": "Initialized empty Git repository in /portfolio/.git/"
+   },
+   {
+    "h": "حفظ اللقطات بـ git add و git commit",
+    "text": "Git لا يحفظ التغييرات فقط، بل يلتقط 'صوراً' (Snapshots) كاملة لملفاتك في لحظة معينة. بأمر 'git add .' تخبر Git أن يجهز الملفات، وبأمر 'git commit -m' تأخذ اللقطة وتكتب تحتها ملاحظة تذكيرية توضح ما الذي قمت بإنجازه في هذا الإصدار.",
+    "code": "git add .\ngit commit -m \"Add initial data portfolio release\"",
+    "output": "[main (root-commit) a1b2c3d] Add initial data portfolio release\n 3 files changed, 120 insertions(+)"
+   },
+   {
+    "h": "إنشاء مستودع بعيد على GitHub",
+    "text": "موقع GitHub هو بمثابة مكتبة ضخمة على الإنترنت لمشاريع المبرمجين ومحللي البيانات. لإنشاء محفظتك هناك، تضغط على زر 'New Repository' وتسميه اسماً رائعاً مثل 'data-portfolio'، ثم تترك الإعدادات عامة (Public) لكي يتمكن الجميع من رؤية مهاراتك الفذة.",
+    "code": "# يتم إنشاء المستودع عبر واجهة GitHub الويب\n# الرابط الناتج يكون شبيه بـ: https://github.com/username/data-portfolio.git",
+    "output": "Repository created successfully on GitHub."
+   },
+   {
+    "h": "ربط المستودع المحلي بالبعيد بـ git remote",
+    "text": "الآن لديك مجلد محلي على حاسوبك ومستودع فارغ على GitHub، وتحتاج إلى مد جسر بينهما. تستخدم أمر 'git remote add origin' وتضع رابط جيت هب، ليشعر الحاسوب بأن لديه قناة اتصال مباشرة وموثوقة مع نسختك السحابية.",
+    "code": "git remote add origin https://github.com/username/data-portfolio.git",
+    "output": "# تم ربط المستودع بنجاح بدون رسائل خطأ"
+   },
+   {
+    "h": "دفع المحفظة أونلاين بـ git push",
+    "text": "هذه هي لحظة الحقيقة والفخر! باستخدام أمر 'git push -u origin main'، أنت تطلب من حاسوبك حزم كل ملفاتك، وصورك، وجداول بياناتك، وإرسالها دفعة واحدة عبر الإنترنت لتستقر في مكانها الجديد على GitHub. هكذا اكتملت رحلة نشر محفظتك.",
+    "code": "git push -u origin main",
+    "output": "Enumerating objects: 5, done.\nTo https://github.com/username/data-portfolio.git\n * [new] branch main -> to main"
+   },
+   {
+    "h": "عرض المحفظة وإبهار الآخرين (Portfolio Showcase)",
+    "text": "عرض المحفظة هو الطريقة التي تقدم بها نفسك كمحلل بيانات محترف. عبر كتابة ملف واجهة جميل يسمى README.md تشرح فيه أهداف مشاريعك، وكيف استخدمت بايثون وبانداس لتحليل الأرقام، تضمن أن كل زائر لمستودع GitHub الخاص بك سينبهر بمدى تنظيمك ومهارتك العالية.",
+    "code": "# ملف README.md يحتوي على شرح تفصيلي للمشاريع\ncat README.md",
+    "output": "# My Data Analytics Portfolio\nWelcome to my professional data analysis projects!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "git init",
+    "desc": "يبدأ مستودع Git جديد محلياً في المجلد الحالي."
+   },
+   {
+    "name": "git add .",
+    "desc": "يجهز كل الملفات الجديدة والمعدلة لالتقاط صورة لها."
+   },
+   {
+    "name": "git commit -m",
+    "desc": "يحفظ لقطة التغييرات مع رسالة وصفية توضيحية."
+   },
+   {
+    "name": "git remote add origin",
+    "desc": "يربط المستودع المحلي بالرابط البعيد على GitHub."
+   },
+   {
+    "name": "git push",
+    "desc": "يرفع التغييرات والمحفظة إلى الخادم السحابي البعيد."
+   },
+   {
+    "name": "README.md",
+    "desc": "ملف واجهة العرض الرئيسي لشرح المحفظة ومشاريعك."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "ما هو الأمر المستخدم لتهيئة مجلد محلي جديد ليكون مستودع Git؟",
+    "a": "git init"
+   },
+   {
+    "q": "اكتب الأمر الذي يربط المستودع المحلي بمستودع بعيد على GitHub اسمه origin.",
+    "a": "git remote add origin <URL>"
+   },
+   {
+    "q": "ما هو أمر Git المسؤول عن إرسال ملفات محفظتك وحفظها نهائياً على الإنترنت؟",
+    "a": "git push"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Step 1: Create a folder on your computer for your complete portfolio, placing all data analytics projects you built this term inside it.",
+   "Step 2: Open your command line in your portfolio folder and type 'git init' to turn it into a local repository tracking your changes.",
+   "Step 3: Use 'git add .' and 'git commit -m' to capture a snapshot of all your project files and secure your amazing work.",
+   "Step 4: Go to GitHub and create a new Remote Repository to serve as your digital home online and your portfolio showcase.",
+   "Step 5: Connect your local repository to the remote online repository using the famous linking command 'git remote add origin'.",
+   "Step 6: Push all your portfolio files safely to the internet using 'git push -u origin main' for the whole world to see!"
+  ],
+  "example": "Imagine you built an art gallery for your data charts and want to hang it online. First, you prepare the artworks in your computer folder and activate Git. Second, you open GitHub and create a new exhibition hall called a Remote Repository. Third, you link your computer to the exhibition hall and send your artworks via the push command, making your portfolio ready for friends and managers worldwide to view with pride.",
+  "mistake": "Forgetting to link the local repository to the remote GitHub URL before attempting to upload, leaving Git lost with nowhere to send files. The fix is ensuring you use 'git remote add origin' with your correct repository link first.",
+  "recap": "We learned how to bundle our projects into a local repository and connect it to a remote one on GitHub. This makes your data analytics portfolio ready for online display.",
+  "q": [
+   {
+    "t": "Which command is used to initialize a new local Git repository inside your portfolio folder?",
+    "o": [
+     "git start",
+     "git init",
+     "git create"
+    ],
+    "a": 1,
+    "why": "git init initializes tracking for files in the local directory."
+   },
+   {
+    "t": "What does a Remote Repository mean?",
+    "o": [
+     "A repository stored on internet servers like GitHub for others to view",
+     "A regular text file on your desktop",
+     "A graphics driver program"
+    ],
+    "a": 0,
+    "why": "A remote repository is your cloud or online version."
+   },
+   {
+    "t": "Which command is used to upload your portfolio files from your computer to GitHub?",
+    "o": [
+     "git download",
+     "git push",
+     "git pull"
+    ],
+    "a": 1,
+    "why": "git push uploads changes and the portfolio to the remote repository."
+   }
+  ],
+  "act": {
+   "type": "fill",
+   "title": "Complete Portfolio GitHub Publishing Steps",
+   "goal": "Choose the correct commands and words to finish publishing your complete portfolio online.",
+   "items": [
+    {
+     "text": "To turn your local folder into a Git repository, type the command ___",
+     "options": [
+      "git init",
+      "git push",
+      "git remote"
+     ],
+     "a": 0
+    },
+    {
+     "text": "To connect your computer to the remote GitHub repository, use git remote add ___",
+     "options": [
+      "local",
+      "origin",
+      "branch"
+     ],
+     "a": 1
+    },
+    {
+     "text": "To finally publish and upload your portfolio to the internet, use the command ___",
+     "options": [
+      "git push",
+      "git commit",
+      "git add"
+     ],
+     "a": 0
+    }
+   ],
+   "success": "Yay! You successfully published your complete portfolio on GitHub for the world to see!"
+  },
+  "sections": [
+   {
+    "h": "The Concept of Publishing a Complete Portfolio",
+    "text": "When you finish building data analytics projects, you need to place them in one place called a Portfolio. Publishing your portfolio is just like opening a real art gallery for people to see your creations; instead of wooden canvases, you showcase stunning data tables and charts on the popular GitHub platform for employers and teachers to admire.",
+    "code": "# Gather data analytics projects in one folder\nls -la data_portfolio/",
+    "output": "README.md  sales_analysis.py  customer_churn.csv"
+   },
+   {
+    "h": "Local vs. Remote Repository",
+    "text": "In the Git world, there are two types of repositories. A Local Repository is a folder on your personal computer where you work freely and edit offline. A Remote Repository is your version stored on GitHub's cloud servers, serving as the safe place that shares your analysis work with the world.",
+    "code": "# Check local repository status\ngit status",
+    "output": "On branch main\nYour branch is up to date with 'origin/main'."
+   },
+   {
+    "h": "Initializing Locally with git init",
+    "text": "To turn any regular folder on your computer into a smart portfolio tracked by Git, you use the 'git init' command. This is like handing a special notebook to your folder so it can record every story and edit you make on your data files.",
+    "code": "git init",
+    "output": "Initialized empty Git repository in /portfolio/.git/"
+   },
+   {
+    "h": "Capturing Snapshots with git add and git commit",
+    "text": "Git does not just save changes; it captures complete 'snapshots' of your files at a specific moment. With 'git add .', you tell Git to stage the files, and with 'git commit -m', you take the snapshot and write a reminder note explaining what you accomplished in this version.",
+    "code": "git add .\ngit commit -m \"Add initial data portfolio release\"",
+    "output": "[main (root-commit) a1b2c3d] Add initial data portfolio release\n 3 files changed, 120 insertions(+)"
+   },
+   {
+    "h": "Creating a Remote Repository on GitHub",
+    "text": "GitHub is like a massive online library for programmer and data analyst projects. To create your portfolio there, you click 'New Repository', give it a cool name like 'data-portfolio', and leave settings Public so everyone can view your stellar skills.",
+    "code": "# Repository is created via GitHub web interface\n# Resulting URL looks like: https://github.com/username/data-portfolio.git",
+    "output": "Repository created successfully on GitHub."
+   },
+   {
+    "h": "Connecting Local to Remote with git remote",
+    "text": "Now you have a local folder on your computer and an empty repository on GitHub, and you need to build a bridge between them. You use 'git remote add origin' with your GitHub link, making your computer establish a direct, trusted communication channel with your cloud version.",
+    "code": "git remote add origin https://github.com/username/data-portfolio.git",
+    "output": "# Repository linked successfully with no error messages"
+   },
+   {
+    "h": "Pushing Portfolio Online with git push",
+    "text": "This is the moment of truth and pride! Using the command 'git push -u origin main', you instruct your computer to pack all your files, images, and data tables, and send them together across the internet to rest in their new home on GitHub. Your portfolio publishing journey is complete.",
+    "code": "git push -u origin main",
+    "output": "Enumerating objects: 5, done.\nTo https://github.com/username/data-portfolio.git\n * [new] branch main -> to main"
+   },
+   {
+    "h": "Portfolio Showcase",
+    "text": "A portfolio showcase is how you present yourself as a professional data analyst. By writing a gorgeous frontend file called README.md explaining your project goals and how you used Python and pandas to analyze numbers, you ensure every visitor to your GitHub repository is impressed by your organization and high skill level.",
+    "code": "# README.md file containing detailed project explanations\ncat README.md",
+    "output": "# My Data Analytics Portfolio\nWelcome to my professional data analysis projects!"
+   }
+  ],
+  "reference": [
+   {
+    "name": "git init",
+    "desc": "Initializes a new Git repository locally in the current folder."
+   },
+   {
+    "name": "git add .",
+    "desc": "Stages all new and modified files to be snapshotted."
+   },
+   {
+    "name": "git commit -m",
+    "desc": "Saves a snapshot of changes with an explanatory descriptive message."
+   },
+   {
+    "name": "git remote add origin",
+    "desc": "Connects the local repository to the remote URL on GitHub."
+   },
+   {
+    "name": "git push",
+    "desc": "Uploads changes and the portfolio to the remote cloud server."
+   },
+   {
+    "name": "README.md",
+    "desc": "The main presentation interface file explaining your portfolio and projects."
+   }
+  ],
+  "exercises": [
+   {
+    "q": "What command is used to initialize a new local folder as a Git repository?",
+    "a": "git init"
+   },
+   {
+    "q": "Write the command that links a local repository to a remote GitHub repository named origin.",
+    "a": "git remote add origin <URL>"
+   },
+   {
+    "q": "What is the Git command responsible for sending your portfolio files and saving them permanently online?",
+    "a": "git push"
+   }
+  ]
+ },
+ "lang": "git",
+ "sources": [
+  {
+   "title": "git-scm.com docs",
+   "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
+  }
+ ],
+ "grounded": true
+}

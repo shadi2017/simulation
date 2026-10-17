@@ -1,0 +1,322 @@
+{
+ "ar": {
+  "steps": [
+   "أهلاً يا بطل! لما بنحلل داتا ونطلع برقم مهم، لازم نكتبه للناس عشان يفهموه زي ما الكاتب بيكتب قصة ممتعة وواضحة.",
+   "عشان نعمل كده، بنستخدم ملف اسمه README.md، وده بيكون واجهة مشروعك البرمجي على جيت هب وبيشرح كل حاجة.",
+   "ملف الـ README بيتعمل بلغة ماركداون (Markdown)، وهي لغة سهلة بنستخدم فيها رموز بسيطة زي الشباك `#` عشان نعمل عناوين.",
+   "عشان ننظم الأرقام والنتائج بتاعتك بشكل شيك ومرتب، بنستخدم الجداول في الماركداون عن طريق أعمدة وخطوط رأسية وأفقية.",
+   "قاعدة ذهبية: خلي دايماً توثيقك بسيط، مباشر، وفيه أهم نتيجة تحليلية وصلت لها في أول سطرين عشان القارئ ما يتأخرش.",
+   "في الشغل الحقيقي، الشركات والمطورين الكبار بيعتمدوا على ملفات الـ README عشان يفهموا مشروعك من أول نظرة بدون ما يقرأوا الكود كله."
+  ],
+  "example": "تخيل إنك عملت تحليل لداتا درجات أصدقائك في الألعاب ولقيت إن اللعبة المشتركة هي المفضلة. في ملف الـ README بتاعك، بتكتب كده:\n\n```markdown\n# تقرير ألعاب الفصل\n\nأهم نتيجة: 80% من الطلاب بيحبوا ألعاب المغامرات!\n\n| اللعبة | النسبة |\n| --- | --- |\n| مغامرات | 80% |\n| سباق | 20% |\n```\nبنستخدم العنوان `#` عشان يبان كبير، وبنحط جدول منظم يعرض النتيجة للناس بوضوح.",
+  "mistake": "غلطة شائعة: إننا نكتب جدول الماركداون من غير شرطة التنسيق `|---|` اللي بتفصل العنوان عن البيانات. الصح دايماً هو كتابة فاصل الأسطر لتظهر كجدول منظم.",
+  "recap": "اتعلمنا إزاي نكتب ملف README احترافي بيشرح نتائج البيانات بلغة الماركداون والجداول. وبكده مشاريعك بقت جاهزة تظهر للدنيا كلها بشكل منظم.",
+  "q": [
+   {
+    "t": "إيه الرمز اللي بنستخدمه في الماركداون عشان نعمل عنوان رئيسي كبير في ملف الـ README؟",
+    "o": [
+     "@",
+     "#",
+     "$"
+    ],
+    "a": 1,
+    "why": "الرمز `#` بيحول النص لعنوان رئيسي Heading 1 في الماركداون."
+   },
+   {
+    "t": "إزاي بنعمل جدول في ملفات الماركداون؟",
+    "o": [
+     "باستخدام أعمدة وخطوط رأسية وأفقية `|` و `---`",
+     "باستخدام الأقواس الكبيرة `{}`",
+     "باستخدام الأمرين start و table"
+    ],
+    "a": 0,
+    "why": "الجداول في الماركداون بتتكون باستخدام الخطوط الرأسية `|` لتقسيم الأعمدة وشرطة التنسيق للفصل."
+   },
+   {
+    "t": "إيه الهدف الأساسي من ملف الـ README في أي مشروع برمجي؟",
+    "o": [
+     "تخزين بيانات اللعبة",
+     "شرح نتائج البيانات والمشروع للناس",
+     "تسريع سرعة الكود"
+    ],
+    "a": 1,
+    "why": "ملف الـ README مخصص لوصف المشروع وشرح نتائج البيانات للمطورين والزوار."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "توقع نتيجة الماركداون",
+   "goal": "اعرف إيه اللي هيظهر لما نكتب السطر ده في ملف الـ README",
+   "code": "# ملخص التحليل\n| الفاكهة | المفضل |\n| --- | --- |\n| تفاح | 70% |",
+   "options": [
+    "جدول منظم يوضح نسبة تفضيل التفاح",
+    "صورة ملونة للفاكهة",
+    "خطأ برمجي في الكود"
+   ],
+   "a": 0,
+   "success": "يا سلام! الماركداون ترجم الكود لجدول رائع بيعرض نتائج البيانات بكل وضوح."
+  },
+  "sections": [
+   {
+    "h": "مقدمة عن توثيق البيانات",
+    "text": "التوثيق هو زي كتافة الإرشادات اللي بتتحط على علبة اللعبة الجديدة، بتشرح للناس إزاي يفهموا شغلك. في تحليل البيانات، مش كفاية نطلع برقم حلو، لازم نكتب للناس إيه معناه بطريقة واضحة وممتعة.",
+    "code": "# مشروع تحليل البيانات\nهنا بنشرح إيه اللي عملناه في الداتا.",
+    "output": "عنوان رئيسي يشرح بداية المشروع."
+   },
+   {
+    "h": "أهمية ملف الـ README",
+    "text": "ملف الـ README.md هو الواجهة الرسمية لمشروعك على جيت هب. زي واجهة بيتك، أول ما الضيف بيعدي بيشوفها وبياخد فكرة عن ذوقك، الزائر لمشروعك بيقرا الـ README عشان يفهم أنت عملت إيه.",
+    "code": "git init\ntouch README.md",
+    "output": "إنشاء ملف README جديد وجاهز للكتابة."
+   },
+   {
+    "h": "أساسيات لغة الماركداون Markdown",
+    "text": "ماركداون دي لغة خفيفة وسهلة جداً، مش زي لغات البرمجة المعقدة. بنستخدم فيها رموز بسيطة زي النجوم والنقاط والشباك عشان نخلي النص عريض أو مايل أو عناوين منسقة.",
+    "code": "* نقطة أولى في القائمة\n**نص عريض مهم**",
+    "output": "قائمة منقطة ونص عريض وواضح للقارئ."
+   },
+   {
+    "h": "صناعة الجداول في الماركداون",
+    "text": "لما يكون عندك أرقام ونتائج تحليل داتا، أفضل طريقة تعرضها بيها هي الجداول. في الماركداون بنستخدم علامة الخط الرأسي `|` لتحديد الأعمدة والشرطة الأفقية للفصل بين العناوين والبيانات.",
+    "code": "| الصنف | القيمة |\n| --- | --- |\n| مبيعات | 500 |",
+    "output": "جدول منسق وجميل يحتوي على البيانات."
+   },
+   {
+    "h": "تلخيص أهم النتائج في أعلى الملف",
+    "text": "الناس عجايلية ومش دايماً بتقرا كل حاجة. عشان كده، القاعدة الذكية بتقول: حط أهم نتيجة تحليلية وصلت لها في أول سطرين من الـ README عشان الكل يشوفها فوراً.",
+    "code": "> أهم استنتاج: زيادة المبيعات بنسبة 40% في شهر الصيف!",
+    "output": "صندوق اقتباس بارز يحتوي على أهم نتيجة."
+   },
+   {
+    "h": "إضافة صور ورسوم بيانية",
+    "text": "الصورة بتبلغ ألف كلمة! بعد ما ترسم الرسم البياني وتحفظه كصورة، تقدر تعرضه جوه ملف الـ README عشان المشروع يبقى جذاب ومليان ألوان وحياة.",
+    "code": "![رسم بياني للمبيعات](sales.png)",
+    "output": "عرض الصورة الرسمية للتحليل داخل الصفحة."
+   },
+   {
+    "h": "مشاركة النتائج مع العالم",
+    "text": "بعد ما تخلص كتابة الـ README وتظبط الجداول والنتائج، بتعمل رفع لمشروعك على جيت هب. ساعتها أي صديق ليك أو معلم يقدر يدخل يشوف تقريرك الفني ويفهم شغلك باحترافية.",
+    "code": "git add README.md\ngit commit -m \"Add awesome README\"\ngit push",
+    "output": "رفع الملف بنجاح لموقع GitHub."
+   },
+   {
+    "h": "أفضل الممارسات لتوثيق ناجح",
+    "text": "خلي لغتك بسيطة، استخدم مسافات، بلاش جمل طويلة معقدة، وراجع إملاء الكلام قبل ما تنشر. التوثيق النظيف بيعكس مدى ذكائك وحرفيتك كمبرمج صغير ومحلل داتا ناجح.",
+    "code": "# نصيحة ذهبية\nالبساطة هي سر الجمال في التوثيق!",
+    "output": "عرض رسالة تشجيعية وواضحة للمطورين."
+   }
+  ],
+  "reference": [
+   {
+    "name": "#",
+    "desc": "لعمل عنوان رئيسي كبير Heading 1"
+   },
+   {
+    "name": "##",
+    "desc": "لعمل عنوان فرعي Heading 2"
+   },
+   {
+    "name": "|",
+    "desc": "لفصل الأعمدة عند إنشاء الجداول"
+   },
+   {
+    "name": "---",
+    "desc": "خط تنسيق يفصل عناوين الجدول عن محتواه"
+   },
+   {
+    "name": "**text**",
+    "desc": "لجعل النص عريضاً Bold"
+   },
+   {
+    "name": "*text*",
+    "desc": "لجعل النص مائلاً Italic"
+   },
+   {
+    "name": "![alt](img.png)",
+    "desc": "لعرض صورة داخل ملف الماركداون"
+   },
+   {
+    "name": "README.md",
+    "desc": "الملف الأساسي لتوثيق المشروع على GitHub"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "اكتب كود ماركداون لعمل عنوان رئيسي باسم 'تحليل مبيعات المتجر'.",
+    "a": "# تحليل مبيعات المتجر"
+   },
+   {
+    "q": "كيف تفصل بين عنوان الجدول وبياناته في الماركداون؟",
+    "a": "باستخدام شرطة التنسيق مثل `| --- | --- |`"
+   },
+   {
+    "q": "ما هي الصيغة الصحيحة لإضافة صورة باسم chart.png في الماركداون؟",
+    "a": "![رسم بياني](chart.png)"
+   }
+  ]
+ },
+ "en": {
+  "steps": [
+   "Hello champion! When we analyze data and find an important number, we must explain it to people so they understand, just like an author writing an engaging story.",
+   "To do this, we use a file named README.md, which acts as the frontend of your coding project on GitHub and explains everything.",
+   "The README file is written in Markdown, an easy language using simple symbols like the hashtag `#` to create headings.",
+   "To organize your numbers and findings neatly, we use Markdown tables by combining columns, vertical lines, and dashes.",
+   "Golden rule: Keep your documentation simple, direct, and place your top analytical insight in the first couple of lines so readers don't miss it.",
+   "In the real world, top companies and developers rely on README files to understand your project at a single glance without reading all the code."
+  ],
+  "example": "Imagine you analyzed friends' game ratings and found that adventure games are the favorite. In your README, you write:\n\n```markdown\n# Class Gaming Report\n\nTop Insight: 80% of students love adventure games!\n\n| Game | Percentage |\n| --- | --- |\n| Adventure | 80% |\n| Racing | 20% |\n```\nWe use the `#` symbol to make it a large heading and include an organized table to clearly show the finding.",
+  "mistake": "Common mistake: Writing a Markdown table without the formatting dashes `|---|` separating the header from the data. The correct way is always including the line separator so it renders as a proper table.",
+  "recap": "We learned how to write a professional README explaining data findings using Markdown and tables. Now your projects are ready to be showcased to the whole world neatly.",
+  "q": [
+   {
+    "t": "Which symbol do we use in Markdown to create a large main heading in a README file?",
+    "o": [
+     "@",
+     "#",
+     "$"
+    ],
+    "a": 1,
+    "why": "The `#` symbol turns text into a Heading 1 in Markdown."
+   },
+   {
+    "t": "How do we create a table in Markdown files?",
+    "o": [
+     "Using columns, vertical lines, and dashes `|` and `---`",
+     "Using curly brackets `{}`",
+     "Using start and table commands"
+    ],
+    "a": 0,
+    "why": "Markdown tables are built using vertical bars `|` for columns and alignment dashes."
+   },
+   {
+    "t": "What is the primary goal of the README file in any coding project?",
+    "o": [
+     "To store game data",
+     "To explain data findings and the project to people",
+     "To speed up code execution"
+    ],
+    "a": 1,
+    "why": "The README file is dedicated to describing the project and explaining data insights to developers and visitors."
+   }
+  ],
+  "act": {
+   "type": "predict",
+   "title": "Predict Markdown Output",
+   "goal": "Find out what renders when we write this line in the README file",
+   "code": "# Analysis Summary\n| Fruit | Favorite |\n| --- | --- |\n| Apple | 70% |",
+   "options": [
+    "An organized table showing apple preference percentage",
+    "A colorful image of fruit",
+    "A coding error in the script"
+   ],
+   "a": 0,
+   "success": "Awesome! Markdown translated the code into a fantastic table displaying data insights with total clarity."
+  },
+  "sections": [
+   {
+    "h": "Introduction to Data Documentation",
+    "text": "Documentation is like the instruction manual inside a new board game box, explaining how people can understand your work. In data analysis, it is not enough to find a cool number; we must write down what it means clearly and engagingly.",
+    "code": "# Data Analysis Project\nHere we explain what we did with the data.",
+    "output": "A main heading showing the project start."
+   },
+   {
+    "h": "The Importance of the README File",
+    "text": "The README.md file is the official storefront of your project on GitHub. Just like your house front where guests glance and get a feel of your style, visitors read your README to understand what you built.",
+    "code": "git init\ntouch README.md",
+    "output": "Creates a new README file ready for writing."
+   },
+   {
+    "h": "Markdown Language Basics",
+    "text": "Markdown is a lightweight and super easy language, unlike complex programming languages. We use simple symbols like stars and hashes to make text bold, italicized, or styled into clear headings.",
+    "code": "* First point in the list\n**Important bold text**",
+    "output": "A bulleted list and clear bold text for the reader."
+   },
+   {
+    "h": "Building Tables in Markdown",
+    "text": "When you have numbers and data analysis results, the best way to display them is through tables. In Markdown, we use the vertical bar `|` to define columns and dashes to separate headers from data.",
+    "code": "| Item | Value |\n| --- | --- |\n| Sales | 500 |",
+    "output": "A neat and formatted table containing the data."
+   },
+   {
+    "h": "Summarizing Top Findings at the Top",
+    "text": "People are busy and don't always read every single line. Therefore, the smart rule says: put your top analytical insight in the first two lines of your README so everyone sees it instantly.",
+    "code": "> Top Insight: Sales increased by 40% in the summer month!",
+    "output": "A highlighted blockquote containing the top finding."
+   },
+   {
+    "h": "Adding Images and Charts",
+    "text": "A picture speaks a thousand words! After generating your chart and saving it as an image, you can embed it inside your README so the project looks vibrant, colorful, and full of life.",
+    "code": "![Sales Chart](sales.png)",
+    "output": "Displays the official analysis chart image inside the page."
+   },
+   {
+    "h": "Sharing Insights with the World",
+    "text": "After you finish writing your README, setting up tables and insights, you push your project to GitHub. Then any friend or teacher can visit to view your technical report and understand your work professionally.",
+    "code": "git add README.md\ngit commit -m \"Add awesome README\"\ngit push",
+    "output": "Successfully uploads the file to GitHub."
+   },
+   {
+    "h": "Best Practices for Successful Documentation",
+    "text": "Keep your language simple, use spacing, avoid long complex sentences, and spell-check before publishing. Clean documentation reflects your intelligence and professionalism as a young programmer and data analyst.",
+    "code": "# Golden Tip\nSimplicity is the secret to great documentation!",
+    "output": "Displays an encouraging and clear message to developers."
+   }
+  ],
+  "reference": [
+   {
+    "name": "#",
+    "desc": "Creates a large main Heading 1"
+   },
+   {
+    "name": "##",
+    "desc": "Creates a sub-heading Heading 2"
+   },
+   {
+    "name": "|",
+    "desc": "Separates columns when building tables"
+   },
+   {
+    "name": "---",
+    "desc": "Formatting line separating table headers from content"
+   },
+   {
+    "name": "**text**",
+    "desc": "Makes text Bold"
+   },
+   {
+    "name": "*text*",
+    "desc": "Makes text Italic"
+   },
+   {
+    "name": "![alt](img.png)",
+    "desc": "Displays an image inside Markdown"
+   },
+   {
+    "name": "README.md",
+    "desc": "The core file for documenting projects on GitHub"
+   }
+  ],
+  "exercises": [
+   {
+    "q": "Write Markdown code to create a main heading titled 'Store Sales Analysis'.",
+    "a": "# Store Sales Analysis"
+   },
+   {
+    "q": "How do you separate table headers from data in Markdown?",
+    "a": "Using a formatting dash like `| --- | --- |`"
+   },
+   {
+    "q": "What is the correct syntax to add an image named chart.png in Markdown?",
+    "a": "![Chart](chart.png)"
+   }
+  ]
+ },
+ "lang": "git",
+ "sources": [
+  {
+   "title": "docs.github.com docs",
+   "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-readmes"
+  }
+ ],
+ "grounded": false
+}
