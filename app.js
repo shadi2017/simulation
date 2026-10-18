@@ -479,15 +479,15 @@ const documentationByGrade=[
 
 copy.ar.result='الناتج';
 copy.en.result='Result';
-Object.assign(copy.ar,{games:'الألعاب والتحديات',lessonGoal:'النهارده هنتعلم:',exampleOne:'مثال ١',exampleTwo:'مثال ٢',thinkNote:'فكر فيها كده',tutorTitle:'اسأل المستر',tutorIntro:'اسأل عن الفكرة أو المثال أو طريقة الحل.',tutorContext:'إجابات من الدرس',tutorWelcome:'أهلًا! أنا معاك في الدرس ده. قولي إيه الجزء اللي محتاج توضيح؟',askExplain:'اشرح تاني',askExample:'اديني مثال',askPractice:'إزاي أطبق؟',askPlaceholder:'اكتب سؤالك عن الدرس...',askSend:'اسأل',readAnswer:'اقرأ الرد',tutorPracticeAnswer:'تعالى نطبقها خطوة خطوة:',tutorFallback:'لو سؤالك عن نقطة محددة، اكتب اسمها أو اسألني عن مثال أو خطوات الحل.',speechUnavailable:'ميزة الصوت غير متاحة في هذا المتصفح.',arcadeTitle:'ألعاب البرمجة',arcadeIntro:'جرّب التحديات، واجمع نقاطًا، واكتشف القواعد البرمجية وراء كل لعبة.',guessTitle:'خمن الرقم',guessDescription:'لعبة Python: استخدم المقارنة والمحاولات المتكررة لتصل للرقم.',guessPlaceholder:'رقم من ١ إلى ٢٠',guessButton:'جرّب الرقم',newNumber:'رقم جديد',guessHint:'اختر رقمًا من ١ إلى ٢٠.',tooLow:'الرقم السري أكبر. جرّب تاني.',tooHigh:'الرقم السري أصغر. جرّب تاني.',guessWon:'صح! وصلت للرقم في',attempts:'محاولات.',reactionTitle:'تحدي سرعة التفاعل',reactionDescription:'لعبة JavaScript: استنى الإشارة الخضراء واضغط بأسرع ما تقدر.',reactionStart:'ابدأ الاستعداد',reactionWait:'استنى الإشارة...',reactionGo:'اضغط الآن!',reactionAgain:'جولة جديدة',reactionEarly:'لسه الإشارة ما ظهرتش!',reactionResult:'زمنك:',ms:'مللي ثانية',detectiveTitle:'محقق البيانات',detectiveDescription:'اقرأ القيم واختر الفئة صاحبة أكبر رقم.',detectiveQuestion:'أي فئة سجلت القيمة الأكبر؟',nextRound:'جولة تالية',dataScore:'نقاطك',rightPick:'اختيار صحيح! أحسنت.',wrongPick:'قارن الأرقام وجرب مرة أخرى.',round:'الجولة'});
-Object.assign(copy.en,{games:'Games & challenges',lessonGoal:'Today we will learn:',exampleOne:'Example 1',exampleTwo:'Example 2',thinkNote:'Think about it',tutorTitle:'Ask the tutor',tutorIntro:'Ask about the idea, an example, or how to solve the challenge.',tutorContext:'Answers from this lesson',tutorWelcome:'Hi! I’m here to help with this lesson. What would you like me to explain?',askExplain:'Explain again',askExample:'Show an example',askPractice:'How do I apply it?',askPlaceholder:'Ask a question about this lesson...',askSend:'Ask',readAnswer:'Read answer',tutorPracticeAnswer:'Let’s apply it step by step:',tutorFallback:'Ask about a specific term, request another example, or ask for help with the steps.',speechUnavailable:'Speech is not available in this browser.',arcadeTitle:'Code Arcade',arcadeIntro:'Play the challenges, collect points, and spot the coding rules behind each game.',guessTitle:'Guess the number',guessDescription:'Python game: use comparisons and repeated tries to find the secret number.',guessPlaceholder:'Number from 1 to 20',guessButton:'Try this number',newNumber:'New number',guessHint:'Choose a number from 1 to 20.',tooLow:'The secret number is higher. Try again.',tooHigh:'The secret number is lower. Try again.',guessWon:'Correct! You found it in',attempts:'guesses.',reactionTitle:'Reaction time',reactionDescription:'JavaScript game: wait for the green signal, then tap as quickly as you can.',reactionStart:'Get ready',reactionWait:'Wait for it...',reactionGo:'Tap now!',reactionAgain:'Play another round',reactionEarly:'The signal has not appeared yet!',reactionResult:'Your time:',ms:'ms',detectiveTitle:'Data detective',detectiveDescription:'Read the values and choose the category with the largest number.',detectiveQuestion:'Which category has the largest value?',nextRound:'Next round',dataScore:'Your score',rightPick:'Correct choice! Nice work.',wrongPick:'Compare the values and try again.',round:'Round'});
+Object.assign(copy.ar,{games:'الألعاب والتحديات',lessonGoal:'النهارده هنتعلم:',exampleOne:'مثال ١',exampleTwo:'مثال ٢',thinkNote:'فكر فيها كده',tutorTitle:'المدرّس الذكي',tutorIntro:'اسأل عن أي حاجة في الدرس: اشرح، لخّص، أو هات أمثلة.',tutorContext:'إجابات من الدرس',tutorWelcome:'أهلًا! أنا معاك في الدرس ده. اسألني عن أي نقطة أو اضغط «اشرح تاني».',askExplain:'اشرح تاني',askSummary:'لخّص الدرس',askExample:'مثال جديد',askPractice:'إزاي أطبق؟',askPlaceholder:'اكتب سؤالك عن الدرس...',askSend:'اسأل',readAnswer:'اقرأ الرد',tutorPracticeAnswer:'تعالى نطبقها خطوة خطوة:',tutorFallback:'لو سؤالك عن نقطة محددة، اكتب اسمها أو اسألني عن مثال أو خطوات الحل.',speechUnavailable:'ميزة الصوت غير متاحة في هذا المتصفح.',arcadeTitle:'ألعاب البرمجة',arcadeIntro:'جرّب التحديات، واجمع نقاطًا، واكتشف القواعد البرمجية وراء كل لعبة.',guessTitle:'خمن الرقم',guessDescription:'لعبة Python: استخدم المقارنة والمحاولات المتكررة لتصل للرقم.',guessPlaceholder:'رقم من ١ إلى ٢٠',guessButton:'جرّب الرقم',newNumber:'رقم جديد',guessHint:'اختر رقمًا من ١ إلى ٢٠.',tooLow:'الرقم السري أكبر. جرّب تاني.',tooHigh:'الرقم السري أصغر. جرّب تاني.',guessWon:'صح! وصلت للرقم في',attempts:'محاولات.',reactionTitle:'تحدي سرعة التفاعل',reactionDescription:'لعبة JavaScript: استنى الإشارة الخضراء واضغط بأسرع ما تقدر.',reactionStart:'ابدأ الاستعداد',reactionWait:'استنى الإشارة...',reactionGo:'اضغط الآن!',reactionAgain:'جولة جديدة',reactionEarly:'لسه الإشارة ما ظهرتش!',reactionResult:'زمنك:',ms:'مللي ثانية',detectiveTitle:'محقق البيانات',detectiveDescription:'اقرأ القيم واختر الفئة صاحبة أكبر رقم.',detectiveQuestion:'أي فئة سجلت القيمة الأكبر؟',nextRound:'جولة تالية',dataScore:'نقاطك',rightPick:'اختيار صحيح! أحسنت.',wrongPick:'قارن الأرقام وجرب مرة أخرى.',round:'الجولة'});
+Object.assign(copy.en,{games:'Games & challenges',lessonGoal:'Today we will learn:',exampleOne:'Example 1',exampleTwo:'Example 2',thinkNote:'Think about it',tutorTitle:'AI Tutor',tutorIntro:'Ask anything about this lesson: explain, summarise, or give examples.',tutorContext:'Answers from this lesson',tutorWelcome:'Hi! I’m with you in this lesson. Ask me about any point, or tap “Explain again”.',askExplain:'Explain again',askSummary:'Summarise',askExample:'New example',askPractice:'How do I apply it?',askPlaceholder:'Ask a question about this lesson...',askSend:'Ask',readAnswer:'Read answer',tutorPracticeAnswer:'Let’s apply it step by step:',tutorFallback:'Ask about a specific term, request another example, or ask for help with the steps.',speechUnavailable:'Speech is not available in this browser.',arcadeTitle:'Code Arcade',arcadeIntro:'Play the challenges, collect points, and spot the coding rules behind each game.',guessTitle:'Guess the number',guessDescription:'Python game: use comparisons and repeated tries to find the secret number.',guessPlaceholder:'Number from 1 to 20',guessButton:'Try this number',newNumber:'New number',guessHint:'Choose a number from 1 to 20.',tooLow:'The secret number is higher. Try again.',tooHigh:'The secret number is lower. Try again.',guessWon:'Correct! You found it in',attempts:'guesses.',reactionTitle:'Reaction time',reactionDescription:'JavaScript game: wait for the green signal, then tap as quickly as you can.',reactionStart:'Get ready',reactionWait:'Wait for it...',reactionGo:'Tap now!',reactionAgain:'Play another round',reactionEarly:'The signal has not appeared yet!',reactionResult:'Your time:',ms:'ms',detectiveTitle:'Data detective',detectiveDescription:'Read the values and choose the category with the largest number.',detectiveQuestion:'Which category has the largest value?',nextRound:'Next round',dataScore:'Your score',rightPick:'Correct choice! Nice work.',wrongPick:'Compare the values and try again.',round:'Round'});
 Object.assign(copy.ar,{tutorBreakdown:'خدها خطوة خطوة:',tutorCheck:'دلوقتي جرب المهمة وشوف هل وصلت لنفس النتيجة.',tutorWhy:'الفكرة تنجح لأن كل خطوة لها سبب ونتيجة نقدر نختبرها.'});
 Object.assign(copy.en,{tutorBreakdown:'Let’s take it one step at a time:',tutorCheck:'Now try the challenge and compare your result.',tutorWhy:'This works because each step has a cause and a result we can test.'});
-Object.assign(copy.ar,{deepTitle:'شرح الدرس الكامل مع المستر الذكي',deepIntro:'شرح خطوة بخطوة، أمثلة محلولة، تدريب، ثم الحل للمراجعة.',buildFullLesson:'ابنِ شرح الدرس',generating:'المستر بيجهز الشرح...',sources:'مراجع موثوقة',sourceNote:'روابط رسمية للقراءة والتوسع',connecting:'بنتصل بالمستر الذكي...',online:'المستر الذكي جاهز',offline:'المستر محتاج إعداد الخدمة',aiError:'ما قدرناش نوصل للمستر دلوقتي. راجع إعداد الخادم وحاول تاني.',lessonReady:'شرح الدرس جاهز',askLimit:'اكتب سؤالًا مرتبطًا بالدرس.'});
+Object.assign(copy.ar,{deepTitle:'شرح الدرس الكامل مع المستر الذكي',deepIntro:'شرح خطوة بخطوة، أمثلة محلولة، تدريب، ثم الحل للمراجعة.',buildFullLesson:'ابنِ شرح الدرس',generating:'المستر بيجهز الشرح...',sources:'مراجع موثوقة',sourceNote:'روابط رسمية للقراءة والتوسع',connecting:'بنتصل بالمستر الذكي...',online:'متصل',offline:'المستر محتاج إعداد الخدمة',aiError:'ما قدرناش نوصل للمستر دلوقتي. راجع إعداد الخادم وحاول تاني.',lessonReady:'شرح الدرس جاهز',askLimit:'اكتب سؤالًا مرتبطًا بالدرس.'});
 Object.assign(copy.en,{deepTitle:'Full lesson with the AI tutor',deepIntro:'Step-by-step teaching, worked examples, practice, then an answer key.',buildFullLesson:'Build the full lesson',generating:'The tutor is preparing the lesson...',sources:'Trusted references',sourceNote:'Official links for further reading',connecting:'Connecting to the AI tutor...',online:'AI tutor is ready',offline:'Tutor service needs setup',aiError:'Could not reach the tutor. Check the server setup and try again.',lessonReady:'Full lesson is ready',askLimit:'Ask a question connected to this lesson.'});
 
-Object.assign(copy.ar,{localMode:'المستر (وضع محلي)',localNote:'رد فوري من محتوى الدرس. الذكاء الاصطناعي بيتفعّل تلقائيًا لما خدمة الـ AI تكون متاحة.'});
-Object.assign(copy.en,{localMode:'Tutor (local mode)',localNote:'An instant answer from the lesson content. The AI turns on automatically once the AI service is available.'});
+Object.assign(copy.ar,{localMode:'وضع محلي',thinking:'بيكتب...'});
+Object.assign(copy.en,{localMode:'Local mode',thinking:'Typing...'});
 copy.ar.missionLabel='تحدي الدرس:';copy.en.missionLabel='Lesson challenge:';
 const app={grade:0,lesson:0,lang:'ar',view:'lessons',answers:[null,null,null],grid:{x:0,y:0},score:0,chart:'line',tutorMessages:[],tutorContextKey:'',arcade:{secret:Math.floor(Math.random()*20)+1,tries:0,reactionState:'idle',reactionTimer:null,reactionStart:0,dataRound:1,dataScore:0}};
 const progressId='codeLabProgressV1';
@@ -975,72 +975,64 @@ function getLessonContext() {
     references: (meta && meta.sources) || documentationByGrade[app.grade]
   };
 }
+/* تنسيق ردود المدرّس: **عريض** و `كود` وقوائم */
+function fmtTutor(text) {
+  const formatted = esc(text).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/`([^`]+)`/g, '<code>$1</code>');
+  return formatted.split('\n').map(line => {
+    const value = line.trim();
+    if (/^#{1,6}\s+/.test(value)) return `<div class="t-h">${value.replace(/^#{1,6}\s+/, '')}</div>`;
+    if (/^(\*\s*){3,}$/.test(value) || /^-{3,}$/.test(value)) return '<div class="t-hr"></div>';
+    if (/^[-*•]\s+/.test(value)) return `<div class="t-line">• ${value.replace(/^[-*•]\s+/, '')}</div>`;
+    if (/^\d+[.)]\s+/.test(value)) return `<div class="t-line">${value}</div>`;
+    if (value === '') return '<div class="t-gap"></div>';
+    return `<div class="t-line">${value}</div>`;
+  }).join('');
+}
+
 /* رد محلي احتياطي: يبني إجابة من محتوى الدرس نفسه بدون أي خدمة خارجية */
 function localTutorAnswer(kind, question) {
   const ar = app.lang === 'ar';
   const P = packBody() || {};
   const teaching = (detail('teaching') || []).filter(Boolean);
-  const steps = (Array.isArray(P.steps) && P.steps.length ? P.steps : teaching).filter(Boolean);
+  const points = (Array.isArray(P.steps) && P.steps.length ? P.steps : teaching).filter(Boolean);
   const title = lessonTitle();
   const example1 = detail('examples');
   const example2 = secondExample();
   const practice = detail('practice');
   const mistake = P.mistake ? String(P.mistake).replace(/^[^:]*:\s*/, '') : '';
   const recap = P.recap || '';
-  const q = String(question || '').toLowerCase();
-  const has = pattern => pattern.test(q);
-  const numbered = list => list.map((step, index) => `${n(index + 1)}. ${step}`).join('\n');
+  const plain = String(question || '').trim();
+  const low = plain.toLowerCase();
+  const has = pattern => pattern.test(low);
+  const bullets = list => list.map(item => `- ${item}`).join('\n');
 
-  if (kind === 'example' || has(/مثال|أمثل|example|امثله/)) {
-    return [
-      ar ? `أهي أمثلة على «${title}»:` : `Here are examples for “${title}”:`,
-      '',
-      `${ar ? 'مثال ١' : 'Example 1'}: ${example1}`,
-      example2 ? `${ar ? 'مثال ٢' : 'Example 2'}: ${example2}` : '',
-      P.example ? `${ar ? 'مثال إضافي' : 'Extra example'}: ${P.example}` : '',
-      '',
-      ar ? 'جرّب تغيّر رقم أو قيمة في المثال وشوف النتيجة بتتغيّر إزاي.' : 'Try changing a number or value in the example and watch the result change.'
-    ].filter(Boolean).join('\n');
+  if (kind === 'summary') {
+    return `${ar ? `**ملخص «${title}»:**` : `**Summary of “${title}”:**`}\n${bullets(points) || (ar ? '- لا توجد نقاط محفوظة لهذا الدرس.' : '- No saved points for this lesson.')}`;
   }
-
-  if (kind === 'practice' || has(/طبق|تطبيق|تمرين|تمارين|practice|مهمة|مهمه|أحل|احل|حل/)) {
-    return [
-      ar ? `تعالى نطبّق «${title}» خطوة خطوة:` : `Let’s apply “${title}” step by step:`,
-      '',
-      `${ar ? 'المهمة' : 'Task'}: ${practice}`,
-      steps.length > 1 ? numbered(steps.slice(0, 3)) : '',
-      mistake ? `${ar ? 'خد بالك' : 'Watch out'}: ${mistake}` : '',
-      '',
-      ar ? 'اكتب محاولتك، ولو وقفت في خطوة قوللي عليها وأنا أوضحها.' : 'Write your attempt, and tell me the step where you get stuck.'
-    ].filter(Boolean).join('\n');
+  if (kind === 'example') {
+    const all = [example1, example2, P.example].filter(Boolean);
+    const body = all.length ? all.map((item, index) => `${ar ? '**مثال' : '**Example'} ${n(index + 1)}:** ${item}`).join('\n\n') : (ar ? '- لا توجد أمثلة إضافية.' : '- No extra examples.');
+    return `${ar ? `**أمثلة على «${title}»:**` : `**Examples for “${title}”:**`}\n${body}\n\n${ar ? '**جرّب بنفسك:** ' : '**Try it yourself:** '}${practice}`;
   }
-
-  if (kind === 'explain' || has(/اشرح|شرح|وضح|فكرة|فكره|يعني|explain|idea/)) {
-    return [
-      ar ? `خليني أشرح «${title}» خطوة خطوة:` : `Let me explain “${title}” step by step:`,
-      '',
-      steps.length ? numbered(steps) : (teaching[0] || ''),
-      '',
-      ar ? 'لو خطوة مش واضحة، اكتب اسمها وأنا أوضحها أكتر.' : 'If a step is unclear, name it and I will explain further.'
-    ].filter(Boolean).join('\n');
+  if (kind === 'explain') {
+    return `${ar ? `**تعال نشرح «${title}» من الأول خطوة خطوة:**` : `**Let’s break down “${title}” from the start:**`}\n${bullets(teaching)}\n\n${ar ? '**أهم النقاط:**' : '**Key points:**'}\n${bullets(points.slice(0, 4))}`;
   }
-
-  if (mistake && has(/غلط|خطأ|خطا|أخطاء|اخطاء|mistake|error|مشكلة|مشكله/)) {
-    return [ar ? `أشهر غلط في درس «${title}»:` : `The most common mistake in “${title}”:`, '', mistake, '', ar ? 'لو وقعت فيه، صلّح الخطوة دي وأعد التجربة.' : 'If you hit it, fix that step and try again.'].join('\n');
+  if (mistake && has(/غلط|خطأ|خطا|أخطاء|اخطاء|mistake|error|مشكله|مشكلة/)) {
+    return `${ar ? `**أشهر غلط في «${title}»:**` : `**Most common mistake in “${title}”:**`}\n- ${mistake}`;
   }
-
   if (has(/ملخص|مراجعة|مراجعه|recap|summary|أهم|اهم/)) {
-    return [ar ? `ملخص «${title}»:` : `Summary of “${title}”:`, '', steps.map(step => `• ${step}`).join('\n'), recap ? `\n${recap}` : ''].filter(Boolean).join('\n');
+    return `${ar ? `**ملخص «${title}»:**` : `**Summary of “${title}”:**`}\n${bullets(points)}${recap ? `\n- ${recap}` : ''}`;
+  }
+  if (kind === 'practice' || has(/طبق|تطبيق|تمرين|تمارين|practice|مهمة|مهمه|أحل|احل/)) {
+    return `${ar ? `**تعالى نطبّق «${title}» خطوة خطوة:**` : `**Let’s apply “${title}” step by step:**`}\n- **${ar ? 'المهمة' : 'Task'}:** ${practice}\n\n${bullets(points.slice(0, 3))}${mistake ? `\n\n**${ar ? 'خد بالك' : 'Watch out'}:** ${mistake}` : ''}`;
   }
 
-  return [
-    ar ? `أنا معاك في «${title}». دي الفكرة الأساسية:` : `I’m with you on “${title}”. Here is the core idea:`,
-    '',
-    teaching[0] || P.example || '',
-    steps.length > 1 ? '\n' + numbered(steps) : '',
-    '',
-    ar ? 'تقدر تسألني: «اشرح تاني» أو «اديني مثال» أو «إزاي أطبق؟».' : 'You can ask me: “Explain again”, “Show an example”, or “How do I apply it?”.'
-  ].filter(Boolean).join('\n');
+  const words = plain.split(/\s+/).filter(word => word.length > 3);
+  const pool = points.concat([example1, example2, practice]).filter(Boolean);
+  const hits = words.length ? pool.filter(item => words.some(word => item.indexOf(word) >= 0)).slice(0, 3) : [];
+  const head = ar ? `**بص على الدرس «${title}»:**` : `**Look at the lesson “${title}”:**`;
+  if (hits.length) return `${head}\n${bullets(hits)}\n${ar ? 'تحب أشرح نقطة معيّنة بالتفصيل؟ اكتبها.' : 'Want a specific point in detail? Type it.'}`;
+  return `${head}\n${bullets(points)}\n${ar ? 'لو سؤالك عن نقطة محددة، اكتب اسمها وأنا أوضّحها.' : 'If your question is about a specific point, type its name and I’ll clarify.'}`;
 }
 
 async function requestTutor(payload) {
@@ -1057,13 +1049,12 @@ function renderTutor() {
   if (app.tutorContextKey !== contextKey) { app.tutorContextKey = contextKey; app.tutorMessages = []; }
   section.innerHTML = `
     <section class="tutor">
-      <div class="tutor-head"><span class="tutor-head-title"><span class="tutor-mark">AI</span>${tr('tutorTitle')}</span><span class="tutor-status" id="tutorStatus">${tr('connecting')}</span></div>
+      <div class="tutor-head"><span class="tutor-head-title">🤖 ${tr('tutorTitle')}</span><span class="tutor-status" id="tutorStatus">${tr('online')}</span></div>
       <p class="tutor-intro">${tr('tutorIntro')}</p>
-      <p class="tutor-note" id="tutorNote" hidden></p>
       <div class="tutor-quick">
-        <button type="button" data-prompt="explain">${tr('askExplain')}</button>
-        <button type="button" data-prompt="example">${tr('askExample')}</button>
-        <button type="button" data-prompt="practice">${tr('askPractice')}</button>
+        <button type="button" data-prompt="explain">📖 ${tr('askExplain')}</button>
+        <button type="button" data-prompt="summary">📝 ${tr('askSummary')}</button>
+        <button type="button" data-prompt="example">💡 ${tr('askExample')}</button>
       </div>
       <div class="tutor-log" id="tutorChat" aria-live="polite"></div>
       <form class="tutor-input" id="tutorForm">
@@ -1071,14 +1062,14 @@ function renderTutor() {
         <button class="btn btn-primary" type="submit">${tr('askSend')}</button>
       </form>
     </section>`;
-  let lastAnswer = `${detail('teaching')[0]} ${stageNotes[app.lang][app.grade]}`;
-  const chat = $('#tutorChat'), addMessage = (role, message) => { const bubble = document.createElement('p'); bubble.className = `t-msg ${role}`; bubble.textContent = message; chat.append(bubble); chat.scrollTop = chat.scrollHeight; };
-  addMessage('a', `${tr('tutorWelcome')} ${detail('teaching')[0]}`);
+  let lastAnswer = tr('tutorWelcome');
+  const chat = $('#tutorChat'), addMessage = (role, message) => { const bubble = document.createElement('div'); bubble.className = `t-msg ${role}`; bubble.innerHTML = fmtTutor(message); chat.append(bubble); chat.scrollTop = chat.scrollHeight; };
+  addMessage('a', tr('tutorWelcome'));
   for (const message of app.tutorMessages) addMessage(message.role === 'user' ? 'u' : 'a', message.content);
-  const status = $('#tutorStatus'), note = $('#tutorNote'), sendButton = $('#tutorForm button[type="submit"]');
+  const status = $('#tutorStatus'), sendButton = $('#tutorForm button[type="submit"]');
   let serverReady = null;
-  const setOnline = () => { status.textContent = tr('online'); if (note) note.hidden = true; };
-  const setLocal = () => { serverReady = false; status.textContent = tr('localMode'); if (note) { note.hidden = false; note.textContent = tr('localNote'); } };
+  const setOnline = () => { status.textContent = tr('online'); };
+  const setLocal = () => { serverReady = false; status.textContent = tr('localMode'); };
   fetch('/api/health')
     .then(response => response.json())
     .then(data => { if (contextKey !== app.tutorContextKey) return; data.ready ? (serverReady = true, setOnline()) : setLocal(); })
@@ -1089,7 +1080,7 @@ function renderTutor() {
     if (!clean || sendButton.disabled) return;
     app.tutorMessages.push({ role: 'user', content: clean }); addMessage('u', clean);
     sendButton.disabled = true; status.textContent = tr('connecting');
-    const thinking = document.createElement('p'); thinking.className = 't-msg a thinking'; thinking.textContent = '…'; chat.append(thinking); chat.scrollTop = chat.scrollHeight;
+    const thinking = document.createElement('div'); thinking.className = 't-msg a thinking'; thinking.textContent = tr('thinking'); chat.append(thinking); chat.scrollTop = chat.scrollHeight;
     const speak = answer => { thinking.remove(); if (contextKey !== app.tutorContextKey) return; app.tutorMessages.push({ role: 'assistant', content: answer }); lastAnswer = answer; addMessage('a', answer); };
     const locally = () => { setLocal(); speak(localTutorAnswer(kind, clean)); if (contextKey === app.tutorContextKey) sendButton.disabled = false; };
 
@@ -1107,7 +1098,7 @@ function renderTutor() {
     } finally { if (contextKey === app.tutorContextKey) sendButton.disabled = false; }
   };
   $('#tutorForm').addEventListener('submit', event => { event.preventDefault(); const input = $('#tutorInput'); ask('chat', input.value); input.value = ''; });
-  $$('[data-prompt]').forEach(button => button.addEventListener('click', () => { const kind = button.dataset.prompt; ask(kind, tr(kind === 'example' ? 'askExample' : kind === 'practice' ? 'askPractice' : 'askExplain')); }));
+  $$('[data-prompt]').forEach(button => button.addEventListener('click', () => { const kind = button.dataset.prompt; ask(kind, tr(kind === 'summary' ? 'askSummary' : kind === 'example' ? 'askExample' : 'askExplain')); }));
   return lastAnswer;
 }
 
