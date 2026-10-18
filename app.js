@@ -485,6 +485,9 @@ Object.assign(copy.ar,{tutorBreakdown:'خدها خطوة خطوة:',tutorCheck:'
 Object.assign(copy.en,{tutorBreakdown:'Let’s take it one step at a time:',tutorCheck:'Now try the challenge and compare your result.',tutorWhy:'This works because each step has a cause and a result we can test.'});
 Object.assign(copy.ar,{deepTitle:'شرح الدرس الكامل مع المستر الذكي',deepIntro:'شرح خطوة بخطوة، أمثلة محلولة، تدريب، ثم الحل للمراجعة.',buildFullLesson:'ابنِ شرح الدرس',generating:'المستر بيجهز الشرح...',sources:'مراجع موثوقة',sourceNote:'روابط رسمية للقراءة والتوسع',connecting:'بنتصل بالمستر الذكي...',online:'المستر الذكي جاهز',offline:'المستر محتاج إعداد الخدمة',aiError:'ما قدرناش نوصل للمستر دلوقتي. راجع إعداد الخادم وحاول تاني.',lessonReady:'شرح الدرس جاهز',askLimit:'اكتب سؤالًا مرتبطًا بالدرس.'});
 Object.assign(copy.en,{deepTitle:'Full lesson with the AI tutor',deepIntro:'Step-by-step teaching, worked examples, practice, then an answer key.',buildFullLesson:'Build the full lesson',generating:'The tutor is preparing the lesson...',sources:'Trusted references',sourceNote:'Official links for further reading',connecting:'Connecting to the AI tutor...',online:'AI tutor is ready',offline:'Tutor service needs setup',aiError:'Could not reach the tutor. Check the server setup and try again.',lessonReady:'Full lesson is ready',askLimit:'Ask a question connected to this lesson.'});
+
+Object.assign(copy.ar,{localMode:'المستر (وضع محلي)',localNote:'رد فوري من محتوى الدرس. الذكاء الاصطناعي بيتفعّل تلقائيًا لما خدمة الـ AI تكون متاحة.'});
+Object.assign(copy.en,{localMode:'Tutor (local mode)',localNote:'An instant answer from the lesson content. The AI turns on automatically once the AI service is available.'});
 copy.ar.missionLabel='تحدي الدرس:';copy.en.missionLabel='Lesson challenge:';
 const app={grade:0,lesson:0,lang:'ar',view:'lessons',answers:[null,null,null],grid:{x:0,y:0},score:0,chart:'line',tutorMessages:[],tutorContextKey:'',arcade:{secret:Math.floor(Math.random()*20)+1,tries:0,reactionState:'idle',reactionTimer:null,reactionStart:0,dataRound:1,dataScore:0}};
 const progressId='codeLabProgressV1';
@@ -972,6 +975,74 @@ function getLessonContext() {
     references: (meta && meta.sources) || documentationByGrade[app.grade]
   };
 }
+/* رد محلي احتياطي: يبني إجابة من محتوى الدرس نفسه بدون أي خدمة خارجية */
+function localTutorAnswer(kind, question) {
+  const ar = app.lang === 'ar';
+  const P = packBody() || {};
+  const teaching = (detail('teaching') || []).filter(Boolean);
+  const steps = (Array.isArray(P.steps) && P.steps.length ? P.steps : teaching).filter(Boolean);
+  const title = lessonTitle();
+  const example1 = detail('examples');
+  const example2 = secondExample();
+  const practice = detail('practice');
+  const mistake = P.mistake ? String(P.mistake).replace(/^[^:]*:\s*/, '') : '';
+  const recap = P.recap || '';
+  const q = String(question || '').toLowerCase();
+  const has = pattern => pattern.test(q);
+  const numbered = list => list.map((step, index) => `${n(index + 1)}. ${step}`).join('\n');
+
+  if (kind === 'example' || has(/مثال|أمثل|example|امثله/)) {
+    return [
+      ar ? `أهي أمثلة على «${title}»:` : `Here are examples for “${title}”:`,
+      '',
+      `${ar ? 'مثال ١' : 'Example 1'}: ${example1}`,
+      example2 ? `${ar ? 'مثال ٢' : 'Example 2'}: ${example2}` : '',
+      P.example ? `${ar ? 'مثال إضافي' : 'Extra example'}: ${P.example}` : '',
+      '',
+      ar ? 'جرّب تغيّر رقم أو قيمة في المثال وشوف النتيجة بتتغيّر إزاي.' : 'Try changing a number or value in the example and watch the result change.'
+    ].filter(Boolean).join('\n');
+  }
+
+  if (kind === 'practice' || has(/طبق|تطبيق|تمرين|تمارين|practice|مهمة|مهمه|أحل|احل|حل/)) {
+    return [
+      ar ? `تعالى نطبّق «${title}» خطوة خطوة:` : `Let’s apply “${title}” step by step:`,
+      '',
+      `${ar ? 'المهمة' : 'Task'}: ${practice}`,
+      steps.length > 1 ? numbered(steps.slice(0, 3)) : '',
+      mistake ? `${ar ? 'خد بالك' : 'Watch out'}: ${mistake}` : '',
+      '',
+      ar ? 'اكتب محاولتك، ولو وقفت في خطوة قوللي عليها وأنا أوضحها.' : 'Write your attempt, and tell me the step where you get stuck.'
+    ].filter(Boolean).join('\n');
+  }
+
+  if (kind === 'explain' || has(/اشرح|شرح|وضح|فكرة|فكره|يعني|explain|idea/)) {
+    return [
+      ar ? `خليني أشرح «${title}» خطوة خطوة:` : `Let me explain “${title}” step by step:`,
+      '',
+      steps.length ? numbered(steps) : (teaching[0] || ''),
+      '',
+      ar ? 'لو خطوة مش واضحة، اكتب اسمها وأنا أوضحها أكتر.' : 'If a step is unclear, name it and I will explain further.'
+    ].filter(Boolean).join('\n');
+  }
+
+  if (mistake && has(/غلط|خطأ|خطا|أخطاء|اخطاء|mistake|error|مشكلة|مشكله/)) {
+    return [ar ? `أشهر غلط في درس «${title}»:` : `The most common mistake in “${title}”:`, '', mistake, '', ar ? 'لو وقعت فيه، صلّح الخطوة دي وأعد التجربة.' : 'If you hit it, fix that step and try again.'].join('\n');
+  }
+
+  if (has(/ملخص|مراجعة|مراجعه|recap|summary|أهم|اهم/)) {
+    return [ar ? `ملخص «${title}»:` : `Summary of “${title}”:`, '', steps.map(step => `• ${step}`).join('\n'), recap ? `\n${recap}` : ''].filter(Boolean).join('\n');
+  }
+
+  return [
+    ar ? `أنا معاك في «${title}». دي الفكرة الأساسية:` : `I’m with you on “${title}”. Here is the core idea:`,
+    '',
+    teaching[0] || P.example || '',
+    steps.length > 1 ? '\n' + numbered(steps) : '',
+    '',
+    ar ? 'تقدر تسألني: «اشرح تاني» أو «اديني مثال» أو «إزاي أطبق؟».' : 'You can ask me: “Explain again”, “Show an example”, or “How do I apply it?”.'
+  ].filter(Boolean).join('\n');
+}
+
 async function requestTutor(payload) {
   let response;
   try { response = await fetch('/api/tutor', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) }); }
@@ -988,6 +1059,7 @@ function renderTutor() {
     <section class="tutor">
       <div class="tutor-head"><span class="tutor-head-title"><span class="tutor-mark">AI</span>${tr('tutorTitle')}</span><span class="tutor-status" id="tutorStatus">${tr('connecting')}</span></div>
       <p class="tutor-intro">${tr('tutorIntro')}</p>
+      <p class="tutor-note" id="tutorNote" hidden></p>
       <div class="tutor-quick">
         <button type="button" data-prompt="explain">${tr('askExplain')}</button>
         <button type="button" data-prompt="example">${tr('askExample')}</button>
@@ -1003,27 +1075,39 @@ function renderTutor() {
   const chat = $('#tutorChat'), addMessage = (role, message) => { const bubble = document.createElement('p'); bubble.className = `t-msg ${role}`; bubble.textContent = message; chat.append(bubble); chat.scrollTop = chat.scrollHeight; };
   addMessage('a', `${tr('tutorWelcome')} ${detail('teaching')[0]}`);
   for (const message of app.tutorMessages) addMessage(message.role === 'user' ? 'u' : 'a', message.content);
-  const status = $('#tutorStatus'), sendButton = $('#tutorForm button[type="submit"]');
-  fetch('/api/health').then(response => response.json()).then(data => { status.textContent = data.ready ? tr('online') : tr('offline'); }).catch(() => { status.textContent = tr('offline'); });
-  const ask = async question => {
+  const status = $('#tutorStatus'), note = $('#tutorNote'), sendButton = $('#tutorForm button[type="submit"]');
+  let serverReady = null;
+  const setOnline = () => { status.textContent = tr('online'); if (note) note.hidden = true; };
+  const setLocal = () => { serverReady = false; status.textContent = tr('localMode'); if (note) { note.hidden = false; note.textContent = tr('localNote'); } };
+  fetch('/api/health')
+    .then(response => response.json())
+    .then(data => { if (contextKey !== app.tutorContextKey) return; data.ready ? (serverReady = true, setOnline()) : setLocal(); })
+    .catch(() => { if (contextKey === app.tutorContextKey) setLocal(); });
+
+  const ask = async (kind, question) => {
     const clean = String(question || '').trim();
     if (!clean || sendButton.disabled) return;
     app.tutorMessages.push({ role: 'user', content: clean }); addMessage('u', clean);
     sendButton.disabled = true; status.textContent = tr('connecting');
     const thinking = document.createElement('p'); thinking.className = 't-msg a thinking'; thinking.textContent = '…'; chat.append(thinking); chat.scrollTop = chat.scrollHeight;
+    const speak = answer => { thinking.remove(); if (contextKey !== app.tutorContextKey) return; app.tutorMessages.push({ role: 'assistant', content: answer }); lastAnswer = answer; addMessage('a', answer); };
+    const locally = () => { setLocal(); speak(localTutorAnswer(kind, clean)); if (contextKey === app.tutorContextKey) sendButton.disabled = false; };
+
+    if (serverReady === false) { locally(); return; }
     try {
       const answer = await requestTutor({ mode: 'chat', language: app.lang, context: getLessonContext(), history: app.tutorMessages.slice(0, -1), question: clean });
-      thinking.remove();
-      if (contextKey !== app.tutorContextKey) return;
-      app.tutorMessages.push({ role: 'assistant', content: answer }); lastAnswer = answer; addMessage('a', answer); status.textContent = tr('online');
+      if (contextKey === app.tutorContextKey) { serverReady = true; setOnline(); }
+      speak(answer);
     } catch (error) {
+      const offline = !error.status || error.status === 404 || error.status === 503 || error.status >= 500;
+      if (offline) { locally(); return; }
       thinking.remove();
       if (contextKey !== app.tutorContextKey) return;
-      app.tutorMessages.pop(); addMessage('a', error.message); status.textContent = error.status === 503 ? tr('offline') : tr('aiError');
+      app.tutorMessages.pop(); addMessage('a', error.message); status.textContent = tr('aiError');
     } finally { if (contextKey === app.tutorContextKey) sendButton.disabled = false; }
   };
-  $('#tutorForm').addEventListener('submit', event => { event.preventDefault(); const input = $('#tutorInput'); ask(input.value); input.value = ''; });
-  $$('[data-prompt]').forEach(button => button.addEventListener('click', () => ask(button.dataset.prompt === 'example' ? tr('askExample') : button.dataset.prompt === 'practice' ? tr('askPractice') : tr('askExplain'))));
+  $('#tutorForm').addEventListener('submit', event => { event.preventDefault(); const input = $('#tutorInput'); ask('chat', input.value); input.value = ''; });
+  $$('[data-prompt]').forEach(button => button.addEventListener('click', () => { const kind = button.dataset.prompt; ask(kind, tr(kind === 'example' ? 'askExample' : kind === 'practice' ? 'askPractice' : 'askExplain')); }));
   return lastAnswer;
 }
 
