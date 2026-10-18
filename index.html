@@ -3,36 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f6f1">
+  <meta name="theme-color" content="#0f3d63">
   <title>مختبر البرمجة | Code Lab</title>
+  <meta name="description" content="منصة تفاعلية لتعلّم البرمجة من الصف الأول حتى التاسع: دروس مشروحة، أنشطة، ألعاب، مشاريع، ومدرّس ذكي — بالعربية والإنجليزية.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="lesson-pack.js" defer></script>
   <script src="content/term2.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong data-i18n="brand">مختبر البرمجة</strong><small data-i18n="brandSub">من الفكرة إلى الكود</small></span></a>
-      <div class="sidebar-label" data-i18n="curriculum">المنهج</div>
-      <nav class="grade-list" id="gradeList" aria-label="الصفوف"></nav>
-      <div class="sidebar-footer"><div class="progress-ring" id="progressRing"><span id="progressPercent">٠٪</span></div><div><strong data-i18n="yourProgress">تقدمك</strong><small id="progressCaption"></small></div></div>
-    </aside>
-    <main class="main-area">
-      <header class="topbar"><div class="breadcrumbs"><span data-i18n="learningPath">مسار التعلم</span><span>/</span><strong id="crumbGrade"></strong></div><div class="top-actions"><span class="saved"><i></i><span data-i18n="saved">حُفظ تقدمك</span></span><button class="language-toggle" id="termToggle" type="button" hidden><span aria-hidden="true">◐</span><span id="termLabel"></span></button><button class="language-toggle" id="languageToggle" type="button"><span aria-hidden="true">文</span><span id="languageLabel">English</span></button></div></header>
-      <div class="content-wrap">
-        <section class="grade-heading"><div><div class="eyebrow"><i></i><span data-i18n="track">مسار تعليمي تفاعلي</span><span>·</span><span id="gradeLevel"></span></div><h1 id="gradeTitle"></h1><p id="gradeDescription"></p></div><div class="grade-stamp"><span id="gradeNumber">01</span><small data-i18n="grade">الصف</small></div></section>
-        <div class="overview-row"><div class="lesson-progress"><div class="progress-track"><i id="gradeProgressBar"></i></div><span id="gradeProgressText"></span></div><div class="view-switch"><button id="lessonsTab" class="view-tab active" type="button"><span>▤</span><span data-i18n="lessons">الدروس</span><small>١٠</small></button><button id="projectsTab" class="view-tab" type="button"><span>✳</span><span data-i18n="projects">مشروع التخرج</span></button><button id="gamesTab" class="view-tab" type="button" hidden><span>⌁</span><span data-i18n="games">الألعاب</span></button></div></div>
-        <section id="lessonView"><nav class="lesson-rail" id="lessonRail" aria-label="الدروس"></nav><article id="lessonPanel" class="lesson-panel"></article></section>
-        <section id="projectsView" class="projects-view" hidden></section>
-        <section id="gamesView" class="games-view" hidden></section>
-        <footer class="page-footer"><span data-i18n="footer">تعلّم بالتجربة. كل محاولة تقرّبك من الحل.</span><span>CODE / LAB</span></footer>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="فتح القائمة" data-i18n-aria="ariaMenu"><span></span><span></span><span></span></button>
+      <a class="brand" href="#" id="brandHome">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-text"><strong data-i18n="brand">مختبر البرمجة</strong><small data-i18n="brandSub">من الفكرة إلى الكود</small></span>
+      </a>
+    </div>
+    <div class="topbar-right">
+      <div class="year-switch" id="gradeSwitch" role="group" aria-label="اختيار الصف" data-i18n-aria="ariaGrade"></div>
+      <button class="term-btn" id="termToggle" type="button" hidden><span id="termLabel"></span></button>
+      <button class="icon-btn" id="themeToggle" type="button" title="الوضع الليلي / النهاري" data-i18n-title="titleTheme" data-i18n-aria="ariaTheme"><span class="theme-icon" id="themeIcon" aria-hidden="true">☾</span></button>
+      <button class="icon-btn lang-btn" id="languageToggle" type="button" title="عربي / English" data-i18n-title="titleLang" data-i18n-aria="ariaLang"><span id="languageLabel">EN</span></button>
+      <button class="avatar" id="avatarBtn" type="button" aria-label="الملف الشخصي" data-i18n-aria="ariaProfile">ع</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <strong id="sidebarGrade"></strong>
+        <small id="sidebarMeta"></small>
       </div>
+      <div class="section-nav" id="sectionNav">
+        <button type="button" data-view="lessons" data-i18n="lessons">الدروس</button>
+        <button type="button" data-view="projects" data-i18n="projects">مشروع التخرج</button>
+        <button type="button" data-view="games" data-i18n="games" id="gamesNavBtn">الألعاب</button>
+      </div>
+      <nav class="unit-list" id="lessonList" aria-label="الدروس" data-i18n-aria="ariaLessons"></nav>
+      <div class="sidebar-footer">
+        <div class="progress-card">
+          <div class="progress-label" data-i18n="overall">تقدمك العام</div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">0%</div>
+        </div>
+        <button class="sidebar-btn" id="certBtn" type="button" data-i18n="certificate">شهادة الإكمال</button>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <div class="container" id="container"></div>
+      <footer class="page-footer">
+        <span data-i18n="footer">تعلّم بالتجربة. كل محاولة تقرّبك من الحل.</span>
+        <span>CODE · LAB</span>
+      </footer>
     </main>
   </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="modal" id="profileModal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2 data-i18n="profileTitle">ملفك الشخصي</h2>
+        <button class="modal-close" id="closeProfile" type="button" aria-label="إغلاق" data-i18n-aria="ariaClose">×</button>
+      </div>
+      <div class="profile-grid">
+        <div class="avatar-big" id="profileAvatar">ع</div>
+        <div class="profile-info">
+          <div class="profile-field"><strong data-i18n="name">الاسم</strong><input class="lab-input" id="profileName" maxlength="32" autocomplete="off"></div>
+          <div class="profile-field"><strong data-i18n="points">النقاط</strong><span><b id="profilePoints">0</b> <span data-i18n="xp">نقطة</span></span></div>
+          <div class="profile-field"><strong data-i18n="certs">الشهادات</strong><span id="profileCerts">0</span></div>
+          <div class="profile-field"><strong data-i18n="doneLessons">دروس مكتملة</strong><span id="profileDone">0</span></div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-outline" id="resetProgress" type="button" data-i18n="reset">إعادة تعيين التقدم</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="certModal">
+    <div class="modal-content cert">
+      <div class="modal-head">
+        <h2 data-i18n="certTitle">شهادة إتمام</h2>
+        <button class="modal-close" id="closeCert" type="button" aria-label="إغلاق" data-i18n-aria="ariaClose">×</button>
+      </div>
+      <div class="cert-frame">
+        <div class="cert-seal">CL</div>
+        <h2 class="cert-title" data-i18n="certHead">شهادة إتمام</h2>
+        <p class="cert-sub" data-i18n="certSub">تُمنح هذه الشهادة إلى</p>
+        <h3 class="cert-name" id="certName">طالب/ـة</h3>
+        <p class="cert-course" data-i18n="certCourse">لإتمامه بنجاح مسار</p>
+        <h4 class="cert-unit" id="certUnit"></h4>
+        <p class="cert-date" id="certDate"></p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-primary" id="downloadCert" type="button" data-i18n="certDownload">تحميل / طباعة الشهادة</button>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>

@@ -94,20 +94,24 @@ window.runPy=async function(code,res){const ar=app.lang==='ar';res.style.display
  catch(e){out+=String(e.message||e).split('\n').slice(-4).join('\n')}
  res.textContent=out||(ar?'(مفيش ناتج نصي)':'(no text output)')};
 window.packSections=function(P,lang){
- const ar=app.lang==='ar',live=['html','css','javascript'].includes(lang),root=document.createElement('section'),mk=(tag,txt,st)=>{const e=document.createElement(tag);if(txt!=null)e.textContent=txt;if(st)e.style.cssText=st;return e};
+ const ar=app.lang==='ar',live=['html','css','javascript'].includes(lang),root=document.createElement('section'),mk=(tag,txt,cls)=>{const e=document.createElement(tag);if(txt!=null)e.textContent=txt;if(cls)e.className=cls;return e};
  root.className='pack-sections';root.append(mk('h3',ar?'الشرح الكامل والأمثلة':'Full tutorial with examples'));
- P.sections.forEach((s,i)=>{const box=mk('div',null,'margin:14px 0;padding:12px;border:1px solid rgba(128,128,128,.3);border-radius:10px');
-  box.append(mk('h4',`${i+1}. ${s.h}`),mk('p',s.text));
-  const pre=mk('pre',null,'direction:ltr;text-align:left;white-space:pre-wrap;background:rgba(128,128,128,.12);padding:10px;border-radius:8px;overflow:auto');pre.textContent=s.code;if(s.code)box.append(pre);
-  if(live&&s.code){const ed=mk('textarea',s.code,'display:none;width:100%;min-height:150px;direction:ltr;text-align:left;font-family:monospace'),fr=mk('iframe',null,'display:none;width:100%;height:220px;background:#fff;border:1px solid #bbb;border-radius:8px;margin-top:6px');fr.setAttribute('sandbox','allow-scripts');
-   const run=mk('button',ar?'جرّبها بنفسك ▶':'Try it Yourself ▶');run.className='demo-control accent';run.onclick=()=>{pre.style.display='none';ed.style.display='block';fr.style.display='block';fr.srcdoc=ed.value};
-   const go=mk('button',ar?'شغّل':'Run');go.className='demo-control';go.onclick=()=>{fr.srcdoc=ed.value};box.append(run,' ',go,ed,fr)}
-  if(lang==='python'&&s.code){const ed=mk('textarea',s.code,'display:none;width:100%;min-height:150px;direction:ltr;text-align:left;font-family:monospace'),res=mk('pre',null,'display:none;direction:ltr;text-align:left;background:#111;color:#9f9;padding:10px;border-radius:8px;white-space:pre-wrap'),b=mk('button',ar?'شغّل بايثون ▶':'Run Python ▶');b.className='demo-control accent';
-   b.onclick=async()=>{pre.style.display='none';ed.style.display='block';await runPy(ed.value,res)};box.append(b,' ',ed,res)}
-  if(s.output)box.append(mk('p',(live?(ar?'النتيجة: ':'Result: '):(ar?'الناتج: ':'Output: '))+s.output,'font-weight:600'));
+ P.sections.forEach((s,i)=>{const box=mk('div',null,'pack-section-box');
+  box.append(mk('h4',`${n(i+1)}. ${s.h}`),mk('p',s.text));
+  const pre=mk('pre',null,'pack-code');pre.textContent=s.code||'';
+  if(live&&s.code){const ed=mk('textarea',s.code,'pack-editor'),fr=mk('iframe',null,'pack-iframe');ed.hidden=true;fr.hidden=true;fr.setAttribute('sandbox','allow-scripts');
+   const run=mk('button',ar?'جرّبها بنفسك ▶':'Try it Yourself ▶','demo-control accent');
+   run.onclick=()=>{pre.hidden=true;ed.hidden=false;fr.hidden=false;fr.srcdoc=ed.value;go.hidden=false};
+   const go=mk('button',ar?'شغّل':'Run','demo-control');go.hidden=true;go.onclick=()=>{fr.srcdoc=ed.value};
+   box.append(pre,run,' ',go,ed,fr)}
+  else if(s.code)box.append(pre);
+  if(lang==='python'&&s.code){const ed=mk('textarea',s.code,'pack-editor'),res=mk('pre',null,'pack-result'),b=mk('button',ar?'شغّل بايثون ▶':'Run Python ▶','demo-control accent');
+   ed.hidden=true;res.hidden=true;
+   b.onclick=async()=>{pre.hidden=true;ed.hidden=false;await runPy(ed.value,res)};box.append(b,ed,res)}
+  if(s.output)box.append(mk('p',(live?(ar?'النتيجة: ':'Result: '):(ar?'الناتج: ':'Output: '))+s.output,'pack-output-note'));
   root.append(box)});
- if(P.reference?.length){const tb=mk('table',null,'width:100%;border-collapse:collapse;margin:10px 0');P.reference.forEach(r=>{const tr_=mk('tr'),a=mk('td',r.name,'border:1px solid rgba(128,128,128,.3);padding:6px;direction:ltr;font-family:monospace'),b=mk('td',r.desc,'border:1px solid rgba(128,128,128,.3);padding:6px');tr_.append(a,b);tb.append(tr_)});root.append(mk('h4',ar?'جدول مرجعي':'Quick reference'),tb)}
- if(P.exercises?.length){root.append(mk('h4',ar?'تمارين':'Exercises'));P.exercises.forEach(x=>{const d=mk('details');d.append(mk('summary',x.q));const c=mk('pre',x.a,'direction:ltr;text-align:left;white-space:pre-wrap');d.append(c);root.append(d)})}
+ if(P.reference?.length){const tb=mk('table',null,'reference-table');P.reference.forEach(r=>{const tr_=mk('tr');tr_.append(mk('td',r.name),mk('td',r.desc));tb.append(tr_)});root.append(mk('h4',null,'pack-h4'),tb);root.querySelector('.pack-h4').textContent=ar?'جدول مرجعي':'Quick reference'}
+ if(P.exercises?.length){const ex=mk('div',null,'exercise-list');P.exercises.forEach(x=>{const d=mk('details');d.append(mk('summary',x.q));const c=mk('pre',null,'pack-code');c.textContent=x.a;d.append(c);ex.append(d)});const h=mk('h4');h.textContent=ar?'تمارين':'Exercises';root.append(h,ex)}
  return root};
 
 window.PROJ={};

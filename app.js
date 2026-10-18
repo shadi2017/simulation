@@ -502,202 +502,678 @@ const T1=rawGrades.map((g,i)=>({lessonNamesEn:g.lessonNamesEn,lessonNamesAr:g.le
 const ck=(g,l)=>(app.term?'t2-':'')+g+'-'+l, TOTAL=()=>window.TERM2?180:90;
 function applyTerm(){const T=app.term&&window.TERM2?window.TERM2:T1;rawGrades.forEach((g,i)=>{['lessonNamesEn','lessonNamesAr','teachingEn','examplesEn','examplesAr','practiceEn','practiceAr'].forEach(k=>{g[k]=T[i][k]});arabicExplanations[i].splice(0,arabicExplanations[i].length,...T[i].arabicExplanations)})}
 applyTerm();
-{const _rg=renderGames;renderGames=function(){_rg();addGradeGames()}}
-document.addEventListener('click',e=>{if(e.target.closest('#termToggle')){app.term=app.term?0:1;localStorage.setItem('codeLabTerm',app.term);applyTerm();app.lesson=0;app.answers=[null,null,null];app.grid={x:0,y:0};app.score=0;render()}});
-function save(){localStorage.setItem(progressId,JSON.stringify(completed))}
-function render(){
-  {const tt=$('#termToggle');if(tt){tt.hidden=!window.TERM2;$('#termLabel').textContent=app.lang==='ar'?(app.term?'الترم الثاني':'الترم الأول'):(app.term?'Term 2':'Term 1')}}
-  document.documentElement.lang=app.lang;document.documentElement.dir=app.lang==='ar'?'rtl':'ltr';
-  renderLabels();renderGrades();renderHeader();renderRail();
-  if(app.view==='lessons'){renderLesson();expandLessonContent();addPackDetail();renderTutor()}
-  else if(app.view==='projects')renderProjects();
-  else renderGames();
+/* ============================================================
+   Code Lab — واجهة الاستخدام (state → render)
+   كل تفاعل يعدّل الحالة ثم يعيد بناء الواجهة.
+   ============================================================ */
+
+/* ---------- نصوص الواجهة الإضافية ---------- */
+Object.assign(copy.ar, {
+  ariaMenu: 'فتح القائمة', ariaGrade: 'اختيار الصف', ariaTheme: 'تغيير وضع العرض', ariaLang: 'تغيير اللغة',
+  ariaProfile: 'الملف الشخصي', ariaClose: 'إغلاق', ariaLessons: 'قائمة الدروس',
+  titleTheme: 'الوضع الليلي / النهاري', titleLang: 'عربي / English',
+  overall: 'تقدمك العام', certificate: 'شهادة الإكمال', remaining: 'متبقٍ',
+  profileTitle: 'ملفك الشخصي', name: 'الاسم', points: 'النقاط', xp: 'نقطة', certs: 'الشهادات', doneLessons: 'دروس مكتملة',
+  certTitle: 'شهادة إتمام', certHead: 'شهادة إتمام', certSub: 'تُمنح هذه الشهادة إلى', certCourse: 'لإتمامه بنجاح مسار', certDownload: 'تحميل / طباعة الشهادة',
+  overview: 'الفكرة الأساسية', keyPoints: 'خطوات الشرح', workedExample: 'مثال محلول', secondExample: 'مثال إضافي',
+  commonMistake: 'غلطة شائعة وحلّها', recap: 'الخلاصة في سطرين', challenge: 'مهمة تطبيقية',
+  fullTutorial: 'الشرح الكامل خطوة بخطوة', referenceTable: 'جدول مرجعي سريع', exercises: 'تمارين للتطبيق',
+  furtherReading: 'مصادر رسمية للتوسّع', activity: 'نشاط الدرس التفاعلي', tryIt: 'جرّبها بنفسك ▶', runCode: 'شغّل',
+  statLessons: 'دروس', statDone: 'منجزة', statStage: 'المرحلة', gamesForGrade: 'ألعاب هذا الصف',
+  gamesForGradeIntro: 'ألعاب متنوعة مبنية على دروس هذا الصف والترم الحالي.',
+  markDone: 'تحديد كمكتمل', doneLabel: 'مكتمل', resultLabel: 'النتيجة',
+  answerWhy: 'السبب: ', noPack: 'الشرح التفصيلي لهذا الدرس لسه ما اتولّدش. شغّل: node build-content.mjs ثم أعد تحميل الصفحة.',
+  certLocked: 'أكمل كل دروس الصف الحالي الأول عشان تفتح الشهادة.',
+  pointsEarned: 'أحسنت! كسبت نقاطًا جديدة.', certAwarded: 'مبروك! حصلت على شهادة إتمام', progressReset: 'تم مسح التقدم من جديد.',
+  nameSaved: 'تم حفظ الاسم.', lessonCompleted: 'الدرس اتسجل كمكتمل 🎉', locked: 'اكتمل أولًا',
+  unlockedNow: 'اتفتح دلوقتي!', summary: 'ملخص سريع', openLesson: 'افتح الدرس', noData: 'لا توجد بيانات لهذا العرض بعد.'
+});
+Object.assign(copy.en, {
+  ariaMenu: 'Open menu', ariaGrade: 'Choose grade', ariaTheme: 'Switch theme', ariaLang: 'Switch language',
+  ariaProfile: 'Profile', ariaClose: 'Close', ariaLessons: 'Lesson list',
+  titleTheme: 'Light / dark mode', titleLang: 'عربي / English',
+  overall: 'Overall progress', certificate: 'Certificate of completion', remaining: 'remaining',
+  profileTitle: 'Your profile', name: 'Name', points: 'Points', xp: 'XP', certs: 'Certificates', doneLessons: 'Lessons completed',
+  certTitle: 'Certificate of completion', certHead: 'Certificate of completion', certSub: 'This certificate is awarded to', certCourse: 'for successfully completing the course', certDownload: 'Download / print certificate',
+  overview: 'Core idea', keyPoints: 'How it works', workedExample: 'Worked example', secondExample: 'Another example',
+  commonMistake: 'A common mistake and its fix', recap: 'Recap in two lines', challenge: 'Practice challenge',
+  fullTutorial: 'Full step-by-step tutorial', referenceTable: 'Quick reference', exercises: 'Exercises',
+  furtherReading: 'Official references', activity: 'Interactive lesson activity', tryIt: 'Try it yourself ▶', runCode: 'Run',
+  statLessons: 'lessons', statDone: 'done', statStage: 'Stage', gamesForGrade: 'Games for this grade',
+  gamesForGradeIntro: 'Mixed games built from the lessons of this grade and term.',
+  markDone: 'Mark as complete', doneLabel: 'Complete', resultLabel: 'Result',
+  answerWhy: 'Why: ', noPack: 'The detailed lesson has not been generated yet. Run: node build-content.mjs, then reload the page.',
+  certLocked: 'Finish every lesson in the current grade to unlock the certificate.',
+  pointsEarned: 'Well done! You earned points.', certAwarded: 'Congratulations! You earned a certificate for', progressReset: 'Progress was cleared.',
+  nameSaved: 'Name saved.', lessonCompleted: 'Lesson marked complete 🎉', locked: 'Finish first',
+  unlockedNow: 'Unlocked now!', summary: 'Quick summary', openLesson: 'Open lesson', noData: 'Nothing to show here yet.'
+});
+
+/* ---------- التخزين والحالة ---------- */
+const STORE = { theme: 'codeLabTheme', lang: 'codeLabLang', points: 'codeLabPoints', certs: 'codeLabCerts', name: 'codeLabName' };
+const storeGet = (key, fallback) => { try { const raw = localStorage.getItem(key); return raw == null ? fallback : JSON.parse(raw); } catch { return fallback; } };
+const storeSet = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} };
+
+app.theme = storeGet(STORE.theme, 'light');
+app.lang = storeGet(STORE.lang, 'ar');
+app.points = storeGet(STORE.points, 0);
+app.certs = storeGet(STORE.certs, []);
+app.name = storeGet(STORE.name, '');
+if (!window.TERM2) app.term = 0;
+
+const userName = () => app.name || (app.lang === 'ar' ? 'طالب/ـة' : 'Student');
+const award = (amount, message) => { app.points += amount; storeSet(STORE.points, app.points); if (message) toast(message, 'success'); };
+const save = () => storeSet(progressId, completed);
+
+function applyTheme() {
+  document.documentElement.dataset.theme = app.theme;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', app.theme === 'dark' ? '#080f1c' : '#0f3d63');
+  const icon = $('#themeIcon');
+  if (icon) icon.textContent = app.theme === 'dark' ? '☀' : '☾';
+}
+
+/* ---------- تحميل محتوى الدرس ---------- */
+function ensurePack() {
+  const key = packId();
+  if (key in window.PACKS) return;
+  window.PACKS[key] = null;
+  fetch(`content/${app.term ? 't2-' : ''}g${app.grade}-l${app.lesson}.json`)
+    .then(response => (response.ok ? response.json() : null))
+    .then(data => { if (data) { window.PACKS[key] = data; if (packId() === key) render(); } else delete window.PACKS[key]; })
+    .catch(() => { delete window.PACKS[key]; });
+}
+/* packData() = الحزمة كاملة (meta + اللغتين) · packBody() = محتوى اللغة الحالية فقط */
+const packData = () => (window.PACKS[packId()] || (!app.term ? window.LESSON_PACK[packId()] : null) || null);
+const packBody = () => { const pack = packData(); return pack ? (pack[app.lang] || null) : null; };
+
+/* ---------- أدوات صغيرة ---------- */
+const esc = value => String(value == null ? '' : value).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+const shuffle = list => [...list].sort(() => Math.random() - 0.5);
+const isElement = value => value instanceof Element;
+let toastTimer;
+function toast(message, type) {
+  const el = $('#toast');
+  el.textContent = message;
+  el.className = `toast show${type ? ' ' + type : ''}`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+/* ---------- التنقل والاختيار ---------- */
+function setGrade(grade) {
+  app.grade = grade; app.lesson = 0; app.view = 'lessons';
+  app.answers = [null, null, null]; app.grid = { x: 0, y: 0 }; app.score = 0;
+  app.tutorMessages = []; app.tutorContextKey = '';
+  render();
+}
+function setLesson(lesson) {
+  app.lesson = lesson; app.answers = [null, null, null]; app.grid = { x: 0, y: 0 }; app.score = 0;
+  app.tutorMessages = []; app.tutorContextKey = '';
+  render();
+}
+function moveLesson(amount) { setLesson(Math.max(0, Math.min(9, app.lesson + amount))); }
+
+/* ---------- render ---------- */
+function render() {
+  document.documentElement.lang = app.lang;
+  document.documentElement.dir = app.lang === 'ar' ? 'rtl' : 'ltr';
+  applyTheme();
+  renderLabels();
+  renderTopbar();
+  renderSidebar();
+  if (app.view === 'projects') renderProjects();
+  else if (app.view === 'games') renderGames();
+  else renderLessons();
   renderProgress();
 }
-function renderLabels(){$$('[data-i18n]').forEach(el=>el.textContent=tr(el.dataset.i18n));$('#languageLabel').textContent=app.lang==='ar'?'English':'العربية';$('#languageToggle').setAttribute('aria-label',app.lang==='ar'?'Switch to English':'التبديل للعربية')}
-function renderGrades(){
-  $('#gradeList').innerHTML=rawGrades.map((g,i)=>`<button type="button" class="grade-button ${i===app.grade?'active':''}" data-grade="${i}" aria-current="${i===app.grade}"><span class="grade-number">${String(i+1).padStart(2,'0')}</span><span class="grade-button-copy"><strong>${g[app.lang]}</strong><small>${gradeLabel(i)}</small></span><span class="grade-mini-progress">${n(doneCount(i))}/10</span></button>`).join('');
-  $$('[data-grade]').forEach(btn=>btn.addEventListener('click',()=>{
-    app.grade=+btn.dataset.grade;app.lesson=0;app.view='lessons';app.answers=[null,null,null];
-    app.grid={x:0,y:0};app.score=0;render();
-  }));
+
+function renderLabels() {
+  $$('[data-i18n]').forEach(el => { el.textContent = tr(el.dataset.i18n); });
+  $$('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', tr(el.dataset.i18nAria)); });
+  $$('[data-i18n-title]').forEach(el => { el.setAttribute('title', tr(el.dataset.i18nTitle)); });
+  $('#languageLabel').textContent = app.lang === 'ar' ? 'EN' : 'ع';
 }
-function renderHeader(){
-  const g=gradeData();$('#crumbGrade').textContent=gradeLabel(app.grade);$('#gradeLevel').textContent=g[app.lang==='ar'?'levelAr':'levelEn'];
-  $('#gradeTitle').textContent=g[app.lang];$('#gradeDescription').textContent=app.lang==='ar'?'افهم الفكرة، شاهد أمثلة، وجرّبها بنفسك خطوة بخطوة.':'Understand the idea, see examples, and try them step by step.';
-  $('#gradeNumber').textContent=String(app.grade+1).padStart(2,'0');$('#gamesTab').hidden=app.grade<6;
-  $('#lessonsTab').classList.toggle('active',app.view==='lessons');$('#projectsTab').classList.toggle('active',app.view==='projects');$('#gamesTab').classList.toggle('active',app.view==='games');
-  $('#lessonView').hidden=app.view!=='lessons';$('#projectsView').hidden=app.view!=='projects';$('#gamesView').hidden=app.view!=='games';
+
+function renderTopbar() {
+  const grades = rawGrades.map((g, i) => {
+    const done = doneCount(i);
+    return `<button type="button" class="year-btn ${i === app.grade ? 'active' : ''} ${done ? 'has-progress' : ''}" data-grade="${i}" title="${esc(g[app.lang])}" aria-current="${i === app.grade}">${n(i + 1)}</button>`;
+  }).join('');
+  $('#gradeSwitch').innerHTML = grades;
+  $('#avatarBtn').textContent = userName().trim().charAt(0) || (app.lang === 'ar' ? 'ع' : 'S');
+  const term = $('#termToggle');
+  term.hidden = !window.TERM2;
+  $('#termLabel').textContent = app.lang === 'ar' ? (app.term ? 'الترم الثاني' : 'الترم الأول') : (app.term ? 'Term 2' : 'Term 1');
+  $('#gamesNavBtn').hidden = app.grade < 6;
+  if (app.grade < 6 && app.view === 'games') app.view = 'lessons';
 }
-function renderProgress(){const total=Object.values(completed).filter(Boolean).length,percent=Math.round(total/TOTAL()*100),count=doneCount(app.grade);$('#progressPercent').textContent=`${n(percent)}${app.lang==='ar'?'٪':'%'}`;$('#progressRing').style.setProperty('--progress',`${percent}%`);$('#progressCaption').textContent=app.lang==='ar'?`${n(total)} من ${n(TOTAL())} درس`:`${total} of ${TOTAL()} lessons`;$('#gradeProgressBar').style.width=`${count*10}%`;$('#gradeProgressText').textContent=`${n(count)} / ${n(10)} ${tr('lessons')}`}
-function renderRail(){$('#lessonRail').innerHTML=Array.from({length:10},(_,i)=>`<button type="button" class="lesson-chip ${app.lesson===i?'active':''} ${isDone(app.grade,i)?'done':''}" data-lesson="${i}" aria-label="${tr('lessonOf')} ${n(i+1)}" aria-current="${app.lesson===i?'step':'false'}"><span>${n(i+1)}</span></button>`).join('');$$('[data-lesson]').forEach(btn=>btn.addEventListener('click',()=>{app.lesson=+btn.dataset.lesson;app.answers=[null,null,null];app.grid={x:0,y:0};app.score=0;render()}))}
-function demoHeading(){if(typeof packSimOK==='function'&&packSimOK()){const P=packKey(),t=P[app.lang]?.act?.title;return t||(app.lang==='ar'?'نشاط الدرس':'Lesson activity')}return tr(({grid:'grid',story:'scene',game:'game',web:'web',style:'style',calculator:'calculator',score:'scoreboard',data:'data',chart:'chart'})[gradeData().demo])}
-function renderLesson(){const g=gradeData(),title=lessonTitle(),example=detail('examples'),teaching=detail('teaching'),practice=detail('practice'),tags=title.split(/[&(),:—]/).map(s=>s.trim()).filter(Boolean).slice(0,3),done=isDone();$('#lessonPanel').innerHTML=`<header class="lesson-head"><div><div class="lesson-kicker">${tr('lessonOf').toUpperCase()} ${n(app.lesson+1)} / 10</div><h2>${title}</h2><p>${tr('lead')} ${teaching[0]}</p></div><span class="lesson-badge">${done?'✓ '+tr('complete'):'◷ '+tr('minutes')}</span></header><div class="lesson-body"><div class="lesson-main-column"><section><h3 class="section-label"><span class="section-index">01</span>${tr('explain')}</h3><p class="explanation">${teaching[0]}</p><div class="topic-tags">${tags.map(tag=>`<span class="topic-tag">${tag}</span>`).join('')}</div></section><section><h3 class="section-label"><span class="section-index">02</span>${tr('example')}</h3><div class="example-box"><span class="example-label">${app.lang==='ar'?'مثال':'EXAMPLE'}</span><p>${example}</p></div></section><section><h3 class="section-label"><span class="section-index">03</span>${tr('try')}</h3><div class="practice-box"><p>${practice}</p></div></section></div><aside class="lesson-side-column"><div><h3 class="section-label"><span class="section-index">↗</span>${demoHeading()}</h3><div class="playground" id="playground"></div></div></aside></div><section class="quiz-section"><div class="quiz-heading"><h3><span class="section-index">04</span>${tr('quiz')}</h3><span class="quiz-count">${tr('quizCount')}</span></div><div class="question-list" id="questionList"></div><div class="quiz-actions"><span class="quiz-result" id="quizResult" aria-live="polite">${done?tr('completedAlready'):''}</span><button class="primary-button" id="submitQuiz" type="button">${tr(done?'retry':'submit')} <span aria-hidden="true">→</span></button></div></section><nav class="lesson-navigation"><button class="navigation-button" id="previousLesson" type="button" ${app.lesson===0?'disabled':''}>← ${tr('previous')}</button><button class="navigation-button" id="nextLesson" type="button" ${app.lesson===9?'disabled':''}>${tr('next')} →</button></nav>`;renderPlayground();renderQuiz();$('#previousLesson').addEventListener('click',()=>moveLesson(-1));$('#nextLesson').addEventListener('click',()=>moveLesson(1));$('#submitQuiz').addEventListener('click',checkQuiz)}
-function expandLessonContent(){
-  const exampleBoxes=$$('.example-box',$('#lessonPanel'));
-  const secondExample=app.lang==='ar'?secondExamplesAr[app.grade][app.lesson]:detail('teaching')[1];
-  $('.lesson-head p').textContent=`${tr('lessonGoal')} ${lessonTitle()}`;
-  $('.example-label',exampleBoxes[0]).textContent=tr('exampleOne');
-  const extra=document.createElement('div');extra.className='example-box example-box-secondary';
-  extra.innerHTML=`<span class="example-label">${tr('exampleTwo')}</span><p></p>`;
-  $('p',extra).textContent=secondExample;
-  exampleBoxes[0].after(extra);
-  const note=document.createElement('aside');note.className='learning-note';
-  note.innerHTML=`<strong>${tr('thinkNote')}</strong><p></p>`;
-  $('p',note).textContent=stageNotes[app.lang][app.grade];
-  $('.explanation').after(note);
-  const panel=$('#lessonPanel'),quiz=$('.quiz-section',panel),fullLesson=document.createElement('section');
-  fullLesson.className='full-lesson-panel';
-  fullLesson.innerHTML=`<div class="full-lesson-heading"><div><span class="section-index">AI</span><div><h3>${tr('deepTitle')}</h3><p>${tr('deepIntro')}</p></div></div><button class="primary-button" id="buildFullLesson" type="button">${tr('buildFullLesson')}</button></div><div class="full-lesson-result" id="fullLessonResult" hidden></div>`;
-  panel.insertBefore(fullLesson,quiz);
-  const references=document.createElement('section');references.className='reference-section';
-  references.innerHTML=`<div><h3>${tr('sources')}</h3><p>${tr('sourceNote')}</p></div><nav class="reference-links"></nav>`;
-  documentationByGrade[app.grade].forEach(reference=>{
-    const link=document.createElement('a');link.href=reference.url;link.target='_blank';link.rel='noreferrer';link.textContent=reference.title;
-    $('.reference-links',references).append(link);
+
+function renderSidebar() {
+  const g = gradeData();
+  $('#sidebarGrade').textContent = lessonTitle(0).length ? g[app.lang] : '';
+  $('#sidebarMeta').textContent = `${gradeLabel(app.grade)} · ${app.lang === 'ar' ? (app.term ? 'الترم الثاني' : 'الترم الأول') : (app.term ? 'Term 2' : 'Term 1')}`;
+  $$('#sectionNav [data-view]').forEach(button => button.classList.toggle('active', button.dataset.view === app.view));
+  const titles = rawGrades[app.grade][app.lang === 'ar' ? 'lessonNamesAr' : 'lessonNamesEn'];
+  $('#lessonList').innerHTML = titles.map((title, i) => `
+    <button type="button" class="unit-item ${i === app.lesson && app.view === 'lessons' ? 'active' : ''} ${isDone(app.grade, i) ? 'done' : ''}" data-lesson="${i}" aria-current="${i === app.lesson}">
+      <span class="unit-number">${isDone(app.grade, i) ? '✓' : n(i + 1)}</span>
+      <span class="unit-copy"><span class="unit-title">${esc(title)}</span><span class="unit-progress">${app.lang === 'ar' ? 'الدرس' : 'Lesson'} ${n(i + 1)} / ١٠</span></span>
+    </button>`).join('');
+}
+
+function renderProgress() {
+  const total = Object.values(completed).filter(Boolean).length;
+  const percent = Math.round((total / TOTAL()) * 100);
+  $('#progressFill').style.width = `${Math.min(100, percent)}%`;
+  $('#progressText').textContent = app.lang === 'ar' ? `${n(percent)}٪ · ${n(total)} / ${n(TOTAL())} درس` : `${percent}% · ${total} / ${TOTAL()} lessons`;
+}
+
+/* ---------- عرض الدروس ---------- */
+function renderLessons() {
+  const g = gradeData();
+  ensurePack();
+  const meta = packData(), P = packBody();
+  const teaching = detail('teaching');
+  const example = detail('examples');
+  const practice = detail('practice');
+  const done = isDone();
+  const percent = Math.round((doneCount(app.grade) / 10) * 100);
+  const tags = lessonTitle().split(/[&(),:—/]/).map(part => part.trim()).filter(Boolean).slice(0, 3);
+
+  const rail = Array.from({ length: 10 }, (_, i) => `
+    <button type="button" class="lesson-chip ${i === app.lesson ? 'active' : ''} ${isDone(app.grade, i) ? 'done' : ''}" data-lesson="${i}" aria-label="${tr('lessonOf')} ${n(i + 1)}">${n(i + 1)}</button>`).join('');
+
+  const steps = P && Array.isArray(P.steps) && P.steps.length ? P.steps : teaching;
+  const language = meta && meta.lang ? meta.lang : '';
+
+  $('#container').innerHTML = `
+    <section class="hero">
+      <span class="hero-badge">${tr('track')}</span>
+      <h1>${esc(g[app.lang])}</h1>
+      <p>${app.lang === 'ar' ? 'افهم الفكرة، شوف أمثلة محلولة، وجرّبها بنفسك خطوة بخطوة.' : 'Understand the idea, see worked examples, and try it yourself step by step.'}</p>
+      <div class="hero-stats">
+        <div><b>${n(doneCount(app.grade))}</b><span>${tr('lessons')}</span></div>
+        <div><b>${n(10 - doneCount(app.grade))}</b><span>${tr('remaining')}</span></div>
+        <div><b>${n(percent)}%</b><span>${esc(g[app.lang === 'ar' ? 'levelAr' : 'levelEn'])}</span></div>
+      </div>
+    </section>
+
+    <nav class="lesson-rail" aria-label="${tr('lessons')}">${rail}</nav>
+
+    <article class="lesson-view-card">
+      <header class="lesson-head">
+        <div>
+          <span class="lesson-kicker">${tr('lessonOf')} ${n(app.lesson + 1)} / ١٠</span>
+          <h2>${esc(lessonTitle())}</h2>
+          <p class="lesson-goal"><strong>${tr('lessonGoal')}</strong> ${esc(teaching[0] || '')}</p>
+        </div>
+        <span class="lesson-badge ${done ? 'done' : ''}">${done ? '✓ ' + tr('doneLabel') : '◷ ' + tr('minutes')}</span>
+      </header>
+      <div class="lesson-body" tabindex="-1">
+        <div class="body-actions">
+          <button type="button" class="btn ${done ? 'btn-secondary' : 'btn-outline'}" id="markDone">${done ? '✓ ' + tr('doneLabel') : tr('markDone')}</button>
+        </div>
+
+        ${P
+          ? `<h3 class="section-title">${tr('keyPoints')}</h3><ol class="concept-list">${steps.map(step => `<li>${esc(step)}</li>`).join('')}</ol>`
+          : `<h3 class="section-title">${tr('overview')}</h3><p class="content-text">${esc(teaching[0] || '')}</p>`}
+        ${tags.length ? `<div class="topic-tags">${tags.map(tag => `<span class="topic-tag">${esc(tag)}</span>`).join('')}</div>` : ''}
+
+        <h3 class="section-title">${tr('workedExample')}</h3>
+        <div class="example-card"><span class="ex-label">${app.lang === 'ar' ? 'مثال ١' : 'Example 1'}</span><p>${esc(example)}</p></div>
+        ${secondExample() ? `<div class="example-card alt"><span class="ex-label">${app.lang === 'ar' ? 'مثال ٢' : 'Example 2'}</span><p>${esc(secondExample())}</p></div>` : ''}
+        ${P && P.example ? `<div class="example-card"><span class="ex-label">${tr('workedExample')}</span><p>${esc(P.example)}</p></div>` : ''}
+
+        ${P && P.mistake ? `<div class="lesson-callout mistake"><strong>${tr('commonMistake')}</strong><p>${esc(String(P.mistake).replace(/^[^:]*:\s*/, ''))}</p></div>` : ''}
+        ${P && P.recap ? `<div class="lesson-callout recap"><strong>${tr('recap')}</strong><p>${esc(P.recap)}</p></div>` : ''}
+        <div class="lesson-callout challenge"><strong>${tr('challenge')}</strong><p>${esc(practice)}</p></div>
+
+        <h3 class="section-title">${tr('activity')}</h3>
+        <div class="playground" id="playground"></div>
+
+        ${P && P.sections && P.sections.length ? `<section id="tutorialBlock"><div id="packSectionsHost"></div></section>` : (P ? '' : `<p class="topic-note">${tr('noPack')}</p>`)}
+        ${P && P.reference && P.reference.length ? `<h3 class="section-title">${tr('referenceTable')}</h3><table class="reference-table"><tbody>${P.reference.map(row => `<tr><td>${esc(row.name)}</td><td>${esc(row.desc)}</td></tr>`).join('')}</tbody></table>` : ''}
+        ${P && P.exercises && P.exercises.length ? `<h3 class="section-title">${tr('exercises')}</h3><div class="exercise-list">${P.exercises.map(item => `<details><summary>${esc(item.q)}</summary><pre>${esc(item.a)}</pre></details>`).join('')}</div>` : ''}
+
+        <section class="quiz-block">
+          <h3 class="section-title">${tr('quiz')}</h3>
+          <div id="questionList"></div>
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary" id="submitQuiz">${done ? tr('retry') : tr('submit')} →</button>
+            <span class="quiz-result" id="quizResult" aria-live="polite"></span>
+          </div>
+        </section>
+
+        <div id="tutorHost"></div>
+
+        ${sourcesBlock(meta)}
+
+        <nav class="lesson-nav">
+          <button type="button" class="btn btn-secondary" data-move="-1" ${app.lesson === 0 ? 'disabled' : ''}>← ${tr('previous')}</button>
+          <button type="button" class="btn btn-secondary" data-move="1" ${app.lesson === 9 ? 'disabled' : ''}>${tr('next')} →</button>
+        </nav>
+      </div>
+    </article>`;
+
+  if (P && P.sections && P.sections.length && typeof packSections === 'function') {
+    $('#packSectionsHost').append(packSections(P, language));
+  }
+  renderPlayground();
+  renderQuiz();
+  renderTutor();
+}
+
+const secondExample = () => (app.lang === 'ar' ? secondExamplesAr[app.grade][app.lesson] : (detail('teaching')[1] || ''));
+
+function sourcesBlock(P) {
+  const links = (P && P.sources && P.sources.length ? P.sources : documentationByGrade[app.grade]) || [];
+  if (!links.length) return '';
+  return `<h3 class="section-title">${tr('furtherReading')}</h3><div class="sources-inline">${links.map(link => `<a href="${esc(link.url)}" target="_blank" rel="noreferrer">${esc(link.title)} ↗</a>`).join('')}</div>`;
+}
+
+/* ---------- النشاط التفاعلي ---------- */
+function renderPlayground() {
+  const box = $('#playground');
+  if (!box) return;
+  const meta = packData(), P = packBody();
+  const heading = (P && P.act && P.act.title) ? P.act.title : (meta && meta.sim ? '' : demoHeading());
+  box.innerHTML = `
+    <div class="playground-top"><span class="playground-title"><span class="live-dot"></span>${esc(heading || tr('activity'))}</span><span class="playground-hint">${tr('lessonOf')} ${n(app.lesson + 1)} / ١٠</span></div>
+    <div class="playground-content">
+      <div class="playground-mission"><strong>${tr('missionLabel')}</strong> ${esc((P && P.act && P.act.goal) || detail('practice'))}</div>
+      <div id="playgroundBody"></div>
+    </div>`;
+  const body = $('#playgroundBody');
+  if (P && P.act && typeof actEngine === 'function') { actEngine(body, P.act); return; }
+  if (meta && meta.sim) { renderSim(body, meta.sim); return; }
+  renderDemo(body, gradeData().demo);
+}
+
+function renderSim(box, sim) {
+  const ar = app.lang === 'ar', goal = sim.goal[app.lang];
+  box.innerHTML = `<p class="playground-caption">${esc(goal)}</p><div id="simArea" class="demo-controls"></div><div class="demo-controls" style="margin-top:9px"><button class="demo-control accent" id="simRun">${ar ? 'شغّل' : 'Run'}</button><button class="demo-control" id="simReset">${tr('reset')}</button></div><div class="scene-demo" id="simStage" style="min-height:52px"></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
+  const area = $('#simArea'), stage = $('#simStage'), out = message => { $('#demoOutput').textContent = message; };
+  if (sim.type === 'order') {
+    let picked = [];
+    const draw = () => {
+      area.innerHTML = '';
+      sim.items.forEach((_, i) => { const button = document.createElement('button'); button.className = 'demo-control'; button.textContent = sim.items[i][app.lang]; button.disabled = picked.includes(i); button.onclick = () => { picked.push(i); draw(); }; area.append(button); });
+      stage.textContent = picked.map(i => sim.items[i][app.lang]).join(' ← ');
+    };
+    draw();
+    $('#simRun').onclick = () => { const ok = picked.length === sim.items.length && picked.every((v, i) => v === i); stage.textContent = ok ? sim.emoji.join(' ') : '💥'; out(ok ? (ar ? 'الترتيب صح، الخوارزمية اشتغلت!' : 'Correct order, the algorithm works!') : (ar ? 'الترتيب مش مظبوط أو ناقص، جرّب تاني.' : 'Order is wrong or incomplete, try again.')); };
+    $('#simReset').onclick = () => { picked = []; draw(); out(tr('output')); };
+  } else {
+    area.innerHTML = `<span>${ar ? 'كرر' : 'Repeat'}</span><input class="demo-input" id="simN" type="number" min="1" max="9" value="1"><span>${ar ? 'مرات' : 'times'}</span>`;
+    $('#simRun').onclick = () => { const count = Math.max(1, Math.min(9, +$('#simN').value || 1)); stage.textContent = sim.emoji.repeat(count); out(count === sim.target ? (ar ? 'تمام! العدد مطابق.' : 'Great! The count matches.') : (count < sim.target ? (ar ? 'ناقص، زوّد العدد.' : 'Too few, increase the count.') : (ar ? 'زيادة، قلّل العدد.' : 'Too many, decrease the count.'))); };
+    $('#simReset').onclick = () => { $('#simN').value = 1; stage.textContent = ''; out(tr('output')); };
+  }
+}
+
+function demoHeading() {
+  return tr(({ grid: 'movement', story: 'scene', game: 'game', web: 'web', style: 'style', calculator: 'calculator', score: 'scoreboard', data: 'data', chart: 'chart' })[gradeData().demo] || 'activity');
+}
+
+function renderDemo(box, kind) {
+  const ar = app.lang === 'ar';
+  let markup = '';
+  if (kind === 'grid') markup = `<p class="playground-caption">${tr('movement')}</p><div class="grid-demo" id="gridDemo"></div><div class="demo-controls"><button class="demo-control" data-move="up">↑</button><button class="demo-control" data-move="left">←</button><button class="demo-control" data-move="down">↓</button><button class="demo-control" data-move="right">→</button><button class="demo-control" id="resetDemo">${tr('reset')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
+  else if (kind === 'story') markup = `<p class="playground-caption">${ar ? 'اختار اللي هتعمله الشخصية عند بداية الحدث.' : 'Choose what the character does when the event starts.'}</p><div class="scene-demo"><span class="scene-character" id="sceneCharacter">🐱</span><span id="sceneBubble">💬</span><span>🌳</span></div><div class="demo-controls" style="margin-top:9px"><select class="demo-select" id="storyAction"><option value="jump">${tr('jump')}</option><option value="dance">${tr('dance')}</option><option value="say">${tr('say')}</option></select><button class="demo-control accent" id="runDemo">${tr('startScene')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
+  else if (kind === 'game') markup = `<p class="playground-caption">${ar ? 'اضغط النجمة عشان تجمعها وتتابع تغيير النقاط.' : 'Collect the star and watch the score change.'}</p><div class="scene-demo"><button class="demo-control accent" id="collectStar" style="font-size:22px">★</button><span>🏃</span><span id="gameScore">${tr('score')}: ${n(app.score)}</span></div><div class="demo-controls" style="margin-top:9px"><button class="demo-control" id="resetDemo">${tr('reset')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
+  else if (kind === 'web') markup = `<p class="playground-caption">${ar ? 'اكتب عنوانًا واعرضه في معاينة الصفحة.' : 'Type a heading and preview it on the page.'}</p><div class="demo-controls"><input class="demo-input" id="headingInput" maxlength="45" value="${ar ? 'رحلتي في البرمجة' : 'My coding journey'}"><button class="demo-control accent" id="runDemo">${tr('preview')}</button></div><div class="demo-output" id="demoOutput">${ar ? 'رحلتي في البرمجة' : 'My coding journey'}</div>`;
+  else if (kind === 'style') markup = `<p class="playground-caption">${ar ? 'غيّر اللون وحجم الخط وشوف قواعد CSS.' : 'Change the color and font size to see CSS at work.'}</p><div class="demo-controls"><input class="demo-input" id="colorInput" type="color" value="#0f3d63" aria-label="${tr('color')}" style="flex:0 0 60px;padding:4px"><input class="demo-input" id="sizeInput" type="range" min="12" max="26" value="16" aria-label="${tr('size')}"></div><div class="demo-output" id="stylePreview" style="background:#0f3d63;color:#fff;font-size:16px;justify-content:center">${ar ? 'بطاقتي الجميلة' : 'My beautiful card'}</div>`;
+  else if (kind === 'calculator') markup = `<p class="playground-caption">${ar ? 'أدخل رقمين واختار العملية.' : 'Enter two numbers and choose an operation.'}</p><div class="demo-controls"><input class="demo-input" id="valueA" type="number" value="12"><select class="demo-select" id="operation"><option value="add">+</option><option value="subtract">−</option><option value="multiply">×</option><option value="divide">÷</option></select><input class="demo-input" id="valueB" type="number" value="4"><button class="demo-control accent" id="runDemo">=</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
+  else if (kind === 'score') markup = `<p class="playground-caption">${ar ? 'استخدم الأزرار لتجربة أحداث تغيّر حالة البرنامج.' : 'Use the buttons to try events that change program state.'}</p><div class="demo-output" id="scoreOutput" style="justify-content:center;font:800 20px var(--font-mono)">${n(app.score)}</div><div class="demo-controls" style="margin-top:9px"><button class="demo-control accent" id="increaseScore">+ ${tr('increase')}</button><button class="demo-control" id="decreaseScore">− ${tr('decrease')}</button><button class="demo-control" id="resetScore">${tr('reset')}</button></div>`;
+  else if (kind === 'data') markup = `<p class="playground-caption">${ar ? 'اختار مرشحًا لتفحص درجات صف تجريبي.' : 'Choose a filter to inspect a sample class dataset.'}</p><div class="demo-controls"><select class="demo-select" id="dataFilter"><option value="all">${tr('all')}</option><option value="passing">${tr('passing')}</option><option value="high">${tr('high')}</option></select><button class="demo-control accent" id="runDemo">${tr('run')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
+  else markup = `<p class="playground-caption">${ar ? 'بدّل طريقة العرض وقارن بيانات الطقس.' : 'Switch the view and compare sample weather data.'}</p><div class="demo-controls"><button class="demo-control accent" data-chart="line">${tr('line')}</button><button class="demo-control" data-chart="bar">${tr('bars')}</button></div><div class="chart-holder"><canvas id="chartCanvas" height="120" aria-label="Sample data chart"></canvas></div>`;
+  box.innerHTML = markup;
+  bindDemo(kind);
+}
+
+const output = value => { const el = $('#demoOutput'); if (el) el.textContent = value; };
+const gridTarget = () => [[4, 4], [0, 4], [4, 0], [2, 4], [4, 2], [1, 4], [3, 0], [0, 3], [3, 4], [4, 1]][app.lesson];
+const atGridTarget = () => { const [x, y] = gridTarget(); return app.grid.x === x && app.grid.y === y; };
+function drawGrid() {
+  const el = $('#gridDemo'); if (!el) return;
+  const [goalX, goalY] = gridTarget(); let cells = '';
+  for (let y = 0; y < 5; y++) for (let x = 0; x < 5; x++) { const player = x === app.grid.x && y === app.grid.y, goal = x === goalX && y === goalY; cells += `<span class="grid-cell ${player ? 'player' : ''} ${goal ? 'goal' : ''}">${player ? '●' : goal ? '★' : ''}</span>`; }
+  el.innerHTML = cells;
+}
+function bindDemo(kind) {
+  if (kind === 'grid') {
+    drawGrid();
+    $$('[data-move]').forEach(button => button.addEventListener('click', () => {
+      const d = button.dataset.move;
+      if (d === 'up') app.grid.y = Math.max(0, app.grid.y - 1);
+      if (d === 'down') app.grid.y = Math.min(4, app.grid.y + 1);
+      if (d === 'left') app.grid.x = Math.max(0, app.grid.x - 1);
+      if (d === 'right') app.grid.x = Math.min(4, app.grid.x + 1);
+      drawGrid();
+      output(atGridTarget() ? tr('arrived') : `${tr('current')}: (${n(app.grid.x)}, ${n(app.grid.y)})`);
+    }));
+    $('#resetDemo').addEventListener('click', () => { app.grid = { x: 0, y: 0 }; drawGrid(); output(tr('output')); });
+  }
+  if (kind === 'story') $('#runDemo').addEventListener('click', () => {
+    const action = $('#storyAction').value, character = $('#sceneCharacter');
+    character.style.transform = action === 'jump' ? 'translateY(-22px)' : action === 'dance' ? 'rotate(24deg) scale(1.2)' : 'translateX(16px)';
+    $('#sceneBubble').textContent = action === 'dance' ? '♫' : action === 'say' ? '💬' : '✨';
+    output(action === 'say' ? (app.lang === 'ar' ? 'قالت الشخصية: مرحبًا!' : 'The character said: Hello!') : (app.lang === 'ar' ? 'استجابت الشخصية للحدث.' : 'The character responded to the event.'));
   });
-  panel.insertBefore(references,quiz);
-  $('#buildFullLesson').addEventListener('click',generateFullLesson);
+  if (kind === 'game') {
+    $('#collectStar').addEventListener('click', () => { app.score++; $('#gameScore').textContent = `${tr('score')}: ${n(app.score)}`; output(app.lang === 'ar' ? `جمعت النجمة! نقاطك ${n(app.score)}.` : `Star collected! Your score is ${app.score}.`); });
+    $('#resetDemo').addEventListener('click', () => { app.score = 0; $('#gameScore').textContent = `${tr('score')}: ٠`; output(tr('output')); });
+  }
+  if (kind === 'web') { const update = () => output($('#headingInput').value || tr('output')); $('#headingInput').addEventListener('input', update); $('#runDemo').addEventListener('click', update); }
+  if (kind === 'style') { const update = () => { $('#stylePreview').style.background = $('#colorInput').value; $('#stylePreview').style.fontSize = `${$('#sizeInput').value}px`; }; $('#colorInput').addEventListener('input', update); $('#sizeInput').addEventListener('input', update); }
+  if (kind === 'calculator') $('#runDemo').addEventListener('click', () => {
+    const a = Number($('#valueA').value), b = Number($('#valueB').value), op = $('#operation').value;
+    const result = op === 'add' ? a + b : op === 'subtract' ? a - b : op === 'multiply' ? a * b : b === 0 ? null : a / b;
+    output(result === null ? tr('noDivide') : `${tr('resultLabel')}: ${n(Number(result.toFixed(3)))}`);
+  });
+  if (kind === 'score') {
+    const refresh = () => { $('#scoreOutput').textContent = n(app.score); };
+    $('#increaseScore').addEventListener('click', () => { app.score++; refresh(); });
+    $('#decreaseScore').addEventListener('click', () => { app.score = Math.max(0, app.score - 1); refresh(); });
+    $('#resetScore').addEventListener('click', () => { app.score = 0; refresh(); });
+  }
+  if (kind === 'data') $('#runDemo').addEventListener('click', () => {
+    const scores = [92, 84, 76, 68, 97, 55, 81, 73], mode = $('#dataFilter').value;
+    const filtered = scores.filter(v => mode === 'all' || (mode === 'passing' && v >= 60) || (mode === 'high' && v > 80));
+    const mean = (filtered.reduce((a, b) => a + b, 0) / filtered.length).toFixed(1);
+    output(`${n(filtered.length)} ${tr('records')}: ${filtered.map(n).join(' · ')}${app.lang === 'ar' ? ' | المتوسط: ' : ' | Mean: '}${n(mean)}`);
+  });
+  if (kind === 'chart') { $$('[data-chart]').forEach(button => button.addEventListener('click', () => { app.chart = button.dataset.chart; $$('[data-chart]').forEach(other => other.classList.toggle('accent', other === button)); drawChart(); })); drawChart(); }
 }
-function getLessonContext(){
-  const grade=gradeData();
+function drawChart() {
+  const canvas = $('#chartCanvas'); if (!canvas) return;
+  const ctx = canvas.getContext('2d'), ratio = devicePixelRatio || 1, width = canvas.clientWidth || 320, height = 120;
+  canvas.width = width * ratio; canvas.height = height * ratio; ctx.setTransform(ratio, 0, 0, ratio, 0, 0); ctx.clearRect(0, 0, width, height);
+  const values = [34, 57, 46, 76, 63, 90], gap = (width - 18) / values.length;
+  ctx.strokeStyle = 'rgba(120,140,160,.5)'; ctx.beginPath(); ctx.moveTo(9, height - 14); ctx.lineTo(width - 9, height - 14); ctx.stroke();
+  if (app.chart === 'bar') values.forEach((v, i) => { const h = (height - 30) * v / 100; ctx.fillStyle = i === 4 ? '#0ea5e9' : 'rgba(15,61,99,.55)'; ctx.fillRect(9 + i * gap + gap * .2, height - 15 - h, gap * .58, h); });
+  else { ctx.strokeStyle = '#0ea5e9'; ctx.lineWidth = 2; ctx.beginPath(); values.forEach((v, i) => { const x = 9 + gap * (i + .5), y = height - 15 - (height - 30) * v / 100; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke(); values.forEach((v, i) => { const x = 9 + gap * (i + .5), y = height - 15 - (height - 30) * v / 100; ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fill(); ctx.strokeStyle = '#0ea5e9'; ctx.stroke(); }); }
+}
+
+/* ---------- الاختبار القصير ---------- */
+function makeQuestions() {
+  const P = packBody();
+  if (P && P.q) return P.q.map(item => ({ text: item.t, options: item.o, answer: item.a, why: item.why }));
+  const titles = rawGrades[app.grade][app.lang === 'ar' ? 'lessonNamesAr' : 'lessonNamesEn'];
+  const lesson = lessonTitle(), prev = titles[(app.lesson + 9) % 10], next = titles[(app.lesson + 1) % 10];
+  const applyAnswer = app.lang === 'ar' ? detail('practice') : detail('teaching')[3];
+  const questions = [
+    { text: tr('conceptQ'), correct: lesson, distractors: [prev, next] },
+    { text: tr('applyQ'), correct: applyAnswer, distractors: [tr('applyWrong1'), tr('applyWrong2')] },
+    { text: tr('reflectQ'), correct: tr('reflectRight'), distractors: [tr('reflectWrong1'), tr('reflectWrong2')] }
+  ];
+  return questions.map((item, i) => {
+    const choices = [item.correct, ...item.distractors], rotation = (app.grade + app.lesson + i) % 3;
+    const options = choices.slice(rotation).concat(choices.slice(0, rotation));
+    return { ...item, options, answer: options.indexOf(item.correct) };
+  });
+}
+function renderQuiz() {
+  const questions = makeQuestions();
+  $('#questionList').innerHTML = questions.map((q, qi) => `
+    <div class="quiz-card" data-question="${qi}">
+      <p class="quiz-q"><span class="qnum">${n(qi + 1)}</span><span>${esc(q.text)}</span></p>
+      <div class="quiz-options">${q.options.map((option, oi) => `<button type="button" class="quiz-option" data-question="${qi}" data-answer="${oi}"><span class="qletter">${String.fromCharCode(65 + oi)}</span><span>${esc(option)}</span></button>`).join('')}</div>
+      <div class="answer-feedback" aria-live="polite"></div>
+    </div>`).join('');
+  $$('#questionList [data-answer]').forEach(button => button.addEventListener('click', () => {
+    const qi = +button.dataset.question;
+    app.answers[qi] = +button.dataset.answer;
+    $$(`.quiz-card[data-question="${qi}"] .quiz-option`).forEach(option => option.classList.toggle('selected', option === button));
+    $(`.quiz-card[data-question="${qi}"] .answer-feedback`).textContent = '';
+  }));
+  $('#submitQuiz').addEventListener('click', checkQuiz);
+}
+function checkQuiz() {
+  if (app.answers.some(a => a === null)) { toast(tr('answerAll')); return; }
+  const questions = makeQuestions();
+  const score = app.answers.reduce((sum, a, i) => sum + (a === questions[i].answer ? 1 : 0), 0);
+  $$('.quiz-card').forEach((card, i) => {
+    const ok = app.answers[i] === questions[i].answer;
+    card.classList.toggle('correct', ok); card.classList.toggle('incorrect', !ok);
+    $$('.quiz-option', card).forEach((button, j) => {
+      button.disabled = true;
+      if (j === questions[i].answer) button.classList.add('correct');
+      if (j === app.answers[i] && !ok) button.classList.add('wrong');
+    });
+    const feedback = $('.answer-feedback', card);
+    feedback.className = `answer-feedback ${ok ? 'ok' : 'no'}`;
+    feedback.textContent = ok ? `✓ ${tr('correct')}` : `✗ ${tr('wrong')}${questions[i].why ? ' ' + tr('answerWhy') + questions[i].why : ''}`;
+  });
+  const wasDone = isDone();
+  if (score === 3) { completed[ck(app.grade, app.lesson)] = true; save(); if (!wasDone) award(10, tr('lessonCompleted')); checkGraduation(); renderTopbar(); renderSidebar(); renderProgress(); }
+  const passed = score === 3;
+  $('#quizResult').textContent = `${tr('resultLabel')}: ${n(score)} / ٣ · ${passed ? tr('passed') : tr('keepGoing')}`;
+  const retry = $('#submitQuiz');
+  retry.textContent = `${tr('retry')} →`;
+  retry.onclick = () => { app.answers = [null, null, null]; render(); };
+}
+function checkGraduation() {
+  if (app.certs.includes(app.grade)) return;
+  if (doneCount(app.grade) < 10) return;
+  app.certs = [...app.certs, app.grade];
+  storeSet(STORE.certs, app.certs);
+  award(25, `${tr('certAwarded')} ${gradeLabel(app.grade)} — ${tr('unlockedNow')}`);
+}
+
+/* ---------- المدرّس الذكي ---------- */
+function getLessonContext() {
+  const grade = gradeData(), meta = packData(), P = packBody();
   return {
-    grade:gradeLabel(app.grade),stage:grade[app.lang==='ar'?'levelAr':'levelEn'],course:grade[app.lang],
-    lesson:lessonTitle(),explanation:detail('teaching')[0],example1:detail('examples'),
-    example2:app.lang==='ar'?secondExamplesAr[app.grade][app.lesson]:detail('teaching')[1],
-    practice:detail('practice'),stageNote:stageNotes[app.lang][app.grade],details:packText()?packText().steps.join(' ')+' Example: '+packText().example:'',references:documentationByGrade[app.grade]
+    grade: gradeLabel(app.grade), stage: grade[app.lang === 'ar' ? 'levelAr' : 'levelEn'], course: grade[app.lang],
+    lesson: lessonTitle(), explanation: detail('teaching')[0], example1: detail('examples'), example2: secondExample(),
+    practice: detail('practice'), stageNote: stageNotes[app.lang][app.grade],
+    details: P && P.steps ? P.steps.join(' ') + (P.example ? ' Example: ' + P.example : '') : '',
+    references: (meta && meta.sources) || documentationByGrade[app.grade]
   };
 }
-async function requestTutor(payload){
+async function requestTutor(payload) {
   let response;
-  try{response=await fetch('/api/tutor',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});}
-  catch{throw new Error(tr('aiError'))}
-  const data=await response.json().catch(()=>({}));
-  if(!response.ok)throw Object.assign(new Error(data.error||tr('aiError')),{status:response.status});
+  try { response = await fetch('/api/tutor', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) }); }
+  catch { throw new Error(tr('aiError')); }
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw Object.assign(new Error(data.error || tr('aiError')), { status: response.status });
   return data.answer;
 }
-async function generateFullLesson(){
-  const button=$('#buildFullLesson'),result=$('#fullLessonResult'),contextKey=`${app.grade}-${app.lesson}-${app.lang}`;
-  button.disabled=true;button.textContent=tr('generating');result.hidden=false;result.textContent=tr('connecting');
-  try{
-    const answer=await requestTutor({mode:'lesson',language:app.lang,context:getLessonContext()});
-    if(contextKey!==`${app.grade}-${app.lesson}-${app.lang}`)return;
-    result.textContent=answer;result.classList.remove('error');
-  }catch(error){result.textContent=error.message;result.classList.add('error')}
-  finally{if(contextKey===`${app.grade}-${app.lesson}-${app.lang}`){button.disabled=false;button.textContent=tr('buildFullLesson')}}
-}
-function renderTutor(){
-  const panel=$('#lessonPanel'),quiz=$('.quiz-section',panel),section=document.createElement('section');
-  const contextKey=`${app.grade}-${app.lesson}-${app.lang}`;
-  if(app.tutorContextKey!==contextKey){app.tutorContextKey=contextKey;app.tutorMessages=[]}
-  section.className='tutor-panel';
-  section.innerHTML=`<div class="tutor-heading"><div class="tutor-mark" aria-hidden="true">M</div><div><h3>${tr('tutorTitle')}</h3><p>${tr('tutorIntro')}</p></div><span class="tutor-badge">${tr('tutorContext')}</span></div><div class="tutor-status" id="tutorStatus" role="status">${tr('connecting')}</div><div class="tutor-chat" id="tutorChat" aria-live="polite"></div><div class="tutor-suggestions"><button type="button" data-tutor-prompt="explain">${tr('askExplain')}</button><button type="button" data-tutor-prompt="example">${tr('askExample')}</button><button type="button" data-tutor-prompt="practice">${tr('askPractice')}</button></div><form class="tutor-form" id="tutorForm"><input id="tutorInput" autocomplete="off" maxlength="1200" placeholder="${tr('askPlaceholder')}"><button class="primary-button" type="submit">${tr('askSend')}</button><button class="quiet-button" id="speakAnswer" type="button" aria-label="${tr('readAnswer')}">${tr('readAnswer')}</button></form>`;
-  panel.insertBefore(section,quiz);
-  let lastAnswer=`${detail('teaching')[0]} ${stageNotes[app.lang][app.grade]}`;
-  const chat=$('#tutorChat',section);
-  const addMessage=(role,message)=>{const bubble=document.createElement('p');bubble.className=`tutor-message ${role}`;bubble.textContent=message;chat.append(bubble);chat.scrollTop=chat.scrollHeight};
-  addMessage('teacher',`${tr('tutorWelcome')} ${detail('teaching')[0]}`);
-  for(const message of app.tutorMessages)addMessage(message.role==='user'?'student':'teacher',message.content);
-  const status=$('#tutorStatus',section),sendButton=$('button[type="submit"]',section);
-  fetch('/api/health').then(response=>response.json()).then(data=>{status.textContent=data.ready?tr('online'):tr('offline');status.classList.toggle('ready',data.ready)}).catch(()=>{status.textContent=tr('offline')});
-  const ask=async(question)=>{
-    const clean=question.trim();if(!clean||sendButton.disabled)return;
-    app.tutorMessages.push({role:'user',content:clean});addMessage('student',clean);
-    sendButton.disabled=true;status.textContent=tr('connecting');
-    try{
-      const answer=await requestTutor({mode:'chat',language:app.lang,context:getLessonContext(),history:app.tutorMessages.slice(0,-1),question:clean});
-      if(contextKey!==app.tutorContextKey)return;
-      app.tutorMessages.push({role:'assistant',content:answer});lastAnswer=answer;addMessage('teacher',answer);status.textContent=tr('online');status.classList.add('ready');
-    }catch(error){
-      if(contextKey!==app.tutorContextKey)return;
-      app.tutorMessages.pop();addMessage('teacher',error.message);status.textContent=error.status===503?tr('offline'):tr('aiError');status.classList.remove('ready');
-    }finally{if(contextKey===app.tutorContextKey)sendButton.disabled=false}
+function renderTutor() {
+  const section = $('#tutorHost');
+  const contextKey = `${app.grade}-${app.lesson}-${app.lang}`;
+  if (app.tutorContextKey !== contextKey) { app.tutorContextKey = contextKey; app.tutorMessages = []; }
+  section.innerHTML = `
+    <section class="tutor">
+      <div class="tutor-head"><span class="tutor-head-title"><span class="tutor-mark">AI</span>${tr('tutorTitle')}</span><span class="tutor-status" id="tutorStatus">${tr('connecting')}</span></div>
+      <p class="tutor-intro">${tr('tutorIntro')}</p>
+      <div class="tutor-quick">
+        <button type="button" data-prompt="explain">${tr('askExplain')}</button>
+        <button type="button" data-prompt="example">${tr('askExample')}</button>
+        <button type="button" data-prompt="practice">${tr('askPractice')}</button>
+      </div>
+      <div class="tutor-log" id="tutorChat" aria-live="polite"></div>
+      <form class="tutor-input" id="tutorForm">
+        <input id="tutorInput" autocomplete="off" maxlength="1200" placeholder="${tr('askPlaceholder')}">
+        <button class="btn btn-primary" type="submit">${tr('askSend')}</button>
+      </form>
+    </section>`;
+  let lastAnswer = `${detail('teaching')[0]} ${stageNotes[app.lang][app.grade]}`;
+  const chat = $('#tutorChat'), addMessage = (role, message) => { const bubble = document.createElement('p'); bubble.className = `t-msg ${role}`; bubble.textContent = message; chat.append(bubble); chat.scrollTop = chat.scrollHeight; };
+  addMessage('a', `${tr('tutorWelcome')} ${detail('teaching')[0]}`);
+  for (const message of app.tutorMessages) addMessage(message.role === 'user' ? 'u' : 'a', message.content);
+  const status = $('#tutorStatus'), sendButton = $('#tutorForm button[type="submit"]');
+  fetch('/api/health').then(response => response.json()).then(data => { status.textContent = data.ready ? tr('online') : tr('offline'); }).catch(() => { status.textContent = tr('offline'); });
+  const ask = async question => {
+    const clean = String(question || '').trim();
+    if (!clean || sendButton.disabled) return;
+    app.tutorMessages.push({ role: 'user', content: clean }); addMessage('u', clean);
+    sendButton.disabled = true; status.textContent = tr('connecting');
+    const thinking = document.createElement('p'); thinking.className = 't-msg a thinking'; thinking.textContent = '…'; chat.append(thinking); chat.scrollTop = chat.scrollHeight;
+    try {
+      const answer = await requestTutor({ mode: 'chat', language: app.lang, context: getLessonContext(), history: app.tutorMessages.slice(0, -1), question: clean });
+      thinking.remove();
+      if (contextKey !== app.tutorContextKey) return;
+      app.tutorMessages.push({ role: 'assistant', content: answer }); lastAnswer = answer; addMessage('a', answer); status.textContent = tr('online');
+    } catch (error) {
+      thinking.remove();
+      if (contextKey !== app.tutorContextKey) return;
+      app.tutorMessages.pop(); addMessage('a', error.message); status.textContent = error.status === 503 ? tr('offline') : tr('aiError');
+    } finally { if (contextKey === app.tutorContextKey) sendButton.disabled = false; }
   };
-  $('#tutorForm',section).addEventListener('submit',event=>{event.preventDefault();const input=$('#tutorInput',section);ask(input.value);input.value=''});
-  $$('[data-tutor-prompt]',section).forEach(button=>button.addEventListener('click',()=>ask(button.dataset.tutorPrompt==='example'?tr('askExample'):button.dataset.tutorPrompt==='practice'?tr('askPractice'):tr('askExplain'))));
-  $('#speakAnswer',section).addEventListener('click',()=>{
-    if(!('speechSynthesis' in window)){toast(tr('speechUnavailable'));return}
-    window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(lastAnswer);utterance.lang=app.lang==='ar'?'ar-EG':'en-US';window.speechSynthesis.speak(utterance);
-  });
+  $('#tutorForm').addEventListener('submit', event => { event.preventDefault(); const input = $('#tutorInput'); ask(input.value); input.value = ''; });
+  $$('[data-prompt]').forEach(button => button.addEventListener('click', () => ask(button.dataset.prompt === 'example' ? tr('askExample') : button.dataset.prompt === 'practice' ? tr('askPractice') : tr('askExplain'))));
+  return lastAnswer;
 }
-function moveLesson(amount){app.lesson=Math.max(0,Math.min(9,app.lesson+amount));app.answers=[null,null,null];app.grid={x:0,y:0};app.score=0;render()}
-function renderPlayground(){if(packSimOK())return packSim($('#playground'));const kind=gradeData().demo;let body='';const hint=tr('changeObserve');if(kind==='grid')body=`<p class="playground-caption">${tr('movement')}</p><div class="grid-demo" id="gridDemo"></div><div class="demo-controls"><button class="demo-control" data-move="up">↑</button><button class="demo-control" data-move="left">←</button><button class="demo-control" data-move="down">↓</button><button class="demo-control" data-move="right">→</button><button class="demo-control" id="resetDemo">${tr('reset')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
-else if(kind==='story')body=`<p class="playground-caption">${app.lang==='ar'?'اختار اللي هتعمله الشخصية عند بداية الحدث.':'Choose what the character does when the event starts.'}</p><div class="scene-demo"><span id="sceneCharacter">🐱</span><span id="sceneBubble">💬</span><span>🌳</span></div><div class="demo-controls" style="margin-top:9px"><select class="demo-select" id="storyAction"><option value="jump">${tr('jump')}</option><option value="dance">${tr('dance')}</option><option value="say">${tr('say')}</option></select><button class="demo-control accent" id="runDemo">${tr('startScene')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
-else if(kind==='game')body=`<p class="playground-caption">${app.lang==='ar'?'اضغط النجمة عشان تجمعها وتتابع تغيير النقاط.':'Collect the star and watch the score change.'}</p><div class="scene-demo"><button class="demo-control accent" id="collectStar" aria-label="${tr('collect')}">★</button><span>🏃</span><span id="gameScore">${tr('score')}: ${n(app.score)}</span></div><div class="demo-controls" style="margin-top:9px"><button class="demo-control" id="resetDemo">${tr('reset')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
-else if(kind==='web')body=`<p class="playground-caption">${app.lang==='ar'?'اكتب عنوانًا واعرضه في معاينة الصفحة.':'Type a heading and preview it on the page.'}</p><div class="demo-controls"><input class="demo-input" id="headingInput" maxlength="45" value="${app.lang==='ar'?'رحلتي في البرمجة':'My coding journey'}"><button class="demo-control accent" id="runDemo">${tr('preview')}</button></div><div class="demo-output" id="demoOutput">${app.lang==='ar'?'رحلتي في البرمجة':'My coding journey'}</div>`;
-else if(kind==='style')body=`<p class="playground-caption">${app.lang==='ar'?'غيّر اللون وحجم الخط وشوف قواعد CSS.':'Change the color and font size to see CSS at work.'}</p><div class="demo-controls"><input class="demo-input" id="colorInput" type="color" value="#c9ed74" aria-label="${tr('color')}"><input class="demo-input" id="sizeInput" type="range" min="10" max="24" value="15" aria-label="${tr('size')}"></div><div class="demo-output" id="stylePreview" style="background:#c9ed74;color:#243322;font-size:15px">${app.lang==='ar'?'بطاقتي الجميلة':'My beautiful card'}</div>`;
-else if(kind==='calculator')body=`<p class="playground-caption">${app.lang==='ar'?'أدخل رقمين واختار العملية الحسابية.':'Enter two numbers and choose an operation.'}</p><div class="demo-controls"><input class="demo-input" id="valueA" type="number" value="12" aria-label="${tr('firstNumber')}"><select class="demo-select" id="operation"><option value="add">+</option><option value="subtract">−</option><option value="multiply">×</option><option value="divide">÷</option></select><input class="demo-input" id="valueB" type="number" value="4" aria-label="${tr('secondNumber')}"><button class="demo-control accent" id="runDemo">=</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
-else if(kind==='score')body=`<p class="playground-caption">${app.lang==='ar'?'استخدم الأزرار لتجربة أحداث تغيّر حالة البرنامج.':'Use the buttons to try events that change program state.'}</p><div class="demo-output" id="scoreOutput" style="justify-content:center;font:700 19px 'DM Mono',monospace">${n(app.score)}</div><div class="demo-controls" style="margin-top:9px"><button class="demo-control accent" id="increaseScore">+ ${tr('increase')}</button><button class="demo-control" id="decreaseScore">− ${tr('decrease')}</button><button class="demo-control" id="resetScore">${tr('reset')}</button></div>`;
-else if(kind==='data')body=`<p class="playground-caption">${app.lang==='ar'?'اختار مرشحًا لتفحص درجات صف تجريبي.':'Choose a filter to inspect a sample class dataset.'}</p><div class="demo-controls"><select class="demo-select" id="dataFilter"><option value="all">${tr('all')}</option><option value="passing">${tr('passing')}</option><option value="high">${tr('high')}</option></select><button class="demo-control accent" id="runDemo">${tr('run')}</button></div><div class="demo-output" id="demoOutput">${tr('output')}</div>`;
-else body=`<p class="playground-caption">${app.lang==='ar'?'بدّل طريقة العرض وقارن بيانات الطقس.':'Switch the view and compare sample weather data.'}</p><div class="demo-controls"><button class="demo-control accent" data-chart="line">${tr('line')}</button><button class="demo-control" data-chart="bar">${tr('bars')}</button></div><div class="chart-holder"><canvas id="chartCanvas" height="105" aria-label="Sample data chart"></canvas></div>`;
-$('#playground').innerHTML=`<div class="playground-top"><span class="playground-title"><span class="live-dot"></span>${demoHeading()}</span><span class="playground-hint">${tr('lessonOf')} ${n(app.lesson+1)} / ١٠</span></div><div class="playground-content"><div class="playground-mission"><strong>${tr('missionLabel')}</strong> ${detail('practice')}</div>${body}</div>`;bindDemo(kind)}
-function output(value){const el=$('#demoOutput');if(el)el.textContent=value}
-function gridTarget(){return [[4,4],[0,4],[4,0],[2,4],[4,2],[1,4],[3,0],[0,3],[3,4],[4,1]][app.lesson]}
-function atGridTarget(){const [x,y]=gridTarget();return app.grid.x===x&&app.grid.y===y}
-function drawGrid(){const el=$('#gridDemo');if(!el)return;const [goalX,goalY]=gridTarget();let cells='';for(let y=0;y<5;y++)for(let x=0;x<5;x++){const player=x===app.grid.x&&y===app.grid.y,goal=x===goalX&&y===goalY;cells+=`<span class="grid-cell ${player?'player':''} ${goal?'goal':''}">${player?'●':goal?'★':''}</span>`}el.innerHTML=cells}
-function bindDemo(kind){if(kind==='grid'){drawGrid();$$('[data-move]').forEach(btn=>btn.addEventListener('click',()=>{const d=btn.dataset.move;if(d==='up')app.grid.y=Math.max(0,app.grid.y-1);if(d==='down')app.grid.y=Math.min(4,app.grid.y+1);if(d==='left')app.grid.x=Math.max(0,app.grid.x-1);if(d==='right')app.grid.x=Math.min(4,app.grid.x+1);drawGrid();output(atGridTarget()?tr('arrived'):`${tr('current')}: (${n(app.grid.x)}, ${n(app.grid.y)})`)}));$('#resetDemo').addEventListener('click',()=>{app.grid={x:0,y:0};drawGrid();output(tr('output'))})}
-if(kind==='story')$('#runDemo').addEventListener('click',()=>{const action=$('#storyAction').value,character=$('#sceneCharacter');character.style.transform=action==='jump'?'translateY(-20px)':action==='dance'?'rotate(25deg) scale(1.2)':'translateX(15px)';$('#sceneBubble').textContent=action==='dance'?'♫':action==='say'?'💬':'✨';output(action==='say'?(app.lang==='ar'?'قالت الشخصية: مرحبًا!':'The character said: Hello!'):(app.lang==='ar'?'استجابت الشخصية للحدث.':'The character responded to the event.'))});
-if(kind==='game'){$('#collectStar').addEventListener('click',()=>{app.score++;$('#gameScore').textContent=`${tr('score')}: ${n(app.score)}`;output(app.lang==='ar'?`جمعت النجمة! نقاطك ${n(app.score)}.`:`Star collected! Your score is ${app.score}.`)});$('#resetDemo').addEventListener('click',()=>{app.score=0;$('#gameScore').textContent=`${tr('score')}: 0`;output(tr('output'))})}
-if(kind==='web'){const update=()=>output($('#headingInput').value||tr('output'));$('#headingInput').addEventListener('input',update);$('#runDemo').addEventListener('click',update)}
-if(kind==='style'){const update=()=>{$('#stylePreview').style.background=$('#colorInput').value;$('#stylePreview').style.fontSize=`${$('#sizeInput').value}px`};$('#colorInput').addEventListener('input',update);$('#sizeInput').addEventListener('input',update)}
-if(kind==='calculator')$('#runDemo').addEventListener('click',()=>{const a=Number($('#valueA').value),b=Number($('#valueB').value),op=$('#operation').value;const result=op==='add'?a+b:op==='subtract'?a-b:op==='multiply'?a*b:b===0?null:a/b;output(result===null?tr('noDivide'):`${tr('result')|| (app.lang==='ar'?'الناتج':'Result')}: ${n(Number(result.toFixed(3)))}`)});
-if(kind==='score'){const refresh=()=>$('#scoreOutput').textContent=n(app.score);$('#increaseScore').addEventListener('click',()=>{app.score++;refresh()});$('#decreaseScore').addEventListener('click',()=>{app.score=Math.max(0,app.score-1);refresh()});$('#resetScore').addEventListener('click',()=>{app.score=0;refresh()})}
-if(kind==='data')$('#runDemo').addEventListener('click',()=>{const scores=[92,84,76,68,97,55,81,73],mode=$('#dataFilter').value,filtered=scores.filter(v=>mode==='all'||mode==='passing'&&v>=60||mode==='high'&&v>80),avg=(filtered.reduce((a,b)=>a+b,0)/filtered.length).toFixed(1);output(`${n(filtered.length)} ${tr('records')}: ${filtered.map(n).join(' · ')}${app.lang==='ar'?' | المتوسط: ':' | Mean: '}${n(avg)}`)});
-if(kind==='chart'){$$('[data-chart]').forEach(btn=>btn.addEventListener('click',()=>{app.chart=btn.dataset.chart;$$('[data-chart]').forEach(b=>b.classList.toggle('accent',b===btn));drawChart()}));drawChart()}}
-function drawChart(){const canvas=$('#chartCanvas');if(!canvas)return;const ctx=canvas.getContext('2d'),ratio=devicePixelRatio||1,width=canvas.clientWidth||300,height=105;canvas.width=width*ratio;canvas.height=height*ratio;ctx.scale(ratio,ratio);ctx.clearRect(0,0,width,height);const values=[34,57,46,76,63,90],gap=(width-18)/values.length;ctx.strokeStyle='#607568';ctx.beginPath();ctx.moveTo(9,height-13);ctx.lineTo(width-9,height-13);ctx.stroke();if(app.chart==='bar')values.forEach((v,i)=>{const h=(height-28)*v/100;ctx.fillStyle=i===4?'#c9ed74':'#74a987';ctx.fillRect(9+i*gap+gap*.2,height-14-h,gap*.58,h)});else{ctx.strokeStyle='#c9ed74';ctx.lineWidth=2;ctx.beginPath();values.forEach((v,i)=>{const x=9+gap*(i+.5),y=height-14-(height-28)*v/100;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();values.forEach((v,i)=>{const x=9+gap*(i+.5),y=height-14-(height-28)*v/100;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#c9ed74';ctx.stroke()})}}
-function makeQuestions(){const PT=packText();if(PT&&PT.q)return PT.q.map(x=>({text:x.t,options:x.o,answer:x.a,why:x.why}));
-  const titles=rawGrades[app.grade][app.lang==='ar'?'lessonNamesAr':'lessonNamesEn'];
-  const lesson=lessonTitle(),prev=titles[(app.lesson+9)%10],next=titles[(app.lesson+1)%10];
-  const applyAnswer=app.lang==='ar'?detail('practice'):detail('teaching')[3];
-  const questions=[
-    {text:tr('conceptQ'),correct:lesson,distractors:[prev,next]},
-    {text:tr('applyQ'),correct:applyAnswer,distractors:[tr('applyWrong1'),tr('applyWrong2')]},
-    {text:tr('reflectQ'),correct:tr('reflectRight'),distractors:[tr('reflectWrong1'),tr('reflectWrong2')]}
-  ];
-  return questions.map((item,i)=>{
-    const choices=[item.correct,...item.distractors],rotation=(app.grade+app.lesson+i)%3;
-    const options=choices.slice(rotation).concat(choices.slice(0,rotation));
-    return {...item,options,answer:options.indexOf(item.correct)};
-  });
+
+/* ---------- المشاريع ---------- */
+function renderProjects() {
+  const data = projData();
+  const list = data ? data[app.lang].map(project => [project.title, project.desc, project.tags]) : (app.lang === 'ar' ? capstonesAr : capstones)[app.grade];
+  const marks = ['↗', '◈', '✳'];
+  $('#container').innerHTML = `
+    <header class="projects-intro">
+      <div><h2>${tr('capTitle')}</h2><p>${tr('capIntro')}</p></div>
+      <span class="projects-count">${tr('capLabel')}</span>
+    </header>
+    <div class="project-grid">${list.map((project, i) => `
+      <article class="project-card">
+        <span class="project-mark" aria-hidden="true">${marks[i] || '↗'}</span>
+        <h3>${esc(project[0])}</h3>
+        <p>${esc(project[1])}</p>
+        <div class="project-tech">${(project[2] || []).map(tag => `<span>${esc(tag)}</span>`).join('')}</div>
+      </article>`).join('')}</div>`;
+  if (data && typeof addProjectDetail === 'function') addProjectDetail(data);
 }
-function renderQuiz(){const questions=makeQuestions();$('#questionList').innerHTML=questions.map((q,qi)=>`<div class="question-card" data-question="${qi}"><p class="question-title"><span class="question-number">${n(qi+1)}</span>${q.text}</p><div class="answer-list">${q.options.map((option,oi)=>`<button class="answer-option" type="button" data-question="${qi}" data-answer="${oi}"><span class="answer-letter">${String.fromCharCode(65+oi)}</span><span>${option}</span></button>`).join('')}</div><div class="answer-feedback" aria-live="polite"></div></div>`).join('');$$('[data-answer]').forEach(btn=>btn.addEventListener('click',()=>{const qi=+btn.dataset.question;app.answers[qi]=+btn.dataset.answer;$$(`.question-card[data-question="${qi}"] .answer-option`).forEach(option=>option.classList.toggle('selected',option===btn));$$(`.question-card[data-question="${qi}"] .answer-feedback`).forEach(el=>el.textContent='')}))}
-function checkQuiz(){if(app.answers.some(a=>a===null)){toast(tr('answerAll'));return}const questions=makeQuestions(),score=app.answers.reduce((sum,a,i)=>sum+(a===questions[i].answer?1:0),0);$$('.question-card').forEach((card,i)=>{const ok=app.answers[i]===questions[i].answer;card.classList.toggle('correct',ok);card.classList.toggle('incorrect',!ok);$$('.answer-option',card).forEach((button,j)=>{button.disabled=true;if(j===questions[i].answer)button.classList.add('selected');if(j===app.answers[i]&&!ok)button.classList.add('wrong')});$('.answer-feedback',card).textContent=ok?tr('correct'):tr('wrong')});if(score===3){completed[ck(app.grade,app.lesson)]=true;save();renderGrades();renderRail();renderProgress()}$('#quizResult').textContent=`${app.lang==='ar'?'النتيجة':'Result'}: ${n(score)} / ٣ · ${score===3?tr('passed'):tr('keepGoing')}`;$('#submitQuiz').textContent=`${tr('retry')} →`;$('#submitQuiz').onclick=()=>{app.answers=[null,null,null];render()}}
-function renderProjects(){const PJ=projData(),projects=PJ?PJ[app.lang].map(p=>[p.title,p.desc,p.tags]):(app.lang==='ar'?capstonesAr:capstones)[app.grade];$('#projectsView').innerHTML=`<div class="projects-intro"><div><h2>${tr('capTitle')}</h2><p>${tr('capIntro')}</p></div><span class="projects-count">${tr('capLabel')}</span></div><div class="project-grid">${projects.map((p,i)=>`<article class="project-card"><span class="project-mark" aria-hidden="true">${['↗','◈','✳'][i]}</span><h3>${p[0]}</h3><p>${p[1]}</p><div class="project-tech">${p[2].map(tag=>`<span>${tag}</span>`).join('')}</div></article>`).join('')}</div>`;addProjectDetail(PJ)}
-function renderGames(){
-  const arcade=app.arcade;
-  clearTimeout(arcade.reactionTimer);arcade.secret=Math.floor(Math.random()*20)+1;arcade.tries=0;arcade.reactionState='idle';arcade.dataRound=1;arcade.dataScore=0;
-  $('#gamesView').innerHTML=`<header class="arcade-header"><span class="arcade-kicker">CODE / PLAY</span><h2>${tr('arcadeTitle')}</h2><p>${tr('arcadeIntro')}</p></header><div class="arcade-grid"><article class="arcade-card"><div class="arcade-card-head"><span class="arcade-number">01</span><div><h3>${tr('guessTitle')}</h3><span class="game-language">PYTHON · IF / ELSE</span></div></div><p>${tr('guessDescription')}</p><form class="arcade-controls" id="guessForm"><input class="arcade-input" id="guessInput" type="number" min="1" max="20" required placeholder="${tr('guessPlaceholder')}" aria-label="${tr('guessPlaceholder')}"><button class="primary-button" type="submit">${tr('guessButton')}</button><button class="quiet-button" id="newNumber" type="button">${tr('newNumber')}</button></form><div class="game-feedback" id="guessFeedback" aria-live="polite">${tr('guessHint')}</div><div class="game-meta" id="guessAttempts">${tr('attempts')} ٠</div></article><article class="arcade-card reaction-card"><div class="arcade-card-head"><span class="arcade-number">02</span><div><h3>${tr('reactionTitle')}</h3><span class="game-language">JAVASCRIPT · EVENTS</span></div></div><p>${tr('reactionDescription')}</p><button class="reaction-button" id="reactionButton" type="button">${tr('reactionStart')}</button><div class="game-feedback" id="reactionFeedback" aria-live="polite">${tr('reactionWait')}</div></article><article class="arcade-card detective-card"><div class="arcade-card-head"><span class="arcade-number">03</span><div><h3>${tr('detectiveTitle')}</h3><span class="game-language">DATA · COMPARE</span></div></div><p>${tr('detectiveDescription')}</p><div class="detective-status"><span id="detectiveRound">${tr('round')} ١ / ٥</span><strong id="detectiveScore">${tr('dataScore')}: ٠</strong></div><p class="detective-question">${tr('detectiveQuestion')}</p><div class="detective-options" id="detectiveOptions"></div><div class="game-feedback" id="detectiveFeedback" aria-live="polite"></div><button class="quiet-button" id="nextRound" type="button" hidden>${tr('nextRound')} →</button></article></div>`;
-  $('#guessForm').addEventListener('submit',event=>{
-    event.preventDefault();const value=Number($('#guessInput').value),feedback=$('#guessFeedback');
-    if(value<1||value>20){feedback.textContent=tr('guessHint');return}
-    arcade.tries++;$('#guessAttempts').textContent=`${tr('attempts')} ${n(arcade.tries)}`;
-    if(value===arcade.secret){feedback.textContent=`${tr('guessWon')} ${n(arcade.tries)} ${tr('attempts')}`;$('#guessForm button[type="submit"]').disabled=true}
-    else feedback.textContent=value<arcade.secret?tr('tooLow'):tr('tooHigh');
+
+/* ---------- الألعاب ---------- */
+function renderGames() {
+  const arcade = app.arcade;
+  clearTimeout(arcade.reactionTimer);
+  arcade.secret = Math.floor(Math.random() * 20) + 1; arcade.tries = 0; arcade.reactionState = 'idle'; arcade.dataRound = 1; arcade.dataScore = 0;
+  $('#container').innerHTML = `
+    <header class="arcade-header"><span class="arcade-kicker">CODE / PLAY</span><h2>${tr('arcadeTitle')}</h2><p>${tr('arcadeIntro')}</p></header>
+    <div class="arcade-grid">
+      <article class="arcade-card">
+        <div class="arcade-card-head"><span class="arcade-number">01</span><div><h3>${tr('guessTitle')}</h3><span class="game-language">PYTHON · IF / ELSE</span></div></div>
+        <p>${tr('guessDescription')}</p>
+        <form class="demo-controls" id="guessForm"><input class="arcade-input" id="guessInput" type="number" min="1" max="20" required placeholder="${tr('guessPlaceholder')}"><button class="btn btn-primary" type="submit">${tr('guessButton')}</button><button class="btn btn-outline" id="newNumber" type="button">${tr('newNumber')}</button></form>
+        <div class="game-feedback" id="guessFeedback">${tr('guessHint')}</div>
+        <div class="game-meta" id="guessAttempts">${tr('attempts')} ٠</div>
+      </article>
+      <article class="arcade-card">
+        <div class="arcade-card-head"><span class="arcade-number">02</span><div><h3>${tr('reactionTitle')}</h3><span class="game-language">JAVASCRIPT · EVENTS</span></div></div>
+        <p>${tr('reactionDescription')}</p>
+        <button class="reaction-button" id="reactionButton" type="button">${tr('reactionStart')}</button>
+        <div class="game-feedback" id="reactionFeedback">${tr('reactionWait')}</div>
+      </article>
+      <article class="arcade-card">
+        <div class="arcade-card-head"><span class="arcade-number">03</span><div><h3>${tr('detectiveTitle')}</h3><span class="game-language">DATA · COMPARE</span></div></div>
+        <p>${tr('detectiveDescription')}</p>
+        <div class="detective-status"><span id="detectiveRound">${tr('round')} ١ / ٥</span><strong id="detectiveScore">${tr('dataScore')}: ٠</strong></div>
+        <p class="detective-question">${tr('detectiveQuestion')}</p>
+        <div class="detective-options" id="detectiveOptions"></div>
+        <div class="game-feedback" id="detectiveFeedback"></div>
+      </article>
+    </div>
+    <div id="gamesView"></div>`;
+  $('#guessForm').addEventListener('submit', event => {
+    event.preventDefault();
+    const value = Number($('#guessInput').value), feedback = $('#guessFeedback');
+    if (value < 1 || value > 20) { feedback.textContent = tr('guessHint'); return; }
+    arcade.tries++; $('#guessAttempts').textContent = `${tr('attempts')} ${n(arcade.tries)}`;
+    if (value === arcade.secret) { feedback.textContent = `${tr('guessWon')} ${n(arcade.tries)} ${tr('attempts')}`; $('#guessForm button[type="submit"]').disabled = true; award(5); }
+    else feedback.textContent = value < arcade.secret ? tr('tooLow') : tr('tooHigh');
   });
-  $('#newNumber').addEventListener('click',()=>{arcade.secret=Math.floor(Math.random()*20)+1;arcade.tries=0;$('#guessInput').value='';$('#guessAttempts').textContent=`${tr('attempts')} ٠`;$('#guessFeedback').textContent=tr('guessHint');$('#guessForm button[type="submit"]').disabled=false});
-  $('#reactionButton').addEventListener('click',()=>{
-    const button=$('#reactionButton'),feedback=$('#reactionFeedback');
-    if(arcade.reactionState==='idle'||arcade.reactionState==='done'){
-      arcade.reactionState='waiting';button.disabled=true;button.textContent=tr('reactionWait');feedback.textContent='';
-      arcade.reactionTimer=setTimeout(()=>{arcade.reactionState='ready';arcade.reactionStart=performance.now();button.disabled=false;button.textContent=tr('reactionGo')},900+Math.random()*1900);
-    }else if(arcade.reactionState==='ready'){
-      const time=Math.round(performance.now()-arcade.reactionStart);arcade.reactionState='done';button.textContent=tr('reactionAgain');feedback.textContent=`${tr('reactionResult')} ${n(time)} ${tr('ms')}`;
+  $('#newNumber').addEventListener('click', () => { arcade.secret = Math.floor(Math.random() * 20) + 1; arcade.tries = 0; $('#guessInput').value = ''; $('#guessAttempts').textContent = `${tr('attempts')} ٠`; $('#guessFeedback').textContent = tr('guessHint'); $('#guessForm button[type="submit"]').disabled = false; });
+  $('#reactionButton').addEventListener('click', () => {
+    const button = $('#reactionButton'), feedback = $('#reactionFeedback');
+    if (arcade.reactionState === 'idle' || arcade.reactionState === 'done') {
+      arcade.reactionState = 'waiting'; button.disabled = true; button.textContent = tr('reactionWait'); feedback.textContent = '';
+      arcade.reactionTimer = setTimeout(() => { arcade.reactionState = 'ready'; arcade.reactionStart = performance.now(); button.disabled = false; button.textContent = tr('reactionGo'); }, 900 + Math.random() * 1900);
+    } else if (arcade.reactionState === 'ready') {
+      const time = Math.round(performance.now() - arcade.reactionStart); arcade.reactionState = 'done'; button.textContent = tr('reactionAgain'); feedback.textContent = `${tr('reactionResult')} ${n(time)} ${tr('ms')}`;
+      if (time < 450) award(5);
     }
   });
-  const categories=app.lang==='ar'?['رياضيات','علوم','فن']:['Math','Science','Art'];
-  const startRound=()=>{
-    if(arcade.dataRound>5){$('#detectiveOptions').innerHTML='';$('#detectiveFeedback').textContent=`${tr('result')}: ${n(arcade.dataScore)} / ٥`;$('#nextRound').hidden=true;return}
-    const values=categories.map(()=>Math.floor(45+Math.random()*56)),correct=Math.max(...values);
-    $('#detectiveRound').textContent=`${tr('round')} ${n(arcade.dataRound)} / ٥`;$('#detectiveScore').textContent=`${tr('dataScore')}: ${n(arcade.dataScore)}`;$('#detectiveFeedback').textContent='';$('#nextRound').hidden=true;
-    $('#detectiveOptions').innerHTML=categories.map((category,index)=>`<button class="detective-option" type="button" data-value="${values[index]}"><span>${category}</span><strong>${n(values[index])}</strong></button>`).join('');
-    $$('.detective-option').forEach(button=>button.addEventListener('click',()=>{
-      const isCorrect=Number(button.dataset.value)===correct;if(isCorrect)arcade.dataScore++;
-      $$('.detective-option').forEach(option=>{option.disabled=true;if(Number(option.dataset.value)===correct)option.classList.add('answer-reveal')});
-      $('#detectiveScore').textContent=`${tr('dataScore')}: ${n(arcade.dataScore)}`;$('#detectiveFeedback').textContent=isCorrect?tr('rightPick'):tr('wrongPick');
-      arcade.dataRound++;$('#nextRound').hidden=false;
+  const categories = app.lang === 'ar' ? ['رياضيات', 'علوم', 'فن'] : ['Math', 'Science', 'Art'];
+  const startRound = () => {
+    if (arcade.dataRound > 5) { $('#detectiveOptions').innerHTML = ''; $('#detectiveFeedback').textContent = `${tr('resultLabel')}: ${n(arcade.dataScore)} / ٥`; return; }
+    const values = categories.map(() => Math.floor(45 + Math.random() * 56)), correct = Math.max(...values);
+    $('#detectiveRound').textContent = `${tr('round')} ${n(arcade.dataRound)} / ٥`;
+    $('#detectiveScore').textContent = `${tr('dataScore')}: ${n(arcade.dataScore)}`;
+    $('#detectiveFeedback').textContent = '';
+    $('#detectiveOptions').innerHTML = categories.map((category, index) => `<button class="detective-option" type="button" data-value="${values[index]}"><span>${category}</span><strong>${n(values[index])}</strong></button>`).join('');
+    $$('.detective-option').forEach(button => button.addEventListener('click', () => {
+      const isCorrect = Number(button.dataset.value) === correct;
+      if (isCorrect) { arcade.dataScore++; award(2); }
+      $$('.detective-option').forEach(option => { option.disabled = true; if (Number(option.dataset.value) === correct) option.classList.add('answer-reveal'); });
+      $('#detectiveScore').textContent = `${tr('dataScore')}: ${n(arcade.dataScore)}`;
+      $('#detectiveFeedback').textContent = isCorrect ? tr('rightPick') : tr('wrongPick');
+      arcade.dataRound++;
     }));
   };
-  $('#nextRound').addEventListener('click',startRound);startRound();
+  startRound();
+  if (typeof addGradeGames === 'function') addGradeGames();
 }
-let toastTimer;function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2200)}
-$('#languageToggle').addEventListener('click',()=>{app.lang=app.lang==='ar'?'en':'ar';app.answers=[null,null,null];render()});$('#lessonsTab').addEventListener('click',()=>{app.view='lessons';render()});$('#projectsTab').addEventListener('click',()=>{app.view='projects';render()});$('#gamesTab').addEventListener('click',()=>{app.view='games';render()});render();
+
+/* ---------- الملف الشخصي والشهادة ---------- */
+function openProfile() {
+  $('#profileAvatar').textContent = userName().trim().charAt(0) || 'ع';
+  $('#profileName').value = app.name;
+  $('#profilePoints').textContent = n(app.points);
+  $('#profileCerts').textContent = n(app.certs.length);
+  $('#profileDone').textContent = `${n(Object.values(completed).filter(Boolean).length)} / ${n(TOTAL())}`;
+  $('#profileModal').showModal();
+}
+function openCert() {
+  if (!app.certs.length) { toast(tr('certLocked')); return; }
+  const grade = app.certs[app.certs.length - 1];
+  $('#certName').textContent = userName();
+  $('#certUnit').textContent = rawGrades[grade][app.lang];
+  $('#certDate').textContent = new Date().toLocaleDateString(app.lang === 'ar' ? 'ar-EG' : 'en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+  $('#certModal').showModal();
+}
+
+/* ---------- الأحداث ---------- */
+document.addEventListener('click', event => {
+  const pick = selector => event.target.closest(selector);
+  let el;
+  if ((el = pick('[data-grade]'))) { setGrade(+el.dataset.grade); return; }
+  if ((el = pick('[data-lesson]'))) { setLesson(+el.dataset.lesson); return; }
+  if ((el = pick('[data-view]'))) { app.view = el.dataset.view; render(); $('#sidebar').classList.remove('open'); return; }
+  if ((el = pick('[data-move]'))) { moveLesson(+el.dataset.move); return; }
+  if (pick('#brandHome')) { event.preventDefault(); app.view = 'lessons'; render(); return; }
+  if (pick('#navToggle')) { $('#sidebar').classList.toggle('open'); return; }
+  if (pick('#termToggle')) {
+    app.term = app.term ? 0 : 1;
+    storeSet('codeLabTerm', app.term);
+    applyTerm(); setGrade(app.grade); return;
+  }
+  if (pick('#themeToggle')) { app.theme = app.theme === 'dark' ? 'light' : 'dark'; storeSet(STORE.theme, app.theme); applyTheme(); return; }
+  if (pick('#languageToggle')) { app.lang = app.lang === 'ar' ? 'en' : 'ar'; storeSet(STORE.lang, app.lang); app.answers = [null, null, null]; app.tutorMessages = []; render(); return; }
+  if (pick('#avatarBtn')) { openProfile(); return; }
+  if (pick('#certBtn')) { openCert(); return; }
+  if (pick('#closeProfile')) { $('#profileModal').close(); return; }
+  if (pick('#closeCert')) { $('#certModal').close(); return; }
+  if (pick('#downloadCert')) { window.print(); return; }
+  if (pick('#markDone')) {
+    completed[ck(app.grade, app.lesson)] = !isDone();
+    save();
+    if (isDone()) { award(10, tr('lessonCompleted')); checkGraduation(); }
+    render(); return;
+  }
+  if (pick('#resetProgress')) {
+    completed = {}; app.points = 0; app.certs = [];
+    storeSet(progressId, completed); storeSet(STORE.points, 0); storeSet(STORE.certs, []);
+    $('#profileModal').close(); toast(tr('progressReset')); render(); return;
+  }
+});
+document.addEventListener('input', event => {
+  if (event.target.id === 'profileName') { app.name = event.target.value.slice(0, 32); storeSet(STORE.name, app.name); $('#profileAvatar').textContent = userName().trim().charAt(0) || 'ع'; $('#avatarBtn').textContent = userName().trim().charAt(0) || 'ع'; }
+});
+document.addEventListener('keydown', event => { if (event.key === 'Escape') { $('#sidebar').classList.remove('open'); } });
+
+applyTheme();
+render();
